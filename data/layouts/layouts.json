@@ -1344,7 +1344,7 @@
     {
       "id": "LAYOUT_PETALBURG_WOODS",
       "name": "PetalburgWoods_Layout",
-      "width": 48,
+      "width": 63,
       "height": 44,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
@@ -4420,6 +4420,36 @@
       "secondary_tileset": "gTileset_Underwater",
       "border_filepath": "data/layouts/Underwater_Route107/border.bin",
       "blockdata_filepath": "data/layouts/Underwater_Route107/map.bin"
+    },
+    {
+      "id": "LAYOUT_ALTERING_CAVE_B1F_2R",
+      "name": "AlteringCave_B1F_2R_Layout",
+      "width": 35,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AlteringCave_B1F_2R/border.bin",
+      "blockdata_filepath": "data/layouts/AlteringCave_B1F_2R/map.bin"
+    },
+    {
+      "id": "LAYOUT_ALTERING_CAVE_B1F_1R",
+      "name": "AlteringCave_B1F_1R_Layout",
+      "width": 21,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AlteringCave_B1F_1R/border.bin",
+      "blockdata_filepath": "data/layouts/AlteringCave_B1F_1R/map.bin"
+    },
+    {
+      "id": "LAYOUT_ALTERING_CAVE_B2F",
+      "name": "AlteringCave_B2F_Layout",
+      "width": 15,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AlteringCave_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/AlteringCave_B2F/map.bin"
     }
   ]
 }

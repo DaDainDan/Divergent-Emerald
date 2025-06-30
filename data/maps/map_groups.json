@@ -430,7 +430,10 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "AlteringCave_B1F_1R",
+    "AlteringCave_B1F_2R",
+    "AlteringCave_B2F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
