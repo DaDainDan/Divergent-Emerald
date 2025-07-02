@@ -4428,18 +4428,14 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
                 else
                     nature = gSaveBlock2Ptr->frontier.domePlayerPartyData[i].nature;
 
-                if (gNaturesInfo[nature].statUp == gNaturesInfo[nature].statDown)
-                {
-                    allocatedArray[j + NUM_STATS + 1] += allocatedArray[j + 1];
-                }
-                else if (gNaturesInfo[nature].statUp == j + 1)
+                if (gNaturesInfo[nature].statUp == j + 1 && gNaturesInfo[nature].statUp2 == j + 1)
                 {
                     allocatedArray[j + NUM_STATS + 1] += (allocatedArray[j + 1] * 110) / 100;
                 }
-                else if (gNaturesInfo[nature].statDown == j + 1)
+                else if (gNaturesInfo[nature].statUp == j + 1 || gNaturesInfo[nature].statUp2 == j + 1)
                 {
-                    allocatedArray[j + NUM_STATS + 1] += (allocatedArray[j + 1] * 90) / 100;
-                    allocatedArray[j + NUM_STATS + NUM_NATURE_STATS + 2]++;
+                    allocatedArray[j + NUM_STATS + 1] += (allocatedArray[j + 1] * 105) / 100;
+                    // allocatedArray[j + NUM_STATS + NUM_NATURE_STATS + 2]++;
                 }
                 else
                 {
@@ -4470,18 +4466,14 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
             {
                 nature = gFacilityTrainerMons[DOME_MONS[trainerTourneyId][i]].nature;
 
-                if (gNaturesInfo[nature].statUp == gNaturesInfo[nature].statDown)
-                {
-                    allocatedArray[j + NUM_STATS + 1] += allocatedArray[j + 1];
-                }
-                else if (gNaturesInfo[nature].statUp == j + 1)
+                if (gNaturesInfo[nature].statUp == j + 1 && gNaturesInfo[nature].statUp2 == j + 1)
                 {
                     allocatedArray[j + NUM_STATS + 1] += (allocatedArray[j + 1] * 110) / 100;
                 }
-                else if (gNaturesInfo[nature].statDown == j + 1)
+                else if (gNaturesInfo[nature].statUp == j + 1 || gNaturesInfo[nature].statUp2 == j + 1)
                 {
-                    allocatedArray[j + NUM_STATS + 1] += (allocatedArray[j + 1] * 90) / 100;
-                    allocatedArray[j + NUM_STATS + NUM_NATURE_STATS + 2]++;
+                    allocatedArray[j + NUM_STATS + 1] += (allocatedArray[j + 1] * 105) / 100;
+                    // allocatedArray[j + NUM_STATS + NUM_NATURE_STATS + 2]++;
                 }
                 else
                 {

@@ -556,7 +556,7 @@ struct NatureInfo
 {
     const u8 *name;
     u8 statUp;
-    u8 statDown;
+    u8 statUp2;
     u8 backAnim;
     u8 pokeBlockAnim[2];
     u8 battlePalacePercents[4];

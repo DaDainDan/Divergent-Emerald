@@ -382,252 +382,252 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
     [NATURE_HARDY] =
     {
         .name = COMPOUND_STRING("Hardy"),
-        .statUp = STAT_ATK,
-        .statDown = STAT_ATK,
+        .statUp = STAT_DEF,
+        .statUp2 = STAT_DEF,
         .backAnim = 0,
         .pokeBlockAnim = {ANIM_HARDY, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(61, 7, 61, 7), //32% support >= 50% HP, 32% support < 50% HP
+        .battlePalacePercents = PALACE_STYLE(60, 30, 65, 30), //10% support >= 50% HP, 5% support < 50% HP
         .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
         .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
     },
     [NATURE_LONELY] =
     {
         .name = COMPOUND_STRING("Lonely"),
-        .statUp = STAT_ATK,
-        .statDown = STAT_DEF,
+        .statUp = STAT_SPATK,
+        .statUp2 = STAT_DEF,
         .backAnim = 2,
         .pokeBlockAnim = {ANIM_LONELY, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlSupportHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(20, 25, 84, 8), //55%,  8%
-        .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
-        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
+        .battlePalacePercents = PALACE_STYLE(15, 35, 50, 30), //50%,  20%
+        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
+        .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
     },
     [NATURE_BRAVE] =
     {
         .name = COMPOUND_STRING("Brave"),
         .statUp = STAT_ATK,
-        .statDown = STAT_SPEED,
+        .statUp2 = STAT_DEF,
         .backAnim = 0,
         .pokeBlockAnim = {ANIM_BRAVE, AFFINE_TURN_UP},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighDefenseLow,
-        .battlePalacePercents = PALACE_STYLE(70, 15, 32, 60), //15%, 8%
-        .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
-        .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
+        .battlePalacePercents = PALACE_STYLE(75, 5, 90, 5), //20%, 5%
+        .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
+        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
     },
     [NATURE_ADAMANT] =
     {
         .name = COMPOUND_STRING("Adamant"),
         .statUp = STAT_ATK,
-        .statDown = STAT_SPATK,
+        .statUp2 = STAT_ATK,
         .backAnim = 0,
         .pokeBlockAnim = {ANIM_ADAMANT, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(38, 31, 70, 15), //31%, 15%
+        .battlePalacePercents = PALACE_STYLE(60, 25, 90, 5), //15%, 5%
         .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
         .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
     },
     [NATURE_NAUGHTY] =
     {
         .name = COMPOUND_STRING("Naughty"),
-        .statUp = STAT_ATK,
-        .statDown = STAT_SPDEF,
+        .statUp = STAT_SPATK,
+        .statUp2 = STAT_SPEED,
         .backAnim = 0,
         .pokeBlockAnim = {ANIM_NAUGHTY, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlDefenseHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(20, 70, 70, 22), //10%, 8%
-        .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
+        .battlePalacePercents = PALACE_STYLE(25, 10, 50, 25), //65%, 25%
+        .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
         .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
     },
     [NATURE_BOLD] =
     {
-        .name = COMPOUND_STRING("Bold"),
+        .name = COMPOUND_STRING("Scrappy"),
         .statUp = STAT_DEF,
-        .statDown = STAT_ATK,
+        .statUp2 = STAT_ATK,
         .backAnim = 1,
         .pokeBlockAnim = {ANIM_BOLD, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlSupportHighDefenseLow,
-        .battlePalacePercents = PALACE_STYLE(30, 20, 32, 58), //50%, 10%
-        .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
-        .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
+        .battlePalacePercents = PALACE_STYLE(90, 5, 90, 5), //5%, 5%
+        .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
+        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
     },
     [NATURE_DOCILE] =
     {
         .name = COMPOUND_STRING("Docile"),
         .statUp = STAT_DEF,
-        .statDown = STAT_DEF,
+        .statUp2 = STAT_SPDEF,
         .backAnim = 1,
         .pokeBlockAnim = {ANIM_DOCILE, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(56, 22, 56, 22), //22%, 22%
-        .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
-        .battlePalaceSmokescreen = PALACE_TARGET_RANDOM,
+        .battlePalacePercents = PALACE_STYLE(5, 50, 20, 50), //45%, 30%
+        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
+        .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
     },
     [NATURE_RELAXED] =
     {
-        .name = COMPOUND_STRING("Relaxed"),
-        .statUp = STAT_DEF,
-        .statDown = STAT_SPEED,
+        .name = COMPOUND_STRING("Curious"),
+        .statUp = STAT_SPDEF,
+        .statUp2 = STAT_SPATK,
         .backAnim = 1,
         .pokeBlockAnim = {ANIM_RELAXED, AFFINE_TURN_UP_AND_DOWN},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlSupportHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(25, 15, 75, 15), //60%, 10%
-        .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
-        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
+        .battlePalacePercents = PALACE_STYLE(25, 15, 50, 15), //60%, 35%
+        .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
+        .battlePalaceSmokescreen = PALACE_TARGET_RANDOM,
     },
     [NATURE_IMPISH] =
     {
-        .name = COMPOUND_STRING("Impish"),
-        .statUp = STAT_DEF,
-        .statDown = STAT_SPATK,
+        .name = COMPOUND_STRING("Grouchy"),
+        .statUp = STAT_ATK,
+        .statUp2 = STAT_SPATK,
         .backAnim = 0,
         .pokeBlockAnim = {ANIM_IMPISH, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighDefenseLow,
-        .battlePalacePercents = PALACE_STYLE(69, 6, 28, 55), //25%, 17%
-        .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
-        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
+        .battlePalacePercents = PALACE_STYLE(80, 10, 55, 35), //10%, 10%
+        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
+        .battlePalaceSmokescreen = PALACE_TARGET_RANDOM,
     },
     [NATURE_LAX] =
     {
-        .name = COMPOUND_STRING("Lax"),
-        .statUp = STAT_DEF,
-        .statDown = STAT_SPDEF,
+        .name = COMPOUND_STRING("Shrewd"),
+        .statUp = STAT_SPEED,
+        .statUp2 = STAT_DEF,
         .backAnim = 1,
         .pokeBlockAnim = {ANIM_LAX, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlSupportHighSupportLow,
-        .battlePalacePercents = PALACE_STYLE(35, 10, 29, 6), //55%, 65%
-        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
-        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
+        .battlePalacePercents = PALACE_STYLE(25, 50, 70, 25), //25%, 5%
+        .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
+        .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
     },
     [NATURE_TIMID] =
     {
         .name = COMPOUND_STRING("Timid"),
-        .statUp = STAT_SPEED,
-        .statDown = STAT_ATK,
+        .statUp = STAT_SPDEF,
+        .statUp2 = STAT_SPEED,
         .backAnim = 2,
         .pokeBlockAnim = {ANIM_TIMID, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighSupportLow,
-        .battlePalacePercents = PALACE_STYLE(62, 10, 30, 20), //28%, 50%
-        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
+        .battlePalacePercents = PALACE_STYLE(10, 80, 25, 50), //10%, 25%
+        .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
         .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
     },
     [NATURE_HASTY] =
     {
-        .name = COMPOUND_STRING("Hasty"),
+        .name = COMPOUND_STRING("Wild"),
         .statUp = STAT_SPEED,
-        .statDown = STAT_DEF,
+        .statUp2 = STAT_ATK,
         .backAnim = 0,
         .pokeBlockAnim = {ANIM_HASTY, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(58, 37, 88, 6), //5%, 6%
-        .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
-        .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
+        .battlePalacePercents = PALACE_STYLE(70, 5, 90, 5), //25%, 5%
+        .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
+        .battlePalaceSmokescreen = PALACE_TARGET_RANDOM,
     },
     [NATURE_SERIOUS] =
     {
         .name = COMPOUND_STRING("Serious"),
-        .statUp = STAT_SPEED,
-        .statDown = STAT_SPEED,
+        .statUp = STAT_ATK,
+        .statUp2 = STAT_SPDEF,
         .backAnim = 1,
         .pokeBlockAnim = {ANIM_SERIOUS, AFFINE_TURN_DOWN},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlSupportHighSupportLow,
-        .battlePalacePercents = PALACE_STYLE(34, 11, 29, 11), //55%, 60%
-        .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
+        .battlePalacePercents = PALACE_STYLE(60, 20, 80, 5), //20%, 15%
+        .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
         .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
     },
     [NATURE_JOLLY] =
     {
         .name = COMPOUND_STRING("Jolly"),
         .statUp = STAT_SPEED,
-        .statDown = STAT_SPATK,
+        .statUp2 = STAT_SPATK,
         .backAnim = 0,
         .pokeBlockAnim = {ANIM_JOLLY, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlSupportHighDefenseLow,
-        .battlePalacePercents = PALACE_STYLE(35, 5, 35, 60), //60%, 5%
-        .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
-        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
+        .battlePalacePercents = PALACE_STYLE(55, 20, 30, 50), //25%, 20%
+        .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
+        .battlePalaceSmokescreen = PALACE_TARGET_RANDOM,
     },
     [NATURE_NAIVE] =
     {
-        .name = COMPOUND_STRING("Naive"),
+        .name = COMPOUND_STRING("Affable"),
         .statUp = STAT_SPEED,
-        .statDown = STAT_SPDEF,
+        .statUp2 = STAT_SPDEF,
         .backAnim = 0,
         .pokeBlockAnim = {ANIM_NAIVE, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(56, 22, 56, 22), //22%, 22%
+        .battlePalacePercents = PALACE_STYLE(5, 50, 10, 40), //45%, 50%
         .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
         .battlePalaceSmokescreen = PALACE_TARGET_RANDOM,
     },
     [NATURE_MODEST] =
     {
-        .name = COMPOUND_STRING("Modest"),
+        .name = COMPOUND_STRING("Selfish"),
         .statUp = STAT_SPATK,
-        .statDown = STAT_ATK,
+        .statUp2 = STAT_ATK,
         .backAnim = 2,
         .pokeBlockAnim = {ANIM_MODEST, AFFINE_TURN_DOWN_SLOW},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlDefenseHighDefenseLow,
-        .battlePalacePercents = PALACE_STYLE(35, 45, 34, 60), //20%, 6%
-        .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
+        .battlePalacePercents = PALACE_STYLE(40, 40, 60, 30), //20%, 10%
+        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
         .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
     },
     [NATURE_MILD] =
     {
-        .name = COMPOUND_STRING("Mild"),
-        .statUp = STAT_SPATK,
-        .statDown = STAT_DEF,
+        .name = COMPOUND_STRING("Noble"),
+        .statUp = STAT_SPDEF,
+        .statUp2 = STAT_ATK,
         .backAnim = 2,
         .pokeBlockAnim = {ANIM_MILD, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlDefenseHighSupportLow,
-        .battlePalacePercents = PALACE_STYLE(44, 50, 34, 6), //6%, 60%
-        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
+        .battlePalacePercents = PALACE_STYLE(40, 40, 65, 15), //20%, 20%
+        .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
         .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
     },
     [NATURE_QUIET] =
     {
         .name = COMPOUND_STRING("Quiet"),
         .statUp = STAT_SPATK,
-        .statDown = STAT_SPEED,
+        .statUp2 = STAT_SPATK,
         .backAnim = 2,
         .pokeBlockAnim = {ANIM_QUIET, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(56, 22, 56, 22), //22%, 22%
-        .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
+        .battlePalacePercents = PALACE_STYLE(15, 45, 75, 10), //60%, 15%
+        .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
         .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
     },
     [NATURE_BASHFUL] =
     {
         .name = COMPOUND_STRING("Bashful"),
-        .statUp = STAT_SPATK,
-        .statDown = STAT_SPATK,
+        .statUp = STAT_DEF,
+        .statUp2 = STAT_SPEED,
         .backAnim = 2,
         .pokeBlockAnim = {ANIM_BASHFUL, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlDefenseHighDefenseLow,
-        .battlePalacePercents = PALACE_STYLE(30, 58, 30, 58), //12%, 12%
-        .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
+        .battlePalacePercents = PALACE_STYLE(15, 50, 60, 20), //35%, 20%
+        .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
         .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
     },
     [NATURE_RASH] =
     {
         .name = COMPOUND_STRING("Rash"),
-        .statUp = STAT_SPATK,
-        .statDown = STAT_SPDEF,
+        .statUp = STAT_SPEED,
+        .statUp2 = STAT_SPEED,
         .backAnim = 1,
         .pokeBlockAnim = {ANIM_RASH, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlSupportHighSupportLow,
-        .battlePalacePercents = PALACE_STYLE(30, 13, 27, 6), //57%, 67%
+        .battlePalacePercents = PALACE_STYLE(85, 5, 60, 35), //10%, 5%
         .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
         .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
     },
     [NATURE_CALM] =
     {
         .name = COMPOUND_STRING("Calm"),
-        .statUp = STAT_SPDEF,
-        .statDown = STAT_ATK,
+        .statUp = STAT_SPATK,
+        .statUp2 = STAT_SPDEF,
         .backAnim = 1,
         .pokeBlockAnim = {ANIM_CALM, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlDefenseHighDefenseLow,
-        .battlePalacePercents = PALACE_STYLE(40, 50, 25, 62), //10%, 13%
+        .battlePalacePercents = PALACE_STYLE(20, 45, 60, 10), //35%, 30%
         .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
         .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
     },
@@ -635,49 +635,49 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
     {
         .name = COMPOUND_STRING("Gentle"),
         .statUp = STAT_SPDEF,
-        .statDown = STAT_DEF,
+        .statUp2 = STAT_DEF,
         .backAnim = 2,
         .pokeBlockAnim = {ANIM_GENTLE, AFFINE_TURN_DOWN_SLIGHT},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlDefenseHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(18, 70, 90, 5), //12%, 5%
+        .battlePalacePercents = PALACE_STYLE(5, 70, 10, 60), //25%, 30%
         .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
         .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
     },
     [NATURE_SASSY] =
     {
         .name = COMPOUND_STRING("Sassy"),
-        .statUp = STAT_SPDEF,
-        .statDown = STAT_SPEED,
+        .statUp = STAT_ATK,
+        .statUp2 = STAT_SPEED,
         .backAnim = 1,
         .pokeBlockAnim = {ANIM_SASSY, AFFINE_TURN_UP_HIGH},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighSupportLow,
-        .battlePalacePercents = PALACE_STYLE(88, 6, 22, 20), //6%, 58%
+        .battlePalacePercents = PALACE_STYLE(60, 10, 90, 5), //30%, 5%
         .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
-        .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
+        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
     },
     [NATURE_CAREFUL] =
     {
         .name = COMPOUND_STRING("Careful"),
-        .statUp = STAT_SPDEF,
-        .statDown = STAT_SPATK,
+        .statUp = STAT_DEF,
+        .statUp2 = STAT_SPATK,
         .backAnim = 2,
         .pokeBlockAnim = {ANIM_CAREFUL, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlDefenseHighSupportLow,
-        .battlePalacePercents = PALACE_STYLE(42, 50, 42, 5), //8%, 53%
-        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
+        .battlePalacePercents = PALACE_STYLE(10, 70, 35, 40), //20%, 25%
+        .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
         .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
     },
     [NATURE_QUIRKY] =
     {
         .name = COMPOUND_STRING("Quirky"),
         .statUp = STAT_SPDEF,
-        .statDown = STAT_SPDEF,
+        .statUp2 = STAT_SPDEF,
         .backAnim = 1,
         .pokeBlockAnim = {ANIM_QUIRKY, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighAttackLow,
-        .battlePalacePercents = PALACE_STYLE(56, 22, 56, 22), //22%, 22%
+        .battlePalacePercents = PALACE_STYLE(30, 35, 40, 25), //35%, 35%
         .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
-        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
+        .battlePalaceSmokescreen = PALACE_TARGET_RANDOM,
     },
 };
 
@@ -4686,16 +4686,16 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             case NATURE_HARDY:
             case NATURE_BRAVE:
             case NATURE_ADAMANT:
-            case NATURE_NAUGHTY:
             case NATURE_DOCILE:
+            case NATURE_BOLD:
             case NATURE_IMPISH:
-            case NATURE_LAX:
             case NATURE_HASTY:
             case NATURE_JOLLY:
-            case NATURE_NAIVE:
+            case NATURE_SERIOUS:
             case NATURE_RASH:
+            case NATURE_BASHFUL:
+            case NATURE_MILD:
             case NATURE_SASSY:
-            case NATURE_QUIRKY:
                 currentCondition = TRUE;
                 break;
             }
@@ -4704,17 +4704,17 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             switch (nature)
             {
             case NATURE_LONELY:
-            case NATURE_BOLD:
+            case NATURE_NAUGHTY:
             case NATURE_RELAXED:
+            case NATURE_LAX:
             case NATURE_TIMID:
-            case NATURE_SERIOUS:
+            case NATURE_NAIVE:
             case NATURE_MODEST:
-            case NATURE_MILD:
             case NATURE_QUIET:
-            case NATURE_BASHFUL:
             case NATURE_CALM:
             case NATURE_GENTLE:
             case NATURE_CAREFUL:
+            case NATURE_QUIRKY:
                 currentCondition = TRUE;
                 break;
             }
@@ -5231,12 +5231,12 @@ u8 GetTrainerEncounterMusicId(u16 trainerOpponentId)
 u16 ModifyStatByNature(u8 nature, u16 stat, u8 statIndex)
 {
     // Don't modify HP, Accuracy, or Evasion by nature
-    if (statIndex <= STAT_HP || statIndex > NUM_NATURE_STATS || gNaturesInfo[nature].statUp == gNaturesInfo[nature].statDown)
+    if (statIndex <= STAT_HP || statIndex > NUM_NATURE_STATS)
         return stat;
-    else if (statIndex == gNaturesInfo[nature].statUp)
+    else if (statIndex == gNaturesInfo[nature].statUp && statIndex == gNaturesInfo[nature].statUp2)
         return stat * 110 / 100;
-    else if (statIndex == gNaturesInfo[nature].statDown)
-        return stat * 90 / 100;
+    else if (statIndex == gNaturesInfo[nature].statUp || statIndex == gNaturesInfo[nature].statUp2)
+        return stat * 105 / 100;
     else
         return stat;
 }

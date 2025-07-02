@@ -46,31 +46,31 @@
 #define EGG_GROUPS_PER_MON            2
 
 // Pokémon natures
-#define NATURE_HARDY    0 // Neutral
-#define NATURE_LONELY   1 // +Atk -Def
-#define NATURE_BRAVE    2 // +Atk -Speed
-#define NATURE_ADAMANT  3 // +Atk -SpAtk
-#define NATURE_NAUGHTY  4 // +Atk -SpDef
-#define NATURE_BOLD     5 // +Def -Atk
-#define NATURE_DOCILE   6 // Neutral
-#define NATURE_RELAXED  7 // +Def -Speed
-#define NATURE_IMPISH   8 // +Def -SpAtk
-#define NATURE_LAX      9 // +Def -SpDef
-#define NATURE_TIMID    10 // +Speed -Atk
-#define NATURE_HASTY    11 // +Speed -Def
-#define NATURE_SERIOUS  12 // Neutral
-#define NATURE_JOLLY    13 // +Speed -SpAtk
-#define NATURE_NAIVE    14 // +Speed - SpDef
-#define NATURE_MODEST   15 // +SpAtk -Atk
-#define NATURE_MILD     16 // +SpAtk -Def
-#define NATURE_QUIET    17 // +SpAtk -Speed
-#define NATURE_BASHFUL  18 // Neutral
-#define NATURE_RASH     19 // +SpAtk -SpDef
-#define NATURE_CALM     20 // +SpDef -Atk
-#define NATURE_GENTLE   21 // +SpDef -Def
-#define NATURE_SASSY    22 // +SpDef -Speed
-#define NATURE_CAREFUL  23 // +SpDef -SpAtk
-#define NATURE_QUIRKY   24 // Neutral
+#define NATURE_HARDY    0 //  +2Def                  OLD: Neutral
+#define NATURE_LONELY   1 //  +SpAtk +Def            OLD: +Atk -Def
+#define NATURE_BRAVE    2 //  +Atk +Def              OLD: +Atk -Speed
+#define NATURE_ADAMANT  3 //  +2Atk                  OLD: +Atk -SpAtk
+#define NATURE_NAUGHTY  4 //  +SpAtk +Speed          OLD: +Atk -SpDef
+#define NATURE_BOLD     5 //  +Def +Atk              OLD: +Def -Atk
+#define NATURE_DOCILE   6 //  +Def +SpDef            OLD: Neutral
+#define NATURE_RELAXED  7 //  +SpDef +SpAtk          OLD: +Def -Speed
+#define NATURE_IMPISH   8 //  +Atk +SpAtk            OLD: +Def -SpAtk
+#define NATURE_LAX      9 //  +Speed +Def            OLD: +Def -SpDef
+#define NATURE_TIMID    10 //  +SpDef +Speed         OLD: +Speed -Atk
+#define NATURE_HASTY    11 //  +Speed +Atk           OLD: +Speed -Def
+#define NATURE_SERIOUS  12 //  +Atk +SpDef           OLD: Neutral
+#define NATURE_JOLLY    13 //  +Speed +SpAtk         OLD: +Speed -SpAtk
+#define NATURE_NAIVE    14 //  +Speed +SpDef         OLD: +Speed -SpDef
+#define NATURE_MODEST   15 //  +SpAtk +Atk           OLD: +SpAtk -Atk
+#define NATURE_MILD     16 //  +SpDef +Atk           OLD: +SpAtk -Def
+#define NATURE_QUIET    17 //  +2SpAtk               OLD: +SpAtk -Speed
+#define NATURE_BASHFUL  18 //  +Def +Speed           OLD: Neutral
+#define NATURE_RASH     19 //  +2Speed               OLD: +SpAtk -SpDef
+#define NATURE_CALM     20 //  +SpAtk +SpDef         OLD: +SpDef -Atk
+#define NATURE_GENTLE   21 //  +SpDef +Def           OLD: +SpDef -Def
+#define NATURE_SASSY    22 //  +Atk +Speed           OLD: +SpDef -Speed
+#define NATURE_CAREFUL  23 //  +Def +SpAtk           OLD: +SpDef -SpAtk
+#define NATURE_QUIRKY   24 //  +2SpDef               OLD: Neutral
 #define NUM_NATURES     25
 
 // Pokémon Stats

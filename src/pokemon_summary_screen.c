@@ -3760,17 +3760,19 @@ static void PrintRibbonCount(void)
 
 static void BufferStat(u8 *dst, u8 statIndex, u32 stat, u32 strId, u32 n)
 {
-    static const u8 sTextNatureDown[] = _("{COLOR}{08}");
-    static const u8 sTextNatureUp[] = _("{COLOR}{05}");
+    static const u8 sTextNatureUp1[] = _("{COLOR}{08}");
+    static const u8 sTextNatureUp2[] = _("{COLOR}{07}");
     static const u8 sTextNatureNeutral[] = _("{COLOR}{01}");
     u8 *txtPtr;
 
-    if (statIndex == 0 || !SUMMARY_SCREEN_NATURE_COLORS || gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statDown)
+    if (statIndex == 0 || !SUMMARY_SCREEN_NATURE_COLORS)
         txtPtr = StringCopy(dst, sTextNatureNeutral);
-    else if (statIndex == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp)
-        txtPtr = StringCopy(dst, sTextNatureUp);
-    else if (statIndex == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statDown)
-        txtPtr = StringCopy(dst, sTextNatureDown);
+    else if (gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp2
+             && statIndex == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp)
+        txtPtr = StringCopy(dst, sTextNatureUp2);
+    else if (statIndex == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp 
+             || statIndex == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp2)
+        txtPtr = StringCopy(dst, sTextNatureUp1);
     else
         txtPtr = StringCopy(dst, sTextNatureNeutral);
 
