@@ -468,7 +468,7 @@ static u8 BattleStyle_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
     {
-        selection ^= 1;
+        // selection ^= 1;
         sArrowPressed = TRUE;
     }
 
