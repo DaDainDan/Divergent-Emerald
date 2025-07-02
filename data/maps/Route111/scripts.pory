@@ -72,7 +72,10 @@ Route111_EventScript_CheckSetSandstorm::
 	goto_if_lt VAR_TEMP_0, 8, Route111_EventScript_EndCheckSetSandstorm
 Route111_EventScript_SetSandstorm::
 	setweather WEATHER_SANDSTORM
+	setvar VAR_ROUTE111_WILD_SET, 1
+	return
 Route111_EventScript_EndCheckSetSandstorm::
+	setvar VAR_ROUTE111_WILD_SET, 0
 	return
 
 Route111_EventScript_SetWinstratesNotDefeated::
@@ -249,12 +252,14 @@ Route111_EventScript_SunTrigger::
 	fadenewbgm MUS_ROUTE110
 	doweather
 	setvar VAR_TEMP_3, 0
+	setvar VAR_ROUTE111_WILD_SET, 0
 	end
 
 Route111_EventScript_SandstormTrigger::
 	setweather WEATHER_SANDSTORM
 	fadenewbgm MUS_DESERT
 	doweather
+	setvar VAR_ROUTE111_WILD_SET, 1
 	end
 
 Route111_EventScript_Victor::

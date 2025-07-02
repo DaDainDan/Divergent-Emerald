@@ -17,7 +17,22 @@ Route104_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call Route104_EventScript_TrySetRivalPos
 	call Route104_EventScript_ShowOrHideWhiteHerbFlorist
+	call Route104_WildSets
 	end
+
+Route104_WildSets::
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	goto_if_lt VAR_TEMP_1, 34, Route104_WildSet2Trigger
+	goto_if_gt VAR_TEMP_1, 34, Route104_WildSet1Trigger
+	return
+
+Route104_WildSet1Trigger::
+	setvar VAR_ROUTE104_WILD_SET, 1
+	return
+
+Route104_WildSet2Trigger::
+	setvar VAR_ROUTE104_WILD_SET, 0
+	return
 
 Route104_EventScript_ShowOrHideWhiteHerbFlorist::
 	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_EventScript_HideWhiteHerbFlorist

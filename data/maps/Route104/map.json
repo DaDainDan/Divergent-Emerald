@@ -543,6 +543,78 @@
       "var": "VAR_ROUTE104_STATE",
       "var_value": "1",
       "script": "Route104_EventScript_RivalTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_ROUTE104_WILD_SET",
+      "var_value": "1",
+      "script": "Route104_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_ROUTE104_WILD_SET",
+      "var_value": "1",
+      "script": "Route104_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_ROUTE104_WILD_SET",
+      "var_value": "1",
+      "script": "Route104_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_ROUTE104_WILD_SET",
+      "var_value": "1",
+      "script": "Route104_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_ROUTE104_WILD_SET",
+      "var_value": "1",
+      "script": "Route104_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_ROUTE104_WILD_SET",
+      "var_value": "1",
+      "script": "Route104_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_ROUTE104_WILD_SET",
+      "var_value": "1",
+      "script": "Route104_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_ROUTE104_WILD_SET",
+      "var_value": "1",
+      "script": "Route104_WildSet2Trigger"
     }
   ],
   "bg_events": [
