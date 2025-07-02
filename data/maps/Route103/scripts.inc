@@ -23,7 +23,7 @@ Route103_OnTransition:
 # 12 "data/maps/Route103/scripts.pory"
 Route103_OnLoad:
 # 13 "data/maps/Route103/scripts.pory"
-	call_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_OpenAlteringCave
+	call Route103_EventScript_OpenAlteringCave
 # 14 "data/maps/Route103/scripts.pory"
 	end
 # 15 "data/maps/Route103/scripts.pory"

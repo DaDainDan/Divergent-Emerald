@@ -13,7 +13,7 @@ Route114_FossilManiacsTunnel_MapScripts::
 # 7 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
 Route114_FossilManiacsTunnel_OnTransition:
 # 8 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
-	call_if_set FLAG_SYS_GAME_CLEAR, Route114_FossilManiacsTunnel_EventScript_MoveFossilManiac
+	call_if_set FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, Route114_FossilManiacsTunnel_EventScript_MoveFossilManiac
 # 9 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
 	end
 # 10 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
@@ -31,7 +31,7 @@ Route114_FossilManiacsTunnel_EventScript_MoveFossilManiac::
 # 16 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
 Route114_FossilManiacsTunnel_OnLoad:
 # 17 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
-	call_if_unset FLAG_SYS_GAME_CLEAR, Route114_FossilManiacsTunnel_EventScript_CloseDesertUnderpass
+	call_if_unset FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, Route114_FossilManiacsTunnel_EventScript_CloseDesertUnderpass
 # 18 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
 	end
 # 19 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
