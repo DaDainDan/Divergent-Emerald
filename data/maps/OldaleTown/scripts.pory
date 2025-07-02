@@ -341,8 +341,10 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	step_end
 
 OldaleTown_Text_SavingMyProgress:
-	.string "I want to take a rest, so I'm saving my\n"
-	.string "progress.$"
+	.string "My mom doesn't let me eat candy, but my\n"
+	.string "friend from Littleroot gave me these.\p"
+	.string "Here, you can have one so long as you\n"
+	.string "keep it a secret. Ufufu.$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"
@@ -378,9 +380,10 @@ OldaleTown_Text_DiscoveredFootprints:
 
 OldaleTown_Text_FinishedSketchingFootprints:
 	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
-	.string "But it turns out they were only my\n"
-	.string "own footprints…$"
+	.string "that rare POKéMON.\p"
+	.string "I can't fully identify the species by\n"
+	.string "these tracks, but it must be bipedal\l"
+	.string "and about the size of a small child.$"
 
 OldaleTown_Text_MayLetsGoBack:
 	.string "MAY: {PLAYER}{KUN}!\n"
@@ -397,3 +400,69 @@ OldaleTown_Text_TownSign:
 	.string "“Where things start off scarce.”$"
 
 `
+script OldaleTown_EventScript_CandyGirl {
+	lock
+	faceplayer
+	if (!(flag(FLAG_RARE_CANDY_GIRL)))
+	{
+		msgbox(OldaleTown_Text_SavingMyProgress)
+		giveitem(ITEM_RARE_CANDY)
+		if (var(VAR_RESULT) == FALSE) {
+			call(Common_EventScript_ShowBagIsFull)
+		}
+		else {
+			setflag(FLAG_RARE_CANDY_GIRL)
+		}
+	}
+	elif (flag(FLAG_BADGE05_GET) && !(flag(FLAG_RARE_CANDY_GIRL2))) {
+		msgbox("Long time no see!\p"
+			   "Consider yourself in luck because I\n"
+			   "just got a bunch more candies in stock.\p"
+			   "Someone just left them lying in a bag\n"
+			   "behind the POKéMART.\p"
+			   "No one claimed them, so I figured this\n"
+			   "was a nice score for me.\p"
+			   "Here's your share of the loot, amigo.")
+		giveitem(ITEM_RARE_CANDY, 10)
+		if (var(VAR_RESULT) == FALSE) {
+			call(Common_EventScript_ShowBagIsFull)
+		}
+		else {
+			setflag(FLAG_RARE_CANDY_GIRL2)
+		}
+	}
+	elif (flag(FLAG_SYS_GAME_CLEAR) && !(flag(FLAG_RARE_CANDY_GIRL3))) {
+		msgbox("Heya, hotshot!\n"
+			   "I heard you became the Champion.\p"
+			   "It's gonna sound dumb, but I actually\n"
+			   "bet my mom that if you became the\l"
+			   "champion, then I would get a lifetime\l"
+			   "supply of candy.\p"
+			   "Guess who's laughing now.")
+		giveitem(ITEM_RARE_CANDY, 10)
+		if (var(VAR_RESULT) == FALSE) {
+			call(Common_EventScript_ShowBagIsFull)
+		}
+		else {
+			msgbox("Come back for more anytime!")
+			setflag(FLAG_RARE_CANDY_GIRL3)
+		}
+	}
+	elif (flag(FLAG_RARE_CANDY_GIRL3)) {
+		msgbox("Back for some more candy?\p"
+			   "Here ya go!")
+		giveitem(ITEM_RARE_CANDY, 10)
+		if (var(VAR_RESULT) == FALSE) {
+			call(Common_EventScript_ShowBagIsFull)
+		}
+	}
+	else {
+		msgbox("Now don't be greedy.\n"
+			   "I already gave you your share.\p"
+			   "Tell you what, if I get any more, I'll\n"
+			   "share them with you. Deal?")
+	}
+	//Add a script where she gives out more candies at later points in the game (Maybe essentailly infinite candies in post-game?)
+	release
+	end
+}	

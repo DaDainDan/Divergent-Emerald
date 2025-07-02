@@ -1,36 +1,36 @@
-Route102_Text_CalvinIntro:
+Route101_Text_CalvinIntro:
 	.string "If you have POKéMON with you, then\n"
 	.string "you're an official POKéMON TRAINER!\l"
 	.string "You can't say no to my challenge!$"
 
-Route102_Text_CalvinDefeated:
+Route101_Text_CalvinDefeated:
 	.string "Arrgh, I lost…\n"
 	.string "I should have trained mine more…$"
 
-Route102_Text_CalvinPostBattle:
+Route101_Text_CalvinPostBattle:
 	.string "Listen, you. If you're strong,\n"
 	.string "you should have told me before!$"
 
-Route102_Text_CalvinRegister:
+Route101_Text_CalvinRegister:
 	.string "I've been working hard at this since\n"
 	.string "I saw you before.\p"
 	.string "I'd like to battle you again, so can\n"
 	.string "you register me in your POKéNAV?$"
 
-Route102_Text_CalvinRegisterShort:
+Route101_Text_CalvinRegisterShort:
 	.string "I'd like to battle you again, so can\n"
 	.string "you register me in your POKéNAV?$"
 
-Route102_Text_CalvinRematchIntro:
+Route101_Text_CalvinRematchIntro:
 	.string "Ever since I lost to you, I desperately\n"
 	.string "trained my POKéMON.\l"
 	.string "You can't say no to my challenge!$"
 
-Route102_Text_CalvinRematchDefeated:
+Route101_Text_CalvinRematchDefeated:
 	.string "Arrgh, I lost…\n"
 	.string "Is my training method not right?$"
 
-Route102_Text_CalvinRematchPostBattle:
+Route101_Text_CalvinRematchPostBattle:
 	.string "If you're going to get stronger,\n"
 	.string "I'll get stronger, too.$"
 

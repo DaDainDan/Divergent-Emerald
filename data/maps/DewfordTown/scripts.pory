@@ -791,3 +791,13 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
 `
+script DewfordTown_EventScript_Fisherman {
+	lock
+	faceplayer
+	msgbox("I can't believe this.\p"
+		   "It's the start of fishing season and\n"
+		   "someone's stolen my fishing rods.\l"
+		   "Talk about a cruel world.", MSGBOX_DEFAULT)
+	release
+	end
+}

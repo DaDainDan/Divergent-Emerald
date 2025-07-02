@@ -212,6 +212,47 @@ Route101_EventScript_Boy::
 	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
 	end
 
+Route101_EventScript_Calvin::
+	trainerbattle_single TRAINER_CALVIN_1, Route101_Text_CalvinIntro, Route101_Text_CalvinDefeated, Route101_EventScript_CalvinRegisterMatchCallAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route101_EventScript_CalvinRematch
+	setvar VAR_0x8004, TRAINER_CALVIN_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	goto_if_eq VAR_RESULT, FALSE, Route101_EventScript_CalvinTryRegister
+	msgbox Route101_Text_CalvinPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route101_EventScript_CalvinRegisterMatchCallAfterBattle::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	goto_if_set FLAG_HAS_MATCH_CALL, Route101_EventScript_CalvinRegisterMatchCall
+	release
+	end
+
+Route101_EventScript_CalvinRegisterMatchCall::
+	msgbox Route101_Text_CalvinRegisterShort, MSGBOX_DEFAULT
+	register_matchcall TRAINER_CALVIN_1
+	release
+	end
+
+Route101_EventScript_CalvinTryRegister::
+	goto_if_set FLAG_HAS_MATCH_CALL, Route101_EventScript_CalvinRegister
+	msgbox Route101_Text_CalvinPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route101_EventScript_CalvinRegister::
+	msgbox Route101_Text_CalvinRegister, MSGBOX_DEFAULT
+	register_matchcall TRAINER_CALVIN_1
+	release
+	end
+
+Route101_EventScript_CalvinRematch::
+	trainerbattle_rematch TRAINER_CALVIN_1, Route101_Text_CalvinRematchIntro, Route101_Text_CalvinRematchDefeated
+	msgbox Route101_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 Route101_EventScript_RouteSign::
 	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
 	end
@@ -259,28 +300,30 @@ Route101_Movement_BirchApproachPlayer:
 	step_end
 
 Route101_Text_HelpMe:
+	.string "Hello?! You over there!\n"
 	.string "H-help me!$"
 
 Route101_Text_PleaseHelp:
-	.string "Hello! You over there!\n"
-	.string "Please! Help!\p"
-	.string "In my BAG!\n"
-	.string "There's a POKé BALL!$"
+	.string "...{PLAYER}{KUN}?!\p"
+	.string "In the BAG!\n"
+	.string "Grab one of my POKé BALLS!$"
 
 Route101_Text_DontLeaveMe:
-	.string "Wh-Where are you going?!\n"
-	.string "Don't leave me like this!$"
+	.string "Where are you going, {PLAYER}{KUN}?!\n"
+	.string "I really need your help!$"
 
 Route101_Text_YouSavedMe:
-	.string "PROF. BIRCH: Whew…\p"
-	.string "I was in the tall grass studying wild\n"
-	.string "POKéMON when I was jumped.\p"
-	.string "You saved me.\n"
-	.string "Thanks a lot!\p"
-	.string "Oh?\p"
-	.string "Hi, you're {PLAYER}{KUN}!\p"
-	.string "This is not the place to chat, so come\n"
-	.string "by my POKéMON LAB later, okay?$"
+	.string "PROF. BIRCH: Whew…\n"
+	.string "That was intense.\p"
+	.string "I owe you big-time.\p"
+	.string "That thing could've done some serious\n"
+	.string "damage to me if you hadn't intervened.\p"
+	.string "It's odd though, the POKéMON around\n"
+	.string "here are typically harmless.\p"
+	.string "I wonder if...\p"
+	.string "Oh! I'm sorry.\n"
+	.string "Let's go back to the lab to finish this\l"
+	.string "conservation, okay?$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
 	.string "If POKéMON get tired, take them to\n"

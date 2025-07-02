@@ -25,16 +25,16 @@ OldaleTown_House2_EventScript_Man::
 # 13 "data/maps/OldaleTown_House2/scripts.pory"
 OldaleTown_House2_Text_PokemonLevelUp:
 # 14 "data/maps/OldaleTown_House2/scripts.pory"
-	.string "When POKéMON battle, they eventually\n"
+	.string "Don't talk to my son about POKéMON\n"
 # 15 "data/maps/OldaleTown_House2/scripts.pory"
-	.string "level up and become stronger.$"
+	.string "battles. He's still too young for that.$"
 # 16 "data/maps/OldaleTown_House2/scripts.pory"
 
 # 17 "data/maps/OldaleTown_House2/scripts.pory"
 OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon:
 # 18 "data/maps/OldaleTown_House2/scripts.pory"
-	.string "If the POKéMON with you become\n"
+	.string "One day, I'm gonna train to become a\n"
 # 19 "data/maps/OldaleTown_House2/scripts.pory"
-	.string "stronger, you'll be able to go farther\l"
+	.string "great POKéMON battler, and then, I'll\l"
 # 20 "data/maps/OldaleTown_House2/scripts.pory"
-	.string "away from here.$"
+	.string "move far away from here.$"

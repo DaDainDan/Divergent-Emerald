@@ -15,3 +15,67 @@ OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
 	.string "It could give you an advantage.$"
 
 `
+script OldaleTown_House1_EventScript_OldRodFisherman {
+    lock
+    faceplayer
+    if (!(flag(FLAG_RECEIVED_OLD_ROD))) 
+    {
+		msgbox("Oh, hello, youngster.\n" 
+			   "Wonderful weather out, huh?\p"
+			   "Lemme tell ya, it would be great day to\n"
+			   "be anglin' out on the water.\p" 
+			   "Say, are you itchin' to do some fishin'?", MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) 
+        {
+        	msgbox("That's great to hear.\p"
+				   "Here,\n"
+				   "Why don't you take my old fishing ROD.", MSGBOX_DEFAULT)
+            giveitem(ITEM_OLD_ROD)
+            if (var(VAR_RESULT) == FALSE)
+            {
+            	call(Common_EventScript_ShowBagIsFull)
+            }
+            else
+            {
+            	setflag(FLAG_RECEIVED_OLD_ROD)
+                msgbox("What about me, you say? \p"
+	 				   "Oh, I haven't fished in a long while.\p"
+	 				   "Doctor said it was causing to much\n"
+	 				   "strain on my joints.\p"
+	 				   "Too much of a good thing, right?\p"
+					   "You shouldn't have to worry about that\n"
+					   "though, being as young as you are.\l"
+	 				   "Just don't go taking it for granted.", MSGBOX_DEFAULT)
+            }
+        }
+        else
+        {
+        	msgbox("Oh, is that so?\n"
+				   "That's too bad, then.", MSGBOX_DEFAULT)
+        }
+    }
+    else
+    {	message("Howdy!\n"
+				"The fishing going good?")
+        waitmessage
+        multichoice(20, 8, MULTI_HOWS_FISHING, TRUE)
+        	if (var(VAR_RESULT) == 0)
+            {
+            	msgbox("Is that right!? That's great!\n"
+						"Haul in some big ones for me!", MSGBOX_DEFAULT)
+            }
+            else
+            {
+            	msgbox("Oh, hey, don't get down on yourself!\n"
+					   "I'll give you a little fishing advice.\p"
+					   "Every catch is a battle of wills.\p"
+ 					   "You need to be calm, patient, and\n"
+ 					   "focused.\l"
+					   "The fish'll know if you're not.\p"
+  					   "The biggest thing is to be ready when\n"
+ 					   "one comes bitin'.", MSGBOX_DEFAULT)
+            }
+    }
+    release
+    end
+}

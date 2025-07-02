@@ -14797,17 +14797,19 @@ F_TRAINER_FEMALE |
         },
     },
 #line 5973
-    [DIFFICULTY_NORMAL][TRAINER_JOSH] =
+    [DIFFICULTY_NORMAL][TRAINER_TRINITY] =
     {
 #line 5974
-        .trainerName = _("JOSH"),
+        .trainerName = _("TRINITY"),
 #line 5975
-        .trainerClass = TRAINER_CLASS_YOUNGSTER,
+        .trainerClass = TRAINER_CLASS_LASS,
 #line 5976
-        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerPic = TRAINER_PIC_LASS,
         .encounterMusic_gender =
+#line 5977
+F_TRAINER_FEMALE | 
 #line 5978
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 5979
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5980
