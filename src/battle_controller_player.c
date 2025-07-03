@@ -2449,9 +2449,9 @@ static u32 CheckTypeEffectiveness(u32 targetId, u32 battler)
 
     if (modifier == UQ_4_12(0.0))
         return EFFECTIVENESS_NO_EFFECT; // No effect
-    else if (modifier <= UQ_4_12(0.5))
+    else if (modifier <= UQ_4_12(0.625))
         return EFFECTIVENESS_NOT_VERY_EFFECTIVE; // Not very effective
-    else if (modifier >= UQ_4_12(2.0))
+    else if (modifier >= UQ_4_12(1.6))
         return EFFECTIVENESS_SUPER_EFFECTIVE; // Super effective
     return EFFECTIVENESS_NORMAL; // Normal effectiveness
 }

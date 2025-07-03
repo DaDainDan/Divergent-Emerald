@@ -18,6 +18,6 @@ SINGLE_BATTLE_TEST("Being airborne causes the target to take double damage from 
     } SCENE {
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(2.0), results[1].damage);
+        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(1.6), results[1].damage);
     }
 }

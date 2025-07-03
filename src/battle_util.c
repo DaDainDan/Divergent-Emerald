@@ -3614,7 +3614,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                         {
                             move = gBattleMons[i].moves[j];
                             moveType = GetBattleMoveType(move);
-                            if (CalcTypeEffectivenessMultiplier(move, moveType, i, battler, ABILITY_ANTICIPATION, FALSE) >= UQ_4_12(2.0) || GetMoveEffect(move) == EFFECT_OHKO)
+                            if (CalcTypeEffectivenessMultiplier(move, moveType, i, battler, ABILITY_ANTICIPATION, FALSE) >= UQ_4_12(1.6) || GetMoveEffect(move) == EFFECT_OHKO)
                             {
                                 effect++;
                                 break;
@@ -8523,7 +8523,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     case ABILITY_WATER_BUBBLE:
         if (moveType == TYPE_FIRE)
         {
-            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.625));
             if (damageCalcData->updateFlags)
                 RecordAbilityBattle(battlerDef, defAbility);
         }
@@ -8826,7 +8826,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     case ABILITY_THICK_FAT:
         if (moveType == TYPE_FIRE || moveType == TYPE_ICE)
         {
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.625));
             if (damageCalcData->updateFlags)
                 RecordAbilityBattle(battlerDef, ABILITY_THICK_FAT);
         }
@@ -8993,7 +8993,7 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
         break;
     case ABILITY_PURIFYING_SALT:
         if (moveType == TYPE_GHOST)
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.6));
         break;
     }
 
@@ -9087,6 +9087,9 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageCalculationDa
     u32 battlerAtk = damageCalcData->battlerAtk;
     u32 move = damageCalcData->move;
     u32 moveType = damageCalcData->moveType;
+    
+    u8 type1 = gBattleMons[battlerAtk].types[0];
+    u8 type2 = gBattleMons[battlerAtk].types[1];
 
     if (moveType == TYPE_MYSTERY)
         return UQ_4_12(1.0);
@@ -9094,6 +9097,8 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageCalculationDa
         return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
     else if (!IS_BATTLER_OF_TYPE(battlerAtk, moveType) || move == MOVE_STRUGGLE || move == MOVE_NONE)
         return UQ_4_12(1.0);
+    else if (type1 == type2 && IS_BATTLER_OF_TYPE(battlerAtk, moveType))
+        return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.25) : UQ_4_12(1.75);
     return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
 }
 
@@ -9176,28 +9181,28 @@ static inline uq4_12_t GetZMaxMoveAgainstProtectionModifier(struct DamageCalcula
 static inline uq4_12_t GetMinimizeModifier(u32 move, u32 battlerDef)
 {
     if (MoveIncreasesPowerToMinimizedTargets(move) && gStatuses3[battlerDef] & STATUS3_MINIMIZED)
-        return UQ_4_12(2.0);
+        return UQ_4_12(1.6);
     return UQ_4_12(1.0);
 }
 
 static inline uq4_12_t GetUndergroundModifier(u32 move, u32 battlerDef)
 {
     if (MoveDamagesUnderground(move) && gStatuses3[battlerDef] & STATUS3_UNDERGROUND)
-        return UQ_4_12(2.0);
+        return UQ_4_12(1.6);
     return UQ_4_12(1.0);
 }
 
 static inline uq4_12_t GetDiveModifier(u32 move, u32 battlerDef)
 {
     if (MoveDamagesUnderWater(move) && gStatuses3[battlerDef] & STATUS3_UNDERWATER)
-        return UQ_4_12(2.0);
+        return UQ_4_12(1.6);
     return UQ_4_12(1.0);
 }
 
 static inline uq4_12_t GetAirborneModifier(u32 move, u32 battlerDef)
 {
     if (MoveDamagesAirborneDoubleDamage(move) && gStatuses3[battlerDef] & STATUS3_ON_AIR)
-        return UQ_4_12(2.0);
+        return UQ_4_12(1.6);
     return UQ_4_12(1.0);
 }
 
@@ -9217,7 +9222,7 @@ static inline uq4_12_t GetScreensModifier(u32 move, u32 battlerAtk, u32 battlerD
 
 static inline uq4_12_t GetCollisionCourseElectroDriftModifier(u32 move, uq4_12_t typeEffectivenessModifier)
 {
-    if (GetMoveEffect(move) == EFFECT_COLLISION_COURSE && typeEffectivenessModifier >= UQ_4_12(2.0))
+    if (GetMoveEffect(move) == EFFECT_COLLISION_COURSE && typeEffectivenessModifier >= UQ_4_12(1.6))
         return UQ_4_12(1.3333);
     return UQ_4_12(1.0);
 }
@@ -9227,7 +9232,7 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
     switch (abilityAtk)
     {
     case ABILITY_NEUROFORCE:
-        if (typeEffectivenessModifier >= UQ_4_12(2.0))
+        if (typeEffectivenessModifier >= UQ_4_12(1.6))
             return UQ_4_12(1.25);
         break;
     case ABILITY_SNIPER:
@@ -9235,8 +9240,8 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
             return UQ_4_12(1.5);
         break;
     case ABILITY_TINTED_LENS:
-        if (typeEffectivenessModifier <= UQ_4_12(0.5))
-            return UQ_4_12(2.0);
+        if (typeEffectivenessModifier <= UQ_4_12(0.625))
+            return UQ_4_12(1.6);
         break;
     }
     return UQ_4_12(1.0);
@@ -9254,7 +9259,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
     case ABILITY_FILTER:
     case ABILITY_SOLID_ROCK:
     case ABILITY_PRISM_ARMOR:
-        if (typeEffectivenessModifier >= UQ_4_12(2.0))
+        if (typeEffectivenessModifier >= UQ_4_12(1.6))
             return UQ_4_12(0.75);
         break;
     case ABILITY_FLUFFY:
@@ -9303,7 +9308,7 @@ static inline uq4_12_t GetAttackerItemsModifier(u32 battlerAtk, uq4_12_t typeEff
         return uq4_12_add(UQ_4_12(1.0), metronomeBoostBase * metronomeTurns);
         break;
     case HOLD_EFFECT_EXPERT_BELT:
-        if (typeEffectivenessModifier >= UQ_4_12(2.0))
+        if (typeEffectivenessModifier >= UQ_4_12(1.6))
             return UQ_4_12(1.2);
         break;
     case HOLD_EFFECT_LIFE_ORB:
@@ -9328,7 +9333,7 @@ static inline uq4_12_t GetDefenderItemsModifier(struct DamageCalculationData *da
     case HOLD_EFFECT_RESIST_BERRY:
         if (UnnerveOn(battlerDef, itemDef))
             return UQ_4_12(1.0);
-        if (moveType == holdEffectDefParam && (moveType == TYPE_NORMAL || typeEffectivenessModifier >= UQ_4_12(2.0)))
+        if (moveType == holdEffectDefParam && (moveType == TYPE_NORMAL || typeEffectivenessModifier >= UQ_4_12(1.6)))
         {
             if (damageCalcData->updateFlags)
                 gSpecialStatuses[battlerDef].berryReduced = TRUE;
@@ -9645,22 +9650,22 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
     if (moveType == TYPE_PSYCHIC && defType == TYPE_DARK && gStatuses3[battlerDef] & STATUS3_MIRACLE_EYED && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
     if (GetMoveEffect(move) == EFFECT_SUPER_EFFECTIVE_ON_ARG && defType == GetMoveArgType(move))
-        mod = UQ_4_12(2.0);
+        mod = UQ_4_12(1.6);
     if (moveType == TYPE_GROUND && defType == TYPE_FLYING && IsBattlerGrounded(battlerDef) && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
     if (moveType == TYPE_STELLAR && GetActiveGimmick(battlerDef) == GIMMICK_TERA)
-        mod = UQ_4_12(2.0);
+        mod = UQ_4_12(1.6);
 
     // B_WEATHER_STRONG_WINDS weakens Super Effective moves against Flying-type Pokémon
     if (gBattleWeather & B_WEATHER_STRONG_WINDS && HasWeatherEffect())
     {
-        if (defType == TYPE_FLYING && mod >= UQ_4_12(2.0))
+        if (defType == TYPE_FLYING && mod >= UQ_4_12(1.6))
             mod = UQ_4_12(1.0);
     }
 
     if (gSpecialStatuses[battlerDef].distortedTypeMatchups || (mod > UQ_4_12(0.0) && ShouldTeraShellDistortTypeMatchups(move, battlerDef, defAbility)))
     {
-        mod = UQ_4_12(0.5);
+        mod = UQ_4_12(0.625);
         if (recordAbilities)
         {
             RecordAbilityBattle(battlerDef, defAbility);
@@ -9720,7 +9725,7 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(u32 move, u32 mov
     if (types[2] != TYPE_MYSTERY && types[2] != types[1] && types[2] != types[0])
         MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, defAbility, types[2], battlerAtk, recordAbilities);
     if (moveType == TYPE_FIRE && gDisableStructs[battlerDef].tarShot)
-        modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.6));
 
     if (recordAbilities && (illusionSpecies = GetIllusionMonSpecies(battlerDef)))
         TryNoticeIllusionInTypeEffectiveness(move, moveType, battlerAtk, battlerDef, modifier, illusionSpecies);
@@ -9829,10 +9834,13 @@ static uq4_12_t GetInverseTypeMultiplier(uq4_12_t multiplier)
     switch (multiplier)
     {
     case UQ_4_12(0.0):
-    case UQ_4_12(0.5):
-        return UQ_4_12(2.0);
-    case UQ_4_12(2.0):
-        return UQ_4_12(0.5);
+        return UQ_4_12(4.096);
+    case UQ_4_12(0.390625):
+        return UQ_4_12(2.56);
+    case UQ_4_12(0.625):
+        return UQ_4_12(1.6);
+    case UQ_4_12(1.6):
+        return UQ_4_12(0.625);
     case UQ_4_12(1.0):
     default:
         return UQ_4_12(1.0);
@@ -9892,12 +9900,17 @@ s32 GetStealthHazardDamageByTypesAndHP(enum TypeSideHazard hazardType, u8 type1,
     case UQ_4_12(0.0):
         dmg = 0;
         break;
-    case UQ_4_12(0.25):
+    case UQ_4_12(0.244140625):
+        dmg = maxHp / 64;
+        if (dmg == 0)
+            dmg = 1;
+        break; 
+    case UQ_4_12(0.390625):
         dmg = maxHp / 32;
         if (dmg == 0)
             dmg = 1;
         break;
-    case UQ_4_12(0.5):
+    case UQ_4_12(0.625):
         dmg = maxHp / 16;
         if (dmg == 0)
             dmg = 1;
@@ -9907,12 +9920,12 @@ s32 GetStealthHazardDamageByTypesAndHP(enum TypeSideHazard hazardType, u8 type1,
         if (dmg == 0)
             dmg = 1;
         break;
-    case UQ_4_12(2.0):
+    case UQ_4_12(1.6):
         dmg = maxHp / 4;
         if (dmg == 0)
             dmg = 1;
         break;
-    case UQ_4_12(4.0):
+    case UQ_4_12(2.56):
         dmg = maxHp / 2;
         if (dmg == 0)
             dmg = 1;

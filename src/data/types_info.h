@@ -2,42 +2,46 @@
 #include "constants/pokemon.h"
 
 #define X UQ_4_12
+#define resist X(0.625) // Basic resistance
+#define twores X(0.390625) // Double resistance
 #define ______ X(1.0) // Regular effectiveness.
 
 // Type matchup updates.                                                Attacker      Defender
-#define STL_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_6 ? X(1.0) : X(0.5))  // Ghost/Dark -> Steel
-#define PSN_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(0.5) : X(2.0))  // Bug        -> Poison
-#define BUG_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(1.0) : X(2.0))  // Poison     -> Bug
-#define PSY_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(2.0) : X(0.0))  // Ghost      -> Psychic
-#define FIR_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(0.5) : X(1.0))  // Ice        -> Fire
+#define STL_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_6 ? X(1.0) : resist)  // Ghost/Dark -> Steel
+#define PSN_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(1.0) : X(1.6))  // Bug        -> Poison
+#define BUG_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(1.0) : X(1.6))  // Poison     -> Bug
+#define PSY_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(1.6) : X(0.0))  // Ghost      -> Psychic
+#define FIR_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? resist : X(1.0))  // Ice        -> Fire
 
 const uq4_12_t gTypeEffectivenessTable[NUMBER_OF_MON_TYPES][NUMBER_OF_MON_TYPES] =
 {//                   Defender -->
  //  Attacker           None   Normal Fighting Flying  Poison  Ground   Rock    Bug     Ghost   Steel  Mystery  Fire   Water   Grass  Electric Psychic   Ice   Dragon   Dark   Fairy   Stellar
     [TYPE_NONE]     = {______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______},
-    [TYPE_NORMAL]   = {______, ______, ______, ______, ______, ______, X(0.5), ______, X(0.0), X(0.5), ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______},
-    [TYPE_FIGHTING] = {______, X(2.0), ______, X(0.5), X(0.5), ______, X(2.0), X(0.5), X(0.0), X(2.0), ______, ______, ______, ______, ______, X(0.5), X(2.0), ______, X(2.0), X(0.5), ______},
-    [TYPE_FLYING]   = {______, ______, X(2.0), ______, ______, ______, X(0.5), X(2.0), ______, X(0.5), ______, ______, ______, X(2.0), X(0.5), ______, ______, ______, ______, ______, ______},
-    [TYPE_POISON]   = {______, ______, ______, ______, X(0.5), X(0.5), X(0.5), BUG_RS, X(0.5), X(0.0), ______, ______, ______, X(2.0), ______, ______, ______, ______, ______, X(2.0), ______},
-    [TYPE_GROUND]   = {______, ______, ______, X(0.0), X(2.0), ______, X(2.0), X(0.5), ______, X(2.0), ______, X(2.0), ______, X(0.5), X(2.0), ______, ______, ______, ______, ______, ______},
-    [TYPE_ROCK]     = {______, ______, X(0.5), X(2.0), ______, X(0.5), ______, X(2.0), ______, X(0.5), ______, X(2.0), ______, ______, ______, ______, X(2.0), ______, ______, ______, ______},
-    [TYPE_BUG]      = {______, ______, X(0.5), X(0.5), PSN_RS, ______, ______, ______, X(0.5), X(0.5), ______, X(0.5), ______, X(2.0), ______, X(2.0), ______, ______, X(2.0), X(0.5), ______},
-    [TYPE_GHOST]    = {______, X(0.0), ______, ______, ______, ______, ______, ______, X(2.0), STL_RS, ______, ______, ______, ______, ______, PSY_RS, ______, ______, X(0.5), ______, ______},
-    [TYPE_STEEL]    = {______, ______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), ______, X(0.5), X(0.5), ______, X(0.5), ______, X(2.0), ______, ______, X(2.0), ______},
+    [TYPE_NORMAL]   = {______, ______, ______, ______, ______, ______, resist, ______, X(0.0), resist, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______},
+    [TYPE_FIGHTING] = {______, ______, resist, ______, ______, ______, X(1.6), X(1.6), X(0.0), X(1.6), ______, ______, ______, ______, ______, ______, X(1.6), ______, X(1.6), resist, ______},
+    [TYPE_FLYING]   = {______, ______, ______, ______, ______, resist, resist, X(1.6), ______, resist, ______, ______, ______, X(1.6), ______, ______, ______, resist, ______, ______, ______},
+    [TYPE_POISON]   = {______, ______, ______, ______, twores, resist, resist, ______, resist, resist, ______, ______, ______, X(1.6), ______, resist, ______, ______, resist, X(1.6), ______},
+    [TYPE_GROUND]   = {______, ______, ______, X(0.0), ______, resist, X(1.6), ______, ______, X(1.6), ______, X(1.6), ______, resist, X(1.6), ______, X(1.6), resist, ______, ______, ______},
+    [TYPE_ROCK]     = {______, ______, ______, X(1.6), ______, resist, resist, X(1.6), ______, resist, ______, X(1.6), ______, ______, ______, ______, X(1.6), resist, ______, ______, ______},
+    [TYPE_BUG]      = {______, ______, ______, resist, ______, resist, resist, ______, X(1.6), resist, ______, ______, ______, X(1.6), ______, X(1.6), ______, ______, ______, X(1.6), ______},
+    [TYPE_GHOST]    = {______, ______, ______, ______, ______, ______, ______, resist, X(1.6), ______, ______, ______, ______, ______, ______, X(1.6), ______, ______, resist, X(0.0), ______},
+    [TYPE_STEEL]    = {______, ______, ______, ______, ______, resist, ______, ______, ______, resist, ______, ______, ______, ______, ______, ______, X(1.6), resist, ______, X(1.6), ______},
     [TYPE_MYSTERY]  = {______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______},
-    [TYPE_FIRE]     = {______, ______, ______, ______, ______, ______, X(0.5), X(2.0), ______, X(2.0), ______, X(0.5), X(0.5), X(2.0), ______, ______, X(2.0), X(0.5), ______, ______, ______},
-    [TYPE_WATER]    = {______, ______, ______, ______, ______, X(2.0), X(2.0), ______, ______, ______, ______, X(2.0), X(0.5), X(0.5), ______, ______, ______, X(0.5), ______, ______, ______},
-    [TYPE_GRASS]    = {______, ______, ______, X(0.5), X(0.5), X(2.0), X(2.0), X(0.5), ______, X(0.5), ______, X(0.5), X(2.0), X(0.5), ______, ______, ______, X(0.5), ______, ______, ______},
-    [TYPE_ELECTRIC] = {______, ______, ______, X(2.0), ______, X(0.0), ______, ______, ______, ______, ______, ______, X(2.0), X(0.5), X(0.5), ______, ______, X(0.5), ______, ______, ______},
-    [TYPE_PSYCHIC]  = {______, ______, X(2.0), ______, X(2.0), ______, ______, ______, ______, X(0.5), ______, ______, ______, ______, ______, X(0.5), ______, ______, X(0.0), ______, ______},
-    [TYPE_ICE]      = {______, ______, ______, X(2.0), ______, X(2.0), ______, ______, ______, X(0.5), ______, FIR_RS, X(0.5), X(2.0), ______, ______, X(0.5), X(2.0), ______, ______, ______},
-    [TYPE_DRAGON]   = {______, ______, ______, ______, ______, ______, ______, ______, ______, X(0.5), ______, ______, ______, ______, ______, ______, ______, X(2.0), ______, X(0.0), ______},
-    [TYPE_DARK]     = {______, ______, X(0.5), ______, ______, ______, ______, ______, X(2.0), STL_RS, ______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), X(0.5), ______},
-    [TYPE_FAIRY]    = {______, ______, X(2.0), ______, X(0.5), ______, ______, ______, ______, X(0.5), ______, X(0.5), ______, ______, ______, ______, ______, X(2.0), X(2.0), ______, ______},
+    [TYPE_FIRE]     = {______, ______, ______, ______, ______, resist, resist, X(1.6), ______, X(1.6), ______, twores, resist, X(1.6), ______, ______, X(1.6), resist, ______, ______, ______},
+    [TYPE_WATER]    = {______, ______, ______, ______, ______, ______, X(1.6), ______, ______, resist, ______, X(1.6), twores, resist, ______, ______, resist, resist, ______, ______, ______},
+    [TYPE_GRASS]    = {______, ______, ______, resist, resist, X(1.6), ______, resist, ______, resist, ______, resist, X(1.6), twores, ______, ______, resist, resist, ______, ______, ______},
+    [TYPE_ELECTRIC] = {______, ______, ______, X(1.6), ______, resist, resist, ______, ______, resist, ______, ______, X(1.6), ______, twores, ______, ______, resist, ______, ______, ______},
+    [TYPE_PSYCHIC]  = {______, ______, X(1.6), ______, X(1.6), ______, ______, resist, resist, ______, ______, ______, ______, ______, ______, twores, ______, ______, resist, X(1.6), ______},
+    [TYPE_ICE]      = {______, ______, ______, ______, ______, X(1.6), resist, X(1.6), ______, resist, ______, resist, resist, X(1.6), ______, ______, twores, X(1.6), ______, ______, ______},
+    [TYPE_DRAGON]   = {______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, resist, ______, resist, ______},
+    [TYPE_DARK]     = {______, ______, resist, ______, ______, ______, resist, ______, X(1.6), resist, ______, ______, ______, ______, ______, X(1.6), ______, ______, resist, resist, ______},
+    [TYPE_FAIRY]    = {______, ______, X(1.6), ______, resist, ______, ______, resist, X(1.6), ______, ______, ______, ______, resist, ______, resist, ______, X(1.6), X(1.6), twores, ______},
     [TYPE_STELLAR]  = {______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______},
 };
 
 #undef ______
+#undef twores
+#undef resist
 #undef X
 
 // Notes regarding custom data:
@@ -72,7 +76,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .paletteTMHM = gItemIconPalette_NormalTMHM,
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
-        .isHiddenPowerType = FALSE,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_SILK_SCARF,
         //.berry = ITEM_CHILAN_BERRY,
         //.gem = ITEM_NORMAL_GEM,
@@ -114,7 +118,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .paletteTMHM = gItemIconPalette_FlyingTMHM,
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
-        .isHiddenPowerType = TRUE,
+        .isHiddenPowerType = FALSE,
         //.enhanceItem = ITEM_SHARP_BEAK,
         //.berry = ITEM_COBA_BERRY,
         //.gem = ITEM_FLYING_GEM,
@@ -455,7 +459,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .paletteTMHM = gItemIconPalette_FairyTMHM,
         .useSecondTypeIconPalette = TRUE,
         .isSpecialCaseType = FALSE,
-        .isHiddenPowerType = FALSE,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_FAIRY_FEATHER,
         //.berry = ITEM_ROSELI_BERRY,
         //.gem = ITEM_FAIRY_GEM,

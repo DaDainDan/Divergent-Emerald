@@ -110,7 +110,7 @@ SINGLE_BATTLE_TEST("Hidden Power's type is determined by IVs")
 
     GIVEN {
         if (hidden) {
-            ASSUME(gTypeEffectivenessTable[type][foeType] == UQ_4_12(2.0));                 // Foe's Type resists
+            ASSUME(gTypeEffectivenessTable[type][foeType] == UQ_4_12(1.6));                 // Foe's Type resists
             ASSUME(gSpeciesInfo[foeSpecies].types[0] == gSpeciesInfo[foeSpecies].types[1]); // Foe's pure type
             ASSUME(gSpeciesInfo[foeSpecies].types[0] == foeType);                           // Foe is the super-effective type
             ASSUME(GetItemHoldEffect(foeItem) == HOLD_EFFECT_RESIST_BERRY);              // Item is resist berry
