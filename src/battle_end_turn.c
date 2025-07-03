@@ -241,7 +241,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
          && ability != ABILITY_SAND_FORCE
          && ability != ABILITY_SAND_RUSH
          && ability != ABILITY_OVERCOAT
-         && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
+         && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_ROCK, TYPE_GROUND, TYPE_TERRA, TYPE_SAND, TYPE_STEEL)
          && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
          && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
          && !IsBattlerProtectedByMagicGuard(battler, ability))
@@ -802,7 +802,7 @@ static bool32 HandleEndTurnSaltCure(u32 battler)
      && IsBattlerAlive(battler)
      && !IsBattlerProtectedByMagicGuard(battler, GetBattlerAbility(battler)))
     {
-        if (IS_BATTLER_ANY_TYPE(battler, TYPE_STEEL, TYPE_WATER))
+        if (IS_BATTLER_ANY_TYPE(battler, TYPE_STEEL, TYPE_OCEAN))
             gBattleStruct->moveDamage[battler] = gBattleMons[battler].maxHP / 4;
         else
             gBattleStruct->moveDamage[battler] = gBattleMons[battler].maxHP / 8;

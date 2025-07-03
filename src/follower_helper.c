@@ -94,9 +94,11 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .text = (u8*)sFireTexts,
         .textSpread = 1,
         .emotion = FOLLOWER_EMOTION_NEUTRAL,
+        .orFlag = 1,
         .conditions =
         {
             MATCH_TYPES(TYPE_FIRE, TYPE_FIRE),
+            MATCH_TYPES(TYPE_FLAME, TYPE_FLAME),
         },
     },
     [COND_MSG_EVER_GRANDE] =

@@ -23,7 +23,15 @@
 #define TYPE_DARK             18
 #define TYPE_FAIRY            19
 #define TYPE_STELLAR          20
-#define NUMBER_OF_MON_TYPES   21
+#define TYPE_TERRA            21
+#define TYPE_FROST            22
+#define TYPE_OCEAN            23
+#define TYPE_FLAME            24
+#define TYPE_UNDEAD           25
+#define TYPE_WIND             26
+#define TYPE_MUD              27
+#define TYPE_SAND             28
+#define NUMBER_OF_MON_TYPES   29
 
 // Pokémon egg groups
 #define EGG_GROUP_NONE                0

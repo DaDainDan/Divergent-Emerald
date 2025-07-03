@@ -866,7 +866,9 @@ static bool8 DoesTypePreventStatus(u16 species, u32 status)
             ret = TRUE;
         break;
     case STATUS1_BURN:
-        if (gSpeciesInfo[species].types[0] == TYPE_FIRE || gSpeciesInfo[species].types[1] == TYPE_FIRE)
+        if (gSpeciesInfo[species].types[0] == TYPE_FIRE || gSpeciesInfo[species].types[1] == TYPE_FIRE
+            || gSpeciesInfo[species].types[0] == TYPE_FLAME || gSpeciesInfo[species].types[1] == TYPE_FLAME
+            || gSpeciesInfo[species].types[0] == TYPE_OCEAN || gSpeciesInfo[species].types[1] == TYPE_OCEAN)
             ret = TRUE;
         break;
     case STATUS1_SLEEP:

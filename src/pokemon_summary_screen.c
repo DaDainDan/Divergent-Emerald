@@ -911,6 +911,38 @@ static const union AnimCmd sSpriteAnim_TypeStellar[] = {
     ANIMCMD_FRAME(TYPE_STELLAR * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+static const union AnimCmd sSpriteAnim_TypeTerra[] = {
+    ANIMCMD_FRAME(TYPE_TERRA * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeFrost[] = {
+    ANIMCMD_FRAME(TYPE_FROST * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeOcean[] = {
+    ANIMCMD_FRAME(TYPE_OCEAN * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeFlame[] = {
+    ANIMCMD_FRAME(TYPE_FLAME * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeUndead[] = {
+    ANIMCMD_FRAME(TYPE_UNDEAD * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeWind[] = {
+    ANIMCMD_FRAME(TYPE_WIND * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeMud[] = {
+    ANIMCMD_FRAME(TYPE_MUD * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeSand[] = {
+    ANIMCMD_FRAME(TYPE_SAND * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
 static const union AnimCmd sSpriteAnim_CategoryCool[] = {
     ANIMCMD_FRAME((CONTEST_CATEGORY_COOL + NUMBER_OF_MON_TYPES) * 8, 0, FALSE, FALSE),
     ANIMCMD_END
@@ -953,6 +985,14 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
     [TYPE_DARK] = sSpriteAnim_TypeDark,
     [TYPE_FAIRY] = sSpriteAnim_TypeFairy,
     [TYPE_STELLAR] = sSpriteAnim_TypeStellar,
+    [TYPE_TERRA] = sSpriteAnim_TypeTerra,
+    [TYPE_FROST] = sSpriteAnim_TypeFrost,
+    [TYPE_OCEAN] = sSpriteAnim_TypeOcean,
+    [TYPE_FLAME] = sSpriteAnim_TypeFlame,
+    [TYPE_UNDEAD] = sSpriteAnim_TypeUndead,
+    [TYPE_WIND] = sSpriteAnim_TypeWind,
+    [TYPE_MUD] = sSpriteAnim_TypeMud,
+    [TYPE_SAND] = sSpriteAnim_TypeSand,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = sSpriteAnim_CategoryCool,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = sSpriteAnim_CategoryBeauty,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_CUTE] = sSpriteAnim_CategoryCute,

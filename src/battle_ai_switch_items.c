@@ -1601,6 +1601,8 @@ static s32 GetSwitchinWeatherImpact(void)
             }
             else if ((gBattleWeather & B_WEATHER_SANDSTORM)
                 && (gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_GROUND && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_GROUND
+                && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_TERRA && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_TERRA
+                && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_SAND && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_SAND
                 && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_ROCK && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_ROCK
                 && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_STEEL && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_STEEL
                 && ability != ABILITY_SAND_VEIL && ability != ABILITY_SAND_RUSH && ability != ABILITY_SAND_FORCE))

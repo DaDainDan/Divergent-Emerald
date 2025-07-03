@@ -1086,23 +1086,23 @@ static const u8 sEnvironmentToType[BATTLE_ENVIRONMENT_COUNT] =
 {
     [BATTLE_ENVIRONMENT_GRASS]            = TYPE_GRASS,
     [BATTLE_ENVIRONMENT_LONG_GRASS]       = TYPE_GRASS,
-    [BATTLE_ENVIRONMENT_SAND]             = TYPE_GROUND,
-    [BATTLE_ENVIRONMENT_UNDERWATER]       = TYPE_WATER,
+    [BATTLE_ENVIRONMENT_SAND]             = TYPE_SAND,
+    [BATTLE_ENVIRONMENT_UNDERWATER]       = TYPE_OCEAN,
     [BATTLE_ENVIRONMENT_WATER]            = TYPE_WATER,
     [BATTLE_ENVIRONMENT_POND]             = TYPE_WATER,
     [BATTLE_ENVIRONMENT_CAVE]             = TYPE_ROCK,
-    [BATTLE_ENVIRONMENT_BUILDING]         = TYPE_NORMAL,
+    [BATTLE_ENVIRONMENT_BUILDING]         = TYPE_STEEL,
     [BATTLE_ENVIRONMENT_SOARING]          = TYPE_FLYING,
-    [BATTLE_ENVIRONMENT_SKY_PILLAR]       = TYPE_FLYING,
-    [BATTLE_ENVIRONMENT_BURIAL_GROUND]    = TYPE_GHOST,
-    [BATTLE_ENVIRONMENT_PUDDLE]           = TYPE_GROUND,
-    [BATTLE_ENVIRONMENT_MARSH]            = TYPE_GROUND,
-    [BATTLE_ENVIRONMENT_SWAMP]            = TYPE_GROUND,
-    [BATTLE_ENVIRONMENT_SNOW]             = TYPE_ICE,
+    [BATTLE_ENVIRONMENT_SKY_PILLAR]       = TYPE_DRAGON,
+    [BATTLE_ENVIRONMENT_BURIAL_GROUND]    = TYPE_UNDEAD,
+    [BATTLE_ENVIRONMENT_PUDDLE]           = TYPE_MUD,
+    [BATTLE_ENVIRONMENT_MARSH]            = TYPE_MUD,
+    [BATTLE_ENVIRONMENT_SWAMP]            = TYPE_MUD,
+    [BATTLE_ENVIRONMENT_SNOW]             = TYPE_FROST,
     [BATTLE_ENVIRONMENT_ICE]              = TYPE_ICE,
     [BATTLE_ENVIRONMENT_VOLCANO]          = TYPE_FIRE,
-    [BATTLE_ENVIRONMENT_DISTORTION_WORLD] = TYPE_NORMAL,
-    [BATTLE_ENVIRONMENT_SPACE]            = TYPE_DRAGON,
+    [BATTLE_ENVIRONMENT_DISTORTION_WORLD] = TYPE_GHOST,
+    [BATTLE_ENVIRONMENT_SPACE]            = TYPE_PSYCHIC,
     [BATTLE_ENVIRONMENT_ULTRA_SPACE]      = TYPE_PSYCHIC,
     [BATTLE_ENVIRONMENT_MOUNTAIN]         = (B_CAMOUFLAGE_TYPES >= GEN_5 ? TYPE_GROUND : TYPE_ROCK),
     [BATTLE_ENVIRONMENT_PLAIN]            = (B_CAMOUFLAGE_TYPES >= GEN_4 ? TYPE_GROUND : TYPE_NORMAL),
@@ -1416,7 +1416,7 @@ static void Cmd_attackcanceler(void)
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
     }
     else if (IsBattlerProtected(gBattlerAttacker, gBattlerTarget, gCurrentMove)
-     && (effect != EFFECT_CURSE || IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
+     && (effect != EFFECT_CURSE || IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST, TYPE_UNDEAD))
      && (!gBattleMoveEffects[effect].twoTurnEffect || (gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS))
      && effect != EFFECT_SUCKER_PUNCH
      && effect != EFFECT_COUNTER
@@ -12861,7 +12861,7 @@ static void Cmd_tryconversiontypechange(void)
 
             if (moveType == TYPE_MYSTERY)
             {
-                if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
+                if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST, TYPE_UNDEAD))
                     moveType = TYPE_GHOST;
                 else
                     moveType = TYPE_NORMAL;
@@ -12888,7 +12888,7 @@ static void Cmd_tryconversiontypechange(void)
 
                 if (moveType == TYPE_MYSTERY)
                 {
-                    if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
+                    if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST, TYPE_UNDEAD))
                         moveType = TYPE_GHOST;
                     else
                         moveType = TYPE_NORMAL;
@@ -15772,7 +15772,7 @@ static void Cmd_handleballthrow(void)
                     ballMultiplier = 150;
                 break;
             case BALL_NET:
-                if (IS_BATTLER_ANY_TYPE(gBattlerTarget, TYPE_WATER, TYPE_BUG))
+                if (IS_BATTLER_ANY_TYPE(gBattlerTarget, TYPE_OCEAN, TYPE_BUG))
                     ballMultiplier = B_NET_BALL_MODIFIER >= GEN_7 ? 350 : 300;
                 break;
             case BALL_DIVE:

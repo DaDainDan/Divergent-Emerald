@@ -1099,7 +1099,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-5);
                 break;
             case EFFECT_CURSE:
-                if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GHOST)) // Don't use Curse if you're a ghost type vs a Magic Guard user, they'll take no damage.
+                if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GHOST, TYPE_UNDEAD)) // Don't use Curse if you're a ghost type vs a Magic Guard user, they'll take no damage.
                     ADJUST_SCORE(-5);
                 break;
             default:
@@ -1768,7 +1768,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_CURSE:
-            if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GHOST))
+            if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GHOST, TYPE_UNDEAD))
             {
                 if (gBattleMons[battlerDef].status2 & STATUS2_CURSED
                   || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
@@ -4234,7 +4234,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_CURSE:
-        if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GHOST))
+        if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GHOST, TYPE_UNDEAD))
         {
             if (!AI_CanBattlerEscape(battlerDef) && IsBattlerTrapped(battlerAtk, battlerDef))
                 ADJUST_SCORE(GOOD_EFFECT);
@@ -5301,7 +5301,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
                         ADJUST_SCORE(BEST_EFFECT);
                     break;
                 case MOVE_EFFECT_SALT_CURE:
-                    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_WATER) || IS_BATTLER_OF_TYPE(battlerDef, TYPE_STEEL))
+                    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_OCEAN) || IS_BATTLER_OF_TYPE(battlerDef, TYPE_STEEL))
                         ADJUST_SCORE(DECENT_EFFECT);
                     break;
 

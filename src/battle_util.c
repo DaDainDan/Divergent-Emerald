@@ -5687,7 +5687,7 @@ bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u
         {
             battleScript = BattleScript_AlreadyBurned;
         }
-        else if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_FIRE))
+        else if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_FIRE, TYPE_FLAME, TYPE_OCEAN))
         {
             battleScript = BattleScript_NotAffected;
         }
@@ -7966,7 +7966,7 @@ const struct TypePower gNaturalGiftTable[] =
     [ITEM_TO_BERRY(ITEM_LEPPA_BERRY)] = {TYPE_FIGHTING, 80},
     [ITEM_TO_BERRY(ITEM_ORAN_BERRY)] = {TYPE_POISON, 80},
     [ITEM_TO_BERRY(ITEM_PERSIM_BERRY)] = {TYPE_GROUND, 80},
-    [ITEM_TO_BERRY(ITEM_LUM_BERRY)] = {TYPE_FLYING, 80},
+    [ITEM_TO_BERRY(ITEM_LUM_BERRY)] = {TYPE_WIND, 80},
     [ITEM_TO_BERRY(ITEM_SITRUS_BERRY)] = {TYPE_PSYCHIC, 80},
     [ITEM_TO_BERRY(ITEM_FIGY_BERRY)] = {TYPE_BUG, 80},
     [ITEM_TO_BERRY(ITEM_WIKI_BERRY)] = {TYPE_ROCK, 80},
@@ -7982,7 +7982,7 @@ const struct TypePower gNaturalGiftTable[] =
     [ITEM_TO_BERRY(ITEM_CHOPLE_BERRY)] = {TYPE_FIGHTING, 80},
     [ITEM_TO_BERRY(ITEM_KEBIA_BERRY)] = {TYPE_POISON, 80},
     [ITEM_TO_BERRY(ITEM_SHUCA_BERRY)] = {TYPE_GROUND, 80},
-    [ITEM_TO_BERRY(ITEM_COBA_BERRY)] = {TYPE_FLYING, 80},
+    [ITEM_TO_BERRY(ITEM_COBA_BERRY)] = {TYPE_WIND, 80},
     [ITEM_TO_BERRY(ITEM_PAYAPA_BERRY)] = {TYPE_PSYCHIC, 80},
     [ITEM_TO_BERRY(ITEM_TANGA_BERRY)] = {TYPE_BUG, 80},
     [ITEM_TO_BERRY(ITEM_CHARTI_BERRY)] = {TYPE_ROCK, 80},
@@ -8000,7 +8000,7 @@ const struct TypePower gNaturalGiftTable[] =
     [ITEM_TO_BERRY(ITEM_KELPSY_BERRY)] = {TYPE_FIGHTING, 90},
     [ITEM_TO_BERRY(ITEM_QUALOT_BERRY)] = {TYPE_POISON, 90},
     [ITEM_TO_BERRY(ITEM_HONDEW_BERRY)] = {TYPE_GROUND, 90},
-    [ITEM_TO_BERRY(ITEM_GREPA_BERRY)] = {TYPE_FLYING, 90},
+    [ITEM_TO_BERRY(ITEM_GREPA_BERRY)] = {TYPE_WIND, 90},
     [ITEM_TO_BERRY(ITEM_TAMATO_BERRY)] = {TYPE_PSYCHIC, 90},
     [ITEM_TO_BERRY(ITEM_CORNN_BERRY)] = {TYPE_BUG, 90},
     [ITEM_TO_BERRY(ITEM_MAGOST_BERRY)] = {TYPE_ROCK, 90},
@@ -8016,7 +8016,7 @@ const struct TypePower gNaturalGiftTable[] =
     [ITEM_TO_BERRY(ITEM_SALAC_BERRY)] = {TYPE_FIGHTING, 100},
     [ITEM_TO_BERRY(ITEM_PETAYA_BERRY)] = {TYPE_POISON, 100},
     [ITEM_TO_BERRY(ITEM_APICOT_BERRY)] = {TYPE_GROUND, 100},
-    [ITEM_TO_BERRY(ITEM_LANSAT_BERRY)] = {TYPE_FLYING, 100},
+    [ITEM_TO_BERRY(ITEM_LANSAT_BERRY)] = {TYPE_WIND, 100},
     [ITEM_TO_BERRY(ITEM_STARF_BERRY)] = {TYPE_PSYCHIC, 100},
     [ITEM_TO_BERRY(ITEM_ENIGMA_BERRY)] = {TYPE_BUG, 100},
     [ITEM_TO_BERRY(ITEM_MICLE_BERRY)] = {TYPE_ROCK, 100},
@@ -8463,7 +8463,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
             modifier = uq4_12_multiply(modifier, UQ_4_12(GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
     case ABILITY_AERILATE:
-        if (moveType == TYPE_FLYING && gBattleStruct->ateBoost[battlerAtk])
+        if (moveType == TYPE_WIND && gBattleStruct->ateBoost[battlerAtk])
             modifier = uq4_12_multiply(modifier, UQ_4_12(GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
     case ABILITY_NORMALIZE:
@@ -8589,7 +8589,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;
     case HOLD_EFFECT_TYPE_POWER:
     case HOLD_EFFECT_PLATE:
-        if (moveType == GetItemSecondaryId(gBattleMons[battlerAtk].item))
+        if (moveType == GetItemSecondaryId(gBattleMons[battlerAtk].item) 
+            || (GetItemSecondaryId(gBattleMons[battlerAtk].item) == TYPE_GROUND && (moveType == TYPE_SAND || moveType == TYPE_MUD || moveType == TYPE_TERRA))
+            || (GetItemSecondaryId(gBattleMons[battlerAtk].item) == TYPE_FLYING && moveType == TYPE_WIND)
+            || (GetItemSecondaryId(gBattleMons[battlerAtk].item) == TYPE_WATER && moveType == TYPE_MUD))
             modifier = uq4_12_multiply(modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_PUNCHING_GLOVE:
@@ -9093,6 +9096,16 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageCalculationDa
 
     if (moveType == TYPE_MYSTERY)
         return UQ_4_12(1.0);
+    else if ((IS_BATTLER_OF_TYPE(battlerAtk, TYPE_FLYING) && moveType == TYPE_WIND) 
+            || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_FLAME) && moveType == TYPE_FIRE)
+            || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_UNDEAD) && moveType == TYPE_GHOST)
+            || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_OCEAN) && moveType == TYPE_WATER)
+            || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_FROST) && moveType == TYPE_ICE)
+            || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GROUND) && (moveType == TYPE_TERRA || moveType == TYPE_SAND || moveType == TYPE_MUD))
+            || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_TERRA) && (moveType == TYPE_GROUND || moveType == TYPE_SAND || moveType == TYPE_MUD))
+            || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_MUD) && (moveType == TYPE_TERRA || moveType == TYPE_SAND || moveType == TYPE_GROUND))
+            || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_SAND) && (moveType == TYPE_TERRA || moveType == TYPE_GROUND || moveType == TYPE_MUD)))
+        return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
     else if (gBattleStruct->pledgeMove && IS_BATTLER_OF_TYPE(BATTLE_PARTNER(battlerAtk), moveType))
         return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
     else if (!IS_BATTLER_OF_TYPE(battlerAtk, moveType) || move == MOVE_STRUGGLE || move == MOVE_NONE)
@@ -9333,7 +9346,10 @@ static inline uq4_12_t GetDefenderItemsModifier(struct DamageCalculationData *da
     case HOLD_EFFECT_RESIST_BERRY:
         if (UnnerveOn(battlerDef, itemDef))
             return UQ_4_12(1.0);
-        if (moveType == holdEffectDefParam && (moveType == TYPE_NORMAL || typeEffectivenessModifier >= UQ_4_12(1.6)))
+        if ((moveType == holdEffectDefParam || (holdEffectDefParam == TYPE_GROUND && (moveType == TYPE_SAND || moveType == TYPE_MUD || moveType == TYPE_TERRA)))
+            || (holdEffectDefParam == TYPE_FLYING && moveType == TYPE_WIND)
+            || (holdEffectDefParam == TYPE_WATER && moveType == TYPE_MUD)
+            && (moveType == TYPE_NORMAL || typeEffectivenessModifier >= UQ_4_12(1.6)))
         {
             if (damageCalcData->updateFlags)
                 gSpecialStatuses[battlerDef].berryReduced = TRUE;
@@ -10888,7 +10904,7 @@ bool32 IsBattlerWeatherAffected(u32 battler, u32 weatherFlags)
 u32 GetBattlerMoveTargetType(u32 battler, u32 move)
 {
     enum BattleMoveEffects effect = GetMoveEffect(move);
-    if (effect == EFFECT_CURSE && !IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
+    if (effect == EFFECT_CURSE && !IS_BATTLER_OF_TYPE(battler, TYPE_GHOST, TYPE_UNDEAD))
         return MOVE_TARGET_USER;
     if (effect == EFFECT_EXPANDING_FORCE && IsBattlerTerrainAffected(battler, STATUS_FIELD_PSYCHIC_TERRAIN))
         return MOVE_TARGET_BOTH;
