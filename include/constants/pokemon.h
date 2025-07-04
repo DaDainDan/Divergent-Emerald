@@ -97,8 +97,8 @@
 #define NUM_BATTLE_STATS (NUM_STATS + 2) // includes Accuracy and Evasion
 
 #define MIN_STAT_STAGE     0
-#define DEFAULT_STAT_STAGE 6
-#define MAX_STAT_STAGE    12
+#define DEFAULT_STAT_STAGE 3
+#define MAX_STAT_STAGE    6
 
 // Shiny odds
 #define SHINY_ODDS 8 // Actual probability is SHINY_ODDS/65536
@@ -370,7 +370,7 @@ enum EvoSpinDirections {
 #define NUM_ABILITY_PERSONALITY 0xFF
 
 #if P_LEGENDARY_PERFECT_IVS >= GEN_6
-#define LEGENDARY_PERFECT_IV_COUNT 3
+#define LEGENDARY_PERFECT_IV_COUNT NUM_STATS
 #else
 #define LEGENDARY_PERFECT_IV_COUNT 0
 #endif

@@ -470,7 +470,7 @@ void SetZEffect(void)
         bool32 canBoost = FALSE;
         for (i = STAT_ATK; i < NUM_STATS; i++) // Doesn't increase Acc or Evsn
         {
-            if (STAT_STAGE(gBattlerAttacker, i) < 12)
+            if (STAT_STAGE(gBattlerAttacker, i) < MAX_STAT_STAGE)
             {
                 canBoost = TRUE;
             }

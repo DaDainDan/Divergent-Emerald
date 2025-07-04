@@ -4774,7 +4774,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && (moveType == TYPE_FIRE || moveType == TYPE_WATER))
             {
                 gEffectBattler = battler;
-                SET_STATCHANGER(STAT_SPEED, 6, FALSE);
+                SET_STATCHANGER(STAT_SPEED, 3, FALSE);
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_TargetAbilityStatRaiseRet;
                 effect++;
@@ -5972,9 +5972,9 @@ static enum ItemEffect RandomStatRaiseBerry(u32 battler, u32 itemId, enum ItemCa
         gBattleTextBuff2[7] = EOS;
         gEffectBattler = battler;
         if (battlerAbility == ABILITY_RIPEN)
-            SET_STATCHANGER(stat, 4, FALSE);
+            SET_STATCHANGER(stat, 3, FALSE);
         else
-            SET_STATCHANGER(stat, 2, FALSE);
+            SET_STATCHANGER(stat, 3, FALSE);
 
         gBattleScripting.animArg1 = STAT_ANIM_PLUS2 + stat;
         gBattleScripting.animArg2 = 0;

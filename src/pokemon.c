@@ -731,19 +731,13 @@ const u8 gPPUpAddValues[MAX_MON_MOVES] = {PP_UP_SHIFTS(1)};
 
 const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2] =
 {
-    {10, 40}, // -6, MIN_STAT_STAGE
-    {10, 35}, // -5
-    {10, 30}, // -4
-    {10, 25}, // -3
-    {10, 20}, // -2
-    {10, 15}, // -1
-    {10, 10}, //  0, DEFAULT_STAT_STAGE
-    {15, 10}, // +1
-    {20, 10}, // +2
-    {25, 10}, // +3
-    {30, 10}, // +4
-    {35, 10}, // +5
-    {40, 10}, // +6, MAX_STAT_STAGE
+    {15, 30}, // -3, MIN_STAT_STAGE
+    {15, 25}, // -2
+    {15, 20}, // -1
+    {15, 15}, //  0, DEFAULT_STAT_STAGE
+    {20, 15}, // +1
+    {25, 15}, // +2
+    {30, 15}, // +3, MAX_STAT_STAGE
 };
 
 // The classes used by other players in the Union Room.
