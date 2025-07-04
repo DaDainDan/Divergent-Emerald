@@ -156,14 +156,14 @@ static const u32 sWinStreakMasks[][2] =
 
 static const u8 sFixedIVTable[][2] =
 {
-    {3, 6},
-    {6, 9},
+    {5, 7},
+    {7, 9},
     {9, 12},
-    {12, 15},
-    {15, 18},
-    {21, 31},
-    {31, 31},
-    {31, 31},
+    {11, 13},
+    {12, 14},
+    {13, 15},
+    {14, 15},
+    {15, 15},
 };
 
 static const u16 sInitialRentalMonRanges[][2] =

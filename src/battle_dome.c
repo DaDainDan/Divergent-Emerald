@@ -2516,19 +2516,19 @@ static u8 GetDomeTrainerMonIvs(u16 trainerId)
     u8 fixedIv;
 
     if (trainerId <= FRONTIER_TRAINER_JILL)         // 0 - 99
-        fixedIv = 3;
+        fixedIv = 5;
     else if (trainerId <= FRONTIER_TRAINER_CHLOE)   // 100 - 119
-        fixedIv = 6;
+        fixedIv = 7;
     else if (trainerId <= FRONTIER_TRAINER_SOFIA)   // 120 - 139
         fixedIv = 9;
     else if (trainerId <= FRONTIER_TRAINER_JAZLYN)  // 140 - 159
-        fixedIv = 12;
+        fixedIv = 11;
     else if (trainerId <= FRONTIER_TRAINER_ALISON)  // 160 - 179
-        fixedIv = 15;
+        fixedIv = 12;
     else if (trainerId <= FRONTIER_TRAINER_LAMAR)   // 180 - 199
-        fixedIv = 18;
+        fixedIv = 13;
     else if (trainerId <= FRONTIER_TRAINER_TESS)    // 200 - 219
-        fixedIv = 21;
+        fixedIv = 14;
     else                                            // 220+ (- 299)
         fixedIv = MAX_PER_STAT_IVS;
 
