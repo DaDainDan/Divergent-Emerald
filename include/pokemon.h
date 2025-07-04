@@ -370,6 +370,7 @@ struct SpeciesInfo /*0xC4*/
     u8 baseSpAttack;
     u8 baseSpDefense;
     u8 types[2];
+    bool8 airborne;
     u8 catchRate;
     u8 forceTeraType;
     u16 expYield; // expYield was changed from u8 to u16 for the new Exp System.

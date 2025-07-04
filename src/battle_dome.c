@@ -2394,6 +2394,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
 {
     int defType1, defType2, defAbility, moveType;
     int typePower = TYPE_x1;
+    bool8 isAirborne;
 
     if (move == MOVE_NONE || move == MOVE_UNAVAILABLE || IsBattleMoveStatus(move))
         return 0;
@@ -2402,8 +2403,9 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
     defType2 = gSpeciesInfo[targetSpecies].types[1];
     defAbility = gSpeciesInfo[targetSpecies].abilities[0];
     moveType = GetMoveType(move);
+    isAirborne = gSpeciesInfo[targetSpecies].airborne;
 
-    if (defAbility == ABILITY_LEVITATE && moveType == TYPE_GROUND)
+    if ((defAbility == ABILITY_LEVITATE || isAirborne) && moveType == TYPE_GROUND)
     {
         // They likely meant to return here, as 8 is the number of points normally used in this mode for moves with no effect.
         // Because there's no return the value instead gets interpreted by the switch, and the number of points becomes 0.
