@@ -9346,9 +9346,9 @@ static inline uq4_12_t GetDefenderItemsModifier(struct DamageCalculationData *da
     case HOLD_EFFECT_RESIST_BERRY:
         if (UnnerveOn(battlerDef, itemDef))
             return UQ_4_12(1.0);
-        if ((moveType == holdEffectDefParam || (holdEffectDefParam == TYPE_GROUND && (moveType == TYPE_SAND || moveType == TYPE_MUD || moveType == TYPE_TERRA)))
+        if (((moveType == holdEffectDefParam || (holdEffectDefParam == TYPE_GROUND && (moveType == TYPE_SAND || moveType == TYPE_MUD || moveType == TYPE_TERRA)))
             || (holdEffectDefParam == TYPE_FLYING && moveType == TYPE_WIND)
-            || (holdEffectDefParam == TYPE_WATER && moveType == TYPE_MUD)
+            || (holdEffectDefParam == TYPE_WATER && moveType == TYPE_MUD))
             && (moveType == TYPE_NORMAL || typeEffectivenessModifier >= UQ_4_12(1.6)))
         {
             if (damageCalcData->updateFlags)
