@@ -43,9 +43,9 @@
             .species = SPECIES_METANG,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 19
-            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
+            .ev = TRAINER_PARTY_EVS(0, 192, 192, 0, 96, 0),
 #line 18
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 17
             .lvl = 42,
 #line 16
@@ -64,9 +64,9 @@
             .species = SPECIES_SKARMORY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 29
-            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 6, 252),
+            .ev = TRAINER_PARTY_EVS(192, 0, 0, 0, 96, 192),
 #line 28
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 27
             .lvl = 43,
 #line 26
@@ -85,9 +85,9 @@
             .species = SPECIES_AGGRON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 39
-            .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 6),
+            .ev = TRAINER_PARTY_EVS(0, 192, 0, 0, 192, 96),
 #line 38
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 37
             .lvl = 44,
 #line 36

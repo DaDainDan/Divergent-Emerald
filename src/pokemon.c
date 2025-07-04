@@ -5332,6 +5332,15 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
     u8 bonus;
     u32 currentEVCap = GetCurrentEVCap();
 
+    if ((!(gBattleTypeFlags & (BATTLE_TYPE_LINK
+                                | BATTLE_TYPE_FRONTIER_NO_PYRAMID
+                                | BATTLE_TYPE_EREADER_TRAINER
+                                | BATTLE_TYPE_RECORDED_LINK
+                                | BATTLE_TYPE_TRAINER))))
+    {
+        return;
+    }
+
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, 0);
     if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
     {
@@ -5364,9 +5373,9 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
             break;
 
         if (CheckPartyHasHadPokerus(mon, 0))
-            multiplier = 2;
+            multiplier = 4;
         else
-            multiplier = 1;
+            multiplier = 2;
 
         switch (i)
         {

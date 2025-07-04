@@ -1334,7 +1334,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MIGHTYENA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 603
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 602
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -1345,7 +1345,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CROBAT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 607
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 606
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -1356,7 +1356,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SHARPEDO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 611
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 610
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -2248,7 +2248,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNETON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 970
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 969
             .lvl = 30,
             .nature = NATURE_HARDY,
@@ -2259,7 +2259,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LOUDRED,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 974
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 973
             .lvl = 30,
             .nature = NATURE_HARDY,
@@ -2291,7 +2291,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNETON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 987
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 986
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -2302,7 +2302,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LOUDRED,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 991
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 990
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -2334,7 +2334,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNETON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1004
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1003
             .lvl = 36,
             .nature = NATURE_HARDY,
@@ -2345,7 +2345,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LOUDRED,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1008
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1007
             .lvl = 36,
             .nature = NATURE_HARDY,
@@ -2377,7 +2377,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNETON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1021
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1020
             .lvl = 39,
             .nature = NATURE_HARDY,
@@ -2395,7 +2395,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_EXPLOUD,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1029
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1028
             .lvl = 39,
             .nature = NATURE_HARDY,
@@ -2999,7 +2999,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SWELLOW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1273
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1272
             .lvl = 26,
             .nature = NATURE_HARDY,
@@ -3039,7 +3039,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SPINDA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1290
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1289
             .lvl = 26,
             .nature = NATURE_HARDY,
@@ -3081,7 +3081,7 @@ F_TRAINER_FEMALE |
 #line 1305
             .heldItem = ITEM_SITRUS_BERRY,
 #line 1307
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1306
             .lvl = 26,
             .nature = NATURE_HARDY,
@@ -3121,7 +3121,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_VIGOROTH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1324
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1323
             .lvl = 26,
             .nature = NATURE_HARDY,
@@ -3867,7 +3867,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MANECTRIC,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1624
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 1623
             .lvl = 35,
             .nature = NATURE_HARDY,
@@ -3878,7 +3878,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WAILMER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1628
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 1627
             .lvl = 35,
             .nature = NATURE_HARDY,
@@ -3889,7 +3889,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1632
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 1631
             .lvl = 35,
             .nature = NATURE_HARDY,
@@ -3970,7 +3970,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DELCATTY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1664
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1663
             .lvl = 26,
             .nature = NATURE_HARDY,
@@ -4011,7 +4011,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WIGGLYTUFF,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1680
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1679
             .lvl = 26,
             .nature = NATURE_HARDY,
@@ -4053,7 +4053,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ZANGOOSE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1697
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 1696
             .lvl = 26,
             .nature = NATURE_HARDY,
@@ -4278,7 +4278,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SABLEYE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1787
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 1786
             .lvl = 30,
             .nature = NATURE_HARDY,
@@ -4723,7 +4723,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1957
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 1956
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -4734,7 +4734,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CAMERUPT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1961
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 1960
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -4745,7 +4745,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ROSELIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1965
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 1964
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -5377,7 +5377,7 @@ F_TRAINER_FEMALE |
 #line 2203
             .heldItem = ITEM_NUGGET,
 #line 2205
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 2204
             .lvl = 40,
             .nature = NATURE_HARDY,
@@ -5803,7 +5803,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_AZUMARILL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2369
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 2368
             .lvl = 40,
             .nature = NATURE_HARDY,
@@ -6241,7 +6241,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDITITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2549
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 2548
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -7857,7 +7857,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MACHOKE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3193
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 3192
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -7932,7 +7932,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MACHOKE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3223
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 3222
             .lvl = 28,
             .nature = NATURE_HARDY,
@@ -8125,7 +8125,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MACHOP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3300
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 3299
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -8136,7 +8136,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MACHOKE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3304
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 3303
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -8147,7 +8147,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MACHOKE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3308
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 3307
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -8160,7 +8160,7 @@ F_TRAINER_FEMALE |
 #line 3310
             .heldItem = ITEM_BLACK_BELT,
 #line 3312
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 3311
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -9881,7 +9881,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DUSTOX,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3999
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 3998
             .lvl = 16,
             .nature = NATURE_HARDY,
@@ -9892,7 +9892,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_BEAUTIFLY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4003
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 4002
             .lvl = 16,
             .nature = NATURE_HARDY,
@@ -11405,7 +11405,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MIGHTYENA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4600
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4599
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -11423,7 +11423,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SHIFTRY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4608
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4607
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -11441,7 +11441,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CACTURNE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4616
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4615
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -11459,7 +11459,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CRAWDAUNT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4624
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4623
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -11479,7 +11479,7 @@ F_TRAINER_FEMALE |
 #line 4630
             .heldItem = ITEM_SITRUS_BERRY,
 #line 4632
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4631
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -11524,7 +11524,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DUSCLOPS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4651
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4650
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -11542,7 +11542,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_BANETTE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4659
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4658
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -11560,7 +11560,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SABLEYE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4667
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4666
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -11578,7 +11578,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_BANETTE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4675
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4674
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -11598,7 +11598,7 @@ F_TRAINER_FEMALE |
 #line 4681
             .heldItem = ITEM_SITRUS_BERRY,
 #line 4683
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4682
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -11643,7 +11643,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SEALEO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4702
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4701
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -11661,7 +11661,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GLALIE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4710
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4709
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -11679,7 +11679,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SEALEO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4718
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4717
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -11697,7 +11697,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GLALIE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4726
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4725
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -11717,7 +11717,7 @@ F_TRAINER_FEMALE |
 #line 4732
             .heldItem = ITEM_SITRUS_BERRY,
 #line 4734
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4733
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -11760,7 +11760,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SHELGON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4753
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4752
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -11778,7 +11778,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ALTARIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4761
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4760
             .lvl = 54,
             .nature = NATURE_HARDY,
@@ -11796,7 +11796,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_KINGDRA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4769
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4768
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -11814,7 +11814,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_FLYGON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4777
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4776
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -11834,7 +11834,7 @@ F_TRAINER_FEMALE |
 #line 4783
             .heldItem = ITEM_SITRUS_BERRY,
 #line 4785
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4784
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -11915,7 +11915,7 @@ F_TRAINER_FEMALE |
 #line 4817
             .heldItem = ITEM_ORAN_BERRY,
 #line 4819
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4818
             .lvl = 15,
             .nature = NATURE_HARDY,
@@ -11994,7 +11994,7 @@ F_TRAINER_FEMALE |
 #line 4851
             .heldItem = ITEM_SITRUS_BERRY,
 #line 4853
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4852
             .lvl = 19,
             .nature = NATURE_HARDY,
@@ -12035,7 +12035,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_VOLTORB,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4871
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4870
             .lvl = 20,
             .nature = NATURE_HARDY,
@@ -12053,7 +12053,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ELECTRIKE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4879
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4878
             .lvl = 20,
             .nature = NATURE_HARDY,
@@ -12071,7 +12071,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNETON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4887
-            .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 4886
             .lvl = 22,
             .nature = NATURE_HARDY,
@@ -12091,7 +12091,7 @@ F_TRAINER_FEMALE |
 #line 4893
             .heldItem = ITEM_SITRUS_BERRY,
 #line 4895
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4894
             .lvl = 24,
             .nature = NATURE_HARDY,
@@ -12134,7 +12134,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_NUMEL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4913
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4912
             .lvl = 24,
             .nature = NATURE_HARDY,
@@ -12152,7 +12152,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SLUGMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4921
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4920
             .lvl = 24,
             .nature = NATURE_HARDY,
@@ -12170,7 +12170,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CAMERUPT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4929
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4928
             .lvl = 26,
             .nature = NATURE_HARDY,
@@ -12190,7 +12190,7 @@ F_TRAINER_FEMALE |
 #line 4935
             .heldItem = ITEM_WHITE_HERB,
 #line 4937
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4936
             .lvl = 29,
             .nature = NATURE_HARDY,
@@ -12231,7 +12231,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SPINDA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4955
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4954
             .lvl = 27,
             .nature = NATURE_HARDY,
@@ -12249,7 +12249,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_VIGOROTH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4963
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4962
             .lvl = 27,
             .nature = NATURE_HARDY,
@@ -12267,7 +12267,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LINOONE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4971
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4970
             .lvl = 29,
             .nature = NATURE_HARDY,
@@ -12287,7 +12287,7 @@ F_TRAINER_FEMALE |
 #line 4977
             .heldItem = ITEM_SITRUS_BERRY,
 #line 4979
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 4978
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -12330,7 +12330,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SWABLU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4997
-            .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4996
             .lvl = 29,
             .nature = NATURE_HARDY,
@@ -12348,7 +12348,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5005
-            .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5004
             .lvl = 29,
             .nature = NATURE_HARDY,
@@ -12366,7 +12366,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5013
-            .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5012
             .lvl = 30,
             .nature = NATURE_HARDY,
@@ -12384,7 +12384,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SKARMORY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5021
-            .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 5020
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -12404,7 +12404,7 @@ F_TRAINER_FEMALE |
 #line 5027
             .heldItem = ITEM_ORAN_BERRY,
 #line 5029
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 5028
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -12445,7 +12445,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CLAYDOL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5047
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 5046
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -12463,7 +12463,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_XATU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5055
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 5054
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -12483,7 +12483,7 @@ F_TRAINER_FEMALE |
 #line 5061
             .heldItem = ITEM_SITRUS_BERRY,
 #line 5063
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 5062
             .lvl = 42,
             .nature = NATURE_HARDY,
@@ -12503,7 +12503,7 @@ F_TRAINER_FEMALE |
 #line 5069
             .heldItem = ITEM_SITRUS_BERRY,
 #line 5071
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 5070
             .lvl = 42,
             .nature = NATURE_HARDY,
@@ -12544,7 +12544,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LUVDISC,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5089
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5088
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -12562,7 +12562,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WHISCASH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5097
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5096
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -12580,7 +12580,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SEALEO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5105
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5104
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -12598,7 +12598,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CRAWDAUNT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5113
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5112
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -12618,7 +12618,7 @@ F_TRAINER_FEMALE |
 #line 5119
             .heldItem = ITEM_CHESTO_BERRY,
 #line 5121
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 5120
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -14291,7 +14291,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5771
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5770
             .lvl = 27,
             .nature = NATURE_HARDY,
@@ -14323,7 +14323,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5784
-            .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5783
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -14362,7 +14362,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5801
-            .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 5800
             .lvl = 36,
             .nature = NATURE_HARDY,
@@ -14401,7 +14401,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5818
-            .iv = TRAINER_PARTY_IVS(27, 27, 27, 27, 27, 27),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 5817
             .lvl = 39,
             .nature = NATURE_HARDY,
@@ -14440,7 +14440,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5835
-            .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
+            .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
 #line 5834
             .lvl = 42,
             .nature = NATURE_HARDY,
@@ -14481,7 +14481,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDITITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5852
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5851
             .lvl = 18,
             .nature = NATURE_HARDY,
@@ -14522,7 +14522,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDITITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5869
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5868
             .lvl = 21,
             .nature = NATURE_HARDY,
@@ -14533,7 +14533,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAKUHITA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5873
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5872
             .lvl = 21,
             .nature = NATURE_HARDY,
@@ -14567,7 +14567,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDITITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5886
-            .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5885
             .lvl = 30,
             .nature = NATURE_HARDY,
@@ -14578,7 +14578,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAKUHITA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5890
-            .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 5889
             .lvl = 30,
             .nature = NATURE_HARDY,
@@ -14612,7 +14612,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5903
-            .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 5902
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -14623,7 +14623,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5907
-            .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 5906
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -14657,7 +14657,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5920
-            .iv = TRAINER_PARTY_IVS(27, 27, 27, 27, 27, 27),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 5919
             .lvl = 36,
             .nature = NATURE_HARDY,
@@ -14668,7 +14668,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5924
-            .iv = TRAINER_PARTY_IVS(27, 27, 27, 27, 27, 27),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 5923
             .lvl = 36,
             .nature = NATURE_HARDY,
@@ -14702,7 +14702,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5937
-            .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
+            .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
 #line 5936
             .lvl = 39,
             .nature = NATURE_HARDY,
@@ -14713,7 +14713,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5941
-            .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
+            .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
 #line 5940
             .lvl = 39,
             .nature = NATURE_HARDY,
@@ -14933,7 +14933,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ZIGZAGOON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6028
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 6027
             .lvl = 17,
             .nature = NATURE_HARDY,
@@ -14951,7 +14951,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GULPIN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6036
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 6035
             .lvl = 17,
             .nature = NATURE_HARDY,
@@ -15490,7 +15490,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WAILORD,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6256
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 6255
             .lvl = 57,
             .nature = NATURE_HARDY,
@@ -15508,7 +15508,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TENTACRUEL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6264
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 6263
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -15526,7 +15526,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LUDICOLO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6272
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 6271
             .lvl = 56,
             .nature = NATURE_HARDY,
@@ -15544,7 +15544,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WHISCASH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6280
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 6279
             .lvl = 56,
             .nature = NATURE_HARDY,
@@ -15562,7 +15562,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GYARADOS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6288
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 6287
             .lvl = 56,
             .nature = NATURE_HARDY,
@@ -15582,7 +15582,7 @@ F_TRAINER_FEMALE |
 #line 6294
             .heldItem = ITEM_SITRUS_BERRY,
 #line 6296
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 6295
             .lvl = 58,
             .nature = NATURE_HARDY,
@@ -16442,7 +16442,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNEMITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6632
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 6631
             .lvl = 14,
             .nature = NATURE_HARDY,
@@ -17612,7 +17612,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_STARYU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7093
-            .iv = TRAINER_PARTY_IVS(19, 19, 19, 19, 19, 19),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 7092
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -17725,7 +17725,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_STARYU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7136
-            .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
+            .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
 #line 7135
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -18076,7 +18076,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ALTARIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7273
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 7272
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -18087,7 +18087,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ALTARIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7277
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 7276
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -18100,7 +18100,7 @@ F_TRAINER_FEMALE |
 #line 7279
             .heldItem = ITEM_DRAGON_FANG,
 #line 7281
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 7280
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -18132,7 +18132,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_BAGON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7294
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 7293
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -18332,7 +18332,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SKARMORY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7375
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 7374
             .lvl = 30,
             .nature = NATURE_HARDY,
@@ -18407,7 +18407,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DODUO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7405
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 7404
             .lvl = 29,
             .nature = NATURE_HARDY,
@@ -18418,7 +18418,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7409
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 7408
             .lvl = 29,
             .nature = NATURE_HARDY,
@@ -18794,7 +18794,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_NATU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7558
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 7557
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -18805,7 +18805,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SWELLOW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7562
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 7561
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -19533,7 +19533,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDITITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7858
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 7857
             .lvl = 13,
             .nature = NATURE_HARDY,
@@ -19815,7 +19815,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7965
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 7964
             .lvl = 35,
             .nature = NATURE_HARDY,
@@ -19826,7 +19826,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7969
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 7968
             .lvl = 35,
             .nature = NATURE_HARDY,
@@ -23115,7 +23115,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MACHOKE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9260
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9259
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -23126,7 +23126,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SPHEAL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9264
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9263
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -23162,7 +23162,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MANECTRIC,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9278
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 9277
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -23214,7 +23214,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9299
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 9298
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -23289,7 +23289,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9329
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 9328
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -23635,7 +23635,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ALTARIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9466
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9465
             .lvl = 44,
             .nature = NATURE_HARDY,
@@ -23653,7 +23653,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DELCATTY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9474
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9473
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -23671,7 +23671,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ROSELIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9482
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9481
             .lvl = 44,
             .nature = NATURE_HARDY,
@@ -23689,7 +23689,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNETON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9490
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9489
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -23707,7 +23707,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GARDEVOIR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9498
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 9497
             .lvl = 45,
             .nature = NATURE_HARDY,
@@ -23854,7 +23854,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GROVYLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9557
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9556
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -23994,7 +23994,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_COMBUSKEN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9612
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9611
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -24134,7 +24134,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MARSHTOMP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9667
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9666
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -24280,7 +24280,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GROVYLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9722
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9721
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -24426,7 +24426,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_COMBUSKEN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9777
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9776
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -24572,7 +24572,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MARSHTOMP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9832
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 9831
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -26548,7 +26548,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDITITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10595
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 10594
             .lvl = 13,
             .nature = NATURE_HARDY,
@@ -26580,7 +26580,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAKUHITA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10608
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 10607
             .lvl = 13,
             .nature = NATURE_HARDY,
@@ -27611,7 +27611,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MIGHTYENA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11015
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 11014
             .lvl = 37,
             .nature = NATURE_HARDY,
@@ -27622,7 +27622,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CROBAT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11019
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 11018
             .lvl = 38,
             .nature = NATURE_HARDY,
@@ -27633,7 +27633,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CAMERUPT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11023
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 11022
             .lvl = 39,
             .nature = NATURE_HARDY,
@@ -27667,7 +27667,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MIGHTYENA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11037
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 11036
             .lvl = 24,
             .nature = NATURE_HARDY,
@@ -27678,7 +27678,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ZUBAT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11041
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 11040
             .lvl = 24,
             .nature = NATURE_HARDY,
@@ -27689,7 +27689,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CAMERUPT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11045
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 11044
             .lvl = 25,
             .nature = NATURE_HARDY,
@@ -30130,7 +30130,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SWELLOW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12008
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12007
             .lvl = 29,
             .nature = NATURE_HARDY,
@@ -30141,7 +30141,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_XATU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12012
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12011
             .lvl = 29,
             .nature = NATURE_HARDY,
@@ -30263,7 +30263,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ALTARIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12060
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12059
             .lvl = 47,
             .nature = NATURE_HARDY,
@@ -30281,7 +30281,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DELCATTY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12068
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12067
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -30299,7 +30299,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ROSELIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12076
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12075
             .lvl = 47,
             .nature = NATURE_HARDY,
@@ -30317,7 +30317,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNETON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12084
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12083
             .lvl = 44,
             .nature = NATURE_HARDY,
@@ -30335,7 +30335,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GARDEVOIR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12092
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 12091
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -30376,7 +30376,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ALTARIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12110
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12109
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -30394,7 +30394,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DELCATTY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12118
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12117
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -30412,7 +30412,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ROSELIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12126
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12125
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -30430,7 +30430,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNETON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12134
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12133
             .lvl = 47,
             .nature = NATURE_HARDY,
@@ -30448,7 +30448,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GARDEVOIR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12142
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 12141
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -30489,7 +30489,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ALTARIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12160
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12159
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -30507,7 +30507,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DELCATTY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12168
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12167
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -30525,7 +30525,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ROSELIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12176
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12175
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -30543,7 +30543,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNETON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12184
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12183
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -30561,7 +30561,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GARDEVOIR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12192
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 12191
             .lvl = 54,
             .nature = NATURE_HARDY,
@@ -30602,7 +30602,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ALTARIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12210
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12209
             .lvl = 56,
             .nature = NATURE_HARDY,
@@ -30620,7 +30620,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DELCATTY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12218
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12217
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -30638,7 +30638,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ROSELIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12226
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12225
             .lvl = 56,
             .nature = NATURE_HARDY,
@@ -30656,7 +30656,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAGNETON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12234
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12233
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -30674,7 +30674,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GARDEVOIR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12242
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 12241
             .lvl = 57,
             .nature = NATURE_HARDY,
@@ -30713,7 +30713,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12259
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12258
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -30724,7 +30724,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SLUGMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12263
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12262
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -30735,7 +30735,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12267
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12266
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -30746,7 +30746,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GROVYLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12271
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12270
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -30778,7 +30778,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12284
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12283
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -30789,7 +30789,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12288
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12287
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -30800,7 +30800,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LUDICOLO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12292
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12291
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -30811,7 +30811,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_COMBUSKEN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12296
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12295
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -30843,7 +30843,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12309
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12308
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -30854,7 +30854,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LUDICOLO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12313
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12312
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -30865,7 +30865,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SLUGMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12317
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12316
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -30876,7 +30876,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MARSHTOMP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12321
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12320
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -30910,7 +30910,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12334
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12333
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -30921,7 +30921,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SLUGMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12338
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12337
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -30932,7 +30932,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12342
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12341
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -30943,7 +30943,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GROVYLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12346
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12345
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -30977,7 +30977,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12359
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12358
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -30988,7 +30988,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12363
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12362
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -30999,7 +30999,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LUDICOLO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12367
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12366
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -31010,7 +31010,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_COMBUSKEN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12371
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12370
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -31044,7 +31044,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12384
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12383
             .lvl = 31,
             .nature = NATURE_HARDY,
@@ -31055,7 +31055,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LUDICOLO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12388
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12387
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -31066,7 +31066,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SLUGMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12392
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 12391
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -31077,7 +31077,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MARSHTOMP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12396
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12395
             .lvl = 34,
             .nature = NATURE_HARDY,
@@ -31772,7 +31772,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12677
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12676
             .lvl = 39,
             .nature = NATURE_HARDY,
@@ -31790,7 +31790,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12685
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12684
             .lvl = 39,
             .nature = NATURE_HARDY,
@@ -31829,7 +31829,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12702
-            .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12701
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -31847,7 +31847,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12710
-            .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12709
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -31886,7 +31886,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12727
-            .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 12726
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -31904,7 +31904,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12735
-            .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 12734
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -31943,7 +31943,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12752
-            .iv = TRAINER_PARTY_IVS(27, 27, 27, 27, 27, 27),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 12751
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -31961,7 +31961,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12760
-            .iv = TRAINER_PARTY_IVS(27, 27, 27, 27, 27, 27),
+            .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
 #line 12759
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -32000,7 +32000,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12777
-            .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
+            .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
 #line 12776
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -32018,7 +32018,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HARIYAMA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12785
-            .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
+            .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
 #line 12784
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -33937,7 +33937,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MIGHTYENA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 13540
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 13539
             .lvl = 42,
             .nature = NATURE_HARDY,
@@ -33948,7 +33948,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CROBAT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 13544
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 13543
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -33959,7 +33959,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CAMERUPT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 13548
-            .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+            .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
 #line 13547
             .lvl = 44,
             .nature = NATURE_HARDY,
@@ -35561,7 +35561,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GOLEM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14168
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14167
             .lvl = 32,
             .nature = NATURE_HARDY,
@@ -35581,7 +35581,7 @@ F_TRAINER_FEMALE |
 #line 14174
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14176
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14175
             .lvl = 35,
             .nature = NATURE_HARDY,
@@ -35599,7 +35599,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ONIX,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14184
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14183
             .lvl = 35,
             .nature = NATURE_HARDY,
@@ -35619,7 +35619,7 @@ F_TRAINER_FEMALE |
 #line 14190
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14192
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14191
             .lvl = 37,
             .nature = NATURE_HARDY,
@@ -35662,7 +35662,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_OMANYTE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14210
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14209
             .lvl = 37,
             .nature = NATURE_HARDY,
@@ -35680,7 +35680,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GOLEM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14218
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14217
             .lvl = 37,
             .nature = NATURE_HARDY,
@@ -35700,7 +35700,7 @@ F_TRAINER_FEMALE |
 #line 14224
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14226
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14225
             .lvl = 40,
             .nature = NATURE_HARDY,
@@ -35718,7 +35718,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ONIX,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14234
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14233
             .lvl = 40,
             .nature = NATURE_HARDY,
@@ -35738,7 +35738,7 @@ F_TRAINER_FEMALE |
 #line 14240
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14242
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14241
             .lvl = 42,
             .nature = NATURE_HARDY,
@@ -35781,7 +35781,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_OMASTAR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14260
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14259
             .lvl = 42,
             .nature = NATURE_HARDY,
@@ -35799,7 +35799,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GOLEM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14268
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14267
             .lvl = 42,
             .nature = NATURE_HARDY,
@@ -35819,7 +35819,7 @@ F_TRAINER_FEMALE |
 #line 14274
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14276
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14275
             .lvl = 45,
             .nature = NATURE_HARDY,
@@ -35837,7 +35837,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ONIX,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14284
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14283
             .lvl = 45,
             .nature = NATURE_HARDY,
@@ -35857,7 +35857,7 @@ F_TRAINER_FEMALE |
 #line 14290
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14292
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14291
             .lvl = 47,
             .nature = NATURE_HARDY,
@@ -35900,7 +35900,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_AERODACTYL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14310
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14309
             .lvl = 47,
             .nature = NATURE_HARDY,
@@ -35918,7 +35918,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GOLEM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14318
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14317
             .lvl = 47,
             .nature = NATURE_HARDY,
@@ -35936,7 +35936,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_OMASTAR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14326
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14325
             .lvl = 47,
             .nature = NATURE_HARDY,
@@ -35956,7 +35956,7 @@ F_TRAINER_FEMALE |
 #line 14332
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14334
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14333
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -35974,7 +35974,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_STEELIX,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14342
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14341
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -35994,7 +35994,7 @@ F_TRAINER_FEMALE |
 #line 14348
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14350
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14349
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -36037,7 +36037,7 @@ F_TRAINER_FEMALE |
 #line 14366
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14368
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14367
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -36055,7 +36055,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDITITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14376
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14375
             .lvl = 33,
             .nature = NATURE_HARDY,
@@ -36073,7 +36073,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HITMONTOP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14384
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14383
             .lvl = 35,
             .nature = NATURE_HARDY,
@@ -36093,7 +36093,7 @@ F_TRAINER_FEMALE |
 #line 14390
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14392
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14391
             .lvl = 37,
             .nature = NATURE_HARDY,
@@ -36136,7 +36136,7 @@ F_TRAINER_FEMALE |
 #line 14408
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14410
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14409
             .lvl = 38,
             .nature = NATURE_HARDY,
@@ -36154,7 +36154,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14418
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14417
             .lvl = 38,
             .nature = NATURE_HARDY,
@@ -36172,7 +36172,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HITMONTOP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14426
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14425
             .lvl = 40,
             .nature = NATURE_HARDY,
@@ -36192,7 +36192,7 @@ F_TRAINER_FEMALE |
 #line 14432
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14434
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14433
             .lvl = 42,
             .nature = NATURE_HARDY,
@@ -36233,7 +36233,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HITMONCHAN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14452
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14451
             .lvl = 40,
             .nature = NATURE_HARDY,
@@ -36253,7 +36253,7 @@ F_TRAINER_FEMALE |
 #line 14458
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14460
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14459
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -36271,7 +36271,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14468
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14467
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -36289,7 +36289,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HITMONTOP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14476
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14475
             .lvl = 45,
             .nature = NATURE_HARDY,
@@ -36309,7 +36309,7 @@ F_TRAINER_FEMALE |
 #line 14482
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14484
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14483
             .lvl = 47,
             .nature = NATURE_HARDY,
@@ -36350,7 +36350,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HITMONLEE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14502
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14501
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -36368,7 +36368,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HITMONCHAN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14510
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14509
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -36388,7 +36388,7 @@ F_TRAINER_FEMALE |
 #line 14516
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14518
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14517
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -36406,7 +36406,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14526
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14525
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -36424,7 +36424,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HITMONTOP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14534
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14533
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -36444,7 +36444,7 @@ F_TRAINER_FEMALE |
 #line 14540
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14542
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14541
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -36485,7 +36485,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MAREEP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14560
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14559
             .lvl = 36,
             .nature = NATURE_HARDY,
@@ -36503,7 +36503,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ELECTRODE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14568
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14567
             .lvl = 36,
             .nature = NATURE_HARDY,
@@ -36523,7 +36523,7 @@ F_TRAINER_FEMALE |
 #line 14574
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14576
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14575
             .lvl = 38,
             .nature = NATURE_HARDY,
@@ -36543,7 +36543,7 @@ F_TRAINER_FEMALE |
 #line 14582
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14584
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14583
             .lvl = 40,
             .nature = NATURE_HARDY,
@@ -36584,7 +36584,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PIKACHU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14602
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14601
             .lvl = 39,
             .nature = NATURE_HARDY,
@@ -36602,7 +36602,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_FLAAFFY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14610
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14609
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -36620,7 +36620,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ELECTRODE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14618
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14617
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -36640,7 +36640,7 @@ F_TRAINER_FEMALE |
 #line 14624
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14626
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14625
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -36660,7 +36660,7 @@ F_TRAINER_FEMALE |
 #line 14632
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14634
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14633
             .lvl = 45,
             .nature = NATURE_HARDY,
@@ -36701,7 +36701,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_RAICHU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14652
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14651
             .lvl = 44,
             .nature = NATURE_HARDY,
@@ -36719,7 +36719,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_AMPHAROS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14660
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14659
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -36737,7 +36737,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ELECTRODE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14668
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14667
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -36757,7 +36757,7 @@ F_TRAINER_FEMALE |
 #line 14674
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14676
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14675
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -36777,7 +36777,7 @@ F_TRAINER_FEMALE |
 #line 14682
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14684
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14683
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -36818,7 +36818,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ELECTABUZZ,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14702
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14701
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -36836,7 +36836,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_RAICHU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14710
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14709
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -36854,7 +36854,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_AMPHAROS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14718
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14717
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -36872,7 +36872,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ELECTRODE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14726
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14725
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -36892,7 +36892,7 @@ F_TRAINER_FEMALE |
 #line 14732
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14734
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14733
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -36912,7 +36912,7 @@ F_TRAINER_FEMALE |
 #line 14740
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14742
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14741
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -36957,7 +36957,7 @@ F_TRAINER_FEMALE |
 #line 14758
             .heldItem = ITEM_WHITE_HERB,
 #line 14760
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14759
             .lvl = 38,
             .nature = NATURE_HARDY,
@@ -36975,7 +36975,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PONYTA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14768
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14767
             .lvl = 36,
             .nature = NATURE_HARDY,
@@ -36995,7 +36995,7 @@ F_TRAINER_FEMALE |
 #line 14774
             .heldItem = ITEM_WHITE_HERB,
 #line 14776
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14775
             .lvl = 38,
             .nature = NATURE_HARDY,
@@ -37015,7 +37015,7 @@ F_TRAINER_FEMALE |
 #line 14782
             .heldItem = ITEM_WHITE_HERB,
 #line 14784
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14783
             .lvl = 40,
             .nature = NATURE_HARDY,
@@ -37058,7 +37058,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GROWLITHE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14802
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14801
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -37078,7 +37078,7 @@ F_TRAINER_FEMALE |
 #line 14808
             .heldItem = ITEM_WHITE_HERB,
 #line 14810
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14809
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -37096,7 +37096,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PONYTA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14818
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14817
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -37116,7 +37116,7 @@ F_TRAINER_FEMALE |
 #line 14824
             .heldItem = ITEM_WHITE_HERB,
 #line 14826
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14825
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -37136,7 +37136,7 @@ F_TRAINER_FEMALE |
 #line 14832
             .heldItem = ITEM_WHITE_HERB,
 #line 14834
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14833
             .lvl = 45,
             .nature = NATURE_HARDY,
@@ -37179,7 +37179,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HOUNDOUR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14852
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14851
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -37197,7 +37197,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GROWLITHE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14860
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14859
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -37217,7 +37217,7 @@ F_TRAINER_FEMALE |
 #line 14866
             .heldItem = ITEM_WHITE_HERB,
 #line 14868
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14867
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -37235,7 +37235,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_RAPIDASH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14876
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14875
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -37255,7 +37255,7 @@ F_TRAINER_FEMALE |
 #line 14882
             .heldItem = ITEM_WHITE_HERB,
 #line 14884
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14883
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -37275,7 +37275,7 @@ F_TRAINER_FEMALE |
 #line 14890
             .heldItem = ITEM_WHITE_HERB,
 #line 14892
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14891
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -37318,7 +37318,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ARCANINE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14910
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14909
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -37338,7 +37338,7 @@ F_TRAINER_FEMALE |
 #line 14916
             .heldItem = ITEM_WHITE_HERB,
 #line 14918
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14917
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -37356,7 +37356,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HOUNDOOM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14926
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14925
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -37374,7 +37374,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_RAPIDASH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14934
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14933
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -37394,7 +37394,7 @@ F_TRAINER_FEMALE |
 #line 14940
             .heldItem = ITEM_WHITE_HERB,
 #line 14942
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14941
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -37414,7 +37414,7 @@ F_TRAINER_FEMALE |
 #line 14948
             .heldItem = ITEM_WHITE_HERB,
 #line 14950
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14949
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -37455,7 +37455,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CHANSEY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14968
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14967
             .lvl = 42,
             .nature = NATURE_HARDY,
@@ -37475,7 +37475,7 @@ F_TRAINER_FEMALE |
 #line 14974
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14976
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14975
             .lvl = 42,
             .nature = NATURE_HARDY,
@@ -37493,7 +37493,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SPINDA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14984
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14983
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -37513,7 +37513,7 @@ F_TRAINER_FEMALE |
 #line 14990
             .heldItem = ITEM_SITRUS_BERRY,
 #line 14992
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 14991
             .lvl = 45,
             .nature = NATURE_HARDY,
@@ -37556,7 +37556,7 @@ F_TRAINER_FEMALE |
 #line 15008
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15010
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15009
             .lvl = 47,
             .nature = NATURE_HARDY,
@@ -37574,7 +37574,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CHANSEY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15018
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15017
             .lvl = 47,
             .nature = NATURE_HARDY,
@@ -37592,7 +37592,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_KANGASKHAN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15026
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15025
             .lvl = 45,
             .nature = NATURE_HARDY,
@@ -37610,7 +37610,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SPINDA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15034
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15033
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -37630,7 +37630,7 @@ F_TRAINER_FEMALE |
 #line 15040
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15042
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15041
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -37673,7 +37673,7 @@ F_TRAINER_FEMALE |
 #line 15058
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15060
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15059
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -37691,7 +37691,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_BLISSEY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15068
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15067
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -37709,7 +37709,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_KANGASKHAN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15076
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15075
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -37727,7 +37727,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SPINDA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15084
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15083
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -37747,7 +37747,7 @@ F_TRAINER_FEMALE |
 #line 15090
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15092
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15091
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -37790,7 +37790,7 @@ F_TRAINER_FEMALE |
 #line 15108
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15110
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15109
             .lvl = 57,
             .nature = NATURE_HARDY,
@@ -37808,7 +37808,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_BLISSEY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15118
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15117
             .lvl = 57,
             .nature = NATURE_HARDY,
@@ -37826,7 +37826,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_KANGASKHAN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15126
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15125
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -37844,7 +37844,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TAUROS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15134
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15133
             .lvl = 57,
             .nature = NATURE_HARDY,
@@ -37862,7 +37862,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SPINDA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15142
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15141
             .lvl = 58,
             .nature = NATURE_HARDY,
@@ -37882,7 +37882,7 @@ F_TRAINER_FEMALE |
 #line 15148
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15150
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15149
             .lvl = 60,
             .nature = NATURE_HARDY,
@@ -37927,7 +37927,7 @@ F_TRAINER_FEMALE |
 #line 15166
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15168
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15167
             .lvl = 40,
             .nature = NATURE_HARDY,
@@ -37945,7 +37945,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15176
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15175
             .lvl = 38,
             .nature = NATURE_HARDY,
@@ -37963,7 +37963,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15184
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15183
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -37981,7 +37981,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SKARMORY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15192
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15191
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -38001,7 +38001,7 @@ F_TRAINER_FEMALE |
 #line 15198
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15200
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15199
             .lvl = 45,
             .nature = NATURE_HARDY,
@@ -38044,7 +38044,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HOOTHOOT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15218
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15217
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -38062,7 +38062,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15226
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15225
             .lvl = 43,
             .nature = NATURE_HARDY,
@@ -38082,7 +38082,7 @@ F_TRAINER_FEMALE |
 #line 15232
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15234
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15233
             .lvl = 45,
             .nature = NATURE_HARDY,
@@ -38100,7 +38100,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15242
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15241
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -38118,7 +38118,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SKARMORY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15250
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15249
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -38138,7 +38138,7 @@ F_TRAINER_FEMALE |
 #line 15256
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15258
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15257
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -38181,7 +38181,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_NOCTOWL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15276
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15275
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -38199,7 +38199,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15284
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15283
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -38219,7 +38219,7 @@ F_TRAINER_FEMALE |
 #line 15290
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15292
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15291
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -38237,7 +38237,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15300
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15299
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -38255,7 +38255,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SKARMORY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15308
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15307
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -38275,7 +38275,7 @@ F_TRAINER_FEMALE |
 #line 15314
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15316
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15315
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -38318,7 +38318,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_NOCTOWL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15334
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15333
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -38336,7 +38336,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15342
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15341
             .lvl = 54,
             .nature = NATURE_HARDY,
@@ -38354,7 +38354,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PELIPPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15350
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15349
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -38374,7 +38374,7 @@ F_TRAINER_FEMALE |
 #line 15356
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15358
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15357
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -38392,7 +38392,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SKARMORY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15366
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15365
             .lvl = 58,
             .nature = NATURE_HARDY,
@@ -38412,7 +38412,7 @@ F_TRAINER_FEMALE |
 #line 15372
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15374
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15373
             .lvl = 60,
             .nature = NATURE_HARDY,
@@ -38453,7 +38453,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SLOWPOKE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15392
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15391
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -38471,7 +38471,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CLAYDOL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15400
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15399
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -38491,7 +38491,7 @@ F_TRAINER_FEMALE |
 #line 15406
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15408
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15407
             .lvl = 49,
             .nature = NATURE_HARDY,
@@ -38511,7 +38511,7 @@ F_TRAINER_FEMALE |
 #line 15414
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15416
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15415
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -38531,7 +38531,7 @@ F_TRAINER_FEMALE |
 #line 15422
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15424
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15423
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -38572,7 +38572,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DROWZEE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15442
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15441
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -38590,7 +38590,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SLOWPOKE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15450
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15449
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -38608,7 +38608,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CLAYDOL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15458
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15457
             .lvl = 54,
             .nature = NATURE_HARDY,
@@ -38628,7 +38628,7 @@ F_TRAINER_FEMALE |
 #line 15464
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15466
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15465
             .lvl = 54,
             .nature = NATURE_HARDY,
@@ -38648,7 +38648,7 @@ F_TRAINER_FEMALE |
 #line 15472
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15474
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15473
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -38668,7 +38668,7 @@ F_TRAINER_FEMALE |
 #line 15480
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15482
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15481
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -38709,7 +38709,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HYPNO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15500
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15499
             .lvl = 58,
             .nature = NATURE_HARDY,
@@ -38727,7 +38727,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CLAYDOL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15508
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15507
             .lvl = 59,
             .nature = NATURE_HARDY,
@@ -38745,7 +38745,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SLOWPOKE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15516
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15515
             .lvl = 58,
             .nature = NATURE_HARDY,
@@ -38765,7 +38765,7 @@ F_TRAINER_FEMALE |
 #line 15522
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15524
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15523
             .lvl = 59,
             .nature = NATURE_HARDY,
@@ -38785,7 +38785,7 @@ F_TRAINER_FEMALE |
 #line 15530
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15532
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15531
             .lvl = 60,
             .nature = NATURE_HARDY,
@@ -38805,7 +38805,7 @@ F_TRAINER_FEMALE |
 #line 15538
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15540
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15539
             .lvl = 60,
             .nature = NATURE_HARDY,
@@ -38846,7 +38846,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HYPNO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15558
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15557
             .lvl = 63,
             .nature = NATURE_HARDY,
@@ -38864,7 +38864,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CLAYDOL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15566
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15565
             .lvl = 64,
             .nature = NATURE_HARDY,
@@ -38882,7 +38882,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SLOWKING,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15574
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15573
             .lvl = 63,
             .nature = NATURE_HARDY,
@@ -38902,7 +38902,7 @@ F_TRAINER_FEMALE |
 #line 15580
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15582
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15581
             .lvl = 64,
             .nature = NATURE_HARDY,
@@ -38922,7 +38922,7 @@ F_TRAINER_FEMALE |
 #line 15588
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15590
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15589
             .lvl = 65,
             .nature = NATURE_HARDY,
@@ -38942,7 +38942,7 @@ F_TRAINER_FEMALE |
 #line 15596
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15598
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15597
             .lvl = 65,
             .nature = NATURE_HARDY,
@@ -38983,7 +38983,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_POLIWAG,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15616
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15615
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -39001,7 +39001,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WHISCASH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15624
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15623
             .lvl = 46,
             .nature = NATURE_HARDY,
@@ -39019,7 +39019,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WALREIN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15632
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15631
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -39039,7 +39039,7 @@ F_TRAINER_FEMALE |
 #line 15638
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15640
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15639
             .lvl = 48,
             .nature = NATURE_HARDY,
@@ -39059,7 +39059,7 @@ F_TRAINER_FEMALE |
 #line 15646
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15648
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15647
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -39100,7 +39100,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_POLIWHIRL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15666
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15665
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -39118,7 +39118,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WHISCASH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15674
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15673
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -39136,7 +39136,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WALREIN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15682
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15681
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -39156,7 +39156,7 @@ F_TRAINER_FEMALE |
 #line 15688
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15690
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15689
             .lvl = 53,
             .nature = NATURE_HARDY,
@@ -39176,7 +39176,7 @@ F_TRAINER_FEMALE |
 #line 15696
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15698
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15697
             .lvl = 56,
             .nature = NATURE_HARDY,
@@ -39217,7 +39217,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LAPRAS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15716
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15715
             .lvl = 56,
             .nature = NATURE_HARDY,
@@ -39235,7 +39235,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WHISCASH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15724
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15723
             .lvl = 58,
             .nature = NATURE_HARDY,
@@ -39253,7 +39253,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_POLIWHIRL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15732
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15731
             .lvl = 56,
             .nature = NATURE_HARDY,
@@ -39271,7 +39271,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WALREIN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15740
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15739
             .lvl = 58,
             .nature = NATURE_HARDY,
@@ -39291,7 +39291,7 @@ F_TRAINER_FEMALE |
 #line 15746
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15748
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15747
             .lvl = 58,
             .nature = NATURE_HARDY,
@@ -39311,7 +39311,7 @@ F_TRAINER_FEMALE |
 #line 15754
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15756
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15755
             .lvl = 61,
             .nature = NATURE_HARDY,
@@ -39352,7 +39352,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LAPRAS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15774
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15773
             .lvl = 61,
             .nature = NATURE_HARDY,
@@ -39370,7 +39370,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WHISCASH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15782
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15781
             .lvl = 63,
             .nature = NATURE_HARDY,
@@ -39388,7 +39388,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_POLITOED,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15790
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15789
             .lvl = 61,
             .nature = NATURE_HARDY,
@@ -39406,7 +39406,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_WALREIN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15798
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15797
             .lvl = 63,
             .nature = NATURE_HARDY,
@@ -39426,7 +39426,7 @@ F_TRAINER_FEMALE |
 #line 15804
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15806
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15805
             .lvl = 63,
             .nature = NATURE_HARDY,
@@ -39446,7 +39446,7 @@ F_TRAINER_FEMALE |
 #line 15812
             .heldItem = ITEM_CHESTO_BERRY,
 #line 15814
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15813
             .lvl = 66,
             .nature = NATURE_HARDY,
@@ -39540,7 +39540,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_TROPIUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15854
-            .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 15853
             .lvl = 30,
             .nature = NATURE_HARDY,
@@ -39574,7 +39574,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SKARMORY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15868
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15867
             .lvl = 77,
             .nature = NATURE_HARDY,
@@ -39592,7 +39592,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CLAYDOL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15876
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15875
             .lvl = 75,
             .nature = NATURE_HARDY,
@@ -39610,7 +39610,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_AGGRON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15884
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15883
             .lvl = 76,
             .nature = NATURE_HARDY,
@@ -39628,7 +39628,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CRADILY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15892
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15891
             .lvl = 76,
             .nature = NATURE_HARDY,
@@ -39646,7 +39646,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_ARMALDO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15900
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15899
             .lvl = 76,
             .nature = NATURE_HARDY,
@@ -39666,7 +39666,7 @@ F_TRAINER_FEMALE |
 #line 15906
             .heldItem = ITEM_SITRUS_BERRY,
 #line 15908
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 15907
             .lvl = 78,
             .nature = NATURE_HARDY,
@@ -40933,7 +40933,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SPINDA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16403
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 16402
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -40944,7 +40944,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_EXPLOUD,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16407
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 16406
             .lvl = 41,
             .nature = NATURE_HARDY,
@@ -40955,7 +40955,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SLAKING,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16411
-            .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+            .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
 #line 16410
             .lvl = 41,
             .nature = NATURE_HARDY,
