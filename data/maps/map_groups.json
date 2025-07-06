@@ -433,7 +433,8 @@
     "MeteorFalls_StevensCave",
     "AlteringCave_B1F_1R",
     "AlteringCave_B1F_2R",
-    "AlteringCave_B2F"
+    "AlteringCave_B2F",
+    "ScorchedSlab_B1F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
