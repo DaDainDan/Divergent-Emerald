@@ -2408,4 +2408,286 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    [ABILITY_AQUATIC] =
+    {
+        .name = _("Aquatic"),
+        .description = COMPOUND_STRING("Adds the Ocean type."),
+        .aiRating = 8,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_COLD_HEART] =
+    {
+        .name = _("Cold Heart"),
+        .description = COMPOUND_STRING("Adds the Frost type."),
+        .aiRating = 9,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_COMBUSTION] =
+    {
+        .name = _("Combustion"),
+        .description = COMPOUND_STRING("Fire hits up SpAtk greatly."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_COSMIC] =
+    {
+        .name = _("Cosmic"),
+        .description = COMPOUND_STRING("Moves hit through abilities."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_CRAFTY] =
+    {
+        .name = _("Crafty"),
+        .description = COMPOUND_STRING("Promotes added effects."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_CULTIVATOR] =
+    {
+        .name = _("Cultivator"),
+        .description = COMPOUND_STRING("Empowers allied Grass-types."),
+        .aiRating = 1,
+    },
+
+    [ABILITY_DRACONIC] =
+    {
+        .name = _("Draconic"),
+        .description = COMPOUND_STRING("Adds Dragon-type."),
+        .aiRating = 9,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_ELECTROLIGHT] =
+    {
+        .name = _("Electrolight"),
+        .description = COMPOUND_STRING("Electric moves go first."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_FORBIDDEN] =
+    {
+        .name = _("Forbidden"),
+        .description = COMPOUND_STRING("Disables opposing moves."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_FROST_ARMOR] =
+    {
+        .name = _("Frost Armor"),
+        .description = COMPOUND_STRING("Halves damage at full HP."),
+        .aiRating = 8,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_GRAPPLER] =
+    {
+        .name = _("Grappler"),
+        .description = COMPOUND_STRING("Powers up grab moves."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_GUNK_MUNCHER] =
+    {
+        .name = _("Gunk Muncher"),
+        .description = COMPOUND_STRING("Turns Poison into HP."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_HEAT_TREATMENT] =
+    {
+        .name = _("Heat Treatment"),
+        .description = COMPOUND_STRING("Fire raises Defense."),
+        .aiRating = 5,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_HYPER_FOCUS] =
+    {
+        .name = _("Hyper Focus"),
+        .description = COMPOUND_STRING("Prevents SpAtk reduction."),
+        .aiRating = 4,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_ICE_ABSORB] =
+    {
+        .name = _("Ice Absorb"),
+        .description = COMPOUND_STRING("Turn Ice into HP."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_INFLATE] =
+    {
+        .name = _("Inflate"),
+        .description = COMPOUND_STRING("Boosts Defs but lowers Spd."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_JET_LEG] =
+    {
+        .name = _("Jet Leg"),
+        .description = COMPOUND_STRING("Boosts kicking moves."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_KUSANAGI] =
+    {
+        .name = _("Kusanagi"),
+        .description = COMPOUND_STRING("Can harness the wind."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_MALICE] =
+    {
+        .name = _("Malice"),
+        .description = COMPOUND_STRING("Deals max damage."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_METALLIC] =
+    {
+        .name = _("Metallic"),
+        .description = COMPOUND_STRING("Adds Steel-type."),
+        .aiRating = 9,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_MINSTREL] =
+    {
+        .name = _("Minstrel"),
+        .description = COMPOUND_STRING("Sound moves have priority."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_MOON_PRESENCE] =
+    {
+        .name = _("Moon Presence"),
+        .description = COMPOUND_STRING("The moon grants power."),
+        .aiRating = 3,
+    },
+    
+    [ABILITY_ORIGIN_OF_LAND] =
+    {
+        .name = _("Origin of Land"),
+        .description = COMPOUND_STRING("Adapatability + Drought."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_ORIGIN_OF_SEA] =
+    {
+        .name = _("Origin of Sea"),
+        .description = COMPOUND_STRING("Drizzle + Lightning Rod."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_ORIGIN_OF_SKY] =
+    {
+        .name = _("Origin of Sky"),
+        .description = COMPOUND_STRING("Air Lock + Kusanagi."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_PROVOCATEUR] =
+    {
+        .name = _("Provocateur"),
+        .description = COMPOUND_STRING("Taunts a foe on entry."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_PURITY] =
+    {
+        .name = _("Purity"),
+        .description = COMPOUND_STRING("Adds Fairy-type."),
+        .aiRating = 9,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_REBOUND] =
+    {
+        .name = _("Rebound"),
+        .description = COMPOUND_STRING("Ups Def, reflects contact."),
+        .aiRating = 9,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_RESILIENCE] =
+    {
+        .name = _("Resilience"),
+        .description = COMPOUND_STRING("Takes minimum damage."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_SCATTERBRAIN] =
+    {
+        .name = _("Scatterbrain"),
+        .description = COMPOUND_STRING("Boosts SpAtk but confuses."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_SILK_SPEW] =
+    {
+        .name = _("Silk Spew"),
+        .description = COMPOUND_STRING("Lowers the foe's Speed"),
+        .aiRating = 9,
+    },
+
+    [ABILITY_TECTONIC] =
+    {
+        .name = _("Tectonic"),
+        .description = COMPOUND_STRING("Adds Ground-type."),
+        .aiRating = 9,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_VENOMOUS] =
+    {
+        .name = _("Venomous"),
+        .description = COMPOUND_STRING("Adds Poison-type."),
+        .aiRating = 8,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_WICKED] =
+    {
+        .name = _("Wicked"),
+        .description = COMPOUND_STRING("Adds Dark-type."),
+        .aiRating = 8,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_AVENGER] =
+    {
+        .name = _("Avenger"),
+        .description = COMPOUND_STRING("Inherits fallen's strength."),
+        .aiRating = 6,
+    },
 };
