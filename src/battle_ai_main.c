@@ -2788,7 +2788,12 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             if (BattlerWillFaintFromWeather(battlerAtk, aiData->abilities[battlerAtk])
             ||  DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
-            ||  GetBattlerWeight(battlerDef) >= 2000) //200.0 kg
+            ||  GetBattlerWeight(battlerDef) >= (2 * GetBattlerWeight(battlerAtk))) //200.0 kg
+                ADJUST_SCORE(-10);
+            break;
+        case EFFECT_GRAB:
+            if ((aiData->abilities[battlerAtk] == ABILITY_GRAPPLER && GetBattlerWeight(battlerDef) >= (4 * GetBattlerWeight(battlerAtk)))
+            || GetBattlerWeight(battlerDef) >= (2 * GetBattlerWeight(battlerAtk)))
                 ADJUST_SCORE(-10);
             break;
         /*case EFFECT_NO_RETREAT:

@@ -8399,8 +8399,17 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     switch (atkAbility)
     {
     case ABILITY_TECHNICIAN:
-        if (basePower <= 60)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        if (basePower <= 70)
+        {
+            if (moveEffect == EFFECT_MULTI_HIT)
+            {
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+            }
+            else
+            {
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.4));
+            }
+        }  
         break;
     case ABILITY_FLARE_BOOST:
         if (gBattleMons[battlerAtk].status1 & STATUS1_BURN && IsBattleMoveSpecial(move))
@@ -8416,7 +8425,19 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;
     case ABILITY_IRON_FIST:
         if (IsPunchingMove(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
+        break;
+    case ABILITY_JET_LEG:
+        if (IsKickingMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
+        break;
+    case ABILITY_GRAPPLER:
+        if (IsGrabMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
+        break;
+    case ABILITY_ROCK_HEAD:
+        if (IsHeadMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.20));
         break;
     case ABILITY_SHEER_FORCE:
         if (MoveIsAffectedBySheerForce(move))
@@ -8438,16 +8459,16 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_TOUGH_CLAWS:
-        if (IsMoveMakingContact(move, battlerAtk))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        if (IsClawMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.15));
         break;
     case ABILITY_STRONG_JAW:
         if (IsBitingMove(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.4));
         break;
     case ABILITY_MEGA_LAUNCHER:
-        if (IsPulseMove(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        if (IsProjectileMove(move)) // IsPulseMove
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
     case ABILITY_WATER_BUBBLE:
         if (moveType == TYPE_WATER)
@@ -9490,7 +9511,19 @@ static inline s32 DoFixedDamageMoveCalc(struct DamageCalculationData *damageCalc
     switch (GetMoveEffect(damageCalcData->move))
     {
     case EFFECT_LEVEL_DAMAGE:
-        dmg = gBattleMons[damageCalcData->battlerAtk].level;
+        if (damageCalcData->move == MOVE_SEISMIC_TOSS) 
+        {
+            if (GetBattlerAbility(damageCalcData->battlerAtk) == ABILITY_GRAPPLER)
+                dmg = 50 * gBattleMons[damageCalcData->battlerAtk].level / 20;
+            else
+                dmg = 2 * gBattleMons[damageCalcData->battlerAtk].level;
+        }
+        else if (damageCalcData->move == MOVE_NIGHT_SHADE)
+        {
+            dmg =  30 * gBattleMons[damageCalcData->battlerAtk].level / 20;
+        }
+        else
+            dmg = gBattleMons[damageCalcData->battlerAtk].level;
         break;
     case EFFECT_PSYWAVE:
         randDamage = B_PSYWAVE_DMG >= GEN_6 ? (Random() % 101) : ((Random() % 11) * 10);

@@ -866,10 +866,10 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
     return simDamage;
 }
 
-bool32 AI_IsDamagedByRecoil(u32 battler)
+bool32 AI_IsDamagedByRecoil(u32 battler, u32 move)
 {
     u32 ability = gAiLogicData->abilities[battler];
-    if (ability == ABILITY_MAGIC_GUARD || ability == ABILITY_ROCK_HEAD)
+    if (ability == ABILITY_MAGIC_GUARD || (ability == ABILITY_ROCK_HEAD && IsHeadMove(move)))
         return FALSE;
     return TRUE;
 }
@@ -1020,7 +1020,7 @@ static bool32 AI_IsMoveEffectInMinus(u32 battlerAtk, u32 battlerDef, u32 move, s
         return TRUE;
     case EFFECT_RECOIL:
     case EFFECT_RECOIL_IF_MISS:
-        if (AI_IsDamagedByRecoil(battlerAtk))
+        if (AI_IsDamagedByRecoil(battlerAtk, move))
             return TRUE;
         break;
     default:
@@ -1939,6 +1939,7 @@ bool32 ShouldLowerStat(u32 battlerAtk, u32 battlerDef, u32 abilityDef, u32 stat)
         if (stat == STAT_SPEED)
             return FALSE;
     case ABILITY_HYPER_CUTTER:
+    case ABILITY_TOUGH_CLAWS:
         if (stat == STAT_ATK)
             return FALSE;
     case ABILITY_BIG_PECKS:
@@ -2043,6 +2044,7 @@ bool32 ShouldLowerAttack(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_HYPER_CUTTER
+      && defAbility != ABILITY_TOUGH_CLAWS
       && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;

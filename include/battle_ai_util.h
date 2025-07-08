@@ -131,7 +131,7 @@ bool32 MovesWithCategoryUnusable(u32 attacker, u32 target, u32 category);
 s32 AI_WhichMoveBetter(u32 move1, u32 move2, u32 battlerAtk, u32 battlerDef, s32 noOfHitsToKo);
 struct SimulatedDamage AI_CalcDamageSaveBattlers(u32 move, u32 battlerAtk, u32 battlerDef, uq4_12_t *typeEffectiveness, bool32 considerZPower);
 struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, uq4_12_t *typeEffectiveness, bool32 considerZPower, u32 weather);
-bool32 AI_IsDamagedByRecoil(u32 battler);
+bool32 AI_IsDamagedByRecoil(u32 battler, u32 move);
 u32 GetNoOfHitsToKO(u32 dmg, s32 hp);
 u32 GetNoOfHitsToKOBattlerDmg(u32 dmg, u32 battlerDef);
 u32 GetNoOfHitsToKOBattler(u32 battlerAtk, u32 battlerDef, u32 moveIndex, enum DamageCalcContext calcContext);
