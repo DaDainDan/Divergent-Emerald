@@ -4116,6 +4116,86 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_METALLIC:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattleMons[battler].types[2] = TYPE_STEEL;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_METALLIC;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
+        case ABILITY_TECTONIC:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattleMons[battler].types[2] = TYPE_GROUND;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_TECTONIC;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
+        case ABILITY_DRACONIC:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattleMons[battler].types[2] = TYPE_DRAGON;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_DRACONIC;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
+        case ABILITY_WICKED:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattleMons[battler].types[2] = TYPE_DARK;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_WICKED;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
+        case ABILITY_PURITY:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattleMons[battler].types[2] = TYPE_FAIRY;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_PURITY;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
+        case ABILITY_VENOMOUS:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattleMons[battler].types[2] = TYPE_POISON;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_VENOMOUS;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
+        case ABILITY_AQUATIC:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattleMons[battler].types[2] = TYPE_OCEAN;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_AQUATIC;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
+        case ABILITY_COLD_HEART:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattleMons[battler].types[2] = TYPE_FROST;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_COLD_HEART;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
         }
         break;
     case ABILITYEFFECT_ENDTURN:
