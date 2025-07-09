@@ -33,8 +33,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BATTLE_ARMOR] =
     {
         .name = _("Battle Armor"),
-        .description = COMPOUND_STRING("Blocks critical hits."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Impenetrable defense."),
+        .aiRating = 5,
         .breakable = TRUE,
     },
 
@@ -249,8 +249,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SERENE_GRACE] =
     {
         .name = _("Serene Grace"),
-        .description = COMPOUND_STRING("Promotes added effects."),
+        .description = COMPOUND_STRING("Boosts defensive luck."),
         .aiRating = 8,
+        .breakable = TRUE,
     },
 
     [ABILITY_SWIFT_SWIM] =
@@ -390,16 +391,16 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_KEEN_EYE] =
     {
         .name = _("Keen Eye"),
-        .description = COMPOUND_STRING("Prevents loss of accuracy."),
-        .aiRating = 1,
-        .breakable = TRUE,
+        .description = COMPOUND_STRING("Higher Acc and crit chance."),
+        .aiRating = 5,
+        // .breakable = TRUE,
     },
 
     [ABILITY_HYPER_CUTTER] =
     {
         .name = _("Hyper Cutter"),
-        .description = COMPOUND_STRING("Prevents Attack reduction."),
-        .aiRating = 3,
+        .description = COMPOUND_STRING("Boosts sword effects."),
+        .aiRating = 4,
         .breakable = TRUE,
     },
 
@@ -567,8 +568,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SHELL_ARMOR] =
     {
         .name = _("Shell Armor"),
-        .description = COMPOUND_STRING("Blocks critical hits."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Protects defensive luck."),
+        .aiRating = 6,
         .breakable = TRUE,
     },
 
@@ -728,8 +729,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SNIPER] =
     {
         .name = _("Sniper"),
-        .description = COMPOUND_STRING("Boosts critical hits."),
-        .aiRating = 3,
+        .description = COMPOUND_STRING("Raises critical abilities."),
+        .aiRating = 7,
     },
 
     [ABILITY_MAGIC_GUARD] =
@@ -785,8 +786,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SUPER_LUCK] =
     {
         .name = _("Super Luck"),
-        .description = COMPOUND_STRING("Critical hits land often."),
-        .aiRating = 3,
+        .description = COMPOUND_STRING("Boosts offensive luck."),
+        .aiRating = 8,
     },
 
     [ABILITY_AFTERMATH] =
@@ -865,8 +866,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SOLID_ROCK] =
     {
         .name = _("Solid Rock"),
-        .description = COMPOUND_STRING("Weakens “supereffective”."),
-        .aiRating = 6,
+        .description = COMPOUND_STRING("Impenetrable defense."),
+        .aiRating = 5,
         .breakable = TRUE,
     },
 
@@ -988,11 +989,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 0,
     },
 
-    [ABILITY_FRIEND_GUARD] =
+    [ABILITY_PACIFIER] =
     {
-        .name = _("Friend Guard"),
-        .description = COMPOUND_STRING("Lowers damage to partner."),
-        .aiRating = 0,
+        .name = _("Pacifier"), // "Friend Guard"
+        .description = COMPOUND_STRING("All Pokémon do low damage."),
+        .aiRating = 4,
         .breakable = TRUE,
     },
 
@@ -1362,8 +1363,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_TOUGH_CLAWS] =
     {
         .name = _("Tough Claws"),
-        .description = COMPOUND_STRING("Boosts contact moves."),
-        .aiRating = 7,
+        .description = COMPOUND_STRING("Boosts claw moves."),
+        .aiRating = 6,
     },
 
     [ABILITY_PIXILATE] =
@@ -1467,8 +1468,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MERCILESS] =
     {
         .name = _("Merciless"),
-        .description = COMPOUND_STRING("Criticals poisoned foes."),
-        .aiRating = 4,
+        .description = COMPOUND_STRING("Criticals statused foes."),
+        .aiRating = 6,
     },
 
     [ABILITY_SHIELDS_DOWN] =
@@ -2299,10 +2300,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 5,
     },
 
-    [ABILITY_MINDS_EYE] =
+    [ABILITY_MIRACLE_EYE] =
     {
-        .name = _("Mind's Eye"),
-        .description = COMPOUND_STRING("Keen Eye and Scrappy."),
+        .name = _("Miracle Eye"), // "Mind's Eye"
+        .description = COMPOUND_STRING("User's moves never miss."), // "Keen Eye and Scrappy".
         .aiRating = 8,
         .breakable = TRUE,
     },

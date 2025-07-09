@@ -786,6 +786,8 @@ BattleScript_EffectFling::
 	waitmessage B_WAIT_TIME_MED
 	jumpiflastuseditemberry BattleScript_EffectFlingConsumeBerry
 	jumpifability BS_TARGET, ABILITY_SHIELD_DUST, BattleScript_FlingBlockedByShieldDust
+	jumpifability BS_TARGET, ABILITY_SERENE_GRACE, BattleScript_FlingBlockedByShieldDust
+	jumpifability BS_TARGET, ABILITY_SHELL_ARMOR, BattleScript_FlingBlockedByShieldDust
 	jumpiflastuseditemholdeffect HOLD_EFFECT_FLAME_ORB, 0, BattleScript_FlingFlameOrb
 	jumpiflastuseditemholdeffect HOLD_EFFECT_FLINCH, 0, BattleScript_FlingFlinch
 	jumpiflastuseditemholdeffect HOLD_EFFECT_LIGHT_BALL, 0, BattleScript_FlingLightBall
@@ -3441,7 +3443,12 @@ BattleScript_AlreadyConfused::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectAttackUp2::
+	jumpifability BS_ATTACKER, ABILITY_HYPER_CUTTER, BattleScript_EffectAttackUp3
 	setstatchanger STAT_ATK, 2, FALSE
+	goto BattleScript_EffectStatUp
+
+BattleScript_EffectAttackUp3::
+	setstatchanger STAT_ATK, 3, FALSE
 	goto BattleScript_EffectStatUp
 
 BattleScript_EffectDefenseUp2::
@@ -3456,6 +3463,10 @@ BattleScript_EffectSpeedUp2::
 	setstatchanger STAT_SPEED, 2, FALSE
 	goto BattleScript_EffectStatUp
 
+BattleScript_EffectSpeedUp3::
+	setstatchanger STAT_SPEED, 3, FALSE
+	goto BattleScript_EffectStatUp
+
 BattleScript_EffectSpecialAttackUp2::
 	setstatchanger STAT_SPATK, 2, FALSE
 	goto BattleScript_EffectStatUp
@@ -3466,6 +3477,10 @@ BattleScript_EffectSpecialAttackUp3::
 
 BattleScript_EffectSpecialDefenseUp2::
 	setstatchanger STAT_SPDEF, 2, FALSE
+	goto BattleScript_EffectStatUp
+
+BattleScript_EffectSpecialDefenseUp3::
+	setstatchanger STAT_SPDEF, 3, FALSE
 	goto BattleScript_EffectStatUp
 
 BattleScript_EffectAccuracyUp2::
@@ -5181,6 +5196,7 @@ BattleScript_CalmMindDoMoveAnim::
 	attackanimation
 	waitanimation
 BattleScript_CalmMindStatRaise::
+	jumpifability BS_ATTACKER, ABILITY_HYPER_FOCUS, BattleScript_CalmMindSpAtkPlus2
 	setbyte sSTAT_ANIM_PLAYED, FALSE
 	playstatchangeanimation BS_ATTACKER, BIT_SPATK | BIT_SPDEF, 0
 	setstatchanger STAT_SPATK, 1, FALSE
@@ -5196,6 +5212,16 @@ BattleScript_CalmMindTrySpDef::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_CalmMindEnd::
 	goto BattleScript_MoveEnd
+
+BattleScript_CalmMindSpAtkPlus2::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_SPATK | BIT_SPDEF, 0
+	setstatchanger STAT_SPATK, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_CalmMindTrySpDef
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_CalmMindTrySpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_CalmMindTrySpDef
 
 BattleScript_CantRaiseMultipleStats::
 	pause B_WAIT_TIME_SHORT

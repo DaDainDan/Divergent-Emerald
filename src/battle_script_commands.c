@@ -1500,12 +1500,15 @@ static bool32 AccuracyCalcHelper(u32 move, u32 battler)
         effect = TRUE;
     }
     // If the attacker has the ability No Guard and they aren't targeting a Pokemon involved in a Sky Drop with the move Sky Drop, move hits.
-    else if (GetBattlerAbility(gBattlerAttacker) == ABILITY_NO_GUARD
+    else if ((GetBattlerAbility(gBattlerAttacker) == ABILITY_NO_GUARD || GetBattlerAbility(gBattlerAttacker) == ABILITY_MIRACLE_EYE)
           && !(gStatuses3[battler] & STATUS3_COMMANDER)
           && (moveEffect != EFFECT_SKY_DROP || gBattleStruct->skyDropTargets[battler] == SKY_DROP_NO_TARGET))
     {
         effect = TRUE;
-        ability = ABILITY_NO_GUARD;
+        if (GetBattlerAbility(gBattlerAttacker) == ABILITY_NO_GUARD)
+            ability = ABILITY_NO_GUARD;
+        else if (GetBattlerAbility(gBattlerAttacker) == ABILITY_MIRACLE_EYE)
+            ability = ABILITY_MIRACLE_EYE;
     }
     // If the target has the ability No Guard and they aren't involved in a Sky Drop or the current move isn't Sky Drop, move hits.
     else if (GetBattlerAbility(battler) == ABILITY_NO_GUARD
@@ -1561,7 +1564,7 @@ static bool32 AccuracyCalcHelper(u32 move, u32 battler)
     }
 
     if (ability != ABILITY_NONE)
-        RecordAbilityBattle(gBattlerAttacker, ABILITY_NO_GUARD);
+        RecordAbilityBattle(gBattlerAttacker, ABILITY_NO_GUARD); // Miracle_Eye?
 
     return effect;
 }
@@ -1578,7 +1581,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     gPotentialItemEffectBattler = battlerDef;
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
-    if (atkAbility == ABILITY_UNAWARE || atkAbility == ABILITY_KEEN_EYE || atkAbility == ABILITY_MINDS_EYE
+    if (atkAbility == ABILITY_UNAWARE || atkAbility == ABILITY_MIRACLE_EYE    // atkAbility == ABILITY_KEEN_EYE || 
             || (B_ILLUMINATE_EFFECT >= GEN_9 && atkAbility == ABILITY_ILLUMINATE))
         evasionStage = DEFAULT_STAT_STAGE;
     if (MoveIgnoresDefenseEvasionStages(move))
@@ -1613,8 +1616,14 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     case ABILITY_COMPOUND_EYES:
         calc = (calc * 130) / 100; // 1.3 compound eyes boost
         break;
-    case ABILITY_VICTORY_STAR:
-        calc = (calc * 110) / 100; // 1.1 victory star boost
+    // case ABILITY_VICTORY_STAR:
+    //     calc = (calc * 110) / 100; // 1.1 victory star boost
+    //     break;
+    case ABILITY_KEEN_EYE:
+        calc = (calc * 140) / 100; // 1.4 keen eye boost
+        break;
+    case ABILITY_CRAFTY:
+        calc = (calc * 120) / 100; // 1.2 crafty boost
         break;
     case ABILITY_HUSTLE:
         if (IsBattleMovePhysical(move))
@@ -1880,7 +1889,7 @@ static void Cmd_ppreduce(void)
 
 // The chance is 1/N for each stage.
 static const u32 sGen7CriticalHitOdds[] = {24,  8,  2,  1,   1}; // 1/X
-static const u32 sGen6CriticalHitOdds[] = {16,  8,  2,  1,   1}; // 1/X
+static const u32 sGen6CriticalHitOdds[] = {16,  8,  4,  2,   1,  1}; // 1/X
 static const u32 sCriticalHitOdds[]     = {16,  8,  4,  3,   2}; // 1/X, Gens 3,4,5
 static const u32 sGen2CriticalHitOdds[] = {17, 32, 64, 85, 128}; // X/256
 
@@ -1941,25 +1950,28 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
     }
     else if (gStatuses3[battlerAtk] & STATUS3_LASER_FOCUS
           || MoveAlwaysCrits(move)
-          || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
+          || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_ANY))
     {
         critChance = CRITICAL_HIT_ALWAYS;
     }
     else
     {
-        critChance  = 2 * ((gBattleMons[battlerAtk].status2 & STATUS2_FOCUS_ENERGY) != 0)
+        critChance  = 4 * ((gBattleMons[battlerAtk].status2 & STATUS2_FOCUS_ENERGY) != 0)
                     + 1 * ((gBattleMons[battlerAtk].status2 & STATUS2_DRAGON_CHEER) != 0)
                     + GetMoveCriticalHitStage(move)
                     + GetHoldEffectCritChanceIncrease(battlerAtk, holdEffectAtk)
                     + 2 * (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS)
-                    + (abilityAtk == ABILITY_SUPER_LUCK)
+                    + (abilityAtk == ABILITY_HYPER_CUTTER || abilityAtk == ABILITY_KEEN_EYE || abilityAtk == ABILITY_MALICE 
+                        || abilityAtk == ABILITY_HYPER_FOCUS)
+                    + 2 * (abilityAtk == ABILITY_SUPER_LUCK || abilityAtk == ABILITY_SNIPER)
                     + gBattleStruct->bonusCritStages[gBattlerAttacker];
 
-        if (critChance >= ARRAY_COUNT(sCriticalHitOdds))
-            critChance = ARRAY_COUNT(sCriticalHitOdds) - 1;
+        if (critChance >= ARRAY_COUNT(sGen6CriticalHitOdds))
+            critChance = ARRAY_COUNT(sGen6CriticalHitOdds) - 1;
     }
 
-    if (critChance != CRITICAL_HIT_BLOCKED && (abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR))
+    if (critChance != CRITICAL_HIT_BLOCKED && (abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR
+        || abilityDef == ABILITY_SERENE_GRACE || abilityDef == ABILITY_SOLID_ROCK || abilityDef == ABILITY_RESILIENCE))
     {
         // Record ability only if move had 100% chance to get a crit
         if (recordAbility)
@@ -2014,7 +2026,8 @@ s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     // Prevented crits
     if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT)
         critChance = CRITICAL_HIT_BLOCKED;
-    else if (abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR)
+    else if (abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR || abilityDef == ABILITY_SERENE_GRACE
+            || abilityDef == ABILITY_SOLID_ROCK|| abilityDef == ABILITY_RESILIENCE)
     {
         if (recordAbility)
             RecordAbilityBattle(battlerDef, abilityDef);
@@ -2024,7 +2037,7 @@ s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     // Guaranteed crits
     else if (gStatuses3[battlerAtk] & STATUS3_LASER_FOCUS
              || MoveAlwaysCrits(move)
-             || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
+             || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_ANY))
     {
         critChance = CRITICAL_HIT_ALWAYS;
     }
@@ -3310,6 +3323,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
 
     if (!primary && affectsUser != MOVE_EFFECT_AFFECTS_USER
      && !(gHitMarker & HITMARKER_STATUS_ABILITY_EFFECT)
+     && !(gBattleScripting.moveEffect == MOVE_EFFECT_FLINCH)
      && IsMoveEffectBlockedByTarget(battlerAbility))
         INCREMENT_RESET_RETURN
 
@@ -6001,10 +6015,12 @@ static void Cmd_playstatchangeanimation(void)
                         && ability != ABILITY_CLEAR_BODY
                         && ability != ABILITY_FULL_METAL_BODY
                         && ability != ABILITY_WHITE_SMOKE
-                        && !((ability == ABILITY_KEEN_EYE || ability == ABILITY_MINDS_EYE) && currStat == STAT_ACC)
+                        && !(ability == ABILITY_MIRACLE_EYE && currStat == STAT_ACC) // ability == ABILITY_KEEN_EYE || 
                         && !(B_ILLUMINATE_EFFECT >= GEN_9 && ability == ABILITY_ILLUMINATE && currStat == STAT_ACC)
                         && !((ability == ABILITY_HYPER_CUTTER || ability == ABILITY_TOUGH_CLAWS) && currStat == STAT_ATK)
-                        && !(ability == ABILITY_BIG_PECKS && currStat == STAT_DEF))
+                        // && !(ability == ABILITY_BIG_PECKS && currStat == STAT_DEF)
+                        && !((ability == ABILITY_BATTLE_ARMOR || ability == ABILITY_SOLID_ROCK) && currStat == STAT_DEF)
+                        && !(ability == ABILITY_HYPER_FOCUS && currStat == STAT_SPATK))
                 {
                     if (gBattleMons[battler].statStages[currStat] > MIN_STAT_STAGE)
                     {
@@ -12365,10 +12381,12 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             return STAT_CHANGE_DIDNT_WORK;
         }
         else if (!certain
-                && (((battlerAbility == ABILITY_KEEN_EYE || battlerAbility == ABILITY_MINDS_EYE) && statId == STAT_ACC)
+                && (((battlerAbility == ABILITY_MIRACLE_EYE) && statId == STAT_ACC) // (battlerAbility == ABILITY_KEEN_EYE || 
                 || (B_ILLUMINATE_EFFECT >= GEN_9 && battlerAbility == ABILITY_ILLUMINATE && statId == STAT_ACC)
                 || ((battlerAbility == ABILITY_HYPER_CUTTER || battlerAbility == ABILITY_TOUGH_CLAWS) && statId == STAT_ATK)
-                || (battlerAbility == ABILITY_BIG_PECKS && statId == STAT_DEF)))
+                // || (battlerAbility == ABILITY_BIG_PECKS && statId == STAT_DEF)
+                || ((battlerAbility == ABILITY_BATTLE_ARMOR || battlerAbility == ABILITY_SOLID_ROCK) && statId == STAT_DEF)
+                || (battlerAbility == ABILITY_HYPER_FOCUS && statId == STAT_SPATK)))
         {
             if (flags == STAT_CHANGE_ALLOW_PTR)
             {
@@ -12992,6 +13010,7 @@ static void Cmd_tryKO(void)
         if ((((gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS)
                 && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
             || GetBattlerAbility(gBattlerAttacker) == ABILITY_NO_GUARD
+            || GetBattlerAbility(gBattlerAttacker) == ABILITY_MIRACLE_EYE
             || targetAbility == ABILITY_NO_GUARD)
             && gBattleMons[gBattlerAttacker].level >= gBattleMons[gBattlerTarget].level)
         {

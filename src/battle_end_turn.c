@@ -241,6 +241,9 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
          && ability != ABILITY_SAND_FORCE
          && ability != ABILITY_SAND_RUSH
          && ability != ABILITY_OVERCOAT
+         && ability != ABILITY_BATTLE_ARMOR
+         && ability != ABILITY_SHELL_ARMOR
+         && ability != ABILITY_SOLID_ROCK
          && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_ROCK, TYPE_GROUND, TYPE_TERRA, TYPE_SAND, TYPE_STEEL)
          && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
          && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
@@ -265,6 +268,9 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
         {
             if (ability != ABILITY_SNOW_CLOAK
              && ability != ABILITY_OVERCOAT
+             && ability != ABILITY_BATTLE_ARMOR
+             && ability != ABILITY_SHELL_ARMOR
+             && ability != ABILITY_SOLID_ROCK
              && !IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
              && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
              && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES

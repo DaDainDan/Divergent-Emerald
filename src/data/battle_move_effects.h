@@ -2224,4 +2224,22 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleScript = BattleScript_EffectGrab,
         .battleTvScore = 0, // TODO: Assign points
     },
+
+    [EFFECT_ATTACK_UP_3] =
+    {
+        .battleScript = BattleScript_EffectAttackUp3,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_SPEED_UP_3] =
+    {
+        .battleScript = BattleScript_EffectSpeedUp3,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_SPECIAL_DEFENSE_UP_3] =
+    {
+        .battleScript = BattleScript_EffectSpecialDefenseUp3,
+        .battleTvScore = 0, // TODO: Assign points
+    },
 };

@@ -531,7 +531,7 @@ static u32 Ai_SetMoveAccuracy(struct AiLogicData *aiData, u32 battlerAtk, u32 ba
     u32 accuracy;
     u32 abilityAtk = aiData->abilities[battlerAtk];
     u32 abilityDef = aiData->abilities[battlerDef];
-    if (abilityAtk == ABILITY_NO_GUARD || abilityDef == ABILITY_NO_GUARD || GetMoveAccuracy(move) == 0) // Moves with accuracy 0 or no guard ability always hit.
+    if (abilityAtk == ABILITY_NO_GUARD || abilityDef == ABILITY_NO_GUARD || abilityAtk == ABILITY_MIRACLE_EYE || GetMoveAccuracy(move) == 0) // Moves with accuracy 0 or no guard ability always hit.
         accuracy = 100;
     else
         accuracy = GetTotalAccuracy(battlerAtk, battlerDef, move, abilityAtk, abilityDef, aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef]);
@@ -2141,6 +2141,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_LOCK_ON:
             if (gStatuses3[battlerDef] & STATUS3_ALWAYS_HITS
               || aiData->abilities[battlerAtk] == ABILITY_NO_GUARD
+              || aiData->abilities[battlerAtk] == ABILITY_MIRACLE_EYE
               || aiData->abilities[battlerDef] == ABILITY_NO_GUARD
               || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
@@ -2148,7 +2149,9 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_LASER_FOCUS:
             if (gStatuses3[battlerAtk] & STATUS3_LASER_FOCUS)
                 ADJUST_SCORE(-10);
-            else if (aiData->abilities[battlerDef] == ABILITY_SHELL_ARMOR || aiData->abilities[battlerDef] == ABILITY_BATTLE_ARMOR)
+            else if (aiData->abilities[battlerDef] == ABILITY_SHELL_ARMOR || aiData->abilities[battlerDef] == ABILITY_BATTLE_ARMOR
+                    || aiData->abilities[battlerDef] == ABILITY_SERENE_GRACE || aiData->abilities[battlerDef] == ABILITY_SOLID_ROCK
+                    || aiData->abilities[battlerDef] == ABILITY_RESILIENCE)
                 ADJUST_SCORE(-8);
             break;
         case EFFECT_SKETCH:
@@ -3497,7 +3500,8 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                         ADJUST_SCORE(DECENT_EFFECT);
                     }
                     // Active mon abilities
-                    if (aiData->abilities[battlerAtk] == ABILITY_COMPOUND_EYES
+                    if (aiData->abilities[battlerAtk] == ABILITY_COMPOUND_EYES || aiData->abilities[battlerAtk] == ABILITY_MIRACLE_EYE 
+                        || aiData->abilities[battlerAtk] == ABILITY_CRAFTY || aiData->abilities[battlerAtk] == ABILITY_KEEN_EYE)
                         && HasMoveWithLowAccuracy(battlerAtkPartner, FOE(battlerAtkPartner), 90, TRUE, atkPartnerAbility, aiData->abilities[FOE(battlerAtkPartner)], atkPartnerHoldEffect, aiData->holdEffects[FOE(battlerAtkPartner)]))
                     {
                         ADJUST_SCORE(GOOD_EFFECT);
@@ -3984,7 +3988,8 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(-2);
         if (gBattleMons[battlerAtk].statStages[STAT_ACC] < DEFAULT_STAT_STAGE)
             ADJUST_SCORE(WEAK_EFFECT);
-        if (gBattleMons[battlerDef].statStages[STAT_EVASION] < (DEFAULT_STAT_STAGE + 1) || aiData->abilities[battlerAtk] == ABILITY_NO_GUARD)
+        if (gBattleMons[battlerDef].statStages[STAT_EVASION] < (DEFAULT_STAT_STAGE + 1) 
+            || aiData->abilities[battlerAtk] == ABILITY_NO_GUARD || aiData->abilities[battlerAtk] == ABILITY_MIRACLE_EYE)
             ADJUST_SCORE(-2);
         break;
     case EFFECT_SPICY_EXTRACT:
@@ -4104,11 +4109,17 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(GOOD_EFFECT);
         break;
     case EFFECT_FOCUS_ENERGY:
-    case EFFECT_LASER_FOCUS:
         if (aiData->abilities[battlerAtk] == ABILITY_SUPER_LUCK
          || aiData->abilities[battlerAtk] == ABILITY_SNIPER
+         || aiData->abilities[battlerAtk] == ABILITY_HYPER_CUTTER
+         || aiData->abilities[battlerAtk] == ABILITY_HYPER_FOCUS
+         || aiData->abilities[battlerAtk] == ABILITY_KEEN_EYE
+         || aiData->abilities[battlerAtk] == ABILITY_MALICE
          || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_SCOPE_LENS
          || HasMoveWithFlag(battlerAtk, GetMoveCriticalHitStage))
+            ADJUST_SCORE(DECENT_EFFECT);
+    case EFFECT_LASER_FOCUS:
+        if (aiData->abilities[battlerAtk] == ABILITY_SNIPER)
             ADJUST_SCORE(GOOD_EFFECT);
         break;
     case EFFECT_CONFUSE:
@@ -4320,7 +4331,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         }
         break;
     case EFFECT_FORESIGHT:
-        if (aiData->abilities[battlerAtk] == ABILITY_SCRAPPY || aiData->abilities[battlerAtk] == ABILITY_MINDS_EYE)
+        if (aiData->abilities[battlerAtk] == ABILITY_SCRAPPY) //  || aiData->abilities[battlerAtk] == ABILITY_MIRACLE_EYE
             break;
         else if (gBattleMons[battlerDef].statStages[STAT_EVASION] > DEFAULT_STAT_STAGE
          || (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST)

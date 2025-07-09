@@ -50,6 +50,7 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
+#include "battle_script_commands.h"
 
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable
@@ -7158,7 +7159,7 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
         case HOLD_EFFECT_FLINCH:
             {
                 u16 ability = GetBattlerAbility(gBattlerAttacker);
-                if (B_SERENE_GRACE_BOOST >= GEN_5 && ability == ABILITY_SERENE_GRACE)
+                if (B_SERENE_GRACE_BOOST >= GEN_5 && ability == ABILITY_SUPER_LUCK)
                     atkHoldEffectParam *= 2;
                 if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_RAINBOW && gCurrentMove != MOVE_SECRET_POWER)
                     atkHoldEffectParam *= 2;
@@ -8590,6 +8591,14 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (IsSlicingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_HYPER_CUTTER:
+        if (IsSlicingMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.1));
+        break;
+    case ABILITY_HYPER_FOCUS:
+        if (moveType == TYPE_PSYCHIC)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.1));
+        break;
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
         break;
@@ -9271,8 +9280,18 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(struct DamageCalculationData *
 
 static inline uq4_12_t GetCriticalModifier(bool32 isCrit)
 {
+    u32 critStage;
+    u32 battlerAtk = damageCalcData->battlerAtk;
+    u32 battlerDef = damageCalcData->battlerDef;
+    u32 move = damageCalcData->move;
+    u32 isCrit = damageCalcData->isCrit;
+    enum ItemHoldEffect holdEffectAtk = GetBattlerHoldEffect(damageCalcData->battlerAtk, TRUE);
+    u32 abilityAtk = GetBattlerAbility(damageCalcData->battlerAtk);
+    u32 abilityDef = GetBattlerAbility(damageCalcData->battlerDef);
+
+    critStage = CalcCritChanceStage(battlerAtk, battlerDef, move, FALSE, abilityAtk, abilityDef, holdEffectAtk);
     if (isCrit)
-        return GetGenConfig(GEN_CONFIG_CRIT_MULTIPLIER) >= GEN_6 ? UQ_4_12(1.5) : UQ_4_12(2.0);
+        return critStage < 5 ? UQ_4_12(1.3) : UQ_4_12(1.6);     // return GetGenConfig(GEN_CONFIG_CRIT_MULTIPLIER) >= GEN_6 ? UQ_4_12(1.5) : UQ_4_12(2.0);
     return UQ_4_12(1.0);
 }
 
@@ -9358,7 +9377,7 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
         break;
     case ABILITY_SNIPER:
         if (isCrit)
-            return UQ_4_12(1.5);
+            return UQ_4_12(1.25);
         break;
     case ABILITY_TINTED_LENS:
         if (typeEffectivenessModifier <= UQ_4_12(0.625))
@@ -9406,12 +9425,12 @@ static inline uq4_12_t GetDefenderPartnerAbilitiesModifier(u32 battlerPartnerDef
     if (!IsBattlerAlive(battlerPartnerDef))
         return UQ_4_12(1.0);
 
-    switch (GetBattlerAbility(battlerPartnerDef))
-    {
-    case ABILITY_FRIEND_GUARD:
-        return UQ_4_12(0.75);
-        break;
-    }
+    // switch (GetBattlerAbility(battlerPartnerDef))
+    // {
+    // case ABILITY_FRIEND_GUARD:
+    //     return UQ_4_12(0.75);
+    //     break;
+    // }
     return UQ_4_12(1.0);
 }
 
@@ -9552,7 +9571,13 @@ static inline s32 DoMoveDamageCalcVars(struct DamageCalculationData *damageCalcD
 
     if (damageCalcData->randomFactor)
     {
+        if ((abilityAtk == ABILITY_MALICE || holdEffectAtk == HOLD_EFFECT_LUCKY_PUNCH) && abilityDef != ABILITY_RESILIENCE && !IsAbilityOnField(ABILITY_PACIFIER))
+            dmg *= DMG_ROLL_PERCENT_HI;
+        else if ((abilityDef == ABILITY_RESILIENCE || IsAbilityOnField(ABILITY_PACIFIER)) && abilityAtk != ABILITY_MALICE)
+            dmg *= DMG_ROLL_PERCENT_LO;
+        else
         dmg *= DMG_ROLL_PERCENT_HI - RandomUniform(RNG_DAMAGE_MODIFIER, 0, DMG_ROLL_PERCENT_HI - DMG_ROLL_PERCENT_LO);
+        
         dmg /= 100;
     }
     else // Apply rest of modifiers in the ai function
@@ -9672,7 +9697,7 @@ static inline s32 DoFutureSightAttackDamageCalcVars(struct DamageCalculationData
     targetFinalDefense = CalcDefenseStat(damageCalcData, ABILITY_NONE, abilityDef, holdEffectDef, weather);
     dmg = CalculateBaseDamage(gBattleMovePower, userFinalAttack, partyMonLevel, targetFinalDefense);
 
-    DAMAGE_APPLY_MODIFIER(GetCriticalModifier(damageCalcData->isCrit));
+    DAMAGE_APPLY_MODIFIER(GetCriticalModifier(damageCalcData->isCrit)); // Remove?
 
     if (damageCalcData->randomFactor)
     {
@@ -9775,7 +9800,7 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(1.0);
     }
     else if ((moveType == TYPE_FIGHTING || moveType == TYPE_NORMAL) && defType == TYPE_GHOST
-        && (abilityAtk == ABILITY_SCRAPPY || abilityAtk == ABILITY_MINDS_EYE)
+        && (abilityAtk == ABILITY_SCRAPPY) //  || abilityAtk == ABILITY_MIRACLE_EYE
         && mod == UQ_4_12(0.0))
     {
         mod = UQ_4_12(1.0);
@@ -10862,12 +10887,14 @@ bool32 IsBattlerAffectedByHazards(u32 battler, bool32 toxicSpikes)
 {
     bool32 ret = TRUE;
     enum ItemHoldEffect holdEffect = GetBattlerHoldEffect(battler, TRUE);
-    if (toxicSpikes && holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS && !IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
+    u32 ability = GetBattlerAbility (battler);
+    if (toxicSpikes && (holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS || ability == ABILITY_SHELL_ARMOR || ability == ABILITY_BATTLE_ARMOR || ability == ABILITY_SOLID_ROCK)
+     && !IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
     {
         ret = FALSE;
         RecordItemEffectBattle(battler, holdEffect);
     }
-    else if (holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS)
+    else if (holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS || ability == ABILITY_SHELL_ARMOR || ability == ABILITY_BATTLE_ARMOR || ability == ABILITY_SOLID_ROCK)
     {
         ret = FALSE;
         RecordItemEffectBattle(battler, holdEffect);
@@ -11155,15 +11182,19 @@ bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2)
 
 u32 CalcSecondaryEffectChance(u32 battler, u32 battlerAbility, const struct AdditionalEffect *additionalEffect)
 {
-    bool8 hasSereneGrace = (battlerAbility == ABILITY_SERENE_GRACE);
+    // bool8 hasSereneGrace = (battlerAbility == ABILITY_SERENE_GRACE);
+    bool8 hasSuperLuck = (battlerAbility == ABILITY_SUPER_LUCK);
+    bool8 isCrafty = (battlerAbility == ABILITY_CRAFTY);
     bool8 hasRainbow = (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_RAINBOW) != 0;
     u16 secondaryEffectChance = additionalEffect->chance;
 
-    if (hasRainbow && hasSereneGrace && additionalEffect->moveEffect == MOVE_EFFECT_FLINCH)
-        return secondaryEffectChance * 2;
+    // if (hasRainbow && hasSereneGrace && additionalEffect->moveEffect == MOVE_EFFECT_FLINCH)
+    //     return secondaryEffectChance * 2;
 
-    if (hasSereneGrace)
+    if (hasSuperLuck)
         secondaryEffectChance *= 2;
+    if (isCrafty)
+        secondaryEffectChance += 30;
     if (hasRainbow && additionalEffect->moveEffect != MOVE_EFFECT_SECRET_POWER)
         secondaryEffectChance *= 2;
 
@@ -11518,7 +11549,7 @@ bool32 DoesDestinyBondFail(u32 battler)
 // This check has always to be the last in a condtion statement because of the recording of AI data.
 bool32 IsMoveEffectBlockedByTarget(u32 ability)
 {
-    if (ability == ABILITY_SHIELD_DUST)
+    if (ability == ABILITY_SHIELD_DUST || ability == ABILITY_SERENE_GRACE || ability == ABILITY_SHELL_ARMOR)
     {
         RecordAbilityBattle(gBattlerTarget, ability);
         return TRUE;

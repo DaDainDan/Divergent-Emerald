@@ -8,7 +8,7 @@ SINGLE_BATTLE_TEST("Mind's Eye allows to hit Ghost-type Pokémon with Normal- an
     PARAMETRIZE { move = MOVE_KARATE_CHOP; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_MINDS_EYE); };
+        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_MIRACLE_EYE); };
         OPPONENT(SPECIES_GASTLY);
     } WHEN {
         TURN { MOVE(player, move); }
@@ -52,7 +52,7 @@ AI_SINGLE_BATTLE_TEST("AI doesn't use accuracy-lowering moves if it knows that t
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_SAND_ATTACK) == EFFECT_ACCURACY_DOWN);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_URSALUNA_BLOODMOON) { Ability(ABILITY_MINDS_EYE); }
+        PLAYER(SPECIES_URSALUNA_BLOODMOON) { Ability(ABILITY_MIRACLE_EYE); }
         OPPONENT(SPECIES_BASCULEGION) { Moves(MOVE_CELEBRATE, MOVE_SAND_ATTACK); Ability(abilityAI); }
     } WHEN {
         TURN { MOVE(player, MOVE_SCRATCH); }

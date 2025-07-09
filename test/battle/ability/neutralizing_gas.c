@@ -129,7 +129,7 @@ DOUBLE_BATTLE_TEST("Neutralizing Gas ignores multipliers from target's ally's ab
         PLAYER(SPECIES_WEEZING) { Ability(ability); }
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_TELEPATHY); }
-        OPPONENT(SPECIES_CLEFAIRY) { Ability(ABILITY_FRIEND_GUARD); }
+        OPPONENT(SPECIES_CLEFAIRY) { Ability(ABILITY_PACIFIER); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_SCRATCH, target: opponentLeft); }
     } SCENE {
