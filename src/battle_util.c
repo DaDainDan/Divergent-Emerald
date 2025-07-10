@@ -8801,8 +8801,8 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     }
 
     // critical hits ignore attack stat's stage drops
-    if (damageCalcData->isCrit && atkStage < DEFAULT_STAT_STAGE)
-        atkStage = DEFAULT_STAT_STAGE;
+    // if (damageCalcData->isCrit && atkStage < DEFAULT_STAT_STAGE)
+    //     atkStage = DEFAULT_STAT_STAGE;
     // pokemon with unaware ignore attack stat changes while taking damage
     if (defAbility == ABILITY_UNAWARE)
         atkStage = DEFAULT_STAT_STAGE;
@@ -9278,7 +9278,7 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(struct DamageCalculationData *
     return UQ_4_12(1.0);
 }
 
-static inline uq4_12_t GetCriticalModifier(bool32 isCrit)
+static inline uq4_12_t GetCriticalModifier(struct DamageCalculationData *damageCalcData)
 {
     u32 critStage;
     u32 battlerAtk = damageCalcData->battlerAtk;
@@ -9566,7 +9566,7 @@ static inline s32 DoMoveDamageCalcVars(struct DamageCalculationData *damageCalcD
     DAMAGE_APPLY_MODIFIER(GetTargetDamageModifier(damageCalcData));
     DAMAGE_APPLY_MODIFIER(GetParentalBondModifier(battlerAtk));
     DAMAGE_APPLY_MODIFIER(GetWeatherDamageModifier(damageCalcData, holdEffectAtk, holdEffectDef, weather));
-    DAMAGE_APPLY_MODIFIER(GetCriticalModifier(damageCalcData->isCrit));
+    DAMAGE_APPLY_MODIFIER(GetCriticalModifier(damageCalcData));
     DAMAGE_APPLY_MODIFIER(GetGlaiveRushModifier(battlerDef));
 
     if (damageCalcData->randomFactor)
@@ -9697,7 +9697,7 @@ static inline s32 DoFutureSightAttackDamageCalcVars(struct DamageCalculationData
     targetFinalDefense = CalcDefenseStat(damageCalcData, ABILITY_NONE, abilityDef, holdEffectDef, weather);
     dmg = CalculateBaseDamage(gBattleMovePower, userFinalAttack, partyMonLevel, targetFinalDefense);
 
-    DAMAGE_APPLY_MODIFIER(GetCriticalModifier(damageCalcData->isCrit)); // Remove?
+    DAMAGE_APPLY_MODIFIER(GetCriticalModifier(damageCalcData)); // Remove?
 
     if (damageCalcData->randomFactor)
     {
