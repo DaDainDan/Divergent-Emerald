@@ -2877,7 +2877,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             {
                 // If Mon already knows Cut, Fly, or Flash, prevent it from being added to action list here
                 // as it will be added later with different logic
-                if (sFieldMoves[j] != MOVE_CUT && sFieldMoves[j] != MOVE_FLY && sFieldMoves[j] != MOVE_FLASH ){
+                if (sFieldMoves[j] != MOVE_CUT && sFieldMoves[j] != MOVE_FLY && sFieldMoves[j] != MOVE_FLASH && sFieldMoves[j] != MOVE_ROCK_SMASH) {
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 }
                 break;
@@ -2888,6 +2888,10 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     // If player has 6th badge, action list consists of < 4 moves, Mon can learn Fly, and player has HM02 in bag
     if (FlagGet(FLAG_BADGE06_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLY) != 1) && CheckBagHasItem(ITEM_HM02, 1)) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
+
+    // If player has 6th badge, action list consists of < 4 moves, Mon can learn Fly, and player has HM02 in bag
+    if (FlagGet(FLAG_BADGE06_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_ROCK_SMASH) != 1) && CheckBagHasItem(ITEM_HM06, 1)) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 2 + MENU_FIELD_MOVES);
 
     // If player has 2nd badge, action list consists of < 4 moves, Mon can learn Flash, and player has HM05 in bag
     if (FlagGet(FLAG_BADGE02_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLASH) != 1) && CheckBagHasItem(ITEM_HM05, 1)) 
