@@ -1900,10 +1900,10 @@ static void CancellerAsleep(u32 *effect)
         else
         {
             u8 toSub;
-            if (GetBattlerAbility(gBattlerAttacker) == ABILITY_EARLY_BIRD)
-                toSub = 2;
-            else
-                toSub = 1;
+            // if (GetBattlerAbility(gBattlerAttacker) == ABILITY_EARLY_BIRD)
+            //     toSub = 2;
+            // else
+            toSub = 1;
             if ((gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP) < toSub)
                 gBattleMons[gBattlerAttacker].status1 &= ~STATUS1_SLEEP;
             else
@@ -2863,7 +2863,17 @@ static inline u8 GetBattlerSideFaintCounter(u32 battler)
 // Supreme Overlord adds a x0.1 damage boost for each fainted ally.
 static inline uq4_12_t GetSupremeOverlordModifier(u32 battler)
 {
-    return UQ_4_12(1.0) + (PercentToUQ4_12(gBattleStruct->supremeOverlordCounter[battler] * 10));
+    return UQ_4_12(1.0) + (PercentToUQ4_12(gBattleStruct->supremeOverlordCounter[battler] * 8));
+}
+
+static inline uq4_12_t GetStakeoutModifier(u32 battler)
+{
+    u16 diff;
+    if (gDisableStructs[battler].slowStartTimer > gBattleTurnCounter)
+        diff = (gDisableStructs[battler].slowStartTimer - gBattleTurnCounter);
+    else
+        diff = 0;
+    return UQ_4_12(1.5) - (PercentToUQ4_12(diff * 10));
 }
 
 bool32 HadMoreThanHalfHpNowDoesnt(u32 battler)
@@ -3560,6 +3570,16 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_STAKEOUT:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gDisableStructs[battler].slowStartTimer = gBattleTurnCounter + 5;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_STAKEOUT;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
         case ABILITY_UNNERVE:
             if (!gSpecialStatuses[battler].switchInAbilityDone && !gDisableStructs[battler].unnerveActivated)
             {
@@ -3984,6 +4004,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_AVENGER:
         case ABILITY_SUPREME_OVERLORD:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
@@ -5080,6 +5101,24 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_RECKLESS:
+            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
+             && IsBattlerAlive(gBattlerTarget)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && !IsFutureSightAttackerInParty(gBattlerAttacker, gBattlerTarget, gCurrentMove)
+             && (gMultiHitCounter == 0 || gMultiHitCounter == 1)
+             && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS
+             && IsBattlerTurnDamaged(gBattlerTarget)) // Need to actually hit the target
+            {
+                gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 10;
+                    if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
+                        gBattleStruct->moveDamage[gBattlerAttacker] = 1;
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_RecklessActivates;
+                effect++;
+            }
+            break;
         }
         break;
     case ABILITYEFFECT_MOVE_END_OTHER: // Abilities that activate on *another* battler's moveend: Dancer, Soul-Heart, Receiver, Symbiosis
@@ -5722,7 +5761,7 @@ bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u
         {
             battleScript = BattleScript_AlreadyPoisoned;
         }
-        else if (abilityAtk != ABILITY_CORROSION && IS_BATTLER_ANY_TYPE(battlerDef, TYPE_POISON, TYPE_STEEL))
+        else if (IS_BATTLER_ANY_TYPE(battlerDef, TYPE_POISON)) // abilityAtk != ABILITY_CORROSION && IS_BATTLER_ANY_TYPE(battlerDef, TYPE_POISON, TYPE_STEEL)
         {
             battleScript = BattleScript_NotAffected;
         }
@@ -8520,9 +8559,13 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (IsHeadMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.20));
         break;
+    case ABILITY_LIBERO:
+        if (!IS_BATTLER_OF_TYPE(battlerAtk, moveType))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
+        break;
     case ABILITY_SHEER_FORCE:
         if (MoveIsAffectedBySheerForce(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
         break;
     case ABILITY_SAND_FORCE:
         if ((moveType == TYPE_STEEL || moveType == TYPE_ROCK || moveType == TYPE_GROUND)
@@ -8599,8 +8642,17 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (moveType == TYPE_PSYCHIC)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.1));
         break;
+    case ABILITY_BATTERY:
+    case ABILITY_POWER_SPOT:
+            if (IsBattleMoveSpecial(move))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+            break;
+    case ABILITY_AVENGER:
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
+        break;
+    case ABILITY_STAKEOUT:
+        modifier = uq4_12_multiply(modifier, GetStakeoutModifier(battlerAtk));
         break;
     }
 
@@ -8619,13 +8671,14 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     {
         switch (GetBattlerAbility(BATTLE_PARTNER(battlerAtk)))
         {
+        case ABILITY_POWER_SPOT:
         case ABILITY_BATTERY:
             if (IsBattleMoveSpecial(move))
-                modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
             break;
-        case ABILITY_POWER_SPOT:
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
-            break;
+        // case ABILITY_POWER_SPOT:
+        //     modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        //     break;
         case ABILITY_STEELY_SPIRIT:
             if (moveType == TYPE_STEEL)
                 modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -8845,13 +8898,31 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (moveType == TYPE_WATER && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
-    case ABILITY_BLAZE:
-        if (moveType == TYPE_FIRE && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
-        break;
     case ABILITY_OVERGROW:
         if (moveType == TYPE_GRASS && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_BLAZE:
+        if (moveType == TYPE_FIRE)
+        {
+            if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.67));
+            else
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.33));
+        }
+        break;
+    case ABILITY_BIG_PECKS:
+        if (moveType == TYPE_FLYING)
+        {
+            if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.67));
+            else
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.33));
+        }
+        break;
+    case ABILITY_CORROSION:
+        if (moveType == TYPE_POISON && IS_BATTLER_ANY_TYPE(battlerDef, TYPE_STEEL, TYPE_ROCK, TYPE_GROUND, TYPE_SAND))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(2.56)); 
         break;
     case ABILITY_PLUS:
         if (IsBattleMoveSpecial(move) && IsBattlerAlive(BATTLE_PARTNER(battlerAtk)))
@@ -8879,13 +8950,17 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (IsBattleMovePhysical(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
-    case ABILITY_STAKEOUT:
-        if (gDisableStructs[battlerDef].isFirstTurn == 2) // just switched in
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+    case ABILITY_EARLY_BIRD:
+        if (GetBattlerTurnOrderNum(battlerAtk) < GetBattlerTurnOrderNum(battlerDef))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.25));
         break;
+    // case ABILITY_STAKEOUT:
+    //     if (gDisableStructs[battlerDef].isFirstTurn == 2) // just switched in
+    //         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+    //     break;
     case ABILITY_GUTS:
-        if (gBattleMons[battlerAtk].status1 & STATUS1_ANY && IsBattleMovePhysical(move))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        if (gBattleMons[battlerAtk].status1 & STATUS1_ANY)    // && IsBattleMovePhysical(move)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_TRANSISTOR:
         if (moveType == TYPE_ELECTRIC)
@@ -9199,7 +9274,7 @@ static inline uq4_12_t GetParentalBondModifier(u32 battlerAtk)
 {
     if (gSpecialStatuses[battlerAtk].parentalBondState != PARENTAL_BOND_2ND_HIT)
         return UQ_4_12(1.0);
-    return B_PARENTAL_BOND_DMG >= GEN_7 ? UQ_4_12(0.25) : UQ_4_12(0.5);
+    return B_PARENTAL_BOND_DMG >= GEN_7 ? UQ_4_12(0.20) : UQ_4_12(0.5);
 }
 
 static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageCalculationData *damageCalcData, u32 abilityAtk)
@@ -9273,7 +9348,8 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(struct DamageCalculationData *
         return UQ_4_12(0.5);
     if (gBattleMons[battlerAtk].status1 & STATUS1_FROSTBITE
         && IsBattleMoveSpecial(move)
-        && (B_BURN_FACADE_DMG < GEN_6 || moveEffect != EFFECT_FACADE))
+        && (B_BURN_FACADE_DMG < GEN_6 || moveEffect != EFFECT_FACADE)
+        && abilityAtk != ABILITY_GUTS)
         return UQ_4_12(0.5);
     return UQ_4_12(1.0);
 }
@@ -9373,7 +9449,7 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
     {
     case ABILITY_NEUROFORCE:
         if (typeEffectivenessModifier >= UQ_4_12(1.6))
-            return UQ_4_12(1.25);
+            return UQ_4_12(1.33);
         break;
     case ABILITY_SNIPER:
         if (isCrit)

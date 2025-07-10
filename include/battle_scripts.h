@@ -873,5 +873,6 @@ extern const u8 BattleScript_EffectGrab[];
 extern const u8 BattleScript_EffectAttackUp3[];
 extern const u8 BattleScript_EffectSpeedUp3[];
 extern const u8 BattleScript_EffectSpecialDefenseUp3[];
+extern const u8 BattleScript_RecklessActivates[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

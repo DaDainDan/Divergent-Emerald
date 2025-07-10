@@ -909,6 +909,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_VENOMOUSENTERS]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is toxic to the core!"),
     [STRINGID_COLDHEARTENTERS]                      = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s heart is made of ice!"),
     [STRINGID_AQUATICENTERS]                        = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} originates from the sea!"),
+    [STRINGID_STAKEOUTENTERS]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is scanning the foe for vulnerablities!"),
+    [STRINGID_PKMNHURTSITSELF]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} used so much power that it hurt itself!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -1013,7 +1015,8 @@ const u16 gSwitchInAbilityStringIds[] =
     [B_MSG_SWITCHIN_PURITY] = STRINGID_PURITYENTERS,
     [B_MSG_SWITCHIN_VENOMOUS] = STRINGID_VENOMOUSENTERS,
     [B_MSG_SWITCHIN_AQUATIC] = STRINGID_AQUATICENTERS,
-    [B_MSG_SWITCHIN_COLD_HEART] = STRINGID_COLDHEARTENTERS
+    [B_MSG_SWITCHIN_COLD_HEART] = STRINGID_COLDHEARTENTERS,
+    [B_MSG_SWITCHIN_STAKEOUT] = STRINGID_STAKEOUTENTERS
 };
 
 const u16 gMissStringIds[] =

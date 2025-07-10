@@ -675,8 +675,8 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
 
             // Checks to see if active Pokemon can do something against sleep
             if ((monAbility == ABILITY_NATURAL_CURE
-                || monAbility == ABILITY_SHED_SKIN
-                || monAbility == ABILITY_EARLY_BIRD)
+                || monAbility == ABILITY_SHED_SKIN)
+                // || monAbility == ABILITY_EARLY_BIRD)
                 || holdEffect == (HOLD_EFFECT_CURE_SLP | HOLD_EFFECT_CURE_STATUS)
                 || HasMove(battler, MOVE_SLEEP_TALK)
                 || (HasMoveWithEffect(battler, MOVE_SNORE) && AI_GetMoveEffectiveness(MOVE_SNORE, battler, opposingBattler) >= UQ_4_12(1.6))

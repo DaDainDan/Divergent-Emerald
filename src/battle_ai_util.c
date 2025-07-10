@@ -3285,7 +3285,7 @@ static inline bool32 DoesBattlerBenefitFromAllVolatileStatus(u32 battler, u32 ab
     if (ability == ABILITY_MARVEL_SCALE
      || ability == ABILITY_QUICK_FEET
      || ability == ABILITY_MAGIC_GUARD
-     || (ability == ABILITY_GUTS && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
+     || (ability == ABILITY_GUTS) // && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL)
      || HasMoveWithEffect(battler, EFFECT_FACADE)
      || HasMoveWithEffect(battler, EFFECT_PSYCHO_SHIFT))
         return TRUE;
@@ -3464,7 +3464,7 @@ bool32 AI_CanBeInfatuated(u32 battlerAtk, u32 battlerDef, u32 defAbility)
 
 u32 ShouldTryToFlinch(u32 battlerAtk, u32 battlerDef, u32 atkAbility, u32 defAbility, u32 move)
 {
-    if (((!IsMoldBreakerTypeAbility(battlerAtk, gAiLogicData->abilities[battlerAtk]) && (defAbility == ABILITY_INNER_FOCUS)) // defAbility == ABILITY_SHIELD_DUST || 
+    if (((!IsMoldBreakerTypeAbility(battlerAtk, gAiLogicData->abilities[battlerAtk]) && (defAbility == ABILITY_INNER_FOCUS || defAbility == ABILITY_GUTS)) // defAbility == ABILITY_SHIELD_DUST || 
       || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_COVERT_CLOAK
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || AI_IsSlower(battlerAtk, battlerDef, move))) // Opponent goes first
@@ -3512,7 +3512,7 @@ bool32 ShouldFakeOut(u32 battlerAtk, u32 battlerDef, u32 move)
     || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_COVERT_CLOAK
     || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
     || (!IsMoldBreakerTypeAbility(battlerAtk, gAiLogicData->abilities[battlerAtk])
-    && (gAiLogicData->abilities[battlerDef] == ABILITY_INNER_FOCUS))) // gAiLogicData->abilities[battlerDef] == ABILITY_SHIELD_DUST || 
+    && (gAiLogicData->abilities[battlerDef] == ABILITY_INNER_FOCUS || gAiLogicData->abilities[battlerDef] == ABILITY_GUTS))) // gAiLogicData->abilities[battlerDef] == ABILITY_SHIELD_DUST || 
         return FALSE;
 
     return TRUE;

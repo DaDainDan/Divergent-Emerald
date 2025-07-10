@@ -370,8 +370,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_EARLY_BIRD] =
     {
         .name = _("Early Bird"),
-        .description = COMPOUND_STRING("Awakens quickly from sleep."),
-        .aiRating = 4,
+        .description = COMPOUND_STRING("Deals more damage if first."),
+        .aiRating = 6,
     },
 
     [ABILITY_FLAME_BODY] =
@@ -474,7 +474,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_GUTS] =
     {
         .name = _("Guts"),
-        .description = COMPOUND_STRING("Ups Attack if suffering."),
+        .description = COMPOUND_STRING("Ups power if suffering."),
         .aiRating = 6,
     },
 
@@ -899,8 +899,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_RECKLESS] =
     {
         .name = _("Reckless"),
-        .description = COMPOUND_STRING("Boosts moves with recoil."),
-        .aiRating = 6,
+        .description = COMPOUND_STRING("Ups power but adds recoil."),
+        .aiRating = 7,
     },
 
     [ABILITY_MULTITYPE] =
@@ -1089,9 +1089,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BIG_PECKS] =
     {
         .name = _("Big Pecks"),
-        .description = COMPOUND_STRING("Prevents Defense loss."),
-        .aiRating = 1,
-        .breakable = TRUE,
+        .description = COMPOUND_STRING("Ups Flying moves in a pinch."),
+        .aiRating = 5,
+        // .breakable = TRUE,
     },
 
     [ABILITY_SAND_RUSH] =
@@ -1487,7 +1487,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STAKEOUT] =
     {
         .name = _("Stakeout"),
-        .description = COMPOUND_STRING("Stronger as foes switch in."),
+        .description = COMPOUND_STRING("Gains strength with time."),
         .aiRating = 6,
     },
 
@@ -1607,8 +1607,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CORROSION] =
     {
         .name = _("Corrosion"),
-        .description = COMPOUND_STRING("Poisons any type."),
-        .aiRating = 5,
+        .description = COMPOUND_STRING("Poison beats mineral types."),
+        .aiRating = 7,
     },
 
     [ABILITY_COMATOSE] =
@@ -1792,7 +1792,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LIBERO] =
     {
         .name = _("Libero"),
-        .description = COMPOUND_STRING("Changes type to move's."),
+        .description = COMPOUND_STRING("Boost non-STAB moves."),
+        .aiRating = 6,
     },
 
     [ABILITY_BALL_FETCH] =
@@ -1896,8 +1897,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_POWER_SPOT] =
     {
         .name = _("Power Spot"),
-        .description = COMPOUND_STRING("Powers up ally moves."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Boosts ally special moves."),
+        .aiRating = 4,
     },
 
     [ABILITY_MIMICRY] =

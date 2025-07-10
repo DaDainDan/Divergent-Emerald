@@ -4093,7 +4093,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
               || HasMoveWithEffect(EFFECT_SLEEP_TALK, battlerAtk)
               || HasMoveWithEffect(EFFECT_SNORE, battlerAtk)
               || aiData->abilities[battlerAtk] == ABILITY_SHED_SKIN
-              || aiData->abilities[battlerAtk] == ABILITY_EARLY_BIRD
+            //   || aiData->abilities[battlerAtk] == ABILITY_EARLY_BIRD
               || (AI_GetWeather() & B_WEATHER_RAIN && gWishFutureKnock.weatherDuration != 1 && aiData->abilities[battlerAtk] == ABILITY_HYDRATION && aiData->holdEffects[battlerAtk] != HOLD_EFFECT_UTILITY_UMBRELLA))
                 ADJUST_SCORE(GOOD_EFFECT);
         }
@@ -6062,7 +6062,7 @@ static s32 AI_PredictSwitch(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     }
 
     // Take advantage of ability damage bonus
-    if ((ability == ABILITY_STAKEOUT || ability == ABILITY_ANALYTIC) && IsBattleMoveStatus(move))
+    if ((ability == ABILITY_ANALYTIC) && IsBattleMoveStatus(move)) // ability == ABILITY_STAKEOUT || 
         ADJUST_SCORE(-WEAK_EFFECT);
 
     // This must be last or the player can gauge whether the AI is predicting based on how long it thinks

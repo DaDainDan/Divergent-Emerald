@@ -1130,7 +1130,7 @@ static bool32 NoTargetPresent(u8 battler, u32 move)
 
 bool32 ProteanTryChangeType(u32 battler, u32 ability, u32 move, u32 moveType)
 {
-      if ((ability == ABILITY_PROTEAN || ability == ABILITY_LIBERO)
+      if ((ability == ABILITY_PROTEAN) // || ability == ABILITY_LIBERO
          && !gDisableStructs[gBattlerAttacker].usedProteanLibero
          && (gBattleMons[battler].types[0] != moveType || gBattleMons[battler].types[1] != moveType
              || (gBattleMons[battler].types[2] != moveType && gBattleMons[battler].types[2] != TYPE_MYSTERY))
@@ -3402,15 +3402,15 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 }
                 break;
             case MOVE_EFFECT_FLINCH:
-                if (battlerAbility == ABILITY_INNER_FOCUS)
+                if (battlerAbility == ABILITY_INNER_FOCUS || battlerAbility == ABILITY_GUTS)
                 {
                     // Inner Focus ALWAYS prevents flinching but only activates
                     // on a move that's supposed to flinch, like Fake Out
                     if (primary == TRUE || certain == TRUE)
                     {
-                        gLastUsedAbility = ABILITY_INNER_FOCUS;
+                        gLastUsedAbility = battlerAbility;
                         gBattlerAbility = gEffectBattler;
-                        RecordAbilityBattle(gEffectBattler, ABILITY_INNER_FOCUS);
+                        RecordAbilityBattle(gEffectBattler, battlerAbility);
                         gBattlescriptCurrInstr = BattleScript_FlinchPrevention;
                     }
                     else
@@ -18673,6 +18673,7 @@ void BS_JumpIfIntimidateAbilityPrevented(void)
     switch (ability)
     {
     case ABILITY_INNER_FOCUS:
+    case ABILITY_GUTS:
     case ABILITY_SCRAPPY:
     case ABILITY_OWN_TEMPO:
     case ABILITY_OBLIVIOUS:
