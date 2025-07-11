@@ -24,7 +24,12 @@ enum StatChange
     STAT_CHANGE_SPATK_2,
     STAT_CHANGE_SPDEF_2,
     STAT_CHANGE_ACC,
-    STAT_CHANGE_EVASION
+    STAT_CHANGE_EVASION,
+    STAT_CHANGE_ATK_3,
+    STAT_CHANGE_DEF_3,
+    STAT_CHANGE_SPEED_3,
+    STAT_CHANGE_SPATK_3,
+    STAT_CHANGE_SPDEF_3
 };
 
 #define BEST_DAMAGE_MOVE         1  // Move with the most amount of hits with the best accuracy/effect

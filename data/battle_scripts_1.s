@@ -7120,7 +7120,7 @@ BattleScript_PowderMoveNoEffectWaitMsg:
 BattleScript_MoveUsedFlinched::
 	printstring STRINGID_PKMNFLINCHED
 	waitmessage B_WAIT_TIME_LONG
-	jumpifability BS_ATTACKER ABILITY_STEADFAST BattleScript_TryActivateSteadFast
+	jumpifability BS_ATTACKER ABILITY_STEADFAST BattleScript_MoveEnd
 BattleScript_MoveUsedFlinchedEnd:
 	goto BattleScript_MoveEnd
 BattleScript_TryActivateSteadFast:
@@ -7593,7 +7593,10 @@ BattleScript_HarvestActivatesEnd:
 
 BattleScript_SolarPowerActivates::
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	jumpifability BS_ATTACKER, ABILITY_SPEED_BOOST, BattleScript_SolarPowerNoPopUp
+BattleScript_SolarPowerAbilityPopUp:
 	call BattleScript_AbilityPopUp
+BattleScript_SolarPowerNoPopUp:
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	printstring STRINGID_SOLARPOWERHPDROP
@@ -8301,6 +8304,15 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchIn::
 	waitanimation
 	printstring STRINGID_BATTLERABILITYRAISEDSTAT
 	waitmessage B_WAIT_TIME_LONG
+	jumpifability BS_ATTACKER, ABILITY_SCATTERBRAIN, BattleScript_ScatterbrainConfusion
+	copybyte gBattlerAttacker, sSAVED_BATTLER
+	end3
+
+BattleScript_TangledFeetConfusion::
+	copybyte gBattlerAbility, gBattlerAttacker
+	call BattleScript_AbilityPopUp
+BattleScript_ScatterbrainConfusion::
+	seteffectprimary MOVE_EFFECT_CONFUSION | MOVE_EFFECT_AFFECTS_USER
 	copybyte gBattlerAttacker, sSAVED_BATTLER
 	end3
 
@@ -9611,7 +9623,13 @@ BattleScript_TargetAbilityStatRaiseRet::
 	statbuffchange MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN, BattleScript_TargetAbilityStatRaiseRet_End
 	setgraphicalstatchangevalues
 	call BattleScript_StatUp
+	jumpifability BS_EFFECT_BATTLER, ABILITY_BERSERK, BattleScript_BerkserkAbilityRet
 BattleScript_TargetAbilityStatRaiseRet_End:
+	copybyte gBattlerAttacker, sSAVED_BATTLER
+	return
+
+BattleScript_BerkserkAbilityRet::
+	seteffectprimary MOVE_EFFECT_CONFUSION
 	copybyte gBattlerAttacker, sSAVED_BATTLER
 	return
 

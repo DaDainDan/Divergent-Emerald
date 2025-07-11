@@ -911,6 +911,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_AQUATICENTERS]                        = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} originates from the sea!"),
     [STRINGID_STAKEOUTENTERS]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is scanning the foe for vulnerablities!"),
     [STRINGID_PKMNHURTSITSELF]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} used so much power that it hurt itself!"),
+    [STRINGID_PKMNCUTSSPECIALATTACKWITH]            = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY} cuts {B_DEF_NAME_WITH_PREFIX2}'s Sp. Atk!"), //not in gen 5+, ability popup
+    [STRINGID_PKMNCUTSSPEEDWITH]                    = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY} cuts {B_DEF_NAME_WITH_PREFIX2}'s Speed!"), //not in gen 5+, ability popup
 };
 
 const u16 gTrainerUsedItemStringIds[] =

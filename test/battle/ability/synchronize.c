@@ -9,14 +9,14 @@ SINGLE_BATTLE_TEST("Synchronize will mirror back non volatile status back at opp
         ASSUME(GetMoveNonVolatileStatus(MOVE_TOXIC) == MOVE_EFFECT_TOXIC);
         ASSUME(GetMoveNonVolatileStatus(MOVE_TOXIC) == MOVE_EFFECT_TOXIC);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_ABRA) { Ability(ABILITY_SYNCHRONIZE); }
+        OPPONENT(SPECIES_ABRA) { Ability(ABILITY_RECIPROCAL); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TOXIC, player);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
         STATUS_ICON(opponent, badPoison: TRUE);
-        ABILITY_POPUP(opponent, ABILITY_SYNCHRONIZE);
+        ABILITY_POPUP(opponent, ABILITY_RECIPROCAL);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, player);
         STATUS_ICON(player, badPoison: TRUE);
     }
@@ -27,7 +27,7 @@ SINGLE_BATTLE_TEST("Synchronize will still show up the ability pop up even if it
     GIVEN {
         ASSUME(MoveMakesContact(MOVE_TACKLE));
         PLAYER(SPECIES_PIKACHU) { Ability(ABILITY_STATIC); }
-        OPPONENT(SPECIES_ABRA) { Ability(ABILITY_SYNCHRONIZE); }
+        OPPONENT(SPECIES_ABRA) { Ability(ABILITY_RECIPROCAL); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); MOVE(player, MOVE_CELEBRATE); }
     } SCENE {
@@ -35,7 +35,7 @@ SINGLE_BATTLE_TEST("Synchronize will still show up the ability pop up even if it
         ABILITY_POPUP(player, ABILITY_STATIC);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PRZ, opponent);
         STATUS_ICON(opponent, paralysis: TRUE);
-        ABILITY_POPUP(opponent, ABILITY_SYNCHRONIZE);
+        ABILITY_POPUP(opponent, ABILITY_RECIPROCAL);
         NONE_OF {
             ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PRZ, player);
             STATUS_ICON(player, paralysis: TRUE);
@@ -50,7 +50,7 @@ SINGLE_BATTLE_TEST("Synchronize will mirror back static activation")
         ASSUME(MoveMakesContact(MOVE_TACKLE));
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_PIKACHU) { Ability(ABILITY_STATIC); }
-        OPPONENT(SPECIES_ABRA) { Ability(ABILITY_SYNCHRONIZE); }
+        OPPONENT(SPECIES_ABRA) { Ability(ABILITY_RECIPROCAL); }
     } WHEN {
         TURN { MOVE(player, MOVE_SKILL_SWAP); }
         TURN { SWITCH(opponent, 1); }
@@ -62,7 +62,7 @@ SINGLE_BATTLE_TEST("Synchronize will mirror back static activation")
         ABILITY_POPUP(player, ABILITY_STATIC);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PRZ, opponent);
         STATUS_ICON(opponent, paralysis: TRUE);
-        ABILITY_POPUP(opponent, ABILITY_SYNCHRONIZE);
+        ABILITY_POPUP(opponent, ABILITY_RECIPROCAL);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PRZ, player);
         STATUS_ICON(player, paralysis: TRUE);
     }

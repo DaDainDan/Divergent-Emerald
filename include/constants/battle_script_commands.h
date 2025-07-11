@@ -262,7 +262,7 @@ enum MoveEndEffects
     MOVEEND_ITEM_EFFECTS_TARGET,
     MOVEEND_FIRST_MOVE_BLOCK,
     MOVEEND_ITEM_EFFECTS_ALL,
-    MOVEEND_SYMBIOSIS,
+    MOVEEND_GENEROSITY, // Old MOVEEND_SYMBIOSIS
     MOVEEND_KINGSROCK, // These item effects will occur each strike of a multi-hit move
     MOVEEND_SUBSTITUTE,
     MOVEEND_SKY_DROP_CONFUSE,
@@ -282,6 +282,7 @@ enum MoveEndEffects
     MOVEEND_EJECT_PACK,
     MOVEEND_HIT_ESCAPE,
     MOVEEND_OPPORTUNIST, // Occurs after other stat change items/abilities to try and copy the boosts
+    MOVEEND_SYMBIOSIS,
     MOVEEND_PICKPOCKET,
     MOVEEND_WHITE_HERB,
     MOVEEND_CHANGED_ITEMS,

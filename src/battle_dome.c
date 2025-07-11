@@ -3911,8 +3911,10 @@ static bool32 IsDomeDefensiveMoveEffect(enum BattleMoveEffects effect)
     case EFFECT_EVASION_UP:
     case EFFECT_DEFENSE_UP:
     case EFFECT_DEFENSE_UP_2:
+    case EFFECT_DEFENSE_UP_3:
     case EFFECT_SPECIAL_DEFENSE_UP:
     case EFFECT_SPECIAL_DEFENSE_UP_2:
+    case EFFECT_SPECIAL_DEFENSE_UP_3:
     case EFFECT_MINIMIZE:
     case EFFECT_ACCURACY_DOWN:
     case EFFECT_DEFENSE_CURL:
@@ -3992,6 +3994,7 @@ static bool32 IsDomePopularMove(u32 move)
     case EFFECT_PROTECT:
     case EFFECT_MAT_BLOCK:
     case EFFECT_ATTACK_UP_2:
+    case EFFECT_ATTACK_UP_3:
     case EFFECT_SPECIAL_ATTACK_UP_2:
     case EFFECT_SPECIAL_ATTACK_UP_3:
         return TRUE;
@@ -4097,6 +4100,7 @@ static bool32 IsDomeComboMove(u32 move)
     // Anything that ups offensive stats by more than one
     case EFFECT_ATTACK_UP:
     case EFFECT_ATTACK_UP_2:
+    case EFFECT_ATTACK_UP_3:
     case EFFECT_ATTACK_SPATK_UP:
     case EFFECT_SPECIAL_ATTACK_UP:
     case EFFECT_SPECIAL_ATTACK_UP_2:

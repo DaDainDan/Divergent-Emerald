@@ -1627,7 +1627,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         break;
     case ABILITY_HUSTLE:
         if (IsBattleMovePhysical(move))
-            calc = (calc * 80) / 100; // 1.2 hustle loss
+            calc = (calc * 85) / 100; // 1.2 hustle loss
         break;
     }
 
@@ -6127,7 +6127,7 @@ static bool32 TryKnockOffBattleScript(u32 battlerDef)
 
 static inline bool32 TryTriggerSymbiosis(u32 battler, u32 ally)
 {
-    return GetBattlerAbility(ally) == ABILITY_SYMBIOSIS
+    return GetBattlerAbility(ally) == ABILITY_GENEROSITY
         && gBattleMons[battler].item == ITEM_NONE
         && gBattleMons[ally].item != ITEM_NONE
         && CanBattlerGetOrLoseItem(battler, gBattleMons[ally].item)
@@ -6253,6 +6253,8 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
                 stat = GetHighestStatId(battlerAtk);
             else if (abilityAtk == ABILITY_GRIM_NEIGH || abilityAtk == ABILITY_AS_ONE_SHADOW_RIDER)
                 stat = STAT_SPATK;
+            else if (abilityAtk == ABILITY_MOXIE)
+                stat = GetHighestAtkStatId(battlerAtk);
 
             if (numMonsFainted && CompareStat(battlerAtk, stat, MAX_STAT_STAGE, CMP_LESS_THAN))
             {
@@ -7377,6 +7379,12 @@ static void Cmd_moveend(void)
                 gBattleScripting.moveendState++;
             break;
         case MOVEEND_SYMBIOSIS:
+            if (AbilityBattleEffects(ABILITYEFFECT_SYMBIOSIS, 0, 0, 0, 0))
+                effect = TRUE; // it loops through all battlers, so we increment after its done with all battlers
+            else
+                gBattleScripting.moveendState++;
+            break;
+        case MOVEEND_GENEROSITY:
             for (i = 0; i < gBattlersCount; i++)
             {
                 if ((gSpecialStatuses[i].berryReduced
@@ -9875,6 +9883,18 @@ u32 GetHighestStatId(u32 battler)
     return highestId;
 }
 
+u32 GetHighestAtkStatId(u32 battler)
+{
+    u32 highestId;
+
+    if (gBattleMons[battler].attack >= gBattleMons[battler].spAttack)
+        highestId = STAT_ATK;
+    else
+        highestId = STAT_SPATK;
+    
+    return highestId;
+}
+
 static bool32 IsRototillerAffected(u32 battler)
 {
     if (!IsBattlerAlive(battler))
@@ -10593,6 +10613,7 @@ static void Cmd_various(void)
         AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS, battler, 0, 0, 0);
         AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, battler, 0, 0, 0);
         AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST, battler, 0, 0, 0);
+        AbilityBattleEffects(ABILITYEFFECT_SYMBIOSIS, battler, 0, 0, 0);
         return;
     }
     case VARIOUS_INSTANT_HP_DROP:
@@ -12501,7 +12522,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
                 if (IsBattlerAlly(index, battler))
                     continue; // Only triggers on opposing side
 
-                if (GetBattlerAbility(index) == ABILITY_OPPORTUNIST
+                if ((GetBattlerAbility(index) == ABILITY_OPPORTUNIST || GetBattlerAbility(index) == ABILITY_COMPETITIVE)
                  && gProtectStructs[battler].activateOpportunist == 0) // don't activate opportunist on other mon's opportunist raises
                 {
                     gProtectStructs[index].activateOpportunist = 2;      // set stats to copy
@@ -12517,6 +12538,22 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
                     gQueuedStatBoosts[index].statChanges[statId - 1] += statIncrease;
                 }
             }
+            for (index = 0; index < gBattlersCount; index++)
+            {
+                if (!IsBattlerAlly(index, battler) || battler == index)
+                    continue;
+                
+                if (GetBattlerAbility(index) == ABILITY_SYMBIOSIS && gProtectStructs[battler].activateOpportunist == 0)
+                {
+                   gProtectStructs[index].activateOpportunist = 2; 
+                }
+
+                if (gProtectStructs[index].activateOpportunist == 2)
+                {
+                    gQueuedStatBoosts[index].stats |= (1 << (statId - 1));    // -1 to start at atk
+                    gQueuedStatBoosts[index].statChanges[statId - 1] += statIncrease;
+                } 
+            }   
         }
     }
 
@@ -17960,10 +17997,20 @@ void BS_CopyFoesStatIncrease(void)
     {
         if (gQueuedStatBoosts[battler].stats & (1 << stat))
         {
-            if (gQueuedStatBoosts[battler].statChanges[stat] <= -1)
-                SET_STATCHANGER(stat + 1, abs(gQueuedStatBoosts[battler].statChanges[stat]), TRUE);
+            if (GetBattlerAbility(battler) == ABILITY_COMPETITIVE || GetBattlerAbility(battler) == ABILITY_SYMBIOSIS)
+            {
+                if (gQueuedStatBoosts[battler].statChanges[stat] <= -1)
+                    SET_STATCHANGER(stat + 1, 1, TRUE);
+                else
+                    SET_STATCHANGER(stat + 1, 1, FALSE);
+            }
             else
-                SET_STATCHANGER(stat + 1, gQueuedStatBoosts[battler].statChanges[stat], FALSE);
+            {
+                if (gQueuedStatBoosts[battler].statChanges[stat] <= -1)
+                    SET_STATCHANGER(stat + 1, abs(gQueuedStatBoosts[battler].statChanges[stat]), TRUE);
+                else
+                    SET_STATCHANGER(stat + 1, gQueuedStatBoosts[battler].statChanges[stat], FALSE);
+            }
 
             gQueuedStatBoosts[battler].stats &= ~(1 << stat);
             gBattlerTarget = battler;

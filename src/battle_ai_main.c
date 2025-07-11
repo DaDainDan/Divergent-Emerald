@@ -1121,7 +1121,12 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 RETURN_SCORE_MINUS(20);
             break;
         case ABILITY_JUSTIFIED:
-            if (moveType == TYPE_DARK && !IsBattleMoveStatus(move) && !IS_TARGETING_PARTNER(battlerAtk, battlerDef))
+            if ((moveType == TYPE_DARK || moveType == TYPE_GHOST) && !IsBattleMoveStatus(move) && !IS_TARGETING_PARTNER(battlerAtk, battlerDef))
+                RETURN_SCORE_MINUS(10);
+            break;
+        case ABILITY_IRRITABILITY:
+            if (GetMoveStrikeCount(move) > 1 && moveEffect != EFFECT_DRAGON_DARTS && !IS_TARGETING_PARTNER(battlerAtk, battlerDef)
+                && !CanAIFaintTarget(battlerAtk, battlerDef, 0))
                 RETURN_SCORE_MINUS(10);
             break;
         case ABILITY_RATTLED:
@@ -1295,6 +1300,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     // stat raising effects
         case EFFECT_ATTACK_UP:
         case EFFECT_ATTACK_UP_2:
+        case EFFECT_ATTACK_UP_3:
         case EFFECT_ATTACK_UP_USER_ALLY:
             if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_ATK) || !HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL))
                 ADJUST_SCORE(-10);
@@ -1318,6 +1324,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             break;
         case EFFECT_SPECIAL_DEFENSE_UP:
         case EFFECT_SPECIAL_DEFENSE_UP_2:
+        case EFFECT_SPECIAL_DEFENSE_UP_3:
             if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPDEF))
                 ADJUST_SCORE(-10);
             break;
@@ -2763,6 +2770,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
               || gStatuses3[battlerAtk] & (STATUS3_ROOTED | STATUS3_MAGNET_RISE | STATUS3_SMACKED_DOWN)
               || !IsBattlerGrounded(battlerAtk))
                 ADJUST_SCORE(-10);
+            if (IsBattlerGrounded(battlerAtk) && aiData->abilities[battlerAtk] == ABILITY_QUICK_FEET && AI_IsFaster(battlerAtk, battlerDef, move))
+                ADJUST_SCORE(-3);
             break;
         case EFFECT_CAMOUFLAGE:
             if (!CanCamouflage(battlerAtk))
@@ -3291,7 +3300,26 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 
                     if (GetMoveStrikeCount(move) > 1 && effect != EFFECT_DRAGON_DARTS)
                     {
+                        ADJUST_SCORE(WEAK_EFFECT);
+                    }
+                }
+                else
+                {
+                    isMoveAffectedByPartnerAbility = FALSE;
+                }
+                break;
+            case ABILITY_HEAT_TREATMENT:
+                if (moveType == TYPE_FIRE && isFriendlyFireOK
+                    && ShouldTriggerAbility(battlerAtkPartner, atkPartnerAbility))
+                {
+                    if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
+                    {
                         ADJUST_SCORE(DECENT_EFFECT);
+                    }
+
+                    if (GetMoveStrikeCount(move) > 1 && effect != EFFECT_DRAGON_DARTS)
+                    {
+                        ADJUST_SCORE(WEAK_EFFECT);
                     }
                 }
                 else
@@ -3373,7 +3401,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 }
                 break;
             case ABILITY_JUSTIFIED:
-                if (moveType == TYPE_DARK && isFriendlyFireOK
+                if ((moveType == TYPE_DARK || moveType == TYPE_GHOST) && isFriendlyFireOK
                     && !IsBattleMoveStatus(move)
                     && ShouldTriggerAbility(battlerAtkPartner, atkPartnerAbility))
                 {
@@ -3412,7 +3440,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             case ABILITY_CONTRARY:
             case ABILITY_DEFIANT:
-            case ABILITY_COMPETITIVE:
+            case ABILITY_STEADFAST:
                 if (IsStatLoweringEffect(effect) && isFriendlyFireOK && ShouldTriggerAbility(battlerAtkPartner, atkPartnerAbility))
                 {
                     if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
@@ -3420,6 +3448,27 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                         ADJUST_SCORE(GOOD_EFFECT);
                     }
                     RETURN_SCORE_PLUS(WEAK_EFFECT);
+                }
+                else
+                {
+                    isMoveAffectedByPartnerAbility = FALSE;
+                }
+                break;
+            case ABILITY_IRRITABILITY:
+                if (isFriendlyFireOK && !IsBattleMoveStatus(move)
+                    && ShouldTriggerAbility(battlerAtkPartner, atkPartnerAbility))
+                {
+                    if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
+                    {
+                        ADJUST_SCORE(GOOD_EFFECT);
+                    }
+
+                    if (GetMoveStrikeCount(move) > 1 && effect != EFFECT_DRAGON_DARTS)
+                    {
+                        ADJUST_SCORE(WEAK_EFFECT);
+                    }
+
+                    ADJUST_SCORE(WEAK_EFFECT);
                 }
                 else
                 {
@@ -3473,7 +3522,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             case EFFECT_BEAT_UP:
                 if (atkPartnerAbility == ABILITY_JUSTIFIED
-                  && moveType == TYPE_DARK
+                  && (moveType == TYPE_DARK || moveType == TYPE_GHOST)
                   && !DoesBattlerIgnoreAbilityChecks(battlerAtk, aiData->abilities[battlerAtk], move)
                   && !IsBattleMoveStatus(move)
                   && HasMoveWithCategory(battlerAtkPartner, DAMAGE_CATEGORY_PHYSICAL)
@@ -3871,12 +3920,17 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
     case EFFECT_ATTACK_UP_2:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_ATK_2));
         break;
+    case EFFECT_ATTACK_UP_3:
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_ATK_3));
+        break;
     case EFFECT_DEFENSE_UP:
-    case EFFECT_DEFENSE_UP_3:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_DEF));
         break;
     case EFFECT_DEFENSE_UP_2:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_DEF_2));
+        break;
+    case EFFECT_DEFENSE_UP_3:
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_DEF_3));
         break;
     case EFFECT_SPEED_UP:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED));
@@ -3884,18 +3938,26 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
     case EFFECT_SPEED_UP_2:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED_2));
         break;
+    case EFFECT_SPEED_UP_3:
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED_3));
+        break;
     case EFFECT_SPECIAL_ATTACK_UP:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK));
         break;
     case EFFECT_SPECIAL_ATTACK_UP_2:
-    case EFFECT_SPECIAL_ATTACK_UP_3:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK_2));
+        break;
+    case EFFECT_SPECIAL_ATTACK_UP_3:
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK_3));
         break;
     case EFFECT_SPECIAL_DEFENSE_UP:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF));
         break;
     case EFFECT_SPECIAL_DEFENSE_UP_2:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF_2));
+        break;
+    case EFFECT_SPECIAL_DEFENSE_UP_3:
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF_3));
         break;
     case EFFECT_ACCURACY_UP:
     case EFFECT_ACCURACY_UP_2:
@@ -4948,7 +5010,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_TELEKINESIS:
         if (HasMoveWithLowAccuracy(battlerAtk, battlerDef, 90, FALSE, aiData->abilities[battlerAtk], aiData->abilities[battlerDef], aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef])
-          || !IsBattlerGrounded(battlerDef))
+          || (IsBattlerGrounded(battlerDef) && aiData->abilities[battlerDef] == ABILITY_QUICK_FEET && AI_IsSlower(battlerAtk, battlerDef, move)))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_HEAL_BLOCK:
@@ -5394,12 +5456,15 @@ static s32 AI_ForceSetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 
     case EFFECT_FOCUS_ENERGY:
     case EFFECT_CONFUSE:
     case EFFECT_ATTACK_UP_2:
+    case EFFECT_ATTACK_UP_3:
     case EFFECT_DEFENSE_UP_2:
     case EFFECT_DEFENSE_UP_3:
     case EFFECT_SPEED_UP_2:
+    case EFFECT_SPEED_UP_3:
     case EFFECT_SPECIAL_ATTACK_UP_2:
     case EFFECT_SPECIAL_ATTACK_UP_3:
     case EFFECT_SPECIAL_DEFENSE_UP_2:
+    case EFFECT_SPECIAL_DEFENSE_UP_3:
     case EFFECT_ACCURACY_UP_2:
     case EFFECT_EVASION_UP_2:
     case EFFECT_ATTACK_DOWN_2:
@@ -5798,8 +5863,11 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_BULK_UP:
             case EFFECT_CALM_MIND:
             case EFFECT_DRAGON_DANCE:
+            case EFFECT_ATTACK_UP_3:
             case EFFECT_DEFENSE_UP_3:
+            case EFFECT_SPEED_UP_3:
             case EFFECT_SPECIAL_ATTACK_UP_3:
+            case EFFECT_SPECIAL_DEFENSE_UP_3:
                 ADJUST_SCORE(-2);
                 break;
             default:

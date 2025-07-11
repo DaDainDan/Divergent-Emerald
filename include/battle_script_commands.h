@@ -59,6 +59,7 @@ void SaveBattlerTarget(u32 battler);
 void SaveBattlerAttacker(u32 battler);
 bool32 CanBurnHitThaw(u16 move);
 void SetNonVolatileStatusCondition(u32 target, enum MoveEffects effect);
+u32 GetHighestAtkStatId(u32 battlerId);
 
 extern void (*const gBattleScriptingCommandsTable[])(void);
 extern const struct StatFractions gAccuracyStageRatios[];

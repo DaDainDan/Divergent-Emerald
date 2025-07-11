@@ -26,7 +26,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("Speed Boost"),
-        .description = COMPOUND_STRING("Gradually boosts Speed."),
+        .description = COMPOUND_STRING("Boosts Speed when needed."),
         .aiRating = 9,
     },
 
@@ -219,8 +219,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SYNCHRONIZE] =
     {
         .name = _("Synchronize"),
-        .description = COMPOUND_STRING("Passes on status problems."),
-        .aiRating = 4,
+        .description = COMPOUND_STRING("Copies stat changes."),
+        .aiRating = 6,
     },
 
     [ABILITY_CLEAR_BODY] =
@@ -289,7 +289,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Huge Power"),
         .description = COMPOUND_STRING("Raises Attack."),
-        .aiRating = 10,
+        .aiRating = 8,
     },
 
     [ABILITY_POISON_POINT] =
@@ -422,7 +422,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HUSTLE] =
     {
         .name = _("Hustle"),
-        .description = COMPOUND_STRING("Trades accuracy for power."),
+        .description = COMPOUND_STRING("Trades accuracy for speed."),
         .aiRating = 7,
     },
 
@@ -561,8 +561,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_PURE_POWER] =
     {
         .name = _("Pure Power"),
-        .description = COMPOUND_STRING("Raises Attack."),
-        .aiRating = 10,
+        .description = COMPOUND_STRING("Raises SpAtk."),
+        .aiRating = 8,
     },
 
     [ABILITY_SHELL_ARMOR] =
@@ -583,7 +583,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_TANGLED_FEET] =
     {
         .name = _("Tangled Feet"),
-        .description = COMPOUND_STRING("Ups evasion if confused."),
+        .description = COMPOUND_STRING("Ups evasion but confuses."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -606,8 +606,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STEADFAST] =
     {
         .name = _("Steadfast"),
-        .description = COMPOUND_STRING("Flinching raises Speed."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Lowered stats up Speed."),
+        .aiRating = 5,
     },
 
     [ABILITY_SNOW_CLOAK] =
@@ -667,7 +667,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Download"),
         .description = COMPOUND_STRING("Adjusts power favorably."),
-        .aiRating = 7,
+        .aiRating = 8,
     },
 
     [ABILITY_IRON_FIST] =
@@ -715,8 +715,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_QUICK_FEET] =
     {
         .name = _("Quick Feet"),
-        .description = COMPOUND_STRING("Ups Speed if suffering."),
-        .aiRating = 5,
+        .description = COMPOUND_STRING("Ups Speed while grounded."),
+        .aiRating = 7,
     },
 
     [ABILITY_NORMALIZE] =
@@ -964,8 +964,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DEFIANT] =
     {
         .name = _("Defiant"),
-        .description = COMPOUND_STRING("Lowered stats up Attack."),
-        .aiRating = 5,
+        .description = COMPOUND_STRING("Lowered stats up best Atk."),
+        .aiRating = 6,
     },
 
     [ABILITY_DEFEATIST] =
@@ -1038,7 +1038,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_FLARE_BOOST] =
     {
         .name = _("Flare Boost"),
-        .description = COMPOUND_STRING("Ups Sp. Atk if burned."),
+        .description = COMPOUND_STRING("Burn ups Sp. Atk and Speed."),
         .aiRating = 5,
     },
 
@@ -1060,8 +1060,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MOODY] =
     {
         .name = _("Moody"),
-        .description = COMPOUND_STRING("Stats change gradually."),
-        .aiRating = 10,
+        .description = COMPOUND_STRING("Raises a random stat."),
+        .aiRating = 7,
     },
 
     [ABILITY_OVERCOAT] =
@@ -1159,8 +1159,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_JUSTIFIED] =
     {
         .name = _("Justified"),
-        .description = COMPOUND_STRING("Dark hits raise Attack."),
-        .aiRating = 4,
+        .description = COMPOUND_STRING("Evil hits raise Attack."),
+        .aiRating = 6,
     },
 
     [ABILITY_RATTLED] =
@@ -1293,8 +1293,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_COMPETITIVE] =
     {
         .name = _("Competitive"),
-        .description = COMPOUND_STRING("Lowered stats up Sp. Atk."),
-        .aiRating = 5,
+        .description = COMPOUND_STRING("Mimics foe's stat change."),
+        .aiRating = 6,
     },
 
     [ABILITY_STRONG_JAW] =
@@ -1356,8 +1356,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SYMBIOSIS] =
     {
         .name = _("Symbiosis"),
-        .description = COMPOUND_STRING("Passes its item to an ally."),
-        .aiRating = 0,
+        .description = COMPOUND_STRING("Mimics ally stat changes."),
+        .aiRating = 4,
     },
 
     [ABILITY_TOUGH_CLAWS] =
@@ -1508,8 +1508,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BERSERK] =
     {
         .name = _("Berserk"),
-        .description = COMPOUND_STRING("Boosts Sp. Atk at low HP."),
-        .aiRating = 5,
+        .description = COMPOUND_STRING("Goes wild at low HP."),
+        .aiRating = 6,
     },
 
     [ABILITY_SLUSH_RUSH] =
@@ -2691,5 +2691,26 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Avenger"),
         .description = COMPOUND_STRING("Inherits fallen's strength."),
         .aiRating = 6,
+    },
+
+    [ABILITY_GENEROSITY] =
+    {
+        .name = _("Generosity"),
+        .description = COMPOUND_STRING("Passes its item to an ally."),
+        .aiRating = 0,
+    },
+
+    [ABILITY_IRRITABILITY] =
+    {
+        .name = _("Irritability"),
+        .description = COMPOUND_STRING("Taking damage raises Atk."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_RECIPROCAL] =
+    {
+        .name = _("Reciprocal"),
+        .description = COMPOUND_STRING("Passes on status problems."),
+        .aiRating = 4,
     },
 };

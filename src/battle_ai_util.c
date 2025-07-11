@@ -2556,6 +2556,7 @@ bool32 IsAttackBoostMoveEffect(enum BattleMoveEffects effect)
     {
     case EFFECT_ATTACK_UP:
     case EFFECT_ATTACK_UP_2:
+    case EFFECT_ATTACK_UP_3:
     case EFFECT_ATTACK_ACCURACY_UP:
     case EFFECT_ATTACK_SPATK_UP:
     case EFFECT_DRAGON_DANCE:
@@ -2576,16 +2577,19 @@ bool32 IsStatRaisingEffect(enum BattleMoveEffects effect)
     {
     case EFFECT_ATTACK_UP:
     case EFFECT_ATTACK_UP_2:
+    case EFFECT_ATTACK_UP_3:
     case EFFECT_DEFENSE_UP:
     case EFFECT_DEFENSE_UP_2:
     case EFFECT_DEFENSE_UP_3:
     case EFFECT_SPEED_UP:
     case EFFECT_SPEED_UP_2:
+    case EFFECT_SPEED_UP_3:
     case EFFECT_SPECIAL_ATTACK_UP:
     case EFFECT_SPECIAL_ATTACK_UP_2:
     case EFFECT_SPECIAL_ATTACK_UP_3:
     case EFFECT_SPECIAL_DEFENSE_UP:
     case EFFECT_SPECIAL_DEFENSE_UP_2:
+    case EFFECT_SPECIAL_DEFENSE_UP_3:
     case EFFECT_ACCURACY_UP:
     case EFFECT_ACCURACY_UP_2:
     case EFFECT_EVASION_UP:
@@ -3283,7 +3287,7 @@ bool32 AI_CanPutToSleep(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move
 static inline bool32 DoesBattlerBenefitFromAllVolatileStatus(u32 battler, u32 ability)
 {
     if (ability == ABILITY_MARVEL_SCALE
-     || ability == ABILITY_QUICK_FEET
+    //  || ability == ABILITY_QUICK_FEET
      || ability == ABILITY_MAGIC_GUARD
      || (ability == ABILITY_GUTS) // && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL)
      || HasMoveWithEffect(battler, EFFECT_FACADE)
@@ -3318,7 +3322,7 @@ bool32 ShouldBurn(u32 battlerAtk, u32 battlerDef, u32 abilityDef)
     if (CanBeBurned(battlerAtk, battlerDef, abilityDef) && (
         DoesBattlerBenefitFromAllVolatileStatus(battlerDef, abilityDef)
         || abilityDef == ABILITY_HEATPROOF
-        || (abilityDef == ABILITY_FLARE_BOOST && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))))
+        || (abilityDef == ABILITY_FLARE_BOOST))) // && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL)
     {
         if (battlerAtk == battlerDef) // Targeting self
             return TRUE;
@@ -4199,7 +4203,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         return NO_INCREASE;
 
     // Don't increase stats if opposing battler has Opportunist
-    if (gAiLogicData->abilities[battlerDef] == ABILITY_OPPORTUNIST)
+    if (gAiLogicData->abilities[battlerDef] == ABILITY_OPPORTUNIST || gAiLogicData->abilities[battlerDef] == ABILITY_COMPETITIVE)
         return NO_INCREASE;
 
     // Don't increase stats if opposing battler has Encore
@@ -4236,11 +4240,15 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         tempScore += WEAK_EFFECT;
     }
 
+    // Stat changes will also increase ally's stats
+    if (gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_SYMBIOSIS)
+        tempScore += WEAK_EFFECT;
+
     switch (statId)
     {
     case STAT_CHANGE_ATK:
         if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL) && shouldSetUp)
-            tempScore += DECENT_EFFECT;
+            tempScore += WEAK_EFFECT;
         break;
     case STAT_CHANGE_DEF:
         if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL) || !HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))
@@ -4253,11 +4261,11 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         break;
     case STAT_CHANGE_SPEED:
         if ((noOfHitsToFaint >= 3 && !aiIsFaster) || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
-            tempScore += DECENT_EFFECT;
+            tempScore += WEAK_EFFECT;
         break;
     case STAT_CHANGE_SPATK:
         if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL) && shouldSetUp)
-            tempScore += DECENT_EFFECT;
+            tempScore += WEAK_EFFECT;
         break;
     case STAT_CHANGE_SPDEF:
         if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL) || !HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
@@ -4270,7 +4278,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         break;
     case STAT_CHANGE_ATK_2:
         if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL) && shouldSetUp)
-            tempScore += GOOD_EFFECT;
+            tempScore += DECENT_EFFECT;
         break;
     case STAT_CHANGE_DEF_2:
         if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL) || !HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))
@@ -4283,11 +4291,11 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         break;
     case STAT_CHANGE_SPEED_2:
         if ((noOfHitsToFaint >= 3 && !aiIsFaster) || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
-            tempScore += GOOD_EFFECT;
+            tempScore += DECENT_EFFECT;
         break;
     case STAT_CHANGE_SPATK_2:
         if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL) && shouldSetUp)
-            tempScore += GOOD_EFFECT;
+            tempScore += DECENT_EFFECT;
         break;
     case STAT_CHANGE_SPDEF_2:
         if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL) || !HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
@@ -4307,6 +4315,36 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             tempScore += GOOD_EFFECT;
         else
             tempScore += DECENT_EFFECT;
+        break;
+    case STAT_CHANGE_ATK_3:
+        if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL) && shouldSetUp)
+            tempScore += GOOD_EFFECT;
+        break;
+    case STAT_CHANGE_DEF_3:
+        if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL) || !HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))
+        {
+            if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_STALL)
+                tempScore += BEST_EFFECT;
+            else
+                tempScore += GOOD_EFFECT;
+        }
+        break;
+    case STAT_CHANGE_SPEED_3:
+        if ((noOfHitsToFaint >= 3 && !aiIsFaster) || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
+            tempScore += GOOD_EFFECT;
+        break;
+    case STAT_CHANGE_SPATK_3:
+        if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL) && shouldSetUp)
+            tempScore += GOOD_EFFECT;
+        break;
+    case STAT_CHANGE_SPDEF_3:
+        if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL) || !HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
+        {
+            if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_STALL)
+                tempScore += BEST_EFFECT;
+            else
+                tempScore += GOOD_EFFECT;
+        }
         break;
     }
 
@@ -4736,13 +4774,21 @@ bool32 ShouldTriggerAbility(u32 battler, u32 ability)
 
         case ABILITY_DEFIANT:
         case ABILITY_JUSTIFIED:
-        case ABILITY_MOXIE:
+        case ABILITY_MOXIE: {
+            u32 category = DAMAGE_CATEGORY_PHYSICAL;
+            u32 statId = GetHighestAtkStatId(battler);
+            if (statId == STAT_SPATK)
+                category = DAMAGE_CATEGORY_SPECIAL;
+            return (BattlerStatCanRise(battler, ability, statId) && HasMoveWithCategory(battler, category));
+        }
+
         case ABILITY_SAP_SIPPER:
         case ABILITY_THERMAL_EXCHANGE:
+        case ABILITY_IRRITABILITY:
             return (BattlerStatCanRise(battler, ability, STAT_ATK) && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL));
 
-        case ABILITY_COMPETITIVE:
-            return (BattlerStatCanRise(battler, ability, STAT_SPATK) && HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL));
+        // case ABILITY_COMPETITIVE:
+        //     return (BattlerStatCanRise(battler, ability, STAT_SPATK) && HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL));
 
         case ABILITY_CONTRARY:
             return TRUE;
@@ -4754,6 +4800,7 @@ bool32 ShouldTriggerAbility(u32 battler, u32 ability)
 
         case ABILITY_RATTLED:
         case ABILITY_STEAM_ENGINE:
+        case ABILITY_STEADFAST:
             return BattlerStatCanRise(battler, ability, STAT_SPEED);
 
         case ABILITY_FLASH_FIRE:
@@ -4761,6 +4808,7 @@ bool32 ShouldTriggerAbility(u32 battler, u32 ability)
 
         case ABILITY_WATER_COMPACTION:
         case ABILITY_WELL_BAKED_BODY:
+        case ABILITY_HEAT_TREATMENT:
             return (BattlerStatCanRise(battler, ability, STAT_DEF));
 
         default:

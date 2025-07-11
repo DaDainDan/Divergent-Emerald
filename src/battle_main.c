@@ -3856,6 +3856,11 @@ static void TryDoEventsBeforeFirstTurn(void)
             return;
         gBattleStruct->eventsBeforeFirstTurnState++;
         break;
+    case FIRST_TURN_EVENTS_SYMBIOSIS_1:
+        if (AbilityBattleEffects(ABILITYEFFECT_SYMBIOSIS, 0, 0, 0, 0))
+            return;
+        gBattleStruct->eventsBeforeFirstTurnState++;
+        break;
     case FIRST_TURN_EVENTS_ITEM_EFFECTS:
         while (gBattleStruct->switchInBattlerCounter < gBattlersCount) // From fastest to slowest
         {
@@ -3867,6 +3872,11 @@ static void TryDoEventsBeforeFirstTurn(void)
         break;
     case FIRST_TURN_EVENTS_OPPORTUNIST_2:
         if (AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST, 0, 0, 0, 0))
+            return;
+        gBattleStruct->eventsBeforeFirstTurnState++;
+        break;
+    case FIRST_TURN_EVENTS_SYMBIOSIS_2:
+        if (AbilityBattleEffects(ABILITYEFFECT_SYMBIOSIS, 0, 0, 0, 0))
             return;
         gBattleStruct->eventsBeforeFirstTurnState++;
         break;
@@ -4721,8 +4731,12 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
     }
 
     // other abilities
-    if (ability == ABILITY_QUICK_FEET && gBattleMons[battler].status1 & STATUS1_ANY)
-        speed = (speed * 150) / 100;
+    if (ability == ABILITY_QUICK_FEET && IsBattlerGrounded(battler)) // && gBattleMons[battler].status1 & STATUS1_ANY
+        speed = (speed * 125) / 100;
+    else if (ability == ABILITY_FLARE_BOOST && gBattleMons[battler].status1 & STATUS1_BURN)
+        speed = (speed * 125) / 100;
+    else if (ability == ABILITY_HUSTLE)
+        speed = (speed * 133) / 100;
     else if (ability == ABILITY_SURGE_SURFER && gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
         speed *= 2;
     else if (ability == ABILITY_SLOW_START && gDisableStructs[battler].slowStartTimer != 0)
@@ -4757,7 +4771,7 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
         speed *= 2;
 
     // paralysis drop
-    if (gBattleMons[battler].status1 & STATUS1_PARALYSIS && ability != ABILITY_QUICK_FEET)
+    if (gBattleMons[battler].status1 & STATUS1_PARALYSIS) //  && ability != ABILITY_QUICK_FEET
         speed /= GetGenConfig(GEN_CONFIG_PARALYSIS_SPEED) >= GEN_7 ? 2 : 4;
 
     if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SWAMP)
