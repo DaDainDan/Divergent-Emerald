@@ -789,6 +789,7 @@ BattleScript_EffectFling::
 	jumpifability BS_TARGET, ABILITY_SHIELD_DUST, BattleScript_FlingBlockedByShieldDust
 	jumpifability BS_TARGET, ABILITY_SERENE_GRACE, BattleScript_FlingBlockedByShieldDust
 	jumpifability BS_TARGET, ABILITY_SHELL_ARMOR, BattleScript_FlingBlockedByShieldDust
+	jumpifability BS_TARGET, ABILITY_LEAF_GUARD, BattleScript_FlingBlockedByShieldDust
 	jumpiflastuseditemholdeffect HOLD_EFFECT_FLAME_ORB, 0, BattleScript_FlingFlameOrb
 	jumpiflastuseditemholdeffect HOLD_EFFECT_FLINCH, 0, BattleScript_FlingFlinch
 	jumpiflastuseditemholdeffect HOLD_EFFECT_LIGHT_BALL, 0, BattleScript_FlingLightBall
@@ -5692,10 +5693,11 @@ BattleScript_FogEnded_Ret::
 
 BattleScript_IceBodyHeal::
 	call BattleScript_AbilityPopUp
+BattleScript_HealingWeather::
 	playanimation BS_ATTACKER, B_ANIM_SIMPLE_HEAL
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
-	printstring STRINGID_ICEBODYHPGAIN
+	printfromtable gWeatherHealingStringIds
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
@@ -8012,6 +8014,34 @@ BattleScript_PsychicSurgeActivates::
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG
 	call BattleScript_ActivateTerrainEffects
+	end3
+
+BattleScript_WhiteSmokeActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	playanimation BS_SCRIPTING, B_ANIM_FOG_CONTINUES
+	waitanimation
+	printstring STRINGID_PKMNSHROUDEDINMIST
+	waitmessage B_WAIT_TIME_LONG
+	end3
+
+BattleScript_VictoryStarActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	playanimation BS_SCRIPTING, B_ANIM_TOTEM_FLARE
+	waitanimation
+	printstring STRINGID_VICTORYAURA
+	waitmessage B_WAIT_TIME_LONG
+	end3
+
+BattleScript_BlackFumesActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	normalisebuffs
+	playanimation BS_SCRIPTING, B_ANIM_FOG_CONTINUES
+	waitanimation
+	printstring STRINGID_STATCHANGESGONE
+	waitmessage B_WAIT_TIME_LONG
 	end3
 
 BattleScript_BadDreamsActivates::

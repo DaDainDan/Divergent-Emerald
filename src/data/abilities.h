@@ -65,8 +65,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SAND_VEIL] =
     {
         .name = _("Sand Veil"),
-        .description = COMPOUND_STRING("Ups evasion in a sandstorm."),
-        .aiRating = 3,
+        .description = COMPOUND_STRING("Ups SpDef in a sandstorm."),
+        .aiRating = 4,
         .breakable = TRUE,
     },
 
@@ -341,8 +341,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_RAIN_DISH] =
     {
         .name = _("Rain Dish"),
-        .description = COMPOUND_STRING("Slight HP recovery in rain."),
-        .aiRating = 3,
+        .description = COMPOUND_STRING("HP recovery in rain."),
+        .aiRating = 4,
     },
 
     [ABILITY_SAND_STREAM] =
@@ -553,9 +553,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WHITE_SMOKE] =
     {
         .name = _("White Smoke"),
-        .description = COMPOUND_STRING("Prevents ability reduction."),
+        .description = COMPOUND_STRING("Sets Mist on entry."),
         .aiRating = 4,
-        .breakable = TRUE,
+        // .breakable = TRUE,
     },
 
     [ABILITY_PURE_POWER] =
@@ -613,8 +613,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SNOW_CLOAK] =
     {
         .name = _("Snow Cloak"),
-        .description = COMPOUND_STRING("Ups evasion in Hail or Snow."),
-        .aiRating = 3,
+        .description = COMPOUND_STRING("Ups Def in Hail or Snow."),
+        .aiRating = 4,
         .breakable = TRUE,
     },
 
@@ -764,8 +764,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LEAF_GUARD] =
     {
         .name = _("Leaf Guard"),
-        .description = COMPOUND_STRING("Blocks status in sunshine."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Prevents added effects."),
+        .aiRating = 5,
         .breakable = TRUE,
     },
 
@@ -920,8 +920,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Flower Gift"),
         .description = COMPOUND_STRING("Allies power up in sunshine."),
         .aiRating = 4,
-        .cantBeCopied = TRUE,
-        .cantBeTraced = TRUE,
+        // .cantBeCopied = TRUE,
+        // .cantBeTraced = TRUE,
         .breakable = TRUE,
     },
 
@@ -1221,7 +1221,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_VICTORY_STAR] =
     {
         .name = _("Victory Star"),
-        .description = COMPOUND_STRING("Raises party accuracy."),
+        .description = COMPOUND_STRING("Sets Lucky Chant on entry."),
         .aiRating = 6,
     },
 
@@ -1432,7 +1432,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_DELTA_STREAM] =
     {
-        .name = _("Delta Stream"),
+        .name = _("Airstream"),
         .description = COMPOUND_STRING("Summons strong winds."),
         .aiRating = 10,
     },
@@ -2605,7 +2605,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ORIGIN_OF_SKY] =
     {
         .name = _("Origin of Sky"),
-        .description = COMPOUND_STRING("Air Lock + Kusanagi."),
+        .description = COMPOUND_STRING("Delta Stream + Kusanagi."),
         .aiRating = 10,
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
@@ -2712,5 +2712,12 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Reciprocal"),
         .description = COMPOUND_STRING("Passes on status problems."),
         .aiRating = 4,
+    },
+
+    [ABILITY_BLACK_FUMES] =
+    {
+        .name = _("Black Fumes"),
+        .description = COMPOUND_STRING("Sets Haze on entry."),
+        .aiRating = 6,
     },
 };

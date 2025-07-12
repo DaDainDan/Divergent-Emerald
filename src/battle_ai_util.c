@@ -1798,7 +1798,7 @@ bool32 ShouldSetSandstorm(u32 battler, u32 ability, enum ItemHoldEffect holdEffe
      || ability == ABILITY_SOLID_ROCK
      || ability == ABILITY_SHELL_ARMOR
      || ability == ABILITY_MAGIC_GUARD
-     || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
+     || holdEffect == HOLD_EFFECT_UTILITY_UMBRELLA // HOLD_EFFECT_SAFETY_GOGGLES
      || IS_BATTLER_ANY_TYPE(battler, TYPE_ROCK, TYPE_GROUND, TYPE_TERRA, TYPE_SAND, TYPE_STEEL)
      || HasMoveWithEffect(battler, EFFECT_SHORE_UP)
      || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL))
@@ -1820,10 +1820,10 @@ bool32 ShouldSetHail(u32 battler, u32 ability, enum ItemHoldEffect holdEffect)
      || ability == ABILITY_MAGIC_GUARD
      || ability == ABILITY_OVERCOAT
      || ability == ABILITY_BATTLE_ARMOR
-      || ability == ABILITY_SHELL_ARMOR
-      || ability == ABILITY_SOLID_ROCK
-     || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
-     || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
+     || ability == ABILITY_SHELL_ARMOR
+     || ability == ABILITY_SOLID_ROCK
+     || holdEffect == HOLD_EFFECT_UTILITY_UMBRELLA // HOLD_EFFECT_SAFETY_GOGGLES
+     || IS_BATTLER_OF_TYPE(battler, TYPE_ICE, TYPE_STEEL)
      || HasMoveWithFlag(battler, MoveAlwaysHitsInHailSnow)
      || HasMoveWithEffect(battler, EFFECT_AURORA_VEIL)
      || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL))
@@ -1844,6 +1844,7 @@ bool32 ShouldSetRain(u32 battlerAtk, u32 atkAbility, enum ItemHoldEffect holdEff
       || atkAbility == ABILITY_HYDRATION
       || atkAbility == ABILITY_RAIN_DISH
       || atkAbility == ABILITY_DRY_SKIN
+      || IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS)
       || HasMoveWithFlag(battlerAtk, MoveAlwaysHitsInRain)
       || HasMoveWithEffect(battlerAtk, EFFECT_WEATHER_BALL)
       || HasMoveWithType(battlerAtk, TYPE_WATER)))
@@ -1883,14 +1884,16 @@ bool32 ShouldSetSnow(u32 battler, u32 ability, enum ItemHoldEffect holdEffect)
     if (IsWeatherActive(B_WEATHER_SNOW | B_WEATHER_HAIL | B_WEATHER_PRIMAL_ANY) != WEATHER_INACTIVE)
         return FALSE;
 
-    if (ability == ABILITY_SNOW_CLOAK
+    if (holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
+     && (ability == ABILITY_SNOW_CLOAK
      || ability == ABILITY_ICE_BODY
      || ability == ABILITY_FORECAST
      || ability == ABILITY_SLUSH_RUSH
      || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
      || HasMoveWithFlag(battler, MoveAlwaysHitsInHailSnow)
      || HasMoveWithEffect(battler, EFFECT_AURORA_VEIL)
-     || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL))
+     || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL)
+     || HasMoveWithType(battler, TYPE_ICE)))
     {
         return TRUE;
     }
@@ -1945,6 +1948,9 @@ bool32 ShouldLowerStat(u32 battlerAtk, u32 battlerDef, u32 abilityDef, u32 stat)
     if (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_CLEAR_AMULET)
         return FALSE;
 
+    if ((gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MIST))
+        return FALSE;    
+
     switch (abilityDef)
     {
     case ABILITY_SPEED_BOOST:
@@ -1975,7 +1981,7 @@ bool32 ShouldLowerStat(u32 battlerAtk, u32 battlerDef, u32 abilityDef, u32 stat)
         break;
     case ABILITY_CONTRARY:
     case ABILITY_CLEAR_BODY:
-    case ABILITY_WHITE_SMOKE:
+    // case ABILITY_WHITE_SMOKE:
     case ABILITY_FULL_METAL_BODY:
         return FALSE;
     }
@@ -2058,10 +2064,11 @@ bool32 ShouldLowerAttack(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL)
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+    //   && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_HYPER_CUTTER
       && defAbility != ABILITY_TOUGH_CLAWS
+      && !(gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MIST)
       && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2078,11 +2085,12 @@ bool32 ShouldLowerDefense(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL)
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+    //   && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_FULL_METAL_BODY
     //   && defAbility != ABILITY_BIG_PECKS
       && defAbility != ABILITY_BATTLE_ARMOR
       && defAbility != ABILITY_SOLID_ROCK
+      && !(gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MIST)
       && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2093,7 +2101,8 @@ bool32 ShouldLowerSpeed(u32 battlerAtk, u32 battlerDef, u32 defAbility)
     if (defAbility == ABILITY_CONTRARY
      || defAbility == ABILITY_CLEAR_BODY
      || defAbility == ABILITY_FULL_METAL_BODY
-     || defAbility == ABILITY_WHITE_SMOKE
+    //  || defAbility == ABILITY_WHITE_SMOKE
+     || (gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MIST)
      || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_CLEAR_AMULET)
         return FALSE;
 
@@ -2112,8 +2121,9 @@ bool32 ShouldLowerSpAtk(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
       && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+    //   && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_HYPER_FOCUS
+      && !(gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MIST)
       && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2131,7 +2141,8 @@ bool32 ShouldLowerSpDef(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
       && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+    //   && defAbility != ABILITY_WHITE_SMOKE
+      && !(gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MIST)
       && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2146,11 +2157,12 @@ bool32 ShouldLowerAccuracy(u32 battlerAtk, u32 battlerDef, u32 defAbility)
 
     if (defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+    //   && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_FULL_METAL_BODY
     //   && defAbility != ABILITY_KEEN_EYE
       && defAbility != ABILITY_MIRACLE_EYE
       && (B_ILLUMINATE_EFFECT >= GEN_9 && defAbility != ABILITY_ILLUMINATE)
+      && !(gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MIST)
       && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2167,7 +2179,8 @@ bool32 ShouldLowerEvasion(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
       && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+    //   && defAbility != ABILITY_WHITE_SMOKE
+      && !(gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MIST)
       && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2898,6 +2911,7 @@ static u32 GetPoisonDamage(u32 battlerId)
 static bool32 BattlerAffectedBySandstorm(u32 battlerId, u32 ability)
 {
     if (!IS_BATTLER_ANY_TYPE(battlerId, TYPE_ROCK, TYPE_GROUND, TYPE_TERRA, TYPE_SAND, TYPE_STEEL)
+      && ability != ABILITY_MAGIC_GUARD
       && ability != ABILITY_SAND_VEIL
       && ability != ABILITY_SAND_FORCE
       && ability != ABILITY_SAND_RUSH
@@ -2911,7 +2925,8 @@ static bool32 BattlerAffectedBySandstorm(u32 battlerId, u32 ability)
 
 static bool32 BattlerAffectedByHail(u32 battlerId, u32 ability)
 {
-    if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_ICE)
+    if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_ICE, TYPE_STEEL)
+      && ability != ABILITY_MAGIC_GUARD
       && ability != ABILITY_SNOW_CLOAK
       && ability != ABILITY_OVERCOAT
       && ability != ABILITY_BATTLE_ARMOR
@@ -2935,7 +2950,7 @@ static u32 GetWeatherDamage(u32 battlerId)
     {
         if (BattlerAffectedBySandstorm(battlerId, ability)
           && !(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
-          && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES)
+          && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA) // HOLD_EFFECT_SAFETY_GOGGLES
         {
             damage = GetNonDynamaxMaxHP(battlerId) / 16;
             if (damage == 0)
@@ -2946,12 +2961,23 @@ static u32 GetWeatherDamage(u32 battlerId)
     {
         if (BattlerAffectedByHail(battlerId, ability)
           && !(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
-          && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES)
+          && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA) // HOLD_EFFECT_SAFETY_GOGGLES
         {
             damage = GetNonDynamaxMaxHP(battlerId) / 16;
             if (damage == 0)
                 damage = 1;
         }
+    }
+    if ((weather & B_WEATHER_SUN) && IS_BATTLER_OF_TYPE(battlerId, TYPE_ICE) && !IS_BATTLER_OF_TYPE(battlerId, TYPE_FIRE, TYPE_FLAME)
+        && ability != ABILITY_MAGIC_GUARD)
+    {
+       if (!(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
+          && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA) // HOLD_EFFECT_SAFETY_GOGGLES
+        {
+            damage = GetNonDynamaxMaxHP(battlerId) / 16;
+            if (damage == 0)
+                damage = 1;
+        } 
     }
     return damage;
 }

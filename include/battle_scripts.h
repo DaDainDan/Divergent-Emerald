@@ -875,5 +875,9 @@ extern const u8 BattleScript_EffectSpeedUp3[];
 extern const u8 BattleScript_EffectSpecialDefenseUp3[];
 extern const u8 BattleScript_RecklessActivates[];
 extern const u8 BattleScript_TangledFeetConfusion[];
+extern const u8 BattleScript_HealingWeather[];
+extern const u8 BattleScript_WhiteSmokeActivates[];
+extern const u8 BattleScript_VictoryStarActivates[];
+extern const u8 BattleScript_BlackFumesActivates[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

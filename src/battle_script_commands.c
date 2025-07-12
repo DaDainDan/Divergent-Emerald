@@ -1634,14 +1634,14 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     // Target's ability
     switch (defAbility)
     {
-    case ABILITY_SAND_VEIL:
-        if (HasWeatherEffect() && gBattleWeather & B_WEATHER_SANDSTORM)
-            calc = (calc * 80) / 100; // 1.2 sand veil loss
-        break;
-    case ABILITY_SNOW_CLOAK:
-        if (HasWeatherEffect() && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
-            calc = (calc * 80) / 100; // 1.2 snow cloak loss
-        break;
+    // case ABILITY_SAND_VEIL:
+    //     if (HasWeatherEffect() && gBattleWeather & B_WEATHER_SANDSTORM)
+    //         calc = (calc * 80) / 100; // 1.2 sand veil loss
+    //     break;
+    // case ABILITY_SNOW_CLOAK:
+    //     if (HasWeatherEffect() && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
+    //         calc = (calc * 80) / 100; // 1.2 snow cloak loss
+    //     break;
     case ABILITY_TANGLED_FEET:
         if (gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
             calc = (calc * 50) / 100; // 1.5 tangled feet loss
@@ -1651,10 +1651,10 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     // Attacker's ally's ability
     switch (atkAllyAbility)
     {
-    case ABILITY_VICTORY_STAR:
-        if (IsBattlerAlive(atkAlly))
-            calc = (calc * 110) / 100; // 1.1 ally's victory star boost
-        break;
+    // case ABILITY_VICTORY_STAR:
+    //     if (IsBattlerAlive(atkAlly))
+    //         calc = (calc * 110) / 100; // 1.1 ally's victory star boost
+    //     break;
     }
 
     // Attacker's hold effect
@@ -1691,8 +1691,12 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     if (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerDef) == AFFECTION_FIVE_HEARTS)
         calc = (calc * 90) / 100;
 
-    if (HasWeatherEffect() && gBattleWeather & B_WEATHER_FOG)
+    if (HasWeatherEffect() && gBattleWeather & B_WEATHER_FOG && atkHoldEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
         calc = (calc * 60) / 100; // modified by 3/5
+    
+    if (HasWeatherEffect() && gBattleWeather & B_WEATHER_SANDSTORM && GetMoveType(move) != TYPE_GROUND && GetMoveType(move) != TYPE_SAND
+        && !IS_BATTLER_ANY_TYPE(battlerAtk, TYPE_GROUND, TYPE_TERRA, TYPE_SAND) && atkHoldEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
+        calc = (calc * 80) / 100; // modified by 3/5
 
     return calc;
 }
@@ -2378,19 +2382,19 @@ static u32 UpdateEffectivenessResultFlagsForDoubleSpreadMoves(u32 resultFlags)
 
 static inline bool32 TryStrongWindsWeakenAttack(u32 battlerDef, u32 moveType)
 {
-    if (gBattleWeather & B_WEATHER_STRONG_WINDS && HasWeatherEffect())
-    {
-        if (GetMoveCategory(gCurrentMove) != DAMAGE_CATEGORY_STATUS
-         && IS_BATTLER_OF_TYPE(battlerDef, TYPE_FLYING)
-         && gTypeEffectivenessTable[moveType][TYPE_FLYING] >= UQ_4_12(1.6)
-         && !gBattleStruct->printedStrongWindsWeakenedAttack)
-        {
-            gBattleStruct->printedStrongWindsWeakenedAttack = TRUE;
-            BattleScriptPushCursor();
-            gBattlescriptCurrInstr = BattleScript_AttackWeakenedByStrongWinds;
-            return TRUE;
-        }
-    }
+    // if (gBattleWeather & B_WEATHER_STRONG_WINDS && HasWeatherEffect())
+    // {
+    //     if (GetMoveCategory(gCurrentMove) != DAMAGE_CATEGORY_STATUS
+    //      && IS_BATTLER_OF_TYPE(battlerDef, TYPE_FLYING)
+    //      && gTypeEffectivenessTable[moveType][TYPE_FLYING] >= UQ_4_12(1.6)
+    //      && !gBattleStruct->printedStrongWindsWeakenedAttack)
+    //     {
+    //         gBattleStruct->printedStrongWindsWeakenedAttack = TRUE;
+    //         BattleScriptPushCursor();
+    //         gBattlescriptCurrInstr = BattleScript_AttackWeakenedByStrongWinds;
+    //         return TRUE;
+    //     }
+    // }
 
     return FALSE;
 }
@@ -6014,7 +6018,7 @@ static void Cmd_playstatchangeanimation(void)
                         && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_CLEAR_AMULET
                         && ability != ABILITY_CLEAR_BODY
                         && ability != ABILITY_FULL_METAL_BODY
-                        && ability != ABILITY_WHITE_SMOKE
+                        // && ability != ABILITY_WHITE_SMOKE
                         && !(ability == ABILITY_MIRACLE_EYE && currStat == STAT_ACC) // ability == ABILITY_KEEN_EYE || 
                         && !(B_ILLUMINATE_EFFECT >= GEN_9 && ability == ABILITY_ILLUMINATE && currStat == STAT_ACC)
                         && !((ability == ABILITY_HYPER_CUTTER || ability == ABILITY_TOUGH_CLAWS) && currStat == STAT_ATK)
@@ -8392,7 +8396,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
                     return TRUE;
                 break;
             case ABILITY_FORECAST:
-            case ABILITY_FLOWER_GIFT:
+            // case ABILITY_FLOWER_GIFT:
             case ABILITY_PROTOSYNTHESIS:
                 if (AbilityBattleEffects(ABILITYEFFECT_ON_WEATHER, i, 0, 0, 0))
                     return TRUE;
@@ -9845,10 +9849,10 @@ u32 IsFlowerVeilProtected(u32 battler)
 
 u32 IsLeafGuardProtected(u32 battler, u32 ability)
 {
-    if (IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
-        return ability == ABILITY_LEAF_GUARD;
-    else
-        return 0;
+    // if (IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
+    //     return ability == ABILITY_LEAF_GUARD;
+    // else
+    return 0;
 }
 
 bool32 IsShieldsDownProtected(u32 battler, u32 ability)
@@ -11402,8 +11406,8 @@ static void Cmd_various(void)
         {
             u32 ability = GetBattlerAbility(i);
             if (((ability == ABILITY_DESOLATE_LAND && gBattleWeather & B_WEATHER_SUN_PRIMAL)
-             || (ability == ABILITY_PRIMORDIAL_SEA && gBattleWeather & B_WEATHER_RAIN_PRIMAL)
-             || (ability == ABILITY_DELTA_STREAM && gBattleWeather & B_WEATHER_STRONG_WINDS))
+             || (ability == ABILITY_PRIMORDIAL_SEA && gBattleWeather & B_WEATHER_RAIN_PRIMAL))
+            //  || (ability == ABILITY_DELTA_STREAM && gBattleWeather & B_WEATHER_STRONG_WINDS))
              && IsBattlerAlive(i))
                 shouldNotClear = TRUE;
         }
@@ -11419,12 +11423,12 @@ static void Cmd_various(void)
             PrepareStringBattle(STRINGID_HEAVYRAINLIFTED, battler);
             gBattleCommunication[MSG_DISPLAY] = 1;
         }
-        else if (gBattleWeather & B_WEATHER_STRONG_WINDS && !shouldNotClear)
-        {
-            gBattleWeather &= ~B_WEATHER_STRONG_WINDS;
-            PrepareStringBattle(STRINGID_STRONGWINDSDISSIPATED, battler);
-            gBattleCommunication[MSG_DISPLAY] = 1;
-        }
+        // else if (gBattleWeather & B_WEATHER_STRONG_WINDS && !shouldNotClear)
+        // {
+        //     gBattleWeather &= ~B_WEATHER_STRONG_WINDS;
+        //     PrepareStringBattle(STRINGID_STRONGWINDSDISSIPATED, battler);
+        //     gBattleCommunication[MSG_DISPLAY] = 1;
+        // }
         break;
     }
     case VARIOUS_TRY_END_NEUTRALIZING_GAS:
@@ -16874,7 +16878,7 @@ static bool32 CanAbilityPreventStatLoss(u32 abilityDef)
     {
     case ABILITY_CLEAR_BODY:
     case ABILITY_FULL_METAL_BODY:
-    case ABILITY_WHITE_SMOKE:
+    // case ABILITY_WHITE_SMOKE:
         return TRUE;
     }
     return FALSE;

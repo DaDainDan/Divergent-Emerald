@@ -1162,12 +1162,12 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (IsShieldsDownProtected(battlerAtk, aiData->abilities[battlerAtk]) && IsNonVolatileStatusMove(move))
                 RETURN_SCORE_MINUS(10);
             break;
-        case ABILITY_LEAF_GUARD:
-            if ((AI_GetWeather() & B_WEATHER_SUN)
-              && aiData->holdEffects[battlerDef] != HOLD_EFFECT_UTILITY_UMBRELLA
-              && IsNonVolatileStatusMove(move))
-                RETURN_SCORE_MINUS(10);
-            break;
+        // case ABILITY_LEAF_GUARD:
+        //     if ((AI_GetWeather() & B_WEATHER_SUN)
+        //       && aiData->holdEffects[battlerDef] != HOLD_EFFECT_UTILITY_UMBRELLA
+        //       && IsNonVolatileStatusMove(move))
+        //         RETURN_SCORE_MINUS(10);
+        //     break;
         } // def ability checks
 
         // target partner ability checks & not attacking partner
@@ -4218,10 +4218,10 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_CURE_SLP
               || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_CURE_STATUS
               || HasMoveWithEffect(EFFECT_SLEEP_TALK, battlerAtk)
-              || HasMoveWithEffect(EFFECT_SNORE, battlerAtk)
-              || aiData->abilities[battlerAtk] == ABILITY_SHED_SKIN
+              || HasMoveWithEffect(EFFECT_SNORE, battlerAtk))
+            //   || aiData->abilities[battlerAtk] == ABILITY_SHED_SKIN
             //   || aiData->abilities[battlerAtk] == ABILITY_EARLY_BIRD
-              || (AI_GetWeather() & B_WEATHER_RAIN && gWishFutureKnock.weatherDuration != 1 && aiData->abilities[battlerAtk] == ABILITY_HYDRATION && aiData->holdEffects[battlerAtk] != HOLD_EFFECT_UTILITY_UMBRELLA))
+            //   || (AI_GetWeather() & B_WEATHER_RAIN && gWishFutureKnock.weatherDuration != 1 && aiData->abilities[battlerAtk] == ABILITY_HYDRATION && aiData->holdEffects[battlerAtk] != HOLD_EFFECT_UTILITY_UMBRELLA))
                 ADJUST_SCORE(GOOD_EFFECT);
         }
         break;
@@ -4704,7 +4704,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(DECENT_EFFECT);
             break;
         case HOLD_EFFECT_UTILITY_UMBRELLA:
-            if (aiData->abilities[battlerAtk] != ABILITY_SOLAR_POWER && aiData->abilities[battlerAtk] != ABILITY_DRY_SKIN)
+            if (aiData->abilities[battlerAtk] != ABILITY_DRY_SKIN) // aiData->abilities[battlerAtk] != ABILITY_SOLAR_POWER && 
             {
                 switch (aiData->abilities[battlerDef])
                 {
@@ -4713,8 +4713,21 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
                         ADJUST_SCORE(DECENT_EFFECT); // Slow 'em down
                     break;
                 case ABILITY_CHLOROPHYLL:
+                case ABILITY_SOLAR_POWER:
                 case ABILITY_FLOWER_GIFT:
+                case ABILITY_LEAF_GUARD:
                     if (AI_GetWeather() & B_WEATHER_SUN)
+                        ADJUST_SCORE(DECENT_EFFECT); // Slow 'em down
+                    break;
+                case ABILITY_SNOW_CLOAK:
+                case ABILITY_SLUSH_RUSH:
+                    if ((AI_GetWeather() & B_WEATHER_SNOW) || (AI_GetWeather() & B_WEATHER_HAIL))
+                        ADJUST_SCORE(DECENT_EFFECT); // Slow 'em down
+                    break;
+                case ABILITY_SAND_FORCE:
+                case ABILITY_SAND_RUSH:
+                case ABILITY_SAND_VEIL:
+                    if (AI_GetWeather() & B_WEATHER_SANDSTORM)
                         ADJUST_SCORE(DECENT_EFFECT); // Slow 'em down
                     break;
                 }

@@ -748,9 +748,9 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_HEAVYRAINLIFTED]                      = COMPOUND_STRING("The heavy rain has lifted!"),
     [STRINGID_MOVEFIZZLEDOUTINTHEHEAVYRAIN]         = COMPOUND_STRING("The Fire-type attack fizzled out in the heavy rain!"),
     [STRINGID_NORELIEFROMHEAVYRAIN]                 = COMPOUND_STRING("There is no relief from this heavy rain!"),
-    [STRINGID_MYSTERIOUSAIRCURRENT]                 = COMPOUND_STRING("Mysterious strong winds are protecting Flying-type Pokémon!"),
-    [STRINGID_STRONGWINDSDISSIPATED]                = COMPOUND_STRING("The mysterious strong winds have dissipated!"),
-    [STRINGID_MYSTERIOUSAIRCURRENTBLOWSON]          = COMPOUND_STRING("The mysterious strong winds blow on regardless!"),
+    [STRINGID_MYSTERIOUSAIRCURRENT]                 = COMPOUND_STRING("A fierce tempest erupted!"), // Mysterious strong winds are protecting Flying-type Pokémon!
+    [STRINGID_STRONGWINDSDISSIPATED]                = COMPOUND_STRING("The strong winds have dissipated!"),
+    [STRINGID_MYSTERIOUSAIRCURRENTBLOWSON]          = COMPOUND_STRING("The winds aren't letting up."),
     [STRINGID_ATTACKWEAKENEDBSTRONGWINDS]           = COMPOUND_STRING("The mysterious strong winds weakened the attack!"),
     [STRINGID_STUFFCHEEKSCANTSELECT]                = COMPOUND_STRING("It can't use the move because it doesn't have a Berry!\p"),
     [STRINGID_PKMNREVERTEDTOPRIMAL]                 = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s Primal Reversion! It reverted to its primal state!"),
@@ -914,6 +914,12 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNCUTSSPECIALATTACKWITH]            = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY} cuts {B_DEF_NAME_WITH_PREFIX2}'s Sp. Atk!"), //not in gen 5+, ability popup
     [STRINGID_PKMNCUTSSPEEDWITH]                    = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY} cuts {B_DEF_NAME_WITH_PREFIX2}'s Speed!"), //not in gen 5+, ability popup
     [STRINGID_KUSANAGIENTERS]                       = COMPOUND_STRING("The heavens are at {B_SCR_NAME_WITH_PREFIX}'s call!"),
+    [STRINGID_SUNLIGHTMELTING]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is melting from the heat!"),
+    [STRINGID_PKMNREINFORCEDWITHSAND]               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} reinforced it's body with sand!"),
+    [STRINGID_PKMNNOURISHEDBYRAIN]                  = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} was nourished by the rainfall!"),
+    [STRINGID_PKMNREINFORCEDWITHSNOW]               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} reinforced it's body with snow.!"),
+    [STRINGID_PKMNABSORBEDSUNLIGHT]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s {B_ATK_ABILITY} absorbed some of the sunlight!"),
+    [STRINGID_VICTORYAURA]                          = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is wishing for a great victory!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -1079,7 +1085,16 @@ const u16 gWeatherTurnStringIds[] =
 const u16 gSandStormHailDmgStringIds[] =
 {
     [B_MSG_SANDSTORM] = STRINGID_PKMNBUFFETEDBYSANDSTORM,
-    [B_MSG_HAIL]      = STRINGID_PKMNPELTEDBYHAIL
+    [B_MSG_HAIL]      = STRINGID_PKMNPELTEDBYHAIL,
+    [B_MSG_SUN]       = STRINGID_SUNLIGHTMELTING
+};
+
+const u16 gWeatherHealingStringIds[] =
+{
+    [B_MSG_SANDHEAL]  = STRINGID_PKMNREINFORCEDWITHSAND,
+    [B_MSG_RAIN]      = STRINGID_PKMNNOURISHEDBYRAIN,
+    [B_MSG_SNOW]      = STRINGID_PKMNREINFORCEDWITHSNOW,
+    [B_MSG_SUNHEAL]   = STRINGID_PKMNABSORBEDSUNLIGHT,
 };
 
 const u16 gProtectLikeUsedStringIds[] =

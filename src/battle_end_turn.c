@@ -222,18 +222,49 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
     case BATTLE_WEATHER_RAIN:
     case BATTLE_WEATHER_RAIN_PRIMAL:
     case BATTLE_WEATHER_RAIN_DOWNPOUR:
-        if (ability == ABILITY_DRY_SKIN || ability == ABILITY_RAIN_DISH)
+        if ((ability == ABILITY_DRY_SKIN || ability == ABILITY_RAIN_DISH || ability == ABILITY_HYDRATION) && !IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
         {
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
                 effect = TRUE;
         }
+        else if (IS_BATTLER_OF_TYPE(battler, TYPE_GRASS)
+         && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
+         && !IsBattlerAtMaxHp(battler) 
+         && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK)
+         && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA)
+         {
+            if (ability == ABILITY_RAIN_DISH || ability == ABILITY_DRY_SKIN)
+                gBattleStruct->moveDamage[battler] = 3 * GetNonDynamaxMaxHP(battler) / 16;
+            else
+                gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / (ability == ABILITY_HYDRATION ? 8 : 16);
+            
+            if (gBattleStruct->moveDamage[battler] == 0)
+                gBattleStruct->moveDamage[battler] = 1;
+            gBattleStruct->moveDamage[battler] *= -1;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_RAIN;
+            BattleScriptExecute(BattleScript_HealingWeather);
+            effect = TRUE;
+         }
         break;
     case BATTLE_WEATHER_SUN:
     case BATTLE_WEATHER_SUN_PRIMAL:
-        if (ability == ABILITY_DRY_SKIN || ability == ABILITY_SOLAR_POWER)
+        if (ability == ABILITY_DRY_SKIN || ability == ABILITY_CHLOROPHYLL)
         {
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
                 effect = TRUE;
+        }
+        else if (IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
+         && !IS_BATTLER_ANY_TYPE(battler, TYPE_FIRE, TYPE_FLAME)
+         && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
+         && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA
+         && !IsBattlerProtectedByMagicGuard(battler, ability))
+        {
+            gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
+            if (gBattleStruct->moveDamage[battler] == 0)
+                gBattleStruct->moveDamage[battler] = 1;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SUN;
+            BattleScriptExecute(BattleScript_DamagingWeather);
+            effect = TRUE;
         }
         break;
     case BATTLE_WEATHER_SANDSTORM:
@@ -246,7 +277,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
          && ability != ABILITY_SOLID_ROCK
          && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_ROCK, TYPE_GROUND, TYPE_TERRA, TYPE_SAND, TYPE_STEEL)
          && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
-         && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
+         && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA // HOLD_EFFECT_SAFETY_GOGGLES
          && !IsBattlerProtectedByMagicGuard(battler, ability))
         {
             gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
@@ -256,13 +287,41 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
             BattleScriptExecute(BattleScript_DamagingWeather);
             effect = TRUE;
         }
+        else if ((IS_BATTLER_ANY_TYPE(battler, TYPE_ROCK, TYPE_SAND) || ability == ABILITY_SAND_FORCE)
+         && !IsBattlerAtMaxHp(battler)
+         && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
+         && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK)
+         && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA)
+        {
+            gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / (ability == ABILITY_SAND_FORCE ? 8 : 16);
+            if (gBattleStruct->moveDamage[battler] == 0)
+                gBattleStruct->moveDamage[battler] = 1;
+            gBattleStruct->moveDamage[battler] *= -1;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SANDHEAL;
+            BattleScriptExecute(BattleScript_HealingWeather);
+            effect = TRUE;
+        }
         break;
     case BATTLE_WEATHER_HAIL:
     case BATTLE_WEATHER_SNOW:
-        if (ability == ABILITY_ICE_BODY)
+        // if (ability == ABILITY_ICE_BODY)
+        // {
+        //     if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+        //         effect = TRUE;
+        // }
+        if (IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
+         && !IsBattlerAtMaxHp(battler)
+         && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
+         && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK)
+         && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA)
         {
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
-                effect = TRUE;
+            gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
+            if (gBattleStruct->moveDamage[battler] == 0)
+                gBattleStruct->moveDamage[battler] = 1;
+            gBattleStruct->moveDamage[battler] *= -1;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SNOW;
+            BattleScriptExecute(BattleScript_HealingWeather);
+            effect = TRUE;
         }
         else if (currBattleWeather == BATTLE_WEATHER_HAIL)
         {
@@ -271,9 +330,9 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
              && ability != ABILITY_BATTLE_ARMOR
              && ability != ABILITY_SHELL_ARMOR
              && ability != ABILITY_SOLID_ROCK
-             && !IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
+             && !IS_BATTLER_OF_TYPE(battler, TYPE_ICE, TYPE_STEEL)
              && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
-             && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
+             && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA // HOLD_EFFECT_SAFETY_GOGGLES
              && !IsBattlerProtectedByMagicGuard(battler, ability))
             {
                 gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
@@ -511,7 +570,7 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
         switch (ability)
         {
         case ABILITY_HEALER:
-        case ABILITY_HYDRATION:
+        // case ABILITY_HYDRATION:
         case ABILITY_SHED_SKIN:
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
                 effect = TRUE;

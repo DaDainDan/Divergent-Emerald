@@ -1604,12 +1604,13 @@ static s32 GetSwitchinWeatherImpact(void)
     if (HasWeatherEffect())
     {
         // Damage
-        if (holdEffect != HOLD_EFFECT_SAFETY_GOGGLES && ability != ABILITY_MAGIC_GUARD && ability != ABILITY_OVERCOAT 
+        if (holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && ability != ABILITY_MAGIC_GUARD && ability != ABILITY_OVERCOAT // HOLD_EFFECT_SAFETY_GOGGLES
             && ability != ABILITY_BATTLE_ARMOR && ability != ABILITY_SHELL_ARMOR && ability != ABILITY_SOLID_ROCK)
         {
             if ((gBattleWeather & B_WEATHER_HAIL)
-             && (gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_ICE || gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_ICE)
-             && ability != ABILITY_SNOW_CLOAK && ability != ABILITY_ICE_BODY)
+             && (gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_ICE && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_ICE
+             && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_STEEL && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_STEEL
+             && ability != ABILITY_SNOW_CLOAK && ability != ABILITY_ICE_BODY))
             {
                 weatherImpact = maxHP / 16;
                 if (weatherImpact == 0)
@@ -1628,10 +1629,15 @@ static s32 GetSwitchinWeatherImpact(void)
                     weatherImpact = 1;
             }
         }
-        if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
-         && (ability == ABILITY_SOLAR_POWER || ability == ABILITY_DRY_SKIN))
+        if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && ability != ABILITY_MAGIC_GUARD) // ability == ABILITY_SOLAR_POWER || 
         {
-            weatherImpact = maxHP / 8;
+            if (ability == ABILITY_DRY_SKIN)
+                weatherImpact = maxHP / 8;
+            else if ((gAiLogicData->switchinCandidate.battleMon.types[0] == TYPE_ICE || gAiLogicData->switchinCandidate.battleMon.types[1] == TYPE_ICE)
+                && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_FIRE && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_FIRE
+                && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_FLAME && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_FLAME)
+                weatherImpact = maxHP / 16;
+            
             if (weatherImpact == 0)
                 weatherImpact = 1;
         }
@@ -1639,20 +1645,49 @@ static s32 GetSwitchinWeatherImpact(void)
         // Healing
         if (gBattleWeather & B_WEATHER_RAIN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
         {
-            if (ability == ABILITY_DRY_SKIN)
+            if (gAiLogicData->switchinCandidate.battleMon.types[0] == TYPE_GRASS || gAiLogicData->switchinCandidate.battleMon.types[1] == TYPE_GRASS)
             {
-                weatherImpact = -(maxHP / 8);
+                if (ability == ABILITY_DRY_SKIN || ability == ABILITY_RAIN_DISH)
+                    weatherImpact = -(3 * maxHP / 16);
+                else
+                    weatherImpact = -(maxHP / (ability == ABILITY_HYDRATION ? 8 : 16));
+                
                 if (weatherImpact == 0)
                     weatherImpact = -1;
             }
-            else if (ability == ABILITY_RAIN_DISH)
+            else 
             {
-                weatherImpact = -(maxHP / 16);
+                if (ability == ABILITY_HYDRATION)
+                    weatherImpact = -(maxHP / 16);
+                else
+                    weatherImpact = -(maxHP / 8);
+                
                 if (weatherImpact == 0)
                     weatherImpact = -1;
             }
         }
-        if (((gBattleWeather & B_WEATHER_HAIL) || (gBattleWeather & B_WEATHER_SNOW)) && ability == ABILITY_ICE_BODY)
+        if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
+         && (ability == ABILITY_CHLOROPHYLL))
+        {
+            weatherImpact = -(maxHP / 16);
+            if (weatherImpact == 0)
+                weatherImpact = -1;
+        }
+        if ((gBattleWeather & B_WEATHER_SANDSTORM) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
+         && ((gAiLogicData->switchinCandidate.battleMon.types[0] == TYPE_ROCK || gAiLogicData->switchinCandidate.battleMon.types[1] == TYPE_ROCK)
+         || (gAiLogicData->switchinCandidate.battleMon.types[0] == TYPE_SAND || gAiLogicData->switchinCandidate.battleMon.types[1] == TYPE_SAND)
+         || ability == ABILITY_SAND_FORCE))
+        {
+            if (ability == ABILITY_SAND_FORCE)
+                weatherImpact = -(maxHP / 8);
+            else
+                weatherImpact = -(maxHP / 16);
+            
+            if (weatherImpact == 0)
+                weatherImpact = -1;
+        }
+        if (((gBattleWeather & B_WEATHER_HAIL) || (gBattleWeather & B_WEATHER_SNOW)) 
+         && (gAiLogicData->switchinCandidate.battleMon.types[0] == TYPE_ICE || gAiLogicData->switchinCandidate.battleMon.types[1] == TYPE_ICE)) // ability == ABILITY_ICE_BODY
         {
             weatherImpact = -(maxHP / 16);
             if (weatherImpact == 0)
