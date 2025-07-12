@@ -10,11 +10,11 @@ SINGLE_BATTLE_TEST("Transistor increases Electric-type attack / special attack",
     u16 ability;
 
     PARAMETRIZE { move = MOVE_SCRATCH; ability = ABILITY_KLUTZ; }
-    PARAMETRIZE { move = MOVE_SCRATCH; ability = ABILITY_TRANSISTOR; }
+    PARAMETRIZE { move = MOVE_SCRATCH; ability = ABILITY_CONDUCTOR; }
     PARAMETRIZE { move = MOVE_WILD_CHARGE; ability = ABILITY_KLUTZ; }
-    PARAMETRIZE { move = MOVE_WILD_CHARGE; ability = ABILITY_TRANSISTOR; }
+    PARAMETRIZE { move = MOVE_WILD_CHARGE; ability = ABILITY_CONDUCTOR; }
     PARAMETRIZE { move = MOVE_THUNDER_SHOCK; ability = ABILITY_KLUTZ; }
-    PARAMETRIZE { move = MOVE_THUNDER_SHOCK; ability = ABILITY_TRANSISTOR; }
+    PARAMETRIZE { move = MOVE_THUNDER_SHOCK; ability = ABILITY_CONDUCTOR; }
 
     GIVEN {
         ASSUME(GetMoveType(MOVE_SCRATCH) != TYPE_ELECTRIC);
@@ -44,7 +44,7 @@ SINGLE_BATTLE_TEST("Transistor is blocked by neutralizing gas", s16 damage)
 
     GIVEN {
         ASSUME(GetMoveType(MOVE_THUNDER_SHOCK) == TYPE_ELECTRIC);
-        PLAYER(SPECIES_REGIELEKI) { Ability(ABILITY_TRANSISTOR); }
+        PLAYER(SPECIES_REGIELEKI) { Ability(ABILITY_CONDUCTOR); }
         OPPONENT(SPECIES_KOFFING) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_THUNDER_SHOCK); }

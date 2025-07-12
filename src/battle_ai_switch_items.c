@@ -505,11 +505,15 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
     if (incomingType == TYPE_FIRE)
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FLASH_FIRE;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_MAGMA_ARMOR;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_COMBUSTION;
     }
     else if (incomingType == TYPE_WATER || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_WATER))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_WATER_ABSORB;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_DRY_SKIN;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_HYDRATION;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_STEAM_ENGINE;
         if (B_REDIRECT_ABILITY_IMMUNITY >= GEN_5)
             absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_STORM_DRAIN;
     }
@@ -519,15 +523,26 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_MOTOR_DRIVE;
         if (B_REDIRECT_ABILITY_IMMUNITY >= GEN_5)
             absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LIGHTNING_ROD;
+            absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_ORIGIN_OF_SEA;
     }
     else if (incomingType == TYPE_GRASS || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_GRASS))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SAP_SIPPER;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_MAGMA_ARMOR;
     }
     else if (incomingType == TYPE_GROUND || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_GROUND))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_EARTH_EATER;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LEVITATE;
+    }
+    else if (incomingType == TYPE_ICE || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_ICE))
+    {
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_ICE_ABSORB;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_MAGMA_ARMOR;
+    }
+    else if (incomingType == TYPE_POISON || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_POISON))
+    {
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_GUNK_MUNCHER;
     }
     else if (IsSoundMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsSoundMove(incomingMove)))
     {
@@ -537,7 +552,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_BULLETPROOF;
     }
-    else if (IsWindMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsWindMove(incomingMove)))
+    else if ((IsWindMove(incomingMove) || incomingType == TYPE_WIND) || (isOpposingBattlerChargingOrInvulnerable && (IsWindMove(incomingMove) || incomingType == TYPE_WIND)))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_WIND_RIDER;
     }
@@ -1509,8 +1524,8 @@ static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 inva
 bool32 IsMonGrounded(u16 heldItemEffect, u32 ability, u8 type1, u8 type2, u32 battler)
 {
     // List that makes mon not grounded
-    if (type1 == TYPE_FLYING || type2 == TYPE_FLYING || ability == ABILITY_LEVITATE || IsBattlerAirborne(battler)
-         || (heldItemEffect == HOLD_EFFECT_AIR_BALLOON && !(ability == ABILITY_KLUTZ || (gFieldStatuses & STATUS_FIELD_MAGIC_ROOM))))
+    if (ability == ABILITY_LEVITATE || IsBattlerAirborne(battler) || (heldItemEffect == HOLD_EFFECT_AIR_BALLOON // type1 == TYPE_FLYING || type2 == TYPE_FLYING || 
+        && !(ability == ABILITY_KLUTZ || (gFieldStatuses & STATUS_FIELD_MAGIC_ROOM))))
     {
         // List that overrides being off the ground
         if ((heldItemEffect == HOLD_EFFECT_IRON_BALL && !(ability == ABILITY_KLUTZ || (gFieldStatuses & STATUS_FIELD_MAGIC_ROOM))) || (gFieldStatuses & STATUS_FIELD_GRAVITY) || (gFieldStatuses & STATUS_FIELD_MAGIC_ROOM))

@@ -558,6 +558,7 @@ BattleScript_EffectTeatime::
 	setbyte gBattlerTarget, 0
 BattleScript_TeatimeLoop:
 	jumpifelectricabilityaffected BS_TARGET, ABILITY_LIGHTNING_ROD, BattleScript_Teatimerod
+	jumpifelectricabilityaffected BS_TARGET, ABILITY_ORIGIN_OF_SEA, BattleScript_Teatimerod
 	jumpifelectricabilityaffected BS_TARGET, ABILITY_VOLT_ABSORB, BattleScript_Teatimesorb
 	jumpifelectricabilityaffected BS_TARGET, ABILITY_MOTOR_DRIVE, BattleScript_Teatimemotor
 	jumpifteainvulnerable BS_TARGET, BattleScript_Teatimevul @ in semi-invulnerable state OR held item is not a Berry
@@ -2709,7 +2710,7 @@ BattleScript_TryTailwindAbilitiesLoop_Increment:
 
 BattleScript_TryTailwindAbilitiesLoop_WindRider:
 	call BattleScript_AbilityPopUp
-	modifybattlerstatstage BS_TARGET, STAT_ATK, INCREASE, 1, BattleScript_TryTailwindAbilitiesLoop_Increment, ANIM_ON
+	modifybattlerstatstage BS_TARGET, STAT_SPATK, INCREASE, 1, BattleScript_TryTailwindAbilitiesLoop_Increment, ANIM_ON
 	goto BattleScript_TryTailwindAbilitiesLoop_Increment
 
 BattleScript_TryTailwindAbilitiesLoop_WindPower:

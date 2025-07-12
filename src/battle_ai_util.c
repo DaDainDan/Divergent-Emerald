@@ -511,7 +511,7 @@ bool32 IsDamageMoveUnusable(u32 battlerAtk, u32 battlerDef, u32 move, u32 moveTy
         return TRUE;
 
     // Limited to Lighning Rod and Storm Drain because otherwise the AI would consider Water Absorb, etc...
-    if (partnerDefAbility == ABILITY_LIGHTNING_ROD || partnerDefAbility == ABILITY_STORM_DRAIN)
+    if (partnerDefAbility == ABILITY_LIGHTNING_ROD || partnerDefAbility == ABILITY_ORIGIN_OF_SEA || partnerDefAbility == ABILITY_STORM_DRAIN)
     {
         if (CanAbilityAbsorbMove(battlerAtk, BATTLE_PARTNER(battlerDef), partnerDefAbility, move, moveType, ABILITY_CHECK_TRIGGER))
             return TRUE;
@@ -4766,7 +4766,7 @@ bool32 ShouldTriggerAbility(u32 battler, u32 ability)
     switch (ability)
     {
         case ABILITY_LIGHTNING_ROD:
-        case ABILITY_STORM_DRAIN:
+        case ABILITY_ORIGIN_OF_SEA:
             if (B_REDIRECT_ABILITY_IMMUNITY < GEN_5)
                 return FALSE;
             else
@@ -4782,30 +4782,49 @@ bool32 ShouldTriggerAbility(u32 battler, u32 ability)
             return (BattlerStatCanRise(battler, ability, statId) && HasMoveWithCategory(battler, category));
         }
 
-        case ABILITY_SAP_SIPPER:
         case ABILITY_THERMAL_EXCHANGE:
         case ABILITY_IRRITABILITY:
             return (BattlerStatCanRise(battler, ability, STAT_ATK) && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL));
 
-        // case ABILITY_COMPETITIVE:
-        //     return (BattlerStatCanRise(battler, ability, STAT_SPATK) && HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL));
+        case ABILITY_COMBUSTION:
+        case ABILITY_STEAM_ENGINE:
+        case ABILITY_WIND_RIDER:
+            return (BattlerStatCanRise(battler, ability, STAT_SPATK) && HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL));
 
         case ABILITY_CONTRARY:
             return TRUE;
-
+        
+        case ABILITY_HYDRATION:    
         case ABILITY_DRY_SKIN:
-        case ABILITY_VOLT_ABSORB:
-        case ABILITY_WATER_ABSORB:
+        case ABILITY_STORM_DRAIN:
             return (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_HP_AWARE);
 
         case ABILITY_RATTLED:
-        case ABILITY_STEAM_ENGINE:
         case ABILITY_STEADFAST:
+        case ABILITY_MOTOR_DRIVE:
             return BattlerStatCanRise(battler, ability, STAT_SPEED);
 
         case ABILITY_FLASH_FIRE:
-            return (HasMoveWithType(battler, TYPE_FIRE) && !gDisableStructs[battler].flashFireBoosted);
+        case ABILITY_VOLT_ABSORB:
+        case ABILITY_WATER_ABSORB:
+        case ABILITY_GUNK_MUNCHER:
+            if (AI_BattlerAtMaxHp(battler))
+                return (BattlerStatCanRise(battler, ability, STAT_SPATK) && HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL));
+            else
+                return (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_HP_AWARE);  // (HasMoveWithType(battler, TYPE_FIRE) && !gDisableStructs[battler].flashFireBoosted);
 
+        case ABILITY_SAP_SIPPER:
+            if (AI_BattlerAtMaxHp(battler))
+                return (BattlerStatCanRise(battler, ability, STAT_ATK));
+            else
+                return (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_HP_AWARE);
+
+        case ABILITY_ICE_ABSORB:
+            if (AI_BattlerAtMaxHp(battler))
+                return (BattlerStatCanRise(battler, ability, STAT_DEF));
+            else
+                return (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_HP_AWARE);
+            
         case ABILITY_WATER_COMPACTION:
         case ABILITY_WELL_BAKED_BODY:
         case ABILITY_HEAT_TREATMENT:

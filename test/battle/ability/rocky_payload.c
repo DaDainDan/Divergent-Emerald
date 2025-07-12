@@ -7,11 +7,11 @@ SINGLE_BATTLE_TEST("Rocky Payload increases Rock-type move damage", s16 damage)
     u16 ability;
 
     PARAMETRIZE { move = MOVE_SCRATCH; ability = ABILITY_BIG_PECKS; }
-    PARAMETRIZE { move = MOVE_SCRATCH; ability = ABILITY_ROCKY_PAYLOAD; }
+    PARAMETRIZE { move = MOVE_SCRATCH; ability = ABILITY_STONEMASON; }
     PARAMETRIZE { move = MOVE_ROCK_THROW; ability = ABILITY_BIG_PECKS; }
-    PARAMETRIZE { move = MOVE_ROCK_THROW; ability = ABILITY_ROCKY_PAYLOAD; }
+    PARAMETRIZE { move = MOVE_ROCK_THROW; ability = ABILITY_STONEMASON; }
     PARAMETRIZE { move = MOVE_POWER_GEM; ability = ABILITY_BIG_PECKS; }
-    PARAMETRIZE { move = MOVE_POWER_GEM; ability = ABILITY_ROCKY_PAYLOAD; }
+    PARAMETRIZE { move = MOVE_POWER_GEM; ability = ABILITY_STONEMASON; }
 
     GIVEN {
         ASSUME(GetMoveType(MOVE_SCRATCH) != TYPE_ROCK);

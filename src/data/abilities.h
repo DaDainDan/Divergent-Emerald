@@ -141,7 +141,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_FLASH_FIRE] =
     {
         .name = _("Flash Fire"),
-        .description = COMPOUND_STRING("Powers up if hit by fire."),
+        .description = COMPOUND_STRING("Turns Fire into HP."),
         .aiRating = 6,
         .breakable = TRUE,
     },
@@ -310,8 +310,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MAGMA_ARMOR] =
     {
         .name = _("Magma Armor"),
-        .description = COMPOUND_STRING("Prevents freezing."),
-        .aiRating = 1,
+        .description = COMPOUND_STRING("Fire resists are immunities."),
+        .aiRating = 7,
         .breakable = TRUE,
     },
 
@@ -701,7 +701,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HYDRATION] =
     {
         .name = _("Hydration"),
-        .description = COMPOUND_STRING("Cures status in rain."),
+        .description = COMPOUND_STRING("Water restores HP."),
         .aiRating = 4,
     },
 
@@ -1181,7 +1181,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SAP_SIPPER] =
     {
         .name = _("Sap Sipper"),
-        .description = COMPOUND_STRING("Grass increases Attack."),
+        .description = COMPOUND_STRING("Turns Grass into HP"),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -1846,8 +1846,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STEAM_ENGINE] =
     {
         .name = _("Steam Engine"),
-        .description = COMPOUND_STRING("Fire or Water hits up Speed."),
-        .aiRating = 3,
+        .description = COMPOUND_STRING("Water hits up SpAtk greatly."),
+        .aiRating = 5,
     },
 
     [ABILITY_PUNK_ROCK] =
@@ -1994,9 +1994,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 3,
     },
 
-    [ABILITY_TRANSISTOR] =
+    [ABILITY_CONDUCTOR] =
     {
-        .name = _("Transistor"),
+        .name = _("Conductor"),
         .description = COMPOUND_STRING("Ups Electric-type moves."),
         .aiRating = 6,
     },
@@ -2093,8 +2093,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_WIND_RIDER] =
     {
-        .name = _("Wind Rider"),
-        .description = COMPOUND_STRING("Ups Attack if hit by wind."),
+        .name = _("Wind Power"),
+        .description = COMPOUND_STRING("Ups SpAtk if hit by wind."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -2107,16 +2107,16 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
-    [ABILITY_ROCKY_PAYLOAD] =
+    [ABILITY_STONEMASON] =
     {
-        .name = _("Rocky Payload"),
+        .name = _("Stonemason"),
         .description = COMPOUND_STRING("Powers up Rock moves."),
         .aiRating = 6,
     },
 
     [ABILITY_WIND_POWER] =
     {
-        .name = _("Wind Power"),
+        .name = _("Wind Rider"),
         .description = COMPOUND_STRING("Gets charged by wind."),
         .aiRating = 4,
     },
@@ -2545,7 +2545,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_KUSANAGI] =
     {
         .name = _("Kusanagi"),
-        .description = COMPOUND_STRING("Can harness the wind."),
+        .description = COMPOUND_STRING("Adds Wind-type."),
         .aiRating = 6,
         .breakable = TRUE,
     },
