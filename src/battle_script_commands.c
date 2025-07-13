@@ -1210,13 +1210,15 @@ bool32 IsMovePowderBlocked(u32 battlerAtk, u32 battlerDef, u32 move)
 bool32 EmergencyExitCanBeTriggered(u32 battler)
 {
     u32 ability = GetBattlerAbility(battler);
+    u32 moveType = GetMoveType(gCurrentMove);
 
-    if (ability != ABILITY_EMERGENCY_EXIT && ability != ABILITY_WIMP_OUT)
+    if (ability != ABILITY_EMERGENCY_EXIT && ability != ABILITY_WIMP_OUT && ability != ABILITY_RUN_AWAY && ability != ABILITY_RATTLED)
         return FALSE;
 
     if (IsBattlerTurnDamaged(battler)
      && IsBattlerAlive(battler)
-     && HadMoreThanHalfHpNowDoesnt(battler)
+     && ((HadMoreThanQuartHpNowDoesnt(battler) && (ability == ABILITY_EMERGENCY_EXIT || ability == ABILITY_RUN_AWAY))
+     || (ability == ABILITY_RATTLED && (moveType == TYPE_GHOST || moveType == TYPE_DARK)))
      && (CanBattlerSwitch(battler) || !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
      && !(gBattleTypeFlags & BATTLE_TYPE_ARENA)
      && CountUsablePartyMons(battler) > 0
@@ -1626,7 +1628,9 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         calc = (calc * 120) / 100; // 1.2 crafty boost
         break;
     case ABILITY_HUSTLE:
-        if (IsBattleMovePhysical(move))
+        calc = (calc * 85) / 100;
+    case ABILITY_PROPELLER_TAIL:
+        if (MoveMakesContact(move))
             calc = (calc * 85) / 100; // 1.2 hustle loss
         break;
     }
@@ -6616,7 +6620,7 @@ static void Cmd_moveend(void)
 
                     effect = TRUE;
                     BattleScriptPushCursor();
-                    if (targetAbility == ABILITY_SUCTION_CUPS)
+                    if (targetAbility == ABILITY_SUCTION_CUPS || targetAbility == ABILITY_STICKY_HOLD)
                     {
                         gBattlescriptCurrInstr = BattleScript_AbilityPreventsPhasingOutRet;
                     }
@@ -18726,7 +18730,7 @@ void BS_JumpIfIntimidateAbilityPrevented(void)
     case ABILITY_INNER_FOCUS:
     case ABILITY_GUTS:
     case ABILITY_SCRAPPY:
-    case ABILITY_OWN_TEMPO:
+    // case ABILITY_OWN_TEMPO:
     case ABILITY_OBLIVIOUS:
         if (B_UPDATED_INTIMIDATE >= GEN_8)
         {

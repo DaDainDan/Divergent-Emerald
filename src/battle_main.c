@@ -3398,7 +3398,7 @@ const u8* FaintClearSetData(u32 battler)
 
                 // If the released mon can be confused, do so.
                 // Don't use CanBeConfused here, since it can cause issues in edge cases.
-                if (!(GetBattlerAbility(otherSkyDropper) == ABILITY_OWN_TEMPO
+                if (!(GetBattlerAbility(otherSkyDropper) == ABILITY_INNER_FOCUS         // ABILITY_OWN_TEMPO
                     || gBattleMons[otherSkyDropper].status2 & STATUS2_CONFUSION
                     || IsBattlerTerrainAffected(otherSkyDropper, STATUS_FIELD_MISTY_TERRAIN)))
                 {
@@ -4821,6 +4821,22 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
     {
         priority++;
     }
+    else if (ability == ABILITY_ELECTROLIGHT && GetMoveType(move) == TYPE_ELECTRIC)
+    {
+        priority++;
+    }
+    else if (ability == ABILITY_MINSTREL && IsSoundMove(move))
+    {
+        priority++;
+    }
+    else if (ability == ABILITY_ANALYTIC)
+    {
+        priority--;
+    }
+    else if (ability == ABILITY_PROPELLER_TAIL && MoveMakesContact(move))
+    {
+        priority++;
+    }
     else if (ability == ABILITY_PRANKSTER && IsBattleMoveStatus(move))
     {
         gProtectStructs[battler].pranksterElevated = 1;
@@ -4830,11 +4846,14 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
     {
         priority++;
     }
-    else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
-        priority += 3;
+    // else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
+    //     priority += 3;
 
-    if (gProtectStructs[battler].quash)
-        priority = -8;
+    if (ability == ABILITY_OWN_TEMPO)
+        priority = 0;
+
+    if (gProtectStructs[battler].quash && ability != ABILITY_OWN_TEMPO)
+        priority = -9;
 
     return priority;
 }
@@ -4854,7 +4873,11 @@ s32 GetWhichBattlerFasterArgs(u32 battler1, u32 battler2, bool32 ignoreChosenMov
         bool32 battler1HasStallingAbility = ability1 == ABILITY_STALL || (ability1 == ABILITY_MYCELIUM_MIGHT && IsBattleMoveStatus(gChosenMoveByBattler[battler1]));
         bool32 battler2HasStallingAbility = ability2 == ABILITY_STALL || (ability2 == ABILITY_MYCELIUM_MIGHT && IsBattleMoveStatus(gChosenMoveByBattler[battler2]));
 
-        if (battler1HasQuickEffect && !battler2HasQuickEffect)
+        if (ability1 == ABILITY_QUEENLY_MAJESTY && ability2 != ABILITY_QUEENLY_MAJESTY)
+            strikesFirst = 1;
+        else if (ability2 == ABILITY_QUEENLY_MAJESTY && ability1 != ABILITY_QUEENLY_MAJESTY)
+            strikesFirst = -1;
+        else if (battler1HasQuickEffect && !battler2HasQuickEffect)
             strikesFirst = 1;
         else if (battler2HasQuickEffect && !battler1HasQuickEffect)
             strikesFirst = -1;
@@ -5057,7 +5080,7 @@ static void SetActionsAndBattlersTurnOrder(void)
                     gActionsByTurnOrder[turnOrderId] = gChosenActionByBattler[battler];
                     gBattlerByTurnOrder[turnOrderId] = battler;
                     quickClawRandom[battler] = RandomPercentage(RNG_QUICK_CLAW, GetBattlerHoldEffectParam(battler));
-                    quickDrawRandom[battler] = RandomPercentage(RNG_QUICK_DRAW, 30);
+                    // quickDrawRandom[battler] = RandomPercentage(RNG_QUICK_DRAW, 30);
                     turnOrderId++;
                 }
             }
@@ -5253,7 +5276,7 @@ static void TryChangingTurnOrderEffects(u32 battler1, u32 battler2, u32 *quickCl
 
     // Battler 1
     // Quick Draw
-    if (ability1 == ABILITY_QUICK_DRAW && !IsBattleMoveStatus(gChosenMoveByBattler[battler1]) && quickDrawRandom[battler1])
+    if (ability1 == ABILITY_QUICK_DRAW && !IsBattleMoveStatus(gChosenMoveByBattler[battler1]) && gDisableStructs[gBattlerAttacker].isFirstTurn) // quickDrawRandom[battler1]
         gProtectStructs[battler1].quickDraw = TRUE;
     // Quick Claw and Custap Berry
     if (!gProtectStructs[battler1].quickDraw
@@ -5263,7 +5286,7 @@ static void TryChangingTurnOrderEffects(u32 battler1, u32 battler2, u32 *quickCl
 
     // Battler 2
     // Quick Draw
-    if (ability2 == ABILITY_QUICK_DRAW && !IsBattleMoveStatus(gChosenMoveByBattler[battler2]) && quickDrawRandom[battler2])
+    if (ability2 == ABILITY_QUICK_DRAW && !IsBattleMoveStatus(gChosenMoveByBattler[battler2]) && gDisableStructs[gBattlerAttacker].isFirstTurn) // quickDrawRandom[battler2]
         gProtectStructs[battler2].quickDraw = TRUE;
     // Quick Claw and Custap Berry
     if (!gProtectStructs[battler2].quickDraw

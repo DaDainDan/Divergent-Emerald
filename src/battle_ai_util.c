@@ -371,7 +371,7 @@ bool32 IsBattlerTrapped(u32 battlerAtk, u32 battlerDef)
     if (gFieldStatuses & STATUS_FIELD_FAIRY_LOCK)
         return TRUE;
     if (AI_IsAbilityOnSide(battlerAtk, ABILITY_SHADOW_TAG)
-        && (B_SHADOW_TAG_ESCAPE >= GEN_4 && gAiLogicData->abilities[battlerDef] != ABILITY_SHADOW_TAG))
+        && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GHOST)) // gAiLogicData->abilities[battlerDef] != ABILITY_SHADOW_TAG
         return TRUE;
     if (AI_IsAbilityOnSide(battlerAtk, ABILITY_ARENA_TRAP)
         && IsBattlerGrounded(battlerAtk))
@@ -1208,6 +1208,11 @@ s32 AI_WhoStrikesFirst(u32 battlerAI, u32 battler, u32 moveConsidered)
     else if (abilityAI != ABILITY_STALL && abilityPlayer == ABILITY_STALL)
         return AI_IS_FASTER;
 
+    if (abilityAI != ABILITY_QUEENLY_MAJESTY && abilityPlayer == ABILITY_QUEENLY_MAJESTY)
+        return AI_IS_SLOWER;
+    else if (abilityAI == ABILITY_QUEENLY_MAJESTY && abilityPlayer != ABILITY_QUEENLY_MAJESTY)
+        return AI_IS_FASTER;
+
     if (speedBattlerAI > speedBattler)
     {
         if (gFieldStatuses & STATUS_FIELD_TRICK_ROOM)
@@ -1693,8 +1698,8 @@ bool32 IsMoveRedirectionPrevented(u32 battlerAtk, u32 move, u32 atkAbility)
     enum BattleMoveEffects effect = GetMoveEffect(move);
     if (effect == EFFECT_SKY_DROP
       || effect == EFFECT_SNIPE_SHOT
-      || atkAbility == ABILITY_PROPELLER_TAIL
-      || atkAbility == ABILITY_STALWART)
+      || atkAbility == ABILITY_INNER_FOCUS     // ABILITY_PROPELLER_TAIL
+      || atkAbility == ABILITY_OBLIVIOUS)    // ABILITY_STALWART
         return TRUE;
     return FALSE;
 }
@@ -3435,7 +3440,7 @@ bool32 AI_CanParalyze(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, 
 bool32 AI_CanBeConfused(u32 battlerAtk, u32 battlerDef, u32 move, u32 ability)
 {
     if ((gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
-     || (ability == ABILITY_OWN_TEMPO && !DoesBattlerIgnoreAbilityChecks(battlerAtk, gAiLogicData->abilities[battlerAtk], move))
+     || (ability == ABILITY_INNER_FOCUS && !DoesBattlerIgnoreAbilityChecks(battlerAtk, gAiLogicData->abilities[battlerAtk], move)) // ability == ABILITY_OWN_TEMPO
      || IsBattlerTerrainAffected(battlerDef, STATUS_FIELD_MISTY_TERRAIN)
      || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD
      || DoesSubstituteBlockMove(battlerAtk, battlerDef, move))
@@ -4825,7 +4830,7 @@ bool32 ShouldTriggerAbility(u32 battler, u32 ability)
         case ABILITY_STORM_DRAIN:
             return (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_HP_AWARE);
 
-        case ABILITY_RATTLED:
+        // case ABILITY_RATTLED:
         case ABILITY_STEADFAST:
         case ABILITY_MOTOR_DRIVE:
             return BattlerStatCanRise(battler, ability, STAT_SPEED);

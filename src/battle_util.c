@@ -293,8 +293,8 @@ bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide, u32 move)
         || (!IsBattlerAlive(gSideTimers[defSide].followmeTarget) && !IsDragonDartsSecondHit(effect))
         || effect == EFFECT_SNIPE_SHOT
         || effect == EFFECT_SKY_DROP
-        || ability == ABILITY_PROPELLER_TAIL
-        || ability == ABILITY_STALWART)
+        || ability == ABILITY_INNER_FOCUS   // ABILITY_PROPELLER_TAIL
+        || ability == ABILITY_OBLIVIOUS)    // ABILITY_STALWART
         return FALSE;
 
     if (effect == EFFECT_PURSUIT && IsPursuitTargetSet())
@@ -341,8 +341,8 @@ bool32 HandleMoveTargetRedirection(void)
                 && GetBattlerTurnOrderNum(battler) < redirectorOrderNum
                 && moveEffect != EFFECT_SNIPE_SHOT
                 && moveEffect != EFFECT_PLEDGE
-                && GetBattlerAbility(gBattlerAttacker) != ABILITY_PROPELLER_TAIL
-                && GetBattlerAbility(gBattlerAttacker) != ABILITY_STALWART)
+                && GetBattlerAbility(gBattlerAttacker) != ABILITY_INNER_FOCUS      // ABILITY_PROPELLER_TAIL
+                && GetBattlerAbility(gBattlerAttacker) != ABILITY_OBLIVIOUS)     // ABILITY_STALWART
             {
                 redirectorOrderNum = GetBattlerTurnOrderNum(battler);
             }
@@ -1044,7 +1044,7 @@ const u8 *CheckSkyDropState(u32 battler, enum SkyDropState skyDropState)
 
         // If the target can be confused, confuse them.
         // Don't use CanBeConfused, can cause issues in edge cases.
-        if (!(GetBattlerAbility(otherSkyDropper) == ABILITY_OWN_TEMPO
+        if (!(GetBattlerAbility(otherSkyDropper) == ABILITY_INNER_FOCUS // ABILITY_OWN_TEMPO
             || gBattleMons[otherSkyDropper].status2 & STATUS2_CONFUSION
             || IsBattlerTerrainAffected(otherSkyDropper, STATUS_FIELD_MISTY_TERRAIN)))
         {
@@ -2902,6 +2902,14 @@ bool32 HadMoreThanHalfHpNowDoesnt(u32 battler)
         && gBattleMons[battler].hp <= cutoff;
 }
 
+bool32 HadMoreThanQuartHpNowDoesnt(u32 battler)
+{
+    u32 cutoff = gBattleMons[battler].maxHP / 4;
+    // Had more than half of hp before, now has less
+    return gBattleStruct->hpBefore[battler] > cutoff
+        && gBattleMons[battler].hp <= cutoff;
+}
+
 #define ANIM_STAT_HP      0
 #define ANIM_STAT_ATK     1
 #define ANIM_STAT_DEF     2
@@ -2980,7 +2988,7 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u32 a
         }
         break;
     case ABILITY_DAZZLING:
-    case ABILITY_QUEENLY_MAJESTY:
+    // case ABILITY_QUEENLY_MAJESTY:
     case ABILITY_ARMOR_TAIL:
         if (atkPriority > 0 && !IsBattlerAlly(battlerAtk, battlerDef))
         {
@@ -3027,7 +3035,7 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u32 a
             switch (abilityDef)
             {
             case ABILITY_DAZZLING:
-            case ABILITY_QUEENLY_MAJESTY:
+            // case ABILITY_QUEENLY_MAJESTY:
             case ABILITY_ARMOR_TAIL:
                 if (gBattleMons[battlerAtk].status2 & STATUS2_MULTIPLETURNS)
                     gHitMarker |= HITMARKER_NO_PPDEDUCT;
@@ -4722,20 +4730,20 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         }
-        case ABILITY_RATTLED:
-            if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT)
-             && IsBattlerTurnDamaged(gBattlerTarget)
-             && IsBattlerAlive(battler)
-             && (moveType == TYPE_DARK || moveType == TYPE_BUG || moveType == TYPE_GHOST)
-             && CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
-            {
-                gEffectBattler = battler;
-                SET_STATCHANGER(STAT_SPEED, 1, FALSE);
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_TargetAbilityStatRaiseRet;
-                effect++;
-            }
-            break;
+        // case ABILITY_RATTLED:
+        //     if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT)
+        //      && IsBattlerTurnDamaged(gBattlerTarget)
+        //      && IsBattlerAlive(battler)
+        //      && (moveType == TYPE_DARK || moveType == TYPE_BUG || moveType == TYPE_GHOST)
+        //      && CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
+        //     {
+        //         gEffectBattler = battler;
+        //         SET_STATCHANGER(STAT_SPEED, 1, FALSE);
+        //         BattleScriptPushCursor();
+        //         gBattlescriptCurrInstr = BattleScript_TargetAbilityStatRaiseRet;
+        //         effect++;
+        //     }
+        //     break;
         case ABILITY_WATER_COMPACTION:
             if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT)
              && IsBattlerTurnDamaged(gBattlerTarget)
@@ -5501,7 +5509,8 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     effect = 1;
                 }
                 break;
-            case ABILITY_OWN_TEMPO:
+            // case ABILITY_OWN_TEMPO:
+            case ABILITY_INNER_FOCUS:
                 if (gBattleMons[battler].status2 & STATUS2_CONFUSION)
                 {
                     StringCopy(gBattleTextBuff1, gStatusConditionString_ConfusionJpn);
@@ -5914,9 +5923,6 @@ u32 IsAbilityOnFieldExcept(u32 battler, u32 ability)
 
 u32 IsAbilityPreventingEscape(u32 battler)
 {
-    if (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
-        return 0;
-
     for (u32 battlerDef = 0; battlerDef < gBattlersCount; battlerDef++)
     {
         if (battler == battlerDef || IsBattlerAlly(battler, battlerDef))
@@ -5924,8 +5930,11 @@ u32 IsAbilityPreventingEscape(u32 battler)
 
         u32 ability = GetBattlerAbility(battlerDef);
 
-        if (ability == ABILITY_SHADOW_TAG && (B_SHADOW_TAG_ESCAPE <= GEN_3 || GetBattlerAbility(battler) != ABILITY_SHADOW_TAG))
+        if (ability == ABILITY_SHADOW_TAG && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST, TYPE_UNDEAD)) // (B_SHADOW_TAG_ESCAPE <= GEN_3 || GetBattlerAbility(battler) != ABILITY_SHADOW_TAG)
             return battlerDef + 1;
+        
+        if (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
+            return 0;
 
         if (ability == ABILITY_ARENA_TRAP && IsBattlerGrounded(battler))
             return battlerDef + 1;
@@ -6276,7 +6285,7 @@ static bool32 CanSleepDueToSleepClause(u32 battlerAtk, u32 battlerDef, enum NonV
 
 bool32 CanBeConfused(u32 battler)
 {
-    if (GetBattlerAbility(battler) == ABILITY_OWN_TEMPO
+    if (GetBattlerAbility(battler) == ABILITY_INNER_FOCUS // ABILITY_OWN_TEMPO
      || gBattleMons[battler].status2 & STATUS2_CONFUSION
      || IsBattlerTerrainAffected(battler, STATUS_FIELD_MISTY_TERRAIN))
         return FALSE;
@@ -8891,11 +8900,11 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (MoveIsAffectedBySheerForce(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
         break;
-    case ABILITY_SAND_FORCE:
-        if ((moveType == TYPE_STEEL || moveType == TYPE_ROCK || moveType == TYPE_GROUND)
-            && weather & B_WEATHER_SANDSTORM)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
-        break;
+    // case ABILITY_SAND_FORCE:
+    //     if ((moveType == TYPE_STEEL || moveType == TYPE_ROCK || moveType == TYPE_GROUND)
+    //         && weather & B_WEATHER_SANDSTORM)
+    //        modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+    //     break;
     case ABILITY_RIVALRY:
         if (AreBattlersOfSameGender(battlerAtk, battlerDef))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
@@ -8903,7 +8912,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
         break;
     case ABILITY_ANALYTIC:
-        if (GetBattlerTurnOrderNum(battlerAtk) == gBattlersCount - 1 && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE)
+        if (move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE) // GetBattlerTurnOrderNum(battlerAtk) == gBattlersCount - 1 && 
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_TOUGH_CLAWS:
@@ -8921,6 +8930,14 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     case ABILITY_WATER_BUBBLE:
         if (moveType == TYPE_WATER)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
+        break;
+    case ABILITY_GALE_WINGS:
+        if (moveType == TYPE_FLYING || moveType == TYPE_WIND)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.8));
+        break;
+    case ABILITY_ELECTROLIGHT:
+        if (moveType == TYPE_ELECTRIC)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.8));
         break;
     case ABILITY_STEELWORKER:
         if (moveType == TYPE_STEEL)
@@ -11660,7 +11677,7 @@ void RemoveConfusionStatus(u32 battler)
 
 static bool32 CanBeInfinitelyConfused(u32 battler)
 {
-    if  (GetBattlerAbility(battler) == ABILITY_OWN_TEMPO
+    if  (GetBattlerAbility(battler) == ABILITY_INNER_FOCUS // ABILITY_OWN_TEMPO
          || IsBattlerTerrainAffected(battler, STATUS_FIELD_MISTY_TERRAIN)
          || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
     {

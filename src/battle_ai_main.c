@@ -1129,11 +1129,11 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 && !CanAIFaintTarget(battlerAtk, battlerDef, 0))
                 RETURN_SCORE_MINUS(10);
             break;
-        case ABILITY_RATTLED:
-            if (!IsBattleMoveStatus(move)
-              && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG))
-                RETURN_SCORE_MINUS(10);
-            break;
+        // case ABILITY_RATTLED:
+        //     if (!IsBattleMoveStatus(move)
+        //       && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG))
+        //         RETURN_SCORE_MINUS(10);
+        //     break;
         case ABILITY_AROMA_VEIL:
             if (IsAromaVeilProtectedEffect(moveEffect))
                 RETURN_SCORE_MINUS(10);
@@ -1638,7 +1638,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_ROAR:
             if (CountUsablePartyMons(battlerDef) == 0)
                 ADJUST_SCORE(-10);
-            else if (aiData->abilities[battlerDef] == ABILITY_SUCTION_CUPS)
+            else if (aiData->abilities[battlerDef] == ABILITY_SUCTION_CUPS || aiData->abilities[battlerDef] == ABILITY_STICKY_HOLD)
                 ADJUST_SCORE(-10);
             else if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
                 ADJUST_SCORE(-10);
@@ -3487,22 +3487,22 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     isMoveAffectedByPartnerAbility = FALSE;
                 }
                 break;
-            case ABILITY_RATTLED:
-                if (!IsBattleMoveStatus(move) && isFriendlyFireOK
-                    && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG)
-                    && ShouldTriggerAbility(battlerAtkPartner, atkPartnerAbility))
-                {
-                    if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
-                    {
-                        ADJUST_SCORE(DECENT_EFFECT);
-                    }
-                    RETURN_SCORE_PLUS(WEAK_EFFECT);
-                }
-                else
-                {
-                    isMoveAffectedByPartnerAbility = FALSE;
-                }
-                break;
+            // case ABILITY_RATTLED:
+            //     if (!IsBattleMoveStatus(move) && isFriendlyFireOK
+            //         && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG)
+            //         && ShouldTriggerAbility(battlerAtkPartner, atkPartnerAbility))
+            //     {
+            //         if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
+            //         {
+            //             ADJUST_SCORE(DECENT_EFFECT);
+            //         }
+            //         RETURN_SCORE_PLUS(WEAK_EFFECT);
+            //     }
+            //     else
+            //     {
+            //         isMoveAffectedByPartnerAbility = FALSE;
+            //     }
+            //     break;
             case ABILITY_CONTRARY:
             case ABILITY_DEFIANT:
             case ABILITY_STEADFAST:
@@ -4144,7 +4144,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_ROAR:
         if ((IsSoundMove(move) && aiData->abilities[battlerDef] == ABILITY_SOUNDPROOF)
-          || aiData->abilities[battlerDef] == ABILITY_SUCTION_CUPS)
+          || aiData->abilities[battlerDef] == ABILITY_SUCTION_CUPS || aiData->abilities[battlerDef] == ABILITY_STICKY_HOLD)
             break;
         else if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
             break;

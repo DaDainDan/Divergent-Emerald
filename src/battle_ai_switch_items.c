@@ -2013,15 +2013,11 @@ static s32 GetMaxDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposingBattle
 
 static bool32 CanAbilityTrapOpponent(u16 ability, u32 opponent)
 {
-    if ((B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(opponent, TYPE_GHOST)))
+    
+    if (ability == ABILITY_SHADOW_TAG && IS_BATTLER_OF_TYPE(opponent, TYPE_GHOST, TYPE_UNDEAD)) // (B_SHADOW_TAG_ESCAPE >= GEN_4 && gAiLogicData->abilities[opponent] == ABILITY_SHADOW_TAG)
+        return TRUE;
+    else if ((B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(opponent, TYPE_GHOST)))
         return FALSE;
-    else if (ability == ABILITY_SHADOW_TAG)
-    {
-        if (B_SHADOW_TAG_ESCAPE >= GEN_4 && gAiLogicData->abilities[opponent] == ABILITY_SHADOW_TAG) // Check if ability exists in species
-            return FALSE;
-        else
-            return TRUE;
-    }
     else if (ability == ABILITY_ARENA_TRAP && IsBattlerGrounded(opponent))
         return TRUE;
     else if (ability == ABILITY_MAGNET_PULL && IS_BATTLER_OF_TYPE(opponent, TYPE_STEEL))

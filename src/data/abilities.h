@@ -157,9 +157,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_OWN_TEMPO] =
     {
         .name = _("Own Tempo"),
-        .description = COMPOUND_STRING("Prevents confusion."),
+        .description = COMPOUND_STRING("Negates priority effects."),
         .aiRating = 3,
-        .breakable = TRUE,
+        // .breakable = TRUE,
     },
 
     [ABILITY_SUCTION_CUPS] =
@@ -180,8 +180,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SHADOW_TAG] =
     {
         .name = _("Shadow Tag"),
-        .description = COMPOUND_STRING("Prevents the foe's escape."),
-        .aiRating = 10,
+        .description = COMPOUND_STRING("Traps Ghost-type Pokemon."),
+        .aiRating = 8,
     },
 
     [ABILITY_ROUGH_SKIN] =
@@ -384,8 +384,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_RUN_AWAY] =
     {
         .name = _("Run Away"),
-        .description = COMPOUND_STRING("Makes escaping easier."),
-        .aiRating = 0,
+        .description = COMPOUND_STRING("Runs at low HP."),
+        .aiRating = 3,
     },
 
     [ABILITY_KEEN_EYE] =
@@ -459,7 +459,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STICKY_HOLD] =
     {
         .name = _("Sticky Hold"),
-        .description = COMPOUND_STRING("Prevents item theft."),
+        .description = COMPOUND_STRING("Firm grip."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -1112,8 +1112,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ANALYTIC] =
     {
         .name = _("Analytic"),
-        .description = COMPOUND_STRING("Moving last boosts power."),
-        .aiRating = 5,
+        .description = COMPOUND_STRING("More power but moves last."),
+        .aiRating = 6,
     },
 
     [ABILITY_ILLUSION] =
@@ -1166,7 +1166,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_RATTLED] =
     {
         .name = _("Rattled"),
-        .description = COMPOUND_STRING("Raises Speed when scared."),
+        .description = COMPOUND_STRING("Runs when scared."),
         .aiRating = 3,
     },
 
@@ -1625,10 +1625,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_QUEENLY_MAJESTY] =
     {
-        .name = _("Queenly Majesty"),
-        .description = COMPOUND_STRING("Protects from priority."),
-        .aiRating = 6,
-        .breakable = TRUE,
+        .name = _("Majesty"),
+        .description = COMPOUND_STRING("Always moves first."),
+        .aiRating = 10,
+        // .breakable = TRUE,
     },
 
     [ABILITY_INNARDS_OUT] =
@@ -1813,8 +1813,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_PROPELLER_TAIL] =
     {
         .name = _("Propeller Tail"),
-        .description = COMPOUND_STRING("Ignores foe's redirection."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Gain priority but lower Acc."),
+        .aiRating = 5,
     },
 
     [ABILITY_MIRROR_ARMOR] =
@@ -1976,8 +1976,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_QUICK_DRAW] =
     {
         .name = _("Quick Draw"),
-        .description = COMPOUND_STRING("Moves first occasionally."),
-        .aiRating = 4,
+        .description = COMPOUND_STRING("Swift initial strike."),
+        .aiRating = 5,
     },
 
     [ABILITY_UNSEEN_FIST] =
@@ -2570,7 +2570,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Minstrel"),
         .description = COMPOUND_STRING("Sound moves have priority."),
-        .aiRating = 6,
+        .aiRating = 5,
     },
 
     [ABILITY_MOON_PRESENCE] =

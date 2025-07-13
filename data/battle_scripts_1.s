@@ -3253,6 +3253,7 @@ BattleScript_EffectRoar::
 	jumpifcommanderactive BattleScript_ButItFailed
 	jumpifability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_ButItFailed
 	jumpifability BS_TARGET, ABILITY_SUCTION_CUPS, BattleScript_AbilityPreventsPhasingOut
+	jumpifability BS_TARGET, ABILITY_STICKY_HOLD, BattleScript_AbilityPreventsPhasingOut
 	jumpifstatus3 BS_TARGET, STATUS3_ROOTED, BattleScript_PrintMonIsRooted
 	jumpiftargetdynamaxed BattleScript_RoarBlockedByDynamax
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
@@ -3424,7 +3425,7 @@ BattleScript_EffectConfuse::
 	attackcanceler
 	attackstring
 	ppreduce
-	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_OwnTempoPrevents
+	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_OwnTempoPrevents
 	jumpifsubstituteblocks BattleScript_ButItFailed
 	jumpifstatus2 BS_TARGET, STATUS2_CONFUSION, BattleScript_AlreadyConfused
 	jumpifterrainaffected BS_TARGET, STATUS_FIELD_MISTY_TERRAIN, BattleScript_MistyTerrainPrevents
@@ -4166,7 +4167,7 @@ BattleScript_EffectSwagger::
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_SwaggerTryConfuse:
-	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_OwnTempoPrevents
+	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_OwnTempoPrevents
 	jumpifsafeguard BattleScript_SafeguardProtected
 	seteffectprimary MOVE_EFFECT_CONFUSION
 	goto BattleScript_MoveEnd
@@ -4714,7 +4715,7 @@ BattleScript_EffectFlatter::
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_FlatterTryConfuse::
-	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_OwnTempoPrevents
+	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_OwnTempoPrevents
 	jumpifsafeguard BattleScript_SafeguardProtected
 	seteffectprimary MOVE_EFFECT_CONFUSION
 	goto BattleScript_MoveEnd
@@ -9492,6 +9493,7 @@ BattleScript_RedCardActivates::
 	swapattackerwithtarget
 	jumpifstatus3 BS_EFFECT_BATTLER, STATUS3_ROOTED, BattleScript_RedCardIngrain
 	jumpifability BS_EFFECT_BATTLER, ABILITY_SUCTION_CUPS, BattleScript_RedCardSuctionCups
+	jumpifability BS_EFFECT_BATTLER, ABILITY_STICKY_HOLD, BattleScript_RedCardSuctionCups
 	jumpiftargetdynamaxed BattleScript_RedCardDynamaxed
 	removeitem BS_SCRIPTING
 	setbyte sSWITCH_CASE, B_SWITCH_RED_CARD
@@ -10053,7 +10055,7 @@ BattleScript_BerserkGeneRet::
 	setbyte cMULTISTRING_CHOOSER, B_MSG_STAT_ROSE_ITEM
 	call BattleScript_StatUp
 BattleScript_BerserkGeneRet_TryConfuse:
-	jumpifability BS_ATTACKER, ABILITY_OWN_TEMPO, BattleScript_BerserkGeneRet_OwnTempoPrevents
+	jumpifability BS_ATTACKER, ABILITY_INNER_FOCUS, BattleScript_BerserkGeneRet_OwnTempoPrevents
 	jumpifsafeguard BattleScript_BerserkGeneRet_SafeguardProtected
 	seteffectprimary MOVE_EFFECT_CONFUSION | MOVE_EFFECT_AFFECTS_USER
 	goto BattleScript_BerserkGeneRet_End
