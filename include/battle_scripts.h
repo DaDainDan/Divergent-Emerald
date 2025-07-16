@@ -879,5 +879,11 @@ extern const u8 BattleScript_HealingWeather[];
 extern const u8 BattleScript_WhiteSmokeActivates[];
 extern const u8 BattleScript_VictoryStarActivates[];
 extern const u8 BattleScript_BlackFumesActivates[];
+extern const u8 BattleScript_ComatoseHealing[];
+extern const u8 BattleScript_MoveUsedLoafingAroundMsg[];
+extern const u8 BattleScript_UnnerveActivates[];
+extern const u8 BattleScript_SilkSpewActivates[];
+extern const u8 BattleScript_AbilityStatusEffectNoPopUp[];
+extern const u8 BattleScript_ProvocateurActivates[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

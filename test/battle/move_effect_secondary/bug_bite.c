@@ -138,7 +138,7 @@ SINGLE_BATTLE_TEST("Bug Bite ignores Unnerve")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_TYRANITAR) { Ability(ABILITY_UNNERVE); Item(ITEM_ORAN_BERRY); }
+        OPPONENT(SPECIES_TYRANITAR) { Ability(ABILITY_MY_LIEGE); Item(ITEM_ORAN_BERRY); }
     } WHEN {
         TURN { MOVE(player, MOVE_BUG_BITE); }
     } SCENE {

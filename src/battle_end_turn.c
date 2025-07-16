@@ -1476,6 +1476,7 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
         switch (ability)
         {
         case ABILITY_TRUANT: // Not fully accurate but it has to be handled somehow. TODO: Find a better way.
+        case ABILITY_COMATOSE:
         case ABILITY_CUD_CHEW:
         case ABILITY_SLOW_START:
         case ABILITY_BAD_DREAMS:

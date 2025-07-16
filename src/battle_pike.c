@@ -814,7 +814,7 @@ static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
     u16 ability = GetMonAbility(mon);
     bool8 ret = FALSE;
 
-    if (ability == ABILITY_COMATOSE)
+    if (ability == ABILITY_WONDER_SKIN && status != STATUS1_SLEEP)
         return TRUE;
 
     switch (status)
@@ -1626,7 +1626,7 @@ static bool8 CanEncounterWildMon(u8 enemyMonLevel)
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
     {
         u16 monAbility = GetMonAbility(&gPlayerParty[0]);
-        if (monAbility == ABILITY_KEEN_EYE || monAbility == ABILITY_INTIMIDATE)
+        if (monAbility == ABILITY_KEEN_EYE || monAbility == ABILITY_INTIMIDATE || monAbility == ABILITY_UNNERVE)
         {
             u8 playerMonLevel = GetMonData(&gPlayerParty[0], MON_DATA_LEVEL);
             if (playerMonLevel > 5 && enemyMonLevel <= playerMonLevel - 5 && Random() % 2 == 0)

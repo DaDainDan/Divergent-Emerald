@@ -1139,27 +1139,34 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 RETURN_SCORE_MINUS(10);
             break;
         case ABILITY_SWEET_VEIL:
+        case ABILITY_COMATOSE:
             if (nonVolatileStatus == MOVE_EFFECT_SLEEP)
                 RETURN_SCORE_MINUS(10);
             break;
         case ABILITY_FLOWER_VEIL:
-            if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS) && (IsNonVolatileStatusMove(move)))
+            if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS) 
+                && (IsNonVolatileStatusMove(move) && nonVolatileStatus != MOVE_EFFECT_SLEEP))
                 RETURN_SCORE_MINUS(10);
             break;
         case ABILITY_MAGIC_BOUNCE:
             if (MoveCanBeBouncedBack(move))
                 RETURN_SCORE_MINUS(20);
             break;
+        case ABILITY_TRUANT:
+            if (IsStatLoweringEffect(moveEffect))
+                ADJUST_SCORE(-5);
+            break;
         case ABILITY_CONTRARY:
             if (IsStatLoweringEffect(moveEffect))
                 RETURN_SCORE_MINUS(20);
             break;
-        case ABILITY_COMATOSE:
-            if (IsNonVolatileStatusMove(move))
+        case ABILITY_WONDER_SKIN:
+            if (IsNonVolatileStatusMove(move) && nonVolatileStatus != MOVE_EFFECT_SLEEP)
                 RETURN_SCORE_MINUS(10);
             break;
         case ABILITY_SHIELDS_DOWN:
-            if (IsShieldsDownProtected(battlerAtk, aiData->abilities[battlerAtk]) && IsNonVolatileStatusMove(move))
+            if (IsShieldsDownProtected(battlerAtk, aiData->abilities[battlerAtk]) 
+                && (IsNonVolatileStatusMove(move) && nonVolatileStatus != MOVE_EFFECT_SLEEP))
                 RETURN_SCORE_MINUS(10);
             break;
         // case ABILITY_LEAF_GUARD:
@@ -1193,7 +1200,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_FLOWER_VEIL:
-                if ((IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS)) && (IsNonVolatileStatusMove(move) || IsStatLoweringEffect(moveEffect)))
+                if ((IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS)) && (IsNonVolatileStatusMove(move) && nonVolatileStatus != MOVE_EFFECT_SLEEP)) // || IsStatLoweringEffect(moveEffect)))
                     RETURN_SCORE_MINUS(10);
                 break;
             case ABILITY_AROMA_VEIL:
@@ -1218,7 +1225,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 
         if (IsBattlerTerrainAffected(battlerDef, STATUS_FIELD_MISTY_TERRAIN))
         {
-            if (IsNonVolatileStatusMove(move) || IsConfusionMoveEffect(moveEffect))
+            if ((IsNonVolatileStatusMove(move) && nonVolatileStatus != MOVE_EFFECT_SLEEP) || IsConfusionMoveEffect(moveEffect))
                 RETURN_SCORE_MINUS(20);
         }
 
@@ -1737,6 +1744,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_ENCORE:
             if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
                 ADJUST_SCORE(-10);
+            else if (aiData->abilities[battlerDef] == ABILITY_OBLIVIOUS || aiData->abilities[battlerDef] == ABILITY_INNER_FOCUS)
+                ADJUST_SCORE(-10);
             else if (gDisableStructs[battlerDef].encoreTimer == 0
                 && (B_MENTAL_HERB < GEN_5 || aiData->holdEffects[battlerDef] != HOLD_EFFECT_MENTAL_HERB)
                 && !DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
@@ -1828,15 +1837,16 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (isDoubleBattle)
             {
                 if (CountUsablePartyMons(battlerAtk) == 0
-                  && aiData->abilities[battlerAtk] != ABILITY_SOUNDPROOF
-                  && aiData->abilities[BATTLE_PARTNER(battlerAtk)] != ABILITY_SOUNDPROOF
+                  && aiData->abilities[battlerAtk] != ABILITY_SOUNDPROOF && aiData->abilities[battlerAtk] != ABILITY_OBLIVIOUS
+                  && aiData->abilities[BATTLE_PARTNER(battlerAtk)] != ABILITY_SOUNDPROOF && aiData->abilities[BATTLE_PARTNER(battlerAtk)] != ABILITY_OBLIVIOUS
                   && CountUsablePartyMons(FOE(battlerAtk)) >= 1)
                 {
                     ADJUST_SCORE(-10); //Don't wipe your team if you're going to lose
                 }
-                else if ((!IsBattlerAlive(FOE(battlerAtk)) || aiData->abilities[FOE(battlerAtk)] == ABILITY_SOUNDPROOF
+                else if ((!IsBattlerAlive(FOE(battlerAtk)) || (aiData->abilities[FOE(battlerAtk)] == ABILITY_SOUNDPROOF || aiData->abilities[FOE(battlerAtk)] == ABILITY_OBLIVIOUS)
                   || gStatuses3[FOE(battlerAtk)] & STATUS3_PERISH_SONG)
-                  && (!IsBattlerAlive(BATTLE_PARTNER(FOE(battlerAtk))) || aiData->abilities[BATTLE_PARTNER(FOE(battlerAtk))] == ABILITY_SOUNDPROOF
+                  && (!IsBattlerAlive(BATTLE_PARTNER(FOE(battlerAtk))) 
+                  || (aiData->abilities[BATTLE_PARTNER(FOE(battlerAtk))] == ABILITY_SOUNDPROOF || aiData->abilities[BATTLE_PARTNER(FOE(battlerAtk))] == ABILITY_OBLIVIOUS)
                   || gStatuses3[BATTLE_PARTNER(FOE(battlerAtk))] & STATUS3_PERISH_SONG))
                 {
                     ADJUST_SCORE(-10); //Both enemies are perish songed
@@ -1848,11 +1858,12 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             }
             else
             {
-                if (CountUsablePartyMons(battlerAtk) == 0 && aiData->abilities[battlerAtk] != ABILITY_SOUNDPROOF
+                if (CountUsablePartyMons(battlerAtk) == 0 && aiData->abilities[battlerAtk] != ABILITY_SOUNDPROOF && aiData->abilities[battlerAtk] != ABILITY_OBLIVIOUS
                   && CountUsablePartyMons(battlerDef) >= 1)
                     ADJUST_SCORE(-10);
 
-                if (gStatuses3[FOE(battlerAtk)] & STATUS3_PERISH_SONG || aiData->abilities[FOE(battlerAtk)] == ABILITY_SOUNDPROOF)
+                if (gStatuses3[FOE(battlerAtk)] & STATUS3_PERISH_SONG 
+                 || (aiData->abilities[FOE(battlerAtk)] == ABILITY_SOUNDPROOF || aiData->abilities[FOE(battlerAtk)] == ABILITY_OBLIVIOUS))
                     ADJUST_SCORE(-10);
             }
             break;
@@ -1964,6 +1975,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             break;
         case EFFECT_TORMENT:
             if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
+                ADJUST_SCORE(-10);
+            else if (aiData->abilities[battlerDef] == ABILITY_OBLIVIOUS || aiData->abilities[battlerDef] == ABILITY_INNER_FOCUS)
                 ADJUST_SCORE(-10);
             else if (gBattleMons[battlerDef].status2 & STATUS2_TORMENT
               || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
@@ -2233,6 +2246,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     {
                         ADJUST_SCORE(-10);
                     }
+                    else if (aiData->abilities[battlerDef] == ABILITY_INFILTRATOR)
+                    {
+                        ADJUST_SCORE(-4);
+                    }
                 }
 
                 /*if (gAiThinkingStruct->aiFlags[battlerAtk] == AI_SCRIPT_CHECK_BAD_MOVE //Only basic AI
@@ -2326,6 +2343,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             return AI_CheckBadMove(battlerAtk, battlerDef, GetNaturePowerMove(battlerAtk), score);
         case EFFECT_TAUNT:
             if (gDisableStructs[battlerDef].tauntTimer > 0
+              || aiData->abilities[battlerDef] == ABILITY_OBLIVIOUS || aiData->abilities[battlerDef] == ABILITY_INNER_FOCUS
               || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
             break;
@@ -2368,6 +2386,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             break;
         case EFFECT_YAWN:
             if (gStatuses3[battlerDef] & STATUS3_YAWN)
+                ADJUST_SCORE(-10);
+            else if (aiData->abilities[battlerDef] == ABILITY_OBLIVIOUS || aiData->abilities[battlerDef] == ABILITY_INNER_FOCUS)
                 ADJUST_SCORE(-10);
             else if (!AI_CanPutToSleep(battlerAtk, battlerDef, aiData->abilities[battlerDef], move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
@@ -3609,7 +3629,9 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     {
                         ADJUST_SCORE(10);
                     }
-                    else if (aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_INTIMIDATE)
+                    else if (aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_INTIMIDATE 
+                        || aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_UNNERVE
+                        || aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_SILK_SPEW)
                     {
                         ADJUST_SCORE(DECENT_EFFECT);
                     }
@@ -3706,7 +3728,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         {
         case EFFECT_SKILL_SWAP:
             if (aiData->abilities[battlerAtk] == ABILITY_TRUANT)
-                ADJUST_SCORE(GOOD_EFFECT);
+                ADJUST_SCORE(DECENT_EFFECT);
             else if (IsAbilityOfRating(aiData->abilities[battlerAtk], 0) || IsAbilityOfRating(aiData->abilities[battlerDef], 10))
                 ADJUST_SCORE(DECENT_EFFECT); // we want to transfer our bad ability or take their awesome ability
             break;
@@ -4144,6 +4166,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_ROAR:
         if ((IsSoundMove(move) && aiData->abilities[battlerDef] == ABILITY_SOUNDPROOF)
+          || (IsSoundMove(move) && IsBattleMoveStatus(move) && aiData->abilities[battlerDef] == ABILITY_OBLIVIOUS)
           || aiData->abilities[battlerDef] == ABILITY_SUCTION_CUPS || aiData->abilities[battlerDef] == ABILITY_STICKY_HOLD)
             break;
         else if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
@@ -4218,7 +4241,8 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_CURE_SLP
               || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_CURE_STATUS
               || HasMoveWithEffect(EFFECT_SLEEP_TALK, battlerAtk)
-              || HasMoveWithEffect(EFFECT_SNORE, battlerAtk))
+              || HasMoveWithEffect(EFFECT_SNORE, battlerAtk)
+              || aiData->abilities[battlerAtk] == ABILITY_INNER_FOCUS)
             //   || aiData->abilities[battlerAtk] == ABILITY_SHED_SKIN
             //   || aiData->abilities[battlerAtk] == ABILITY_EARLY_BIRD
             //   || (AI_GetWeather() & B_WEATHER_RAIN && gWishFutureKnock.weatherDuration != 1 && aiData->abilities[battlerAtk] == ABILITY_HYDRATION && aiData->holdEffects[battlerAtk] != HOLD_EFFECT_UTILITY_UMBRELLA))
@@ -5338,6 +5362,8 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             {
                 case MOVE_EFFECT_FLINCH:
                     score += ShouldTryToFlinch(battlerAtk, battlerDef, aiData->abilities[battlerAtk], aiData->abilities[battlerDef], move);
+                    if (isDoubleBattle && AI_IsSlower(BATTLE_PARTNER(battlerAtk), battlerDef, aiData->partnerMove))
+                        ADJUST_SCORE(DECENT_EFFECT);
                     break;
                 case MOVE_EFFECT_SPD_MINUS_1:
                 case MOVE_EFFECT_SPD_MINUS_2:

@@ -548,6 +548,11 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SOUNDPROOF;
     }
+    else if ((IsSoundMove(incomingMove) && IsBattleMoveStatus(incomingMove)) 
+        || (isOpposingBattlerChargingOrInvulnerable && IsSoundMove(incomingMove) && IsBattleMoveStatus(incomingMove)))
+    {
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_OBLIVIOUS;
+    }
     else if (IsBallisticMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsBallisticMove(incomingMove)))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_BULLETPROOF;
@@ -665,14 +670,14 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
     //Perish Song
     if (gStatuses3[battler] & STATUS3_PERISH_SONG
         && gDisableStructs[battler].perishSongTimer == 0
-        && monAbility != ABILITY_SOUNDPROOF
+        && monAbility != ABILITY_SOUNDPROOF && monAbility != ABILITY_OBLIVIOUS
         && RandomPercentage(RNG_AI_SWITCH_PERISH_SONG, GetSwitchChance(SHOULD_SWITCH_PERISH_SONG)))
         return SetSwitchinAndSwitch(battler, PARTY_SIZE);
 
     if (gAiThinkingStruct->aiFlags[GetThinkingBattler(battler)] & AI_FLAG_SMART_SWITCHING)
     {
         //Yawn
-        if (gStatuses3[battler] & STATUS3_YAWN
+        if (gStatuses3[battler] & STATUS3_YAWN // && monAbility != ABILITY_OBLIVIOUS && monAbility != ABILITY_INNER_FOCUS
             && CanBeSlept(battler, battler, monAbility, BLOCKED_BY_SLEEP_CLAUSE) // TODO: ask for help from pawwkie
             && gBattleMons[battler].hp > gBattleMons[battler].maxHP / 3
             && RandomPercentage(RNG_AI_SWITCH_YAWN, GetSwitchChance(SHOULD_SWITCH_YAWN)))
@@ -690,7 +695,8 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
 
             // Checks to see if active Pokemon can do something against sleep
             if ((monAbility == ABILITY_NATURAL_CURE
-                || monAbility == ABILITY_SHED_SKIN)
+                || monAbility == ABILITY_INNER_FOCUS)
+                // || monAbility == ABILITY_SHED_SKIN)
                 // || monAbility == ABILITY_EARLY_BIRD)
                 || holdEffect == (HOLD_EFFECT_CURE_SLP | HOLD_EFFECT_CURE_STATUS)
                 || HasMove(battler, MOVE_SLEEP_TALK)
@@ -1565,9 +1571,10 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
             hazardDamage += spikesDamage;
         }
 
-        if ((hazardFlags & SIDE_STATUS_TOXIC_SPIKES) && (defType1 != TYPE_POISON && defType2 != TYPE_POISON
-            && defType1 != TYPE_STEEL && defType2 != TYPE_STEEL
-            && ability != ABILITY_IMMUNITY && ability != ABILITY_POISON_HEAL && ability != ABILITY_COMATOSE
+        if ((hazardFlags & SIDE_STATUS_TOXIC_SPIKES) && 
+            (defType1 != TYPE_POISON && defType2 != TYPE_POISON
+            && ability != ABILITY_IMMUNITY && ability != ABILITY_POISON_HEAL // && ability != ABILITY_COMATOSE
+            && ability != ABILITY_SHELL_ARMOR && ability != ABILITY_SOLID_ROCK && ability != ABILITY_BATTLE_ARMOR 
             && status == 0
             && !(hazardFlags & SIDE_STATUS_SAFEGUARD)
             && !IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL)
@@ -1721,9 +1728,17 @@ static u32 GetSwitchinRecurringHealing(void)
     } // Intentionally omitting Shell Bell for its inconsistency
 
     // Abilities
+    u32 healing = 0;
     if (ability == ABILITY_POISON_HEAL && (gAiLogicData->switchinCandidate.battleMon.status1 & STATUS1_POISON))
     {
-        u32 healing = maxHP / 8;
+        healing = maxHP / 8;
+        if (healing == 0)
+            healing = 1;
+        recurringHealing += healing;
+    }
+    else if (ability == ABILITY_COMATOSE)
+    {
+        healing = maxHP / 8;
         if (healing == 0)
             healing = 1;
         recurringHealing += healing;
@@ -1880,7 +1895,7 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
 
         // Check if we're at a single use healing item threshold
         if (gAiLogicData->switchinCandidate.battleMon.ability != ABILITY_KLUTZ && usedSingleUseHealingItem == FALSE
-         && !(opposingAbility == ABILITY_UNNERVE && GetPocketByItemId(item) == POCKET_BERRIES))
+         && !(opposingAbility == ABILITY_MY_LIEGE && GetPocketByItemId(item) == POCKET_BERRIES))
         {
             switch (heldItemEffect)
             {
@@ -2041,8 +2056,8 @@ static inline bool32 IsFreeSwitch(enum SwitchType switchType, u32 battlerSwitchi
         {
             u32 opposingAbility = AI_GetBattlerAbility(opposingBattler);
             // If faster, not a free switch; likely lowered own stats
-            if (!movedSecond && opposingAbility != ABILITY_INTIMIDATE && opposingAbility != ABILITY_SUPERSWEET_SYRUP) // Intimidate triggers switches before turn starts
-                return FALSE;
+            if (!movedSecond && opposingAbility != ABILITY_INTIMIDATE && opposingAbility != ABILITY_SUPERSWEET_SYRUP && opposingAbility != ABILITY_UNNERVE) 
+                return FALSE;  // Intimidate triggers switches before turn starts
             // Otherwise, free switch
             return TRUE;
         }

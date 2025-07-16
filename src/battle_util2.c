@@ -150,10 +150,10 @@ u32 BattlePalace_TryEscapeStatus(u8 battler)
                 {
                     u32 toSub;
 
-                    // if (GetBattlerAbility(battler) == ABILITY_EARLY_BIRD)
-                    //     toSub = 2;
-                    // else
-                    toSub = 1;
+                    if (GetBattlerAbility(battler) == ABILITY_INNER_FOCUS) // ABILITY_EARLY_BIRD
+                        toSub = 2;
+                    else
+                        toSub = 1;
 
                     // Reduce number of sleep turns
                     if ((gBattleMons[battler].status1 & STATUS1_SLEEP) < toSub)

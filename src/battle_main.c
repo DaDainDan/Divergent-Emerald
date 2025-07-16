@@ -3400,6 +3400,7 @@ const u8* FaintClearSetData(u32 battler)
                 // Don't use CanBeConfused here, since it can cause issues in edge cases.
                 if (!(GetBattlerAbility(otherSkyDropper) == ABILITY_INNER_FOCUS         // ABILITY_OWN_TEMPO
                     || gBattleMons[otherSkyDropper].status2 & STATUS2_CONFUSION
+                    || IsAbilityOnSide(otherSkyDropper, ABILITY_AROMA_VEIL)
                     || IsBattlerTerrainAffected(otherSkyDropper, STATUS_FIELD_MISTY_TERRAIN)))
                 {
                     gBattleMons[otherSkyDropper].status2 |= STATUS2_CONFUSION_TURN(((Random()) % 4) + 2);

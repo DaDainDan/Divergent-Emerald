@@ -1566,6 +1566,8 @@ bool32 IsAromaVeilProtectedEffect(enum BattleMoveEffects moveEffect)
     case EFFECT_TORMENT:
     case EFFECT_TAUNT:
     case EFFECT_HEAL_BLOCK:
+    case EFFECT_IMPRISON:
+    case EFFECT_CONFUSE:
         return TRUE;
     default:
         return FALSE;
@@ -1980,10 +1982,10 @@ bool32 ShouldLowerStat(u32 battlerAtk, u32 battlerDef, u32 abilityDef, u32 stat)
     case ABILITY_MIRACLE_EYE:
         if (stat == STAT_ACC)
             return FALSE;
-    case ABILITY_FLOWER_VEIL:
-        if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS))
-            return FALSE;
-        break;
+    // case ABILITY_FLOWER_VEIL:
+    //     if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS))
+    //         return FALSE;
+    //     break;
     case ABILITY_CONTRARY:
     case ABILITY_CLEAR_BODY:
     // case ABILITY_WHITE_SMOKE:
@@ -3441,6 +3443,7 @@ bool32 AI_CanBeConfused(u32 battlerAtk, u32 battlerDef, u32 move, u32 ability)
 {
     if ((gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
      || (ability == ABILITY_INNER_FOCUS && !DoesBattlerIgnoreAbilityChecks(battlerAtk, gAiLogicData->abilities[battlerAtk], move)) // ability == ABILITY_OWN_TEMPO
+     || AI_IsAbilityOnSide(battlerDef, ABILITY_AROMA_VEIL)
      || IsBattlerTerrainAffected(battlerDef, STATUS_FIELD_MISTY_TERRAIN)
      || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD
      || DoesSubstituteBlockMove(battlerAtk, battlerDef, move))
@@ -3490,7 +3493,7 @@ bool32 AI_CanBeInfatuated(u32 battlerAtk, u32 battlerDef, u32 defAbility)
 {
     if ((gBattleMons[battlerDef].status2 & STATUS2_INFATUATION)
       || gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] == UQ_4_12(0.0)
-      || defAbility == ABILITY_OBLIVIOUS
+      || defAbility == ABILITY_OBLIVIOUS || defAbility == ABILITY_INNER_FOCUS
       || !AreBattlersOfOppositeGender(battlerAtk, battlerDef)
       || AI_IsAbilityOnSide(battlerDef, ABILITY_AROMA_VEIL))
         return FALSE;
@@ -4217,6 +4220,10 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
     if (considerContrary && gAiLogicData->abilities[battlerAtk] == ABILITY_CONTRARY)
         return NO_INCREASE;
 
+    // Truant will remove stat changes anyway    
+    if (gAiLogicData->abilities[battlerAtk] == ABILITY_TRUANT)
+        return NO_INCREASE;
+
     // Don't increase stats if opposing battler has Unaware
     if (HasBattlerSideAbility(battlerDef, ABILITY_UNAWARE, gAiLogicData))
         return NO_INCREASE;
@@ -4248,7 +4255,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         return NO_INCREASE;
 
     // Don't increase if AI is at +1 and opponent has Haze effect
-    if (gBattleMons[battlerAtk].statStages[statId] >= MAX_STAT_STAGE - 5 && (HasBattlerSideMoveWithEffect(battlerDef, EFFECT_HAZE)
+    if (gBattleMons[battlerAtk].statStages[statId] >= MAX_STAT_STAGE - 2 && (HasBattlerSideMoveWithEffect(battlerDef, EFFECT_HAZE)
         || HasBattlerSideMoveWithAdditionalEffect(battlerDef, MOVE_EFFECT_CLEAR_SMOG)
         || HasBattlerSideMoveWithAdditionalEffect(battlerDef, MOVE_EFFECT_HAZE)))
         return NO_INCREASE;
@@ -4497,9 +4504,9 @@ void IncreaseConfusionScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score
         if (gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
           || gBattleMons[battlerDef].status2 & STATUS2_INFATUATION
           || (gAiLogicData->abilities[battlerAtk] == ABILITY_SUPER_LUCK && HasMoveWithMoveEffectExcept(battlerAtk, MOVE_EFFECT_FLINCH, EFFECT_FIRST_TURN_ONLY)))
-            ADJUST_SCORE_PTR(GOOD_EFFECT);
-        else
             ADJUST_SCORE_PTR(DECENT_EFFECT);
+        else
+            ADJUST_SCORE_PTR(WEAK_EFFECT);
     }
 }
 

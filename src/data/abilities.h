@@ -96,8 +96,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_OBLIVIOUS] =
     {
         .name = _("Oblivious"),
-        .description = COMPOUND_STRING("Prevents attraction."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Doesn't notice foe."),
+        .aiRating = 4,
         .breakable = TRUE,
     },
 
@@ -302,8 +302,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_INNER_FOCUS] =
     {
         .name = _("Inner Focus"),
-        .description = COMPOUND_STRING("Prevents flinching."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Resists status conditions."),
+        .aiRating = 7,
         .breakable = TRUE,
     },
 
@@ -813,7 +813,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_UNAWARE] =
     {
-        .name = _("Unaware"),
+        .name = _("Naive"),
         .description = COMPOUND_STRING("Ignores stat changes."),
         .aiRating = 6,
         .breakable = TRUE,
@@ -957,8 +957,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_UNNERVE] =
     {
         .name = _("Unnerve"),
-        .description = COMPOUND_STRING("Foes can't eat Berries."),
-        .aiRating = 3,
+        .description = COMPOUND_STRING("Lowers the foe's SpAtk."),
+        .aiRating = 7,
     },
 
     [ABILITY_DEFIANT] =
@@ -1104,8 +1104,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WONDER_SKIN] =
     {
         .name = _("Wonder Skin"),
-        .description = COMPOUND_STRING("May avoid status problems."),
-        .aiRating = 4,
+        .description = COMPOUND_STRING("Prevents status ailments."),
+        .aiRating = 8,
         .breakable = TRUE,
     },
 
@@ -1251,7 +1251,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Flower Veil"),
         .description = COMPOUND_STRING("Protects Grass-types."),
-        .aiRating = 0,
+        .aiRating = 4,
     },
 
     [ABILITY_CHEEK_POUCH] =
@@ -1694,10 +1694,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_POWER_OF_ALCHEMY] =
     {
         .name = _("Power Of Alchemy"),
-        .description = COMPOUND_STRING("Copies ally's ability."),
-        .aiRating = 0,
-        .cantBeCopied = TRUE,
-        .cantBeTraced = TRUE,
+        .description = COMPOUND_STRING("Poison gives random effect."),
+        .aiRating = 5,
+        // .cantBeCopied = TRUE,
+        // .cantBeTraced = TRUE,
     },
 
     [ABILITY_BEAST_BOOST] =
@@ -1922,11 +1922,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 2,
     },
 
-    [ABILITY_PERISH_BODY] =
+    [ABILITY_DOOM_DESIRE] =
     {
-        .name = _("Perish Body"),
-        .description = COMPOUND_STRING("Foe faints in 3 turns if hit."),
-        .aiRating = -1,
+        .name = _("Doom Desire"),
+        .description = COMPOUND_STRING("Ghost moves condemn foes."),
+        .aiRating = 7,
     },
 
     [ABILITY_WANDERING_SPIRIT] =
@@ -2719,5 +2719,12 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Black Fumes"),
         .description = COMPOUND_STRING("Sets Haze on entry."),
         .aiRating = 6,
+    },
+
+    [ABILITY_MY_LIEGE] =
+    {
+        .name = _("My Liege"),
+        .description = COMPOUND_STRING("Foes can't eat Berries."),
+        .aiRating = 3,
     },
 };

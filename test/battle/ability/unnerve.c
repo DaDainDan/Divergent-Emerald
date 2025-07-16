@@ -6,7 +6,7 @@ SINGLE_BATTLE_TEST("Unnerve prevents opposing Pokémon from eating their own ber
 {
     u16 mon;
     u16 ability;
-    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
+    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_MY_LIEGE; }
     PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
     GIVEN {
         ASSUME(gItemsInfo[ITEM_RAWST_BERRY].holdEffect == HOLD_EFFECT_CURE_BRN);
@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Unnerve doesn't prevent opposing Pokémon from using Natural
 {
     u16 mon;
     u16 ability;
-    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
+    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_MY_LIEGE; }
     PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_NATURAL_GIFT) == EFFECT_NATURAL_GIFT);
@@ -43,7 +43,7 @@ SINGLE_BATTLE_TEST("Unnerve prints the correct string (player)")
 {
     u16 mon;
     u16 ability;
-    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
+    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_MY_LIEGE; }
     PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
     GIVEN {
         PLAYER(mon) { Ability(ability); }
@@ -60,7 +60,7 @@ SINGLE_BATTLE_TEST("Unnerve prints the correct string (opponent)")
 {
     u16 mon;
     u16 ability;
-    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
+    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_MY_LIEGE; }
     PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -77,7 +77,7 @@ SINGLE_BATTLE_TEST("Unnerve activates only once per switch-in")
 {
     u16 mon;
     u16 ability;
-    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
+    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_MY_LIEGE; }
     PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

@@ -60,6 +60,7 @@ void SaveBattlerAttacker(u32 battler);
 bool32 CanBurnHitThaw(u16 move);
 void SetNonVolatileStatusCondition(u32 target, enum MoveEffects effect);
 u32 GetHighestAtkStatId(u32 battlerId);
+u32 IsWonderSkinProtected(u32 battler, u32 ability);
 
 extern void (*const gBattleScriptingCommandsTable[])(void);
 extern const struct StatFractions gAccuracyStageRatios[];
