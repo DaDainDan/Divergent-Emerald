@@ -8633,6 +8633,15 @@ BattleScript_HurtAttacker:
 	tryfaintmon BS_ATTACKER
 	return
 
+BattleScript_HurtTarget:
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNHURTSTARGET
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_TARGET
+	return
+
 BattleScript_AttackerHurtSelf:
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	healthbarupdate BS_ATTACKER
@@ -8645,6 +8654,11 @@ BattleScript_AttackerHurtSelf:
 BattleScript_RoughSkinActivates::
 	call BattleScript_AbilityPopUp
 	call BattleScript_HurtAttacker
+	return
+
+BattleScript_RoughSkinActivatesAttacker::
+	call BattleScript_AbilityPopUp
+	call BattleScript_HurtTarget
 	return
 
 BattleScript_RecklessActivates::
@@ -8705,6 +8719,12 @@ BattleScript_GooeyActivates::
 	swapattackerwithtarget  @ for defiant, mirror armor
 	seteffectsecondary MOVE_EFFECT_SPD_MINUS_1
 	swapattackerwithtarget
+	return
+
+BattleScript_GooeyActivatesAttack::
+	waitstate
+	call BattleScript_AbilityPopUp
+	seteffectsecondary MOVE_EFFECT_SPD_MINUS_1
 	return
 
 BattleScript_AbilityStatusEffect::
@@ -10272,4 +10292,12 @@ BattleScript_ProvocateurActivates::
 	printstring STRINGID_PKMNFELLFORTAUNT
 	waitmessage B_WAIT_TIME_LONG
 	end3
+
+BattleScript_MoonPresence::
+	waitstate
+	showabilitypopup BS_ATTACKER
+	pause B_WAIT_TIME_LONG
+	destroyabilitypopup
+	seteffectsecondary MOVE_EFFECT_SP_ATK_PLUS_1 | MOVE_EFFECT_AFFECTS_USER 
+	return
 

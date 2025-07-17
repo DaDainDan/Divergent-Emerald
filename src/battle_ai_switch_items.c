@@ -273,7 +273,9 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
 
     // Check if mon gets one shot
     if (maxDamageTaken > gBattleMons[battler].hp
-        && !(gItemsInfo[gBattleMons[battler].item].holdEffect == HOLD_EFFECT_FOCUS_SASH || (!IsMoldBreakerTypeAbility(opposingBattler, gBattleMons[opposingBattler].ability) && B_STURDY >= GEN_5 && aiAbility == ABILITY_STURDY)))
+        && !(gItemsInfo[gBattleMons[battler].item].holdEffect == HOLD_EFFECT_FOCUS_SASH 
+        || (!IsMoldBreakerTypeAbility(opposingBattler, gBattleMons[opposingBattler].ability) && B_STURDY >= GEN_5 && (aiAbility == ABILITY_STURDY || aiAbility == ABILITY_STALWART)
+            && !gBattleStruct->partyState[GetBattlerSide(battler)][gBattlerPartyIndexes[battler]].sturdyActivation)))
     {
         getsOneShot = TRUE;
     }
@@ -1886,7 +1888,10 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
         currentHP = currentHP - damageTaken;
 
         // One shot prevention effects
-        if (damageTaken >= maxHP && startingHP == maxHP && (heldItemEffect == HOLD_EFFECT_FOCUS_SASH || (!opponentCanBreakMold && B_STURDY >= GEN_5 && ability == ABILITY_STURDY)) && hitsToKO < 1)
+        if (damageTaken >= maxHP && startingHP == maxHP && heldItemEffect == HOLD_EFFECT_FOCUS_SASH && hitsToKO < 1)
+            currentHP = 1;
+        else if (damageTaken >= startingHP && (!opponentCanBreakMold && B_STURDY >= GEN_5 && (ability == ABILITY_STURDY || ability == ABILITY_STALWART)
+            && !gBattleStruct->partyState[GetBattlerSide(battler)][gBattlerPartyIndexes[battler]].sturdyActivation))
             currentHP = 1;
 
         // If mon is still alive, apply weather impact first, as it might KO the mon before it can heal with its item (order is weather -> item -> status)

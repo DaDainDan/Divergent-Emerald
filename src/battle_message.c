@@ -921,7 +921,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNABSORBEDSUNLIGHT]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s {B_ATK_ABILITY} absorbed some of the sunlight!"),
     [STRINGID_VICTORYAURA]                          = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is wishing for a great victory!"),
     [STRINGID_PKMNFROSTBITTENBY]                    = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_BUFF1} gave {B_EFF_NAME_WITH_PREFIX2} frostbite!"),
-    [STRINGID_COSMICENTERS]                         = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is not of this world!"), 
+    [STRINGID_COSMICENTERS]                         = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is not of this world!"),
+    [STRINGID_PKMNHURTSTARGET]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was hurt by {B_ATK_NAME_WITH_PREFIX2}'s {B_BUFF1}!"), 
 };
 
 const u16 gTrainerUsedItemStringIds[] =

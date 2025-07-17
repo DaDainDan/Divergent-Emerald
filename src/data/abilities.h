@@ -41,8 +41,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STURDY] =
     {
         .name = _("Sturdy"),
-        .description = COMPOUND_STRING("Negates 1-hit KO attacks."),
-        .aiRating = 6,
+        .description = COMPOUND_STRING("Prevents KO once."),
+        .aiRating = 8,
         .breakable = TRUE,
     },
 
@@ -74,7 +74,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Static"),
         .description = COMPOUND_STRING("Paralyzes on contact."),
-        .aiRating = 4,
+        .aiRating = 5,
     },
 
     [ABILITY_VOLT_ABSORB] =
@@ -378,7 +378,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Flame Body"),
         .description = COMPOUND_STRING("Burns the foe on contact."),
-        .aiRating = 4,
+        .aiRating = 5,
     },
 
     [ABILITY_RUN_AWAY] =
@@ -429,8 +429,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CUTE_CHARM] =
     {
         .name = _("Cute Charm"),
-        .description = COMPOUND_STRING("Infatuates on contact."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Infatuates when attacked."),
+        .aiRating = 4,
     },
 
     [ABILITY_PLUS] =
@@ -829,8 +829,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_FILTER] =
     {
         .name = _("Filter"),
-        .description = COMPOUND_STRING("Weakens “supereffective”."),
-        .aiRating = 6,
+        .description = COMPOUND_STRING("Boosts barrier strength."),
+        .aiRating = 3,
         .breakable = TRUE,
     },
 
@@ -859,8 +859,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ICE_BODY] =
     {
         .name = _("Ice Body"),
-        .description = COMPOUND_STRING("HP recovery in Hail or Snow."),
-        .aiRating = 3,
+        .description = COMPOUND_STRING("Contact causes frostbite."),
+        .aiRating = 5,
     },
 
     [ABILITY_SOLID_ROCK] =
@@ -1074,9 +1074,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_POISON_TOUCH] =
     {
-        .name = _("Poison Touch"),
+        .name = _("Toxic Body"),
         .description = COMPOUND_STRING("Poisons foe on contact."),
-        .aiRating = 4,
+        .aiRating = 5,
     },
 
     [ABILITY_REGENERATOR] =
@@ -1145,8 +1145,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MUMMY] =
     {
         .name = _("Mummy"),
-        .description = COMPOUND_STRING("Spreads with contact."),
-        .aiRating = 5,
+        .description = COMPOUND_STRING("Spreads type with contact."),
+        .aiRating = 6,
     },
 
     [ABILITY_MOXIE] =
@@ -1634,8 +1634,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_INNARDS_OUT] =
     {
         .name = _("Innards Out"),
-        .description = COMPOUND_STRING("Hurts foe when defeated."),
-        .aiRating = 5,
+        .description = COMPOUND_STRING("Hurts foe when attacked."),
+        .aiRating = 8,
     },
 
     [ABILITY_DANCER] =
@@ -1839,8 +1839,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STALWART] =
     {
         .name = _("Stalwart"),
-        .description = COMPOUND_STRING("Ignores foe's redirection."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Prevents KO once."),
+        .aiRating = 8,
+        .breakable = TRUE,
     },
 
     [ABILITY_STEAM_ENGINE] =
@@ -2531,7 +2532,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_INFLATE] =
     {
         .name = _("Inflate"),
-        .description = COMPOUND_STRING("Boosts Defs but lowers Spd."),
+        .description = COMPOUND_STRING("Slower but takes less dmg."),
         .aiRating = 5,
     },
 

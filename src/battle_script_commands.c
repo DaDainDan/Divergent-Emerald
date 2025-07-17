@@ -2264,11 +2264,13 @@ static void Cmd_adjustdamage(void)
             gLastUsedItem = gBattleMons[battlerDef].item;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
         }
-        else if (B_STURDY >= GEN_5 && GetBattlerAbility(battlerDef) == ABILITY_STURDY && IsBattlerAtMaxHp(battlerDef))
+        else if (B_STURDY >= GEN_5 && (GetBattlerAbility(battlerDef) == ABILITY_STURDY || GetBattlerAbility(battlerDef) == ABILITY_STALWART) // IsBattlerAtMaxHp(battlerDef)
+            && !gBattleStruct->partyState[GetBattlerSide(battlerDef)][gBattlerPartyIndexes[battlerDef]].sturdyActivation) 
         {
             enduredHit = TRUE;
-            RecordAbilityBattle(battlerDef, ABILITY_STURDY);
-            gLastUsedAbility = ABILITY_STURDY;
+            gLastUsedAbility = GetBattlerAbility(battlerDef);
+            RecordAbilityBattle(battlerDef, gLastUsedAbility);
+            gBattleStruct->partyState[GetBattlerSide(battlerDef)][gBattlerPartyIndexes[battlerDef]].sturdyActivation = TRUE;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_STURDIED;
         }
         else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && IsBattlerAtMaxHp(battlerDef))
@@ -6232,12 +6234,13 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
 
     switch (abilityAtk)
     {
-    case ABILITY_MAGICIAN:
+    case ABILITY_PICKPOCKET:
         if (move != MOVE_FLING && move != MOVE_NATURAL_GIFT
          && gBattleMons[battlerAtk].item == ITEM_NONE
          && gBattleMons[battlerDef].item != ITEM_NONE
          && IsBattlerAlive(battlerAtk)
          && IsBattlerTurnDamaged(battlerDef)
+         && IsMoveMakingContact(move, battlerAtk) // ++
          && CanStealItem(battlerAtk, battlerDef, gBattleMons[battlerDef].item)
          && !gSpecialStatuses[battlerAtk].gemBoost   // In base game, gems are consumed after magician would activate.
          && !(gWishFutureKnock.knockedOffMons[GetBattlerSide(battlerDef)] & (1u << gBattlerPartyIndexes[battlerDef]))
@@ -7293,7 +7296,7 @@ static void Cmd_moveend(void)
             if (IsBattlerAlive(gBattlerAttacker)
               && gBattleMons[gBattlerAttacker].item != ITEM_NONE        // Attacker must be holding an item
               && !(gWishFutureKnock.knockedOffMons[GetBattlerSide(gBattlerAttacker)] & (1u << gBattlerPartyIndexes[gBattlerAttacker]))   // But not knocked off
-              && IsMoveMakingContact(gCurrentMove, gBattlerAttacker)    // Pickpocket requires contact
+            //   && IsMoveMakingContact(gCurrentMove, gBattlerAttacker)    // Pickpocket requires contact
               && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))           // Obviously attack needs to have worked
             {
                 u8 battlers[4] = {0, 1, 2, 3};
@@ -7303,7 +7306,7 @@ static void Cmd_moveend(void)
                     u8 battler = battlers[i];
                     // Attacker is mon who made contact, battler is mon with pickpocket
                     if (battler != gBattlerAttacker                                                     // Cannot pickpocket yourself
-                      && GetBattlerAbility(battler) == ABILITY_PICKPOCKET                               // Target must have pickpocket ability
+                      && GetBattlerAbility(battler) == ABILITY_MAGICIAN                               // Target must have pickpocket ability
                       && IsBattlerTurnDamaged(battler)                                                  // Target needs to have been damaged
                       && !DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove)              // Subsitute unaffected
                       && IsBattlerAlive(battler)                                                        // Battler must be alive to pickpocket

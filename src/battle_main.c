@@ -4750,6 +4750,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_UNBURDEN && gDisableStructs[battler].unburdenActive)
         speed *= 2;
+    else if (ability == ABILITY_INFLATE)
+        speed /= 2;
 
     // player's badge boost
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))

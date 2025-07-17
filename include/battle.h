@@ -601,6 +601,7 @@ struct PartyState
     u32 transformZeroToHero:1;
     u32 supersweetSyrup:1;
     u32 padding:26;
+    u32 sturdyActivation:1;
 };
 
 // Cleared at the beginning of the battle. Fields need to be cleared when needed manually otherwise.

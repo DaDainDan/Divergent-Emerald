@@ -1238,16 +1238,17 @@ s32 AI_WhoStrikesFirst(u32 battlerAI, u32 battler, u32 moveConsidered)
 static bool32 CanEndureHit(u32 battler, u32 battlerTarget, u32 move)
 {
     enum BattleMoveEffects effect = GetMoveEffect(move);
-    if (!AI_BattlerAtMaxHp(battlerTarget) || effect == EFFECT_MULTI_HIT)
+    if (effect == EFFECT_MULTI_HIT)
         return FALSE;
     if (GetMoveStrikeCount(move) > 1 && !(effect == EFFECT_DRAGON_DARTS && IsValidDoubleBattle(battlerTarget)))
         return FALSE;
-    if (gAiLogicData->holdEffects[battlerTarget] == HOLD_EFFECT_FOCUS_SASH)
+    if (AI_BattlerAtMaxHp(battlerTarget) && gAiLogicData->holdEffects[battlerTarget] == HOLD_EFFECT_FOCUS_SASH)
         return TRUE;
 
     if (!DoesBattlerIgnoreAbilityChecks(battler, gAiLogicData->abilities[battler], move))
     {
-        if (B_STURDY >= GEN_5 && gAiLogicData->abilities[battlerTarget] == ABILITY_STURDY)
+        if (B_STURDY >= GEN_5 && (gAiLogicData->abilities[battlerTarget] == ABILITY_STURDY || gAiLogicData->abilities[battlerTarget] == ABILITY_STALWART)
+            && !gBattleStruct->partyState[GetBattlerSide(battlerTarget)][gBattlerPartyIndexes[battlerTarget]].sturdyActivation)
             return TRUE;
         if (gBattleMons[battlerTarget].species == SPECIES_MIMIKYU_DISGUISED)
             return TRUE;
@@ -3131,16 +3132,18 @@ enum AIPivot ShouldPivot(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 mov
 
                     if (!IsBattleMoveStatus(move) && ((gAiLogicData->shouldSwitch & (1u << battlerAtk))
                         || (AI_BattlerAtMaxHp(battlerDef) && (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH
-                        || (B_STURDY >= GEN_5 && defAbility == ABILITY_STURDY)
+                        // || (B_STURDY >= GEN_5 && defAbility == ABILITY_STURDY)
                         || defAbility == ABILITY_MULTISCALE
+                        || defAbility == ABILITY_FROST_ARMOR
                         || defAbility == ABILITY_SHADOW_SHIELD))))
                         return SHOULD_PIVOT;   // pivot to break sash/sturdy/multiscale
                 }
                 else if (!hasStatBoost)
                 {
                     if (!IsBattleMoveStatus(move) && (AI_BattlerAtMaxHp(battlerDef) && (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH
-                        || (B_STURDY >= GEN_5 && defAbility == ABILITY_STURDY)
-                        || defAbility == ABILITY_MULTISCALE
+                        // || (B_STURDY >= GEN_5 && defAbility == ABILITY_STURDY)
+                        || defAbility == ABILITY_MULTISCALE 
+                        || defAbility == ABILITY_FROST_ARMOR
                         || defAbility == ABILITY_SHADOW_SHIELD)))
                         return SHOULD_PIVOT;   // pivot to break sash/sturdy/multiscale
 

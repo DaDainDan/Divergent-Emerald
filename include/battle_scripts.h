@@ -885,5 +885,8 @@ extern const u8 BattleScript_UnnerveActivates[];
 extern const u8 BattleScript_SilkSpewActivates[];
 extern const u8 BattleScript_AbilityStatusEffectNoPopUp[];
 extern const u8 BattleScript_ProvocateurActivates[];
+extern const u8 BattleScript_RoughSkinActivatesAttacker[];
+extern const u8 BattleScript_GooeyActivatesAttack[];
+extern const u8 BattleScript_MoonPresence[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H
