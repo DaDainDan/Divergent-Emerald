@@ -1346,7 +1346,7 @@ static const u16 sGenesectFormSpeciesIdTable[] = {
 #if P_FAMILY_FROAKIE
 static const u16 sGreninjaFormSpeciesIdTable[] = {
     SPECIES_GRENINJA,
-    SPECIES_GRENINJA_BATTLE_BOND,
+    // SPECIES_GRENINJA_BATTLE_BOND,
     SPECIES_GRENINJA_ASH,
     FORM_SPECIES_END,
 };

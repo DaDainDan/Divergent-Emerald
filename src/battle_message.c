@@ -922,7 +922,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_VICTORYAURA]                          = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is wishing for a great victory!"),
     [STRINGID_PKMNFROSTBITTENBY]                    = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_BUFF1} gave {B_EFF_NAME_WITH_PREFIX2} frostbite!"),
     [STRINGID_COSMICENTERS]                         = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is not of this world!"),
-    [STRINGID_PKMNHURTSTARGET]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was hurt by {B_ATK_NAME_WITH_PREFIX2}'s {B_BUFF1}!"), 
+    [STRINGID_PKMNHURTSTARGET]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was hurt by {B_ATK_NAME_WITH_PREFIX2}'s {B_BUFF1}!"),
+    [STRINGID_PKMNSTATSCANTCHANGE]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s stats cannot be changed!"), //not in gen 5+, ability popup
 };
 
 const u16 gTrainerUsedItemStringIds[] =

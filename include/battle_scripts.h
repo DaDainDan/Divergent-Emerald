@@ -888,5 +888,6 @@ extern const u8 BattleScript_ProvocateurActivates[];
 extern const u8 BattleScript_RoughSkinActivatesAttacker[];
 extern const u8 BattleScript_GooeyActivatesAttack[];
 extern const u8 BattleScript_MoonPresence[];
+extern const u8 BattleScript_NullilyStatChange[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

@@ -1691,7 +1691,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
 
     if (gBattleStruct->battlerState[battlerAtk].usedMicleBerry)
     {
-        if (atkAbility == ABILITY_RIPEN)
+        if (atkAbility == ABILITY_CHEEK_POUCH)
             calc = (calc * 140) / 100;  // ripen gives 40% acc boost
         else
             calc = (calc * 120) / 100;  // 20% acc boost
@@ -3709,14 +3709,14 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 }
                 break;
             case MOVE_EFFECT_ATK_DEF_DOWN: // SuperPower
-                if (!NoAliveMonsForEitherParty())
+                if (!NoAliveMonsForEitherParty() && battlerAbility != ABILITY_NULL && battlerAbility != ABILITY_STAMINA)
                 {
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_AtkDefDown;
                 }
                 break;
             case MOVE_EFFECT_DEF_SPDEF_DOWN: // Close Combat
-                if (!NoAliveMonsForEitherParty())
+                if (!NoAliveMonsForEitherParty() && battlerAbility != ABILITY_NULL && battlerAbility != ABILITY_STAMINA)
                 {
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_DefSpDefDown;
@@ -3795,7 +3795,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 }
                 break;
             case MOVE_EFFECT_V_CREATE:
-                if (!NoAliveMonsForEitherParty())
+                if (!NoAliveMonsForEitherParty() && battlerAbility != ABILITY_NULL && battlerAbility != ABILITY_STAMINA)
                 {
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_VCreateStatLoss;
@@ -6003,11 +6003,11 @@ static void Cmd_playstatchangeanimation(void)
         flags ^= STAT_CHANGE_NEGATIVE;
         RecordAbilityBattle(battler, ability);
     }
-    else if (ability == ABILITY_SIMPLE)
-    {
-        flags |= STAT_CHANGE_BY_TWO;
-        RecordAbilityBattle(battler, ability);
-    }
+    // else if (ability == ABILITY_SIMPLE)
+    // {
+    //     flags |= STAT_CHANGE_BY_TWO;
+    //     RecordAbilityBattle(battler, ability);
+    // }
 
     if (flags & STAT_CHANGE_NEGATIVE) // goes down
     {
@@ -6033,6 +6033,7 @@ static void Cmd_playstatchangeanimation(void)
                         && ability != ABILITY_CLEAR_BODY
                         && ability != ABILITY_FULL_METAL_BODY
                         // && ability != ABILITY_WHITE_SMOKE
+                        && ability != ABILITY_NULL
                         && !(ability == ABILITY_MIRACLE_EYE && currStat == STAT_ACC) // ability == ABILITY_KEEN_EYE || 
                         && !(B_ILLUMINATE_EFFECT >= GEN_9 && ability == ABILITY_ILLUMINATE && currStat == STAT_ACC)
                         && !((ability == ABILITY_HYPER_CUTTER || ability == ABILITY_TOUGH_CLAWS) && currStat == STAT_ATK)
@@ -6292,64 +6293,64 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
             }
         }
         break;
-    case ABILITY_BATTLE_BOND:
-        {
-            if (!IsBattlerAlive(battlerAtk)
-             || NoAliveMonsForEitherParty()
-             || NumFaintedBattlersByAttacker(battlerAtk) == 0)
-                break;
+    // case ABILITY_BATTLE_BOND:
+    //     {
+    //         if (!IsBattlerAlive(battlerAtk)
+    //          || NoAliveMonsForEitherParty()
+    //          || NumFaintedBattlersByAttacker(battlerAtk) == 0)
+    //             break;
 
-            u32 side = GetBattlerSide(battlerAtk);
+    //         u32 side = GetBattlerSide(battlerAtk);
 
-            if (gBattleStruct->partyState[side][gBattlerPartyIndexes[battlerAtk]].battleBondBoost)
-                break;
+    //         if (gBattleStruct->partyState[side][gBattlerPartyIndexes[battlerAtk]].battleBondBoost)
+    //             break;
 
-            if (GetGenConfig(GEN_CONFIG_BATTLE_BOND) < GEN_9 && gBattleMons[battlerAtk].species == SPECIES_GRENINJA_BATTLE_BOND)
-            {
-                // TODO: Convert this to a proper FORM_CHANGE type.
-                gLastUsedAbility = abilityAtk;
-                gBattleStruct->partyState[side][gBattlerPartyIndexes[battlerAtk]].battleBondBoost = TRUE;
-                PREPARE_SPECIES_BUFFER(gBattleTextBuff1, gBattleMons[battlerAtk].species);
-                gBattleStruct->changedSpecies[side][gBattlerPartyIndexes[battlerAtk]] = gBattleMons[battlerAtk].species;
-                gBattleMons[battlerAtk].species = SPECIES_GRENINJA_ASH;
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_BattleBondActivatesOnMoveEndAttacker;
-                effect = TRUE;
-            }
-            else
-            {
-                u32 numStatBuffs = 0;
-                if (CompareStat(battlerAtk, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN))
-                {
-                    gBattleScripting.animArg1 = GET_STAT_BUFF_ID(STAT_ATK) + STAT_ANIM_PLUS1;
-                    numStatBuffs++;
-                }
-                if (CompareStat(battlerAtk, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN))
-                {
-                    gBattleScripting.animArg1 = GET_STAT_BUFF_ID(STAT_SPATK) + STAT_ANIM_PLUS1;
-                    numStatBuffs++;
-                }
-                if (CompareStat(battlerAtk, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
-                {
-                    gBattleScripting.animArg1 = GET_STAT_BUFF_ID(STAT_SPEED) + STAT_ANIM_PLUS1;
-                    numStatBuffs++;
-                }
+    //         if (GetGenConfig(GEN_CONFIG_BATTLE_BOND) < GEN_9 && gBattleMons[battlerAtk].species == SPECIES_GRENINJA_BATTLE_BOND)
+    //         {
+    //             // TODO: Convert this to a proper FORM_CHANGE type.
+    //             gLastUsedAbility = abilityAtk;
+    //             gBattleStruct->partyState[side][gBattlerPartyIndexes[battlerAtk]].battleBondBoost = TRUE;
+    //             PREPARE_SPECIES_BUFFER(gBattleTextBuff1, gBattleMons[battlerAtk].species);
+    //             gBattleStruct->changedSpecies[side][gBattlerPartyIndexes[battlerAtk]] = gBattleMons[battlerAtk].species;
+    //             gBattleMons[battlerAtk].species = SPECIES_GRENINJA_ASH;
+    //             BattleScriptPushCursor();
+    //             gBattlescriptCurrInstr = BattleScript_BattleBondActivatesOnMoveEndAttacker;
+    //             effect = TRUE;
+    //         }
+    //         else
+    //         {
+    //             u32 numStatBuffs = 0;
+    //             if (CompareStat(battlerAtk, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN))
+    //             {
+    //                 gBattleScripting.animArg1 = GET_STAT_BUFF_ID(STAT_ATK) + STAT_ANIM_PLUS1;
+    //                 numStatBuffs++;
+    //             }
+    //             if (CompareStat(battlerAtk, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN))
+    //             {
+    //                 gBattleScripting.animArg1 = GET_STAT_BUFF_ID(STAT_SPATK) + STAT_ANIM_PLUS1;
+    //                 numStatBuffs++;
+    //             }
+    //             if (CompareStat(battlerAtk, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
+    //             {
+    //                 gBattleScripting.animArg1 = GET_STAT_BUFF_ID(STAT_SPEED) + STAT_ANIM_PLUS1;
+    //                 numStatBuffs++;
+    //             }
 
-                if (numStatBuffs > 0)
-                {
-                    if (numStatBuffs > 1)
-                        gBattleScripting.animArg1 = STAT_ANIM_MULTIPLE_PLUS1;
+    //             if (numStatBuffs > 0)
+    //             {
+    //                 if (numStatBuffs > 1)
+    //                     gBattleScripting.animArg1 = STAT_ANIM_MULTIPLE_PLUS1;
 
-                    gLastUsedAbility = abilityAtk;
-                    gBattlerAbility = battlerAtk;
-                    gBattleStruct->partyState[side][gBattlerPartyIndexes[battlerAtk]].battleBondBoost = TRUE;
-                    BattleScriptPushCursor();
-                    gBattlescriptCurrInstr = BattleScript_EffectBattleBondStatIncrease;
-                    effect = TRUE;
-                }
-            }
-        }
-        break;
+    //                 gLastUsedAbility = abilityAtk;
+    //                 gBattlerAbility = battlerAtk;
+    //                 gBattleStruct->partyState[side][gBattlerPartyIndexes[battlerAtk]].battleBondBoost = TRUE;
+    //                 BattleScriptPushCursor();
+    //                 gBattlescriptCurrInstr = BattleScript_EffectBattleBondStatIncrease;
+    //                 effect = TRUE;
+    //             }
+    //         }
+    //     }
+    //     break;
     }
 
     return effect;
@@ -9169,7 +9170,7 @@ static void Cmd_setgravity(void)
 static bool32 TryCheekPouch(u32 battler, u32 itemId)
 {
     if (GetItemPocket(itemId) == POCKET_BERRIES
-        && GetBattlerAbility(battler) == ABILITY_CHEEK_POUCH
+        && GetBattlerAbility(battler) == ABILITY_RIPEN // ABILITY_CHEEK_POUCH 
         && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK)
         && gBattleStruct->partyState[GetBattlerSide(battler)][gBattlerPartyIndexes[battler]].ateBerry
         && !IsBattlerAtMaxHp(battler))
@@ -12342,7 +12343,18 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
     }
     else if (battlerAbility == ABILITY_SIMPLE)
     {
-        statValue = (SET_STAT_BUFF_VALUE(GET_STAT_BUFF_VALUE(statValue) * 2)) | ((statValue <= -1) ? STAT_BUFF_NEGATIVE : 0);
+        // statValue = (SET_STAT_BUFF_VALUE(GET_STAT_BUFF_VALUE(statValue) * 2)) | ((statValue <= -1) ? STAT_BUFF_NEGATIVE : 0);
+        statValue = (statValue & STAT_BUFF_NEGATIVE) ? (SET_STAT_BUFF_VALUE(1) | STAT_BUFF_NEGATIVE) : SET_STAT_BUFF_VALUE(1);
+    }
+    else if (battlerAbility == ABILITY_STAMINA && (statValue & STAT_BUFF_NEGATIVE))
+    {
+        statValue = (SET_STAT_BUFF_VALUE(GET_STAT_BUFF_VALUE(statValue) - 1)) | STAT_BUFF_NEGATIVE;
+        if ((GET_STAT_BUFF_VALUE(statValue)) == 0)
+            goto CLEAR_BODY;
+    }
+    else if (battlerAbility == ABILITY_NULL && (battler == gBattlerAttacker))
+    {
+        goto CLEAR_BODY;
     }
 
     PREPARE_STAT_BUFFER(gBattleTextBuff1, statId);
@@ -12377,6 +12389,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
         else if ((battlerHoldEffect == HOLD_EFFECT_CLEAR_AMULET || CanAbilityPreventStatLoss(battlerAbility))
               && (!affectsUser || mirrorArmored) && !certain && gCurrentMove != MOVE_CURSE)
         {
+            CLEAR_BODY:
             if (flags == STAT_CHANGE_ALLOW_PTR)
             {
                 if (gSpecialStatuses[battler].statLowered)
@@ -12397,7 +12410,10 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
                     {
                         gBattlerAbility = battler;
                         BattleScriptPush(BS_ptr);
-                        gBattlescriptCurrInstr = BattleScript_AbilityNoStatLoss;
+                        if (battlerAbility == ABILITY_NULL)
+                            gBattlescriptCurrInstr = BattleScript_NullilyStatChange;
+                        else
+                            gBattlescriptCurrInstr = BattleScript_AbilityNoStatLoss;
                         gLastUsedAbility = battlerAbility;
                         RecordAbilityBattle(battler, gLastUsedAbility);
                     }
@@ -15534,9 +15550,13 @@ static void Cmd_pickup(void)
                 && species != SPECIES_EGG
                 && heldItem == ITEM_NONE)
             {
-                if ((lvlDivBy10 + 1 ) * 5 > Random() % 100)
+                if ((lvlDivBy10 + 2 ) * 9 > Random() % 100)
                 {
-                    heldItem = ITEM_HONEY;
+                    if (Random() % 100 < 5)
+                        heldItem = ITEM_MAX_HONEY;
+                    else
+                        heldItem = ITEM_HONEY;
+                    
                     SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
                 }
             }
@@ -16914,6 +16934,7 @@ static bool32 CanAbilityPreventStatLoss(u32 abilityDef)
     {
     case ABILITY_CLEAR_BODY:
     case ABILITY_FULL_METAL_BODY:
+    case ABILITY_NULL:
     // case ABILITY_WHITE_SMOKE:
         return TRUE;
     }

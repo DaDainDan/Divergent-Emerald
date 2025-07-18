@@ -65,7 +65,8 @@ enum FormChanges
     // param1: battle terrain to check.
     FORM_CHANGE_END_BATTLE_TERRAIN,
     // Form change that activates when the Pokémon is switched out in battle.
-    // param1: ability to check, optional
+    // param1: item to hold, optional
+    // param2: ability to check, optional
     FORM_CHANGE_BATTLE_SWITCH,
     // Form change that activates when the Pokémon's HP % passes a certain threshold.
     // param1: Ability to check.

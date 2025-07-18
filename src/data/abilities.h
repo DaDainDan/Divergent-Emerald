@@ -517,7 +517,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SWARM] =
     {
         .name = _("Swarm"),
-        .description = COMPOUND_STRING("Ups Bug moves in a pinch."),
+        .description = COMPOUND_STRING("Bugs gain power in unity."),
         .aiRating = 5,
     },
 
@@ -650,7 +650,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SIMPLE] =
     {
         .name = _("Simple"),
-        .description = COMPOUND_STRING("Prone to wild stat changes."),
+        .description = COMPOUND_STRING("Small stat changes only."),
         .aiRating = 8,
         .breakable = TRUE,
     },
@@ -986,7 +986,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Healer"),
         .description = COMPOUND_STRING("Heals partner Pokémon."),
-        .aiRating = 0,
+        .aiRating = 4,
     },
 
     [ABILITY_PACIFIER] =
@@ -1257,7 +1257,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CHEEK_POUCH] =
     {
         .name = _("Cheek Pouch"),
-        .description = COMPOUND_STRING("Eating Berries restores HP."),
+        .description = COMPOUND_STRING("Doubles effect of Berries."),
         .aiRating = 4,
     },
 
@@ -1440,7 +1440,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STAMINA] =
     {
         .name = _("Stamina"),
-        .description = COMPOUND_STRING("Boosts Defense when hit."),
+        .description = COMPOUND_STRING("Resists stat drops."),
         .aiRating = 6,
     },
 
@@ -1583,7 +1583,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BATTLE_BOND] =
     {
         .name = _("Battle Bond"),
-        .description = COMPOUND_STRING("Changes form after a KO."),
+        .description = COMPOUND_STRING("Friendship transformation."),
         .aiRating = 6,
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
@@ -1595,7 +1595,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_POWER_CONSTRUCT] =
     {
         .name = _("Power Construct"),
-        .description = COMPOUND_STRING("Cells aid it when weakened."),
+        .description = COMPOUND_STRING("Assembles cells when strong."),
         .aiRating = 10,
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
@@ -1877,7 +1877,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_RIPEN] =
     {
         .name = _("Ripen"),
-        .description = COMPOUND_STRING("Doubles effect of Berries."),
+        .description = COMPOUND_STRING("Eating Berries restores HP."),
         .aiRating = 4,
     },
 
@@ -2727,5 +2727,12 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("My Liege"),
         .description = COMPOUND_STRING("Foes can't eat Berries."),
         .aiRating = 3,
+    },
+
+    [ABILITY_NULL] =
+    {
+        .name = _("Null"),
+        .description = COMPOUND_STRING("Prevent ALL stat changes."),
+        .aiRating = 7,
     },
 };

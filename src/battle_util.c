@@ -3608,10 +3608,10 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 target2 = GetBattlerAtPosition(side + BIT_FLANK);
                 if (IsDoubleBattle())
                 {
-                    if (!gAbilitiesInfo[gBattleMons[target1].ability].cantBeTraced && gBattleMons[target1].hp != 0
-                        && !gAbilitiesInfo[gBattleMons[target2].ability].cantBeTraced && gBattleMons[target2].hp != 0)
-                        chosenTarget = GetBattlerAtPosition((RandomPercentage(RNG_TRACE, 50) * 2) | side), effect++;
-                    else if (!gAbilitiesInfo[gBattleMons[target1].ability].cantBeTraced && gBattleMons[target1].hp != 0)
+                    // if (!gAbilitiesInfo[gBattleMons[target1].ability].cantBeTraced && gBattleMons[target1].hp != 0
+                    //     && !gAbilitiesInfo[gBattleMons[target2].ability].cantBeTraced && gBattleMons[target2].hp != 0)
+                    //     chosenTarget = GetBattlerAtPosition((RandomPercentage(RNG_TRACE, 50) * 2) | side), effect++;
+                    if (!gAbilitiesInfo[gBattleMons[target1].ability].cantBeTraced && gBattleMons[target1].hp != 0)
                         chosenTarget = target1, effect++;
                     else if (!gAbilitiesInfo[gBattleMons[target2].ability].cantBeTraced && gBattleMons[target2].hp != 0)
                         chosenTarget = target2, effect++;
@@ -4073,8 +4073,12 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 BattleScriptPushCursorAndCallback(BattleScript_ActivateTeraformZero);
                 effect++;
             }
+        case ABILITY_BATTLE_BOND:
+            mon = GetBattlerMon(battler);
+            if (GetMonData(mon, MON_DATA_FRIENDSHIP, 0) != MAX_FRIENDSHIP)
+                break;
         case ABILITY_SCHOOLING:
-            if (gBattleMons[battler].level < 20)
+            if (gBattleMons[battler].level < 40)
                 break;
         // Fallthrough
         case ABILITY_ZEN_MODE:
@@ -4255,6 +4259,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_HEALER:
         case ABILITY_HOSPITALITY:
             partner = BATTLE_PARTNER(battler);
 
@@ -4735,14 +4740,19 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gBattleScripting.battler = BATTLE_PARTNER(battler);
                 if (IsBattlerAlive(gBattleScripting.battler)
                     && gBattleMons[gBattleScripting.battler].status1 & STATUS1_ANY
-                    && RandomPercentage(RNG_HEALER, 30))
+                    // && RandomPercentage(RNG_HEALER, 30))
+                    && gDisableStructs[battler].isFirstTurn != 2)
                 {
                     BattleScriptPushCursorAndCallback(BattleScript_HealerActivates);
                     effect++;
                 }
                 break;
+            case ABILITY_BATTLE_BOND:
+                mon = GetBattlerMon(battler);
+                if (GetMonData(mon, MON_DATA_FRIENDSHIP, 0) != MAX_FRIENDSHIP)
+                    break;
             case ABILITY_SCHOOLING:
-                if (gBattleMons[battler].level < 20)
+                if (gBattleMons[battler].level < 40)
                     break;
             // Fallthrough
             case ABILITY_ZEN_MODE:
@@ -4866,20 +4876,20 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
-        case ABILITY_STAMINA:
-            if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT)
-             && gBattlerAttacker != gBattlerTarget
-             && IsBattlerTurnDamaged(gBattlerTarget)
-             && IsBattlerAlive(battler)
-             && CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN))
-            {
-                gEffectBattler = battler;
-                SET_STATCHANGER(STAT_DEF, 1, FALSE);
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_TargetAbilityStatRaiseRet;
-                effect++;
-            }
-            break;
+        // case ABILITY_STAMINA:
+        //     if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT)
+        //      && gBattlerAttacker != gBattlerTarget
+        //      && IsBattlerTurnDamaged(gBattlerTarget)
+        //      && IsBattlerAlive(battler)
+        //      && CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN))
+        //     {
+        //         gEffectBattler = battler;
+        //         SET_STATCHANGER(STAT_DEF, 1, FALSE);
+        //         BattleScriptPushCursor();
+        //         gBattlescriptCurrInstr = BattleScript_TargetAbilityStatRaiseRet;
+        //         effect++;
+        //     }
+        //     break;
         case ABILITY_BERSERK:
         {
             u16 statId = GetHighestAtkStatId(battler);
@@ -6620,7 +6630,7 @@ bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u
     // Checks that apply to all non volatile statuses
     if (effect != MOVE_EFFECT_SLEEP 
      && (abilityDef == ABILITY_COMATOSE
-     || abilityDef == ABILITY_SHIELDS_DOWN
+     || IsShieldsDownProtected (battlerDef, abilityDef)
      || abilityDef == ABILITY_PURIFYING_SALT
      || abilityDef == ABILITY_WONDER_SKIN))
     {
@@ -6749,7 +6759,7 @@ static enum ItemEffect HealConfuseBerry(u32 battler, u32 itemId, u32 flavorId, e
             gBattleStruct->moveDamage[battler] = 1;
         gBattleStruct->moveDamage[battler] *= -1;
 
-        if (GetBattlerAbility(battler) == ABILITY_RIPEN)
+        if (GetBattlerAbility(battler) == ABILITY_CHEEK_POUCH)
         {
             gBattleStruct->moveDamage[battler] *= 2;
             gBattlerAbility = battler;
@@ -6782,7 +6792,7 @@ static enum ItemEffect StatRaiseBerry(u32 battler, u32 itemId, u32 statId, enum 
     {
         BufferStatChange(battler, statId, STRINGID_STATROSE);
         gEffectBattler = gBattleScripting.battler = battler;
-        if (GetBattlerAbility(battler) == ABILITY_RIPEN)
+        if (GetBattlerAbility(battler) == ABILITY_CHEEK_POUCH)
             SET_STATCHANGER(statId, 2, FALSE);
         else
             SET_STATCHANGER(statId, 1, FALSE);
@@ -6834,7 +6844,7 @@ static enum ItemEffect RandomStatRaiseBerry(u32 battler, u32 itemId, enum ItemCa
         gBattleTextBuff2[6] = stringId >> 8;
         gBattleTextBuff2[7] = EOS;
         gEffectBattler = battler;
-        if (battlerAbility == ABILITY_RIPEN)
+        if (battlerAbility == ABILITY_CHEEK_POUCH)
             SET_STATCHANGER(stat, 3, FALSE);
         else
             SET_STATCHANGER(stat, 3, FALSE);
@@ -6885,7 +6895,7 @@ static enum ItemEffect TrySetEnigmaBerry(u32 battler)
     {
         gBattleScripting.battler = battler;
         gBattleStruct->moveDamage[battler] = (gBattleMons[battler].maxHP * 25 / 100) * -1;
-        if (GetBattlerAbility(battler) == ABILITY_RIPEN)
+        if (GetBattlerAbility(battler) == ABILITY_CHEEK_POUCH)
             gBattleStruct->moveDamage[battler] *= 2;
 
         BattleScriptPushCursor();
@@ -6909,7 +6919,7 @@ static enum ItemEffect DamagedStatBoostBerryEffect(u32 battler, u8 statId, u8 ca
         BufferStatChange(battler, statId, STRINGID_STATROSE);
 
         gEffectBattler = battler;
-        if (GetBattlerAbility(battler) == ABILITY_RIPEN)
+        if (GetBattlerAbility(battler) == ABILITY_CHEEK_POUCH)
             SET_STATCHANGER(statId, 2, FALSE);
         else
             SET_STATCHANGER(statId, 1, FALSE);
@@ -7009,7 +7019,7 @@ static u32 ItemRestorePp(u32 battler, u32 itemId, enum ItemCaseId caseID)
         {
             u32 ppRestored = GetBattlerItemHoldEffectParam(battler, itemId);
 
-            if (GetBattlerAbility(battler) == ABILITY_RIPEN)
+            if (GetBattlerAbility(battler) == ABILITY_CHEEK_POUCH)
             {
                 ppRestored *= 2;
                 gBattlerAbility = battler;
@@ -7052,7 +7062,7 @@ static u32 ItemHealHp(u32 battler, u32 itemId, enum ItemCaseId caseID, bool32 pe
             gBattleStruct->moveDamage[battler] = GetBattlerItemHoldEffectParam(battler, itemId) * -1;
 
         // check ripen
-        if (GetItemPocket(itemId) == POCKET_BERRIES && GetBattlerAbility(battler) == ABILITY_RIPEN)
+        if (GetItemPocket(itemId) == POCKET_BERRIES && GetBattlerAbility(battler) == ABILITY_CHEEK_POUCH)
             gBattleStruct->moveDamage[battler] *= 2;
 
         gBattlerAbility = battler;    // in SWSH, berry juice shows ability pop up but has no effect. This is mimicked here
@@ -8136,7 +8146,7 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                     gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
                     if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
                         gBattleStruct->moveDamage[gBattlerAttacker] = 1;
-                    if (GetBattlerAbility(battler) == ABILITY_RIPEN)
+                    if (GetBattlerAbility(battler) == ABILITY_CHEEK_POUCH)
                         gBattleStruct->moveDamage[gBattlerAttacker] *= 2;
 
                     effect = ITEM_HP_CHANGE;
@@ -8156,7 +8166,7 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                     gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
                     if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
                         gBattleStruct->moveDamage[gBattlerAttacker] = 1;
-                    if (GetBattlerAbility(battler) == ABILITY_RIPEN)
+                    if (GetBattlerAbility(battler) == ABILITY_CHEEK_POUCH)
                         gBattleStruct->moveDamage[gBattlerAttacker] *= 2;
 
                     effect = ITEM_HP_CHANGE;
@@ -9660,9 +9670,13 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     //     if (moveType == TYPE_FIRE && gDisableStructs[battlerAtk].flashFireBoosted)
     //         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
     //     break;
+    // case ABILITY_SWARM:
+    //     if (moveType == TYPE_BUG && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
+    //         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+    //     break;
     case ABILITY_SWARM:
-        if (moveType == TYPE_BUG && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        if (IS_BATTLER_OF_TYPE(BATTLE_PARTNER(battlerAtk), TYPE_BUG))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.33));
         break;
     case ABILITY_TORRENT:
         if (moveType == TYPE_WATER && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
@@ -9849,6 +9863,10 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
             break;
         case ABILITY_CULTIVATOR:
             if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS))
+                modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.33));
+            break;
+        case ABILITY_SWARM:
+            if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_BUG))
                 modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.33));
             break;
         }
@@ -10435,7 +10453,7 @@ static inline uq4_12_t GetDefenderItemsModifier(struct DamageCalculationData *da
         {
             if (damageCalcData->updateFlags)
                 gSpecialStatuses[battlerDef].berryReduced = TRUE;
-            return (abilityDef == ABILITY_RIPEN) ? UQ_4_12(0.25) : UQ_4_12(0.5);
+            return (abilityDef == ABILITY_CHEEK_POUCH) ? UQ_4_12(0.25) : UQ_4_12(0.5);
         }
         break;
     default:
@@ -11120,6 +11138,7 @@ bool32 DoesSpeciesUseHoldItemToChangeForm(u16 species, u16 heldItemId)
         case FORM_CHANGE_BATTLE_ULTRA_BURST:
         case FORM_CHANGE_ITEM_HOLD:
         case FORM_CHANGE_BEGIN_BATTLE:
+        case FORM_CHANGE_BATTLE_SWITCH:
             if (formChanges[i].param1 == heldItemId)
                 return TRUE;
             break;
@@ -11277,7 +11296,8 @@ u16 GetBattleFormChangeTargetSpecies(u32 battler, enum FormChanges method)
                     targetSpecies = formChanges[i].targetSpecies;
                 break;
             case FORM_CHANGE_BATTLE_SWITCH:
-                if (formChanges[i].param1 == GetBattlerAbility(battler) || formChanges[i].param1 == ABILITY_NONE)
+                if ((heldItem == formChanges[i].param1 || formChanges[i].param1 == ITEM_NONE) &&
+                    (formChanges[i].param2 == GetBattlerAbility(battler) || formChanges[i].param2 == ABILITY_NONE))
                     targetSpecies = formChanges[i].targetSpecies;
                 break;
             case FORM_CHANGE_BATTLE_HP_PERCENT:
