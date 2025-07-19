@@ -4717,8 +4717,8 @@ static void GetMedicineItemEffectMessage(u16 item, u32 statusCured)
 
 static bool8 NotUsingHPEVItemOnShedinja(struct Pokemon *mon, u16 item)
 {
-    if (GetItemEffectType(item) == ITEM_EFFECT_HP_EV && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_SHEDINJA)
-        return FALSE;
+    // if (GetItemEffectType(item) == ITEM_EFFECT_HP_EV && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_SHEDINJA)
+    //     return FALSE;
     return TRUE;
 }
 
@@ -5220,9 +5220,9 @@ static u16 ItemEffectToMonEv(struct Pokemon *mon, u8 effectType)
     switch (effectType)
     {
     case ITEM_EFFECT_HP_EV:
-        if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_SHEDINJA)
-            return GetMonData(mon, MON_DATA_HP_EV);
-        break;
+        // if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_SHEDINJA)
+        return GetMonData(mon, MON_DATA_HP_EV);
+        // break;
     case ITEM_EFFECT_ATK_EV:
         return GetMonData(mon, MON_DATA_ATK_EV);
     case ITEM_EFFECT_DEF_EV:

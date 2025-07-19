@@ -1780,15 +1780,14 @@ void CalculateMonStats(struct Pokemon *mon)
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
-    if (species == SPECIES_SHEDINJA)
-    {
-        newMaxHP = 1;
-    }
-    else
-    {
-        s32 n = 2 * gSpeciesInfo[species].baseHP + hpIV;
-        newMaxHP = (((n + hpEV / 4) * level) / 100) + level + 10;
-    }
+    // if (species == SPECIES_SHEDINJA)
+    // {
+    //     newMaxHP = 1;
+    // }
+    // else
+    
+    s32 n = 2 * gSpeciesInfo[species].baseHP + hpIV;
+    newMaxHP = (((n + hpEV / 4) * level) / 100) + level + 10;
 
     gBattleScripting.levelUpHP = newMaxHP - oldMaxHP;
     if (gBattleScripting.levelUpHP == 0)

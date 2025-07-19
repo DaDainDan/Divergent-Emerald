@@ -2145,15 +2145,14 @@ static void CalcDomeMonStats(const struct TrainerMon *fmon, int level, u8 ivs, i
             evs[i] = 0;
     }
 
-    if (fmon->species == SPECIES_SHEDINJA)
-    {
-        stats[STAT_HP] = 1;
-    }
-    else
-    {
-        int n = 2 * gSpeciesInfo[fmon->species].baseHP;
-        stats[STAT_HP] = (((n + ivs + evs[STAT_HP] / 4) * level) / 100) + level + 10;
-    }
+    // if (fmon->species == SPECIES_SHEDINJA)
+    // {
+    //     stats[STAT_HP] = 1;
+    // }
+    // else
+    
+    int n = 2 * gSpeciesInfo[fmon->species].baseHP;
+    stats[STAT_HP] = (((n + ivs + evs[STAT_HP] / 4) * level) / 100) + level + 10;
 
     CALC_STAT(baseAttack, STAT_ATK);
     CALC_STAT(baseDefense, STAT_DEF);
