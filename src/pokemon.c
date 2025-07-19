@@ -67,7 +67,7 @@
 #include "constants/weather.h"
 #include "wild_encounter.h"
 
-#define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
+#define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 255)
 
 struct SpeciesItem
 {
@@ -919,15 +919,15 @@ static const u8 sStatsToRaise[] =
 // 0-99, 100-199, 200+
 static const s8 sFriendshipEventModifiers[][3] =
 {
-    [FRIENDSHIP_EVENT_GROW_LEVEL]      = { 5,  3,  2},
-    [FRIENDSHIP_EVENT_VITAMIN]         = { 5,  3,  2},
+    [FRIENDSHIP_EVENT_GROW_LEVEL]      = { 5,  5,  5},
+    [FRIENDSHIP_EVENT_VITAMIN]         = { 2,  2,  2},
     [FRIENDSHIP_EVENT_BATTLE_ITEM]     = { 1,  1,  0},
-    [FRIENDSHIP_EVENT_LEAGUE_BATTLE]   = { 3,  2,  1},
-    [FRIENDSHIP_EVENT_LEARN_TMHM]      = { 1,  1,  0},
-    [FRIENDSHIP_EVENT_WALKING]         = { 1,  1,  1},
-    [FRIENDSHIP_EVENT_FAINT_SMALL]     = {-1, -1, -1},
-    [FRIENDSHIP_EVENT_FAINT_FIELD_PSN] = {-5, -5, -10},
-    [FRIENDSHIP_EVENT_FAINT_LARGE]     = {-5, -5, -10},
+    [FRIENDSHIP_EVENT_LEAGUE_BATTLE]   = { 2,  3,  5},
+    [FRIENDSHIP_EVENT_LEARN_TMHM]      = { 0,  0,  0},
+    [FRIENDSHIP_EVENT_WALKING]         = { 1,  0,  0},
+    [FRIENDSHIP_EVENT_FAINT_SMALL]     = {-5, -3, -2},
+    [FRIENDSHIP_EVENT_FAINT_FIELD_PSN] = {-5, -3, -2},
+    [FRIENDSHIP_EVENT_FAINT_LARGE]     = {-10, -10, -10},
 };
 
 #define HM_MOVES_END 0xFFFF
