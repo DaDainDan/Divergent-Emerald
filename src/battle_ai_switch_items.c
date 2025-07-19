@@ -703,8 +703,7 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
                 || holdEffect == (HOLD_EFFECT_CURE_SLP | HOLD_EFFECT_CURE_STATUS)
                 || HasMove(battler, MOVE_SLEEP_TALK)
                 || (HasMoveWithEffect(battler, MOVE_SNORE) && AI_GetMoveEffectiveness(MOVE_SNORE, battler, opposingBattler) >= UQ_4_12(1.6))
-                || (IsBattlerGrounded(battler)
-                    && (HasMove(battler, MOVE_MISTY_TERRAIN) || HasMove(battler, MOVE_ELECTRIC_TERRAIN)))
+                || ((HasMove(battler, MOVE_MISTY_TERRAIN) || HasMove(battler, MOVE_ELECTRIC_TERRAIN))) // IsBattlerGrounded(battler) &&
                 )
                 switchMon = FALSE;
 

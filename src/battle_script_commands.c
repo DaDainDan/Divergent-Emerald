@@ -8307,7 +8307,8 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     else if (!(gDisableStructs[battler].stealthRockDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_STEALTH_ROCK)
         && IsBattlerAffectedByHazards(battler, FALSE)
-        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD
+        && IsBattlerGrounded(battler))
     {
         gDisableStructs[battler].stealthRockDone = TRUE;
         gBattleStruct->moveDamage[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_POINTED_STONES, battler);
@@ -10312,8 +10313,8 @@ static void Cmd_various(void)
         VARIOUS_ARGS(const u8 *failInstr);
         if ((gStatuses3[battler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK))
             || IsBattlerAtMaxHp(battler)
-            || !gBattleMons[battler].hp
-            || !(IsBattlerGrounded(battler)))
+            || !gBattleMons[battler].hp)
+            // || !(IsBattlerGrounded(battler)))
         {
             gBattlescriptCurrInstr = cmd->failInstr;
         }

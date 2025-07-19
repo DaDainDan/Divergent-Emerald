@@ -2338,7 +2338,7 @@ static void CancellerProtean(u32 *effect)
 static void CancellerPsychicTerrain(u32 *effect)
 {
     if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN
-        && IsBattlerGrounded(gBattlerTarget)
+        // && IsBattlerGrounded(gBattlerTarget)
         && GetChosenMovePriority(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)) > 0
         && GetMoveTarget(gCurrentMove) != MOVE_TARGET_ALL_BATTLERS
         && GetMoveTarget(gCurrentMove) != MOVE_TARGET_OPPONENTS_FIELD
@@ -6412,7 +6412,7 @@ bool32 IsBattlerTerrainAffected(u32 battler, u32 terrainFlag)
     else if (gStatuses3[battler] & STATUS3_SEMI_INVULNERABLE)
         return FALSE;
 
-    return IsBattlerGrounded(battler);
+    return TRUE; // IsBattlerGrounded(battler)
 }
 
 bool32 CanBeSlept(u32 battlerAtk, u32 battlerDef, u32 abilityDef, enum SleepClauseBlock isBlockedBySleepClause)
