@@ -7,7 +7,7 @@
 
 // AI switch chances; if you want more complex behaviour, modify GetSwitchChance
 #define SHOULD_SWITCH_WONDER_GUARD_PERCENTAGE                   100
-#define SHOULD_SWITCH_TRUANT_PERCENTAGE                         100
+#define SHOULD_SWITCH_TRUANT_PERCENTAGE                         30
 #define SHOULD_SWITCH_ALL_MOVES_BAD_PERCENTAGE                  100
 #define STAY_IN_STATS_RAISED                                    2  // Number of stat stages that must be raised across any stats before the AI won't switch mon out in certain cases
 
@@ -28,7 +28,7 @@
 #define SHOULD_SWITCH_PERISH_SONG_PERCENTAGE                    100
 #define SHOULD_SWITCH_YAWN_PERCENTAGE                           100
 #define SHOULD_SWITCH_BADLY_POISONED_PERCENTAGE                 50
-#define SHOULD_SWITCH_BADLY_POISONED_STATS_RAISED_PERCENTAGE    20
+#define SHOULD_SWITCH_BADLY_POISONED_STATS_RAISED_PERCENTAGE    25
 #define SHOULD_SWITCH_CURSED_PERCENTAGE                         50
 #define SHOULD_SWITCH_CURSED_STATS_RAISED_PERCENTAGE            20
 #define SHOULD_SWITCH_NIGHTMARE_PERCENTAGE                      33
@@ -51,13 +51,13 @@
 #define AI_GOOD_SCORE_THRESHOLD                                 100 // Move scores above this threshold are considered "good" when deciding switching
 
 // AI held item-based move scoring
-#define LOW_ACCURACY_THRESHOLD                                  75 // Moves with accuracy equal OR below this value are considered low accuracy 
+#define LOW_ACCURACY_THRESHOLD                                  80 // Moves with accuracy equal OR below this value are considered low accuracy 
 
 // AI move scoring
-#define STATUS_MOVE_FOCUS_PUNCH_CHANCE                          50 // Chance the AI will use a status move if the player's best move is Focus Punch
+#define STATUS_MOVE_FOCUS_PUNCH_CHANCE                          20 // Chance the AI will use a status move if the player's best move is Focus Punch
 
 // AI damage calc considerations
-#define RISKY_AI_CRIT_STAGE_THRESHOLD                           2   // Stat stages at which Risky will assume it gets a crit
+#define RISKY_AI_CRIT_STAGE_THRESHOLD                           3   // Stat stages at which Risky will assume it gets a crit
 #define RISKY_AI_CRIT_THRESHOLD_GEN_1                           128 // "Stat stage" at which Risky will assume it gets a crit with gen 1 mechanics (this translates to an X / 255 % crit threshold)
 
 // AI prediction chances

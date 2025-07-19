@@ -301,7 +301,7 @@ static const u16 sTrappingMoves[NUM_TRAPPING_MOVES] =
     MOVE_THUNDER_CAGE
 };
 
-static const u16 sWhiteOutBadgeMoney[9] = { 8, 16, 24, 36, 48, 64, 80, 100, 120 };
+static const u16 sWhiteOutBadgeMoney[10] = { 2, 10, 25, 50, 75, 100, 150, 250, 400, 500 };
 
 enum GiveCaughtMonStates
 {
@@ -8844,9 +8844,10 @@ static void Cmd_hitanimation(void)
 
 static u32 GetTrainerMoneyToGive(u16 trainerId)
 {
-    u32 lastMonLevel = 0;
+    // u32 lastMonLevel = 0;
     u32 moneyReward;
     u8 trainerMoney = 0;
+    u8 partysize = 1;
 
     if (trainerId == TRAINER_SECRET_BASE)
     {
@@ -8857,15 +8858,25 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         const struct TrainerMon *party = GetTrainerPartyFromId(trainerId);
         if (party == NULL)
             return 20;
-        lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
-        trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
+        // lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
+        trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 6;
+        partysize = GetTrainerPartySizeFromId(trainerId);
+        
+        s32 i, count;
+        for (count = 1, i = 0; i < ARRAY_COUNT(gBadgeFlags); i++)
+        {
+            if (FlagGet(gBadgeFlags[i]) == TRUE)
+                ++count;
+        }
+        if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
+                ++count;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = 25 * count * partysize * gBattleStruct->moneyMultiplier * trainerMoney;
         else if (IsDoubleBattle())
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
+            moneyReward = 25 * count * partysize * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
         else
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = 25 * count * partysize * gBattleStruct->moneyMultiplier * trainerMoney;
     }
 
     return moneyReward;
@@ -8876,7 +8887,7 @@ static void Cmd_getmoneyreward(void)
     CMD_ARGS();
 
     u32 money;
-    u8 sPartyLevel = 1;
+    // u8 sPartyLevel = 1;
 
     if (gBattleOutcome == B_OUTCOME_WON)
     {
@@ -8893,22 +8904,26 @@ static void Cmd_getmoneyreward(void)
         }
         else
         {
+            // s32 i, count;
+            // for (i = 0; i < PARTY_SIZE; i++)
+            // {
+            //     if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_NONE
+            //     && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_EGG)
+            //     {
+            //         if (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) > sPartyLevel)
+            //             sPartyLevel = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
+            //     }
+            // }
             s32 i, count;
-            for (i = 0; i < PARTY_SIZE; i++)
-            {
-                if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_NONE
-                && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_EGG)
-                {
-                    if (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) > sPartyLevel)
-                        sPartyLevel = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
-                }
-            }
             for (count = 0, i = 0; i < ARRAY_COUNT(gBadgeFlags); i++)
             {
                 if (FlagGet(gBadgeFlags[i]) == TRUE)
                     ++count;
             }
-            money = sWhiteOutBadgeMoney[count] * sPartyLevel;
+            if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
+                ++count;
+            
+            money = sWhiteOutBadgeMoney[count] * 50; // sPartyLevel;
         }
         RemoveMoney(&gSaveBlock1Ptr->money, money);
     }
