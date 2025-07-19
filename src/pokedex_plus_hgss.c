@@ -166,6 +166,7 @@ static const u8 sText_Stats_EggCycles_Fast[] = _("{EMOJI_DIZZYEGG}");
 static const u8 sText_Stats_EggCycles_Normal[] = _("{EMOJI_DIZZYEGG}{EMOJI_DIZZYEGG}");
 static const u8 sText_Stats_EggCycles_Slow[] = _("{EMOJI_DIZZYEGG}{EMOJI_DIZZYEGG}{EMOJI_DIZZYEGG}");
 static const u8 sText_Stats_Growthrate[] = _("GROW: ");
+static const u8 sText_Stats_Airborne[] = _("AIRBORNE: CAN FLY");
 static const u8 sText_Stats_Friendship[] = _("FRIENDSHIP:");
 static const u8 sText_Stats_Friendship_BigAnger[] = _("{EMOJI_BIGANGER}");
 static const u8 sText_Stats_Friendship_Neutral[] = _("{EMOJI_NEUTRAL}");
@@ -363,6 +364,7 @@ struct PokemonStats
     u16 ability0;
     u16 ability1;
     u16 abilityHidden;
+    bool8 airborne;
 };
 
 struct EvoScreenData
@@ -4816,6 +4818,7 @@ static void SaveMonDataInStruct(void)
     sPokedexView->sPokemonStats.ability0            = GetAbilityBySpecies(species, 0);
     sPokedexView->sPokemonStats.ability1            = GetAbilityBySpecies(species, 1);
     sPokedexView->sPokemonStats.abilityHidden       = GetAbilityBySpecies(species, 2);
+    sPokedexView->sPokemonStats.airborne            = gSpeciesInfo[species].airborne;
 }
 
 #define tMonSpriteId data[4]
@@ -5639,6 +5642,7 @@ static void PrintStatsScreen_Left(u8 taskId)
     {
         u32 catchRate = sPokedexView->sPokemonStats.catchRate;
         u32 growthRate = sPokedexView->sPokemonStats.growthRate;
+        // bool8 airborne = sPokedexView->sPokemonStats.airborne;
 
         //Catch rate
         PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_CatchRate, base_x, base_y + base_y_offset*base_i);

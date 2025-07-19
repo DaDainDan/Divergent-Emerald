@@ -335,18 +335,18 @@ static const u16 sFarfetchdFormSpeciesIdTable[] = {
 
 #if P_FAMILY_GRIMER
 static const u16 sGrimerFormSpeciesIdTable[] = {
-    SPECIES_GRIMER,
 #if P_ALOLAN_FORMS
     SPECIES_GRIMER_ALOLA,
 #endif
+    SPECIES_GRIMER,
     FORM_SPECIES_END,
 };
 
 static const u16 sMukFormSpeciesIdTable[] = {
-    SPECIES_MUK,
 #if P_ALOLAN_FORMS
     SPECIES_MUK_ALOLA,
 #endif
+    SPECIES_MUK,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_GRIMER
@@ -655,10 +655,10 @@ static const u16 sDudunsparceFormSpeciesIdTable[] = {
 
 #if P_FAMILY_QWILFISH
 static const u16 sQwilfishFormSpeciesIdTable[] = {
-    SPECIES_QWILFISH,
 #if P_HISUIAN_FORMS
     SPECIES_QWILFISH_HISUI,
 #endif
+    SPECIES_QWILFISH,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_QWILFISH
@@ -1482,8 +1482,8 @@ static const u16 sMeowsticFormSpeciesIdTable[] = {
 
 #if P_FAMILY_HONEDGE
 static const u16 sAegislashFormSpeciesIdTable[] = {
-    SPECIES_AEGISLASH_SHIELD,
     SPECIES_AEGISLASH_BLADE,
+    SPECIES_AEGISLASH_SHIELD,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_HONEDGE
@@ -1556,7 +1556,7 @@ static const u16 sZygardeFormSpeciesIdTable[] = {
 #if P_FAMILY_DIANCIE
 static const u16 sDiancieFormSpeciesIdTable[] = {
     SPECIES_DIANCIE,
-#if P_MEGA_EVOLUTIONS
+#if TRUE
     SPECIES_DIANCIE_MEGA,
 #endif
     FORM_SPECIES_END,
