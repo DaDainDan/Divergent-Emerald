@@ -4767,9 +4767,13 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
     else if (holdEffect == HOLD_EFFECT_IRON_BALL)
         speed /= 2;
     else if (holdEffect == HOLD_EFFECT_CHOICE_SCARF && GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
-        speed = (speed * 150) / 100;
-    else if (holdEffect == HOLD_EFFECT_QUICK_POWDER && gBattleMons[battler].species == SPECIES_DITTO && !(gBattleMons[battler].status2 & STATUS2_TRANSFORMED))
-        speed *= 2;
+        speed = (speed * 133) / 100;
+    else if (holdEffect == HOLD_EFFECT_QUICK_POWDER && (gBattleMons[battler].species == SPECIES_DITTO || gBattleMons[battler].status2 & STATUS2_TRANSFORMED))
+        speed = (speed * 125) / 100;
+    else if (holdEffect == HOLD_EFFECT_EVIOLITE && CanEvolve(gBattleMons[battler].species) && gBattleMons[battler].species != SPECIES_KANGASKHAN)
+        speed = (speed * 115) / 100;
+    else if (holdEffect == HOLD_EFFECT_FLOAT_STONE)
+        speed = (speed * 110) / 100;
 
     // various effects
     if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)
@@ -4884,6 +4888,10 @@ s32 GetWhichBattlerFasterArgs(u32 battler1, u32 battler2, bool32 ignoreChosenMov
             strikesFirst = 1;
         else if (battler2HasQuickEffect && !battler1HasQuickEffect)
             strikesFirst = -1;
+        else if (holdEffectBattler1 == HOLD_EFFECT_ZOOM_LENS && holdEffectBattler2 != HOLD_EFFECT_ZOOM_LENS)
+            strikesFirst = -1;
+        else if (holdEffectBattler2 == HOLD_EFFECT_ZOOM_LENS && holdEffectBattler1 != HOLD_EFFECT_ZOOM_LENS)
+            strikesFirst = 1;
         else if (holdEffectBattler1 == HOLD_EFFECT_LAGGING_TAIL && holdEffectBattler2 != HOLD_EFFECT_LAGGING_TAIL)
             strikesFirst = -1;
         else if (holdEffectBattler2 == HOLD_EFFECT_LAGGING_TAIL && holdEffectBattler1 != HOLD_EFFECT_LAGGING_TAIL)

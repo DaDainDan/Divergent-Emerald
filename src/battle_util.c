@@ -1691,8 +1691,8 @@ bool32 BattleArenaTurnEnd(void)
 // Ingrain, Leech Seed, Strength Sap and Aqua Ring
 s32 GetDrainedBigRootHp(u32 battler, s32 hp)
 {
-    if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_BIG_ROOT)
-        hp = (hp * 1300) / 1000;
+    if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_BIG_ROOT && IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
+        hp = (hp * 1500) / 1000;
     if (hp == 0)
         hp = 1;
 
@@ -2370,9 +2370,9 @@ static void CancellerMultihitMoves(u32 *effect)
     {
         u32 ability = GetBattlerAbility(gBattlerAttacker);
 
-        if (ability == ABILITY_SKILL_LINK)
+        if (ability == ABILITY_SKILL_LINK || (GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_LOADED_DICE))
         {
-            gMultiHitCounter = 5;
+            gMultiHitCounter = 4;
         }
         else if (ability == ABILITY_BATTLE_BOND
               && gCurrentMove == MOVE_WATER_SHURIKEN
@@ -2391,7 +2391,7 @@ static void CancellerMultihitMoves(u32 *effect)
     {
         if (GetMoveEffect(gCurrentMove) == EFFECT_POPULATION_BOMB && GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_LOADED_DICE)
         {
-            gMultiHitCounter = RandomUniform(RNG_LOADED_DICE, 4, 10);
+            gMultiHitCounter = 10;
         }
         else
         {
@@ -8070,7 +8070,7 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                     && IsBattlerAlive(gBattlerAttacker)
                     && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
                 {
-                    gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 6;
+                    gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
                     if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
                         gBattleStruct->moveDamage[gBattlerAttacker] = 1;
                     effect = ITEM_HP_CHANGE;
@@ -9551,6 +9551,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_OGERPON)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
+    case HOLD_EFFECT_BIG_ROOT:
+        if (GetMoveEffect(move) == EFFECT_ABSORB && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
+        break;
     default:
         break;
     }
@@ -9571,6 +9575,23 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     }
 
     return uq4_12_multiply_by_int_half_down(modifier, basePower);
+}
+
+bool32 CanEvolve(u32 species)
+{
+    u32 i;
+    const struct Evolution *evolutions = GetSpeciesEvolutions(species);
+
+    if (evolutions != NULL)
+    {
+        for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
+        {
+            if (evolutions[i].method
+             && SanitizeSpeciesId(evolutions[i].targetSpecies) != SPECIES_NONE)
+                return TRUE;
+        }
+    }
+    return FALSE;
 }
 
 static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u32 atkAbility, u32 defAbility, enum ItemHoldEffect holdEffectAtk, u32 weather)
@@ -9885,23 +9906,27 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     {
     case HOLD_EFFECT_THICK_CLUB:
         if ((atkBaseSpeciesId == SPECIES_CUBONE || atkBaseSpeciesId == SPECIES_MAROWAK) && IsBattleMovePhysical(move))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.33));
         break;
-    case HOLD_EFFECT_DEEP_SEA_TOOTH:
-        if (gBattleMons[battlerAtk].species == SPECIES_CLAMPERL && IsBattleMoveSpecial(move))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
-        break;
+    // case HOLD_EFFECT_DEEP_SEA_TOOTH:
+    //     if (gBattleMons[battlerAtk].species == SPECIES_CLAMPERL && IsBattleMoveSpecial(move))
+    //         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+    //     break;
     case HOLD_EFFECT_LIGHT_BALL:
         if (atkBaseSpeciesId == SPECIES_PIKACHU && (B_LIGHT_BALL_ATTACK_BOOST >= GEN_4 || IsBattleMoveSpecial(move)))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_CHOICE_BAND:
         if (IsBattleMovePhysical(move) && GetActiveGimmick(battlerAtk) != GIMMICK_DYNAMAX)
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.33));
         break;
     case HOLD_EFFECT_CHOICE_SPECS:
         if (IsBattleMoveSpecial(move) && GetActiveGimmick(battlerAtk) != GIMMICK_DYNAMAX)
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.33));
+        break;
+    case HOLD_EFFECT_EVIOLITE:
+        if (CanEvolve(gBattleMons[battlerAtk].species) && atkBaseSpeciesId != SPECIES_KANGASKHAN)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.15));
         break;
     default:
         break;
@@ -9914,23 +9939,6 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
 
     return uq4_12_multiply_by_int_half_down(modifier, atkStat);
-}
-
-static bool32 CanEvolve(u32 species)
-{
-    u32 i;
-    const struct Evolution *evolutions = GetSpeciesEvolutions(species);
-
-    if (evolutions != NULL)
-    {
-        for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
-        {
-            if (evolutions[i].method
-             && SanitizeSpeciesId(evolutions[i].targetSpecies) != SPECIES_NONE)
-                return TRUE;
-        }
-    }
-    return FALSE;
 }
 
 static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, u32 atkAbility, u32 defAbility, enum ItemHoldEffect holdEffectDef, u32 weather)
@@ -10076,27 +10084,27 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
     switch (holdEffectDef)
     {
     case HOLD_EFFECT_DEEP_SEA_SCALE:
-        if (gBattleMons[battlerDef].species == SPECIES_CLAMPERL && !usesDefStat)
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+        if ((gBattleMons[battlerDef].species == SPECIES_CLAMPERL || gBattleMons[battlerDef].species == SPECIES_GOREBYSS) && !usesDefStat)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.33));
         break;
     case HOLD_EFFECT_METAL_POWDER:
-        if (gBattleMons[battlerDef].species == SPECIES_DITTO && usesDefStat && !(gBattleMons[battlerDef].status2 & STATUS2_TRANSFORMED))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+        if ((gBattleMons[battlerDef].species == SPECIES_DITTO || (gBattleMons[battlerDef].status2 & STATUS2_TRANSFORMED))) //  && usesDefStat
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     case HOLD_EFFECT_EVIOLITE:
-        if (CanEvolve(gBattleMons[battlerDef].species))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        if (CanEvolve(gBattleMons[battlerDef].species) && gBattleMons[battlerDef].species != SPECIES_KANGASKHAN)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.15));
         break;
     case HOLD_EFFECT_ASSAULT_VEST:
-        if (!usesDefStat)
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        if (usesDefStat)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.33));
         break;
     case HOLD_EFFECT_SOUL_DEW:
         if (B_SOUL_DEW_BOOST < GEN_7
          && (gBattleMons[battlerDef].species == SPECIES_LATIAS || gBattleMons[battlerDef].species == SPECIES_LATIOS)
-         && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+        //  && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
          && !usesDefStat)
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
         break;
     default:
         break;
@@ -12086,12 +12094,13 @@ bool32 CanTargetBattler(u32 battlerAtk, u32 battlerDef, u16 move)
 
 static void SetRandomMultiHitCounter()
 {
-    if (GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_LOADED_DICE)
-        gMultiHitCounter = RandomUniform(RNG_LOADED_DICE, 4, 5);
-    else if (GetGenConfig(GEN_CONFIG_MULTI_HIT_CHANCE) >= GEN_5)
-        gMultiHitCounter = RandomWeighted(RNG_HITS, 0, 0, 7, 7, 3, 3); // 35%: 2 hits, 35%: 3 hits, 15% 4 hits, 15% 5 hits.
+    // if (GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_LOADED_DICE)
+    //     gMultiHitCounter = RandomUniform(RNG_LOADED_DICE, 4, 5);
+    if (GetGenConfig(GEN_CONFIG_MULTI_HIT_CHANCE) >= GEN_5)
+        gMultiHitCounter = RandomWeighted(RNG_HITS, 0, 0, 1, 6, 3, 0); // 10%: 2 hits, 60% 3 hits, 30% 4 hits. Average Hits: 3.2
+        // gMultiHitCounter = RandomWeighted(RNG_HITS, 0, 0, 7, 7, 3, 3); // 35%: 2 hits, 35%: 3 hits, 15% 4 hits, 15% 5 hits. Average Hits: 3.1
     else
-        gMultiHitCounter = RandomWeighted(RNG_HITS, 0, 0, 3, 3, 1, 1); // 37.5%: 2 hits, 37.5%: 3 hits, 12.5% 4 hits, 12.5% 5 hits.
+        gMultiHitCounter = RandomWeighted(RNG_HITS, 0, 0, 3, 3, 1, 1); // 37.5%: 2 hits, 37.5%: 3 hits, 12.5% 4 hits, 12.5% 5 hits. Average Hits: 3
 }
 
 void CopyMonLevelAndBaseStatsToBattleMon(u32 battler, struct Pokemon *mon)
@@ -12557,6 +12566,11 @@ bool32 IsMoveEffectBlockedByTarget(u32 ability)
     else if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_COVERT_CLOAK)
     {
         RecordItemEffectBattle(gBattlerTarget, HOLD_EFFECT_COVERT_CLOAK);
+        return TRUE;
+    }
+    else if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_REAPER_CLOTH && IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GHOST, TYPE_UNDEAD))
+    {
+        RecordItemEffectBattle(gBattlerTarget, HOLD_EFFECT_REAPER_CLOTH);
         return TRUE;
     }
 

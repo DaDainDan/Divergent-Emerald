@@ -632,24 +632,17 @@ static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCal
             minimum *= 3;
             maximum *= 3;
         }
-        else if (abilityAtk == ABILITY_SKILL_LINK)
+        else if (abilityAtk == ABILITY_SKILL_LINK || holdEffectAtk == HOLD_EFFECT_LOADED_DICE)
         {
-            median *= 5;
-            minimum *= 5;
-            maximum *= 5;
-        }
-        else if (holdEffectAtk == HOLD_EFFECT_LOADED_DICE)
-        {
-            median *= 9;
-            median /= 2;
+            median *= 4;
             minimum *= 4;
-            maximum *= 5;
+            maximum *= 4;
         }
         else
         {
             median *= 3;
             minimum *= 2;
-            maximum *= 5;
+            maximum *= 4;
         }
         break;
     case EFFECT_ENDEAVOR:
@@ -1202,6 +1195,11 @@ s32 AI_WhoStrikesFirst(u32 battlerAI, u32 battler, u32 moveConsidered)
         return AI_IS_SLOWER;
     else if (holdEffectAI != HOLD_EFFECT_LAGGING_TAIL && holdEffectPlayer == HOLD_EFFECT_LAGGING_TAIL)
         return AI_IS_FASTER;
+    
+    if (holdEffectAI == HOLD_EFFECT_ZOOM_LENS && holdEffectPlayer != HOLD_EFFECT_ZOOM_LENS)
+        return AI_IS_SLOWER;
+    else if (holdEffectAI != HOLD_EFFECT_ZOOM_LENS && holdEffectPlayer == HOLD_EFFECT_ZOOM_LENS)
+        return AI_IS_FASTER;   
 
     if (abilityAI == ABILITY_STALL && abilityPlayer != ABILITY_STALL)
         return AI_IS_SLOWER;
@@ -1735,7 +1733,8 @@ bool32 IsMoveEncouragedToHit(u32 battlerAtk, u32 battlerDef, u32 move)
     if (gStatuses3[battlerDef] & STATUS3_ALWAYS_HITS || gDisableStructs[battlerDef].battlerWithSureHit == battlerAtk)
         return TRUE;
 
-    if (gAiLogicData->abilities[battlerDef] == ABILITY_NO_GUARD || gAiLogicData->abilities[battlerAtk] == ABILITY_NO_GUARD || gAiLogicData->abilities[battlerAtk] == ABILITY_MIRACLE_EYE)
+    if (gAiLogicData->abilities[battlerDef] == ABILITY_NO_GUARD || gAiLogicData->abilities[battlerAtk] == ABILITY_NO_GUARD 
+        || gAiLogicData->abilities[battlerAtk] == ABILITY_MIRACLE_EYE || gAiLogicData->holdEffects[battlerAtk] == HOLD_EFFECT_ZOOM_LENS)
         return TRUE;
 
     u32 nonVolatileStatus = GetMoveNonVolatileStatus(move);
@@ -1777,7 +1776,8 @@ bool32 ShouldTryOHKO(u32 battlerAtk, u32 battlerDef, u32 atkAbility, u32 defAbil
 
     if ((((gStatuses3[battlerDef] & STATUS3_ALWAYS_HITS)
         && gDisableStructs[battlerDef].battlerWithSureHit == battlerAtk)
-        || atkAbility == ABILITY_NO_GUARD || defAbility == ABILITY_NO_GUARD || atkAbility == ABILITY_MIRACLE_EYE)
+        || atkAbility == ABILITY_NO_GUARD || defAbility == ABILITY_NO_GUARD || atkAbility == ABILITY_MIRACLE_EYE
+        || gAiLogicData->holdEffects[battlerAtk] == HOLD_EFFECT_ZOOM_LENS)
         && gBattleMons[battlerAtk].level >= gBattleMons[battlerDef].level)
     {
         return TRUE;

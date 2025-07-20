@@ -1676,8 +1676,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         calc = (calc * (100 + atkParam)) / 100;
         break;
     case HOLD_EFFECT_ZOOM_LENS:
-        if (GetBattlerTurnOrderNum(battlerAtk) > GetBattlerTurnOrderNum(battlerDef))
-            calc = (calc * (100 + atkParam)) / 100;
+        calc = 0;
         break;
     }
 
@@ -1935,15 +1934,19 @@ static inline u32 GetHoldEffectCritChanceIncrease(u32 battler, enum ItemHoldEffe
     switch (holdEffect)
     {
     case HOLD_EFFECT_SCOPE_LENS:
-        critStageIncrease = 1;
+        critStageIncrease = 2;
         break;
-    case HOLD_EFFECT_LUCKY_PUNCH:
+    case HOLD_EFFECT_LUCKY_EGG:
         if (gBattleMons[battler].species == SPECIES_CHANSEY)
-            critStageIncrease = 2;
+            critStageIncrease = 3;
+        break;
+    case HOLD_EFFECT_DEEP_SEA_TOOTH:
+        if (gBattleMons[battler].species == SPECIES_CLAMPERL || gBattleMons[battler].species == SPECIES_HUNTAIL)
+            critStageIncrease = 3;
         break;
     case HOLD_EFFECT_LEEK:
         if (IsBattlerLeekAffected(battler, holdEffect))
-            critStageIncrease = 2;
+            critStageIncrease = 3;
         break;
     default:
         critStageIncrease = 0;

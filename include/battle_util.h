@@ -387,5 +387,6 @@ bool32 HadMoreThanHalfHpNowDoesnt(u32 battler);
 void UpdateStallMons(void);
 bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId);
 bool32 HadMoreThanQuartHpNowDoesnt(u32 battler);
+bool32 CanEvolve(u32 species);
 
 #endif // GUARD_BATTLE_UTIL_H

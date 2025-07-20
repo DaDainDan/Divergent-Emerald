@@ -531,7 +531,8 @@ static u32 Ai_SetMoveAccuracy(struct AiLogicData *aiData, u32 battlerAtk, u32 ba
     u32 accuracy;
     u32 abilityAtk = aiData->abilities[battlerAtk];
     u32 abilityDef = aiData->abilities[battlerDef];
-    if (abilityAtk == ABILITY_NO_GUARD || abilityDef == ABILITY_NO_GUARD || abilityAtk == ABILITY_MIRACLE_EYE || GetMoveAccuracy(move) == 0) // Moves with accuracy 0 or no guard ability always hit.
+    if (abilityAtk == ABILITY_NO_GUARD || abilityDef == ABILITY_NO_GUARD || abilityAtk == ABILITY_MIRACLE_EYE 
+        || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_ZOOM_LENS || GetMoveAccuracy(move) == 0) // Moves with accuracy 0 or no guard ability always hit.
         accuracy = 100;
     else
         accuracy = GetTotalAccuracy(battlerAtk, battlerDef, move, abilityAtk, abilityDef, aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef]);
@@ -2164,6 +2165,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
               || aiData->abilities[battlerAtk] == ABILITY_NO_GUARD
               || aiData->abilities[battlerAtk] == ABILITY_MIRACLE_EYE
               || aiData->abilities[battlerDef] == ABILITY_NO_GUARD
+              || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_ZOOM_LENS
               || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
             break;
@@ -3975,13 +3977,13 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
         break;
     case EFFECT_ABSORB:
-        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT && effectiveness >= UQ_4_12(1.0))
+        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS) && effectiveness >= UQ_4_12(1.0))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_DREAM_EATER:
     case EFFECT_STRENGTH_SAP:
     case EFFECT_AQUA_RING:
-        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT)
+        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_EXPLOSION:
@@ -4138,7 +4140,8 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         if (gBattleMons[battlerAtk].statStages[STAT_ACC] < DEFAULT_STAT_STAGE)
             ADJUST_SCORE(WEAK_EFFECT);
         if (gBattleMons[battlerDef].statStages[STAT_EVASION] < (DEFAULT_STAT_STAGE + 1) 
-            || aiData->abilities[battlerAtk] == ABILITY_NO_GUARD || aiData->abilities[battlerAtk] == ABILITY_MIRACLE_EYE)
+            || aiData->abilities[battlerAtk] == ABILITY_NO_GUARD || aiData->abilities[battlerAtk] == ABILITY_MIRACLE_EYE
+            || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_ZOOM_LENS)
             ADJUST_SCORE(-2);
         break;
     case EFFECT_SPICY_EXTRACT:
@@ -4301,7 +4304,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         ADJUST_SCORE(GOOD_EFFECT);
         if (!HasDamagingMove(battlerDef)
             || (!AI_CanBattlerEscape(battlerDef) && IsBattlerTrapped(battlerAtk, battlerDef))
-            || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT)
+            || (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS)))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_DO_NOTHING:
@@ -4825,7 +4828,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_INGRAIN:
         ADJUST_SCORE(WEAK_EFFECT);
-        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT)
+        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS))
             ADJUST_SCORE(GOOD_EFFECT);
         break;
     case EFFECT_MAGIC_COAT:

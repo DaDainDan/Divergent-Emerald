@@ -4185,6 +4185,7 @@ const struct Item gItemsInfo[] =
         .name = _("Reaper Cloth"),
         .pluralName = _("Reaper Cloths"),
         .price = (I_PRICE >= GEN_7) ? 2000 * TREASURE_FACTOR : 2100,
+        .holdEffect = HOLD_EFFECT_REAPER_CLOTH,
         .description = COMPOUND_STRING(
             "Loved by a certain\n"
             "Pokémon. Imbued\n"
@@ -7124,7 +7125,7 @@ const struct Item gItemsInfo[] =
         .name = _("Soul Dew"),
         .price = (I_PRICE >= GEN_7) ? 0 : 200,
         .holdEffect = HOLD_EFFECT_SOUL_DEW,
-        .holdEffectParam = B_SOUL_DEW_BOOST >= GEN_7 ? 20 : 50,
+        .holdEffectParam = B_SOUL_DEW_BOOST >= GEN_7 ? 20 : 15,
         .description = COMPOUND_STRING(
         #if B_SOUL_DEW_BOOST >= GEN_7
             "Powers up Latios' &\n"
@@ -8466,7 +8467,7 @@ const struct Item gItemsInfo[] =
         .name = _("Shell Bell"),
         .price = (I_PRICE >= GEN_9) ? 20000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
         .holdEffect = HOLD_EFFECT_SHELL_BELL,
-        .holdEffectParam = 8,
+        .holdEffectParam = 4,
         .description = COMPOUND_STRING(
             "A hold item that\n"
             "restores HP upon\n"
@@ -8485,7 +8486,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Wide Lenses"),
         .price = (I_PRICE >= GEN_9) ? 20000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
         .holdEffect = HOLD_EFFECT_WIDE_LENS,
-        .holdEffectParam = 10,
+        .holdEffectParam = 20,
         .description = COMPOUND_STRING(
             "A magnifying lens\n"
             "that boosts the\n"
@@ -8503,7 +8504,7 @@ const struct Item gItemsInfo[] =
         .name = _("Muscle Band"),
         .price = (I_PRICE >= GEN_9) ? 8000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
         .holdEffect = HOLD_EFFECT_MUSCLE_BAND,
-        .holdEffectParam = 10,
+        .holdEffectParam = 12,
         .description = COMPOUND_STRING(
             "A headband that\n"
             "boosts the power\n"
@@ -8522,7 +8523,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Wise Glasses"),
         .price = (I_PRICE >= GEN_9) ? 8000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
         .holdEffect = HOLD_EFFECT_WISE_GLASSES,
-        .holdEffectParam = 10,
+        .holdEffectParam = 12,
         .description = COMPOUND_STRING(
             "A pair of glasses\n"
             "that ups the power\n"
