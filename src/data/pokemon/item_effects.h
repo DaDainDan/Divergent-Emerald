@@ -175,8 +175,8 @@ const u8 gItemEffect_SacredAsh[7] = {
 };
 
 #define VITAMIN_FRIENDSHIP_CHANGE(i)             \
-    [(i) + 0] = 5, /* Friendship change, low */  \
-    [(i) + 1] = 3, /* Friendship change, mid */  \
+    [(i) + 0] = 2, /* Friendship change, low */  \
+    [(i) + 1] = 2, /* Friendship change, mid */  \
     [(i) + 2] = 2  /* Friendship change, high */
 
 const u8 gItemEffect_HPUp[11] = {
@@ -418,9 +418,9 @@ const u8 gItemEffect_SitrusBerry[7] = {
 };
 
 #define EV_BERRY_FRIENDSHIP_CHANGE          \
-    [7] = 10, /* Friendship change, low */  \
-    [8] = 5,  /* Friendship change, mid */  \
-    [9] = 2   /* Friendship change, high */
+    [7] = 8, /* Friendship change, low */  \
+    [8] = 8,  /* Friendship change, mid */  \
+    [9] = 8   /* Friendship change, high */
 
 const u8 gItemEffect_PomegBerry[10] = {
     [4] = ITEM4_EV_HP,

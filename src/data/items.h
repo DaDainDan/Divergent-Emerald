@@ -10170,7 +10170,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Liechi Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_ATTACK_UP,
-        .holdEffectParam = 4,
+        .holdEffectParam = 3,
         .description = COMPOUND_STRING(
             "A hold item that\n"
             "raises Attack in\n"
@@ -10189,7 +10189,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Ganlon Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_DEFENSE_UP,
-        .holdEffectParam = 4,
+        .holdEffectParam = 3,
         .description = COMPOUND_STRING(
             "A hold item that\n"
             "raises Defense in\n"
@@ -10208,7 +10208,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Salac Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_SPEED_UP,
-        .holdEffectParam = 4,
+        .holdEffectParam = 3,
         .description = COMPOUND_STRING(
             "A hold item that\n"
             "raises Speed in\n"
@@ -10227,7 +10227,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Petaya Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_SP_ATTACK_UP,
-        .holdEffectParam = 4,
+        .holdEffectParam = 3,
         .description = COMPOUND_STRING(
             "A hold item that\n"
             "raises Sp. Atk in\n"
@@ -10246,7 +10246,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Apicot Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_SP_DEFENSE_UP,
-        .holdEffectParam = 4,
+        .holdEffectParam = 3,
         .description = COMPOUND_STRING(
             "A hold item that\n"
             "raises Sp. Def in\n"
@@ -10265,7 +10265,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Lansat Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CRITICAL_UP,
-        .holdEffectParam = 4,
+        .holdEffectParam = 3,
         .description = COMPOUND_STRING(
             "A hold item that\n"
             "ups the critical-\n"
@@ -10321,7 +10321,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Micle Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_MICLE_BERRY,
-        .holdEffectParam = 4,
+        .holdEffectParam = 3,
         .description = COMPOUND_STRING(
             "When held, it ups\n"
             "the Accuracy of a\n"
@@ -10340,7 +10340,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Custap Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CUSTAP_BERRY,
-        .holdEffectParam = 4,
+        .holdEffectParam = 3,
         .description = COMPOUND_STRING(
             "It allows a Pokémon\n"
             "in a pinch to move\n"

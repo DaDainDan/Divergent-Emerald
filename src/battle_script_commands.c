@@ -1691,10 +1691,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
 
     if (gBattleStruct->battlerState[battlerAtk].usedMicleBerry)
     {
-        if (atkAbility == ABILITY_CHEEK_POUCH)
-            calc = (calc * 140) / 100;  // ripen gives 40% acc boost
-        else
-            calc = (calc * 120) / 100;  // 20% acc boost
+        calc = 0;
     }
 
     if (gFieldStatuses & STATUS_FIELD_GRAVITY)
