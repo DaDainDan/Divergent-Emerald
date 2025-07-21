@@ -8446,6 +8446,8 @@ u8 GetAttackerObedienceForAction()
         return OBEYS;
     if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
         return OBEYS;
+    if (gSpeciesInfo[gBattleMons[gBattlerAttacker].species].isLegendary && !FlagGet(FLAG_IS_CHAMPION))
+        return DISOBEYS_LOAFS;
     if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
         return OBEYS;
 
