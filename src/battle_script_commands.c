@@ -3650,6 +3650,139 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     gBattlescriptCurrInstr = BattleScript_StatDown;
                 }
                 break;
+            case MOVE_EFFECT_ATK_PLUS_3:
+            case MOVE_EFFECT_DEF_PLUS_3:
+            case MOVE_EFFECT_SPD_PLUS_3:
+            case MOVE_EFFECT_SP_ATK_PLUS_3:
+            case MOVE_EFFECT_SP_DEF_PLUS_3:
+            case MOVE_EFFECT_ACC_PLUS_3:
+            case MOVE_EFFECT_EVS_PLUS_3:
+                if (NoAliveMonsForEitherParty()
+                  || ChangeStatBuffs(SET_STAT_BUFF_VALUE(3),
+                                    gBattleScripting.moveEffect - MOVE_EFFECT_ATK_PLUS_3 + 1,
+                                    affectsUser | STAT_CHANGE_UPDATE_MOVE_EFFECT, 0) == STAT_CHANGE_DIDNT_WORK)
+                {
+                    gBattlescriptCurrInstr++;
+                }
+                else
+                {
+                    gBattleScripting.animArg1 = (gBattleScripting.moveEffect - 90) & ~(MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN);
+                    gBattleScripting.animArg2 = 0;
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    gBattlescriptCurrInstr = BattleScript_StatUp;
+                }
+                break;
+            case MOVE_EFFECT_ATK_MINUS_3:
+            case MOVE_EFFECT_DEF_MINUS_3:
+            case MOVE_EFFECT_SPD_MINUS_3:
+            case MOVE_EFFECT_SP_ATK_MINUS_3:
+            case MOVE_EFFECT_SP_DEF_MINUS_3:
+            case MOVE_EFFECT_ACC_MINUS_3:
+            case MOVE_EFFECT_EVS_MINUS_3:
+                if (affectsUser == MOVE_EFFECT_AFFECTS_USER)
+                    flags = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN;
+                else
+                    flags = 0;
+                if (mirrorArmorReflected && !affectsUser)
+                    flags |= STAT_CHANGE_ALLOW_PTR;
+                else
+                    flags |= STAT_CHANGE_UPDATE_MOVE_EFFECT;
+                
+                if (ChangeStatBuffs(SET_STAT_BUFF_VALUE(3) | STAT_BUFF_NEGATIVE,
+                                    gBattleScripting.moveEffect - MOVE_EFFECT_ATK_MINUS_3 + 1,
+                                    flags, gBattlescriptCurrInstr + 1) == STAT_CHANGE_DIDNT_WORK)
+                {
+                    if (!mirrorArmorReflected)
+                        gBattlescriptCurrInstr++;
+                }
+                else
+                {
+                    gBattleScripting.animArg1 = (gBattleScripting.moveEffect - 90)  & ~(MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN);
+                    gBattleScripting.animArg2 = 0;
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    gBattlescriptCurrInstr = BattleScript_StatDown;
+                }
+                break;
+            case MOVE_EFFECT_RANDOM_STAT_PLUS_1:
+                u32 bits = 0;
+                for (i = STAT_ATK; i < NUM_STATS; i++)
+                {
+                    if (CompareStat(gBattlerAttacker, i, MAX_STAT_STAGE, CMP_LESS_THAN))
+                        bits |= 1u << i;
+                }
+                if (bits)
+                {
+                    u32 statId;
+                    do
+                    {
+                        statId = (Random() % (NUM_STATS - 1)) + 1;
+                    } while (!(bits & (1u << statId)));
+
+                    if (NoAliveMonsForEitherParty() 
+                    || ChangeStatBuffs(SET_STAT_BUFF_VALUE(1),
+                                        statId,
+                                        affectsUser | STAT_CHANGE_UPDATE_MOVE_EFFECT, 0) == STAT_CHANGE_DIDNT_WORK)
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
+                    else
+                    {
+                        gBattleScripting.animArg1 = (statId + 14) & ~(MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN);
+                        gBattleScripting.animArg2 = 0;
+                        BattleScriptPush(gBattlescriptCurrInstr + 1);
+                        gBattlescriptCurrInstr = BattleScript_StatUp;
+                    }
+                    
+                }
+                else
+                {
+                    gBattlescriptCurrInstr++;
+                }
+                break;
+            case MOVE_EFFECT_RANDOM_STAT_MINUS_1:
+                u32 bits2 = 0;
+                for (i = STAT_ATK; i < NUM_STATS; i++)
+                {
+                    if (CompareStat(gBattlerTarget, i, MIN_STAT_STAGE, CMP_GREATER_THAN))
+                        bits2 |= 1u << i;
+                }
+                if (bits2)
+                {
+                    u32 statId2;
+                    do
+                    {
+                        statId2 = (Random() % (NUM_STATS - 1)) + 1;
+                    } while (!(bits2 & (1u << statId2)));
+
+                    if (affectsUser == MOVE_EFFECT_AFFECTS_USER)
+                        flags = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN;
+                    else
+                        flags = 0;
+                    if (mirrorArmorReflected && !affectsUser)
+                        flags |= STAT_CHANGE_ALLOW_PTR;
+                    else
+                        flags |= STAT_CHANGE_UPDATE_MOVE_EFFECT;
+
+                    if (ChangeStatBuffs(SET_STAT_BUFF_VALUE(1) | STAT_BUFF_NEGATIVE,
+                                        statId2,
+                                        flags, gBattlescriptCurrInstr + 1) == STAT_CHANGE_DIDNT_WORK)
+                    {
+                        if (!mirrorArmorReflected)
+                            gBattlescriptCurrInstr++;
+                    }
+                    else
+                    {
+                        gBattleScripting.animArg1 = (statId2 + 21)  & ~(MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN);
+                        gBattleScripting.animArg2 = 0;
+                        BattleScriptPush(gBattlescriptCurrInstr + 1);
+                        gBattlescriptCurrInstr = BattleScript_StatDown;
+                    }
+                }
+                else
+                {
+                   gBattlescriptCurrInstr++; 
+                }
+                break;
             case MOVE_EFFECT_RECHARGE:
                 if (B_SKIP_RECHARGE == GEN_1 && !IsBattlerAlive(gBattlerTarget))  // Skip recharge if gen 1 and foe is KO'd
                     break;
@@ -3707,6 +3840,10 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_AllStatsUp;
                 }
+                break;
+            case MOVE_EFFECT_ESCAPE_BIND:
+                BattleScriptPush(gBattlescriptCurrInstr + 1);
+                gBattlescriptCurrInstr = BattleScript_RapidSpinAway;
                 break;
             case MOVE_EFFECT_ATK_DEF_DOWN: // SuperPower
                 if (!NoAliveMonsForEitherParty() && battlerAbility != ABILITY_NULL && battlerAbility != ABILITY_STAMINA)
@@ -12276,6 +12413,8 @@ static u16 ReverseStatChangeMoveEffect(u16 moveEffect)
         return MOVE_EFFECT_ACC_MINUS_1;
     case MOVE_EFFECT_EVS_PLUS_1:
         return MOVE_EFFECT_EVS_MINUS_1;
+    case MOVE_EFFECT_RANDOM_STAT_PLUS_1:
+        return MOVE_EFFECT_RANDOM_STAT_MINUS_1;
     // -1
     case MOVE_EFFECT_ATK_MINUS_1:
         return MOVE_EFFECT_ATK_PLUS_1;
@@ -12290,6 +12429,9 @@ static u16 ReverseStatChangeMoveEffect(u16 moveEffect)
     case MOVE_EFFECT_ACC_MINUS_1:
         return MOVE_EFFECT_ACC_PLUS_1;
     case MOVE_EFFECT_EVS_MINUS_1:
+        return MOVE_EFFECT_EVS_PLUS_1;
+    case MOVE_EFFECT_RANDOM_STAT_MINUS_1:
+        return MOVE_EFFECT_RANDOM_STAT_PLUS_1;
     // +2
     case MOVE_EFFECT_ATK_PLUS_2:
         return MOVE_EFFECT_ATK_MINUS_2;
@@ -12320,6 +12462,36 @@ static u16 ReverseStatChangeMoveEffect(u16 moveEffect)
         return MOVE_EFFECT_ACC_PLUS_2;
     case MOVE_EFFECT_EVS_MINUS_2:
         return MOVE_EFFECT_EVS_PLUS_2;
+    // +3
+    case MOVE_EFFECT_ATK_PLUS_3:
+        return MOVE_EFFECT_ATK_MINUS_3;
+    case MOVE_EFFECT_DEF_PLUS_3:
+        return MOVE_EFFECT_DEF_MINUS_3;
+    case MOVE_EFFECT_SPD_PLUS_3:
+        return MOVE_EFFECT_SPD_MINUS_3;
+    case MOVE_EFFECT_SP_ATK_PLUS_3:
+        return MOVE_EFFECT_SP_ATK_MINUS_3;
+    case MOVE_EFFECT_SP_DEF_PLUS_3:
+        return MOVE_EFFECT_SP_DEF_MINUS_3;
+    case MOVE_EFFECT_ACC_PLUS_3:
+        return MOVE_EFFECT_ACC_MINUS_3;
+    case MOVE_EFFECT_EVS_PLUS_3:
+        return MOVE_EFFECT_EVS_MINUS_3;
+    // -3
+    case MOVE_EFFECT_ATK_MINUS_3:
+        return MOVE_EFFECT_ATK_PLUS_3;
+    case MOVE_EFFECT_DEF_MINUS_3:
+        return MOVE_EFFECT_DEF_PLUS_3;
+    case MOVE_EFFECT_SPD_MINUS_3:
+        return MOVE_EFFECT_SPD_PLUS_3;
+    case MOVE_EFFECT_SP_ATK_MINUS_3:
+        return MOVE_EFFECT_SP_ATK_PLUS_3;
+    case MOVE_EFFECT_SP_DEF_MINUS_3:
+        return MOVE_EFFECT_SP_DEF_PLUS_3;
+    case MOVE_EFFECT_ACC_MINUS_3:
+        return MOVE_EFFECT_ACC_PLUS_3;
+    case MOVE_EFFECT_EVS_MINUS_3:
+        return MOVE_EFFECT_EVS_PLUS_3;
     default:
         return 0;
     }

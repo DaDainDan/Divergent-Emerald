@@ -910,34 +910,41 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
             {
                 case MOVE_EFFECT_ATK_PLUS_1:
                 case MOVE_EFFECT_ATK_PLUS_2:
+                case MOVE_EFFECT_ATK_PLUS_3:
                     if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ATK))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_DEF_PLUS_1:
                 case MOVE_EFFECT_DEF_PLUS_2:
+                case MOVE_EFFECT_DEF_PLUS_3:
                     if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_DEF))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_SPD_PLUS_1:
                 case MOVE_EFFECT_SPD_PLUS_2:
+                case MOVE_EFFECT_SPD_PLUS_3:
                     if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_SPEED))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_SP_ATK_PLUS_1:
                 case MOVE_EFFECT_SP_ATK_PLUS_2:
+                case MOVE_EFFECT_SP_ATK_PLUS_3:
                     if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_SPATK))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_EVS_PLUS_1:
                 case MOVE_EFFECT_EVS_PLUS_2:
+                case MOVE_EFFECT_EVS_PLUS_3:
                     if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_EVASION))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_ACC_PLUS_1:
                 case MOVE_EFFECT_ACC_PLUS_2:
+                case MOVE_EFFECT_ACC_PLUS_3:
                     if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ACC))
                         return TRUE;
                     break;
+                case MOVE_EFFECT_RANDOM_STAT_PLUS_1:
                 case MOVE_EFFECT_ALL_STATS_UP:
                     for (i = STAT_ATK; i <= NUM_STATS; i++)
                     {
@@ -986,6 +993,13 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
                     if (ShouldLowerStat(battlerAtk, battlerDef, abilityDef, STAT_ATK + (additionalEffect->moveEffect - MOVE_EFFECT_ATK_MINUS_1)) && noOfHitsToKo != 1)
                         return TRUE;
                     break;
+                case MOVE_EFFECT_RANDOM_STAT_MINUS_1:
+                    for (i = STAT_ATK; i <= NUM_STATS; i++)
+                    {
+                        if (ShouldLowerStat(battlerAtk, battlerDef, abilityDef, i) && noOfHitsToKo != 1)
+                            return TRUE;
+                    }
+                    break;
                 case MOVE_EFFECT_ATK_MINUS_2:
                 case MOVE_EFFECT_DEF_MINUS_2:
                 case MOVE_EFFECT_SPD_MINUS_2:
@@ -994,6 +1008,16 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
                 case MOVE_EFFECT_ACC_MINUS_2:
                 case MOVE_EFFECT_EVS_MINUS_2:
                     if (ShouldLowerStat(battlerAtk, battlerDef, abilityDef, STAT_ATK + (additionalEffect->moveEffect - MOVE_EFFECT_ATK_MINUS_2)) && noOfHitsToKo != 1)
+                        return TRUE;
+                    break;
+                case MOVE_EFFECT_ATK_MINUS_3:
+                case MOVE_EFFECT_DEF_MINUS_3:
+                case MOVE_EFFECT_SPD_MINUS_3:
+                case MOVE_EFFECT_SP_ATK_MINUS_3:
+                case MOVE_EFFECT_SP_DEF_MINUS_3:
+                case MOVE_EFFECT_ACC_MINUS_3:
+                case MOVE_EFFECT_EVS_MINUS_3:
+                    if (ShouldLowerStat(battlerDef, abilityDef, abilityDef, STAT_ATK + (additionalEffect->moveEffect - MOVE_EFFECT_ATK_MINUS_3)) && noOfHitsToKo != 1)
                         return TRUE;
                     break;
             }
@@ -1044,9 +1068,17 @@ static bool32 AI_IsMoveEffectInMinus(u32 battlerAtk, u32 battlerDef, u32 move, s
                 case MOVE_EFFECT_SP_DEF_MINUS_2:
                 case MOVE_EFFECT_EVS_MINUS_2:
                 case MOVE_EFFECT_ACC_MINUS_2:
+                case MOVE_EFFECT_ATK_MINUS_3:
+                case MOVE_EFFECT_DEF_MINUS_3:
+                case MOVE_EFFECT_SPD_MINUS_3:
+                case MOVE_EFFECT_SP_ATK_MINUS_3:
+                case MOVE_EFFECT_SP_DEF_MINUS_3:
+                case MOVE_EFFECT_EVS_MINUS_3:
+                case MOVE_EFFECT_ACC_MINUS_3:
                 case MOVE_EFFECT_V_CREATE:
                 case MOVE_EFFECT_ATK_DEF_DOWN:
                 case MOVE_EFFECT_DEF_SPDEF_DOWN:
+                case MOVE_EFFECT_RANDOM_STAT_MINUS_1:    
                     if ((additionalEffect->self && abilityAtk != ABILITY_CONTRARY)
                         || (noOfHitsToKo != 1 && abilityDef == ABILITY_CONTRARY && !DoesBattlerIgnoreAbilityChecks(battlerAtk, abilityAtk, move)))
                         return TRUE;
@@ -1067,7 +1099,15 @@ static bool32 AI_IsMoveEffectInMinus(u32 battlerAtk, u32 battlerDef, u32 move, s
                 case MOVE_EFFECT_SP_DEF_PLUS_2:
                 case MOVE_EFFECT_EVS_PLUS_2:
                 case MOVE_EFFECT_ACC_PLUS_2:
+                case MOVE_EFFECT_ATK_PLUS_3:
+                case MOVE_EFFECT_DEF_PLUS_3:
+                case MOVE_EFFECT_SPD_PLUS_3:
+                case MOVE_EFFECT_SP_ATK_PLUS_3:
+                case MOVE_EFFECT_SP_DEF_PLUS_3:
+                case MOVE_EFFECT_EVS_PLUS_3:
+                case MOVE_EFFECT_ACC_PLUS_3:
                 case MOVE_EFFECT_ALL_STATS_UP:
+                case MOVE_EFFECT_RANDOM_STAT_PLUS_1:    
                     if ((additionalEffect->self && abilityAtk == ABILITY_CONTRARY)
                         || (noOfHitsToKo != 1 && !(abilityDef == ABILITY_CONTRARY && !DoesBattlerIgnoreAbilityChecks(battlerAtk, abilityAtk, move))))
                         return TRUE;
@@ -2693,9 +2733,17 @@ bool32 IsSelfStatLoweringEffect(enum BattleMoveEffects effect)
     case MOVE_EFFECT_SP_DEF_MINUS_2:
     case MOVE_EFFECT_EVS_MINUS_2:
     case MOVE_EFFECT_ACC_MINUS_2:
+    case MOVE_EFFECT_ATK_MINUS_3:
+    case MOVE_EFFECT_DEF_MINUS_3:
+    case MOVE_EFFECT_SPD_MINUS_3:
+    case MOVE_EFFECT_SP_ATK_MINUS_3:
+    case MOVE_EFFECT_SP_DEF_MINUS_3:
+    case MOVE_EFFECT_EVS_MINUS_3:
+    case MOVE_EFFECT_ACC_MINUS_3:
     case MOVE_EFFECT_V_CREATE:
     case MOVE_EFFECT_ATK_DEF_DOWN:
     case MOVE_EFFECT_DEF_SPDEF_DOWN:
+    case MOVE_EFFECT_RANDOM_STAT_MINUS_1:
         return TRUE;
     default:
         return FALSE;
