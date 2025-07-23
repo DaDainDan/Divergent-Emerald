@@ -116,7 +116,7 @@ static const u8 sFeintDescription[] = _(
     "using moves like Protect.");
 
 static const u8 sProtectDescription[] = _(
-    "Evades attack, but may fail\n"
+    "Evades attack, but will fail\n"
     "if used in succession.");
 
 static const u8 sGMaxOneBlowDescription[] = _(
@@ -1402,17 +1402,18 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Sonic Boom"),
         .description = COMPOUND_STRING(
-            "Launches shock waves that\n"
-            "always inflict 20 HP damage."),
-        .effect = EFFECT_FIXED_DAMAGE_ARG,
+            "Inflicts damage identical\n"
+            "to half the user's level."),
+        .effect = EFFECT_LEVEL_DAMAGE, // EFFECT_FIXED_DAMAGE_ARG,
         .power = 1,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STEEL,
         .accuracy = 90,
-        .pp = 20,
+        .pp = 25,
         .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
+        .priority = 2,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .argument = { .fixedDamage = 20 },
+        // .argument = { .fixedDamage = 20 },
+        .soundMove = TRUE,
         .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -1936,13 +1937,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Seismic Toss"),
         .description = COMPOUND_STRING(
-            "Inflicts damage identical\n"
-            "to the user's level."),
+            "A powerful grab that deals\n"
+            "damaged based on level."),
         .effect = EFFECT_LEVEL_DAMAGE,
         .power = 1,
         .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 20,
+        .accuracy = 90,
+        .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -2760,12 +2761,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Night Shade"),
         .description = COMPOUND_STRING(
-            "Inflicts damage identical\n"
-            "to the user's level."),
+            "Inflicts damage equal to\n"
+            "1.25x the user's level."),
         .effect = EFFECT_LEVEL_DAMAGE,
         .power = 1,
         .type = TYPE_GHOST,
-        .accuracy = 100,
+        .accuracy = 0,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -3274,14 +3275,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Inflicts severe damage but\n"
             "makes the user faint."),
         .effect = EFFECT_EXPLOSION,
-        .power = 200,
+        .power = 150,
         .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
+        .accuracy = 0,
+        .pp = 1,
         .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
+        .priority = -1,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .parentalBondBanned = TRUE,
+        .alwaysCriticalHit = TRUE,
         .contestEffect = CONTEST_EFFECT_GREAT_APPEAL_BUT_NO_MORE_MOVES,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -4150,12 +4152,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_EXPLOSION,
         .power = 250,
         .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
+        .accuracy = 0,
+        .pp = 1,
         .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
+        .priority = -2,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .parentalBondBanned = TRUE,
+        .alwaysCriticalHit = TRUE,
         .contestEffect = CONTEST_EFFECT_GREAT_APPEAL_BUT_NO_MORE_MOVES,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -4870,11 +4873,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Spite"),
         .description = COMPOUND_STRING(
             "Spitefully cuts the PP\n"
-        #if B_PP_REDUCED_BY_SPITE >= GEN_4
-            "of the foe's last move by 4."),
-        #else
-            "of foe's last move by 2-5."),
-        #endif
+            "last move in half."),
+        // #if B_PP_REDUCED_BY_SPITE >= GEN_4
+        //     "of the foe's last move by 4."),
+        // #else
+        //     "of foe's last move by 2-5."),
+        // #endif
         .effect = EFFECT_SPITE,
         .power = 0,
         .type = TYPE_GHOST,
@@ -5963,14 +5967,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Magnitude"),
         .description = COMPOUND_STRING(
             "A ground-shaking attack\n"
-            "of random intensity."),
+            "based on the user's size."),
         .effect = EFFECT_MAGNITUDE,
         .power = 1,
         .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 30,
+        .accuracy = 0,
+        .pp = 10,
         .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
+        .priority = -1,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .damagesUnderground = TRUE,
         .skyBattleBanned = TRUE,
@@ -6091,12 +6095,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Encore"),
         .description = COMPOUND_STRING(
             "Makes the foe repeat its\n"
-            "last move over 3 turns."),
+            "last move over 2 turns."),
         .effect = EFFECT_ENCORE,
         .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
+        .type = TYPE_FAIRY,
+        .accuracy = 0,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -8038,13 +8042,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Mud Sport"),
         .description = COMPOUND_STRING(
-            "Covers the user in mud to\n"
-            "weaken all Electric moves."),
+            "Covers field in mud to help\n"
+            "with fire and electricity."),
         // in theory this should mention 5 turns (gen 6+)
         .effect = EFFECT_MUD_SPORT,
         .power = 0,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
+        .type = TYPE_MUD,
+        .accuracy = 0,
         .pp = 15,
         .target = MOVE_TARGET_ALL_BATTLERS,
         .priority = 0,
@@ -9778,8 +9782,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Acupressure"),
         .description = COMPOUND_STRING(
-            "The user sharply raises\n"
-            "one of its stats."),
+            "The user drastically raises\n"
+            "a random stat of an ally."),
         .effect = EFFECT_ACUPRESSURE,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -10096,11 +10100,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Lucky Chant"),
         .description = COMPOUND_STRING(
-            "Prevents the foe from\n"
-            "landing critical hits."),
+            "Boost the offensive and\n"
+            "defensive luck of allies."),
         .effect = EFFECT_LUCKY_CHANT,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_FAIRY,
         .accuracy = 0,
         .pp = 30,
         .target = MOVE_TARGET_USER,
@@ -13300,14 +13304,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Incinerate"),
         .description = COMPOUND_STRING(
-            "Burns up Berries and Gems\n"
+            "Burns up held items\n"
             "preventing their use."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 60 : 30,
+        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 65 : 30,
         .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_BOTH,
+        .accuracy = 95,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED, // BOTH
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .projectileMove = TRUE,
@@ -13348,11 +13352,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Acrobatics"),
         .description = COMPOUND_STRING(
-            "Does double damage if the\n"
+            "Has elevated priority if the\n"
             "user has no item."),
         .effect = EFFECT_ACROBATICS,
         .power = 55,
-        .type = TYPE_FLYING,
+        .type = TYPE_NORMAL, // TYPE_FLYING
         .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
@@ -19971,7 +19975,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_LAST_RESPECTS] =
     {
-        .name = COMPOUND_STRING("Last Respects"),
+        .name = COMPOUND_STRING("Grave Power"),
         .description = COMPOUND_STRING(
             "This move deals more damage\n"
             "for each defeated ally."),

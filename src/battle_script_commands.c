@@ -954,7 +954,8 @@ static const struct SpriteTemplate sSpriteTemplate_MonIconOnLvlUpBanner =
     .callback = SpriteCB_MonIconOnLvlUpBanner
 };
 
-static const u16 sProtectSuccessRates[] = {USHRT_MAX, USHRT_MAX / 2, USHRT_MAX / 4, USHRT_MAX / 8};
+static const u16 sProtectSuccessRates[] = {USHRT_MAX, USHRT_MAX / 16, USHRT_MAX / 256, USHRT_MAX / 4096};
+                                        // USHRT_MAX, USHRT_MAX / 2, USHRT_MAX / 4, USHRT_MAX / 8
 
 static const u16 sFinalStrikeOnlyEffects[] =
 {
@@ -1374,7 +1375,8 @@ static void Cmd_attackcanceler(void)
     }
 
     // Z-moves and Max Moves bypass protection, but deal reduced damage (factored in AccumulateOtherModifiers)
-    if ((IsZMove(gCurrentMove) || IsMaxMove(gCurrentMove) || (GetBattlerAbility(gBattlerAttacker) == ABILITY_INFILTRATOR && IsMoveMakingContact(gCurrentMove, gBattlerAttacker)))
+    if ((IsZMove(gCurrentMove) || IsMaxMove(gCurrentMove) || (GetBattlerAbility(gBattlerAttacker) == ABILITY_INFILTRATOR && MoveMakesContact(gCurrentMove))
+     || GetMoveEffect(gCurrentMove == EFFECT_EXPLOSION))
      && gProtectStructs[gBattlerTarget].protected != PROTECT_NONE
      && gProtectStructs[gBattlerTarget].protected != PROTECT_MAX_GUARD)
     {
@@ -1975,6 +1977,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
     {
         critChance  = 4 * ((gBattleMons[battlerAtk].status2 & STATUS2_FOCUS_ENERGY) != 0)
                     + 1 * ((gBattleMons[battlerAtk].status2 & STATUS2_DRAGON_CHEER) != 0)
+                    + 2 * ((gSideStatuses[battlerAtk] & SIDE_STATUS_LUCKY_CHANT) != 0)
                     + GetMoveCriticalHitStage(move)
                     + GetHoldEffectCritChanceIncrease(battlerAtk, holdEffectAtk)
                     + 2 * (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS)
@@ -3967,10 +3970,11 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 gBattlescriptCurrInstr++;
                 break;
             case MOVE_EFFECT_INCINERATE:
-                if ((gBattleMons[gEffectBattler].item >= FIRST_BERRY_INDEX && gBattleMons[gEffectBattler].item <= LAST_BERRY_INDEX)
-                 || (B_INCINERATE_GEMS >= GEN_6 && GetBattlerHoldEffect(gEffectBattler, FALSE) == HOLD_EFFECT_GEMS))
+                // if ((gBattleMons[gEffectBattler].item >= FIRST_BERRY_INDEX && gBattleMons[gEffectBattler].item <= LAST_BERRY_INDEX)
+                //  || (B_INCINERATE_GEMS >= GEN_6 && GetBattlerHoldEffect(gEffectBattler, FALSE) == HOLD_EFFECT_GEMS))
+                gLastUsedItem = gBattleMons[gEffectBattler].item;
+                if (gBattleMons[gEffectBattler].item != 0)
                 {
-                    gLastUsedItem = gBattleMons[gEffectBattler].item;
                     gBattleMons[gEffectBattler].item = 0;
                     CheckSetUnburden(gEffectBattler);
 
@@ -3978,6 +3982,10 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     MarkBattlerForControllerExec(gEffectBattler);
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_MoveEffectIncinerate;
+                }
+                else
+                {
+                    gBattlescriptCurrInstr++;
                 }
                 break;
             case MOVE_EFFECT_BUG_BITE:
@@ -10552,7 +10560,7 @@ static void Cmd_various(void)
                 statId = (Random() % (NUM_BATTLE_STATS - 1)) + 1;
             } while (!(bits & (1u << statId)));
 
-            SET_STATCHANGER(statId, 2, FALSE);
+            SET_STATCHANGER(statId, 3, FALSE);
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
         else
@@ -13828,9 +13836,9 @@ static void Cmd_trysetencore(void)
         gDisableStructs[gBattlerTarget].encoredMovePos = i;
         // Encore always lasts 3 turns, but we need to account for a scenario where Encore changes the move during the same turn.
         if (GetBattlerTurnOrderNum(gBattlerAttacker) > GetBattlerTurnOrderNum(gBattlerTarget))
-            gDisableStructs[gBattlerTarget].encoreTimer = 4;
-        else
             gDisableStructs[gBattlerTarget].encoreTimer = 3;
+        else
+            gDisableStructs[gBattlerTarget].encoreTimer = 2;
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
     else
@@ -13895,6 +13903,7 @@ static void Cmd_settypetorandomresistance(void)
                 switch (GetTypeModifier(hitByType, i))
                 {
                 case UQ_4_12(0):
+                case UQ_4_12(0.390625):
                 case UQ_4_12(0.625):
                     resistTypes |= 1u << i;
                     break;
@@ -13952,6 +13961,7 @@ static void Cmd_settypetorandomresistance(void)
                 switch (GetTypeModifier(gLastUsedMoveType[gBattlerTarget], i))
                 {
                 case UQ_4_12(0):
+                case UQ_4_12(0.390625):
                 case UQ_4_12(0.625):
                     resistTypes |= 1u << i;
                     break;
@@ -14188,10 +14198,10 @@ static void Cmd_tryspiteppreduce(void)
 
         if (i != MAX_MON_MOVES && gBattleMons[gBattlerTarget].pp[i] > (B_CAN_SPITE_FAIL >= GEN_4 ? 0 : 1))
         {
-            s32 ppToDeduct = B_PP_REDUCED_BY_SPITE >= GEN_4 ? 4 : (Random() & 3) + 2;
+            s32 ppToDeduct = (gBattleMons[gBattlerTarget].pp[i] + 1) / 2;  // B_PP_REDUCED_BY_SPITE >= GEN_4 ? 4 : (Random() & 3) + 2;
             // G-Max Depletion only deducts 2 PP.
             if (IsMaxMove(gCurrentMove) && MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_SPITE))
-                ppToDeduct = 2;
+                ppToDeduct /= 2;
 
             if (gBattleMons[gBattlerTarget].pp[i] < ppToDeduct)
                 ppToDeduct = gBattleMons[gBattlerTarget].pp[i];
@@ -14557,43 +14567,44 @@ static void Cmd_magnitudedamagecalculation(void)
 {
     CMD_ARGS();
 
-    u32 magnitude = Random() % 100;
+    u32 magnitude = gSpeciesInfo[gBattleMons[gBattlerAttacker].species].baseHP;
+    // u32 magnitude = Random() % 100;
 
-    if (magnitude < 5)
+    if (magnitude < 30)
     {
         gBattleStruct->magnitudeBasePower = 10;
         magnitude = 4;
     }
-    else if (magnitude < 15)
+    else if (magnitude < 60)
     {
-        gBattleStruct->magnitudeBasePower = 30;
+        gBattleStruct->magnitudeBasePower = 35;
         magnitude = 5;
-    }
-    else if (magnitude < 35)
-    {
-        gBattleStruct->magnitudeBasePower = 50;
-        magnitude = 6;
-    }
-    else if (magnitude < 65)
-    {
-        gBattleStruct->magnitudeBasePower = 70;
-        magnitude = 7;
     }
     else if (magnitude < 85)
     {
-        gBattleStruct->magnitudeBasePower = 90;
-        magnitude = 8;
+        gBattleStruct->magnitudeBasePower = 70;
+        magnitude = 6;
     }
-    else if (magnitude < 95)
+    else if (magnitude < 120)
     {
-        gBattleStruct->magnitudeBasePower = 110;
-        magnitude = 9;
+        gBattleStruct->magnitudeBasePower = 95;
+        magnitude = 7;
+    }
+    else if (magnitude < 150)
+    {
+        gBattleStruct->magnitudeBasePower = 120;
+        magnitude = 8;
     }
     else
     {
         gBattleStruct->magnitudeBasePower = 150;
-        magnitude = 10;
+        magnitude = 9;
     }
+    // else
+    // {
+    //     gBattleStruct->magnitudeBasePower = 150;
+    //     magnitude = 10;
+    // }
 
     PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 2, magnitude)
 

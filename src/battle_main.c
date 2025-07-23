@@ -4853,6 +4853,12 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
     {
         priority++;
     }
+    else if (GetMoveEffect(move) == EFFECT_ACROBATICS && (gBattleMons[battler].item == ITEM_NONE
+            // Edge case, because removal of items happens after damage calculation.
+            || (gSpecialStatuses[battler].gemBoost && GetBattlerHoldEffect(battler, FALSE) == HOLD_EFFECT_GEMS)))
+    {
+        priority++;
+    }
     else if (GetMoveEffect(move) == EFFECT_ROLLOUT && gBattleMons[battler].status2 & STATUS2_DEFENSE_CURL)
     {
         priority++;

@@ -8619,7 +8619,9 @@ bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
     {
         if (IsZMove(move) || IsMaxMove(move))
             return FALSE; // Z-Moves and Max Moves bypass protection (except Max Guard).
-        if (IsMoveMakingContact(move, battlerAtk) && (GetBattlerAbility(battlerAtk) == ABILITY_UNSEEN_FIST || GetBattlerAbility(battlerAtk) == ABILITY_INFILTRATOR))
+        if (MoveMakesContact(move) && (GetBattlerAbility(battlerAtk) == ABILITY_UNSEEN_FIST || GetBattlerAbility(battlerAtk) == ABILITY_INFILTRATOR))
+            return FALSE;
+        if (GetMoveEffect(move) == EFFECT_EXPLOSION)
             return FALSE;
     }
 
@@ -9067,12 +9069,12 @@ static inline u32 CalcMoveBasePower(struct DamageCalculationData *damageCalcData
                 basePower = sTrumpCardPowerTable[gBattleMons[battlerAtk].pp[i]];
         }
         break;
-    case EFFECT_ACROBATICS:
-        if (gBattleMons[battlerAtk].item == ITEM_NONE
-            // Edge case, because removal of items happens after damage calculation.
-            || (gSpecialStatuses[battlerAtk].gemBoost && GetBattlerHoldEffect(battlerAtk, FALSE) == HOLD_EFFECT_GEMS))
-            basePower *= 2;
-        break;
+    // case EFFECT_ACROBATICS:
+    //     if (gBattleMons[battlerAtk].item == ITEM_NONE
+    //         // Edge case, because removal of items happens after damage calculation.
+    //         || (gSpecialStatuses[battlerAtk].gemBoost && GetBattlerHoldEffect(battlerAtk, FALSE) == HOLD_EFFECT_GEMS))
+    //         basePower *= 2;
+    //     break;
     case EFFECT_LOW_KICK:
         weight = GetBattlerWeight(battlerDef);
         for (i = 0; sWeightToDamageTable[i] != 0xFFFF; i += 2)
@@ -9211,7 +9213,7 @@ static inline u32 CalcMoveBasePower(struct DamageCalculationData *damageCalcData
             basePower = 100;
         break;
     case EFFECT_LAST_RESPECTS:
-        basePower += (basePower * min(100, GetBattlerSideFaintCounter(battlerAtk)));
+        basePower += (20 * min(100, GetBattlerSideFaintCounter(battlerAtk)));
         break;
     default:
         break;
@@ -9303,7 +9305,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_PSYCHIC_TERRAIN) && moveType == TYPE_PSYCHIC)
         modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
 
-    if (moveType == TYPE_ELECTRIC && ((gFieldStatuses & STATUS_FIELD_MUDSPORT)
+    if ((moveType == TYPE_ELECTRIC || moveType == TYPE_FIRE) && ((gFieldStatuses & STATUS_FIELD_MUDSPORT)
     || AbilityBattleEffects(ABILITYEFFECT_FIELD_SPORT, 0, 0, ABILITYEFFECT_MUD_SPORT, 0)))
         modifier = uq4_12_multiply(modifier, UQ_4_12(B_SPORT_DMG_REDUCTION >= GEN_5 ? 0.33 : 0.5));
     if (moveType == TYPE_FIRE && ((gFieldStatuses & STATUS_FIELD_WATERSPORT)
@@ -10318,7 +10320,7 @@ static inline uq4_12_t GetZMaxMoveAgainstProtectionModifier(struct DamageCalcula
         else
             return UQ_4_12(1.0);
     }
-    else if (GetBattlerAbility(damageCalcData->battlerAtk) == ABILITY_INFILTRATOR)
+    else if (GetBattlerAbility(damageCalcData->battlerAtk) == ABILITY_INFILTRATOR || GetMoveEffect(damageCalcData->move) == EFFECT_EXPLOSION)
     {
         if (protected == PROTECT_NONE
         || (protected == PROTECT_WIDE_GUARD && !IsSpreadMove(GetBattlerMoveTargetType(damageCalcData->battlerAtk, damageCalcData->move)))
@@ -10639,13 +10641,17 @@ static inline s32 DoFixedDamageMoveCalc(struct DamageCalculationData *damageCalc
         if (damageCalcData->move == MOVE_SEISMIC_TOSS) 
         {
             if (GetBattlerAbility(damageCalcData->battlerAtk) == ABILITY_GRAPPLER)
-                dmg = 50 * gBattleMons[damageCalcData->battlerAtk].level / 20;
+                dmg = 70 * gBattleMons[damageCalcData->battlerAtk].level / 40;
             else
-                dmg = 2 * gBattleMons[damageCalcData->battlerAtk].level;
+                dmg = 30 * gBattleMons[damageCalcData->battlerAtk].level / 20;
         }
         else if (damageCalcData->move == MOVE_NIGHT_SHADE)
         {
-            dmg =  30 * gBattleMons[damageCalcData->battlerAtk].level / 20;
+            dmg =  50 * gBattleMons[damageCalcData->battlerAtk].level / 40;
+        }
+        else if (damageCalcData->move == MOVE_SONIC_BOOM)
+        {
+            dmg =  gBattleMons[damageCalcData->battlerAtk].level / 2;
         }
         else
             dmg = gBattleMons[damageCalcData->battlerAtk].level;
