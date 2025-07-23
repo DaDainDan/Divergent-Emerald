@@ -7233,7 +7233,8 @@ BattleScript_PrintUproarOverTurns::
 
 BattleScript_ThrashConfuses::
 	chosenstatus2animation BS_ATTACKER, STATUS2_CONFUSION
-	printstring STRINGID_PKMNFATIGUECONFUSION
+BattleScript_ThrashMessage::
+	printstring STRINGID_PKMNRAMPAGES
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
@@ -10133,6 +10134,11 @@ BattleScript_TormentSideEnd:
 
 BattleScript_TormentEnds::
 	printstring STRINGID_TORMENTEDNOMORE
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+BattleScript_TauntEnds::
+	printstring STRINGID_PKMNCALMEDDOWN
 	waitmessage B_WAIT_TIME_LONG
 	end2
 

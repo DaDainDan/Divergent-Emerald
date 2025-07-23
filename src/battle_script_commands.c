@@ -298,7 +298,8 @@ static const u16 sTrappingMoves[NUM_TRAPPING_MOVES] =
     MOVE_MAGMA_STORM,
     MOVE_INFESTATION,
     MOVE_SNAP_TRAP,
-    MOVE_THUNDER_CAGE
+    MOVE_THUNDER_CAGE,
+    MOVE_ATTACK_ORDER
 };
 
 static const u16 sWhiteOutBadgeMoney[10] = { 2, 10, 25, 50, 75, 100, 150, 250, 400, 500 };
@@ -893,7 +894,7 @@ static const u32 sStatusFlagsForMoveEffects[NUM_MOVE_EFFECTS] =
     [MOVE_EFFECT_RECHARGE]       = STATUS2_RECHARGE,
     [MOVE_EFFECT_PREVENT_ESCAPE] = STATUS2_ESCAPE_PREVENTION,
     [MOVE_EFFECT_NIGHTMARE]      = STATUS2_NIGHTMARE,
-    [MOVE_EFFECT_THRASH]         = STATUS2_LOCK_CONFUSE,
+    // [MOVE_EFFECT_THRASH]         = STATUS2_LOCK_CONFUSE,
 };
 
 static const u8 *const sMoveEffectBS_Ptrs[] =
@@ -3529,7 +3530,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     if (GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_GRIP_CLAW)
                         gDisableStructs[gEffectBattler].wrapTurns = B_BINDING_TURNS >= GEN_5 ? 7 : 5;
                     else
-                        gDisableStructs[gEffectBattler].wrapTurns = B_BINDING_TURNS >= GEN_5 ? (Random() % 2) + 4 : (Random() % 4) + 2;
+                        gDisableStructs[gEffectBattler].wrapTurns = (Random() % 2) + 3; // B_BINDING_TURNS >= GEN_5 ? (Random() % 2) + 4 : (Random() % 4) + 2;
 
                     gBattleStruct->wrappedMove[gEffectBattler] = gCurrentMove;
                     gBattleStruct->wrappedBy[gEffectBattler] = gBattlerAttacker;
@@ -3877,9 +3878,25 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 }
                 else
                 {
-                    gBattleMons[gEffectBattler].status2 |= STATUS2_MULTIPLETURNS;
-                    gLockedMoves[gEffectBattler] = gCurrentMove;
-                    gBattleMons[gEffectBattler].status2 |= STATUS2_LOCK_CONFUSE_TURN(RandomUniform(RNG_RAMPAGE_TURNS, 2, 3));
+                    // gBattleMons[gEffectBattler].status2 |= STATUS2_MULTIPLETURNS;
+                    // gLockedMoves[gEffectBattler] = gCurrentMove;
+                    // gBattleMons[gEffectBattler].status2 |= STATUS2_LOCK_CONFUSE_TURN(RandomUniform(RNG_RAMPAGE_TURNS, 2, 3));
+                    bool8 isTaunted = FALSE;
+                    bool8 isConfused = FALSE;
+                    if (gBattleMons[gEffectBattler].status2 & STATUS2_CONFUSION)
+                        isConfused = TRUE;
+                    if (gDisableStructs[gEffectBattler].tauntTimer != 0)
+                        isTaunted = TRUE;
+                    
+                    gDisableStructs[gEffectBattler].tauntTimer = 4;
+                    gBattleMons[gEffectBattler].status2 |= STATUS2_CONFUSION_TURN(3);
+                    
+                    if (isTaunted && isConfused)
+                        gBattlescriptCurrInstr++;
+                    else if (isConfused)
+                        gBattlescriptCurrInstr = BattleScript_ThrashMessage;
+                    else
+                        gBattlescriptCurrInstr = BattleScript_ThrashConfuses;
                 }
                 break;
             case MOVE_EFFECT_CLEAR_SMOG:
@@ -4518,7 +4535,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                         if (GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_GRIP_CLAW)
                             gDisableStructs[battler].wrapTurns = (B_BINDING_TURNS >= GEN_5) ? 7 : 5;
                         else
-                            gDisableStructs[battler].wrapTurns = (Random() % 2) + 4;
+                            gDisableStructs[battler].wrapTurns = (Random() % 2) + 3;
                         // The Wrap effect does not expire when the user switches, so here's some cheese.
                         gBattleStruct->wrappedBy[battler] = gBattlerTarget;
                         if (gBattleScripting.moveEffect == MOVE_EFFECT_SANDBLAST_SIDE)

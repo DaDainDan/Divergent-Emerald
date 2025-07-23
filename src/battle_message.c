@@ -336,7 +336,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNCANTUSEMOVETORMENT]               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} can't use the same move twice in a row due to the torment!\p"),
     [STRINGID_PKMNTIGHTENINGFOCUS]                  = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is tightening its focus!"),
     [STRINGID_PKMNFELLFORTAUNT]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} fell for {B_ATK_NAME_WITH_PREFIX}'s taunt!"),
-    [STRINGID_PKMNCANTUSEMOVETAUNT]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} can't use {B_CURRENT_MOVE} after the taunt!\p"),
+    [STRINGID_PKMNCANTUSEMOVETAUNT]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is too angry to use {B_CURRENT_MOVE}!\p"),
     [STRINGID_PKMNREADYTOHELP]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is ready to help {B_DEF_NAME_WITH_PREFIX2}!"),
     [STRINGID_PKMNSWITCHEDITEMS]                    = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} switched items with its target!"),
     [STRINGID_PKMNCOPIEDFOE]                        = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} copied {B_DEF_NAME_WITH_PREFIX2}'s Ability!"),
@@ -926,6 +926,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNSTATSCANTCHANGE]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s stats cannot be changed!"), //not in gen 5+, ability popup
     [STRINGID_USERSTATCHANGESGONE]                  = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s stat changes were reset!"),
     [STRINGID_PKMNHEALCLEARSTATS]                   = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s HP was restored and their stat changes were reset!"),
+    [STRINGID_PKMNTRAPPEDINSWARM]                   = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is trapped in {B_ATK_NAME_WITH_PREFIX2}'s swarm!"),
+    [STRINGID_PKMNRAMPAGES]                         = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is overcome with a violent rage!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -947,7 +949,7 @@ const u16 gZEffectStringIds[] =
 const u16 gMentalHerbCureStringIds[] =
 {
     [B_MSG_MENTALHERBCURE_INFATUATION] = STRINGID_ATKGOTOVERINFATUATION,
-    [B_MSG_MENTALHERBCURE_TAUNT]       = STRINGID_BUFFERENDS,
+    [B_MSG_MENTALHERBCURE_TAUNT]       = STRINGID_PKMNCALMEDDOWN,
     [B_MSG_MENTALHERBCURE_ENCORE]      = STRINGID_PKMNENCOREENDED,
     [B_MSG_MENTALHERBCURE_TORMENT]     = STRINGID_TORMENTEDNOMORE,
     [B_MSG_MENTALHERBCURE_HEALBLOCK]   = STRINGID_HEALBLOCKEDNOMORE,
@@ -1198,6 +1200,7 @@ const u16 gWrappedStringIds[NUM_TRAPPING_MOVES] =
     [B_MSG_WRAPPED_INFESTATION] = STRINGID_INFESTATION,            // MOVE_INFESTATION
     [B_MSG_WRAPPED_SNAP_TRAP]   = STRINGID_PKMNINSNAPTRAP,         // MOVE_SNAP_TRAP
     [B_MSG_WRAPPED_THUNDER_CAGE]= STRINGID_THUNDERCAGETRAPPED,     // MOVE_THUNDER_CAGE
+    [B_MSG_WRAPPED_ATTACK_ORDER]= STRINGID_PKMNTRAPPEDINSWARM,     // MOVE_ATTACK_ORDER
 };
 
 const u16 gMistUsedStringIds[] =

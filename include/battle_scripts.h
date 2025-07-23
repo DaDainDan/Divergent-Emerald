@@ -891,5 +891,7 @@ extern const u8 BattleScript_MoonPresence[];
 extern const u8 BattleScript_NullilyStatChange[];
 extern const u8 BattleScript_EffectFloralHealing[];
 extern const u8 BattleScript_EffectRecover[];
+extern const u8 BattleScript_ThrashMessage[];
+extern const u8 BattleScript_TauntEnds[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

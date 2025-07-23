@@ -927,8 +927,8 @@ static bool32 HandleEndTurnTaunt(u32 battler)
 
     if (gDisableStructs[battler].tauntTimer && --gDisableStructs[battler].tauntTimer == 0)
     {
-        BattleScriptExecute(BattleScript_BufferEndTurn);
-        PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_TAUNT);
+        BattleScriptExecute(BattleScript_TauntEnds); // BattleScript_BufferEndTurn
+        // PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_TAUNT);
         effect = TRUE;
     }
 
