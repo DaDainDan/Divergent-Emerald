@@ -5167,6 +5167,14 @@ BattleScript_EffectStruggle::
 	incrementgamestat GAME_STAT_USED_STRUGGLE
 	goto BattleScript_EffectHit
 
+BattleScript_EffectOverheat::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPATK, MIN_STAT_STAGE, BattleScript_ButItFailed
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	goto BattleScript_HitFromCritCalc
+
 BattleScript_EffectMudSport::
 BattleScript_EffectWaterSport::
 	attackcanceler

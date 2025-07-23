@@ -539,6 +539,10 @@ bool32 IsDamageMoveUnusable(u32 battlerAtk, u32 battlerDef, u32 move, u32 moveTy
         if (!CanUseLastResort(battlerAtk))
             return TRUE;
         break;
+    case EFFECT_OVERHEAT:
+        if (gBattleMons[battlerAtk].statStages[STAT_SPATK] == (MIN_STAT_STAGE))
+            return TRUE;
+        break;
     case EFFECT_LOW_KICK:
     case EFFECT_HEAT_CRASH:
         if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
@@ -1041,6 +1045,11 @@ static bool32 AI_IsMoveEffectInMinus(u32 battlerAtk, u32 battlerDef, u32 move, s
     case EFFECT_EXPLOSION:
     case EFFECT_FINAL_GAMBIT:
         return TRUE;
+    case EFFECT_OVERHEAT:
+        if (gBattleMons[battlerAtk].statStages[STAT_SPATK] < (DEFAULT_STAT_STAGE))
+            return TRUE;
+        break;
+    case EFFECT_HEAT_CRASH:
     case EFFECT_RECOIL:
     case EFFECT_RECOIL_IF_MISS:
         if (AI_IsDamagedByRecoil(battlerAtk, move))

@@ -43,6 +43,10 @@ static const u8 sRevengeDescription[] = _(
     "An attack that moves last\n"
     "and gains power if hit.");
 
+static const u8 sFlailDescription[] = _(
+    "Inflicts more damage when\n"
+    "the user's HP is low.");
+
 static const u8 sPluckDescription[] = _(
     "Eats the foe's held Berry\n"
     "gaining its effect.");
@@ -2271,14 +2275,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_DRAGON_RAGE] =
     {
         .name = COMPOUND_STRING("Dragon Rage"),
-        .description = COMPOUND_STRING(
-            "Launches shock waves that\n"
-            "always inflict 40 HP damage."),
-        .effect = EFFECT_FIXED_DAMAGE_ARG,
-        .power = 1,
+        .description = sFlailDescription,
+        .effect = EFFECT_FLAIL, //EFFECT_FIXED_DAMAGE_ARG
+        .power = 70,
         .type = TYPE_DRAGON,
         .accuracy = 100,
-        .pp = 10,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -4740,18 +4742,20 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_FLAIL] =
     {
         .name = COMPOUND_STRING("Flail"),
-        .description = COMPOUND_STRING(
-            "Inflicts more damage when\n"
-            "the user's HP is down."),
+        .description = sFlailDescription,
         .effect = EFFECT_FLAIL,
-        .power = 1,
+        .power = 20,
         .type = TYPE_NORMAL,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
+        .priority = 1,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ESCAPE_BIND,
+            .self = TRUE,
+        }),
         .contestEffect = CONTEST_EFFECT_BETTER_WHEN_LATER,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,
@@ -4843,16 +4847,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_REVERSAL] =
     {
         .name = COMPOUND_STRING("Reversal"),
-        .description = COMPOUND_STRING(
-            "Inflicts more damage when\n"
-            "the user's HP is down."),
+        .description = sFlailDescription,
         .effect = EFFECT_FLAIL,
-        .power = 1,
+        .power = 70,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
+        .priority = -1,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
@@ -7497,14 +7499,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_REVENGE] =
     {
         .name = COMPOUND_STRING("Revenge"),
-        .description = sRevengeDescription,
-        .effect = EFFECT_REVENGE,
-        .power = 60,
-        .type = TYPE_FIGHTING,
+        .description = sFlailDescription,
+        .effect = EFFECT_FLAIL, //EFFECT_REVENGE
+        .power = 70,
+        .type = TYPE_DARK,
         .accuracy = 100,
-        .pp = 10,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
-        .priority = -4,
+        .priority = -1,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .clawMove = TRUE,
@@ -7616,16 +7618,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_ERUPTION] =
     {
         .name = COMPOUND_STRING("Eruption"),
-        .description = COMPOUND_STRING(
-            "The higher the user's HP,\n"
-            "the more damage caused."),
-        .effect = EFFECT_POWER_BASED_ON_USER_HP,
-        .power = 150,
+        .description = sFlailDescription,
+        .effect = EFFECT_FLAIL, // EFFECT_POWER_BASED_ON_USER_HP
+        .power = 100,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 5,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = -1,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .projectileMove = TRUE,
         .contestEffect = CONTEST_EFFECT_BETTER_WHEN_LATER,
@@ -8440,10 +8440,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Allows a full-power attack,\n"
             "but sharply lowers Sp. Atk."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_OVERHEAT,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 130 : 140,
         .type = TYPE_FIRE,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -8650,9 +8650,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Inflicts more damage if the\n"
             "user's HP is high."),
         .effect = EFFECT_POWER_BASED_ON_USER_HP,
-        .power = 150,
+        .power = 130,
         .type = TYPE_WATER,
-        .accuracy = 100,
+        .accuracy = 0,
         .pp = 5,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
@@ -11041,16 +11041,16 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_AVALANCHE] =
     {
         .name = COMPOUND_STRING("Avalanche"),
-        .description = sRevengeDescription,
-        .effect = EFFECT_REVENGE,
-        .power = 60,
+        .description = sFlailDescription,
+        .effect = EFFECT_FLAIL, //EFFECT_REVENGE
+        .power = 70,
         .type = TYPE_ICE,
         .accuracy = 100,
         .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -4,
+        .target = MOVE_TARGET_BOTH,
+        .priority = -1,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
+        // .makesContact = TRUE,
         .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_LATER,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -13577,20 +13577,20 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Struggle Bug"),
         .description = COMPOUND_STRING(
             "Resisting, the user attacks\n"
-            "the foes. Lowers Sp. Atk."),
-        .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 50 : 30,
+            "foes."),
+        .effect = EFFECT_FLAIL,
+        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 65 : 30,
         .type = TYPE_BUG,
         .accuracy = 100,
-        .pp = 20,
+        .pp = 15,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .projectileMove = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
-            .chance = 100,
-        }),
+        // .additionalEffects = ADDITIONAL_EFFECTS({
+        //     .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
+        //     .chance = 100,
+        // }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -15930,13 +15930,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Gathers the energy of the\n"
             "land to attack every foe."),
-        .effect = EFFECT_HIT,
-        .power = 90,
+        .effect = EFFECT_FLAIL,
+        .power = 70,
         .type = TYPE_GROUND,
-        .accuracy = 100,
+        .accuracy = 0,
         .pp = 10,
         .target = MOVE_TARGET_BOTH,
-        .priority = 0,
+        .priority = -1,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .skyBattleBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
@@ -18913,18 +18913,16 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_LASH_OUT] =
     {
         .name = COMPOUND_STRING("Lash Out"),
-        .description = COMPOUND_STRING(
-            "If stats lowered during this\n"
-            "turn, power is doubled."),
-        .effect = EFFECT_LASH_OUT,
-        .power = 75,
+        .description = sFlailDescription,
+        .effect = EFFECT_FLAIL, //EFFECT_LASH_OUT
+        .power = 70,
         .type = TYPE_DARK,
         .accuracy = 100,
-        .pp = 5,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        // .makesContact = TRUE,
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,

@@ -8946,7 +8946,8 @@ static inline u32 CalcMoveBasePower(struct DamageCalculationData *damageCalcData
 
     u32 i;
     u32 basePower = GetMovePower(move);
-    u32 weight, hpFraction, speed;
+    u32 weight, speed;
+    // u32 hpFraction;
 
     if (GetActiveGimmick(battlerAtk) == GIMMICK_Z_MOVE)
         return GetZMovePower(gBattleStruct->zmove.baseMoves[battlerAtk]);
@@ -8964,16 +8965,36 @@ static inline u32 CalcMoveBasePower(struct DamageCalculationData *damageCalcData
         basePower = GetFlingPowerFromItemId(gBattleMons[battlerAtk].item);
         break;
     case EFFECT_POWER_BASED_ON_USER_HP:
-        basePower = gBattleMons[battlerAtk].hp * basePower / gBattleMons[battlerAtk].maxHP;
+        // basePower = gBattleMons[battlerAtk].hp * basePower / gBattleMons[battlerAtk].maxHP;
+        basePower = basePower - (65 * (1 - (gBattleMons[battlerAtk].hp / gBattleMons[battlerAtk].maxHP)));
         break;
     case EFFECT_FLAIL:
-        hpFraction = GetScaledHPFraction(gBattleMons[battlerAtk].hp, gBattleMons[battlerAtk].maxHP, 48);
-        for (i = 0; i < sizeof(sFlailHpScaleToPowerTable); i += 2)
-        {
-            if (hpFraction <= sFlailHpScaleToPowerTable[i])
+        u32 dmgbonus = 70;
+            switch(move)
+            {
+            case MOVE_FLAIL:
+                dmgbonus = 55;
                 break;
-        }
-        basePower = sFlailHpScaleToPowerTable[i + 1];
+            case MOVE_DRAGON_RAGE:
+            case MOVE_ERUPTION:
+            case MOVE_LASH_OUT:
+                dmgbonus = 50;
+                break;
+            case MOVE_STRUGGLE_BUG:
+                dmgbonus = 65;
+                break;
+            default:
+                break;
+            }
+            
+        basePower += ((gBattleMons[battlerAtk].maxHP - gBattleMons[battlerAtk].hp) * dmgbonus / gBattleMons[battlerAtk].maxHP);
+        // hpFraction = GetScaledHPFraction(gBattleMons[battlerAtk].hp, gBattleMons[battlerAtk].maxHP, 48);
+        // for (i = 0; i < sizeof(sFlailHpScaleToPowerTable); i += 2)
+        // {
+        //     if (hpFraction <= sFlailHpScaleToPowerTable[i])
+        //         break;
+        // }
+        // basePower = sFlailHpScaleToPowerTable[i + 1];
         break;
     case EFFECT_RETURN:
         basePower = 10 * (gBattleMons[battlerAtk].friendship) / 25;

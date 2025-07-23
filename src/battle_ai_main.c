@@ -1935,6 +1935,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-2); // mainly to prevent looping between hail and snow
             break;
         case EFFECT_BELLY_DRUM:
+            if (gBattleMons[battlerAtk].statStages[STAT_ATK] >= MAX_STAT_STAGE || !HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL))
+                ADJUST_SCORE(-10);
         case EFFECT_FILLET_AWAY:
             if (HasBattlerSideAbility(battlerDef, ABILITY_UNAWARE, aiData))
                 ADJUST_SCORE(-10);
@@ -2825,8 +2827,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_FLAIL:
-            if (AI_IsSlower(battlerAtk, battlerDef, move) // Opponent should go first
-             || aiData->hpPercents[battlerAtk] > 50)
+            if ((AI_IsSlower(battlerAtk, battlerDef, move) && CanTargetFaintAi(battlerDef, battlerAtk)) // Opponent will go first and KO
+             || (aiData->hpPercents[battlerAtk] > 66 && AI_IsFaster(battlerAtk, battlerDef, move))) // AI will go first and is above 66% max HP
                 ADJUST_SCORE(-4);
             break;
         //TODO
@@ -5787,12 +5789,13 @@ static s32 AI_Risky(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         if (aiData->hpPercents[battlerAtk] < 50 && AI_RandLessThan(128))
             ADJUST_SCORE(AVERAGE_RISKY_EFFECT);
         break;
+    case EFFECT_FLAIL:
     case EFFECT_REVENGE:
         if (gSpeciesInfo[gBattleMons[battlerDef].species].baseSpeed >= gSpeciesInfo[gBattleMons[battlerAtk].species].baseSpeed + 10)
             ADJUST_SCORE(AVERAGE_RISKY_EFFECT);
         break;
     case EFFECT_BELLY_DRUM:
-        if (aiData->hpPercents[battlerAtk] >= 90)
+        if (aiData->hpPercents[battlerAtk] >= 70)
             ADJUST_SCORE(AVERAGE_RISKY_EFFECT);
         break;
     case EFFECT_MAX_HP_50_RECOIL:
@@ -5976,9 +5979,11 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_FOCUS_ENERGY:
             case EFFECT_CONVERSION_2:
             case EFFECT_SAFEGUARD:
-            case EFFECT_BELLY_DRUM:
             case EFFECT_FILLET_AWAY:
                 ADJUST_SCORE(-2);
+                break;
+            case EFFECT_BELLY_DRUM:
+                ADJUST_SCORE(-1);
                 break;
             default:
                 break;

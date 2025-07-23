@@ -893,5 +893,6 @@ extern const u8 BattleScript_EffectFloralHealing[];
 extern const u8 BattleScript_EffectRecover[];
 extern const u8 BattleScript_ThrashMessage[];
 extern const u8 BattleScript_TauntEnds[];
+extern const u8 BattleScript_EffectOverheat[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

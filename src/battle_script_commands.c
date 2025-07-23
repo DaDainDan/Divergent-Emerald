@@ -7180,7 +7180,7 @@ static void Cmd_moveend(void)
                     else if (B_RECOIL_IF_MISS_DMG == GEN_4 && (GetNonDynamaxMaxHP(gBattlerTarget) / 2) < gBattleStruct->moveDamage[gBattlerTarget])
                         gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerTarget) / 2;
                     else // Fallback if B_RECOIL_IF_MISS_DMG is set to gen3 or lower.
-                        gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerTarget) / 2;
+                        gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerTarget) / 8;
 
                     if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
                         gBattleStruct->moveDamage[gBattlerAttacker] = 1;
@@ -7195,7 +7195,15 @@ static void Cmd_moveend(void)
                 if (IsBattlerTurnDamaged(gBattlerTarget) && IsBattlerAlive(gBattlerAttacker)
                     && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_ROCK_HEAD && IsHeadMove(gCurrentMove)))
                 {
-                    gBattleStruct->moveDamage[gBattlerAttacker] = max(1, gBattleStruct->moveDamage[gBattlerTarget] * max(1, GetMoveRecoil(gCurrentMove)) / 100);
+                    u8 level = gBattleMons[gBattlerAttacker].level;
+                    u16 recoil = GetMoveRecoil(gCurrentMove);
+                    
+                    if (IsBattleMovePhysical(gCurrentMove))
+                        recoil = (recoil * ((190 * level) / 100)) / (gBattleMons[gBattlerAttacker].defense);
+                    else
+                        recoil = (recoil * ((190 * level) / 100)) / (gBattleMons[gBattlerAttacker].spDefense);
+
+                    gBattleStruct->moveDamage[gBattlerAttacker] = max(1, gBattleStruct->moveDamage[gBattlerTarget] * max(1, recoil) / 100);
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
                     effect = TRUE;
@@ -7207,6 +7215,18 @@ static void Cmd_moveend(void)
                     gBattleStruct->moveDamage[gBattlerAttacker] = 0;
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_FaintAttackerForExplosion;
+                    effect = TRUE;
+                }
+                break;
+            case EFFECT_OVERHEAT:
+                if (IsBattlerAlive(gBattlerAttacker)
+                 && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_FAILED)
+                 && CompareStat(gBattlerAttacker, STAT_SPATK, MIN_STAT_STAGE, CMP_EQUAL)
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_STAMINA && GetBattlerAbility(gBattlerAttacker) != ABILITY_NULL)
+                {
+                    gBattleStruct->moveDamage[gBattlerAttacker] = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 4; // Quarter of Max HP Rounded UP
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_MaxHp50Recoil;
                     effect = TRUE;
                 }
                 break;
@@ -14635,14 +14655,14 @@ static void Cmd_halvehp(void)
 {
     CMD_ARGS(const u8 *failInstr);
 
-    u32 halfHp = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+    u32 halfHp = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
 
-    if (!(GetNonDynamaxMaxHP(gBattlerAttacker) / 2))
+    if (!(GetNonDynamaxMaxHP(gBattlerAttacker) / 8))
         halfHp = 1;
 
     if (gBattleMons[gBattlerAttacker].hp > halfHp)
     {
-        gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+        gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
         if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
             gBattleStruct->moveDamage[gBattlerAttacker] = 1;
 
