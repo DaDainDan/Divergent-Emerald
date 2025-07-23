@@ -7932,7 +7932,7 @@ BattleScript_SilkSpewEffect:
 	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_SilkSpewContrary
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_SilkSpewWontDecrease
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
-	printfromtable STRINGID_PKMNCUTSSPEEDWITH
+	printstring STRINGID_PKMNCUTSSPEEDWITH
 BattleScript_SilkSpewEffect_WaitString:
 	waitmessage B_WAIT_TIME_LONG
 	copybyte sBATTLER, gBattlerTarget
@@ -8258,7 +8258,6 @@ BattleScript_VictoryStarActivates::
 BattleScript_BlackFumesActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
-	normalisebuffs
 	playanimation BS_SCRIPTING, B_ANIM_FOG_CONTINUES
 	waitanimation
 	printstring STRINGID_STATCHANGESGONE

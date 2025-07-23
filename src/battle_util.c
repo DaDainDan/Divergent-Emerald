@@ -4492,6 +4492,10 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         case ABILITY_BLACK_FUMES:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
+                s32 i;
+                for (i = 0; i < gBattlersCount; i++)
+                    TryResetBattlerStatChanges(i);
+                
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 BattleScriptPushCursorAndCallback(BattleScript_BlackFumesActivates);
                 effect++;
@@ -9313,13 +9317,9 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (basePower <= 70)
         {
             if (moveEffect == EFFECT_MULTI_HIT)
-            {
                 modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
-            }
             else
-            {
                 modifier = uq4_12_multiply(modifier, UQ_4_12(1.4));
-            }
         }  
         break;
     case ABILITY_FLARE_BOOST:

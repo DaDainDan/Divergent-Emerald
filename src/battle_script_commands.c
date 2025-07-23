@@ -11526,7 +11526,7 @@ static void Cmd_various(void)
     case VARIOUS_JUMP_IF_UNDER_200:
     {
         VARIOUS_ARGS(const u8 *jumpInstr);
-        // If the Pokemon is less than 200 kg, or weighing less than 441 lbs, then Sky Drop will work. Otherwise, it will fail.
+        // If the Pokemon is less than twice the weight of the user, then Grabs will work. Otherwise, they will fail.
         if (GetBattlerAbility(gBattlerAttacker) == ABILITY_GRAPPLER && GetBattlerWeight(gBattlerTarget) < (4 * GetBattlerWeight(gBattlerAttacker)))
             gBattlescriptCurrInstr = cmd->jumpInstr;
         else if (GetBattlerWeight(gBattlerTarget) < (2 * GetBattlerWeight(gBattlerAttacker)))
@@ -12033,7 +12033,7 @@ static void Cmd_tryhealhalfhealth(void)
     if (gCurrentMove == MOVE_SLACK_OFF || gCurrentMove == MOVE_ROOST || gCurrentMove == MOVE_LUNAR_DANCE)
         gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerTarget) / 4;
     else if (gCurrentMove == MOVE_PURIFY || gCurrentMove == MOVE_RECOVER)
-    gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerTarget) / 2;
+        gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerTarget) / 2;
     else if (gCurrentMove == MOVE_MILK_DRINK || gCurrentMove == MOVE_SOFT_BOILED)
         gBattleStruct->moveDamage[gBattlerTarget] = 30 * GetNonDynamaxMaxHP(gBattlerAttacker) / 80;
     else
@@ -12887,10 +12887,20 @@ static void Cmd_normalisebuffs(void)
 {
     CMD_ARGS();
 
-    s32 i;
-
-    for (i = 0; i < gBattlersCount; i++)
-        TryResetBattlerStatChanges(i);
+    if (gMovesInfo[gCurrentMove].target == MOVE_TARGET_ALL_BATTLERS)
+    {
+        s32 i;
+        for (i = 0; i < gBattlersCount; i++)
+            TryResetBattlerStatChanges(i);
+    }
+    else if (gMovesInfo[gCurrentMove].target == MOVE_TARGET_USER)
+    {
+        TryResetBattlerStatChanges(gBattlerAttacker);
+    }
+    else
+    {
+        TryResetBattlerStatChanges(gBattlerTarget);
+    }
 
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
@@ -14773,7 +14783,7 @@ static void Cmd_recoverbasedonsunlight(void)
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
             else if (HasWeatherEffect() && gBattleWeather & B_WEATHER_RAIN && (GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA))
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
-        else
+            else
                 gBattleStruct->moveDamage[gBattlerAttacker] = 30 * GetNonDynamaxMaxHP(gBattlerAttacker) / 80;
         }
         else if (GetMoveEffect(gCurrentMove) == EFFECT_MORNING_SUN)
@@ -15902,7 +15912,7 @@ bool32 DoesSubstituteBlockMove(u32 battlerAtk, u32 battlerDef, u32 move)
         return FALSE;
     else if (MoveIgnoresSubstitute(move))
         return FALSE;
-    else if (GetBattlerAbility(battlerAtk) == ABILITY_INFILTRATOR)
+    else if (GetBattlerAbility(battlerAtk) == ABILITY_INFILTRATOR && MoveMakesContact(move))
         return FALSE;
     else
         return TRUE;

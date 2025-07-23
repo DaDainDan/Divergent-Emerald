@@ -3585,7 +3585,7 @@ gBattleAnimMove_DoubleHit::
 	@ why does the anim hit twice?
 	@ that just means the anim plays 4 times
 	@ which doesn't make sense
-	@      I don't know, but I'm not gonna argue with it
+	@ I don't know, but I'm not gonna argue with it
 	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 4
 	delay 6
 	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, ANIM_TARGET, 2
