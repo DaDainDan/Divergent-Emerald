@@ -7173,6 +7173,7 @@ static void Cmd_moveend(void)
                     effect = TRUE;
                 }
                 break;
+            case EFFECT_HEAT_CRASH:
             case EFFECT_RECOIL:
                 if (IsBattlerTurnDamaged(gBattlerTarget) && IsBattlerAlive(gBattlerAttacker)
                     && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_ROCK_HEAD && IsHeadMove(gCurrentMove)))
@@ -14365,8 +14366,8 @@ static void Cmd_handlerollout(void)
     {
         if (!(gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS)) // First hit.
         {
-            gDisableStructs[gBattlerAttacker].rolloutTimer = 5;
-            gDisableStructs[gBattlerAttacker].rolloutTimerStartValue = 5;
+            gDisableStructs[gBattlerAttacker].rolloutTimer = 4;
+            gDisableStructs[gBattlerAttacker].rolloutTimerStartValue = 4;
             gBattleMons[gBattlerAttacker].status2 |= STATUS2_MULTIPLETURNS;
             gLockedMoves[gBattlerAttacker] = gCurrentMove;
         }

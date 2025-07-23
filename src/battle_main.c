@@ -4853,6 +4853,10 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
     {
         priority++;
     }
+    else if (GetMoveEffect(move) == EFFECT_ROLLOUT && gBattleMons[battler].status2 & STATUS2_DEFENSE_CURL)
+    {
+        priority++;
+    }
     else if (GetMoveEffect(move) == EFFECT_FLORAL_HEALING && gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
     {    
         priority += 3;

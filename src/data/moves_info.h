@@ -72,8 +72,8 @@ static const u8 sChipAwayDescription[] = _(
     "stat changes.");
 
 static const u8 sHeavySlamDescription[] = _(
-    "Does more damage if the\n"
-    "user outweighs the foe.");
+    "Does more damage the larger\n"
+    "the user is.");
 
 static const u8 sPsyshockDescription[] = _(
     "Attacks with a psychic wave\n"
@@ -97,7 +97,7 @@ static const u8 sDrainingKissDescription[] = _(
 
 static const u8 sCloseCombatDescription[] = _(
     "A strong attack but lowers\n"
-    "the defensive stats.");
+    "user's Atk and Def.");
 
 static const u8 sHyperspaceHoleDescription[] = _(
     "Uses a warp hole to attack.\n"
@@ -12650,13 +12650,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Heavy Slam"),
         .description = sHeavySlamDescription,
         .effect = EFFECT_HEAT_CRASH,
-        .power = 1,
+        .power = 110,
         .type = TYPE_STEEL,
         .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .recoilPercentage = 25 },
         .makesContact = TRUE,
         .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS >= GEN_7,
         .skyBattleBanned = TRUE,
@@ -13868,13 +13869,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Heat Crash"),
         .description = sHeavySlamDescription,
         .effect = EFFECT_HEAT_CRASH,
-        .power = 1,
+        .power = 110,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .recoilPercentage = 25 },
         .makesContact = TRUE,
         .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS >= GEN_6,
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
@@ -21370,6 +21372,127 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .sheerForceBoost = SHEER_FORCE_BOOST,
         }),
         .battleAnimScript = gBattleAnimMove_MalignantChain,
+    },
+
+    [MOVE_RAGING_DEMON] =
+    {
+        .name = COMPOUND_STRING("Raging Demon"),
+        .description = sCloseCombatDescription,
+        .effect = EFFECT_HIT,
+        .power = 120,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .clawMove = TRUE,
+        .punchingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ATK_DEF_DOWN, // MOVE_EFFECT_DEF_SPDEF_DOWN
+            .self = TRUE,
+        }),
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY, COMBO_STARTER_MIND_READER},
+        .battleAnimScript = gBattleAnimMove_RagingDemon,
+    },
+
+    [MOVE_BELLY_FLOP] =
+    {
+        .name = COMPOUND_STRING("Belly Flop"),
+        .description = sHeavySlamDescription,
+        .effect = EFFECT_HEAT_CRASH,
+        .power = 105,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .recoilPercentage = 25 },
+        .makesContact = TRUE,
+        .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FlyingPress,
+    },
+
+    [MOVE_BERRY_TOSS] =
+    {
+        .name = COMPOUND_STRING("Berry Toss"),
+        .description = COMPOUND_STRING(
+            "The effectiveness varies\n"
+            "with the held Berry."),
+        .effect = EFFECT_NATURAL_GIFT,
+        .power = 1,
+        .type = TYPE_NORMAL,
+        .accuracy = 90,
+        .pp = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .projectileMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_WHEN_LATER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_BerryToss,
+    },
+
+    [MOVE_POWER_BALL] =
+    {
+        .name = COMPOUND_STRING("Power Ball"),
+        .description = COMPOUND_STRING(
+            "An attack lasting 4 turns\n"
+            "with rising intensity."),
+        .effect = EFFECT_ROLLOUT,
+        .power = 30,
+        .type = TYPE_NORMAL,
+        .accuracy = 90,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .instructBanned = TRUE,
+        .parentalBondBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_DEFENSE_CURL, COMBO_STARTER_HARDEN},
+        .battleAnimScript = gBattleAnimMove_Rollout, // Change Rock to Bounce Ball if possible
+    },
+
+    [MOVE_HEAD_SMACK] =
+    {
+        .name = COMPOUND_STRING("Head Smack"),
+        .description = COMPOUND_STRING(
+            "A clumsy headbutt that\n"
+            "confuses the user."),
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_NORMAL,
+        .accuracy = 90,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .headMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .self = TRUE,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY},
+        .battleAnimScript = gBattleAnimMove_HeadSmack,
     },
 
     // Z-Moves

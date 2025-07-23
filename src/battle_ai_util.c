@@ -589,7 +589,7 @@ static inline s32 SetFixedMoveBasePower(u32 battlerAtk, u32 move)
     {
     case EFFECT_ROLLOUT:
         n = gDisableStructs[battlerAtk].rolloutTimer - 1;
-        fixedBasePower = CalcRolloutBasePower(battlerAtk, GetMovePower(move), n < 0 ? 5 : n);
+        fixedBasePower = CalcRolloutBasePower(battlerAtk, GetMovePower(move), n < 0 ? 4 : n);
         break;
     case EFFECT_FURY_CUTTER:
         fixedBasePower = CalcFuryCutterBasePower(GetMovePower(move), min(gDisableStructs[battlerAtk].furyCutterCounter + 1, 5));

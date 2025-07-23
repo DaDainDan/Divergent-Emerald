@@ -8923,10 +8923,10 @@ const struct TypePower gNaturalGiftTable[] =
 u32 CalcRolloutBasePower(u32 battlerAtk, u32 basePower, u32 rolloutTimer)
 {
     u32 i;
-    for (i = 1; i < (5 - rolloutTimer); i++)
-        basePower *= 2;
+    for (i = 1; i < (4 - rolloutTimer); i++)
+        basePower += 30;
     if (gBattleMons[battlerAtk].status2 & STATUS2_DEFENSE_CURL)
-        basePower *= 2;
+        basePower += 30;
     return basePower;
 }
 
@@ -9016,6 +9016,8 @@ static inline u32 CalcMoveBasePower(struct DamageCalculationData *damageCalcData
         break;
     case EFFECT_NATURAL_GIFT:
         basePower = gNaturalGiftTable[ITEM_TO_BERRY(gBattleMons[battlerAtk].item)].power;
+        if (move == MOVE_BERRY_TOSS)
+            basePower /= 2;
         break;
     case EFFECT_DOUBLE_POWER_ON_ARG_STATUS:
         // Comatose targets treated as if asleep
@@ -9058,13 +9060,13 @@ static inline u32 CalcMoveBasePower(struct DamageCalculationData *damageCalcData
         else
             basePower = 120;
         break;
-    case EFFECT_HEAT_CRASH:
-        weight = GetBattlerWeight(battlerAtk) / GetBattlerWeight(battlerDef);
-        if (weight >= ARRAY_COUNT(sHeatCrashPowerTable))
-            basePower = sHeatCrashPowerTable[ARRAY_COUNT(sHeatCrashPowerTable) - 1];
-        else
-            basePower = sHeatCrashPowerTable[weight];
-        break;
+    // case EFFECT_HEAT_CRASH:
+    //     weight = GetBattlerWeight(battlerAtk) / GetBattlerWeight(battlerDef);
+    //     if (weight >= ARRAY_COUNT(sHeatCrashPowerTable))
+    //         basePower = sHeatCrashPowerTable[ARRAY_COUNT(sHeatCrashPowerTable) - 1];
+    //     else
+    //         basePower = sHeatCrashPowerTable[weight];
+    //     break;
     case EFFECT_PUNISHMENT:
         basePower = 60 + (CountBattlerStatIncreases(battlerDef, FALSE) * 20);
         if (basePower > 200)
@@ -9638,6 +9640,19 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         {
             atkStat = gBattleMons[battlerAtk].spDefense;
             atkStage = gBattleMons[battlerAtk].statStages[STAT_SPDEF];
+        }
+    }
+    else if (moveEffect == EFFECT_HEAT_CRASH)
+    {
+        if (IsBattleMovePhysical(move))
+        {
+            atkStat = 4 * (gBattleMons[battlerAtk].maxHP) / 5;
+            atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
+        }
+        else
+        {
+            atkStat = 4 * (gBattleMons[battlerAtk].maxHP) / 5;
+            atkStage = gBattleMons[battlerAtk].statStages[STAT_SPATK];
         }
     }
     else
