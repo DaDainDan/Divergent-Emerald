@@ -1806,10 +1806,12 @@ bool32 ShouldSetSandstorm(u32 battler, u32 ability, enum ItemHoldEffect holdEffe
      || ability == ABILITY_SOLID_ROCK
      || ability == ABILITY_SHELL_ARMOR
      || ability == ABILITY_MAGIC_GUARD
+     || ability == ABILITY_KEEN_EYE || ability == ABILITY_MIRACLE_EYE
      || holdEffect == HOLD_EFFECT_UTILITY_UMBRELLA // HOLD_EFFECT_SAFETY_GOGGLES
      || IS_BATTLER_ANY_TYPE(battler, TYPE_ROCK, TYPE_GROUND, TYPE_TERRA, TYPE_SAND, TYPE_STEEL)
      || HasMoveWithEffect(battler, EFFECT_SHORE_UP)
-     || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL))
+     || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL)
+     || HasMoveWithType(battler, TYPE_SAND))
     {
         return TRUE;
     }
@@ -1854,8 +1856,10 @@ bool32 ShouldSetRain(u32 battlerAtk, u32 atkAbility, enum ItemHoldEffect holdEff
       || atkAbility == ABILITY_DRY_SKIN
       || IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS)
       || HasMoveWithFlag(battlerAtk, MoveAlwaysHitsInRain)
+      || HasMoveWithEffect(battlerAtk, EFFECT_SYNTHESIS)
       || HasMoveWithEffect(battlerAtk, EFFECT_WEATHER_BALL)
-      || HasMoveWithType(battlerAtk, TYPE_WATER)))
+      || HasMoveWithType(battlerAtk, TYPE_WATER)
+      || HasMoveWithType(battlerAtk, TYPE_ELECTRIC)))
     {
         return TRUE;
     }
@@ -1877,10 +1881,11 @@ bool32 ShouldSetSun(u32 battlerAtk, u32 atkAbility, enum ItemHoldEffect holdEffe
       || HasMoveWithEffect(battlerAtk, EFFECT_SOLAR_BEAM)
       || HasMoveWithEffect(battlerAtk, EFFECT_MORNING_SUN)
       || HasMoveWithEffect(battlerAtk, EFFECT_SYNTHESIS)
-      || HasMoveWithEffect(battlerAtk, EFFECT_MOONLIGHT)
+    //   || HasMoveWithEffect(battlerAtk, EFFECT_MOONLIGHT)
       || HasMoveWithEffect(battlerAtk, EFFECT_WEATHER_BALL)
       || HasMoveWithEffect(battlerAtk, EFFECT_GROWTH)
-      || HasMoveWithType(battlerAtk, TYPE_FIRE)))
+      || HasMoveWithType(battlerAtk, TYPE_FIRE)
+      || HasMoveWithType(battlerAtk, TYPE_GRASS)))
     {
         return TRUE;
     }

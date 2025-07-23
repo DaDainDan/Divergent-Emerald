@@ -948,7 +948,7 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
         case EFFECT_WEATHER_BALL:
         case EFFECT_SYNTHESIS:
         case EFFECT_MORNING_SUN:
-        case EFFECT_MOONLIGHT:
+        // case EFFECT_MOONLIGHT:
             points += 3;
             break;
         default:

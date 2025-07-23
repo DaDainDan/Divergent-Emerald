@@ -1109,6 +1109,32 @@ BattleScript_JungleHealingTryRestoreAlly:
 	setallytonexttarget JungleHealing_RestoreTargetHealth
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectFloralHealing::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifteamhealthy BS_TARGET, BattleScript_ButItFailed
+	jumpifstatus3 BS_ATTACKER, STATUS3_HEAL_BLOCK, BattleScript_MoveUsedHealBlockPrevents @ stops pollen puff
+	jumpifstatus3 BS_TARGET, STATUS3_HEAL_BLOCK, BattleScript_MoveUsedHealBlockPrevents
+	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
+	jumpifsubstituteblocks BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	tryhealquarterhealth BS_TARGET, BattleScript_FloralHealingStatusCheck
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_FloralHealingStatusCheck:
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_FloralHealingCureStatus
+	goto BattleScript_MoveEnd
+BattleScript_FloralHealingCureStatus:
+	curestatus BS_TARGET
+	updatestatusicon BS_TARGET
+	printstring STRINGID_ATTACKERCUREDTARGETSTATUS
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectRelicSong::
 	call BattleScript_EffectHit_Ret
 	tryfaintmon BS_TARGET
@@ -1186,6 +1212,10 @@ BattleScript_PurifyWorks:
 	waitmessage B_WAIT_TIME_LONG
 	tryhealhalfhealth BattleScript_AlreadyAtFullHp, BS_ATTACKER
 	goto BattleScript_RestoreHp
+
+BattleScript_EffectRecover::
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_EffectPurify
+	goto BattleScript_EffectRestoreHp
 
 BattleScript_EffectStrengthSap::
 	setstatchanger STAT_ATK, 1, TRUE
@@ -2759,9 +2789,26 @@ BattleScript_EffectRoost::
 	attackcanceler
 	attackstring
 	ppreduce
-	tryhealhalfhealth BattleScript_AlreadyAtFullHp, BS_TARGET
+	jumpifmove MOVE_SLACK_OFF, BattleScript_SlackOff
 	setroost
-	goto BattleScript_PresentHealTarget
+BattleScript_SlackOff::
+	normalisebuffs
+	tryhealhalfhealth BattleScript_RoostNoHeal, BS_TARGET
+	attackanimation
+	waitanimation
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNHEALCLEARSTATS
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_RoostNoHeal::
+	attackanimation
+	waitanimation
+	printstring STRINGID_USERSTATCHANGESGONE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
 
 BattleScript_EffectCaptivate::
 	setstatchanger STAT_SPATK, 2, TRUE
@@ -4521,6 +4568,32 @@ BattleScript_PresentHealTarget::
 	datahpupdate BS_TARGET
 	printstring STRINGID_PKMNREGAINEDHEALTH
 	waitmessage B_WAIT_TIME_LONG
+	jumpifmove MOVE_SOFT_BOILED, BattleScript_SoftBoiledSpDef
+	jumpifmove MOVE_LUNAR_DANCE, BattleScript_SoftBoiledSpDef
+	jumpifmove MOVE_MILK_DRINK, BattleScript_MilkDrinkDef
+	jumpifmove MOVE_PETAL_DANCE, BattleScript_PetalDanceSpAtk
+	jumpifmove MOVE_DEFEND_ORDER, BattleScript_DefendOrderStatRaise
+	goto BattleScript_MoveEnd
+
+BattleScript_SoftBoiledSpDef::
+	setstatchanger STAT_SPDEF, 1, FALSE
+	goto BattleScript_SoftBoiledStatCheck
+BattleScript_MilkDrinkDef::
+	setstatchanger STAT_DEF, 1, FALSE
+	goto BattleScript_SoftBoiledStatCheck
+BattleScript_PetalDanceSpAtk::
+	setstatchanger STAT_SPATK, 1, FALSE
+	goto BattleScript_SoftBoiledStatCheck
+BattleScript_SoftBoiledStatCheck:
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_StatUpEnd
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_SoftBoiledStatChange
+	pause B_WAIT_TIME_SHORT
+	goto BattleScript_MoveEnd
+BattleScript_SoftBoiledStatChange:
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
 BattleScript_AlreadyAtFullHp::
@@ -5150,6 +5223,7 @@ BattleScript_EffectCosmicPower::
 BattleScript_CosmicPowerDoMoveAnim::
 	attackanimation
 	waitanimation
+BattleScript_DefendOrderStatRaise::
 	setbyte sSTAT_ANIM_PLAYED, FALSE
 	playstatchangeanimation BS_ATTACKER, BIT_DEF | BIT_SPDEF, 0
 	setstatchanger STAT_DEF, 1, FALSE

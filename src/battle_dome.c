@@ -4068,7 +4068,7 @@ static bool32 IsDomeComboMove(u32 move)
     // Moves dependent on weather
     case EFFECT_SYNTHESIS:
     case EFFECT_MORNING_SUN:
-    case EFFECT_MOONLIGHT:
+    // case EFFECT_MOONLIGHT:
     case EFFECT_SHORE_UP:
     case EFFECT_SOLAR_BEAM:
     case EFFECT_GROWTH:
@@ -4077,6 +4077,7 @@ static bool32 IsDomeComboMove(u32 move)
     // Moves dependent on terrain
     case EFFECT_EXPANDING_FORCE:
     case EFFECT_GRASSY_GLIDE:
+    case EFFECT_FLORAL_HEALING:
     //case EFFECT_MISTY_EXPLOSION: (needs a unique effect in gMovesInfo!)
     case EFFECT_PSYBLADE:
     case EFFECT_RISING_VOLTAGE:

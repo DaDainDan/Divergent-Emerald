@@ -2200,29 +2200,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Petal Dance"),
         .description = COMPOUND_STRING(
-            "A rampage of 2 to 3 turns\n"
-            "that confuses the user."),
+            "Restores the user's HP and\n"
+            "raises their SpAtk."),
         #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 120,
+            .power = 0,
         #elif B_UPDATED_MOVE_DATA == GEN_4
             .power = 90,
         #else
             .power = 70,
         #endif
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_SOFTBOILED,
         .type = TYPE_GRASS,
-        .accuracy = 100,
+        .accuracy = 0,
         .pp = B_UPDATED_MOVE_DATA >= GEN_5 ? 10 : 20,
-        .target = MOVE_TARGET_RANDOM,
+        .target = MOVE_TARGET_USER,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .makesContact = TRUE,
+        .category = DAMAGE_CATEGORY_STATUS,
+        // .makesContact = TRUE,
         .danceMove = TRUE,
-        .instructBanned = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_THRASH,
-            .self = TRUE,
-        }),
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        // .instructBanned = TRUE,
+        // .additionalEffects = ADDITIONAL_EFFECTS({
+        //     .moveEffect = MOVE_EFFECT_THRASH,
+        //     .self = TRUE,
+        // }),
         .contestEffect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -2849,8 +2852,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Recover"),
         .description = COMPOUND_STRING(
-            "Recovers up to half the\n"
-            "user's maximum HP."),
+            "Heals half of the user's HP\n"
+            "and cures ailments."),
         #if B_UPDATED_MOVE_DATA >= GEN_9
             .pp = 5,
         #elif B_UPDATED_MOVE_DATA >= GEN_4
@@ -2858,9 +2861,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         #else
             .pp = 20,
         #endif
-        .effect = EFFECT_RESTORE_HP,
+        .effect = EFFECT_RECOVER, // EFFECT_RESTORE_HP
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_PSYCHIC,
         .accuracy = 0,
         .target = MOVE_TARGET_USER,
         .priority = 0,
@@ -3639,14 +3642,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Soft-Boiled"),
         .description = COMPOUND_STRING(
-            "Recovers up to half the\n"
-            "user's maximum HP."),
+            "Restores an ally's HP and\n"
+            "raises their SpDef."),
         .effect = EFFECT_SOFTBOILED,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_FAIRY,
         .accuracy = 100,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_9 ? 5 : 10,
-        .target = MOVE_TARGET_USER,
+        .pp = B_UPDATED_MOVE_DATA >= GEN_9 ? 10 : 5,
+        .target = MOVE_TARGET_USER | MOVE_TARGET_ALLY,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_RESET_STATS },
@@ -5576,14 +5579,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Milk Drink"),
         .description = COMPOUND_STRING(
-            "Recovers up to half the\n"
-            "user's maximum HP."),
+            "Restores an ally's HP and\n"
+            "raises their Def."),
         .effect = EFFECT_SOFTBOILED,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_9 ? 5 : 10,
-        .target = MOVE_TARGET_USER,
+        .pp = B_UPDATED_MOVE_DATA >= GEN_9 ? 10 : 5,
+        .target = MOVE_TARGET_USER | MOVE_TARGET_ALLY,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_RESET_STATS },
@@ -6272,9 +6275,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "varies with the weather."),
         .effect = EFFECT_MORNING_SUN,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_FIRE,
         .accuracy = 0,
-        .pp = 5,
+        .pp = 10,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -6301,7 +6304,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 0,
         .type = TYPE_GRASS,
         .accuracy = 0,
-        .pp = 5,
+        .pp = 10,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -6322,13 +6325,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Moonlight"),
         .description = COMPOUND_STRING(
-            "Restores HP. The amount\n"
-            "varies with the weather."),
+            "Uses the power of the moon\n"
+            "in order to restore HP."),
         .effect = EFFECT_MOONLIGHT,
         .power = 0,
         .type = B_UPDATED_MOVE_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL,
         .accuracy = 0,
-        .pp = 5,
+        .pp = 10,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -8103,15 +8106,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Slack Off"),
         .description = COMPOUND_STRING(
-            "Slacks off and restores\n"
-            "half the maximum HP."),
-        .effect = EFFECT_RESTORE_HP,
+            "Restores a quarter of HP\n"
+            "and resets stat changes."),
+        .effect = EFFECT_ROOST,
         .power = 0,
         .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_9 ? 5 : 10,
+        .accuracy = 0,
+        .pp = B_UPDATED_MOVE_DATA >= GEN_9 ? 40 : 10,
         .target = MOVE_TARGET_USER,
-        .priority = 0,
+        .priority = -1,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_RESET_STATS },
         .healingMove = TRUE,
@@ -9463,8 +9466,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Roost"),
         .description = COMPOUND_STRING(
-            "Restores the user's HP by\n"
-            "half of its max HP."),
+            "Restores a quarter of HP\n"
+            "and resets stat changes."),
         .effect = EFFECT_ROOST,
         .power = 0,
         .type = TYPE_FLYING,
@@ -11937,9 +11940,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Defend Order"),
         .description = COMPOUND_STRING(
-            "Raises Defense and Sp. Def\n"
-            "with a living shield."),
-        .effect = EFFECT_COSMIC_POWER,
+            "Servants heal and increase\n"
+            "the defenses of the user."),
+        .effect = EFFECT_SOFTBOILED,
         .power = 0,
         .type = TYPE_BUG,
         .accuracy = 0,
@@ -11948,6 +11951,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
+        .healingMove = TRUE,
         .snatchAffected = TRUE,
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
@@ -12084,9 +12088,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Lunar Dance"),
         .description = sHealingWishDescription,
-        .effect = EFFECT_HEALING_WISH,
+        .effect = EFFECT_SOFTBOILED,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_FAIRY,
         .accuracy = 0,
         .pp = 10,
         .target = MOVE_TARGET_USER,
@@ -16047,9 +16051,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "More HP in a sandstorm."),
         .effect = EFFECT_SHORE_UP,
         .power = 0,
-        .type = TYPE_GROUND,
+        .type = TYPE_SAND,
         .accuracy = 0,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_9 ? 5 : 10,
+        .pp = B_UPDATED_MOVE_DATA >= GEN_9 ? 10 : 5,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -16227,18 +16231,18 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Floral Healing"),
         .description = COMPOUND_STRING(
-            "Restores an ally's HP.\n"
-            "Heals more on grass."),
-        .effect = EFFECT_HEAL_PULSE,
+            "Restores an ally's HP and\n"
+            "cures status ailments."),
+        .effect = EFFECT_FLORAL_HEALING,
         .power = 0,
-        .type = TYPE_FAIRY,
+        .type = TYPE_GRASS,
         .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
+        .pp = 15,
+        .target = MOVE_TARGET_USER | MOVE_TARGET_ALLY, // MOVE_TARGET_SELECTED
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .argument = { .moveProperty = MOVE_EFFECT_FLORAL_HEALING },
+        // .argument = { .moveProperty = MOVE_EFFECT_FLORAL_HEALING },
         .mirrorMoveBanned = TRUE,
         .healingMove = TRUE,
         .magicCoatAffected = TRUE,

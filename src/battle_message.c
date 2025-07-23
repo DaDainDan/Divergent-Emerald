@@ -700,7 +700,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_INCINERATEBURN]                       = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX}'s {B_LAST_ITEM} was burnt up!"),
     [STRINGID_BUGBITE]                              = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} stole and ate its target's {B_LAST_ITEM}!"),
     [STRINGID_ILLUSIONWOREOFF]                      = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s illusion wore off!"),
-    [STRINGID_ATTACKERCUREDTARGETSTATUS]            = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} cured {B_DEF_NAME_WITH_PREFIX2}'s problem!"),
+    [STRINGID_ATTACKERCUREDTARGETSTATUS]            = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX2}'s problem was cured!"),
     [STRINGID_ATTACKERLOSTFIRETYPE]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} burned itself out!"),
     [STRINGID_HEALERCURE]                           = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ABILITY} cured {B_SCR_NAME_WITH_PREFIX2}'s problem!"),
     [STRINGID_SCRIPTINGABILITYSTATRAISE]            = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY} raised its {B_BUFF1}!"),
@@ -924,6 +924,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_COSMICENTERS]                         = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is not of this world!"),
     [STRINGID_PKMNHURTSTARGET]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was hurt by {B_ATK_NAME_WITH_PREFIX2}'s {B_BUFF1}!"),
     [STRINGID_PKMNSTATSCANTCHANGE]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s stats cannot be changed!"), //not in gen 5+, ability popup
+    [STRINGID_USERSTATCHANGESGONE]                  = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s stat changes were reset!"),
+    [STRINGID_PKMNHEALCLEARSTATS]                   = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s HP was restored and their stat changes were reset!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =

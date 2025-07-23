@@ -11316,7 +11316,7 @@ static void Cmd_various(void)
     case VARIOUS_JUMP_IF_TEAM_HEALTHY:
     {
         VARIOUS_ARGS(const u8 *jumpInstr);
-        if ((IsDoubleBattle()) && IsBattlerAlive(BATTLE_PARTNER(battler)))
+        if ((IsDoubleBattle()) && IsBattlerAlive(BATTLE_PARTNER(battler)) && gCurrentMove != MOVE_FLORAL_HEALING)
         {
             u8 partner = BATTLE_PARTNER(battler);
             if ((gBattleMons[battler].hp == gBattleMons[battler].maxHP && !(gBattleMons[battler].status1 & STATUS1_ANY))
@@ -11855,7 +11855,15 @@ static void Cmd_tryhealhalfhealth(void)
     if (cmd->battler == BS_ATTACKER)
         gBattlerTarget = gBattlerAttacker;
 
+    if (gCurrentMove == MOVE_SLACK_OFF || gCurrentMove == MOVE_ROOST || gCurrentMove == MOVE_LUNAR_DANCE)
+        gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerTarget) / 4;
+    else if (gCurrentMove == MOVE_PURIFY || gCurrentMove == MOVE_RECOVER)
     gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerTarget) / 2;
+    else if (gCurrentMove == MOVE_MILK_DRINK || gCurrentMove == MOVE_SOFT_BOILED)
+        gBattleStruct->moveDamage[gBattlerTarget] = 30 * GetNonDynamaxMaxHP(gBattlerAttacker) / 80;
+    else
+        gBattleStruct->moveDamage[gBattlerTarget] = 30 * GetNonDynamaxMaxHP(gBattlerTarget) / 80;
+
     if (gBattleStruct->moveDamage[gBattlerTarget] == 0)
         gBattleStruct->moveDamage[gBattlerTarget] = 1;
     gBattleStruct->moveDamage[gBattlerTarget] *= -1;
@@ -14551,19 +14559,41 @@ static void Cmd_recoverbasedonsunlight(void)
     {
         if (GetMoveEffect(gCurrentMove) == EFFECT_SHORE_UP)
         {
-            if (HasWeatherEffect() && gBattleWeather & B_WEATHER_SANDSTORM)
-                gBattleStruct->moveDamage[gBattlerAttacker] = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
-            else
+            if (HasWeatherEffect() && gBattleWeather & B_WEATHER_SANDSTORM && (GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA))
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+            else if (HasWeatherEffect() && gBattleWeather & B_WEATHER_RAIN && (GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA))
+                gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
+        else
+                gBattleStruct->moveDamage[gBattlerAttacker] = 30 * GetNonDynamaxMaxHP(gBattlerAttacker) / 80;
+        }
+        else if (GetMoveEffect(gCurrentMove) == EFFECT_MORNING_SUN)
+        {
+            if (HasWeatherEffect() && gBattleWeather & B_WEATHER_SUN && (GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA))
+                gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+            else if (HasWeatherEffect() && gBattleWeather & (B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_HAIL) && (GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA))
+                gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
+            else
+                gBattleStruct->moveDamage[gBattlerAttacker] = 30 * GetNonDynamaxMaxHP(gBattlerAttacker) / 80;
+        }
+        else if (GetMoveEffect(gCurrentMove) == EFFECT_SYNTHESIS)
+        {
+            if (HasWeatherEffect() && gBattleWeather & (B_WEATHER_RAIN | B_WEATHER_SUN) && (GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA))
+                gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+            else if (HasWeatherEffect() && gBattleWeather & (B_WEATHER_SNOW | B_WEATHER_HAIL) && (GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA))
+                gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
+            else
+                gBattleStruct->moveDamage[gBattlerAttacker] = 30 * GetNonDynamaxMaxHP(gBattlerAttacker) / 80;
+        }
+        else if (GetMoveEffect(gCurrentMove) == EFFECT_MOONLIGHT)
+        {
+            if (GetBattlerAbility(gBattlerAttacker) == ABILITY_MOON_PRESENCE)
+                gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+            else
+                gBattleStruct->moveDamage[gBattlerAttacker] = 30 * GetNonDynamaxMaxHP(gBattlerAttacker) / 80;
         }
         else
         {
-            if (!(gBattleWeather & B_WEATHER_ANY) || !HasWeatherEffect() || GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_UTILITY_UMBRELLA)
-                gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
-            else if (gBattleWeather & B_WEATHER_SUN)
-                gBattleStruct->moveDamage[gBattlerAttacker] = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
-            else // not sunny weather
-                gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
+            gBattleStruct->moveDamage[gBattlerAttacker] = 30 * GetNonDynamaxMaxHP(gBattlerAttacker) / 80;
         }
 
         if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)

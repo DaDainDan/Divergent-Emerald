@@ -889,5 +889,7 @@ extern const u8 BattleScript_RoughSkinActivatesAttacker[];
 extern const u8 BattleScript_GooeyActivatesAttack[];
 extern const u8 BattleScript_MoonPresence[];
 extern const u8 BattleScript_NullilyStatChange[];
+extern const u8 BattleScript_EffectFloralHealing[];
+extern const u8 BattleScript_EffectRecover[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

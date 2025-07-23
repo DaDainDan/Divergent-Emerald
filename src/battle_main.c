@@ -4853,8 +4853,12 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
     {
         priority++;
     }
-    // else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
-    //     priority += 3;
+    else if (GetMoveEffect(move) == EFFECT_FLORAL_HEALING && gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
+    {    
+        priority += 3;
+    }
+    else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
+        priority += 3;
 
     if (ability == ABILITY_OWN_TEMPO)
         priority = 0;

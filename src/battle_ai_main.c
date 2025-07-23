@@ -2105,16 +2105,32 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_RESTORE_HP:
         case EFFECT_SOFTBOILED:
         case EFFECT_ROOST:
+        case EFFECT_RECOVER:
+        case EFFECT_MOONLIGHT:
             if (AI_BattlerAtMaxHp(battlerAtk))
                 ADJUST_SCORE(-10);
             else if (aiData->hpPercents[battlerAtk] >= 90)
                 ADJUST_SCORE(-9); //No point in healing, but should at least do it if nothing better
             break;
         case EFFECT_MORNING_SUN:
+            if ((AI_GetWeather() & (B_WEATHER_RAIN | B_WEATHER_HAIL | B_WEATHER_SNOW)))
+                ADJUST_SCORE(-2);
+            else if (AI_BattlerAtMaxHp(battlerAtk))
+                ADJUST_SCORE(-10);
+            else if (aiData->hpPercents[battlerAtk] >= 90)
+                ADJUST_SCORE(-9); //No point in healing, but should at least do it if nothing better
+            break;
         case EFFECT_SYNTHESIS:
-        case EFFECT_MOONLIGHT:
-            if ((AI_GetWeather() & (B_WEATHER_RAIN | B_WEATHER_SANDSTORM | B_WEATHER_HAIL | B_WEATHER_SNOW | B_WEATHER_FOG)))
-                ADJUST_SCORE(-3);
+            if ((AI_GetWeather() & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
+                ADJUST_SCORE(-2);
+            else if (AI_BattlerAtMaxHp(battlerAtk))
+                ADJUST_SCORE(-10);
+            else if (aiData->hpPercents[battlerAtk] >= 90)
+                ADJUST_SCORE(-9); //No point in healing, but should at least do it if nothing better
+            break;
+        case EFFECT_SHORE_UP:
+            if ((AI_GetWeather() & (B_WEATHER_RAIN)))
+                ADJUST_SCORE(-2);
             else if (AI_BattlerAtMaxHp(battlerAtk))
                 ADJUST_SCORE(-10);
             else if (aiData->hpPercents[battlerAtk] >= 90)
@@ -2853,6 +2869,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_JUNGLE_HEALING:
+        case EFFECT_FLORAL_HEALING:
            if (AI_BattlerAtMaxHp(battlerAtk)
             && AI_BattlerAtMaxHp(BATTLE_PARTNER(battlerAtk))
             && !(gBattleMons[battlerAtk].status1 & STATUS1_ANY)
@@ -4215,16 +4232,34 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
                 ADJUST_SCORE(DECENT_EFFECT);
         }
         break;
-    case EFFECT_RESTORE_HP:
-    case EFFECT_SOFTBOILED:
-    case EFFECT_ROOST:
-    case EFFECT_MORNING_SUN:
-    case EFFECT_SYNTHESIS:
-    case EFFECT_MOONLIGHT:
+    case EFFECT_RECOVER:
         if (ShouldRecover(battlerAtk, battlerDef, move, 50, AI_DEFENDING))
             ADJUST_SCORE(GOOD_EFFECT);
+        if (gBattleMons[battlerAtk].status1 & STATUS1_ANY)
+            ADJUST_SCORE(DECENT_EFFECT);
+        break;
+    case EFFECT_MOONLIGHT:
         if (aiData->abilities[battlerAtk] == ABILITY_MOON_PRESENCE && BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPATK))
             ADJUST_SCORE(DECENT_EFFECT);
+        // fallthrough
+    case EFFECT_RESTORE_HP:
+    case EFFECT_SOFTBOILED:
+    case EFFECT_MORNING_SUN:
+    case EFFECT_SYNTHESIS:
+        if (ShouldRecover(battlerAtk, battlerDef, move, 37, AI_DEFENDING))
+            ADJUST_SCORE(GOOD_EFFECT);
+        break;
+    case EFFECT_ROOST:
+        if (ShouldRecover(battlerAtk, battlerDef, move, 25, AI_DEFENDING))
+            ADJUST_SCORE(DECENT_EFFECT);
+        for (i = STAT_ATK; i < NUM_BATTLE_STATS; i++)
+        {
+            if (gBattleMons[battlerAtk].statStages[i] < DEFAULT_STAT_STAGE)
+                ADJUST_SCORE(WEAK_EFFECT); 
+        }
+        if (AI_IsFaster(battlerAtk, battlerDef, move) && move == MOVE_ROOST && predictedMove != MOVE_NONE
+            && (predictedType == TYPE_ELECTRIC || predictedType == TYPE_ROCK))
+            ADJUST_SCORE(DECENT_EFFECT); // If using Roost would negate Flying weakness
         break;
     case EFFECT_LIGHT_SCREEN:
     case EFFECT_REFLECT:
@@ -4512,10 +4547,10 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(DECENT_EFFECT);
             if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_SMOOTH_ROCK)
                 ADJUST_SCORE(WEAK_EFFECT);
-            if (HasMoveWithEffect(battlerDef, EFFECT_MORNING_SUN)
-              || HasMoveWithEffect(battlerDef, EFFECT_SYNTHESIS)
-              || HasMoveWithEffect(battlerDef, EFFECT_MOONLIGHT))
-                ADJUST_SCORE(WEAK_EFFECT);
+            // if (HasMoveWithEffect(battlerDef, EFFECT_MORNING_SUN)
+            //   || HasMoveWithEffect(battlerDef, EFFECT_SYNTHESIS)
+            //   || HasMoveWithEffect(battlerDef, EFFECT_MOONLIGHT))
+            //     ADJUST_SCORE(WEAK_EFFECT);
         }
         break;
     case EFFECT_HAIL:
@@ -4528,9 +4563,8 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(DECENT_EFFECT);
             if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_ICY_ROCK)
                 ADJUST_SCORE(WEAK_EFFECT);
-            if (HasMoveWithEffect(battlerDef, EFFECT_MORNING_SUN)
-              || HasMoveWithEffect(battlerDef, EFFECT_SYNTHESIS)
-              || HasMoveWithEffect(battlerDef, EFFECT_MOONLIGHT))
+            if (HasMoveWithEffect(battlerDef, EFFECT_MORNING_SUN) //   || HasMoveWithEffect(battlerDef, EFFECT_MOONLIGHT))
+              || HasMoveWithEffect(battlerDef, EFFECT_SYNTHESIS))
                 ADJUST_SCORE(WEAK_EFFECT);
         }
         break;
@@ -4544,9 +4578,10 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(DECENT_EFFECT);
             if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_ICY_ROCK)
                 ADJUST_SCORE(WEAK_EFFECT);
-            if (HasMoveWithEffect(battlerDef, EFFECT_MORNING_SUN)
-              || HasMoveWithEffect(battlerDef, EFFECT_SYNTHESIS)
-              || HasMoveWithEffect(battlerDef, EFFECT_MOONLIGHT))
+            if (HasMoveWithEffect(battlerDef, EFFECT_MORNING_SUN) //   || HasMoveWithEffect(battlerDef, EFFECT_MOONLIGHT))
+              || HasMoveWithEffect(battlerDef, EFFECT_SYNTHESIS))
+                ADJUST_SCORE(WEAK_EFFECT);
+            if (HasMoveWithType(battlerDef, TYPE_GRASS) || HasMoveWithType(BATTLE_PARTNER(battlerDef), TYPE_GRASS))
                 ADJUST_SCORE(WEAK_EFFECT);
         }
         break;
@@ -4557,9 +4592,10 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_DAMP_ROCK)
                 ADJUST_SCORE(WEAK_EFFECT);
             if (HasMoveWithEffect(battlerDef, EFFECT_MORNING_SUN)
-              || HasMoveWithEffect(battlerDef, EFFECT_SYNTHESIS)
-              || HasMoveWithEffect(battlerDef, EFFECT_SOLAR_BEAM)
-              || HasMoveWithEffect(battlerDef, EFFECT_MOONLIGHT))
+            //   || HasMoveWithEffect(battlerDef, EFFECT_SYNTHESIS)
+              || HasMoveWithEffect(battlerDef, EFFECT_SHORE_UP)
+            //   || HasMoveWithEffect(battlerDef, EFFECT_MOONLIGHT)
+              || HasMoveWithEffect(battlerDef, EFFECT_SOLAR_BEAM))
                 ADJUST_SCORE(WEAK_EFFECT);
             if (HasMoveWithType(battlerDef, TYPE_FIRE) || HasMoveWithType(BATTLE_PARTNER(battlerDef), TYPE_FIRE))
                 ADJUST_SCORE(WEAK_EFFECT);
@@ -4571,7 +4607,10 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(DECENT_EFFECT);
             if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_HEAT_ROCK)
                 ADJUST_SCORE(WEAK_EFFECT);
-            if (HasMoveWithType(battlerDef, TYPE_WATER) || HasMoveWithType(BATTLE_PARTNER(battlerDef), TYPE_WATER))
+            if (HasMoveWithType(battlerDef, TYPE_WATER) || HasMoveWithType(BATTLE_PARTNER(battlerDef), TYPE_WATER)
+                || HasMoveWithType(battlerDef, TYPE_ICE) || HasMoveWithType(BATTLE_PARTNER(battlerDef), TYPE_ICE))
+                ADJUST_SCORE(WEAK_EFFECT);
+            if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
                 ADJUST_SCORE(WEAK_EFFECT);
             if (HasMoveWithFlag(battlerDef, MoveHas50AccuracyInSun) || HasMoveWithFlag(BATTLE_PARTNER(battlerDef), MoveHas50AccuracyInSun))
                 ADJUST_SCORE(WEAK_EFFECT);
@@ -5208,9 +5247,9 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(GOOD_EFFECT);
         break;
     case EFFECT_SHORE_UP:
-        if ((AI_GetWeather() & B_WEATHER_SANDSTORM) && ShouldRecover(battlerAtk, battlerDef, move, 67, AI_DEFENDING))
+        if ((AI_GetWeather() & B_WEATHER_SANDSTORM) && ShouldRecover(battlerAtk, battlerDef, move, 50, AI_DEFENDING))
             ADJUST_SCORE(DECENT_EFFECT);
-        else if (ShouldRecover(battlerAtk, battlerDef, move, 50, AI_DEFENDING))
+        else if (ShouldRecover(battlerAtk, battlerDef, move, 37, AI_DEFENDING))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_ENDEAVOR:
@@ -5236,6 +5275,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
     //case EFFECT_SKY_DROP
         //break;
     case EFFECT_JUNGLE_HEALING:
+    case EFFECT_FLORAL_HEALING:
         if (ShouldRecover(battlerAtk, battlerDef, move, 25, AI_DEFENDING)
          || ShouldRecover(BATTLE_PARTNER(battlerAtk), battlerDef, move, 25, AI_DEFENDING)
          || gBattleMons[battlerAtk].status1 & STATUS1_ANY
@@ -5844,20 +5884,23 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             switch (effect)
             {
             case EFFECT_EXPLOSION:
-            case EFFECT_RESTORE_HP:
             case EFFECT_REST:
             case EFFECT_DESTINY_BOND:
-            case EFFECT_FLAIL:
             case EFFECT_ENDURE:
+            case EFFECT_MEMENTO:
+            case EFFECT_GRUDGE:
+            case EFFECT_RECOVER:
+                ADJUST_SCORE(-2);
+                break;
+            case EFFECT_FLAIL:
+            case EFFECT_RESTORE_HP:
             case EFFECT_MORNING_SUN:
             case EFFECT_SYNTHESIS:
             case EFFECT_MOONLIGHT:
             case EFFECT_SHORE_UP:
             case EFFECT_SOFTBOILED:
             case EFFECT_ROOST:
-            case EFFECT_MEMENTO:
-            case EFFECT_GRUDGE:
-                ADJUST_SCORE(-2);
+                ADJUST_SCORE(-1);
                 break;
             default:
                 break;
@@ -6193,6 +6236,7 @@ static s32 AI_PredictSwitch(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_RESTORE_HP:
+    case EFFECT_SOFTBOILED:
         if (gAiLogicData->hpPercents[battlerAtk] < 60)
             ADJUST_SCORE(GOOD_EFFECT);
         break;
