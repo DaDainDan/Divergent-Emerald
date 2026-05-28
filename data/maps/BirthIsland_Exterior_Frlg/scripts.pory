@@ -104,12 +104,12 @@ BirthIsland_Exterior_Frlg_EventScript_RanFromDeoxys::
 	end
 
 Movement_DeoxysApproach:
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
+	creep_down
+	creep_down
+	creep_down
+	creep_down
+	creep_down
+	creep_down
+	creep_down
 	step_end
 `

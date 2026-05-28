@@ -230,10 +230,10 @@ BattleFrontier_BattlePalaceBattleRoom_EventScript_DefeatedSpenserSilver::
 	waitmessage
 	waitfanfare
 	frontier_givesymbol
-	applymovement LOCALID_PALACE_BATTLE_OPPONENT, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_PALACE_BATTLE_OPPONENT, Common_Movement_StepLeft
 	waitmovement 0
-	applymovement LOCALID_PALACE_BATTLE_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	applymovement LOCALID_PALACE_BATTLE_ATTENDANT, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PALACE_BATTLE_PLAYER, Common_Movement_StepFasterRight
+	applymovement LOCALID_PALACE_BATTLE_ATTENDANT, Common_Movement_StepFasterRight
 	waitmovement 0
 	msgbox BattleFrontier_BattlePalaceBattleRoom_Text_SpenserAwaitNextTime, MSGBOX_DEFAULT
 	goto BattleFrontier_BattlePalaceBattleRoom_EventScript_WarpToLobbyWon
@@ -262,10 +262,10 @@ BattleFrontier_BattlePalaceBattleRoom_EventScript_DefeatedSpenserGold::
 	waitmessage
 	waitfanfare
 	frontier_givesymbol
-	applymovement LOCALID_PALACE_BATTLE_OPPONENT, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_PALACE_BATTLE_OPPONENT, Common_Movement_StepLeft
 	waitmovement 0
-	applymovement LOCALID_PALACE_BATTLE_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	applymovement LOCALID_PALACE_BATTLE_ATTENDANT, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PALACE_BATTLE_PLAYER, Common_Movement_StepFasterRight
+	applymovement LOCALID_PALACE_BATTLE_ATTENDANT, Common_Movement_StepFasterRight
 	waitmovement 0
 	msgbox BattleFrontier_BattlePalaceBattleRoom_Text_SpenserComeSeeMeAgain, MSGBOX_DEFAULT
 	goto BattleFrontier_BattlePalaceBattleRoom_EventScript_WarpToLobbyWon
@@ -373,20 +373,20 @@ BattleFrontier_BattlePalaceBattleRoom_Movement_FaceDown:
 
 BattleFrontier_BattlePalaceBattleRoom_Movement_UnusedOpponentEnter1:
 	set_visible
-	walk_slow_down
-	walk_slow_down
+	creep_down
+	creep_down
 	face_left
 	step_end
 
 BattleFrontier_BattlePalaceBattleRoom_Movement_UnusedOpponentEnter2:
 	set_visible
-	walk_slow_down
+	creep_down
 	step_end
 
 BattleFrontier_BattlePalaceBattleRoom_Movement_UnusedOpponentEnter3:
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
+	creep_down
+	creep_down
+	creep_down
 	face_left
 	step_end
 
@@ -409,19 +409,19 @@ BattleFrontier_BattlePalaceBattleRoom_Movement_DusclopsEnter:
 	walk_down
 	walk_right
 	walk_down
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 BattleFrontier_BattlePalaceBattleRoom_Movement_AzurillEnter:
 	set_visible
-	walk_fast_down
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_in_place_faster_left
+	run_down
+	run_right
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	step_faster_left
 	delay_16
 	step_end
 
@@ -434,10 +434,10 @@ BattleFrontier_BattlePalaceBattleRoom_Movement_SpenserEnter:
 	delay_16
 	delay_16
 	set_visible
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
+	creep_down
+	creep_down
+	creep_down
+	creep_down
 	face_left
 	step_end
 

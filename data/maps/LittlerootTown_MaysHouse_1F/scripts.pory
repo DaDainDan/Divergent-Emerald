@@ -91,7 +91,7 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 	waitmovement 0
 	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, Common_Movement_Delay48
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
 	waitmovement 0
 	special GetRivalSonDaughterString
@@ -148,7 +148,7 @@ LittlerootTown_MaysHouse_1F_EventScript_GoSeeRoom::
 	lockall
 	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
 	setvar VAR_0x8005, FEMALE
-	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterRight
+	applymovement VAR_0x8004, Common_Movement_StepFasterRight
 	waitmovement 0
 	goto PlayersHouse_1F_EventScript_MomGoSeeRoom
 	end
@@ -205,7 +205,7 @@ LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_PlayerFaceMay::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
 	waitmovement 0
 	return
 
@@ -225,9 +225,9 @@ LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer2::
 	return
 
 LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer0:
-	walk_in_place_faster_left
+	step_faster_left
 	walk_left
-	walk_in_place_faster_up
+	step_faster_up
 	walk_up
 	walk_up
 	walk_up
@@ -241,9 +241,9 @@ LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer1:
 	step_end
 
 LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer2:
-	walk_in_place_faster_right
+	step_faster_right
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	walk_up
 	walk_up
 	walk_up
@@ -271,48 +271,48 @@ LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs2::
 LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit0:
 	delay_16
 	delay_8
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit1:
 	delay_16
 	delay_8
-	walk_in_place_faster_right
+	step_faster_right
 	delay_16
 	delay_16
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit2:
 	delay_16
 	delay_8
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs0:
-	walk_in_place_faster_right
+	step_faster_right
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	walk_up
 	walk_up
 	step_end
 
 LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs1:
-	walk_in_place_faster_right
+	step_faster_right
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	walk_up
 	walk_up
-	walk_in_place_faster_left
+	step_faster_left
 	walk_left
-	walk_in_place_faster_up
+	step_faster_up
 	walk_up
 	step_end
 
 LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs2:
-	walk_in_place_faster_left
+	step_faster_left
 	walk_left
-	walk_in_place_faster_up
+	step_faster_up
 	walk_up
 	walk_up
 	step_end

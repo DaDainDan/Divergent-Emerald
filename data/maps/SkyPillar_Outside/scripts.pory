@@ -35,7 +35,7 @@ SkyPillar_Outside_EventScript_WallaceScene::
 	lockall
 	applymovement LOCALID_SKY_PILLAR_WALLACE, SkyPillar_Outside_Movement_WallaceApproachPlayer
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
 	waitmovement 0
 	msgbox SkyPillar_Outside_Text_OpenedDoorToSkyPillar, MSGBOX_DEFAULT
 	closemessage
@@ -59,13 +59,13 @@ SkyPillar_Outside_EventScript_WallaceScene::
 	special ShakeCamera
 	waitstate
 	delay 20
-	applymovement LOCALID_SKY_PILLAR_WALLACE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_SKY_PILLAR_WALLACE, Common_Movement_StepFasterLeft
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_SKY_PILLAR_WALLACE, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_SKY_PILLAR_WALLACE, Common_Movement_StepFasterRight
 	waitmovement 0
 	delay 20
-	applymovement LOCALID_SKY_PILLAR_WALLACE, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SKY_PILLAR_WALLACE, Common_Movement_StepFasterDown
 	waitmovement 0
 	delay 30
 	msgbox SkyPillar_Outside_Text_SituationGettingWorse, MSGBOX_DEFAULT

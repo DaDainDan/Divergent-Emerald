@@ -453,9 +453,9 @@ LilycoveCity_PokemonCenter_1F_Movement_LadyFacePlayer:
 	step_end
 
 LilycoveCity_PokemonCenter_1F_Movement_MonJump:
-	disable_jump_landing_ground_effect
+	disable_landing_effect
 	jump_in_place_left
-	disable_jump_landing_ground_effect
+	disable_landing_effect
 	jump_in_place_left
 	step_end
 

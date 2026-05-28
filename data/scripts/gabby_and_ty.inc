@@ -215,19 +215,19 @@ GabbyAndTy_EventScript_FirstInterview::
 	end
 
 GabbyAndTy_EventScript_FacePlayerNorth::
-	applymovement VAR_0x8004, GabbyAndTy_Movement_WalkInPlaceDown
+	applymovement VAR_0x8004, GabbyAndTy_Movement_StepDown
 	waitmovement 0
 	return
 
 GabbyAndTy_EventScript_FacePlayerSouth::
-	applymovement VAR_0x8004, GabbyAndTy_Movement_WalkInPlaceUp
-	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterUp
+	applymovement VAR_0x8004, GabbyAndTy_Movement_StepUp
+	applymovement VAR_0x8005, Common_Movement_StepFasterUp
 	waitmovement 0
 	return
 
 GabbyAndTy_EventScript_FacePlayerEast::
-	applymovement VAR_0x8004, GabbyAndTy_Movement_WalkInPlaceLeft
-	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterLeft
+	applymovement VAR_0x8004, GabbyAndTy_Movement_StepLeft
+	applymovement VAR_0x8005, Common_Movement_StepFasterLeft
 	waitmovement 0
 	return
 
@@ -250,16 +250,16 @@ GabbyAndTy_EventScript_RequestInterview::
 	case 4, GabbyAndTy_EventScript_RequestInterviewLostAMon
 	end
 
-GabbyAndTy_Movement_WalkInPlaceDown:
-	walk_in_place_down
+GabbyAndTy_Movement_StepDown:
+	step_down
 	step_end
 
-GabbyAndTy_Movement_WalkInPlaceUp:
-	walk_in_place_up
+GabbyAndTy_Movement_StepUp:
+	step_up
 	step_end
 
-GabbyAndTy_Movement_WalkInPlaceLeft:
-	walk_in_place_left
+GabbyAndTy_Movement_StepLeft:
+	step_left
 	step_end
 
 GabbyAndTy_EventScript_DidntInterviewLastTime::

@@ -12,18 +12,18 @@ LilycoveCity_PokemonTrainerFanClub_OnFrame:
 
 LilycoveCity_PokemonTrainerFanClub_EventScript_MeetFirstFans::
 	lockall
-	applymovement LOCALID_TRAINER_FAN_CLUB_LASS, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_TRAINER_FAN_CLUB_LASS, Common_Movement_StepFasterDown
 	waitmovement 0
 	msgbox LilycoveCity_PokemonTrainerFanClub_Text_OhWowItsPlayer, MSGBOX_DEFAULT
 	applymovement LOCALID_TRAINER_FAN_CLUB_LITTLE_GIRL, LilycoveCity_PokemonTrainerFanClub_Movement_LittleGirlWatchPlayer
 	applymovement LOCALID_TRAINER_FAN_CLUB_MAN, LilycoveCity_PokemonTrainerFanClub_Movement_FanApproachPlayer
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 	waitmovement 0
 	msgbox LilycoveCity_PokemonTrainerFanClub_Text_HeardAboutYouImYourFan, MSGBOX_DEFAULT
 	applymovement LOCALID_TRAINER_FAN_CLUB_LITTLE_GIRL, LilycoveCity_PokemonTrainerFanClub_Movement_LittleGirlMoveCloserToPlayer
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
 	waitmovement 0
 	applymovement LOCALID_TRAINER_FAN_CLUB_LITTLE_GIRL, LilycoveCity_PokemonTrainerFanClub_Movement_LittleGirlHideFromPlayer
 	waitmovement 0
@@ -33,7 +33,7 @@ LilycoveCity_PokemonTrainerFanClub_EventScript_MeetFirstFans::
 
 LilycoveCity_PokemonTrainerFanClub_Movement_FanApproachPlayer:
 	delay_8
-	walk_in_place_faster_down
+	step_faster_down
 	walk_down
 	walk_down
 	walk_down
@@ -42,25 +42,25 @@ LilycoveCity_PokemonTrainerFanClub_Movement_FanApproachPlayer:
 	step_end
 
 LilycoveCity_PokemonTrainerFanClub_Movement_LittleGirlWatchPlayer:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_down
+	run_left
+	run_left
+	run_down
+	run_down
+	run_left
+	run_down
 	step_end
 
 LilycoveCity_PokemonTrainerFanClub_Movement_LittleGirlMoveCloserToPlayer:
 	walk_down
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 LilycoveCity_PokemonTrainerFanClub_Movement_LittleGirlHideFromPlayer:
 	jump_in_place_right
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_in_place_faster_down
+	run_up
+	run_up
+	run_right
+	step_faster_down
 	step_end
 
 LilycoveCity_PokemonTrainerFanClub_OnTransition:

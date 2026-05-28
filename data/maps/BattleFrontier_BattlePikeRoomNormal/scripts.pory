@@ -411,11 +411,11 @@ BattleFrontier_BattlePikeRoomNormal_Movement_StatusNPCApproachPlayer:
 	step_end
 
 BattleFrontier_BattlePikeRoomNormal_Movement_MonApproachPlayer:
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_left
+	run_down
+	run_right
+	run_right
+	run_down
+	run_left
 	face_down
 	step_end
 

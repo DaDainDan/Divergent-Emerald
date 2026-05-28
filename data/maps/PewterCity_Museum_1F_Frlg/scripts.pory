@@ -35,7 +35,7 @@ PewterCity_Museum_1F_EventScript_ExplainAmber::
 PewterCity_Museum_1F_EventScript_EntranceTriggerLeft::
 	lockall
 	setvar VAR_TEMP_1, 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 	waitmovement 0
 	goto PewterCity_Museum_1F_EventScript_EntranceTrigger
 	end
@@ -43,7 +43,7 @@ PewterCity_Museum_1F_EventScript_EntranceTriggerLeft::
 PewterCity_Museum_1F_EventScript_EntranceTriggerMid::
 	lockall
 	setvar VAR_TEMP_1, 1
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 	waitmovement 0
 	goto PewterCity_Museum_1F_EventScript_EntranceTrigger
 	end
@@ -51,7 +51,7 @@ PewterCity_Museum_1F_EventScript_EntranceTriggerMid::
 PewterCity_Museum_1F_EventScript_EntranceTriggerRight::
 	lockall
 	setvar VAR_TEMP_1, 2
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 	waitmovement 0
 	goto PewterCity_Museum_1F_EventScript_EntranceTrigger
 	end
@@ -118,18 +118,18 @@ PewterCity_Museum_1F_Movement_ApproachCounterLeft::
 	walk_right
 	walk_right
 	delay_8
-	walk_in_place_right
+	step_right
 	step_end
 
 PewterCity_Museum_1F_Movement_ApproachCounterMid::
 	walk_right
 	delay_8
-	walk_in_place_right
+	step_right
 	step_end
 
 PewterCity_Museum_1F_Movement_ApproachCounterRight::
 	delay_8
-	walk_in_place_right
+	step_right
 	step_end
 
 PewterCity_Museum_1F_EventScript_Scientist2::

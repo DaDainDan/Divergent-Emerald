@@ -37,18 +37,18 @@ MossdeepCity_House2_EventScript_WingullExitWest::
 	return
 
 MossdeepCity_House2_Movement_WingullExitNorth:
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_down
+	run_right
+	run_down
+	run_down
+	run_left
+	run_down
 	delay_8
 	step_end
 
 MossdeepCity_House2_Movement_WingullExitEast:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	run_down
+	run_down
+	run_down
 	delay_8
 	step_end
 

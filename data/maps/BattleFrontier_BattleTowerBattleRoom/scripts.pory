@@ -192,7 +192,7 @@ BattleFrontier_EventScript_IncrementWinStreak::
 BattleFrontier_BattleTowerBattleRoom_EventScript_SecondAttendantEnter::
 	applymovement LOCALID_TOWER_BATTLE_ATTENDANT_2, BattleFrontier_BattleTowerBattleRoom_Movement_SecondAttendantEnter
 	waitmovement 0
-	applymovement LOCALID_TOWER_BATTLE_ATTENDANT_2, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_TOWER_BATTLE_ATTENDANT_2, Common_Movement_StepLeft
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_TOWER_BATTLE_ATTENDANT_1, Common_Movement_ExclamationMark
@@ -391,14 +391,14 @@ BattleFrontier_BattleTowerBattleRoom_Movement_AttendantFaceSecondAttendant:
 	delay_16
 	delay_16
 	delay_16
-	walk_in_place_right
+	step_right
 	step_end
 
 BattleFrontier_BattleTowerBattleRoom_Movement_AnabelEnter:
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
+	creep_down
+	creep_down
+	creep_down
+	creep_down
 	face_left
 	step_end
 

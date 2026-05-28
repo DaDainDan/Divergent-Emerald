@@ -300,7 +300,7 @@ Route110_EventScript_Alyssa::
 
 Route110_EventScript_CyclingChallengeEnd::
 	lockall
-	applymovement LOCALID_CHALLENGE_BIKER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_CHALLENGE_BIKER, Common_Movement_StepFasterRight
 	waitmovement 0
 	call Route110_EventScript_CyclingChallengeResults
 	releaseall
@@ -374,7 +374,7 @@ Route110_EventScript_RivalScene::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, Route110_EventScript_PlayMayMusic
 	call_if_eq VAR_RESULT, FEMALE, Route110_EventScript_PlayBrendanMusic
-	applymovement LOCALID_ROUTE110_RIVAL, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_ROUTE110_RIVAL, Common_Movement_StepFasterDown
 	waitmovement 0
 	applymovement LOCALID_ROUTE110_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -527,7 +527,7 @@ Route110_EventScript_MoveRival3::
 Route110_Movement_RivalApproachPlayer1:
 	walk_down
 	walk_left
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 Route110_Movement_RivalApproachPlayer2:
@@ -537,38 +537,38 @@ Route110_Movement_RivalApproachPlayer2:
 Route110_Movement_RivalApproachPlayer3:
 	walk_down
 	walk_right
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 Route110_Movement_RivalExit1:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
 	step_end
 
 Route110_Movement_RivalExit2:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_down
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_down
 	step_end
 
 Route110_Movement_RivalExit3:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
 	step_end
 
 Route110_EventScript_BirchScene1::
@@ -607,13 +607,13 @@ Route110_EventScript_BirchScene::
 	msgbox Route110_Text_ImagineSeeingYouHere, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_StepFasterLeft
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_StepFasterRight
 	waitmovement 0
 	delay 20
-	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_StepFasterDown
 	waitmovement 0
 	delay 30
 	msgbox Route110_Text_HeardYouInstallMatchCall, MSGBOX_DEFAULT

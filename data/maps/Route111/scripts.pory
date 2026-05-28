@@ -134,12 +134,12 @@ Route111_EventScript_RootFossilDisappeared::
 @ Unused
 Route111_Movement_PlayerFall::
 	lock_anim
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
 	step_end
 
 Route111_EventScript_Girl::
@@ -266,7 +266,7 @@ Route111_EventScript_Victor::
 Route111_EventScript_BattleWinstrates::
 	msgbox Route111_Text_VictorIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_VICTOR, Route111_Text_VictorDefeat
-	applymovement LOCALID_ROUTE111_VICTOR, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_ROUTE111_VICTOR, Common_Movement_StepFasterUp
 	waitmovement 0
 	call Route111_EventScript_OpenWinstrateDoor
 	msgbox Route111_Text_VictorPostBattle, MSGBOX_DEFAULT
@@ -284,7 +284,7 @@ Route111_EventScript_BattleWinstrates::
 	call Route111_EventScript_CloseWinstrateDoor
 	msgbox Route111_Text_VictoriaIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_VICTORIA, Route111_Text_VictoriaDefeat
-	applymovement LOCALID_ROUTE111_VICTORIA, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_ROUTE111_VICTORIA, Common_Movement_StepFasterUp
 	waitmovement 0
 	call Route111_EventScript_OpenWinstrateDoor
 	msgbox Route111_Text_VictoriaPostBattle, MSGBOX_DEFAULT
@@ -302,7 +302,7 @@ Route111_EventScript_BattleWinstrates::
 	call Route111_EventScript_CloseWinstrateDoor
 	msgbox Route111_Text_ViviIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_VIVI, Route111_Text_ViviDefeat
-	applymovement LOCALID_ROUTE111_VIVI, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_ROUTE111_VIVI, Common_Movement_StepFasterUp
 	waitmovement 0
 	call Route111_EventScript_OpenWinstrateDoor
 	msgbox Route111_Text_ViviPostBattle, MSGBOX_DEFAULT
@@ -322,7 +322,7 @@ Route111_EventScript_BattleWinstrates::
 	trainerbattle_no_intro TRAINER_VICKY, Route111_Text_VickyDefeat
 	msgbox Route111_Text_VickyPostBattle, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROUTE111_VICKY, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_ROUTE111_VICKY, Common_Movement_StepFasterUp
 	waitmovement 0
 	call Route111_EventScript_OpenWinstrateDoor
 	applymovement LOCALID_ROUTE111_VICKY, Route111_Movement_WinstrateEnterHouse
@@ -343,7 +343,7 @@ Route111_EventScript_CloseWinstrateDoor::
 	return
 
 Route111_Movement_WinstrateEnterHouse:
-	walk_in_place_faster_up
+	step_faster_up
 	walk_up
 	step_end
 

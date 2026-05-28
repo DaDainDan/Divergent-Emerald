@@ -660,11 +660,11 @@ BattleFrontier_BattleTowerLobby_Movement_PlayerEnterElevator:
 
 @ Unused
 BattleFrontier_BattleTowerLobby_Movement_UnusedEnterElevator:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
 	set_invisible
 	step_end
 

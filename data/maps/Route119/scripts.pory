@@ -46,7 +46,7 @@ Route119_EventScript_RivalEncounter::
 	delay 65
 	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_RivalEnter1
 	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_RivalEnter2
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
 	waitmovement 0
 	delay 30
 	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_SetRivalPos1
@@ -213,66 +213,66 @@ Route119_EventScript_SetRivalPos2::
 
 Route119_Movement_PlayerWatchRivalExit1:
 	delay_16
-	walk_in_place_faster_right
+	step_faster_right
 	delay_8
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 Route119_Movement_PlayerWatchRivalExit2:
 	delay_16
-	walk_in_place_faster_left
+	step_faster_left
 	delay_8
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 Route119_Movement_RivalEnter1:
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_up
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_up
 	step_end
 
 Route119_Movement_RivalEnter2:
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_up
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_up
 	step_end
 
 Route119_Movement_RivalExit1:
-	walk_fast_right
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	run_right
+	run_up
+	run_up
+	run_up
+	run_right
+	run_up
+	run_up
+	run_up
+	run_up
 	step_end
 
 Route119_Movement_RivalExit2:
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	run_left
+	run_up
+	run_up
+	run_up
+	run_right
+	run_right
+	run_up
+	run_up
+	run_up
+	run_up
 	step_end
 
 Route119_Movement_ScottEnter:

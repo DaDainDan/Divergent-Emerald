@@ -26,7 +26,7 @@ SeafloorCavern_Entrance_EventScript_Grunt::
 	copyobjectxytoperm LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT
 	msgbox SeafloorCavern_Entrance_Text_HearMagmaNearMossdeep, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT, Common_Movement_StepFasterUp
 	waitmovement 0
 	releaseall
 	end
@@ -37,23 +37,23 @@ SeafloorCavern_Entrance_EventScript_GruntSpeechShort::
 	call_if_eq VAR_FACING, DIR_NORTH, SeafloorCavern_Entrance_EventScript_GruntFacePlayerNorth
 	msgbox SeafloorCavern_Entrance_Text_HearMagmaNearMossdeepShort, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT, Common_Movement_StepFasterUp
 	waitmovement 0
 	releaseall
 	end
 
 SeafloorCavern_Entrance_EventScript_GruntFacePlayerEast::
-	applymovement LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT, Common_Movement_StepFasterLeft
 	waitmovement 0
 	return
 
 SeafloorCavern_Entrance_EventScript_GruntFacePlayerWest::
-	applymovement LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT, Common_Movement_StepFasterRight
 	waitmovement 0
 	return
 
 SeafloorCavern_Entrance_EventScript_GruntFacePlayerNorth::
-	applymovement LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SEAFLOOR_CAVERN_ENTRANCE_GRUNT, Common_Movement_StepFasterDown
 	waitmovement 0
 	return
 

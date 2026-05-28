@@ -15,7 +15,7 @@ FourIsland_IcefallCave_Back_EventScript_LoreleiRocketsScene::
 	lockall
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox FourIsland_IcefallCave_Back_Text_LoreleiKeepHandsOffMons
-	applymovement LOCALID_ICEFALL_ROCKET1, FourIsland_IcefallCave_Back_Movement_WalkInPlaceDown
+	applymovement LOCALID_ICEFALL_ROCKET1, FourIsland_IcefallCave_Back_Movement_StepDown
 	waitmovement 0
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox FourIsland_IcefallCave_Back_Text_ShutItLadyLeaveUsBe
@@ -23,31 +23,31 @@ FourIsland_IcefallCave_Back_EventScript_LoreleiRocketsScene::
 	playse SE_PIN
 	applymovement LOCALID_ICEFALL_LORELEI, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_ICEFALL_LORELEI, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_ICEFALL_LORELEI, Common_Movement_StepFasterDown
 	waitmovement 0
 	applymovement LOCALID_ICEFALL_LORELEI, Common_Movement_Delay48
 	waitmovement 0
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox FourIsland_IcefallCave_Back_Text_LoreleiPlayerHelpMeKickPoachersOut
 	closemessage
-	applymovement LOCALID_ICEFALL_LORELEI, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_ICEFALL_LORELEI, Common_Movement_StepFasterRight
 	waitmovement 0
 	delay 18
-	applymovement LOCALID_ICEFALL_LORELEI, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_ICEFALL_LORELEI, Common_Movement_StepFasterDown
 	waitmovement 0
 	delay 35
 	applymovement LOCALID_ICEFALL_ROCKET3, FourIsland_IcefallCave_Back_Movement_Rocket3FaceLorelei
 	applymovement LOCALID_ICEFALL_LORELEI, FourIsland_IcefallCave_Back_Movement_LoreleiToRockets
 	applymovement LOCALID_PLAYER, FourIsland_IcefallCave_Back_Movement_PlayerToRockets
 	waitmovement 0
-	applymovement LOCALID_ICEFALL_ROCKET2, FourIsland_IcefallCave_Back_Movement_WalkInPlaceDown
+	applymovement LOCALID_ICEFALL_ROCKET2, FourIsland_IcefallCave_Back_Movement_StepDown
 	waitmovement 0
 	playbgm MUS_RG_ENCOUNTER_ROCKET, 0
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox FourIsland_IcefallCave_Back_Text_GruntIntro
 	setvar VAR_LAST_TALKED, LOCALID_ICEFALL_ROCKET3
 	trainerbattle_no_intro TRAINER_TEAM_ROCKET_GRUNT_45, FourIsland_IcefallCave_Back_Text_GruntDefeat
-	applymovement LOCALID_ICEFALL_LORELEI, FourIsland_IcefallCave_Back_Movement_WalkInPlaceUp
+	applymovement LOCALID_ICEFALL_LORELEI, FourIsland_IcefallCave_Back_Movement_StepUp
 	waitmovement 0
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox FourIsland_IcefallCave_Back_Text_LoreleiWhereHaveYouTakenMons
@@ -77,7 +77,7 @@ FourIsland_IcefallCave_Back_EventScript_LoreleiRocketsScene::
 	delay 50
 	applymovement LOCALID_ICEFALL_LORELEI, FourIsland_IcefallCave_Back_Movement_LoreleiWalkToPlayer
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
 	waitmovement 0
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox FourIsland_IcefallCave_Back_Text_ThankYouThisIsAwful
@@ -96,49 +96,49 @@ FourIsland_IcefallCave_Back_Movement_PlayerToRockets::
 
 FourIsland_IcefallCave_Back_Movement_PlayerWatchRocketsExit::
 	delay_16
-	walk_in_place_faster_left
+	step_faster_left
 	delay_16
 	delay_16
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
-FourIsland_IcefallCave_Back_Movement_WalkInPlaceDown::
-	walk_in_place_down
+FourIsland_IcefallCave_Back_Movement_StepDown::
+	step_down
 	step_end
 
 FourIsland_IcefallCave_Back_Movement_UnusedPushRight::
-	lock_facing_direction
+	lock_look
 	walk_right
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 FourIsland_IcefallCave_Back_Movement_Rocket1ReactToThreat::
-	walk_in_place_fast_down
+	step_fast_down
 	step_end
 
 FourIsland_IcefallCave_Back_Movement_Rocket1Exit::
 	walk_right
 	walk_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
 	step_end
 
 FourIsland_IcefallCave_Back_Movement_Rocket2Exit::
 	delay_16
 	walk_left
 	walk_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
 	step_end
 
 FourIsland_IcefallCave_Back_Movement_Rocket3Exit::
@@ -146,19 +146,19 @@ FourIsland_IcefallCave_Back_Movement_Rocket3Exit::
 	walk_down
 	delay_16
 	walk_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	run_right
+	run_right
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
 	step_end
 
 FourIsland_IcefallCave_Back_Movement_Rocket3FaceLorelei::
 	delay_16
 	delay_8
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 FourIsland_IcefallCave_Back_Movement_UnusedWalkLeft::
@@ -171,16 +171,16 @@ FourIsland_IcefallCave_Back_Movement_LoreleiToRockets::
 	walk_up
 	step_end
 
-FourIsland_IcefallCave_Back_Movement_WalkInPlaceUp::
-	walk_in_place_up
+FourIsland_IcefallCave_Back_Movement_StepUp::
+	step_up
 	step_end
 
 FourIsland_IcefallCave_Back_Movement_LoreleiWatchRocketsExit::
 	delay_8
-	walk_in_place_faster_right
+	step_faster_right
 	delay_16
 	delay_16
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 FourIsland_IcefallCave_Back_Movement_LoreleiWalkToPlayer::

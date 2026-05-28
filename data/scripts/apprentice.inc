@@ -227,19 +227,19 @@ Apprentice_EventScript_DontMove:
 	end
 
 Apprentice_Movement_LeaveNorth:
-	walk_fast_right
+	run_right
 Apprentice_Movement_Leave:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
+	run_down
+	run_down
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
 	set_invisible
 	slide_down
 	slide_down

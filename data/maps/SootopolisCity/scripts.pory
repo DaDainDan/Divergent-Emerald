@@ -189,8 +189,8 @@ SootopolisCity_EventScript_LegendariesSceneFromPokeCenter::
 	doweather
 	setvar VAR_0x8004, FALSE @ Just do Groudon/Kyogre fight scene
 	special Script_DoRayquazaScene
-	applymovement LOCALID_SOOTOPOLIS_KYOGRE, Common_Movement_WalkInPlaceFasterLeft
-	applymovement LOCALID_SOOTOPOLIS_GROUDON, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_SOOTOPOLIS_KYOGRE, Common_Movement_StepFasterLeft
+	applymovement LOCALID_SOOTOPOLIS_GROUDON, Common_Movement_StepFasterRight
 	waitmovement 0
 	delay 60
 	waitse
@@ -247,33 +247,33 @@ SootopolisCity_EventScript_LegendariesSceneFromPokeCenter::
 	end
 
 SootopolisCity_Movement_PanToActionFromPokeCenter:
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
 	step_end
 
 SootopolisCity_Movement_PanBackToPokeCenter:
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
 	step_end
 
 SootopolisCity_EventScript_LegendariesSceneFromDive::
@@ -288,8 +288,8 @@ SootopolisCity_EventScript_LegendariesSceneFromDive::
 	doweather
 	setvar VAR_0x8004, FALSE @ Just do Groudon/Kyogre fight scene
 	special Script_DoRayquazaScene
-	applymovement LOCALID_SOOTOPOLIS_KYOGRE, Common_Movement_WalkInPlaceFasterLeft
-	applymovement LOCALID_SOOTOPOLIS_GROUDON, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_SOOTOPOLIS_KYOGRE, Common_Movement_StepFasterLeft
+	applymovement LOCALID_SOOTOPOLIS_GROUDON, Common_Movement_StepFasterRight
 	waitmovement 0
 	delay 60
 	waitse
@@ -346,8 +346,8 @@ SootopolisCity_EventScript_LegendariesSceneFromDive::
 	end
 
 SootopolisCity_Movement_PanToActionFromDive:
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
 	walk_up
 	walk_up
 	walk_up
@@ -365,14 +365,14 @@ SootopolisCity_Movement_PanBackToDive:
 	walk_down
 	walk_down
 	walk_down
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
 	step_end
 
 SootopolisCity_Movement_KyogreAttack:
-	walk_in_place_slow_left
-	walk_in_place_slow_left
-	walk_in_place_slow_left
+	step_slow_left
+	step_slow_left
+	step_slow_left
 	delay_16
 	delay_16
 	delay_16
@@ -397,31 +397,31 @@ SootopolisCity_Movement_KyogreDefend:
 	step_end
 
 SootopolisCity_Movement_KyogreMoveBack:
-	lock_facing_direction
+	lock_look
 	walk_right
 	delay_16
 	delay_16
 	delay_16
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 SootopolisCity_Movement_KyogreIdle:
-	walk_in_place_slow_left
-	walk_in_place_slow_left
-	walk_in_place_slow_left
-	walk_in_place_slow_left
-	walk_in_place_slow_left
-	walk_in_place_slow_left
+	step_slow_left
+	step_slow_left
+	step_slow_left
+	step_slow_left
+	step_slow_left
+	step_slow_left
 	step_end
 
 SootopolisCity_Movement_GroudonAttack:
-	walk_in_place_slow_right
-	walk_in_place_slow_right
-	walk_in_place_slow_right
+	step_slow_right
+	step_slow_right
+	step_slow_right
 	delay_16
 	delay_16
 	delay_16
-	walk_fast_right
+	run_right
 	step_end
 
 SootopolisCity_Movement_GroudonDefend:
@@ -434,25 +434,25 @@ SootopolisCity_Movement_GroudonDefend:
 	delay_16
 	delay_16
 	delay_16
-	walk_fast_right
+	run_right
 	step_end
 
 SootopolisCity_Movement_GroudonMoveBack:
-	lock_facing_direction
+	lock_look
 	walk_left
 	delay_16
 	delay_16
 	delay_16
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 SootopolisCity_Movement_GroudonIdle:
-	walk_in_place_slow_right
-	walk_in_place_slow_right
-	walk_in_place_slow_right
-	walk_in_place_slow_right
-	walk_in_place_slow_right
-	walk_in_place_slow_right
+	step_slow_right
+	step_slow_right
+	step_slow_right
+	step_slow_right
+	step_slow_right
+	step_slow_right
 	step_end
 
 @ If not at PokeCenter, assumed to have arrived via Dive
@@ -595,13 +595,13 @@ SootopolisCity_EventScript_SetRoughWater::
 	return
 
 SootopolisCity_Movement_RayquazaFlyOff:
-	walk_fast_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
+	run_up
+	sprint_up
+	sprint_up
+	sprint_up
+	sprint_up
+	sprint_up
+	sprint_up
 	step_end
 
 SootopolisCity_Movement_PanUp:
@@ -628,14 +628,14 @@ SootopolisCity_Movement_PlayerApproachLegendariesDown:
 
 @ Unused
 SootopolisCity_Movement_UnusedPanUp:
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
+	creep_diag_northeast
 	walk_right
 	walk_right
 	walk_right
@@ -655,8 +655,8 @@ SootopolisCity_Movement_UnusedPanBack:
 	walk_down
 	walk_down
 	walk_down
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
+	creep_diag_southwest
+	creep_diag_southwest
 	step_end
 
 SootopolisCity_EventScript_CaveOfOriginExpert::
@@ -972,7 +972,7 @@ SootopolisCity_Movement_StevenStartWalkToCaveOfOrigin:
 	walk_up
 	walk_up
 	walk_up
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 SootopolisCity_Movement_PlayerStartWalkToCaveOfOriginWest:
@@ -1103,7 +1103,7 @@ SootopolisCity_Movement_StevenWalkToCaveOfOrigin:
 	walk_right
 	walk_right
 	delay_4
-	walk_in_place_faster_left
+	step_faster_left
 	delay_16
 	delay_16
 	walk_right
@@ -1165,8 +1165,8 @@ SootopolisCity_Movement_PlayerWalkToCaveOfOrigin:
 	step_end
 
 SootopolisCity_Movement_ExpertMoveAside:
-	walk_slow_left
-	walk_in_place_faster_right
+	creep_left
+	step_faster_right
 	step_end
 
 SootopolisCity_Movement_StevenArriveCaveEntrance:
@@ -1179,7 +1179,7 @@ SootopolisCity_Movement_StevenArriveCaveEntrance:
 	walk_up
 	walk_up
 	walk_right
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 SootopolisCity_Movement_PlayerArriveCaveEntrance:
@@ -1192,7 +1192,7 @@ SootopolisCity_Movement_PlayerArriveCaveEntrance:
 	walk_up
 	walk_up
 	walk_up
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 SootopolisCity_Movement_PlayerEnterCaveOfOrigin:
@@ -1322,12 +1322,12 @@ SootopolisCity_EventScript_GoToGym::
 
 SootopolisCity_Movement_WallaceMoveFromGym:
 	walk_right
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 SootopolisCity_Movement_WallaceMoveFromGymWest:
 	walk_left
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 SootopolisCity_EventScript_Maxie::

@@ -105,12 +105,12 @@ CinnabarIsland_EventScript_BillScene::
 	end
 
 CinnabarIsland_EventScript_BillFacePlayer1::
-	applymovement LOCALID_CINNABAR_BILL, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_CINNABAR_BILL, Common_Movement_StepFasterUp
 	waitmovement 0
 	return
 
 CinnabarIsland_EventScript_BillFacePlayer2::
-	applymovement LOCALID_CINNABAR_BILL, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_CINNABAR_BILL, Common_Movement_StepFasterLeft
 	waitmovement 0
 	return
 
@@ -122,7 +122,7 @@ CinnabarIsland_EventScript_BillApproachPlayer1::
 CinnabarIsland_EventScript_BillApproachPlayer2::
 	applymovement LOCALID_CINNABAR_BILL, CinnabarIsland_Movement_BillApproachPlayer2
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 	waitmovement 0
 	return
 
@@ -173,13 +173,13 @@ CinnabarIsland_EventScript_BillReturnToPokeCenter::
 
 CinnabarIsland_Movement_PlayerWatchBillExit::
 	walk_left
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 CinnabarIsland_Movement_BillApproachDoor::
 	delay_16
 	walk_left
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 CinnabarIsland_Movement_BillReEnterPokeCenter::
@@ -240,11 +240,11 @@ CinnabarIsland_EventScript_BoardBoatExitedPokeCenter::
 CinnabarIsland_Movement_BoatArrive::
 	delay_16
 	delay_16
-	walk_fast_left
-	walk_fast_left
+	run_left
+	run_left
 	walk_left
-	walk_slow_left
-	walk_slow_left
+	creep_left
+	creep_left
 	step_end
 
 CinnabarIsland_Movement_BillBoardBoat::
@@ -270,7 +270,7 @@ CinnabarIsland_Movement_BillFaceBoat::
 	delay_16
 	delay_16
 	delay_8
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 CinnabarIsland_Movement_ApproachShore::
@@ -293,7 +293,7 @@ CinnabarIsland_Movement_PlayerBoardBoat::
 	walk_right
 	walk_down
 	walk_down
-	walk_in_place_faster_right
+	step_faster_right
 	delay_4
 	walk_right
 	delay_4
@@ -311,7 +311,7 @@ CinnabarIsland_Movement_PlayerBoardBoatFromShore::
 @ Triggered when VAR_TEMP_1 is 0
 CinnabarIsland_EventScript_GymDoorLocked::
 	lockall
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
 	waitmovement 0
 	delay 20
 	msgbox CinnabarIsland_Text_DoorIsLocked

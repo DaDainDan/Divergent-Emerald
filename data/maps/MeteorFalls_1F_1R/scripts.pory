@@ -20,12 +20,12 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_StepDown
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_WithThisMeteorite, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterUp
-	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_StepFasterUp
+	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, Common_Movement_StepFasterUp
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_ExclamationMark
@@ -38,9 +38,9 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_HoldItRightThereMagma, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
-	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterLeft
-	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
+	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_StepFasterLeft
+	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, Common_Movement_StepFasterLeft
 	waitmovement 0
 	addobject LOCALID_METEOR_FALLS_ARCHIE
 	addobject LOCALID_METEOR_FALLS_AQUA_GRUNT_1
@@ -50,8 +50,8 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	applymovement LOCALID_METEOR_FALLS_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1Arrive
 	applymovement LOCALID_METEOR_FALLS_AQUA_GRUNT_2, MeteorFalls_1F_1R_Movement_AquaGrunt2Arrive
 	waitmovement 0
-	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterLeft
-	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_StepFasterLeft
+	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, Common_Movement_StepFasterLeft
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua, MSGBOX_DEFAULT
 	closemessage
@@ -69,10 +69,10 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	applymovement LOCALID_METEOR_FALLS_AQUA_GRUNT_2, MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma, MSGBOX_DEFAULT
-	applymovement LOCALID_METEOR_FALLS_ARCHIE, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_METEOR_FALLS_ARCHIE, Common_Movement_StepFasterDown
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo, MSGBOX_DEFAULT
-	applymovement LOCALID_METEOR_FALLS_ARCHIE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_METEOR_FALLS_ARCHIE, Common_Movement_StepFasterLeft
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_ArchieFarewell, MSGBOX_DEFAULT
 	closemessage
@@ -94,32 +94,32 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 MeteorFalls_1F_1R_Movement_MagmaGruntApproachPlayer:
 	walk_right
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
+	run_up
+	run_up
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
 	step_end
 
 MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
+	run_up
+	run_up
+	run_up
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
 	step_end
 
 MeteorFalls_1F_1R_Movement_ArchieArrive:
@@ -166,7 +166,7 @@ MeteorFalls_1F_1R_Movement_ArchieApproachPlayer:
 	walk_right
 	walk_up
 	walk_up
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 MeteorFalls_1F_1R_Movement_AquaGrunt1Exit:
@@ -185,7 +185,7 @@ MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie:
 	walk_right
 	walk_right
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 MeteorFalls_1F_1R_Movement_AquaGrunt2Exit:
@@ -205,16 +205,16 @@ MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie:
 	walk_right
 	walk_right
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay:
-	walk_in_place_faster_down
+	step_faster_down
 	delay_4
-	walk_in_place_faster_right
-	lock_facing_direction
+	step_faster_right
+	lock_look
 	walk_left
-	unlock_facing_direction
+	unlock_look
 	face_right
 	step_end
 

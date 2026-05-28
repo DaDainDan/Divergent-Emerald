@@ -44,8 +44,8 @@ BattleFrontier_BattleArenaBattleRoom_EventScript_EnterRoom::
 	waitmovement 0
 	frontier_get FRONTIER_DATA_BATTLE_NUM
 	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattleArenaBattleRoom_EventScript_AnnounceTrainers
-	applymovement LOCALID_ARENA_BATTLE_ATTENDANT, BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceDown
-	applymovement LOCALID_ARENA_BATTLE_PLAYER, BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceLeft
+	applymovement LOCALID_ARENA_BATTLE_ATTENDANT, BattleFrontier_BattleArenaBattleRoom_Movement_StepDown
+	applymovement LOCALID_ARENA_BATTLE_PLAYER, BattleFrontier_BattleArenaBattleRoom_Movement_StepLeft
 	setvar VAR_TEMP_2, 1
 	frontier_set FRONTIER_DATA_RECORD_DISABLED, TRUE
 	goto BattleFrontier_BattleArenaBattleRoom_EventScript_AskReadyForOpponent
@@ -114,8 +114,8 @@ BattleFrontier_BattleArenaBattleRoom_EventScript_DefeatedOpponent::
 	applymovement LOCALID_ARENA_BATTLE_OPPONENT, BattleFrontier_BattleArenaBattleRoom_Movement_OpponentExit
 	waitmovement 0
 	removeobject LOCALID_ARENA_BATTLE_OPPONENT
-	applymovement LOCALID_ARENA_BATTLE_ATTENDANT, BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceDown
-	applymovement LOCALID_ARENA_BATTLE_PLAYER, BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceLeft
+	applymovement LOCALID_ARENA_BATTLE_ATTENDANT, BattleFrontier_BattleArenaBattleRoom_Movement_StepDown
+	applymovement LOCALID_ARENA_BATTLE_PLAYER, BattleFrontier_BattleArenaBattleRoom_Movement_StepLeft
 	waitmovement 0
 	msgbox BattleFrontier_BattleArenaBattleRoom_Text_MonsWillBeRestored, MSGBOX_DEFAULT
 	special LoadPlayerParty
@@ -184,8 +184,8 @@ BattleFrontier_BattleArenaBattleRoom_EventScript_AskRetireChallenge::
 
 BattleFrontier_BattleArenaBattleRoom_EventScript_ContinueChallenge::
 	closemessage
-	applymovement LOCALID_ARENA_BATTLE_PLAYER, BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceRight
-	applymovement LOCALID_ARENA_BATTLE_ATTENDANT, BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceRight
+	applymovement LOCALID_ARENA_BATTLE_PLAYER, BattleFrontier_BattleArenaBattleRoom_Movement_StepRight
+	applymovement LOCALID_ARENA_BATTLE_ATTENDANT, BattleFrontier_BattleArenaBattleRoom_Movement_StepRight
 	waitmovement 0
 	goto BattleFrontier_BattleArenaBattleRoom_EventScript_AnnounceTrainers
 	waitstate
@@ -262,8 +262,8 @@ BattleFrontier_BattleArenaBattleRoom_EventScript_AskReadyForTycoonNoRecord::
 
 BattleFrontier_BattleArenaBattleRoom_EventScript_BattleGreta::
 	call BattleFrontier_EventScript_SetBrainObjectGfx
-	applymovement LOCALID_ARENA_BATTLE_PLAYER, BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceRight
-	applymovement LOCALID_ARENA_BATTLE_ATTENDANT, BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceRight
+	applymovement LOCALID_ARENA_BATTLE_PLAYER, BattleFrontier_BattleArenaBattleRoom_Movement_StepRight
+	applymovement LOCALID_ARENA_BATTLE_ATTENDANT, BattleFrontier_BattleArenaBattleRoom_Movement_StepRight
 	waitmovement 0
 	applymovement LOCALID_ARENA_BATTLE_ANNOUNCER, BattleFrontier_BattleArenaBattleRoom_Movement_JumpInPlaceDown
 	playse SE_M_BELLY_DRUM
@@ -398,15 +398,15 @@ BattleFrontier_BattleArenaBattleRoom_Movement_PlayerStepForward:
 BattleFrontier_BattleArenaBattleRoom_Movement_PlayerWalkBackToLine:
 	walk_left
 	walk_left
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
-BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceLeft:
-	walk_in_place_faster_up
+BattleFrontier_BattleArenaBattleRoom_Movement_StepLeft:
+	step_faster_up
 	step_end
 
-BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceRight:
-	walk_in_place_faster_right
+BattleFrontier_BattleArenaBattleRoom_Movement_StepRight:
+	step_faster_right
 	step_end
 
 BattleFrontier_BattleArenaBattleRoom_Movement_OpponentEnter:
@@ -419,11 +419,11 @@ BattleFrontier_BattleArenaBattleRoom_Movement_OpponentStepForward:
 	step_end
 
 BattleFrontier_BattleArenaBattleRoom_Movement_GretaEnter:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
+	run_left
+	run_left
+	run_left
+	run_left
+	run_left
 	step_end
 
 BattleFrontier_BattleArenaBattleRoom_Movement_OpponentExit:
@@ -437,22 +437,22 @@ BattleFrontier_BattleArenaBattleRoom_Movement_OpponentExit:
 	step_end
 
 BattleFrontier_BattleArenaBattleRoom_Movement_JumpInPlaceDown:
-	disable_jump_landing_ground_effect
+	disable_landing_effect
 	jump_in_place_down
 	step_end
 
 BattleFrontier_BattleArenaBattleRoom_Movement_JumpInPlaceUp:
-	disable_jump_landing_ground_effect
+	disable_landing_effect
 	jump_in_place_up
 	step_end
 
-BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceDown:
-	walk_in_place_faster_down
+BattleFrontier_BattleArenaBattleRoom_Movement_StepDown:
+	step_faster_down
 	step_end
 
 @ Unused, redundant
-BattleFrontier_BattleArenaBattleRoom_Movement_WalkInPlaceRight2:
-	walk_in_place_faster_right
+BattleFrontier_BattleArenaBattleRoom_Movement_StepRight2:
+	step_faster_right
 	step_end
 
 BattleFrontier_BattleArenaBattleRoom_OnWarp:
@@ -469,19 +469,19 @@ BattleFrontier_BattleArenaBattleRoom_EventScript_SetUpRoomObjects::
 
 BattleFrontier_BattleArenaBattleRoom_Movement_GretaLookAroundPlayer:
 	walk_down
-	walk_in_place_faster_left
+	step_faster_left
 	delay_16
 	delay_16
 	delay_16
 	delay_16
 	walk_up
 	walk_up
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 BattleFrontier_BattleArenaBattleRoom_Movement_GretaWalkBackToCenter:
 	walk_down
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 BattleFrontier_BattleArenaBattleRoom_Text_PlayerStepForward:

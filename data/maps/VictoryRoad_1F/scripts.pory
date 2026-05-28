@@ -37,7 +37,7 @@ VictoryRoad_1F_EventScript_WallyBattleTrigger2::
 	end
 
 VictoryRoad_1F_EventScript_WallyEntranceBattle::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
 	waitmovement 0
 	msgbox VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_WALLY_VR_1, VictoryRoad_1F_Text_WallyEntranceDefeat

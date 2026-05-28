@@ -221,7 +221,7 @@ Route117_PokemonDayCare_Movement_RetrieveDaycareMon:
 	delay_16
 	delay_16
 	face_up
-	walk_slow_up
+	creep_up
 	set_invisible
 	delay_16
 	delay_16
@@ -230,7 +230,7 @@ Route117_PokemonDayCare_Movement_RetrieveDaycareMon:
 	delay_16
 	face_down
 	set_visible
-	walk_slow_down
+	creep_down
 	step_end
 
 @ Unused. Possibly a commented script, or a typo end added to the above Movement script

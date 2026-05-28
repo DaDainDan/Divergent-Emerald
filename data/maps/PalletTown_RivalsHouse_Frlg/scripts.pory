@@ -132,7 +132,7 @@ PalletTown_RivalsHouse_EventScript_GiveTownMap::
 	closemessage
 	checkitemspace ITEM_TOWN_MAP
 	goto_if_eq VAR_RESULT, FALSE, PalletTown_RivalsHouse_EventScript_NoRoomForTownMap
-	applymovement LOCALID_DAISY, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_DAISY, Common_Movement_StepFasterRight
 	waitmovement 0
 	removeobject LOCALID_TOWN_MAP
 	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2

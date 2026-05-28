@@ -43,7 +43,7 @@ EventScript_PkmnCenterNurse_TakeAndHealPkmn::
 	clearflag OW_FLAG_MOVE_UNION_ROOM_CHECK
 .endif
 	waitfieldeffect FLDEFF_POKECENTER_HEAL
-	applymovement VAR_0x800B, Common_Movement_WalkInPlaceFasterDown
+	applymovement VAR_0x800B, Common_Movement_StepFasterDown
 	waitmovement 0
 	special HealPlayerParty
 	callnative UpdateFollowingPokemon
@@ -129,5 +129,5 @@ Movement_PkmnCenterNurse_Bow:
 	step_end
 
 Movement_PkmnCenterNurse_Turn:
-	walk_in_place_faster_left
+	step_faster_left
 	step_end

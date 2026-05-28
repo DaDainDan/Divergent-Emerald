@@ -105,12 +105,12 @@ BirthIsland_Exterior_EventScript_RanFromDeoxys::
 	end
 
 BirthIsland_Exterior_Movement_DeoxysApproach:
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
+	creep_down
+	creep_down
+	creep_down
+	creep_down
+	creep_down
+	creep_down
+	creep_down
 	step_end
 `

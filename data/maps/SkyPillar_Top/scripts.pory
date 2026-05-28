@@ -134,15 +134,15 @@ SkyPillar_Top_EventScript_AwakenRayquaza::
 @ See comments, or sAnimTable_Rayquaza
 SkyPillar_Top_Movement_RayquazaStir:
 	delay_16
-	walk_in_place_fast_left  @ Coiled, awake
+	step_fast_left  @ Coiled, awake
 	delay_16
 	delay_16
 	delay_16
 	delay_16
 	delay_16
-	walk_in_place_left  @ Coiled, mouth open
+	step_left  @ Coiled, mouth open
 	delay_16
-	walk_in_place_right  @ Normal, awake
+	step_right  @ Normal, awake
 	delay_16
 	delay_16
 	delay_16
@@ -153,11 +153,11 @@ SkyPillar_Top_Movement_RayquazaStir:
 
 SkyPillar_Top_Movement_RayquazaFlyOff:
 	delay_16
-	walk_in_place_down  @ Coiled, asleep
+	step_down  @ Coiled, asleep
 	delay_8
-	walk_in_place_right  @ Normal, awake
+	step_right  @ Normal, awake
 	delay_8
-	walk_faster_up  @ Fly up
+	sprint_up  @ Fly up
 	slide_up
 	slide_up
 	slide_up
@@ -167,15 +167,15 @@ SkyPillar_Top_Movement_RayquazaFlyOff:
 	step_end
 
 SkyPillar_Top_Movement_CameraPanUp:
-	walk_slow_up
-	walk_slow_up
-	walk_slow_up
+	creep_up
+	creep_up
+	creep_up
 	step_end
 
 SkyPillar_Top_Movement_CameraPanDown:
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
+	creep_down
+	creep_down
+	creep_down
 	step_end
 
 SkyPillar_Top_Text_RayquazaFlewOff:

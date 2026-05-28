@@ -61,116 +61,116 @@ FollowerSplashMovement::
 	step_end
 
 FollowerShiverVerticalMovement:
-	lock_facing_direction
+	lock_look
 	slide_left
 	slide_right
 	slide_right
 	slide_left
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 FollowerShiverHorizontalMovement:
-	lock_facing_direction
+	lock_look
 	slide_up
 	slide_down
 	slide_down
 	slide_up
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 FollowerNostalgiaMovement:
 	face_away_player
-	lock_facing_direction
+	lock_look
 	jump_in_place_down
 	jump_in_place_down
 	jump_in_place_down
-	unlock_facing_direction
+	unlock_look
 	face_player
-	lock_facing_direction
+	lock_look
 	jump_in_place_down
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 FollowerSkippingMovement:
-	lock_facing_direction
+	lock_look
 	jump_in_place_down
 	delay_4
 	jump_in_place_down
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 FollowerJumpOnPlayerNorth:
 	jump_up
 	delay_4
-	lock_facing_direction
-	walk_fast_down
-	unlock_facing_direction
+	lock_look
+	run_down
+	unlock_look
 	step_end
 
 FollowerJumpOnPlayerSouth:
 	jump_down
 	delay_4
-	lock_facing_direction
-	walk_fast_up
-	unlock_facing_direction
+	lock_look
+	run_up
+	unlock_look
 	step_end
 
 FollowerJumpOnPlayerEast:
 	jump_right
 	delay_4
-	lock_facing_direction
-	walk_fast_left
-	unlock_facing_direction
+	lock_look
+	run_left
+	unlock_look
 	step_end
 
 FollowerJumpOnPlayerWest:
 	jump_left
 	delay_4
-	lock_facing_direction
-	walk_fast_right
-	unlock_facing_direction
+	lock_look
+	run_right
+	unlock_look
 	step_end
 
 FollowerCuddlingNorth:
 	face_left
-	lock_facing_direction
+	lock_look
 	walk_up
-	walk_in_place_left
-	walk_in_place_left
-	unlock_facing_direction
+	step_left
+	step_left
+	unlock_look
 	walk_down
 	face_player
 	step_end
 
 FollowerCuddlingSouth:
 	face_right
-	lock_facing_direction
+	lock_look
 	walk_down
-	walk_in_place_right
-	walk_in_place_right
-	unlock_facing_direction
+	step_right
+	step_right
+	unlock_look
 	walk_up
 	face_player
 	step_end
 
 FollowerCuddlingEast:
 	face_down
-	lock_facing_direction
+	lock_look
 	walk_right
-	walk_in_place_down
-	walk_in_place_down
-	unlock_facing_direction
+	step_down
+	step_down
+	unlock_look
 	walk_left
 	face_player
 	step_end
 
 FollowerCuddlingWest:
 	face_down
-	lock_facing_direction
+	lock_look
 	walk_left
-	walk_in_place_down
-	walk_in_place_down
-	unlock_facing_direction
+	step_down
+	step_down
+	unlock_look
 	walk_right
 	face_player
 	step_end
@@ -178,81 +178,81 @@ FollowerCuddlingWest:
 FollowerGetCloserNorth:
 	walk_up
 	delay_16
-	lock_facing_direction
+	lock_look
 	walk_down
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 FollowerGetCloserSouth:
 	walk_down
 	delay_16
-	lock_facing_direction
+	lock_look
 	walk_up
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 FollowerGetCloserEast:
 	walk_right
 	delay_16
-	lock_facing_direction
+	lock_look
 	walk_left
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 FollowerGetCloserWest:
 	walk_left
 	delay_16
-	lock_facing_direction
+	lock_look
 	walk_right
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 FollowerPokeNorth:
-	walk_faster_up
+	sprint_up
 	delay_8
-	lock_facing_direction
-	walk_faster_down
+	lock_look
+	sprint_down
 	delay_4
-	walk_faster_up
+	sprint_up
 	delay_4
-	walk_faster_down
-	unlock_facing_direction
+	sprint_down
+	unlock_look
 	step_end
 
 FollowerPokeSouth:
-	walk_faster_down
+	sprint_down
 	delay_8
-	lock_facing_direction
-	walk_faster_up
+	lock_look
+	sprint_up
 	delay_4
-	walk_faster_down
+	sprint_down
 	delay_4
-	walk_faster_up
-	unlock_facing_direction
+	sprint_up
+	unlock_look
 	step_end
 
 FollowerPokeEast:
-	walk_faster_right
+	sprint_right
 	delay_8
-	lock_facing_direction
-	walk_faster_left
+	lock_look
+	sprint_left
 	delay_4
-	walk_faster_right
+	sprint_right
 	delay_4
-	walk_faster_left
-	unlock_facing_direction
+	sprint_left
+	unlock_look
 	step_end
 
 FollowerPokeWest:
-	walk_faster_left
+	sprint_left
 	delay_8
-	lock_facing_direction
-	walk_faster_right
+	lock_look
+	sprint_right
 	delay_4
-	walk_faster_left
+	sprint_left
 	delay_4
-	walk_faster_right
-	unlock_facing_direction
+	sprint_right
+	unlock_look
 	step_end
 
 FollowerLookAround:
@@ -278,34 +278,34 @@ FollowerLookAway:
 
 FollowerLookAwayBark:
 	face_away_player
-	lock_facing_direction
+	lock_look
 	jump_in_place_down
 	jump_in_place_down
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 FollowerLookAwayPokeG:
 	face_away_player
-	lock_facing_direction
-	walk_in_place_down
-	walk_in_place_down
-	walk_in_place_down
-	unlock_facing_direction
+	lock_look
+	step_down
+	step_down
+	step_down
+	unlock_look
 	step_end
 
 FollowerPokeGround:
-	lock_facing_direction
-	walk_in_place_down
-	walk_in_place_down
-	walk_in_place_down
-	unlock_facing_direction
+	lock_look
+	step_down
+	step_down
+	step_down
+	unlock_look
 	step_end
 
 FollowerStartled:
 	face_away_player
-	lock_facing_direction
+	lock_look
 	jump_in_place_down
-	unlock_facing_direction
+	unlock_look
 	face_player
 	step_end
 
@@ -318,10 +318,10 @@ FollowerHopFast:
 	step_end
 
 FollowerDizzy:
-	walk_in_place_left
-	walk_in_place_fast_right
-	walk_in_place_slow_up
-	walk_in_place_fast_down
+	step_left
+	step_fast_right
+	step_slow_up
+	step_fast_down
 	delay_4
 	face_away_player
 	step_end
@@ -347,17 +347,17 @@ FollowerLookAroundScared:
 	step_end
 
 FollowerDance:
-	lock_facing_direction
+	lock_look
 	jump_in_place_up
-	unlock_facing_direction
-	walk_in_place_fast_up
-	walk_in_place_fast_left
-	walk_in_place_fast_down
-	walk_in_place_fast_right
-	walk_in_place_fast_up
-	walk_in_place_fast_left
-	walk_in_place_fast_down
-	walk_in_place_fast_right
+	unlock_look
+	step_fast_up
+	step_fast_left
+	step_fast_down
+	step_fast_right
+	step_fast_up
+	step_fast_left
+	step_fast_down
+	step_fast_right
 	jump_in_place_up
 	jump_in_place_down
 	jump_in_place_up

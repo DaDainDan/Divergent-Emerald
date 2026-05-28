@@ -46,10 +46,10 @@ FortreeCity_House4_EventScript_ReceivedMentalHerb::
 	end
 
 FortreeCity_House4_Movement_WingullExit:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_in_place_faster_down
+	run_down
+	run_down
+	run_right
+	step_faster_down
 	delay_8
 	step_end
 

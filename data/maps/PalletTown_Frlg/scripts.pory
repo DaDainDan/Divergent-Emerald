@@ -111,7 +111,7 @@ PalletTown_Movement_OakWalkToPlayersDoor::
 	walk_left
 	walk_left
 	walk_left
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 PalletTown_Movement_OakExit::
@@ -146,7 +146,7 @@ PalletTown_Movement_OakWalkToLabFromHouse::
 	walk_right
 	walk_right
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 PalletTown_Movement_PlayerWalkToLabFromHouse::
@@ -188,7 +188,7 @@ PalletTown_EventScript_OakTrigger::
 	waitmessage
 	delay 85
 	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
@@ -288,7 +288,7 @@ PalletTown_Movement_OakWalkToLabLeft::
 	walk_down
 	walk_to_lab
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 PalletTown_Movement_OakWalkToLabRight::
@@ -296,7 +296,7 @@ PalletTown_Movement_OakWalkToLabRight::
 	walk_left
 	walk_to_lab
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 PalletTown_Movement_OakEnterLab::
@@ -379,12 +379,12 @@ PalletTown_EventScript_SignLadyJustShowedSign::
 
 PalletTown_Movement_SignLadyMoveOutOfWayRight::
 	walk_right
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 PalletTown_Movement_SignLadyMoveOutOfWayLeft::
 	walk_left
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 PalletTown_EventScript_FatMan::
@@ -419,8 +419,8 @@ PalletTown_EventScript_TrainerTips::
 
 PalletTown_EventScript_SignLadyTrigger::
 	lockall
-	applymovement LOCALID_PALLET_SIGN_LADY, Common_Movement_WalkInPlaceFasterRight
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PALLET_SIGN_LADY, Common_Movement_StepFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
 	waitmovement 0
 	call PalletTown_EventScript_SignLadyShowSign
 	releaseall

@@ -40,7 +40,7 @@ FiveIsland_ResortGorgeous_House_EventScript_ShowRequestedMon::
 	waitmovement 0
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox FiveIsland_ResortGorgeous_House_Text_ButlerYesMyLady
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_StepFasterUp
 	waitmovement 0
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox FiveIsland_ResortGorgeous_House_Text_SelphyGiveTokenOfAppreciation
@@ -61,25 +61,25 @@ FiveIsland_ResortGorgeous_House_EventScript_ShowRequestedMon::
 	end
 
 FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerNorth::
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_StepFasterDown
 	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerNorth
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
 	waitmovement 0
 	return
 
 FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerSouth::
 	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerSouth
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
 	waitmovement 0
 	return
 
 FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerEast::
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_StepFasterLeft
 	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerEast
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
 	waitmovement 0
 	return
 
@@ -110,13 +110,13 @@ FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerNorth::
 	walk_down
 	walk_down
 	walk_down
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerSouth::
 	walk_left
 	walk_left
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerEast::
@@ -133,7 +133,7 @@ FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerWest::
 	step_end
 
 FiveIsland_ResortGorgeous_House_Movement_ButlerEnter::
-	walk_in_place_down
+	step_down
 	step_end
 
 @ Addressed as "Sebastian" but speaks only as "Butler"

@@ -226,7 +226,7 @@ CableClub_EventScript_PlayerExitLinkRoom::
 
 CableClub_EventScript_Tutorial::
 	lockall
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
 	waitmovement 0
 	msgbox CableClub_Text_FirstTimeRightThisWay, MSGBOX_DEFAULT
 	closemessage

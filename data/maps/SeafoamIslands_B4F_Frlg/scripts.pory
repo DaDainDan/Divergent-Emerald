@@ -80,9 +80,9 @@ SeafoamIslands_B4F_EventScript_EnterOnCurrent::
 	end
 
 SeafoamIslands_B4F_Movement_EnterOnCurrent::
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	run_up
+	run_up
+	run_up
 	step_end
 
 @ The current the player lands on when entering the map by falling

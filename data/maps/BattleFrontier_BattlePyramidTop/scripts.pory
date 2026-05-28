@@ -187,12 +187,12 @@ BattleFrontier_BattlePyramidTop_EventScript_DoBrandonBattle::
 
 BattleFrontier_BattlePyramidTop_Movement_AttendantMoveAside:
 	walk_right
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 BattleFrontier_BattlePyramidTop_Movement_AttendantBlockPath:
 	walk_left
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 BattleFrontier_BattlePyramidTop_Movement_PlayerClimbToTop:
@@ -201,16 +201,16 @@ BattleFrontier_BattlePyramidTop_Movement_PlayerClimbToTop:
 	walk_up
 	walk_up
 	walk_up
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 BattleFrontier_BattlePyramidTop_Movement_BrandonApproachPlayer:
-	walk_fast_down
+	run_down
 	step_end
 
 BattleFrontier_BattlePyramidTop_Movement_CameraPanUp:
-	walk_slow_up
-	walk_slow_up
+	creep_up
+	creep_up
 	delay_16
 	step_end
 

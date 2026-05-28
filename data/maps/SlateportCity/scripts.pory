@@ -59,11 +59,11 @@ SlateportCity_EventScript_ScottScene::
 	waitmovement 0
 	msgbox SlateportCity_Text_YouDroveTeamAquaAway, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_SLATEPORT_SCOTT, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_SLATEPORT_SCOTT, Common_Movement_StepFasterLeft
 	waitmovement 0
 	delay 60
 	msgbox SlateportCity_Text_MaybeThisTrainer, MSGBOX_DEFAULT
-	applymovement LOCALID_SLATEPORT_SCOTT, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_SLATEPORT_SCOTT, Common_Movement_StepFasterRight
 	waitmovement 0
 	msgbox SlateportCity_Text_LetsRegisterEachOther, MSGBOX_DEFAULT
 	closemessage
@@ -90,7 +90,7 @@ SlateportCity_EventScript_ScottScene::
 SlateportCity_Movement_PlayerFaceScott:
 	delay_16
 	delay_8
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 SlateportCity_Movement_ScottApproachPlayer:
@@ -548,10 +548,10 @@ SlateportCity_EventScript_CaptStern::
 	msgbox SlateportCity_Text_SternMoveAheadWithExploration, MSGBOX_DEFAULT
 	msgbox SlateportCity_Text_GabbyWonderfulThanksForInterview, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_SLATEPORT_GABBY, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_SLATEPORT_GABBY, Common_Movement_StepFasterRight
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_SLATEPORT_TY, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SLATEPORT_TY, Common_Movement_StepFasterDown
 	waitmovement 0
 	delay 25
 	applymovement LOCALID_SLATEPORT_CAPT_STERN, SlateportCity_Movement_SternWatchGabbyAndTyExit
@@ -562,18 +562,18 @@ SlateportCity_EventScript_CaptStern::
 	removeobject LOCALID_SLATEPORT_GABBY
 	removeobject LOCALID_SLATEPORT_TY
 	msgbox SlateportCity_Text_SternWhewFirstInterview, MSGBOX_DEFAULT
-	applymovement LOCALID_SLATEPORT_CAPT_STERN, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_SLATEPORT_CAPT_STERN, Common_Movement_StepFasterUp
 	waitmovement 0
 	msgbox SlateportCity_Text_OhPlayerWeMadeDiscovery, MSGBOX_DEFAULT
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	msgbox SlateportCity_Text_AquaWillAssumeControlOfSubmarine, MSGBOX_DEFAULT
-	applymovement LOCALID_SLATEPORT_COOK, Common_Movement_WalkInPlaceFasterLeft
-	applymovement LOCALID_SLATEPORT_FAT_MAN, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_SLATEPORT_COOK, Common_Movement_StepFasterLeft
+	applymovement LOCALID_SLATEPORT_FAT_MAN, Common_Movement_StepFasterLeft
 	applymovement LOCALID_SLATEPORT_OLD_WOMAN, SlateportCity_Movement_OldWomanConcern
 	applymovement LOCALID_SLATEPORT_RICH_BOY, Common_Movement_QuestionMark
 	applymovement LOCALID_SLATEPORT_MAN_1, SlateportCity_Movement_ManConcern
 	waitmovement 0
-	applymovement LOCALID_SLATEPORT_CAPT_STERN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SLATEPORT_CAPT_STERN, Common_Movement_StepFasterDown
 	waitmovement 0
 	msgbox SlateportCity_Text_SternWhatWasAllThat, MSGBOX_DEFAULT
 	playse SE_PIN
@@ -581,7 +581,7 @@ SlateportCity_EventScript_CaptStern::
 	waitmovement 0
 	applymovement LOCALID_SLATEPORT_CAPT_STERN, Common_Movement_Delay48
 	waitmovement 0
-	applymovement LOCALID_SLATEPORT_CAPT_STERN, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_SLATEPORT_CAPT_STERN, Common_Movement_StepFasterUp
 	waitmovement 0
 	msgbox SlateportCity_Text_FromHarborTryingToTakeSub, MSGBOX_DEFAULT
 	msgbox SlateportCity_Text_PleaseComeWithMe, MSGBOX_DEFAULT
@@ -604,20 +604,20 @@ SlateportCity_Movement_OldWomanConcern:
 	delay_16
 	delay_16
 	emote_question_mark
-	walk_in_place_faster_right
+	step_faster_right
 	delay_16
 	delay_16
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 SlateportCity_Movement_ManConcern:
 	emote_question_mark
-	walk_in_place_faster_up
+	step_faster_up
 	delay_16
-	walk_in_place_faster_down
+	step_faster_down
 	delay_16
 	delay_16
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 SlateportCity_Movement_GabbyExit:
@@ -653,7 +653,7 @@ SlateportCity_Movement_TyExit:
 
 SlateportCity_Movement_Unused:
 	walk_down
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 SlateportCity_Movement_SternEnterHarbor:
@@ -674,7 +674,7 @@ SlateportCity_Movement_SternWatchGabbyAndTyExit:
 	step_end
 
 SlateportCity_Movement_PlayerEnterHarbor:
-	walk_in_place_faster_right
+	step_faster_right
 	delay_16
 	delay_16
 	walk_right
@@ -689,7 +689,7 @@ SlateportCity_Movement_PlayerFaceStern:
 	delay_16
 	delay_16
 	delay_16
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 SlateportCity_EventScript_Ty::
@@ -886,14 +886,14 @@ SlateportCity_EventScript_ScottBattleTentScene::
 	end
 
 SlateportCity_Movement_PushPlayerDown:
-	lock_facing_direction
+	lock_look
 	walk_down
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 SlateportCity_Movement_PlayerWatchScottExit:
 	delay_16
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 SlateportCity_Movement_ScottExitBattleTent:

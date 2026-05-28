@@ -99,17 +99,17 @@ PokemonLeague_BrunosRoom_EventScript_DefeatedBruno::
 	end
 
 PokemonLeague_BrunosRoom_EventScript_BrunoLookAwayLeft::
-	applymovement LOCALID_BRUNO, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_BRUNO, Common_Movement_StepFasterLeft
 	waitmovement 0
 	return
 
 PokemonLeague_BrunosRoom_EventScript_BrunoLookAwayRight::
-	applymovement LOCALID_BRUNO, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_BRUNO, Common_Movement_StepFasterRight
 	waitmovement 0
 	return
 
 PokemonLeague_BrunosRoom_EventScript_BrunoLookAwayDown::
-	applymovement LOCALID_BRUNO, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_BRUNO, Common_Movement_StepFasterDown
 	waitmovement 0
 	return
 

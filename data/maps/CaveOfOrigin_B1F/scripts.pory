@@ -7,7 +7,7 @@ CaveOfOrigin_B1F_EventScript_Wallace::
 	faceplayer
 	msgbox CaveOfOrigin_B1F_Text_WallaceStory, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_CAVE_OF_ORIGIN_WALLACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_CAVE_OF_ORIGIN_WALLACE, Common_Movement_StepFasterUp
 	waitmovement 0
 	delay 60
 	playse SE_PIN

@@ -134,7 +134,7 @@ LilycoveCity_DepartmentStore_5F_EventScript_WomanNormal::
 LilycoveCity_DepartmentStore_5F_EventScript_WomanLegendaryWeather::
 	msgbox LilycoveCity_DepartmentStore_5F_Text_ClosedRooftopForWeather, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_DEPARTMENT_STORE_STAIRS_WOMAN, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_DEPARTMENT_STORE_STAIRS_WOMAN, Common_Movement_StepFasterUp
 	waitmovement 0
 	releaseall
 	end

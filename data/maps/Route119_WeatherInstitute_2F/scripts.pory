@@ -163,17 +163,17 @@ Route119_WeatherInstitute_2F_EventScript_NoAbnormalWeather::
 	end
 
 Route119_WeatherInstitute_2F_Movement_GruntApproachShelly:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
+	run_left
+	run_left
+	run_left
+	run_left
+	run_left
+	run_left
+	run_left
+	run_left
+	run_left
+	run_left
+	run_left
 	step_end
 
 Route119_WeatherInstitute_2F_Movement_ShovePlayerOutOfWay:
@@ -183,12 +183,12 @@ Route119_WeatherInstitute_2F_Movement_ShovePlayerOutOfWay:
 	delay_16
 	delay_16
 	ride_water_current_up
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 Route119_WeatherInstitute_2F_Movement_PlayerReturnToPosition:
 	slide_down
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 Route119_WeatherInstitute_2F_Movement_ScientistApproachPlayer:

@@ -98,7 +98,7 @@ LavaridgeTown_EventScript_PlayBrendanMusic::
 	return
 
 LavaridgeTown_EventScript_RivalNoticePlayer::
-	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_StepFasterUp
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_ExclamationMark
@@ -115,14 +115,14 @@ LavaridgeTown_EventScript_RivalExitHerbShop::
 	waitmovement 0
 	closedoor 12, 15
 	waitdooranim
-	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_StepFasterLeft
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_Delay48
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 	waitmovement 0
 	return
 
@@ -148,34 +148,34 @@ LavaridgeTown_EventScript_RivalExit2::
 	return
 
 LavaridgeTown_Movement_RivalExit2:
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	run_right
+	run_right
+	run_right
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
 	step_end
 
 LavaridgeTown_Movement_PlayerWatchRivalExit:
 	delay_16
 	delay_8
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 LavaridgeTown_Movement_RivalExit1:
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
+	run_down
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
+	run_right
 	step_end
 
 LavaridgeTown_Movement_RivalApproachPlayer2:

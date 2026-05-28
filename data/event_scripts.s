@@ -1084,7 +1084,7 @@ EventScript_AfterWhiteOutHealMsg::
 EventScript_AfterWhiteOutMomHeal::
 	lockall
 	textcolor NPC_TEXT_COLOR_FEMALE
-	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, Common_Movement_StepFasterDown
 	waitmovement 0
 	msgbox gText_HadQuiteAnExperienceTakeRest
 	call Common_EventScript_OutOfCenterPartyHeal
@@ -1275,9 +1275,9 @@ Common_EventScript_FerryDepart::
 	return
 
 Movement_FerryDepart:
-	walk_slow_right
-	walk_slow_right
-	walk_slow_right
+	creep_right
+	creep_right
+	creep_right
 	walk_right
 	walk_right
 	walk_right
@@ -1307,7 +1307,7 @@ RusturfTunnel_EventScript_SetRusturfTunnelOpen::
 
 EventScript_UnusedBoardFerry::
 	delay 30
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
 	waitmovement 0
 	showplayer
 	delay 30

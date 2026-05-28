@@ -93,14 +93,14 @@ MtEmber_Exterior_EventScript_RocketPasswordScene::
 	waitmovement 0
 	waitbuttonpress
 	msgbox MtEmber_Exterior_Text_FirstPasswordGoldeen
-	applymovement LOCALID_MT_EMBER_GRUNT1, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_MT_EMBER_GRUNT1, Common_Movement_StepFasterDown
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_MT_EMBER_GRUNT1, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_MT_EMBER_GRUNT1, Common_Movement_Delay48
 	waitmovement 0
-	applymovement LOCALID_MT_EMBER_GRUNT2, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_MT_EMBER_GRUNT2, Common_Movement_StepFasterDown
 	waitmovement 0
 	call MtEmber_Exterior_EventScript_RocketsFaceDown
 	msgbox MtEmber_Exterior_Text_SnoopsBeenListeningIn

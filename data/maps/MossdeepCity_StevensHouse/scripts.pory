@@ -28,7 +28,7 @@ MossdeepCity_StevensHouse_OnFrame:
 
 MossdeepCity_StevensHouse_EventScript_StevenGivesDive::
 	lockall
-	applymovement LOCALID_STEVENS_HOUSE_STEVEN, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_STEVENS_HOUSE_STEVEN, Common_Movement_StepFasterLeft
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_STEVENS_HOUSE_STEVEN, Common_Movement_ExclamationMark
@@ -59,7 +59,7 @@ MossdeepCity_StevensHouse_Movement_StevenApproachPlayer:
 	walk_left
 	walk_left
 	walk_left
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 MossdeepCity_StevensHouse_Movement_StevenReturn:
@@ -67,7 +67,7 @@ MossdeepCity_StevensHouse_Movement_StevenReturn:
 	walk_right
 	walk_right
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 MossdeepCity_StevensHouse_EventScript_BeldumPokeball::

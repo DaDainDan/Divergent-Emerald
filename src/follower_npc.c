@@ -1873,10 +1873,10 @@ void ScriptFaceFollowerNPC(struct ScriptContext *ctx)
 
 static const u8 *const FollowerNPCHideMovementsSpeedTable[][4] =
 {
-    [DIR_SOUTH] = {Common_Movement_WalkDownSlow, Common_Movement_WalkDown, Common_Movement_WalkDownFast, Common_Movement_WalkDownFaster},
-    [DIR_NORTH] = {Common_Movement_WalkUpSlow, Common_Movement_WalkUp, Common_Movement_WalkUpFast, Common_Movement_WalkUpFaster},
-    [DIR_WEST] = {Common_Movement_WalkLeftSlow, Common_Movement_WalkLeft, Common_Movement_WalkLeftFast, Common_Movement_WalkLeftFaster},
-    [DIR_EAST] = {Common_Movement_WalkRightSlow, Common_Movement_WalkRight, Common_Movement_WalkRightFast, Common_Movement_WalkRightFaster}
+    [DIR_SOUTH] = {Common_Movement_CreepDown, Common_Movement_WalkDown, Common_Movement_RunDown, Common_Movement_SprintDown},
+    [DIR_NORTH] = {Common_Movement_CreepUp, Common_Movement_WalkUp, Common_Movement_RunUp, Common_Movement_SprintUp},
+    [DIR_WEST] = {Common_Movement_CreepLeft, Common_Movement_WalkLeft, Common_Movement_RunLeft, Common_Movement_SprintLeft},
+    [DIR_EAST] = {Common_Movement_CreepRight, Common_Movement_WalkRight, Common_Movement_RunRight, Common_Movement_SprintRight}
 };
 
 void ScriptHideNPCFollower(struct ScriptContext *ctx)

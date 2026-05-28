@@ -11,7 +11,7 @@ SaffronCity_PokemonTrainerFanClub_OnFrame::
 SaffronCity_PokemonTrainerFanClub_EventScript_MeetFirstFans::
 	lockall
 	textcolor NPC_TEXT_COLOR_FEMALE
-	applymovement LOCALID_TRAINER_FAN_CLUB_BATTLE_GIRL, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_TRAINER_FAN_CLUB_BATTLE_GIRL, Common_Movement_StepFasterDown
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_TRAINER_FAN_CLUB_BATTLE_GIRL, Common_Movement_ExclamationMark
@@ -22,7 +22,7 @@ SaffronCity_PokemonTrainerFanClub_EventScript_MeetFirstFans::
 	closemessage
 	applymovement LOCALID_TRAINER_FAN_CLUB_BATTLE_GIRL, SaffronCity_PokemonTrainerFanClub_Movement_FanApproachPlayer
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 	waitmovement 0
 	msgbox SaffronCity_PokemonTrainerFanClub_Text_YourePlayerWereYourFansNow
 	setvar VAR_MAP_SCENE_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB, 2

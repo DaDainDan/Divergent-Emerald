@@ -101,7 +101,7 @@ Movement_HoOhApproach:
 	walk_down
 	walk_down
 	walk_down
-	walk_in_place_down
+	step_down
 	delay_16
 	delay_16
 	step_end
@@ -109,9 +109,9 @@ Movement_HoOhApproach:
 Movement_HoOhAppear:
 	delay_16
 	delay_16
-	walk_in_place_down
-	walk_in_place_down
-	walk_in_place_down
-	walk_in_place_down
+	step_down
+	step_down
+	step_down
+	step_down
 	step_end
 `

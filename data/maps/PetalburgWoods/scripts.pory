@@ -16,7 +16,7 @@ PetalburgWoods_EventScript_DevonResearcherLeft::
 	closemessage
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaApproachResearcherLeft
 	waitmovement 0
-	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, Common_Movement_StepFasterUp
 	waitmovement 0
 	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
 	closemessage
@@ -42,7 +42,7 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 	call PetalburgWoods_EventScript_DevonResearcherIntro
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherApproachPlayerRight
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
 	waitmovement 0
 	msgbox PetalburgWoods_Text_HaveYouSeenShroomish, MSGBOX_DEFAULT
 	closemessage
@@ -53,14 +53,14 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 	closemessage
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaApproachResearcherRight
 	waitmovement 0
-	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, Common_Movement_StepFasterUp
 	waitmovement 0
 	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerRight
 	waitmovement 0
 	msgbox PetalburgWoods_Text_YouHaveToHelpMe, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
 	waitmovement 0
 	msgbox PetalburgWoods_Text_NoOneCrossesTeamAqua, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
@@ -86,7 +86,7 @@ PetalburgWoods_EventScript_DevonResearcherPostBattle::
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaRunAway
 	waitmovement 0
 	removeobject LOCALID_PETALBURG_WOODS_GRUNT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
 	waitmovement 0
 	msgbox PetalburgWoods_Text_ThatWasAwfullyClose, MSGBOX_DEFAULT
 	giveitem ITEM_GREAT_BALL
@@ -133,14 +133,14 @@ PetalburgWoods_Movement_DevonResearcherLookAround:
 	step_end
 
 PetalburgWoods_Movement_DevonResearcherExitLeft:
-	walk_fast_right
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	run_right
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
 	step_end
 
 PetalburgWoods_Movement_DevonResearcherApproachPlayerLeft:
@@ -156,42 +156,42 @@ PetalburgWoods_Movement_DevonResearcherApproachPlayerRight:
 	walk_down
 	walk_down
 	walk_down
-	walk_in_place_faster_right
+	step_faster_right
 	step_end
 
 PetalburgWoods_Movement_DevonResearcherExitRight:
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	run_left
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
 	step_end
 
 PetalburgWoods_Movement_WatchResearcherLeave:
 	delay_16
 	delay_16
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 PetalburgWoods_Movement_DevonResearcherFleeToPlayerLeft:
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_in_place_faster_up
+	run_right
+	run_down
+	run_down
+	run_left
+	step_faster_up
 	step_end
 
 PetalburgWoods_Movement_DevonResearcherFleeToPlayerRight:
-	walk_fast_down
-	walk_fast_right
-	walk_in_place_faster_up
+	run_down
+	run_right
+	step_faster_up
 	step_end
 
 PetalburgWoods_Movement_DevonResearcherStartExit:
-	walk_in_place_faster_down
+	step_faster_down
 	delay_16
 	delay_16
 	delay_16
@@ -201,30 +201,30 @@ PetalburgWoods_Movement_DevonResearcherStartExit:
 	step_end
 
 PetalburgWoods_Movement_AquaApproachResearcherLeft:
-	walk_fast_down
-	walk_fast_down
+	run_down
+	run_down
 	step_end
 
 PetalburgWoods_Movement_AquaBackOff:
-	lock_facing_direction
+	lock_look
 	walk_up
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 PetalburgWoods_Movement_AquaRunAway:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	run_up
+	run_up
+	run_up
+	run_up
+	run_up
 	delay_16
 	delay_16
 	step_end
 
 PetalburgWoods_Movement_AquaApproachResearcherRight:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	run_down
+	run_down
+	run_down
 	step_end
 
 PetalburgWoods_Movement_AquaEntrance:

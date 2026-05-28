@@ -35,7 +35,7 @@ SevenIsland_SevaultCanyon_House_EventScript_ChanseyDanceMan::
 	end
 
 SevenIsland_SevaultCanyon_House_EventScript_PlayerFaceDown::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
 	waitmovement 0
 	return
 
@@ -53,21 +53,21 @@ SevenIsland_SevaultCanyon_House_EventScript_DeclineDance::
 	end
 
 SevenIsland_SevaultCanyon_House_Movement_ChanseyDance::
-	walk_in_place_down
+	step_down
 	delay_16
-	walk_in_place_down
+	step_down
 	delay_16
-	walk_in_place_down
+	step_down
 	delay_16
-	walk_in_place_down
+	step_down
 	delay_16
-	walk_in_place_faster_right
+	step_faster_right
 	delay_4
-	walk_in_place_faster_up
+	step_faster_up
 	delay_4
-	walk_in_place_faster_left
+	step_faster_left
 	delay_4
-	walk_in_place_faster_down
+	step_faster_down
 	delay_4
 	step_end
 

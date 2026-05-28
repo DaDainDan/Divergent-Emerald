@@ -55,13 +55,13 @@ MossdeepCity_SpaceCenter_2F_EventScript_BattleThreeMagmaGrunts::
 	trainerbattle_no_intro TRAINER_GRUNT_SPACE_CENTER_5, MossdeepCity_SpaceCenter_2F_Text_Grunt5Defeat
 	applymovement LOCALID_SPACE_CENTER_GRUNT_5, MossdeepCity_SpaceCenter_2F_Movement_Grunt5Defeated
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
 	waitmovement 0
 	msgbox MossdeepCity_SpaceCenter_2F_Text_Grunt6Intro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_SPACE_CENTER_6, MossdeepCity_SpaceCenter_2F_Text_Grunt6Defeat
 	applymovement LOCALID_SPACE_CENTER_GRUNT_6, MossdeepCity_SpaceCenter_2F_Movement_Grunt6Defeated
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 	waitmovement 0
 	msgbox MossdeepCity_SpaceCenter_2F_Text_Grunt7Intro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_SPACE_CENTER_7, MossdeepCity_SpaceCenter_2F_Text_Grunt7Defeat
@@ -75,21 +75,21 @@ MossdeepCity_SpaceCenter_2F_EventScript_BattleThreeMagmaGrunts::
 	end
 
 MossdeepCity_SpaceCenter_2F_Movement_Grunt6Defeated:
-	lock_facing_direction
+	lock_look
 	walk_left
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 MossdeepCity_SpaceCenter_2F_Movement_Grunt5Defeated:
-	lock_facing_direction
+	lock_look
 	walk_down
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 MossdeepCity_SpaceCenter_2F_Movement_Grunt7Defeated:
-	lock_facing_direction
+	lock_look
 	walk_right
-	unlock_facing_direction
+	unlock_look
 	step_end
 
 MossdeepCity_SpaceCenter_2F_EventScript_Scientist::
@@ -200,26 +200,26 @@ MossdeepCity_SpaceCenter_2F_EventScript_StevenFightMovementSouth::
 	end
 
 MossdeepCity_SpaceCenter_2F_Movement_StevenFight:
-	lock_facing_direction
-	walk_fast_up
-	walk_fast_up
-	unlock_facing_direction
+	lock_look
+	run_up
+	run_up
+	unlock_look
 	delay_16
 	delay_16
-	walk_slow_down
-	walk_slow_down
+	creep_down
+	creep_down
 	step_end
 
 MossdeepCity_SpaceCenter_2F_Movement_StevenFightSouth:
 	face_left
-	lock_facing_direction
-	walk_fast_right
-	walk_fast_right
-	unlock_facing_direction
+	lock_look
+	run_right
+	run_right
+	unlock_look
 	delay_16
 	delay_16
-	walk_slow_left
-	walk_slow_left
+	creep_left
+	creep_left
 	face_down
 	step_end
 
@@ -230,13 +230,13 @@ MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt::
 	goto_if_eq VAR_RESULT, YES, MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenHurryGetReadyQuickly, MSGBOX_DEFAULT
 	closemessage
-	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
+	applymovement VAR_LAST_TALKED, Common_Movement_StepFasterDown
 	waitmovement 0
 	releaseall
 	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle::
-	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
+	applymovement VAR_LAST_TALKED, Common_Movement_StepFasterDown
 	waitmovement 0
 	special SavePlayerParty
 	fadescreen FADE_TO_BLACK
@@ -256,12 +256,12 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_SPACE_CENTER_MAXIE, Common_Movement_WalkInPlaceFasterLeft
-	applymovement LOCALID_SPACE_CENTER_TABITHA, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SPACE_CENTER_MAXIE, Common_Movement_StepFasterLeft
+	applymovement LOCALID_SPACE_CENTER_TABITHA, Common_Movement_StepFasterDown
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_SPACE_CENTER_MAXIE, Common_Movement_WalkInPlaceFasterUp
-	applymovement LOCALID_SPACE_CENTER_TABITHA, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_SPACE_CENTER_MAXIE, Common_Movement_StepFasterUp
+	applymovement LOCALID_SPACE_CENTER_TABITHA, Common_Movement_StepFasterRight
 	waitmovement 0
 	delay 20
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp, MSGBOX_DEFAULT

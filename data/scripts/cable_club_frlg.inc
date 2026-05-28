@@ -172,7 +172,7 @@ CableClub_EventScript_PlayerExitLinkRoom_Frlg::
 CableClub_EventScript_Tutorial_Frlg::
 	lockall
 	textcolor NPC_TEXT_COLOR_FEMALE
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
 	waitmovement 0
 	msgbox CableClub_Text_FirstTimeRightThisWay_Frlg
 	closemessage

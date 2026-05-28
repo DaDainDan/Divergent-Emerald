@@ -187,7 +187,7 @@ SSTidalCorridor_EventScript_ScottScene::
 	lockall
 	applymovement LOCALID_SS_TIDAL_SCOTT, SSTidalCorridor_Movement_ScottApproachPlayer
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 	waitmovement 0
 	msgbox SSTidalCorridor_Text_ScottBattleFrontierInvite, MSGBOX_DEFAULT
 	closemessage
@@ -217,7 +217,7 @@ SSTidalCorridor_Movement_ScottApproachPlayer:
 	step_end
 
 SSTidalCorridor_Movement_ScottExit:
-	walk_in_place_faster_down
+	step_faster_down
 	delay_16
 	delay_16
 	delay_16
@@ -232,22 +232,22 @@ SSTidalCorridor_Movement_PlayerWatchScottExit:
 	delay_16
 	delay_16
 	delay_8
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 SSTidalCorridor_Movement_SailorMoveForScott:
 	delay_16
 	walk_right
 	walk_right
-	walk_in_place_faster_up
+	step_faster_up
 	delay_16
-	walk_in_place_faster_left
+	step_faster_left
 	step_end
 
 SSTidalCorridor_Movement_SailorReturn:
 	walk_left
 	walk_left
-	walk_in_place_faster_up
+	step_faster_up
 	step_end
 
 SSTidalCorridor_Text_ScottBattleFrontierInvite:

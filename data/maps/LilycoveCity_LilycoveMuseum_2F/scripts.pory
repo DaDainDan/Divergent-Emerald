@@ -64,7 +64,7 @@ LilycoveCity_LilycoveMuseum_2F_OnFrame:
 LilycoveCity_LilycoveMuseum_2F_EventScript_ShowExhibitHall::
 	lockall
 	applymovement LOCALID_MUSEUM_2F_CURATOR, Common_Movement_FacePlayer
-	applymovement LOCALID_PLAYER, LilycoveCity_LilycoveMuseum_2F_Movement_PlayerWalkInPlaceLeft
+	applymovement LOCALID_PLAYER, LilycoveCity_LilycoveMuseum_2F_Movement_PlayerStepLeft
 	waitmovement 0
 	msgbox LilycoveCity_LilycoveMuseum_2F_Text_ThisIsExhibitHall, MSGBOX_SIGN
 	applymovement LOCALID_MUSEUM_2F_CURATOR, LilycoveCity_LilycoveMuseum_2F_Movement_FaceExhibitHall
@@ -74,7 +74,7 @@ LilycoveCity_LilycoveMuseum_2F_EventScript_ShowExhibitHall::
 	msgbox LilycoveCity_LilycoveMuseum_2F_Text_ExplainExhibitHall, MSGBOX_SIGN
 	applymovement LOCALID_MUSEUM_2F_CURATOR, Common_Movement_FacePlayer
 	waitmovement 0
-	applymovement LOCALID_PLAYER, LilycoveCity_LilycoveMuseum_2F_Movement_PlayerWalkInPlaceLeft
+	applymovement LOCALID_PLAYER, LilycoveCity_LilycoveMuseum_2F_Movement_PlayerStepLeft
 	waitmovement 0
 	msgbox LilycoveCity_LilycoveMuseum_2F_Text_PleaseObtainPaintingsForExhibit, MSGBOX_SIGN
 #ifdef UBFIX
@@ -85,8 +85,8 @@ LilycoveCity_LilycoveMuseum_2F_EventScript_ShowExhibitHall::
 	releaseall
 	end
 
-LilycoveCity_LilycoveMuseum_2F_Movement_PlayerWalkInPlaceLeft:
-	walk_in_place_faster_left
+LilycoveCity_LilycoveMuseum_2F_Movement_PlayerStepLeft:
+	step_faster_left
 	step_end
 
 LilycoveCity_LilycoveMuseum_2F_Movement_FaceExhibitHall:

@@ -59,7 +59,7 @@ MtChimney_EventScript_Maxie::
 	addobject LOCALID_MT_CHIMNEY_ARCHIE
 	call_if_eq VAR_FACING, DIR_EAST, MtChimney_EventScript_ArchieApproachPlayerEast
 	call_if_eq VAR_FACING, DIR_NORTH, MtChimney_EventScript_ArchieApproachPlayerNorth
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
 	waitmovement 0
 	msgbox MtChimney_Text_ArchieThankYou, MSGBOX_DEFAULT
 	closemessage
@@ -240,15 +240,15 @@ MtChimney_Movement_Unused3:
 	step_end
 
 MtChimney_Movement_Unused4:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
 	walk_left
 	walk_left
 	walk_down
@@ -323,7 +323,7 @@ MtChimney_Movement_Unused8:
 	walk_left
 	walk_left
 	walk_left
-	walk_in_place_faster_down
+	step_faster_down
 	step_end
 
 MtChimney_Movement_Unused9:
@@ -359,7 +359,7 @@ MtChimney_Movement_Unused11:
 MtChimney_Movement_Unused12:
 	delay_16
 	delay_16
-	walk_in_place_faster_left
+	step_faster_left
 	delay_16
 	walk_down
 	walk_down
@@ -375,22 +375,22 @@ MtChimney_Movement_Unused13:
 	delay_16
 	delay_16
 	delay_16
-	walk_in_place_faster_left
+	step_faster_left
 	delay_16
 	walk_down
 	walk_down
 	step_end
 
 MtChimney_Movement_Unused14:
-	lock_facing_direction
-	walk_fast_left
-	unlock_facing_direction
+	lock_look
+	run_left
+	unlock_look
 	face_right
 	step_end
 
 MtChimney_Movement_Unused15:
 	walk_left
-	walk_in_place_faster_right
+	step_faster_right
 	delay_16
 	step_end
 

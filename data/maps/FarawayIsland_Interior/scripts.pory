@@ -67,7 +67,7 @@ FarawayIsland_Interior_Movement_MewMoveAndHide:
 	walk_up
 	walk_up
 	walk_up
-	walk_in_place_faster_down
+	step_faster_down
 	set_invisible
 	step_end
 
@@ -76,39 +76,39 @@ FarawayIsland_Interior_Movement_MewAppear:
 	step_end
 
 FarawayIsland_Interior_Movement_MewFloatUpNorth:
-	lock_facing_direction
-	walk_fast_up
-	walk_fast_up
-	unlock_facing_direction
-	walk_in_place_down
-	walk_in_place_down
+	lock_look
+	run_up
+	run_up
+	unlock_look
+	step_down
+	step_down
 	step_end
 
 FarawayIsland_Interior_Movement_MewFloatUpSouth:
-	lock_facing_direction
-	walk_fast_up
-	walk_fast_up
-	unlock_facing_direction
-	walk_in_place_up
-	walk_in_place_up
+	lock_look
+	run_up
+	run_up
+	unlock_look
+	step_up
+	step_up
 	step_end
 
 FarawayIsland_Interior_Movement_MewFloatUpWest:
-	lock_facing_direction
-	walk_fast_up
-	walk_fast_up
-	unlock_facing_direction
-	walk_in_place_right
-	walk_in_place_right
+	lock_look
+	run_up
+	run_up
+	unlock_look
+	step_right
+	step_right
 	step_end
 
 FarawayIsland_Interior_Movement_MewFloatUpEast:
-	lock_facing_direction
-	walk_fast_up
-	walk_fast_up
-	unlock_facing_direction
-	walk_in_place_left
-	walk_in_place_left
+	lock_look
+	run_up
+	run_up
+	unlock_look
+	step_left
+	step_left
 	step_end
 
 FarawayIsland_Interior_EventScript_Mew::

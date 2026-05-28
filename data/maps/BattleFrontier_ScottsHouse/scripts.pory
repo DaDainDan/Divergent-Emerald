@@ -191,22 +191,22 @@ BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints::
 	end
 
 BattleFrontier_ScottsHouse_EventScript_ScottFaceAwayNorth::
-	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_StepFasterUp
 	waitmovement 0
 	return
 
 BattleFrontier_ScottsHouse_EventScript_ScottFaceAwaySouth::
-	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_StepFasterDown
 	waitmovement 0
 	return
 
 BattleFrontier_ScottsHouse_EventScript_ScottFaceAwayEast::
-	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_StepFasterRight
 	waitmovement 0
 	return
 
 BattleFrontier_ScottsHouse_EventScript_ScottFaceAwayWest::
-	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_StepFasterLeft
 	waitmovement 0
 	return
 

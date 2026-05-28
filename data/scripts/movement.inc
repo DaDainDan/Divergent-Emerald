@@ -24,23 +24,23 @@ Common_Movement_FaceAwayPlayer:
 	step_end
 
 Common_Movement_FaceOriginalDirection:
-	face_original_direction
+	face_reset
 	step_end
 
-Common_Movement_WalkInPlaceFasterLeft:
-	walk_in_place_faster_left
+Common_Movement_StepFasterLeft:
+	step_faster_left
 	step_end
 
-Common_Movement_WalkInPlaceFasterUp:
-	walk_in_place_faster_up
+Common_Movement_StepFasterUp:
+	step_faster_up
 	step_end
 
-Common_Movement_WalkInPlaceFasterRight:
-	walk_in_place_faster_right
+Common_Movement_StepFasterRight:
+	step_faster_right
 	step_end
 
-Common_Movement_WalkInPlaceFasterDown:
-	walk_in_place_faster_down
+Common_Movement_StepFasterDown:
+	step_faster_down
 	step_end
 
 Common_Movement_FaceRight::
@@ -59,16 +59,16 @@ Common_Movement_FaceUp::
 	face_up
 	step_end
 
-Common_Movement_WalkInPlaceDown:
-	walk_in_place_down
+Common_Movement_StepDown:
+	step_down
 	step_end
 
-Common_Movement_WalkInPlaceLeft:
-	walk_in_place_left
+Common_Movement_StepLeft:
+	step_left
 	step_end
 
-Common_Movement_WalkInPlaceRight:
-	walk_in_place_right
+Common_Movement_StepRight:
+	step_right
 	step_end
 
 @ End of follower-safe movements
@@ -115,20 +115,20 @@ Common_Movement_WalkUp2::
 	step_end
 
 @ Follower NPC
-Common_Movement_WalkUpSlow::
-	walk_slow_up
+Common_Movement_CreepUp::
+	creep_up
 	step_end
 
-Common_Movement_WalkDownSlow::
-	walk_slow_down
+Common_Movement_CreepDown::
+	creep_down
 	step_end
 
-Common_Movement_WalkRightSlow::
-	walk_slow_right
+Common_Movement_CreepRight::
+	creep_right
 	step_end
 
-Common_Movement_WalkLeftSlow::
-	walk_slow_left
+Common_Movement_CreepLeft::
+	creep_left
 	step_end
 
 Common_Movement_WalkDown::
@@ -143,34 +143,34 @@ Common_Movement_WalkLeft::
 	walk_left
 	step_end
 
-Common_Movement_WalkUpFast::
-	walk_fast_up
+Common_Movement_RunUp::
+	run_up
 	step_end
 
-Common_Movement_WalkDownFast::
-	walk_fast_down
+Common_Movement_RunDown::
+	run_down
 	step_end
 
-Common_Movement_WalkRightFast::
-	walk_fast_right
+Common_Movement_RunRight::
+	run_right
 	step_end
 
-Common_Movement_WalkLeftFast::
-	walk_fast_left
+Common_Movement_RunLeft::
+	run_left
 	step_end
 
-Common_Movement_WalkUpFaster::
-	walk_faster_up
+Common_Movement_SprintUp::
+	sprint_up
 	step_end
 
-Common_Movement_WalkDownFaster::
-	walk_faster_down
+Common_Movement_SprintDown::
+	sprint_down
 	step_end
 
-Common_Movement_WalkRightFaster::
-	walk_faster_right
+Common_Movement_SprintRight::
+	sprint_right
 	step_end
 
-Common_Movement_WalkLeftFaster::
-	walk_faster_left
+Common_Movement_SprintLeft::
+	sprint_left
 	step_end

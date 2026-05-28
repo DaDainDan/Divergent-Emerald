@@ -65,33 +65,33 @@ SeafoamIslands_B3F_EventScript_CurrentBlocked::
 	end
 
 SeafoamIslands_B3F_Movement_RideCurrentFar::
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_right
+	run_right
+	run_right
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
 	step_end
 
 SeafoamIslands_B3F_Movement_RideCurrentClose::
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_right
+	run_right
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
+	run_down
 	step_end
 `
