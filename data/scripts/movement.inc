@@ -174,3 +174,11 @@ Common_Movement_SprintRight::
 Common_Movement_SprintLeft::
 	sprint_left
 	step_end
+
+Common_Movement_StepUp::
+	step_up
+	step_end
+
+Common_Movement_SetInvisible::
+	set_invisible
+	step_end

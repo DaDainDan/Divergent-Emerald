@@ -9,6 +9,9 @@
     "additem": {
       "var_name": "VAR_RESULT"
     },
+    "giveitem": {
+      "var_name": "VAR_RESULT"
+    },
     "removeitem": {
       "var_name": "VAR_RESULT"
     },
@@ -28,6 +31,9 @@
       "var_name": "VAR_RESULT"
     },
     "adddecoration": {
+      "var_name": "VAR_RESULT"
+    },
+    "givedecoration": {
       "var_name": "VAR_RESULT"
     },
     "removedecoration": {

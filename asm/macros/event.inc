@@ -2874,3 +2874,16 @@
 	getbraillestringwidth \text
 	call EventScript_BrailleCursorWaitButton
 	.endm
+
+@ Promise
+	@ Combines release and end into a single macro to condense scripts
+	.macro release_end
+	release
+	end
+	.endm
+
+	@ Combines lock and faceplayer into a single macro to condense scripts
+	.macro lock_faceplayer
+	lock
+	faceplayer
+	.endm
