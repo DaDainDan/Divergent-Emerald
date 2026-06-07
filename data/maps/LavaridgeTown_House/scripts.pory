@@ -1,28 +1,27 @@
-raw `
-LavaridgeTown_House_MapScripts::
-	.byte 0
+mapscripts LavaridgeTown_House_MapScripts {}
 
-LavaridgeTown_House_EventScript_OldMan::
-	msgbox LavaridgeTown_House_Text_WifeWarmingEggInHotSprings, MSGBOX_NPC
-	end
+script LavaridgeTown_House_EventScript_OldMan {
+    msgbox(LavaridgeTown_House_Text_WifeWarmingEggInHotSprings, MSGBOX_NPC)
+    end
+}
 
-LavaridgeTown_House_EventScript_Zigzagoon::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
-	msgbox LavaridgeTown_House_Text_Zigzagoon, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
+script LavaridgeTown_House_EventScript_Zigzagoon {
+    lock_faceplayer
+    waitse
+    playmoncry(SPECIES_ZIGZAGOON, CRY_MODE_NORMAL)
+    msgbox(LavaridgeTown_House_Text_Zigzagoon, MSGBOX_DEFAULT)
+    waitmoncry
+    release_end
+}
 
-LavaridgeTown_House_Text_WifeWarmingEggInHotSprings:
-	.string "My wife's warming an EGG in the hot\n"
-	.string "springs. This is what she told me.\p"
-	.string "She left two POKéMON with the DAY CARE.\n"
-	.string "And they discovered that EGG!$"
+text LavaridgeTown_House_Text_WifeWarmingEggInHotSprings {
+	"My wife's warming an EGG in the hot
+	springs. This is what she told me.
 
-LavaridgeTown_House_Text_Zigzagoon:
-	.string "ZIGZAGOON: Pshoo!$"
+	She left two POKéMON with the DAY CARE.
+	And they discovered that EGG!"
+}
 
-`
+text LavaridgeTown_House_Text_Zigzagoon {
+	"ZIGZAGOON: Pshoo!"
+}

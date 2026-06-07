@@ -1,185 +1,207 @@
-raw `
-MeteorFalls_1F_2R_MapScripts::
-	.byte 0
+mapscripts MeteorFalls_1F_2R_MapScripts {}
 
-MeteorFalls_1F_2R_EventScript_Nicolas::
-	trainerbattle_single TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasIntro, MeteorFalls_1F_2R_Text_NicolasDefeat, MeteorFalls_1F_2R_EventScript_RegisterNicolas
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MeteorFalls_1F_2R_EventScript_RematchNicolas
-	msgbox MeteorFalls_1F_2R_Text_NicolasPostBattle, MSGBOX_DEFAULT
-	release
-	end
+script MeteorFalls_1F_2R_EventScript_Nicolas {
+    trainerbattle_single(TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasIntro, MeteorFalls_1F_2R_Text_NicolasDefeat, MeteorFalls_1F_2R_EventScript_RegisterNicolas)
+    if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
+        trainerbattle_rematch(TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasRematchIntro, MeteorFalls_1F_2R_Text_NicolasRematchDefeat)
+		msgbox(MeteorFalls_1F_2R_Text_NicolasPostRematch, MSGBOX_AUTOCLOSE)
+		end
+    }
+    msgbox(MeteorFalls_1F_2R_Text_NicolasPostBattle, MSGBOX_DEFAULT)
+    release_end
+}
 
-MeteorFalls_1F_2R_EventScript_RegisterNicolas::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox MeteorFalls_1F_2R_Text_NicolasRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_NICOLAS_1
-	release
-	end
+script MeteorFalls_1F_2R_EventScript_RegisterNicolas {
+    special(PlayerFaceTrainerAfterBattle)
+    waitmovement(0)
+    msgbox(MeteorFalls_1F_2R_Text_NicolasRegister, MSGBOX_DEFAULT)
+    register_matchcall(TRAINER_NICOLAS_1)
+    release_end
+}
 
-MeteorFalls_1F_2R_EventScript_RematchNicolas::
-	trainerbattle_rematch TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasRematchIntro, MeteorFalls_1F_2R_Text_NicolasRematchDefeat
-	msgbox MeteorFalls_1F_2R_Text_NicolasPostRematch, MSGBOX_AUTOCLOSE
-	end
+script MeteorFalls_1F_2R_EventScript_John {
+    trainerbattle_double(TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JohnIntro, MeteorFalls_1F_2R_Text_JohnDefeat, MeteorFalls_1F_2R_Text_JohnNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJohnAndJay)
+    if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
+        trainerbattle_rematch_double(TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JohnRematchIntro, MeteorFalls_1F_2R_Text_JohnRematchDefeat, MeteorFalls_1F_2R_Text_JohnRematchNotEnoughMons)
+		msgbox(MeteorFalls_1F_2R_Text_JohnPostRematch, MSGBOX_AUTOCLOSE)
+		end
+    }
+    msgbox(MeteorFalls_1F_2R_Text_JohnPostBattle, MSGBOX_DEFAULT)
+    release_end
+}
 
-MeteorFalls_1F_2R_EventScript_John::
-	trainerbattle_double TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JohnIntro, MeteorFalls_1F_2R_Text_JohnDefeat, MeteorFalls_1F_2R_Text_JohnNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJohn
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MeteorFalls_1F_2R_EventScript_RematchJohn
-	msgbox MeteorFalls_1F_2R_Text_JohnPostBattle, MSGBOX_DEFAULT
-	release
-	end
+script MeteorFalls_1F_2R_EventScript_RegisterJohnAndJay {
+    msgbox(MeteorFalls_1F_2R_Text_JohnRegister, MSGBOX_DEFAULT)
+    register_matchcall(TRAINER_JOHN_AND_JAY_1)
+    release_end
+}
 
-MeteorFalls_1F_2R_EventScript_RegisterJohn::
-	msgbox MeteorFalls_1F_2R_Text_JohnRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_JOHN_AND_JAY_1
-	release
-	end
+script MeteorFalls_1F_2R_EventScript_Jay {
+    trainerbattle_double(TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat, MeteorFalls_1F_2R_Text_JayNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJohnAndJay)
+    if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
+        trainerbattle_rematch_double(TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JayRematchIntro, MeteorFalls_1F_2R_Text_JayRematchDefeat, MeteorFalls_1F_2R_Text_JayRematchNotEnoughMons)
+		msgbox(MeteorFalls_1F_2R_Text_JayPostRematch, MSGBOX_AUTOCLOSE)
+		end
+    }
+    msgbox(MeteorFalls_1F_2R_Text_JayPostBattle, MSGBOX_DEFAULT)
+    release_end
+}
 
-MeteorFalls_1F_2R_EventScript_RematchJohn::
-	trainerbattle_rematch_double TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JohnRematchIntro, MeteorFalls_1F_2R_Text_JohnRematchDefeat, MeteorFalls_1F_2R_Text_JohnRematchNotEnoughMons
-	msgbox MeteorFalls_1F_2R_Text_JohnPostRematch, MSGBOX_AUTOCLOSE
-	end
+text MeteorFalls_1F_2R_Text_NicolasIntro {
+	"This is where we DRAGON users do our
+	training.
 
-MeteorFalls_1F_2R_EventScript_Jay::
-	trainerbattle_double TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat, MeteorFalls_1F_2R_Text_JayNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJay
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MeteorFalls_1F_2R_EventScript_RematchJay
-	msgbox MeteorFalls_1F_2R_Text_JayPostBattle, MSGBOX_DEFAULT
-	release
-	end
+	The CHAMPION even visits.
+	Now do you see how special it is here?"
+}
 
-MeteorFalls_1F_2R_EventScript_RegisterJay::
-	msgbox MeteorFalls_1F_2R_Text_JohnRegister, MSGBOX_DEFAULT  @ John speaks for both during register
-	register_matchcall TRAINER_JOHN_AND_JAY_1
-	release
-	end
+text MeteorFalls_1F_2R_Text_NicolasDefeat {
+	"Urgh!
+	I didn't expect you to be so strong!"
+}
 
-MeteorFalls_1F_2R_EventScript_RematchJay::
-	trainerbattle_rematch_double TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JayRematchIntro, MeteorFalls_1F_2R_Text_JayRematchDefeat, MeteorFalls_1F_2R_Text_JayRematchNotEnoughMons
-	msgbox MeteorFalls_1F_2R_Text_JayPostRematch, MSGBOX_AUTOCLOSE
-	end
+text MeteorFalls_1F_2R_Text_NicolasPostBattle {
+	"The road ahead remains long and harsh.
 
-MeteorFalls_1F_2R_Text_NicolasIntro:
-	.string "This is where we DRAGON users do our\n"
-	.string "training.\p"
-	.string "The CHAMPION even visits.\n"
-	.string "Now do you see how special it is here?$"
+	When will my POKéMON and I become
+	the best?"
+}
 
-MeteorFalls_1F_2R_Text_NicolasDefeat:
-	.string "Urgh!\n"
-	.string "I didn't expect you to be so strong!$"
+text MeteorFalls_1F_2R_Text_NicolasRegister {
+	"I want to know more about your power.
+	Let me register you in my POKéNAV."
+}
 
-MeteorFalls_1F_2R_Text_NicolasPostBattle:
-	.string "The road ahead remains long and harsh.\p"
-	.string "When will my POKéMON and I become\n"
-	.string "the best?$"
+text MeteorFalls_1F_2R_Text_NicolasRematchIntro {
+	"Since we met, we have trained hard
+	with our sights on number one.
 
-MeteorFalls_1F_2R_Text_NicolasRegister:
-	.string "I want to know more about your power.\n"
-	.string "Let me register you in my POKéNAV.$"
+	Help us see how much stronger we've
+	become!"
+}
 
-MeteorFalls_1F_2R_Text_NicolasRematchIntro:
-	.string "Since we met, we have trained hard\n"
-	.string "with our sights on number one.\p"
-	.string "Help us see how much stronger we've\n"
-	.string "become!$"
+text MeteorFalls_1F_2R_Text_NicolasRematchDefeat {
+	"Urgh!
+	I didn't expect you to be so strong!"
+}
 
-MeteorFalls_1F_2R_Text_NicolasRematchDefeat:
-	.string "Urgh!\n"
-	.string "I didn't expect you to be so strong!$"
+text MeteorFalls_1F_2R_Text_NicolasPostRematch {
+	"You've obviously kept up your
+	POKéMON training.
 
-MeteorFalls_1F_2R_Text_NicolasPostRematch:
-	.string "You've obviously kept up your\n"
-	.string "POKéMON training.\p"
-	.string "So long as you remain strong, I, too,\n"
-	.string "can become stronger!$"
+	So long as you remain strong, I, too,
+	can become stronger!"
+}
 
-MeteorFalls_1F_2R_Text_JohnIntro:
-	.string "JOHN: We've always battled POKéMON\n"
-	.string "together as a twosome.\l"
-	.string "We've confidence in ourselves.$"
+text MeteorFalls_1F_2R_Text_JohnIntro {
+	"JOHN: We've always battled POKéMON
+	together as a twosome.
+	We've confidence in ourselves."
+}
 
-MeteorFalls_1F_2R_Text_JohnDefeat:
-	.string "JOHN: Oh, my.\n"
-	.string "We've lost, dear wife.$"
+text MeteorFalls_1F_2R_Text_JohnDefeat {
+	"JOHN: Oh, my.
+	We've lost, dear wife."
+}
 
-MeteorFalls_1F_2R_Text_JohnPostBattle:
-	.string "JOHN: We've been married for\n"
-	.string "fifty years.\p"
-	.string "Come to think of it, I've yet to beat\n"
-	.string "my dear wife in a battle.$"
+text MeteorFalls_1F_2R_Text_JohnPostBattle {
+	"JOHN: We've been married for
+	fifty years.
 
-MeteorFalls_1F_2R_Text_JohnNotEnoughMons:
-	.string "JOHN: Well, well, what a young TRAINER!\p"
-	.string "Will you battle with us? If so, you'll\n"
-	.string "have to return with more POKéMON.$"
+	Come to think of it, I've yet to beat
+	my dear wife in a battle."
+}
 
-MeteorFalls_1F_2R_Text_JohnRegister:
-	.string "JOHN: Young TRAINER, if the chance\n"
-	.string "arises, will you battle with us again?$"
+text MeteorFalls_1F_2R_Text_JohnNotEnoughMons {
+	"JOHN: Well, well, what a young TRAINER!
 
-MeteorFalls_1F_2R_Text_JayIntro:
-	.string "JAY: We've been married for\n"
-	.string "fifty years.\p"
-	.string "The bond we share as a couple could\n"
-	.string "never be broken.$"
+	Will you battle with us? If so, you'll
+	have to return with more POKéMON."
+}
 
-MeteorFalls_1F_2R_Text_JayDefeat:
-	.string "JAY: Oh, dear.\n"
-	.string "We've lost, my dear husband.$"
+text MeteorFalls_1F_2R_Text_JohnRegister {
+	"JOHN: Young TRAINER, if the chance
+	arises, will you battle with us again?"
+}
 
-MeteorFalls_1F_2R_Text_JayPostBattle:
-	.string "JAY: Fifty years of marriage…\p"
-	.string "If we ever argued, we always settled\n"
-	.string "it with a POKéMON battle…$"
+text MeteorFalls_1F_2R_Text_JayIntro {
+	"JAY: We've been married for
+	fifty years.
 
-MeteorFalls_1F_2R_Text_JayNotEnoughMons:
-	.string "JAY: Well, well, aren't you a young\n"
-	.string "TRAINER?\p"
-	.string "If you'd care to battle with us, you'll\n"
-	.string "have to come back with more POKéMON.$"
+	The bond we share as a couple could
+	never be broken."
+}
 
-MeteorFalls_1F_2R_Text_JohnRematchIntro:
-	.string "JOHN: We've always battled POKéMON\n"
-	.string "together as a twosome.\l"
-	.string "We've confidence in ourselves.$"
+text MeteorFalls_1F_2R_Text_JayDefeat {
+	"JAY: Oh, dear.
+	We've lost, my dear husband."
+}
 
-MeteorFalls_1F_2R_Text_JohnRematchDefeat:
-	.string "JOHN: Oh, my.\n"
-	.string "We've lost, dear wife.$"
+text MeteorFalls_1F_2R_Text_JayPostBattle {
+	"JAY: Fifty years of marriage…
 
-MeteorFalls_1F_2R_Text_JohnPostRematch:
-	.string "JOHN: Married for fifty years…\p"
-	.string "On reflection, the dear wife and I,\n"
-	.string "we battled day in and day out…$"
+	If we ever argued, we always settled
+	it with a POKéMON battle…"
+}
 
-MeteorFalls_1F_2R_Text_JohnRematchNotEnoughMons:
-	.string "JOHN: Well, well, what a young TRAINER!\p"
-	.string "Will you battle with us? If so, you'll\n"
-	.string "have to return with more POKéMON.$"
+text MeteorFalls_1F_2R_Text_JayNotEnoughMons {
+	"JAY: Well, well, aren't you a young
+	TRAINER?
 
-MeteorFalls_1F_2R_Text_JayRematchIntro:
-	.string "JAY: We've been married for\n"
-	.string "fifty years.\p"
-	.string "We've supported each other all that\n"
-	.string "time. We've made ourselves strong.$"
+	If you'd care to battle with us, you'll
+	have to come back with more POKéMON."
+}
 
-MeteorFalls_1F_2R_Text_JayRematchDefeat:
-	.string "JAY: Oh, dear.\n"
-	.string "We've lost, my dear husband.$"
+text MeteorFalls_1F_2R_Text_JohnRematchIntro {
+	"JOHN: We've always battled POKéMON
+	together as a twosome.
+	We've confidence in ourselves."
+}
 
-MeteorFalls_1F_2R_Text_JayPostRematch:
-	.string "JAY: Fifty years of marriage…\n"
-	.string "Many things have happened.\p"
-	.string "I hope that we will continue to make\n"
-	.string "happy memories together.$"
+text MeteorFalls_1F_2R_Text_JohnRematchDefeat {
+	"JOHN: Oh, my.
+	We've lost, dear wife."
+}
 
-MeteorFalls_1F_2R_Text_JayRematchNotEnoughMons:
-	.string "JAY: Well, well, aren't you a young\n"
-	.string "TRAINER?\p"
-	.string "If you'd care to battle with us, you'll\n"
-	.string "have to come back with more POKéMON.$"
+text MeteorFalls_1F_2R_Text_JohnPostRematch {
+	"JOHN: Married for fifty years…
 
-`
+	On reflection, the dear wife and I,
+	we battled day in and day out…"
+}
+
+text MeteorFalls_1F_2R_Text_JohnRematchNotEnoughMons {
+	"JOHN: Well, well, what a young TRAINER!
+
+	Will you battle with us? If so, you'll
+	have to return with more POKéMON."
+}
+
+text MeteorFalls_1F_2R_Text_JayRematchIntro {
+	"JAY: We've been married for
+	fifty years.
+
+	We've supported each other all that
+	time. We've made ourselves strong."
+}
+
+text MeteorFalls_1F_2R_Text_JayRematchDefeat {
+	"JAY: Oh, dear.
+	We've lost, my dear husband."
+}
+
+text MeteorFalls_1F_2R_Text_JayPostRematch {
+	"JAY: Fifty years of marriage…
+	Many things have happened.
+
+	I hope that we will continue to make
+	happy memories together."
+}
+
+text MeteorFalls_1F_2R_Text_JayRematchNotEnoughMons {
+	"JAY: Well, well, aren't you a young
+	TRAINER?
+
+	If you'd care to battle with us, you'll
+	have to come back with more POKéMON."
+}
