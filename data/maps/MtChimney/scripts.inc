@@ -735,7 +735,7 @@ MtChimney_EventScript_MeteoriteMachine_1:
 
 MtChimney_EventScript_MeteoriteMachine_2:
 # 320 "data/maps/MtChimney/scripts.pory"
-	msgbox MtChimney_Text_MetoriteFittedOnMachine, MSGBOX_DEFAULT
+	msgbox MtChimney_Text_MeteoriteFittedOnMachine, MSGBOX_DEFAULT
 	goto MtChimney_EventScript_MeteoriteMachine_1
 
 MtChimney_EventScript_MeteoriteMachine_3:
@@ -1148,7 +1148,7 @@ MtChimney_Text_OhFineThen::
 # 661 "data/maps/MtChimney/scripts.pory"
 	.string "Oh, fine then.$"
 
-MtChimney_Text_MetoriteFittedOnMachine::
+MtChimney_Text_MeteoriteFittedOnMachine::
 # 665 "data/maps/MtChimney/scripts.pory"
 	.string "A METEORITE is fitted on a mysterious\n"
 	.string "machine…\p"
