@@ -1,11 +1,16 @@
 MirageTower_3F_MapScripts::
+# 2 "data/maps/MirageTower_3F/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
+# 3 "data/maps/MirageTower_3F/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, CaveHole_FixCrackedGround
-	map_script MAP_SCRIPT_ON_RESUME, MirageTower_3F_SetHoleWarp
+# 4 "data/maps/MirageTower_3F/scripts.pory"
+	map_script MAP_SCRIPT_ON_RESUME, MirageTower_3F_MapScripts_MAP_SCRIPT_ON_RESUME
 	.byte 0
 
-MirageTower_3F_SetHoleWarp:
+MirageTower_3F_MapScripts_MAP_SCRIPT_ON_RESUME:
+# 5 "data/maps/MirageTower_3F/scripts.pory"
 	setstepcallback STEP_CB_CRACKED_FLOOR
+# 6 "data/maps/MirageTower_3F/scripts.pory"
 	setholewarp MAP_MIRAGE_TOWER_2F
 	end
 

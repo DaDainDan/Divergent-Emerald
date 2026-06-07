@@ -1,452 +1,472 @@
-raw `
-TrainerHill_Entrance_MapScripts::
-	map_script MAP_SCRIPT_ON_RESUME, TrainerHill_Entrance_OnResume
-	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, TrainerHill_Entrance_OnReturn
-	map_script MAP_SCRIPT_ON_TRANSITION, TrainerHill_Entrance_OnTransition
-	map_script MAP_SCRIPT_ON_LOAD, TrainerHill_Entrance_OnLoad
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, TrainerHill_Entrance_OnFrame
-	.byte 0
+mapscripts TrainerHill_Entrance_MapScripts {
+    MAP_SCRIPT_ON_RESUME {
+        trainerhill_resumetimer
+		setvar(VAR_TEMP_0, 0)
+		trainerhill_getusingereader
+		if (var(VAR_RESULT) == FALSE) { // VAR_RESULT always FALSE here
+			trainerhill_getwon
+			if (var(VAR_RESULT) == FALSE) {
+				applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+			}
+			end
+		}
+		setobjectxy(LOCALID_PLAYER, 9, 6)
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+		end
+    }
+    MAP_SCRIPT_ON_RETURN_TO_FIELD {
+        addobject(LOCALID_TRAINER_HILL_NURSE)
+		addobject(LOCALID_TRAINER_HILL_ATTENDANT)
+		addobject(LOCALID_TRAINER_HILL_MAN)
+		addobject(LOCALID_TRAINER_HILL_GIRL)
+		end
+    }
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_LANDMARK_TRAINER_HILL)
+		getplayerxy(VAR_TEMP_D, VAR_RESULT)
+		end
+    }
+    MAP_SCRIPT_ON_LOAD {
+        if (var(VAR_TEMP_D) == 17) {
+			setmetatile(17, 10, METATILE_TrainerHill_GreenFloorTile, FALSE)
+		}
+		end
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_0, 0: TrainerHill_Entrance_EventScript_ExitChallenge
+		VAR_TEMP_D, 17: TrainerHill_Entrance_EventScript_ExitElevator
+		VAR_TEMP_5, 1: TrainerHill_Entrance_EventScript_EntryTrigger
+		VAR_TEMP_1, 1: TrainerHill_EventScript_WarpToEntranceCounter
+    ]
+}
 
-TrainerHill_Entrance_OnTransition:
-	setflag FLAG_LANDMARK_TRAINER_HILL
-	getplayerxy VAR_TEMP_D, VAR_RESULT
-	end
+script TrainerHill_Entrance_EventScript_ExitElevator {
+    lockall
+    applymovement(LOCALID_PLAYER, moves(walk_down * 2))
+    waitmovement(0)
+    setmetatile(17, 10, METATILE_TrainerHill_CounterDoor, TRUE)
+    special(DrawWholeMapView)
+    playse(SE_CLICK)
+    waitse
+    setvar(VAR_TEMP_D, 0)
+    releaseall
+    end
+}
 
-@ Unused
-TrainerHill_Entrance_OnWarp:
-	end
-
-TrainerHill_Entrance_OnResume:
-	trainerhill_resumetimer
-	setvar VAR_TEMP_0, 0
-	trainerhill_getusingereader
-	goto_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_TryFaceAttendant  @ VAR_RESULT always FALSE here
-	setobjectxy LOCALID_PLAYER, 9, 6
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-	end
-
-TrainerHill_Entrance_EventScript_TryFaceAttendant::
-	trainerhill_getwon
-	goto_if_eq VAR_RESULT, TRUE, TrainerHill_Entrance_EventScript_PlayerDontFaceAttendant
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-	end
-
-TrainerHill_Entrance_EventScript_PlayerDontFaceAttendant::
-	end
-
-TrainerHill_Entrance_OnReturn:
-	addobject LOCALID_TRAINER_HILL_NURSE
-	addobject LOCALID_TRAINER_HILL_ATTENDANT
-	addobject LOCALID_TRAINER_HILL_MAN
-	addobject LOCALID_TRAINER_HILL_GIRL
-	end
-
-TrainerHill_Entrance_OnLoad:
-	call_if_eq VAR_TEMP_D, 17, TrainerHill_Entrance_EventScript_OpenCounterDoor
-	end
-
-TrainerHill_Entrance_EventScript_OpenCounterDoor::
-	setmetatile 17, 10, METATILE_TrainerHill_GreenFloorTile, FALSE
-	return
-
-TrainerHill_Entrance_OnFrame:
-	map_script_2 VAR_TEMP_0, 0, TrainerHill_Entrance_EventScript_ExitChallenge
-	map_script_2 VAR_TEMP_D, 17, TrainerHill_Entrance_EventScript_ExitElevator
-	map_script_2 VAR_TEMP_5, 1, TrainerHill_Entrance_EventScript_EntryTrigger
-	map_script_2 VAR_TEMP_1, 1, TrainerHill_EventScript_WarpToEntranceCounter
-	.2byte 0
-
-TrainerHill_Entrance_EventScript_ExitElevator::
-	lockall
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerExitElevator
-	waitmovement 0
-	setmetatile 17, 10, METATILE_TrainerHill_CounterDoor, TRUE
-	special DrawWholeMapView
-	playse SE_CLICK
-	waitse
-	setvar VAR_TEMP_D, 0
-	releaseall
-	end
-
-TrainerHill_Entrance_EventScript_ExitChallenge::
-	setvar VAR_TEMP_0, 1
-	trainerhill_getstatus
-	switch VAR_RESULT
-	case TRAINER_HILL_PLAYER_STATUS_LOST, TrainerHill_Entrance_EventScript_ExitChallengeLost
-	case TRAINER_HILL_PLAYER_STATUS_ECARD_SCANNED, TrainerHill_Entrance_EventScript_ExitChallengeECard
-	case TRAINER_HILL_PLAYER_STATUS_NORMAL, TrainerHill_Entrance_EventScript_EndExitChallenge
-
-TrainerHill_Entrance_EventScript_ExitChallengeLost::
-	lockall
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-	msgbox TrainerHill_Entrance_Text_TooBadTremendousEffort, MSGBOX_DEFAULT
-	goto TrainerHill_Entrance_EventScript_PlayerExitChallenge
-
-TrainerHill_Entrance_EventScript_ExitChallengeECard::
-	lockall
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-	msgbox TrainerHill_Entrance_Text_MovedReceptionHereForSwitch, MSGBOX_DEFAULT
-TrainerHill_Entrance_EventScript_PlayerExitChallenge::
+script TrainerHill_Entrance_EventScript_ExitChallenge {
+    setvar(VAR_TEMP_0, 1)
+    trainerhill_getstatus
+    switch (var(VAR_RESULT)) {
+        case TRAINER_HILL_PLAYER_STATUS_LOST:
+			lockall
+    		applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+    		msgbox(TrainerHill_Entrance_Text_TooBadTremendousEffort, MSGBOX_DEFAULT)
+        case TRAINER_HILL_PLAYER_STATUS_ECARD_SCANNED:
+			lockall
+    		applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+    		msgbox(TrainerHill_Entrance_Text_MovedReceptionHereForSwitch, MSGBOX_DEFAULT)
+		default: end
+    }
 	closemessage
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
-	waitmovement 0
-	setvar VAR_TRAINER_HILL_IS_ACTIVE, 0
-	special HealPlayerParty
-	callnative UpdateFollowingPokemon
-	releaseall
-TrainerHill_Entrance_EventScript_EndExitChallenge::
+    applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+    waitmovement(0)
+    setvar(VAR_TRAINER_HILL_IS_ACTIVE, 0)
+    special(HealPlayerParty)
+    callnative(UpdateFollowingPokemon)
+    releaseall
+    end
+}
+
+script TrainerHill_Entrance_EventScript_Nurse {
+    setvar(VAR_0x800B, LOCALID_TRAINER_HILL_NURSE)
+    call(Common_EventScript_PkmnCenterNurse)
+    waitmessage
+    waitbuttonpress
+    release_end
+}
+
+script TrainerHill_Entrance_EventScript_Attendant {
+    lock_faceplayer
+    trainerhill_inchallenge
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(TrainerHill_Entrance_Text_ThankYouForPlaying, MSGBOX_DEFAULT)
+    	release_end
+    }
+    msgbox(TrainerHill_Entrance_Text_HopeYouGiveItYourBest, MSGBOX_DEFAULT)
+    release_end
+}
+
+script TrainerHill_Entrance_EventScript_EntryTrigger {
+    lockall
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+    if (!flag(FLAG_SYS_GAME_CLEAR)) {
+        msgbox(TrainerHill_Entrance_Text_StillGettingReady, MSGBOX_DEFAULT)
+		closemessage
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+		waitmovement(0)
+		releaseall
+		end
+    }
+    msgbox(TrainerHill_Entrance_Text_WelcomeToTrainerHill, MSGBOX_DEFAULT)
+    trainerhill_getsaved
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(TrainerHill_Entrance_Text_SaveGameBeforeEnter, MSGBOX_DEFAULT)
+		trainerhill_setsaved
+		setvar(VAR_TEMP_5, 1)
+		call(Common_EventScript_SaveGame)
+		if (var(VAR_RESULT) == FALSE) {
+			trainerhill_clearsaved
+			goto(TrainerHill_Entrance_EventScript_CancelEntry)
+		}
+		trainerhill_setsaved
+    }
+    trainerhill_allfloorsused
+    if (var(VAR_RESULT) == TRUE) {
+        msgbox(TrainerHill_Entrance_Text_TrainersInEveryRoom, MSGBOX_DEFAULT)
+    } else {
+		msgbox(TrainerHill_Entrance_Text_TrainersUpToFloorX, MSGBOX_DEFAULT)
+	}
+    goto(TrainerHill_Entrance_EventScript_AskChallengeTrainers)
 	end
+}
 
-TrainerHill_Entrance_EventScript_Nurse::
-	setvar VAR_0x800B, LOCALID_TRAINER_HILL_NURSE
-	call Common_EventScript_PkmnCenterNurse
-	waitmessage
-	waitbuttonpress
-	release
-	end
+script TrainerHill_Entrance_EventScript_AskChallengeTrainers {
+    message(TrainerHill_Entrance_Text_LikeToChallengeTrainers)
+    waitmessage
+    multichoice(15, 6, MULTI_YESNOINFO, FALSE)
+    switch (var(VAR_RESULT)) {
+        case 0: goto(TrainerHill_Entrance_EventScript_ChooseChallenge)
+        case 2:
+			msgbox(TrainerHill_Entrance_Text_ExplainTrainerHill, MSGBOX_DEFAULT)
+    		goto(TrainerHill_Entrance_EventScript_AskChallengeTrainers)
+		case 1:
+        case MULTI_B_PRESSED: goto(TrainerHill_Entrance_EventScript_CancelEntry)
+    }
+    end
+}
 
-TrainerHill_Entrance_EventScript_Attendant::
-	lock
-	faceplayer
-	trainerhill_inchallenge
-	goto_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_ThanksForPlaying
-	msgbox TrainerHill_Entrance_Text_HopeYouGiveItYourBest, MSGBOX_DEFAULT
-	goto TrainerHill_Entrance_EventScript_AttendantEnd
+script TrainerHill_Entrance_EventScript_ChooseChallenge {
+    multichoice(13, 2, MULTI_TAG_MATCH_TYPE, FALSE)
+	if (var(VAR_RESULT) == 4 || var(VAR_RESULT) == MULTI_B_PRESSED) {
+		goto(TrainerHill_Entrance_EventScript_CancelEntry)
+	}
+    trainerhill_setmode(VAR_RESULT)
+    setvar(VAR_TRAINER_HILL_IS_ACTIVE, 1)
+    setvar(VAR_TEMP_5, 0)
+    special(HealPlayerParty)
+    callnative(UpdateFollowingPokemon)
+    msgbox(TrainerHill_Entrance_Text_TimeProgessGetSetGo, MSGBOX_DEFAULT)
+    trainerhill_start
+    releaseall
+    end
+}
 
-TrainerHill_Entrance_EventScript_ThanksForPlaying::
-	msgbox TrainerHill_Entrance_Text_ThankYouForPlaying, MSGBOX_DEFAULT
-TrainerHill_Entrance_EventScript_AttendantEnd::
-	release
-	end
+script TrainerHill_Entrance_EventScript_CancelEntry {
+    setvar(VAR_TEMP_5, 0)
+    msgbox(TrainerHill_Entrance_Text_PleaseVisitUsAgain, MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+    waitmovement(0)
+    releaseall
+    end
+}
 
-TrainerHill_Entrance_EventScript_EntryTrigger::
-	lockall
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_Closed
-	msgbox TrainerHill_Entrance_Text_WelcomeToTrainerHill, MSGBOX_DEFAULT
-	trainerhill_getsaved
-	call_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_SaveGame
-	trainerhill_allfloorsused
-	goto_if_eq VAR_RESULT, TRUE, TrainerHill_Entrance_EventScript_AllFloorsUsed
-	msgbox TrainerHill_Entrance_Text_TrainersUpToFloorX, MSGBOX_DEFAULT
-	goto TrainerHill_Entrance_EventScript_AskChallengeTrainers
+// Unused
+movement TrainerHill_Entrance_Movement_FaceUp {
+    // moves(face_up)
+    face_up
+}
 
-TrainerHill_Entrance_EventScript_AllFloorsUsed::
-	msgbox TrainerHill_Entrance_Text_TrainersInEveryRoom, MSGBOX_DEFAULT
-TrainerHill_Entrance_EventScript_AskChallengeTrainers::
-	message TrainerHill_Entrance_Text_LikeToChallengeTrainers
-	waitmessage
-	multichoice 15, 6, MULTI_YESNOINFO, FALSE
-	switch VAR_RESULT
-	case 0, TrainerHill_Entrance_EventScript_ChooseChallenge
-	case 1, TrainerHill_Entrance_EventScript_CancelEntry
-	case 2, TrainerHill_Entrance_EventScript_Info
-	case MULTI_B_PRESSED, TrainerHill_Entrance_EventScript_CancelEntry
-	end
+script TrainerHill_Entrance_EventScript_Records {
+    lockall
+    fadescreen(FADE_TO_BLACK)
+    setvar(VAR_0x8004, 0)
+    special(ShowTrainerHillRecords)
+    releaseall
+    end
+}
 
-TrainerHill_Entrance_EventScript_Info::
-	msgbox TrainerHill_Entrance_Text_ExplainTrainerHill, MSGBOX_DEFAULT
-	goto TrainerHill_Entrance_EventScript_AskChallengeTrainers
-	end
+script TrainerHill_Entrance_EventScript_Man {
+    if (!flag(FLAG_SYS_GAME_CLEAR)) {
+        msgbox(TrainerHill_Entrance_Text_CantWaitToTestTheWaters, MSGBOX_NPC)
+    	end
+    }
+    msgbox(TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead, MSGBOX_NPC)
+    end
+}
 
-TrainerHill_Entrance_EventScript_ChooseChallenge::
-	multichoice 13, 2, MULTI_TAG_MATCH_TYPE, FALSE
-	switch VAR_RESULT
-	case 4, TrainerHill_Entrance_EventScript_CancelEntry
-	case MULTI_B_PRESSED, TrainerHill_Entrance_EventScript_CancelEntry
-	trainerhill_setmode VAR_RESULT
-	setvar VAR_TRAINER_HILL_IS_ACTIVE, 1
-	setvar VAR_TEMP_5, 0
-	special HealPlayerParty
-	callnative UpdateFollowingPokemon
-	msgbox TrainerHill_Entrance_Text_TimeProgessGetSetGo, MSGBOX_DEFAULT
-	trainerhill_start
-	releaseall
-	end
+script TrainerHill_Entrance_EventScript_Girl {
+    if (!flag(FLAG_SYS_GAME_CLEAR)) {
+        msgbox(TrainerHill_Entrance_Text_DoYouKnowWhenTheyOpen, MSGBOX_NPC)
+    	end
+    }
+    msgbox(TrainerHill_Entrance_Text_FriendsTryingToReachTimeBoardTop, MSGBOX_NPC)
+    end
+}
 
-TrainerHill_Entrance_EventScript_CancelEntry::
-	setvar VAR_TEMP_5, 0
-	msgbox TrainerHill_Entrance_Text_PleaseVisitUsAgain, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
-	waitmovement 0
-	releaseall
-	end
+script TrainerHill_Entrance_EventScript_Clerk {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    if (flag(FLAG_SYS_GAME_CLEAR)) {
+        goto(TrainerHill_Entrance_EventScript_ExpandedPokemart)
+    }
+    pokemart(TrainerHill_Entrance_Pokemart_Basic)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
 
-TrainerHill_Entrance_EventScript_SaveGame::
-	msgbox TrainerHill_Entrance_Text_SaveGameBeforeEnter, MSGBOX_DEFAULT
-	trainerhill_setsaved
-	setvar VAR_TEMP_5, 1
-	call Common_EventScript_SaveGame
-	goto_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_SaveFailed
-	trainerhill_setsaved
-	return
+mart TrainerHill_Entrance_Pokemart_Basic {
+    ITEM_SUPER_POTION
+    ITEM_ANTIDOTE
+    ITEM_PARALYZE_HEAL
+    ITEM_AWAKENING
+    ITEM_X_SPEED
+    ITEM_X_SP_ATK
+    ITEM_X_ATTACK
+    ITEM_X_DEFENSE
+    ITEM_DIRE_HIT
+    ITEM_GUARD_SPEC
+    ITEM_X_ACCURACY
+}
 
-TrainerHill_Entrance_EventScript_SaveFailed::
-	trainerhill_clearsaved
-	goto TrainerHill_Entrance_EventScript_CancelEntry
-	end
+script TrainerHill_Entrance_EventScript_ExpandedPokemart {
+    pokemart(TrainerHill_Entrance_Pokemart_Expanded)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
 
-TrainerHill_Entrance_EventScript_Closed::
-	msgbox TrainerHill_Entrance_Text_StillGettingReady, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
-	waitmovement 0
-	releaseall
-	end
+mart TrainerHill_Entrance_Pokemart_Expanded {
+    ITEM_HYPER_POTION
+    ITEM_MAX_POTION
+    ITEM_FULL_RESTORE
+    ITEM_FULL_HEAL
+    ITEM_REVIVE
+    ITEM_X_SPEED
+    ITEM_X_SP_ATK
+    ITEM_X_ATTACK
+    ITEM_X_DEFENSE
+    ITEM_DIRE_HIT
+    ITEM_GUARD_SPEC
+    ITEM_X_ACCURACY
+}
 
-TrainerHill_Entrance_Movement_PlayerFaceAttendant:
-	face_right
-	step_end
+text TrainerHill_Entrance_Text_StillGettingReady {
+	"This is the TRAINER HILL where
+	you may enjoy tag battles with many
+	TRAINERS.
 
-TrainerHill_Entrance_Movement_PushPlayerBackFromCounter:
-	walk_down
-	step_end
+	Unfortunately, we're still getting
+	things ready. Please come back later!"
+}
 
-@ Unused
-TrainerHill_Entrance_Movement_FaceUp:
-	face_up
-	step_end
+text TrainerHill_Entrance_Text_WelcomeToTrainerHill {
+	"Welcome!
 
-TrainerHill_Entrance_Movement_PlayerExitElevator:
-	walk_down
-	walk_down
-	step_end
+	This is the TRAINER HILL where
+	you may enjoy tag battles with many
+	TRAINERS!"
+}
 
-TrainerHill_Entrance_EventScript_Records::
-	lockall
-	fadescreen FADE_TO_BLACK
-	setvar VAR_0x8004, 0
-	special ShowTrainerHillRecords
-	releaseall
-	end
+text TrainerHill_Entrance_Text_SaveGameBeforeEnter {
+	"Is this your first visit here?
 
-TrainerHill_Entrance_EventScript_Man::
-	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_ManTrainerHillClosed
-	msgbox TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead, MSGBOX_NPC
-	end
+	Before you enter, please save
+	your game."
+}
 
-TrainerHill_Entrance_EventScript_ManTrainerHillClosed::
-	msgbox TrainerHill_Entrance_Text_CantWaitToTestTheWaters, MSGBOX_NPC
-	end
+text TrainerHill_Entrance_Text_TrainersUpToFloorX {
+	"Let's see…
+	The TRAINERS here now are…
 
-TrainerHill_Entrance_EventScript_Girl::
-	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_GirlTrainerHillClosed
-	msgbox TrainerHill_Entrance_Text_FriendsTryingToReachTimeBoardTop, MSGBOX_NPC
-	end
+	Up to floor no. {STR_VAR_1}."
+}
 
-TrainerHill_Entrance_EventScript_GirlTrainerHillClosed::
-	msgbox TrainerHill_Entrance_Text_DoYouKnowWhenTheyOpen, MSGBOX_NPC
-	end
+text TrainerHill_Entrance_Text_TrainersInEveryRoom {
+	"Let's see…
+	The TRAINERS here now are…
 
-TrainerHill_Entrance_EventScript_Clerk::
-	lock
-	faceplayer
-	message gText_HowMayIServeYou
-	waitmessage
-	goto_if_set FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_ExpandedPokemart
-	pokemart TrainerHill_Entrance_Pokemart_Basic
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
+	There appear to be TRAINERS gathered
+	in every room."
+}
 
-	.align 2
-TrainerHill_Entrance_Pokemart_Basic:
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_SP_ATK
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
-	.2byte ITEM_DIRE_HIT
-	.2byte ITEM_GUARD_SPEC
-	.2byte ITEM_X_ACCURACY
-	pokemartlistend
+text TrainerHill_Entrance_Text_LikeToChallengeTrainers {
+	"Would you like to challenge the
+	waiting TRAINERS?"
+}
 
-TrainerHill_Entrance_EventScript_ExpandedPokemart::
-	pokemart TrainerHill_Entrance_Pokemart_Expanded
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
+text TrainerHill_Entrance_Text_TimeProgessGetSetGo {
+	"I will time your progress.
+	Best of luck!
 
-	.align 2
-TrainerHill_Entrance_Pokemart_Expanded:
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_MAX_POTION
-	.2byte ITEM_FULL_RESTORE
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_REVIVE
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_SP_ATK
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
-	.2byte ITEM_DIRE_HIT
-	.2byte ITEM_GUARD_SPEC
-	.2byte ITEM_X_ACCURACY
-	pokemartlistend
+	On your marks…
 
-TrainerHill_Entrance_Text_StillGettingReady:
-	.string "This is the TRAINER HILL where\n"
-	.string "you may enjoy tag battles with many\l"
-	.string "TRAINERS.\p"
-	.string "Unfortunately, we're still getting\n"
-	.string "things ready. Please come back later!$"
+	Get set…
 
-TrainerHill_Entrance_Text_WelcomeToTrainerHill:
-	.string "Welcome!\p"
-	.string "This is the TRAINER HILL where\n"
-	.string "you may enjoy tag battles with many\l"
-	.string "TRAINERS!$"
+	Go!"
+}
 
-TrainerHill_Entrance_Text_SaveGameBeforeEnter:
-	.string "Is this your first visit here?\p"
-	.string "Before you enter, please save\n"
-	.string "your game.$"
+text TrainerHill_Entrance_Text_PleaseVisitUsAgain {
+	"Please do visit us again!"
+}
 
-TrainerHill_Entrance_Text_TrainersUpToFloorX:
-	.string "Let's see…\n"
-	.string "The TRAINERS here now are…\p"
-	.string "Up to floor no. {STR_VAR_1}.$"
+text TrainerHill_Entrance_Text_TooBadTremendousEffort {
+	"That was too bad.
 
-TrainerHill_Entrance_Text_TrainersInEveryRoom:
-	.string "Let's see…\n"
-	.string "The TRAINERS here now are…\p"
-	.string "There appear to be TRAINERS gathered\n"
-	.string "in every room.$"
+	I think you put in a tremendous
+	effort in your battling.
 
-TrainerHill_Entrance_Text_LikeToChallengeTrainers:
-	.string "Would you like to challenge the\n"
-	.string "waiting TRAINERS?$"
+	Please come back and try again!"
+}
 
-TrainerHill_Entrance_Text_TimeProgessGetSetGo:
-	.string "I will time your progress.\n"
-	.string "Best of luck!\p"
-	.string "On your marks…\p"
-	.string "Get set…\p"
-	.string "Go!$"
+text TrainerHill_Entrance_Text_HopeYouGiveItYourBest {
+	"I hope you give it your best."
+}
 
-TrainerHill_Entrance_Text_PleaseVisitUsAgain:
-	.string "Please do visit us again!$"
+text TrainerHill_Entrance_Text_MovedReceptionHereForSwitch {
+	"When the TRAINERS switch places,
+	the movement can be hectic.
 
-TrainerHill_Entrance_Text_TooBadTremendousEffort:
-	.string "That was too bad.\p"
-	.string "I think you put in a tremendous\n"
-	.string "effort in your battling.\p"
-	.string "Please come back and try again!$"
+	To avoid the stampede, we moved
+	the reception counter here.
 
-TrainerHill_Entrance_Text_HopeYouGiveItYourBest:
-	.string "I hope you give it your best.$"
+	I'm sorry for the inconvenience."
+}
 
-TrainerHill_Entrance_Text_MovedReceptionHereForSwitch:
-	.string "When the TRAINERS switch places,\n"
-	.string "the movement can be hectic.\p"
-	.string "To avoid the stampede, we moved\n"
-	.string "the reception counter here.\p"
-	.string "I'm sorry for the inconvenience.$"
+text TrainerHill_Entrance_Text_ThankYouForPlaying {
+	"Thank you for playing!"
+}
 
-TrainerHill_Entrance_Text_ThankYouForPlaying:
-	.string "Thank you for playing!$"
+text TrainerHill_Entrance_Text_ExplainTrainerHill {
+	"Here at the TRAINER HILL, we conduct
+	an event called the Time Attack.
 
-TrainerHill_Entrance_Text_ExplainTrainerHill:
-	.string "Here at the TRAINER HILL, we conduct\n"
-	.string "an event called the Time Attack.\p"
-	.string "It is a race that measures how long\n"
-	.string "you take to reach our owner on\l"
-	.string "the rooftop from this counter.\p"
-	.string "The fastest times are posted on\n"
-	.string "the Time Board--try competing with\l"
-	.string "your friends.\p"
-	.string "In TRAINER battles along the way,\n"
-	.string "neither Exp. Points nor money will\l"
-	.string "be awarded.$"
+	It is a race that measures how long
+	you take to reach our owner on
+	the rooftop from this counter.
 
-@ Unused
-TrainerHill_Entrance_Text_NeedAtLeastTwoPokemon:
-	.string "Oh, I'm sorry, but you appear to have\n"
-	.string "only one POKéMON with you.\p"
-	.string "You will need at least two POKéMON\n"
-	.string "to enter this event.$"
+	The fastest times are posted on
+	the Time Board--try competing with
+	your friends.
 
-TrainerHill_Roof_Text_YouFinallyCameBravo:
-	.string "Hm! Hm!\p"
-	.string "You finally came!\n"
-	.string "Yes, you have arrived!\p"
-	.string "Wait! Don't say it!\n"
-	.string "I know why you came all the way\l"
-	.string "here by yourself!\p"
-	.string "You wanted to see me, the owner\n"
-	.string "of the TRAINER HILL, because…\p"
-	.string "You want to form a tag team with me!\n"
-	.string "Wa-hoo!\p"
-	.string "…Uh?\n"
-	.string "That's not it?\p"
-	.string "Anyway, I watched you on your way up.\n"
-	.string "Marvelous battling! Bravo, indeed!$"
+	In TRAINER battles along the way,
+	neither Exp. Points nor money will
+	be awarded."
+}
 
-TrainerHill_Roof_Text_HaveTheMostMarvelousGift:
-	.string "For a marvelous someone like you,\n"
-	.string "I have the most marvelous gift!$"
+text TrainerHill_Entrance_Text_NeedAtLeastTwoPokemon {
+	"Oh, I'm sorry, but you appear to have
+	only one POKéMON with you.
 
-TrainerHill_Roof_Text_FullUpBeBackLaterForThis:
-	.string "Oh, no, full up with things!\n"
-	.string "You'll be back later for this!$"
+	You will need at least two POKéMON
+	to enter this event."
+}
 
-TrainerHill_Roof_Text_GotHereMarvelouslyQuickly:
-	.string "Oh, hold on here! Did you possibly get\n"
-	.string "here marvelously quickly?\p"
-	.string "How splendid! You needn't have\n"
-	.string "hurried so to see me!\p"
-	.string "That is so delightful. I'll have the Time\n"
-	.string "Board at the reception updated!$"
+text TrainerHill_Roof_Text_YouFinallyCameBravo {
+	"Hm! Hm!
 
-TrainerHill_Roof_Text_YouWerentVeryQuick:
-	.string "But, oh…\n"
-	.string "You weren't very quick getting here.$"
+	You finally came!
+	Yes, you have arrived!
 
-TrainerHill_Roof_Text_ArriveZippierNextTime:
-	.string "Perhaps it would please me more if you\n"
-	.string "arrived zippier next time.\p"
-	.string "Then, I should be pleased to form\n"
-	.string "a tag team with you!\p"
-	.string "Until we meet again, amigo!$"
+	Wait! Don't say it!
+	I know why you came all the way
+	here by yourself!
 
-@ Unused
-TrainerHill_Roof_Text_BuiltTrainerHillToFindPartner:
-	.string "I had the TRAINER HILL built for but\n"
-	.string "one reason and one only!\p"
-	.string "To find the most suitable partner\n"
-	.string "with whom I may form a tag team!$"
+	You wanted to see me, the owner
+	of the TRAINER HILL, because…
 
-TrainerHill_Entrance_Text_ChallengeTime:
-	.string "{STR_VAR_1} min. {STR_VAR_2}.{STR_VAR_3} sec.$"
+	You want to form a tag team with me!
+	Wa-hoo!
 
-TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead:
-	.string "Who knows what sort of TRAINERS\n"
-	.string "and POKéMON combos are ahead?\p"
-	.string "All I know is that I'll knock aside\n"
-	.string "anyone that stands in my way!$"
+	…Uh?
+	That's not it?
 
-TrainerHill_Entrance_Text_CantWaitToTestTheWaters:
-	.string "I heard tough TRAINERS come to this\n"
-	.string "TRAINER HILL from all over.\p"
-	.string "I can't wait to test the waters!\p"
-	.string "I'll knock aside anyone that stands\n"
-	.string "in my way!$"
+	Anyway, I watched you on your way up.
+	Marvelous battling! Bravo, indeed!"
+}
 
-TrainerHill_Entrance_Text_FriendsTryingToReachTimeBoardTop:
-	.string "Do you see the Time Board over there?\p"
-	.string "My friends and I are trying to see who\n"
-	.string "can reach the top in the least time.$"
+text TrainerHill_Roof_Text_HaveTheMostMarvelousGift {
+	"For a marvelous someone like you,
+	I have the most marvelous gift!"
+}
 
-TrainerHill_Entrance_Text_DoYouKnowWhenTheyOpen:
-	.string "Do you know when they're opening\n"
-	.string "this place up?\p"
-	.string "I'm waiting here to be the first\n"
-	.string "challenger ever!$"
+text TrainerHill_Roof_Text_FullUpBeBackLaterForThis {
+	"Oh, no, full up with things!
+	You'll be back later for this!"
+}
 
-TrainerHill_Elevator_Text_ReturnToReception:
-	.string "Would you like to return to\n"
-	.string "the reception counter?$"
-`
+text TrainerHill_Roof_Text_GotHereMarvelouslyQuickly {
+	"Oh, hold on here! Did you possibly get
+	here marvelously quickly?
+
+	How splendid! You needn't have
+	hurried so to see me!
+
+	That is so delightful. I'll have the Time
+	Board at the reception updated!"
+}
+
+text TrainerHill_Roof_Text_YouWerentVeryQuick {
+	"But, oh…
+	You weren't very quick getting here."
+}
+
+text TrainerHill_Roof_Text_ArriveZippierNextTime {
+	"Perhaps it would please me more if you
+	arrived zippier next time.
+
+	Then, I should be pleased to form
+	a tag team with you!
+
+	Until we meet again, amigo!"
+}
+
+text TrainerHill_Roof_Text_BuiltTrainerHillToFindPartner {
+	"I had the TRAINER HILL built for but
+	one reason and one only!
+
+	To find the most suitable partner
+	with whom I may form a tag team!"
+}
+
+text TrainerHill_Entrance_Text_ChallengeTime {
+	"{STR_VAR_1} min. {STR_VAR_2}.{STR_VAR_3} sec."
+}
+
+text TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead {
+	"Who knows what sort of TRAINERS
+	and POKéMON combos are ahead?
+
+	All I know is that I'll knock aside
+	anyone that stands in my way!"
+}
+
+text TrainerHill_Entrance_Text_CantWaitToTestTheWaters {
+	"I heard tough TRAINERS come to this
+	TRAINER HILL from all over.
+
+	I can't wait to test the waters!
+
+	I'll knock aside anyone that stands
+	in my way!"
+}
+
+text TrainerHill_Entrance_Text_FriendsTryingToReachTimeBoardTop {
+	"Do you see the Time Board over there?
+
+	My friends and I are trying to see who
+	can reach the top in the least time."
+}
+
+text TrainerHill_Entrance_Text_DoYouKnowWhenTheyOpen {
+	"Do you know when they're opening
+	this place up?
+
+	I'm waiting here to be the first
+	challenger ever!"
+}
+
+text TrainerHill_Elevator_Text_ReturnToReception {
+	"Would you like to return to
+	the reception counter?"
+}

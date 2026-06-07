@@ -1,76 +1,64 @@
-raw `
-VerdanturfTown_BattleTentCorridor_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, VerdanturfTown_BattleTentCorridor_OnFrame
-	.byte 0
+mapscripts VerdanturfTown_BattleTentCorridor_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_0, 0: VerdanturfTown_BattleTentCorridor_EventScript_EnterCorridor
+    ]
+}
 
-VerdanturfTown_BattleTentCorridor_OnFrame:
-	map_script_2 VAR_TEMP_0, 0, VerdanturfTown_BattleTentCorridor_EventScript_EnterCorridor
-	.2byte 0
+script VerdanturfTown_BattleTentCorridor_EventScript_EnterCorridor {
+    lockall
+    setvar(VAR_TEMP_0, 1)
+    applymovement(LOCALID_VERDANTURF_TENT_CORRIDOR_ATTENDANT, moves(walk_up * 4))
+    applymovement(LOCALID_PLAYER, moves(walk_up * 4))
+    waitmovement(0)
+    opendoor(2, 1)
+    waitdooranim
+    applymovement(LOCALID_VERDANTURF_TENT_CORRIDOR_ATTENDANT, moves(walk_up,  set_invisible))
+    applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+    waitmovement(0)
+    closedoor(2, 1)
+    waitdooranim
+    setvar(VAR_0x8006, 0)
+    warp(MAP_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM, 6, 5)
+    waitstate
+    releaseall
+    end
+}
 
-VerdanturfTown_BattleTentCorridor_EventScript_EnterCorridor::
-	lockall
-	setvar VAR_TEMP_0, 1
-	applymovement LOCALID_VERDANTURF_TENT_CORRIDOR_ATTENDANT, VerdanturfTown_BattleTentCorridor_Movement_WalkToDoor
-	applymovement LOCALID_PLAYER, VerdanturfTown_BattleTentCorridor_Movement_WalkToDoor
-	waitmovement 0
-	opendoor 2, 1
-	waitdooranim
-	applymovement LOCALID_VERDANTURF_TENT_CORRIDOR_ATTENDANT, VerdanturfTown_BattleTentCorridor_Movement_AttendantEnterDoor
-	applymovement LOCALID_PLAYER, VerdanturfTown_BattleTentCorridor_Movement_PlayerEnterDoor
-	waitmovement 0
-	closedoor 2, 1
-	waitdooranim
-	setvar VAR_0x8006, 0
-	warp MAP_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM, 6, 5
-	waitstate
-	releaseall
-	end
+// Leftover text from when this was a Contest Hall in R/S
+// Unused
+text VerdanturfTown_ContestHall_Text_WhichContestYouEntering {
+	"Which CONTEST are you entering?
+	Want a piece of advice?
 
-VerdanturfTown_BattleTentCorridor_Movement_WalkToDoor:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
+	In any CONTEST, for example, a CUTE
+	CONTEST, I don't think they judge you
+	only on cuteness in the first round.
 
-VerdanturfTown_BattleTentCorridor_Movement_PlayerEnterDoor:
-	walk_up
-VerdanturfTown_BattleTentCorridor_Movement_AttendantEnterDoor:
-	walk_up
-	set_invisible
-	step_end
+	You need to work out ways for raising
+	POKéMON better."
+}
 
+text VerdanturfTown_ContestHall_Text_RaisedMonToBeCute {
+	"I raised my POKéMON to be cute.
 
-@ Leftover text from when this was a Contest Hall in R/S
-@ Unused
-VerdanturfTown_ContestHall_Text_WhichContestYouEntering:
-	.string "Which CONTEST are you entering?\n"
-	.string "Want a piece of advice?\p"
-	.string "In any CONTEST, for example, a CUTE\n"
-	.string "CONTEST, I don't think they judge you\l"
-	.string "only on cuteness in the first round.\p"
-	.string "You need to work out ways for raising\n"
-	.string "POKéMON better.$"
+	I found out you can put POKéMON in
+	a CONTEST for cuteness!
 
-@ Unused
-VerdanturfTown_ContestHall_Text_RaisedMonToBeCute:
-	.string "I raised my POKéMON to be cute.\p"
-	.string "I found out you can put POKéMON in\n"
-	.string "a CONTEST for cuteness!\p"
-	.string "I'm so glad I raised my POKéMON with\n"
-	.string "loving care…$"
+	I'm so glad I raised my POKéMON with
+	loving care…"
+}
 
-@ Unused
-VerdanturfTown_ContestHall_Text_MyMonRules:
-	.string "My POKéMON rules!\p"
-	.string "It's cool, tough yet beautiful, cute,\n"
-	.string "and smart. It's complete!\p"
-	.string "I may as well go for wins in every\n"
-	.string "single CONTEST.$"
+text VerdanturfTown_ContestHall_Text_MyMonRules {
+	"My POKéMON rules!
 
-@ Unused
-VerdanturfTown_ContestHall_Text_NormalRankStage:
-	.string "POKéMON CONTESTS\n"
-	.string "NORMAL RANK STAGE!$"
+	It's cool, tough yet beautiful, cute,
+	and smart. It's complete!
 
-`
+	I may as well go for wins in every
+	single CONTEST."
+}
+
+text VerdanturfTown_ContestHall_Text_NormalRankStage {
+	"POKéMON CONTESTS
+	NORMAL RANK STAGE!"
+}
