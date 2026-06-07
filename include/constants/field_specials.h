@@ -117,4 +117,16 @@ enum {
     TEMPLATE_POSITION
 };
 
+// Starter Pokemon
+
+// Emerald
+#define CHOSE_TREECKO 0
+#define CHOSE_TORCHIC 1
+#define CHOSE_MUDKIP  2
+
+// FRLG
+#define CHOSE_BULBASAUR  0
+#define CHOSE_SQUIRTLE   1
+#define CHOSE_CHARMANDER 2
+
 #endif // GUARD_CONSTANTS_FIELD_SPECIALS_H

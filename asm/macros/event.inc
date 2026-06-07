@@ -2962,3 +2962,34 @@
 	lock
 	faceplayer
 	.endm
+
+	@ Sets the item/decoration (VAR_0x8009) and BP/Coin price (VAR_0x8008)
+	.macro setitemandprice item:req, price:req
+	setvar VAR_0x8009, \item
+	setvar VAR_0x8008, \price
+	.endm
+
+	@ Sets the input item/decoration (VAR_0x8008) and the output item/decoration (VAR_0x8009)
+	.macro settradeitems itemin:req, itemout:req
+	setvar VAR_0x8008, \itemin
+	setvar VAR_0x8009, \itemout
+	.endm
+
+	@ Sets the tutor move (VAR_0x8005) and BP/Coin price (VAR_0x8008)
+	.macro setmoveandprice move:req, price:req
+	setvar VAR_0x8005, \move
+	setvar VAR_0x8008, \price
+	.endm
+
+	@ Sets the tutor move (VAR_0x8005) and trade item (VAR_0x8008)
+	.macro setmoveanditem move:req, item:req
+	setvar VAR_0x8005, \move
+	setvar VAR_0x8008, \item
+	.endm
+
+	@ Sets the price (VAR_0x8008), the amount of currency received (VAR_0x8009), and the exchange limit (VAR_0x8007)
+	.macro setcurrencyexchange price:req, gains:req, limit:req
+	setvar VAR_0x8008, \price
+	setvar VAR_0x8009, \gains
+	setvar VAR_0x8007, \limit
+	.endm

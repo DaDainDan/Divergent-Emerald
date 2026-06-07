@@ -1627,6 +1627,13 @@ EventScript_VsSeekerChargingDone::
 	releaseall
 	end
 
+Common_EventScript_FaceOriginalDirection::
+    closemessage
+    applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+    waitmovement 0
+    release
+	end
+
 @ FRLG scripts
 
 EventScript_SetExitingCyclingRoad::
