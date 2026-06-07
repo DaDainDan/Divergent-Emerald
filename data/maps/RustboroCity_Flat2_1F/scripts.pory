@@ -1,26 +1,24 @@
-raw `
-RustboroCity_Flat2_1F_MapScripts::
-	.byte 0
+mapscripts RustboroCity_Flat2_1F_MapScripts {}
 
-RustboroCity_Flat2_1F_EventScript_OldWoman::
-	msgbox RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere, MSGBOX_NPC
-	end
+script RustboroCity_Flat2_1F_EventScript_OldWoman {
+    msgbox(RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere, MSGBOX_NPC)
+    end
+}
 
-RustboroCity_Flat2_1F_EventScript_Skitty::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
-	msgbox RustboroCity_Flat2_1F_Text_Skitty, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
+script RustboroCity_Flat2_1F_EventScript_Skitty {
+    lock_faceplayer
+    waitse
+    playmoncry(SPECIES_SKITTY, CRY_MODE_NORMAL)
+    msgbox(RustboroCity_Flat2_1F_Text_Skitty, MSGBOX_DEFAULT)
+    waitmoncry
+    release_end
+}
 
-RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere:
-	.string "DEVON CORPORATION's workers live in\n"
-	.string "this building.$"
+text RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere {
+	"DEVON CORPORATION's workers live in
+	this building."
+}
 
-RustboroCity_Flat2_1F_Text_Skitty:
-	.string "SKITTY: Gyaaaah!$"
-
-`
+text RustboroCity_Flat2_1F_Text_Skitty {
+	"SKITTY: Gyaaaah!"
+}

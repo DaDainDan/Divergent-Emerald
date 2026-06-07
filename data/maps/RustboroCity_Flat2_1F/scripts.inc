@@ -1,24 +1,32 @@
 RustboroCity_Flat2_1F_MapScripts::
 	.byte 0
 
+
 RustboroCity_Flat2_1F_EventScript_OldWoman::
+# 4 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
 	msgbox RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere, MSGBOX_NPC
 	end
 
-RustboroCity_Flat2_1F_EventScript_Skitty::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
-	msgbox RustboroCity_Flat2_1F_Text_Skitty, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
 
-RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere:
+RustboroCity_Flat2_1F_EventScript_Skitty::
+# 9 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
+	lock_faceplayer
+# 10 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
+	waitse
+# 11 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
+	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+# 12 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
+	msgbox RustboroCity_Flat2_1F_Text_Skitty, MSGBOX_DEFAULT
+# 13 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
+	waitmoncry
+	release_end
+
+
+RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere::
+# 17 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
 	.string "DEVON CORPORATION's workers live in\n"
 	.string "this building.$"
 
-RustboroCity_Flat2_1F_Text_Skitty:
+RustboroCity_Flat2_1F_Text_Skitty::
+# 22 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
 	.string "SKITTY: Gyaaaah!$"
-
