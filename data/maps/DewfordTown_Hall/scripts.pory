@@ -1,442 +1,447 @@
-raw `
-DewfordTown_Hall_MapScripts::
-	.byte 0
+mapscripts DewfordTown_Hall_MapScripts {}
 
-DewfordTown_Hall_EventScript_Girl::
-	lock
-	faceplayer
-	call Common_EventScript_BufferTrendyPhrase
-	special IsTrendyPhraseBoring
-	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Hall_EventScript_GirlBoredOfTrend
-	msgbox DewfordTown_Hall_Text_CantImagineLifeWithoutTrend, MSGBOX_DEFAULT
-	release
-	end
+script DewfordTown_Hall_EventScript_Girl {
+    lock_faceplayer
+    call(Common_EventScript_BufferTrendyPhrase)
+    special(IsTrendyPhraseBoring)
+    if (var(VAR_RESULT) == TRUE) {
+        msgbox(DewfordTown_Hall_Text_GettingBoredOfTrend, MSGBOX_DEFAULT)
+    	release_end
+    }
+    msgbox(DewfordTown_Hall_Text_CantImagineLifeWithoutTrend, MSGBOX_DEFAULT)
+    release_end
+}
 
-DewfordTown_Hall_EventScript_GirlBoredOfTrend::
-	msgbox DewfordTown_Hall_Text_GettingBoredOfTrend, MSGBOX_DEFAULT
-	release
-	end
+script DewfordTown_Hall_EventScript_Woman {
+    lock_faceplayer
+    call(Common_EventScript_BufferTrendyPhrase)
+    msgbox(DewfordTown_Hall_Text_TeachingMonAboutTrend, MSGBOX_DEFAULT)
+    release_end
+}
 
-DewfordTown_Hall_EventScript_Woman::
-	lock
-	faceplayer
-	call Common_EventScript_BufferTrendyPhrase
-	msgbox DewfordTown_Hall_Text_TeachingMonAboutTrend, MSGBOX_DEFAULT
-	release
-	end
+script DewfordTown_Hall_EventScript_Man {
+    lock_faceplayer
+    call(Common_EventScript_BufferTrendyPhrase)
+    special(BufferDeepLinkPhrase)
+    msgbox(DewfordTown_Hall_Text_DeepLinkBetweenXAndY, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(DewfordTown_Hall_Text_MyHunchWasRight, MSGBOX_DEFAULT)
+    } else {
+        msgbox(DewfordTown_Hall_Text_NotEasyToKeepUp, MSGBOX_DEFAULT)
+    }
+    release_end
+}
 
-DewfordTown_Hall_EventScript_Man::
-	lock
-	faceplayer
-	call Common_EventScript_BufferTrendyPhrase
-	special BufferDeepLinkPhrase
-	msgbox DewfordTown_Hall_Text_DeepLinkBetweenXAndY, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, DewfordTown_Hall_EventScript_ConfirmTrendLink
-	goto_if_eq VAR_RESULT, NO, DewfordTown_Hall_EventScript_RejectTrendLink
-	end
+script DewfordTown_Hall_EventScript_ExpertM {
+    lock_faceplayer
+    call(Common_EventScript_BufferTrendyPhrase)
+    msgbox(DewfordTown_Hall_Text_TVShowAboutTrend, MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_DEWFORD_HALL_EXPERT_M, Common_Movement_StepFasterUp)
+    waitmovement(0)
+    release_end
+}
 
-DewfordTown_Hall_EventScript_ConfirmTrendLink::
-	msgbox DewfordTown_Hall_Text_MyHunchWasRight, MSGBOX_DEFAULT
-	release
-	end
+script DewfordTown_Hall_EventScript_Twin {
+    lock_faceplayer
+    call(Common_EventScript_BufferTrendyPhrase)
+    msgbox(DewfordTown_Hall_Text_IsTrendMorePopularAcrossSea, MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_DEWFORD_HALL_TWIN, Common_Movement_StepFasterUp)
+    waitmovement(0)
+    release_end
+}
 
-DewfordTown_Hall_EventScript_RejectTrendLink::
-	msgbox DewfordTown_Hall_Text_NotEasyToKeepUp, MSGBOX_DEFAULT
-	release
-	end
+script DewfordTown_Hall_EventScript_LittleBoy {
+    lock_faceplayer
+    call(Common_EventScript_BufferTrendyPhrase)
+    msgbox(DewfordTown_Hall_Text_CollectTrendMerchandise, MSGBOX_DEFAULT)
+    release_end
+}
 
-DewfordTown_Hall_EventScript_ExpertM::
-	lock
-	faceplayer
-	call Common_EventScript_BufferTrendyPhrase
-	msgbox DewfordTown_Hall_Text_TVShowAboutTrend, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_DEWFORD_HALL_EXPERT_M, Common_Movement_StepFasterUp
-	waitmovement 0
-	release
-	end
+script DewfordTown_Hall_EventScript_Bookshelf {
+    lockall
+    call(Common_EventScript_BufferTrendyPhrase)
+    msgbox(DewfordTown_Hall_Text_BooksAboutTrend, MSGBOX_DEFAULT)
+    releaseall
+    end
+}
 
-DewfordTown_Hall_EventScript_Twin::
-	lock
-	faceplayer
-	call Common_EventScript_BufferTrendyPhrase
-	msgbox DewfordTown_Hall_Text_IsTrendMorePopularAcrossSea, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_DEWFORD_HALL_TWIN, Common_Movement_StepFasterUp
-	waitmovement 0
-	release
-	end
+script DewfordTown_Hall_EventScript_Painting {
+    lockall
+    call(Common_EventScript_BufferTrendyPhrase)
+    special(GetDewfordHallPaintingNameIndex)
+    switch (var(VAR_RESULT)) {
+        case 0:
+        case 4:
+		case 5: msgbox(DewfordTown_Hall_Text_TrendsScream, MSGBOX_DEFAULT)
+        case 1: msgbox(DewfordTown_Hall_Text_TrendsSmile, MSGBOX_DEFAULT)
+		case 3: msgbox(DewfordTown_Hall_Text_BirthOfTrend, MSGBOX_DEFAULT)
+        case 2:
+        case 6:
+        case 7: msgbox(DewfordTown_Hall_Text_LastTrend, MSGBOX_DEFAULT)
+    }
+    releaseall
+    end
+}
 
-DewfordTown_Hall_EventScript_LittleBoy::
-	lock
-	faceplayer
-	call Common_EventScript_BufferTrendyPhrase
-	msgbox DewfordTown_Hall_Text_CollectTrendMerchandise, MSGBOX_DEFAULT
-	release
-	end
+script DewfordTown_Hall_EventScript_SchoolKidM {
+    lockall
+    setvar(VAR_0x8008, 0)
+    goto(DewfordTown_Hall_EventScript_DoTrendDebate)
+    end
+}
 
-DewfordTown_Hall_EventScript_Bookshelf::
-	lockall
-	call Common_EventScript_BufferTrendyPhrase
-	msgbox DewfordTown_Hall_Text_BooksAboutTrend, MSGBOX_DEFAULT
-	releaseall
-	end
+script DewfordTown_Hall_EventScript_PsychicM {
+    lockall
+    setvar(VAR_0x8008, 1)
+    goto(DewfordTown_Hall_EventScript_DoTrendDebate)
+    end
+}
 
-DewfordTown_Hall_EventScript_Painting::
-	lockall
-	call Common_EventScript_BufferTrendyPhrase
-	special GetDewfordHallPaintingNameIndex
-	switch VAR_RESULT
-	case 0, DewfordTown_Hall_EventScript_ScreamTitle
-	case 4, DewfordTown_Hall_EventScript_ScreamTitle
-	case 1, DewfordTown_Hall_EventScript_SmileTitle
-	case 5, DewfordTown_Hall_EventScript_ScreamTitle
-	case 2, DewfordTown_Hall_EventScript_LastTitle
-	case 6, DewfordTown_Hall_EventScript_LastTitle
-	case 3, DewfordTown_Hall_EventScript_BirthTitle
-	case 7, DewfordTown_Hall_EventScript_LastTitle
-	end
+script DewfordTown_Hall_EventScript_DoTrendDebate {
+    call(Common_EventScript_BufferTrendyPhrase)
+    special(GetDewfordHallPaintingNameIndex)
+    switch (var(VAR_RESULT)) {
+        case 0:
+        case 1: goto(DewfordTown_Hall_EventScript_TrendDebate1)
+        case 2:
+        case 3: goto(DewfordTown_Hall_EventScript_TrendDebate2)
+        case 4:
+        case 5: goto(DewfordTown_Hall_EventScript_TrendDebate3)
+        case 6: goto(DewfordTown_Hall_EventScript_TrendDebate4)
+        case 7: goto(DewfordTown_Hall_EventScript_TrendDebate5)
+    }
+    end
+}
 
-DewfordTown_Hall_EventScript_ScreamTitle::
-	msgbox DewfordTown_Hall_Text_TrendsScream, MSGBOX_DEFAULT
-	releaseall
-	end
+script DewfordTown_Hall_EventScript_TrendDebate1 {
+    call(DewfordTown_Hall_EventScript_DebateReact1)
+    msgbox(DewfordTown_Hall_Text_SawTrendCoolestThing, MSGBOX_DEFAULT)
+    call(DewfordTown_Hall_EventScript_DebateReact2)
+    msgbox(DewfordTown_Hall_Text_AllegedTrendNotAuthentic, MSGBOX_DEFAULT)
+    releaseall
+    end
+}
 
-DewfordTown_Hall_EventScript_SmileTitle::
-	msgbox DewfordTown_Hall_Text_TrendsSmile, MSGBOX_DEFAULT
-	releaseall
-	end
+script DewfordTown_Hall_EventScript_TrendDebate2 {
+    call(DewfordTown_Hall_EventScript_DebateReact1)
+    msgbox(DewfordTown_Hall_Text_ComposedTrendThemeSong, MSGBOX_DEFAULT)
+    call(DewfordTown_Hall_EventScript_DebateReact2)
+    msgbox(DewfordTown_Hall_Text_WorkOnYourSinging, MSGBOX_DEFAULT)
+    releaseall
+    end
+}
 
-DewfordTown_Hall_EventScript_LastTitle::
-	msgbox DewfordTown_Hall_Text_LastTrend, MSGBOX_DEFAULT
-	releaseall
-	end
+script DewfordTown_Hall_EventScript_TrendDebate3 {
+    call(DewfordTown_Hall_EventScript_DebateReact1)
+    msgbox(DewfordTown_Hall_Text_OrganizeTrendParty, MSGBOX_DEFAULT)
+    call(DewfordTown_Hall_EventScript_DebateReact2)
+    msgbox(DewfordTown_Hall_Text_BrilliantIndeed, MSGBOX_DEFAULT)
+    releaseall
+    end
+}
 
-DewfordTown_Hall_EventScript_BirthTitle::
-	msgbox DewfordTown_Hall_Text_BirthOfTrend, MSGBOX_DEFAULT
-	releaseall
-	end
+script DewfordTown_Hall_EventScript_TrendDebate4 {
+    call(DewfordTown_Hall_EventScript_DebateReact1)
+    msgbox(DewfordTown_Hall_Text_TrendHasBecomePartOfLife, MSGBOX_DEFAULT)
+    call(DewfordTown_Hall_EventScript_DebateReact2)
+    msgbox(DewfordTown_Hall_Text_TrendWeighsHeavilyOnMind, MSGBOX_DEFAULT)
+    releaseall
+    end
+}
 
-DewfordTown_Hall_EventScript_SchoolKidM::
-	lockall
-	setvar VAR_0x8008, 0
-	goto DewfordTown_Hall_EventScript_DoTrendDebate
-	end
+script DewfordTown_Hall_EventScript_TrendDebate5 {
+    call(DewfordTown_Hall_EventScript_DebateReact1)
+    msgbox(DewfordTown_Hall_Text_IfWeTeamUpWellBeInvincible, MSGBOX_DEFAULT)
+    call(DewfordTown_Hall_EventScript_DebateReact2)
+    msgbox(DewfordTown_Hall_Text_WellBeTrendDuo, MSGBOX_DEFAULT)
+    releaseall
+    end
+}
 
-DewfordTown_Hall_EventScript_PsychicM::
-	lockall
-	setvar VAR_0x8008, 1
-	goto DewfordTown_Hall_EventScript_DoTrendDebate
-	end
+script DewfordTown_Hall_EventScript_DebateReact1 {
+    applymovement(LOCALID_DEWFORD_HALL_PSYCHIC_M, Common_Movement_StepLeft)
+    waitmovement(0)
+    if (var(VAR_0x8008) == 0 && var(VAR_FACING) != DIR_EAST) {
+        applymovement(LOCALID_PLAYER, Common_Movement_StepFasterRight)
+    	waitmovement(0)
+    }
+    end
+}
 
-DewfordTown_Hall_EventScript_DoTrendDebate::
-	call Common_EventScript_BufferTrendyPhrase
-	special GetDewfordHallPaintingNameIndex
-	switch VAR_RESULT
-	case 0, DewfordTown_Hall_EventScript_TrendDebate1
-	case 1, DewfordTown_Hall_EventScript_TrendDebate1
-	case 2, DewfordTown_Hall_EventScript_TrendDebate2
-	case 3, DewfordTown_Hall_EventScript_TrendDebate2
-	case 4, DewfordTown_Hall_EventScript_TrendDebate3
-	case 5, DewfordTown_Hall_EventScript_TrendDebate3
-	case 6, DewfordTown_Hall_EventScript_TrendDebate4
-	case 7, DewfordTown_Hall_EventScript_TrendDebate5
-	end
+script DewfordTown_Hall_EventScript_DebateReact2 {
+    applymovement(LOCALID_DEWFORD_HALL_SCHOOL_KID_M, Common_Movement_StepRight)
+    waitmovement(0)
+    if (var(VAR_0x8008) == 0) {
+        switch (var(VAR_FACING)) {
+			case DIR_NORTH: applymovement(LOCALID_PLAYER, Common_Movement_StepFasterUp)
+			case DIR_SOUTH: applymovement(LOCALID_PLAYER, Common_Movement_StepFasterDown)
+		}
+    }
+    elif (var(VAR_0x8008) == 1 && var(VAR_FACING) != DIR_WEST) {
+        applymovement(LOCALID_PLAYER, Common_Movement_StepFasterLeft)
+    }
+	waitmovement(0)
+    end
+}
 
-DewfordTown_Hall_EventScript_TrendDebate1::
-	call DewfordTown_Hall_EventScript_DebateReact1
-	msgbox DewfordTown_Hall_Text_SawTrendCoolestThing, MSGBOX_DEFAULT
-	call DewfordTown_Hall_EventScript_DebateReact2
-	msgbox DewfordTown_Hall_Text_AllegedTrendNotAuthentic, MSGBOX_DEFAULT
-	releaseall
-	end
+script DewfordTown_Hall_EventScript_SludgeBombMan {
+    lock_faceplayer
+    call(Common_EventScript_BufferTrendyPhrase)
+    if (flag(FLAG_RECEIVED_TM_SLUDGE_BOMB)) {
+        msgbox(DewfordTown_Hall_Text_LoveSludgeBombButTrendInToo, MSGBOX_DEFAULT)
+    	release_end
+    }
+    msgbox(DewfordTown_Hall_Text_GiveYouSludgeBomb, MSGBOX_DEFAULT)
+    if (giveitem(ITEM_TM_SLUDGE_BOMB) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    setflag(FLAG_RECEIVED_TM_SLUDGE_BOMB)
+    release_end
+}
 
-DewfordTown_Hall_EventScript_TrendDebate2::
-	call DewfordTown_Hall_EventScript_DebateReact1
-	msgbox DewfordTown_Hall_Text_ComposedTrendThemeSong, MSGBOX_DEFAULT
-	call DewfordTown_Hall_EventScript_DebateReact2
-	msgbox DewfordTown_Hall_Text_WorkOnYourSinging, MSGBOX_DEFAULT
-	releaseall
-	end
+text DewfordTown_Hall_Text_CantImagineLifeWithoutTrend {
+	"What's in vogue? Why, it has to be
+	“{STR_VAR_1}”!
 
-DewfordTown_Hall_EventScript_TrendDebate3::
-	call DewfordTown_Hall_EventScript_DebateReact1
-	msgbox DewfordTown_Hall_Text_OrganizeTrendParty, MSGBOX_DEFAULT
-	call DewfordTown_Hall_EventScript_DebateReact2
-	msgbox DewfordTown_Hall_Text_BrilliantIndeed, MSGBOX_DEFAULT
-	releaseall
-	end
+	I can't imagine what life would be like
+	without “{STR_VAR_1}”!"
+}
 
-DewfordTown_Hall_EventScript_TrendDebate4::
-	call DewfordTown_Hall_EventScript_DebateReact1
-	msgbox DewfordTown_Hall_Text_TrendHasBecomePartOfLife, MSGBOX_DEFAULT
-	call DewfordTown_Hall_EventScript_DebateReact2
-	msgbox DewfordTown_Hall_Text_TrendWeighsHeavilyOnMind, MSGBOX_DEFAULT
-	releaseall
-	end
+text DewfordTown_Hall_Text_GettingBoredOfTrend {
+	"What's in vogue? Why, it has to be
+	“{STR_VAR_1}”!
 
-DewfordTown_Hall_EventScript_TrendDebate5::
-	call DewfordTown_Hall_EventScript_DebateReact1
-	msgbox DewfordTown_Hall_Text_IfWeTeamUpWellBeInvincible, MSGBOX_DEFAULT
-	call DewfordTown_Hall_EventScript_DebateReact2
-	msgbox DewfordTown_Hall_Text_WellBeTrendDuo, MSGBOX_DEFAULT
-	releaseall
-	end
+	But I'm getting kind of bored with it.
 
-DewfordTown_Hall_EventScript_DontMovePlayer1::
-	return
+	I should look for the next big thing."
+}
 
-DewfordTown_Hall_EventScript_DebateReact1::
-	applymovement LOCALID_DEWFORD_HALL_PSYCHIC_M, DewfordTown_Hall_Movement_PsychicStepLeft
-	waitmovement 0
-	goto_if_eq VAR_0x8008, 0, DewfordTown_Hall_EventScript_PlayerReactWest
-	goto_if_eq VAR_0x8008, 1, DewfordTown_Hall_EventScript_DontMovePlayer2
-	end
+text DewfordTown_Hall_Text_TeachingMonAboutTrend {
+	"I'm teaching my POKéMON about
+	“{STR_VAR_1},”
+	but it's not going well.
 
-DewfordTown_Hall_EventScript_PlayerReactWest::
-	goto_if_eq VAR_FACING, DIR_EAST, DewfordTown_Hall_EventScript_DontMovePlayer1
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
-	waitmovement 0
-	return
+	It's a bit too much, I think."
+}
 
-DewfordTown_Hall_EventScript_DontMovePlayer2::
-	return
+text DewfordTown_Hall_Text_DeepLinkBetweenXAndY {
+	"I'm studying up on the hip and trendy
+	“{STR_VAR_1}” now.
 
-DewfordTown_Hall_EventScript_DebateReact2::
-	applymovement LOCALID_DEWFORD_HALL_SCHOOL_KID_M, DewfordTown_Hall_Movement_SchoolKidStepRight
-	waitmovement 0
-	goto_if_eq VAR_0x8008, 0, DewfordTown_Hall_EventScript_PlayerReactNorthSouth
-	goto_if_eq VAR_0x8008, 1, DewfordTown_Hall_EventScript_PlayerReactEast
-	end
+	Is it true that there's a deep link
+	between “{STR_VAR_1}”
+	and “{STR_VAR_2}”?"
+}
 
-DewfordTown_Hall_EventScript_PlayerReactNorthSouth::
-	call_if_eq VAR_FACING, DIR_NORTH, DewfordTown_Hall_EventScript_PlayerStepUp
-	call_if_eq VAR_FACING, DIR_SOUTH, DewfordTown_Hall_EventScript_PlayerStepDown
-	return
+text DewfordTown_Hall_Text_MyHunchWasRight {
+	"Oh!
+	So, my hunch was right!
 
-DewfordTown_Hall_EventScript_PlayerStepUp::
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
-	waitmovement 0
-	return
+	I'm one step closer to being hip and
+	happening, yowza!"
+}
 
-DewfordTown_Hall_EventScript_PlayerStepDown::
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
-	waitmovement 0
-	return
+text DewfordTown_Hall_Text_NotEasyToKeepUp {
+	"What?!
+	Is that so?!
 
-DewfordTown_Hall_EventScript_PlayerReactEast::
-	goto_if_eq VAR_FACING, DIR_WEST, DewfordTown_Hall_EventScript_DontMovePlayer1
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
-	waitmovement 0
-	return
+	It's not easy for an older fellow like
+	me to keep up with trends!"
+}
 
-DewfordTown_Hall_Movement_PsychicStepLeft:
-	step_left
-	step_end
+text DewfordTown_Hall_Text_TVShowAboutTrend {
+	"This whole business about
+	“{STR_VAR_1}”…
+	Isn't there a TV show on it?"
+}
 
-DewfordTown_Hall_Movement_SchoolKidStepRight:
-	step_right
-	step_end
+text DewfordTown_Hall_Text_IsTrendMorePopularAcrossSea {
+	"Across the sea…
 
-DewfordTown_Hall_EventScript_SludgeBombMan::
-	lock
-	faceplayer
-	call Common_EventScript_BufferTrendyPhrase
-	goto_if_set FLAG_RECEIVED_TM_SLUDGE_BOMB, DewfordTown_Hall_EventScript_ReceivedSludgeBomb
-	msgbox DewfordTown_Hall_Text_GiveYouSludgeBomb, MSGBOX_DEFAULT
-	giveitem ITEM_TM_SLUDGE_BOMB
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_TM_SLUDGE_BOMB
-	release
-	end
+	Is “{STR_VAR_1}”
+	even more popular?"
+}
 
-DewfordTown_Hall_EventScript_ReceivedSludgeBomb::
-	msgbox DewfordTown_Hall_Text_LoveSludgeBombButTrendInToo, MSGBOX_DEFAULT
-	release
-	end
+text DewfordTown_Hall_Text_CollectTrendMerchandise {
+	"I collect official
+	“{STR_VAR_1}”
+	licensed merchandise.
 
-DewfordTown_Hall_Text_CantImagineLifeWithoutTrend:
-	.string "What's in vogue? Why, it has to be\n"
-	.string "“{STR_VAR_1}”!\p"
-	.string "I can't imagine what life would be like\n"
-	.string "without “{STR_VAR_1}”!$"
+	I have official
+	“{STR_VAR_1}” DOLLS…
 
-DewfordTown_Hall_Text_GettingBoredOfTrend:
-	.string "What's in vogue? Why, it has to be\n"
-	.string "“{STR_VAR_1}”!\p"
-	.string "But I'm getting kind of bored with it.\p"
-	.string "I should look for the next big thing.$"
+	Official “{STR_VAR_1}”
+	brand clothing…
 
-DewfordTown_Hall_Text_TeachingMonAboutTrend:
-	.string "I'm teaching my POKéMON about\n"
-	.string "“{STR_VAR_1},”\l"
-	.string "but it's not going well.\p"
-	.string "It's a bit too much, I think.$"
+	And officially licensed
+	“{STR_VAR_1}”
+	picture books.
 
-DewfordTown_Hall_Text_DeepLinkBetweenXAndY:
-	.string "I'm studying up on the hip and trendy\n"
-	.string "“{STR_VAR_1}” now.\p"
-	.string "Is it true that there's a deep link\n"
-	.string "between “{STR_VAR_1}”\l"
-	.string "and “{STR_VAR_2}”?$"
+	Heheh, I own!
+	I'm not sharing anything with you!"
+}
 
-DewfordTown_Hall_Text_MyHunchWasRight:
-	.string "Oh!\n"
-	.string "So, my hunch was right!\p"
-	.string "I'm one step closer to being hip and\n"
-	.string "happening, yowza!$"
+text DewfordTown_Hall_Text_BooksAboutTrend {
+	"IDENTIFYING GOOD
+	“{STR_VAR_1}” &
+	BAD “{STR_VAR_1}”…
 
-DewfordTown_Hall_Text_NotEasyToKeepUp:
-	.string "What?!\n"
-	.string "Is that so?!\p"
-	.string "It's not easy for an older fellow like\n"
-	.string "me to keep up with trends!$"
+	THE LINK BETWEEN
+	“{STR_VAR_1}” AND
+	POKéMON…
 
-DewfordTown_Hall_Text_TVShowAboutTrend:
-	.string "This whole business about\n"
-	.string "“{STR_VAR_1}”…\l"
-	.string "Isn't there a TV show on it?$"
+	USEFUL
+	“{STR_VAR_1}”…
 
-DewfordTown_Hall_Text_IsTrendMorePopularAcrossSea:
-	.string "Across the sea…\p"
-	.string "Is “{STR_VAR_1}”\n"
-	.string "even more popular?$"
+	It's neatly jammed with books about
+	“{STR_VAR_1}.”"
+}
 
-DewfordTown_Hall_Text_CollectTrendMerchandise:
-	.string "I collect official\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "licensed merchandise.\p"
-	.string "I have official\n"
-	.string "“{STR_VAR_1}” DOLLS…\p"
-	.string "Official “{STR_VAR_1}”\n"
-	.string "brand clothing…\p"
-	.string "And officially licensed\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "picture books.\p"
-	.string "Heheh, I own!\n"
-	.string "I'm not sharing anything with you!$"
+text DewfordTown_Hall_Text_TrendsScream {
+	"“{STR_VAR_1}'S
+	SCREAM” is the title."
+}
 
-DewfordTown_Hall_Text_BooksAboutTrend:
-	.string "IDENTIFYING GOOD\n"
-	.string "“{STR_VAR_1}” &\l"
-	.string "BAD “{STR_VAR_1}”…\p"
-	.string "THE LINK BETWEEN\n"
-	.string "“{STR_VAR_1}” AND\l"
-	.string "POKéMON…\p"
-	.string "USEFUL\n"
-	.string "“{STR_VAR_1}”…\p"
-	.string "It's neatly jammed with books about\n"
-	.string "“{STR_VAR_1}.”$"
+text DewfordTown_Hall_Text_TrendsSmile {
+	"“{STR_VAR_1}'S
+	SMILE” is the title."
+}
 
-DewfordTown_Hall_Text_TrendsScream:
-	.string "“{STR_VAR_1}'S\n"
-	.string "SCREAM” is the title.$"
+text DewfordTown_Hall_Text_LastTrend {
+	"It's titled “THE LAST
+	{STR_VAR_1}”."
+}
 
-DewfordTown_Hall_Text_TrendsSmile:
-	.string "“{STR_VAR_1}'S\n"
-	.string "SMILE” is the title.$"
+text DewfordTown_Hall_Text_BirthOfTrend {
+	"It's titled “THE BIRTH OF
+	{STR_VAR_1}”."
+}
 
-DewfordTown_Hall_Text_LastTrend:
-	.string "It's titled “THE LAST\n"
-	.string "{STR_VAR_1}”.$"
+text DewfordTown_Hall_Text_SawTrendCoolestThing {
+	"I saw “{STR_VAR_1}”!
+	Cool, huh?
 
-DewfordTown_Hall_Text_BirthOfTrend:
-	.string "It's titled “THE BIRTH OF\n"
-	.string "{STR_VAR_1}”.$"
+	It's, like, the coolest thing going!
 
-DewfordTown_Hall_Text_SawTrendCoolestThing:
-	.string "I saw “{STR_VAR_1}”!\n"
-	.string "Cool, huh?\p"
-	.string "It's, like, the coolest thing going!\p"
-	.string "It was awesome!\n"
-	.string "It was the real thing, oh yeah!$"
+	It was awesome!
+	It was the real thing, oh yeah!"
+}
 
-DewfordTown_Hall_Text_AllegedTrendNotAuthentic:
-	.string "Oh, no, no, no.\p"
-	.string "That alleged\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "you claim to have seen--it's not.\p"
-	.string "The authentic article is much…\n"
-	.string "How should I say it?\l"
-	.string "Sharper, yet more mellow!\p"
-	.string "Ah, no matter. It's astonishing!$"
+text DewfordTown_Hall_Text_AllegedTrendNotAuthentic {
+	"Oh, no, no, no.
 
-DewfordTown_Hall_Text_ComposedTrendThemeSong:
-	.string "Hey, listen, I composed a theme song\n"
-	.string "for “{STR_VAR_1}.”\p"
-	.string "“{STR_VAR_1}”\n"
-	.string "is really popular right now.\p"
-	.string "Okay, listen!\n"
-	.string "… …\p"
-	.string "Oh!\n"
-	.string "{STR_VAR_1}!\p"
-	.string "Wonderful\n"
-	.string "{STR_VAR_1}!$"
+	That alleged
+	“{STR_VAR_1}”
+	you claim to have seen--it's not.
 
-DewfordTown_Hall_Text_WorkOnYourSinging:
-	.string "… …\p"
-	.string "I dare say, chap, it would pay for you\n"
-	.string "to work on your singing before you\l"
-	.string "trifle yourself with\l"
-	.string "“{STR_VAR_1}.”$"
+	The authentic article is much…
+	How should I say it?
+	Sharper, yet more mellow!
 
-DewfordTown_Hall_Text_OrganizeTrendParty:
-	.string "Anyway, as I was saying earlier, we\n"
-	.string "should get together and organize a\l"
-	.string "“{STR_VAR_1}” party\l"
-	.string "on the island.$"
+	Ah, no matter. It's astonishing!"
+}
 
-DewfordTown_Hall_Text_BrilliantIndeed:
-	.string "Oh, a smashing good idea!\p"
-	.string "It will settle once and for all\n"
-	.string "who is the best at\l"
-	.string "“{STR_VAR_1}.”\l"
-	.string "Brilliant, indeed!\p"
-	.string "Starting today, our lives will revolve\n"
-	.string "around “{STR_VAR_1}”!$"
+text DewfordTown_Hall_Text_ComposedTrendThemeSong {
+	"Hey, listen, I composed a theme song
+	for “{STR_VAR_1}.”
 
-DewfordTown_Hall_Text_TrendHasBecomePartOfLife:
-	.string "I was thinking, though…\p"
-	.string "Wouldn't you agree that\n"
-	.string "“{STR_VAR_1}” has\l"
-	.string "grown from being something trendy to\l"
-	.string "being a part of our daily lives?$"
+	“{STR_VAR_1}”
+	is really popular right now.
 
-DewfordTown_Hall_Text_TrendWeighsHeavilyOnMind:
-	.string "Beg pardon?\n"
-	.string "That much, what?\p"
-	.string "However, it's true that\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "weighs heavily on your mind, whether\l"
-	.string "you're awake or asleep.\p"
-	.string "Absolutely, you're the\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "PROFESSOR, old sport!$"
+	Okay, listen!
+	… …
 
-DewfordTown_Hall_Text_IfWeTeamUpWellBeInvincible:
-	.string "If you and me team up as a combo,\n"
-	.string "we'll be invincible when it comes to all\l"
-	.string "things “{STR_VAR_1}”!$"
+	Oh!
+	{STR_VAR_1}!
 
-DewfordTown_Hall_Text_WellBeTrendDuo:
-	.string "Spot on, my friend!\p"
-	.string "We shall be the\n"
-	.string "“{STR_VAR_1}” DUO!\p"
-	.string "Isn't that a ripe image?\n"
-	.string "Hahahah!$"
+	Wonderful
+	{STR_VAR_1}!"
+}
 
-DewfordTown_Hall_Text_GiveYouSludgeBomb:
-	.string "For me, SLUDGE BOMB is at the peak\n"
-	.string "of popularity. It's the one.\p"
-	.string "Hunh? You're telling me that you don't\n"
-	.string "know about SLUDGE BOMB?\p"
-	.string "That's outright pitiful.\n"
-	.string "I'll give you one.$"
+text DewfordTown_Hall_Text_WorkOnYourSinging {
+	"… …
 
-DewfordTown_Hall_Text_LoveSludgeBombButTrendInToo:
-	.string "I love SLUDGE BOMB.\p"
-	.string "But POKéMON with the move\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "are in, too.$"
+	I dare say, chap, it would pay for you
+	to work on your singing before you
+	trifle yourself with
+	“{STR_VAR_1}.”"
+}
 
-`
+text DewfordTown_Hall_Text_OrganizeTrendParty {
+	"Anyway, as I was saying earlier, we
+	should get together and organize a
+	“{STR_VAR_1}” party
+	on the island."
+}
+
+text DewfordTown_Hall_Text_BrilliantIndeed {
+	"Oh, a smashing good idea!
+
+	It will settle once and for all
+	who is the best at
+	“{STR_VAR_1}.”
+	Brilliant, indeed!
+
+	Starting today, our lives will revolve
+	around “{STR_VAR_1}”!"
+}
+
+text DewfordTown_Hall_Text_TrendHasBecomePartOfLife {
+	"I was thinking, though…
+
+	Wouldn't you agree that
+	“{STR_VAR_1}” has
+	grown from being something trendy to
+	being a part of our daily lives?"
+}
+
+text DewfordTown_Hall_Text_TrendWeighsHeavilyOnMind {
+	"Beg pardon?
+	That much, what?
+
+	However, it's true that
+	“{STR_VAR_1}”
+	weighs heavily on your mind, whether
+	you're awake or asleep.
+
+	Absolutely, you're the
+	“{STR_VAR_1}”
+	PROFESSOR, old sport!"
+}
+
+text DewfordTown_Hall_Text_IfWeTeamUpWellBeInvincible {
+	"If you and me team up as a combo,
+	we'll be invincible when it comes to all
+	things “{STR_VAR_1}”!"
+}
+
+text DewfordTown_Hall_Text_WellBeTrendDuo {
+	"Spot on, my friend!
+
+	We shall be the
+	“{STR_VAR_1}” DUO!
+
+	Isn't that a ripe image?
+	Hahahah!"
+}
+
+text DewfordTown_Hall_Text_GiveYouSludgeBomb {
+	"For me, SLUDGE BOMB is at the peak
+	of popularity. It's the one.
+
+	Hunh? You're telling me that you don't
+	know about SLUDGE BOMB?
+
+	That's outright pitiful.
+	I'll give you one."
+}
+
+text DewfordTown_Hall_Text_LoveSludgeBombButTrendInToo {
+	"I love SLUDGE BOMB.
+
+	But POKéMON with the move
+	“{STR_VAR_1}”
+	are in, too."
+}

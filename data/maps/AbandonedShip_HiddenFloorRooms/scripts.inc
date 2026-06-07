@@ -1,117 +1,182 @@
 AbandonedShip_HiddenFloorRooms_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, AbandonedShip_HiddenFloorRooms_OnFrame
+# 2 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, AbandonedShip_HiddenFloorRooms_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
-AbandonedShip_HiddenFloorRooms_OnFrame:
+AbandonedShip_HiddenFloorRooms_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 3 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	map_script_2 VAR_TEMP_1, 0, AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle
 	.2byte 0
 
-@ After the below calculation, VAR_TEMP_4 is the room number of the door the player entered
-@ Bottom row, left column   (Rm 1)
-@ Bottom row, middle column (Rm 2)
-@ Bottom row, right column	(Rm 3)
-@ Upper row,  left column   (Rm 4)
-@ Upper row,  middle column (Rm 5)
-@ Upper row,  right column  (Rm 6)
+
 AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle::
+# 16 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	setvar VAR_TEMP_1, 1
+# 17 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	getplayerxy VAR_TEMP_2, VAR_TEMP_3
+# 18 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	setvar VAR_TEMP_4, 1
-	call_if_eq VAR_TEMP_2, 21, AbandonedShip_HiddenFloorRooms_EventScript_InMiddleRoomColumn
-	call_if_eq VAR_TEMP_2, 36, AbandonedShip_HiddenFloorRooms_EventScript_InRightRoomColumn
-	call_if_eq VAR_TEMP_3, 2, AbandonedShip_HiddenFloorRooms_EventScript_InUpperRoomRow
+# 19 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	compare VAR_TEMP_2, 21
+	goto_if_eq AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_2
+# 22 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	compare VAR_TEMP_2, 36
+	goto_if_eq AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_3
+# 25 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	compare VAR_TEMP_3, 2
+	goto_if_eq AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_4
+AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_1:
+# 28 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	switch VAR_TEMP_4
-	case 1, AbandonedShip_HiddenFloorRooms_EventScript_EnterRm1
-	case 2, AbandonedShip_HiddenFloorRooms_EventScript_EnterRm2
-	case 3, AbandonedShip_HiddenFloorRooms_EventScript_EnterRm3
-	case 4, AbandonedShip_HiddenFloorRooms_EventScript_EnterRm4
-	case 5, AbandonedShip_HiddenFloorRooms_EventScript_EnterRm5
-	case 6, AbandonedShip_HiddenFloorRooms_EventScript_EnterRm6
+# 29 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	case 1, AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_10
+# 30 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	case 3, AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_11
+# 31 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	case 4, AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_12
+# 32 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	case 5, AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_13
+AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_8:
 	end
 
-AbandonedShip_HiddenFloorRooms_EventScript_InMiddleRoomColumn::
+AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_2:
+# 20 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	addvar VAR_TEMP_4, 1
-	return
+	goto AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_1
 
-AbandonedShip_HiddenFloorRooms_EventScript_InRightRoomColumn::
+AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_3:
+# 23 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	addvar VAR_TEMP_4, 2
-	return
+	goto AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_1
 
-AbandonedShip_HiddenFloorRooms_EventScript_InUpperRoomRow::
+AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_4:
+# 26 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	addvar VAR_TEMP_4, 3
-	return
+	goto AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_1
+
+AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_10:
+# 29 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	goto AbandonedShip_HiddenFloorRooms_EventScript_EnterRm1
+	goto AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_8
+
+AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_11:
+# 30 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	goto AbandonedShip_HiddenFloorRooms_EventScript_EnterRm3
+	goto AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_8
+
+AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_12:
+# 31 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	goto AbandonedShip_HiddenFloorRooms_EventScript_EnterRm4
+	goto AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_8
+
+AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_13:
+# 32 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	goto AbandonedShip_HiddenFloorRooms_EventScript_EnterRm5
+	goto AbandonedShip_HiddenFloorRooms_EventScript_DoHiddenItemSparkle_8
+
 
 AbandonedShip_HiddenFloorRooms_EventScript_EnterRm1::
+# 38 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	delay 20
+# 39 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	dofieldeffectsparkle 10, 10, 0
 	specialvar VAR_RESULT, FoundAbandonedShipRoom4Key
-	call_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorRooms_EventScript_Rm4KeySparkle
+# 0 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq AbandonedShip_HiddenFloorRooms_EventScript_EnterRm1_2
+AbandonedShip_HiddenFloorRooms_EventScript_EnterRm1_1:
+# 43 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	waitfieldeffect FLDEFF_SPARKLE
+# 44 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	delay 10
 	end
 
-AbandonedShip_HiddenFloorRooms_EventScript_EnterRm2::
-	end
+AbandonedShip_HiddenFloorRooms_EventScript_EnterRm1_2:
+# 41 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	dofieldeffectsparkle 1, 12, 0
+	goto AbandonedShip_HiddenFloorRooms_EventScript_EnterRm1_1
+
 
 AbandonedShip_HiddenFloorRooms_EventScript_EnterRm3::
 	specialvar VAR_RESULT, FoundAbandonedShipRoom1Key
-	goto_if_eq VAR_RESULT, TRUE, AbandonedShip_HiddenFloorRooms_EventScript_Rm3NoSparkle
+# 0 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq AbandonedShip_HiddenFloorRooms_EventScript_EnterRm3_2
+# 52 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	delay 20
-	call_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorRooms_EventScript_Rm1KeySparkle
+# 53 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	dofieldeffectsparkle 42, 10, 0
+# 54 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	waitfieldeffect FLDEFF_SPARKLE
+# 55 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	delay 10
 	end
 
-AbandonedShip_HiddenFloorRooms_EventScript_Rm3NoSparkle::
+AbandonedShip_HiddenFloorRooms_EventScript_EnterRm3_2:
 	end
+
 
 AbandonedShip_HiddenFloorRooms_EventScript_EnterRm4::
+# 60 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	delay 20
+# 61 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	dofieldeffectsparkle 8, 5, 0
+# 62 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	dofieldeffectsparkle 11, 3, 0
 	specialvar VAR_RESULT, FoundAbandonedShipRoom6Key
-	call_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorRooms_EventScript_Rm6KeySparkle
+# 0 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq AbandonedShip_HiddenFloorRooms_EventScript_EnterRm4_2
+AbandonedShip_HiddenFloorRooms_EventScript_EnterRm4_1:
+# 66 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	waitfieldeffect FLDEFF_SPARKLE
+# 67 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	delay 10
 	end
+
+AbandonedShip_HiddenFloorRooms_EventScript_EnterRm4_2:
+# 64 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	dofieldeffectsparkle 1, 2, 0
+	goto AbandonedShip_HiddenFloorRooms_EventScript_EnterRm4_1
+
 
 AbandonedShip_HiddenFloorRooms_EventScript_EnterRm5::
+# 72 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	delay 20
+# 73 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	dofieldeffectsparkle 16, 3, 0
+# 74 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	dofieldeffectsparkle 25, 2, 0
+# 75 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	dofieldeffectsparkle 24, 6, 0
 	specialvar VAR_RESULT, FoundAbandonedShipRoom2Key
-	call_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorRooms_EventScript_Rm2KeySparkle
+# 0 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq AbandonedShip_HiddenFloorRooms_EventScript_EnterRm5_2
+AbandonedShip_HiddenFloorRooms_EventScript_EnterRm5_1:
+# 79 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	waitfieldeffect FLDEFF_SPARKLE
+# 80 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	delay 10
 	end
 
-AbandonedShip_HiddenFloorRooms_EventScript_EnterRm6::
-	end
-
-AbandonedShip_HiddenFloorRooms_EventScript_Rm1KeySparkle::
-	dofieldeffectsparkle 42, 10, 0
-	return
-
-AbandonedShip_HiddenFloorRooms_EventScript_Rm2KeySparkle::
+AbandonedShip_HiddenFloorRooms_EventScript_EnterRm5_2:
+# 77 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	dofieldeffectsparkle 20, 5, 0
-	return
+	goto AbandonedShip_HiddenFloorRooms_EventScript_EnterRm5_1
 
-AbandonedShip_HiddenFloorRooms_EventScript_Rm4KeySparkle::
-	dofieldeffectsparkle 1, 12, 0
-	return
-
-AbandonedShip_HiddenFloorRooms_EventScript_Rm6KeySparkle::
-	dofieldeffectsparkle 1, 2, 0
-	return
 
 AbandonedShip_HiddenFloorRooms_EventScript_Trash::
+# 85 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	lockall
+# 86 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	msgbox AbandonedShip_HiddenFloorRooms_Text_BrightShinyTrash, MSGBOX_DEFAULT
+# 87 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	releaseall
 	end
 
-AbandonedShip_HiddenFloorRooms_Text_BrightShinyTrash:
+
+AbandonedShip_HiddenFloorRooms_Text_BrightShinyTrash::
+# 91 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	.string "It's bright and shiny!\n"
 	.string "But it's just trash…$"
-

@@ -1,8 +1,10 @@
 AbandonedShip_Deck_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, AbandonedShip_Deck_OnTransition
+# 2 "data/maps/AbandonedShip_Deck/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, AbandonedShip_Deck_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-AbandonedShip_Deck_OnTransition:
+AbandonedShip_Deck_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/AbandonedShip_Deck/scripts.pory"
 	setflag FLAG_LANDMARK_ABANDONED_SHIP
 	end
 
