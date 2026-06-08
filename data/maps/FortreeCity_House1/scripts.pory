@@ -1,80 +1,85 @@
-raw `
-FortreeCity_House1_MapScripts::
-	.byte 0
+mapscripts FortreeCity_House1_MapScripts {}
 
-FortreeCity_House1_EventScript_Trader::
-	lock
-	faceplayer
-	goto_if_set FLAG_FORTREE_NPC_TRADE_COMPLETED, FortreeCity_House1_EventScript_TradeCompleted
-	ingame_trade INGAME_TRADE_PLUSLE, FortreeCity_House1_Text_YouWillTradeWontYou, FortreeCity_House1_EventScript_DeclineTrade, FortreeCity_House1_EventScript_NotRequestedMon, FortreeCity_House1_Text_MonYouTakeCare
-	setflag FLAG_FORTREE_NPC_TRADE_COMPLETED
-	release
-	end
+script FortreeCity_House1_EventScript_Trader {
+    lock_faceplayer
+    if (flag(FLAG_FORTREE_NPC_TRADE_COMPLETED)) {
+        msgbox(FortreeCity_House1_Text_GoingToMakeVolbeatStrong, MSGBOX_DEFAULT)
+    	release_end
+    }
+    ingame_trade(INGAME_TRADE_PLUSLE, FortreeCity_House1_Text_YouWillTradeWontYou, FortreeCity_House1_EventScript_DeclineTrade, FortreeCity_House1_EventScript_NotRequestedMon, FortreeCity_House1_Text_MonYouTakeCare)
+    setflag(FLAG_FORTREE_NPC_TRADE_COMPLETED)
+    release_end
+}
 
-FortreeCity_House1_EventScript_DeclineTrade::
-	msgbox FortreeCity_House1_Text_YouWontTradeMe, MSGBOX_DEFAULT
-	release
-	end
+script FortreeCity_House1_EventScript_DeclineTrade {
+    msgbox(FortreeCity_House1_Text_YouWontTradeMe, MSGBOX_DEFAULT)
+    release_end
+}
 
-FortreeCity_House1_EventScript_NotRequestedMon::
-	bufferspeciesname STR_VAR_1, VAR_0x8009
-	msgbox FortreeCity_House1_Text_ThisIsntAMon, MSGBOX_DEFAULT
-	release
-	end
+script FortreeCity_House1_EventScript_NotRequestedMon {
+    bufferspeciesname(STR_VAR_1, VAR_0x8009)
+    msgbox(FortreeCity_House1_Text_ThisIsntAMon, MSGBOX_DEFAULT)
+    release_end
+}
 
-FortreeCity_House1_EventScript_TradeCompleted::
-	msgbox FortreeCity_House1_Text_GoingToMakeVolbeatStrong, MSGBOX_DEFAULT
-	release
-	end
+script FortreeCity_House1_EventScript_ExpertF {
+    msgbox(FortreeCity_House1_Text_TradingMemoriesWithOthers, MSGBOX_NPC)
+    end
+}
 
-FortreeCity_House1_EventScript_ExpertF::
-	msgbox FortreeCity_House1_Text_TradingMemoriesWithOthers, MSGBOX_NPC
-	end
+script FortreeCity_House1_EventScript_Zigzagoon {
+    lock_faceplayer
+    waitse
+    playmoncry(SPECIES_ZIGZAGOON, CRY_MODE_NORMAL)
+    msgbox(FortreeCity_House1_Text_Zigzagoon, MSGBOX_DEFAULT)
+    waitmoncry
+    release_end
+}
 
-FortreeCity_House1_EventScript_Zigzagoon::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
-	msgbox FortreeCity_House1_Text_Zigzagoon, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
+text FortreeCity_House1_Text_YouWillTradeWontYou {
+	"Wrooooaaar! I need it!
+	I have to get me a {STR_VAR_1}!
+	I'll do anything for it!
 
-FortreeCity_House1_Text_YouWillTradeWontYou:
-	.string "Wrooooaaar! I need it!\n"
-	.string "I have to get me a {STR_VAR_1}!\l"
-	.string "I'll do anything for it!\p"
-	.string "…Uh… Did you hear that?\n"
-	.string "My shout from the bottom of my heart?\p"
-	.string "Having heard that, you will trade\n"
-	.string "your {STR_VAR_1} for my {STR_VAR_2},\l"
-	.string "won't you?$"
+	…Uh… Did you hear that?
+	My shout from the bottom of my heart?
 
-FortreeCity_House1_Text_MonYouTakeCare:
-	.string "Oh, yeah, right on!\p"
-	.string "{STR_VAR_1}, welcome!\n"
-	.string "{STR_VAR_2}, you take care!$"
+	Having heard that, you will trade
+	your {STR_VAR_1} for my {STR_VAR_2},
+	won't you?"
+}
 
-FortreeCity_House1_Text_ThisIsntAMon:
-	.string "Uh, no, I don't think so.\n"
-	.string "That isn't a {STR_VAR_1}.$"
+text FortreeCity_House1_Text_MonYouTakeCare {
+	"Oh, yeah, right on!
 
-FortreeCity_House1_Text_YouWontTradeMe:
-	.string "No? You won't trade me?\n"
-	.string "Even after I bared my heart to you?$"
+	{STR_VAR_1}, welcome!
+	{STR_VAR_2}, you take care!"
+}
 
-FortreeCity_House1_Text_GoingToMakeVolbeatStrong:
-	.string "I'm going to make VOLBEAT super\n"
-	.string "strong from this moment on!\p"
-	.string "I hope you do the same with PLUSLE!$"
+text FortreeCity_House1_Text_ThisIsntAMon {
+	"Uh, no, I don't think so.
+	That isn't a {STR_VAR_1}."
+}
 
-FortreeCity_House1_Text_TradingMemoriesWithOthers:
-	.string "Trading POKéMON with others…\p"
-	.string "It's as if you're trading your own\n"
-	.string "memories with other people.$"
+text FortreeCity_House1_Text_YouWontTradeMe {
+	"No? You won't trade me?
+	Even after I bared my heart to you?"
+}
 
-FortreeCity_House1_Text_Zigzagoon:
-	.string "ZIGZAGOON: Gumomoh?$"
+text FortreeCity_House1_Text_GoingToMakeVolbeatStrong {
+	"I'm going to make VOLBEAT super
+	strong from this moment on!
 
-`
+	I hope you do the same with PLUSLE!"
+}
+
+text FortreeCity_House1_Text_TradingMemoriesWithOthers {
+	"Trading POKéMON with others…
+
+	It's as if you're trading your own
+	memories with other people."
+}
+
+text FortreeCity_House1_Text_Zigzagoon {
+	"ZIGZAGOON: Gumomoh?"
+}
