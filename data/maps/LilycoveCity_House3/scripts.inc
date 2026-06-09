@@ -1,103 +1,116 @@
 LilycoveCity_House3_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_House3_OnTransition
+# 2 "data/maps/LilycoveCity_House3/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_House3_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-LilycoveCity_House3_OnTransition:
+LilycoveCity_House3_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/LilycoveCity_House3/scripts.pory"
 	random 4
+# 4 "data/maps/LilycoveCity_House3/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
 	end
 
+
 LilycoveCity_House3_EventScript_PokefanF::
-	lock
-	faceplayer
+# 10 "data/maps/LilycoveCity_House3/scripts.pory"
+	lock_faceplayer
+# 11 "data/maps/LilycoveCity_House3/scripts.pory"
 	msgbox LilycoveCity_House3_Text_LearnFromMasterOfPokeblocks, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, LilycoveCity_House3_EventScript_DeclinePokeblockLearn
+# 12 "data/maps/LilycoveCity_House3/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq LilycoveCity_House3_EventScript_PokefanF_2
+# 15 "data/maps/LilycoveCity_House3/scripts.pory"
 	msgbox LilycoveCity_House3_Text_ExplainPokeblocks, MSGBOX_DEFAULT
-	closemessage
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
+LilycoveCity_House3_EventScript_PokefanF_1:
+# 17 "data/maps/LilycoveCity_House3/scripts.pory"
+	goto Common_EventScript_FaceOriginalDirection
 	end
 
-LilycoveCity_House3_EventScript_DeclinePokeblockLearn::
+LilycoveCity_House3_EventScript_PokefanF_2:
+# 13 "data/maps/LilycoveCity_House3/scripts.pory"
 	msgbox LilycoveCity_House3_Text_OhAreYouSure, MSGBOX_DEFAULT
-	closemessage
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
+	goto LilycoveCity_House3_EventScript_PokefanF_1
+
 
 LilycoveCity_House3_EventScript_Man::
-	lock
-	faceplayer
+# 22 "data/maps/LilycoveCity_House3/scripts.pory"
+	lock_faceplayer
+# 23 "data/maps/LilycoveCity_House3/scripts.pory"
 	msgbox LilycoveCity_House3_Text_HappyToHaveQuadruplets, MSGBOX_DEFAULT
-	closemessage
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
+# 24 "data/maps/LilycoveCity_House3/scripts.pory"
+	goto Common_EventScript_FaceOriginalDirection
 	end
+
 
 LilycoveCity_House3_EventScript_GameBoyKid1::
-	lock
-	faceplayer
-	switch VAR_TEMP_1
-	case 0, LilycoveCity_House3_EventScript_WereDoingMultiBattle
-	case 1, LilycoveCity_House3_EventScript_WereMixingRecords
-	case 2, LilycoveCity_House3_EventScript_WereBlendingBerries
-	case 3, LilycoveCity_House3_EventScript_WereDoingContest
+# 29 "data/maps/LilycoveCity_House3/scripts.pory"
+	lock_faceplayer
+# 30 "data/maps/LilycoveCity_House3/scripts.pory"
+	goto LilycoveCity_House3_EventScript_GameBoyKidMain
 	end
+
 
 LilycoveCity_House3_EventScript_GameBoyKid2::
-	lock
-	faceplayer
-	switch VAR_TEMP_1
-	case 0, LilycoveCity_House3_EventScript_WereDoingMultiBattle
-	case 1, LilycoveCity_House3_EventScript_WereMixingRecords
-	case 2, LilycoveCity_House3_EventScript_WereBlendingBerries
-	case 3, LilycoveCity_House3_EventScript_WereDoingContest
+# 35 "data/maps/LilycoveCity_House3/scripts.pory"
+	lock_faceplayer
+# 36 "data/maps/LilycoveCity_House3/scripts.pory"
+	goto LilycoveCity_House3_EventScript_GameBoyKidMain
 	end
+
 
 LilycoveCity_House3_EventScript_GameBoyKid3::
-	lock
-	faceplayer
-	switch VAR_TEMP_1
-	case 0, LilycoveCity_House3_EventScript_WereDoingMultiBattle
-	case 1, LilycoveCity_House3_EventScript_WereMixingRecords
-	case 2, LilycoveCity_House3_EventScript_WereBlendingBerries
-	case 3, LilycoveCity_House3_EventScript_WereDoingContest
+# 41 "data/maps/LilycoveCity_House3/scripts.pory"
+	lock_faceplayer
+# 42 "data/maps/LilycoveCity_House3/scripts.pory"
+	goto LilycoveCity_House3_EventScript_GameBoyKidMain
 	end
+
 
 LilycoveCity_House3_EventScript_GameBoyKid4::
-	lock
-	faceplayer
+# 47 "data/maps/LilycoveCity_House3/scripts.pory"
+	lock_faceplayer
+# 48 "data/maps/LilycoveCity_House3/scripts.pory"
+	goto LilycoveCity_House3_EventScript_GameBoyKidMain
+	end
+
+
+LilycoveCity_House3_EventScript_GameBoyKidMain::
+# 53 "data/maps/LilycoveCity_House3/scripts.pory"
 	switch VAR_TEMP_1
-	case 0, LilycoveCity_House3_EventScript_WereDoingMultiBattle
-	case 1, LilycoveCity_House3_EventScript_WereMixingRecords
-	case 2, LilycoveCity_House3_EventScript_WereBlendingBerries
-	case 3, LilycoveCity_House3_EventScript_WereDoingContest
-	end
+# 54 "data/maps/LilycoveCity_House3/scripts.pory"
+	case 0, LilycoveCity_House3_EventScript_GameBoyKidMain_3
+# 55 "data/maps/LilycoveCity_House3/scripts.pory"
+	case 1, LilycoveCity_House3_EventScript_GameBoyKidMain_4
+# 56 "data/maps/LilycoveCity_House3/scripts.pory"
+	case 2, LilycoveCity_House3_EventScript_GameBoyKidMain_5
+# 57 "data/maps/LilycoveCity_House3/scripts.pory"
+	case 3, LilycoveCity_House3_EventScript_GameBoyKidMain_6
+LilycoveCity_House3_EventScript_GameBoyKidMain_1:
+	release_end
 
-LilycoveCity_House3_EventScript_WereDoingMultiBattle::
+LilycoveCity_House3_EventScript_GameBoyKidMain_3:
+# 54 "data/maps/LilycoveCity_House3/scripts.pory"
 	msgbox LilycoveCity_House3_Text_GoingToWinMultiBattles, MSGBOX_DEFAULT
-	release
-	end
+	goto LilycoveCity_House3_EventScript_GameBoyKidMain_1
 
-LilycoveCity_House3_EventScript_WereMixingRecords::
+LilycoveCity_House3_EventScript_GameBoyKidMain_4:
+# 55 "data/maps/LilycoveCity_House3/scripts.pory"
 	msgbox LilycoveCity_House3_Text_LikeMixingAtRecordCorner, MSGBOX_DEFAULT
-	release
-	end
+	goto LilycoveCity_House3_EventScript_GameBoyKidMain_1
 
-LilycoveCity_House3_EventScript_WereBlendingBerries::
+LilycoveCity_House3_EventScript_GameBoyKidMain_5:
+# 56 "data/maps/LilycoveCity_House3/scripts.pory"
 	msgbox LilycoveCity_House3_Text_MakePokeblocksWithBerryBlender, MSGBOX_DEFAULT
-	release
-	end
+	goto LilycoveCity_House3_EventScript_GameBoyKidMain_1
 
-LilycoveCity_House3_EventScript_WereDoingContest::
+LilycoveCity_House3_EventScript_GameBoyKidMain_6:
+# 57 "data/maps/LilycoveCity_House3/scripts.pory"
 	msgbox LilycoveCity_House3_Text_GoingToEnterContest, MSGBOX_DEFAULT
-	release
-	end
+	goto LilycoveCity_House3_EventScript_GameBoyKidMain_1
 
-LilycoveCity_House3_Text_LearnFromMasterOfPokeblocks:
+
+LilycoveCity_House3_Text_LearnFromMasterOfPokeblocks::
+# 62 "data/maps/LilycoveCity_House3/scripts.pory"
 	.string "Oh, my, my! Are you traveling alone?\n"
 	.string "But you're so young! Good for you!\p"
 	.string "I'm sure my kids could learn a thing\n"
@@ -108,12 +121,14 @@ LilycoveCity_House3_Text_LearnFromMasterOfPokeblocks:
 	.string "Would you like to learn from me,\n"
 	.string "a master of {POKEBLOCK}S?$"
 
-LilycoveCity_House3_Text_OhAreYouSure:
+LilycoveCity_House3_Text_OhAreYouSure::
+# 78 "data/maps/LilycoveCity_House3/scripts.pory"
 	.string "Oh? Are you sure?\p"
 	.string "You shouldn't always try to do\n"
 	.string "everything by yourself, dear!$"
 
-LilycoveCity_House3_Text_ExplainPokeblocks:
+LilycoveCity_House3_Text_ExplainPokeblocks::
+# 85 "data/maps/LilycoveCity_House3/scripts.pory"
 	.string "Oh, good! You're a smart soul!\n"
 	.string "This is a bit long, so listen up!\p"
 	.string "Are you ready?\p"
@@ -142,27 +157,31 @@ LilycoveCity_House3_Text_ExplainPokeblocks:
 	.string "the world would be a happier place.\p"
 	.string "Don't give up, dear!$"
 
-LilycoveCity_House3_Text_HappyToHaveQuadruplets:
+LilycoveCity_House3_Text_HappyToHaveQuadruplets::
+# 129 "data/maps/LilycoveCity_House3/scripts.pory"
 	.string "When my wife gave birth to quadruplets,\n"
 	.string "you bet I was shocked.\p"
 	.string "But, now, seeing them play together,\n"
 	.string "it makes me happy.$"
 
-LilycoveCity_House3_Text_GoingToWinMultiBattles:
+LilycoveCity_House3_Text_GoingToWinMultiBattles::
+# 137 "data/maps/LilycoveCity_House3/scripts.pory"
 	.string "We're having MULTI BATTLES, but I know\n"
 	.string "I'm going to win.$"
 
-LilycoveCity_House3_Text_LikeMixingAtRecordCorner:
+LilycoveCity_House3_Text_LikeMixingAtRecordCorner::
+# 142 "data/maps/LilycoveCity_House3/scripts.pory"
 	.string "We like mixing stuff at\n"
 	.string "the RECORD CORNER.\p"
 	.string "But what gets mixed up?$"
 
-LilycoveCity_House3_Text_MakePokeblocksWithBerryBlender:
+LilycoveCity_House3_Text_MakePokeblocksWithBerryBlender::
+# 149 "data/maps/LilycoveCity_House3/scripts.pory"
 	.string "We're going to make super {POKEBLOCK}S\n"
 	.string "with a BERRY BLENDER!$"
 
-LilycoveCity_House3_Text_GoingToEnterContest:
+LilycoveCity_House3_Text_GoingToEnterContest::
+# 154 "data/maps/LilycoveCity_House3/scripts.pory"
 	.string "I want to brag about how tough my\n"
 	.string "POKéMON is, so we're going to enter\l"
 	.string "a CONTEST together.$"
-

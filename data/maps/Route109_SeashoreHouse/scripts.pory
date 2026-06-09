@@ -34,15 +34,26 @@ script Route109_SeashoreHouse_EventScript_Owner {
     release_end
 }
 
-raw `
-Route109_SeashoreHouse_EventScript_BuySodaPop::
-	checkmoney 300
-	goto_if_eq VAR_RESULT, FALSE, Route109_SeashoreHouse_EventScript_NotEnoughMoney
-	checkitemspace ITEM_SODA_POP
-	goto_if_eq VAR_RESULT, FALSE, Route109_SeashoreHouse_EventScript_NotEnoughSpace
-	msgbox Route109_SeashoreHouse_Text_HereYouGo, MSGBOX_DEFAULT
-	removemoney 300
+script Route109_SeashoreHouse_EventScript_BuySodaPop {
+	if (checkmoney(300) == FALSE) {
+		msgbox(Route109_SeashoreHouse_Text_NotEnoughMoney, MSGBOX_DEFAULT)
+		hidemoneybox
+		release_end
+	}
+	if (checkitemspace(ITEM_SODA_POP) == TRUE) {
+		msgbox(gText_TooBadBagIsFull, MSGBOX_DEFAULT)
+		hidemoneybox
+		release_end
+	}
+	msgbox(Route109_SeashoreHouse_Text_HereYouGo, MSGBOX_DEFAULT)
+	removemoney(300)
 	updatemoneybox
+	goto(Route109_SeashoreHouse_EventScript_GiveSodaPop)
+	end
+}
+
+raw `
+Route109_SeashoreHouse_EventScript_GiveSodaPop::
 .if OW_SHOW_ITEM_DESCRIPTIONS != OW_ITEM_DESCRIPTIONS_OFF
 	hidemoneybox
 	giveitem ITEM_SODA_POP
@@ -50,21 +61,8 @@ Route109_SeashoreHouse_EventScript_BuySodaPop::
 	giveitem ITEM_SODA_POP
 	hidemoneybox
 .endif
-	release
-	end
+	release_end
 `
-
-script Route109_SeashoreHouse_EventScript_NotEnoughMoney {
-    msgbox(Route109_SeashoreHouse_Text_NotEnoughMoney, MSGBOX_DEFAULT)
-    hidemoneybox
-    release_end
-}
-
-script Route109_SeashoreHouse_EventScript_NotEnoughSpace {
-    msgbox(gText_TooBadBagIsFull, MSGBOX_DEFAULT)
-    hidemoneybox
-    release_end
-}
 
 script Route109_SeashoreHouse_EventScript_Dwayne {
     trainerbattle_single(TRAINER_DWAYNE, Route109_SeashoreHouse_Text_DwayneIntro, Route109_SeashoreHouse_Text_DwayneDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion)

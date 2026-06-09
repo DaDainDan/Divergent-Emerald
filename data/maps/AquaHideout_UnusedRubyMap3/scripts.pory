@@ -1,5 +1,1 @@
-raw `
-AquaHideout_UnusedRubyMap3_MapScripts::
-	.byte 0
-
-`
+mapscripts AquaHideout_UnusedRubyMap3_MapScripts {}

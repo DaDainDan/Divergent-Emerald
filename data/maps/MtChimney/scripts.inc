@@ -152,704 +152,709 @@ MtChimney_EventScript_Maxie_8:
 	goto MtChimney_EventScript_Maxie_5
 
 
-# 75 "data/maps/MtChimney/scripts.pory"
-
-# 76 "data/maps/MtChimney/scripts.pory"
 MtChimney_EventScript_LavaCookieLady::
-# 77 "data/maps/MtChimney/scripts.pory"
+# 76 "data/maps/MtChimney/scripts.pory"
 	lock
-# 78 "data/maps/MtChimney/scripts.pory"
+# 77 "data/maps/MtChimney/scripts.pory"
 	faceplayer
-# 79 "data/maps/MtChimney/scripts.pory"
+# 78 "data/maps/MtChimney/scripts.pory"
 	showmoneybox 0, 0
-# 80 "data/maps/MtChimney/scripts.pory"
+# 79 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_LavaCookiesJust200, MSGBOX_YESNO
-# 81 "data/maps/MtChimney/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, MtChimney_EventScript_DeclineLavaCookie
-# 82 "data/maps/MtChimney/scripts.pory"
+# 80 "data/maps/MtChimney/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq MtChimney_EventScript_LavaCookieLady_2
 	checkmoney 200
-# 83 "data/maps/MtChimney/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_NotEnoughMoney
-# 84 "data/maps/MtChimney/scripts.pory"
-	msgbox MtChimney_Text_ThankYouDear, MSGBOX_DEFAULT
-# 85 "data/maps/MtChimney/scripts.pory"
-	checkitemspace ITEM_LAVA_COOKIE
-# 86 "data/maps/MtChimney/scripts.pory"
-	call_if_eq VAR_RESULT, TRUE, MtChimney_EventScript_RemoveMoney
-# 87 "data/maps/MtChimney/scripts.pory"
-.if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_OFF
-# 88 "data/maps/MtChimney/scripts.pory"
-	giveitem ITEM_LAVA_COOKIE
-# 89 "data/maps/MtChimney/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_BagIsFull
+# 0 "data/maps/MtChimney/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq MtChimney_EventScript_LavaCookieLady_5
 # 90 "data/maps/MtChimney/scripts.pory"
-	hidemoneybox
-# 91 "data/maps/MtChimney/scripts.pory"
-	release
-# 92 "data/maps/MtChimney/scripts.pory"
-	end
-# 93 "data/maps/MtChimney/scripts.pory"
-
-# 94 "data/maps/MtChimney/scripts.pory"
-MtChimney_EventScript_BagIsFull::
+	msgbox MtChimney_Text_ThankYouDear, MSGBOX_DEFAULT
+	checkitemspace ITEM_LAVA_COOKIE
+# 0 "data/maps/MtChimney/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq MtChimney_EventScript_LavaCookieLady_8
+MtChimney_EventScript_LavaCookieLady_7:
 # 95 "data/maps/MtChimney/scripts.pory"
-	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
-# 96 "data/maps/MtChimney/scripts.pory"
-	hidemoneybox
-# 97 "data/maps/MtChimney/scripts.pory"
-	release
-# 98 "data/maps/MtChimney/scripts.pory"
+	goto MtChimney_EventScript_LavaCookieLady_GiveItem
 	end
-# 99 "data/maps/MtChimney/scripts.pory"
-.else
-# 100 "data/maps/MtChimney/scripts.pory"
-	hidemoneybox
-# 101 "data/maps/MtChimney/scripts.pory"
-	giveitem ITEM_LAVA_COOKIE
-# 102 "data/maps/MtChimney/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_BagIsFull
-# 103 "data/maps/MtChimney/scripts.pory"
-	release
-# 104 "data/maps/MtChimney/scripts.pory"
-	end
-# 105 "data/maps/MtChimney/scripts.pory"
 
-# 106 "data/maps/MtChimney/scripts.pory"
-MtChimney_EventScript_BagIsFull::
-# 107 "data/maps/MtChimney/scripts.pory"
-	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
-# 108 "data/maps/MtChimney/scripts.pory"
+MtChimney_EventScript_LavaCookieLady_2:
+# 81 "data/maps/MtChimney/scripts.pory"
+	msgbox MtChimney_Text_OhFineThen, MSGBOX_DEFAULT
+# 82 "data/maps/MtChimney/scripts.pory"
+	hidemoneybox
+	release_end
+
+MtChimney_EventScript_LavaCookieLady_5:
+# 86 "data/maps/MtChimney/scripts.pory"
+	msgbox MtChimney_Text_YouveNotGotTheMoney, MSGBOX_DEFAULT
+# 87 "data/maps/MtChimney/scripts.pory"
+	hidemoneybox
+	release_end
+
+MtChimney_EventScript_LavaCookieLady_8:
+# 92 "data/maps/MtChimney/scripts.pory"
+	removemoney 200
+# 93 "data/maps/MtChimney/scripts.pory"
+	updatemoneybox
+	goto MtChimney_EventScript_LavaCookieLady_7
+
+
+# 99 "data/maps/MtChimney/scripts.pory"
+
+# 100 "data/maps/MtChimney/scripts.pory"
+MtChimney_EventScript_LavaCookieLady_GiveItem::
+# 101 "data/maps/MtChimney/scripts.pory"
+.if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_OFF
+# 102 "data/maps/MtChimney/scripts.pory"
+	giveitem ITEM_LAVA_COOKIE
+# 103 "data/maps/MtChimney/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_BagIsFull
+# 104 "data/maps/MtChimney/scripts.pory"
+	hidemoneybox
+# 105 "data/maps/MtChimney/scripts.pory"
 	release
-# 109 "data/maps/MtChimney/scripts.pory"
+# 106 "data/maps/MtChimney/scripts.pory"
 	end
+# 107 "data/maps/MtChimney/scripts.pory"
+
+# 108 "data/maps/MtChimney/scripts.pory"
+MtChimney_EventScript_BagIsFull::
+# 109 "data/maps/MtChimney/scripts.pory"
+	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
 # 110 "data/maps/MtChimney/scripts.pory"
+	hidemoneybox
+# 111 "data/maps/MtChimney/scripts.pory"
+	release
+# 112 "data/maps/MtChimney/scripts.pory"
+	end
+# 113 "data/maps/MtChimney/scripts.pory"
+.else
+# 114 "data/maps/MtChimney/scripts.pory"
+	hidemoneybox
+# 115 "data/maps/MtChimney/scripts.pory"
+	giveitem ITEM_LAVA_COOKIE
+# 116 "data/maps/MtChimney/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_BagIsFull
+# 117 "data/maps/MtChimney/scripts.pory"
+	release
+# 118 "data/maps/MtChimney/scripts.pory"
+	end
+# 119 "data/maps/MtChimney/scripts.pory"
+
+# 120 "data/maps/MtChimney/scripts.pory"
+MtChimney_EventScript_BagIsFull::
+# 121 "data/maps/MtChimney/scripts.pory"
+	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
+# 122 "data/maps/MtChimney/scripts.pory"
+	release
+# 123 "data/maps/MtChimney/scripts.pory"
+	end
+# 124 "data/maps/MtChimney/scripts.pory"
 .endif @ OW_SHOW_ITEM_DESCRIPTIONS
 
-MtChimney_EventScript_RemoveMoney::
-# 114 "data/maps/MtChimney/scripts.pory"
-	removemoney 200
-# 115 "data/maps/MtChimney/scripts.pory"
-	updatemoneybox
-	return
-
-
-MtChimney_EventScript_DeclineLavaCookie::
-# 120 "data/maps/MtChimney/scripts.pory"
-	msgbox MtChimney_Text_OhFineThen, MSGBOX_DEFAULT
-# 121 "data/maps/MtChimney/scripts.pory"
-	hidemoneybox
-	release_end
-
-
-MtChimney_EventScript_NotEnoughMoney::
-# 126 "data/maps/MtChimney/scripts.pory"
-	msgbox MtChimney_Text_YouveNotGotTheMoney, MSGBOX_DEFAULT
 # 127 "data/maps/MtChimney/scripts.pory"
-	hidemoneybox
-	release_end
-
-
-# 131 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused1:
+# 129 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 129 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 129 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 129 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 129 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 130 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 130 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 131 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 131 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 131 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 131 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 132 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 132 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 132 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 132 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 132 "data/maps/MtChimney/scripts.pory"
+	walk_left
 # 133 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 133 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 133 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 133 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 133 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 134 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 134 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 135 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 135 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 135 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 135 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 136 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 136 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 136 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 136 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 136 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 137 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 140 "data/maps/MtChimney/scripts.pory"
+# 136 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused2:
-# 142 "data/maps/MtChimney/scripts.pory"
+# 138 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 142 "data/maps/MtChimney/scripts.pory"
+# 138 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 142 "data/maps/MtChimney/scripts.pory"
+# 138 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 142 "data/maps/MtChimney/scripts.pory"
+# 138 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 143 "data/maps/MtChimney/scripts.pory"
+# 139 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 143 "data/maps/MtChimney/scripts.pory"
+# 139 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 143 "data/maps/MtChimney/scripts.pory"
+# 139 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 144 "data/maps/MtChimney/scripts.pory"
+# 140 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 147 "data/maps/MtChimney/scripts.pory"
+# 143 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused3:
-# 149 "data/maps/MtChimney/scripts.pory"
+# 145 "data/maps/MtChimney/scripts.pory"
 	walk_right
-# 150 "data/maps/MtChimney/scripts.pory"
+# 146 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 150 "data/maps/MtChimney/scripts.pory"
+# 146 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 150 "data/maps/MtChimney/scripts.pory"
+# 146 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 150 "data/maps/MtChimney/scripts.pory"
+# 146 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 151 "data/maps/MtChimney/scripts.pory"
+# 147 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 151 "data/maps/MtChimney/scripts.pory"
+# 147 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 151 "data/maps/MtChimney/scripts.pory"
+# 147 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 151 "data/maps/MtChimney/scripts.pory"
+# 147 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 151 "data/maps/MtChimney/scripts.pory"
+# 147 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 152 "data/maps/MtChimney/scripts.pory"
+# 148 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 152 "data/maps/MtChimney/scripts.pory"
+# 148 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 152 "data/maps/MtChimney/scripts.pory"
+# 148 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 152 "data/maps/MtChimney/scripts.pory"
+# 148 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 155 "data/maps/MtChimney/scripts.pory"
+# 151 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused4:
-# 157 "data/maps/MtChimney/scripts.pory"
+# 153 "data/maps/MtChimney/scripts.pory"
 	run_down
-# 157 "data/maps/MtChimney/scripts.pory"
+# 153 "data/maps/MtChimney/scripts.pory"
 	run_down
-# 157 "data/maps/MtChimney/scripts.pory"
+# 153 "data/maps/MtChimney/scripts.pory"
 	run_down
-# 157 "data/maps/MtChimney/scripts.pory"
+# 153 "data/maps/MtChimney/scripts.pory"
 	run_down
-# 157 "data/maps/MtChimney/scripts.pory"
+# 153 "data/maps/MtChimney/scripts.pory"
 	run_down
-# 157 "data/maps/MtChimney/scripts.pory"
+# 153 "data/maps/MtChimney/scripts.pory"
 	run_down
-# 157 "data/maps/MtChimney/scripts.pory"
+# 153 "data/maps/MtChimney/scripts.pory"
 	run_down
-# 157 "data/maps/MtChimney/scripts.pory"
+# 153 "data/maps/MtChimney/scripts.pory"
 	run_down
-# 157 "data/maps/MtChimney/scripts.pory"
+# 153 "data/maps/MtChimney/scripts.pory"
 	run_down
+# 154 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 154 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 155 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 155 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 155 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 156 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 156 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 157 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 157 "data/maps/MtChimney/scripts.pory"
+	walk_down
 # 158 "data/maps/MtChimney/scripts.pory"
 	walk_left
 # 158 "data/maps/MtChimney/scripts.pory"
 	walk_left
+# 158 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 158 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 158 "data/maps/MtChimney/scripts.pory"
+	walk_left
 # 159 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 159 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 159 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 160 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 160 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 161 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 161 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 162 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 162 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 162 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 162 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 162 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 163 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 166 "data/maps/MtChimney/scripts.pory"
+# 162 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused5:
-# 168 "data/maps/MtChimney/scripts.pory"
+# 164 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 168 "data/maps/MtChimney/scripts.pory"
+# 164 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 168 "data/maps/MtChimney/scripts.pory"
+# 164 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 169 "data/maps/MtChimney/scripts.pory"
+# 165 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 169 "data/maps/MtChimney/scripts.pory"
+# 165 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 169 "data/maps/MtChimney/scripts.pory"
+# 165 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 170 "data/maps/MtChimney/scripts.pory"
+# 166 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 170 "data/maps/MtChimney/scripts.pory"
+# 166 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 170 "data/maps/MtChimney/scripts.pory"
+# 166 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 171 "data/maps/MtChimney/scripts.pory"
+# 167 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 174 "data/maps/MtChimney/scripts.pory"
+# 170 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused6:
+# 172 "data/maps/MtChimney/scripts.pory"
+	delay_16
+# 173 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 174 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 174 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 174 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 174 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 175 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 175 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 175 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 175 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 175 "data/maps/MtChimney/scripts.pory"
+	walk_left
 # 176 "data/maps/MtChimney/scripts.pory"
-	delay_16
-# 177 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 178 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 178 "data/maps/MtChimney/scripts.pory"
+# 176 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 178 "data/maps/MtChimney/scripts.pory"
+# 176 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 178 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 179 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 179 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 179 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 179 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 179 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 180 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 180 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 180 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 180 "data/maps/MtChimney/scripts.pory"
+# 176 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 183 "data/maps/MtChimney/scripts.pory"
+# 179 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused7:
-# 185 "data/maps/MtChimney/scripts.pory"
+# 181 "data/maps/MtChimney/scripts.pory"
 	delay_16
+# 182 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 182 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 183 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 183 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 183 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 184 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 184 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 185 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 185 "data/maps/MtChimney/scripts.pory"
+	walk_down
 # 186 "data/maps/MtChimney/scripts.pory"
 	walk_left
 # 186 "data/maps/MtChimney/scripts.pory"
 	walk_left
+# 186 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 186 "data/maps/MtChimney/scripts.pory"
+	walk_left
+# 186 "data/maps/MtChimney/scripts.pory"
+	walk_left
 # 187 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 187 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 187 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 188 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 188 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 189 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 189 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 190 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 190 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 190 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 190 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 190 "data/maps/MtChimney/scripts.pory"
-	walk_left
-# 191 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 194 "data/maps/MtChimney/scripts.pory"
+# 190 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused8:
-# 196 "data/maps/MtChimney/scripts.pory"
+# 192 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 197 "data/maps/MtChimney/scripts.pory"
+# 193 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 198 "data/maps/MtChimney/scripts.pory"
+# 194 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 198 "data/maps/MtChimney/scripts.pory"
+# 194 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 198 "data/maps/MtChimney/scripts.pory"
+# 194 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 198 "data/maps/MtChimney/scripts.pory"
+# 194 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 199 "data/maps/MtChimney/scripts.pory"
+# 195 "data/maps/MtChimney/scripts.pory"
 	step_faster_down
 	step_end
 
-# 202 "data/maps/MtChimney/scripts.pory"
+# 198 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused9:
-# 204 "data/maps/MtChimney/scripts.pory"
+# 200 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 204 "data/maps/MtChimney/scripts.pory"
+# 200 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 204 "data/maps/MtChimney/scripts.pory"
+# 200 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 204 "data/maps/MtChimney/scripts.pory"
+# 200 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 205 "data/maps/MtChimney/scripts.pory"
+# 201 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 205 "data/maps/MtChimney/scripts.pory"
+# 201 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 205 "data/maps/MtChimney/scripts.pory"
+# 201 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 205 "data/maps/MtChimney/scripts.pory"
+# 201 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 205 "data/maps/MtChimney/scripts.pory"
+# 201 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 206 "data/maps/MtChimney/scripts.pory"
+# 202 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 206 "data/maps/MtChimney/scripts.pory"
+# 202 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 206 "data/maps/MtChimney/scripts.pory"
+# 202 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 206 "data/maps/MtChimney/scripts.pory"
+# 202 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 209 "data/maps/MtChimney/scripts.pory"
+# 205 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused10:
-# 211 "data/maps/MtChimney/scripts.pory"
+# 207 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 214 "data/maps/MtChimney/scripts.pory"
+# 210 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused11:
-# 216 "data/maps/MtChimney/scripts.pory"
+# 212 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 216 "data/maps/MtChimney/scripts.pory"
+# 212 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 216 "data/maps/MtChimney/scripts.pory"
+# 212 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 216 "data/maps/MtChimney/scripts.pory"
+# 212 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 216 "data/maps/MtChimney/scripts.pory"
+# 212 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 216 "data/maps/MtChimney/scripts.pory"
+# 212 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 216 "data/maps/MtChimney/scripts.pory"
+# 212 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 219 "data/maps/MtChimney/scripts.pory"
+# 215 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused12:
-# 221 "data/maps/MtChimney/scripts.pory"
+# 217 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 221 "data/maps/MtChimney/scripts.pory"
+# 217 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 222 "data/maps/MtChimney/scripts.pory"
+# 218 "data/maps/MtChimney/scripts.pory"
 	step_faster_left
+# 219 "data/maps/MtChimney/scripts.pory"
+	delay_16
+# 220 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 220 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 220 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 220 "data/maps/MtChimney/scripts.pory"
+	walk_down
+# 220 "data/maps/MtChimney/scripts.pory"
+	walk_down
+	step_end
+
 # 223 "data/maps/MtChimney/scripts.pory"
-	delay_16
-# 224 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 224 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 224 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 224 "data/maps/MtChimney/scripts.pory"
-	walk_down
-# 224 "data/maps/MtChimney/scripts.pory"
-	walk_down
-	step_end
-
-# 227 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused13:
-# 229 "data/maps/MtChimney/scripts.pory"
+# 225 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 229 "data/maps/MtChimney/scripts.pory"
+# 225 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 229 "data/maps/MtChimney/scripts.pory"
+# 225 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 229 "data/maps/MtChimney/scripts.pory"
+# 225 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 229 "data/maps/MtChimney/scripts.pory"
+# 225 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 229 "data/maps/MtChimney/scripts.pory"
+# 225 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 230 "data/maps/MtChimney/scripts.pory"
+# 226 "data/maps/MtChimney/scripts.pory"
 	step_faster_left
-# 231 "data/maps/MtChimney/scripts.pory"
+# 227 "data/maps/MtChimney/scripts.pory"
 	delay_16
-# 232 "data/maps/MtChimney/scripts.pory"
+# 228 "data/maps/MtChimney/scripts.pory"
 	walk_down
-# 232 "data/maps/MtChimney/scripts.pory"
+# 228 "data/maps/MtChimney/scripts.pory"
 	walk_down
 	step_end
 
-# 235 "data/maps/MtChimney/scripts.pory"
+# 231 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused14:
-# 237 "data/maps/MtChimney/scripts.pory"
+# 233 "data/maps/MtChimney/scripts.pory"
 	lock_look
-# 238 "data/maps/MtChimney/scripts.pory"
+# 234 "data/maps/MtChimney/scripts.pory"
 	run_left
-# 239 "data/maps/MtChimney/scripts.pory"
+# 235 "data/maps/MtChimney/scripts.pory"
 	unlock_look
-# 240 "data/maps/MtChimney/scripts.pory"
+# 236 "data/maps/MtChimney/scripts.pory"
 	face_right
 	step_end
 
-# 243 "data/maps/MtChimney/scripts.pory"
+# 239 "data/maps/MtChimney/scripts.pory"
 MtChimney_Movement_Unused15:
-# 245 "data/maps/MtChimney/scripts.pory"
+# 241 "data/maps/MtChimney/scripts.pory"
 	walk_left
-# 246 "data/maps/MtChimney/scripts.pory"
+# 242 "data/maps/MtChimney/scripts.pory"
 	step_faster_right
-# 247 "data/maps/MtChimney/scripts.pory"
+# 243 "data/maps/MtChimney/scripts.pory"
 	delay_16
 	step_end
 
 MtChimney_EventScript_BusyAquaGrunt1::
-# 251 "data/maps/MtChimney/scripts.pory"
+# 247 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_MagmaOutnumbersUs, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_BusyAquaGrunt2::
-# 256 "data/maps/MtChimney/scripts.pory"
+# 252 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_LessHabitatForWaterPokemon, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_BusyAquaGrunt3::
-# 261 "data/maps/MtChimney/scripts.pory"
+# 257 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_MagmasNameSimilar, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_Tabitha::
-# 266 "data/maps/MtChimney/scripts.pory"
+# 262 "data/maps/MtChimney/scripts.pory"
 	trainerbattle_single TRAINER_TABITHA_MT_CHIMNEY, MtChimney_Text_TabithaIntro, MtChimney_Text_TabithaDefeat
-# 267 "data/maps/MtChimney/scripts.pory"
+# 263 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MtChimney_EventScript_Grunt2::
-# 272 "data/maps/MtChimney/scripts.pory"
+# 268 "data/maps/MtChimney/scripts.pory"
 	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_2, MtChimney_Text_Grunt2Intro, MtChimney_Text_Grunt2Defeat
-# 273 "data/maps/MtChimney/scripts.pory"
+# 269 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MtChimney_EventScript_BusyMagmaGrunt1::
-# 278 "data/maps/MtChimney/scripts.pory"
+# 274 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_TeamAquaAlwaysMessingWithPlans, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_BusyMagmaGrunt2::
-# 283 "data/maps/MtChimney/scripts.pory"
+# 279 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_MeteoritesPackAmazingPower, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_BusyMagmaGrunt3::
-# 288 "data/maps/MtChimney/scripts.pory"
+# 284 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_YouBetterNotMessWithUs, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_BusyMagmaGrunt4::
-# 293 "data/maps/MtChimney/scripts.pory"
+# 289 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_AquasNameSimilar, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_BusyMagmaGrunt5::
-# 298 "data/maps/MtChimney/scripts.pory"
+# 294 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_DouseThemInFire, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_BusyMagmaGrunt6::
-# 303 "data/maps/MtChimney/scripts.pory"
+# 299 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_KeepMakingMoreLand, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_MagmaPoochyena::
-# 308 "data/maps/MtChimney/scripts.pory"
+# 304 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_Bufoh, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_AquaPoochyena::
-# 313 "data/maps/MtChimney/scripts.pory"
+# 309 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_Bushaa, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_MeteoriteMachine::
-# 318 "data/maps/MtChimney/scripts.pory"
+# 314 "data/maps/MtChimney/scripts.pory"
 	lockall
-# 319 "data/maps/MtChimney/scripts.pory"
+# 315 "data/maps/MtChimney/scripts.pory"
 	goto_if_unset FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, MtChimney_EventScript_MeteoriteMachine_2
-# 322 "data/maps/MtChimney/scripts.pory"
+# 318 "data/maps/MtChimney/scripts.pory"
 	goto_if_set FLAG_RECEIVED_METEORITE, MtChimney_EventScript_MeteoriteMachine_3
-# 326 "data/maps/MtChimney/scripts.pory"
+# 322 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_RemoveTheMeteorite, MSGBOX_YESNO
-# 327 "data/maps/MtChimney/scripts.pory"
+# 323 "data/maps/MtChimney/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MtChimney_EventScript_MeteoriteMachine_7
-# 330 "data/maps/MtChimney/scripts.pory"
+# 326 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_PlayerRemovedMeteorite, MSGBOX_DEFAULT
 	giveitem ITEM_METEORITE
 # 0 "data/maps/MtChimney/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq MtChimney_EventScript_MeteoriteMachine_11
 MtChimney_EventScript_MeteoriteMachine_10:
-# 334 "data/maps/MtChimney/scripts.pory"
+# 330 "data/maps/MtChimney/scripts.pory"
 	setflag FLAG_RECEIVED_METEORITE
 MtChimney_EventScript_MeteoriteMachine_1:
-# 337 "data/maps/MtChimney/scripts.pory"
+# 333 "data/maps/MtChimney/scripts.pory"
 	releaseall
 	end
 
 MtChimney_EventScript_MeteoriteMachine_2:
-# 320 "data/maps/MtChimney/scripts.pory"
+# 316 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_MeteoriteFittedOnMachine, MSGBOX_DEFAULT
 	goto MtChimney_EventScript_MeteoriteMachine_1
 
 MtChimney_EventScript_MeteoriteMachine_3:
-# 323 "data/maps/MtChimney/scripts.pory"
+# 319 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_MachineMakesNoResponse, MSGBOX_DEFAULT
 	goto MtChimney_EventScript_MeteoriteMachine_1
 
 MtChimney_EventScript_MeteoriteMachine_7:
-# 328 "data/maps/MtChimney/scripts.pory"
+# 324 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_PlayerLeftMeteorite, MSGBOX_DEFAULT
 	goto MtChimney_EventScript_MeteoriteMachine_1
 
 MtChimney_EventScript_MeteoriteMachine_11:
-# 332 "data/maps/MtChimney/scripts.pory"
+# 328 "data/maps/MtChimney/scripts.pory"
 	goto Common_EventScript_ShowBagIsFull
 	goto MtChimney_EventScript_MeteoriteMachine_10
 
 
 MtChimney_EventScript_RouteSign::
-# 342 "data/maps/MtChimney/scripts.pory"
+# 338 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_RouteSign, MSGBOX_SIGN
 	end
 
 
 MtChimney_EventScript_Shelby::
-# 347 "data/maps/MtChimney/scripts.pory"
+# 343 "data/maps/MtChimney/scripts.pory"
 	trainerbattle_single TRAINER_SHELBY_1, MtChimney_Text_ShelbyIntro, MtChimney_Text_ShelbyDefeat, MtChimney_EventScript_DefeatedShelby
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 0 "data/maps/MtChimney/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MtChimney_EventScript_Shelby_2
-# 353 "data/maps/MtChimney/scripts.pory"
+# 349 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_ShelbyPostBattle, MSGBOX_DEFAULT
 	release_end
 
 MtChimney_EventScript_Shelby_2:
-# 349 "data/maps/MtChimney/scripts.pory"
+# 345 "data/maps/MtChimney/scripts.pory"
 	trainerbattle_rematch TRAINER_SHELBY_1, MtChimney_Text_ShelbyRematchIntro, MtChimney_Text_ShelbyRematchDefeat
-# 350 "data/maps/MtChimney/scripts.pory"
+# 346 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_ShelbyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 
 MtChimney_EventScript_DefeatedShelby::
-# 358 "data/maps/MtChimney/scripts.pory"
+# 354 "data/maps/MtChimney/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
-# 359 "data/maps/MtChimney/scripts.pory"
+# 355 "data/maps/MtChimney/scripts.pory"
 	waitmovement 0
-# 360 "data/maps/MtChimney/scripts.pory"
+# 356 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_ShelbyRegister, MSGBOX_DEFAULT
-# 361 "data/maps/MtChimney/scripts.pory"
+# 357 "data/maps/MtChimney/scripts.pory"
 	register_matchcall TRAINER_SHELBY_1
 	release_end
 
 
 MtChimney_EventScript_Melissa::
-# 366 "data/maps/MtChimney/scripts.pory"
+# 362 "data/maps/MtChimney/scripts.pory"
 	trainerbattle_single TRAINER_MELISSA, MtChimney_Text_MelissaIntro, MtChimney_Text_MelissaDefeat
-# 367 "data/maps/MtChimney/scripts.pory"
+# 363 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_MelissaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MtChimney_EventScript_Sheila::
-# 372 "data/maps/MtChimney/scripts.pory"
+# 368 "data/maps/MtChimney/scripts.pory"
 	trainerbattle_single TRAINER_SHEILA, MtChimney_Text_SheilaIntro, MtChimney_Text_SheilaDefeat
-# 373 "data/maps/MtChimney/scripts.pory"
+# 369 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_SheilaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MtChimney_EventScript_Shirley::
-# 378 "data/maps/MtChimney/scripts.pory"
+# 374 "data/maps/MtChimney/scripts.pory"
 	trainerbattle_single TRAINER_SHIRLEY, MtChimney_Text_ShirleyIntro, MtChimney_Text_ShirleyDefeat
-# 379 "data/maps/MtChimney/scripts.pory"
+# 375 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_ShirleyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MtChimney_EventScript_Grunt1::
-# 384 "data/maps/MtChimney/scripts.pory"
+# 380 "data/maps/MtChimney/scripts.pory"
 	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_1, MtChimney_Text_Grunt1Intro, MtChimney_Text_Grunt1Defeat
-# 385 "data/maps/MtChimney/scripts.pory"
+# 381 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MtChimney_EventScript_Sawyer::
-# 390 "data/maps/MtChimney/scripts.pory"
+# 386 "data/maps/MtChimney/scripts.pory"
 	trainerbattle_single TRAINER_SAWYER_1, MtChimney_Text_SawyerIntro, MtChimney_Text_SawyerDefeat, MtChimney_EventScript_SawyerDefeated
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 0 "data/maps/MtChimney/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MtChimney_EventScript_Sawyer_2
-# 396 "data/maps/MtChimney/scripts.pory"
+# 392 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_SawyerPostBattle, MSGBOX_DEFAULT
 	release_end
 
 MtChimney_EventScript_Sawyer_2:
-# 392 "data/maps/MtChimney/scripts.pory"
+# 388 "data/maps/MtChimney/scripts.pory"
 	trainerbattle_rematch TRAINER_SAWYER_1, MtChimney_Text_SawyerRematchIntro, MtChimney_Text_SawyerRematchDefeat
-# 393 "data/maps/MtChimney/scripts.pory"
+# 389 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_SawyerPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 
 MtChimney_EventScript_SawyerDefeated::
-# 401 "data/maps/MtChimney/scripts.pory"
+# 397 "data/maps/MtChimney/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
-# 402 "data/maps/MtChimney/scripts.pory"
+# 398 "data/maps/MtChimney/scripts.pory"
 	waitmovement 0
-# 403 "data/maps/MtChimney/scripts.pory"
+# 399 "data/maps/MtChimney/scripts.pory"
 	msgbox MtChimney_Text_SawyerRegister, MSGBOX_DEFAULT
-# 404 "data/maps/MtChimney/scripts.pory"
+# 400 "data/maps/MtChimney/scripts.pory"
 	register_matchcall TRAINER_SAWYER_1
 	release_end
 
@@ -933,7 +938,7 @@ MtChimney_EventScript_Maxie_Movement_3:
 	step_end
 
 MtChimney_Text_MeteoriteWillActivateVolcano::
-# 408 "data/maps/MtChimney/scripts.pory"
+# 404 "data/maps/MtChimney/scripts.pory"
 	.string "The power contained in the METEORITE…\p"
 	.string "By amplifying its power with this\n"
 	.string "machine, MT. CHIMNEY's volcanic\l"
@@ -943,7 +948,7 @@ MtChimney_Text_MeteoriteWillActivateVolcano::
 	.string "Fufufu…$"
 
 MtChimney_Text_MaxieIntro::
-# 420 "data/maps/MtChimney/scripts.pory"
+# 416 "data/maps/MtChimney/scripts.pory"
 	.string "MAXIE: Hm?\n"
 	.string "Who are you?\p"
 	.string "… … … … … …\n"
@@ -972,12 +977,12 @@ MtChimney_Text_MaxieIntro::
 	.string "meddling in our grand design!$"
 
 MtChimney_Text_MaxieDefeat::
-# 460 "data/maps/MtChimney/scripts.pory"
+# 456 "data/maps/MtChimney/scripts.pory"
 	.string "What?!\p"
 	.string "I, MAXIE, was caught off guard?!$"
 
 MtChimney_Text_MaxieYouHaventSeenLastOfMagma::
-# 466 "data/maps/MtChimney/scripts.pory"
+# 462 "data/maps/MtChimney/scripts.pory"
 	.string "MAXIE: But, enough.\n"
 	.string "I will back off this time.\p"
 	.string "But don't think that this is the last\n"
@@ -987,7 +992,7 @@ MtChimney_Text_MaxieYouHaventSeenLastOfMagma::
 	.string "obtain that ORB… Fufufu…$"
 
 MtChimney_Text_TabithaIntro::
-# 479 "data/maps/MtChimney/scripts.pory"
+# 475 "data/maps/MtChimney/scripts.pory"
 	.string "Hehehe!\p"
 	.string "So you've come all the way here!\p"
 	.string "But you're too late!\n"
@@ -995,19 +1000,19 @@ MtChimney_Text_TabithaIntro::
 	.string "from METEOR FALLS to the BOSS!$"
 
 MtChimney_Text_TabithaDefeat::
-# 489 "data/maps/MtChimney/scripts.pory"
+# 485 "data/maps/MtChimney/scripts.pory"
 	.string "Hehehe…\p"
 	.string "Even though I've lost, if our leader\n"
 	.string "awakens that thing…$"
 
 MtChimney_Text_TabithaPostBattle::
-# 496 "data/maps/MtChimney/scripts.pory"
+# 492 "data/maps/MtChimney/scripts.pory"
 	.string "BOSS, hurry!\n"
 	.string "Give it the METEORITE's energy!\p"
 	.string "Hehehe…$"
 
 MtChimney_Text_Grunt2Intro::
-# 503 "data/maps/MtChimney/scripts.pory"
+# 499 "data/maps/MtChimney/scripts.pory"
 	.string "We of TEAM MAGMA are working hard for\n"
 	.string "everyone's sake.\p"
 	.string "Like, if that thing's power made more\n"
@@ -1015,69 +1020,69 @@ MtChimney_Text_Grunt2Intro::
 	.string "Everyone'd be happy!$"
 
 MtChimney_Text_Grunt2Defeat::
-# 513 "data/maps/MtChimney/scripts.pory"
+# 509 "data/maps/MtChimney/scripts.pory"
 	.string "Hunh?\n"
 	.string "What do you mean I lost?$"
 
 MtChimney_Text_Grunt2PostBattle::
-# 518 "data/maps/MtChimney/scripts.pory"
+# 514 "data/maps/MtChimney/scripts.pory"
 	.string "Our BOSS says, “It will make everyone\n"
 	.string "happy.”\p"
 	.string "But why does everyone keep getting\n"
 	.string "in our way?$"
 
 MtChimney_Text_Grunt1Intro::
-# 526 "data/maps/MtChimney/scripts.pory"
+# 522 "data/maps/MtChimney/scripts.pory"
 	.string "If there were more land, I'd be able\n"
 	.string "to get a big house of my own!\p"
 	.string "I'm going to build it on hardened lava!$"
 
 MtChimney_Text_Grunt1Defeat::
-# 533 "data/maps/MtChimney/scripts.pory"
+# 529 "data/maps/MtChimney/scripts.pory"
 	.string "My dream of a big house…$"
 
 MtChimney_Text_Grunt1PostBattle::
-# 537 "data/maps/MtChimney/scripts.pory"
+# 533 "data/maps/MtChimney/scripts.pory"
 	.string "A kid like you, you ought to be\n"
 	.string "splashing about in the waves!$"
 
 MtChimney_Text_TeamAquaAlwaysMessingWithPlans::
-# 542 "data/maps/MtChimney/scripts.pory"
+# 538 "data/maps/MtChimney/scripts.pory"
 	.string "That annoying TEAM AQUA…\n"
 	.string "They always mess with our plans!$"
 
 MtChimney_Text_MeteoritesPackAmazingPower::
-# 547 "data/maps/MtChimney/scripts.pory"
+# 543 "data/maps/MtChimney/scripts.pory"
 	.string "METEORITES pack amazing power!$"
 
 MtChimney_Text_YouBetterNotMessWithUs::
-# 551 "data/maps/MtChimney/scripts.pory"
+# 547 "data/maps/MtChimney/scripts.pory"
 	.string "You'd better not mess with us!\p"
 	.string "We're trying to awaken that thing\n"
 	.string "for the benefit of everyone!$"
 
 MtChimney_Text_AquasNameSimilar::
-# 558 "data/maps/MtChimney/scripts.pory"
+# 554 "data/maps/MtChimney/scripts.pory"
 	.string "We're TEAM MAGMA!\p"
 	.string "They're TEAM AQUA!\p"
 	.string "It totally annoys me that they'd\n"
 	.string "use a name like ours!$"
 
 MtChimney_Text_DouseThemInFire::
-# 567 "data/maps/MtChimney/scripts.pory"
+# 563 "data/maps/MtChimney/scripts.pory"
 	.string "Yeah!\n"
 	.string "Douse them in fire!$"
 
 MtChimney_Text_KeepMakingMoreLand::
-# 572 "data/maps/MtChimney/scripts.pory"
+# 568 "data/maps/MtChimney/scripts.pory"
 	.string "We're going to keep making more land!$"
 
 MtChimney_Text_Bufoh::
-# 576 "data/maps/MtChimney/scripts.pory"
+# 572 "data/maps/MtChimney/scripts.pory"
 	.string "Bufoh!$"
 
 MtChimney_Text_ArchieGoStopTeamMagma::
-# 580 "data/maps/MtChimney/scripts.pory"
+# 576 "data/maps/MtChimney/scripts.pory"
 	.string "ARCHIE: Grr, {PLAYER}!\n"
 	.string "I should've guessed you'd show up!\p"
 	.string "See for yourself what the fanatics\n"
@@ -1088,7 +1093,7 @@ MtChimney_Text_ArchieGoStopTeamMagma::
 	.string "the volcano's eruption!$"
 
 MtChimney_Text_ArchieIHaveMyHandsFull::
-# 594 "data/maps/MtChimney/scripts.pory"
+# 590 "data/maps/MtChimney/scripts.pory"
 	.string "ARCHIE: Grrr…\p"
 	.string "I want to stop that MAXIE,\n"
 	.string "but I can't!\p"
@@ -1096,7 +1101,7 @@ MtChimney_Text_ArchieIHaveMyHandsFull::
 	.string "three opponents at once!$"
 
 MtChimney_Text_ArchieThankYou::
-# 604 "data/maps/MtChimney/scripts.pory"
+# 600 "data/maps/MtChimney/scripts.pory"
 	.string "ARCHIE: {PLAYER}!\n"
 	.string "Thank you!\p"
 	.string "With your help, we thwarted TEAM\n"
@@ -1109,143 +1114,143 @@ MtChimney_Text_ArchieThankYou::
 	.string "{PLAYER}, we shall meet again!$"
 
 MtChimney_Text_MagmaOutnumbersUs::
-# 622 "data/maps/MtChimney/scripts.pory"
+# 618 "data/maps/MtChimney/scripts.pory"
 	.string "Darn… TEAM MAGMA outnumbers us!\n"
 	.string "We can't keep up with them!$"
 
 MtChimney_Text_LessHabitatForWaterPokemon::
-# 627 "data/maps/MtChimney/scripts.pory"
+# 623 "data/maps/MtChimney/scripts.pory"
 	.string "If they expand the land, there'll be\n"
 	.string "less habitats for WATER POKéMON!$"
 
 MtChimney_Text_MagmasNameSimilar::
-# 632 "data/maps/MtChimney/scripts.pory"
+# 628 "data/maps/MtChimney/scripts.pory"
 	.string "We're TEAM AQUA!\p"
 	.string "They're TEAM MAGMA!\p"
 	.string "It burns me up that they'd use such\n"
 	.string "a confusing name!$"
 
 MtChimney_Text_Bushaa::
-# 641 "data/maps/MtChimney/scripts.pory"
+# 637 "data/maps/MtChimney/scripts.pory"
 	.string "Bushaa!$"
 
 MtChimney_Text_LavaCookiesJust200::
-# 645 "data/maps/MtChimney/scripts.pory"
+# 641 "data/maps/MtChimney/scripts.pory"
 	.string "LAVA COOKIES are MT. CHIMNEY's local\n"
 	.string "specialty.\p"
 	.string "Try one. It's just ¥200.$"
 
 MtChimney_Text_ThankYouDear::
-# 652 "data/maps/MtChimney/scripts.pory"
+# 648 "data/maps/MtChimney/scripts.pory"
 	.string "Thank you, dear!$"
 
 MtChimney_Text_YouveNotGotTheMoney::
-# 656 "data/maps/MtChimney/scripts.pory"
+# 652 "data/maps/MtChimney/scripts.pory"
 	.string "Oh, dear. You can't buy a thing if\n"
 	.string "you've not got the money.$"
 
 MtChimney_Text_OhFineThen::
-# 661 "data/maps/MtChimney/scripts.pory"
+# 657 "data/maps/MtChimney/scripts.pory"
 	.string "Oh, fine then.$"
 
 MtChimney_Text_MeteoriteFittedOnMachine::
-# 665 "data/maps/MtChimney/scripts.pory"
+# 661 "data/maps/MtChimney/scripts.pory"
 	.string "A METEORITE is fitted on a mysterious\n"
 	.string "machine…\p"
 	.string "The machine seems to be storing\n"
 	.string "energy in the METEORITE.$"
 
 MtChimney_Text_RemoveTheMeteorite::
-# 673 "data/maps/MtChimney/scripts.pory"
+# 669 "data/maps/MtChimney/scripts.pory"
 	.string "A METEORITE is fitted on a mysterious\n"
 	.string "machine…\p"
 	.string "Do you want to remove the METEORITE?$"
 
 MtChimney_Text_PlayerRemovedMeteorite::
-# 680 "data/maps/MtChimney/scripts.pory"
+# 676 "data/maps/MtChimney/scripts.pory"
 	.string "{PLAYER} removed the METEORITE from\n"
 	.string "the mysterious machine.$"
 
 MtChimney_Text_PlayerLeftMeteorite::
-# 685 "data/maps/MtChimney/scripts.pory"
+# 681 "data/maps/MtChimney/scripts.pory"
 	.string "{PLAYER} left the METEORITE where\n"
 	.string "it was.$"
 
 MtChimney_Text_MachineMakesNoResponse::
-# 690 "data/maps/MtChimney/scripts.pory"
+# 686 "data/maps/MtChimney/scripts.pory"
 	.string "This mysterious machine…\n"
 	.string "It makes no response whatsoever.$"
 
 MtChimney_Text_RouteSign::
-# 695 "data/maps/MtChimney/scripts.pory"
+# 691 "data/maps/MtChimney/scripts.pory"
 	.string "{DOWN_ARROW} JAGGED PATH\n"
 	.string "LAVARIDGE TOWN AHEAD$"
 
 MtChimney_Text_ShelbyIntro::
-# 700 "data/maps/MtChimney/scripts.pory"
+# 696 "data/maps/MtChimney/scripts.pory"
 	.string "I've been to the hot springs and\n"
 	.string "refreshed my tired bones.\l"
 	.string "Right now I'm feeling strong!$"
 
 MtChimney_Text_ShelbyDefeat::
-# 706 "data/maps/MtChimney/scripts.pory"
+# 702 "data/maps/MtChimney/scripts.pory"
 	.string "Oh, my goodness.\n"
 	.string "Now, aren't you something!$"
 
 MtChimney_Text_ShelbyPostBattle::
-# 711 "data/maps/MtChimney/scripts.pory"
+# 707 "data/maps/MtChimney/scripts.pory"
 	.string "Well, well, I've lost. I can't call\n"
 	.string "myself an EXPERT now, can I?$"
 
 MtChimney_Text_ShelbyRegister::
-# 716 "data/maps/MtChimney/scripts.pory"
+# 712 "data/maps/MtChimney/scripts.pory"
 	.string "Thank you, child. It was fun, as if\n"
 	.string "I were battling my own grandchild.\p"
 	.string "Please, come see me again for\n"
 	.string "a rematch.$"
 
 MtChimney_Text_ShelbyRematchIntro::
-# 724 "data/maps/MtChimney/scripts.pory"
+# 720 "data/maps/MtChimney/scripts.pory"
 	.string "If you can mesh your heart with those\n"
 	.string "of your POKéMON, why, you should be\l"
 	.string "able to achieve great things.$"
 
 MtChimney_Text_ShelbyRematchDefeat::
-# 730 "data/maps/MtChimney/scripts.pory"
+# 726 "data/maps/MtChimney/scripts.pory"
 	.string "Oh, my goodness.\n"
 	.string "Now, aren't you something!$"
 
 MtChimney_Text_ShelbyPostRematch::
-# 735 "data/maps/MtChimney/scripts.pory"
+# 731 "data/maps/MtChimney/scripts.pory"
 	.string "Perhaps your heart has become one\n"
 	.string "with the hearts of your POKéMON.$"
 
 MtChimney_Text_MelissaIntro::
-# 740 "data/maps/MtChimney/scripts.pory"
+# 736 "data/maps/MtChimney/scripts.pory"
 	.string "I've got the fire in me, baby.\n"
 	.string "I can't stand it! I have to battle!$"
 
 MtChimney_Text_MelissaDefeat::
-# 745 "data/maps/MtChimney/scripts.pory"
+# 741 "data/maps/MtChimney/scripts.pory"
 	.string "Ooh, that was a scorching-hot match!$"
 
 MtChimney_Text_MelissaPostBattle::
-# 749 "data/maps/MtChimney/scripts.pory"
+# 745 "data/maps/MtChimney/scripts.pory"
 	.string "The heat of MT. CHIMNEY warms\n"
 	.string "me up, baby!$"
 
 MtChimney_Text_SheilaIntro::
-# 754 "data/maps/MtChimney/scripts.pory"
+# 750 "data/maps/MtChimney/scripts.pory"
 	.string "I've finally made it to MT. CHIMNEY.\n"
 	.string "I want to make my POKéMON battle!$"
 
 MtChimney_Text_SheilaDefeat::
-# 759 "data/maps/MtChimney/scripts.pory"
+# 755 "data/maps/MtChimney/scripts.pory"
 	.string "The way you battle…\n"
 	.string "It's like a MT. CHIMNEY eruption!$"
 
 MtChimney_Text_SheilaPostBattle::
-# 764 "data/maps/MtChimney/scripts.pory"
+# 760 "data/maps/MtChimney/scripts.pory"
 	.string "Like I said, I've finally made it to\n"
 	.string "MT. CHIMNEY. It would be a shame if\l"
 	.string "I only do a little sightseeing…\p"
@@ -1253,52 +1258,52 @@ MtChimney_Text_SheilaPostBattle::
 	.string "COOKIES as souvenirs.$"
 
 MtChimney_Text_ShirleyIntro::
-# 773 "data/maps/MtChimney/scripts.pory"
+# 769 "data/maps/MtChimney/scripts.pory"
 	.string "Since I bathed in the hot springs,\n"
 	.string "I've been feeling great!\l"
 	.string "I'm sure I'm going to win!$"
 
 MtChimney_Text_ShirleyDefeat::
-# 779 "data/maps/MtChimney/scripts.pory"
+# 775 "data/maps/MtChimney/scripts.pory"
 	.string "Yowch!\n"
 	.string "I'm getting a chill out of the water.$"
 
 MtChimney_Text_ShirleyPostBattle::
-# 784 "data/maps/MtChimney/scripts.pory"
+# 780 "data/maps/MtChimney/scripts.pory"
 	.string "I'll have to take another dip in the\n"
 	.string "hot springs. Want to join me?\p"
 	.string "Just joking!$"
 
 MtChimney_Text_SawyerIntro::
-# 791 "data/maps/MtChimney/scripts.pory"
+# 787 "data/maps/MtChimney/scripts.pory"
 	.string "This is one fine mountain! Plenty of\n"
 	.string "hot people around for company!$"
 
 MtChimney_Text_SawyerDefeat::
-# 796 "data/maps/MtChimney/scripts.pory"
+# 792 "data/maps/MtChimney/scripts.pory"
 	.string "Oh, you're a real firebrand, too!$"
 
 MtChimney_Text_SawyerPostBattle::
-# 800 "data/maps/MtChimney/scripts.pory"
+# 796 "data/maps/MtChimney/scripts.pory"
 	.string "I think I need a dip in LAVARIDGE\n"
 	.string "HOT SPRING with the locals!$"
 
 MtChimney_Text_SawyerRegister::
-# 805 "data/maps/MtChimney/scripts.pory"
+# 801 "data/maps/MtChimney/scripts.pory"
 	.string "I like little fireballs like you.\n"
 	.string "Let me register you in my POKéNAV.$"
 
 MtChimney_Text_SawyerRematchIntro::
-# 810 "data/maps/MtChimney/scripts.pory"
+# 806 "data/maps/MtChimney/scripts.pory"
 	.string "I'm happily surrounded by hot people\n"
 	.string "around these parts. I won't lose!$"
 
 MtChimney_Text_SawyerRematchDefeat::
-# 815 "data/maps/MtChimney/scripts.pory"
+# 811 "data/maps/MtChimney/scripts.pory"
 	.string "Gosh, you're still the same\n"
 	.string "firebrand as before!$"
 
 MtChimney_Text_SawyerPostRematch::
-# 820 "data/maps/MtChimney/scripts.pory"
+# 816 "data/maps/MtChimney/scripts.pory"
 	.string "Actually, it really is hot here.\n"
 	.string "I'm overdressed for these parts.$"

@@ -1,221 +1,187 @@
-raw `
-LilycoveCity_DepartmentStoreRooftop_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_DepartmentStoreRooftop_OnTransition
-	.byte 0
+mapscripts LilycoveCity_DepartmentStoreRooftop_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        getpokenewsactive(POKENEWS_LILYCOVE)
+		if (var(VAR_RESULT) == TRUE) {
+			clearflag(FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN)
+		} else {
+			setflag(FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN)
+		}
+		end
+    }
+}
 
-LilycoveCity_DepartmentStoreRooftop_OnTransition:
-	getpokenewsactive POKENEWS_LILYCOVE
-	call_if_eq VAR_RESULT, TRUE, LilycoveCity_DepartmentStoreRooftop_EventScript_ShowSaleWoman
-	call_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_HideSaleWoman
-	end
+script LilycoveCity_DepartmentStoreRooftop_EventScript_SaleWoman {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemartdecoration(LilycoveCity_DepartmentStoreRooftop_PokemartDecor_ClearOutSale)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_ShowSaleWoman::
-	clearflag FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN
+mart LilycoveCity_DepartmentStoreRooftop_PokemartDecor_ClearOutSale {
+    DECOR_MUD_BALL
+    DECOR_FENCE_LENGTH
+    DECOR_FENCE_WIDTH
+    DECOR_TIRE
+    DECOR_BREAKABLE_DOOR
+    DECOR_SOLID_BOARD
+    DECOR_SAND_ORNAMENT
+    DECOR_STAND
+    DECOR_SLIDE
+    DECOR_TV
+    DECOR_ROUND_TV
+    DECOR_CUTE_TV
+    DECOR_WAILMER_DOLL
+    DECOR_RHYDON_DOLL
+}
+
+script LilycoveCity_DepartmentStoreRooftop_EventScript_Man {
+    lock_faceplayer
+    getpokenewsactive(POKENEWS_LILYCOVE)
+    if (var(VAR_RESULT) == TRUE) {
+        msgbox(LilycoveCity_DepartmentStoreRooftop_Text_BeenWaitingForClearOutSale, MSGBOX_DEFAULT)
+    	release_end
+    }
+    msgbox(LilycoveCity_DepartmentStoreRooftop_Text_SetDatesForClearOutSales, MSGBOX_DEFAULT)
+    release_end
+}
+
+script LilycoveCity_DepartmentStoreRooftop_EventScript_ThirstyMan {
+    msgbox(LilycoveCity_DepartmentStoreRooftop_Text_BoneDryThirsty, MSGBOX_NPC)
+    end
+}
+
+script LilycoveCity_DepartmentStoreRooftop_EventScript_VendingMachine {
+    lockall
+    message(LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike)
+    waitmessage
+    showmoneybox(0, 0)
+    goto(LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink)
+    end
+}
+
+script LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink {
+    multichoice(16, 0, MULTI_VENDING_MACHINE, FALSE)
+    copyvar(VAR_TEMP_1, VAR_RESULT)
+    switch (var(VAR_TEMP_1)) {
+        case 0: setvar(VAR_TEMP_0, ITEM_FRESH_WATER)
+        case 1: setvar(VAR_TEMP_0, ITEM_SODA_POP)
+        case 2: setvar(VAR_TEMP_0, ITEM_LEMONADE)
+		default:
+			msgbox(LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingDrink, MSGBOX_DEFAULT)
+    		goto(LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine)
+    }
+    switch (var(VAR_TEMP_0)) {
+		case ITEM_FRESH_WATER: checkmoney(200)
+		case ITEM_SODA_POP: checkmoney(300)
+		case ITEM_LEMONADE: checkmoney(350)
+	}
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney, MSGBOX_DEFAULT)
+		goto(LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine)
+    }
+    if (checkitemspace(VAR_TEMP_0) == FALSE) {
+        goto(LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink)
+    }
+	switch (var(VAR_TEMP_0)) {
+		case ITEM_FRESH_WATER: removemoney(200)
+		case ITEM_SODA_POP: removemoney(300)
+		case ITEM_LEMONADE: removemoney(350)
+	}
+    updatemoneybox
+    bufferitemname(STR_VAR_1, VAR_TEMP_0)
+    playse(SE_VEND)
+    msgbox(LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown, MSGBOX_DEFAULT)
+    call(LilycoveCity_DepartmentStoreRooftop_EventScript_GiveDrink)
+    call(LilycoveCity_DepartmentStoreRooftop_EventScript_RandomExtraDrink) // 1/64 chance of an additional drink dropping
+    call(LilycoveCity_DepartmentStoreRooftop_EventScript_RandomExtraDrink) // 1/64 * the prev 1/64 chance of a third additional drink dropping, ~ 0.02% chance
+    goto(LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink)
+    end
+}
+
+script LilycoveCity_DepartmentStoreRooftop_EventScript_GiveDrink {
+	additem(VAR_TEMP_0)
+    bufferitemname(STR_VAR_2, VAR_TEMP_0)
+    bufferstdstring(STR_VAR_3, STDSTRING_ITEMS)
+    msgbox(gText_PutItemInPocket, MSGBOX_DEFAULT)
 	return
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_HideSaleWoman::
-	setflag FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN
+script LilycoveCity_DepartmentStoreRooftop_EventScript_RandomExtraDrink {
+	if (random(64) != 0) {
+        goto(LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink)
+    }
+    elif (checkitemspace(VAR_TEMP_0) == FALSE) {
+        goto(LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink)
+    }
+    playse(SE_VEND)
+    msgbox(LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown, MSGBOX_DEFAULT)
+    call(LilycoveCity_DepartmentStoreRooftop_EventScript_GiveDrink)
 	return
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_SaleWoman::
-	lock
-	faceplayer
-	message gText_HowMayIServeYou
-	waitmessage
-	pokemartdecoration LilycoveCity_DepartmentStoreRooftop_PokemartDecor_ClearOutSale
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
+script LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink {
+    message(LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike)
+    waitmessage
+    goto(LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink)
+    end
+}
 
-	.align 2
-LilycoveCity_DepartmentStoreRooftop_PokemartDecor_ClearOutSale:
-	.2byte DECOR_MUD_BALL
-	.2byte DECOR_FENCE_LENGTH
-	.2byte DECOR_FENCE_WIDTH
-	.2byte DECOR_TIRE
-	.2byte DECOR_BREAKABLE_DOOR
-	.2byte DECOR_SOLID_BOARD
-	.2byte DECOR_SAND_ORNAMENT
-	.2byte DECOR_STAND
-	.2byte DECOR_SLIDE
-	.2byte DECOR_TV
-	.2byte DECOR_ROUND_TV
-	.2byte DECOR_CUTE_TV
-	.2byte DECOR_WAILMER_DOLL
-	.2byte DECOR_RHYDON_DOLL
-	.2byte 0
-	release
-	end
+script LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink {
+    msgbox(gText_TheBagIsFull, MSGBOX_DEFAULT)
+    goto(LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine)
+    end
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_Man::
-	lock
-	faceplayer
-	getpokenewsactive POKENEWS_LILYCOVE
-	call_if_eq VAR_RESULT, TRUE, LilycoveCity_DepartmentStoreRooftop_EventScript_ManClearOutSale
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_SetDatesForClearOutSales, MSGBOX_DEFAULT
-	release
-	end
+script LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine {
+    hidemoneybox
+    releaseall
+    end
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_ManClearOutSale::
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_BeenWaitingForClearOutSale, MSGBOX_DEFAULT
-	release
-	end
+text LilycoveCity_DepartmentStoreRooftop_Text_SetDatesForClearOutSales {
+	"Don't they have set dates for their
+	clear-out sales?
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_ThirstyMan::
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_BoneDryThirsty, MSGBOX_NPC
-	end
+	I watch TV, but they never show any
+	commercials."
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_VendingMachine::
-	lockall
-	message LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike
-	waitmessage
-	showmoneybox 0, 0
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink
-	end
+text LilycoveCity_DepartmentStoreRooftop_Text_BeenWaitingForClearOutSale {
+	"Yes! I've been waiting a long time for
+	this clear-out sale.
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink::
-	multichoice 16, 0, MULTI_VENDING_MACHINE, FALSE
-	copyvar VAR_TEMP_1, VAR_RESULT
-	switch VAR_TEMP_1
-	case 0, LilycoveCity_DepartmentStoreRooftop_EventScript_FreshWater
-	case 1, LilycoveCity_DepartmentStoreRooftop_EventScript_SodaPop
-	case 2, LilycoveCity_DepartmentStoreRooftop_EventScript_Lemonade
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingDrink, MSGBOX_DEFAULT
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine
-	end
+	They have items that you can only get
+	here. I'm going to load up, that I am!"
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_FreshWater::
-	setvar VAR_TEMP_0, ITEM_FRESH_WATER
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink
-	end
+text LilycoveCity_DepartmentStoreRooftop_Text_BoneDryThirsty {
+	"Ohh… I'm bone-dry thirsty!"
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_SodaPop::
-	setvar VAR_TEMP_0, ITEM_SODA_POP
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink
-	end
+text LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike {
+	"It's a VENDING MACHINE.
+	Which drink would you like?"
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_Lemonade::
-	setvar VAR_TEMP_0, ITEM_LEMONADE
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink
-	end
+text LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown {
+	"Clang!
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyFreshWater::
-	checkmoney 200
-	return
+	A can of {STR_VAR_1} dropped down."
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneySodaPop::
-	checkmoney 300
-	return
+text LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown {
+	"Clang!
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyLemonade::
-	checkmoney 350
-	return
+	Score! An extra can of {STR_VAR_1}
+	dropped down!"
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyFreshWater::
-	removemoney 200
-	return
+text LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney {
+	"Not enough money…"
+}
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneySodaPop::
-	removemoney 300
-	return
-
-LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyLemonade::
-	removemoney 350
-	return
-
-LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink::
-	call_if_eq VAR_TEMP_1, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyFreshWater
-	call_if_eq VAR_TEMP_1, 1, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneySodaPop
-	call_if_eq VAR_TEMP_1, 2, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyLemonade
-	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_NotEnoughMoneyForDrink
-	checkitemspace VAR_TEMP_0
-	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink
-	call_if_eq VAR_TEMP_1, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyFreshWater
-	call_if_eq VAR_TEMP_1, 1, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneySodaPop
-	call_if_eq VAR_TEMP_1, 2, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyLemonade
-	updatemoneybox
-	bufferitemname STR_VAR_1, VAR_TEMP_0
-	playse SE_VEND
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown, MSGBOX_DEFAULT
-	additem VAR_TEMP_0
-	bufferitemname STR_VAR_2, VAR_TEMP_0
-	bufferstdstring STR_VAR_3, STDSTRING_ITEMS
-	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
-	random 64  @ 1/64 chance of an additional drink dropping
-	goto_if_ne VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
-	checkitemspace VAR_TEMP_0
-	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink
-	playse SE_VEND
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown, MSGBOX_DEFAULT
-	additem VAR_TEMP_0
-	bufferitemname STR_VAR_2, VAR_TEMP_0
-	bufferstdstring STR_VAR_3, STDSTRING_ITEMS
-	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
-	random 64  @ 1/64 * the prev 1/64 chance of a third additional drink dropping, ~ 0.02% chance
-	goto_if_ne VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
-	checkitemspace VAR_TEMP_0
-	goto_if_eq VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink
-	playse SE_VEND
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown, MSGBOX_DEFAULT
-	additem VAR_TEMP_0
-	bufferitemname STR_VAR_2, VAR_TEMP_0
-	bufferstdstring STR_VAR_3, STDSTRING_ITEMS
-	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
-	end
-
-LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink::
-	message LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike
-	waitmessage
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink
-	end
-
-LilycoveCity_DepartmentStoreRooftop_EventScript_NotEnoughMoneyForDrink::
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney, MSGBOX_DEFAULT
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine
-	end
-
-LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink::
-	msgbox gText_TheBagIsFull, MSGBOX_DEFAULT
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine
-	end
-
-LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine::
-	hidemoneybox
-	releaseall
-	end
-
-LilycoveCity_DepartmentStoreRooftop_Text_SetDatesForClearOutSales:
-	.string "Don't they have set dates for their\n"
-	.string "clear-out sales?\p"
-	.string "I watch TV, but they never show any\n"
-	.string "commercials.$"
-
-LilycoveCity_DepartmentStoreRooftop_Text_BeenWaitingForClearOutSale:
-	.string "Yes! I've been waiting a long time for\n"
-	.string "this clear-out sale.\p"
-	.string "They have items that you can only get\n"
-	.string "here. I'm going to load up, that I am!$"
-
-LilycoveCity_DepartmentStoreRooftop_Text_BoneDryThirsty:
-	.string "Ohh… I'm bone-dry thirsty!$"
-
-LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike:
-	.string "It's a VENDING MACHINE.\n"
-	.string "Which drink would you like?$"
-
-LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown:
-	.string "Clang!\p"
-	.string "A can of {STR_VAR_1} dropped down.$"
-
-LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown:
-	.string "Clang!\p"
-	.string "Score! An extra can of {STR_VAR_1}\n"
-	.string "dropped down!$"
-
-LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney:
-	.string "Not enough money…$"
-
-LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingDrink:
-	.string "Decided against buying a drink.$"
-`
+text LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingDrink {
+	"Decided against buying a drink."
+}

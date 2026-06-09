@@ -1,31 +1,48 @@
 MossdeepCity_House3_MapScripts::
 	.byte 0
 
+
 MossdeepCity_House3_EventScript_SuperRodFisherman::
-	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_SUPER_ROD, MossdeepCity_House3_EventScript_ReceivedSuperRod
+# 4 "data/maps/MossdeepCity_House3/scripts.pory"
+	lock_faceplayer
+# 5 "data/maps/MossdeepCity_House3/scripts.pory"
+	goto_if_set FLAG_RECEIVED_SUPER_ROD, MossdeepCity_House3_EventScript_SuperRodFisherman_2
+# 9 "data/maps/MossdeepCity_House3/scripts.pory"
 	msgbox MossdeepCity_House3_Text_YouWantSuperRod, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MossdeepCity_House3_EventScript_DeclineSuperRod
+# 10 "data/maps/MossdeepCity_House3/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq MossdeepCity_House3_EventScript_SuperRodFisherman_5
+# 14 "data/maps/MossdeepCity_House3/scripts.pory"
 	msgbox MossdeepCity_House3_Text_SuperRodIsSuper, MSGBOX_DEFAULT
 	giveitem ITEM_SUPER_ROD
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 0 "data/maps/MossdeepCity_House3/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq MossdeepCity_House3_EventScript_SuperRodFisherman_8
+MossdeepCity_House3_EventScript_SuperRodFisherman_7:
+# 18 "data/maps/MossdeepCity_House3/scripts.pory"
 	setflag FLAG_RECEIVED_SUPER_ROD
+# 19 "data/maps/MossdeepCity_House3/scripts.pory"
 	msgbox MossdeepCity_House3_Text_TryDroppingRodInWater, MSGBOX_DEFAULT
-	release
-	end
+	release_end
 
-MossdeepCity_House3_EventScript_ReceivedSuperRod::
+MossdeepCity_House3_EventScript_SuperRodFisherman_2:
+# 6 "data/maps/MossdeepCity_House3/scripts.pory"
 	msgbox MossdeepCity_House3_Text_GoAfterSeafloorPokemon, MSGBOX_DEFAULT
-	release
-	end
+	release_end
 
-MossdeepCity_House3_EventScript_DeclineSuperRod::
+MossdeepCity_House3_EventScript_SuperRodFisherman_5:
+# 11 "data/maps/MossdeepCity_House3/scripts.pory"
 	msgbox MossdeepCity_House3_Text_DontYouLikeToFish, MSGBOX_DEFAULT
-	release
-	end
+	release_end
 
-MossdeepCity_House3_Text_YouWantSuperRod:
+MossdeepCity_House3_EventScript_SuperRodFisherman_8:
+# 16 "data/maps/MossdeepCity_House3/scripts.pory"
+	goto Common_EventScript_ShowBagIsFull
+	goto MossdeepCity_House3_EventScript_SuperRodFisherman_7
+
+
+MossdeepCity_House3_Text_YouWantSuperRod::
+# 23 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "Hey there, TRAINER!\n"
 	.string "A SUPER ROD really is super!\p"
 	.string "Say all you want, but this baby can\n"
@@ -33,19 +50,22 @@ MossdeepCity_House3_Text_YouWantSuperRod:
 	.string "What do you think?\n"
 	.string "You want it, don't you?$"
 
-MossdeepCity_House3_Text_SuperRodIsSuper:
+MossdeepCity_House3_Text_SuperRodIsSuper::
+# 34 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "You bet, you bet!\n"
 	.string "After all, a SUPER ROD is really super!$"
 
-MossdeepCity_House3_Text_TryDroppingRodInWater:
+MossdeepCity_House3_Text_TryDroppingRodInWater::
+# 39 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "If there's any water, try dropping in\n"
 	.string "your ROD and see what bites!$"
 
-MossdeepCity_House3_Text_DontYouLikeToFish:
+MossdeepCity_House3_Text_DontYouLikeToFish::
+# 44 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "Hunh?\n"
 	.string "Don't you like to fish?$"
 
-MossdeepCity_House3_Text_GoAfterSeafloorPokemon:
+MossdeepCity_House3_Text_GoAfterSeafloorPokemon::
+# 49 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "Go after the seafloor POKéMON with\n"
 	.string "your SUPER ROD.$"
-

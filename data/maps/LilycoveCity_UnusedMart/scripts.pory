@@ -1,5 +1,1 @@
-raw `
-LilycoveCity_UnusedMart_MapScripts::
-	.byte 0
-
-`
+mapscripts LilycoveCity_UnusedMart_MapScripts {}

@@ -82,6 +82,7 @@ enum DeptStoreFloorNumber
 
 // Lilycove Pokémon Trainer Fan Club
 #define NUM_TRAINER_FAN_CLUB_MEMBERS  8
+#define LAST_NONFAN_MEMBER 7
 
 #define FANCLUB_GOT_FIRST_FANS 7
 #define FANCLUB_MEMBER1        8

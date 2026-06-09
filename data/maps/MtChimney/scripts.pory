@@ -72,18 +72,32 @@ script MtChimney_EventScript_Maxie {
     end
 }
 
-raw `
-MtChimney_EventScript_LavaCookieLady::
+script MtChimney_EventScript_LavaCookieLady {
 	lock
 	faceplayer
-	showmoneybox 0, 0
-	msgbox MtChimney_Text_LavaCookiesJust200, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MtChimney_EventScript_DeclineLavaCookie
-	checkmoney 200
-	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_NotEnoughMoney
-	msgbox MtChimney_Text_ThankYouDear, MSGBOX_DEFAULT
-	checkitemspace ITEM_LAVA_COOKIE
-	call_if_eq VAR_RESULT, TRUE, MtChimney_EventScript_RemoveMoney
+	showmoneybox(0, 0)
+	msgbox(MtChimney_Text_LavaCookiesJust200, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(MtChimney_Text_OhFineThen, MSGBOX_DEFAULT)
+		hidemoneybox
+		release_end
+	}
+	if (checkmoney(200) == FALSE) {
+		msgbox(MtChimney_Text_YouveNotGotTheMoney, MSGBOX_DEFAULT)
+		hidemoneybox
+		release_end
+	}
+	msgbox(MtChimney_Text_ThankYouDear, MSGBOX_DEFAULT)
+	if (checkitemspace(ITEM_LAVA_COOKIE) == TRUE) {
+		removemoney(200)
+    	updatemoneybox
+	}
+	goto(MtChimney_EventScript_LavaCookieLady_GiveItem)
+	end
+}
+
+raw `
+MtChimney_EventScript_LavaCookieLady_GiveItem::
 .if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_OFF
 	giveitem ITEM_LAVA_COOKIE
 	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_BagIsFull
@@ -107,26 +121,8 @@ MtChimney_EventScript_BagIsFull::
 	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
 	release
 	end
-.endif @ OW_SHOW_ITEM_DESCRIPTIONS	
+.endif @ OW_SHOW_ITEM_DESCRIPTIONS
 `
-
-script MtChimney_EventScript_RemoveMoney {
-    removemoney(200)
-    updatemoneybox
-    return
-}
-
-script MtChimney_EventScript_DeclineLavaCookie {
-    msgbox(MtChimney_Text_OhFineThen, MSGBOX_DEFAULT)
-    hidemoneybox
-    release_end
-}
-
-script MtChimney_EventScript_NotEnoughMoney {
-    msgbox(MtChimney_Text_YouveNotGotTheMoney, MSGBOX_DEFAULT)
-    hidemoneybox
-    release_end
-}
 
 movement MtChimney_Movement_Unused1 {
     // moves(walk_down * 5,  walk_left * 2,  walk_down * 4,  walk_left * 5,  walk_down)
