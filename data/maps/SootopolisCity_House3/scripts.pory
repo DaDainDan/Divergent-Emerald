@@ -1,44 +1,46 @@
-raw `
-SootopolisCity_House3_MapScripts::
-	.byte 0
+mapscripts SootopolisCity_House3_MapScripts {}
 
-SootopolisCity_House3_EventScript_Woman::
-	lock
-	faceplayer
-	msgbox SootopolisCity_House3_Text_JuanHasManyFansDoYou, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, SootopolisCity_House3_EventScript_HaveFans
-	msgbox SootopolisCity_House3_Text_LonesomeTryWorkingHarder, MSGBOX_DEFAULT
-	release
-	end
+script SootopolisCity_House3_EventScript_Woman {
+    lock_faceplayer
+    msgbox(SootopolisCity_House3_Text_JuanHasManyFansDoYou, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(SootopolisCity_House3_Text_YouMustBePrettyStrong, MSGBOX_DEFAULT)
+    	release_end
+    }
+    msgbox(SootopolisCity_House3_Text_LonesomeTryWorkingHarder, MSGBOX_DEFAULT)
+    release_end
+}
 
-SootopolisCity_House3_EventScript_HaveFans::
-	msgbox SootopolisCity_House3_Text_YouMustBePrettyStrong, MSGBOX_DEFAULT
-	release
-	end
+script SootopolisCity_House3_EventScript_Girl {
+    msgbox(SootopolisCity_House3_Text_TrainerFanClubWasWild, MSGBOX_NPC)
+    end
+}
 
-SootopolisCity_House3_EventScript_Girl::
-	msgbox SootopolisCity_House3_Text_TrainerFanClubWasWild, MSGBOX_NPC
-	end
+text SootopolisCity_House3_Text_JuanHasManyFansDoYou {
+	"You're a POKéMON TRAINER, aren't you?
 
-SootopolisCity_House3_Text_JuanHasManyFansDoYou:
-	.string "You're a POKéMON TRAINER, aren't you?\p"
-	.string "SOOTOPOLIS's JUAN has many fans.\n"
-	.string "Even more than his student WALLACE!\p"
-	.string "Do you have any?$"
+	SOOTOPOLIS's JUAN has many fans.
+	Even more than his student WALLACE!
 
-SootopolisCity_House3_Text_YouMustBePrettyStrong:
-	.string "Oh, then you must be pretty strong.$"
+	Do you have any?"
+}
 
-SootopolisCity_House3_Text_LonesomeTryWorkingHarder:
-	.string "Oh, dear…\n"
-	.string "That's a little lonesome.\p"
-	.string "Try working a little harder to get\n"
-	.string "a fan following.$"
+text SootopolisCity_House3_Text_YouMustBePrettyStrong {
+	"Oh, then you must be pretty strong."
+}
 
-SootopolisCity_House3_Text_TrainerFanClubWasWild:
-	.string "Dedicated fans come over from even\n"
-	.string "outside of HOENN.\p"
-	.string "It was really wild when I went to the\n"
-	.string "TRAINER FAN CLUB in LILYCOVE.$"
+text SootopolisCity_House3_Text_LonesomeTryWorkingHarder {
+	"Oh, dear…
+	That's a little lonesome.
 
-`
+	Try working a little harder to get
+	a fan following."
+}
+
+text SootopolisCity_House3_Text_TrainerFanClubWasWild {
+	"Dedicated fans come over from even
+	outside of HOENN.
+
+	It was really wild when I went to the
+	TRAINER FAN CLUB in LILYCOVE."
+}

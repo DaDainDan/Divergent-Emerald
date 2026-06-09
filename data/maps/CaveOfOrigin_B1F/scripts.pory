@@ -1,120 +1,132 @@
-raw `
-CaveOfOrigin_B1F_MapScripts::
-	.byte 0
+mapscripts CaveOfOrigin_B1F_MapScripts {}
 
-CaveOfOrigin_B1F_EventScript_Wallace::
-	lock
-	faceplayer
-	msgbox CaveOfOrigin_B1F_Text_WallaceStory, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_CAVE_OF_ORIGIN_WALLACE, Common_Movement_StepFasterUp
-	waitmovement 0
-	delay 60
-	playse SE_PIN
-	applymovement LOCALID_CAVE_OF_ORIGIN_WALLACE, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_CAVE_OF_ORIGIN_WALLACE, Common_Movement_Delay48
-	waitmovement 0
-	delay 30
-	applymovement LOCALID_CAVE_OF_ORIGIN_WALLACE, Common_Movement_FacePlayer
-	waitmovement 0
-	message CaveOfOrigin_B1F_Text_WhereIsRayquaza
+script CaveOfOrigin_B1F_EventScript_Wallace {
+    lock_faceplayer
+    msgbox(CaveOfOrigin_B1F_Text_WallaceStory, MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_CAVE_OF_ORIGIN_WALLACE, Common_Movement_StepFasterUp)
+    waitmovement(0)
+    delay(60)
+    playse(SE_PIN)
+    applymovement(LOCALID_CAVE_OF_ORIGIN_WALLACE, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(LOCALID_CAVE_OF_ORIGIN_WALLACE, Common_Movement_Delay48)
+    waitmovement(0)
+    delay(30)
+    applymovement(LOCALID_CAVE_OF_ORIGIN_WALLACE, Common_Movement_FacePlayer)
+    waitmovement(0)
+    message(CaveOfOrigin_B1F_Text_WhereIsRayquaza)
+    waitmessage
+    goto(CaveOfOrigin_B1F_EventScript_WheresRayquaza)
+}
+
+script CaveOfOrigin_B1F_EventScript_WheresRayquaza {
+    multichoice(0, 0, MULTI_WHERES_RAYQUAZA, FALSE)
+    switch (var(VAR_RESULT)) {
+        case 0: message(CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin)
+        case 1: message(CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat)
+        case 2:
+			goto(CaveOfOrigin_B1F_EventScript_AtSkyPillar)
+			end
+        case 3:
+		default: message(CaveOfOrigin_B1F_Text_CantYouRememberSomehow)
+    }
 	waitmessage
-	goto CaveOfOrigin_B1F_EventScript_WheresRayquaza
+	goto(CaveOfOrigin_B1F_EventScript_WheresRayquaza)
+    end
+}
 
-CaveOfOrigin_B1F_EventScript_WheresRayquaza::
-	multichoice 0, 0, MULTI_WHERES_RAYQUAZA, FALSE
-	switch VAR_RESULT
-	case 0, CaveOfOrigin_B1F_EventScript_AtCaveOfOrigin
-	case 1, CaveOfOrigin_B1F_EventScript_AtMtPyre
-	case 2, CaveOfOrigin_B1F_EventScript_AtSkyPillar
-	case 3, CaveOfOrigin_B1F_EventScript_DontRemember
-	goto CaveOfOrigin_B1F_EventScript_DontRemember
-	end
+script CaveOfOrigin_B1F_EventScript_AtSkyPillar {
+    msgbox(CaveOfOrigin_B1F_Text_WellHeadToSkyPillar, MSGBOX_DEFAULT)
+    closemessage
+    playse(SE_EXIT)
+    fadescreenspeed(FADE_TO_BLACK, 4)
+    setflag(FLAG_WALLACE_GOES_TO_SKY_PILLAR)
+    setvar(VAR_SOOTOPOLIS_CITY_STATE, 3)
+    removeobject(LOCALID_CAVE_OF_ORIGIN_WALLACE)
+    clearflag(FLAG_HIDE_SKY_PILLAR_WALLACE)
+    fadescreen(FADE_FROM_BLACK)
+    release_end
+}
 
-CaveOfOrigin_B1F_EventScript_AtCaveOfOrigin::
-	message CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin
-	waitmessage
-	goto CaveOfOrigin_B1F_EventScript_WheresRayquaza
+text CaveOfOrigin_B1F_Text_WallaceStory {
+	"Ah, so you are {PLAYER}{KUN}?
+	I've heard tales of your exploits.
 
-CaveOfOrigin_B1F_EventScript_AtMtPyre::
-	message CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat
-	waitmessage
-	goto CaveOfOrigin_B1F_EventScript_WheresRayquaza
+	My name is WALLACE.
 
-CaveOfOrigin_B1F_EventScript_DontRemember::
-	message CaveOfOrigin_B1F_Text_CantYouRememberSomehow
-	waitmessage
-	goto CaveOfOrigin_B1F_EventScript_WheresRayquaza
+	I was once the GYM LEADER of
+	SOOTOPOLIS, but something came up.
 
-CaveOfOrigin_B1F_EventScript_AtSkyPillar::
-	msgbox CaveOfOrigin_B1F_Text_WellHeadToSkyPillar, MSGBOX_DEFAULT
-	closemessage
-	playse SE_EXIT
-	fadescreenspeed FADE_TO_BLACK, 4
-	setflag FLAG_WALLACE_GOES_TO_SKY_PILLAR
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 3
-	removeobject LOCALID_CAVE_OF_ORIGIN_WALLACE
-	clearflag FLAG_HIDE_SKY_PILLAR_WALLACE
-	fadescreen FADE_FROM_BLACK
-	release
-	end
+	So now, I've entrusted my mentor JUAN
+	with the GYM's operation.
 
-CaveOfOrigin_B1F_Text_WallaceStory:
-	.string "Ah, so you are {PLAYER}{KUN}?\n"
-	.string "I've heard tales of your exploits.\p"
-	.string "My name is WALLACE.\p"
-	.string "I was once the GYM LEADER of\n"
-	.string "SOOTOPOLIS, but something came up.\p"
-	.string "So now, I've entrusted my mentor JUAN\n"
-	.string "with the GYM's operation.\p"
-	.string "… … … … … …\n"
-	.string "… … … … … …\p"
-	.string "GROUDON and KYOGRE, the two POKéMON\n"
-	.string "wreaking havoc here, are considered\l"
-	.string "to be super-ancient POKéMON.\p"
-	.string "But there aren't just two super-\n"
-	.string "ancient POKéMON.\p"
-	.string "There is one more somewhere.\p"
-	.string "Somewhere, there is a super-\n"
-	.string "ancient POKéMON named RAYQUAZA.\p"
-	.string "It's said that it was RAYQUAZA that\n"
-	.string "becalmed the two combatants in\l"
-	.string "the distant past.\p"
-	.string "But even I have no clue as to\n"
-	.string "RAYQUAZA's whereabouts…$"
+	… … … … … …
+	… … … … … …
 
-CaveOfOrigin_B1F_Text_WhereIsRayquaza:
-	.string "WALLACE: {PLAYER}{KUN}, do you perhaps\n"
-	.string "know where RAYQUAZA is now?\p"
-	.string "If you do, please tell me.$"
+	GROUDON and KYOGRE, the two POKéMON
+	wreaking havoc here, are considered
+	to be super-ancient POKéMON.
 
-CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin:
-	.string "WALLACE: The CAVE OF ORIGIN?\p"
-	.string "But that's right here!\n"
-	.string "I need you to do better than that!\p"
-	.string "Please, I need you to think about\n"
-	.string "where RAYQUAZA might be right now.$"
+	But there aren't just two super-
+	ancient POKéMON.
 
-CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat:
-	.string "WALLACE: MT. PYRE?\p"
-	.string "But when I met the old lady there\n"
-	.string "earlier, she made no mention of it.\p"
-	.string "I very much doubt that the old lady\n"
-	.string "would try to hide something from me…\p"
-	.string "{PLAYER}{KUN}, could you think about this\n"
-	.string "more carefully for me?$"
+	There is one more somewhere.
 
-CaveOfOrigin_B1F_Text_CantYouRememberSomehow:
-	.string "WALLACE: Huh? You don't remember?\n"
-	.string "Hmm… That's a problem…\p"
-	.string "Can't you remember somehow?$"
+	Somewhere, there is a super-
+	ancient POKéMON named RAYQUAZA.
 
-CaveOfOrigin_B1F_Text_WellHeadToSkyPillar:
-	.string "WALLACE: The SKY PILLAR?\p"
-	.string "That's it!\n"
-	.string "It must be the SKY PILLAR!\p"
-	.string "{PLAYER}{KUN}, there's not a moment to lose!\n"
-	.string "We'll head to the SKY PILLAR right away!$"
+	It's said that it was RAYQUAZA that
+	becalmed the two combatants in
+	the distant past.
 
-`
+	But even I have no clue as to
+	RAYQUAZA's whereabouts…"
+}
+
+text CaveOfOrigin_B1F_Text_WhereIsRayquaza {
+	"WALLACE: {PLAYER}{KUN}, do you perhaps
+	know where RAYQUAZA is now?
+
+	If you do, please tell me."
+}
+
+text CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin {
+	"WALLACE: The CAVE OF ORIGIN?
+
+	But that's right here!
+	I need you to do better than that!
+
+	Please, I need you to think about
+	where RAYQUAZA might be right now."
+}
+
+text CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat {
+	"WALLACE: MT. PYRE?
+
+	But when I met the old lady there
+	earlier, she made no mention of it.
+
+	I very much doubt that the old lady
+	would try to hide something from me…
+
+	{PLAYER}{KUN}, could you think about this
+	more carefully for me?"
+}
+
+text CaveOfOrigin_B1F_Text_CantYouRememberSomehow {
+	"WALLACE: Huh? You don't remember?
+	Hmm… That's a problem…
+
+	Can't you remember somehow?"
+}
+
+text CaveOfOrigin_B1F_Text_WellHeadToSkyPillar {
+	"WALLACE: The SKY PILLAR?
+
+	That's it!
+	It must be the SKY PILLAR!
+
+	{PLAYER}{KUN}, there's not a moment to lose!
+	We'll head to the SKY PILLAR right away!"
+}

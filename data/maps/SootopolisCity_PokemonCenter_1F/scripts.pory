@@ -1,72 +1,70 @@
-raw `
-SootopolisCity_PokemonCenter_1F_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, SootopolisCity_PokemonCenter_1F_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
-	.byte 0
+mapscripts SootopolisCity_PokemonCenter_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setrespawn(HEAL_LOCATION_SOOTOPOLIS_CITY)
+    	end
+    }
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+}
 
-SootopolisCity_PokemonCenter_1F_OnTransition:
-	setrespawn HEAL_LOCATION_SOOTOPOLIS_CITY
-	end
+script SootopolisCity_PokemonCenter_1F_EventScript_Nurse {
+    setvar(VAR_0x800B, LOCALID_SOOTOPOLIS_NURSE)
+    call(Common_EventScript_PkmnCenterNurse)
+    waitmessage
+    waitbuttonpress
+    release_end
+}
 
-SootopolisCity_PokemonCenter_1F_EventScript_Nurse::
-	setvar VAR_0x800B, LOCALID_SOOTOPOLIS_NURSE
-	call Common_EventScript_PkmnCenterNurse
-	waitmessage
-	waitbuttonpress
-	release
-	end
+script SootopolisCity_PokemonCenter_1F_EventScript_Gentleman {
+    lock_faceplayer
+    if (var(VAR_SKY_PILLAR_STATE) >= 2 || !flag(FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN)) {
+        msgbox(SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn, MSGBOX_DEFAULT)
+    	release_end
+    }
+    msgbox(SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge, MSGBOX_DEFAULT)
+    release_end
+}
 
-SootopolisCity_PokemonCenter_1F_EventScript_Gentleman::
-	lock
-	faceplayer
-	goto_if_ge VAR_SKY_PILLAR_STATE, 2, SootopolisCity_PokemonCenter_1F_EventScript_GentlemanNoLegendaries
-	goto_if_unset FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, SootopolisCity_PokemonCenter_1F_EventScript_GentlemanNoLegendaries
-	msgbox SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge, MSGBOX_DEFAULT
-	release
-	end
+script SootopolisCity_PokemonCenter_1F_EventScript_Woman {
+    lock_faceplayer
+    if (var(VAR_SKY_PILLAR_STATE) >= 2 || !flag(FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN)) {
+        msgbox(SootopolisCity_PokemonCenter_1F_Text_AlwaysBeFriendsWithPokemon, MSGBOX_DEFAULT)
+    	release_end
+    }
+    msgbox(SootopolisCity_PokemonCenter_1F_Text_ArentPokemonOurFriends, MSGBOX_DEFAULT)
+    release_end
+}
 
-SootopolisCity_PokemonCenter_1F_EventScript_GentlemanNoLegendaries::
-	msgbox SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn, MSGBOX_DEFAULT
-	release
-	end
+text SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn {
+	"WALLACE is rumored to be the toughest
+	TRAINER in the whole HOENN region.
 
-SootopolisCity_PokemonCenter_1F_EventScript_Woman::
-	lock
-	faceplayer
-	goto_if_ge VAR_SKY_PILLAR_STATE, 2, SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries
-	goto_if_unset FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries
-	msgbox SootopolisCity_PokemonCenter_1F_Text_ArentPokemonOurFriends, MSGBOX_DEFAULT
-	release
-	end
+	This town's GYM is led by the TRAINER
+	who taught WALLACE.
 
-SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries::
-	msgbox SootopolisCity_PokemonCenter_1F_Text_AlwaysBeFriendsWithPokemon, MSGBOX_DEFAULT
-	release
-	end
+	But the ELITE FOUR… They're said to be
+	even stronger than WALLACE's mentor.
 
-SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn:
-	.string "WALLACE is rumored to be the toughest\n"
-	.string "TRAINER in the whole HOENN region.\p"
-	.string "This town's GYM is led by the TRAINER\n"
-	.string "who taught WALLACE.\p"
-	.string "But the ELITE FOUR… They're said to be\n"
-	.string "even stronger than WALLACE's mentor.\p"
-	.string "How strong could they be?$"
+	How strong could they be?"
+}
 
-SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge:
-	.string "Everyone in town has taken refuge\n"
-	.string "and won't come out of their homes.\p"
-	.string "Even I would rather not venture\n"
-	.string "outside.$"
+text SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge {
+	"Everyone in town has taken refuge
+	and won't come out of their homes.
 
-SootopolisCity_PokemonCenter_1F_Text_AlwaysBeFriendsWithPokemon:
-	.string "Whenever, wherever, and whatever\n"
-	.string "happens, I will always be friends with\l"
-	.string "POKéMON.\p"
-	.string "Because it's fun to be with POKéMON!$"
+	Even I would rather not venture
+	outside."
+}
 
-SootopolisCity_PokemonCenter_1F_Text_ArentPokemonOurFriends:
-	.string "Aren't POKéMON our friends?\p"
-	.string "Why are they going wild this way?$"
+text SootopolisCity_PokemonCenter_1F_Text_AlwaysBeFriendsWithPokemon {
+	"Whenever, wherever, and whatever
+	happens, I will always be friends with
+	POKéMON.
 
-`
+	Because it's fun to be with POKéMON!"
+}
+
+text SootopolisCity_PokemonCenter_1F_Text_ArentPokemonOurFriends {
+	"Aren't POKéMON our friends?
+
+	Why are they going wild this way?"
+}

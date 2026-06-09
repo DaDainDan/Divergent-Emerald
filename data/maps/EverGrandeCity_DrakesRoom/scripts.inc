@@ -1,67 +1,89 @@
 EverGrandeCity_DrakesRoom_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, EverGrandeCity_DrakesRoom_OnFrame
-	map_script MAP_SCRIPT_ON_LOAD, EverGrandeCity_DrakesRoom_OnLoad
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, EverGrandeCity_SidneysRoom_OnWarp
+# 11 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_LOAD
+# 2 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+# 20 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 
-@ Unused, Drake uses Sidneys identical OnWarp for some reason
-EverGrandeCity_DrakesRoom_OnWarp:
-	map_script_2 VAR_TEMP_1, 0, EverGrandeCity_DrakesRoom_EventScript_PlayerTurnNorth
-	.2byte 0
-
-EverGrandeCity_DrakesRoom_EventScript_PlayerTurnNorth::
-	turnobject LOCALID_PLAYER, DIR_NORTH
+EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_LOAD:
+# 12 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_LOAD_2
+EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+# 15 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	compare VAR_ELITE_4_STATE, 4
+	goto_if_eq EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_LOAD_5
+EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_LOAD_4:
 	end
 
-EverGrandeCity_DrakesRoom_OnFrame:
-	map_script_2 VAR_ELITE_4_STATE, 3, EverGrandeCity_DrakesRoom_EventScript_WalkInCloseDoor
+EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_LOAD_2:
+# 13 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	call PokemonLeague_EliteFour_EventScript_ResetAdvanceToNextRoom
+	goto EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_LOAD_1
+
+EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_LOAD_5:
+# 16 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	call PokemonLeague_EliteFour_EventScript_CloseDoor
+	goto EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_LOAD_4
+
+EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 3 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	map_script_2 VAR_ELITE_4_STATE, 3, EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0
 	.2byte 0
 
-EverGrandeCity_DrakesRoom_EventScript_WalkInCloseDoor::
+EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
+# 4 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	lockall
+# 5 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	call PokemonLeague_EliteFour_EventScript_WalkInCloseDoor
+# 6 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	setvar VAR_ELITE_4_STATE, 4
+# 7 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	releaseall
 	end
 
-EverGrandeCity_DrakesRoom_OnLoad:
-	call_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom
-	call_if_eq VAR_ELITE_4_STATE, 4, EverGrandeCity_DrakesRoom_EventScript_CloseDoor
+EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+# 21 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	map_script_2 VAR_TEMP_1, 0, EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
+	.2byte 0
+
+EverGrandeCity_DrakesRoom_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
+# 22 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_NORTH
 	end
 
-EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom::
-	call PokemonLeague_EliteFour_EventScript_ResetAdvanceToNextRoom
-	return
-
-EverGrandeCity_DrakesRoom_EventScript_CloseDoor::
-	call PokemonLeague_EliteFour_EventScript_CloseDoor
-	return
 
 EverGrandeCity_DrakesRoom_EventScript_Drake::
-	lock
-	faceplayer
-	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
+# 29 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	lock_faceplayer
+# 30 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	goto_if_unset FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_Drake_2
+EverGrandeCity_DrakesRoom_EventScript_Drake_1:
+# 39 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	release_end
+
+EverGrandeCity_DrakesRoom_EventScript_Drake_2:
+# 31 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+# 32 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+# 33 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
-	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
-	end
-
-EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech::
-	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
-
-EverGrandeCity_DrakesRoom_EventScript_Defeated::
+# 34 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	setvar VAR_0x8004, FANCOUNTER_DEFEATED_DRAKE
+# 35 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	special Script_TryGainNewFanFromCounter
+# 36 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ELITE_4_DRAKE
+# 37 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
-	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
+	goto EverGrandeCity_DrakesRoom_EventScript_Drake_1
 
-EverGrandeCity_DrakesRoom_Text_IntroSpeech:
+
+EverGrandeCity_DrakesRoom_Text_IntroSpeech::
+# 43 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	.string "I am the last of the POKéMON LEAGUE\n"
 	.string "ELITE FOUR, DRAKE the DRAGON master!\p"
 	.string "In their natural state, POKéMON are\n"
@@ -74,10 +96,12 @@ EverGrandeCity_DrakesRoom_Text_IntroSpeech:
 	.string "If you don't, then you will never\n"
 	.string "prevail over me!$"
 
-EverGrandeCity_DrakesRoom_Text_Defeat:
+EverGrandeCity_DrakesRoom_Text_Defeat::
+# 62 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	.string "Superb, it should be said.$"
 
-EverGrandeCity_DrakesRoom_Text_PostBattleSpeech:
+EverGrandeCity_DrakesRoom_Text_PostBattleSpeech::
+# 66 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	.string "You deserve every credit for coming\n"
 	.string "this far as a TRAINER of POKéMON.\p"
 	.string "You do seem to know what is needed.\p"
@@ -89,4 +113,3 @@ EverGrandeCity_DrakesRoom_Text_PostBattleSpeech:
 	.string "TRAINERS and grow strong.\p"
 	.string "Go! Go onwards!\n"
 	.string "The CHAMPION is waiting!$"
-
