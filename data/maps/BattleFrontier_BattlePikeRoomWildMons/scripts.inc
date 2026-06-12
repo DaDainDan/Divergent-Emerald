@@ -1,42 +1,63 @@
 BattleFrontier_BattlePikeRoomWildMons_MapScripts::
-	map_script MAP_SCRIPT_ON_RESUME, BattleFrontier_BattlePikeRoomWildMons_OnResume
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, BattleFrontier_BattlePikeRoomWildMons_OnFrame
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, BattleFrontier_BattlePikeRoomWildMons_OnWarp
+# 2 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	map_script MAP_SCRIPT_ON_RESUME, BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_RESUME
+# 10 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+# 23 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 
-BattleFrontier_BattlePikeRoomWildMons_OnFrame:
-	map_script_2 VAR_TEMP_0, 0, BattleFrontier_BattlePikeRoomWildMons_EventScript_SetInWildMonRoom
-	map_script_2 VAR_TEMP_1, 1, BattleFrontier_BattlePikeRoomWildMons_EventScript_WarpToLobbyLost
+BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_RESUME:
+# 3 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	call BattleFrontier_BattlePikeRoom_EventScript_ResetSketchedMoves
+# 4 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	frontier_get FRONTIER_DATA_BATTLE_OUTCOME
+# 5 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_LOST
+	goto_if_eq BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_RESUME_2
+# 5 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_DREW
+	goto_if_eq BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_RESUME_2
+BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_RESUME_1:
+	end
+
+BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_RESUME_2:
+# 6 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	setvar VAR_TEMP_1, 1
+	goto BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_RESUME_1
+
+BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 11 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	map_script_2 VAR_TEMP_0, 0, BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0
+# 16 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	map_script_2 VAR_TEMP_1, 1, BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_1
 	.2byte 0
 
-BattleFrontier_BattlePikeRoomWildMons_EventScript_SetInWildMonRoom::
+BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
+# 12 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
 	setvar VAR_TEMP_0, 1
+# 13 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
 	pike_inwildmonroom
 	end
 
-BattleFrontier_BattlePikeRoomWildMons_EventScript_WarpToLobbyLost::
+BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_1:
+# 17 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
 	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, CHALLENGE_STATUS_LOST
+# 18 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
 	warp MAP_BATTLE_FRONTIER_BATTLE_PIKE_LOBBY, 5, 6
+# 19 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
 	waitstate
 	end
 
-BattleFrontier_BattlePikeRoomWildMons_OnWarp:
-	map_script_2 VAR_TEMP_4, 0, BattleFrontier_BattlePikeRoomWildMons_EventScript_TurnPlayerNorth
+BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+# 24 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
+	map_script_2 VAR_TEMP_4, 0, BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
 	.2byte 0
 
-BattleFrontier_BattlePikeRoomWildMons_EventScript_TurnPlayerNorth::
+BattleFrontier_BattlePikeRoomWildMons_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
+# 25 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
 	setvar VAR_TEMP_4, 1
+# 26 "data/maps/BattleFrontier_BattlePikeRoomWildMons/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
-	end
-
-BattleFrontier_BattlePikeRoomWildMons_OnResume:
-	call BattleFrontier_BattlePikeRoom_EventScript_ResetSketchedMoves
-	frontier_get FRONTIER_DATA_BATTLE_OUTCOME
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, BattleFrontier_BattlePikeRoomWildMons_EventScript_SetLost
-	goto_if_eq VAR_RESULT, B_OUTCOME_DREW, BattleFrontier_BattlePikeRoomWildMons_EventScript_SetLost
-	end
-
-BattleFrontier_BattlePikeRoomWildMons_EventScript_SetLost::
-	setvar VAR_TEMP_1, 1
 	end
 

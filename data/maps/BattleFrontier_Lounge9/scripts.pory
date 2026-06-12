@@ -1,5 +1,1 @@
-raw `
-BattleFrontier_Lounge9_MapScripts::
-	.byte 0
-
-`
+mapscripts BattleFrontier_Lounge9_MapScripts {}

@@ -79,7 +79,6 @@ script FallarborTown_BattleTentBattleRoom_EventScript_WarpToLobbyLost {
     special(LoadPlayerParty)
     warp(MAP_FALLARBOR_TOWN_BATTLE_TENT_LOBBY, 6, 6)
     waitstate
-    end
 }
 
 script FallarborTown_BattleTentBattleRoom_EventScript_IncrementBattleNum {
@@ -104,15 +103,14 @@ script FallarborTown_BattleTentBattleRoom_EventScript_IncrementBattleNum {
     waitfanfare
     special(HealPlayerParty)
     goto(FallarborTown_BattleTentBattleRoom_EventScript_AskContinueChallenge)
+    end
 }
 
 script FallarborTown_BattleTentBattleRoom_EventScript_AskContinueChallenge {
     frontier_get(FRONTIER_DATA_BATTLE_NUM)
-    if (var(VAR_RESULT) == 1) {
-        message(BattleFrontier_BattleArenaBattleRoom_Text_ReadyFor2ndOpponent)
-    }
-    if (var(VAR_RESULT) == 2) {
-        message(BattleFrontier_BattleArenaBattleRoom_Text_ReadyFor3rdOpponent)
+    switch (var(VAR_RESULT)) {
+        case 1: message(BattleFrontier_BattleArenaBattleRoom_Text_ReadyFor2ndOpponent)
+        case 2: message(BattleFrontier_BattleArenaBattleRoom_Text_ReadyFor3rdOpponent)
     }
 	waitmessage
     multichoice(20, 6, MULTI_GO_ON_REST_RETIRE, TRUE)

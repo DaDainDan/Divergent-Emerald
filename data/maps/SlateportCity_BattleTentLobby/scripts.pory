@@ -83,6 +83,7 @@ script SlateportCity_BattleTentLobby_EventScript_ResumeChallenge {
     setvar(VAR_TEMP_CHALLENGE_STATUS, 255)
     setvar(VAR_0x8006, 2)
     goto(SlateportCity_BattleTentLobby_EventScript_EnterChallenge)
+    end
 }
 
 script SlateportCity_BattleTentLobby_EventScript_Attendant {
@@ -94,6 +95,7 @@ script SlateportCity_BattleTentLobby_EventScript_Attendant {
     special(SavePlayerParty)
     msgbox(SlateportCity_BattleTentLobby_Text_WelcomeToBattleTent, MSGBOX_DEFAULT)
     goto(SlateportCity_BattleTentLobby_EventScript_AskEnterChallenge)
+    end
 }
 
 script SlateportCity_BattleTentLobby_EventScript_AskEnterChallenge {
@@ -101,8 +103,7 @@ script SlateportCity_BattleTentLobby_EventScript_AskEnterChallenge {
     waitmessage
     multichoice(17, 6, MULTI_CHALLENGEINFO, FALSE)
     switch (var(VAR_RESULT)) {
-        case 0: 
-			goto(SlateportCity_BattleTentLobby_EventScript_TryEnterChallenge)
+        case 0: goto(SlateportCity_BattleTentLobby_EventScript_TryEnterChallenge)
         case 1:
 			msgbox(SlateportCity_BattleTentLobby_Text_ExplainSlateportTent, MSGBOX_DEFAULT)
     		goto(SlateportCity_BattleTentLobby_EventScript_AskEnterChallenge)
@@ -143,6 +144,7 @@ script SlateportCity_BattleTentLobby_EventScript_SaveBeforeChallenge {
     }
     setvar(VAR_0x8006, 0)
     goto(SlateportCity_BattleTentLobby_EventScript_EnterChallenge)
+    end
 }
 
 script SlateportCity_BattleTentLobby_EventScript_EnterChallenge {

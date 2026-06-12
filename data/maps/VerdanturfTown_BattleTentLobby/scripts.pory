@@ -39,7 +39,6 @@ script VerdanturfTown_BattleTentLobby_EventScript_WonChallenge {
     verdanturftent_save(0)
     playse(SE_SAVE)
     waitse
-    goto(VerdanturfTown_BattleTentLobby_EventScript_GivePrize)
 }
 
 script VerdanturfTown_BattleTentLobby_EventScript_GivePrize {
@@ -88,6 +87,7 @@ script VerdanturfTown_BattleTentLobby_EventScript_ResumeChallenge {
     frontier_set(FRONTIER_DATA_PAUSED, FALSE)
     setvar(VAR_TEMP_CHALLENGE_STATUS, 255)
     goto(VerdanturfTown_BattleTentLobby_EventScript_EnterChallenge)
+    end
 }
 
 script VerdanturfTown_BattleTentLobby_EventScript_Attendant {
@@ -101,6 +101,7 @@ script VerdanturfTown_BattleTentLobby_EventScript_Attendant {
     special(SavePlayerParty)
     msgbox(VerdanturfTown_BattleTentLobby_Text_WelcomeToBattleTent, MSGBOX_DEFAULT)
     goto(VerdanturfTown_BattleTentLobby_EventScript_AskEnterChallenge)
+    end
 }
 
 script VerdanturfTown_BattleTentLobby_EventScript_AskEnterChallenge {
@@ -164,6 +165,7 @@ script VerdanturfTown_BattleTentLobby_EventScript_SaveBeforeChallenge {
     	goto(VerdanturfTown_BattleTentLobby_EventScript_CancelChallenge)
     }
     goto(VerdanturfTown_BattleTentLobby_EventScript_EnterChallenge)
+    end
 }
 
 script VerdanturfTown_BattleTentLobby_EventScript_EnterChallenge {
@@ -171,24 +173,6 @@ script VerdanturfTown_BattleTentLobby_EventScript_EnterChallenge {
     frontier_setpartyorder(FRONTIER_PARTY_SIZE)
     msgbox(VerdanturfTown_BattleTentLobby_Text_NowFollowMe, MSGBOX_DEFAULT)
     closemessage
-    call(VerdanturfTown_BattleTentLobby_EventScript_WalkToDoor)
-    warp(MAP_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR, 2, 7)
-    setvar(VAR_TEMP_CHALLENGE_STATUS, 0)
-    waitstate
-    end
-}
-
-script VerdanturfTown_BattleTentLobby_EventScript_LoadPartyCancelChallenge {
-    special(LoadPlayerParty)
-    goto(VerdanturfTown_BattleTentLobby_EventScript_CancelChallenge)
-}
-
-script VerdanturfTown_BattleTentLobby_EventScript_CancelChallenge {
-    msgbox(VerdanturfTown_BattleTentLobby_Text_ReturnFortified, MSGBOX_DEFAULT)
-    release_end
-}
-
-script VerdanturfTown_BattleTentLobby_EventScript_WalkToDoor {
     applymovement(LOCALID_VERDANTURF_TENT_ATTENDANT, moves(walk_up * 3))
     applymovement(LOCALID_PLAYER, moves(walk_up * 3))
     waitmovement(0)
@@ -199,7 +183,21 @@ script VerdanturfTown_BattleTentLobby_EventScript_WalkToDoor {
     waitmovement(0)
     closedoor(6, 1)
     waitdooranim
-    return
+    warp(MAP_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR, 2, 7)
+    setvar(VAR_TEMP_CHALLENGE_STATUS, 0)
+    waitstate
+    end
+}
+
+script VerdanturfTown_BattleTentLobby_EventScript_LoadPartyCancelChallenge {
+    special(LoadPlayerParty)
+    goto(VerdanturfTown_BattleTentLobby_EventScript_CancelChallenge)
+    end
+}
+
+script VerdanturfTown_BattleTentLobby_EventScript_CancelChallenge {
+    msgbox(VerdanturfTown_BattleTentLobby_Text_ReturnFortified, MSGBOX_DEFAULT)
+    release_end
 }
 
 script VerdanturfTown_BattleTentLobby_EventScript_AttractGiver {

@@ -17,6 +17,7 @@ mapscripts VerdanturfTown_BattleTentBattleRoom_MapScripts {
 				goto(VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge)
 			}
 			goto(VerdanturfTown_BattleTentBattleRoom_EventScript_NextOpponentEnter)
+			end
 		}
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
@@ -60,6 +61,7 @@ script VerdanturfTown_BattleTentBattleRoom_EventScript_NextOpponentEnter {
 			special(LoadPlayerParty)
 			warp(MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY, 6, 6)
 			waitstate
+			end
 		}
 		applymovement(LOCALID_VERDANTURF_TENT_BATTLE_OPPONENT, moves(walk_up * 4))
 		waitmovement(0)
@@ -74,7 +76,7 @@ script VerdanturfTown_BattleTentBattleRoom_EventScript_NextOpponentEnter {
 		playfanfare(MUS_HEAL)
 		waitfanfare
 		special(HealPlayerParty)
-		goto(VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge)
+		end
 	}
     goto(VerdanturfTown_BattleTentBattleRoom_EventScript_WarpToLobbyLost)
 }
@@ -108,6 +110,7 @@ script VerdanturfTown_BattleTentBattleRoom_EventScript_ContinueChallenge {
     waitmovement(0)
     closemessage
     goto(VerdanturfTown_BattleTentBattleRoom_EventScript_NextOpponentEnter)
+	end
 }
 
 script VerdanturfTown_BattleTentBattleRoom_EventScript_AskPauseChallenge {

@@ -6,12 +6,10 @@ mapscripts SlateportCity_BattleTentCorridor_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 		VAR_TEMP_1, 0 {
 			setvar(VAR_TEMP_1, 1)
-			if (var(VAR_0x8006) != 1) {
-				turnobject(LOCALID_PLAYER, DIR_NORTH)
-    			end
+			if (var(VAR_0x8006) == 1) {
+				setobjectxy(LOCALID_SLATEPORT_TENT_CORRIDOR_ATTENDANT, 2, 2)
+				turnobject(LOCALID_SLATEPORT_TENT_CORRIDOR_ATTENDANT, DIR_SOUTH)
 			}
-			setobjectxy(LOCALID_SLATEPORT_TENT_CORRIDOR_ATTENDANT, 2, 2)
-			turnobject(LOCALID_SLATEPORT_TENT_CORRIDOR_ATTENDANT, DIR_SOUTH)
 			turnobject(LOCALID_PLAYER, DIR_NORTH)
     		end
 		}
@@ -114,10 +112,9 @@ script SlateportCity_BattleTentCorridor_EventScript_AskSwapMon {
 		fadescreen(FADE_TO_BLACK)
 		slateporttent_swapmons
 		waitstate
-		if (var(VAR_RESULT) == 1) {
-			goto(SlateportCity_BattleTentCorridor_EventScript_EnterBattleRoom)
+		if (var(VAR_RESULT) != 1) {
+			msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_YourSwapIsComplete, MSGBOX_DEFAULT)
 		}
-		msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_YourSwapIsComplete, MSGBOX_DEFAULT)
 	}
 	goto(SlateportCity_BattleTentCorridor_EventScript_EnterBattleRoom)
     end

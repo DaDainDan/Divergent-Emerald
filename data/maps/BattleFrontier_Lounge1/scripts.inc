@@ -1,156 +1,200 @@
 BattleFrontier_Lounge1_MapScripts::
 	.byte 0
 
-@ NPC that rates pokemon based on their IVs
+
 BattleFrontier_Lounge1_EventScript_Breeder::
-	lock
-	faceplayer
-	call_if_unset FLAG_MET_BATTLE_FRONTIER_BREEDER, BattleFrontier_Lounge1_EventScript_BreederIntro
-	call_if_set FLAG_MET_BATTLE_FRONTIER_BREEDER, BattleFrontier_Lounge1_EventScript_AlreadyMetBreeder
-	setflag FLAG_MET_BATTLE_FRONTIER_BREEDER
+# 4 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	lock_faceplayer
+# 5 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	goto_if_unset FLAG_MET_BATTLE_FRONTIER_BREEDER, BattleFrontier_Lounge1_EventScript_Breeder_2
+# 9 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	msgbox BattleFrontier_Lounge1_Text_LetsLookAtYourPokemon, MSGBOX_DEFAULT
+BattleFrontier_Lounge1_EventScript_Breeder_1:
+# 11 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	goto BattleFrontier_Lounge1_EventScript_ChooseMonToShowBreeder
 	end
+
+BattleFrontier_Lounge1_EventScript_Breeder_2:
+# 6 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	msgbox BattleFrontier_Lounge1_Text_PokemonBreederIntro, MSGBOX_DEFAULT
+# 7 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	setflag FLAG_MET_BATTLE_FRONTIER_BREEDER
+	goto BattleFrontier_Lounge1_EventScript_Breeder_1
+
 
 BattleFrontier_Lounge1_EventScript_ChooseMonToShowBreeder::
+# 16 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	chooseboxmon
+# 17 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	waitstate
-	goto_if_ne VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_Lounge1_EventScript_ShowMonToBreeder
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_Lounge1_EventScript_CancelMonSelect
+# 18 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq BattleFrontier_Lounge1_EventScript_ChooseMonToShowBreeder_2
+# 22 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	goto BattleFrontier_Lounge1_EventScript_ShowMonToBreeder
 	end
 
-BattleFrontier_Lounge1_EventScript_BreederIntro::
-	msgbox BattleFrontier_Lounge1_Text_PokemonBreederIntro, MSGBOX_DEFAULT
-	return
+BattleFrontier_Lounge1_EventScript_ChooseMonToShowBreeder_2:
+# 19 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	msgbox BattleFrontier_Lounge1_Text_NoTimeForMyAdvice, MSGBOX_DEFAULT
+	release_end
 
-BattleFrontier_Lounge1_EventScript_AlreadyMetBreeder::
-	msgbox BattleFrontier_Lounge1_Text_LetsLookAtYourPokemon, MSGBOX_DEFAULT
-	return
 
-@ BufferVarsForIVRater buffers the following values
-@ VAR_0x8005: Sum of the mons IVs
-@ VAR_0x8006: Stat id of highest IV stat
-@ VAR_0x8007: IV of the highest IV stat
 BattleFrontier_Lounge1_EventScript_ShowMonToBreeder::
+# 32 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
-	goto_if_eq VAR_RESULT, SPECIES_EGG, BattleFrontier_Lounge1_EventScript_ShowEggToBreeder
+# 33 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	compare VAR_RESULT, SPECIES_EGG
+	goto_if_eq BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_2
+# 38 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	special BufferVarsForIVRater
-	goto_if_le VAR_0x8005, 90, BattleFrontier_Lounge1_EventScript_AverageTotalIVs       @ Average of 15
-	goto_if_le VAR_0x8005, 120, BattleFrontier_Lounge1_EventScript_AboveAverageTotalIVs @ Average of 20
-	goto_if_le VAR_0x8005, 150, BattleFrontier_Lounge1_EventScript_HighTotalIVs         @ Average of 25
-	goto_if_ge VAR_0x8005, 151, BattleFrontier_Lounge1_EventScript_VeryHighTotalIVs     @ Average of > 25
+# 39 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	compare VAR_0x8005, 90
+	goto_if_le BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_5
+# 42 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	compare VAR_0x8005, 120
+	goto_if_le BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_6
+# 45 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	compare VAR_0x8005, 150
+	goto_if_le BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_7
+# 48 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	compare VAR_0x8005, 151
+	goto_if_ge BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_8
+BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_4:
+# 51 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	goto BattleFrontier_Lounge1_EventScript_HighestIVStat
 	end
 
-BattleFrontier_Lounge1_EventScript_ShowEggToBreeder::
+BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_2:
+# 34 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_EvenICantTell, MSGBOX_DEFAULT
+# 35 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	goto BattleFrontier_Lounge1_EventScript_ChooseMonToShowBreeder
 	end
 
-@ Comment on the highest IV stat
-BattleFrontier_Lounge1_EventScript_HighestIVStat::
-	goto_if_eq VAR_0x8006, STAT_HP, BattleFrontier_Lounge1_EventScript_HighestIVHP
-	goto_if_eq VAR_0x8006, STAT_ATK, BattleFrontier_Lounge1_EventScript_HighestIVAtk
-	goto_if_eq VAR_0x8006, STAT_DEF, BattleFrontier_Lounge1_EventScript_HighestIVDef
-	goto_if_eq VAR_0x8006, STAT_SPEED, BattleFrontier_Lounge1_EventScript_HighestIVSpeed
-	goto_if_eq VAR_0x8006, STAT_SPATK, BattleFrontier_Lounge1_EventScript_HighestIVSpAtk
-	goto_if_eq VAR_0x8006, STAT_SPDEF, BattleFrontier_Lounge1_EventScript_HighestIVSpDef
-	end
-
-@ Comment on the highest IV value
-BattleFrontier_Lounge1_EventScript_HighestIVValue::
-	goto_if_le VAR_0x8007, 15, BattleFrontier_Lounge1_EventScript_HighestIVLow
-	goto_if_le VAR_0x8007, 25, BattleFrontier_Lounge1_EventScript_HighestIVMid
-	goto_if_le VAR_0x8007, 30, BattleFrontier_Lounge1_EventScript_HighestIVHigh
-	goto_if_ge VAR_0x8007, 31, BattleFrontier_Lounge1_EventScript_HighestIVMax
-	end
-
-BattleFrontier_Lounge1_EventScript_EndBreederComments::
-	release
-	end
-
-BattleFrontier_Lounge1_EventScript_AverageTotalIVs::
+BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_5:
+# 40 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_AverageAbility, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_HighestIVStat
-	end
+	goto BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_4
 
-BattleFrontier_Lounge1_EventScript_AboveAverageTotalIVs::
+BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_6:
+# 43 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_BetterThanAverageAbility, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_HighestIVStat
-	end
+	goto BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_4
 
-BattleFrontier_Lounge1_EventScript_HighTotalIVs::
+BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_7:
+# 46 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_ImpressiveAbility, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_HighestIVStat
-	end
+	goto BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_4
 
-BattleFrontier_Lounge1_EventScript_VeryHighTotalIVs::
+BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_8:
+# 49 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_OutstandingAbility, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_HighestIVStat
+	goto BattleFrontier_Lounge1_EventScript_ShowMonToBreeder_4
+
+
+BattleFrontier_Lounge1_EventScript_HighestIVStat::
+# 57 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	switch VAR_0x8006
+# 58 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	case STAT_HP, BattleFrontier_Lounge1_EventScript_HighestIVStat_3
+# 59 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	case STAT_ATK, BattleFrontier_Lounge1_EventScript_HighestIVStat_4
+# 60 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	case STAT_DEF, BattleFrontier_Lounge1_EventScript_HighestIVStat_5
+# 61 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	case STAT_SPEED, BattleFrontier_Lounge1_EventScript_HighestIVStat_6
+# 62 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	case STAT_SPATK, BattleFrontier_Lounge1_EventScript_HighestIVStat_7
+# 63 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	case STAT_SPDEF, BattleFrontier_Lounge1_EventScript_HighestIVStat_8
+BattleFrontier_Lounge1_EventScript_HighestIVStat_1:
+# 65 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	goto BattleFrontier_Lounge1_EventScript_HighestIVValue
 	end
 
-BattleFrontier_Lounge1_EventScript_HighestIVHP::
+BattleFrontier_Lounge1_EventScript_HighestIVStat_3:
+# 58 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_BestAspectHP, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_HighestIVValue
-	end
+	goto BattleFrontier_Lounge1_EventScript_HighestIVStat_1
 
-BattleFrontier_Lounge1_EventScript_HighestIVAtk::
+BattleFrontier_Lounge1_EventScript_HighestIVStat_4:
+# 59 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_BestAspectAtk, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_HighestIVValue
-	end
+	goto BattleFrontier_Lounge1_EventScript_HighestIVStat_1
 
-BattleFrontier_Lounge1_EventScript_HighestIVDef::
+BattleFrontier_Lounge1_EventScript_HighestIVStat_5:
+# 60 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_BestAspectDef, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_HighestIVValue
-	end
+	goto BattleFrontier_Lounge1_EventScript_HighestIVStat_1
 
-BattleFrontier_Lounge1_EventScript_HighestIVSpeed::
+BattleFrontier_Lounge1_EventScript_HighestIVStat_6:
+# 61 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_BestAspectSpeed, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_HighestIVValue
-	end
+	goto BattleFrontier_Lounge1_EventScript_HighestIVStat_1
 
-BattleFrontier_Lounge1_EventScript_HighestIVSpAtk::
+BattleFrontier_Lounge1_EventScript_HighestIVStat_7:
+# 62 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_BestAspectSpAtk, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_HighestIVValue
-	end
+	goto BattleFrontier_Lounge1_EventScript_HighestIVStat_1
 
-BattleFrontier_Lounge1_EventScript_HighestIVSpDef::
+BattleFrontier_Lounge1_EventScript_HighestIVStat_8:
+# 63 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_BestAspectSpDef, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_HighestIVValue
-	end
+	goto BattleFrontier_Lounge1_EventScript_HighestIVStat_1
 
-BattleFrontier_Lounge1_EventScript_HighestIVLow::
+
+BattleFrontier_Lounge1_EventScript_HighestIVValue::
+# 71 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	compare VAR_0x8007, 15
+	goto_if_le BattleFrontier_Lounge1_EventScript_HighestIVValue_2
+# 74 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	compare VAR_0x8007, 25
+	goto_if_le BattleFrontier_Lounge1_EventScript_HighestIVValue_3
+# 77 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	compare VAR_0x8007, 30
+	goto_if_le BattleFrontier_Lounge1_EventScript_HighestIVValue_4
+# 80 "data/maps/BattleFrontier_Lounge1/scripts.pory"
+	compare VAR_0x8007, 31
+	goto_if_ge BattleFrontier_Lounge1_EventScript_HighestIVValue_5
+BattleFrontier_Lounge1_EventScript_HighestIVValue_1:
+	release_end
+
+BattleFrontier_Lounge1_EventScript_HighestIVValue_2:
+# 72 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_StatRelativelyGood, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_EndBreederComments
-	end
+	goto BattleFrontier_Lounge1_EventScript_HighestIVValue_1
 
-BattleFrontier_Lounge1_EventScript_HighestIVMid::
+BattleFrontier_Lounge1_EventScript_HighestIVValue_3:
+# 75 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_StatImpressive, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_EndBreederComments
-	end
+	goto BattleFrontier_Lounge1_EventScript_HighestIVValue_1
 
-BattleFrontier_Lounge1_EventScript_HighestIVHigh::
+BattleFrontier_Lounge1_EventScript_HighestIVValue_4:
+# 78 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_StatOutstanding, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_EndBreederComments
-	end
+	goto BattleFrontier_Lounge1_EventScript_HighestIVValue_1
 
-BattleFrontier_Lounge1_EventScript_HighestIVMax::
+BattleFrontier_Lounge1_EventScript_HighestIVValue_5:
+# 81 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_StatFlawless, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge1_EventScript_EndBreederComments
-	end
+	goto BattleFrontier_Lounge1_EventScript_HighestIVValue_1
 
-BattleFrontier_Lounge1_EventScript_CancelMonSelect::
-	msgbox BattleFrontier_Lounge1_Text_NoTimeForMyAdvice, MSGBOX_DEFAULT
-	release
-	end
 
 BattleFrontier_Lounge1_EventScript_Boy1::
+# 87 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_SaidMyMonIsOutstanding, MSGBOX_NPC
 	end
 
+
 BattleFrontier_Lounge1_EventScript_Boy2::
+# 92 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	msgbox BattleFrontier_Lounge1_Text_DidntDoAnythingSpecialRaisingIt, MSGBOX_NPC
 	end
 
-BattleFrontier_Lounge1_Text_PokemonBreederIntro:
+
+BattleFrontier_Lounge1_Text_PokemonBreederIntro::
+# 96 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "For 70 years I have raised POKéMON!\n"
 	.string "I am the man they revere as\l"
 	.string "the legendary top POKéMON BREEDER!\p"
@@ -163,96 +207,114 @@ BattleFrontier_Lounge1_Text_PokemonBreederIntro:
 	.string "Here!\n"
 	.string "Let's have a look at your POKéMON!$"
 
-BattleFrontier_Lounge1_Text_AverageAbility:
+BattleFrontier_Lounge1_Text_AverageAbility::
+# 113 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "…Hmm…\p"
 	.string "This one, overall, I would describe\n"
 	.string "as being of average ability.$"
 
-BattleFrontier_Lounge1_Text_BetterThanAverageAbility:
+BattleFrontier_Lounge1_Text_BetterThanAverageAbility::
+# 120 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "…Hmm…\p"
 	.string "This one, overall, I would describe as\n"
 	.string "having better-than-average ability.$"
 
-BattleFrontier_Lounge1_Text_ImpressiveAbility:
+BattleFrontier_Lounge1_Text_ImpressiveAbility::
+# 127 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "…Hmm…\p"
 	.string "This one, overall, I would say is\n"
 	.string "quite impressive in ability!$"
 
-BattleFrontier_Lounge1_Text_OutstandingAbility:
+BattleFrontier_Lounge1_Text_OutstandingAbility::
+# 134 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "…Hmm…\p"
 	.string "This one, overall, I would say is\n"
 	.string "wonderfully outstanding in ability!$"
 
-BattleFrontier_Lounge1_Text_BestAspectHP:
+BattleFrontier_Lounge1_Text_BestAspectHP::
+# 141 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "Incidentally, the best aspect of it,\n"
 	.string "I would say, is its HP…$"
 
-BattleFrontier_Lounge1_Text_BestAspectAtk:
+BattleFrontier_Lounge1_Text_BestAspectAtk::
+# 146 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "Incidentally, the best aspect of it,\n"
 	.string "I would say, is its ATTACK…$"
 
-BattleFrontier_Lounge1_Text_BestAspectDef:
+BattleFrontier_Lounge1_Text_BestAspectDef::
+# 151 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "Incidentally, the best aspect of it,\n"
 	.string "I would say, is its DEFENSE…$"
 
-BattleFrontier_Lounge1_Text_BestAspectSpAtk:
+BattleFrontier_Lounge1_Text_BestAspectSpAtk::
+# 156 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "Incidentally, the best aspect of it,\n"
 	.string "I would say, is its SPECIAL ATTACK…$"
 
-BattleFrontier_Lounge1_Text_BestAspectSpDef:
+BattleFrontier_Lounge1_Text_BestAspectSpDef::
+# 161 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "Incidentally, the best aspect of it,\n"
 	.string "I would say, is its SPECIAL DEFENSE…$"
 
-BattleFrontier_Lounge1_Text_BestAspectSpeed:
+BattleFrontier_Lounge1_Text_BestAspectSpeed::
+# 166 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "Incidentally, the best aspect of it,\n"
 	.string "I would say, is its SPEED…$"
 
-BattleFrontier_Lounge1_Text_StatRelativelyGood:
+BattleFrontier_Lounge1_Text_StatRelativelyGood::
+# 171 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "That stat is relatively good.\n"
 	.string "…Hm… That's how I call it.$"
 
-BattleFrontier_Lounge1_Text_StatImpressive:
+BattleFrontier_Lounge1_Text_StatImpressive::
+# 176 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "That stat is quite impressive.\n"
 	.string "…Hm… That's how I call it.$"
 
-BattleFrontier_Lounge1_Text_StatOutstanding:
+BattleFrontier_Lounge1_Text_StatOutstanding::
+# 181 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "That stat is outstanding!\n"
 	.string "…Hm… That's how I call it.$"
 
-BattleFrontier_Lounge1_Text_StatFlawless:
+BattleFrontier_Lounge1_Text_StatFlawless::
+# 186 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "It's flawless! A thing of perfection!\n"
 	.string "…Hm… That's how I call it.$"
 
-BattleFrontier_Lounge1_Text_NoTimeForMyAdvice:
+BattleFrontier_Lounge1_Text_NoTimeForMyAdvice::
+# 191 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "What?\n"
 	.string "You have no time for my advice?\p"
 	.string "You should always be eager to learn\n"
 	.string "from the experiences of your elders!$"
 
-@ Unused
-BattleFrontier_Lounge1_Text_HaveBusinessNeedsTending:
+BattleFrontier_Lounge1_Text_HaveBusinessNeedsTending::
+# 199 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "Yes, what is it now?\p"
 	.string "I have business that needs tending!\n"
 	.string "Save it for next time!$"
 
-BattleFrontier_Lounge1_Text_LetsLookAtYourPokemon:
+BattleFrontier_Lounge1_Text_LetsLookAtYourPokemon::
+# 206 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "Ah, youngster! Do your POKéMON's\n"
 	.string "abilities intrigue you?\p"
 	.string "Here, here!\n"
 	.string "Let's have a look at your POKéMON!$"
 
-BattleFrontier_Lounge1_Text_EvenICantTell:
+BattleFrontier_Lounge1_Text_EvenICantTell::
+# 214 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "An expert I am, but even I can't tell\n"
 	.string "anything about an unhatched POKéMON!\p"
 	.string "Show me a POKéMON!\n"
 	.string "A POKéMON is what I need to see!$"
 
-BattleFrontier_Lounge1_Text_SaidMyMonIsOutstanding:
+BattleFrontier_Lounge1_Text_SaidMyMonIsOutstanding::
+# 222 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "He said my POKéMON is outstanding!\n"
 	.string "I'm glad I raised it carefully!$"
 
-BattleFrontier_Lounge1_Text_DidntDoAnythingSpecialRaisingIt:
+BattleFrontier_Lounge1_Text_DidntDoAnythingSpecialRaisingIt::
+# 227 "data/maps/BattleFrontier_Lounge1/scripts.pory"
 	.string "He said my POKéMON is outstanding!\n"
 	.string "But I didn't do anything special\l"
 	.string "raising it…$"
-

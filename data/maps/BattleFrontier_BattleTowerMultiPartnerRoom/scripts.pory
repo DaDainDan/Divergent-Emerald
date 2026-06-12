@@ -5,7 +5,18 @@ mapscripts BattleFrontier_BattleTowerMultiPartnerRoom_MapScripts {
     }
     MAP_SCRIPT_ON_TRANSITION {
         if (flag(FLAG_CHOSEN_MULTI_BATTLE_NPC_PARTNER)) {
-			goto(BattleFrontier_BattleTowerMultiPartnerRoom_EventScript_ChosePartner)
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_BOY_1)
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_BOY_1)
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_BOY_1)
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_BOY_1)
+			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_BOY_1)
+			setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_BOY_1)
+			setvar(VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_BOY_1)
+			setvar(VAR_OBJ_GFX_ID_7, OBJ_EVENT_GFX_BOY_1)
+			setvar(VAR_TEMP_1, 1)
+			setvar(VAR_TEMP_3, 1)
+			setobjectxyperm(LOCALID_TOWER_PARTNER_ROOM_ATTENDANT, 10, 2)
+			end
 		}
 		clearflag(FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_1)
 		clearflag(FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_2)
@@ -25,7 +36,21 @@ mapscripts BattleFrontier_BattleTowerMultiPartnerRoom_MapScripts {
 		}
     ]
     MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_TEMP_1, 0: BattleFrontier_BattleTowerMultiPartnerRoom_EventScript_EnterRoom
+		VAR_TEMP_1, 0 {
+			lockall
+			applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+			waitmovement(0)
+			applymovement(LOCALID_TOWER_PARTNER_ROOM_ATTENDANT, moves(walk_left,  step_faster_down))
+			waitmovement(0)
+			copyobjectxytoperm(LOCALID_TOWER_PARTNER_ROOM_ATTENDANT)
+			applymovement(LOCALID_PLAYER, Common_Movement_StepFasterUp)
+			waitmovement(0)
+			msgbox(BattleFrontier_BattleTowerMultiPartnerRoom_Text_PleaseFindPartner, MSGBOX_DEFAULT)
+			special(HealPlayerParty)
+			setvar(VAR_TEMP_1, 1)
+			releaseall
+			end
+		}
     	VAR_TEMP_3, 1 {
 			lockall
 			setvar(VAR_TEMP_3, 0)
@@ -33,37 +58,6 @@ mapscripts BattleFrontier_BattleTowerMultiPartnerRoom_MapScripts {
 			end
 		}
     ]
-}
-
-script BattleFrontier_BattleTowerMultiPartnerRoom_EventScript_ChosePartner {
-    setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_BOY_1)
-    setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_BOY_1)
-    setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_BOY_1)
-    setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_BOY_1)
-    setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_BOY_1)
-    setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_BOY_1)
-    setvar(VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_BOY_1)
-    setvar(VAR_OBJ_GFX_ID_7, OBJ_EVENT_GFX_BOY_1)
-    setvar(VAR_TEMP_1, 1)
-    setvar(VAR_TEMP_3, 1)
-    setobjectxyperm(LOCALID_TOWER_PARTNER_ROOM_ATTENDANT, 10, 2)
-    end
-}
-
-script BattleFrontier_BattleTowerMultiPartnerRoom_EventScript_EnterRoom {
-    lockall
-    applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-    waitmovement(0)
-    applymovement(LOCALID_TOWER_PARTNER_ROOM_ATTENDANT, moves(walk_left,  step_faster_down))
-    waitmovement(0)
-    copyobjectxytoperm(LOCALID_TOWER_PARTNER_ROOM_ATTENDANT)
-    applymovement(LOCALID_PLAYER, Common_Movement_StepFasterUp)
-    waitmovement(0)
-    msgbox(BattleFrontier_BattleTowerMultiPartnerRoom_Text_PleaseFindPartner, MSGBOX_DEFAULT)
-    special(HealPlayerParty)
-    setvar(VAR_TEMP_1, 1)
-    releaseall
-    end
 }
 
 script BattleFrontier_BattleTowerMultiPartnerRoom_EventScript_Attendant {

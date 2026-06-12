@@ -1,188 +1,99 @@
-raw `
-FarawayIsland_Interior_MapScripts::
-	map_script MAP_SCRIPT_ON_RESUME, FarawayIsland_Interior_OnResume
-	map_script MAP_SCRIPT_ON_TRANSITION, FarawayIsland_Interior_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, FarawayIsland_Interior_OnFrame
-	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, FarawayIsland_Interior_OnReturnToField
-	.byte 0
+mapscripts FarawayIsland_Interior_MapScripts {
+    MAP_SCRIPT_ON_RESUME {
+        if (flag(FLAG_SYS_CTRL_OBJ_DELETE) && specialvar(VAR_RESULT, GetBattleOutcome) == B_OUTCOME_CAUGHT) {
+			removeobject(VAR_LAST_TALKED)
+		}
+		end
+    }
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_FARAWAY_ISLAND_STEP_COUNTER, 0)
+		setvar(VAR_TEMP_1, 1)
+		if (!flag(FLAG_CAUGHT_MEW) && !flag(FLAG_DEFEATED_MEW)) {
+			clearflag(FLAG_HIDE_MEW)
+			setvar(VAR_TEMP_1, 0)
+		}
+		end
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_1, 0 {
+			lockall
+			playse(SE_PIN)
+			applymovement(LOCALID_FARAWAY_ISLAND_MEW, Common_Movement_ExclamationMark)
+			waitmovement(0)
+			applymovement(LOCALID_FARAWAY_ISLAND_MEW, Common_Movement_Delay48)
+			waitmovement(0)
+			applymovement(LOCALID_FARAWAY_ISLAND_MEW, moves(walk_up * 3,  step_faster_down,  set_invisible))
+			waitmovement(0)
+			copyobjectxytoperm(LOCALID_FARAWAY_ISLAND_MEW)
+			setvar(VAR_TEMP_1, 1)
+			releaseall
+			end
+		}
+    ]
+    MAP_SCRIPT_ON_RETURN_TO_FIELD {
+        if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+			specialvar(VAR_RESULT, GetBattleOutcome)
+			if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_RAN 
+			 || var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED || var(VAR_RESULT) == B_OUTCOME_MON_TELEPORTED) {
+				setvar(VAR_0x8004, 1)
+				special(SetMewAboveGrass)
+			}
+		}
+		end
+    }
+}
 
-FarawayIsland_Interior_OnReturnToField:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, FarawayIsland_Interior_EventScript_TrySetMewAboveGrass
-	end
+script FarawayIsland_Interior_EventScript_Mew {
+    lock_faceplayer
+    applymovement(LOCALID_FARAWAY_ISLAND_MEW, moves(set_visible))
+    waitmovement(0)
+    setvar(VAR_0x8004, 0)
+    special(SetMewAboveGrass)
+    message(FarawayIsland_Interior_Text_Mew)
+    waitse
+    playmoncry(SPECIES_MEW, CRY_MODE_ENCOUNTER)
+	switch (var(VAR_FACING)) {
+		case DIR_NORTH: applymovement(LOCALID_FARAWAY_ISLAND_MEW, moves(lock_look,  run_up * 2,  unlock_look,  step_down * 2))
+		case DIR_SOUTH: applymovement(LOCALID_FARAWAY_ISLAND_MEW, moves(lock_look,  run_up * 2,  unlock_look,  step_up * 2))
+		case DIR_WEST: applymovement(LOCALID_FARAWAY_ISLAND_MEW, moves(lock_look,  run_up * 2,  unlock_look,  step_right * 2))
+		case DIR_EAST: applymovement(LOCALID_FARAWAY_ISLAND_MEW, moves(lock_look,  run_up * 2,  unlock_look,  step_left * 2))
+	}
+	waitmovement(0)
+    special(DestroyMewEmergingGrassSprite)
+    delay(40)
+    waitmoncry
+    seteventmon(SPECIES_MEW, 30)
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    special(BattleSetup_StartLegendaryBattle)
+    clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+	switch (var(VAR_RESULT)) {
+		case B_OUTCOME_WON:
+			setflag(FLAG_DEFEATED_MEW)
+			setvar(VAR_0x8004, SPECIES_MEW)
+			goto(Common_EventScript_LegendaryFlewAway)
+		case B_OUTCOME_RAN:
+		case B_OUTCOME_PLAYER_TELEPORTED:
+		case B_OUTCOME_MON_TELEPORTED:
+			setvar(VAR_0x8004, SPECIES_MEW)
+    		goto(Common_EventScript_LegendaryFlewAway)
+	}
+    setflag(FLAG_CAUGHT_MEW)
+    release_end
+}
 
-FarawayIsland_Interior_EventScript_TrySetMewAboveGrass::
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, FarawayIsland_Interior_EventScript_SetMewAboveGrass
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, FarawayIsland_Interior_EventScript_SetMewAboveGrass
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, FarawayIsland_Interior_EventScript_SetMewAboveGrass
-	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, FarawayIsland_Interior_EventScript_SetMewAboveGrass
-	return
+script FarawayIsland_Interior_EventScript_HideMewWhenGrassCut {
+    lockall
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    setflag(FLAG_HIDE_MEW)
+    removeobject(LOCALID_FARAWAY_ISLAND_MEW)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    msgbox(FarawayIsland_Interior_Text_TheFeelingOfBeingWatchedFaded, MSGBOX_DEFAULT)
+    closemessage
+    releaseall
+    end
+}
 
-FarawayIsland_Interior_EventScript_SetMewAboveGrass::
-	setvar VAR_0x8004, 1
-	special SetMewAboveGrass
-	return
-
-FarawayIsland_Interior_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, FarawayIsland_Interior_EventScript_TryRemoveMew
-	end
-
-FarawayIsland_Interior_EventScript_TryRemoveMew::
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
-	removeobject VAR_LAST_TALKED
-	return
-
-FarawayIsland_Interior_OnTransition:
-	setvar VAR_FARAWAY_ISLAND_STEP_COUNTER, 0
-	setvar VAR_TEMP_1, 1
-	call_if_unset FLAG_CAUGHT_MEW, FarawayIsland_Interior_EventScript_TryShowMew
-	end
-
-FarawayIsland_Interior_EventScript_TryShowMew::
-	goto_if_set FLAG_DEFEATED_MEW, Common_EventScript_NopReturn
-	clearflag FLAG_HIDE_MEW
-	setvar VAR_TEMP_1, 0
-	return
-
-FarawayIsland_Interior_OnFrame:
-	map_script_2 VAR_TEMP_1, 0, FarawayIsland_Interior_EventScript_FindMew
-	.2byte 0
-
-FarawayIsland_Interior_EventScript_FindMew::
-	lockall
-	playse SE_PIN
-	applymovement LOCALID_FARAWAY_ISLAND_MEW, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_FARAWAY_ISLAND_MEW, Common_Movement_Delay48
-	waitmovement 0
-	applymovement LOCALID_FARAWAY_ISLAND_MEW, FarawayIsland_Interior_Movement_MewMoveAndHide
-	waitmovement 0
-	copyobjectxytoperm LOCALID_FARAWAY_ISLAND_MEW
-	setvar VAR_TEMP_1, 1
-	releaseall
-	end
-
-FarawayIsland_Interior_Movement_MewMoveAndHide:
-	walk_up
-	walk_up
-	walk_up
-	step_faster_down
-	set_invisible
-	step_end
-
-FarawayIsland_Interior_Movement_MewAppear:
-	set_visible
-	step_end
-
-FarawayIsland_Interior_Movement_MewFloatUpNorth:
-	lock_look
-	run_up
-	run_up
-	unlock_look
-	step_down
-	step_down
-	step_end
-
-FarawayIsland_Interior_Movement_MewFloatUpSouth:
-	lock_look
-	run_up
-	run_up
-	unlock_look
-	step_up
-	step_up
-	step_end
-
-FarawayIsland_Interior_Movement_MewFloatUpWest:
-	lock_look
-	run_up
-	run_up
-	unlock_look
-	step_right
-	step_right
-	step_end
-
-FarawayIsland_Interior_Movement_MewFloatUpEast:
-	lock_look
-	run_up
-	run_up
-	unlock_look
-	step_left
-	step_left
-	step_end
-
-FarawayIsland_Interior_EventScript_Mew::
-	lock
-	faceplayer
-	applymovement LOCALID_FARAWAY_ISLAND_MEW, FarawayIsland_Interior_Movement_MewAppear
-	waitmovement 0
-	setvar VAR_0x8004, 0
-	special SetMewAboveGrass
-	message FarawayIsland_Interior_Text_Mew
-	waitse
-	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
-	call_if_eq VAR_FACING, DIR_NORTH, FarawayIsland_Interior_EventScript_FoundMewNorth
-	call_if_eq VAR_FACING, DIR_SOUTH, FarawayIsland_Interior_EventScript_FoundMewSouth
-	call_if_eq VAR_FACING, DIR_WEST, FarawayIsland_Interior_EventScript_FoundMewWest
-	call_if_eq VAR_FACING, DIR_EAST, FarawayIsland_Interior_EventScript_FoundMewEast
-	special DestroyMewEmergingGrassSprite
-	delay 40
-	waitmoncry
-	seteventmon SPECIES_MEW, 30
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartLegendaryBattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, FarawayIsland_Interior_EventScript_MewDefeated
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, FarawayIsland_Interior_EventScript_PlayerOrMewRan
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, FarawayIsland_Interior_EventScript_PlayerOrMewRan
-	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, FarawayIsland_Interior_EventScript_PlayerOrMewRan
-	setflag FLAG_CAUGHT_MEW
-	release
-	end
-
-FarawayIsland_Interior_EventScript_MewDefeated::
-	setflag FLAG_DEFEATED_MEW
-	setvar VAR_0x8004, SPECIES_MEW
-	goto Common_EventScript_LegendaryFlewAway
-	end
-
-FarawayIsland_Interior_EventScript_PlayerOrMewRan::
-	setvar VAR_0x8004, SPECIES_MEW
-	goto Common_EventScript_LegendaryFlewAway
-	end
-
-FarawayIsland_Interior_EventScript_FoundMewNorth::
-	applymovement LOCALID_FARAWAY_ISLAND_MEW, FarawayIsland_Interior_Movement_MewFloatUpNorth
-	waitmovement 0
-	return
-
-FarawayIsland_Interior_EventScript_FoundMewSouth::
-	applymovement LOCALID_FARAWAY_ISLAND_MEW, FarawayIsland_Interior_Movement_MewFloatUpSouth
-	waitmovement 0
-	return
-
-FarawayIsland_Interior_EventScript_FoundMewWest::
-	applymovement LOCALID_FARAWAY_ISLAND_MEW, FarawayIsland_Interior_Movement_MewFloatUpWest
-	waitmovement 0
-	return
-
-FarawayIsland_Interior_EventScript_FoundMewEast::
-	applymovement LOCALID_FARAWAY_ISLAND_MEW, FarawayIsland_Interior_Movement_MewFloatUpEast
-	waitmovement 0
-	return
-
-FarawayIsland_Interior_EventScript_HideMewWhenGrassCut::
-	lockall
-	fadescreenswapbuffers FADE_TO_BLACK
-	setflag FLAG_HIDE_MEW
-	removeobject LOCALID_FARAWAY_ISLAND_MEW
-	fadescreenswapbuffers FADE_FROM_BLACK
-	msgbox FarawayIsland_Interior_Text_TheFeelingOfBeingWatchedFaded, MSGBOX_DEFAULT
-	closemessage
-	releaseall
-	end
-
-FarawayIsland_Interior_Text_TheFeelingOfBeingWatchedFaded:
-	.string "The feeling of being watched faded…$"
-`
+text FarawayIsland_Interior_Text_TheFeelingOfBeingWatchedFaded {
+	"The feeling of being watched faded…"
+}

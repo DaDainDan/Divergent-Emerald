@@ -47,6 +47,7 @@ script SlateportCity_BattleTentBattleRoom_EventScript_EnterRoom {
 		goto(SlateportCity_BattleTentBattleRoom_EventScript_DefeatedOpponent)
 	}
     goto(SlateportCity_BattleTent_EventScript_WarpToLobbyLost)
+    end
 }
 
 script SlateportCity_BattleTent_EventScript_WarpToLobbyLost {

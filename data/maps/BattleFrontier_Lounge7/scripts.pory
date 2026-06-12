@@ -1,495 +1,398 @@
-raw `
-BattleFrontier_Lounge7_MapScripts::
-	.byte 0
+mapscripts BattleFrontier_Lounge7_MapScripts {}
 
-@special ChooseMonForMoveTutor
-BattleFrontier_Lounge7_EventScript_LeftMoveTutor::
-	lock
-	faceplayer
-	setvar VAR_TEMP_C, SCROLL_MULTI_BF_MOVE_TUTOR_1
-	goto_if_set FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR, BattleFrontier_Lounge7_EventScript_AlreadyMetLeftTutor
-	msgbox BattleFrontier_Lounge7_Text_LeftTutorIntro, MSGBOX_DEFAULT
-	setflag FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR
-	goto BattleFrontier_Lounge7_EventScript_ChooseLeftTutorMove
-	end
+//special ChooseMonForMoveTutor
+// VAR_0x8008 is the price
+// VAR_TEMP_C is the scroll multichoice ID
+// VAR_TEMP_FRONTIER_TUTOR_SELECTION is the move selection
+// VAR_TEMP_FRONTIER_TUTOR_ID is which move tutor was spoken to
+script BattleFrontier_Lounge7_EventScript_LeftMoveTutor {
+    lock_faceplayer
+    setvar(VAR_TEMP_C, SCROLL_MULTI_BF_MOVE_TUTOR_1)
+    if (flag(FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR)) {
+        msgbox(BattleFrontier_Lounge7_Text_LeftTutorWelcomeBack, MSGBOX_DEFAULT)
+    } else {
+		msgbox(BattleFrontier_Lounge7_Text_LeftTutorIntro, MSGBOX_DEFAULT)
+		setflag(FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR)
+	}
+    call(BattleFrontier_Lounge7_EventScript_TutorFirstMoveSetup)
+    goto(BattleFrontier_Lounge7_EventScript_LeftTutorMoveSelection)
+    end
+}
 
-BattleFrontier_Lounge7_EventScript_AlreadyMetLeftTutor::
-	msgbox BattleFrontier_Lounge7_Text_LeftTutorWelcomeBack, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge7_EventScript_ChooseLeftTutorMove
-	end
+script BattleFrontier_Lounge7_EventScript_LeftTutorMoveSelection {
+	setvar(VAR_TEMP_FRONTIER_TUTOR_ID, 0)
+    setvar(VAR_0x8004, SCROLL_MULTI_BF_MOVE_TUTOR_1)
+	special(ShowScrollableMultichoice)
+    copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+    switch (var(VAR_RESULT)) {
+        case 0: setmoveandprice(MOVE_SOFT_BOILED, 16)
+        case 1: setmoveandprice(MOVE_SEISMIC_TOSS, 24)
+        case 2: setmoveandprice(MOVE_DREAM_EATER, 24)
+        case 3: setmoveandprice(MOVE_MEGA_PUNCH, 24)
+		case 4: setmoveandprice(MOVE_MEGA_KICK, 48)
+		case 5: setmoveandprice(MOVE_BODY_SLAM, 48)
+		case 6: setmoveandprice(MOVE_ROCK_SLIDE, 48)
+		case 7: setmoveandprice(MOVE_COUNTER, 48)
+		case 8: setmoveandprice(MOVE_THUNDER_WAVE, 48)
+		case 9: setmoveandprice(MOVE_SWORDS_DANCE, 48)
+        case 10:
+        case MULTI_B_PRESSED:
+			goto(BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect)
+			end
+    }
+	goto(BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection)
+    end
+}
 
-BattleFrontier_Lounge7_EventScript_ChooseLeftTutorMove::
-	message BattleFrontier_Lounge7_Text_TeachWhichMove
+script BattleFrontier_Lounge7_EventScript_RightMoveTutor {
+    lock_faceplayer
+    setvar(VAR_TEMP_C, SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    if (flag(FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR)) {
+        msgbox(BattleFrontier_Lounge7_Text_RightTutorWelcomeBack, MSGBOX_DEFAULT)
+    } else {
+		msgbox(BattleFrontier_Lounge7_Text_RightTutorIntro, MSGBOX_DEFAULT)
+		setflag(FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR)
+	}
+	call(BattleFrontier_Lounge7_EventScript_TutorFirstMoveSetup)
+    goto(BattleFrontier_Lounge7_EventScript_RightTutorMoveSelection)
+    end
+}
+
+script BattleFrontier_Lounge7_EventScript_RightTutorMoveSelection {
+	setvar(VAR_TEMP_FRONTIER_TUTOR_ID, 1)
+    setvar(VAR_0x8004, SCROLL_MULTI_BF_MOVE_TUTOR_2)
+	special(ShowScrollableMultichoice)
+    copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+    switch (var(VAR_RESULT)) {
+        case 0: setmoveandprice(MOVE_DEFENSE_CURL, 16)
+        case 1: setmoveandprice(MOVE_SNORE, 24)
+        case 2: setmoveandprice(MOVE_MUD_SLAP, 24)
+        case 3: setmoveandprice(MOVE_SWIFT, 24)
+        case 4: setmoveandprice(MOVE_ICY_WIND, 24)
+        case 5: setmoveandprice(MOVE_ENDURE, 48)
+        case 6: setmoveandprice(MOVE_PSYCH_UP, 48)
+        case 7: setmoveandprice(MOVE_ICE_PUNCH, 48)
+        case 8: setmoveandprice(MOVE_THUNDER_PUNCH, 48)
+        case 9: setmoveandprice(MOVE_FIRE_PUNCH, 48)
+        case 10:
+        case MULTI_B_PRESSED: 
+			goto(BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect)
+			end
+    }
+	goto(BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection)
+    end
+}
+
+script BattleFrontier_Lounge7_EventScript_TutorFirstMoveSetup {
+	message(BattleFrontier_Lounge7_Text_TeachWhichMove)
+    waitmessage
+    special(ShowBattlePointsWindow)
+	setvar(VAR_0x8006, 0)
+	return
+}
+
+script BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect {
+    special(CloseBattleFrontierTutorWindow)
+    special(CloseBattlePointsWindow)
+    msgbox(BattleFrontier_Lounge7_Text_YouDontWantTo, MSGBOX_DEFAULT)
+    release_end
+}
+
+script BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection {
+    special(BufferBattleFrontierTutorMoveName)
+    buffernumberstring(STR_VAR_2, VAR_EXCHANGE_PRICE)
+    msgbox(BattleFrontier_Lounge7_Text_MoveWillBeXBattlePoints, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        goto(BattleFrontier_Lounge7_EventScript_ChooseNewMove)
+    }
+    if (specialvar(VAR_TEMP_1, GetFrontierBattlePoints) >= VAR_EXCHANGE_PRICE) {
+		goto(BattleFrontier_Lounge7_EventScript_TeachTutorMove)
+	}
+    msgbox(BattleFrontier_Lounge7_Text_HaventGotEnoughPoints, MSGBOX_DEFAULT)
+    goto(BattleFrontier_Lounge7_EventScript_ChooseNewMove)
+    end
+}
+
+script BattleFrontier_Lounge7_EventScript_TeachTutorMove {
+    msgbox(BattleFrontier_Lounge7_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT)
+    fadescreen(FADE_TO_BLACK)
+    special(CloseBattlePointsWindow)
+    special(CloseBattleFrontierTutorWindow)
+    chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+    waitstate
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(BattleFrontier_Lounge7_Text_YouDontWantTo, MSGBOX_DEFAULT)
+    	release_end
+    }
+    msgbox(BattleFrontier_Lounge7_Text_IllTakeBattlePoints, MSGBOX_DEFAULT)
+    copyvar(VAR_0x8004, VAR_EXCHANGE_PRICE)
+    special(TakeFrontierBattlePoints)
+    release_end
+}
+
+script BattleFrontier_Lounge7_EventScript_ChooseNewMove {
+    message(BattleFrontier_Lounge7_Text_TeachWhichMove)
 	waitmessage
-	special ShowBattlePointsWindow
-	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 0
-	setvar VAR_0x8004, SCROLL_MULTI_BF_MOVE_TUTOR_1
-	setvar VAR_0x8006, 0
-	special ShowScrollableMultichoice
-	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
-	switch VAR_RESULT
-	case 0, BattleFrontier_Lounge7_EventScript_Softboiled
-	case 1, BattleFrontier_Lounge7_EventScript_SeismicToss
-	case 2, BattleFrontier_Lounge7_EventScript_DreamEater
-	case 3, BattleFrontier_Lounge7_EventScript_MegaPunch
-	case 4, BattleFrontier_Lounge7_EventScript_MegaKick
-	case 5, BattleFrontier_Lounge7_EventScript_BodySlam
-	case 6, BattleFrontier_Lounge7_EventScript_RockSlide
-	case 7, BattleFrontier_Lounge7_EventScript_Counter
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderWave
-	case 9, BattleFrontier_Lounge7_EventScript_SwordsDance
-	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
-	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
-	end
-
-BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove::
-	message BattleFrontier_Lounge7_Text_TeachWhichMove
-	waitmessage
-	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 0
-	setvar VAR_0x8004, SCROLL_MULTI_BF_MOVE_TUTOR_1
-	setvar VAR_0x8006, 1
-	special ShowScrollableMultichoice
-	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
-	switch VAR_RESULT
-	case 0, BattleFrontier_Lounge7_EventScript_Softboiled
-	case 1, BattleFrontier_Lounge7_EventScript_SeismicToss
-	case 2, BattleFrontier_Lounge7_EventScript_DreamEater
-	case 3, BattleFrontier_Lounge7_EventScript_MegaPunch
-	case 4, BattleFrontier_Lounge7_EventScript_MegaKick
-	case 5, BattleFrontier_Lounge7_EventScript_BodySlam
-	case 6, BattleFrontier_Lounge7_EventScript_RockSlide
-	case 7, BattleFrontier_Lounge7_EventScript_Counter
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderWave
-	case 9, BattleFrontier_Lounge7_EventScript_SwordsDance
-	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
-	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
-	end
-
-BattleFrontier_Lounge7_EventScript_Softboiled::
-	setvar VAR_0x8008, 16
-	setvar VAR_0x8005, MOVE_SOFT_BOILED
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_SeismicToss::
-	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_SEISMIC_TOSS
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_DreamEater::
-	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_DREAM_EATER
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_MegaPunch::
-	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_MEGA_PUNCH
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_MegaKick::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_MEGA_KICK
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_BodySlam::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_BODY_SLAM
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_RockSlide::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_ROCK_SLIDE
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_Counter::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_COUNTER
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_ThunderWave::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_THUNDER_WAVE
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_SwordsDance::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_SWORDS_DANCE
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_RightMoveTutor::
-	lock
-	faceplayer
-	setvar VAR_TEMP_C, SCROLL_MULTI_BF_MOVE_TUTOR_2
-	goto_if_set FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR, BattleFrontier_Lounge7_EventScript_AlreadyMetRightTutor
-	msgbox BattleFrontier_Lounge7_Text_RightTutorIntro, MSGBOX_DEFAULT
-	setflag FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR
-	goto BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove
-	end
-
-BattleFrontier_Lounge7_EventScript_AlreadyMetRightTutor::
-	msgbox BattleFrontier_Lounge7_Text_RightTutorWelcomeBack, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove
-	end
-
-BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove::
-	message BattleFrontier_Lounge7_Text_TeachWhichMove
-	waitmessage
-	special ShowBattlePointsWindow
-	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 1
-	setvar VAR_0x8004, SCROLL_MULTI_BF_MOVE_TUTOR_2
-	setvar VAR_0x8006, 0
-	special ShowScrollableMultichoice
-	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
-	switch VAR_RESULT
-	case 0, BattleFrontier_Lounge7_EventScript_DefenseCurl
-	case 1, BattleFrontier_Lounge7_EventScript_Snore
-	case 2, BattleFrontier_Lounge7_EventScript_MudSlap
-	case 3, BattleFrontier_Lounge7_EventScript_Swift
-	case 4, BattleFrontier_Lounge7_EventScript_IcyWind
-	case 5, BattleFrontier_Lounge7_EventScript_Endure
-	case 6, BattleFrontier_Lounge7_EventScript_PsychUp
-	case 7, BattleFrontier_Lounge7_EventScript_IcePunch
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderPunch
-	case 9, BattleFrontier_Lounge7_EventScript_FirePunch
-	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
-	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
-	end
-
-BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove::
-	message BattleFrontier_Lounge7_Text_TeachWhichMove
-	waitmessage
-	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 1
-	setvar VAR_0x8004, SCROLL_MULTI_BF_MOVE_TUTOR_2
-	setvar VAR_0x8006, 1
-	special ShowScrollableMultichoice
-	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
-	switch VAR_RESULT
-	case 0, BattleFrontier_Lounge7_EventScript_DefenseCurl
-	case 1, BattleFrontier_Lounge7_EventScript_Snore
-	case 2, BattleFrontier_Lounge7_EventScript_MudSlap
-	case 3, BattleFrontier_Lounge7_EventScript_Swift
-	case 4, BattleFrontier_Lounge7_EventScript_IcyWind
-	case 5, BattleFrontier_Lounge7_EventScript_Endure
-	case 6, BattleFrontier_Lounge7_EventScript_PsychUp
-	case 7, BattleFrontier_Lounge7_EventScript_IcePunch
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderPunch
-	case 9, BattleFrontier_Lounge7_EventScript_FirePunch
-	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
-	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
-	end
-
-BattleFrontier_Lounge7_EventScript_DefenseCurl::
-	setvar VAR_0x8008, 16
-	setvar VAR_0x8005, MOVE_DEFENSE_CURL
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_Snore::
-	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_SNORE
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_MudSlap::
-	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_MUD_SLAP
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_Swift::
-	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_SWIFT
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_IcyWind::
-	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_ICY_WIND
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_Endure::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_ENDURE
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_PsychUp::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_PSYCH_UP
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_IcePunch::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_ICE_PUNCH
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_ThunderPunch::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_THUNDER_PUNCH
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_FirePunch::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_FIRE_PUNCH
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect::
-	special CloseBattleFrontierTutorWindow
-	special CloseBattlePointsWindow
-	msgbox BattleFrontier_Lounge7_Text_YouDontWantTo, MSGBOX_DEFAULT
-	release
-	end
-
-BattleFrontier_Lounge7_EventScript_CancelChooseMon::
-	msgbox BattleFrontier_Lounge7_Text_YouDontWantTo, MSGBOX_DEFAULT
-	release
-	end
-
-@ VAR_0x8008 is the price
-@ VAR_TEMP_C is the scroll multichoice ID
-@ VAR_TEMP_FRONTIER_TUTOR_SELECTION is the move selection
-@ VAR_TEMP_FRONTIER_TUTOR_ID is which move tutor was spoken to
-BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection::
-	special BufferBattleFrontierTutorMoveName
-	buffernumberstring STR_VAR_2, VAR_0x8008
-	msgbox BattleFrontier_Lounge7_Text_MoveWillBeXBattlePoints, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, BattleFrontier_Lounge7_EventScript_ChooseNewMove
-	specialvar VAR_TEMP_1, GetFrontierBattlePoints
-	goto_if_ge VAR_TEMP_1, VAR_0x8008, BattleFrontier_Lounge7_EventScript_TeachTutorMove
-	msgbox BattleFrontier_Lounge7_Text_HaventGotEnoughPoints, MSGBOX_DEFAULT
-	goto BattleFrontier_Lounge7_EventScript_ChooseNewMove
-	end
-
-
-BattleFrontier_Lounge7_EventScript_TeachTutorMove::
-	msgbox BattleFrontier_Lounge7_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
-	fadescreen FADE_TO_BLACK
-	special CloseBattlePointsWindow
-	special CloseBattleFrontierTutorWindow
-	chooseboxmon SELECT_PC_MON_MOVE_TUTOR
-	waitstate
-	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_Lounge7_EventScript_CancelChooseMon
-	msgbox BattleFrontier_Lounge7_Text_IllTakeBattlePoints, MSGBOX_DEFAULT
-	copyvar VAR_0x8004, VAR_0x8008
-	special TakeFrontierBattlePoints
-	release
-	end
-
-BattleFrontier_Lounge7_EventScript_ChooseNewMove::
-	goto_if_eq VAR_TEMP_FRONTIER_TUTOR_ID, 0, BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove
-	goto BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove
-	end
-
-BattleFrontier_Lounge7_EventScript_Sailor::
-	msgbox BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong, MSGBOX_NPC
-	end
-
-BattleFrontier_Lounge7_EventScript_Gentleman::
-	msgbox BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful, MSGBOX_NPC
-	end
-
-BattleFrontier_Lounge7_Text_LeftTutorIntro:
-	.string "Buhahaha!\p"
-	.string "You couldn't tell it from looking now,\n"
-	.string "but I used to be one tough TRAINER.\p"
-	.string "I had a reputation as the toughest\n"
-	.string "BEAUTY around, I tell you!\p"
-	.string "… … … … … …\p"
-	.string "What is it now?\n"
-	.string "You don't believe me.\p"
-	.string "I'm not like that blowhard woman over\n"
-	.string "there. I'm actually talented!\p"
-	.string "Let me prove it to you.\n"
-	.string "I can teach your POKéMON special and\l"
-	.string "yet cute moves.\p"
-	.string "But my lessons don't come free.\n"
-	.string "How about paying for the moves I teach\l"
-	.string "with a wee bit of Battle Points?$"
-
-BattleFrontier_Lounge7_Text_LeftTutorWelcomeBack:
-	.string "Buhahaha!\p"
-	.string "Are you back to learn special and\n"
-	.string "yet cute POKéMON moves?$"
-
-BattleFrontier_Lounge7_Text_TeachWhichMove:
-	.string "Fine, fine, look here!\n"
-	.string "Which move should I teach?$"
-
-BattleFrontier_Lounge7_Text_MoveWillBeXBattlePoints:
-	.string "The move {STR_VAR_1}, is it?\n"
-	.string "That will be {STR_VAR_2} Battle Points, okay?$"
-
-BattleFrontier_Lounge7_Text_TeachMoveToWhichMon:
-	.string "Fine, fine, now pick the POKéMON\n"
-	.string "I should teach the move to.$"
-
-BattleFrontier_Lounge7_Text_HaventGotEnoughPoints:
-	.string "What the…\n"
-	.string "You haven't got enough Battle Points!$"
-
-BattleFrontier_Lounge7_Text_IllTakeBattlePoints:
-	.string "Do you see how skilled I am now?\n"
-	.string "I'll take your Battle Points, thanks!$"
-
-BattleFrontier_Lounge7_Text_YouDontWantTo:
-	.string "What's that?\n"
-	.string "You don't want to…\p"
-	.string "If you want to see how skilled I am,\n"
-	.string "you come see me anytime!$"
-
-BattleFrontier_Lounge7_Text_RightTutorIntro:
-	.string "Ihihihi!\p"
-	.string "I know it's hard to see now, but I used\n"
-	.string "to be one fantastic TRAINER.\p"
-	.string "I had a reputation as the most\n"
-	.string "invincible SWIMMER around, I tell you!\p"
-	.string "… … … … … …\p"
-	.string "What's wrong?\n"
-	.string "You don't believe me.\p"
-	.string "I'm not like that buffoonish woman over\n"
-	.string "there. I'm actually experienced!\p"
-	.string "I can prove it to you.\n"
-	.string "I can teach your POKéMON hard and\l"
-	.string "yet pretty moves.\p"
-	.string "But my lessons don't come free.\n"
-	.string "How about paying for the moves I teach\l"
-	.string "with a wee bit of Battle Points?$"
-
-BattleFrontier_Lounge7_Text_RightTutorWelcomeBack:
-	.string "Ihihihi!\p"
-	.string "Have you come to learn hard and\n"
-	.string "yet pretty POKéMON moves?$"
-
-BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong:
-	.string "Those ladies, the way they bad-mouth\n"
-	.string "each other, you probably think that\l"
-	.string "they don't get along.\p"
-	.string "But if that were true, they wouldn't\n"
-	.string "stay out here together, would they?$"
-
-BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful:
-	.string "When I was just a wee YOUNGSTER,\n"
-	.string "those ladies were strong and beautiful.\p"
-	.string "They were idols among us TRAINERS.\p"
-	.string "Even now, age hasn't dulled their\n"
-	.string "abilities.\p"
-	.string "In fact, their POKéMON moves have\n"
-	.string "grown even more polished.\p"
-	.string "But… For some reason, I can't help\n"
-	.string "but feel this…\p"
-	.string "Time is so cruel…$"
-
-BattleFrontier_Lounge7_Text_SoftboiledDesc::
-	.string "Recovers up to\n"
-	.string "half the user's\n"
-	.string "maximum HP.$"
-
-BattleFrontier_Lounge7_Text_SeismicTossDesc::
-	.string "Inflicts damage\n"
-	.string "identical to the\n"
-	.string "user's level.$"
-
-BattleFrontier_Lounge7_Text_DreamEaterDesc::
-	.string "Recovers half the\n"
-	.string "damage inflicted\n"
-	.string "on a sleeping foe.$"
-
-BattleFrontier_Lounge7_Text_MegaPunchDesc::
-	.string "A strong punch\n"
-	.string "thrown with\n"
-	.string "incredible power.$"
-
-BattleFrontier_Lounge7_Text_MegaKickDesc::
-	.string "An extremely\n"
-	.string "powerful kick with\n"
-	.string "intense force.$"
-
-BattleFrontier_Lounge7_Text_BodySlamDesc::
-	.string "A full-body slam\n"
-	.string "that may cause\n"
-	.string "paralysis.$"
-
-BattleFrontier_Lounge7_Text_RockSlideDesc::
-	.string "Large boulders\n"
-	.string "are hurled. May\n"
-	.string "cause flinching.$"
-
-BattleFrontier_Lounge7_Text_CounterDesc::
-	.string "Retaliates any\n"
-	.string "physical hit with\n"
-	.string "double the power.$"
-
-BattleFrontier_Lounge7_Text_ThunderWaveDesc::
-	.string "A weak jolt of\n"
-	.string "electricity that\n"
-	.string "paralyzes the foe.$"
-
-BattleFrontier_Lounge7_Text_SwordsDanceDesc::
-	.string "A fighting dance\n"
-	.string "that sharply\n"
-	.string "raises ATTACK.$"
-
-BattleFrontier_Lounge7_Text_DefenseCurlDesc::
-	.string "Curls up to con-\n"
-	.string "ceal weak spots\n"
-	.string "and raise DEFENSE.$"
-
-BattleFrontier_Lounge7_Text_SnoreDesc::
-	.string "A loud attack\n"
-	.string "that can be used\n"
-	.string "only while asleep.$"
-
-BattleFrontier_Lounge7_Text_MudSlapDesc::
-	.string "Hurls mud in the\n"
-	.string "foe's face to re-\n"
-	.string "duce its accuracy.$"
-
-BattleFrontier_Lounge7_Text_SwiftDesc::
-	.string "Sprays star-\n"
-	.string "shaped rays\n"
-	.string "that never miss.$"
-
-BattleFrontier_Lounge7_Text_IcyWindDesc::
-	.string "A chilling attack\n"
-	.string "that lowers the\n"
-	.string "foe's SPEED.$"
-
-BattleFrontier_Lounge7_Text_EndureDesc::
-	.string "Endures any at-\n"
-	.string "tack for 1 turn,\n"
-	.string "leaving 1HP.$"
-
-BattleFrontier_Lounge7_Text_PsychUpDesc::
-	.string "Copies the foe's\n"
-	.string "effect(s) and\n"
-	.string "gives to the user.$"
-
-BattleFrontier_Lounge7_Text_IcePunchDesc::
-	.string "An icy punch\n"
-	.string "that may\n"
-	.string "freeze the foe.$"
-
-BattleFrontier_Lounge7_Text_ThunderPunchDesc::
-	.string "An electrified\n"
-	.string "punch that may\n"
-	.string "paralyze the foe.$"
-
-BattleFrontier_Lounge7_Text_FirePunchDesc::
-	.string "A fiery punch\n"
-	.string "that may burn\n"
-	.string "the foe.$"
-`
+	setvar(VAR_0x8006, 1)
+	if (var(VAR_TEMP_FRONTIER_TUTOR_ID) == 0) {
+		goto(BattleFrontier_Lounge7_EventScript_LeftTutorMoveSelection)
+    }
+    goto(BattleFrontier_Lounge7_EventScript_RightTutorMoveSelection)
+    end
+}
+
+script BattleFrontier_Lounge7_EventScript_Sailor {
+    msgbox(BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong, MSGBOX_NPC)
+    end
+}
+
+script BattleFrontier_Lounge7_EventScript_Gentleman {
+    msgbox(BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful, MSGBOX_NPC)
+    end
+}
+
+text BattleFrontier_Lounge7_Text_LeftTutorIntro {
+	"Buhahaha!
+
+	You couldn't tell it from looking now,
+	but I used to be one tough TRAINER.
+
+	I had a reputation as the toughest
+	BEAUTY around, I tell you!
+
+	… … … … … …
+
+	What is it now?
+	You don't believe me.
+
+	I'm not like that blowhard woman over
+	there. I'm actually talented!
+
+	Let me prove it to you.
+	I can teach your POKéMON special and
+	yet cute moves.
+
+	But my lessons don't come free.
+	How about paying for the moves I teach
+	with a wee bit of Battle Points?"
+}
+
+text BattleFrontier_Lounge7_Text_LeftTutorWelcomeBack {
+	"Buhahaha!
+
+	Are you back to learn special and
+	yet cute POKéMON moves?"
+}
+
+text BattleFrontier_Lounge7_Text_TeachWhichMove {
+	"Fine, fine, look here!
+	Which move should I teach?"
+}
+
+text BattleFrontier_Lounge7_Text_MoveWillBeXBattlePoints {
+	"The move {STR_VAR_1}, is it?
+	That will be {STR_VAR_2} Battle Points, okay?"
+}
+
+text BattleFrontier_Lounge7_Text_TeachMoveToWhichMon {
+	"Fine, fine, now pick the POKéMON
+	I should teach the move to."
+}
+
+text BattleFrontier_Lounge7_Text_HaventGotEnoughPoints {
+	"What the…
+	You haven't got enough Battle Points!"
+}
+
+text BattleFrontier_Lounge7_Text_IllTakeBattlePoints {
+	"Do you see how skilled I am now?
+	I'll take your Battle Points, thanks!"
+}
+
+text BattleFrontier_Lounge7_Text_YouDontWantTo {
+	"What's that?
+	You don't want to…
+
+	If you want to see how skilled I am,
+	you come see me anytime!"
+}
+
+text BattleFrontier_Lounge7_Text_RightTutorIntro {
+	"Ihihihi!
+
+	I know it's hard to see now, but I used
+	to be one fantastic TRAINER.
+
+	I had a reputation as the most
+	invincible SWIMMER around, I tell you!
+
+	… … … … … …
+
+	What's wrong?
+	You don't believe me.
+
+	I'm not like that buffoonish woman over
+	there. I'm actually experienced!
+
+	I can prove it to you.
+	I can teach your POKéMON hard and
+	yet pretty moves.
+
+	But my lessons don't come free.
+	How about paying for the moves I teach
+	with a wee bit of Battle Points?"
+}
+
+text BattleFrontier_Lounge7_Text_RightTutorWelcomeBack {
+	"Ihihihi!
+
+	Have you come to learn hard and
+	yet pretty POKéMON moves?"
+}
+
+text BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong {
+	"Those ladies, the way they bad-mouth
+	each other, you probably think that
+	they don't get along.
+
+	But if that were true, they wouldn't
+	stay out here together, would they?"
+}
+
+text BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful {
+	"When I was just a wee YOUNGSTER,
+	those ladies were strong and beautiful.
+
+	They were idols among us TRAINERS.
+
+	Even now, age hasn't dulled their
+	abilities.
+
+	In fact, their POKéMON moves have
+	grown even more polished.
+
+	But… For some reason, I can't help
+	but feel this…
+
+	Time is so cruel…"
+}
+
+text BattleFrontier_Lounge7_Text_SoftboiledDesc {
+	"Recovers up to
+	half the user's
+	maximum HP."
+}
+
+text BattleFrontier_Lounge7_Text_SeismicTossDesc {
+	"Inflicts damage
+	identical to the
+	user's level."
+}
+
+text BattleFrontier_Lounge7_Text_DreamEaterDesc {
+	"Recovers half the
+	damage inflicted
+	on a sleeping foe."
+}
+
+text BattleFrontier_Lounge7_Text_MegaPunchDesc {
+	"A strong punch
+	thrown with
+	incredible power."
+}
+
+text BattleFrontier_Lounge7_Text_MegaKickDesc {
+	"An extremely
+	powerful kick with
+	intense force."
+}
+
+text BattleFrontier_Lounge7_Text_BodySlamDesc {
+	"A full-body slam
+	that may cause
+	paralysis."
+}
+
+text BattleFrontier_Lounge7_Text_RockSlideDesc {
+	"Large boulders
+	are hurled. May
+	cause flinching."
+}
+
+text BattleFrontier_Lounge7_Text_CounterDesc {
+	"Retaliates any
+	physical hit with
+	double the power."
+}
+
+text BattleFrontier_Lounge7_Text_ThunderWaveDesc {
+	"A weak jolt of
+	electricity that
+	paralyzes the foe."
+}
+
+text BattleFrontier_Lounge7_Text_SwordsDanceDesc {
+	"A fighting dance
+	that sharply
+	raises ATTACK."
+}
+
+text BattleFrontier_Lounge7_Text_DefenseCurlDesc {
+	"Curls up to con-
+	ceal weak spots
+	and raise DEFENSE."
+}
+
+text BattleFrontier_Lounge7_Text_SnoreDesc {
+	"A loud attack
+	that can be used
+	only while asleep."
+}
+
+text BattleFrontier_Lounge7_Text_MudSlapDesc {
+	"Hurls mud in the
+	foe's face to re-
+	duce its accuracy."
+}
+
+text BattleFrontier_Lounge7_Text_SwiftDesc {
+	"Sprays star-
+	shaped rays
+	that never miss."
+}
+
+text BattleFrontier_Lounge7_Text_IcyWindDesc {
+	"A chilling attack
+	that lowers the
+	foe's SPEED."
+}
+
+text BattleFrontier_Lounge7_Text_EndureDesc {
+	"Endures any at-
+	tack for 1 turn,
+	leaving 1HP."
+}
+
+text BattleFrontier_Lounge7_Text_PsychUpDesc {
+	"Copies the foe's
+	effect(s) and
+	gives to the user."
+}
+
+text BattleFrontier_Lounge7_Text_IcePunchDesc {
+	"An icy punch
+	that may
+	freeze the foe."
+}
+
+text BattleFrontier_Lounge7_Text_ThunderPunchDesc {
+	"An electrified
+	punch that may
+	paralyze the foe."
+}
+
+text BattleFrontier_Lounge7_Text_FirePunchDesc {
+	"A fiery punch
+	that may burn
+	the foe."
+}

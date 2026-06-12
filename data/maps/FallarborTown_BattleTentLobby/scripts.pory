@@ -98,6 +98,7 @@ script FallarborTown_BattleTentLobby_EventScript_Attendant {
     special(SavePlayerParty)
     msgbox(FallarborTown_BattleTentLobby_Text_WelcomeToBattleTent, MSGBOX_DEFAULT)
     goto(FallarborTown_BattleTentLobby_EventScript_AskEnterChallenge)
+    end
 }
 
 script FallarborTown_BattleTentLobby_EventScript_AskEnterChallenge {
@@ -161,6 +162,7 @@ script FallarborTown_BattleTentLobby_EventScript_SaveBeforeChallenge {
     	goto(FallarborTown_BattleTentLobby_EventScript_CancelChallenge)
     }
     goto(FallarborTown_BattleTentLobby_EventScript_EnterChallenge)
+    end
 }
 
 script FallarborTown_BattleTentLobby_EventScript_EnterChallenge {
@@ -187,6 +189,7 @@ script FallarborTown_BattleTentLobby_EventScript_EnterChallenge {
 script FallarborTown_BattleTentLobby_EventScript_LoadPartyCancelChallenge {
     special(LoadPlayerParty)
     goto(FallarborTown_BattleTentLobby_EventScript_CancelChallenge)
+    end
 }
 
 script FallarborTown_BattleTentLobby_EventScript_CancelChallenge {
