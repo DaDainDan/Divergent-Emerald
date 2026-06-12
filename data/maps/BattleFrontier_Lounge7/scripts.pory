@@ -278,121 +278,121 @@ text BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful {
 }
 
 text BattleFrontier_Lounge7_Text_SoftboiledDesc {
-	"Recovers up to
-	half the user's
-	maximum HP."
+	"Recovers up to\n"
+	"half the user's\n"
+	"maximum HP."
 }
 
 text BattleFrontier_Lounge7_Text_SeismicTossDesc {
-	"Inflicts damage
-	identical to the
-	user's level."
+	"Inflicts damage\n"
+	"identical to the\n"
+	"user's level."
 }
 
 text BattleFrontier_Lounge7_Text_DreamEaterDesc {
-	"Recovers half the
-	damage inflicted
-	on a sleeping foe."
+	"Recovers half the\n"
+	"damage inflicted\n"
+	"on a sleeping foe."
 }
 
 text BattleFrontier_Lounge7_Text_MegaPunchDesc {
-	"A strong punch
-	thrown with
-	incredible power."
+	"A strong punch\n"
+	"thrown with\n"
+	"incredible power."
 }
 
 text BattleFrontier_Lounge7_Text_MegaKickDesc {
-	"An extremely
-	powerful kick with
-	intense force."
+	"An extremely\n"
+	"powerful kick with\n"
+	"intense force."
 }
 
 text BattleFrontier_Lounge7_Text_BodySlamDesc {
-	"A full-body slam
-	that may cause
-	paralysis."
+	"A full-body slam\n"
+	"that may cause\n"
+	"paralysis."
 }
 
 text BattleFrontier_Lounge7_Text_RockSlideDesc {
-	"Large boulders
-	are hurled. May
-	cause flinching."
+	"Large boulders\n"
+	"are hurled. May\n"
+	"cause flinching."
 }
 
 text BattleFrontier_Lounge7_Text_CounterDesc {
-	"Retaliates any
-	physical hit with
-	double the power."
+	"Retaliates any\n"
+	"physical hit with\n"
+	"double the power."
 }
 
 text BattleFrontier_Lounge7_Text_ThunderWaveDesc {
-	"A weak jolt of
-	electricity that
-	paralyzes the foe."
+	"A weak jolt of\n"
+	"electricity that\n"
+	"paralyzes the foe."
 }
 
 text BattleFrontier_Lounge7_Text_SwordsDanceDesc {
-	"A fighting dance
-	that sharply
-	raises ATTACK."
+	"A fighting dance\n"
+	"that sharply\n"
+	"raises ATTACK."
 }
 
 text BattleFrontier_Lounge7_Text_DefenseCurlDesc {
-	"Curls up to con-
-	ceal weak spots
-	and raise DEFENSE."
+	"Curls up to con-\n"
+	"ceal weak spots\n"
+	"and raise DEFENSE."
 }
 
 text BattleFrontier_Lounge7_Text_SnoreDesc {
-	"A loud attack
-	that can be used
-	only while asleep."
+	"A loud attack\n"
+	"that can be used\n"
+	"only while asleep."
 }
 
 text BattleFrontier_Lounge7_Text_MudSlapDesc {
-	"Hurls mud in the
-	foe's face to re-
-	duce its accuracy."
+	"Hurls mud in the\n"
+	"foe's face to re-\n"
+	"duce its accuracy."
 }
 
 text BattleFrontier_Lounge7_Text_SwiftDesc {
-	"Sprays star-
-	shaped rays
-	that never miss."
+	"Sprays star-\n"
+	"shaped rays\n"
+	"that never miss."
 }
 
 text BattleFrontier_Lounge7_Text_IcyWindDesc {
-	"A chilling attack
-	that lowers the
-	foe's SPEED."
+	"A chilling attack\n"
+	"that lowers the\n"
+	"foe's SPEED."
 }
 
 text BattleFrontier_Lounge7_Text_EndureDesc {
-	"Endures any at-
-	tack for 1 turn,
-	leaving 1HP."
+	"Endures any at-\n"
+	"tack for 1 turn,\n"
+	"leaving 1HP."
 }
 
 text BattleFrontier_Lounge7_Text_PsychUpDesc {
-	"Copies the foe's
-	effect(s) and
-	gives to the user."
+	"Copies the foe's\n"
+	"effect(s) and\n"
+	"gives to the user."
 }
 
 text BattleFrontier_Lounge7_Text_IcePunchDesc {
-	"An icy punch
-	that may
-	freeze the foe."
+	"An icy punch\n"
+	"that may\n"
+	"freeze the foe."
 }
 
 text BattleFrontier_Lounge7_Text_ThunderPunchDesc {
-	"An electrified
-	punch that may
-	paralyze the foe."
+	"An electrified\n"
+	"punch that may\n"
+	"paralyze the foe."
 }
 
 text BattleFrontier_Lounge7_Text_FirePunchDesc {
-	"A fiery punch
-	that may burn
-	the foe."
+	"A fiery punch\n"
+	"that may burn\n"
+	"the foe."
 }

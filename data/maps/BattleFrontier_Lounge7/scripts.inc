@@ -466,119 +466,119 @@ BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful::
 BattleFrontier_Lounge7_Text_SoftboiledDesc::
 # 280 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Recovers up to\n"
-	.string "half the user's\l"
+	.string "half the user's\n"
 	.string "maximum HP.$"
 
 BattleFrontier_Lounge7_Text_SeismicTossDesc::
 # 286 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Inflicts damage\n"
-	.string "identical to the\l"
+	.string "identical to the\n"
 	.string "user's level.$"
 
 BattleFrontier_Lounge7_Text_DreamEaterDesc::
 # 292 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Recovers half the\n"
-	.string "damage inflicted\l"
+	.string "damage inflicted\n"
 	.string "on a sleeping foe.$"
 
 BattleFrontier_Lounge7_Text_MegaPunchDesc::
 # 298 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "A strong punch\n"
-	.string "thrown with\l"
+	.string "thrown with\n"
 	.string "incredible power.$"
 
 BattleFrontier_Lounge7_Text_MegaKickDesc::
 # 304 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "An extremely\n"
-	.string "powerful kick with\l"
+	.string "powerful kick with\n"
 	.string "intense force.$"
 
 BattleFrontier_Lounge7_Text_BodySlamDesc::
 # 310 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "A full-body slam\n"
-	.string "that may cause\l"
+	.string "that may cause\n"
 	.string "paralysis.$"
 
 BattleFrontier_Lounge7_Text_RockSlideDesc::
 # 316 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Large boulders\n"
-	.string "are hurled. May\l"
+	.string "are hurled. May\n"
 	.string "cause flinching.$"
 
 BattleFrontier_Lounge7_Text_CounterDesc::
 # 322 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Retaliates any\n"
-	.string "physical hit with\l"
+	.string "physical hit with\n"
 	.string "double the power.$"
 
 BattleFrontier_Lounge7_Text_ThunderWaveDesc::
 # 328 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "A weak jolt of\n"
-	.string "electricity that\l"
+	.string "electricity that\n"
 	.string "paralyzes the foe.$"
 
 BattleFrontier_Lounge7_Text_SwordsDanceDesc::
 # 334 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "A fighting dance\n"
-	.string "that sharply\l"
+	.string "that sharply\n"
 	.string "raises ATTACK.$"
 
 BattleFrontier_Lounge7_Text_DefenseCurlDesc::
 # 340 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Curls up to con-\n"
-	.string "ceal weak spots\l"
+	.string "ceal weak spots\n"
 	.string "and raise DEFENSE.$"
 
 BattleFrontier_Lounge7_Text_SnoreDesc::
 # 346 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "A loud attack\n"
-	.string "that can be used\l"
+	.string "that can be used\n"
 	.string "only while asleep.$"
 
 BattleFrontier_Lounge7_Text_MudSlapDesc::
 # 352 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Hurls mud in the\n"
-	.string "foe's face to re-\l"
+	.string "foe's face to re-\n"
 	.string "duce its accuracy.$"
 
 BattleFrontier_Lounge7_Text_SwiftDesc::
 # 358 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Sprays star-\n"
-	.string "shaped rays\l"
+	.string "shaped rays\n"
 	.string "that never miss.$"
 
 BattleFrontier_Lounge7_Text_IcyWindDesc::
 # 364 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "A chilling attack\n"
-	.string "that lowers the\l"
+	.string "that lowers the\n"
 	.string "foe's SPEED.$"
 
 BattleFrontier_Lounge7_Text_EndureDesc::
 # 370 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Endures any at-\n"
-	.string "tack for 1 turn,\l"
+	.string "tack for 1 turn,\n"
 	.string "leaving 1HP.$"
 
 BattleFrontier_Lounge7_Text_PsychUpDesc::
 # 376 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Copies the foe's\n"
-	.string "effect(s) and\l"
+	.string "effect(s) and\n"
 	.string "gives to the user.$"
 
 BattleFrontier_Lounge7_Text_IcePunchDesc::
 # 382 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "An icy punch\n"
-	.string "that may\l"
+	.string "that may\n"
 	.string "freeze the foe.$"
 
 BattleFrontier_Lounge7_Text_ThunderPunchDesc::
 # 388 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "An electrified\n"
-	.string "punch that may\l"
+	.string "punch that may\n"
 	.string "paralyze the foe.$"
 
 BattleFrontier_Lounge7_Text_FirePunchDesc::
 # 394 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "A fiery punch\n"
-	.string "that may burn\l"
+	.string "that may burn\n"
 	.string "the foe.$"
