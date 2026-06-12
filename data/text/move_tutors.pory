@@ -1,0 +1,314 @@
+text MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce {
+	"This move can be learned only
+	once. Is that okay?"
+}
+
+text MoveTutor_Text_SwaggerTeach {
+	"Heh! My POKéMON totally rules!
+	It's cooler than any POKéMON!
+
+	I was lipping off with a swagger in
+	my step like that when the CHAIRMAN
+	chewed me out.
+
+	That took the swagger out of my step.
+
+	If you'd like, I'll teach the move
+	SWAGGER to a POKéMON of yours."
+}
+
+text MoveTutor_Text_SwaggerDeclined {
+	"What, no? Can't you get into
+	the spirit of things?"
+}
+
+text MoveTutor_Text_SwaggerWhichMon {
+	"All right, which POKéMON wants to
+	learn how to SWAGGER?"
+}
+
+text MoveTutor_Text_SwaggerTaught {
+	"I'll just praise my POKéMON from now
+	on without the swagger."
+}
+
+text MoveTutor_Text_RolloutTeach {
+	"Did you know that you can go from
+	here a long way in that direction
+	without changing direction?
+
+	I might even be able to roll
+	that way.
+
+	Do you think your POKéMON will
+	want to roll, too?
+
+	I can teach one the move ROLLOUT
+	if you'd like."
+}
+
+text MoveTutor_Text_RolloutDeclined {
+	"You don't need to be shy about it.
+	Let's roll!"
+}
+
+text MoveTutor_Text_RolloutWhichMon {
+	"Ehehe, sure thing! It'd be great if
+	the POKéMON looked like me."
+}
+
+text MoveTutor_Text_RolloutTaught {
+	"Rolling around in the grass makes me
+	happy. Come on, let's roll!"
+}
+
+text MoveTutor_Text_FuryCutterTeach {
+	"There's a move that gets stronger
+	when you keep using it in a row.
+
+	It's a BUG-type move, and it is
+	wickedly cool.
+
+	It's called FURY CUTTER.
+	Want me to teach it to a POKéMON?"
+}
+
+text MoveTutor_Text_FuryCutterDeclined {
+	"We're not on the same wavelength."
+}
+
+text MoveTutor_Text_FuryCutterWhichMon {
+	"Yay!
+	Show me which POKéMON I should teach."
+}
+
+text MoveTutor_Text_FuryCutterTaught {
+	"I get a thrill watching to see if
+	the move keeps hitting in succession!"
+}
+
+text MoveTutor_Text_MimicTeach {
+	"Ah, young one!
+
+	I am also a young one, but I mimic
+	the styles and speech of the elderly
+	folks of this town.
+
+	What do you say, young one?
+	Would you agree to it if I were to
+	offer to teach the move MIMIC?"
+}
+
+text MoveTutor_Text_MimicDeclined {
+	"Oh, boo! I wanted to teach MIMIC
+	to your POKéMON!"
+}
+
+text MoveTutor_Text_MimicWhichMon {
+	"Fwofwo! And so I shall!
+	Let me see the POKéMON
+	you wish me to teach."
+}
+
+text MoveTutor_Text_MimicTaught {
+	"MIMIC is a move of great depth.
+
+	Could you execute it to perfection
+	as well as me…?"
+}
+
+text MoveTutor_Text_MetronomeTeach {
+	"I want all sorts of things!
+	But I used up my allowance…
+
+	Wouldn't it be nice if there were
+	a spell that made money appear when
+	you waggle a finger?
+
+	If you want, I can teach your POKéMON
+	the move METRONOME.
+
+	Money won't appear, but your POKéMON
+	will waggle a finger. Yes?"
+}
+
+text MoveTutor_Text_MetronomeDeclined {
+	"Okay. I'll be here if you change
+	your mind."
+}
+
+text MoveTutor_Text_MetronomeWhichMon {
+	"Okay! I'll teach it!
+	Which POKéMON should I teach?"
+}
+
+text MoveTutor_Text_MetronomeTaught {
+	"When a POKéMON waggles its finger
+	like a METRONOME, all sorts of nice
+	things happen.
+
+	Wouldn't it be nice if we could
+	use it, too?"
+}
+
+text MoveTutor_Text_SleepTalkTeach {
+	"Humph! My wife relies on HIDDEN
+	POWER to stay awake.
+
+	She should just take a nap like I do,
+	and SLEEP TALK.
+
+	I can teach your POKéMON how to
+	SLEEP TALK instead. Interested?"
+}
+
+text MoveTutor_Text_SleepTalkDeclined {
+	"Oh, fine, fine. You want to stay awake
+	with HIDDEN POWER, too…"
+}
+
+text MoveTutor_Text_SleepTalkWhichMon {
+	"Ah, an appreciative child!
+	Which POKéMON should I teach?"
+}
+
+text MoveTutor_Text_SleepTalkTaught {
+	"I've never once gotten my wife's
+	coin trick right.
+
+	I would be happy if I got it right
+	even as I SLEEP TALK…"
+}
+
+text MoveTutor_Text_SubstituteTeach {
+	"When I see the wide world from up
+	here on the roof…
+
+	I think about how nice it would be
+	if there were more than just one me
+	so I could enjoy all sorts of lives.
+
+	Of course it's not possible.
+	Giggle…
+
+	I know! Would you be interested in
+	having a POKéMON learn SUBSTITUTE?"
+}
+
+text MoveTutor_Text_SubstituteDeclined {
+	"Oh, no?
+
+	A POKéMON can make a copy of
+	itself using it, you know."
+}
+
+text MoveTutor_Text_SubstituteWhichMon {
+	"Giggle…
+	Which POKéMON do you want me to
+	teach SUBSTITUTE?"
+}
+
+text MoveTutor_Text_SubstituteTaught {
+	"We human beings should enjoy our
+	own lives to the utmost!
+
+	I hope you'll get that way, too!"
+}
+
+text MoveTutor_Text_DynamicPunchTeach {
+	"I can't do this anymore!
+
+	It's utterly hopeless!
+
+	I'm a FIGHTING-type TRAINER,
+	so I can't win at the MOSSDEEP GYM
+	no matter how hard I try!
+
+	Argh! Punch! Punch! Punch!
+	Punch! Punch! Punch!
+
+	What, don't look at me that way!
+	I'm only hitting the ground!
+
+	Or do you want me to teach your
+	POKéMON DYNAMICPUNCH?"
+}
+
+text MoveTutor_Text_DynamicPunchDeclined {
+	"Darn! You're even making fun of me?
+	Punch! Punch! Punch!"
+}
+
+text MoveTutor_Text_DynamicPunchWhichMon {
+	"What? You do? You're a good person!
+	Which POKéMON should I teach?"
+}
+
+text MoveTutor_Text_DynamicPunchTaught {
+	"I want you to win at the MOSSDEEP GYM
+	using that DYNAMICPUNCH!"
+}
+
+text MoveTutor_Text_DoubleEdgeTeach {
+	"Sigh…
+
+	SOOTOPOLIS's GYM LEADER is really
+	lovably admirable.
+
+	But that also means I have many
+	rivals for his attention.
+
+	He's got appeal with a DOUBLE-EDGE.
+	I couldn't even catch his eye.
+
+	Please, let me teach your POKéMON
+	the move DOUBLE-EDGE!"
+}
+
+text MoveTutor_Text_DoubleEdgeDeclined {
+	"Oh…
+	Even you rejected me…"
+}
+
+text MoveTutor_Text_DoubleEdgeWhichMon {
+	"Okay, which POKéMON should I teach
+	DOUBLE-EDGE?"
+}
+
+text MoveTutor_Text_DoubleEdgeTaught {
+	"I won't live for love anymore!
+	I'll become tough!"
+}
+
+text MoveTutor_Text_ExplosionTeach {
+	"I don't intend to be going nowhere
+	fast in the sticks like this forever.
+
+	You watch me, I'll get out to the city
+	and become a huge hit.
+
+	Seriously, I'm going to cause
+	a huge EXPLOSION of popularity!
+
+	If you overheard that, I'll happily
+	teach EXPLOSION to your POKéMON!"
+}
+
+text MoveTutor_Text_ExplosionDeclined {
+	"Gaah! You're turning me down because
+	I live in the country?"
+}
+
+text MoveTutor_Text_ExplosionWhichMon {
+	"Fine! An EXPLOSION it is!
+	Which POKéMON wants to blow up?"
+}
+
+text MoveTutor_Text_ExplosionTaught {
+	"For a long time, I've taught POKéMON
+	how to use EXPLOSION, but I've yet
+	to ignite my own EXPLOSION…
+
+	Maybe it's because deep down,
+	I would rather stay here…"
+}

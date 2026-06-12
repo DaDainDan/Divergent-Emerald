@@ -1,0 +1,173 @@
+// Same as Hoenn's day-care text, used by the Four Island Day-Care. Unused text translated in Emerald
+
+text DayCare_Text_ImDaycareManSpeakToMyWife {
+	"I'm the DAY-CARE MAN.
+
+	I help take care of the precious
+	POKéMON of TRAINERS.
+
+	If you'd like me to raise your
+	POKéMON, have a word with my wife."
+}
+
+text DayCare_Text_DoYouWantEgg {
+	"Ah, it's you!
+
+	We were raising your POKéMON, and
+	my goodness, were we surprised!
+
+	Your POKéMON had an EGG!
+
+	We don't know how it got there,
+	but your POKéMON had it.
+
+	You do want it, yes?"
+}
+
+text DayCare_Text_YourMonIsDoingFine {
+	"Ah, it's you! Good to see you.
+	Your {STR_VAR_1}'s doing fine."
+}
+
+text DayCare_Text_IllKeepIt {
+	"Well then, I'll keep it.
+	Thanks!"
+}
+
+text DayCare_Text_YouHaveNoRoomForIt {
+	"You have no room for it…
+	Come back when you've made room."
+}
+
+text DayCare_Text_ReceivedEgg {
+	"{PLAYER} received the EGG from
+	the DAY-CARE MAN."
+}
+
+text DayCare_Text_TakeGoodCareOfIt {
+	"Take good care of it."
+}
+
+text DayCare_Text_SeeWifeIfYouWantToPickUpMon {
+	"ポケモンを　ひきとりたい　ときは
+	ばさんに　いって　おくれ"
+}
+
+text DayCare_Text_YourMonsAreDoingFine {
+	"Ah, it's you! Your {STR_VAR_1} and
+	{STR_VAR_2} are doing fine."
+}
+
+text DayCare_Text_IWillKeepDoYouWantIt {
+	"I really will keep it.
+	You do want this, yes?"
+}
+
+text DayCare_Text_WouldYouLikeUsToRaiseMon {
+	"I'm the DAY-CARE LADY.
+
+	We can raise POKéMON for you.
+
+	Would you like us to raise one?"
+}
+
+text DayCare_Text_WhichMonShouldWeRaise {
+	"Which POKéMON should we raise for
+	you?"
+}
+
+text DayCare_Text_WellRaiseYourMon {
+	"Fine, we'll raise your {STR_VAR_1}
+	for a while.
+
+	Come back for it later."
+}
+
+text DayCare_Text_WeCanRaiseOneMore {
+	"We can raise two of your POKéMON.
+
+	Would you like us to raise one
+	more POKéMON for you?"
+}
+
+text DayCare_Text_HusbandWasLookingForYou {
+	"My husband was looking for you."
+}
+
+text DayCare_Text_FineThenComeAgain {
+	"Oh, fine, then.
+	Come again."
+}
+
+text DayCare_Text_NotEnoughMoney {
+	"You don't have enough money…"
+}
+
+text DayCare_Text_TakeOtherOneBackToo {
+	"Will you take back the other one,
+	too?"
+}
+
+text DayCare_Text_ComeAgain {
+	"Fine.
+	Come again."
+}
+
+text DayCare_Text_GoodToSeeYou {
+	"Ah, it's you!
+	Good to see you.
+
+	Your POKéMON can only be doing
+	good!"
+}
+
+text DayCare_Text_YourMonHasGrownXLevels {
+	"By level, your {STR_VAR_1} has
+	grown by {STR_VAR_2}."
+}
+
+text DayCare_Text_YourPartyIsFull {
+	"Your POKéMON party is full.
+	Make room, then come see me."
+}
+
+text DayCare_Text_TakeBackWhichMon {
+	"どっちの　ポケモンを　ひきとるかい？"
+}
+
+text DayCare_Text_ItWillCostX {
+	"If you want your {STR_VAR_1} back,
+	it will cost ¥{STR_VAR_2}."
+}
+
+text DayCare_Text_HeresYourMon {
+	"Perfect!
+	Here's your POKéMON."
+}
+
+text DayCare_Text_TookBackMon {
+	"{PLAYER} took back {STR_VAR_1} from
+	the DAY-CARE LADY."
+}
+
+text DayCare_Text_YouHaveJustOneMon {
+	"Oh? But you have just one
+	POKéMON.
+
+	Come back another time."
+}
+
+text DayCare_Text_TakeYourMonBack {
+	"Will you take your POKéMON back?"
+}
+
+text DayCare_Text_WhatWillYouBattleWith {
+	"If you leave me that POKéMON,
+	what will you battle with?
+
+	Come back another time."
+}
+
+text DayCare_Text_Huh {
+	"Huh?"
+}

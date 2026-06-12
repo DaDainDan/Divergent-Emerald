@@ -1,0 +1,309 @@
+text gBirchDexRatingText_AreYouCurious {
+	"PROF. BIRCH: Ah, {PLAYER}{KUN}!
+
+	Are you curious about how your
+	POKéDEX is coming along?"
+}
+
+text gBirchDexRatingText_Cancel {
+	"Hm? Oh, you haven't caught enough
+	POKéMON to make it worthwhile."
+}
+
+text gBirchDexRatingText_SoYouveSeenAndCaught {
+	"Hmhm…
+
+	So, you've seen {STR_VAR_1} POKéMON,
+	and you've caught {STR_VAR_2} POKéMON…"
+}
+
+text gBirchDexRatingText_LessThan10 {
+	"Go into grassy areas more and look
+	for POKéMON more carefully."
+}
+
+text gBirchDexRatingText_LessThan20 {
+	"I guess you're getting the hang
+	of it. But, it gets harder from here."
+}
+
+text gBirchDexRatingText_LessThan30 {
+	"Some POKéMON only appear in
+	certain areas.
+	You must be persistent."
+}
+
+text gBirchDexRatingText_LessThan40 {
+	"Well, it could use more quantity,
+	but this is looking more like
+	a POKéDEX now."
+}
+
+text gBirchDexRatingText_LessThan50 {
+	"This is coming along pretty good.
+	Keep up the effort."
+}
+
+text gBirchDexRatingText_LessThan60 {
+	"Are you using any RODS?
+	There are many POKéMON in the sea."
+}
+
+text gBirchDexRatingText_LessThan70 {
+	"Instead of just catching POKéMON,
+	how about making them evolve, too?"
+}
+
+text gBirchDexRatingText_LessThan80 {
+	"This is going to be a fantastic
+	POKéDEX.
+	That's the feeling I'm getting."
+}
+
+text gBirchDexRatingText_LessThan90 {
+	"You've collected this many…
+	Your talent is remarkable!"
+}
+
+text gBirchDexRatingText_LessThan100 {
+	"Have you visited the SAFARI ZONE?
+
+	I hear there are some POKéMON that
+	can only be caught there."
+}
+
+text gBirchDexRatingText_LessThan110 {
+	"You've finally reached
+	the 100-kind mark.
+
+	This is an impressive POKéDEX!"
+}
+
+text gBirchDexRatingText_LessThan120 {
+	"There might be POKéMON that can be
+	found using ROCK SMASH."
+}
+
+text gBirchDexRatingText_LessThan130 {
+	"You should get some more POKéMON
+	by trading with others."
+}
+
+text gBirchDexRatingText_LessThan140 {
+	"I've heard of POKéMON that evolve
+	when they come to fully love their
+	TRAINERS."
+}
+
+text gBirchDexRatingText_LessThan150 {
+	"I had no idea that there were so
+	many POKéMON species in the HOENN
+	region."
+}
+
+text gBirchDexRatingText_LessThan160 {
+	"On occasion, some POKéMON appear
+	in large numbers like outbreaks.
+
+	Don't miss opportunities like
+	those."
+}
+
+text gBirchDexRatingText_LessThan170 {
+	"One can get a very good idea about
+	the POKéMON of the HOENN region
+	by looking through your POKéDEX."
+}
+
+text gBirchDexRatingText_LessThan180 {
+	"I would say you already qualify as
+	a POKéMON PROFESSOR, and a good
+	one, too!"
+}
+
+text gBirchDexRatingText_LessThan190 {
+	"With a POKéDEX this complete,
+	you're a real professional at this!"
+}
+
+text gBirchDexRatingText_LessThan200 {
+	"You're very close to completing
+	this POKéDEX.
+	I can feel it in my bones!"
+}
+
+text gBirchDexRatingText_DexCompleted {
+	"Congratulations!
+	Your POKéDEX is complete!"
+}
+
+text gBirchDexRatingText_OnANationwideBasis {
+	"Hmhm…
+	On a nationwide basis…
+
+	You've seen {STR_VAR_1} POKéMON,
+	and you've caught {STR_VAR_2} POKéMON…"
+}
+
+// FRLG
+text PokedexRating_Text_HowIsPokedexComingAlong {
+	"OAK: Good to see you!
+	How is your POKéDEX coming along?
+
+	Here, let me take a look."
+}
+
+text PokedexRating_Text_SeenXOwnedY {
+	"The amount of progress you've made
+	on your POKéDEX is:
+
+	{STR_VAR_1} POKéMON seen and
+	{STR_VAR_2} POKéMON owned.
+
+	{FONT_NORMAL}PROF. OAK's rating:"
+}
+
+text PokedexRating_Text_LessThan10 {
+	"You still have lots to do.
+
+	Go into every patch of grass you
+	see and look for POKéMON!"
+}
+
+text PokedexRating_Text_LessThan20 {
+	"It looks as if you're getting on
+	the right track!
+
+	I've given one of my AIDES a FLASH
+	HM. Make sure you go get it!"
+}
+
+text PokedexRating_Text_LessThan30 {
+	"Your POKéDEX could use a bit more
+	volume still!
+
+	Try to catch other species of
+	POKéMON!"
+}
+
+text PokedexRating_Text_LessThan40 {
+	"Good, it's apparent that you're
+	trying hard!
+
+	I've given one of my AIDES an
+	ITEMFINDER. Be sure to collect it!"
+}
+
+text PokedexRating_Text_LessThan50 {
+	"Your POKéDEX is coming along quite
+	well!
+
+	I've given one of my AIDES an
+	AMULET COIN. Be sure to get it!"
+}
+
+text PokedexRating_Text_LessThan60 {
+	"Ah, you've finally topped 50
+	species!
+
+	I've given one of my AIDES an EXP.
+	SHARE. Be sure to go get it!"
+}
+
+text PokedexRating_Text_LessThan70 {
+	"Hoho! This is turning into quite the
+	respectable POKéDEX!"
+}
+
+text PokedexRating_Text_LessThan80 {
+	"Very good!
+
+	I think you'll collect even more
+	POKéMON by going fishing!"
+}
+
+text PokedexRating_Text_LessThan90 {
+	"Wonderful! Let me guess… You
+	like to collect things, don't you?"
+}
+
+text PokedexRating_Text_LessThan100 {
+	"I'm impressed!
+	It must have been difficult to do!"
+}
+
+text PokedexRating_Text_LessThan110 {
+	"You've finally hit 100 species!
+	I can't believe how good you are!"
+}
+
+text PokedexRating_Text_LessThan120 {
+	"You even have the evolved forms
+	of POKéMON! Super!"
+}
+
+text PokedexRating_Text_LessThan130 {
+	"Excellent! Trade with friends to
+	get some more!"
+}
+
+text PokedexRating_Text_LessThan140 {
+	"Outstanding!
+	You've become a real pro at this!"
+}
+
+text PokedexRating_Text_LessThan150 {
+	"I have nothing left to say!
+	You're the POKéMON PROFESSOR now!"
+}
+
+text PokedexRating_Text_Complete {
+	"Your POKéDEX is entirely complete!
+	Congratulations!!"
+}
+
+text PokedexRating_Text_NationalDexSeenXOwnedY {
+	"And your NATIONAL POKéDEX is:
+
+	{STR_VAR_1} POKéMON seen and
+	{STR_VAR_2} POKéMON owned."
+}
+
+text PokedexRating_Text_LookForwardToFilledNationalDex {
+	"I'll be looking forward to seeing
+	you fill the NATIONAL POKéDEX!"
+}
+
+text PokedexRating_Text_YouveCompletedDex {
+	"Finally…
+
+	You've finally completed the
+	POKéDEX!
+
+	It's magnificent!
+	Truly, this is a fantastic feat!"
+}
+
+text PokedexRating_Text_Wroooaaarrr {
+	"Wroooooooaaaaaarrrr!"
+}
+
+text PokedexRating_Text_ThankYouMadeDreamReality {
+	"Thank you, {PLAYER}!
+	Sincerely, thank you!
+	You've made my dream a reality!"
+}
+
+text PokedexRating_Text_LoveSeeingYourPokedex {
+	"OAK: Ah, welcome!
+
+	Tell me, how is your POKéDEX
+	coming along?
+
+	Wahaha!
+
+	Actually, I know how it is, but I
+	love seeing it anyway!
+
+	Let's see…"
+}

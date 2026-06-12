@@ -1,0 +1,57 @@
+text Questionnaire_Text_FillOut {
+	"There is a questionnaire.
+	Would you like to fill it out?"
+}
+
+text Questionnaire_Text_ThankYou {
+	"Thank you for taking the time to
+	fill out our questionnaire.
+
+	Your feedback will be used for
+	future reference."
+}
+
+text Questionnaire_Text_YouKnowThoseWordsGift {
+	"Oh, hello!
+	You know those words?
+
+	That means you must know about
+	the MYSTERY GIFT.
+
+	From now on, you should be
+	receiving MYSTERY GIFTS!"
+}
+
+text Questionnaire_Text_YouCanAccessMysteryGift {
+	"Once you save your game, you can
+	access the MYSTERY GIFT."
+}
+
+text Questionnaire_Text_YouKnowThoseWordsEvent {
+	"Oh, hello!
+	You know those words?
+
+	That means you must know about
+	the MYSTERY EVENT."
+}
+
+text Questionnaire_Text_YouCanAccessMysteryEvent {
+	"Once you save your game, you can
+	access the MYSTERY EVENT."
+}
+
+text MysteryGift_Text_TheresATicketForYou {
+	"Thank you for using the MYSTERY
+	EVENT System.
+
+	You must be {PLAYER}.
+	There is a ticket here for you."
+}
+
+text MysteryGift_Text_TryUsingItAtLilycovePort {
+	"It appears to be for use at
+	the LILYCOVE CITY port.
+
+	Why not give it a try and see what
+	it is about?"
+}

@@ -1,0 +1,81 @@
+// Only contains the text for the Mauville Man named Giddy. The rest is in scripts/mauville_man.inc
+text GiddyText_SoPretty {
+	" so pretty!"
+}
+
+text GiddyText_SoDarling {
+	" so darling!"
+}
+
+text GiddyText_SoRelaxed {
+	" so relaxed!"
+}
+
+text GiddyText_SoSunny {
+	" so sunny!"
+}
+
+text GiddyText_SoDesirable {
+	" so desirable!"
+}
+
+text GiddyText_SoExciting {
+	" so exciting!"
+}
+
+text GiddyText_SoAmusing {
+	" so amusing!"
+}
+
+text GiddyText_SoMagical {
+	" so magical!"
+}
+
+text GiddyText_Is {
+	" is"
+}
+
+text GiddyText_DontYouAgree {
+	"
+	Don't you agree?"
+}
+
+text GiddyText_ISoWantToGoOnAVacation {
+	"I so want to go on a vacation.
+	Would you happen to know a nice place?"
+}
+
+text GiddyText_IBoughtCrayonsWith120Colors {
+	"I bought crayons with 120 colors!
+	Don't you think that's nice?"
+}
+
+text GiddyText_WouldntItBeNiceIfWeCouldFloat {
+	"Wouldn't it be nice if we could float
+	away on a cloud of bubbles?"
+}
+
+text GiddyText_WhenYouWriteOnASandyBeach {
+	"When you write on a sandy beach,
+	they wash away. It makes me sad."
+}
+
+text GiddyText_WhatsTheBottomOfTheSeaLike {
+	"What's the bottom of the sea like?
+	Just once I would so love to go!"
+}
+
+text GiddyText_WhenYouSeeTheSettingSunDoesIt {
+	"When you see the setting sun, does it
+	make you want to go home?"
+}
+
+text GiddyText_LyingBackInTheGreenGrass {
+	"Lying back in the green grass…
+	Oh, it's so, so nice!"
+}
+
+text GiddyText_SecretBasesAreSoWonderful {
+	"SECRET BASES are so wonderful!
+	Can't you feel the excitement?"
+}

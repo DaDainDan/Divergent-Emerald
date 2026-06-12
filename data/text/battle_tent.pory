@@ -1,0 +1,576 @@
+text(local) FallarborTown_BattleTentLobby_Text_WelcomeToBattleTent {
+	"I welcome you to the BATTLE TENT
+	FALLARBOR SITE!
+
+	I am your guide to the Set KO Tourney!"
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_TakeChallenge {
+	"Now, do you wish to take the challenge
+	of a Set KO Tourney?"
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_AwaitAnotherChallenge {
+	"We await your challenge on
+	another occasion!"
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_ExplainFallarborTent {
+	"In the FALLARBOR BATTLE TENT,
+	we undertake the Set KO Tourney.
+
+	All participants enter with a team of
+	three POKéMON.
+
+	The three POKéMON must be lined up
+	in the order that they are to appear in.
+
+	During battle, the POKéMON will appear
+	one at a time in the preset order.
+
+	Once a POKéMON enters battle, it must
+	remain out until the match is decided.
+
+	If a match remains undecided in
+	three turns, it goes to judging.
+
+	If you wish to interrupt your challenge,
+	please save the game.
+
+	If you don't save, you will not be able
+	to continue with your challenge.
+
+	If you pull off the feat of beating
+	three TRAINERS in succession,
+	we will present you with a fine prize."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_SaveBeforeChallenge {
+	"Before showing you to the BATTLE
+	TENT, I must save. Is that okay?"
+}
+
+// Unused
+text(local) FallarborTown_BattleTentLobby_Text_WhichLevelMode {
+	"We offer two levels of challenge,
+	Level 50 and Open Level.
+	Which is your choice?"
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_SelectThreeMons {
+	"Very well, now select your
+	three POKéMON, please."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_NotEnoughValidMonsLv50 {
+	"My dear challenger!
+
+	You do not have the three POKéMON
+	required for entry.
+
+	They also must not hold the same
+	kinds of items.
+
+	EGGS{STR_VAR_1} ineligible.
+
+	When you have made your preparations,
+	please do return."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_NotEnoughValidMonsLvOpen {
+	"My dear challenger!
+
+	You do not have the three POKéMON
+	required for entry.
+
+	To qualify, you must bring three
+	different kinds of POKéMON.
+
+	They also must not hold the same
+	kinds of items.
+
+	EGGS{STR_VAR_1} ineligible.
+
+	When you have made your preparations,
+	please do return."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_GuideYouToBattleTent {
+	"I shall now guide you to
+	the BATTLE TENT."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_DidntSaveBeforeQuitting {
+	"My dear challenger!
+
+	You did not save the game before
+	shutting down, did you?
+
+	It is unfortunate, but that has
+	resulted in your disqualification
+	from your challenge.
+
+	You may, of course, start with a fresh
+	challenge."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_BeatThreeTrainers {
+	"How splendid! You have beaten
+	three TRAINERS in succession!"
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_WaitWhileSaveGame {
+	"Please wait while I save the game."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_PresentYouWithPrize {
+	"In commemoration of your 3-win streak,
+	we present you with this prize."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_ReceivedPrize {
+	"{PLAYER} received the prize
+	{STR_VAR_1}."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_BagFullReturnForPrize {
+	"Oh?
+	Your BAG seems to be full.
+
+	I urge you to clear space and
+	return for your prize."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_ThankYouWaitWhileSaving {
+	"Thank you so much for participating!
+
+	Please wait while I save the game."
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_AwaitAnotherChallenge2 {
+	"We await your challenge on
+	another occasion!"
+}
+
+text(local) FallarborTown_BattleTentLobby_Text_LookingForwardToArrival {
+	"We have been looking forward to
+	your arrival.
+
+	Before I show you to the BATTLE TENT,
+	I must save the game. Please wait."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_WelcomeToBattleTent {
+	"I welcome you to the BATTLE TENT
+	VERDANTURF SITE!
+
+	Here, the TRAINER's trust toward
+	POKéMON is tested."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_TakeChallenge {
+	"Do you wish to take the VERDANTURF
+	BATTLE TENT challenge?"
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_ExplainVerdanturfTent {
+	"In the VERDANTURF BATTLE TENT,
+	there is one crucial rule that must
+	be obeyed.
+
+	TRAINERS are permitted only to switch
+	their POKéMON in and out.
+
+	TRAINERS are otherwise forbidden to
+	command their POKéMON.
+
+	The POKéMON are to behave according
+	to their nature and battle on their own.
+
+	You must put your trust in your
+	POKéMON and watch over them.
+
+	If you achieve the honor of beating
+	three TRAINERS in succession,
+	we will present you with a prize.
+
+	If you want to interrupt your
+	challenge, please save the game.
+
+	If you don't save before interrupting,
+	you will be disqualified."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_ReturnFortified {
+	"When you have fortified your heart
+	and POKéMON, you must return."
+}
+
+// Unused
+text(local) VerdanturfTown_BattleTentLobby_Text_WhichLevelMode {
+	"There are two levels of difficulty,
+	Level 50 and Open Level.
+	Which is your choice of a challenge?"
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_NotEnoughValidMonsLv50 {
+	"Sigh…
+
+	You do not have the three POKéMON
+	required for the challenge.
+
+	To enter, you must provide three
+	different kinds of POKéMON.
+
+	They also must not be holding
+	the same kinds of items.
+
+	EGGS{STR_VAR_1} ineligible.
+
+	Come back when you have made
+	your preparations."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_NotEnoughValidMonsLvOpen {
+	"Sigh…
+
+	You do not have the three POKéMON
+	required for the challenge.
+
+	To enter, you must provide three
+	different kinds of POKéMON.
+
+	They also must not be holding
+	the same kinds of items.
+
+	EGGS{STR_VAR_1} ineligible.
+
+	Come back when you have made
+	your preparations."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_SelectThreeMons {
+	"Good. Now, you must select your
+	three POKéMON."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_SaveBeforeChallenge {
+	"I must save before I show you to
+	the BATTLE TENT. Is that okay?"
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_NowFollowMe {
+	"Good.
+	Now, follow me."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_ResultsWillBeRecorded {
+	"I feel privileged for having seen
+	your POKéMON's exploits.
+
+	The results will be recorded.
+	I must ask you to briefly wait."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_AchievedThreeWinStreak {
+	"To achieve a 3-win streak…
+
+	The bonds that bind your heart with
+	your POKéMON seem firm and true."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_FeatWillBeRecorded {
+	"Your feat will be recorded.
+	I must ask you to briefly wait."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_PresentYouWithPrize {
+	"For the feat of your 3-win streak,
+	we present you with this prize."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_WelcomeToBattleTent {
+	"Welcome to the BATTLE TENT
+	SLATEPORT SITE!
+
+	I am your guide to the Battle Swap
+	Tournament."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_TakeChallenge {
+	"Would you like to take the Battle
+	Swap challenge?"
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_ExplainSlateportTent {
+	"Here at the SLATEPORT BATTLE TENT,
+	we hold Battle Swap events
+	using rental POKéMON.
+
+	First, you will be loaned three
+	POKéMON specifically for this event.
+
+	Using the supplied rental POKéMON,
+	you must conduct a SINGLE BATTLE.
+
+	If you win, you are permitted to trade
+	one of your rental POKéMON.
+
+	Repeat this cycle of battling and
+	trading--if you win three times in
+	a row, you will earn a fine prize.
+
+	If you want to interrupt your
+	challenge, please save the game.
+
+	If you don't save before interrupting,
+	you will be disqualified."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_LookForwardToNextVisit {
+	"We look forward to your next visit."
+}
+
+// Unused
+text(local) SlateportCity_BattleTentLobby_Text_WhichLevelMode {
+	"Which level do you wish to challenge?
+	Level 50 or Level 100?"
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_SaveBeforeChallenge {
+	"Before you begin your challenge,
+	I need to save data. Is that okay?"
+}
+
+// Unused
+text(local) SlateportCity_BattleTentLobby_Text_HoldMonsForSafekeeping {
+	"Okay, I will hold your POKéMON for
+	safekeeping while you compete."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_StepThisWay {
+	"Please step this way."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_ReturnRentalMonsSaveResults {
+	"Thank you for participating!
+
+	I will return your POKéMON in exchange
+	for our rental POKéMON.
+
+	I must also save your event results.
+	Please wait."
+}
+
+// Unused
+text(local) SlateportCity_BattleTentLobby_Text_ReturnMonsExchangeRentals {
+	"I will return your POKéMON in exchange
+	for our rental POKéMON."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_WonThreeMatchesReturnMons {
+	"Congratulations!
+	You've won three straight matches!
+
+	I will return your POKéMON in exchange
+	for our rental POKéMON.
+
+	I must also save your event results.
+	Please wait."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_AwardYouThisPrize {
+	"In recognition of your 3-win streak,
+	we award you this prize."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_NoRoomInBagMakeRoom {
+	"Oh?
+	You seem to have no room for this.
+
+	Please make room in your BAG and
+	let me know."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_BeenWaitingForYou {
+	"We've been waiting for you!
+
+	Before we resume your challenge,
+	I must save the game."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_DidntSaveBeforeQuitting {
+	"I'm sorry to say this, but you didn't
+	save before you quit playing last time.
+
+	As a result, you have been disqualified
+	from your challenge."
+}
+
+// Unused
+text(local) SlateportCity_BattleTentLobby_Text_ReturnPersonalMons {
+	"We'll return your personal POKéMON."
+}
+
+// Unused
+text(local) SlateportCity_BattleTentLobby_Text_ReceivedPrize {
+	"{PLAYER} received the prize
+	{STR_VAR_1}."
+}
+
+// Unused
+text(local) SlateportCity_BattleTentLobby_Text_RulesAreListed {
+	"The Battle Swap rules are listed."
+}
+
+// Unused
+text(local) SlateportCity_BattleTentLobby_Text_ReadWhichHeading {
+	"Which heading do you want to read?"
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_ExplainBasicRules {
+	"In a Battle Swap event, you may use
+	only three POKéMON.
+
+	Whether you are renting or swapping,
+	your team may not have two or more
+	of the same POKéMON."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_ExplainSwapPartnerRules {
+	"You may swap POKéMON only with
+	the TRAINER you have just defeated.
+
+	You may swap for only those POKéMON
+	used by the beaten TRAINER."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_ExplainSwapNumberRules {
+	"After every battle you win, you may
+	swap for one of your defeated
+	opponent's POKéMON.
+
+	You will not be able to swap POKéMON
+	with the third TRAINER in the event."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_ExplainSwapNotes {
+	"There are two key points to be aware
+	of when swapping POKéMON.
+
+	First, when swapping, you can't check
+	the stats of the POKéMON you are
+	about to receive.
+
+	Second, the POKéMON on your team
+	are lined up in sequence, depending on
+	the order in which you rented them.
+
+	This sequence remains unchanged
+	even when swaps are made."
+}
+
+text(local) SlateportCity_BattleTentLobby_Text_ExplainMonRules {
+	"The POKéMON of the SLATEPORT
+	BATTLE TENT are all rentals.
+
+	All rental POKéMON are kept at
+	Level 30."
+}
+
+// Unused
+text(local) VerdanturfTown_BattleTentLobby_Text_RulesAreListed2 {
+	"The VERDANTURF BATTLE TENT
+	rules are listed."
+}
+
+// Unused
+text(local) VerdanturfTown_BattleTentLobby_Text_ReadWhichHeading {
+	"Which heading do you want to read?"
+}
+
+// Unused
+text(local) VerdanturfTown_BattleTentLobby_Text_ExplainBasicRules {
+	"Here at the VERDANTURF BATTLE TENT,
+	POKéMON are required to think and
+	battle by themselves.
+
+	Unlike in the wild, POKéMON that live
+	with people behave differently
+	depending on their nature."
+}
+
+// Unused
+text(local) VerdanturfTown_BattleTentLobby_Text_ExplainNatureRules {
+	"Depending on its nature, a POKéMON
+	may prefer to attack no matter what.
+
+	Another POKéMON may prefer to protect
+	itself from any harm.
+
+	Yet another may enjoy vexing or
+	confounding its foes.
+
+	Depending on its nature, a POKéMON
+	will have favorite moves that it is good
+	at using.
+
+	It may also dislike certain moves that
+	it has trouble using."
+}
+
+// Unused
+text(local) VerdanturfTown_BattleTentLobby_Text_ExplainMoveRules {
+	"There are offensive moves that inflict
+	direct damage on the foe.
+
+	There are defensive moves that are
+	used to prepare for enemy attacks or
+	used to heal HP and so on.
+
+	There are also other somewhat-odd
+	moves that may enfeeble the foes with
+	stat problems including poison and 
+	paralysis.
+
+	POKéMON will consider using moves in
+	these three categories."
+}
+
+// Unused
+text(local) VerdanturfTown_BattleTentLobby_Text_ExplainUnderpoweredRules {
+	"When not under command by its TRAINER,
+	a POKéMON may be unable to effectively
+	use certain moves.
+
+	A POKéMON is not good at using any
+	move that it dislikes.
+
+	If a POKéMON only knows moves that
+	do not match its nature, it will often
+	be unable to live up to its potential."
+}
+
+// Unused
+text(local) VerdanturfTown_BattleTentLobby_Text_ExplainWhenInDangerRules {
+	"Depending on its nature, a POKéMON may
+	start using moves that don't match its
+	nature when it is in trouble.
+
+	If a POKéMON begins behaving oddly
+	in a pinch, watch it carefully."
+}
+
+text(local) BattleTentLobby_Text_ExplainLevelRules {
+	"At this BATTLE TENT, the levels of
+	your opponents will be adjusted to
+	match the levels of your POKéMON.
+
+	However, no TRAINER you face will
+	have any POKéMON below Level 30."
+}
+
+text(local) VerdanturfTown_BattleTentLobby_Text_RulesAreListed {
+	"The VERDANTURF BATTLE TENT
+	rules are listed."
+}

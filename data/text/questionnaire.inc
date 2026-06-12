@@ -1,14 +1,17 @@
 Questionnaire_Text_FillOut::
+# 1 "data/text/questionnaire.pory"
 	.string "There is a questionnaire.\n"
 	.string "Would you like to fill it out?$"
 
 Questionnaire_Text_ThankYou::
+# 6 "data/text/questionnaire.pory"
 	.string "Thank you for taking the time to\n"
 	.string "fill out our questionnaire.\p"
 	.string "Your feedback will be used for\n"
 	.string "future reference.$"
 
 Questionnaire_Text_YouKnowThoseWordsGift::
+# 14 "data/text/questionnaire.pory"
 	.string "Oh, hello!\n"
 	.string "You know those words?\p"
 	.string "That means you must know about\n"
@@ -17,26 +20,31 @@ Questionnaire_Text_YouKnowThoseWordsGift::
 	.string "receiving MYSTERY GIFTS!$"
 
 Questionnaire_Text_YouCanAccessMysteryGift::
+# 25 "data/text/questionnaire.pory"
 	.string "Once you save your game, you can\n"
 	.string "access the MYSTERY GIFT.$"
 
 Questionnaire_Text_YouKnowThoseWordsEvent::
+# 30 "data/text/questionnaire.pory"
 	.string "Oh, hello!\n"
 	.string "You know those words?\p"
 	.string "That means you must know about\n"
 	.string "the MYSTERY EVENT.$"
 
 Questionnaire_Text_YouCanAccessMysteryEvent::
+# 38 "data/text/questionnaire.pory"
 	.string "Once you save your game, you can\n"
 	.string "access the MYSTERY EVENT.$"
 
 MysteryGift_Text_TheresATicketForYou::
+# 43 "data/text/questionnaire.pory"
 	.string "Thank you for using the MYSTERY\n"
 	.string "EVENT System.\p"
 	.string "You must be {PLAYER}.\n"
 	.string "There is a ticket here for you.$"
 
 MysteryGift_Text_TryUsingItAtLilycovePort::
+# 51 "data/text/questionnaire.pory"
 	.string "It appears to be for use at\n"
 	.string "the LILYCOVE CITY port.\p"
 	.string "Why not give it a try and see what\n"

@@ -1,4 +1,5 @@
 EventTicket_Text_OldSeaMapTooFar:
+# 1 "data/text/event_ticket_2.pory"
 	.string "What's up, youngster?\p"
 	.string "What, it's you who's supposed to have\n"
 	.string "a tattered old map?\p"
@@ -8,11 +9,13 @@ EventTicket_Text_OldSeaMapTooFar:
 	.string "I'm afraid I can't help you…$"
 
 EventTicket_Text_BrineyHoldOnASecond:
+# 14 "data/text/event_ticket_2.pory"
 	.string "BRINEY: Hold on a second!\p"
 	.string "What's the idea of turning down\n"
 	.string "someone that I owe so much to?$"
 
 EventTicket_Text_BrineyLetsSail:
+# 21 "data/text/event_ticket_2.pory"
 	.string "{PLAYER}{KUN}, I'm terribly sorry.\p"
 	.string "You came to me seeking my help,\n"
 	.string "and we almost turned you away.\p"
@@ -22,6 +25,7 @@ EventTicket_Text_BrineyLetsSail:
 	.string "this OLD SEA MAP!$"
 
 EventTicket_Text_OddTicketGetOnBoard:
+# 35 "data/text/event_ticket_2.pory"
 	.string "Is it you who brought that odd\n"
 	.string "ticket?\p"
 	.string "Where you're trying to go is an island\n"
@@ -32,15 +36,18 @@ EventTicket_Text_OddTicketGetOnBoard:
 	.string "Get on board, youngster!$"
 
 FarawayIsland_Entrance_Text_SailorReturn:
+# 50 "data/text/event_ticket_2.pory"
 	.string "CAPT. BRINEY can be so maddeningly\n"
 	.string "fickle…\p"
 	.string "Do you want to return to LILYCOVE?$"
 
 BirthIsland_Harbor_Text_SailorReturn:
+# 57 "data/text/event_ticket_2.pory"
 	.string "What an oddly shaped island, eh?\n"
 	.string "Do you want to return to LILYCOVE?$"
 
 EventTicket_Text_OddTicketsWhereTo:
+# 62 "data/text/event_ticket_2.pory"
 	.string "Is it you who brought those\n"
 	.string "odd tickets?\p"
 	.string "… … …Hm.\p"
@@ -54,12 +61,14 @@ EventTicket_Text_OddTicketsWhereTo:
 	.string "Where shall we sail first?$"
 
 NavelRock_Harbor_Text_SailorReturn:
+# 81 "data/text/event_ticket_2.pory"
 	.string "Did… Did you hear that?\n"
 	.string "That low growling from deep in there.\p"
 	.string "Are you sure it's safe?\n"
 	.string "Do you think we should leave?$"
 
 FarawayIsland_Entrance_Text_Sign:
+# 89 "data/text/event_ticket_2.pory"
 	.string "The writing is fading as if it was\n"
 	.string "written a long time ago…\p"
 	.string "“…ber, 6th day\n"
@@ -68,4 +77,5 @@ FarawayIsland_Entrance_Text_Sign:
 	.string "…ith that hope, I depar…”$"
 
 FarawayIsland_Interior_Text_Mew:
+# 99 "data/text/event_ticket_2.pory"
 	.string "Myuu…$"

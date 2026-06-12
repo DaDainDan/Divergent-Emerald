@@ -1,5 +1,5 @@
-
 gPokeNewsTextSlateport_Upcoming::
+# 2 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "SLATEPORT's most popular kind of guy,\n"
@@ -15,6 +15,7 @@ gPokeNewsTextSlateport_Upcoming::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextSlateport_Ongoing::
+# 23 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "This is the news you've all been\n"
@@ -29,6 +30,7 @@ gPokeNewsTextSlateport_Ongoing::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextSlateport_Ending::
+# 43 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "This is the news you've all been\n"
@@ -44,6 +46,7 @@ gPokeNewsTextSlateport_Ending::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextGameCorner_Upcoming::
+# 65 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "It's approaching!\n"
@@ -55,6 +58,7 @@ gPokeNewsTextGameCorner_Upcoming::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextGameCorner_Ongoing::
+# 81 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "It's here!\n"
@@ -68,6 +72,7 @@ gPokeNewsTextGameCorner_Ongoing::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextGameCorner_Ending::
+# 100 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "It's here!\n"
@@ -81,6 +86,7 @@ gPokeNewsTextGameCorner_Ending::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextLilycove_Upcoming::
+# 119 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "We've just received wonderful news\n"
@@ -92,6 +98,7 @@ gPokeNewsTextLilycove_Upcoming::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextLilycove_Ongoing::
+# 135 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "This is the news you've all been\n"
@@ -105,6 +112,7 @@ gPokeNewsTextLilycove_Ongoing::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextLilycove_Ending::
+# 154 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "This is the news you've all been\n"
@@ -118,6 +126,7 @@ gPokeNewsTextLilycove_Ending::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextBlendMaster_Upcoming::
+# 173 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "We have big news for everyone\n"
@@ -134,6 +143,7 @@ gPokeNewsTextBlendMaster_Upcoming::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextBlendMaster_Ongoing::
+# 195 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "We have big news for everyone\n"
@@ -149,6 +159,7 @@ gPokeNewsTextBlendMaster_Ongoing::
 	.string "That's the news on POKéMON NEWS.$"
 
 gPokeNewsTextBlendMaster_Ending::
+# 216 "data/text/pokemon_news.pory"
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "It's incredible!\n"

@@ -1,14 +1,17 @@
 BerryBlender_Text_BlendWithTheBlendMaster:
+# 1 "data/text/blend_master.pory"
 	.string "BLEND MASTER: Indeed I am!\n"
 	.string "The BLEND MASTER am I!\p"
 	.string "Blend with me, and you shall witness\n"
 	.string "the mastery I bring to blending!$"
 
 BerryBlender_Text_SeeMyMasteryInAction:
+# 9 "data/text/blend_master.pory"
 	.string "BLEND MASTER: Hmmm! So, you wish to\n"
 	.string "see my mastery in action?$"
 
 BerryBlender_Text_TooBusyNowIsee:
+# 14 "data/text/blend_master.pory"
 	.string "Hmmm!\p"
 	.string "So, you are too busy now, I see!\p"
 	.string "But fear not!\n"
@@ -16,12 +19,14 @@ BerryBlender_Text_TooBusyNowIsee:
 	.string "Hurry back from your errand!$"
 
 BerryBlender_Text_BlendMasterNoBerries:
+# 24 "data/text/blend_master.pory"
 	.string "Hmmm!\p"
 	.string "You haven't got a single BERRY!\p"
 	.string "I shall be here all day!\n"
 	.string "Hurry back with some BERRIES!$"
 
 BerryBlender_Text_BlendMasterKnowHowToMakePokeblocks:
+# 33 "data/text/blend_master.pory"
 	.string "Of course!\n"
 	.string "Of course!\p"
 	.string "Incidentally…\n"
@@ -29,6 +34,7 @@ BerryBlender_Text_BlendMasterKnowHowToMakePokeblocks:
 	.string "from BERRIES?$"
 
 BerryBlender_Text_BlendMasterExplainBerryBlending:
+# 42 "data/text/blend_master.pory"
 	.string "Hmmm!\p"
 	.string "Ah, but it is a simple process!\p"
 	.string "When the BLENDER's arrow comes to\n"
@@ -38,12 +44,14 @@ BerryBlender_Text_BlendMasterExplainBerryBlending:
 	.string "the A Button, you will understand.$"
 
 BerryBlender_Text_BlendMasterLetsBerryBlender:
+# 56 "data/text/blend_master.pory"
 	.string "Fine!\p"
 	.string "Let's get started, then!\p"
 	.string "All together with the BLEND MASTER,\n"
 	.string "let's BERRY BLENDER!$"
 
 BerryBlender_Text_BlendMasterNoPokeblockCase:
+# 65 "data/text/blend_master.pory"
 	.string "Hmmm!\p"
 	.string "You don't appear to have gotten\n"
 	.string "the {POKEBLOCK} CASE!\p"
@@ -51,26 +59,32 @@ BerryBlender_Text_BlendMasterNoPokeblockCase:
 	.string "Obtain the {POKEBLOCK} CASE and hurry back!$"
 
 BerryBlender_Text_BlendMasterPokeblockCaseFull:
+# 75 "data/text/blend_master.pory"
 	.string "Hmmm!\p"
 	.string "Your {POKEBLOCK} CASE appears to be full!\p"
 	.string "I shall be here all day!\n"
 	.string "Use some {POKEBLOCK}S and hurry back!$"
 
 BerryBlender_Text_WhoaAwesome:
+# 84 "data/text/blend_master.pory"
 	.string "Whoa!\n"
 	.string "Awesome!$"
 
 BerryBlender_Text_WickedlyFast:
+# 89 "data/text/blend_master.pory"
 	.string "Wickedly fast!$"
 
 BerryBlender_Text_WhatAnExpert:
+# 93 "data/text/blend_master.pory"
 	.string "What an expert!$"
 
 BerryBlender_Text_MadeAmazingPokeblocksWithMaster:
+# 97 "data/text/blend_master.pory"
 	.string "When I blended with the MASTER,\n"
 	.string "we made amazing {POKEBLOCK}S!$"
 
 BerryBlender_Text_QualitiesOfBlendMaster:
+# 102 "data/text/blend_master.pory"
 	.string "Eyes that track the arrow with\n"
 	.string "machinelike intensity…\p"
 	.string "A hand that taps the A Button\n"
@@ -79,6 +93,7 @@ BerryBlender_Text_QualitiesOfBlendMaster:
 	.string "the BLEND MASTER truly great.$"
 
 BerryBlender_Text_MasterWorksOnSkillsInMountains:
+# 113 "data/text/blend_master.pory"
 	.string "The BLEND MASTER's supposed to work\n"
 	.string "on his skills deep in the mountains.\p"
 	.string "Sometimes, he comes to LILYCOVE\n"

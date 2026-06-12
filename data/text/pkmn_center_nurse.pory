@@ -1,0 +1,69 @@
+text gText_WouldYouLikeToRestYourPkmn {
+	"Hello, and welcome to
+	the POKéMON CENTER.
+
+	We restore your tired POKéMON
+	to full health.
+
+	Would you like to rest your POKéMON?"
+}
+
+text gText_IllTakeYourPkmn {
+	"Okay, I'll take your POKéMON
+	for a few seconds."
+}
+
+text gText_RestoredPkmnToFullHealth {
+	"Thank you for waiting.
+
+	We've restored your POKéMON
+	to full health."
+}
+
+text gText_WeHopeToSeeYouAgain {
+	"We hope to see you again!"
+}
+
+text gText_WelcomeCutShort {
+	"Hello, and welcome to
+	the POKéMON CENTER.
+
+	We restore your tired POKéMON
+	to full health.
+
+	Would you like to…"
+}
+
+text gText_NoticesGoldCard {
+	"Th-that card…
+	Could it be… The GOLD CARD?!
+
+	Oh, the gold color is brilliant!
+	The four stars seem to sparkle!
+
+	I've seen several TRAINERS with
+	a SILVER CARD before, but, {PLAYER},
+	you're the first TRAINER I've ever
+	seen with a GOLD CARD!
+
+	Okay, {PLAYER}, please allow me
+	the honor of resting your POKéMON!"
+}
+
+text gText_YouWantTheUsual {
+	"I'm delighted to see you, {PLAYER}!
+	You want the usual, am I right?"
+}
+
+text gText_IllTakeYourPkmn2 {
+	"Okay, I'll take your POKéMON
+	for a few seconds."
+}
+
+text gText_ThankYouForWaiting {
+	"Thank you for waiting."
+}
+
+text gText_WeHopeToSeeYouAgain2 {
+	"We hope to see you again!"
+}

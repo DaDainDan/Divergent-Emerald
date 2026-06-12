@@ -1,0 +1,643 @@
+text(local) CableClub_Text_WelcomeWhichCableClubService {
+	"Welcome to the POKéMON CABLE
+	CLUB.
+
+	Which of our services do you wish
+	to use?"
+}
+
+text(local) CableClub_Text_WhichService {
+	"Which of our services do you wish
+	to use?"
+}
+
+text CableClub_Text_TradeUsingLinkCable {
+	"Trade POKéMON with another player
+	using a GBA Game Link cable."
+}
+
+text CableClub_Text_BattleUsingLinkCable {
+	"You may battle another TRAINER
+	using a GBA Game Link cable."
+}
+
+text CableClub_Text_RecordCornerUsingLinkCable {
+	"You can use the RECORD CORNER with
+	others using a GBA Game Link cable."
+}
+
+// Unused
+text(local) CableClub_Text_CloseThisMenu {
+	"Close this menu."
+}
+
+text(local) CableClub_Text_NeedTwoMonsForDoubleBattle {
+	"For a DOUBLE BATTLE, you must
+	have at least two POKéMON."
+}
+
+text(local) CableClub_Text_NeedTwoMonsToTrade {
+	"For trading, you must have at
+	least two POKéMON with you."
+}
+
+text(local) CableClub_Text_CantTradeEnigmaBerry {
+	"A POKéMON holding the {STR_VAR_1}
+	BERRY can't be traded."
+}
+
+text gText_PleaseWaitForLink {
+	"Please wait.
+	… … B Button: Cancel"
+}
+
+text gText_ConfirmLinkWhenPlayersReady {
+	"When all players are ready…
+	A Button: Confirm
+	B Button: Cancel"
+}
+
+text gText_ConfirmStartLinkWithXPlayers {
+	"Start link with {STR_VAR_1} players.
+	A Button: Confirm
+	B Button: Cancel"
+}
+
+text gText_AwaitingLinkup {
+	"Awaiting linkup…
+	… … B Button: Cancel"
+}
+
+// Unused
+text CableClub_Text_OkayToSaveProgress {
+	"Your progress must be saved before
+	linking. Is it okay to save?"
+}
+
+text(local) CableClub_Text_PleaseEnter {
+	"Please enter."
+}
+
+text(local) CableClub_Text_DirectYouToYourRoom {
+	"I'll direct you to your room now."
+}
+
+text(local) Text_SomeoneIsNotReadyToLink {
+	"Someone is not ready to link.
+
+	Please come back after everyone
+	has made preparations."
+}
+
+text(local) Text_LinkErrorPleaseReset {
+	"Sorry, we have a link error…
+	Please reset and try again."
+}
+
+text(local) Text_PlayersMadeDifferentSelections {
+	"The link partners appear to have
+	made different selections."
+}
+
+text(local) CableClub_Text_PleaseVisitAgain {
+	"Please do visit again."
+}
+
+text(local) CableClub_Text_IncorrectNumberOfParticipants {
+	"The number of participants is
+	incorrect."
+}
+
+text(local) CableClub_Text_CantSingleBattleWithXPlayers {
+	"The SINGLE BATTLE Mode can't be
+	played by {STR_VAR_1} players."
+}
+
+text(local) CableClub_Text_CantDoubleBattleWithXPlayers {
+	"The DOUBLE BATTLE Mode can't be
+	played by {STR_VAR_1} players."
+}
+
+text(local) CableClub_Text_NeedFourPlayers {
+	"There must be four players to play
+	this Battle Mode."
+}
+
+text(local) CableClub_Text_PleaseConfirmNumberAndRestart {
+	"Please confirm the number of
+	players and start again."
+}
+
+text(local) Text_TerminateLinkConfirmation {
+	"The link will be terminated if you
+	leave the room. Is that okay?"
+}
+
+text(local) Text_TerminateLinkPleaseWait {
+	"Terminating link…
+	You will be escorted out of
+	the room. Please wait."
+}
+
+text(local) CableClub_Text_TooBusyToNotice {
+	"This TRAINER is too busy to
+	notice…"
+}
+
+text(local) CableClub_Text_GotToLookAtTrainerCard {
+	"Score! Got to look at {STR_VAR_1}'s
+	TRAINER CARD!"
+}
+
+text(local) CableClub_Text_GotToLookAtColoredTrainerCard {
+	"Score! Got to look at {STR_VAR_1}'s
+	TRAINER CARD!
+
+	It's a {STR_VAR_2} card!"
+}
+
+text(local) BattleColosseum_2P_Text_TakePlaceStartBattle {
+	"Please take your place and start
+	your battle."
+}
+
+text(local) TradeCenter_Text_TakeSeatStartTrade {
+	"Please take your seat and start
+	your trade."
+}
+
+text(local) RecordCorner_Text_ThanksForComing {
+	"Thanks for coming."
+}
+
+text(local) CableClub_Text_TrainerCardDataOverwritten {
+	"The TRAINER CARD data will
+	be overwritten."
+}
+
+text(local) CableClub_Text_HopeToSeeYouAgain {
+	"I hope to see you again!"
+}
+
+text(local) CableClub_Text_NotSetUpForFarAwayRegion {
+	"I'm awfully sorry.
+
+	We're not set up to conduct trades
+	with TRAINERS far away in another
+	region yet…"
+}
+
+text(local) CableClub_Text_OtherTrainerNotReady {
+	"The other TRAINER is not ready."
+}
+
+text(local) CableClub_Text_YouHaveAMonThatCantBeTaken {
+	"You have at least one POKéMON
+	that can't be taken."
+}
+
+text(local) RecordCorner_Text_TakeSeatAndWait {
+	"Please take your seat and wait."
+}
+
+text(local) RecordCorner_Text_PlayerSentOverOneX {
+	"{STR_VAR_1} sent over one
+	{STR_VAR_2}."
+}
+
+text(local) CableClub_Text_CantMixWithJapaneseGame {
+	"Sorry, there is a transmission error.
+
+	You may not mix records with  
+	Japanese Ruby or Sapphire games.
+
+	Also, you can't mix records with
+	Japanese Emerald and overseas Ruby
+	or Sapphire games at the same time."
+}
+
+text(local) CableClub_Text_AdapterNotConnected {
+	"The Wireless Adapter is not
+	connected properly."
+}
+
+text(local) CableClub_Text_ParticipantsStepUpToCounter {
+	"Participants are asked to step up
+	to the reception counter."
+}
+
+// Unused
+text(local) CableClub_Text_Hello {
+	"Hello!"
+}
+
+// Unused
+text(local) CableClub_Text_PleaseWait {
+	"Please wait."
+}
+
+text CableClub_Text_YouMayTradeHere {
+	"You may trade your POKéMON here
+	with another TRAINER."
+}
+
+text CableClub_Text_YouMayBattleHere {
+	"You may battle with your friends
+	here."
+}
+
+text CableClub_Text_CanMakeBerryPowder {
+	"Two to five TRAINERS can make
+	BERRY POWDER together."
+}
+
+text CableClub_Text_CanMixRecords {
+	"The records of two to four players
+	can be mixed together."
+}
+
+// Unused
+text(local) CableClub_Text_GuideToVariousServices {
+	"A guide to the WIRELESS CLUB's
+	various services."
+}
+
+text CableClub_Text_CancelSelectedItem {
+	"Cancels the selected MENU item."
+}
+
+// Unused
+text(local) CableClub_Text_WhichBattleMode {
+	"Which battle mode would you like?"
+}
+
+// Unused
+text(local) CableClub_Text_ReturnsToPreviousStep {
+	"Returns to the previous step."
+}
+
+text(local) CableClub_Text_NeedBerryForBerryCrush {
+	"To use the BERRY CRUSH service,
+	you must have at least one BERRY."
+}
+
+text(local) CableClub_Text_NeedTwoMonsForUnionRoom {
+	"To enter the UNION ROOM, you must
+	have at least two POKéMON."
+}
+
+text(local) CableClub_Text_NoEnigmaBerryInUnionRoom {
+	"No POKéMON holding the {STR_VAR_1}
+	BERRY may enter the UNION ROOM."
+}
+
+text(local) CableClub_Text_UnionRoomAdapterNotConnected {
+	"This is the POKéMON WIRELESS CLUB
+	UNION ROOM.
+
+	Unfortunately, your Wireless
+	Adapter is not connected properly.
+
+	Please do come again."
+}
+
+// Unused
+text(local) CableClub_Text_OhExcuseMe {
+	"Oh…
+	Excuse me!"
+}
+
+text(local) CableClub_Text_PlayerIsWaiting {
+	"It appears as if {STR_VAR_1} is playing
+	right now.
+	Go for it!"
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_DescribeWhichGame {
+	"I can explain game rules to you,
+	if you'd like.
+
+	Which game should I describe?"
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_PokemonJumpInfo {
+	"“POKéMON JUMP”
+
+	Make your POKéMON skip the VINE WHIP
+	rope with the A Button.
+
+	Only mini POKéMON around 28 inches
+	or less may participate.
+
+	POKéMON that only swim, burrow,
+	or fly are not good at jumping.
+
+	As a result, those POKéMON may not
+	participate.
+
+	Good things happen if everyone
+	jumps in time."
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_DodrioBerryPickingInfo {
+	"“DODRIO BERRY-PICKING”
+
+	Command DODRIO's three heads to
+	catch falling BERRIES.
+
+	Press right, up, or left on the
+	{PLUS} Control Pad to move the heads.
+
+	To play this game, you must have
+	a DODRIO."
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_TalkToOldManToPlay {
+	"If you want to play a game,
+	please tell the old man beside me."
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_WelcomeCanYouWait {
+	"Hi, welcome!
+	Are you here to play games using
+	Wireless Communication?
+
+	Can you wait just a little bit?"
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_ComeAgain {
+	"All right, come again!"
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_AdapterNotConnected {
+	"The Wireless Adapter isn't connected.
+	Come back when it's hooked up!"
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_PlayWhichGame {
+	"All right, which game did you want
+	to play?"
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_EnterWhichPokemon {
+	"Which POKéMON would you like to
+	enter?"
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_AllGoodToGo {
+	"Okay, you're all good to go.
+	Don't let the others beat you!"
+}
+
+// Unused
+text(local) MossdeepCity_GameCorner_1F_Text_LeavingDoComeAgain {
+	"Are you leaving now?
+	Do come again!"
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_ExplainRequiredMon {
+	"It doesn't look like you have any
+	POKéMON that you can enter…
+
+	Would you like me to explain what
+	kinds of POKéMON can enter?"
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_ShortJumpingPokemonAllowed {
+	"“POKéMON JUMP” is open to POKéMON
+	around 28 inches or less.
+
+	What you can't enter are those
+	POKéMON that can't jump.
+
+	You know, like POKéMON that only
+	swim, burrow, or fly.
+
+	That's all you need to know."
+}
+
+text(local) MossdeepCity_GameCorner_1F_Text_OnlyDodrioAllowed {
+	"DODRIO BERRY-PICKING is a game that 
+	only DODRIO may enter."
+}
+
+// Unused
+text(local) MossdeepCity_GameCorner_1F_Text_RetryPlease {
+	"Could you retry this from the start
+	again, please?"
+}
+
+text(local) CableClub_Text_WelcomeWhichDirectCornerRoom {
+	"Welcome to the POKéMON WIRELESS
+	CLUB DIRECT CORNER.
+
+	You may interact directly with
+	your friends here.
+
+	Which room would you like to
+	enter?"
+}
+
+text(local) CableClub_Text_TradePokemon {
+	"Would you like to trade POKéMON?"
+}
+
+text(local) CableClub_Text_PlayWhichBattleMode {
+	"Which Battle Mode would you like
+	to play?"
+}
+
+text(local) CableClub_Text_AccessRecordCorner {
+	"Would you like to access
+	the RECORD CORNER?"
+}
+
+text(local) CableClub_Text_UseBerryCrush {
+	"Would you like to use the
+	BERRY CRUSH System?"
+}
+
+text(local) CableClub_Text_ExplainBattleModes {
+	"There are three Battle Modes.
+
+	SINGLE BATTLE is for two TRAINERS
+	with one or more POKéMON each.
+
+	Each TRAINER can have one POKéMON
+	in battle at a time.
+
+	DOUBLE BATTLE is for two TRAINERS
+	with two or more POKéMON each.
+
+	Each TRAINER will send out two
+	POKéMON in battle at a time.
+
+	MULTI BATTLE is for four TRAINERS
+	with one or more POKéMON each.
+
+	Each TRAINER can have one POKéMON
+	in battle at a time."
+}
+
+text(local) CableClub_Text_ChooseGroupLeaderOfTwo {
+	"Please decide which of you two
+	will become the LEADER.
+
+	The other player must then choose
+	“JOIN GROUP.”"
+}
+
+text(local) CableClub_Text_ChooseGroupLeaderOfFour {
+	"Please decide which of you four
+	will become the GROUP LEADER.
+
+	The other players must then choose
+	“JOIN GROUP.”"
+}
+
+text(local) CableClub_Text_ChooseGroupLeader {
+	"Please decide which of you will
+	become the GROUP LEADER.
+
+	The other players must then choose
+	“JOIN GROUP.”"
+}
+
+text(local) CableClub_Text_WelcomeUnionRoomEnter {
+	"Welcome to the POKéMON WIRELESS
+	CLUB UNION ROOM.
+
+	You may interact directly with
+	other TRAINERS here, some of
+	whom you may not even know.
+
+	Would you like to enter the ROOM?"
+}
+
+text(local) CableClub_Text_UnionRoomInfo {
+	"The TRAINERS in the UNION ROOM
+	will be those players around you
+	who have also entered the ROOM.
+
+	You may do all sorts of things
+	here, such as exchanging greetings.
+
+	You may enter two POKéMON up to
+	Lv. 30 for a one-on-one battle.
+
+	You may take part in a chat with
+	two to five people.
+
+	Or, you may register a POKéMON for
+	trade.
+
+	Would you like to enter the ROOM?"
+}
+
+text(local) CableClub_Text_EnjoyUnionRoom {
+	"I hope you enjoy your time in
+	the UNION ROOM."
+}
+
+text(local) CableClub_Text_FirstTimeRightThisWay {
+	"Hello!
+	My name is TEALA.
+
+	This must be your first time
+	up here.
+
+	I'll show you how the Wireless
+	Communication System works.
+
+	First, I need to show you this
+	floor of our POKéMON CENTER.
+
+	Right this way, please."
+}
+
+text(local) CableClub_Text_ExplainWirelessClubFirstTime {
+	"On the top floor, there are two
+	rooms.
+
+	First, the room on the left.
+	It's the UNION ROOM.
+
+	You may link up with TRAINERS
+	around you who have also entered
+	the UNION ROOM.
+
+	With them, you may do things like
+	chat, battle, and trade.
+
+	Second, the room on the right is
+	the DIRECT CORNER.
+
+	You may trade or battle POKéMON
+	with your friends in this room.
+
+	If the Wireless Adapter isn't
+	connected, you may still link up
+	using a GBA Game Link cable.
+
+	If that is the case, you must go
+	to the DIRECT CORNER.
+
+	I hope you enjoy the Wireless 
+	Communication System."
+}
+
+text(local) CableClub_Text_AskAboutLinking {
+	"Hello, {PLAYER}!
+
+	It's me, TEALA, the POKéMON
+	CENTER 2F attendant.
+
+	Is there something you needed to
+	ask me about linking?"
+}
+
+text(local) CableClub_Text_ExplainWirelessClub {
+	"Let me explain how the POKéMON
+	WIRELESS CLUB works.
+
+	On this, the top floor, there are
+	two rooms.
+
+	First, the room on the left.
+	It's the UNION ROOM.
+
+	You may link up with TRAINERS
+	around you who have also entered
+	the UNION ROOM.
+
+	With them, you may do things like
+	chat, battle, and trade.
+
+	Second, the room on the right is
+	the DIRECT CORNER.
+
+	You may trade or battle POKéMON
+	with your friends in this room.
+
+	Sometimes, you may not be able to
+	find your friends in the UNION ROOM
+	or the DIRECT CORNER.
+
+	In that case, please move closer
+	to your friends.
+
+	If the Wireless Adapter isn't
+	connected, you may still link up
+	using a GBA Game Link cable.
+
+	If that is the case, you must go
+	to the DIRECT CORNER.
+
+	I hope you enjoy the Wireless 
+	Communication System."
+}
+
+text(local) CableClub_Text_HopeYouEnjoyWirelessSystem {
+	"I hope you enjoy the Wireless
+	Communication System."
+}

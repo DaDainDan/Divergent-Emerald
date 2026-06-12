@@ -1,0 +1,56 @@
+text(local) EventTicket_Text_ShowOldSeaMap {
+	"The ferry to SLATEPORT is…
+
+	I beg your pardon?
+	Can we sail to this place on the map?
+
+	I know someone who will help you better.
+	Please wait."
+}
+
+text(local) EventTicket_Text_ThatPass {
+	"The ferry to SLATEPORT is…
+
+	Oh?
+	That PASS…"
+}
+
+text(local) EventTicket_Text_ShowEonTicket {
+	"Aye, mate, are you the one who brought
+	that mighty odd PASS?
+
+	I'll tell you, you're trying to reach a
+	tiny spit of an island far in the south.
+
+	There's no telling what we'll encounter
+	once we reach there, aye.
+	That shivers my timbers!
+
+	All aboard!"
+}
+
+text(local) EventTicket_Text_SouthernIslandSailBack {
+	"Aye, mate, there's nothing here to
+	see or do on this forgettable island.
+
+	What say we sail back to LILYCOVE?"
+}
+
+text(local) EventTicket_Text_SailHome {
+	"Aye, right, then!
+	Sail home we will!"
+}
+
+text(local) EventTicket_Text_AsYouLike {
+	"Aye, right, as you like, then."
+}
+
+text(local) SouthernIsland_Interior_Text_Sign {
+	"“All dreams are but another reality.
+	Never forget…”"
+}
+
+text(local) SouthernIsland_Exterior_Text_Sign {
+	"“Those whose memories fade seek to
+	carve them in their hearts…”"
+}

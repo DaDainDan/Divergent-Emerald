@@ -1,0 +1,4130 @@
+text MatchCall_WildBattleText1 {
+	"Hi! {PLAYER}{KUN}, hello!
+	This is {STR_VAR_1}.
+
+	I saw this {STR_VAR_2} a while back
+	but I couldn't catch it.
+
+	It was so close, too!
+	Well, see you again!"
+}
+
+text MatchCall_WildBattleText2 {
+	"Hello, {PLAYER}{KUN}.
+	It's {STR_VAR_1}.
+
+	I tried to catch a nice {STR_VAR_2}
+	a little while ago.
+
+	But, it got away.
+	I was sure disappointed!
+
+	Okay, bye!"
+}
+
+text MatchCall_WildBattleText3 {
+	"Hey there, {PLAYER}!
+	It's me, {STR_VAR_1}.
+
+	I just took a shot at catching
+	this {STR_VAR_2}, but it took off.
+
+	I came oh so close, too!
+
+	It spoiled my day…
+	All right, see you!"
+}
+
+text MatchCall_WildBattleText4 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+
+	You know the POKéMON {STR_VAR_2}?
+	I came close to getting one.
+
+	It was just a while back.
+	I thought I had it but it escaped.
+
+	If I see it again, I'll get it for
+	sure, though.
+
+	Okay, catch you later."
+}
+
+text MatchCall_WildBattleText5 {
+	"Hiya, {PLAYER}{KUN}!
+	It's {STR_VAR_1}.
+	Catching any POKéMON lately?
+
+	A little while ago I came close to
+	nabbing one, but it got loose.
+
+	Right, take care!"
+}
+
+text MatchCall_WildBattleText6 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+	Caught any POKéMON lately?
+
+	I nearly nabbed one the other day.
+	But it evaded me somehow.
+
+	You take care."
+}
+
+text MatchCall_WildBattleText7 {
+	"…Uh, {PLAYER}{KUN}?
+	It's me, {STR_VAR_1}.
+
+	Oh, wait! Wait!
+	I can catch this {STR_VAR_2}…
+
+	Aaarrrgh! It bolted loose!
+	That wasn't just close!"
+}
+
+text MatchCall_WildBattleText8 {
+	"Oh, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1} speaking.
+
+	Have you had success catching
+	POKéMON lately?
+
+	I came very close a little while
+	ago, but my target got free.
+
+	I need to try harder!
+	See you again!"
+}
+
+text MatchCall_WildBattleText9 {
+	"Oh, {PLAYER}{KUN}, hi there!
+	This is {STR_VAR_1}!
+
+	So? Are you getting more POKéMON
+	together?
+
+	I'm having a rotten time of it!
+	They all get away from me!
+
+	See you!"
+}
+
+text MatchCall_WildBattleText10 {
+	"Oh, {PLAYER}{KUN}, hello…
+	This is {STR_VAR_1}.
+
+	Listen, I came within a whisker of
+	catching this {STR_VAR_2}…
+
+	But, it gave me the slip…
+
+	I need to try harder.
+	See you around."
+}
+
+text MatchCall_WildBattleText11 {
+	"Ah, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+	How are things with you?
+
+	I tried to catch a wild {STR_VAR_2}
+	earlier, but it managed to flee.
+
+	I feel defeated…"
+}
+
+text MatchCall_WildBattleText12 {
+	"Hello, {PLAYER}{KUN}.
+	It's me, {STR_VAR_1}.
+	Are you still catching POKéMON?
+
+	I've been trying to catch them
+	myself, but it's not so easy.
+
+	The way of POKéMON is deep!"
+}
+
+text MatchCall_WildBattleText13 {
+	"Ah, hello, {PLAYER}{KUN}!
+	This is {STR_VAR_1}!
+	Have you been catching POKéMON?
+
+	I've been trying to catch them
+	myself, but with little success.
+
+	The way of POKéMON is deep!"
+}
+
+text MatchCall_WildBattleText14 {
+	"Oh, hi, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1}.
+
+	Just now, I tried to catch a cute
+	{STR_VAR_2}.
+
+	It got away, though!
+	Oh, you bet I was disappointed!
+
+	Bye-bye!"
+}
+
+text MatchCall_WildBattleText15 {
+	"Hey, {PLAYER}!
+	This is {STR_VAR_1}!
+
+	I've been thinking about trying
+	to catch me some POKéMON.
+
+	But I can't seem to find any.
+	It's a real puzzler for me!
+
+	I'm at my wit's end!
+	See you around!"
+}
+
+text MatchCall_NegativeBattleText1 {
+	"Hi! {PLAYER}{KUN}, hello!
+	This is {STR_VAR_1}.
+
+	I tried battling another TRAINER,
+	but I lost.
+
+	It was really disappointing.
+	Well, see you again!"
+}
+
+text MatchCall_NegativeBattleText2 {
+	"Hello, {PLAYER}{KUN}.
+	It's {STR_VAR_1}.
+
+	I challenged someone else after
+	we battled.
+
+	I came close, but I ended up
+	losing. Oh, well!"
+}
+
+text MatchCall_NegativeBattleText3 {
+	"Hey there, {PLAYER}!
+	It's me, {STR_VAR_1}.
+
+	I just got cleaned in a battle.
+
+	I guess I need to raise my team
+	some more!"
+}
+
+text MatchCall_NegativeBattleText4 {
+	"Hey, {PLAYER}.
+	{STR_VAR_1} here.
+
+	I tried another battle yesterday,
+	but I couldn't pull out the win.
+
+	My team needs more raising.
+	Okay, catch you later."
+}
+
+text MatchCall_NegativeBattleText5 {
+	"Hiya, {PLAYER}!
+	It's {STR_VAR_1}.
+
+	How are things with you?
+
+	I've been battling on,
+	but I haven't won very often.
+
+	I can't get it together.
+	Right, take care!"
+}
+
+text MatchCall_NegativeBattleText6 {
+	"Hey, {PLAYER}.
+	{STR_VAR_1} here.
+
+	How's it going for you?
+
+	I've been battling hard lately,
+	but to little success.
+
+	I can't get into the groove.
+	You take care."
+}
+
+text MatchCall_NegativeBattleText7 {
+	"{STR_VAR_1} here.
+	How's it going lately?
+
+	I lost a battle yesterday,
+	and it's filled my thoughts.
+
+	I have to devise a plan…
+	See you."
+}
+
+text MatchCall_NegativeBattleText8 {
+	"Oh, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1} speaking.
+
+	How are your POKéMON doing?
+	I lost a match the other day.
+
+	I need to try harder!
+	See you again!"
+}
+
+text MatchCall_NegativeBattleText9 {
+	"Oh, {PLAYER}{KUN}, hi there!
+	This is {STR_VAR_1}!
+
+	Listen, listen, you have to hear
+	this!
+
+	I had a POKéMON battle earlier,
+	but I lost at the last second.
+
+	Oh, it burns me up!"
+}
+
+text MatchCall_NegativeBattleText10 {
+	"Oh, {PLAYER}{KUN}, hello…
+	This is {STR_VAR_1}.
+
+	A little earlier, I was in a battle.
+	I lost, though.
+
+	I need to raise my POKéMON more.
+	See you around."
+}
+
+text MatchCall_NegativeBattleText11 {
+	"Ah, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+	How are your POKéMON?
+
+	I just lost yet another battle.
+
+	Well, see you!"
+}
+
+text MatchCall_NegativeBattleText12 {
+	"Hello, {PLAYER}{KUN}.
+	It's me, {STR_VAR_1}.
+	Are you still battling hard?
+
+	As for me, I lost recently, so I've
+	been training my team all over.
+
+	Let's meet again."
+}
+
+text MatchCall_NegativeBattleText13 {
+	"Ah, hello, {PLAYER}{KUN}!
+	This is {STR_VAR_1}!
+
+	I hope you've been keeping well.
+
+	I was in a battle just a little
+	while before this.
+
+	{PLAYER}{KUN}, try to be active like me.
+	See you again!"
+}
+
+text MatchCall_NegativeBattleText14 {
+	"Oh, hi, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	Are you doing good?
+
+	You should go home every so often,
+	though.
+
+	Bye-bye!"
+}
+
+text MatchCall_PositiveBattleText1 {
+	"Hi! {PLAYER}{KUN}, hello!
+	This is {STR_VAR_1}!
+
+	I battled another TRAINER earlier.
+	I won! I won!
+
+	My {STR_VAR_2} really worked hard
+	for me. This is so great!"
+}
+
+text MatchCall_PositiveBattleText2 {
+	"Hello, {PLAYER}{KUN}!
+	It's {STR_VAR_1}!
+
+	I had a battle yesterday and
+	I won! It's fantastic!"
+}
+
+text MatchCall_PositiveBattleText3 {
+	"Hey there, {PLAYER}!
+	It's me, {STR_VAR_1}!
+	How's your battling?
+
+	Me, I had a battle the other day,
+	and my {STR_VAR_2} came up huge!
+
+	The next time I battle you,
+	{PLAYER}, it won't be me losing!"
+}
+
+text MatchCall_PositiveBattleText4 {
+	"Hey, {PLAYER}.
+	{STR_VAR_1} here.
+
+	I had a match earlier.
+	I managed to win, but it was close.
+
+	My {STR_VAR_2} put on one
+	inspired showing."
+}
+
+text MatchCall_PositiveBattleText5 {
+	"Hiya, {PLAYER}{KUN}!
+	It's {STR_VAR_1}.
+
+	How are things with you?
+	Battling much?
+
+	I just won a while back!
+	My {STR_VAR_2} was brilliant!
+
+	You wait. I'm going to beat you
+	next time! Right, take care!"
+}
+
+text MatchCall_PositiveBattleText6 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+
+	How's it going for you?
+
+	I've been riding a hot streak.
+	Why, I just won a battle.
+
+	When we have our next battle,
+	I'm sure not going to lose!"
+}
+
+text MatchCall_PositiveBattleText7 {
+	"{PLAYER}{KUN}?
+	{STR_VAR_1} here.
+
+	My {STR_VAR_2} is a force!
+	It won me another battle just now!
+
+	I can't wait to have a rematch
+	with you."
+}
+
+text MatchCall_PositiveBattleText8 {
+	"Oh, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1} speaking.
+
+	I hope you've been well.
+	I wanted to tell you I just won.
+
+	My {STR_VAR_2} worked especially
+	hard to get the win.
+
+	See you again!"
+}
+
+text MatchCall_PositiveBattleText9 {
+	"Oh, {PLAYER}{KUN}, hi there!
+	This is {STR_VAR_1}!
+
+	How are your POKéMON holding up?
+	Mine just won a battle!
+
+	My {STR_VAR_2} was spectacular,
+	I must say!
+
+	I wish I could've shown you!
+	See you again!"
+}
+
+text MatchCall_PositiveBattleText10 {
+	"Oh, {PLAYER}{KUN}, hello…
+	This is {STR_VAR_1}.
+
+	How has life been treating you?
+
+	My POKéMON appear to be charged
+	with energy.
+
+	I just won a battle with them.
+	See you around."
+}
+
+text MatchCall_PositiveBattleText11 {
+	"Ah, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	Been in any battles lately?
+	I just won another one today!
+
+	I'm on a roll! Gahahaha!
+	Well, see you!"
+}
+
+text MatchCall_PositiveBattleText12 {
+	"Hello, {PLAYER}{KUN}.
+	It's me, {STR_VAR_1}.
+
+	I trust you've been well?
+	I'm still bursting with life!
+
+	Why, just now, I won another match.
+	I'm not stepping aside to you
+	youngsters yet!"
+}
+
+text MatchCall_PositiveBattleText13 {
+	"Ah, hello, {PLAYER}{KUN}!
+	This is {STR_VAR_1}!
+
+	I hope you've been keeping well.
+	I still have a bounce in my step!
+
+	Why, I just won a battle yet again.
+	Oh, I won't lose to young people
+	quite yet!
+
+	See you again!"
+}
+
+text MatchCall_PositiveBattleText14 {
+	"Oh, hi, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	I was in a battle recently, and my
+	{STR_VAR_2} was exceptional!
+
+	I wish you could have seen it,
+	{PLAYER}{KUN}. Bye-bye!"
+}
+
+text MatchCall_SameRouteBattleRequestText1 {
+	"Hi! {PLAYER}, hello!
+	This is {STR_VAR_1}.
+
+	Huh? Wait, you're near
+	{STR_VAR_2}?
+
+	Oh, wow, we have to battle, then!
+	I'll be waiting! See you!"
+}
+
+text MatchCall_SameRouteBattleRequestText2 {
+	"Hello, {PLAYER}!
+	It's {STR_VAR_1}.
+
+	Oh? You happen to be around
+	{STR_VAR_2} right now?
+
+	Would you like to battle now?
+	I'll wait for you! See you!"
+}
+
+text MatchCall_SameRouteBattleRequestText3 {
+	"Hey there, {PLAYER}!
+	It's me, {STR_VAR_1}.
+
+	Oh, hey, are you near
+	{STR_VAR_2} right now?
+
+	How would you like to battle with
+	me right now?
+
+	I'm not losing again!
+	I'll be waiting! Catch you soon!"
+}
+
+text MatchCall_SameRouteBattleRequestText4 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+
+	Whereabouts are you now?
+	Huh? {STR_VAR_2}?
+
+	Want to battle now?
+	I'll wait for you. See you!"
+}
+
+text MatchCall_SameRouteBattleRequestText5 {
+	"Hiya, {PLAYER}{KUN}!
+	It's {STR_VAR_1}.
+	How are things with you?
+
+	You're where now?
+	{STR_VAR_2}?
+
+	Well, how about we have a quick
+	rematch right away?
+
+	I'll keep an eye out for you.
+	See you soon!"
+}
+
+text MatchCall_SameRouteBattleRequestText6 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+	How are your POKéMON keeping?
+
+	Oh, is that right? You're around
+	{STR_VAR_2}?
+
+	Well, then, we'd better have
+	a rematch.
+
+	I can wait, sure.
+	See you!"
+}
+
+text MatchCall_SameRouteBattleRequestText7 {
+	"…Er, {PLAYER}{KUN}?
+	{STR_VAR_1} here…
+
+	Oh, you happen to be around
+	{STR_VAR_2}?
+
+	Then, let's battle.
+	Right away, I mean.
+
+	I'll show you my POKéMON.
+	I'll wait for you."
+}
+
+text MatchCall_SameRouteBattleRequestText8 {
+	"Oh, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1} speaking.
+
+	I hope you're doing well.
+	Oh, you're near {STR_VAR_2}.
+
+	Would you like to have a battle
+	with me, then?
+
+	I'll wait for you.
+	See you soon!"
+}
+
+text MatchCall_SameRouteBattleRequestText9 {
+	"Oh, {PLAYER}{KUN}, hi there!
+	This is {STR_VAR_1}!
+
+	Are you keeping up?
+	Oh, you're near {STR_VAR_2}?
+
+	Oh, well, then don't you think we
+	should battle?
+
+	Don't keep me waiting too long!"
+}
+
+text MatchCall_SameRouteBattleRequestText10 {
+	"Oh, {PLAYER}{KUN}, hello…
+	This is {STR_VAR_1}.
+
+	How are things with you?
+	Oh, you're near {STR_VAR_2}.
+
+	We should have a battle now, then.
+
+	I'm ready and waiting.
+	Be quick!"
+}
+
+text MatchCall_SameRouteBattleRequestText11 {
+	"Ah, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	Ah, so where you are now is
+	{STR_VAR_2}?
+
+	Well, then, we just have to have
+	a battle, don't you think?
+
+	I'll wait around for you!
+	See you real quick!"
+}
+
+text MatchCall_SameRouteBattleRequestText12 {
+	"Hello, {PLAYER}{KUN}.
+	It's me, {STR_VAR_1}.
+	Where might you be now?
+
+	{STR_VAR_2}?
+	That's quite close by!
+
+	What do you say we have a battle
+	now?
+
+	I can wait.
+	See you!"
+}
+
+text MatchCall_SameRouteBattleRequestText13 {
+	"Ah, hello, {PLAYER}{KUN}!
+	This is {STR_VAR_1}!
+
+	I hope you've been keeping well.
+	Oh, you're near {STR_VAR_2}?
+
+	Since that's not very far away,
+	come see me for a battle.
+
+	I'll wait for you.
+	Bye for now."
+}
+
+text MatchCall_SameRouteBattleRequestText14 {
+	"Oh, hi, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	You're what? …{STR_VAR_2}?
+	That's very close.
+
+	Don't you think we ought to have
+	a battle?
+
+	I'll be looking for you!
+	Bye-bye!"
+}
+
+text MatchCall_DifferentRouteBattleRequestText1 {
+	"Hi! {PLAYER}, hello!
+	This is {STR_VAR_1}.
+
+	Want to have a battle with me?
+
+	I'll be waiting for you around
+	{STR_VAR_2}!"
+}
+
+text MatchCall_DifferentRouteBattleRequestText2 {
+	"Hello, {PLAYER}!
+	It's {STR_VAR_1}.
+
+	Would you like to have a battle
+	with me again?
+
+	You can find me around
+	{STR_VAR_2}. I'll be waiting!"
+}
+
+text MatchCall_DifferentRouteBattleRequestText3 {
+	"Hey there, {PLAYER}!
+	It's me, {STR_VAR_1}.
+
+	My POKéMON have grown a lot
+	tougher since last time.
+
+	I want to see how strong they've
+	become with your POKéMON, {PLAYER}.
+
+	So, let's have a battle!
+
+	I'll be waiting for you around
+	{STR_VAR_2}."
+}
+
+text MatchCall_DifferentRouteBattleRequestText4 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+	How are things with you?
+
+	My POKéMON have grown pretty
+	tough lately.
+
+	Hey, how would you like to have
+	another battle with me?
+
+	Let's meet up around
+	{STR_VAR_2}, okay?"
+}
+
+text MatchCall_DifferentRouteBattleRequestText5 {
+	"Hiya, {PLAYER}{KUN}!
+	It's {STR_VAR_1}.
+
+	My POKéMON are growing up in
+	decent ways.
+
+	I'd really like to have another
+	battle with you.
+
+	I'll keep an eye out for you around
+	{STR_VAR_2}. See you soon!"
+}
+
+text MatchCall_DifferentRouteBattleRequestText6 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+	I hope you're on top of things.
+
+	I was thinking I'd like another
+	battle with you. What do you say?
+
+	If you feel like a battle,
+	come to {STR_VAR_2}.
+
+	See you!"
+}
+
+text MatchCall_DifferentRouteBattleRequestText7 {
+	"…Er, {PLAYER}{KUN}?
+	{STR_VAR_1} here…
+	So? Are your POKéMON growing?
+
+	Mine sure got stronger.
+	I'd like to show you.
+
+	I'll be around {STR_VAR_2}.
+	Come see me for a match.
+
+	See you around."
+}
+
+text MatchCall_DifferentRouteBattleRequestText8 {
+	"Oh, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1} speaking.
+
+	I hope you're doing well.
+	My POKéMON are very frisky.
+
+	If you're ever in the area, please
+	give me a rematch.
+
+	I'll be around {STR_VAR_2}.
+	Until then, good-bye!"
+}
+
+text MatchCall_DifferentRouteBattleRequestText9 {
+	"Oh, {PLAYER}{KUN}, hi there!
+	This is {STR_VAR_1}!
+	How are your POKéMON doing?
+
+	My POKéMON keep getting better.
+	I'd like to show you, {PLAYER}{KUN}.
+
+	I'm around {STR_VAR_2} now,
+	so let's battle if you're close by.
+
+	Hope I see you soon!"
+}
+
+text MatchCall_DifferentRouteBattleRequestText10 {
+	"Oh, {PLAYER}{KUN}, hello…
+	This is {STR_VAR_1}.
+	So, how are things with you?
+
+	My POKéMON have grown much
+	stronger than before.
+
+	I'd love another battle with you,
+	{PLAYER}{KUN}.
+
+	I'll be around {STR_VAR_2}.
+	Come see me if you're close."
+}
+
+text MatchCall_DifferentRouteBattleRequestText11 {
+	"Ah, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+	Where might you be now?
+
+	My POKéMON are full of life.
+	They appear to be looking forward
+	to seeing your POKéMON, {PLAYER}{KUN}.
+
+	I'm around {STR_VAR_2} now.
+	I hope you'll seek us out."
+}
+
+text MatchCall_DifferentRouteBattleRequestText12 {
+	"Hello, {PLAYER}{KUN}.
+	It's me, {STR_VAR_1}.
+
+	I should tell you, my POKéMON have
+	grown to be quite robust lately.
+
+	I would like to see them in a battle
+	with you, {PLAYER}{KUN}.
+
+	We'll be around {STR_VAR_2}.
+	Come see us anytime!"
+}
+
+text MatchCall_DifferentRouteBattleRequestText13 {
+	"Ah, hello, {PLAYER}{KUN}!
+	This is {STR_VAR_1}!
+	Are your POKéMON keeping well?
+
+	My POKéMON have been so healthy,
+	they don't look capable of losing!
+
+	I would surely love to have another
+	battle with you.
+
+	If you're near {STR_VAR_2},
+	do come see us."
+}
+
+text MatchCall_DifferentRouteBattleRequestText14 {
+	"Oh, hi, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+	Keeping well, I hope.
+
+	Oh, yes! My POKéMON are
+	much stronger than before.
+
+	Don't you think we ought to have
+	a battle, {PLAYER}{KUN}?
+
+	We'll be waiting for you around
+	{STR_VAR_2}.
+
+	Come see us anytime, okay?"
+}
+
+text MatchCall_PersonalizedText1 {
+	"It's me, the mountain-loving
+	{STR_VAR_1}!
+
+	Well, since we met, have you grown
+	to appreciate the mountains more?
+
+	I rarely see you in the mountains…
+
+	Next time, we'll meet somewhere
+	around {STR_VAR_2}."
+}
+
+text MatchCall_PersonalizedText2 {
+	"This is {STR_VAR_1}.
+	Hello.
+
+	I was just telling a new TRAINER
+	about you.
+
+	I told her about a strong TRAINER
+	who raises POKéMON with care.
+
+	I hope you'll become a TRAINER
+	that everyone will admire.
+
+	I hope we meet again!"
+}
+
+text MatchCall_PersonalizedText3 {
+	"Hello! It's {STR_VAR_1}.
+
+	I love where I am now.
+	It's pleasant with sweet aromas!
+
+	I think someone planted BERRIES,
+	and they burst into bloom.
+
+	See you again sometime!"
+}
+
+text MatchCall_PersonalizedText4 {
+	"Hello! Thirty years of exploration,
+	{STR_VAR_1} at your service!
+
+	It seems that you're energetically
+	traveling here and there.
+
+	Have you discovered any new ruins?
+	Please tell if you have!
+
+	Now, if you'll excuse me,
+	I have ruins to explore."
+}
+
+text MatchCall_PersonalizedText5 {
+	"It's {STR_VAR_1}!
+
+	Know what I'm doing today?
+	Looking at waves from the beach!
+
+	Sigh… The waves are all sparkly.
+	The sea is the prettiest from here.
+	I'm getting hungry, so bye-bye!"
+}
+
+text MatchCall_PersonalizedText6 {
+	"Munch-chew…
+	Oh, hi, it's {STR_VAR_1}.
+	I love eating on the beach.
+
+	My POKéMON and I have been doing
+	great. We're fully fueled!
+	I'm going for a swim. Bye!"
+}
+
+text MatchCall_PersonalizedText7 {
+	"Hello, this is {STR_VAR_1}…
+
+	I've grown a little jaded with this
+	whole COOLTRAINER thing…
+
+	Everyone thinks I'm a perfect
+	TRAINER, and that makes me try to
+	live up to that expectation.
+
+	But I guess that goes with being
+	a COOLTRAINER.
+
+	I'll just have to buckle down…
+	and grin and bear it.
+
+	You're the only person that I could
+	confide in like this.
+
+	But when I see you next,
+	don't worry, I won't whine!"
+}
+
+text MatchCall_PersonalizedText8 {
+	"Yahoo, it's {STR_VAR_1}!
+	How do you do?
+
+	I've been raising my POKéMON with
+	you as the target.
+
+	I don't intend to lose when we
+	battle again.
+
+	Isn't it great to have TRAINER
+	friends? Let's meet again!"
+}
+
+text MatchCall_PersonalizedText9 {
+	"It's {STR_VAR_1}…
+	Right now, behind you…
+	Wasn't there something…?
+
+	The power of the POKéMON that
+	sleep here at MT. PYRE…
+
+	It's telling me about you…
+
+	You should walk away quickly and
+	never once look back…
+
+	Giggle…
+	Farewell…"
+}
+
+text MatchCall_PersonalizedText10 {
+	"This is {STR_VAR_1}.
+	How do you do?
+
+	Isn't it convenient that we can
+	chat like this at a distance?
+
+	Before, if I wanted to speak with
+	anyone, I had to have my father
+	drive me…
+
+	I should be going now.
+	I'm glad we had this chat."
+}
+
+text MatchCall_PersonalizedText11 {
+	"It's {STR_VAR_1}!
+	Will you listen to this?
+
+	I like the SAFARI ZONE a lot,
+	but whenever I go, I get lost!
+
+	All that tall grass!
+	And it's much too spread out!
+
+	I feel better getting that off
+	my chest!
+
+	I'm off to the SAFARI ZONE again!
+	Catch you!"
+}
+
+text MatchCall_PersonalizedText12 {
+	"Hello, {STR_VAR_1} here.
+	Yes, correct, I am rich, yes.
+
+	I should tell you, my wealth has
+	grown since we last met.
+
+	What's more, my POKéMON have also
+	grown stronger.
+
+	I can't shake the feeling that
+	this world exists for me!
+
+	Oh, no need to say a word!
+	Everyone knows it's true!
+
+	Oh, you must excuse me, I have this
+	formal dinner to attend."
+}
+
+text MatchCall_PersonalizedText13 {
+	"Ufufufufu…
+	It's me, {STR_VAR_1}…
+
+	Can you guess what I'm seeing?
+	A pair of {STR_VAR_2} in a battle.
+
+	Maybe I'll try catching the winner…
+	Ufufufufufu…
+
+	I… I'm kind of busy now.
+	I have to go."
+}
+
+text MatchCall_PersonalizedText14 {
+	"Oh, it's {STR_VAR_1}!
+
+	I was just thinking I'm getting
+	bored of the ABANDONED SHIP.
+
+	But since I'm already here,
+	and I want to beat you once,
+	I'll be sticking around a bit more.
+
+	If you feel compelled, why don't
+	you come see me?
+
+	I think today will be the day that
+	I finally challenge the man next
+	door to a match.
+
+	Be seeing you!"
+}
+
+text MatchCall_PersonalizedText15 {
+	"I'm {STR_VAR_1}!
+	The man of the sea!
+
+	You know what I think?
+
+	The TRAINERS out at sea are
+	the toughest of the tough!
+
+	You should learn from me and train
+	in the sea…
+
+	Whoops, giant surf rising!
+
+	It's a great training opportunity!
+	Sorry, but I have to go!"
+}
+
+text MatchCall_PersonalizedText16 {
+	"It's {STR_VAR_1}! Listen, I've been
+	teaching karate to my POKéMON.
+
+	But now they're better than me!
+	I've done nothing but lose to them!
+
+	But even though I may lose to
+	POKéMON, I won't lose to another
+	TRAINER, no sir!
+
+	We have to battle again!
+	Ugwaah!"
+}
+
+text MatchCall_PersonalizedText17 {
+	"It's me, {STR_VAR_1}.
+	How're your travels unwinding?
+
+	…Whoa, is that right?
+	Sounds awfully stimulating!
+
+	I think I could write a song about
+	one of your episodes.
+
+	…Oh, hey, I'm feeling it.
+	I hear the riffs in my head.
+
+	I'd better get this tune properly
+	written, so I've got to fly! Later!"
+}
+
+text MatchCall_PersonalizedText18 {
+	"This is {STR_VAR_1}…
+	Hear my new song.
+
+	Lalala, {STR_VAR_2}, {STR_VAR_2}!
+	Why are you that {STR_VAR_2}?
+	Why can't I be you, {STR_VAR_2}?
+	Lala, {STR_VAR_2} and {STR_VAR_1},
+	{STR_VAR_1} and {STR_VAR_2}…
+
+	Repeat chorus, fade…"
+}
+
+text MatchCall_PersonalizedText19 {
+	"I'm {STR_VAR_1}, you know,
+	the camping expert!
+
+	When we battled, I couldn't help
+	but lose to you.
+
+	After all, my expertise is in
+	camping.
+
+	But win or lose, I like to battle
+	when I'm camping.
+
+	Battle with us again, okay?
+	Oh, and let's go camping, too!"
+}
+
+text MatchCall_PersonalizedText20 {
+	"It's me, me, {STR_VAR_1}!
+
+	I'd like to climb other mountains
+	than this one, to be honest.
+
+	But I'm not sure if there'd be any
+	ladies like on MT. CHIMNEY.
+
+	If you know any other mountain
+	with ladies around, let me know!
+
+	Ehehehe, see you around!"
+}
+
+text MatchCall_PersonalizedText21 {
+	"… … … … … …
+	… … … … … …
+	It's {STR_VAR_1}…
+
+	… … … … … …
+	… … … … … …
+	That's all today…"
+}
+
+text MatchCall_PersonalizedText22 {
+	"This is {STR_VAR_1}. Today, I had
+	this feeling I would chat with you.
+
+	My desire to defeat you builds
+	by day and by night.
+
+	You have a rival like that, yes?
+	I wish it were me…
+
+	I'm glad you heard me out.
+	See you!"
+}
+
+text MatchCall_PersonalizedText23 {
+	"It's {STR_VAR_1}.
+
+	When there's a strong TRAINER
+	nearby, I can sometimes sense that
+	somehow.
+
+	Did you pass close by, {PLAYER}{KUN}?
+	Maybe it was you.
+
+	I'll be waiting for your visit.
+	Bye!"
+}
+
+text MatchCall_PersonalizedText24 {
+	"Hello, this is {STR_VAR_1}.
+	You sound well, {PLAYER}{KUN}.
+
+	I've traveled around the world,
+	but I must say I've taken a great
+	shine to this region.
+
+	I plan to stay here a while.
+	Perhaps we can meet again?
+
+	I've not forgotten your dazzling
+	techniques.
+
+	I do hope for a rematch."
+}
+
+text MatchCall_PersonalizedText25 {
+	"Snivel… It's… {STR_VAR_1}…
+	…Sob…
+
+	ROXANNE chewed me out in class
+	today.
+
+	But I don't dislike her or anything.
+
+	ROXANNE tells me exactly what
+	I did wrong so I can learn from it.
+
+	You bet I'll be going to
+	the TRAINER'S SCHOOL tomorrow!
+
+	See you later!"
+}
+
+text MatchCall_PersonalizedText26 {
+	"It's {STR_VAR_1}!
+
+	ROXANNE let me battle with her
+	yesterday.
+
+	The results…
+	Terrible, like you needed to ask.
+
+	But I was delighted that ROXANNE
+	would even let me challenge her!
+
+	You wouldn't believe how much
+	more I admire her!
+
+	I'm going to really focus and work!
+	I'd better go!"
+}
+
+text MatchCall_PersonalizedText27 {
+	"Hi, it's ANNA! I'm with my junior
+	partner MEG again today.
+
+	I really love caring for MEG and
+	POKéMON. They're so cute!
+
+	I wish I could look after them
+	as if they were my siblings!
+
+	Oh, hi, MEG!
+	Did you get the buns?
+
+	Huh? No, no, I'm not treating you
+	like my personal slave!
+
+	You lost the match, so you have
+	to go buy the bread as punishment!
+
+	I wouldn't treat you like a slave,
+	MEG! You're too special to me!
+
+	I have to go now.
+	It's time for our snack!"
+}
+
+text MatchCall_PersonalizedText28 {
+	"I love POKéMON!
+	It's {STR_VAR_1} from the FAN CLUB!
+
+	You have to hear this!
+	My sweet POKéMON…
+
+	Snort! Wahaha!
+	I can't say any more! It's a secret!
+	It's just too cute for words!
+
+	Oh, my sweet {STR_VAR_2} is begging
+	for a {POKEBLOCK}!
+
+	It's the picture of cuteness!
+
+	Sorry, but I can't talk now!
+	You'll have to hear this next time!"
+}
+
+text MatchCall_PersonalizedText29 {
+	"Ohoho!
+
+	This is {STR_VAR_1}! I can't wait to
+	tell you about my darling POKéMON!
+
+	Please, you must listen to this.
+	It's about my darling {STR_VAR_2}.
+
+	Whenever anyone picks it up,
+	it leaps straight into my arms!
+
+	Oh… Oh… Could there be anything
+	more blissful?
+
+	Oh, it feels so heavenly!
+
+	I'm so glad I could share some of
+	my happiness with you.
+
+	Well, I must be going.
+	Bye, now!"
+}
+
+text MatchCall_PersonalizedText30 {
+	"I am… {STR_VAR_1}.
+	People call me an EXPERT.
+
+	But there is one thing I know.
+	I could not be an EXPERT on my own
+	power.
+
+	Only with the help of POKéMON can
+	a TRAINER become an EXPERT.
+
+	Humph! I believe I may have said
+	something deep and profound!
+
+	I shall leave you in good spirits!"
+}
+
+text MatchCall_PersonalizedText31 {
+	"It's {STR_VAR_1}.
+	I'm glad to chat with you!
+
+	I am feeling alive and refreshed
+	soaking in this hot-spring tub.
+
+	I've been battling young TRAINERS
+	since we met, but you're still
+	the best of the lot.
+
+	I imagine you'll become an EXPERT
+	in your old age! Ohohoho…"
+}
+
+text MatchCall_PersonalizedText32 {
+	"Yay! This is {STR_VAR_1}!
+	What's up?
+
+	I might be imagining this, but when
+	I win battles, my shorts seem to
+	feel, like, better. Materially.
+
+	What do I mean by that?
+	It's kind of hard to explain, but…
+	How would I say this now…
+	My shorts feel silkier!
+
+	And when I battled you, {PLAYER}{KUN},
+	my shorts felt icky and coarse.
+
+	… … … … … …
+	You didn't really believe that?
+	Ehehehe, that's all! Bye now!"
+}
+
+text MatchCall_PersonalizedText33 {
+	"Ahoy!
+	{STR_VAR_1} here!
+
+	As always, I'm fishing with wild
+	abandon!
+
+	Are there other places I can fish
+	than the sea and rivers?
+
+	I get these powerful urges to
+	fish just about anywhere!
+
+	Oh, gosh, darn it!
+	My line's tangled up!
+
+	Gotta go!
+	Find me some new fishing spots!"
+}
+
+text MatchCall_PersonalizedText34 {
+	"Hey, there! It's {STR_VAR_1}.
+	Are you taking it casually?
+
+	Ever since I was a kid, you know,
+	I've always been placid, huh?
+
+	I never was much for getting all
+	stressed or rushing things.
+
+	But wouldn't you know it,
+	I'm now a TRIATHLETE.
+
+	You just can't tell where life will
+	take you, if you get my drift.
+
+	You're a TRAINER now, but who
+	knows what the future holds, huh?
+
+	Imagine yourself as a teacher,
+	or maybe an artist. Cool, huh?
+
+	But, hey, be cool. Take it casual.
+	See you around."
+}
+
+text MatchCall_PersonalizedText35 {
+	"This is {STR_VAR_1}!
+	I'm cycling right now.
+
+	I love swimming and running,
+	but cycling is my first love!
+
+	It makes my whole body feel as if
+	I'm one with the wind.
+
+	It exhilarates me as if I were
+	flying!
+
+	Okay! Today, I'm going to set a new
+	CYCLING ROAD record!
+
+	You should make the challenge, too!
+	See you!"
+}
+
+text MatchCall_PersonalizedText36 {
+	"Yo, this is {STR_VAR_1}! I'm smack
+	in the middle of a triathlon!
+
+	But, hey, I've always got time to
+	shoot the breeze!
+
+	Working out with POKéMON feels
+	mighty good!
+
+	Without exchanging words, we synch
+	as if we shared a heart.
+
+	It's inspiring!
+
+	Gasp… Chatting while running…
+	I'm getting run down…
+	Gasp… Have…to…go…"
+}
+
+text MatchCall_PersonalizedText37 {
+	"Hi, it's {STR_VAR_1}.
+	If you want to improve endurance,
+	high-altitude training is it!
+
+	Try running on a mountaintop.
+	You'll be gasping in no time!
+
+	I'm getting oxygen starved, too!
+	See you!"
+}
+
+text MatchCall_PersonalizedText38 {
+	"Oh, it's {STR_VAR_1}, hello.
+
+	I've been swimming a lot but I still
+	can't seem to reach EVERGRANDE.
+
+	Maybe I'm just going in circles.
+
+	No, no, that can't be possible.
+	Wahahaha.
+	Take care!"
+}
+
+text MatchCall_PersonalizedText39 {
+	"Hey, it's {STR_VAR_1}…
+	Whoops!
+
+	Splash!
+
+	Blug-blug-blug-blug…
+
+	Sploosh!
+
+	Whiff-whiff! Whiff-whiff!
+
+	Hey! Sorry about that!
+	I just put on some suntan oil.
+
+	So my POKéNAV went whoopsy
+	out of my hand into the water!
+
+	But, boy, DEVON's POKéNAV is built
+	tough. It survived that dunking!
+
+	Anyways, I'm busy sunbathing,
+	so let's chat another time."
+}
+
+text MatchCall_PersonalizedText40 {
+	"Hello, this is {STR_VAR_1}.
+
+	Out of the three triathlon events,
+	I like swimming best.
+
+	But if I stay in the sea too long,
+	won't I get all prune-like?
+
+	Ooh, triathlon is such a grueling
+	test of human endurance! Bye!"
+}
+
+text MatchCall_PersonalizedText41 {
+	"Hello, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+
+	How are your POKéMON doing?
+
+	My DRAGON POKéMON appear to be
+	in peak form. Bye for now."
+}
+
+text MatchCall_PersonalizedText42 {
+	"{STR_VAR_1} here.
+
+	My {STR_VAR_2} has grown even more
+	tough than that last time.
+
+	I'm not going to lose again to you.
+	You wait till next time!
+
+	See you around!"
+}
+
+text MatchCall_PersonalizedText43 {
+	"It is {STR_VAR_1} here.
+
+	I have continued with my studies
+	in the art of concealment.
+
+	But I have been too successful.
+	No one has been able to find me.
+	My success makes me lonely…
+
+	Like smoke I disappear!
+	Farewell!"
+}
+
+text MatchCall_PersonalizedText44 {
+	"This is {STR_VAR_1}.
+	I kept up my training since we met.
+
+	My {STR_VAR_2} is getting pretty
+	tough.
+
+	Training on a beach is effective,
+	just as I thought. Bye now!"
+}
+
+text MatchCall_PersonalizedText45 {
+	"How do you do?
+	This is {STR_VAR_1}.
+
+	I wonder when this yucky volcanic
+	ash will stop falling?
+
+	If it gets too deep, it will cover
+	up the pattern on my parasol…
+
+	Let's promise to meet again!"
+}
+
+text MatchCall_PersonalizedText46 {
+	"Hi, {STR_VAR_1} here.
+
+	Did you know that it's easier to
+	float in the sea than a pool?
+
+	Just by lying still, your body will
+	float on its own.
+
+	But if you float for too long,
+	watch that you don't get carried
+	off too far out.
+
+	…Where am I, anyway?
+	I'd better go!"
+}
+
+text MatchCall_PersonalizedText47 {
+	"Oh, {PLAYER}{KUN}, hello!
+	This is {STR_VAR_1}.
+	I'm up in the mountains now.
+
+	But the ground is too bumpy.
+	I can't pitch my tent here…
+
+	Oh, I had a brilliant idea!
+
+	Maybe I can get my POKéMON to tamp
+	the ground flat here!
+
+	I'm going to try that!
+	Bye-bye!"
+}
+
+text MatchCall_PersonalizedText48 {
+	"Oh, hi, hi, this is {STR_VAR_1}!
+
+	I'm raising POKéMON with LIV!
+	We're trying very hard!
+
+	If we try harder, can we become
+	number one? Bye-bye!"
+}
+
+text MatchCall_PersonalizedText49 {
+	"{STR_VAR_1} here!
+
+	I'm a SAILOR, but I'm not on a boat
+	now.
+
+	It makes me wonder--what should
+	a SAILOR on land be called?
+
+	That's what I've been thinking
+	while staring out across the waves.
+
+	All right, next time!"
+}
+
+text MatchCall_PersonalizedText50 {
+	"It's {STR_VAR_1}.
+	So? Get any more POKéMON?
+
+	If you catch a new POKéMON,
+	you have to come show me.
+
+	I won't whine for it, honest.
+	I'll be waiting. See you."
+}
+
+text MatchCall_PersonalizedText51 {
+	"This is {STR_VAR_1}.
+
+	Are you raising your POKéMON
+	in the optimal way?
+
+	The air is clean where I am.
+	It's the perfect environment for
+	raising POKéMON.
+
+	If you're going to focus on raising
+	POKéMON, you should come out to
+	{STR_VAR_2}. Take care now."
+}
+
+text MatchCall_PersonalizedText52 {
+	"Hi, this is {STR_VAR_1}.
+
+	I gave a {POKEBLOCK} to my {STR_VAR_2}.
+	It seemed to enjoy it very much.
+
+	It looks like POKéMON have their
+	likes and dislikes with {POKEBLOCK}S.
+
+	I find that quite fascinating.
+	Please do take care."
+}
+
+text MatchCall_PersonalizedText53 {
+	"{STR_VAR_1} here.
+
+	If you cooperate with POKéMON,
+	one can be comfortable in the wild.
+
+	Everyone should realize that and
+	cooperate with POKéMON more.
+
+	That would be ideal.
+	I really think so.
+
+	I think you're on the right track!
+	Catch you later!"
+}
+
+text MatchCall_PersonalizedText54 {
+	"Hi, it's {STR_VAR_1}. You know,
+	the TRAINER who's always prepared!
+
+	{PLAYER}{KUN}, do you have enough items?
+	Are your POKéMON fit for action?
+
+	Keeping everything perfect around
+	you all the time is the secret to
+	keeping your journey going.
+
+	I'd better go check my own
+	supplies! Be vigilant!"
+}
+
+text MatchCall_PersonalizedText55 {
+	"It's {STR_VAR_1}!
+	It's {STR_VAR_1}!
+
+	{STR_VAR_2} is a very busy
+	thoroughfare, so I get challenged
+	by all kinds of TRAINERS every day.
+
+	Today, I won five battles and lost
+	only three!
+
+	How did you do today?
+	Tell me about it next time, okay?"
+}
+
+text MatchCall_PersonalizedText56 {
+	"It's me, {STR_VAR_1}.
+
+	I'm popular because I have lots
+	of BUG POKéMON, right?
+
+	Well, I took a bunch of my fave
+	bugs to school today.
+
+	This girl I like started crying!
+	Go ahead and laugh if you want.
+
+	I have to try teaching her what
+	makes BUG POKéMON so appealing.
+
+	Snivel…
+	See you!"
+}
+
+text MatchCall_PersonalizedText57 {
+	"Hah! Hah! Hah! Hah!
+
+	Hi! It's {STR_VAR_1}! Hah! Hah!
+
+	Trying to chat…
+	While climbing…
+	Is harsh exercise… Hah! Hah!
+
+	Urgh! Oof…
+	It's steeper now…
+	We'll chat…another time…
+	Hah! Hah! Hah!"
+}
+
+text MatchCall_PersonalizedText58 {
+	"Oh, hi!
+
+	I'm still searching for treasures
+	with KIRA!
+
+	Maybe there isn't any treasure
+	here at all…
+
+	But the important thing is for me
+	to search alongside KIRA.
+
+	Oh, hey, KIRA!
+	Wh-why are you angry?
+
+	I'm not ignoring you, honey!
+	You're my one and only!
+
+	…{PLAYER}, I have to go, bye!"
+}
+
+text MatchCall_PersonalizedText59 {
+	"This is {STR_VAR_1}!
+
+	I went to DEWFORD's GYM again
+	for training.
+
+	BRAWLY, the GYM LEADER, seems
+	to be tougher now.
+
+	Something about being toughened
+	by the wild waves…
+
+	But he's still as cool as ever.
+	The ladies adore him!
+	It makes me envious, frankly.
+
+	I wonder… Is his friend BRUNO
+	the same way as BRAWLY?
+
+	You know, all sweaty or smelly,
+	and prone to calling people
+	“big wave,” that sort of thing.
+
+	But, hey, this jealousy thing isn't
+	very seemly, is it?
+
+	Forget this chat ever happened,
+	how about it? So long!"
+}
+
+text MatchCall_PersonalizedText60 {
+	"It's a pleasure to chat with
+	a young TRAINER like you.
+
+	I imagine that you will continue to
+	enjoy POKéMON whatever your age.
+
+	Wouldn't it be good if you had
+	a partnership like ours?
+
+	Of course, {PLAYER}{KUN}, you already
+	enjoy the trust and companionship
+	of your POKéMON now.
+
+	You have the makings of long and
+	enduring relationships already!
+
+	Hahaha!
+	Never be discouraged!"
+}
+
+text MatchCall_PersonalizedText61 {
+	"Hi, this is {STR_VAR_1}!
+	We just won a battle!
+
+	We don't win often, but it was this
+	cool SWIMMER guy.
+
+	My sister was steamed!
+
+	She wanted to pretend that she
+	was weak to make an impression!
+
+	She always chews me out whether
+	we win or lose!
+
+	{PLAYER}{KUN}, can you say something
+	to her next time?
+
+	Okay, see you!"
+}
+
+text MatchCall_PersonalizedText62 {
+	"{STR_VAR_1} here, yes.
+	I headed out to sea yesterday.
+
+	I had been hoping to find a new
+	ruin to explore.
+
+	But the tides somehow seemed to
+	carry me back where I started.
+
+	I'm still weak at battling, too…
+	Feel free to mock me…
+	But I won't give up.
+
+	My day will come when I discover
+	a new ruin!
+
+	That's all I have to say!
+	Farewell for now!"
+}
+
+text MatchCall_PersonalizedText63 {
+	"Ahoy there!
+	It's me, {STR_VAR_1}!
+	I'm out on ROUTE 108 now!
+	In other words, where I always am!
+
+	Today, a gorgeous SWIMMER 
+	swam by me!
+
+	So I startled her with a shout!
+
+	And she gave me a nasty glare!
+
+	That's all from ROUTE 108!
+	Brought to you by {STR_VAR_1}!"
+}
+
+text MatchCall_PersonalizedText64 {
+	"It's {STR_VAR_1}!
+
+	I'm kind of busy, but I figured
+	I should let you know that I've
+	beaten five TRAINERS again today.
+
+	If I keep this pace up, I can
+	probably beat you next time.
+
+	I think we'll be good rivals,
+	you and I. Good-bye for now!"
+}
+
+text MatchCall_BattleFrontierStreakText1 {
+	"Hi! This is {STR_VAR_1}.
+	I heard the news!
+
+	They say you did excellent at
+	the {STR_VAR_2}.
+
+	It's awesome, {STR_VAR_3} straight wins?
+	See you!"
+}
+
+text MatchCall_BattleFrontierStreakText2 {
+	"Hello, it's {STR_VAR_1}!
+	I heard about you!
+
+	They said you won {STR_VAR_3} straight
+	battles at the {STR_VAR_2}.
+
+	That's special! I should try
+	harder, too! See you!"
+}
+
+text MatchCall_BattleFrontierStreakText3 {
+	"Hey there, {PLAYER}!
+	It's me, {STR_VAR_1}.
+
+	I heard you went on a tear at
+	the {STR_VAR_2}!
+
+	A big {STR_VAR_3}-win streak…
+	That is a big record, isn't it?
+
+	I'd better get it together, too!
+	Catch you soon!"
+}
+
+text MatchCall_BattleFrontierStreakText4 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here. What's up?
+
+	There's a rumor going around that
+	you strung together {STR_VAR_3} straight
+	wins at the {STR_VAR_2}.
+
+	I'd better step it up, too.
+	See you!"
+}
+
+text MatchCall_BattleFrontierStreakText5 {
+	"Hiya, {PLAYER}{KUN}!
+	It's {STR_VAR_1}.
+
+	You were at the {STR_VAR_2}
+	and won {STR_VAR_3} battles in a row?
+	Isn't that something!
+
+	I'd better work on my POKéMON more.
+	See you soon!"
+}
+
+text MatchCall_BattleFrontierStreakText6 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here. How are you?
+
+	By the way, I heard you pulled off
+	the feat of {STR_VAR_3} straight wins at
+	the {STR_VAR_2}.
+
+	That inspires me to focus on
+	raising my team."
+}
+
+text MatchCall_BattleFrontierStreakText7 {
+	"…Er, {PLAYER}{KUN}?
+	{STR_VAR_1} here…
+
+	Oh, yeah, you were over at
+	the {STR_VAR_2}, right?
+
+	And you won {STR_VAR_3} battles in a row.
+
+	Oh, there goes a rare POKéMON!
+	I have to go!"
+}
+
+text MatchCall_BattleFrontierStreakText8 {
+	"Oh, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1} speaking.
+	I hope you're doing well.
+
+	Oh, but, you are. I've heard that
+	you won {STR_VAR_3} matches in a row at
+	the {STR_VAR_2}.
+
+	That's very impressive!
+	I hope you stay successful."
+}
+
+text MatchCall_BattleFrontierStreakText9 {
+	"Oh, {PLAYER}{KUN}, hi there!
+	This is {STR_VAR_1}!
+
+	I heard! Your {STR_VAR_3}-win streak at
+	the {STR_VAR_2}!
+
+	That is so cool!
+	I'd better try harder, too!"
+}
+
+text MatchCall_BattleFrontierStreakText10 {
+	"Oh, {PLAYER}{KUN}, hello…
+	This is {STR_VAR_1}.
+
+	You won {STR_VAR_3} straight battles at
+	the {STR_VAR_2}?
+
+	That's quite the accomplishment.
+	I need to work harder."
+}
+
+text MatchCall_BattleFrontierStreakText11 {
+	"Ah, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	I hear you're the terror of
+	the {STR_VAR_2}?
+
+	You won, what, {STR_VAR_3} matches in
+	a row?
+
+	You're good, you.
+	I wonder how many I can win?"
+}
+
+text MatchCall_BattleFrontierStreakText12 {
+	"Hello, {PLAYER}{KUN}.
+	It's me, {STR_VAR_1}.
+	Are you keeping well?
+
+	Someone passed on word about you.
+	How you won {STR_VAR_3} straight battles
+	at a place named {STR_VAR_2}?
+
+	That's quite the tale.
+	See you!"
+}
+
+text MatchCall_BattleFrontierStreakText13 {
+	"Ah, hello, {PLAYER}{KUN}!
+	This is {STR_VAR_1}!
+	I hope you've been keeping well.
+
+	They say you won {STR_VAR_3} straight
+	battles at the {STR_VAR_2}.
+
+	I admire your energy!
+	Bye now."
+}
+
+text MatchCall_BattleFrontierStreakText14 {
+	"Oh, hi, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	I heard about you!
+	Didn't you just win {STR_VAR_3} battles in
+	a row at the {STR_VAR_2}?
+
+	You're an inspiration!
+	Bye-bye!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText1 {
+	"Hi! This is {STR_VAR_1}.
+	I heard the news!
+
+	They say you did excellent at
+	the {STR_VAR_2}.
+
+	It's awesome--{STR_VAR_3} straight wins?
+	See you!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText2 {
+	"Hello, it's {STR_VAR_1}!
+	I heard about you!
+
+	They said you won {STR_VAR_3} straight
+	battles at the {STR_VAR_2}.
+
+	That's special! I should try
+	harder, too! See you!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText3 {
+	"Hey there, {PLAYER}!
+	It's me, {STR_VAR_1}.
+
+	I heard you went on a tear at
+	the {STR_VAR_2}!
+
+	A big {STR_VAR_3}-win streak…
+	That is a big record, isn't it?
+
+	I'd better get it together, too!
+	Catch you soon!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText4 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here. What's up?
+
+	There's a rumor going around that
+	you strung together {STR_VAR_3} straight
+	wins at the {STR_VAR_2}.
+
+	I'd better step it up, too.
+	See you!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText5 {
+	"Hiya, {PLAYER}{KUN}!
+	It's {STR_VAR_1}.
+
+	You were at the {STR_VAR_2}
+	and won {STR_VAR_3} battles in a row?
+	Isn't that something!
+
+	Me? I'd say I'm coming along.
+	See you soon!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText6 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here. How are you?
+
+	By the way, I heard you pulled off
+	the feat of {STR_VAR_3} straight wins at
+	the {STR_VAR_2}.
+
+	I'd better try harder myself!
+	See you soon!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText7 {
+	"…Er, {PLAYER}{KUN}?
+	{STR_VAR_1} here…
+
+	Oh, yeah, you were over at
+	the {STR_VAR_2}, right?
+
+	And you won {STR_VAR_3} battles in a row.
+
+	Oh, there goes a rare POKéMON!
+	I have to go!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText8 {
+	"Oh, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1} speaking.
+	I hope you're doing well.
+
+	Oh, but, you are. I've heard that
+	you won {STR_VAR_3} matches in a row at
+	the {STR_VAR_2}.
+
+	That's very impressive!
+	I'd better work on my POKéMON, too!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText9 {
+	"Oh, {PLAYER}{KUN}, hi there!
+	This is {STR_VAR_1}!
+
+	I heard! Your {STR_VAR_3}-win streak at
+	the {STR_VAR_2}!
+
+	That is so cool!
+	I'd better try harder, too!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText10 {
+	"Oh, {PLAYER}{KUN}, hello…
+	This is {STR_VAR_1}.
+
+	You won {STR_VAR_3} straight battles at
+	the {STR_VAR_2}?
+
+	That's quite the accomplishment.
+	I need to work harder."
+}
+
+text MatchCall_BattleFrontierRecordStreakText11 {
+	"Ah, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	I hear you're the terror of
+	the {STR_VAR_2}?
+
+	You won, what, {STR_VAR_3} matches in
+	a row?
+
+	You're good, you.
+	I wonder how many I can win?"
+}
+
+text MatchCall_BattleFrontierRecordStreakText12 {
+	"Hello, {PLAYER}{KUN}.
+	It's me, {STR_VAR_1}.
+	Are you keeping well?
+
+	Someone passed on word about you.
+	How you won {STR_VAR_3} straight battles
+	at a place named {STR_VAR_2}?
+
+	That's quite the tale.
+	See you!"
+}
+
+text MatchCall_BattleFrontierRecordStreakText13 {
+	"Ah, hello, {PLAYER}{KUN}!
+	This is {STR_VAR_1}!
+	I hope you've been keeping well.
+
+	They say you won {STR_VAR_3} straight
+	battles at the {STR_VAR_2}.
+
+	I admire your energy!
+	Bye now."
+}
+
+text MatchCall_BattleFrontierRecordStreakText14 {
+	"Oh, hi, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+	I heard about you!
+
+	Didn't you just win {STR_VAR_3} battles in
+	a row at the {STR_VAR_2}?
+
+	You're an inspiration!
+	Bye-bye!"
+}
+
+text MatchCall_BattleDomeText1 {
+	"Hi! {PLAYER}?
+	Hello, this is {STR_VAR_1}!
+	I heard the news!
+
+	You became the champion at
+	the {STR_VAR_2} {STR_VAR_3} times?
+
+	It's awesome! I have to do better!
+	See you!"
+}
+
+text MatchCall_BattleDomeText2 {
+	"Hello, it's {STR_VAR_1}!
+	I heard about you!
+
+	They said you won {STR_VAR_3} titles
+	at the {STR_VAR_2}.
+
+	That's super! I wonder if I can
+	become a champion?"
+}
+
+text MatchCall_BattleDomeText3 {
+	"Hey there, {PLAYER}!
+	It's me, {STR_VAR_1}.
+	How's it going?
+
+	I heard you won events {STR_VAR_3} times
+	at the {STR_VAR_2}!
+
+	Make it one more next time!
+	Catch you soon!"
+}
+
+text MatchCall_BattleDomeText4 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+
+	I heard you became the champion
+	at the {STR_VAR_2} {STR_VAR_3} times.
+
+	Sounds like you're working hard.
+	I'll try to keep up!"
+}
+
+text MatchCall_BattleDomeText5 {
+	"Hiya, {PLAYER}{KUN}!
+	It's {STR_VAR_1}.
+
+	I heard you won {STR_VAR_3} times
+	outright at the {STR_VAR_2}.
+
+	I'd better get with it, too!
+	See you soon!"
+}
+
+text MatchCall_BattleDomeText6 {
+	"Hey, {PLAYER}{KUN}?
+	{STR_VAR_1} here. How are you?
+
+	By the way, I heard you became
+	the champion {STR_VAR_3} times at
+	the {STR_VAR_2}.
+
+	I'd better raise my POKéMON before
+	you pull farther ahead."
+}
+
+text MatchCall_BattleDomeText7 {
+	"{PLAYER}{KUN}?
+	{STR_VAR_1} here.
+
+	You were at the {STR_VAR_2}
+	and became the champ {STR_VAR_3} times?
+
+	That's neat. By the way, have you
+	caught any rare POKéMON lately?
+
+	Oh, is that right.
+	Okay, bye."
+}
+
+text MatchCall_BattleDomeText8 {
+	"Oh, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1} speaking.
+	I hope you're doing well.
+	Oh, but, you are.
+
+	I've heard that you won {STR_VAR_3} titles
+	at the {STR_VAR_2}.
+
+	I must raise my POKéMON like you.
+	See you again."
+}
+
+text MatchCall_BattleDomeText9 {
+	"Oh, {PLAYER}{KUN}, hi there!
+	This is {STR_VAR_1}!
+
+	I heard! You took the title
+	{STR_VAR_3} times at the {STR_VAR_2}!
+
+	That is so cool!
+	I'd better try harder, too!"
+}
+
+text MatchCall_BattleDomeText10 {
+	"Oh, {PLAYER}{KUN}, hello.
+	This is {STR_VAR_1}.
+
+	You won {STR_VAR_3} straight times at
+	the {STR_VAR_2}?
+
+	That's quite the accomplishment.
+	I need to work harder."
+}
+
+text MatchCall_BattleDomeText11 {
+	"Ah, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	I hear you're the terror of
+	the {STR_VAR_2}?
+
+	You won, what, {STR_VAR_3} straight times
+	now?
+
+	I wonder if I can ever become
+	a champion?
+
+	…Pretty well impossible?
+	Well, see you!"
+}
+
+text MatchCall_BattleDomeText12 {
+	"Hello, {PLAYER}{KUN}.
+	It's me, {STR_VAR_1}.
+	Are you keeping well?
+
+	You've won {STR_VAR_3} events at a place
+	named {STR_VAR_2}?
+
+	That's quite the tale.
+	See you!"
+}
+
+text MatchCall_BattleDomeText13 {
+	"Ah, hello, {PLAYER}{KUN}!
+	This is {STR_VAR_1}!
+	I hope you've been keeping well.
+
+	They say you won {STR_VAR_3} events
+	at the {STR_VAR_2}?
+
+	I admire your energy!
+	Bye now."
+}
+
+text MatchCall_BattleDomeText14 {
+	"Oh, hi, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+	I heard about you!
+
+	Didn't you win {STR_VAR_3} titles
+	at the {STR_VAR_2}?
+
+	You're an inspiration!
+	See you again!"
+}
+
+text MatchCall_BattlePikeText1 {
+	"Hi! {PLAYER}?
+	Hello, this is {STR_VAR_1}!
+	I heard the news!
+
+	You got through {STR_VAR_3} rooms
+	at the {STR_VAR_2}!
+
+	That's awesome!
+	See you!"
+}
+
+text MatchCall_BattlePikeText2 {
+	"Hello, it's {STR_VAR_1}!
+	I heard about you!
+
+	They said you won your way through
+	{STR_VAR_3} rooms at the {STR_VAR_2}.
+
+	I have to try much harder!
+	Bye!"
+}
+
+text MatchCall_BattlePikeText3 {
+	"Hey there, {PLAYER}!
+	It's me, {STR_VAR_1}.
+	How's it going?
+
+	I heard you won through {STR_VAR_3} rooms
+	at the {STR_VAR_2}!
+
+	Try to do even better next time!
+	Catch you soon!"
+}
+
+text MatchCall_BattlePikeText4 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+
+	I heard you blew through {STR_VAR_3} rooms
+	at the {STR_VAR_2}.
+
+	I'd better train my POKéMON and
+	try to keep up!"
+}
+
+text MatchCall_BattlePikeText5 {
+	"Hiya, {PLAYER}{KUN}!
+	It's {STR_VAR_1}.
+
+	I heard you got past {STR_VAR_3} rooms
+	at the {STR_VAR_2}.
+
+	I'd better get with it, too!
+	See you soon!"
+}
+
+text MatchCall_BattlePikeText6 {
+	"Hey, {PLAYER}{KUN}?
+	{STR_VAR_1} here. How are you?
+
+	By the way, I heard you got through
+	{STR_VAR_3} rooms at the {STR_VAR_2}.
+
+	I'd better raise my POKéMON before
+	you pull further ahead."
+}
+
+text MatchCall_BattlePikeText7 {
+	"{PLAYER}{KUN}?
+	{STR_VAR_1} here.
+
+	You were at the {STR_VAR_2}
+	and won your way past {STR_VAR_3} rooms?
+
+	That's wicked.
+
+	Oh, there goes a rare POKéMON!
+	Okay, bye."
+}
+
+text MatchCall_BattlePikeText8 {
+	"Oh, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1} speaking.
+	I hope you're doing well.
+	Oh, but, you are.
+
+	I've heard that you got through
+	{STR_VAR_3} rooms at the {STR_VAR_2}.
+
+	That's quite impressive!
+	I must raise my POKéMON like you.
+	See you again."
+}
+
+text MatchCall_BattlePikeText9 {
+	"Oh, {PLAYER}{KUN}, hi there!
+	This is {STR_VAR_1}!
+
+	I heard! You won your way through
+	{STR_VAR_3} rooms at the {STR_VAR_2}!
+
+	That is so cool!
+	I'd better try harder, too!"
+}
+
+text MatchCall_BattlePikeText10 {
+	"Oh, {PLAYER}{KUN}, hello.
+	This is {STR_VAR_1}.
+
+	You won your way past {STR_VAR_3} rooms
+	at the {STR_VAR_2}?
+
+	That's quite the accomplishment.
+	I need to work harder."
+}
+
+text MatchCall_BattlePikeText11 {
+	"Ah, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	I hear you're the terror of
+	the {STR_VAR_2}?
+
+	You got through, what, {STR_VAR_3} rooms?
+	That's gotta count for something.
+
+	I wonder if I can ever become
+	a champion?
+
+	…Pretty well impossible?
+	Well, see you!"
+}
+
+text MatchCall_BattlePikeText12 {
+	"Hello, {PLAYER}{KUN}.
+	It's me, {STR_VAR_1}.
+	Are you keeping well?
+
+	You've won through {STR_VAR_3} rooms at
+	a place named {STR_VAR_2}?
+
+	That's quite the tale.
+	See you!"
+}
+
+text MatchCall_BattlePikeText13 {
+	"Ah, hello, {PLAYER}{KUN}!
+	This is {STR_VAR_1}!
+	I hope you've been keeping well.
+
+	They say you won in {STR_VAR_3} rooms
+	at the {STR_VAR_2}?
+
+	I admire your energy!
+	Bye now."
+}
+
+text MatchCall_BattlePikeText14 {
+	"Oh, hi, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+	I heard about you!
+
+	Didn't you get through {STR_VAR_3} rooms
+	at the {STR_VAR_2}?
+
+	You're an inspiration!
+	See you again!"
+}
+
+text MatchCall_BattlePyramidText1 {
+	"Hi! {PLAYER}?
+	Hello, this is {STR_VAR_1}!
+	I heard the news!
+
+	You climbed {STR_VAR_3} floors inside
+	the {STR_VAR_2}, right?
+
+	That's awesome!
+	I should try that challenge."
+}
+
+text MatchCall_BattlePyramidText2 {
+	"Hello, it's {STR_VAR_1}!
+	I heard about you!
+
+	They said you won your way through
+	{STR_VAR_3} floors in the {STR_VAR_2}.
+
+	Wow, that's fantastic!
+	I'd better raise my POKéMON, too!"
+}
+
+text MatchCall_BattlePyramidText3 {
+	"Hey there, {PLAYER}!
+	It's me, {STR_VAR_1}.
+	How's it going?
+
+	I heard you climbed {STR_VAR_3} floors
+	in the {STR_VAR_2}!
+
+	Try to do even better next time!
+	Catch you soon!"
+}
+
+text MatchCall_BattlePyramidText4 {
+	"Hey, {PLAYER}{KUN}.
+	{STR_VAR_1} here.
+
+	I heard you scaled {STR_VAR_3} floors
+	in the {STR_VAR_2}.
+
+	I'd better work hard and try
+	to keep up!"
+}
+
+text MatchCall_BattlePyramidText5 {
+	"Hiya, {PLAYER}{KUN}!
+	It's {STR_VAR_1}.
+
+	I heard you climbed {STR_VAR_3} floors
+	in the {STR_VAR_2}.
+
+	I'd better get with it, too!
+	See you soon!"
+}
+
+text MatchCall_BattlePyramidText6 {
+	"Hey, {PLAYER}{KUN}?
+	{STR_VAR_1} here. How are you?
+
+	By the way, I heard you got through
+	{STR_VAR_3} floors in the {STR_VAR_2}.
+
+	I'd better raise my POKéMON before
+	you pull further ahead."
+}
+
+text MatchCall_BattlePyramidText7 {
+	"{PLAYER}{KUN}?
+	{STR_VAR_1} here.
+
+	You were at the {STR_VAR_2}
+	and won your way up {STR_VAR_3} floors?
+
+	Neat. Were there any rare POKéMON
+	there?
+
+	No, huh?
+	Okay, bye."
+}
+
+text MatchCall_BattlePyramidText8 {
+	"Oh, {PLAYER}{KUN}, how do you do?
+	This is {STR_VAR_1} speaking.
+	I hope you're doing well.
+	Oh, but, you are.
+
+	I've heard that you got through
+	{STR_VAR_3} floors in the {STR_VAR_2}.
+
+	That's quite impressive!
+	I must raise my POKéMON like you.
+	See you again."
+}
+
+text MatchCall_BattlePyramidText9 {
+	"Oh, {PLAYER}{KUN}, hi there!
+	This is {STR_VAR_1}!
+
+	I heard! You won your way through
+	{STR_VAR_3} floors in the {STR_VAR_2}!
+
+	That is so cool!
+	I'd better try harder, too!"
+}
+
+text MatchCall_BattlePyramidText10 {
+	"Oh, {PLAYER}{KUN}, hello.
+	This is {STR_VAR_1}.
+
+	You climbed {STR_VAR_3} floors inside
+	the {STR_VAR_2}?
+
+	That's quite the accomplishment.
+	I need to work harder."
+}
+
+text MatchCall_BattlePyramidText11 {
+	"Ah, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+
+	I hear you're the terror of
+	the {STR_VAR_2}?
+
+	You rose through, what, {STR_VAR_3} floors?
+	That's gotta count for something.
+
+	I wonder if I can ever become
+	a champion?
+
+	…Pretty well impossible?
+	Well, see you!"
+}
+
+text MatchCall_BattlePyramidText12 {
+	"Hello, {PLAYER}{KUN}.
+	It's me, {STR_VAR_1}.
+	Are you keeping well?
+
+	You've won through {STR_VAR_3} floors in
+	a place named {STR_VAR_2}?
+
+	That's quite the tale.
+	See you!"
+}
+
+text MatchCall_BattlePyramidText13 {
+	"Ah, hello, {PLAYER}{KUN}!
+	This is {STR_VAR_1}!
+	I hope you've been keeping well.
+
+	They say you climbed {STR_VAR_3} floors
+	in the {STR_VAR_2}?
+
+	I admire your energy!
+	Bye now."
+}
+
+text MatchCall_BattlePyramidText14 {
+	"Oh, hi, {PLAYER}{KUN}.
+	This is {STR_VAR_1}.
+	I heard about you!
+
+	Didn't you get through {STR_VAR_3} floors
+	in the {STR_VAR_2}?
+
+	You're an inspiration!
+	See you again!"
+}
+
+text MatchCall_Text_Mom1 {
+	"MOM: Your father and you…
+	Everyone is captivated by POKéMON.
+
+	What is the charm of POKéMON?
+
+	Me?
+	I adore POKéMON that help me with
+	my everyday chores."
+}
+
+text MatchCall_Text_Mom2 {
+	"MOM: Hi, {PLAYER}!
+	Your father keeps himself locked
+	away in the PETALBURG GYM.
+
+	He comes home every so often.
+	But he goes back to the GYM when
+	he's eaten everything he can.
+
+	I'm guessing that losing to you
+	was a big blow to his pride!"
+}
+
+text MatchCall_Text_Mom3 {
+	"MOM: {PLAYER}…
+	Don't worry about me or the house.
+
+	Wear those RUNNING SHOES until
+	they fall apart, honey!"
+}
+
+text MatchCall_Text_Roxanne_Preparing {
+	"ROXANNE: Oh, hello, {PLAYER}!
+
+	I've been hard at work retraining
+	since we met.
+
+	I will still need some more time
+	before I can reopen the GYM.
+
+	But when I do, please visit my GYM
+	for a rematch!"
+}
+
+text MatchCall_Text_Roxanne_PreparingPostGame {
+	"ROXANNE: Is this {PLAYER}?
+	Congratulations!
+	I've been hearing about you!
+
+	As for me, I need some more time
+	before I can reopen the GYM.
+
+	But when I do, please visit my GYM
+	for a rematch!"
+}
+
+text MatchCall_Text_Roxanne_RematchReady {
+	"ROXANNE: {PLAYER}!
+	My GYM is ready!
+
+	Please visit RUSTBORO whenever
+	you can!"
+}
+
+text MatchCall_Text_Roxanne_PostRematch {
+	"ROXANNE: At the RUSTBORO GYM,
+	the fact that we battled, {PLAYER},
+	is a matter of pride."
+}
+
+text MatchCall_Text_Brawly_Preparing {
+	"BRAWLY: Hey, there, {PLAYER}{KUN}!
+
+	I learned a lot from the battle we
+	had together.
+
+	I intend to do my training over,
+	then reopen the GYM.
+
+	It's going to take some time before
+	I'm ready to run the GYM again.
+
+	But if I can reopen the GYM,
+	I want you to challenge us again."
+}
+
+text MatchCall_Text_Brawly_PreparingPostGame {
+	"BRAWLY: Hey, {PLAYER}{KUN}!
+	Congratulations!
+
+	Word about your exploits arrived
+	on tidal winds!
+
+	It appears as if I need to work on
+	my training some more.
+
+	It's going to take some time before
+	I'm ready to run the GYM again.
+
+	But if I can reopen the GYM,
+	I want you to challenge us again."
+}
+
+text MatchCall_Text_Brawly_RematchReady {
+	"BRAWLY: Hey, {PLAYER}{KUN}!
+	My GYM's ready for action!
+
+	Come back to DEWFORD anytime
+	for another challenge!"
+}
+
+text MatchCall_Text_Brawly_PostRematch {
+	"BRAWLY: {PLAYER}{KUN}, I don't think
+	I'll ever get bored of battling you!"
+}
+
+text MatchCall_Text_Wattson_Preparing {
+	"WATTSON: Oh, it's you!
+
+	After you left, I've been redoing
+	my training from scratch.
+
+	I'd say I could use a wee bit more
+	time to reopen my GYM.
+
+	You'll have to wait till then!
+	Wahahahaha!"
+}
+
+text MatchCall_Text_Wattson_PreparingPostGame {
+	"WATTSON: Wahahahaha!
+
+	You've really done it, haven't you?
+	I've been getting word about you!
+
+	It seems I need to retrain some
+	more still.
+
+	I'd say I could use a wee bit more
+	time to reopen my GYM.
+
+	You'll have to wait till then!
+	Wahahahaha!"
+}
+
+text MatchCall_Text_Wattson_RematchReady {
+	"WATTSON: Oh, it's you!
+	My GYM's ready!
+
+	Visit MAUVILLE anytime!
+	Wahahahaha!"
+}
+
+text MatchCall_Text_Wattson_PostRematch {
+	"WATTSON: Wahahaha!
+
+	A battle with you is always charged
+	with shocking power!"
+}
+
+text MatchCall_Text_Flannery_Preparing {
+	"FLANNERY: {PLAYER}…
+
+	When we battled, I learned exactly
+	how immature I was.
+
+	But I'm not done yet!
+
+	I'm going to redo my training and
+	reopen the GYM.
+
+	When the time comes, {PLAYER},
+	please challenge us again."
+}
+
+text MatchCall_Text_Flannery_PreparingPostGame {
+	"FLANNERY: Hello, {PLAYER}?
+	Congratulations!
+
+	Word of your success has reached
+	us like the heat of a volcano!
+
+	Our training is coming along very
+	well here.
+
+	When the GYM's ready, a mark will
+	appear beside my name in the
+	MATCH CALL list."
+}
+
+text MatchCall_Text_Flannery_RematchReady {
+	"FLANNERY: Oh, {PLAYER}?
+	Our GYM's ready!
+
+	Come to LAVARIDGE for a soak
+	in the hot spring and a challenge!"
+}
+
+text MatchCall_Text_Flannery_PostRematch {
+	"FLANNERY: {PLAYER}…
+	I'm positive that you keep getting
+	better at training every time."
+}
+
+text MatchCall_Text_Winona_Preparing {
+	"WINONA: Hello, {PLAYER}!
+
+	Thanks to our battle, I've come
+	to understand my weak points!
+
+	When I reopen the GYM, I won't go
+	down in defeat again!"
+}
+
+text MatchCall_Text_Winona_PreparingPostGame {
+	"WINONA: You've done it, {PLAYER}!
+
+	News about the new CHAMPION
+	has reached us in FORTREE!
+
+	But… The next time we battle,
+	it's not going to end the same way."
+}
+
+text MatchCall_Text_Winona_RematchReady {
+	"WINONA: Is this {PLAYER}?
+	Our GYM is back in operation!
+
+	We're waiting for you in FORTREE!"
+}
+
+text MatchCall_Text_Winona_PostRematch {
+	"WINONA: {PLAYER}…
+	Though I have lost, my wings will
+	never break.
+
+	Yes, in exactly the same way that
+	you never lost sight of your dream."
+}
+
+text MatchCall_Text_TateLiza_Preparing {
+	"TATE: Oh! You're…
+	LIZA: {PLAYER}!
+
+	TATE: We're in training again…
+	LIZA: So we can reopen our GYM!
+
+	TATE: When our GYM is ready…
+	LIZA: When our GYM is ready…
+
+	TATE: A mark'll appear by our name…
+	LIZA: On the MATCH CALL list."
+}
+
+text MatchCall_Text_TateLiza_PreparingPostGame {
+	"TATE: {PLAYER}, congratulations!
+	LIZA: {PLAYER}, congratulations!
+
+	TATE: The two of us are…
+	LIZA: Still in training!
+
+	TATE: We need some more time, but…
+	LIZA: When our GYM is ready…
+
+	TATE: A mark'll appear by our name…
+	LIZA: On the MATCH CALL list."
+}
+
+text MatchCall_Text_TateLiza_RematchReady {
+	"TATE: {PLAYER}!
+	LIZA: {PLAYER}!
+
+	TATE: Our GYM is ready!
+	LIZA: Our GYM is ready!
+
+	TATE: Please come visit…
+	LIZA: MOSSDEEP anytime!"
+}
+
+text MatchCall_Text_TateLiza_PostRematch {
+	"TATE: {PLAYER}, the battle we had…
+	LIZA: Is an invaluable experience.
+
+	TATE: It would be nice if…
+	LIZA: We could all battle again!"
+}
+
+text MatchCall_Text_Juan_Preparing {
+	"JUAN: Hmm…
+	{PLAYER}{KUN}… Was it?
+
+	Our battle together--it brought
+	to me memories of when I first
+	encountered WALLACE.
+
+	Perhaps you are a genius who may
+	yet surpass WALLACE!"
+}
+
+text MatchCall_Text_Juan_PreparingPostGame {
+	"JUAN: Fufu… {PLAYER}{KUN}…
+	You've finally achieved your goal.
+
+	My eye for appraising talent wasn't
+	mistaken…
+
+	I wish for another chance to meet
+	you, for you have scaled the peak
+	of power and prestige."
+}
+
+text MatchCall_Text_Juan_RematchReady {
+	"JUAN: Hoho… {PLAYER}{KUN}…
+
+	Our SOOTOPOLIS GYM has finally
+	reopened.
+
+	If you wish to see me, you are
+	welcome to visit anytime."
+}
+
+text MatchCall_Text_Juan_PostRematch {
+	"JUAN: {PLAYER}{KUN}…
+
+	Like the finest music, the battles
+	we wage together strike chords
+	of inspiration in my heart…
+
+	When I close my eyes, I see visions
+	of you soaring with the melody…"
+}
+
+text MatchCall_Text_Sidney {
+	"SIDNEY: Yo, {PLAYER}!
+
+	If you want to battle with me
+	again, you come on back whenever
+	you like to the POKéMON LEAGUE.
+
+	I'll always be here!
+	I'll be waiting!"
+}
+
+text MatchCall_Text_Phoebe {
+	"PHOEBE: Hi, {PLAYER}!
+
+	How about coming back here again
+	sometime?
+
+	I'd like to see how much tighter
+	your bond has grown with your
+	POKéMON."
+}
+
+text MatchCall_Text_Glacia {
+	"GLACIA: Hello, {PLAYER}.
+
+	I trust you haven't become
+	complacent with your power?
+
+	If you feel the need to cool your
+	hot emotions just a little, do come
+	to the POKéMON LEAGUE…"
+}
+
+text MatchCall_Text_Drake {
+	"DRAKE: That voice… {PLAYER}, is it?
+	You sound well…
+
+	I understand that there is now
+	a facility called the BATTLE
+	FRONTIER that tests the skills of
+	TRAINERS.
+
+	However, if you wish to have real
+	battles, there is no substitute for
+	the POKéMON LEAGUE!
+
+	Don't you agree, {PLAYER}?"
+}
+
+text MatchCall_Text_Wallace {
+	"WALLACE: Hello, {PLAYER}{KUN}.
+	Have you met STEVEN?
+
+	He is…
+	Actually incredibly skilled.
+
+	However, he's an odd soul who
+	rarely battles.
+
+	Instead, he would rather look for
+	rare stones.
+
+	I'm sure he's digging in a cave or
+	a craggy mountain somewhere.
+
+	But what is a rare stone exactly?
+	All I can think of is a METEORITE…"
+}
+
+text(local) MatchCall_Text_MayRayquazaCall {
+	"… … … … … …
+	… … … … … Beep!
+
+	MAY: Hi, {PLAYER}{KUN}!
+
+	I was just in PACIFIDLOG a little
+	while ago.
+
+	I saw a giant green POKéMON
+	flying high in the sky.
+
+	I…
+	I've never seen anything like it.
+
+	I wonder what it was.
+	Is this maybe a major discovery?
+
+	… … … … … …
+	… … … … … Click!"
+}
+
+text(local) MatchCall_Text_BrendanRayquazaCall {
+	"… … … … … …
+	… … … … … Beep!
+
+	BRENDAN: Hey, {PLAYER}!
+	I was in PACIFIDLOG just now.
+
+	I saw this huge green POKéMON
+	flying across the sky.
+
+	I've never seen anything that
+	amazing before.
+
+	I wish you could've seen it,
+	{PLAYER}.
+
+	… … … … … …
+	… … … … … Click!"
+}
+
+text MatchCall_Text_May1 {
+	"MAY: Hi, {PLAYER}{KUN}!
+
+	MR. BRINEY retired as a SAILOR,
+	but I still see him out on the sea
+	with his pet PEEKO sometimes.
+
+	He must love the sea still."
+}
+
+text MatchCall_Text_May2 {
+	"MAY: Hi, {PLAYER}{KUN}!
+
+	You know how little towns like
+	PETALBURG and DEWFORD have GYMS?
+
+	For some reason, the big port of
+	SLATEPORT doesn't have a GYM.
+
+	When they finally build a GYM there,
+	I should apply to be the LEADER."
+}
+
+text MatchCall_Text_May3 {
+	"MAY: Hi, {PLAYER}{KUN}!
+
+	Do you remember a man named
+	the CUTTER in RUSTBORO?
+	He had a house there, remember?
+
+	Well, I found out his younger
+	brother lives in MAUVILLE.
+
+	Can you guess his name?
+
+	… … … … … …
+	… … … … … …
+
+	The ROCK SMASH GUY!"
+}
+
+text MatchCall_Text_May4 {
+	"MAY: {PLAYER}{KUN}?
+
+	RUSTURF TUNNEL…
+	They named it that because it
+	joins RUSTBORO and VERDANTURF."
+}
+
+text MatchCall_Text_May5 {
+	"MAY: {PLAYER}{KUN}, how are you?
+
+	I'm out on ROUTE 111 now.
+
+	I'm going to get a rest at an old
+	lady's house.
+
+	She lives just north of
+	the desert."
+}
+
+text MatchCall_Text_May6 {
+	"MAY: Hi, {PLAYER}{KUN}!
+
+	Did you know about the MIRAGE
+	TOWER in the desert?
+
+	They say, like a mirage, it seems
+	to mysteriously come and go.
+
+	I wish I could see it."
+}
+
+text MatchCall_Text_May7 {
+	"MAY: {PLAYER}{KUN}, yahoo!
+	I'm on ROUTE 119 now.
+
+	There's a big river here, and
+	it often rains.
+
+	I got soaked!"
+}
+
+text MatchCall_Text_May8 {
+	"MAY: {PLAYER}{KUN}, hi.
+
+	MT. PYRE is a memorial to POKéMON
+	whose lives have ended.
+
+	Maybe as a result, it's infested
+	with many GHOST-type POKéMON!"
+}
+
+text MatchCall_Text_May9 {
+	"MAY: Hi, {PLAYER}{KUN}!
+
+	I was thinking of going to the hot
+	spring in LAVARIDGE.
+
+	But on the way, around JAGGED
+	PASS, I ran into some bad-looking
+	characters. The mood was ugly!"
+}
+
+text MatchCall_Text_May10 {
+	"MAY: Hi, {PLAYER}{KUN}!
+	Did you see the news?
+
+	They say CAPT. STERN discovered
+	the SEAFLOOR CAVERN while on his
+	submarine expedition."
+}
+
+text MatchCall_Text_May11 {
+	"MAY: Hi, {PLAYER}{KUN}!
+	Don't you think it's neat?
+
+	Even if you don't have a boat,
+	you can cross the sea using
+	a POKéMON's move.
+
+	Did you know there's more?
+
+	There's a POKéMON move that lets
+	you go to the bottom of the sea."
+}
+
+text MatchCall_Text_May12 {
+	"MAY: Hi, {PLAYER}{KUN}!
+	Hope things are okay!
+
+	Have you been on the sea and
+	found your way to the other side
+	blocked?
+
+	Try diving deep underwater and
+	following trenches.
+
+	When you get to the other side,
+	come up to the surface. Easy!"
+}
+
+text MatchCall_Text_May13 {
+	"MAY: Hi, {PLAYER}{KUN}!
+
+	How's it going?
+	Are you filling your POKéDEX?
+
+	I heard a rumor that there are
+	super-ancient POKéMON out there.
+	And there are three of them!
+
+	I would love to see even one…"
+}
+
+text MatchCall_Text_May14 {
+	"MAY: {PLAYER}{KUN}!
+	I heard the rumors!
+
+	You beat the SOOTOPOLIS GYM
+	LEADER?
+
+	That means you don't have far
+	to go, do you?"
+}
+
+text MatchCall_Text_May15 {
+	"MAY: There isn't a single TRAINER
+	left in HOENN who doesn't know who
+	you are, {PLAYER}{KUN}!
+
+	When I tell people that I'm friends
+	with you, {PLAYER}{KUN}, they're all
+	surprised!"
+}
+
+text MatchCall_Text_Brendan1 {
+	"BRENDAN: Hey, {PLAYER}!
+
+	MR. BRINEY retired as a SAILOR,
+	but I still see him out on the sea
+	with his pet PEEKO sometimes.
+
+	I guess he must love
+	the sea still."
+}
+
+text MatchCall_Text_Brendan2 {
+	"BRENDAN: Hey, {PLAYER}!
+
+	I don't get how little towns like
+	PETALBURG and DEWFORD have GYMS.
+
+	I mean, not when the big port of
+	SLATEPORT doesn't have a GYM.
+
+	When they finally build a GYM there,
+	I should apply to be the LEADER."
+}
+
+text MatchCall_Text_Brendan3 {
+	"BRENDAN: Yo, {PLAYER}!
+
+	Do you remember a guy named
+	the CUTTER in RUSTBORO?
+	He had a house there, right?
+
+	Well, it turns out his little
+	brother lives in MAUVILLE.
+
+	Can you guess his name?
+
+	… … … … … …
+	… … … … … …
+
+	The ROCK SMASH GUY!"
+}
+
+text MatchCall_Text_Brendan4 {
+	"BRENDAN: This voice… {PLAYER}?
+
+	They gave RUSTURF TUNNEL its name
+	because it joins RUSTBORO and
+	VERDANTURF.
+
+	Did you know that?"
+}
+
+text MatchCall_Text_Brendan5 {
+	"BRENDAN: {PLAYER}, what's up?
+
+	Hey, I'm out on ROUTE 111 now.
+
+	I'm going to rest up at an old
+	lady's house north of the desert.
+
+	If you're in the area, you should
+	visit her, too."
+}
+
+text MatchCall_Text_Brendan6 {
+	"BRENDAN: Hey, {PLAYER}!
+
+	Did you know about the MIRAGE
+	TOWER in the desert?
+
+	They say, like a mirage, it can be
+	seen only sometimes.
+
+	I'd like to see that!"
+}
+
+text MatchCall_Text_Brendan7 {
+	"BRENDAN: Who's this? Oh, {PLAYER}?
+	Guess what? I'm on ROUTE 119 now.
+
+	There's a big river here, and
+	it rains all the time.
+
+	I got soaked to the bone!"
+}
+
+text MatchCall_Text_Brendan8 {
+	"BRENDAN: {PLAYER}!
+
+	MT. PYRE is a memorial to POKéMON
+	whose lives have ended.
+
+	That's probably why it's infested
+	with many GHOST-type POKéMON!"
+}
+
+text MatchCall_Text_Brendan9 {
+	"BRENDAN: Hey there, {PLAYER}.
+
+	I was on my way back to the hot
+	spring in LAVARIDGE.
+
+	But around JAGGED PASS, I ran into
+	some nasty-looking characters.
+
+	Those creeps…
+	I think they were TEAM MAGMA."
+}
+
+text MatchCall_Text_Brendan10 {
+	"BRENDAN: Hi, {PLAYER}!
+	Did you catch the news?
+
+	They say CAPT. STERN discovered
+	the SEAFLOOR CAVERN while on his
+	submarine expedition."
+}
+
+text MatchCall_Text_Brendan11 {
+	"BRENDAN: Hey there, {PLAYER}!
+	Don't you think it's awesome?
+
+	Even if you don't have a boat,
+	you can cross the sea using
+	a POKéMON's move.
+
+	And, there's a move that lets you
+	travel to the bottom of the sea.
+
+	Man, POKéMON can do anything!"
+}
+
+text MatchCall_Text_Brendan12 {
+	"BRENDAN: Howdy, {PLAYER}!
+	How are you holding up?
+
+	Ever found your way to the other
+	side blocked while on the sea?
+
+	Try diving deep underwater and
+	following trenches at the bottom.
+
+	When you get to the other side,
+	come up to the surface. Simple!"
+}
+
+text MatchCall_Text_Brendan13 {
+	"BRENDAN: Hey there, {PLAYER}!
+
+	How's it going? Filling up your
+	POKéDEX successfully?
+
+	I heard a rumor that there are
+	super-ancient POKéMON out there.
+	And not just one--three!
+
+	I'd love to catch even one…"
+}
+
+text MatchCall_Text_Brendan14 {
+	"BRENDAN: {PLAYER}!
+	I heard the rumors!
+
+	You beat the SOOTOPOLIS GYM
+	LEADER? Awesome!
+
+	You're getting awful close now!"
+}
+
+text MatchCall_Text_Brendan15 {
+	"BRENDAN: There isn't a TRAINER in
+	all of HOENN who doesn't know who
+	you are, {PLAYER}!
+
+	When I tell people that I'm friends
+	with you, {PLAYER}, they get pretty
+	envious!"
+}
+
+text MatchCall_Text_Wally1 {
+	"WALLY: Oh, {PLAYER}!
+
+	I've been getting healthier and
+	more physically fit.
+
+	I hope I can become a TRAINER like
+	you soon, {PLAYER}!"
+}
+
+text MatchCall_Text_Wally2 {
+	"WALLY: {PLAYER}, hello!
+
+	After RUSTURF TUNNEL went
+	through, WANDA's been very happy!"
+}
+
+text MatchCall_Text_Wally3 {
+	"WALLY: Oh, {PLAYER}!
+
+	I… I left my uncle's place in
+	VERDANTURF without telling anyone.
+
+	I wonder if he's furious with me…
+
+	{PLAYER}, you understand how
+	I feel, don't you?"
+}
+
+text MatchCall_Text_Wally4 {
+	"WALLY: {PLAYER}?
+	It's me, WALLY!
+
+	The world of TRAINERS is amazing!
+
+	When I have my POKéMON with me,
+	all sorts of people say hi!
+
+	It's as if everyone's getting
+	connected through POKéMON!"
+}
+
+text MatchCall_Text_Wally5 {
+	"WALLY: {PLAYER}? It's awesome!
+	That RALTS we caught together?
+	It evolved, {PLAYER}!
+
+	Maybe I'm talented…
+
+	Oh, but I shouldn't get a big head
+	like that!
+
+	After all, it's the POKéMON that
+	should be praised!"
+}
+
+text MatchCall_Text_Wally6 {
+	"… … … … … …
+	… … … … … …
+
+	WALLY appears to be out of
+	the POKéNAV's service area…"
+}
+
+text MatchCall_Text_Wally7 {
+	"WALLY: Oh, {PLAYER}!
+
+	Before I met you, I hardly ever
+	left my house…
+
+	But now, I'm on an adventure with
+	my very own POKéMON…
+
+	{PLAYER}…
+	Thank you…"
+}
+
+text MatchCall_Text_Scott1 {
+	"SCOTT: Howdy, {PLAYER}{KUN}!
+
+	You know how POKéMON can be found
+	everywhere?
+
+	Like in the mountains, in the sea,
+	in tall grass anywhere?
+
+	Just like POKéMON, you can find
+	TRAINERS everywhere, too.
+
+	As a result, I have to hurry
+	everywhere, too. Busy, busy!"
+}
+
+text MatchCall_Text_Scott2 {
+	"SCOTT: I'm on ROUTE 119 right now.
+	It's teeming with TRAINERS!
+
+	It's also overgrown with tall grass
+	everywhere, it seems.
+
+	Walking around in shorts here
+	makes me all ticklish!"
+}
+
+text MatchCall_Text_Scott3 {
+	"SCOTT: Hi, hi, {PLAYER}{KUN}!
+
+	Have you had the chance to climb
+	MT. PYRE?
+
+	The place is a memorial to POKéMON
+	that have passed away.
+
+	It's somewhere every TRAINER
+	should climb to the top of once."
+}
+
+text MatchCall_Text_Scott4 {
+	"SCOTT: Hi, {PLAYER}{KUN}!
+
+	I've been hearing about these odd
+	gangs being a nuisance.
+
+	TEAM MAGMA and TEAM AQUA,
+	I think they were.
+
+	I would think there'd be some
+	skilled TRAINERS among them.
+
+	…But if they're thugs…"
+}
+
+text MatchCall_Text_Scott5 {
+	"SCOTT: Oh, hi, {PLAYER}{KUN}.
+
+	Might there be tough TRAINERS
+	at the bottom of the sea?
+
+	I can't go check for myself.
+	I can't swim, for one.
+	And I don't raise POKéMON…"
+}
+
+text MatchCall_Text_Scott6 {
+	"SCOTT: Hi, hi, {PLAYER}{KUN}!
+
+	You know that you can challenge
+	the POKéMON LEAGUE when you've
+	collected all the GYM BADGES?
+
+	With your talent, becoming the
+	CHAMPION isn't a pipe dream.
+
+	But did you know?
+	There's somewhere even better.
+
+	But, that's all I'm willing to say
+	for the time being.
+
+	It's something you can look
+	forward to.
+
+	When you've won your way through
+	the POKéMON LEAGUE into the HALL
+	OF FAME!"
+}
+
+text MatchCall_Text_Scott7 {
+	"… … … … … …
+	… … … … … …
+
+	SCOTT appears to be out of
+	the POKéNAV's service area…"
+}
+
+text MatchCall_Text_Norman1 {
+	"DAD: In RUSTBORO, there's a man
+	that goes by the odd name of
+	the CUTTER.
+
+	If you're in the area, you should
+	pay him a visit."
+}
+
+text MatchCall_Text_Norman2 {
+	"DAD: Hm… Little by little, but also
+	very surely, you're getting
+	tougher, {PLAYER}.
+
+	The stronger you get, the farther
+	and higher you soar from Mother
+	and me…
+
+	This feeling is hard to explain."
+}
+
+text MatchCall_Text_Norman3 {
+	"DAD: I see…
+	You've collected four GYM BADGES…
+
+	There's no avoiding it now.
+	We will battle like I promised.
+
+	Come anytime.
+	We'll all be waiting for you!"
+}
+
+text MatchCall_Text_Norman4 {
+	"DAD: {PLAYER}! You'd better go visit
+	Mother every so often.
+
+	I'm going to remain here and
+	redouble my training.
+
+	The way of battling is deep
+	and unforgiving!"
+}
+
+text MatchCall_Text_Norman5 {
+	"DAD: Oh, hi, {PLAYER}!
+
+	What's that? MAGMA EMBLEM?
+	I don't know what that's about.
+
+	But with a name like that, it may
+	be somehow linked to a volcano!"
+}
+
+text MatchCall_Text_Norman_Preparing {
+	"DAD: Hiyah! Haah! Dwah!
+
+	…Oh? {PLAYER}!
+
+	You caught me right in the middle
+	of a POKéMON training session!"
+}
+
+text MatchCall_Text_Norman_PreparingPostGame {
+	"DAD: {PLAYER}!
+
+	Who would've thought you'd become
+	the POKéMON LEAGUE CHAMPION…
+
+	Okay!
+	I won't be left behind!"
+}
+
+text MatchCall_Text_Norman_RematchReady {
+	"DAD: Hm? {PLAYER}?
+	What good timing!
+
+	This time, I'm going to challenge
+	you to battle.
+
+	I'm waiting in the PETALBURG GYM.
+	Accept my challenge anytime!"
+}
+
+text MatchCall_Text_Norman_PostRematch {
+	"DAD: …You amaze me, {PLAYER}.
+	How much higher will you soar?"
+}
+
+text MatchCall_Text_Steven1 {
+	"STEVEN: Hi, {PLAYER}{KUN}!
+
+	Have you been to MAUVILLE
+	already?
+
+	You should visit the BIKE SHOP
+	and get a MACH BIKE.
+
+	Then, try exploring the GRANITE
+	CAVE thoroughly.
+
+	You may make a new discovery
+	there."
+}
+
+text MatchCall_Text_Steven2 {
+	"STEVEN: Hi, {PLAYER}{KUN}!
+
+	I've met a lot of different
+	TRAINERS so far.
+
+	But you're one of a kind.
+	You're not like anyone else."
+}
+
+text MatchCall_Text_Steven3 {
+	"STEVEN: Hi, {PLAYER}{KUN}!
+
+	When you're on an adventure with
+	your POKéMON, what do you think?
+
+	Do you consider them to be strong
+	partners?
+
+	Do you think of them as fun
+	companions?
+
+	Depending on how you think, your
+	adventure's significance changes."
+}
+
+text MatchCall_Text_Steven4 {
+	"STEVEN: Hello?
+	{PLAYER}{KUN}?
+
+	I'm involved in a spot of trouble
+	at the SPACE CENTER.
+
+	I'm sorry, but I can't talk now.
+	Bye!"
+}
+
+text MatchCall_Text_Steven5 {
+	"STEVEN: Oh!
+	{PLAYER}{KUN}!
+
+	There's no need to talk.
+	It's past time for talking.
+
+	You have to believe in yourself
+	and do what's right."
+}
+
+text MatchCall_Text_Steven6 {
+	"… … … … … …
+
+	STEVEN appears not to be getting
+	the call…"
+}
+
+text MatchCall_Text_Steven7 {
+	"STEVEN: {PLAYER}{KUN}… Congratulations
+	for entering the HALL OF FAME.
+
+	… … … … … …
+	… … … … … …
+
+	I hope we can meet again
+	somewhere!"
+}
+
+text(local) MatchCall_Text_BirchRegisterCall {
+	"PROF. BIRCH: Oh, {PLAYER}{KUN}!
+	I've already heard about you!
+
+	It seems your POKéNAV's been
+	upgraded with MATCH CALL.
+
+	Well, I should register, too!
+
+	That way, I'd be able to examine
+	your POKéDEX even while you're
+	out in the field.
+
+	… … … … … …"
+}
+
+text(local) MatchCall_Text_RegisteredBirch {
+	"Registered PROF. BIRCH
+	in the POKéNAV."
+}
+
+text(local) MatchCall_Text_UnusedProfBirch {
+	"PROF. BIRCH: When one has both
+	the POKéDEX and POKéNAV, studying
+	POKéMON becomes more fun, eh?"
+}
+
+text MatchCall_Text_MrStone1 {
+	"MR. STONE: Oh? {PLAYER}{KUN}!
+
+	Since you called me, the POKéNAV
+	must be working properly!
+
+	Other people will be registered,
+	so try calling them up, too!
+
+	Good! Good!
+	You seem to be quite happy!
+
+	Hm…
+	How could I know that?
+
+	It's because I'm looking down at
+	you from my office window!
+
+	Wahahaha!
+	See you again!"
+}
+
+text MatchCall_Text_MrStone2 {
+	"MR. STONE: Oh? {PLAYER}{KUN}!
+
+	What's wrong? Have you forgotten
+	about that little errand of mine?
+
+	I need you to deliver my letter
+	to STEVEN in DEWFORD.
+
+	After that, deliver our parcel to
+	CAPT. STERN in SLATEPORT.
+
+	You remember, don't you?
+
+	Now, since I am a busy PRESIDENT,
+	I have to go! Bye-bye!"
+}
+
+text MatchCall_Text_MrStone3 {
+	"MR. STONE: Oh! {PLAYER}{KUN}!
+
+	Ah, so you've met STEVEN!
+	I'd better reward you, then!
+
+	When you visit RUSTBORO again,
+	come see me at my office.
+
+	I'll be waiting for you!"
+}
+
+text MatchCall_Text_MrStone4 {
+	"MR. STONE: Oh! {PLAYER}{KUN}!
+
+	Did you know that DEVON was
+	digging the RUSTURF TUNNEL?
+
+	But we shut down the operation to
+	protect the POKéMON in the area.
+
+	It's a no-brainer, really.
+
+	It's more important to let POKéMON
+	live in peace than worry about our
+	own convenience."
+}
+
+text MatchCall_Text_MrStone5 {
+	"MR. STONE: Hello, hello, {PLAYER}{KUN}!
+
+	I heard from someone in PETALBURG
+	that you're NORMAN's child!
+
+	No wonder you're such a capable
+	being!"
+}
+
+text MatchCall_Text_MrStone6 {
+	"MR. STONE: What's that?
+
+	You battled your own father and
+	defeated him?
+
+	That's astounding!
+
+	I had no idea that I befriended
+	someone so special! Wahaha!"
+}
+
+text MatchCall_Text_MrStone7 {
+	"Hello!
+	This is DEVON CORPORATI…
+	Oh, hello, {PLAYER}!
+
+	Our PRESIDENT was here a little
+	while ago, but he's gone out.
+
+	Our PRESIDENT is busy, but you
+	seem to be just as busy, {PLAYER}."
+}
+
+text MatchCall_Text_MrStone8 {
+	"…Huh? …What's that?
+
+	GROU… Yes? …DON?
+
+	You're breaking up…
+	…can't hear…
+
+	BZZZZ…"
+}
+
+text MatchCall_Text_MrStone9 {
+	"…Huh? …What's that?
+
+	Seaflo… Yes? …Caver…?
+
+	You're breaking up…
+	…can't hear…
+
+	BZZZZ…"
+}
+
+text MatchCall_Text_MrStone10 {
+	"MR. STONE: {PLAYER}{KUN}! It's me!
+
+	You were apparently involved in all
+	sorts of things, but I, being busy,
+	haven't a clue exactly what!
+
+	However, I urge you to take
+	the road you believe in and walk it.
+
+	I'll always be in your corner!
+	Take care!"
+}
+
+text MatchCall_Text_MrStone11 {
+	"MR. STONE: … … … … … …
+	Is this maybe {PLAYER}{KUN}?
+
+	Your voice is so full of confidence,
+	I didn't recognize you right off!
+
+	Hm! You must come visit us at DEVON
+	sometime!"
+}

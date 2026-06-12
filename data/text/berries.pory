@@ -1,0 +1,325 @@
+text(local) PetalburgCity_Gym_Text_GiveEnigmaBerry {
+	"DAD: Hi, {PLAYER}!
+
+	I just received a very rare BERRY.
+	I'd like you to have it."
+}
+
+text(local) Route104_Text_PlantBerriesInSoilTakeThis {
+	"If you see BERRIES growing in loamy
+	soil, feel free to take them.
+
+	But make sure you plant a BERRY in the
+	same spot. That's common courtesy.
+
+	Here, I'll share this with you."
+}
+
+text(local) Route104_Text_TrainersOftenMakeMonHoldBerries {
+	"The way you look, you must be a
+	TRAINER, no?
+
+	TRAINERS often make POKéMON hold
+	BERRIES.
+
+	It's up to you whether to grow BERRIES
+	or use them."
+}
+
+text(local) Route111_Text_WateredPlantsEveryDayTakeBerry {
+	"I watered the plants every day.
+	They grew lots of flowers.
+
+	And they gave me lots of BERRIES, too.
+
+	Here you go!
+	You can have it!"
+}
+
+text(local) Route111_Text_GoingToTryToMakeDifferentColorBerries {
+	"I'm going to try really hard and make
+	BERRIES in different colors.
+
+	I hope you try hard, too!"
+}
+
+text(local) Route111_Text_WhatColorBerriesToLookForToday {
+	"I wonder what color BERRIES I'll look
+	for today?"
+}
+
+text(local) Route114_Text_LoveUsingBerryCrushShareBerry {
+	"I love using the BERRY CRUSH machine,
+	so I'm collecting BERRIES.
+
+	I'll share one with you, if you'd like."
+}
+
+text(local) Route114_Text_TryBerryCrushWithFriends {
+	"You should try the BERRY CRUSH
+	machine with your friends."
+}
+
+text(local) Route114_Text_FunToThinkAboutBerries {
+	"Which BERRY should be planted?
+	Should you use or hoard BERRIES?
+
+	It's fun to think about."
+}
+
+text(local) Route120_Text_BerriesExpressionOfLoveIsntIt {
+	"BERRIES grow by soaking up sunlight.
+
+	We help the BERRIES grow by watering
+	them regularly.
+
+	It's an expression of love, isn't it?"
+}
+
+text(local) Route120_Text_YesYouUnderstand {
+	"Yes, yes.
+	You understand what I mean.
+
+	You should take this."
+}
+
+text(local) Route120_Text_MakeYourOwnImpressions {
+	"Oh… But it is important to make your
+	own impressions, I guess…
+
+	You can have this."
+}
+
+text(local) Route120_Text_BerryIsRareRaiseItWithCare {
+	"I think that BERRY is rare.
+	I hope you raise it with loving care."
+}
+
+text(local) Route120_Text_IllGetMoreBerriesFromBerryMaster {
+	"I'll get more BERRIES from
+	the BERRY MASTER."
+}
+
+text(local) LilycoveCity_Text_BerrySuitsYou {
+	"When it gets right down to it…
+
+	The same way suits suit me perfectly,
+	a crisp breeze suits the sea.
+
+	And you, a BERRY suits you to a “T”…
+
+	Why should that be so?"
+}
+
+text(local) LilycoveCity_Text_BecauseYoureTrainer {
+	"When it gets right down to it…
+
+	It's because you're a TRAINER!"
+}
+
+text(local) LilycoveCity_Text_PokeblocksSuitPokemon {
+	"When it gets right down to it…
+
+	The way dignified simplicity suits me,
+	{POKEBLOCK}S perfectly suit POKéMON."
+}
+
+text(local) Route123_BerryMastersHouse_Text_YoureDeservingOfBerry {
+	"You may call me the BERRY MASTER.
+
+	I dream of filling the world with
+	beautiful flowers, so I raise BERRIES
+	and hand them out to everyone.
+
+	You're deserving of one!"
+}
+
+text(local) Route123_BerryMastersHouse_Text_WhyBeStingyTakeAnother {
+	"Why be stingy?
+	Take another!"
+}
+
+text(local) Route123_BerryMastersHouse_Text_VisitPrettyPetalFlowerShop {
+	"Be sure to visit the PRETTY PETAL
+	flower shop near RUSTBORO.
+
+	Let flowers fill the world!"
+}
+
+text(local) Route123_BerryMastersHouse_Text_DoneForToday {
+	"I'm done for today.
+	Come again another day.
+
+	Let flowers fill the world!"
+}
+
+text(local) Route123_BerryMastersHouse_Text_HeardAGoodSayingLately {
+	"The way my husband grows BERRIES,
+	oh, he's the best in the world.
+
+	He makes me proud, that he does.
+
+	Incidentally, child, have you heard
+	a good saying lately?"
+}
+
+text(local) Route123_BerryMastersHouse_Text_InspirationalTakeThis {
+	"Ah! What a remarkable saying!
+	Inspirational, it is!
+
+	I want you to have this."
+}
+
+text(local) Route123_BerryMastersHouse_Text_GoodSayingTakeThis {
+	"Oh! A good saying it is.
+	You're quite remarkable.
+
+	I want you to have this."
+}
+
+text(local) Route123_BerryMastersHouse_Text_JoyNeverGoesOutOfMyLife {
+	"Our four grandchildren should become
+	more accomplished than my husband.
+
+	Joy never goes out of my life!"
+}
+
+text(local) Route123_BerryMastersHouse_Text_Ah {
+	"Ah…"
+}
+
+text(local) Route104_PrettyPetalFlowerShop_Text_ThisIsPrettyPetalFlowerShop {
+	"Hello!
+
+	This is the PRETTY PETAL flower shop.
+	Spreading flowers all over the world!"
+}
+
+text(local) Route104_PrettyPetalFlowerShop_Text_LearnAboutBerries {
+	"{PLAYER}{KUN}, would you like to learn about
+	BERRIES?"
+}
+
+text(local) Route104_PrettyPetalFlowerShop_Text_IntroLearnAboutBerries {
+	"Your name is?
+
+	{PLAYER}{KUN}.
+	That's a nice name.
+
+	{PLAYER}{KUN}, would you like to learn about
+	BERRIES?"
+}
+
+text(local) Route104_PrettyPetalFlowerShop_Text_BerriesExplanation {
+	"BERRIES grow on trees that thrive
+	only in soft, loamy soil.
+
+	If you take some BERRIES, be sure to
+	plant one in the loamy soil again.
+
+	A planted BERRY will soon sprout,
+	grow into a plant, flower beautifully,
+	then grow BERRIES again.
+
+	I want to see the whole wide world
+	filled with beautiful flowers.
+	That's my dream.
+
+	Please help me, {PLAYER}{KUN}. Plant BERRIES
+	and bring more flowers into the world."
+}
+
+text(local) Route104_PrettyPetalFlowerShop_Text_FlowersBringHappiness {
+	"Flowers bring so much happiness to
+	people, don't they?"
+}
+
+text(local) Route104_PrettyPetalFlowerShop_Text_YouCanHaveThis {
+	"Hello!
+
+	The more attention you give to flowers,
+	the more beautifully they bloom.
+
+	You'll like tending flowers. I'm sure
+	of it. You can have this."
+}
+
+text(local) Route104_PrettyPetalFlowerShop_Text_WailmerPailExplanation {
+	"While BERRY plants are growing,
+	water them with the WAILMER PAIL.
+
+	Oh, another thing.
+
+	If you don't pick BERRIES for a while,
+	they'll drop off onto the ground.
+	But they'll sprout again.
+
+	Isn't that awesome?
+	It's like they have the will to live."
+}
+
+text(local) Route104_PrettyPetalFlowerShop_Text_ImGrowingFlowers {
+	"I'm trying to be like my big sisters.
+	I'm growing flowers, too!
+
+	Here you go!
+	It's for you!"
+}
+
+text(local) Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries {
+	"You can plant a BERRY and grow it big,
+	or you can make a POKéMON hold it.
+
+	But now they have a machine that mixes
+	up different BERRIES and makes candies
+	for POKéMON.
+
+	I want some candy, too."
+}
+
+text(local) SootopolisCity_Text_NameIsKiriHaveOneOfThese {
+	"Hi, what's your name?
+
+	… … …  … … …  … … …
+	Okay. That's nice!
+
+	My name is KIRI.
+
+	My mommy and daddy named me that so
+	I would grow healthy and warmhearted.
+	That's what they wished.
+
+	You can have one of these."
+}
+
+text(local) SootopolisCity_Text_GiveYouThisBerryToo {
+	"KIRI will give you this BERRY, too!
+	I really like it lots!"
+}
+
+text(local) SootopolisCity_Text_WhatKindOfWishInYourName {
+	"I wonder what kind of wish is included
+	in your name."
+}
+
+text(local) SootopolisCity_Text_LikeSeasonBornIn {
+	"Spring, summer, autumn, and winter.
+
+	If you're born in springtime, do you like
+	the spring, and if you're born in the
+	summer, do you like the summer?"
+}
+
+text(local) SootopolisCity_Text_ThenILoveAutumn {
+	"Then KIRI was born in the autumn,
+	so I love the autumn!
+
+	Which season do you like?"
+}
+
+text(local) SootopolisCity_Text_OhDoesntMatter {
+	"Oh…
+	It doesn't matter…
+
+	There's so much that I want to know…"
+}

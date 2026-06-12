@@ -1,0 +1,237 @@
+
+text gPokeNewsTextSlateport_Upcoming {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	SLATEPORT's most popular kind of guy,
+	the ENERGY GURU, is in the news again!
+
+	He promises to, “Stupendously go for
+	it in just this many days: {STR_VAR_1}!”
+
+	While he refused to elaborate on what
+	he will stupendously go for, the
+	ENERGY GURU advised, “Save up your
+	money. That'll be good…”
+
+	It sounds like a trip to SLATEPORT
+	would be well worth your while that day.
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextSlateport_Ongoing {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	This is the news you've all been
+	waiting for!
+
+	SLATEPORT'S ENERGY GURU is going
+	for it stupendously in the MARKET!
+
+	He promises unbeatable bargain
+	prices on CALCIUM and PROTEIN!
+
+	A trip to SLATEPORT CITY sounds
+	worthwhile. Why not visit and shop
+	to your heart's content?
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextSlateport_Ending {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	This is the news you've all been
+	waiting for!
+
+	SLATEPORT'S ENERGY GURU is going
+	for it stupendously in the MARKET!
+
+	He promises unbeatable bargain
+	prices on CALCIUM and PROTEIN!
+
+	According to the ENERGY GURU, he
+	still has ample merchandise left.
+
+	Why not visit SLATEPORT CITY for
+	a most enjoyable shopping trip?
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextGameCorner_Upcoming {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	It's approaching!
+	It's finally coming!
+
+	The GAME CORNER's service day will be
+	here in just this many days: {STR_VAR_1}!
+
+	Even those who are usually unlucky
+	may be lucky on this particular day!
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextGameCorner_Ongoing {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	It's here!
+	It's finally arrived!
+
+	GAME CORNER's service day has finally
+	arrived!
+
+	Could you be lucky at the SLOTS 
+	and ROULETTE?
+
+	The location is MAUVILLE CITY.
+	This is the place!
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextGameCorner_Ending {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	It's here!
+	It's finally arrived!
+
+	GAME CORNER's service day has finally
+	arrived!
+
+	Could you be lucky at the SLOTS
+	and ROULETTE?
+
+	Time is limited and has almost run out.
+	The location is MAUVILLE CITY.
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextLilycove_Upcoming {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	We've just received wonderful news
+	from LILYCOVE DEPARTMENT STORE.
+
+	The DEPARTMENT STORE's clear-out sale
+	will be in just this many days: {STR_VAR_1}!
+
+	That thingamajig or that doodad that
+	you've always wanted could be yours!
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextLilycove_Ongoing {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	This is the news you've all been
+	waiting for!
+
+	LILYCOVE DEPARTMENT STORE's clear-out
+	sale has finally arrived!
+
+	All the thingamajigs and doodads that
+	you've always dreamt about…
+
+	You may be in for fateful encounters
+	with them all!
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextLilycove_Ending {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	This is the news you've all been
+	waiting for!
+
+	LILYCOVE DEPARTMENT STORE's clear-out
+	sale has finally arrived!
+
+	All the thingamajigs and doodads that
+	you've always dreamt about…
+
+	You may be in for fateful encounters
+	with them all!
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextBlendMaster_Upcoming {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	We have big news for everyone
+	involved in the making of {POKEBLOCK}S.
+
+	The legendary BLEND MASTER will be
+	appearing in LILYCOVE CITY with just
+	a mere {STR_VAR_1}-day wait to go!
+
+	The BLEND MASTER is said to be
+	the best in all HOENN when it comes to
+	spinning a BERRY BLENDER.
+
+	Those people who want to make great
+	{POKEBLOCK}S or see the MASTER in action
+	are urged to save their BERRIES.
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextBlendMaster_Ongoing {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	We have big news for everyone
+	involved in the making of {POKEBLOCK}S.
+
+	The legendary BLEND MASTER has
+	finally appeared!
+
+	The BLEND MASTER is spinning
+	the BERRY BLENDER at the LILYCOVE
+	CONTEST HALL.
+
+	Those people who want to make great
+	{POKEBLOCK}S or see the MASTER in action
+	should hurry to LILYCOVE.
+
+	That's the news on POKéMON NEWS."
+}
+
+text gPokeNewsTextBlendMaster_Ending {
+	"Greetings!
+	It's time for POKéMON NEWS.
+
+	It's incredible!
+	Too incredible, even!
+
+	The BERRY BLENDER is spinning at
+	a dizzying pace!
+
+	The BLEND MASTER has lived up to
+	his reputation!
+
+	The BLEND MASTER will soon be
+	leaving LILYCOVE.
+
+	If you haven't seen the MASTER in
+	action, don't waste this chance!
+	Head to LILYCOVE right now!
+
+	That's the news on POKéMON NEWS."
+}

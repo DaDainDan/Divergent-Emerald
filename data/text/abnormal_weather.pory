@@ -1,0 +1,9 @@
+text gText_AbnormalWeatherEnded_Rain {
+    "The massive downpour appears to
+	have stopped…"
+}
+
+text gText_AbnormalWeatherEnded_Sun {
+    "The intense sunshine appears to
+	have subsided…"
+}

@@ -1,0 +1,119 @@
+text(local) BerryBlender_Text_BlendWithTheBlendMaster {
+	"BLEND MASTER: Indeed I am!
+	The BLEND MASTER am I!
+
+	Blend with me, and you shall witness
+	the mastery I bring to blending!"
+}
+
+text(local) BerryBlender_Text_SeeMyMasteryInAction {
+	"BLEND MASTER: Hmmm! So, you wish to
+	see my mastery in action?"
+}
+
+text(local) BerryBlender_Text_TooBusyNowIsee {
+	"Hmmm!
+
+	So, you are too busy now, I see!
+
+	But fear not!
+	I shall be here all day!
+	Hurry back from your errand!"
+}
+
+text(local) BerryBlender_Text_BlendMasterNoBerries {
+	"Hmmm!
+
+	You haven't got a single BERRY!
+
+	I shall be here all day!
+	Hurry back with some BERRIES!"
+}
+
+text(local) BerryBlender_Text_BlendMasterKnowHowToMakePokeblocks {
+	"Of course!
+	Of course!
+
+	Incidentally…
+	You do know how to blend {POKEBLOCK}S
+	from BERRIES?"
+}
+
+text(local) BerryBlender_Text_BlendMasterExplainBerryBlending {
+	"Hmmm!
+
+	Ah, but it is a simple process!
+
+	When the BLENDER's arrow comes to
+	your marker, just press the A Button.
+
+	That's all you have to do.
+
+	When you see how precisely I press
+	the A Button, you will understand."
+}
+
+text(local) BerryBlender_Text_BlendMasterLetsBerryBlender {
+	"Fine!
+
+	Let's get started, then!
+
+	All together with the BLEND MASTER,
+	let's BERRY BLENDER!"
+}
+
+text(local) BerryBlender_Text_BlendMasterNoPokeblockCase {
+	"Hmmm!
+
+	You don't appear to have gotten
+	the {POKEBLOCK} CASE!
+
+	I shall be here all day!
+	Obtain the {POKEBLOCK} CASE and hurry back!"
+}
+
+text(local) BerryBlender_Text_BlendMasterPokeblockCaseFull {
+	"Hmmm!
+
+	Your {POKEBLOCK} CASE appears to be full!
+
+	I shall be here all day!
+	Use some {POKEBLOCK}S and hurry back!"
+}
+
+text(local) BerryBlender_Text_WhoaAwesome {
+	"Whoa!
+	Awesome!"
+}
+
+text(local) BerryBlender_Text_WickedlyFast {
+	"Wickedly fast!"
+}
+
+text(local) BerryBlender_Text_WhatAnExpert {
+	"What an expert!"
+}
+
+text(local) BerryBlender_Text_MadeAmazingPokeblocksWithMaster {
+	"When I blended with the MASTER,
+	we made amazing {POKEBLOCK}S!"
+}
+
+text(local) BerryBlender_Text_QualitiesOfBlendMaster {
+	"Eyes that track the arrow with
+	machinelike intensity…
+
+	A hand that taps the A Button
+	with clockwork-like precision…
+
+	Possessing these qualities makes
+	the BLEND MASTER truly great."
+}
+
+text(local) BerryBlender_Text_MasterWorksOnSkillsInMountains {
+	"The BLEND MASTER's supposed to work
+	on his skills deep in the mountains.
+
+	Sometimes, he comes to LILYCOVE
+	to blend BERRIES all day long."
+}

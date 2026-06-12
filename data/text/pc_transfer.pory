@@ -1,0 +1,62 @@
+raw `
+gText_PkmnTransferredLanettesPC::
+	.string "{STR_VAR_2} was transferred to\n"
+#if IS_FRLG
+	.string "BILL'S PC.\p"
+#else
+	.string "LANETTE'S PC.\p"
+#endif
+	.string "It was placed in \n"
+	.string "BOX “{STR_VAR_1}.”$"
+
+gText_PkmnTransferredLanettesPCBoxFull::
+	.string "BOX “{STR_VAR_3}” on\n"
+#if IS_FRLG
+	.string "BILL'S PC was full.\p"
+#else
+	.string "LANETTE'S PC was full.\p"
+#endif
+	.string "{STR_VAR_2} was transferred to\n"
+	.string "BOX “{STR_VAR_1}.”$"
+`
+
+text gText_PkmnTransferredSomeonesPC {
+	"{STR_VAR_2} was transferred to
+	SOMEONE'S PC.
+
+	It was placed in 
+	BOX “{STR_VAR_1}.”"
+}
+
+text gText_PkmnTransferredSomeonesPCBoxFull {
+	"BOX “{STR_VAR_3}” on
+	SOMEONE'S PC was full.
+
+	{STR_VAR_2} was transferred to
+	BOX “{STR_VAR_1}.”"
+}
+
+text gText_PkmnSentToPCAfterCatch {
+	"{STR_VAR_2} was sent to
+	{B_PC_CREATOR_NAME} PC.
+
+	It was placed in 
+	BOX “{STR_VAR_1}”."
+}
+
+text gText_PlayerObtainedTheMon {
+	"{PLAYER} obtained
+	the {STR_VAR_1}!"
+}
+
+text gText_NoMoreRoomForPokemon {
+	"There's no more room for POKéMON!
+
+	The POKéMON BOXES are full and
+	can't accept any more!"
+}
+
+text gText_NicknameThisPokemon {
+	"Do you want to give a nickname to
+	this {STR_VAR_1}?"
+}

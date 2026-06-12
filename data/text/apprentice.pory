@@ -1,0 +1,3473 @@
+text gText_ApprenticeChallenge0 {
+	"Um, I'm {STR_VAR_1}'s no. {STR_VAR_2} apprentice.
+	Snivel… This tension is getting to me…"
+}
+
+text gText_ApprenticeChallenge1 {
+	"I'm {STR_VAR_1}'s no. {STR_VAR_2} apprentice!
+	Here we come!"
+}
+
+text gText_ApprenticeChallenge2 {
+	"I'm the no. {STR_VAR_2} apprentice of {STR_VAR_1}!
+	Accept my challenge!"
+}
+
+text gText_ApprenticeChallenge3 {
+	"Um… I'm {STR_VAR_1}'s no. {STR_VAR_2} apprentice…
+	Do you think someone like me can win?"
+}
+
+text gText_ApprenticeChallenge4 {
+	"I'm {STR_VAR_1}'s no. {STR_VAR_2} apprentice!
+	I'll let you challenge me!"
+}
+
+text gText_ApprenticeChallenge5 {
+	"I'm horribly busy, but I also happen
+	to be {STR_VAR_1}'s no. {STR_VAR_2} apprentice."
+}
+
+text gText_ApprenticeChallenge6 {
+	"I'm {STR_VAR_1}'s no. {STR_VAR_2} apprentice.
+	Glad to meet you!"
+}
+
+text gText_ApprenticeChallenge7 {
+	"I serve as {STR_VAR_1}'s no. {STR_VAR_2} apprentice.
+	May I begin?"
+}
+
+text gText_ApprenticeChallenge8 {
+	"Eek! I'm {STR_VAR_1}'s no. {STR_VAR_2} apprentice!
+	I'll do my best!"
+}
+
+text gText_ApprenticeChallenge9 {
+	"Yeehaw! I'm {STR_VAR_1}'s no. {STR_VAR_2} apprentice!
+	Put 'em up!"
+}
+
+text gText_ApprenticeChallenge10 {
+	"I'm {STR_VAR_1}'s 1,000th apprentice!
+	Actually, I'm no. {STR_VAR_2}! Here goes!"
+}
+
+text gText_ApprenticeChallenge11 {
+	"Yeah, I'm {STR_VAR_1}'s no. {STR_VAR_2} apprentice!
+	Let's get rockin' and a-rollin'!"
+}
+
+text gText_ApprenticeChallenge12 {
+	"Yippee-yahoo! I'm what you call
+	{STR_VAR_1}'s no. {STR_VAR_2} apprentice!"
+}
+
+text gText_ApprenticeChallenge13 {
+	"Cough! I'm {STR_VAR_1}'s no. {STR_VAR_2} apprentice.
+	Good to meet you! Cough!"
+}
+
+text gText_ApprenticeChallenge14 {
+	"This is nerve-racking…
+	I'm the no. {STR_VAR_2} apprentice of {STR_VAR_1}."
+}
+
+text gText_ApprenticeChallenge15 {
+	"I am {STR_VAR_1}'s no. {STR_VAR_2} apprentice,
+	and that's no lie."
+}
+
+text gText_ApprenticePleaseTeach0 {
+	"Are you… {PLAYER}?
+	Oh! Sniff…sob…
+
+	Oh! S-sorry…
+	I'm so nervous, I can't help crying…
+
+	I'm {STR_VAR_1}, and I really look up
+	to you, {PLAYER}.
+
+	I… I had this dream of one day meeting
+	you and asking you about POKéMON.
+
+	Please, please, {PLAYER}!
+	Please teach me about POKéMON!"
+}
+
+text gText_ApprenticeRejectTeaching0 {
+	"Oh… B-but…
+	Snivel… Waaaaaaah!
+
+	Please!
+	I'm begging you, please!"
+}
+
+text gText_ApprenticeWhichLevelMode0 {
+	"Oh, really? You will?
+	Awesome! Wicked! Awoooh!
+
+	Oh… I'm sorry…
+	I'm so happy, I'm crying…
+
+	Um… Then please tell me!
+	It's about the BATTLE TOWER.
+
+	Which would be better for me: Level 50
+	or the Open Level?"
+}
+
+text gText_ApprenticeLevelModeThanks0 {
+	"{STR_VAR_1}?
+	Waaaaah!
+
+	Oh! I'm so sorry!
+	You've made me happy by choosing
+	the level for me, and it's made me cry…
+
+	Snivel…
+	Thank you so much!
+	Please talk with me again!"
+}
+
+text gText_ApprenticePleaseTeach1 {
+	"Wowee! You're {PLAYER}, aren't you?
+	You're awesomely strong, aren't you?
+
+	I'm {STR_VAR_1}!
+	I just became a TRAINER!
+
+	Please, {PLAYER}!
+	Can you be my teacher and tell me
+	lots about being a TRAINER?"
+}
+
+text gText_ApprenticeRejectTeaching1 {
+	"Aww, why?
+	Oh, please? Pretty please?
+	Please be my teacher, please!"
+}
+
+text gText_ApprenticeWhichLevelMode1 {
+	"Yay! Great!
+
+	The first thing I wanted to ask you is
+	about the BATTLE TOWER!
+
+	The Level 50 and Open Level Rooms…
+	Which would be perfect for me?"
+}
+
+text gText_ApprenticeLevelModeThanks1 {
+	"{STR_VAR_1}, huh? That's true!
+	I'll do my best there!
+
+	If we meet here again, please teach
+	me something else, teacher!"
+}
+
+text gText_ApprenticePleaseTeach2 {
+	"Um… Are you {PLAYER}?
+	My name is {STR_VAR_1}.
+
+	I want to become a POKéMON TRAINER,
+	but I don't know what to do…
+
+	So I thought maybe I could ask you for
+	advice because you're so famous.
+
+	{PLAYER}, could you give me advice?"
+}
+
+text gText_ApprenticeRejectTeaching2 {
+	"Oh, but…
+
+	I sincerely want to become a POKéMON
+	TRAINER!
+
+	Please, can you answer my questions?"
+}
+
+text gText_ApprenticeWhichLevelMode2 {
+	"Thank you!
+	Here's my first question right away!
+
+	The BATTLE TOWER has two levels,
+	Level 50 and Open Level, right?
+
+	Which level do you think is more
+	suitable for me?"
+}
+
+text gText_ApprenticeLevelModeThanks2 {
+	"Oh, the {STR_VAR_1} challenge?
+	Understood!
+
+	If I have another question, I'll come
+	back here for your advice!"
+}
+
+text gText_ApprenticePleaseTeach3 {
+	"Oh? Huh? You're…
+	No, that can't be true.
+
+	There isn't any way that someone
+	like me could meet {PLAYER}.
+
+	…You really are {PLAYER}?
+	I can't believe I'm talking to you!
+
+	When something this good happens,
+	only terrible things will happen to me
+	now, I just know it…
+
+	…I'm sorry…
+	I'm… {STR_VAR_1}…
+
+	There isn't anything special about
+	me that I can be proud of…
+
+	I shouldn't even say anything about
+	myself because you'll forget…
+
+	I had this dream that if I ever met
+	you, {PLAYER}, that maybe I could ask
+	you for advice as a TRAINER.
+
+	But I don't think you would agree
+	to that.
+
+	…Or will you be so kind as to give
+	me advice?"
+}
+
+text gText_ApprenticeRejectTeaching3 {
+	"I knew it…
+
+	It had to happen because I'm such
+	a really boring nobody…
+
+	But I thought just maybe…
+	You won't reconsider, will you?
+
+	But I can't give up just like that.
+	I'll ask you while I'm still lucky!
+
+	Please, will you be so kind as to give
+	me advice?"
+}
+
+text gText_ApprenticeWhichLevelMode3 {
+	"Really? I can't believe it!
+	I can't believe you'll advise me!
+	I… I'm so happy…
+
+	What I want to ask you is really
+	trivial, but I can't decide…
+
+	At the BATTLE TOWER, they let you
+	choose Level 50 or Open Level.
+
+	Which course do you think even I may
+	have a chance at?"
+}
+
+text gText_ApprenticeLevelModeThanks3 {
+	"{STR_VAR_1}? Okay!
+	But do you really think someone like
+	me would have a chance?
+
+	I'll do my best, even though I don't
+	think it will work.
+
+	Thank you very much for spending
+	time with someone like me."
+}
+
+text gText_ApprenticePleaseTeach4 {
+	"Oh! You're {PLAYER}{KUN}, aren't you?
+
+	I've heard that you're tough at
+	POKéMON!
+
+	I'm {STR_VAR_1}!
+	I'll be your friend!
+
+	Did you know?
+
+	You can't win at the BATTLE FRONTIER
+	if all you know is what they teach at
+	the TRAINER'S SCHOOL.
+
+	I'm willing to listen to your advice.
+	You'll agree, of course?"
+}
+
+text gText_ApprenticeRejectTeaching4 {
+	"Huh? Why are you refusing me?
+	It's me who's asking you!
+	You have to reconsider!"
+}
+
+text gText_ApprenticeWhichLevelMode4 {
+	"Okay, so there is this something.
+	I want you to decide it for me.
+
+	You know that the BATTLE TOWER has
+	Level 50 and Open Level Rooms?
+
+	Which do you think would be good
+	for me, {PLAYER}{KUN}?"
+}
+
+text gText_ApprenticeLevelModeThanks4 {
+	"Okay, {STR_VAR_1} is suitable for me?
+	Thank you!
+
+	Knowing that you made the decision,
+	{PLAYER}{KUN}, I won't be so upset if
+	I lose.
+
+	Okay, I'll look to you for advice again.
+	Bye!"
+}
+
+text gText_ApprenticePleaseTeach5 {
+	"Oh, hi, there! {PLAYER}{KUN}!
+	I know you because you're famous!
+	Call me {STR_VAR_1}! Glad to meet you!
+
+	I'm a TRIATHLETE, so I keep myself
+	fit even while I raise POKéMON.
+
+	I'm also involved with other things
+	like work, napping, ballroom dancing…
+
+	Being this busy, it's not so easy for
+	me to become a decent TRAINER.
+
+	So, I have a proposition!
+
+	There must be a reason why we met.
+	So, {PLAYER}{KUN}, how about sharing your
+	wisdom with me every so often?"
+}
+
+text gText_ApprenticeRejectTeaching5 {
+	"Oh, but, please?
+	A guy like me needs someone like
+	you, {PLAYER}{KUN}!
+
+	Honestly, I need your advice!"
+}
+
+text gText_ApprenticeWhichLevelMode5 {
+	"Thank you! That's more like it!
+	So, let's start with an easy one!
+
+	You know about the BATTLE TOWER's
+	two courses, right?
+	You know, Level 50 and Open Level.
+
+	Me being a busy guy, which one should
+	I gear up for?"
+}
+
+text gText_ApprenticeLevelModeThanks5 {
+	"{STR_VAR_1}, huh? Okay, gotcha.
+	I'll find time somehow and give it a go!
+
+	…Whoops, I'd better go to work!
+	Thanks! See you around!"
+}
+
+text gText_ApprenticePleaseTeach6 {
+	"No way! Uh-uh!
+	Are you maybe the real {PLAYER}?
+
+	A-hah! Awesome! I'm {STR_VAR_1},
+	so pleased to meet you!
+
+	{PLAYER}, you're very strong,
+	aren't you?
+
+	Everyone's talking about you!
+
+	Oh! I just had this great idea!
+	I'll get advice off you, {PLAYER}!
+	I'm sure it will make me tougher!
+
+	Isn't it a great idea?
+	Please, I want your advice!"
+}
+
+text gText_ApprenticeRejectTeaching6 {
+	"Ahahaha, you can pretend to be mean,
+	but you can't fool me!
+	You really mean okay, don't you?"
+}
+
+text gText_ApprenticeWhichLevelMode6 {
+	"Yay! I knew you'd have a big heart,
+	{PLAYER}!
+
+	What should I ask you first?
+	…Oh, I thought of something!
+
+	Drum roll, please!
+	The question I have is…
+
+	If I were to take a BATTLE TOWER
+	challenge, which way should I go?
+
+	Level 50 or Open Level?
+	Which suits me more?"
+}
+
+text gText_ApprenticeLevelModeThanks6 {
+	"Oh-oh-oh!
+	{STR_VAR_1}, you say!
+	Thank you for a totally cool reply!
+
+	I guess that's about all I wanted
+	to ask you today.
+
+	Let's meet here again, okay?
+	Thanks!"
+}
+
+text gText_ApprenticePleaseTeach7 {
+	"I beg your pardon, but…
+	Are you {PLAYER}?
+
+	I'm {STR_VAR_1}, and I am delighted to
+	make your acquaintance.
+
+	I have long been an admirer
+	of yours…
+
+	… … … … … …
+
+	Um… I hope you don't find this
+	request too much of a burden, but…
+
+	May I become your apprentice,
+	{PLAYER}?"
+}
+
+text gText_ApprenticeRejectTeaching7 {
+	"Oh…!
+
+	… … … … … …
+	… … … … … …
+
+	…I must have fainted from shock.
+	I'm sorry, I must have misheard you.
+
+	Please! Please say that you will
+	accept me as your apprentice!"
+}
+
+text gText_ApprenticeWhichLevelMode7 {
+	"Oh… I'm delighted!
+
+	I don't wish to waste your time,
+	so please advise me on this.
+
+	I plan to take a BATTLE TOWER
+	challenge soon.
+
+	However, there are two levels…
+
+	Which would be most suitable for me?
+	Level 50 or Open Level?"
+}
+
+text gText_ApprenticeLevelModeThanks7 {
+	"{STR_VAR_1} is your choice!
+	I see. I will do my best!
+
+	Thank you, {PLAYER}.
+	I hope I can count on you again.
+	Please take care!"
+}
+
+text gText_ApprenticePleaseTeach8 {
+	"Eek! Eek! {PLAYER}!
+	You spoke to me!
+	I… I'm overjoyed!
+
+	Me! My name is {STR_VAR_1}!
+	I just became a TRAINER!
+
+	I'm delighted I met you, {PLAYER},
+	the big name in POKéMON circles!
+
+	Oh-oh-oh, I know!
+	May I ask a huge favor, {PLAYER}?
+
+	Please take me in as your apprentice!
+	I want to learn from you!"
+}
+
+text gText_ApprenticeRejectTeaching8 {
+	"Waaaah!
+	{PLAYER} turned me down…
+	It… It's an invaluable experience!
+
+	{PLAYER}, please! I want to hear
+	an affirmative answer this time!
+
+	I beg you for your guidance!"
+}
+
+text gText_ApprenticeWhichLevelMode8 {
+	"Hieeeeh! {PLAYER} said yes!
+	{PLAYER} said yes!
+
+	I won't be able to sleep tonight…
+	Thank you ever so much!
+
+	Then, here's my question!
+
+	At the BATTLE TOWER, what is right
+	for me, Level 50 or Open Level?"
+}
+
+text gText_ApprenticeLevelModeThanks8 {
+	"{STR_VAR_1}! Perfectly understood!
+	I understand perfectly!
+	I'm deliriously delighted!
+
+	I hope you'll be willing to teach me
+	some more another time."
+}
+
+text gText_ApprenticePleaseTeach9 {
+	"Whoa! Could you be…
+	Might you be… {PLAYER}{KUN}?!
+	That strong and famous TRAINER?
+	Well, hello, aren't I just the luckiest!
+
+	Hello, the name's {STR_VAR_1}!
+
+	I've been on the lookout for
+	a POKéMON teacher.
+
+	And with impeccably good timing,
+	along came you, {PLAYER}{KUN}!
+
+	So, there you have it, {PLAYER}{KUN}!
+	Let me apprentice under you!"
+}
+
+text gText_ApprenticeRejectTeaching9 {
+	"Gwaaaah!
+	You're quite cool and tough…
+
+	Don't be that way, please.
+	I'm asking you!"
+}
+
+text gText_ApprenticeWhichLevelMode9 {
+	"Oh, yeah! That's a solid reply!
+	Excellent, I might add!
+
+	So how about a first piece of advice
+	on the BATTLE TOWER?
+
+	If I were to go, what would be better?
+	Level 50 or Open Level?"
+}
+
+text gText_ApprenticeLevelModeThanks9 {
+	"Uh-huh, {STR_VAR_1} it is!
+	OK, A-OK!
+	I'll go show my mettle, like, jam!
+
+	All right, I'll look to you as my mentor!
+	Adios!"
+}
+
+text gText_ApprenticePleaseTeach10 {
+	"Oh, hey, {PLAYER}{KUN}, right?
+	The police were looking for you!
+
+	… … …
+	Of course I'm lying!
+
+	Me, I'm {STR_VAR_1}. Despite the way
+	I look, I'm the POKéMON CHAMPION!
+	…That's a lie, too!
+
+	This is no lie, though.
+	I'm not very good at battling.
+
+	So, how about you becoming my master
+	about all things POKéMON?"
+}
+
+text gText_ApprenticeRejectTeaching10 {
+	"If you're going to act cold like that,
+	I'll show you what I'll do!
+
+	Waaah! Waaah! Waaah!
+	Hiccup!
+
+	Hahaha, that was my FAKE TEARS!
+
+	Come on, will you please be
+	my POKéMON master?"
+}
+
+text gText_ApprenticeWhichLevelMode10 {
+	"Yippee!
+	I'll buy you a boat for that!
+
+	Of course I'm lying again!
+	But… Thank you, master!
+
+	You know how there's Level 50 and
+	Open Level at the BATTLE TOWER?
+
+	I'm having trouble deciding which
+	level I should challenge…
+
+	Can you decide for me, master?"
+}
+
+text gText_ApprenticeLevelModeThanks10 {
+	"Okay, so {STR_VAR_1} is better!
+	I'll go to the other level, then!
+
+	Just kidding!
+	I'll obey your teaching, master!
+
+	Thanks, master!
+	I hope you'll keep teaching me!"
+}
+
+text gText_ApprenticePleaseTeach11 {
+	"A-H-O-Y!
+	And that spells ahoy, and it means hi!
+
+	I'm {STR_VAR_1}, the rappin' SAILOR
+	am I!
+
+	Your turn now, tell me a little about
+	yourself, give it a try!
+
+	Uh-huh, uh-huh!
+	{PLAYER}{KUN}'s your name,
+	and POKéMON's your game!
+
+	And you're at a delicate age
+	when all the world's your stage!
+
+	Anyway, I just want to say,
+	that you're the tenth TRAINER
+	I've spoken to today.
+
+	Let's make that a celebration!
+	Become my mentor for commemoration!"
+}
+
+text gText_ApprenticeRejectTeaching11 {
+	"But!
+	You have to work with me!
+
+	Don't be such a tease!
+	Become my mentor, please!"
+}
+
+text gText_ApprenticeWhichLevelMode11 {
+	"That's it!
+	{PLAYER}, you've got the spirit!
+
+	So here's my first question
+	that begs your suggestion!
+
+	It's about the BATTLE TOWER,
+	and it hinges on my power!
+
+	Level 50 and Open Level there be,
+	which is the one that's good for me?"
+}
+
+text gText_ApprenticeLevelModeThanks11 {
+	"Okay, {STR_VAR_1} it is, you say!
+	I'll go and take it on my way!
+
+	If it's advice I ever need,
+	{PLAYER}, your word I'll always heed!"
+}
+
+text gText_ApprenticePleaseTeach12 {
+	"Say, hey, aren't you {PLAYER}?
+	What should I do? Talk to you?
+	Why not? I'm already talking to you!
+
+	{PLAYER}, are you surprised at me?
+	I'd better tell you who I happen to be!
+
+	{STR_VAR_1} is what you can call me.
+	The brightest star in guitardom,
+	that's me!
+
+	Are you receiving me?
+	You are receiving me!
+
+	My luck's at its best,
+	I'll hit you with a request!
+
+	{PLAYER}, let me be your underling!
+	I want you to teach me everything!"
+}
+
+text gText_ApprenticeRejectTeaching12 {
+	"You're turning me down, then?
+	I'll just have to ask you again!
+
+	{PLAYER}, I beg to be your underling!
+	I need you to teach me everything!"
+}
+
+text gText_ApprenticeWhichLevelMode12 {
+	"Lucky, yeah, woohoo!
+	Should I pop a question to you?
+
+	Since we're near the BATTLE TOWER,
+	how about a question about its power?
+
+	Of the choices you see,
+	which is the right one for me?"
+}
+
+text gText_ApprenticeLevelModeThanks12 {
+	"If {STR_VAR_1} is what you suggest,
+	it must be the very best!
+
+	Well, {PLAYER}, I have to roam free,
+	but don't you forget about me.
+
+	See you again, my smart friend!"
+}
+
+text gText_ApprenticePleaseTeach13 {
+	"Oh, hi! You there!
+	Can I get you to massage my shoulder?
+
+	…Yes, there! That's it!
+	Ouch, ouch! Oooh, that feels great!
+
+	My name's {STR_VAR_1}.
+	I take karate training, but my body's
+	not built to take the abuse…
+
+	I decided I'll battle POKéMON and
+	toughen myself up.
+
+	You're {PLAYER}{KUN}, aren't you?
+	The POKéMON LEAGUE CHAMP?
+
+	Listen, can I get you to give me
+	advice?"
+}
+
+text gText_ApprenticeRejectTeaching13 {
+	"Oh, why?
+
+	I won't be a big bother, I promise!
+	Please?"
+}
+
+text gText_ApprenticeWhichLevelMode13 {
+	"Thank you. Mighty good of you!
+	…Cough! Cough!
+
+	Oogh, I have to toughen up quick…
+
+	I'll be heading off to the BATTLE TOWER
+	right away, but what would be better
+	for me? Level 50 or Open Level?"
+}
+
+text gText_ApprenticeLevelModeThanks13 {
+	"Hm, all right. That's {STR_VAR_1}.
+	I'll go there right away.
+
+	I hope I can keep hitting you up for
+	help--after all, you're my mentor!"
+}
+
+text gText_ApprenticePleaseTeach14 {
+	"Er… Um…
+	{PLAYER}{KUN}…?
+
+	Please, don't look at me that way.
+	You're making me all self-conscious.
+
+	I… I'm {STR_VAR_1}.
+
+	I'm really embarrassed to say this,
+	but I explore ancient ruins and such.
+
+	I'm even more embarrassed to admit
+	I'm interested in the BATTLE FRONTIER.
+
+	{PLAYER}{KUN}, you have a reputation as
+	a tough TRAINER…
+
+	It's hard for me to say this,
+	but I want to ask something.
+
+	Could you become my teacher and
+	give me advice?"
+}
+
+text gText_ApprenticeRejectTeaching14 {
+	"Please don't brush me off like this!
+	I can't live with the humiliation.
+
+	Please become my teacher!
+	I need your advice!"
+}
+
+text gText_ApprenticeWhichLevelMode14 {
+	"Th-thank you…
+
+	But please don't look at me like that.
+	It makes me all flustered.
+
+	Please, answer me without looking
+	at my eyes.
+
+	At the BATTLE TOWER…
+	Which level should I attempt?"
+}
+
+text gText_ApprenticeLevelModeThanks14 {
+	"Oh… Okay!
+	I'll try my hand at that.
+
+	I hope I can make a valiant challenge
+	without getting all flustered…
+
+	Thank you, {PLAYER}{KUN}.
+	If we meet again, I hope you will be
+	as helpful."
+}
+
+text gText_ApprenticePleaseTeach15 {
+	"Hm? You appear to be {PLAYER}{KUN}…
+	But are you really real?
+
+	You may call me {STR_VAR_1}.
+
+	I have been toying with the idea of
+	apprenticing under a strong TRAINER.
+
+	So, I must say I'm lucky you came along!
+	…You really are {PLAYER}{KUN}, yes?
+
+	No, no, if you are real, it's fine.
+	I merely want you to recognize me
+	as your apprentice."
+}
+
+text gText_ApprenticeRejectTeaching15 {
+	"Oh?
+	But what would compel you to refuse?
+
+	I apologize for being skeptical about
+	your identity.
+
+	Please accept my apology and
+	accept me as your apprentice."
+}
+
+text gText_ApprenticeWhichLevelMode15 {
+	"You really are accepting me?
+	I don't wish to celebrate prematurely.
+
+	If it is true, I apologize.
+	But now, I need your advice.
+
+	If I were to enter the BATTLE TOWER,
+	what would be worthy of me?
+	Level 50 or Open Level?"
+}
+
+text gText_ApprenticeLevelModeThanks15 {
+	"{STR_VAR_1}?
+	Are you certain?
+
+	I see. If that's the case, that's fine.
+	I thank you for your time.
+
+	I realize I can annoy, but it delights
+	me that you have accepted me.
+
+	Let us meet again!"
+}
+
+text gText_ApprenticeWhatHeldItem0 {
+	"Sigh… Sob…
+	Oh, {PLAYER}!
+
+	I'm all tangled up in a dilemma
+	that I can't decide.
+
+	I can't decide what I should make
+	my {STR_VAR_1} hold.
+
+	Please tell me, {PLAYER}.
+	What item should I make it hold?"
+}
+
+text gText_ApprenticeHoldNothing0 {
+	"Oh, really? I shouldn't make
+	my {STR_VAR_1} hold anything?"
+}
+
+text gText_ApprenticeThanksNoHeldItem0 {
+	"Oh, okay! I'm delighted it's settled!
+	Awesome! Wicked! Awoooh!
+
+	Thank you so much!"
+}
+
+text gText_ApprenticeThanksHeldItem0 {
+	"Oh, I'm so glad…
+	I think I have that {STR_VAR_1}, too.
+
+	I'm delighted it's settled!
+	Awesome! Wicked! Awoooh!
+
+	Thank you so much!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended0 {
+	"Waaaah! Please don't be mean!
+
+	That item {STR_VAR_1} was already
+	recommended to me before, sob…
+
+	Or do you mean I shouldn't make
+	my {STR_VAR_2} hold anything?"
+}
+
+text gText_ApprenticeWhatHeldItem1 {
+	"Yay! It's {PLAYER}!
+	Great! I wanted to ask you something!
+
+	Do you make your POKéMON hold items?
+	I want to make mine hold items, but…
+
+	What item would be good for
+	{STR_VAR_1} to hold?
+
+	What do you think?"
+}
+
+text gText_ApprenticeHoldNothing1 {
+	"Huh? You mean my {STR_VAR_1} doesn't
+	have to hold anything?"
+}
+
+text gText_ApprenticeThanksNoHeldItem1 {
+	"Oh, I get it! I'll do that!
+	Thanks for teaching me!"
+}
+
+text gText_ApprenticeThanksHeldItem1 {
+	"Oh, wow! One {STR_VAR_1}, huh?
+	Okay, I'll do that!
+
+	Thanks for teaching me!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended1 {
+	"Oh, uh, no, that's not what I meant.
+	I want to know about a different item
+	than the ones I already know.
+
+	Or do you mean that my POKéMON doesn't
+	have to hold anything this time?"
+}
+
+text gText_ApprenticeWhatHeldItem2 {
+	"{PLAYER}, hello!
+	It's about my {STR_VAR_1}…
+
+	I want to make it hold a good item.
+	What would be good for it?"
+}
+
+text gText_ApprenticeHoldNothing2 {
+	"Oh, then my {STR_VAR_1} doesn't have
+	to hold anything?"
+}
+
+text gText_ApprenticeThanksNoHeldItem2 {
+	"Okay, I got it!
+	See you again!"
+}
+
+text gText_ApprenticeThanksHeldItem2 {
+	"Oh, the item {STR_VAR_1}?
+	Understood!
+
+	I'll do my best to find one!
+	See you again!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended2 {
+	"Somebody taught me about
+	the {STR_VAR_1} already.
+
+	I want my POKéMON to hold a different
+	kind of item.
+
+	Or do you think {STR_VAR_2} doesn't
+	have to hold anything?"
+}
+
+text gText_ApprenticeWhatHeldItem3 {
+	"Hello, {PLAYER}…
+	I'm sorry to disturb you, but I have
+	something else I wanted to ask you.
+
+	I don't think I'm good enough to win
+	matches on my own, so I'm thinking of
+	making my {STR_VAR_1} hold an item.
+
+	But I don't know what would be good.
+
+	{PLAYER}, please, could you decide
+	for me?"
+}
+
+text gText_ApprenticeHoldNothing3 {
+	"A POKéMON belonging to someone like me
+	would be better off without an item?"
+}
+
+text gText_ApprenticeThanksNoHeldItem3 {
+	"I understand…
+	You're saying I shouldn't rely on items.
+	I'll do my best not to!
+
+	Thank you very much!"
+}
+
+text gText_ApprenticeThanksHeldItem3 {
+	"The item {STR_VAR_1}, okay.
+	I'm not sure if I can get one…
+	No! I'll do my best to get it.
+
+	Thank you very much!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended3 {
+	"Oh, but…
+	I think I've heard about that before…
+
+	Is it maybe because I haven't handled
+	the item {STR_VAR_1} very well?
+
+	Or do you mean I shouldn't make
+	my {STR_VAR_2} hold anything?"
+}
+
+text gText_ApprenticeWhatHeldItem4 {
+	"Oh, {PLAYER}{KUN}.
+	There's something I wanted to ask you.
+
+	You know how you decided which
+	POKéMON I should have for me?
+
+	But I never asked you what item
+	it should be holding.
+
+	Since you already gave me advice,
+	how about seeing this to the end?
+
+	What would be good? I want to make
+	my {STR_VAR_1} hold something."
+}
+
+text gText_ApprenticeHoldNothing4 {
+	"Oh! So my {STR_VAR_1} should do
+	the best it can empty-handed?"
+}
+
+text gText_ApprenticeThanksNoHeldItem4 {
+	"If you think that's best, I'll do that.
+
+	Knowing that you made the decision,
+	{PLAYER}{KUN}, I won't be so upset if
+	I lose.
+
+	Okay, I'll look to you for advice again.
+	Bye!"
+}
+
+text gText_ApprenticeThanksHeldItem4 {
+	"The item {STR_VAR_1}, huh?
+	Not bad. I'll use it!
+
+	Knowing that you made the decision,
+	{PLAYER}{KUN}, I won't be so upset if
+	I lose.
+
+	Okay, I'll look to you for advice again.
+	Bye!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended4 {
+	"Huh? What are you saying?
+	You told me about the {STR_VAR_1}
+	already before.
+
+	Or do you mean my {STR_VAR_2} should
+	do the best it can empty-handed?"
+}
+
+text gText_ApprenticeWhatHeldItem5 {
+	"Yo, {PLAYER}{KUN}!
+
+	We're both busy, but we seem to run
+	into each other often anyway!
+
+	Today I have to do some walking,
+	cleaning, and brushing.
+
+	I haven't even had the time to buy
+	my precious {STR_VAR_1} anything.
+
+	I don't have any time, so how about
+	giving me advice on what I should make
+	my {STR_VAR_1} hold?"
+}
+
+text gText_ApprenticeHoldNothing5 {
+	"Oh, so me being a busy guy, you say
+	my {STR_VAR_1} doesn't need anything?"
+}
+
+text gText_ApprenticeThanksNoHeldItem5 {
+	"Okay, gotcha.
+	I won't need any time for that.
+
+	Thanks today!
+	See you around!"
+}
+
+text gText_ApprenticeThanksHeldItem5 {
+	"Okay, gotcha.
+	I'll find time somehow and find
+	that {STR_VAR_1} you recommended.
+
+	I'm glad I met a good mentor in you.
+	Thanks! See you around!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended5 {
+	"Huh? I already know about
+	that {STR_VAR_1}.
+
+	Oh, right, I get it.
+	So me being a busy guy, you say
+	my {STR_VAR_2} doesn't need anything?"
+}
+
+text gText_ApprenticeWhatHeldItem6 {
+	"Hiya, {PLAYER}! It's me!
+	I need to tap your mind again today.
+	Please, I need your advice!
+
+	Drum roll, please!
+	The question I have is…
+
+	If I want to make my {STR_VAR_1} hold
+	an item, what should it be?"
+}
+
+text gText_ApprenticeHoldNothing6 {
+	"Is that right? My {STR_VAR_1} doesn't
+	need to hold an item, you're saying."
+}
+
+text gText_ApprenticeThanksNoHeldItem6 {
+	"Okay, that's what I'll do!
+
+	I guess that's about all I wanted
+	to ask you today.
+
+	Let's meet here again, okay?
+	Thanks!"
+}
+
+text gText_ApprenticeThanksHeldItem6 {
+	"Uh-huh! One {STR_VAR_1}.
+	What a cool choice!
+	I'll definitely try that!
+
+	I guess that's about all I wanted
+	to ask you today.
+
+	Let's meet here again, okay?
+	Thanks!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended6 {
+	"Ahahah! That's silly!
+	You already told me about that
+	{STR_VAR_1} before!
+
+	Are you feeling okay, {PLAYER}?
+
+	Oh, wait! My {STR_VAR_2} doesn't
+	need to hold an item, you're saying."
+}
+
+text gText_ApprenticeWhatHeldItem7 {
+	"Hello, {PLAYER}. I hope you've been
+	keeping well.
+
+	May I approach you for advice?
+
+	In a recent battle, my opponent
+	seemed to have given his POKéMON
+	an item to hold.
+
+	As a result, I was defeated…
+
+	I don't wish to be left behind.
+	I would like to make my {STR_VAR_1}
+	hold an item, too.
+
+	It would please me if you could decide
+	what would be right for my POKéMON…"
+}
+
+text gText_ApprenticeHoldNothing7 {
+	"In other words… My POKéMON has
+	no need to hold an item?"
+}
+
+text gText_ApprenticeThanksNoHeldItem7 {
+	"I understand clearly now!
+	I will keep trying like this.
+
+	Thank you, {PLAYER}.
+	I hope I can count on you again.
+	Please take care!"
+}
+
+text gText_ApprenticeThanksHeldItem7 {
+	"One {STR_VAR_1} it is!
+	I will order it right away.
+
+	Thank you, {PLAYER}.
+	I hope I can count on you again.
+	Please take care!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended7 {
+	"You've already told me about that,
+	and I already have it.
+
+	Or are you saying… My POKéMON has
+	no need to hold an item?"
+}
+
+text gText_ApprenticeWhatHeldItem8 {
+	"Eek! {PLAYER}!
+	I… I'm overjoyed to see you again!
+
+	Oh-oh-oh! There's something I just
+	had to ask you, {PLAYER}!
+
+	Please decide what my {STR_VAR_1}
+	should be holding!"
+}
+
+text gText_ApprenticeHoldNothing8 {
+	"Oh, wow! I didn't expect that answer!
+	So, a hold item isn't necessary?"
+}
+
+text gText_ApprenticeThanksNoHeldItem8 {
+	"Perfectly understood!
+	I'll keep at this without an item!
+
+	I hope you'll be willing to teach me
+	some more another time."
+}
+
+text gText_ApprenticeThanksHeldItem8 {
+	"{STR_VAR_1}! I'll use that!
+
+	Um… Could it be, {PLAYER}, you also
+	make your POKéMON hold that item?
+
+	I'll be sure to get it!
+	I hope you'll be willing to teach me
+	some more another time."
+}
+
+text gText_ApprenticeItemAlreadyRecommended8 {
+	"Oh? You recommended that
+	{STR_VAR_1} before, too.
+
+	Or is it the best thing to hold?
+	Or do you mean that my {STR_VAR_2}
+	doesn't need anything to hold?"
+}
+
+text gText_ApprenticeWhatHeldItem9 {
+	"Hola!
+	My maestro, {PLAYER}{KUN}!
+
+	I want to hit you up for advice on
+	POKéMON tools.
+
+	What do you think would be good for
+	my {STR_VAR_1} to hold?
+
+	Don't be shy now.
+	Let's blurt it out!"
+}
+
+text gText_ApprenticeHoldNothing9 {
+	"Oh? So, you're saying my {STR_VAR_1}
+	can win without holding any item?"
+}
+
+text gText_ApprenticeThanksNoHeldItem9 {
+	"Si, bueno!
+	I'll give it my best shot, like, slam!
+
+	All right, thanks, as always!
+	Adios!"
+}
+
+text gText_ApprenticeThanksHeldItem9 {
+	"Uh-huh, that's one {STR_VAR_1}?
+	Si, bueno!
+	I'll go find me one, like, bam!
+
+	All right, thanks, as always!
+	Adios!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended9 {
+	"No, no! You already told me about
+	that {STR_VAR_1} thing before.
+
+	Oh, now wait just one minute here…
+	So, you're saying my {STR_VAR_2}
+	can win without holding any item?"
+}
+
+text gText_ApprenticeWhatHeldItem10 {
+	"{PLAYER}{KUN}, something unbelievable
+	has happened!
+
+	I woke up this morning, and my POKéMON
+	had 10 NUGGETS!
+
+	Of course I'm lying!
+	Wahahaha!
+
+	This is no lie, though.
+	I'm not very good at thinking about
+	what items POKéMON should hold.
+
+	So, how about deciding for me what
+	my {STR_VAR_1} should hold, master?"
+}
+
+text gText_ApprenticeHoldNothing10 {
+	"What's that mean?
+	Don't make it hold anything?"
+}
+
+text gText_ApprenticeThanksNoHeldItem10 {
+	"Okay, so it shouldn't hold anything.
+	Then, I'd better get something for it!
+
+	Just kidding!
+	I'll obey your teaching, master!
+
+	Thanks, master!
+	I hope you'll keep teaching me!"
+}
+
+text gText_ApprenticeThanksHeldItem10 {
+	"Okay, so it's one {STR_VAR_1}!
+	I'll make it hold anything but that!
+
+	Just kidding!
+	I'll obey your teaching, master!
+
+	Thanks, master!
+	I hope you'll keep teaching me!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended10 {
+	"Um, you told me about that before,
+	didn't you?
+
+	Isn't there something else?
+
+	Or do you mean, don't make
+	my {STR_VAR_2} hold anything?"
+}
+
+text gText_ApprenticeWhatHeldItem11 {
+	"A-H-O-Y!
+	And that spells ahoy!
+
+	The rappin' SAILOR am I!
+	I present to you a question
+	that's pretty fly!
+
+	It's an item question
+	that begs your suggestion!
+
+	My {STR_VAR_1} needs an item to hold,
+	What should it be, if I may be bold?"
+}
+
+text gText_ApprenticeHoldNothing11 {
+	"Is that right?
+	My {STR_VAR_1} doesn't need to be
+	holding anything tight?"
+}
+
+text gText_ApprenticeThanksNoHeldItem11 {
+	"Okay, I hear you, sure I do!
+	My POKéMON will go empty-handed, too!
+
+	If it's advice I ever need,
+	{PLAYER}, your word I'll always heed!"
+}
+
+text gText_ApprenticeThanksHeldItem11 {
+	"Okay, one {STR_VAR_1},
+	that's what I'll use.
+	I was right to make you choose!
+
+	If it's advice I ever need,
+	{PLAYER}, your word I'll always heed!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended11 {
+	"Okay, one {STR_VAR_1}, you say?
+	You told me that the other day.
+	I need a new idea, a brand new way.
+
+	Or, what, is that right?
+	My POKéMON doesn't need to hold
+	anything tight?"
+}
+
+text gText_ApprenticeWhatHeldItem12 {
+	"Say, hey, {PLAYER}!
+	I found you again today!
+
+	What should I do? Get your advice?
+	Why not? I'm already talking to you!
+
+	{PLAYER}, are you getting sick of me?
+	Nah, no way, that can't be.
+
+	Will you hear me out?
+	I'm looking for advice--that's what
+	I'm talking about.
+
+	It's about a hold item for
+	my {STR_VAR_1} that'd be good.
+	My indecision is making me brood."
+}
+
+text gText_ApprenticeHoldNothing12 {
+	"My {STR_VAR_1} needs nothing?
+	Doesn't need to hold anything?"
+}
+
+text gText_ApprenticeThanksNoHeldItem12 {
+	"If holding nothing is the best,
+	I'll do as you suggest!
+
+	Well, {PLAYER}, I have to roam free,
+	but don't you forget about me.
+
+	See you again, my smart friend!"
+}
+
+text gText_ApprenticeThanksHeldItem12 {
+	"If holding that {STR_VAR_1} is
+	the best, I'll do as you suggest!
+
+	Well, {PLAYER}, I have to roam free,
+	but don't you forget about me.
+
+	See you again, my smart friend!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended12 {
+	"Haven't I heard about that
+	{STR_VAR_1} before?
+	I'm certain I have, that's for sure!
+
+	I need a new something!
+	Or, my {STR_VAR_2} needs nothing?
+	Doesn't need to hold anything?"
+}
+
+text gText_ApprenticeWhatHeldItem13 {
+	"Gwah! Ouch! {PLAYER}{KUN}, my arm's broken!
+	Don't touch it, please!
+
+	I must've broken it while I was trying
+	out different hold items with my posse
+	of POKéMON.
+
+	So, things being this way,
+	I need you to decide for me.
+
+	{PLAYER}{KUN}, what do you think would be
+	good for my {STR_VAR_1} to hold?"
+}
+
+text gText_ApprenticeHoldNothing13 {
+	"Ouch…
+
+	So your suggestion is my {STR_VAR_1}
+	doesn't have to hold anything?"
+}
+
+text gText_ApprenticeThanksNoHeldItem13 {
+	"Hm, all right. That would be easier
+	for me, the way things are now.
+
+	I hope I can keep hitting you up
+	for help like this."
+}
+
+text gText_ApprenticeThanksHeldItem13 {
+	"Hm, all right. That's one {STR_VAR_1}.
+	My POKéMON's arm is fine, so I'll make
+	it hold that item right away.
+
+	I hope I can keep hitting you up
+	for help like this."
+}
+
+text gText_ApprenticeItemAlreadyRecommended13 {
+	"No, no, you told me about that
+	{STR_VAR_1} before, remember?
+
+	How about telling me something
+	even better?
+
+	Oh, wait a second.
+	So your suggestion is my {STR_VAR_2}
+	doesn't have to hold anything?"
+}
+
+text gText_ApprenticeWhatHeldItem14 {
+	"Er… Um…
+	{PLAYER}{KUN}…
+
+	Please, don't look at me that way.
+	My POKéMON don't have anything.
+
+	I… I'm really embarrassed about this,
+	but I really need your advice.
+
+	I can't decide what hold item would
+	make my {STR_VAR_1} strong.
+
+	{PLAYER}{KUN}, what do you think would
+	be good?"
+}
+
+text gText_ApprenticeHoldNothing14 {
+	"Oh… Then, you think it would be better
+	if my {STR_VAR_1} didn't have an item?"
+}
+
+text gText_ApprenticeThanksNoHeldItem14 {
+	"Oh… Okay!
+	I'll go without an item.
+
+	This is nerve-racking, though.
+	Wouldn't it be too cool?
+
+	Thank you, {PLAYER}{KUN}.
+	If we meet again, I hope you will be
+	as helpful."
+}
+
+text gText_ApprenticeThanksHeldItem14 {
+	"Oh… Okay!
+	I'll go with that {STR_VAR_1}.
+
+	This is nerve-racking, though.
+	Wouldn't it be too cool?
+
+	Thank you, {PLAYER}{KUN}.
+	If we meet again, I hope you will be
+	as helpful."
+}
+
+text gText_ApprenticeItemAlreadyRecommended14 {
+	"B-but I already heard about that.
+
+	Please don't brush me off like this!
+	I can't live with the humiliation.
+
+	Oh… Am I jumping to conclusions?
+	Do you think it would be better if
+	my {STR_VAR_2} didn't have an item?"
+}
+
+text gText_ApprenticeWhatHeldItem15 {
+	"Hm? You appear to be {PLAYER}{KUN}…
+	But are you really?
+	Perhaps you're a twin?
+
+	Oh, no, no, no, don't worry!
+	If you really are {PLAYER}, please
+	forget about my rudeness.
+
+	What I would like is some more of
+	your fine advice.
+
+	I have here my {STR_VAR_1} that I wish
+	to make hold a convenient item.
+
+	What would be worthy of it?"
+}
+
+text gText_ApprenticeHoldNothing15 {
+	"It's better if it held nothing?
+	Are you certain?"
+}
+
+text gText_ApprenticeThanksNoHeldItem15 {
+	"I see. If that's the case, that's fine.
+	I thank you for your time.
+
+	Let us meet again!"
+}
+
+text gText_ApprenticeThanksHeldItem15 {
+	"One {STR_VAR_1}?
+	Are you certain?
+
+	I see. If that's the case, that's fine.
+	I thank you for your time.
+
+	I do hope my POKéMON will be able to
+	put it to good use.
+
+	Let us meet again!"
+}
+
+text gText_ApprenticeItemAlreadyRecommended15 {
+	"No, no, wait a minute.
+	I believe you taught me that before.
+
+	I would like you to recommend
+	something different this time.
+
+	Perhaps you're suggesting that
+	my {STR_VAR_2} should hold nothing?
+	Are you certain?"
+}
+
+text gText_ApprenticeWhichMonFirst0 {
+	"Waah, {PLAYER}!
+	I have a dilemma, sob…
+
+	I want to begin battling other people,
+	but I don't know what to do.
+
+	How should I line up my POKéMON
+	so they'll be at their strongest?
+
+	Please tell me, {PLAYER}.
+	If you were me, which of these POKéMON
+	would you send out first?"
+}
+
+text gText_ApprenticeMonFirstThanks0 {
+	"My {STR_VAR_1} should go first?
+	Waaaaah!
+
+	Oh! I'm so sorry!
+	You've made me happy by choosing
+	my first POKéMON, and it's made me cry…
+
+	Thank you so much!"
+}
+
+text gText_ApprenticeWhichMonFirst1 {
+	"Yay! It's {PLAYER}!
+	Great! I wanted to ask you something!
+
+	Um, of my POKéMON, which do you
+	think should go out first?"
+}
+
+text gText_ApprenticeMonFirstThanks1 {
+	"My {STR_VAR_1}? That's true.
+	Okay, I'll do that!
+
+	Thanks for teaching me!"
+}
+
+text gText_ApprenticeWhichMonFirst2 {
+	"{PLAYER}, hello!
+
+	I think, in a battle, it's very important
+	which POKéMON comes out first.
+
+	Out of the POKéMON that I have,
+	which would be good to send out first?"
+}
+
+text gText_ApprenticeMonFirstThanks2 {
+	"My {STR_VAR_1} goes first?
+	Okay, I got it!
+
+	See you again!"
+}
+
+text gText_ApprenticeWhichMonFirst3 {
+	"Hello, {PLAYER}…
+	I'm sorry to disturb you again with
+	another question.
+
+	I have so little confidence, I don't
+	know what I'd do without you, {PLAYER}.
+
+	It may be a waste of time for me to
+	even worry about it, but I just can't
+	decide something…
+
+	Which of my POKéMON should I send
+	out first in a battle?"
+}
+
+text gText_ApprenticeMonFirstThanks3 {
+	"My {STR_VAR_1}?
+	Understood!
+
+	I can't believe that you would bother
+	to answer my questions so often!
+
+	I'm so grateful that you would even
+	speak with me… Thank you!"
+}
+
+text gText_ApprenticeWhichMonFirst4 {
+	"Oh, {PLAYER}{KUN}! It's me!
+	I'm so glad to see you because I have
+	this little problem.
+
+	I can't decide how my POKéMON should
+	be lined up. Could you decide for me?
+
+	Oh, you don't need to decide the whole
+	party right now.
+
+	How about deciding just the first
+	POKéMON for me?"
+}
+
+text gText_ApprenticeMonFirstThanks4 {
+	"My {STR_VAR_1}? That's great!
+
+	Knowing that you made the decision,
+	{PLAYER}{KUN}, I won't be so upset if
+	I lose.
+
+	Okay, I'll look to you for advice again.
+	Bye!"
+}
+
+text gText_ApprenticeWhichMonFirst5 {
+	"Hi, my teacher {PLAYER}{KUN}!
+	I'm busy again today!
+
+	I have to do some cycling, shopping,
+	and humming.
+
+	I haven't even had the time to decide
+	how to line up my POKéMON team.
+
+	So, how about checking out my team?
+	Which one should go first?"
+}
+
+text gText_ApprenticeMonFirstThanks5 {
+	"Okay, gotcha.
+	I have enough time at least to put
+	my {STR_VAR_1} at the head of the line!
+
+	Whoops, my girlfriend's waiting!
+	Thanks! See you around!"
+}
+
+text gText_ApprenticeWhichMonFirst6 {
+	"Yoohoo! Hiya, {PLAYER}!
+	You always walk around looking tough!
+
+	Listen, I need something from you
+	again! It's the usual thing!
+
+	Drum roll, please!
+	The question I have is about my team.
+
+	Which POKéMON of mine should be first
+	to go out in a battle?"
+}
+
+text gText_ApprenticeMonFirstThanks6 {
+	"Hmhm!
+	My {STR_VAR_1}, you say!
+	Thanks for a most cool answer!
+
+	I guess that's about all I wanted
+	to ask you today.
+
+	Let's meet here again, okay?
+	Thanks!"
+}
+
+text gText_ApprenticeWhichMonFirst7 {
+	"Thank you so much for stopping to
+	chat with me, {PLAYER}.
+
+	I know I'm taking advantage of your
+	kindness, but may I ask for advice?
+
+	I would like you to decide on the order
+	of my POKéMON team.
+
+	It would please me if you could decide
+	which POKéMON should come first."
+}
+
+text gText_ApprenticeMonFirstThanks7 {
+	"My {STR_VAR_1} it is!
+	I will put it first right away!
+
+	Thank you, {PLAYER}.
+	I hope I can count on you again.
+	Please take care!"
+}
+
+text gText_ApprenticeWhichMonFirst8 {
+	"Eek! {PLAYER}!
+	I… I'm overjoyed to see you again!
+
+	My POKéMON have become much
+	stronger!
+
+	But I don't always win. It seems to
+	depend on which POKéMON goes first.
+
+	{PLAYER}, please, I need your help!
+
+	Please decide which of my POKéMON
+	should go out first!"
+}
+
+text gText_ApprenticeMonFirstThanks8 {
+	"Sigh… I'm overwhelmed with happiness…
+
+	It's like a dream having you decide
+	for me, {PLAYER}.
+
+	But perfectly understood!
+	I will go with my {STR_VAR_1} first!
+
+	I hope you'll be willing to teach me
+	some more another time."
+}
+
+text gText_ApprenticeWhichMonFirst9 {
+	"Hello, hello!
+	My mentor, {PLAYER}{KUN}!
+	Hit me with your sage advice today!
+
+	You see, I pulled together a team of
+	three POKéMON. So far so good.
+
+	But the team's battling order's not
+	settled yet.
+
+	This is where you come in, {PLAYER}{KUN}!
+	You decide which POKéMON leads off!
+
+	Don't be shy now.
+	Let's blurt it out!"
+}
+
+text gText_ApprenticeMonFirstThanks9 {
+	"Uh-huh, my {STR_VAR_1} leads off!
+	OK, A-OK!
+	I'll reorder the lineup, like, wham!
+
+	All right, thanks, as always!
+	Adios!"
+}
+
+text gText_ApprenticeWhichMonFirst10 {
+	"{PLAYER}{KUN}, listen!
+	It's a crisis!
+
+	My POKéMON, all three of them, go into
+	battle at once!
+
+	Of course that's impossible!
+	Wahahaha!
+
+	This is no lie, though.
+	I'm not very good at thinking about
+	how I should line up my POKéMON.
+
+	So, how about deciding for me which
+	POKéMON should go first, master?"
+}
+
+text gText_ApprenticeMonFirstThanks10 {
+	"Okay, so it's my {STR_VAR_1} you chose?
+	I'll let any but that one go first!
+
+	Just kidding!
+	I'll obey your teaching, master!
+
+	Thanks, master!
+	I hope you'll keep teaching me!"
+}
+
+text gText_ApprenticeWhichMonFirst11 {
+	"A-H-O-Y!
+	And that spells ahoy!
+
+	The rappin' SAILOR am I!
+	I present to you a question
+	that's pretty fly!
+
+	It's a team lineup question
+	that begs your suggestion!
+
+	Out of this lot, which should go first
+	as the first on the spot?"
+}
+
+text gText_ApprenticeMonFirstThanks11 {
+	"Okay, I hear you, sure I do!
+	I'll switch them up, that I'll do!
+
+	If it's advice I ever need,
+	{PLAYER}, your word I'll always heed!"
+}
+
+text gText_ApprenticeWhichMonFirst12 {
+	"Yahoo, {PLAYER}!
+	How do you do?
+
+	What should I do? Go ahead and ask?
+	Uh-huh, I have something to ask!
+	Are you receiving me?
+	You are receiving me!
+
+	You have to decide, which of my
+	POKéMON is the first to ride!
+	Into battle, I mean to say."
+}
+
+text gText_ApprenticeMonFirstThanks12 {
+	"My {STR_VAR_1}? Yes!
+	That'll do, there's no distress!
+
+	Well, {PLAYER}, I have to roam free,
+	but don't you forget about me.
+
+	See you again, my smart friend!"
+}
+
+text gText_ApprenticeWhichMonFirst13 {
+	"…Oof…ooch… {PLAYER}{KUN}…
+	My stomach's hurting all of a sudden…
+
+	…It's getting better now…
+
+	I must've worried myself sick racking
+	my brains on how I should line up
+	my posse of POKéMON.
+
+	So, things being this way,
+	I need you to decide for me.
+
+	{PLAYER}{KUN}, which of my POKéMON should
+	go first? So I'd win, I mean."
+}
+
+text gText_ApprenticeMonFirstThanks13 {
+	"Hm, all right.
+	My {STR_VAR_1} goes first.
+
+	I'll fix the lineup like that after
+	I have my supper.
+
+	I hope I can keep hitting you up
+	for help like this."
+}
+
+text gText_ApprenticeWhichMonFirst14 {
+	"Er… Um…
+	{PLAYER}{KUN}?
+
+	Please, don't look at me that way.
+	You're making me feel all flustered.
+
+	Um…
+	I really need your advice.
+
+	It makes me bashful to say this,
+	but I chose my 3-POKéMON team.
+	I can't decide on the order, though.
+
+	Which POKéMON should I send out first
+	so I at least look capable?"
+}
+
+text gText_ApprenticeMonFirstThanks14 {
+	"Oh… Okay!
+	I'll lead with my {STR_VAR_1}.
+
+	I hope I can do my best without
+	getting all flustered.
+
+	Thank you, {PLAYER}{KUN}.
+	If we meet again, I hope you will be
+	as helpful."
+}
+
+text gText_ApprenticeWhichMonFirst15 {
+	"Hm? You appear to be {PLAYER}{KUN}…
+	But are you really?
+	Perhaps you're a clever look-alike?
+
+	Oh, no, no, no, don't worry!
+	If you really are {PLAYER}, please
+	forget about my rudeness.
+
+	What I would like is your fine advice.
+
+	I have here my POKéMON team.
+	I would like you to tell me which one
+	should go first in a battle."
+}
+
+text gText_ApprenticeMonFirstThanks15 {
+	"My {STR_VAR_1}…
+	You aren't pulling my leg?
+
+	I see. If that's the case, that's fine.
+	I thank you for your time.
+
+	I am as you see, but I shall do
+	my best.
+
+	Let us meet again!"
+}
+
+text gText_ApprenticeWhichMon0 {
+	"Snivel…
+	Oh, {PLAYER}!
+
+	What perfect timing!
+	There's something I just can't decide…
+
+	I can't decide which POKéMON I should
+	be using.
+
+	I can't decide between the POKéMON
+	{STR_VAR_1} and {STR_VAR_2}…
+
+	{PLAYER}, which do you think will give
+	even me a chance at winning?"
+}
+
+text gText_ApprenticeMonThanks0 {
+	"Snivel… I… I understand!
+	Oh! I'm so sorry!
+	You've made me so happy, I'm crying…
+
+	I'll do my best to catch one
+	{STR_VAR_1}!
+
+	Thank you so much!"
+}
+
+text gText_ApprenticeWhichMon1 {
+	"Yay! It's {PLAYER}!
+	Yay, you came at the right time, too!
+	I need your advice again!
+
+	Um, I'm all mixed up--should I use
+	my {STR_VAR_1} or {STR_VAR_2}…
+
+	Which do you think I should raise,
+	{PLAYER}?"
+}
+
+text gText_ApprenticeMonThanks1 {
+	"Oh, so my {STR_VAR_1} is better!
+	Okay, I'll do that!
+
+	Thanks for teaching me!"
+}
+
+text gText_ApprenticeWhichMon2 {
+	"{PLAYER}, hello!
+	I have a question I wanted to ask.
+
+	I'm in a dilemma over whether I should
+	raise one {STR_VAR_1} or {STR_VAR_2}.
+
+	Which POKéMON do you think will
+	be stronger?"
+}
+
+text gText_ApprenticeMonThanks2 {
+	"{STR_VAR_1} is your choice?
+	Okay, I got it!
+
+	I'll go catch a strong {STR_VAR_1}
+	right away!
+
+	See you again!"
+}
+
+text gText_ApprenticeWhichMon3 {
+	"Hello, {PLAYER}…
+
+	Um, you've probably already forgotten
+	about someone like me…
+
+	…But that doesn't matter if you
+	could give me advice…
+
+	I can't decide on the one kind of
+	POKéMON I should raise…
+
+	I've narrowed the field to the POKéMON
+	{STR_VAR_1} and {STR_VAR_2}, but that's
+	where I became stuck…
+
+	{PLAYER}, you probably don't want to
+	bother, but please decide for me."
+}
+
+text gText_ApprenticeMonThanks3 {
+	"But will a wild {STR_VAR_1} even pay
+	attention to me?
+
+	I will try!
+
+	But will I even be able to catch one…
+	No! I'll do my best!
+
+	Thank you!"
+}
+
+text gText_ApprenticeWhichMon4 {
+	"Oh, {PLAYER}{KUN}! I'm so glad to see you!
+	I was about to go looking for you!
+
+	Can you decide what kind of POKéMON
+	I should use?
+
+	For instance…
+	How about the POKéMON {STR_VAR_1}
+	and {STR_VAR_2}?
+
+	Which one do you think would be
+	better?"
+}
+
+text gText_ApprenticeMonThanks4 {
+	"{STR_VAR_1}? That's great!
+
+	Knowing that you made the decision,
+	{PLAYER}{KUN}, I won't be so upset if
+	I lose.
+
+	Okay, I'll look to you for advice again.
+	Bye!"
+}
+
+text gText_ApprenticeWhichMon5 {
+	"If it isn't {PLAYER}{KUN}! How's it going?
+	I'm busy again as always!
+
+	I want to do good with POKéMON, too,
+	but I haven't been able to decide
+	which POKéMON I should use.
+
+	You know how {STR_VAR_1} look strong?
+	But {STR_VAR_2} are tough to ignore.
+
+	{PLAYER}{KUN}, give me some of your good
+	advice! Which one'd be good for me?"
+}
+
+text gText_ApprenticeMonThanks5 {
+	"Okay, gotcha.
+	I'll find time somehow and catch me
+	that {STR_VAR_1} you recommended.
+
+	I'm glad I met a good mentor in you.
+	Thanks! See you around!"
+}
+
+text gText_ApprenticeWhichMon6 {
+	"Oh!
+	Yay, it's {PLAYER}!
+
+	I didn't waste any time boasting to
+	my friends about meeting you!
+
+	I need to tap your mind again today.
+	It's an easy one for you!
+
+	Drum roll, please!
+	The question I have is…
+
+	If I were to raise a POKéMON,
+	and the choices were one {STR_VAR_1}
+	or {STR_VAR_2}, which should it be?"
+}
+
+text gText_ApprenticeMonThanks6 {
+	"Ahhh!
+	{STR_VAR_1}, you say!
+	Thanks for a most cool answer!
+
+	I guess that's about all I wanted
+	to ask you today.
+
+	Let's meet here again, okay?
+	Thanks!"
+}
+
+text gText_ApprenticeWhichMon7 {
+	"Oh, is it you, {PLAYER}?
+	I'm delighted to see you again!
+
+	Ever since I became your apprentice,
+	my confidence has been blooming.
+
+	I think I'm ready to raise a POKéMON
+	of my own!
+
+	{PLAYER}, may I impose on you to choose
+	which POKéMON I should raise?
+
+	The choices are the POKéMON
+	{STR_VAR_1} or {STR_VAR_2}…
+	Which POKéMON is right for me?"
+}
+
+text gText_ApprenticeMonThanks7 {
+	"One {STR_VAR_1} it is!
+	I will find one right away!
+
+	Thank you, {PLAYER}.
+	I hope I can count on you again.
+	Please take care!"
+}
+
+text gText_ApprenticeWhichMon8 {
+	"Eek! {PLAYER}! I met you again!
+	I… I'm overjoyed!
+
+	Oh-oh-oh, I know!
+	I shouldn't pass up this opportunity!
+
+	May I ask a huge favor, {PLAYER}?
+	Please choose a POKéMON for me!
+
+	Please decide which would be better,
+	{STR_VAR_1} or {STR_VAR_2}!"
+}
+
+text gText_ApprenticeMonThanks8 {
+	"Wow! You decided for me!
+	One {STR_VAR_1} is what I'll raise to
+	the best of my ability.
+
+	I hope you'll be willing to teach me
+	some more another time."
+}
+
+text gText_ApprenticeWhichMon9 {
+	"Hey, hey!
+	My mentor, {PLAYER}{KUN}!
+
+	Hello, I've been looking for you
+	for some more of your sage advice!
+
+	Which kind of POKéMON would be right
+	for me, one {STR_VAR_1} or {STR_VAR_2}?
+
+	Don't be shy now.
+	Let's blurt it out!"
+}
+
+text gText_ApprenticeMonThanks9 {
+	"Uh-huh, one {STR_VAR_1} it is!
+	OK, A-OK!
+	I'll get one in a BALL, like, cram!
+
+	All right, thanks, as always!
+	Adios!"
+}
+
+text gText_ApprenticeWhichMon10 {
+	"{PLAYER}{KUN}, listen! Big news!
+	I caught a mirage POKéMON!
+
+	Of course I'm lying!
+	Wahahaha!
+
+	This is no lie, though.
+	I'm not very good at catching
+	POKéMON.
+
+	So, how about deciding for me which
+	kind of POKéMON I should catch,
+	master?
+
+	Which would be better?
+	{STR_VAR_1} or {STR_VAR_2}?"
+}
+
+text gText_ApprenticeMonThanks10 {
+	"Okay, so it's {STR_VAR_1} you chose?
+	I'll grab the other kind, then!
+
+	Just kidding!
+	I'll obey your teaching, master!
+
+	Thanks, master!
+	I hope you'll keep teaching me!"
+}
+
+text gText_ApprenticeWhichMon11 {
+	"A-H-O-Y!
+	And that spells ahoy!
+
+	The rappin' SAILOR am I!
+	Surely you remember who am I?
+
+	Today, I have a POKéMON question
+	that begs your suggestion!
+
+	I have the choice between this
+	{STR_VAR_1} and {STR_VAR_2}, you see.
+	Which is the one to catch for me?"
+}
+
+text gText_ApprenticeMonThanks11 {
+	"{STR_VAR_1}, you say, hey, hey!
+	I'll go get me one right away!
+
+	If it's advice I ever need,
+	{PLAYER}, your word I'll always heed!"
+}
+
+text gText_ApprenticeWhichMon12 {
+	"Oh, wow, if it isn't {PLAYER}!
+
+	What should I do? Get your advice?
+	Why not? I'm already talking to you!
+
+	It's been a long time. Let me break
+	the ice. I'm also looking for advice!
+	Are you receiving me?
+	You are receiving me!
+
+	My POKéMON--which should I use?
+	It's either {STR_VAR_1} or {STR_VAR_2}.
+	Which do you choose?"
+}
+
+text gText_ApprenticeMonThanks12 {
+	"If that {STR_VAR_1} is the best,
+	I'll do as you suggest!
+
+	Well, {PLAYER}, I have to roam free,
+	but don't you forget about me.
+
+	See you again, my smart friend!"
+}
+
+text gText_ApprenticeWhichMon13 {
+	"Oh, hi, {PLAYER}{KUN}…
+	I have this horrible headache…
+
+	I must've worried too much about
+	the kind of POKéMON I should raise.
+
+	So, things being this way,
+	I need you to decide for me.
+
+	{PLAYER}{KUN}, if I had to choose between
+	the POKéMON {STR_VAR_1} and
+	{STR_VAR_2}, which should it be?"
+}
+
+text gText_ApprenticeMonThanks13 {
+	"Hm, one {STR_VAR_1}, all right.
+	I'll go look for one when I get better.
+
+	I hope I can keep hitting you up
+	for help like this."
+}
+
+text gText_ApprenticeWhichMon14 {
+	"Er… Um…
+	{PLAYER}{KUN}…?
+
+	Please, don't look at me that way.
+	I'm getting all flustered…
+	I… I need your advice.
+
+	I… I'm really embarrassed, but I can't
+	decide which POKéMON to use.
+
+	If the choices were {STR_VAR_1} or
+	{STR_VAR_2}, which would be better?"
+}
+
+text gText_ApprenticeMonThanks14 {
+	"Oh… Okay!
+	I'll do my best with one {STR_VAR_1}.
+
+	I hope I can do my best without
+	getting all flustered.
+
+	Thank you, {PLAYER}{KUN}.
+	If we meet again, I hope you will be
+	as helpful."
+}
+
+text gText_ApprenticeWhichMon15 {
+	"Hm? You appear to be {PLAYER}{KUN}…
+	But are you really real?
+
+	No, no, if you are real, it's fine.
+	Incidentally, I would like to obtain
+	your advice.
+
+	It's about the POKéMON I am to use.
+
+	If the choices are the POKéMON
+	{STR_VAR_1} and {STR_VAR_2}, which is
+	more worthy of me?"
+}
+
+text gText_ApprenticeMonThanks15 {
+	"{STR_VAR_1}?
+	Are you certain?
+
+	I see. If that's the case, that's fine.
+	I thank you for your time.
+
+	I do hope it is something even I can
+	handle with aplomb.
+
+	Let us meet again!"
+}
+
+text gText_ApprenticeWhichMove0 {
+	"Waaah! Oh, {PLAYER}!
+	Snivel… Hiccup…
+
+	I have a dilemma!
+	I can't decide on a move for
+	my {STR_VAR_1}…
+
+	Please, please, {PLAYER}.
+	Can you decide for me?
+
+	For my {STR_VAR_1}, which move would
+	be the better choice: {STR_VAR_2}
+	or {STR_VAR_3}?"
+}
+
+text gText_ApprenticeMoveThanks0 {
+	"{STR_VAR_1}?
+	Waaaaah!
+
+	Oh! I'm so sorry, {PLAYER}!
+	You've made me so happy by deciding
+	the move, I'm crying…
+
+	Snivel…
+	Thank you so much!"
+}
+
+text gText_ApprenticeWhichMove1 {
+	"Yay! Hi, {PLAYER}!
+	I need your advice again!
+
+	I want to teach my {STR_VAR_1}
+	a cool move.
+
+	I like either of the moves
+	{STR_VAR_2} or {STR_VAR_3}.
+	What's your recommendation?"
+}
+
+text gText_ApprenticeMoveThanks1 {
+	"{STR_VAR_1} is better? I guess so!
+	Okay, I'll go with that!
+
+	If we meet here again, please teach
+	me something else, teacher!"
+}
+
+text gText_ApprenticeWhichMove2 {
+	"{PLAYER}, hello!
+	It's about my {STR_VAR_1}, but I'm
+	worried about its moves.
+
+	You see, it's the moves {STR_VAR_2}
+	and {STR_VAR_3}.
+
+	Which is stronger and better for
+	my {STR_VAR_1}?"
+}
+
+text gText_ApprenticeMoveThanks2 {
+	"{STR_VAR_1} is your choice?
+	Okay, I got it!
+
+	I'll go teach {STR_VAR_1} to
+	my POKéMON right away!
+
+	See you again!"
+}
+
+text gText_ApprenticeWhichMove3 {
+	"Ohhh, {PLAYER}…
+	I'm hopeless, no, really!
+
+	I've decided to raise a POKéMON,
+	but now I can't even decide what
+	move I should let it learn…
+
+	I know that it doesn't mean anything
+	to you, {PLAYER}.
+
+	But it means a lot to me…
+
+	Please, {PLAYER}, could you choose
+	a move for my {STR_VAR_1}?
+
+	If you could even choose between
+	{STR_VAR_2} and {STR_VAR_3}…"
+}
+
+text gText_ApprenticeMoveThanks3 {
+	"I understand!
+
+	But will it even be willing to learn
+	{STR_VAR_1} for me…
+	No! I'll do my best!
+
+	Thank you!"
+}
+
+text gText_ApprenticeWhichMove4 {
+	"Oh, {PLAYER}{KUN}!
+	I was just hoping to see you, too!
+
+	I was wondering what move would
+	be suitable for my {STR_VAR_1}.
+
+	I can't decide, so can you decide
+	for me instead?
+
+	For instance… How about the moves
+	{STR_VAR_2} and {STR_VAR_3}?
+	Which one would be better?"
+}
+
+text gText_ApprenticeMoveThanks4 {
+	"{STR_VAR_1}? That's great!
+
+	Knowing that you made the decision,
+	{PLAYER}{KUN}, I won't be so upset if
+	I lose.
+
+	Okay, I'll look to you for advice again.
+	Bye!"
+}
+
+text gText_ApprenticeWhichMove5 {
+	"How could things be this busy?
+	Hey, if it isn't {PLAYER}{KUN}!
+	How's it going?
+
+	Since I got up this morning, I've done
+	my jogging, swimming, and cooking!
+
+	You wouldn't believe how busy I am!
+
+	I can't even decide what move
+	my {STR_VAR_1} should learn!
+
+	{STR_VAR_2} looks good, huh?
+	But {STR_VAR_3}'s also decent.
+
+	{PLAYER}{KUN}, give me some of your good
+	advice! Which move'd be good for me?"
+}
+
+text gText_ApprenticeMoveThanks5 {
+	"Okay, gotcha.
+	I'll make room in my schedule and
+	teach that move.
+
+	I'm glad I met a good mentor in you.
+	Thanks! See you around!"
+}
+
+text gText_ApprenticeWhichMove6 {
+	"Oh! Lucky!
+	I met you again, {PLAYER}!
+	I need to tap your mind again today.
+
+	Drum roll, please!
+	The question I have is…
+
+	For my {STR_VAR_1}, which is the move
+	best suited, {STR_VAR_2} or
+	{STR_VAR_3}?"
+}
+
+text gText_ApprenticeMoveThanks6 {
+	"Ahhh!
+	{STR_VAR_1}, you say!
+	Thanks for a most cool answer!
+
+	I guess that's about all I wanted
+	to ask you today.
+
+	Let's meet here again, okay?
+	Thanks!"
+}
+
+text gText_ApprenticeWhichMove7 {
+	"Oh, hello, {PLAYER}.
+	I trust you've been well?
+
+	I have to seek your advice again.
+	It's about my dearest {STR_VAR_1}.
+
+	What would be the ideal move for
+	my lovable {STR_VAR_1}?
+	{STR_VAR_2} or {STR_VAR_3}?"
+}
+
+text gText_ApprenticeMoveThanks7 {
+	"{STR_VAR_1} it is!
+	I will teach that right away!
+
+	Thank you, {PLAYER}.
+	I hope I can count on you again.
+	Please take care!"
+}
+
+text gText_ApprenticeWhichMove8 {
+	"Eek! {PLAYER}! I met you again!
+	I… I'm overjoyed!
+
+	Whenever I'm in need, you're always
+	there for me, {PLAYER}!
+
+	Today, I want you to recommend
+	a move for me!
+
+	Please choose a move for
+	my {STR_VAR_1}!
+
+	Which move would be better,
+	{STR_VAR_2} or {STR_VAR_3}?"
+}
+
+text gText_ApprenticeMoveThanks8 {
+	"Oh-oh-oh! Thank you!
+	{STR_VAR_1} is it!
+	Perfectly understood!
+
+	I hope you'll be willing to teach me
+	some more another time."
+}
+
+text gText_ApprenticeWhichMove9 {
+	"Hola, {PLAYER}{KUN}, bueno!
+	I'm hoping for some more of
+	your sage advice today!
+
+	What would be the best move for
+	my {STR_VAR_1}?
+
+	It should be something that'll
+	let me win just like that!
+
+	Would it be {STR_VAR_2}?
+	Or {STR_VAR_3}?"
+}
+
+text gText_ApprenticeMoveThanks9 {
+	"Uh-huh, {STR_VAR_1} it is!
+	Si, bueno!
+	I'll get it taught, like, ka-blam!
+
+	All right, thanks, as always!
+	Adios!"
+}
+
+text gText_ApprenticeWhichMove10 {
+	"{PLAYER}{KUN}, it's completely wild!
+
+	My POKéMON!
+	It learned six moves!
+
+	Of course I'm lying!
+	Wahahaha!
+
+	This is no lie, though.
+	I'm not very good at choosing moves
+	for my POKéMON.
+
+	So, how about deciding for me which
+	kind of move I should teach?
+
+	{STR_VAR_2} or {STR_VAR_3}--which
+	would go with my {STR_VAR_1} best?"
+}
+
+text gText_ApprenticeMoveThanks10 {
+	"Okay, so it's {STR_VAR_1} you chose?
+	I'll choose another move, then!
+
+	Just kidding!
+	I'll obey your teaching, master!
+
+	Thanks, master!
+	I hope you'll keep teaching me!"
+}
+
+text gText_ApprenticeWhichMove11 {
+	"A-H-O-Y!
+	And that spells ahoy!
+
+	The rappin' SAILOR am I!
+	I'm always with it, don't ask me why.
+
+	Today, I have a move question
+	that begs your suggestion!
+
+	{STR_VAR_2} and {STR_VAR_3} are
+	the moves. What would be the best
+	for my {STR_VAR_1} so it grooves?"
+}
+
+text gText_ApprenticeMoveThanks11 {
+	"{STR_VAR_1}, you say, hey, hey!
+	I'll go teach that right away!
+
+	If it's advice I ever need,
+	{PLAYER}, your word I'll always heed!"
+}
+
+text gText_ApprenticeWhichMove12 {
+	"Oh, yeahah, if it isn't {PLAYER}!
+
+	What should I do? Get your advice?
+	Why not? I'm already talking to you!
+
+	{PLAYER}, are you surprised by me?
+	I want your advice, can't you see?
+
+	Are you receiving me?
+	You are receiving me!
+
+	My {STR_VAR_1}--what should it use?
+	It's {STR_VAR_2} or {STR_VAR_3},
+	what do you choose?"
+}
+
+text gText_ApprenticeMoveThanks12 {
+	"If that {STR_VAR_1} is the best,
+	I'll do as you suggest!
+
+	Well, {PLAYER}, I have to roam free,
+	but don't you forget about me.
+
+	See you again, my smart friend!"
+}
+
+text gText_ApprenticeWhichMove13 {
+	"Gahack! Gaah! Oh, {PLAYER}{KUN}…
+	I have this lousy cold, I do…
+
+	I want to pick a move for my POKéMON,
+	but I'm not up to it…
+
+	So, things being this way,
+	I need you to decide for me.
+
+	{PLAYER}{KUN}, if I had to choose between
+	{STR_VAR_2} and {STR_VAR_3} for
+	my {STR_VAR_1}, which would it be?"
+}
+
+text gText_ApprenticeMoveThanks13 {
+	"Hm, {STR_VAR_1}, all right. Cough!
+	I'll go teach it when I get better.
+
+	I hope I can keep hitting you up
+	for help like this."
+}
+
+text gText_ApprenticeWhichMove14 {
+	"Er… Um…
+	{PLAYER}{KUN}…?
+
+	Please, don't look at me that way.
+	I'm getting all flustered…
+	I… I need your advice.
+
+	I… I'm really embarrassed, but I can't
+	decide what move I should teach
+	my POKéMON.
+
+	It's for my {STR_VAR_1}.
+	If the choices were {STR_VAR_2} or
+	{STR_VAR_3}, which would be better?"
+}
+
+text gText_ApprenticeMoveThanks14 {
+	"Oh… Okay!
+	I'll try that {STR_VAR_1}.
+
+	I hope I can teach that move…
+	This is so nerve-racking…
+
+	Thank you, {PLAYER}{KUN}.
+	If we meet again, I hope you will be
+	as helpful."
+}
+
+text gText_ApprenticeWhichMove15 {
+	"Hm? You appear to be {PLAYER}{KUN}…
+	But are you really real?
+
+	Perhaps you're one of those popular
+	mimics?
+
+	No, no, if you are real, it's fine.
+	No need to be upset, I assure you!
+
+	Incidentally, I would like to obtain
+	your advice.
+
+	It's about my {STR_VAR_1}.
+
+	Which move would be better for it to
+	use, {STR_VAR_2} or {STR_VAR_3}?"
+}
+
+text gText_ApprenticeMoveThanks15 {
+	"{STR_VAR_1}?
+	There's no question about that?
+
+	I see. If that's the case, that's fine.
+	I thank you for your time.
+
+	I do hope it is something even
+	my POKéMON can learn.
+
+	Let us meet again!"
+}
+
+text gText_ApprenticePickWinSpeech0 {
+	"Oh… {PLAYER}?
+	It is {PLAYER}!
+	Oh! Sniff…sob… Please, listen!
+
+	I… When I battle, I get so nervous,
+	I can't help crying even if I win…
+
+	I wish I could say something cool
+	when I win…
+
+	Please, please, {PLAYER}!
+	Could you maybe teach me something
+	cool to say when I win so I don't cry?"
+}
+
+text gText_ApprenticeWinSpeechThanks0 {
+	"{STR_VAR_1}
+
+	Awesome! Wicked! Awoooh!
+	It's really cool!
+
+	Oh… I'm sorry…
+	I'm so happy, I'm crying…
+
+	Snivel… {PLAYER}!
+	Thank you so much for everything!
+
+	I will battle the best I can for
+	your sake, {PLAYER}!
+
+	{PLAYER}…
+	Next time… We should battle!"
+}
+
+text gText_ApprenticePickWinSpeech1 {
+	"Yay! It's {PLAYER}! Hello!
+	I wanted to ask you something!
+
+	I want to say something cool when
+	I win a match.
+
+	Do you have a cool saying that
+	you could recommend?"
+}
+
+text gText_ApprenticeWinSpeechThanks1 {
+	"{STR_VAR_1}
+
+	Oh, wow! That is so cool!
+	Okay, I'll say that!
+
+	Thanks for teaching me all this time!
+	I'm going to do the best I can
+	wherever I go from now on!
+
+	When we meet again, it'll be for
+	a battle!"
+}
+
+text gText_ApprenticePickWinSpeech2 {
+	"{PLAYER}, hello!
+
+	My POKéMON and I are ready for
+	anything, except for one thing.
+
+	I think it would be good if I had
+	something to shout when I win.
+
+	Could you think up something good
+	to say?"
+}
+
+text gText_ApprenticeWinSpeechThanks2 {
+	"{STR_VAR_1}
+
+	…Cool!
+	I will use that!
+
+	I'm going out to battle all over
+	the place.
+
+	Who knows, I may even get to battle
+	you one day, {PLAYER}.
+
+	Next time, let's meet at a place
+	of battle!"
+}
+
+text gText_ApprenticePickWinSpeech3 {
+	"Hello, {PLAYER}…
+	I'm sorry to bug you, but I'm hopeless…
+
+	Even when…
+	Even when I win, I don't have anything
+	special to say…
+
+	I know that it doesn't mean anything
+	to you, {PLAYER}.
+
+	But it means a lot to me…
+
+	Please, {PLAYER}, what should I say
+	if I win a battle?"
+}
+
+text gText_ApprenticeWinSpeechThanks3 {
+	"{STR_VAR_1}
+
+	That's inspired…
+
+	Uh… Is it okay for someone like me
+	to even say that?
+
+	No! I'll do my best!
+
+	{PLAYER}, thank you so much for
+	putting up with me for so long…
+
+	I promise to do my best from now on.
+
+	I'm sure you'll quickly forget about
+	someone like me, but let's meet
+	somewhere again!"
+}
+
+text gText_ApprenticePickWinSpeech4 {
+	"Oh, {PLAYER}{KUN}.
+	There's something I want you to hear.
+
+	I know that I don't always sound
+	nice or polite…
+
+	When I win a battle, I think I come
+	across as being arrogant.
+
+	I don't want people to dislike me,
+	so I want to say something nice to
+	someone I beat.
+
+	But I can't think of anything good!
+	Could you think something up for me?"
+}
+
+text gText_ApprenticeWinSpeechThanks4 {
+	"{STR_VAR_1}
+
+	Not bad!
+	Yup, that's what I'll go with!
+
+	I'm going to hit the road and do what
+	I can with what you taught me in
+	my head and heart.
+
+	I'm sorry that I've been so pushy
+	with you!
+
+	Next time, we battle, okay?
+	See you!"
+}
+
+text gText_ApprenticePickWinSpeech5 {
+	"Oh, I can't get over how busy I am!
+	Oh, hey, I was looking for you, {PLAYER}{KUN}.
+
+	Are you well as usual?
+	Things haven't changed for me at all.
+
+	I've got running, fighting, and mapping
+	to do. Why am I so busy?
+
+	But even though I'm busy, it'd be rude
+	to just turn on my heels and walk away
+	from a win without saying a word.
+
+	So, what would be a cool saying to
+	underline my coolness when I'm done
+	and walking away? {PLAYER}{KUN}, help me!"
+}
+
+text gText_ApprenticeWinSpeechThanks5 {
+	"{STR_VAR_1}
+
+	Okay, gotcha.
+	I can find time to say that!
+
+	Honestly, I'm glad I met a good mentor
+	like you.
+
+	I'm going to make time somehow so
+	I can get into battling.
+
+	Thanks for everything, {PLAYER}{KUN}!
+	We have to battle, you and me, one day!"
+}
+
+text gText_ApprenticePickWinSpeech6 {
+	"I lucked out again!
+	{PLAYER}! Am I glad to see you!
+	Like usual, I need your advice!
+
+	Drum roll, please!
+	The last question I have is…
+
+	If I win a battle and want to end
+	it with a cool flourish, what
+	should I say?"
+}
+
+text gText_ApprenticeWinSpeechThanks6 {
+	"{STR_VAR_1}
+
+	That… That's fabulous!
+	It's dignified and cool! I claim it!
+
+	…Listen, I think I'm getting decent
+	at this, huh?
+
+	So, I'm thinking of challenging other
+	TRAINERS from now on.
+
+	{PLAYER}, your advice really helped me.
+
+	Maybe one day, there'll be a time when
+	we battle!
+
+	Thank you for everything!"
+}
+
+text gText_ApprenticePickWinSpeech7 {
+	"Oh, {PLAYER}.
+	I'm so glad I met you!
+
+	I no longer have any concerns with
+	regard to my POKéMON.
+
+	It's myself that worries me…
+
+	Do you know how a TRAINER says
+	a few things upon winning a battle?
+
+	Definitely, I wish I could do that,
+	too!
+
+	Please, what should I say when
+	I win a battle?"
+}
+
+text gText_ApprenticeWinSpeechThanks7 {
+	"{STR_VAR_1}
+
+	Ah! That saying! It refreshes me
+	and makes me feel reborn!
+
+	I must use that right away!
+
+	And now, I must take my leave,
+	{PLAYER}…
+
+	I will go out to battle many others,
+	but never will I forget your teachings.
+
+	Perhaps one day…
+	Farewell!"
+}
+
+text gText_ApprenticePickWinSpeech8 {
+	"Eek! I spotted {PLAYER}!
+	I… I'm overjoyed to see you!
+
+	Oh-oh-oh! There's something I just
+	had to ask you!
+
+	A little while ago, I won a battle.
+	That part was giddying!
+
+	But it made me so overjoyed that
+	I choked up and couldn't say a thing!
+
+	So now, {PLAYER}, please, I want you to
+	think up an exit line for when I win!"
+}
+
+text gText_ApprenticeWinSpeechThanks8 {
+	"{STR_VAR_1}
+
+	Waaaaah!
+	I'm going to say that?!
+	I… I'm delirious with joy!
+
+	Th-th-thank you!
+	I have nothing left to regret now!
+
+	I'm going to travel now and battle
+	all sorts of people.
+
+	Everything, I owe it to you, {PLAYER}.
+	Really, really, thank you!
+
+	I've got to go now, but let's meet
+	in battle one day!"
+}
+
+text gText_ApprenticePickWinSpeech9 {
+	"Hola, bueno!
+	{PLAYER}{KUN}!
+
+	You know, I'm getting the itch to roam
+	and battle where I may.
+
+	But before I do, I want your advice
+	once again, please!
+
+	If I were to win a battle, what would
+	be a good boast I could say to my
+	fallen TRAINER opponent?"
+}
+
+text gText_ApprenticeWinSpeechThanks9 {
+	"{STR_VAR_1}
+
+	Uh-huh, that's sweet!
+	Si, bueno!
+	I'll try saying that, like, ham!
+
+	And now, it's time to say good-bye!
+	Thanks for all sorts of things!
+
+	Give me a battle one day, OK?
+	Adios!"
+}
+
+text gText_ApprenticePickWinSpeech10 {
+	"{PLAYER}{KUN}, there's big trouble!
+
+	When I win a battle, I brag about it
+	for an hour at least!
+
+	Of course I'm lying!
+	Wahahaha!
+
+	This is no lie, though.
+	I'm not very good at chatting.
+
+	So, how about deciding for me what
+	I should say after winning a battle,
+	master?"
+}
+
+text gText_ApprenticeWinSpeechThanks10 {
+	"{STR_VAR_1}
+
+	That's what I should say, huh?
+	Then, I'll stay away from that!
+
+	Just kidding!
+	I'll obey your teaching, master!
+
+	Thanks for teaching me all this time,
+	master!
+
+	I'm finally understanding what being
+	a TRAINER is about.
+
+	I'm going to go out and win battles
+	against any TRAINER.
+
+	Maybe it'll be you one day, master!
+
+	That's all!
+	Farewell, my master!"
+}
+
+text gText_ApprenticePickWinSpeech11 {
+	"A-H-O-Y!
+	And that spells ahoy!
+
+	The rappin' SAILOR am I!
+	This will be my last question,
+	don't you cry!
+
+	It's a saying question
+	that begs your suggestion!
+
+	If I win a match, what can I say
+	in a real cool way?"
+}
+
+text gText_ApprenticeWinSpeechThanks11 {
+	"{STR_VAR_1}
+
+	Perfect! That's what I'll use.
+	I was right to make you choose!
+
+	And now, I think it'd be best,
+	if I were to fly the nest!
+
+	Thanks for all you taught me.
+	I'll be off on a battle spree!
+
+	B-O-N-V-O-Y-A-G-E!
+	And that spells bon voyage,
+	to you this is my homage!"
+}
+
+text gText_ApprenticePickWinSpeech12 {
+	"Oh, yeah, {PLAYER}!
+	I found you again today!
+
+	What should I do? Ask you again?
+	Why not? I'm already asking you!
+
+	Anyways, {PLAYER}…
+	Are you receiving me?
+	You are receiving me!
+	I need some more advice for me!
+
+	It's about what I should yell.
+	Something cool to holler when
+	a battle ends well.
+
+	Come on, I wanna hear you say it!"
+}
+
+text gText_ApprenticeWinSpeechThanks12 {
+	"{STR_VAR_1}
+
+	All right, all right!
+	I'll use that because it's so tight!
+
+	I'm out of things to ask you.
+	Waving bye is all that's left to do.
+
+	But maybe one day we'll meet, with one
+	destined to go down in defeat.
+
+	But, it really is time to say farewell.
+
+	Well, {PLAYER}, I have to roam free,
+	but don't you forget about me!
+
+	Take care, {PLAYER}!
+	Love ya!"
+}
+
+text gText_ApprenticePickWinSpeech13 {
+	"{PLAYER}{KUN}, I'm finished…
+	My nose won't stop dripping…
+
+	I was trying to think up something
+	cool to say when I win a battle.
+
+	It inspired me so much, it made me cry,
+	and now my nose won't stop running…
+
+	So, things being this way,
+	I need you to decide for me, {PLAYER}{KUN}.
+
+	When I win a battle,
+	what should I say?"
+}
+
+text gText_ApprenticeWinSpeechThanks13 {
+	"{STR_VAR_1}
+
+	… … …That's good.
+	No, it's awe inspiring!
+	It's bringing fresh tears to my eyes!
+
+	But in spite of my tears and runny
+	nose, I will use that saying!
+
+	I'm plumb out of things to ask you,
+	{PLAYER}{KUN}.
+
+	From now on, we're rivals!
+	Thanks for everything!"
+}
+
+text gText_ApprenticePickWinSpeech14 {
+	"Er… Um…
+	{PLAYER}{KUN}…
+
+	Please, don't look at me that way.
+	You're making me all nervous.
+
+	I… I need your advice again.
+	I'll make it my last, though…
+
+	It's really embarrassing to ask,
+	but what if I win a battle?
+	What should I say?"
+}
+
+text gText_ApprenticeWinSpeechThanks14 {
+	"{STR_VAR_1}
+
+	Oh… Okay!
+	I'll try to say that!
+	I might be too nervous to say it…
+
+	Thank you, {PLAYER}{KUN}.
+	I have to say good-bye now.
+
+	I'll obey all that you've taught me,
+	{PLAYER}{KUN}, and do the best I can."
+}
+
+text gText_ApprenticePickWinSpeech15 {
+	"Hm? You appear to be {PLAYER}{KUN}…
+	But are you really?
+	Perhaps a clever {PLAYER} DOLL?
+
+	Oh, no, no, no, don't worry!
+	If you really are real, please
+	forget about my rudeness.
+
+	No need to be so angry. All I wish for
+	is more of your fine advice.
+
+	It concerns a saying.
+
+	More precisely, what should I say
+	if I win a battle?"
+}
+
+text gText_ApprenticeWinSpeechThanks15 {
+	"{STR_VAR_1}
+
+	… … … … … …
+	When I win a match…
+
+	{STR_VAR_1}
+
+	…Are you serious?
+
+	I see. If you are serious, that's fine.
+	I thank you for your time.
+
+	I do hope even I will be able to
+	put that saying to good use.
+
+	I seem to have run dry on what advice
+	I need.
+
+	I do believe it's high time I bid you
+	farewell and strike out on my own.
+
+	Thank you, my mentor!
+	I apologize for my skepticism!"
+}

@@ -1,0 +1,101 @@
+text(local) EventTicket_Text_OldSeaMapTooFar {
+	"What's up, youngster?
+
+	What, it's you who's supposed to have
+	a tattered old map?
+
+	Let's have a look.
+	… … … … … …
+
+	Boy, this is quite a ways away.
+	I'm afraid I can't help you…"
+}
+
+text(local) EventTicket_Text_BrineyHoldOnASecond {
+	"BRINEY: Hold on a second!
+
+	What's the idea of turning down
+	someone that I owe so much to?"
+}
+
+text(local) EventTicket_Text_BrineyLetsSail {
+	"{PLAYER}{KUN}, I'm terribly sorry.
+
+	You came to me seeking my help,
+	and we almost turned you away.
+
+	Well, let me make things right.
+
+	We'll sail right away, of course!
+
+	Let's find this island on
+	this OLD SEA MAP!"
+}
+
+text(local) EventTicket_Text_OddTicketGetOnBoard {
+	"Is it you who brought that odd
+	ticket?
+
+	Where you're trying to go is an island
+	that's far, far away.
+
+	No one knows what awaits there…
+
+	The very thought excites my blood
+	as a sailing man!
+
+	Get on board, youngster!"
+}
+
+text(local) FarawayIsland_Entrance_Text_SailorReturn {
+	"CAPT. BRINEY can be so maddeningly
+	fickle…
+
+	Do you want to return to LILYCOVE?"
+}
+
+text(local) BirthIsland_Harbor_Text_SailorReturn {
+	"What an oddly shaped island, eh?
+	Do you want to return to LILYCOVE?"
+}
+
+text(local) EventTicket_Text_OddTicketsWhereTo {
+	"Is it you who brought those
+	odd tickets?
+
+	… … …Hm.
+
+	These tickets will get you to islands
+	that are far, far away.
+
+	No one knows what awaits there,
+	or what may happen there.
+
+	The very thought excites my blood
+	as a sailing man!
+
+	Get on board, youngster!
+	Where shall we sail first?"
+}
+
+text(local) NavelRock_Harbor_Text_SailorReturn {
+	"Did… Did you hear that?
+	That low growling from deep in there.
+
+	Are you sure it's safe?
+	Do you think we should leave?"
+}
+
+text(local) FarawayIsland_Entrance_Text_Sign {
+	"The writing is fading as if it was
+	written a long time ago…
+
+	“…ber, 6th day
+	If any human…sets foot here…
+	again…et it be a kindhearted pers…
+	…ith that hope, I depar…”"
+}
+
+text(local) FarawayIsland_Interior_Text_Mew {
+	"Myuu…"
+}

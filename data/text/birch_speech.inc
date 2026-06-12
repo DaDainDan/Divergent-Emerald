@@ -1,4 +1,5 @@
 gText_Birch_Welcome::
+# 1 "data/text/birch_speech.pory"
 	.string "Hi! Sorry to keep you waiting!\p"
 	.string "Welcome to the world of POKéMON!\p"
 	.string "My name is BIRCH.\p"
@@ -7,11 +8,13 @@ gText_Birch_Welcome::
 	.string "$"
 
 gText_Birch_Pokemon::
+# 14 "data/text/birch_speech.pory"
 	.string "This is what we call a “POKéMON.”\p"
 	.string "\n"
 	.string "$"
 
 gText_Birch_MainSpeech::
+# 20 "data/text/birch_speech.pory"
 	.string "This world is widely inhabited by\n"
 	.string "creatures known as POKéMON.\p"
 	.string "We humans live alongside POKéMON,\n"
@@ -29,20 +32,25 @@ gText_Birch_MainSpeech::
 	.string "$"
 
 gText_Birch_AndYouAre::
+# 44 "data/text/birch_speech.pory"
 	.string "And you are?$"
 
 gText_Birch_BoyOrGirl::
+# 48 "data/text/birch_speech.pory"
 	.string "Are you a boy?\n"
 	.string "Or are you a girl?$"
 
 gText_Birch_WhatsYourName::
+# 53 "data/text/birch_speech.pory"
 	.string "All right.\n"
 	.string "What's your name?$"
 
 gText_Birch_SoItsPlayer::
+# 58 "data/text/birch_speech.pory"
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
+# 62 "data/text/birch_speech.pory"
 	.string "Ah, okay!\p"
 	.string "You're {PLAYER}{KUN} who's moving to my\n"
 	.string "hometown of LITTLEROOT.\l"
@@ -50,6 +58,7 @@ gText_Birch_YourePlayer::
 	.string "$"
 
 gText_Birch_AreYouReady::
+# 72 "data/text/birch_speech.pory"
 	.string "All right, are you ready?\p"
 	.string "Your very own adventure is about\n"
 	.string "to unfold.\p"

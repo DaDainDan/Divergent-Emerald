@@ -1,0 +1,6133 @@
+text(local) Route102_Text_CalvinIntro {
+	"If you have POKéMON with you, then
+	you're an official POKéMON TRAINER!
+	You can't say no to my challenge!"
+}
+
+text(local) Route102_Text_CalvinDefeated {
+	"Arrgh, I lost…
+	I should have trained mine more…"
+}
+
+text(local) Route102_Text_CalvinPostBattle {
+	"Listen, you. If you're strong,
+	you should have told me before!"
+}
+
+text(local) Route102_Text_CalvinRegister {
+	"I've been working hard at this since
+	I saw you before.
+
+	I'd like to battle you again, so can
+	you register me in your POKéNAV?"
+}
+
+text(local) Route102_Text_CalvinRegisterShort {
+	"I'd like to battle you again, so can
+	you register me in your POKéNAV?"
+}
+
+text(local) Route102_Text_CalvinRematchIntro {
+	"Ever since I lost to you, I desperately
+	trained my POKéMON.
+	You can't say no to my challenge!"
+}
+
+text(local) Route102_Text_CalvinRematchDefeated {
+	"Arrgh, I lost…
+	Is my training method not right?"
+}
+
+text(local) Route102_Text_CalvinRematchPostBattle {
+	"If you're going to get stronger,
+	I'll get stronger, too."
+}
+
+text(local) Route102_Text_AllenIntro {
+	"Did you just become a TRAINER?
+	We're both beginners!"
+}
+
+text(local) Route102_Text_AllenDefeated {
+	"I called you because I thought
+	I could beat you…"
+}
+
+text(local) Route102_Text_AllenPostBattle {
+	"I haven't won once yet…
+	I wish I would win soon…"
+}
+
+text(local) Route102_Text_RickIntro {
+	"Hahah! Our eyes met!
+	I'll take you on with my BUG POKéMON!"
+}
+
+text(local) Route102_Text_RickDefeated {
+	"Ow! Down and out!"
+}
+
+text(local) Route102_Text_RickPostBattle {
+	"If you lock eyes with a TRAINER,
+	you have to challenge! It's a rule!"
+}
+
+text(local) Route102_Text_TianaIntro {
+	"I'm going to keep winning and aim
+	to be the best TRAINER.
+
+	Help me further my career!"
+}
+
+text(local) Route102_Text_TianaDefeated {
+	"I ended up furthering your career…"
+}
+
+text(local) Route102_Text_TianaPostBattle {
+	"To keep winning my way up, I see that
+	I have to catch more POKéMON."
+}
+
+text(local) Route103_Text_DaisyIntro {
+	"Did you feel the tug of our
+	soul-soothing fragrance?"
+}
+
+text(local) Route103_Text_DaisyDefeated {
+	"You weren't led astray by our aroma…"
+}
+
+text(local) Route103_Text_DaisyPostBattle {
+	"Aromatherapy is a form of mental
+	healing that works with fragrances."
+}
+
+text(local) Route103_Text_AmyIntro {
+	"AMY: I'm AMY.
+	And this is my little sister LIV.
+	We battle together!"
+}
+
+text(local) Route103_Text_AmyDefeated {
+	"AMY: Uh-oh, we lost."
+}
+
+text(local) Route103_Text_AmyPostBattle {
+	"AMY: You have to think about all
+	kinds of things when you're battling
+	against two TRAINERS."
+}
+
+text(local) Route103_Text_AmyNotEnoughPokemon {
+	"AMY: Uh-oh, you have only one
+	POKéMON with you.
+	You can't battle us like that."
+}
+
+text(local) Route103_Text_LivIntro {
+	"LIV: We battle together as one
+	team."
+}
+
+text(local) Route103_Text_LivDefeated {
+	"LIV: Oh, we lost, big sister…"
+}
+
+text(local) Route103_Text_LivPostBattle {
+	"LIV: We work perfectly together,
+	me and my big sister…
+
+	But we still lost…"
+}
+
+text(local) Route103_Text_AmyLivRegister {
+	"LIV: Really, we're a lot better…
+	It's true! We'll show you next time!"
+}
+
+text(local) Route103_Text_LivNotEnoughPokemon {
+	"LIV: If you want to battle us,
+	you have to have two POKéMON!
+	It's not fair if you don't!"
+}
+
+text(local) Route103_Text_AmyRematchIntro {
+	"AMY: I'm AMY.
+	And this is my little sister LIV.
+	We battle together!"
+}
+
+text(local) Route103_Text_AmyRematchDefeated {
+	"AMY: Aww, boo!
+	We couldn't win again…"
+}
+
+text(local) Route103_Text_AmyRematchPostBattle {
+	"AMY: You have to think about all
+	kinds of things when you're battling
+	against two TRAINERS."
+}
+
+text(local) Route103_Text_AmyRematchNotEnoughPokemon {
+	"AMY: Uh-oh, you have only one
+	POKéMON with you.
+	You can't battle us like that."
+}
+
+text(local) Route103_Text_LivRematchIntro {
+	"LIV: We battle together as one
+	team."
+}
+
+text(local) Route103_Text_LivRematchDefeated {
+	"LIV: Awww, we lost again…
+	Big sister…"
+}
+
+text(local) Route103_Text_LivRematchPostBattle {
+	"LIV: We work perfectly together,
+	me and my big sister…
+
+	But why did we lose again?"
+}
+
+text(local) Route103_Text_LivRematchNotEnoughPokemon {
+	"LIV: If you want to battle us, you
+	have to have two POKéMON!
+	It's not fair if you don't!"
+}
+
+text(local) Route103_Text_AndrewIntro {
+	"Gah! My fishing line's all snarled up!
+	I'm getting frustrated and mean!
+	That's it! Battle me!"
+}
+
+text(local) Route103_Text_AndrewDefeated {
+	"Gah! Lost it!
+	I'm even more annoyed now!"
+}
+
+text(local) Route103_Text_AndrewPostBattle {
+	"Gah, I'm still boiling mad…
+	Grrrrr…"
+}
+
+text(local) Route103_Text_MiguelIntro {
+	"My POKéMON is delightfully adorable!
+	Don't be shy--I'll show you!"
+}
+
+text(local) Route103_Text_MiguelDefeated {
+	"Oh, my gosh!
+	My darling POKéMON!"
+}
+
+text(local) Route103_Text_MiguelPostBattle {
+	"My delightful POKéMON looks darling
+	even when it's fainted!"
+}
+
+text(local) Route103_Text_MiguelRegister {
+	"I'll get you to come out and look in
+	on my delightful POKéMON again!"
+}
+
+text(local) Route103_Text_MiguelRematchIntro {
+	"Hi, you! My delightfully adorable
+	POKéMON has become more darling!"
+}
+
+text(local) Route103_Text_MiguelRematchDefeated {
+	"Oh!
+	My darling POKéMON!"
+}
+
+text(local) Route103_Text_MiguelRematchPostBattle {
+	"The more I spend time with it,
+	the more adorable my POKéMON becomes."
+}
+
+text(local) Route103_Text_PeteIntro {
+	"This sort of distance…
+	You should just swim it!"
+}
+
+text(local) Route103_Text_PeteDefeated {
+	"Oh, that's good going!"
+}
+
+text(local) Route103_Text_PetePostBattle {
+	"Oh, I understand where you're coming
+	from now.
+
+	If I had a POKéMON that trusty,
+	I'd want to SURF on it, too!"
+}
+
+text(local) Route103_Text_IsabelleIntro {
+	"Watch where you're going!
+	We're going to crash!"
+}
+
+text(local) Route103_Text_IsabelleDefeated {
+	"Groan…"
+}
+
+text(local) Route103_Text_IsabellePostBattle {
+	"I'm a poor swimmer so I was practicing…
+	Sorry for almost crashing into you."
+}
+
+text(local) Route103_Text_RhettIntro {
+	"Whoa!
+	How'd you get into a space this small?"
+}
+
+text(local) Route103_Text_RhettDefeated {
+	"Whoa!
+	The kid can rock!"
+}
+
+text(local) Route103_Text_RhettPostBattle {
+	"Do you like cramped quarters
+	like this?"
+}
+
+text(local) Route103_Text_MarcosIntro {
+	"Did my guitar's wailing draw you in?"
+}
+
+text(local) Route103_Text_MarcosDefeated {
+	"My one-man show is ruined…"
+}
+
+text(local) Route103_Text_MarcosPostBattle {
+	"I was playing my guitar where few
+	people were around, but a lot of fans
+	have gathered.
+
+	Heh, maybe I should turn pro."
+}
+
+text(local) Route104_Text_GinaIntro {
+	"GINA: Okay, let's battle with our
+	POKéMON!"
+}
+
+text(local) Route104_Text_GinaDefeat {
+	"GINA: Losing upsets me!"
+}
+
+text(local) Route104_Text_GinaPostBattle {
+	"GINA: You are strong!
+	We have to train lots more!"
+}
+
+text(local) Route104_Text_GinaNotEnoughMons {
+	"GINA: Oh? Only one POKéMON?
+	Then, we don't battle with you.
+
+	If there's only one POKéMON, it will
+	be lonesome. That's not nice."
+}
+
+text(local) Route104_Text_MiaIntro {
+	"MIA: We are twins, so we battle
+	POKéMON together."
+}
+
+text(local) Route104_Text_MiaDefeat {
+	"MIA: We battled together, but we
+	both lost…"
+}
+
+text(local) Route104_Text_MiaPostBattle {
+	"MIA: We will train our POKéMON more
+	and be strong like you."
+}
+
+text(local) Route104_Text_MiaNotEnoughMons {
+	"MIA: You want to battle with us?
+
+	It's a big no-no if you don't have two
+	POKéMON with you.
+	We're too strong for you!"
+}
+
+text(local) Route104_Text_IvanIntro {
+	"Why keep it a secret?
+	I'm the WATER POKéMON expert!
+
+	Huh?
+	You don't know me?"
+}
+
+text(local) Route104_Text_IvanDefeat {
+	"I thought I wasn't too bad, if I may
+	say so, but I guess not… Bleah…"
+}
+
+text(local) Route104_Text_IvanPostBattle {
+	"I got too into fishing.
+	I forgot I had to raise my POKéMON…"
+}
+
+text(local) Route104_Text_BillyIntro {
+	"Leaving footprints in the sand is
+	so fun!"
+}
+
+text(local) Route104_Text_BillyDefeat {
+	"Waah! I got sand in my runners!
+	They're all gritty!"
+}
+
+text(local) Route104_Text_BillyPostBattle {
+	"I want to leave my footprints in
+	the sand everywhere, but they
+	disappear quickly…"
+}
+
+text(local) Route104_Text_HaleyIntro {
+	"Should I…
+	Or shouldn't I?
+
+	Okay, sure, I will battle!"
+}
+
+text(local) Route104_Text_HaleyDefeat {
+	"I shouldn't have battled…"
+}
+
+text(local) Route104_Text_HaleyPostBattle {
+	"If you're faced with a decision and
+	you let someone else choose for you,
+	you will regret it, however things
+	turn out."
+}
+
+text(local) Route104_Text_HaleyRegister1 {
+	"You're strong, but should I register
+	you in my POKéNAV?
+	Maybe I shouldn't…
+
+	Okay, sure, I will register you!"
+}
+
+text(local) Route104_Text_HaleyRegister2 {
+	"You're strong, but should I register
+	you in my POKéNAV?
+	Maybe I shouldn't…
+
+	Okay, sure, I will register you!"
+}
+
+text(local) Route104_Text_HaleyRematchIntro {
+	"Come on, battle with me!"
+}
+
+text(local) Route104_Text_HaleyRematchDefeat {
+	"Ohh…
+	I thought I could win…"
+}
+
+text(local) Route104_Text_HaleyPostRematch {
+	"I made the decision to battle, so
+	I can accept this loss with grace.
+
+	I am still upset about losing!"
+}
+
+text(local) Route104_Text_WinstonIntro {
+	"Oh, sure, I'll accept your challenge.
+	I have a lot of money."
+}
+
+text(local) Route104_Text_WinstonDefeat {
+	"Why couldn't I win?"
+}
+
+text(local) Route104_Text_WinstonPostBattle {
+	"There are some things money can't buy.
+	That's POKéMON…"
+}
+
+text(local) Route104_Text_WinstonRegister1 {
+	"Hm?
+	Ah, you've obtained a POKéNAV.
+
+	I will gladly register you.
+	After all, I have plenty of money."
+}
+
+text(local) Route104_Text_WinstonRegister2 {
+	"Hm?
+	Ah, you've obtained a POKéNAV.
+
+	I will gladly register you.
+	After all, I have plenty of money."
+}
+
+text(local) Route104_Text_WinstonRematchIntro {
+	"After I lost to you, I learned a bunch
+	of things about POKéMON."
+}
+
+text(local) Route104_Text_WinstonRematchDefeat {
+	"I lost again?
+	Why couldn't I win?"
+}
+
+text(local) Route104_Text_WinstonPostRematch {
+	"I'm fabulously wealthy, but I can't
+	seem to win at POKéMON…
+
+	It's so deep, the world of POKéMON…"
+}
+
+text(local) Route104_Text_CindyIntro {
+	"We must have been fated to meet.
+	May I ask you for a battle?"
+}
+
+text(local) Route104_Text_CindyDefeat {
+	"Oh, my!"
+}
+
+text(local) Route104_Text_CindyPostBattle {
+	"“Hello” is the beginning of “good-bye.”
+	I hope we meet again."
+}
+
+text(local) Route104_Text_CindyRegister1 {
+	"Hello, we meet again.
+
+	We seem to be drawn together. Let's
+	register each other in our POKéNAVS."
+}
+
+text(local) Route104_Text_CindyRegister2 {
+	"We should commemorate how we seem
+	to be drawn to each other.
+
+	Let's register each other in our
+	POKéNAVS."
+}
+
+text(local) Route104_Text_CindyRematchIntro {
+	"Hello, we meet again.
+	May I ask you for a battle?"
+}
+
+text(local) Route104_Text_CindyRematchDefeat {
+	"Oh, my…
+	I did the best that I could…"
+}
+
+text(local) Route104_Text_CindyPostRematch {
+	"“Hello” is the beginning of “good-bye.”
+	I hope we meet again."
+}
+
+text(local) Route104_Text_DarianIntro {
+	"I fished up a tough-looking POKéMON!
+
+	It has this magical quality to it!
+	It surely looks tough, yes it does!"
+}
+
+text(local) Route104_Text_DarianDefeat {
+	"What the…"
+}
+
+text(local) Route104_Text_DarianPostBattle {
+	"Hey, MAGIKARP, you sure don't live up
+	to your name, do you?"
+}
+
+text(local) Route105_Text_FosterIntro {
+	"There's supposed to be a mystical
+	rock around here.
+	Do you know anything about it?"
+}
+
+text(local) Route105_Text_FosterDefeated {
+	"I was thinking too much about that
+	rock, while my POKéMON remained weak…"
+}
+
+text(local) Route105_Text_FosterPostBattle {
+	"I can spend hours and hours staring
+	at a nice rock without growing bored."
+}
+
+text(local) Route105_Text_LuisIntro {
+	"Whew! I was worried that a kid was
+	drowning when I saw you.
+
+	You seem to be okay, so what do you
+	say to a battle?"
+}
+
+text(local) Route105_Text_LuisDefeated {
+	"Glub… Glub…"
+}
+
+text(local) Route105_Text_LuisPostBattle {
+	"If you are drowning, the signal is to
+	wave one arm toward the beach."
+}
+
+text(local) Route105_Text_DominikIntro {
+	"Swimming the deep blue sea…
+	It feels the greatest!"
+}
+
+text(local) Route105_Text_DominikDefeated {
+	"I lost…
+	Now I'm feeling blue…"
+}
+
+text(local) Route105_Text_DominikPostBattle {
+	"Why is the sea blue?
+
+	I learned about that at the MUSEUM in
+	SLATEPORT, but I forgot."
+}
+
+text(local) Route105_Text_BeverlyIntro {
+	"My body feels lighter in the water.
+	It's as if I've gotten slimmer!"
+}
+
+text(local) Route105_Text_BeverlyDefeated {
+	"I'm floating…"
+}
+
+text(local) Route105_Text_PostBattle {
+	"Your body weight is reduced to just
+	one tenth in the water.
+
+	That would make me…
+	Whoops! I'm not telling you my weight!"
+}
+
+text(local) Route105_Text_ImaniIntro {
+	"The blue, blue sky…
+	The vast sea…
+	It's so peaceful…"
+}
+
+text(local) Route105_Text_ImaniDefeated {
+	"I lost while I was lounging!"
+}
+
+text(local) Route105_Text_ImaniPostBattle {
+	"I want to be told I'm relaxing to be
+	with. Giggle."
+}
+
+text(local) Route105_Text_AndresIntro {
+	"I'm convinced that the sea keeps
+	secrets from us."
+}
+
+text(local) Route105_Text_AndresDefeated {
+	"Yes…
+	I am no good at battling…"
+}
+
+text(local) Route105_Text_AndresPostBattle {
+	"I'm sure there are many secrets to be
+	discovered in the world's seas.
+
+	I mean to find them all!"
+}
+
+text(local) Route105_Text_AndresRegister {
+	"Huh? I'm so weak, but you're willing
+	to register me in your POKéNAV?"
+}
+
+text(local) Route105_Text_AndresRematchIntro {
+	"I've told you that I'm weak…
+	Are you sure you want to do this?"
+}
+
+text(local) Route105_Text_AndresRematchDefeated {
+	"Yes…
+	I didn't think I could win."
+}
+
+text(local) Route105_Text_AndresRematchPostBattle {
+	"I may be weak at battling, but my
+	drive to explore can't be bested.
+
+	I will travel the seas all around
+	the world!"
+}
+
+text(local) Route105_Text_JosueIntro {
+	"I'm exhausted from swimming.
+	I'm just not used to it.
+
+	I need a battle for a change of pace!"
+}
+
+text(local) Route105_Text_JosueDefeated {
+	"I lost because I battled at sea."
+}
+
+text(local) Route105_Text_JosuePostBattle {
+	"Yeah, for me, the sky is a much better
+	match than the sea."
+}
+
+text(local) Route106_Text_ElliotIntro {
+	"Which do you prefer, fishing in the
+	sea or a stream?"
+}
+
+text(local) Route106_Text_ElliotDefeated {
+	"Like in deep-sea fishing, I lost
+	spectacularly!"
+}
+
+text(local) Route106_Text_ElliotPostBattle {
+	"Fishing is the greatest whether it's
+	in the sea or a stream.
+	You agree with me, right?"
+}
+
+text(local) Route106_Text_ElliotRegister {
+	"Fishing's great, but so is battling.
+	If you don't mind, can we meet again?"
+}
+
+text(local) Route106_Text_ElliotRematchIntro {
+	"I caught a bunch of POKéMON fishing.
+	I'll show you an impressive battle!"
+}
+
+text(local) Route106_Text_ElliotRematchDefeated {
+	"I lost again spectacularly!"
+}
+
+text(local) Route106_Text_ElliotRematchPostBattle {
+	"Win or lose, POKéMON are the greatest!
+	You agree with me, right?"
+}
+
+text(local) Route106_Text_NedIntro {
+	"What do people do if they need to go
+	to a washroom?
+
+	What if my ROD hooks a big one while
+	I'm in the washroom? I just can't go…"
+}
+
+text(local) Route106_Text_NedDefeated {
+	"I lost because I'm trying to not go
+	to the washroom…"
+}
+
+text(local) Route106_Text_NedPostBattle {
+	"Oh, no! I've got this feeling I'll hook
+	a big one!"
+}
+
+text(local) Route106_Text_DouglasIntro {
+	"Hahahah! I'm a lousy runner, but in
+	the water you can't catch me!"
+}
+
+text(local) Route106_Text_DouglasDefeated {
+	"I give up!"
+}
+
+text(local) Route106_Text_DouglasPostBattle {
+	"I wouldn't lose in a swim race…"
+}
+
+text(local) Route106_Text_KylaIntro {
+	"The sea is my backyard. I'm not going
+	to take it easy because you're a kid!"
+}
+
+text(local) Route106_Text_KylaDefeated {
+	"Did you take it easy on me by any
+	chance?"
+}
+
+text(local) Route106_Text_KylaPostBattle {
+	"Drifting along with the waves…
+	I love it! Why don't you give it a try?"
+}
+
+text(local) Route107_Text_DarrinIntro {
+	"Yawn…
+
+	I must have drifted off to sleep while
+	I was drifting in the waves."
+}
+
+text(local) Route107_Text_DarrinDefeated {
+	"Ahaha, I lost…
+	I'll take a snooze, I think…"
+}
+
+text(local) Route107_Text_DarrinPostBattle {
+	"Floating and being rocked by
+	the waves--it's like sleeping in
+	a plush, comfy bed."
+}
+
+text(local) Route107_Text_TonyIntro {
+	"The sea is like my backyard.
+	Let's battle!"
+}
+
+text(local) Route107_Text_TonyDefeated {
+	"I lost on my home field…
+	I'm in shock!"
+}
+
+text(local) Route107_Text_TonyPostBattle {
+	"I swim the seas with a heart full of
+	dreams…
+
+	It's a song!
+	Anyways, I'm swimming some more."
+}
+
+text(local) Route107_Text_TonyRegister {
+	"You've shocked me to the bone!
+	Well, so you won't forget me…"
+}
+
+text(local) Route107_Text_TonyRematchIntro {
+	"Swimming in the big, wide sea,
+	my POKéMON has grown stronger!"
+}
+
+text(local) Route107_Text_TonyRematchDefeated {
+	"What a shock!
+
+	My POKéMON has gotten stronger, but
+	I stayed weak as a TRAINER!"
+}
+
+text(local) Route107_Text_TonyRematchPostBattle {
+	"What you learn in battle makes you
+	a stronger TRAINER.
+	The waves taught me that."
+}
+
+text(local) Route107_Text_DeniseIntro {
+	"Do you know a little town called
+	DEWFORD?"
+}
+
+text(local) Route107_Text_DeniseDefeated {
+	"I hate this!"
+}
+
+text(local) Route107_Text_DenisePostBattle {
+	"A weird saying is getting really
+	trendy at DEWFORD HALL."
+}
+
+text(local) Route107_Text_BethIntro {
+	"Did you want to battle me?
+	Sure, I'll go with you!"
+}
+
+text(local) Route107_Text_BethDefeated {
+	"I wasn't good enough for you."
+}
+
+text(local) Route107_Text_BethPostBattle {
+	"I think you're going to keep getting
+	better. I'll go for it, too!"
+}
+
+text(local) Route107_Text_LisaIntro {
+	"LISA: We challenge you as a sister
+	and brother!"
+}
+
+text(local) Route107_Text_LisaDefeated {
+	"LISA: Awesome.
+	You're in a different class of tough."
+}
+
+text(local) Route107_Text_LisaPostBattle {
+	"LISA: Do you have any friends who
+	would go to the beach with you?"
+}
+
+text(local) Route107_Text_LisaNotEnoughPokemon {
+	"LISA: If you want to battle with us,
+	bring more POKéMON."
+}
+
+text(local) Route107_Text_RayIntro {
+	"RAY: We always battle POKéMON,
+	me and my sister.
+
+	I always lose, but we can beat you
+	2-on-2!"
+}
+
+text(local) Route107_Text_RayDefeated {
+	"RAY: Wowee, you're at a higher level
+	than us!"
+}
+
+text(local) Route107_Text_RayPostBattle {
+	"RAY: My sister gave me my POKéMON.
+	I raised it, and now it's my important
+	partner!"
+}
+
+text(local) Route107_Text_RayNotEnoughPokemon {
+	"RAY: If you want to battle us,
+	go bring some more POKéMON!"
+}
+
+text(local) Route107_Text_CamronIntro {
+	"I'm in the middle of a triathlon,
+	but I'm nowhere near tired!"
+}
+
+text(local) Route107_Text_CamronDefeated {
+	"That exhausted me…"
+}
+
+text(local) Route107_Text_CamronPostBattle {
+	"I still have swimming and running left
+	to do after this.
+
+	Am I going to be okay?"
+}
+
+text(local) Route108_Text_JeromeIntro {
+	"My dream is to swim the world's seven
+	seas!"
+}
+
+text(local) Route108_Text_JeromeDefeated {
+	"I won't be able to swim the seven seas
+	like this…"
+}
+
+text(local) Route108_Text_JeromePostBattle {
+	"Playing with marine POKéMON is one of
+	the pleasures of swimming!"
+}
+
+text(local) Route108_Text_MatthewIntro {
+	"Ahoy, there! Are you going out to
+	the ABANDONED SHIP, too?"
+}
+
+text(local) Route108_Text_MatthewDefeated {
+	"I'm sinking!
+	Glub… Glub…"
+}
+
+text(local) Route108_Text_MatthewPostBattle {
+	"Some people even go inside that
+	ABANDONED SHIP."
+}
+
+text(local) Route108_Text_TaraIntro {
+	"My liar of a boyfriend told me that
+	I look great in a bikini…"
+}
+
+text(local) Route108_Text_TaraDefeated {
+	"Oh, boo!"
+}
+
+text(local) Route108_Text_TaraPostBattle {
+	"Even if it's a lie, I love being told
+	I look great…
+	We girls are so complex…"
+}
+
+text(local) Route108_Text_MissyIntro {
+	"I love the sea!
+	I forget all my worries when I swim!"
+}
+
+text(local) Route108_Text_MissyDefeated {
+	"When I lose a battle, I get all
+	stressed out!"
+}
+
+text(local) Route108_Text_MissyPostBattle {
+	"Work off your stress by swimming!
+	It's so healthy!"
+}
+
+text(local) Route108_Text_CoryIntro {
+	"I love WATER-type POKéMON.
+	I love other POKéMON, too!"
+}
+
+text(local) Route108_Text_CoryDefeated {
+	"Waaah! I lost!
+	Waaah! Waaah!"
+}
+
+text(local) Route108_Text_CoryPostBattle {
+	"Shouting is good for me!
+	It uplifts me!"
+}
+
+text(local) Route108_Text_CoryRegister {
+	"I love tough TRAINERS, too!
+	Register me in your POKéNAV!"
+}
+
+text(local) Route108_Text_CoryRematchIntro {
+	"Win or lose, I love battling at sea!"
+}
+
+text(local) Route108_Text_CoryRematchDefeated {
+	"Waaah! I lost again!
+	Waaah! Waaah!"
+}
+
+text(local) Route108_Text_CoryRematchPostBattle {
+	"If you're faced with a challenge,
+	try shouting at the sea!"
+}
+
+text(local) Route108_Text_CarolinaIntro {
+	"I take huge pride in my POKéMON.
+	We'll show you one speedy battle!"
+}
+
+text(local) Route108_Text_CarolinaDefeated {
+	"That wasn't cute at all."
+}
+
+text(local) Route108_Text_CarolinaPostBattle {
+	"Since I'm at sea like this, I wouldn't
+	mind putting on a pink, frilly swimsuit…"
+}
+
+text(local) Route109_Text_DavidIntro {
+	"Hiyah! Look at my chiseled abs!
+	This is what you call “cut”!"
+}
+
+text(local) Route109_Text_DavidDefeated {
+	"Aiyah!
+	Flubbed out!"
+}
+
+text(local) Route109_Text_DavidPostBattle {
+	"Hiyah!
+
+	My sculpted abs have nothing to do
+	with POKéMON battles!"
+}
+
+text(local) Route109_Text_AliceIntro {
+	"Are you properly protected against
+	the sun?"
+}
+
+text(local) Route109_Text_AliceDefeated {
+	"Ouch, ouch, ouch!"
+}
+
+text(local) Route109_Text_AlicePostBattle {
+	"Cheeks are the most prone to burning!"
+}
+
+text(local) Route109_Text_HueyIntro {
+	"I've laid anchor in ports around
+	the world, but SLATEPORT's the best."
+}
+
+text(local) Route109_Text_HueyDefeated {
+	"You're the best!"
+}
+
+text(local) Route109_Text_HueyPostBattle {
+	"In the best port was the best
+	TRAINER…"
+}
+
+text(local) Route109_Text_EdmondIntro {
+	"Urrrrppp…
+	Battle? With me?"
+}
+
+text(local) Route109_Text_EdmondDefeated {
+	"Urp… Ooooooohhhhhh…
+	Urrrrpppp…"
+}
+
+text(local) Route109_Text_EdmondPostBattle {
+	"I'm usually stronger than this!
+	I'm just seasick as a dog!
+
+	I'm a SAILOR, but…"
+}
+
+text(local) Route109_Text_RickyIntro {
+	"I'm thirsty… I could go for a SODA POP
+	at the SEASHORE HOUSE…"
+}
+
+text(local) Route109_Text_RickyDefeated {
+	"Groan…"
+}
+
+text(local) Route109_Text_RickyPostBattle {
+	"I'm getting famished… My inner tube
+	looks like a giant doughnut…"
+}
+
+text(local) Route109_Text_RickyRegister {
+	"Will you have another match with me
+	when I'm not all thirsty?"
+}
+
+text(local) Route109_Text_RickyRematchIntro {
+	"I'm hungry, but I've got enough pep in
+	me for a battle!"
+}
+
+text(local) Route109_Text_RickyRematchDefeated {
+	"I lost…
+	It's because I'm hungry…"
+}
+
+text(local) Route109_Text_RickyRematchPostBattle {
+	"When you eat on a beach, everything
+	seems to taste a little better."
+}
+
+text(local) Route109_Text_LolaIntro {
+	"Doesn't a beach umbrella look like
+	a giant flower?"
+}
+
+text(local) Route109_Text_LolaDefeated {
+	"Mommy!"
+}
+
+text(local) Route109_Text_LolaPostBattle {
+	"If you look at the beach from the sky,
+	it looks like a big flower garden!"
+}
+
+text(local) Route109_Text_LolaRegister {
+	"Me?
+	I'm here every day!"
+}
+
+text(local) Route109_Text_LolaRematchIntro {
+	"I'm not losing to you again!
+	That's why I have my inner tube!"
+}
+
+text(local) Route109_Text_LolaRematchDefeated {
+	"Mommy!"
+}
+
+text(local) Route109_Text_LolaRematchPostBattle {
+	"If I have an inner tube, me and my
+	POKéMON's cuteness goes way up!"
+}
+
+text(local) Route109_Text_AustinaIntro {
+	"I can't swim without my inner tube,
+	but I won't lose at POKéMON!"
+}
+
+text(local) Route109_Text_AustinaDefeated {
+	"Did I lose because I have an inner
+	tube?"
+}
+
+text(local) Route109_Text_AustinaPostBattle {
+	"My inner tube is a fashion item.
+	I can't be seen without it."
+}
+
+text(local) Route109_Text_GwenIntro {
+	"Hi, big TRAINER.
+	Will you battle with me?"
+}
+
+text(local) Route109_Text_GwenDefeated {
+	"Oh, you're strong."
+}
+
+text(local) Route109_Text_GwenPostBattle {
+	"How did you get to be so strong?"
+}
+
+text(local) Route109_Text_CarterIntro {
+	"Wahahah! This dude's going to catch
+	himself a big one!"
+}
+
+text(local) Route109_Text_CarterDefeated {
+	"This dude just lost one…"
+}
+
+text(local) Route109_Text_CarterPostBattle {
+	"This dude thinks you're a big one.
+	No, you're a big-one-to-be!"
+}
+
+text(local) Route109_Text_PaulIntro {
+	"PAUL: Well, this is a mood-breaker.
+
+	I wish you wouldn't disturb our
+	precious time together."
+}
+
+text(local) Route109_Text_PaulDefeated {
+	"PAUL: Well, I give up."
+}
+
+text(local) Route109_Text_PaulPostBattle {
+	"PAUL: Well, don't tell anyone that
+	we're here.
+	This is just our private world of two!"
+}
+
+text(local) Route109_Text_PaulNotEnoughPokemon {
+	"PAUL: We're totally, deeply in love.
+	That's why we make our POKéMON battle
+	together."
+}
+
+text(local) Route109_Text_MelIntro {
+	"MEL: We're, like, totally in love.
+	Our romance is heating up all of HOENN!"
+}
+
+text(local) Route109_Text_MelDefeated {
+	"MEL: We lost, and it's my fault!
+	PAUL will hate me!"
+}
+
+text(local) Route109_Text_MelPostBattle {
+	"MEL: Um, PAUL, are you angry with me?
+	Please don't be angry."
+}
+
+text(local) Route109_Text_MelNotEnoughPokemon {
+	"MEL: We're, like, deeply and truly in love.
+	That's why we make our POKéMON
+	battle together."
+}
+
+text(local) Route109_Text_ChandlerIntro {
+	"Tadaah! See?
+	My inner tube's round!"
+}
+
+text(local) Route109_Text_ChandlerDefeated {
+	"Oh, oh!
+	Too bad!"
+}
+
+text(local) Route109_Text_ChandlerPostBattle {
+	"After I showed you my round inner
+	tube, too…"
+}
+
+text(local) Route109_Text_HaileyIntro {
+	"I can't swim, so I'm pretending
+	to swim."
+}
+
+text(local) Route109_Text_HaileyDefeated {
+	"I thought so!
+	I didn't think we could win."
+}
+
+text(local) Route109_Text_HaileyPostBattle {
+	"When I learn how to swim, I think
+	my POKéMON will become tougher."
+}
+
+text(local) Route109_Text_ElijahIntro {
+	"For a guy as macho as me, this kind
+	of POKéMON is the perfect match!"
+}
+
+text(local) Route109_Text_ElijahDefeated {
+	"I'm cool even in defeat, hey?"
+}
+
+text(local) Route109_Text_ElijahPostBattle {
+	"For a guy as macho as me, a port
+	is the perfect setting!
+
+	I guess I'll head for SLATEPORT."
+}
+
+text(local) Route110_Text_JacobIntro {
+	"Whoa! Watch it!
+	I guess you're not used to BIKE racing."
+}
+
+text(local) Route110_Text_JacobDefeated {
+	"Whoa!
+	My brakes failed!"
+}
+
+text(local) Route110_Text_JacobPostBattle {
+	"Flat tires and brake problems can
+	cause serious injury!
+	Inspect your BIKE for problems!"
+}
+
+text(local) Route110_Text_AnthonyIntro {
+	"Yo, you!
+	Can you keep up with my speed?"
+}
+
+text(local) Route110_Text_AnthonyDefeated {
+	"Crash and burn!"
+}
+
+text(local) Route110_Text_AnthonyPostBattle {
+	"Speed alone won't let me win at POKéMON.
+	I need to reconsider this…"
+}
+
+text(local) Route110_Text_BenjaminIntro {
+	"Don't panic if your BIKE's going fast!"
+}
+
+text(local) Route110_Text_BenjaminDefeated {
+	"I shouldn't panic during POKéMON
+	battles…"
+}
+
+text(local) Route110_Text_BenjaminPostBattle {
+	"There's no need to panic or stress.
+	Take it easy. There's plenty of time."
+}
+
+text(local) Route110_Text_BenjaminRegister {
+	"I'll keep chugging on without stressing.
+	Give me a shout if you're up to it."
+}
+
+text(local) Route110_Text_BenjaminRematchIntro {
+	"Aren't you going a little too fast?
+	Take it easy and let's battle."
+}
+
+text(local) Route110_Text_BenjaminRematchDefeated {
+	"I didn't panic, but I still lost…"
+}
+
+text(local) Route110_Text_BenjaminRematchPostBattle {
+	"There's no need to panic or stress.
+	Take it easy. There's plenty of time."
+}
+
+text(local) Route110_Text_AbigailIntro {
+	"The triathlon is hard in the extreme.
+
+	You have to complete the three events
+	of swimming, cycling, and running."
+}
+
+text(local) Route110_Text_AbigailDefeated {
+	"POKéMON battles are hard, too!"
+}
+
+text(local) Route110_Text_AbigailPostBattle {
+	"I'm exhausted, so I need a break.
+	It's important to get proper rest."
+}
+
+text(local) Route110_Text_AbigailRegister {
+	"You know, I like you!
+	Let's have a rematch on CYCLING ROAD."
+}
+
+text(local) Route110_Text_AbigailRematchIntro {
+	"Isn't it neat to hold a battle while
+	cycling?"
+}
+
+text(local) Route110_Text_AbigailRematchDefeated {
+	"Wow…
+	How could you be so strong?"
+}
+
+text(local) Route110_Text_AbigailRematchPostBattle {
+	"Were you going after a record?
+
+	I'm sorry if I held you up!"
+}
+
+text(local) Route110_Text_JasmineIntro {
+	"I've been riding without stopping.
+	My thighs are like rocks!"
+}
+
+text(local) Route110_Text_JasmineDefeated {
+	"I'm worried about muscle cramps…"
+}
+
+text(local) Route110_Text_JasminePostBattle {
+	"Oh, you have some GYM BADGES?
+	No wonder you're so strong!"
+}
+
+text(local) Route110_Text_EdwardIntro {
+	"I have foreseen your intentions!
+	I cannot possibly lose!"
+}
+
+text(local) Route110_Text_EdwardDefeated {
+	"I failed to prophesize my own demise!"
+}
+
+text(local) Route110_Text_EdwardPostBattle {
+	"I see your future…
+
+	Hmm…
+	I see a shining light…"
+}
+
+text(local) Route110_Text_JaclynIntro {
+	"Ahahahaha!
+	I'll dazzle you with my wonders!"
+}
+
+text(local) Route110_Text_JaclynDefeated {
+	"I wondrously lost!"
+}
+
+text(local) Route110_Text_JaclynPostBattle {
+	"You managed to win only because it was
+	a wonder! Yes, a wonder!
+	Don't think you can win all the time!"
+}
+
+text(local) Route110_Text_EdwinIntro {
+	"Could I see your POKéMON?
+	Just one look, please?"
+}
+
+text(local) Route110_Text_EdwinDefeated {
+	"I wanted to complete
+	my collection…"
+}
+
+text(local) Route110_Text_EdwinPostBattle {
+	"When I see a POKéMON that I don't know,
+	my passion as a collector is ignited!"
+}
+
+text(local) Route110_Text_EdwinRegister {
+	"I like collecting MATCH CALL
+	registrations, too…"
+}
+
+text(local) Route110_Text_EdwinRematchIntro {
+	"Hi, have you caught any new POKéMON?
+
+	Could I see your POKéMON?
+	Just one look, please?"
+}
+
+text(local) Route110_Text_EdwinRematchDefeated {
+	"Your POKéMON…
+	I envy you."
+}
+
+text(local) Route110_Text_EdwinRematchPostBattle {
+	"Oh, I long to make all rare POKéMON
+	mine!"
+}
+
+text(local) Route110_Text_DaleIntro {
+	"Hey!
+	Don't sneak up behind me like that!"
+}
+
+text(local) Route110_Text_DaleDefeated {
+	"I lost!
+	Drat!"
+}
+
+text(local) Route110_Text_DalePostBattle {
+	"Fishing is all about concentration.
+	You have to focus on the floater."
+}
+
+text(local) Route110_Text_IsabelIntro {
+	"Ahahaha! I would go anywhere to show
+	off my delightful POKéMON."
+}
+
+text(local) Route110_Text_IsabelDefeated {
+	"Oh, dear, this won't do."
+}
+
+text(local) Route110_Text_IsabelPostBattle {
+	"Rather than battling, perhaps I should
+	show off my POKéMON at the FAN CLUB."
+}
+
+text(local) Route110_Text_IsabelRegister {
+	"That wasn't close to what I could
+	do to show off my POKéMON.
+
+	I'll have you as my captive audience
+	as often as possible!"
+}
+
+text(local) Route110_Text_IsabelRematchIntro {
+	"Ahahahaha! I would be happy to show
+	off my POKéMON as often as you like!"
+}
+
+text(local) Route110_Text_IsabelRematchDefeated {
+	"Oh, dear, this won't do."
+}
+
+text(local) Route110_Text_IsabelRematchPostBattle {
+	"I don't think that I could ever stop
+	from showing off my POKéMON.
+
+	But I like to battle, too!"
+}
+
+text(local) Route110_Text_TimmyIntro {
+	"I found some cool POKéMON in the grass
+	around here!"
+}
+
+text(local) Route110_Text_TimmyDefeated {
+	"Being cool isn't enough to win…"
+}
+
+text(local) Route110_Text_TimmyPostBattle {
+	"It's hard to battle with POKéMON you
+	just caught."
+}
+
+text(local) Route110_Text_AlyssaIntro {
+	"I fell off CYCLING ROAD…
+
+	I'll get over my embarrassment by
+	battling with you!"
+}
+
+text(local) Route110_Text_AlyssaDefeated {
+	"Oops!
+	I ended up losing!"
+}
+
+text(local) Route110_Text_AlyssaPostBattle {
+	"Falling… Losing…
+	This is so humiliating for me!"
+}
+
+text(local) Route110_Text_JosephIntro {
+	"Okay! Full-throttle time! If you can't
+	groove, you get left behind!"
+}
+
+text(local) Route110_Text_JosephDefeated {
+	"You got into the groove all right…"
+}
+
+text(local) Route110_Text_JosephPostBattle {
+	"This isn't going to bring me down!
+	Losing has made me a better man!"
+}
+
+text(local) Route110_Text_KalebIntro {
+	"When cute POKéMON help each other…
+	You won't see a more adorable sight!"
+}
+
+text(local) Route110_Text_KalebDefeated {
+	"Have you no compassion or pity?"
+}
+
+text(local) Route110_Text_KalebPostBattle {
+	"Okay, okay, you've done the best you
+	could, my pretties."
+}
+
+text(local) Route111_Text_DrewIntro {
+	"Oh, hey! Those GO-GOGGLES suit you.
+	But I think they look better on me.
+
+	Let's decide who they look better on
+	with a battle!"
+}
+
+text(local) Route111_Text_DrewDefeat {
+	"I couldn't see what was happening at
+	my sides because of the GO-GOGGLES."
+}
+
+text(local) Route111_Text_DrewPostBattle {
+	"The GO-GOGGLES make it possible to
+	get through sandstorms.
+	That makes me happy!"
+}
+
+text(local) Route111_Text_HeidiIntro {
+	"I'm having a picnic in the desert.
+
+	You can always find a TRAINER,
+	so I can enjoy a battle here, too!"
+}
+
+text(local) Route111_Text_HeidiDefeat {
+	"Ohhh! You're mean!"
+}
+
+text(local) Route111_Text_HeidiPostBattle {
+	"When you're battling in a sandstorm,
+	watch out for your POKéMON's HP.
+
+	It can faint if you don't keep
+	an eye on it!"
+}
+
+text(local) Route111_Text_BeauIntro {
+	"Wearing these GO-GOGGLES makes me
+	feel like a superhero.
+	Right now, nobody can beat me!"
+}
+
+text(local) Route111_Text_BeauDefeat {
+	"I can't win on spirit alone…"
+}
+
+text(local) Route111_Text_BeauPostBattle {
+	"I'm going to be a real hero one day.
+	I'm going to work harder to make me
+	and my POKéMON stronger."
+}
+
+text(local) Route111_Text_BeckyIntro {
+	"I heard there are fossils to be found
+	in the desert. Where could they be?"
+}
+
+text(local) Route111_Text_BeckyDefeat {
+	"I came up short…"
+}
+
+text(local) Route111_Text_BeckyPostBattle {
+	"If they can find fossils in the desert,
+	it must have been a sea before."
+}
+
+text(local) Route111_Text_DustyIntro {
+	"For thirty years I have searched for
+	ancient ruins!
+	I am to be challenged?"
+}
+
+text(local) Route111_Text_DustyDefeat {
+	"While I have searched for ruins,
+	I've not searched for strong POKéMON."
+}
+
+text(local) Route111_Text_DustyPostBattle {
+	"For thirty years I have searched for
+	ancient ruins!
+
+	No, wait, was that forty years?
+	Which was it now?"
+}
+
+text(local) Route111_Text_DustyRegister {
+	"I haven't been searching for any
+	tough POKéMON.
+
+	But, for some reason, I sure do like
+	POKéNAVS."
+}
+
+text(local) Route111_Text_DustyRematchIntro {
+	"For thirty years I have searched for
+	ancient ruins!
+
+	No, wait, was that forty years?
+	Anyway, am I to be challenged?"
+}
+
+text(local) Route111_Text_DustyRematchDefeat {
+	"I've found no ruins, nor have I found
+	any strong POKéMON…"
+}
+
+text(local) Route111_Text_DustyPostRematch {
+	"For thirty years I have searched for
+	ancient ruins!
+
+	No, wait, was that forty years
+	I've searched?
+
+	Hmm… It could even be fifty…
+	How long have I been at this?"
+}
+
+text(local) Route111_Text_TravisIntro {
+	"I'm full of pep!
+	And my POKéMON is peppy, too!"
+}
+
+text(local) Route111_Text_TravisDefeat {
+	"My POKéMON lost its pep…"
+}
+
+text(local) Route111_Text_TravisPostBattle {
+	"When I see a TRAINER with a lot of pep,
+	I can't help looking."
+}
+
+text(local) Route111_Text_IreneIntro {
+	"I don't know where you're going,
+	but would you like to battle?"
+}
+
+text(local) Route111_Text_IreneDefeat {
+	"Oh, you're disgustingly good!"
+}
+
+text(local) Route111_Text_IrenePostBattle {
+	"I'm thinking that I should go to
+	MT. CHIMNEY, but the view around
+	here is very nice, too."
+}
+
+text(local) Route111_Text_DaisukeIntro {
+	"To train myself, I challenge all
+	whom I meet!"
+}
+
+text(local) Route111_Text_DaisukeDefeat {
+	"Uncle! I give up!"
+}
+
+text(local) Route111_Text_DaisukePostBattle {
+	"All I can do is keep training until
+	I can defeat strong TRAINERS such
+	as yourself."
+}
+
+text(local) Route111_Text_WiltonIntro {
+	"Show me how much you've toughened
+	your POKéMON."
+}
+
+text(local) Route111_Text_WiltonDefeat {
+	"I see, you've toughened them
+	considerably."
+}
+
+text(local) Route111_Text_WiltonPostBattle {
+	"POKéMON and TRAINERS learn much
+	through battling.
+
+	What's important is to never give up
+	even if you lose."
+}
+
+text(local) Route111_Text_WiltonRegister {
+	"There is much to be learned from
+	your training style.
+
+	I request a rematch if it
+	behooves you."
+}
+
+text(local) Route111_Text_WiltonRematchIntro {
+	"We're training here to elevate our
+	game to the next level.
+	Stay and train with us!"
+}
+
+text(local) Route111_Text_WiltonRematchDefeat {
+	"Ooh, you're decent!"
+}
+
+text(local) Route111_Text_WiltonPostRematch {
+	"Since you're that strong, you should
+	aim for the POKéMON LEAGUE."
+}
+
+text(local) Route111_Text_BrookeIntro {
+	"Oh, your POKéMON look like serious
+	actors.
+	I have to ask you for an engagement."
+}
+
+text(local) Route111_Text_BrookeDefeat {
+	"They didn't just look strong,
+	they are strong!"
+}
+
+text(local) Route111_Text_BrookePostBattle {
+	"I thought I was raising my POKéMON
+	diligently, but, oh no, there is still
+	much to be done."
+}
+
+text(local) Route111_Text_BrookeRegister {
+	"I wish I could become friends with
+	more strong people like you!"
+}
+
+text(local) Route111_Text_BrookeRematchIntro {
+	"You can make POKéMON stronger or
+	weaker depending on the moves you
+	teach them.
+
+	What kinds of moves do your POKéMON
+	know?"
+}
+
+text(local) Route111_Text_BrookeRematchDefeat {
+	"You've taught them good moves!"
+}
+
+text(local) Route111_Text_BrookePostRematch {
+	"Maybe I should have stopped my
+	POKéMON from evolving until they
+	learned better moves…"
+}
+
+text(local) Route111_Text_CeliaIntro {
+	"I shouldn't have come to a place like
+	this for a picnic!"
+}
+
+text(local) Route111_Text_CeliaDefeat {
+	"Aww!
+	I really shouldn't have come!"
+}
+
+text(local) Route111_Text_CeliaPostBattle {
+	"In a sandstorm like this, I can't set
+	the places for a picnic even with my
+	GO-GOGGLES on…"
+}
+
+text(local) Route111_Text_BryanIntro {
+	"How tough are you?
+	We shall expose that secret!"
+}
+
+text(local) Route111_Text_BryanDefeat {
+	"Oh! Your strength!
+	It is shrouded in mystery!"
+}
+
+text(local) Route111_Text_BryanPostBattle {
+	"This desert hoards mysteries in
+	its shifting sands!"
+}
+
+text(local) Route111_Text_BrandenIntro {
+	"I'll give you some of my sandwich
+	if you'll lose."
+}
+
+text(local) Route111_Text_BrandenDefeat {
+	"Tch! I thought a sandwich would be
+	enough of a bribe…"
+}
+
+text(local) Route111_Text_BrandenPostBattle {
+	"My SANDSHREW loves eating
+	my sandwiches."
+}
+
+text(local) Route111_Text_TyronIntro {
+	"This is my favorite kind of POKéMON!"
+}
+
+text(local) Route111_Text_TyronDefeat {
+	"Wait!
+	Did you get a good look at my POKéMON?"
+}
+
+text(local) Route111_Text_TyronPostBattle {
+	"When having a battle, I get a kick out
+	of showing off my POKéMON.
+
+	I bet everyone feels that way when
+	they enter a battle!"
+}
+
+text(local) Route111_Text_CelinaIntro {
+	"Show me how to put a little excitement
+	into my life."
+}
+
+text(local) Route111_Text_CelinaDefeat {
+	"Oh… My…
+	That was too much excitement."
+}
+
+text(local) Route111_Text_CelinaPostBattle {
+	"My pulse is still racing.
+	You're one fabulous TRAINER."
+}
+
+text(local) Route111_Text_HaydenIntro {
+	"When you're as famished as I am,
+	there is no room for pity!"
+}
+
+text(local) Route111_Text_HaydenDefeat {
+	"Groan…"
+}
+
+text(local) Route111_Text_HaydenPostBattle {
+	"My stomach is grumbling!
+	Maybe I can grill some BERRIES…"
+}
+
+text(local) Route111_Text_BiancaIntro {
+	"Did you come from MAUVILLE?
+	Then you should be full of energy!"
+}
+
+text(local) Route111_Text_BiancaDefeat {
+	"Ooh lala!
+	That's a lot to take!"
+}
+
+text(local) Route111_Text_BiancaPostBattle {
+	"This road here…
+	You have quite a ways to travel."
+}
+
+text(local) Route112_Text_BriceIntro {
+	"Hahahaha!
+	How about we have a battle?
+	You and me!
+	Hahahaha!"
+}
+
+text(local) Route112_Text_BriceDefeat {
+	"I lost!
+	Hahahaha!"
+}
+
+text(local) Route112_Text_BricePostBattle {
+	"Hahahahaha! Something flew up my nose!
+	Hahahaha-hatchoo!"
+}
+
+text(local) Route112_Text_TrentIntro {
+	"My legs are solid from pounding up
+	and down the mountains.
+
+	They're not going to buckle easily,
+	friend!"
+}
+
+text(local) Route112_Text_TrentDefeat {
+	"Ouch! My legs cramped up!"
+}
+
+text(local) Route112_Text_TrentPostBattle {
+	"Try hiking, and I mean really
+	pounding, on these mountain trails
+	with a heavy pack weighing dozens of
+	pounds.
+
+	That, my friend, will get your body
+	into serious shape."
+}
+
+text(local) Route112_Text_TrentRegister {
+	"Ow, my legs have cramped up.
+	Can you grab me some bandages from
+	my backpack?
+
+	No, that's my POKéNAV!
+	Oh, fine, I'll register you."
+}
+
+text(local) Route112_Text_TrentRematchIntro {
+	"I've been keeping fit by hiking.
+	Power, I have in spades!"
+}
+
+text(local) Route112_Text_TrentRematchDefeat {
+	"I got trumped in power?"
+}
+
+text(local) Route112_Text_TrentRematchPostBattle {
+	"I hear there are some seriously tough
+	TRAINERS on top of MT. CHIMNEY.
+
+	I intend to get up there and give them
+	a challenge!"
+}
+
+text(local) Route112_Text_LarryIntro {
+	"I'm strong.
+	I won't cry if I lose."
+}
+
+text(local) Route112_Text_LarryDefeat {
+	"Waaaah!"
+}
+
+text(local) Route112_Text_LarryPostBattle {
+	"I'm not crying because I miss my mommy!
+	Snivel…"
+}
+
+text(local) Route112_Text_CarolIntro {
+	"When you're out on a picnic, why,
+	you simply have to sing!
+	Come on, sing with me!"
+}
+
+text(local) Route112_Text_CarolDefeat {
+	"Oh, you're so strong!"
+}
+
+text(local) Route112_Text_CarolPostBattle {
+	"It doesn't matter if you're good or bad
+	at singing or POKéMON.
+
+	If you have the most fun, you win!"
+}
+
+text(local) Route112_Text_BryantIntro {
+	"I caught hot POKéMON in FIERY PATH!
+	Take a look!"
+}
+
+text(local) Route112_Text_BryantDefeat {
+	"What a bumpy ride that was!"
+}
+
+text(local) Route112_Text_BryantPostBattle {
+	"I like the way you battle.
+	It has a certain flair to it."
+}
+
+text(local) Route112_Text_ShaylaIntro {
+	"Oh, aren't you an adorable TRAINER!
+	Please, I need a romantic battle!
+	I'm somewhat decent!"
+}
+
+text(local) Route112_Text_ShaylaDefeat {
+	"Oh, how strong you are!
+	You've given me quite a shock!"
+}
+
+text(local) Route112_Text_ShaylaPostBattle {
+	"Are you busy right now?
+	I was thinking that maybe we can have
+	a rematch right now…
+	But it's all right if you're busy."
+}
+
+text(local) Route113_Text_JaylenIntro {
+	"Can you guess why it's so cool
+	around here?"
+}
+
+text(local) Route113_Text_JaylenDefeat {
+	"Peeuuw!
+	That stinks!"
+}
+
+text(local) Route113_Text_JaylenPostBattle {
+	"The volcanic ash blocks the sun,
+	so it doesn't get very warm.
+
+	That's good for me--I can't stand heat!"
+}
+
+text(local) Route113_Text_DillonIntro {
+	"The volcano's eruption is proof that
+	the earth is alive."
+}
+
+text(local) Route113_Text_DillonDefeat {
+	"You're some kind of strong!"
+}
+
+text(local) Route113_Text_DillonPostBattle {
+	"Ouch! Owww! I can't see!
+	I got ashes in my eyelashes!
+
+	Get it? Ashes and eyelashes?
+
+	Okay, that was bad, sorry…"
+}
+
+text(local) Route113_Text_MadelineIntro {
+	"I use this parasol to ward off this
+	filthy, yucky volcanic ash from
+	my dear NUMEL."
+}
+
+text(local) Route113_Text_MadelineDefeat {
+	"Huff, huff…
+	I am exhausted…"
+}
+
+text(local) Route113_Text_MadelinePostBattle {
+	"You're very good at this.
+	I must say I'm impressed!"
+}
+
+text(local) Route113_Text_MadelineRegister {
+	"Here, slide under my parasol.
+	Let me register you in my POKéNAV."
+}
+
+text(local) Route113_Text_MadelineRematchIntro {
+	"Oh, hello, hasn't it been a while?
+	May I invite you to battle?"
+}
+
+text(local) Route113_Text_MadelineRematchDefeat {
+	"Oh, how super!"
+}
+
+text(local) Route113_Text_MadelinePostRematch {
+	"You've remained very good at this.
+	I must say I'm impressed!"
+}
+
+text(local) Route113_Text_LaoIntro {
+	"From out of the ashes I leap! Hiyah!
+	I challenge thee!"
+}
+
+text(local) Route113_Text_LaoDefeat {
+	"With honor I admit defeat!"
+}
+
+text(local) Route113_Text_LaoPostBattle {
+	"I must refine the art of concealment.
+	I bid thee farewell."
+}
+
+text(local) Route113_Text_LaoRegister {
+	"Yiiyaah! Witness the ancient ninja
+	technique of POKéNAV registration!"
+}
+
+text(local) Route113_Text_LaoRematchIntro {
+	"From out of the ashes I leap! Hiyah!
+	I challenge thee!"
+}
+
+text(local) Route113_Text_LaoRematchDefeat {
+	"With honor I admit defeat!"
+}
+
+text(local) Route113_Text_LaoPostRematch {
+	"My flawless concealment was let down
+	by my immature battle skills…
+
+	I bid thee farewell."
+}
+
+text(local) Route113_Text_LungIntro {
+	"Thanks for finding me!
+	But we still have to battle!"
+}
+
+text(local) Route113_Text_LungDefeat {
+	"I'll use my ninjutsu on you…
+	“VOLCANIC ASH SWIRL CLOAK”!
+
+	…What?
+	It's already over?"
+}
+
+text(local) Route113_Text_LungPostBattle {
+	"You know what's crummy about hiding?
+	It's lonely if no one comes along."
+}
+
+text(local) Route113_Text_ToriIntro {
+	"TORI: Both of us, we collect ashes.
+	We battle POKéMON, too."
+}
+
+text(local) Route113_Text_ToriDefeat {
+	"TORI: We lost… It's boring, so I'm going
+	to get some more ashes."
+}
+
+text(local) Route113_Text_ToriPostBattle {
+	"TORI: How much ash do we have?
+	Enough for a WHITE FLUTE, I hope."
+}
+
+text(local) Route113_Text_ToriNotEnoughMons {
+	"TORI: We want to battle 2-on-2.
+	If we didn't, we would lose!"
+}
+
+text(local) Route113_Text_TiaIntro {
+	"TIA: Both of us, we collect ashes.
+	We battle POKéMON, too."
+}
+
+text(local) Route113_Text_TiaDefeat {
+	"TIA: We couldn't win… It's boring,
+	so I'm getting some more ashes."
+}
+
+text(local) Route113_Text_TiaPostBattle {
+	"TIA: We have a lot of ashes!
+	I think enough for a WHITE FLUTE!"
+}
+
+text(local) Route113_Text_TiaNotEnoughMons {
+	"TIA: We want to battle 2-on-2.
+	If we don't, we won't win!"
+}
+
+text(local) Route113_Text_CobyIntro {
+	"Pfft, with these wings I can
+	flick you away!"
+}
+
+text(local) Route113_Text_CobyDefeat {
+	"A… What?"
+}
+
+text(local) Route113_Text_CobyPostBattle {
+	"I don't know what to say when I get
+	beaten so easily…"
+}
+
+text(local) Route113_Text_SophieIntro {
+	"The warmth here is making me drowsy.
+	Battle with me so I can stay awake."
+}
+
+text(local) Route113_Text_SophieDefeat {
+	"This is a dream.
+	I'm sure of it…"
+}
+
+text(local) Route113_Text_SophiePostBattle {
+	"Losing burns me up…
+	I'm just going to sleep right here!
+	Zzz!"
+}
+
+text(local) Route113_Text_LawrenceIntro {
+	"Were you maybe in the middle
+	of gathering volcanic ashes?"
+}
+
+text(local) Route113_Text_LawrenceDefeat {
+	"Ehehe.
+	We got beaten cleanly."
+}
+
+text(local) Route113_Text_LawrencePostBattle {
+	"I ought to hide under the ashes, too."
+}
+
+text(local) Route113_Text_WyattIntro {
+	"Y-you want to battle with me?
+	Even though I just caught my POKéMON?"
+}
+
+text(local) Route113_Text_WyattDefeat {
+	"Y-you're all happy to win?
+	Even though it's only me?"
+}
+
+text(local) Route113_Text_WyattPostBattle {
+	"Oh, so now you want to say a word to
+	the loser?
+
+	Aren't you just the coolest?
+	Humph!"
+}
+
+text(local) Route114_Text_LennyIntro {
+	"Yodelayhihoo!
+
+	… …
+
+	You're supposed to shout
+	“yodelayhihoo” since it doesn't
+	echo here!"
+}
+
+text(local) Route114_Text_LennyDefeat {
+	"Yodelayhihoo!"
+}
+
+text(local) Route114_Text_LennyPostBattle {
+	"When I was a wee tyke, I believed there
+	was someone copying me and shouting
+	back, “Yodelayhihoo.”"
+}
+
+text(local) Route114_Text_LucasIntro {
+	"If you're not prepared, you shouldn't
+	be up in the mountains!"
+}
+
+text(local) Route114_Text_LucasDefeat {
+	"The mountains are unforgiving…"
+}
+
+text(local) Route114_Text_LucasPostBattle {
+	"In the winter, mountains turn deadly
+	with blizzards and avalanches."
+}
+
+text(local) Route114_Text_ShaneIntro {
+	"Camping's fun! You can fish, roast
+	marshmallows, and tell spooky stories!
+
+	But the best of all are the POKéMON
+	battles!"
+}
+
+text(local) Route114_Text_ShaneDefeat {
+	"Way too strong!"
+}
+
+text(local) Route114_Text_ShanePostBattle {
+	"I think it's great that I can go
+	camping with my POKéMON."
+}
+
+text(local) Route114_Text_NancyIntro {
+	"I need to exercise after a meal.
+	Let's have a match!"
+}
+
+text(local) Route114_Text_NancyDefeat {
+	"Oh, no!"
+}
+
+text(local) Route114_Text_NancyPostBattle {
+	"I just had a tasty meal.
+	I'm getting drowsy…"
+}
+
+text(local) Route114_Text_SteveIntro {
+	"Ufufufufufu…
+	Want to battle against my POKéMON?"
+}
+
+text(local) Route114_Text_SteveDefeat {
+	"M-My POKéMON…"
+}
+
+text(local) Route114_Text_StevePostBattle {
+	"A big body that's all lumpy and hard,
+	enormous horns, and vicious fangs…
+
+	Ufufufufu…
+	I wish I had a POKéMON like that…"
+}
+
+text(local) Route114_Text_SteveRegister {
+	"Don't forget what you've done to me!
+	I'll make it so you can't forget!"
+}
+
+text(local) Route114_Text_SteveRematchIntro {
+	"Ufufufufufu…
+	Come on, battle my POKéMON…"
+}
+
+text(local) Route114_Text_SteveRematchDefeat {
+	"I feel so lucky getting to see your
+	POKéMON…"
+}
+
+text(local) Route114_Text_StevePostRematch {
+	"Ufufufufufu…
+
+	When I see POKéMON battling, I get all
+	shivery and shaky…"
+}
+
+text(local) Route114_Text_BernieIntro {
+	"If you're lighting a campfire,
+	make sure you have water handy."
+}
+
+text(local) Route114_Text_BernieDefeat {
+	"Thanks for dousing my fire!"
+}
+
+text(local) Route114_Text_BerniePostBattle {
+	"You really do have to be careful with
+	any sort of fire in a forest.
+
+	Don't ever underestimate the power
+	of fire."
+}
+
+text(local) Route114_Text_BernieRegister {
+	"You set my spirit on fire.
+	Let's register each other!"
+}
+
+text(local) Route114_Text_BernieRematchIntro {
+	"Have you learned to keep water handy
+	for campfires?"
+}
+
+text(local) Route114_Text_BernieRematchDefeat {
+	"I got hosed down before I could
+	flare up, I guess."
+}
+
+text(local) Route114_Text_BerniePostRematch {
+	"You really do have to be careful with
+	any sort of fire in a forest.
+
+	Don't ever underestimate the power
+	of fire."
+}
+
+text(local) Route114_Text_ClaudeIntro {
+	"If we were fishing, you wouldn't stand
+	a chance against me.
+	So, bring on your POKéMON!"
+}
+
+text(local) Route114_Text_ClaudeDefeat {
+	"If we were fishing, I would've won…"
+}
+
+text(local) Route114_Text_ClaudePostBattle {
+	"I think I'll try my luck at landing
+	a big one at METEOR FALLS.
+
+	There has to be something in there.
+	I just know it."
+}
+
+text(local) Route114_Text_NolanIntro {
+	"I like to fish. But I also like to
+	battle!
+
+	If anyone challenges me, I'm there,
+	even if I'm fishing."
+}
+
+text(local) Route114_Text_NolanDefeat {
+	"I like to battle, but that doesn't
+	mean I'm good at it…"
+}
+
+text(local) Route114_Text_NolanPostBattle {
+	"This time I'll do it!
+
+	I always think that, so I can't walk
+	away from fishing or POKéMON."
+}
+
+text(local) Route114_Text_TyraIntro {
+	"TYRA: Well, sure.
+	I'm in the mood for it.
+	I'll teach you a little about POKéMON."
+}
+
+text(local) Route114_Text_TyraDefeat {
+	"TYRA: What an amazing battle style!"
+}
+
+text(local) Route114_Text_TyraPostBattle {
+	"TYRA: I was teaching my junior IVY
+	about POKéMON."
+}
+
+text(local) Route114_Text_TyraNotEnoughMons {
+	"TYRA: Giggle…
+	If you want to battle with us, just one
+	POKéMON isn't enough!"
+}
+
+text(local) Route114_Text_IvyIntro {
+	"IVY: Who taught you about POKéMON?"
+}
+
+text(local) Route114_Text_IvyDefeat {
+	"IVY: What an amazing battle style!"
+}
+
+text(local) Route114_Text_IvyPostBattle {
+	"IVY: I started training POKéMON
+	because TYRA, my student mentor,
+	taught me!"
+}
+
+text(local) Route114_Text_IvyNotEnoughMons {
+	"IVY: Do you only have one POKéMON?
+	I think it must feel lonesome."
+}
+
+text(local) Route114_Text_KaiIntro {
+	"I landed a big one!
+	A huge one, I tell you!"
+}
+
+text(local) Route114_Text_KaiDefeat {
+	"What was that about?
+	Did mine lose in size?"
+}
+
+text(local) Route114_Text_KaiPostBattle {
+	"Okay!
+	I'll just fish me a bigger one!"
+}
+
+text(local) Route114_Text_CharlotteIntro {
+	"Me!
+	I'm not just a pretty face!"
+}
+
+text(local) Route114_Text_CharlotteDefeat {
+	"That wasn't cute in the least!"
+}
+
+text(local) Route114_Text_CharlottePostBattle {
+	"I don't want a POKéMON that's
+	just cute.
+
+	I adore cute ones that have a quirk
+	or two!"
+}
+
+text(local) Route114_Text_AngelinaIntro {
+	"Have you made your POKéMON evolve
+	very much?"
+}
+
+text(local) Route114_Text_AngelinaDefeat {
+	"Oh, I see.
+	That's good to know."
+}
+
+text(local) Route114_Text_AngelinaPostBattle {
+	"Some POKéMON change so much when
+	they evolve, it's startling!"
+}
+
+text(local) Route115_Text_TimothyIntro {
+	"Hm…
+	You seem rather capable…
+	Let me keep you company!"
+}
+
+text(local) Route115_Text_TimothyDefeat {
+	"You're much stronger than
+	I'd imagined!"
+}
+
+text(local) Route115_Text_TimothyPostBattle {
+	"There is no such thing as a born genius.
+	It all depends on effort!
+	That is what I believe…"
+}
+
+text(local) Route115_Text_TimothyRegister {
+	"Hmm… A loss this thorough has been
+	a distant memory.
+
+	If you would allow it, I wish for
+	another opportunity to do battle."
+}
+
+text(local) Route115_Text_TimothyRematchIntro {
+	"Hm… As always, your agility speaks
+	for itself.
+	Come, keep me company!"
+}
+
+text(local) Route115_Text_TimothyRematchDefeat {
+	"As strong as ever!"
+}
+
+text(local) Route115_Text_TimothyPostRematch {
+	"All it takes is effort!
+
+	I lost because I haven't put in enough
+	effort!"
+}
+
+text(local) Route115_Text_KoichiIntro {
+	"You!
+
+	My MACHOP!
+
+	Demand a battle!"
+}
+
+text(local) Route115_Text_KoichiDefeat {
+	"Ouch, ouch, ouch!"
+}
+
+text(local) Route115_Text_KoichiPostBattle {
+	"My MACHOP crew!
+
+	So long as they seek power, I will
+	grow strong with them!"
+}
+
+text(local) Route115_Text_NobIntro {
+	"My strongest skill is busting bricks
+	with my forehead!"
+}
+
+text(local) Route115_Text_NobDefeat {
+	"Ugwaaaah!
+	My head is busted!"
+}
+
+text(local) Route115_Text_NobPostBattle {
+	"I've been teaching my POKéMON karate.
+
+	It looks like they'll get a lot better
+	than me. I'm excited about that."
+}
+
+text(local) Route115_Text_NobRegister {
+	"You impress me! Give me a rematch
+	after I redo my training!"
+}
+
+text(local) Route115_Text_NobRematchIntro {
+	"After you beat me, we trained hard to
+	improve our skills.
+	Come on, give us a rematch!"
+}
+
+text(local) Route115_Text_NobRematchDefeat {
+	"Ugwaaah!
+	We lost again!"
+}
+
+text(local) Route115_Text_NobPostRematch {
+	"My POKéMON will grow stronger!
+	I'll redouble my training!"
+}
+
+text(local) Route115_Text_CyndyIntro {
+	"This beach is my secret training spot!
+	Don't come butting in!"
+}
+
+text(local) Route115_Text_CyndyDefeat {
+	"I haven't trained enough!"
+}
+
+text(local) Route115_Text_CyndyPostBattle {
+	"The sand acts as a cushion to reduce
+	impact and prevent injury.
+	This is the perfect place to train."
+}
+
+text(local) Route115_Text_CyndyRegister {
+	"Okay, fine, you're free to come here.
+	In return, I'd like to battle you again."
+}
+
+text(local) Route115_Text_CyndyRematchIntro {
+	"Okay, let's get this battle on!"
+}
+
+text(local) Route115_Text_CyndyRematchDefeat {
+	"I can battle but my POKéMON…"
+}
+
+text(local) Route115_Text_CyndyPostRematch {
+	"Even when I lose, I still get some
+	enjoyment out of it.
+	It must be that I love POKéMON."
+}
+
+text(local) Route115_Text_HectorIntro {
+	"I have a rare POKéMON!
+	Would you like me to show you?"
+}
+
+text(local) Route115_Text_HectorDefeat {
+	"You…
+	You want my POKéMON, don't you?"
+}
+
+text(local) Route115_Text_HectorPostBattle {
+	"I have this rare POKéMON.
+	It's enough to keep me satisfied."
+}
+
+text(local) Route115_Text_KyraIntro {
+	"I'll battle while I'm running!
+	Try to keep up with me!"
+}
+
+text(local) Route115_Text_KyraDefeat {
+	"Gasp, gasp…"
+}
+
+text(local) Route115_Text_KyraPostBattle {
+	"I made the mistake of trying to battle
+	while running!
+
+	I should take a run to calm down…"
+}
+
+text(local) Route115_Text_JaidenIntro {
+	"Take that!
+	Ultra POKéMON ninja attack!"
+}
+
+text(local) Route115_Text_JaidenDefeat {
+	"Waaah!
+	Our strategy failed!"
+}
+
+text(local) Route115_Text_JaidenPostBattle {
+	"But my POKéMON were ultra,
+	weren't they?"
+}
+
+text(local) Route115_Text_HeleneIntro {
+	"My POKéMON have black belt-level
+	strength!"
+}
+
+text(local) Route115_Text_HeleneDefeat {
+	"This is too humiliating!"
+}
+
+text(local) Route115_Text_HelenePostBattle {
+	"I rarely meet anyone who's better
+	than me…
+
+	I get it now!
+	You're a GYM LEADER, aren't you?"
+}
+
+text(local) Route115_Text_AlixIntro {
+	"Our eyes met!
+	There's no getting away now!"
+}
+
+text(local) Route115_Text_AlixDefeat {
+	"Gah!
+	Not bad!"
+}
+
+text(local) Route115_Text_AlixPostBattle {
+	"Oh, well.
+	I think I will TELEPORT home."
+}
+
+text(local) Route115_Text_MarleneIntro {
+	"You've disturbed my meditation…
+	You'll be punished for it."
+}
+
+text(local) Route115_Text_MarleneDefeat {
+	"You've broken my concentration!"
+}
+
+text(local) Route115_Text_MarlenePostBattle {
+	"I was meditating with my POKéMON.
+	But this place isn't very peaceful…"
+}
+
+text(local) Route116_Text_ClarkIntro {
+	"If the tunnel doesn't go through, then
+	I'll just go over the top."
+}
+
+text(local) Route116_Text_ClarkDefeat {
+	"Gasp… Gasp…
+	Losing made me tired…"
+}
+
+text(local) Route116_Text_ClarkPostBattle {
+	"It's no big deal if there's no tunnel.
+	To a HIKER, mountains are roads!"
+}
+
+text(local) Route116_Text_JoeyIntro {
+	"My POKéMON rule!
+	Check them out!"
+}
+
+text(local) Route116_Text_JoeyDefeat {
+	"Ouch! A scrape!
+	I have to put on a bandage!"
+}
+
+text(local) Route116_Text_JoeyPostBattle {
+	"Bandages are signs of toughness!
+	I've got another one!"
+}
+
+text(local) Route116_Text_JoseIntro {
+	"My BUG POKéMON are tough!
+	Let's battle!"
+}
+
+text(local) Route116_Text_JoseDefeat {
+	"I lost!
+	I thought I had you!"
+}
+
+text(local) Route116_Text_JosePostBattle {
+	"BUG POKéMON evolve quickly.
+	So they get strong quickly, too."
+}
+
+text(local) Route116_Text_JaniceIntro {
+	"Let me teach you how strong my
+	adorable POKéMON is!"
+}
+
+text(local) Route116_Text_JaniceDefeat {
+	"You're a notch above me…"
+}
+
+text(local) Route116_Text_JanicePostBattle {
+	"POKéMON that possess cuteness and
+	power, that's ideal, I think."
+}
+
+text(local) Route116_Text_JerryIntro {
+	"We learn all sorts of things at the
+	TRAINER'S SCHOOL.
+
+	I want to test things out for real!"
+}
+
+text(local) Route116_Text_JerryDefeat {
+	"I slacked off in school…
+	That's why I lost."
+}
+
+text(local) Route116_Text_JerryPostBattle {
+	"I'll have to redo some courses at
+	the TRAINER'S SCHOOL.
+	If I don't, ROXANNE will be steamed."
+}
+
+text(local) Route116_Text_JerryRegister1 {
+	"I learned at the TRAINER'S SCHOOL
+	that a POKéNAV can register TRAINERS.
+
+	I don't really get what that means,
+	so can I just try it?"
+}
+
+text(local) Route116_Text_JerryRegister2 {
+	"I learned at the TRAINER'S SCHOOL
+	that a POKéNAV can register TRAINERS.
+
+	I don't really get what that means,
+	so can I just try it?"
+}
+
+text(local) Route116_Text_JerryRematchIntro {
+	"I've been studying seriously at the
+	TRAINER'S SCHOOL.
+	I won't lose like I did last time."
+}
+
+text(local) Route116_Text_JerryRematchDefeat {
+	"Hunh?
+	I studied diligently."
+}
+
+text(local) Route116_Text_JerryPostRematch {
+	"I'll have to redo some courses at
+	the TRAINER'S SCHOOL.
+	If I don't, ROXANNE will be steamed."
+}
+
+text(local) Route116_Text_KarenIntro {
+	"I study at school, and I study on
+	the way home, too!"
+}
+
+text(local) Route116_Text_KarenDefeat {
+	"I'm in shock--I lost?"
+}
+
+text(local) Route116_Text_KarenPostBattle {
+	"Awww, I'll never become an elegant
+	TRAINER like ROXANNE this way!"
+}
+
+text(local) Route116_Text_KarenRegister1 {
+	"Oh, wow! Isn't that a POKéNAV?
+	I have one, too! Please register me!"
+}
+
+text(local) Route116_Text_KarenRegister2 {
+	"Oh, wow! Isn't that a POKéNAV?
+	I have one, too! Please register me!"
+}
+
+text(local) Route116_Text_KarenRematchIntro {
+	"I studied a whole lot since I saw you.
+	You must see my achievements!"
+}
+
+text(local) Route116_Text_KarenRematchDefeat {
+	"I'm in shock.
+	I lost again?"
+}
+
+text(local) Route116_Text_KarenPostRematch {
+	"You've beaten ROXANNE?
+	I can't beat you, then. Not yet."
+}
+
+text(local) Route116_Text_SarahIntro {
+	"Just so you know, I've never once been
+	bested by anyone at anything."
+}
+
+text(local) Route116_Text_SarahDefeat {
+	"Oh, my goodness.
+	This is a new experience for me."
+}
+
+text(local) Route116_Text_SarahPostBattle {
+	"My life of luxury affords me all that
+	I could possibly desire.
+
+	However, when it comes to POKéMON,
+	my wealth has no meaning."
+}
+
+text(local) Route116_Text_DawsonIntro {
+	"When you lay your eyes on my POKéMON's
+	gorgeous fur, their beauty will render
+	you helpless!"
+}
+
+text(local) Route116_Text_DawsonDefeat {
+	"Oh, baby, say it isn't so!"
+}
+
+text(local) Route116_Text_DawsonPostBattle {
+	"Oh, no, no, no!
+	You've mussed up my POKéMON's fur!
+	You've ruined my hairdo, too!
+	I'll have to call my stylist now!"
+}
+
+text(local) Route116_Text_DevanIntro {
+	"We'll rock you hard!"
+}
+
+text(local) Route116_Text_DevanDefeat {
+	"Aiyiyi!
+	No contest at all!"
+}
+
+text(local) Route116_Text_DevanPostBattle {
+	"I should try different POKéMON
+	types, that's what I ought to do."
+}
+
+text(local) Route116_Text_JohnsonIntro {
+	"It's a dead end up here.
+	I'm bored, so can we battle?"
+}
+
+text(local) Route116_Text_JohnsonDefeat {
+	"That was fun even though I lost."
+}
+
+text(local) Route116_Text_JohnsonPostBattle {
+	"Want to stay here and keep
+	me company?"
+}
+
+text(local) Route117_Text_IsaacIntro {
+	"Listen, could I get you to battle
+	the POKéMON I'm raising?"
+}
+
+text(local) Route117_Text_IsaacDefeat {
+	"You've raised yours superbly…"
+}
+
+text(local) Route117_Text_IsaacPostBattle {
+	"POKéMON isn't all about power.
+
+	Polishing a unique aspect of one's
+	character is another way of enjoying
+	POKéMON."
+}
+
+text(local) Route117_Text_IsaacRegister {
+	"I'm going to redouble my training.
+	Would you come look in on us?"
+}
+
+text(local) Route117_Text_IsaacRematchIntro {
+	"The POKéMON I've been raising are
+	looking good, just like before."
+}
+
+text(local) Route117_Text_IsaacRematchDefeat {
+	"You know how to raise them properly.
+	You might have DAY CARE skills…"
+}
+
+text(local) Route117_Text_IsaacPostRematch {
+	"Your POKéMON are growing good!
+	You should enter them in CONTESTS."
+}
+
+text(local) Route117_Text_LydiaIntro {
+	"Please, allow me to evaluate if you
+	have raised your POKéMON properly."
+}
+
+text(local) Route117_Text_LydiaDefeat {
+	"Yes, they are growing properly."
+}
+
+text(local) Route117_Text_LydiaPostBattle {
+	"Try raising POKéMON with more
+	attention to their character traits."
+}
+
+text(local) Route117_Text_LydiaRegister {
+	"I'm glad I met a superb TRAINER in you.
+	I hope to see you again."
+}
+
+text(local) Route117_Text_LydiaRematchIntro {
+	"Allow me to reevaluate if you have
+	raised your POKéMON properly."
+}
+
+text(local) Route117_Text_LydiaRematchDefeat {
+	"They are growing admirably."
+}
+
+text(local) Route117_Text_LydiaPostRematch {
+	"POKéMON seem to like different kinds
+	of {POKEBLOCK}S, depending on their nature."
+}
+
+text(local) Route117_Text_DylanIntro {
+	"I'm in the middle of a triathlon, but,
+	whatever, let's have a battle!"
+}
+
+text(local) Route117_Text_DylanDefeat {
+	"I ran out of energy!"
+}
+
+text(local) Route117_Text_DylanPostBattle {
+	"I may have blown it…
+
+	I might have dropped to last during
+	that battle…"
+}
+
+text(local) Route117_Text_DylanRegister {
+	"POKéMON have to be strong, too?
+	I'd like you to train me!"
+}
+
+text(local) Route117_Text_DylanRematchIntro {
+	"I'm smack in the middle of a triathlon,
+	but I'm comfortably ahead.
+	Let's make this a quick battle!"
+}
+
+text(local) Route117_Text_DylanRematchDefeat {
+	"I ran out of energy again!"
+}
+
+text(local) Route117_Text_DylanPostRematch {
+	"I was tops in swimming and cycling,
+	but I'm not quite that confident with
+	POKéMON yet."
+}
+
+text(local) Route117_Text_MariaIntro {
+	"I do my triathlon training with POKéMON,
+	so I'm pretty confident about my speed."
+}
+
+text(local) Route117_Text_MariaDefeat {
+	"I need to get more practices in,
+	I guess."
+}
+
+text(local) Route117_Text_MariaPostBattle {
+	"Training is meaningful only if you
+	keep it up regularly.
+
+	Okay! I'll resume my training!
+	Tomorrow!"
+}
+
+text(local) Route117_Text_MariaRegister {
+	"You appear to be training properly…
+	If you'd like, I'll battle you later!"
+}
+
+text(local) Route117_Text_MariaRematchIntro {
+	"Are you keeping up with your training?
+	I sure am!
+	Let me show you the evidence!"
+}
+
+text(local) Route117_Text_MariaRematchDefeat {
+	"I need to get more practices in,
+	I guess."
+}
+
+text(local) Route117_Text_MariaPostRematch {
+	"I'll resume training tomorrow.
+	Let's battle again sometime!"
+}
+
+text(local) Route117_Text_DerekIntro {
+	"Once a BUG CATCHER!
+	And now a BUG MANIAC!
+
+	But my love for POKéMON remains
+	unchanged!"
+}
+
+text(local) Route117_Text_DerekDefeat {
+	"My ineptitude also remains
+	unchanged…"
+}
+
+text(local) Route117_Text_DerekPostBattle {
+	"All I did was follow my heart, and now
+	they call me a BUG MANIAC…
+
+	Still, I am an expert on BUG POKéMON,
+	so it's only natural that they call me
+	a BUG MANIAC."
+}
+
+text(local) Route117_Text_AnnaIntro {
+	"ANNA: I'm with my pretty junior student
+	partner. I have to do good!"
+}
+
+text(local) Route117_Text_AnnaDefeat {
+	"ANNA: I'm with my pretty junior student
+	partner! Let me win!"
+}
+
+text(local) Route117_Text_AnnaPostBattle {
+	"ANNA: Your POKéMON have some good
+	combinations.
+
+	I'd say you're second only to us!"
+}
+
+text(local) Route117_Text_AnnaAndMegRegister {
+	"ANNA: We can't take this lying down!
+	You will come back, won't you?"
+}
+
+text(local) Route117_Text_AnnaNotEnoughMons {
+	"ANNA: If you want to battle us,
+	bring two POKéMON with you."
+}
+
+text(local) Route117_Text_MegIntro {
+	"MEG: I'm going to tag up with my super
+	senior student partner and beat you!"
+}
+
+text(local) Route117_Text_MegDefeat {
+	"MEG: Oh, no!
+	I'm sorry, ANNA! I let you down…"
+}
+
+text(local) Route117_Text_MegPostBattle {
+	"MEG: I dragged ANNA down…
+	If I didn't, she would have won!"
+}
+
+text(local) Route117_Text_MegNotEnoughMons {
+	"MEG: Do you only have one POKéMON?
+	We can't battle with you, then.
+
+	We want to have a 2-on-2 battle."
+}
+
+text(local) Route117_Text_AnnaRematchIntro {
+	"ANNA: I can't keep losing in front of
+	my junior partner, right?"
+}
+
+text(local) Route117_Text_AnnaRematchDefeat {
+	"ANNA: I couldn't get into the groove."
+}
+
+text(local) Route117_Text_AnnaPostRematch {
+	"ANNA: Your POKéMON have some good
+	combinations.
+
+	I'd say you're second only to us!"
+}
+
+text(local) Route117_Text_AnnaRematchNotEnoughMons {
+	"ANNA: If you want to battle us,
+	bring two POKéMON with you."
+}
+
+text(local) Route117_Text_MegRematchIntro {
+	"MEG: I'm going to tag up with my
+	senior partner and win this time!"
+}
+
+text(local) Route117_Text_MegRematchDefeat {
+	"MEG: Too strong!"
+}
+
+text(local) Route117_Text_MegPostRematch {
+	"MEG: I battled together with my
+	senior partner, but we lost…
+
+	That's so discouraging…"
+}
+
+text(local) Route117_Text_MegRematchNotEnoughMons {
+	"MEG: Do you only have one POKéMON?
+	We can't battle with you, then.
+
+	We want to have a 2-on-2 battle."
+}
+
+text(local) Route117_Text_MelinaIntro {
+	"Isn't it nice? To battle while looking
+	at pretty flowers?"
+}
+
+text(local) Route117_Text_MelinaDefeat {
+	"Oh, that's quite impressive!"
+}
+
+text(local) Route117_Text_MelinaPostBattle {
+	"It feels wonderful to go for a jog
+	while looking at flowers."
+}
+
+text(local) Route117_Text_BrandiIntro {
+	"Let me demonstrate the power
+	hidden within a PSYCHIC POKéMON!"
+}
+
+text(local) Route117_Text_BrandiDefeat {
+	"Astonishing!"
+}
+
+text(local) Route117_Text_BrandiPostBattle {
+	"PSYCHIC POKéMON are complex.
+	You should try catching some."
+}
+
+text(local) Route117_Text_AishaIntro {
+	"Concentrate on getting the win.
+	That's how I battle!"
+}
+
+text(local) Route117_Text_AishaDefeat {
+	"I don't waste any time being angry
+	over a loss--I would rather train."
+}
+
+text(local) Route117_Text_AishaPostBattle {
+	"I think that if you worry about losing,
+	you're more likely to lose."
+}
+
+text(local) Route118_Text_RoseIntro {
+	"The aroma of flowers has a magical
+	power. It cleanses us body and soul."
+}
+
+text(local) Route118_Text_RoseDefeat {
+	"Oh, dear me.
+	I seem to have lost."
+}
+
+text(local) Route118_Text_RosePostBattle {
+	"Flowers, POKéMON…
+	I love whatever smells nice.
+
+	Stinky things…
+	I'll pass."
+}
+
+text(local) Route118_Text_RoseRegister {
+	"Sniff… That odor--it's a POKéNAV!
+	We must register each other!"
+}
+
+text(local) Route118_Text_RoseRematchIntro {
+	"Were you drawn here by the sweet
+	aroma?"
+}
+
+text(local) Route118_Text_RoseRematchDefeat {
+	"The power of aroma…
+	It didn't seem to do much."
+}
+
+text(local) Route118_Text_RosePostRematch {
+	"If you use a sweet aroma properly,
+	POKéMON will be attracted by it."
+}
+
+text(local) Route118_Text_PerryIntro {
+	"BIRD POKéMON that FLY elegantly in
+	the sky… They're the best!"
+}
+
+text(local) Route118_Text_PerryDefeat {
+	"Urgh…
+	I crashed…"
+}
+
+text(local) Route118_Text_PerryPostBattle {
+	"You've got great POKéMON.
+	I'll have to train mine better."
+}
+
+text(local) Route118_Text_ChesterIntro {
+	"Take flight!
+	My BIRD POKéMON!"
+}
+
+text(local) Route118_Text_ChesterDefeat {
+	"They did take flight…"
+}
+
+text(local) Route118_Text_ChesterPostBattle {
+	"If they'd get stronger, they'd be able
+	to fly more freely…"
+}
+
+text(local) Route118_Text_BarnyIntro {
+	"I'm a FISHERMAN, but also a TRAINER.
+	I'm raising the POKéMON I caught."
+}
+
+text(local) Route118_Text_BarnyDefeat {
+	"I thought I was doing okay in my
+	training…"
+}
+
+text(local) Route118_Text_BarnyPostBattle {
+	"I couldn't win by training POKéMON
+	while I fished…
+
+	Was I doing things in half measures?"
+}
+
+text(local) Route118_Text_WadeIntro {
+	"For FISHERMEN, equipment is the key.
+
+	But for TRAINERS, the key ingredients
+	are POKéMON and heart, of course!"
+}
+
+text(local) Route118_Text_WadeDefeat {
+	"I was beaten in heart?"
+}
+
+text(local) Route118_Text_WadePostBattle {
+	"Come to think of it, fishing is a battle
+	between a FISHERMAN and a POKéMON."
+}
+
+text(local) Route118_Text_DaltonIntro {
+	"Let my melody rock your soul!"
+}
+
+text(local) Route118_Text_DaltonDefeat {
+	"La-lalala…"
+}
+
+text(local) Route118_Text_DaltonPostBattle {
+	"An electric guitar doesn't always
+	have to be noisy…
+
+	It can be strummed to squeeze out
+	this heart-stirring melody…"
+}
+
+text(local) Route118_Text_DaltonRegister {
+	"When I compose better melodies,
+	you have to come listen, okay?"
+}
+
+text(local) Route118_Text_DaltonRematchIntro {
+	"A melody from my POKéMON and me…
+	Let us deliver it to your soul."
+}
+
+text(local) Route118_Text_DaltonRematchDefeat {
+	"La-lalala…"
+}
+
+text(local) Route118_Text_DaltonPostRematch {
+	"When I play, my emotions should reach
+	you through my electric guitar…"
+}
+
+text(local) Route118_Text_DeandreIntro {
+	"Go, go, go!
+	POKéMON 1, 2, and 3!"
+}
+
+text(local) Route118_Text_DeandreDefeat {
+	"Come in, POKéMON! Are you okay?
+	POKéMON 1, 2, and 3?!"
+}
+
+text(local) Route118_Text_DeandrePostBattle {
+	"Isn't it cool that I have a POKéMON
+	battle team?
+
+	You can copy me--I don't mind!"
+}
+
+text(local) Route119_Text_BrentIntro {
+	"We're the MIMIC CIRCLE!
+	We MIMIC what you do!"
+}
+
+text(local) Route119_Text_BrentDefeat {
+	"Whoopsie!
+	I lost!"
+}
+
+text(local) Route119_Text_BrentPostBattle {
+	"What's so good about mimicry?
+
+	Fufufu…
+	You'll never understand…"
+}
+
+text(local) Route119_Text_DonaldIntro {
+	"So, we finally meet!
+	My BUG POKéMON will keep you company!"
+}
+
+text(local) Route119_Text_DonaldDefeat {
+	"I wish we'd never met…"
+}
+
+text(local) Route119_Text_DonaldPostBattle {
+	"I want to MIMIC you some more.
+	Can you hurry up and move?"
+}
+
+text(local) Route119_Text_TaylorIntro {
+	"If you step forward, we step forward.
+
+	If you turn right, we turn, too…"
+}
+
+text(local) Route119_Text_TaylorDefeat {
+	"But if you win, I lose…"
+}
+
+text(local) Route119_Text_TaylorPostBattle {
+	"I can't MIMIC you winning the match.
+	That's just impossible…
+	It's burning me up…"
+}
+
+text(local) Route119_Text_DougIntro {
+	"Yep, you've finally caught me!
+	Or were you trying to avoid me?"
+}
+
+text(local) Route119_Text_DougDefeat {
+	"Whoop, that was a great match!"
+}
+
+text(local) Route119_Text_DougPostBattle {
+	"We're the MIMIC CIRCLE!
+	I hope you enjoyed our performance."
+}
+
+text(local) Route119_Text_GregIntro {
+	"You don't know who I am, do you?
+
+	But, I also don't know you.
+	So, we'll battle!"
+}
+
+text(local) Route119_Text_GregDefeat {
+	"You're pretty strong!"
+}
+
+text(local) Route119_Text_GregPostBattle {
+	"Until you go away somewhere, we'll
+	keep on mimicking your every move."
+}
+
+text(local) Route119_Text_KentIntro {
+	"The MIMIC CIRCLE was formed by people
+	who like to MIMIC.
+
+	A battle starts the instant we meet!"
+}
+
+text(local) Route119_Text_KentDefeat {
+	"I give up!"
+}
+
+text(local) Route119_Text_KentPostBattle {
+	"Won't you join our MIMIC CIRCLE?"
+}
+
+text(local) Route119_Text_JacksonIntro {
+	"Who has the knowledge and
+	the technique for survival?
+
+	POKéMON RANGERS, that's who!"
+}
+
+text(local) Route119_Text_JacksonDefeat {
+	"I didn't have enough POKéMON
+	know-how…"
+}
+
+text(local) Route119_Text_JacksonPostBattle {
+	"To break away from civilization and
+	awaken the wild spirit within!
+
+	That's our vision."
+}
+
+text(local) Route119_Text_JacksonRegister {
+	"I hope you'll give me a rematch without
+	mocking my lack of knowledge."
+}
+
+text(local) Route119_Text_JacksonRematchIntro {
+	"I'm going to regain my wild spirit by
+	being together with POKéMON."
+}
+
+text(local) Route119_Text_JacksonRematchDefeat {
+	"You've remained strong!"
+}
+
+text(local) Route119_Text_JacksonPostRematch {
+	"Believe in your POKéMON.
+	Believe in yourself.
+
+	The road will reveal itself to you."
+}
+
+text(local) Route119_Text_CatherineIntro {
+	"Oh? Look at you.
+
+	For someone on an adventure,
+	you're traveling awfully light."
+}
+
+text(local) Route119_Text_CatherineDefeat {
+	"Accidents happen when you're not
+	prepared!"
+}
+
+text(local) Route119_Text_CatherinePostBattle {
+	"You're traveling light but you have
+	everything you need.
+
+	You're on top of things mentally and
+	physically, too."
+}
+
+text(local) Route119_Text_CatherineRegister {
+	"Do you have a POKéNAV?
+	It's a must-have tool for any TRAINER.
+
+	Oh, you do have one!
+	Let's register each other, then!"
+}
+
+text(local) Route119_Text_CatherineRematchIntro {
+	"How's your journey with POKéMON
+	going?"
+}
+
+text(local) Route119_Text_CatherineRematchDefeat {
+	"I'm still missing something…"
+}
+
+text(local) Route119_Text_CatherinePostRematch {
+	"In the same way that you, as a TRAINER,
+	rely on your POKéMON, your POKéMON
+	rely on you."
+}
+
+text(local) Route119_Text_HughIntro {
+	"The vast sky holds untold promise!
+
+	Nothing can compare to the sheer
+	exhilaration of flight!"
+}
+
+text(local) Route119_Text_HughDefeat {
+	"Down and out!"
+}
+
+text(local) Route119_Text_HughPostBattle {
+	"My BIRD POKéMON made my dreams of
+	flying come true!"
+}
+
+text(local) Route119_Text_PhilIntro {
+	"I'll show you the true potential of me
+	and my BIRD POKéMON!"
+}
+
+text(local) Route119_Text_PhilDefeat {
+	"We lacked potential…"
+}
+
+text(local) Route119_Text_PhilPostBattle {
+	"Ever since I was a little kid, I always
+	admired BIRD POKéMON…"
+}
+
+text(local) Route119_Text_YasuIntro {
+	"To lurk in shadows, and live in
+	darkness… That is my destiny.
+
+	I emerge to challenge you!"
+}
+
+text(local) Route119_Text_YasuDefeat {
+	"I admit defeat!"
+}
+
+text(local) Route119_Text_YasuPostBattle {
+	"Those defeated in battle withdraw
+	quietly back into the shadows.
+	That, too, is destiny…"
+}
+
+text(local) Route119_Text_TakashiIntro {
+	"If you're not on your guard,
+	you're in for some pain!"
+}
+
+text(local) Route119_Text_TakashiDefeat {
+	"You're surprisingly good!"
+}
+
+text(local) Route119_Text_TakashiPostBattle {
+	"My surprise attack ended in
+	failure…"
+}
+
+text(local) Route119_Text_HideoIntro {
+	"To hide a tree, use a forest!"
+}
+
+text(local) Route119_Text_HideoDefeat {
+	"I bow to your superiority."
+}
+
+text(local) Route119_Text_HideoPostBattle {
+	"To hide a tree, use a forest!
+	To hide a POKéMON, use a POKéMON!
+
+	There is no deep, hidden meaning
+	to that."
+}
+
+text(local) Route119_Text_ChrisIntro {
+	"You spoke to me…
+	So you want to challenge me!
+
+	Sure! I'll try out the POKéMON I caught
+	while SURFING!"
+}
+
+text(local) Route119_Text_ChrisDefeat {
+	"I don't have a clue about what it
+	takes to win."
+}
+
+text(local) Route119_Text_ChrisPostBattle {
+	"Go for a SURF on my POKéMON…
+
+	Then fish off its back…
+
+	It's an indescribably luxuriant moment!"
+}
+
+text(local) Route119_Text_FabianIntro {
+	"Hit me with a power chord!
+	Victory is mine!
+	It's our time to shine, whoa, yeah!"
+}
+
+text(local) Route119_Text_FabianDefeat {
+	"You showed me who's the boss!
+	We'll have to take the loss, oh, no!"
+}
+
+text(local) Route119_Text_FabianPostBattle {
+	"Hit me with another power chord!
+	Leave me alone!
+	Your win you have to atone!"
+}
+
+text(local) Route119_Text_DaytonIntro {
+	"Hohoho!
+	I like kid TRAINERS!
+	Let's have a good one!"
+}
+
+text(local) Route119_Text_DaytonDefeat {
+	"You're pretty amazing!
+	Hohoho!"
+}
+
+text(local) Route119_Text_DaytonPostBattle {
+	"Hohoho!
+	I'll try emulating the pep of kid
+	TRAINERS like you!"
+}
+
+text(local) Route119_Text_RachelIntro {
+	"Wherever and whenever I may be,
+	I always have my parasol in hand."
+}
+
+text(local) Route119_Text_RachelDefeat {
+	"Oh, but…
+	That's not fair."
+}
+
+text(local) Route119_Text_RachelPostBattle {
+	"You're asking if my parasol is heavy?
+	Your BAG is filled with more junk than
+	I ever carry around."
+}
+
+text(local) Route120_Text_ColinIntro {
+	"Do you have any moves that can strike
+	a flying POKéMON?"
+}
+
+text(local) Route120_Text_ColinDefeat {
+	"You soared above me!"
+}
+
+text(local) Route120_Text_ColinPostBattle {
+	"The move FLY is convenient,
+	don't you think?
+
+	While the POKéMON is flying,
+	almost no moves can strike it."
+}
+
+text(local) Route120_Text_RobertIntro {
+	"My POKéMON is strong!
+	How about yours?"
+}
+
+text(local) Route120_Text_RobertDefeat {
+	"Your POKéMON were stronger…"
+}
+
+text(local) Route120_Text_RobertPostBattle {
+	"A POKéMON that grows steadily is one
+	you can count on."
+}
+
+text(local) Route120_Text_RobertRegister {
+	"You can be counted on to get better.
+	I'd like to register you in my POKéNAV!"
+}
+
+text(local) Route120_Text_RobertRematchIntro {
+	"A POKéMON that grows steadily is one
+	you can count on."
+}
+
+text(local) Route120_Text_RobertRematchDefeat {
+	"Your POKéMON are seriously strong."
+}
+
+text(local) Route120_Text_RobertPostRematch {
+	"My POKéMON are growing stronger.
+	I have to grow stronger, too."
+}
+
+text(local) Route120_Text_LorenzoIntro {
+	"I'll check your POKéMON and see if
+	they're fit for the outdoors."
+}
+
+text(local) Route120_Text_LorenzoDefeat {
+	"With POKéMON that strong, you're in
+	no danger of needing rescue!"
+}
+
+text(local) Route120_Text_LorenzoPostBattle {
+	"To travel wherever your heart desires
+	with POKéMON…
+	That's the joy of being a TRAINER."
+}
+
+text(local) Route120_Text_JennaIntro {
+	"How's your physical fitness?
+	If you're not fit, you could have a
+	rough time in critical situations."
+}
+
+text(local) Route120_Text_JennaDefeat {
+	"I'm totally fit, but…"
+}
+
+text(local) Route120_Text_JennaPostBattle {
+	"Fitness training is in my routine.
+	I always run with my POKéMON."
+}
+
+text(local) Route120_Text_JeffreyIntro {
+	"… … … … … …
+	… … … … … …
+	Want to battle?"
+}
+
+text(local) Route120_Text_JeffreyDefeat {
+	"Lost it…"
+}
+
+text(local) Route120_Text_JeffreyPostBattle {
+	"… … … … … …
+	… … … … … …
+	I'll try harder…"
+}
+
+text(local) Route120_Text_JeffreyRegister {
+	"… … … … … …
+	… … … … … …
+	Do you have a POKéNAV…?"
+}
+
+text(local) Route120_Text_JeffreyRematchIntro {
+	"… … … … … …
+	… … … … … …
+	Want to battle again?"
+}
+
+text(local) Route120_Text_JeffreyRematchDefeat {
+	"… … … … … …
+	I lost again…"
+}
+
+text(local) Route120_Text_JeffreyPostRematch {
+	"… … … … … …
+	… … … … … …
+	I'll try harder…
+	For my precious BUG POKéMON…"
+}
+
+text(local) Route120_Text_JenniferIntro {
+	"POKéMON have many special abilities.
+	If you want to become a first-class
+	TRAINER, learn about them."
+}
+
+text(local) Route120_Text_JenniferDefeat {
+	"You're obviously thinking."
+}
+
+text(local) Route120_Text_JenniferPostBattle {
+	"The special abilities of POKéMON
+	will make battle styles change."
+}
+
+text(local) Route120_Text_ChipIntro {
+	"Who might you be?
+
+	Are you perhaps searching for ancient
+	ruins that are rumored to possibly
+	exist according to legend?"
+}
+
+text(local) Route120_Text_ChipDefeat {
+	"What a disgraceful setback…"
+}
+
+text(local) Route120_Text_ChipPostBattle {
+	"That giant rock… I would like to
+	believe it may indeed contain ancient
+	ruins. But I see no entrance."
+}
+
+text(local) Route120_Text_ClarissaIntro {
+	"Why am I carrying this parasol?
+
+	I'll tell you if you can win against me."
+}
+
+text(local) Route120_Text_ClarissaDefeat {
+	"A parasol can't ward off POKéMON
+	attacks…"
+}
+
+text(local) Route120_Text_ClarissaPostBattle {
+	"I don't think strong sunlight is good
+	for my POKéMON.
+	So I shield them with my parasol."
+}
+
+text(local) Route120_Text_AngelicaIntro {
+	"Me, POKéMON, and my parasol…
+
+	If any one of them is missing,
+	the picture of beauty will be ruined."
+}
+
+text(local) Route120_Text_AngelicaDefeat {
+	"You've completely ruined my beauty…"
+}
+
+text(local) Route120_Text_AngelicaPostBattle {
+	"A parasol wouldn't suit you at all.
+
+	Why, something like this would only
+	get in your way."
+}
+
+text(local) Route120_Text_KeigoIntro {
+	"I will adopt the movements of POKéMON
+	and create new ninja techniques."
+}
+
+text(local) Route120_Text_KeigoDefeat {
+	"The creation of new ninja techniques
+	is but a distant dream…"
+}
+
+text(local) Route120_Text_KeigoPostBattle {
+	"Perhaps I ought to apprentice under
+	a ninja sensei."
+}
+
+text(local) Route120_Text_RileyIntro {
+	"We ninja conceal ourselves under our
+	camouflage cloaks.
+	I bet you didn't know where I was!"
+}
+
+text(local) Route120_Text_RileyDefeat {
+	"I lost!
+	I should camouflage my shame!"
+}
+
+text(local) Route120_Text_RileyPostBattle {
+	"Our camouflage cloaks are all
+	handmade."
+}
+
+text(local) Route120_Text_CallieIntro {
+	"If you don't pay attention,
+	you could get hurt!"
+}
+
+text(local) Route120_Text_CallieDefeat {
+	"Ouch!
+	I was the one to get hurt."
+}
+
+text(local) Route120_Text_CalliePostBattle {
+	"I wonder… Should I evolve my POKéMON?
+	They're cute the way they are, though."
+}
+
+text(local) Route120_Text_LeonelIntro {
+	"Your party POKéMON…
+	Do you have different types?"
+}
+
+text(local) Route120_Text_LeonelDefeat {
+	"I've seen your policy in action!"
+}
+
+text(local) Route120_Text_LeonelPostBattle {
+	"I think it's awesome you're so strong
+	battling with your favorite POKéMON."
+}
+
+text(local) Route121_Text_VanessaIntro {
+	"Will you play with my delightfully
+	pretty POKéMON?"
+}
+
+text(local) Route121_Text_VanessaDefeat {
+	"This isn't what I meant!"
+}
+
+text(local) Route121_Text_VanessaPostBattle {
+	"I'm going to a CONTEST in LILYCOVE.
+
+	My POKéMON should have no problem
+	sweeping the MASTER CLASS."
+}
+
+text(local) Route121_Text_WalterIntro {
+	"With my POKéMON, I have traveled
+	to the world's four corners.
+
+	You might say I have some confidence
+	in my abilities."
+}
+
+text(local) Route121_Text_WalterDefeat {
+	"Ah, well played."
+}
+
+text(local) Route121_Text_WalterPostBattle {
+	"I would like to circle the globe once
+	again with my POKéMON."
+}
+
+text(local) Route121_Text_WalterRegister {
+	"Your POKéMON prowess is remarkable.
+	Allow me to register you as a memento."
+}
+
+text(local) Route121_Text_WalterRematchIntro {
+	"With my POKéMON, I have traveled
+	to the world's four corners.
+
+	You might say I have some confidence
+	in my abilities."
+}
+
+text(local) Route121_Text_WalterRematchDefeat {
+	"Ah, well played."
+}
+
+text(local) Route121_Text_WalterPostRematch {
+	"Your POKéMON and you…
+
+	Your prowess together will be
+	considered strong, even overseas."
+}
+
+text(local) Route121_Text_TammyIntro {
+	"There are powers beyond our
+	understanding in the world…"
+}
+
+text(local) Route121_Text_TammyDefeat {
+	"I have lost…"
+}
+
+text(local) Route121_Text_TammyPostBattle {
+	"MT. PYRE…
+	There is a mysterious power
+	at work there…"
+}
+
+text(local) Route121_Text_KateIntro {
+	"KATE: Together, we're fearless!
+	We'll demonstrate how tough we are!"
+}
+
+text(local) Route121_Text_KateDefeat {
+	"KATE: I blew it in front of my junior
+	student partner…"
+}
+
+text(local) Route121_Text_KatePostBattle {
+	"KATE: When someone's relying on me,
+	I get this urge to look cool in front
+	of them…"
+}
+
+text(local) Route121_Text_KateNotEnoughMons {
+	"KATE: If you've only got one POKéMON,
+	we can't battle with you.
+
+	That would be bullying."
+}
+
+text(local) Route121_Text_JoyIntro {
+	"JOY: Together, we're fearless!
+	We'll demonstrate how tough we are!"
+}
+
+text(local) Route121_Text_JoyDefeat {
+	"JOY: Please forgive me, KATE!"
+}
+
+text(local) Route121_Text_JoyPostBattle {
+	"JOY: Ehehe, I'll have to train with KATE,
+	my senior student partner, again."
+}
+
+text(local) Route121_Text_JoyNotEnoughMons {
+	"JOY: You need at least two POKéMON
+	if you're going to challenge us!"
+}
+
+text(local) Route121_Text_JessicaIntro {
+	"Stop! Have a good look at my precious
+	POKéMON!"
+}
+
+text(local) Route121_Text_JessicaDefeat {
+	"Oh, how dare you!
+	Don't take it so seriously!"
+}
+
+text(local) Route121_Text_JessicaPostBattle {
+	"Maybe I'll go catch more POKéMON at
+	the SAFARI."
+}
+
+text(local) Route121_Text_JessicaRegister {
+	"I took it easy on you this time!
+	It won't be that way the next time!"
+}
+
+text(local) Route121_Text_JessicaRematchIntro {
+	"My precious POKéMON grew!
+	Have a good look!"
+}
+
+text(local) Route121_Text_JessicaRematchDefeat {
+	"Oh, how dare you!
+	You still won't take it easy!"
+}
+
+text(local) Route121_Text_JessicaPostRematch {
+	"Maybe I'll go catch more POKéMON at
+	the SAFARI."
+}
+
+text(local) Route121_Text_CristinIntro {
+	"I have this routine.
+	Defeat five TRAINERS a day.
+	Guess what? You're number five!"
+}
+
+text(local) Route121_Text_CristinDefeat {
+	"No!
+	You're horrid!"
+}
+
+text(local) Route121_Text_CristinPostBattle {
+	"I didn't expect to lose this easily…
+	I'll win next time!"
+}
+
+text(local) Route121_Text_CristinRegister {
+	"That was total humiliation!
+	I won't forget you…
+	Hand over your POKéNAV!"
+}
+
+text(local) Route121_Text_CristinRematchIntro {
+	"I have this new routine.
+	Defeat ten TRAINERS a day.
+	Guess what? You're number ten!"
+}
+
+text(local) Route121_Text_CristinRematchDefeat {
+	"Wait! That's nasty!
+	I demand a rematch!"
+}
+
+text(local) Route121_Text_CristinPostRematch {
+	"An opponent I just can't beat…
+	Snivel…
+	I can't believe this is happening…"
+}
+
+text(local) Route121_Text_CaleIntro {
+	"Can't you see that I have all this
+	stuff with me?
+
+	Despite that, you still insist that
+	we battle?"
+}
+
+text(local) Route121_Text_CaleDefeat {
+	"Of course I lost!
+	I'm holding stuff in both hands!"
+}
+
+text(local) Route121_Text_CalePostBattle {
+	"I bought too much stuff at
+	the LILYCOVE DEPT. STORE.
+
+	It's up the road from here.
+	I wish I had a BAG like yours."
+}
+
+text(local) Route121_Text_MylesIntro {
+	"There's nothing I love more than
+	checking out other people's POKéMON!"
+}
+
+text(local) Route121_Text_MylesDefeat {
+	"Super awesome!"
+}
+
+text(local) Route121_Text_MylesPostBattle {
+	"They're great, your POKéMON!
+	How do you raise them?"
+}
+
+text(local) Route121_Text_PatIntro {
+	"I want everybody to see the POKéMON
+	I've raised!"
+}
+
+text(local) Route121_Text_PatDefeat {
+	"Wow!
+	Spectacular!"
+}
+
+text(local) Route121_Text_PatPostBattle {
+	"I raise every POKéMON with the same
+	love and care--I don't pick favorites."
+}
+
+text(local) Route121_Text_MarcelIntro {
+	"My POKéMON have never tasted defeat!
+	On their next win, I'm entering them
+	in CONTESTS."
+}
+
+text(local) Route121_Text_MarcelDefeat {
+	"Oh, now what happened here?"
+}
+
+text(local) Route121_Text_MarcelPostBattle {
+	"I may have to train my gang some more
+	before entering any CONTEST."
+}
+
+text(local) Route123_Text_WendyIntro {
+	"Want to determine how strong you are?
+	I'll be the test!"
+}
+
+text(local) Route123_Text_WendyDefeat {
+	"You passed with flying colors!"
+}
+
+text(local) Route123_Text_WendyPostBattle {
+	"To best even me…
+	Your strength is marvelous!"
+}
+
+text(local) Route123_Text_BraxtonIntro {
+	"You seem to have a big collection
+	of GYM BADGES.
+
+	Let me see if you're actually worthy of
+	those BADGES!"
+}
+
+text(local) Route123_Text_BraxtonDefeat {
+	"Oh, you're worthy, all right!"
+}
+
+text(local) Route123_Text_BraxtonPostBattle {
+	"You did your BADGES proud in that
+	match!"
+}
+
+text(local) Route123_Text_VioletIntro {
+	"They say that good times are filled
+	with good aromas."
+}
+
+text(local) Route123_Text_VioletDefeat {
+	"Oh…
+	I smell the bitter scent of misery…"
+}
+
+text(local) Route123_Text_VioletPostBattle {
+	"The BERRY MASTER's garden is filled
+	with uplifting fragrances."
+}
+
+text(local) Route123_Text_CameronIntro {
+	"Being a psychic is about willpower.
+
+	I've willed myself not to lose to
+	anyone. That makes me strong!"
+}
+
+text(local) Route123_Text_CameronDefeat {
+	"I feel sad…"
+}
+
+text(local) Route123_Text_CameronPostBattle {
+	"Being a psychic is about willpower.
+	I thought I wouldn't lose to you…"
+}
+
+text(local) Route123_Text_CameronRegister {
+	"I sense it!
+	You and I shall battle again!
+	I can't tell if I'll win, though…
+
+	Let's see your POKéNAV."
+}
+
+text(local) Route123_Text_CameronRematchIntro {
+	"I've convinced myself that I won't
+	lose anymore. That makes me strong!"
+}
+
+text(local) Route123_Text_CameronRematchDefeat {
+	"I feel sad…"
+}
+
+text(local) Route123_Text_CameronPostRematch {
+	"I should train at MT. PYRE…
+	I'll never beat you this way…"
+}
+
+text(local) Route123_Text_JackiIntro {
+	"Don't be too happy if your POKéMON
+	develop psychic powers.
+
+	You need to refine those powers to
+	make them really useful."
+}
+
+text(local) Route123_Text_JackiDefeat {
+	"Overwhelmed!"
+}
+
+text(local) Route123_Text_JackiPostBattle {
+	"We all have psychic powers.
+	We've just forgotten how to use them."
+}
+
+text(local) Route123_Text_JackiRegister {
+	"I would like to face you again.
+	Is that okay with you?"
+}
+
+text(local) Route123_Text_JackiRematchIntro {
+	"Have you awoken the psychic powers
+	within you?"
+}
+
+text(local) Route123_Text_JackiRematchDefeat {
+	"Astounding!"
+}
+
+text(local) Route123_Text_JackiPostRematch {
+	"Your power with POKéMON…
+	That could be a psychic power, too."
+}
+
+text(local) Route123_Text_MiuIntro {
+	"MIU: Hello, TRAINER. I hope your
+	POKéMON won't cry when they lose."
+}
+
+text(local) Route123_Text_MiuDefeat {
+	"MIU: Uh-oh, we lost."
+}
+
+text(local) Route123_Text_MiuPostBattle {
+	"MIU: TRAINER, your POKéMON are
+	strong because you are friends."
+}
+
+text(local) Route123_Text_MiuNotEnoughMons {
+	"MIU: It's no fun to battle if you
+	don't have two POKéMON."
+}
+
+text(local) Route123_Text_YukiIntro {
+	"YUKI: Okay!
+	We're beating the TRAINER's POKéMON!"
+}
+
+text(local) Route123_Text_YukiDefeat {
+	"YUKI: Uh-oh, we lost."
+}
+
+text(local) Route123_Text_YukiPostBattle {
+	"YUKI: Why are you so strong?
+	We've never lost before."
+}
+
+text(local) Route123_Text_YukiNotEnoughMons {
+	"YUKI: It's no fun to battle if you
+	don't have two POKéMON."
+}
+
+text(local) Route123_Text_KindraIntro {
+	"MT. PYRE…
+	Where the spirits of POKéMON sleep…
+	Will your POKéMON sleep?"
+}
+
+text(local) Route123_Text_KindraDefeat {
+	"Overflowing with vitality…"
+}
+
+text(local) Route123_Text_KindraPostBattle {
+	"MT. PYRE…
+	Where the spirits of POKéMON sleep…
+
+	It must overflow with a power that
+	soothes spirits…"
+}
+
+text(local) Route123_Text_FernandoIntro {
+	"I'll turn your lights out while
+	I rip through this tune!"
+}
+
+text(local) Route123_Text_FernandoDefeat {
+	"Hey, hold it!
+	I was still playing the intro!"
+}
+
+text(local) Route123_Text_FernandoPostBattle {
+	"You're rock steady.
+	I'd like to write a tune about you."
+}
+
+text(local) Route123_Text_FernandoRegister {
+	"The next time, lend your ears to
+	the full tune, will you?"
+}
+
+text(local) Route123_Text_FernandoRematchIntro {
+	"Today's the day I'm going to do it!
+	I'll turn out your lights before
+	I finish singing my song!"
+}
+
+text(local) Route123_Text_FernandoRematchDefeat {
+	"Hey, hold it!
+	I haven't even hit the chorus!"
+}
+
+text(local) Route123_Text_FernandoPostRematch {
+	"I thought you'd be so enthralled
+	by my tune, you'd lose."
+}
+
+text(local) Route123_Text_DavisIntro {
+	"This is my awesome BUG POKéMON!
+	My big brother got it for me."
+}
+
+text(local) Route123_Text_DavisDefeat {
+	"Waaaah!
+	You meanie!"
+}
+
+text(local) Route123_Text_DavisPostBattle {
+	"Don't tell my brother I lost.
+	You have to keep it a secret!"
+}
+
+text(local) Route123_Text_JazmynIntro {
+	"My confidence will get a boost by
+	beating someone obviously strong!"
+}
+
+text(local) Route123_Text_JazmynDefeat {
+	"There goes my confidence…"
+}
+
+text(local) Route123_Text_JazmynPostBattle {
+	"They say that you can't judge a person
+	by their appearance.
+
+	But often, their looks don't lie…"
+}
+
+text(local) Route123_Text_FrederickIntro {
+	"Hello, child!
+	Can you spare some time?"
+}
+
+text(local) Route123_Text_FrederickDefeat {
+	"Ah, a mighty capable child!
+	Let me contribute to your allowance."
+}
+
+text(local) Route123_Text_FrederickPostBattle {
+	"Contribute to your allowance?
+	Wasn't the prize money enough?"
+}
+
+text(local) Route123_Text_AlbertoIntro {
+	"I have to tell you, BIRD POKéMON
+	are my obsession!
+
+	Birds are cool!
+	They're the best!"
+}
+
+text(local) Route123_Text_AlbertoDefeat {
+	"Even in defeat, BIRD POKéMON are cool!"
+}
+
+text(local) Route123_Text_AlbertoPostBattle {
+	"I gather BIRD POKéMON feathers that
+	scatter during battles.
+
+	I'm going to make a hat with
+	BIRD POKéMON feathers."
+}
+
+text(local) Route123_Text_EdIntro {
+	"When there are no TRAINERS around,
+	I let my POKéMON battle each other.
+	I watch them."
+}
+
+text(local) Route123_Text_EdDefeat {
+	"I kind of like your POKéMON."
+}
+
+text(local) Route123_Text_EdPostBattle {
+	"Hehe, I'm swiping your battling ideas!
+	I think they'll make me better."
+}
+
+text(local) Route123_Text_JonasIntro {
+	"I lay in ambush, and a TRAINER has
+	landed in my trap!"
+}
+
+text(local) Route123_Text_JonasDefeat {
+	"If you don't lose, how am I supposed
+	to have fun playing ninja?"
+}
+
+text(local) Route123_Text_JonasPostBattle {
+	"I'm going to ambush a weaker-looking
+	TRAINER next time."
+}
+
+text(local) Route123_Text_KayleyIntro {
+	"I just bought this parasol.
+	My cuteness should be up by a third!"
+}
+
+text(local) Route123_Text_KayleyDefeat {
+	"You're better than me by about
+	five times!"
+}
+
+text(local) Route123_Text_KayleyPostBattle {
+	"Using accessories effectively is
+	the secret behind fashion appeal."
+}
+
+text(local) Route124_Text_SpencerIntro {
+	"Hey, are you lost at sea?
+
+	If you can beat my POKéMON,
+	I can serve as your pilot."
+}
+
+text(local) Route124_Text_SpencerDefeat {
+	"I lost my bearings in battle!"
+}
+
+text(local) Route124_Text_SpencerPostBattle {
+	"Many people lose their bearings at sea.
+
+	If you're that sort, you should refer
+	to the POKéNAV's MAP."
+}
+
+text(local) Route124_Text_RolandIntro {
+	"Hm! You're riding a POKéMON instead
+	of swimming yourself…
+
+	I am envious!"
+}
+
+text(local) Route124_Text_RolandDefeat {
+	"Oh!
+	I can't…"
+}
+
+text(local) Route124_Text_RolandPostBattle {
+	"I'm getting chilled…
+	I've been in the water too long…
+
+	I wish I could ride a POKéMON like you…"
+}
+
+text(local) Route124_Text_JennyIntro {
+	"If you just float in the sea like
+	this, POKéMON come around to play."
+}
+
+text(local) Route124_Text_JennyDefeat {
+	"Oh, darn.
+	I've gone and lost."
+}
+
+text(local) Route124_Text_JennyPostBattle {
+	"While swimming, I noticed that some
+	POKéMON attack, and some just watch.
+
+	I guess POKéMON have personalities
+	of their own."
+}
+
+text(local) Route124_Text_JennyRegister {
+	"It's only on a whim, but maybe I'll get
+	you to register me in your POKéNAV."
+}
+
+text(local) Route124_Text_JennyRematchIntro {
+	"If you just float in the sea like this,
+	TRAINERS challenge you!"
+}
+
+text(local) Route124_Text_JennyRematchDefeat {
+	"That's strange…
+	I lost again…"
+}
+
+text(local) Route124_Text_JennyPostRematch {
+	"This has nothing to do with anything,
+	but maybe I'll visit the TRICK HOUSE."
+}
+
+text(local) Route124_Text_GraceIntro {
+	"I'm growing bored of swimming…
+	How about a battle?"
+}
+
+text(local) Route124_Text_GraceDefeat {
+	"I had no idea that you were
+	this strong!"
+}
+
+text(local) Route124_Text_GracePostBattle {
+	"All the effort you put in must have
+	made you this strong."
+}
+
+text(local) Route124_Text_ChadIntro {
+	"Fufufufu… I dive deep underwater
+	to go deep under cover.
+	Plumbing the depths is where I excel!"
+}
+
+text(local) Route124_Text_ChadDefeat {
+	"Glub, glub, glub…
+	I'm sinking…"
+}
+
+text(local) Route124_Text_ChadPostBattle {
+	"I have it on good authority that
+	there's a DIVE spot around here.
+
+	It gives me the urge to go deep
+	again…"
+}
+
+text(local) Route124_Text_LilaIntro {
+	"LILA: Sigh…
+
+	Here I am in the sea, but who's with me?
+	My little brother!
+
+	Let's battle so I won't have to dwell
+	on that!"
+}
+
+text(local) Route124_Text_LilaDefeat {
+	"LILA: ROY! It's your fault we lost!
+	You're in for it later!"
+}
+
+text(local) Route124_Text_LilaPostBattle {
+	"LILA: Sigh…
+
+	If only it wasn't my little brother
+	next to me, but a nice boyfriend…"
+}
+
+text(local) Route124_Text_LilaNotEnoughMons {
+	"LILA: You're planning to battle us?
+	Not unless you have two POKéMON."
+}
+
+text(local) Route124_Text_RoyIntro {
+	"ROY: My big sister is tough at POKéMON!
+
+	Don't cry when you lose!"
+}
+
+text(local) Route124_Text_RoyDefeat {
+	"ROY: Uh-oh…
+	My big sister will chew me out…"
+}
+
+text(local) Route124_Text_RoyPostBattle {
+	"ROY: My big sister is really scary
+	when she gets angry.
+
+	That's why she doesn't have a
+	boyfriend."
+}
+
+text(local) Route124_Text_LilaRoyRegister {
+	"ROY: Will you battle with us again?
+	But take it easy next time, okay?"
+}
+
+text(local) Route124_Text_RoyNotEnoughMons {
+	"ROY: Did you want to battle us?
+	Bring two POKéMON, then."
+}
+
+text(local) Route124_Text_LilaRematchIntro {
+	"LILA: Sigh…
+
+	Here I am in the sea, but who's with me?
+	My little brother!
+
+	Oh, hi, it's been a while. Let's battle
+	so I won't have to dwell on things!"
+}
+
+text(local) Route124_Text_LilaRematchDefeat {
+	"LILA: ROY!
+	It's your fault we lost again!
+
+	We're having a training session later!"
+}
+
+text(local) Route124_Text_LilaPostRematch {
+	"LILA: Sigh…
+
+	If I had a nice boyfriend, we'd beat
+	anyone with lovely combinations…"
+}
+
+text(local) Route124_Text_LilaRematchNotEnoughMons {
+	"LILA: You're planning to battle us?
+	Not unless you have two POKéMON."
+}
+
+text(local) Route124_Text_RoyRematchIntro {
+	"ROY: If we lose, I'll catch heck.
+	I'm going to go totally all out!"
+}
+
+text(local) Route124_Text_RoyRematchDefeat {
+	"ROY: Uh-oh…
+	My big sister will chew me out again."
+}
+
+text(local) Route124_Text_RoyPostRematch {
+	"ROY: My big sister is really scary
+	when she gets angry.
+
+	She's going to make me train really
+	hard with POKéMON later…"
+}
+
+text(local) Route124_Text_RoyRematchNotEnoughMons {
+	"ROY: Did you want to battle us?
+	Bring two POKéMON, then."
+}
+
+text(local) Route124_Text_DeclanIntro {
+	"Here I am swimming by my lonesome
+	on this wide, beautiful sea.
+
+	There's no other word for it.
+	This is pathetic!"
+}
+
+text(local) Route124_Text_DeclanDefeat {
+	"I'm feeling blue.
+	Blue as the sky…"
+}
+
+text(local) Route124_Text_DeclanPostBattle {
+	"I should chat up lady SWIMMERS
+	and invite them on a long swim."
+}
+
+text(local) Route124_Text_IsabellaIntro {
+	"I'm not going to lose to some
+	surfer TRAINER."
+}
+
+text(local) Route124_Text_IsabellaDefeat {
+	"I've only got sweat in my eyes!
+	I am not crying!"
+}
+
+text(local) Route124_Text_IsabellaPostBattle {
+	"You can find pretty colored shards
+	of things around here."
+}
+
+text(local) Route125_Text_NolenIntro {
+	"I heard you approaching, so I hung
+	around for you!"
+}
+
+text(local) Route125_Text_NolenDefeat {
+	"I surrender!"
+}
+
+text(local) Route125_Text_NolenPostBattle {
+	"Sound travels faster in water than
+	it does through air."
+}
+
+text(local) Route125_Text_StanIntro {
+	"Hey, there!
+	Check out my sweet POKéMON!"
+}
+
+text(local) Route125_Text_StanDefeat {
+	"I floundered…"
+}
+
+text(local) Route125_Text_StanPostBattle {
+	"I was blown away by HORSEA's charm,
+	so I started swimming, too."
+}
+
+text(local) Route125_Text_TanyaIntro {
+	"I'm tired of swimming.
+	Are you up for a battle with me?"
+}
+
+text(local) Route125_Text_TanyaDefeat {
+	"You're too much!"
+}
+
+text(local) Route125_Text_TanyaPostBattle {
+	"Whew…
+	Which way is it to MOSSDEEP CITY?"
+}
+
+text(local) Route125_Text_SharonIntro {
+	"How would you like to take on the
+	WATER-type POKéMON I raised?"
+}
+
+text(local) Route125_Text_SharonDefeat {
+	"Lost it…"
+}
+
+text(local) Route125_Text_SharonPostBattle {
+	"Your power… You're the real deal.
+	I'm amazed!"
+}
+
+text(local) Route125_Text_ErnestIntro {
+	"Ahoy! I'm a buff, tough SAILOR!
+	I've braved the world's seas!"
+}
+
+text(local) Route125_Text_ErnestDefeat {
+	"Gwrroooar!
+	I couldn't win!"
+}
+
+text(local) Route125_Text_ErnestPostBattle {
+	"The tide ebbs and flows inside the
+	SHOAL CAVE.
+
+	By the way, it's about six hours from
+	high tide to low tide. Did you know?"
+}
+
+text(local) Route125_Text_ErnestRegister {
+	"Register me in your POKéNAV,
+	and I'll tell you something good."
+}
+
+text(local) Route125_Text_ErnestRematchIntro {
+	"It's high time I get my payback
+	from you! Come on, we're battling!"
+}
+
+text(local) Route125_Text_ErnestRematchDefeat {
+	"I couldn't win!
+	I flat out couldn't win!"
+}
+
+text(local) Route125_Text_ErnestRematchPostBattle {
+	"The SHOAL CAVE…
+
+	There are places you can and can't
+	get to depending on the rise and fall
+	of the tide.
+
+	By the way, it's about six hours from
+	high tide to low tide. Don't forget!"
+}
+
+text(local) Route125_Text_KimIntro {
+	"KIM: A funny old man lives in the
+	SHOAL CAVE. Someone told me.
+	Are you going to see him, too?"
+}
+
+text(local) Route125_Text_KimDefeat {
+	"KIM: I thought we would win."
+}
+
+text(local) Route125_Text_KimPostBattle {
+	"KIM: A funny old man lives in the
+	SHOAL CAVE, doesn't he?
+
+	Let's go see him, IRIS!"
+}
+
+text(local) Route125_Text_KimNotEnoughMons {
+	"KIM: No, no, no! You need two POKéMON,
+	or it's just no good!"
+}
+
+text(local) Route125_Text_IrisIntro {
+	"IRIS: KIM, can you tell me what we're
+	looking for out here?"
+}
+
+text(local) Route125_Text_IrisDefeat {
+	"IRIS: Oh, we came sort of close."
+}
+
+text(local) Route125_Text_IrisPostBattle {
+	"IRIS: KIM, are we really going into
+	the SHOAL CAVE?
+	We'll get all wet."
+}
+
+text(local) Route125_Text_IrisNotEnoughMons {
+	"IRIS: Oh, we could never, ever do
+	anything like a 2-on-1 battle."
+}
+
+text(local) Route125_Text_PresleyIntro {
+	"Why would a BIRDKEEPER like me
+	come out to the sea?"
+}
+
+text(local) Route125_Text_PresleyDefeat {
+	"Okay.
+	I'll tell you why I'm here."
+}
+
+text(local) Route125_Text_PresleyPostBattle {
+	"I put a message in a bottle and put
+	it out to sea.
+
+	I'm sure that a girl SWIMMER will
+	find it!"
+}
+
+text(local) Route125_Text_AuronIntro {
+	"Hey! Was it you throwing garbage
+	into the sea?"
+}
+
+text(local) Route125_Text_AuronDefeat {
+	"Oh, you weren't throwing trash into
+	the sea."
+}
+
+text(local) Route125_Text_AuronPostBattle {
+	"I found an unsightly bottle bobbing
+	in the waves earlier.
+
+	It angers me that someone would
+	pollute the sea!"
+}
+
+text(local) Route126_Text_BarryIntro {
+	"Swimming is a full-body workout!
+	You will get fit!"
+}
+
+text(local) Route126_Text_BarryDefeat {
+	"I admit it!
+	You win!"
+}
+
+text(local) Route126_Text_BarryPostBattle {
+	"Thanks to my daily swimming routine…
+	Look! Feast your eyes on this physique!"
+}
+
+text(local) Route126_Text_DeanIntro {
+	"This towering white mountain of rock
+	is SOOTOPOLIS CITY."
+}
+
+text(local) Route126_Text_DeanDefeat {
+	"I was done in?"
+}
+
+text(local) Route126_Text_DeanPostBattle {
+	"I can't find the entrance to
+	SOOTOPOLIS. Where could it be?"
+}
+
+text(local) Route126_Text_NikkiIntro {
+	"Ufufufufu!
+	I'm a mermaid!"
+}
+
+text(local) Route126_Text_NikkiDefeat {
+	"My fantasy burst as if it were a bubble!
+	Blub, blub, blub…"
+}
+
+text(local) Route126_Text_NikkiPostBattle {
+	"You thrashed me… I want to
+	disappear in a wave of despair…"
+}
+
+text(local) Route126_Text_BrendaIntro {
+	"Hello, kiddo!
+	Want a battle with me?"
+}
+
+text(local) Route126_Text_BrendaDefeat {
+	"Oh, noooooh!"
+}
+
+text(local) Route126_Text_BrendaPostBattle {
+	"I love frolicking with POKéMON in
+	the sea like this!"
+}
+
+text(local) Route126_Text_PabloIntro {
+	"Check out this sculpted body!
+	I'm more cut than a BLACK BELT!"
+}
+
+text(local) Route126_Text_PabloDefeat {
+	"Whoops! Too strong!
+	Not bad! Not bad at all!"
+}
+
+text(local) Route126_Text_PabloPostBattle {
+	"Losing to you stimulated my senses!
+	I'll train myself and POKéMON harder!"
+}
+
+text(local) Route126_Text_PabloRegister {
+	"Yep, you're not bad at all!
+	I'd like to get to know you more!"
+}
+
+text(local) Route126_Text_PabloRematchIntro {
+	"Check out this beautiful body!
+	I'm more shapely than a SWIMMER!"
+}
+
+text(local) Route126_Text_PabloRematchDefeat {
+	"Whoops! Really too strong!
+	Not bad! Not bad at all!"
+}
+
+text(local) Route126_Text_PabloPostRematch {
+	"I'm going to train even harder!
+	You're a great motivator!
+	You have to come back again!"
+}
+
+text(local) Route126_Text_LeonardoIntro {
+	"I couldn't even swim last year,
+	but now I'm a decent SWIMMER.
+
+	I think I'm capable of anything now."
+}
+
+text(local) Route126_Text_LeonardoDefeat {
+	"Sheesh, getting greedy didn't do
+	a thing for me."
+}
+
+text(local) Route126_Text_LeonardoPostBattle {
+	"If you practice at something,
+	you will get better at it.
+
+	You're young--don't be afraid to
+	try all sorts of things!"
+}
+
+text(local) Route126_Text_IsobelIntro {
+	"If seawater gets up your nose,
+	doesn't it feel terrible?"
+}
+
+text(local) Route126_Text_IsobelDefeat {
+	"Ack! Why, you…
+	Glub!"
+}
+
+text(local) Route126_Text_IsobelPostBattle {
+	"Ooh, I choked on some water!
+	It's bitter! It's salty!!"
+}
+
+text(local) Route126_Text_SiennaIntro {
+	"I'm throwing my whole heart
+	into this!"
+}
+
+text(local) Route126_Text_SiennaDefeat {
+	"You had more heart!"
+}
+
+text(local) Route126_Text_SiennaPostBattle {
+	"I need to cool down now…
+	I think I'll go for a dive."
+}
+
+text(local) Route127_Text_CamdenIntro {
+	"I can see it in your face.
+	You want to challenge me."
+}
+
+text(local) Route127_Text_CamdenDefeat {
+	"Awawawawawa…"
+}
+
+text(local) Route127_Text_CamdenPostBattle {
+	"A well-played match leaves me feeling
+	refreshed and serene."
+}
+
+text(local) Route127_Text_DonnyIntro {
+	"Do you have a rival whom you just
+	hate to lose against?"
+}
+
+text(local) Route127_Text_DonnyDefeat {
+	"Arrrgh!
+	I hate losing!"
+}
+
+text(local) Route127_Text_DonnyPostBattle {
+	"If you have a rival, don't you get the
+	feeling that you have to keep getting
+	better?"
+}
+
+text(local) Route127_Text_JonahIntro {
+	"Through fishing, I have attained a
+	state of becalmed serenity…
+
+	Please, allow me to demonstrate…"
+}
+
+text(local) Route127_Text_JonahDefeat {
+	"Though I have lost, my heart remains
+	calm…"
+}
+
+text(local) Route127_Text_JonahPostBattle {
+	"It matters not that I catch nothing.
+	The line remains in the water…"
+}
+
+text(local) Route127_Text_HenryIntro {
+	"Whoops! Don't tell me I snagged
+	a SURFING POKéMON?"
+}
+
+text(local) Route127_Text_HenryDefeat {
+	"I can't keep up!"
+}
+
+text(local) Route127_Text_HenryPostBattle {
+	"It'd be a handful if I hooked
+	your tough POKéMON!"
+}
+
+text(local) Route127_Text_RogerIntro {
+	"Well, hey! This is a match between
+	a POKéMON fan and a fishing buff!"
+}
+
+text(local) Route127_Text_RogerDefeat {
+	"No! My line's all tangled!
+	The party's over!"
+}
+
+text(local) Route127_Text_RogerPostBattle {
+	"My fishing line's doing a dance!
+	The tangle tango! Hahaha, snarl!"
+}
+
+text(local) Route127_Text_AidanIntro {
+	"BIRD POKéMON have excellent vision.
+	They spot prey from great heights."
+}
+
+text(local) Route127_Text_AidanDefeat {
+	"Whew… I give up."
+}
+
+text(local) Route127_Text_AidanPostBattle {
+	"There're lots of diving spots in
+	the sea around here.
+
+	You can spot them easily from the sky
+	because of their darker color."
+}
+
+text(local) Route127_Text_KojiIntro {
+	"Run in your bare feet.
+	That will toughen up your soles!"
+}
+
+text(local) Route127_Text_KojiDefeat {
+	"Yowch!
+	I got a pebble under a toenail!"
+}
+
+text(local) Route127_Text_KojiPostBattle {
+	"Going barefoot feels great.
+	But your RUNNING SHOES are cool, too."
+}
+
+text(local) Route127_Text_KojiRegister {
+	"This is what I do to people who beat me!
+	I hope we can do this again."
+}
+
+text(local) Route127_Text_KojiRematchIntro {
+	"I still run in my bare feet daily.
+	My soles are tough!"
+}
+
+text(local) Route127_Text_KojiRematchDefeat {
+	"Yowch!
+	Pebbles dug into my arches!"
+}
+
+text(local) Route127_Text_KojiPostRematch {
+	"Want to go barefoot for a while?
+	So I can try your RUNNING SHOES?"
+}
+
+text(local) Route127_Text_AthenaIntro {
+	"We should have a slow and methodical
+	match."
+}
+
+text(local) Route127_Text_AthenaDefeat {
+	"You didn't give me the chance to
+	do any strategizing."
+}
+
+text(local) Route127_Text_AthenaPostBattle {
+	"When I'm surrounded by the blue sea
+	and sky, it feels as if time slows down."
+}
+
+text(local) Route128_Text_IsaiahIntro {
+	"EVER GRANDE CITY is still a long ways
+	away…"
+}
+
+text(local) Route128_Text_IsaiahDefeat {
+	"My first victory seems to be far
+	away, too…"
+}
+
+text(local) Route128_Text_IsaiahPostBattle {
+	"My whole life has been about losing,
+	but I will never give up!"
+}
+
+text(local) Route128_Text_IsaiahRegister {
+	"I know I'm not good now, but I think
+	I can win eventually.
+
+	Please register me in your POKéNAV."
+}
+
+text(local) Route128_Text_IsaiahRematchIntro {
+	"I'm still feeling good. I'll keep on
+	swimming to EVER GRANDE CITY."
+}
+
+text(local) Route128_Text_IsaiahRematchDefeat {
+	"I've yet to taste my first victory…"
+}
+
+text(local) Route128_Text_IsaiahPostRematch {
+	"I'll eventually reach EVER GRANDE CITY
+	where I can eventually win…"
+}
+
+text(local) Route128_Text_KatelynIntro {
+	"You have to swim, cycle, and then run
+	a marathon in a triathlon.
+
+	It's a grueling race that consists
+	of three events."
+}
+
+text(local) Route128_Text_KatelynDefeat {
+	"A POKéMON battle is grueling, too…"
+}
+
+text(local) Route128_Text_KatelynPostBattle {
+	"I have to ride a BIKE next, but…
+	I'm about to throw in the towel…"
+}
+
+text(local) Route128_Text_KatelynRegister {
+	"Well, I may as well make the best
+	of this. I'd like a rematch sometime."
+}
+
+text(local) Route128_Text_KatelynRematchIntro {
+	"A triathlon is long. But I guess the
+	road to become the POKéMON CHAMPION
+	is also a long and grueling one."
+}
+
+text(local) Route128_Text_KatelynRematchDefeat {
+	"A POKéMON battle really is harsh
+	and unforgiving…"
+}
+
+text(local) Route128_Text_KatelynPostRematch {
+	"You should give serious thought to
+	challenges on VICTORY ROAD."
+}
+
+text(local) Route128_Text_AlexaIntro {
+	"We've been working so hard to mount
+	a POKéMON LEAGUE challenge…
+
+	We can't afford to lose now!"
+}
+
+text(local) Route128_Text_AlexaDefeat {
+	"Oh!
+	How could this happen?!"
+}
+
+text(local) Route128_Text_AlexaPostBattle {
+	"After all I've done to get here,
+	I won't give up after one setback."
+}
+
+text(local) Route128_Text_RubenIntro {
+	"There is no stronger TRAINER than I!"
+}
+
+text(local) Route128_Text_RubenDefeat {
+	"This can't be!"
+}
+
+text(local) Route128_Text_RubenPostBattle {
+	"There probably is no stronger TRAINER
+	than you!"
+}
+
+text(local) Route128_Text_WayneIntro {
+	"I want to visit EVER GRANDE, so I
+	caught myself a POKéMON that knows
+	the move WATERFALL to crest the falls."
+}
+
+text(local) Route128_Text_WayneDefeat {
+	"I'm crestfallen!"
+}
+
+text(local) Route128_Text_WaynePostBattle {
+	"Awww, phooey!
+
+	My POKéMON knows WATERFALL, but
+	I don't have the SOOTOPOLIS GYM BADGE!"
+}
+
+text(local) Route128_Text_HarrisonIntro {
+	"You're looking awfully tough.
+	I wonder if I can win?"
+}
+
+text(local) Route128_Text_HarrisonDefeat {
+	"Ouch!
+	I guess it was impossible to win."
+}
+
+text(local) Route128_Text_HarrisonPostBattle {
+	"There are tough TRAINERS galore
+	around EVER GRANDE.
+
+	Do you think I may be out
+	of my league?"
+}
+
+text(local) Route128_Text_CarleeIntro {
+	"The sunlight seems to be more harsh
+	in this area."
+}
+
+text(local) Route128_Text_CarleeDefeat {
+	"I couldn't see very well because of
+	the sun's glare."
+}
+
+text(local) Route128_Text_CarleePostBattle {
+	"I should go back soon.
+	I need to reapply my sunscreen."
+}
+
+text(local) Route129_Text_ChaseIntro {
+	"This is my first triathlon.
+	I'm all tense and nervous!"
+}
+
+text(local) Route129_Text_ChaseDefeat {
+	"Wroooaaar!
+	I failed to win!"
+}
+
+text(local) Route129_Text_ChasePostBattle {
+	"If I'm all tensed up, I won't be able to
+	give it my all."
+}
+
+text(local) Route129_Text_AllisonIntro {
+	"I'm in the middle of a triathlon,
+	but, sure, why don't we battle?"
+}
+
+text(local) Route129_Text_AllisonDefeat {
+	"I was sure I'd win!"
+}
+
+text(local) Route129_Text_AllisonPostBattle {
+	"Do you know what's the greatest thing
+	about triathlons?
+
+	Testing the limits of your own
+	strength and endurance against
+	Mother Nature!"
+}
+
+text(local) Route129_Text_ReedIntro {
+	"Say hey, hey!
+	Let's get on with it!"
+}
+
+text(local) Route129_Text_ReedDefeat {
+	"Beat, I'm beaten.
+	That's it, done!"
+}
+
+text(local) Route129_Text_ReedPostBattle {
+	"There's nothing for a loser.
+	Time for me to beat it home."
+}
+
+text(local) Route129_Text_TishaIntro {
+	"What's the hurry?
+	Let's take it slow and easy."
+}
+
+text(local) Route129_Text_TishaDefeat {
+	"Oh, my.
+	I wanted to relax a little more…"
+}
+
+text(local) Route129_Text_TishaPostBattle {
+	"Don't you hate making mistakes when
+	you're in a rush?
+
+	That's why I try to take things
+	slowly."
+}
+
+text(local) Route129_Text_ClarenceIntro {
+	"Surfing isn't as easy as it seems,
+	isn't that right?"
+}
+
+text(local) Route129_Text_ClarenceDefeat {
+	"Winning sure isn't easy."
+}
+
+text(local) Route129_Text_ClarencePostBattle {
+	"You have your sights on the POKéMON
+	LEAGUE? Keep at it!"
+}
+
+text(local) Route130_Text_RodneyIntro {
+	"What a surprise! I didn't expect to
+	see a TRAINER out in the sea.
+
+	I think we should battle!"
+}
+
+text(local) Route130_Text_RodneyDefeat {
+	"This kid's awfully tough…"
+}
+
+text(local) Route130_Text_RodneyPostBattle {
+	"Your eyes have that look of someone
+	who's experienced harsh challenges
+	and won. It suits you well!"
+}
+
+text(local) Route130_Text_KatieIntro {
+	"In the deep blue sea,
+	my shattered blue heart finds
+	comfort among waves."
+}
+
+text(local) Route130_Text_KatieDefeat {
+	"Like the vast blue sea,
+	the world of POKéMON spans
+	depths beyond belief."
+}
+
+text(local) Route130_Text_KatiePostBattle {
+	"The world's children dream
+	of one day becoming
+	the POKéMON CHAMPION."
+}
+
+text(local) Route130_Text_SantiagoIntro {
+	"Floating on the open sea like this…
+	It's peaceful."
+}
+
+text(local) Route130_Text_SantiagoDefeat {
+	"I needed to be a little less peaceful!"
+}
+
+text(local) Route130_Text_SantiagoPostBattle {
+	"Swimming and battling like this…
+	I'm one happy guy…"
+}
+
+text(local) Route131_Text_RichardIntro {
+	"The sea is teeming with POKéMON.
+	It's not easy swimming, I tell you."
+}
+
+text(local) Route131_Text_RichardDefeat {
+	"POKéMON raised by TRAINERS are
+	seriously tough…"
+}
+
+text(local) Route131_Text_RichardPostBattle {
+	"Gasp… Gasp…
+	I'm wiped out…
+
+	The going's easy. It's the leaving
+	that's the hard part.
+
+	Will I have any energy left to make
+	the return trip?"
+}
+
+text(local) Route131_Text_HermanIntro {
+	"The sea… The sea… The sea…
+	The sea as far as these eyes can see!
+	I'm sick and tired of the sea!"
+}
+
+text(local) Route131_Text_HermanDefeat {
+	"Bleah!"
+}
+
+text(local) Route131_Text_HermanPostBattle {
+	"Bored I am by the sea, but swim I must.
+
+	I'm a born swimmer!
+	That's what I am."
+}
+
+text(local) Route131_Text_SusieIntro {
+	"Hi, sweetie, wait!
+	We should battle, you and I!"
+}
+
+text(local) Route131_Text_SusieDefeat {
+	"You're tough in spite of the way
+	you look!"
+}
+
+text(local) Route131_Text_SusiePostBattle {
+	"Did you see a guy over there who whines
+	that he's bored of the sea?
+
+	That's all talk.
+	He's hopelessly in love with the sea!"
+}
+
+text(local) Route131_Text_KaraIntro {
+	"Why do men love bathing suits so much?
+
+	They all ogle me!"
+}
+
+text(local) Route131_Text_KaraDefeat {
+	"I'm out of my depth!"
+}
+
+text(local) Route131_Text_KaraPostBattle {
+	"Maybe it's not my bathing suit that
+	makes men look. It must be my beauty!"
+}
+
+text(local) Route131_Text_ReliIntro {
+	"RELI: We'll work together as siblings
+	to take you on!"
+}
+
+text(local) Route131_Text_ReliDefeat {
+	"RELI: We couldn't win even though we
+	worked together…"
+}
+
+text(local) Route131_Text_ReliPostBattle {
+	"RELI: The people of PACIFIDLOG are
+	together with the sea and POKéMON from
+	the time they are born."
+}
+
+text(local) Route131_Text_ReliNotEnoughMons {
+	"RELI: You don't have two POKéMON?
+	We can't enjoy a battle, then."
+}
+
+text(local) Route131_Text_IanIntro {
+	"IAN: I'm doing my best together with
+	my sis!"
+}
+
+text(local) Route131_Text_IanDefeat {
+	"IAN: I did my best with my sis,
+	but we still couldn't win…"
+}
+
+text(local) Route131_Text_IanPostBattle {
+	"IAN: You know how PACIFIDLOG is
+	a floating town?
+
+	So, wherever there is the sea,
+	that's a part of PACIFIDLOG!"
+}
+
+text(local) Route131_Text_IanNotEnoughMons {
+	"IAN: If you have two POKéMON,
+	we'll take you on!"
+}
+
+text(local) Route131_Text_TaliaIntro {
+	"If you can beat me, I'll give you some
+	great information!"
+}
+
+text(local) Route131_Text_TaliaDefeat {
+	"Oh?
+	Did I lose?"
+}
+
+text(local) Route131_Text_TaliaPostBattle {
+	"There is an odd place nearby.
+	There's a huge tower there.
+	Why don't you go take a look?"
+}
+
+text(local) Route131_Text_KevinIntro {
+	"The people of PACIFIDLOG are
+	a peaceful bunch.
+
+	They never get angry.
+	That goes for me, too."
+}
+
+text(local) Route131_Text_KevinDefeat {
+	"Oops!"
+}
+
+text(local) Route131_Text_KevinPostBattle {
+	"Tch! …Oh, wait.
+	I'm not angry. Honestly!
+
+	But, boy, you're strong!
+	Hahaha!"
+}
+
+text(local) Route132_Text_GilbertIntro {
+	"I used to catch colds all the time as
+	a kid, but I became totally fit after
+	I started swimming."
+}
+
+text(local) Route132_Text_GilbertDefeat {
+	"I crave more power…"
+}
+
+text(local) Route132_Text_GilbertPostBattle {
+	"TRAINERS travel the fields and
+	mountains, so they must be fit, too."
+}
+
+text(local) Route132_Text_DanaIntro {
+	"I try not to swim where the currents
+	are too strong."
+}
+
+text(local) Route132_Text_DanaDefeat {
+	"Oh, please, no!"
+}
+
+text(local) Route132_Text_DanaPostBattle {
+	"If I get swept away, I'll lose all my
+	sense of place…"
+}
+
+text(local) Route132_Text_RonaldIntro {
+	"Win or lose, you'll never know until
+	you try!"
+}
+
+text(local) Route132_Text_RonaldDefeat {
+	"Waah!
+	I sank in defeat!"
+}
+
+text(local) Route132_Text_RonaldPostBattle {
+	"I never battle when I know I'll win.
+	I like to battle at the razor's edge of
+	victory and defeat!"
+}
+
+text(local) Route132_Text_KiyoIntro {
+	"I contemplate POKéMON 24 hours a day.
+	How could you possibly beat me?"
+}
+
+text(local) Route132_Text_KiyoDefeat {
+	"I lose.
+	I will concede defeat."
+}
+
+text(local) Route132_Text_KiyoPostBattle {
+	"Urggh…
+	You're a POKéMON fanatic, aren't you?
+
+	You must contemplate POKéMON 24 hours
+	a day, don't you?"
+}
+
+text(local) Route132_Text_MakaylaIntro {
+	"I'm always with my husband,
+	but I can win even without him."
+}
+
+text(local) Route132_Text_MakaylaDefeat {
+	"Oh, I guess I wasn't good enough."
+}
+
+text(local) Route132_Text_MakaylaPostBattle {
+	"That young man over there looks just
+	like my husband when he was young.
+
+	He's making me blush!"
+}
+
+text(local) Route132_Text_JonathanIntro {
+	"Someone's been watching me intently.
+	Was it you?"
+}
+
+text(local) Route132_Text_JonathanDefeat {
+	"Wow!
+	That's pretty strong, all right!"
+}
+
+text(local) Route132_Text_JonathanPostBattle {
+	"I can't shake this feeling that
+	someone's watching me.
+
+	I can't concentrate!"
+}
+
+text(local) Route132_Text_PaxtonIntro {
+	"Now where could my wife have gone?
+	I'm always with her.
+	I wonder if I can win on my own."
+}
+
+text(local) Route132_Text_PaxtonDefeat {
+	"Ah, I see that I couldn't manage
+	to win on my own after all."
+}
+
+text(local) Route132_Text_PaxtonPostBattle {
+	"My wife must be looking for me.
+	I'd best go find her right away."
+}
+
+text(local) Route132_Text_DarcyIntro {
+	"I liked training here by myself.
+	It's awful that all these people came!"
+}
+
+text(local) Route132_Text_DarcyDefeat {
+	"Okay! I won't complain about other
+	people being here."
+}
+
+text(local) Route132_Text_DarcyPostBattle {
+	"I suppose I can partner up with that
+	old man and challenge that other team."
+}
+
+text(local) Route133_Text_FranklinIntro {
+	"Did the currents carry you here, too?
+	This must have been fated.
+	Let's battle!"
+}
+
+text(local) Route133_Text_FranklinDefeat {
+	"Strong!
+	Too much so!"
+}
+
+text(local) Route133_Text_FranklinPostBattle {
+	"It's just my luck that a tough TRAINER
+	like you would drift here…
+	I must be cursed…"
+}
+
+text(local) Route133_Text_DebraIntro {
+	"I've led a life of woe and misery…
+	I've been cast away, and this is where
+	I've drifted…"
+}
+
+text(local) Route133_Text_DebraDefeat {
+	"Another loss…"
+}
+
+text(local) Route133_Text_DebraPostBattle {
+	"A life adrift…
+	I don't want it anymore!"
+}
+
+text(local) Route133_Text_LindaIntro {
+	"Welcome!
+	I've been expecting you!"
+}
+
+text(local) Route133_Text_LindaDefeat {
+	"No! Please!"
+}
+
+text(local) Route133_Text_LindaPostBattle {
+	"A strong child TRAINER…
+	That's so annoying!"
+}
+
+text(local) Route133_Text_WarrenIntro {
+	"I want to win like everyone else, but I
+	won't raise POKéMON like everyone else."
+}
+
+text(local) Route133_Text_WarrenDefeat {
+	"Darn it!
+	My way is still too slack!"
+}
+
+text(local) Route133_Text_WarrenPostBattle {
+	"It's way more fun to do things the way
+	I want than to be like everybody else.
+	I mean, that's obvious!"
+}
+
+text(local) Route133_Text_BeckIntro {
+	"I came all the way out here with my
+	BIRD POKéMON."
+}
+
+text(local) Route133_Text_BeckDefeat {
+	"You…
+	You're stunningly cool!"
+}
+
+text(local) Route133_Text_BeckPostBattle {
+	"I'd like to go back to FORTREE,
+	but I've grown to like this place, too."
+}
+
+text(local) Route133_Text_MollieIntro {
+	"I must have battled thousands
+	of times. I've lost count."
+}
+
+text(local) Route133_Text_MollieDefeat {
+	"I may have lost thousands of times,
+	but a loss still stings."
+}
+
+text(local) Route133_Text_MolliePostBattle {
+	"Keep at this, youngster. So you can
+	become like my husband and me."
+}
+
+text(local) Route133_Text_ConorIntro {
+	"Young people are too happy to go with
+	the flow. They're without direction."
+}
+
+text(local) Route133_Text_ConorDefeat {
+	"You have a firm sense of purpose."
+}
+
+text(local) Route133_Text_ConorPostBattle {
+	"Don't let others lead you astray.
+	Don't lose direction as you grow older."
+}
+
+text(local) Route134_Text_JackIntro {
+	"Even those POKéMON that can swim are
+	carried along by the rapid currents."
+}
+
+text(local) Route134_Text_JackDefeat {
+	"Aiyeeeeh!"
+}
+
+text(local) Route134_Text_JackPostBattle {
+	"I think POKéMON enjoy the fast-running
+	currents around these parts."
+}
+
+text(local) Route134_Text_LaurelIntro {
+	"My LUVDISC are looking for a fun
+	match. Will you join us?"
+}
+
+text(local) Route134_Text_LaurelDefeat {
+	"Oopsie!"
+}
+
+text(local) Route134_Text_LaurelPostBattle {
+	"There's a collector who's after
+	the SCALES of LUVDISC."
+}
+
+text(local) Route134_Text_AlexIntro {
+	"Okeydokey! That's enough rest, gang!
+	It's time for a match!"
+}
+
+text(local) Route134_Text_AlexDefeat {
+	"Tuckered out again…"
+}
+
+text(local) Route134_Text_AlexPostBattle {
+	"My BIRD POKéMON get tired quickly after
+	a long flight…"
+}
+
+text(local) Route134_Text_HitoshiIntro {
+	"You're a POKéMON TRAINER.
+	No need for words. We battle now."
+}
+
+text(local) Route134_Text_HitoshiDefeat {
+	"… … … … … …
+	… … … … … …"
+}
+
+text(local) Route134_Text_HitoshiPostBattle {
+	"It was I who challenged you, and yet
+	I lost. I am deeply shamed…"
+}
+
+text(local) Route134_Text_AaronIntro {
+	"The savage tide in this area serves to
+	make us stronger than ever."
+}
+
+text(local) Route134_Text_AaronDefeat {
+	"I willingly concede defeat."
+}
+
+text(local) Route134_Text_AaronPostBattle {
+	"We will return for more training at
+	METEOR FALLS.
+
+	If you'd like, you should go, too.
+	It will definitely toughen you up!"
+}
+
+text(local) Route134_Text_KelvinIntro {
+	"O-our boat!
+	The tide carried it away!"
+}
+
+text(local) Route134_Text_KelvinDefeat {
+	"Awawawawah!
+	Please, stop! Please!"
+}
+
+text(local) Route134_Text_KelvinPostBattle {
+	"If we can't SURF, how are we supposed
+	to get home?
+
+	Actually, I know a fainted POKéMON
+	can still SURF, but it feels wrong."
+}
+
+text(local) Route134_Text_MarleyIntro {
+	"Can your POKéMON dodge our
+	lightning-quick attacks?"
+}
+
+text(local) Route134_Text_MarleyDefeat {
+	"I never knew such a technique existed!
+	You've defeated us thoroughly."
+}
+
+text(local) Route134_Text_MarleyPostBattle {
+	"I haven't lost my passion for speed.
+	I will try harder."
+}
+
+text(local) Route134_Text_ReynaIntro {
+	"My POKéMON can't be taken down
+	easily!"
+}
+
+text(local) Route134_Text_ReynaDefeat {
+	"You're kidding!
+	Explain how I lost!"
+}
+
+text(local) Route134_Text_ReynaPostBattle {
+	"Haha!
+	You won, all right!
+
+	I'll work my way back up by taking on
+	TRAINERS I happen to meet!"
+}
+
+text(local) Route134_Text_HudsonIntro {
+	"Listen, have you seen another SAILOR
+	around here?"
+}
+
+text(local) Route134_Text_HudsonDefeat {
+	"Now, that's something!"
+}
+
+text(local) Route134_Text_HudsonPostBattle {
+	"Our boat drifted out to sea.
+
+	My buddy's a timid fellow, so I'm
+	worried about him."
+}
+
+text VSSeeker_Text_BatteryNotChargedNeedXSteps {
+	"The battery isn't charged enough.
+
+	No. of steps required to fully
+	charge the battery: {STR_VAR_1}{PAUSE_UNTIL_PRESS}"
+}
+
+text VSSeeker_Text_NoTrainersWithinRange {
+	"There are no Trainers within range
+	who can battle…
+
+	The VS Seeker was turned off.{PAUSE_UNTIL_PRESS}"
+}
+
+text VSSeeker_Text_TrainersNotReady {
+	"The other Trainers don't appear
+	to be ready for battle.
+
+	Let's wait till later.{PAUSE_UNTIL_PRESS}"
+}

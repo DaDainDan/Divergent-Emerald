@@ -1,0 +1,317 @@
+text gOtherText_NewName {
+	"NEW NAME"
+}
+
+text gNameChoice_Green {
+	"GREEN"
+}
+
+text gNameChoice_Red {
+	"RED"
+}
+
+text gNameChoice_Leaf {
+	"LEAF"
+}
+
+text gNameChoice_Fire {
+	"FIRE"
+}
+
+text gNameChoice_Gary {
+	"GARY"
+}
+
+text gNameChoice_Kaz {
+	"KAZ"
+}
+
+text gNameChoice_Toru {
+	"TORU"
+}
+
+text gNameChoice_Ash {
+	"ASH"
+}
+
+text gNameChoice_Kene {
+	"KENE"
+}
+
+text gNameChoice_Geki {
+	"GEKI"
+}
+
+text gNameChoice_Jak {
+	"JAK"
+}
+
+text gNameChoice_Janne {
+	"JANNE"
+}
+
+text gNameChoice_Jonn {
+	"JONN"
+}
+
+text gNameChoice_Kamon {
+	"KAMON"
+}
+
+text gNameChoice_Karl {
+	"KARL"
+}
+
+text gNameChoice_Taylor {
+	"TAYLOR"
+}
+
+text gNameChoice_Oscar {
+	"OSCAR"
+}
+
+text gNameChoice_Hiro {
+	"HIRO"
+}
+
+text gNameChoice_Max {
+	"MAX"
+}
+
+text gNameChoice_Jon {
+	"JON"
+}
+
+text gNameChoice_Ralph {
+	"RALPH"
+}
+
+text gNameChoice_Kay {
+	"KAY"
+}
+
+text gNameChoice_Tosh {
+	"TOSH"
+}
+
+text gNameChoice_Roak {
+	"ROAK"
+}
+
+text gNameChoice_Omi {
+	"OMI"
+}
+
+text gNameChoice_Jodi {
+	"JODI"
+}
+
+text gNameChoice_Amanda {
+	"AMANDA"
+}
+
+text gNameChoice_Hillary {
+	"HILLARY"
+}
+
+text gNameChoice_Makey {
+	"MAKEY"
+}
+
+text gNameChoice_Michi {
+	"MICHI"
+}
+
+text gNameChoice_Paula {
+	"PAULA"
+}
+
+text gNameChoice_June {
+	"JUNE"
+}
+
+text gNameChoice_Cassie {
+	"CASSIE"
+}
+
+text gNameChoice_Rey {
+	"REY"
+}
+
+text gNameChoice_Seda {
+	"SEDA"
+}
+
+text gNameChoice_Kiko {
+	"KIKO"
+}
+
+text gNameChoice_Mina {
+	"MINA"
+}
+
+text gNameChoice_Norie {
+	"NORIE"
+}
+
+text gNameChoice_Sai {
+	"SAI"
+}
+
+text gNameChoice_Momo {
+	"MOMO"
+}
+
+text gNameChoice_Suzi {
+	"SUZI"
+}
+
+text gControlsGuide_Text_Intro {
+	"The various buttons will be explained in
+	the order of their importance."
+}
+
+text gControlsGuide_Text_DPad {
+	"Moves the main character.\n"
+	"Also used to choose various data\n"
+	"headings.$"
+}
+
+text gControlsGuide_Text_AButton {
+	"Used to confirm a choice, check
+	things, chat, and scroll text."
+}
+
+text gControlsGuide_Text_BButton {
+	"Used to exit, cancel a choice,
+	and cancel a mode."
+}
+
+text gControlsGuide_Text_StartButton {
+	"Press this button to open the
+	MENU."
+}
+
+text gControlsGuide_Text_SelectButton {
+	"Used to shift items and to use
+	a registered item."
+}
+
+text gControlsGuide_Text_LRButtons {
+	"If you need help playing the\n"
+	"game, or on how to do things,\n"
+	"press the L or R Button.$"
+}
+
+text gOakSpeech_Text_AskPlayerGender {
+	"Now tell me. Are you a boy?
+	Or are you a girl?"
+}
+
+text gPikachuIntro_Text_Page1 {
+	"In the world which you are about to\n"
+	"enter, you will embark on a grand\n"
+	"adventure with you as the hero.\n"
+	"\n"
+	"Speak to people and check things\n"
+	"wherever you go, be it towns, roads,\n"
+	"or caves. Gather information and\n"
+	"hints from every source.$"
+}
+
+text gPikachuIntro_Text_Page2 {
+	"New paths will open to you by helping\n"
+	"people in need, overcoming challenges,\n"
+	"and solving mysteries.\n"
+	"\n"
+	"At times, you will be challenged by\n"
+	"others and attacked by wild creatures.\n"
+	"Be brave and keep pushing on.$"
+}
+
+text gPikachuIntro_Text_Page3 {
+	"Through your adventure, we hope\n"
+	"that you will interact with all sorts\n"
+	"of people and achieve personal growth.\n"
+	"That is our biggest objective.\n"
+	"\n"
+	"Press the A Button, and let your\n"
+	"adventure begin!$"
+}
+
+text gOakSpeech_Text_WelcomeToTheWorld {
+	"Hello, there!
+	Glad to meet you!
+
+	Welcome to the world of POKéMON!
+
+	My name is OAK.
+
+	People affectionately refer to me
+	as the POKéMON PROFESSOR.\p"
+}
+
+text gOakSpeech_Text_ThisWorld {
+	"This world…"
+}
+
+text gOakSpeech_Text_IsInhabitedFarAndWide {
+	"…is inhabited far and wide by
+	creatures called POKéMON.\p"
+}
+
+text gOakSpeech_Text_IStudyPokemon {
+	"For some people, POKéMON are pets.
+	Others use them for battling.
+
+	As for myself…
+
+	I study POKéMON as a profession.\p"
+}
+
+text gOakSpeech_Text_TellMeALittleAboutYourself {
+	"But first, tell me a little about
+	yourself.\p"
+}
+
+text gOakSpeech_Text_YourNameWhatIsIt {
+	"Let's begin with your name.
+	What is it?\p"
+}
+
+text gOakSpeech_Text_SoYourNameIsPlayer {
+	"Right…
+	So your name is {PLAYER}."
+}
+
+text gOakSpeech_Text_WhatWasHisName {
+	"This is my grandson.
+
+	He's been your rival since you both
+	were babies.
+
+	…Erm, what was his name now?"
+}
+
+text gOakSpeech_Text_YourRivalsNameWhatWasIt {
+	"Your rival's name, what was it now?"
+}
+
+text gOakSpeech_Text_ConfirmRivalName {
+	"…Er, was it {RIVAL}?"
+}
+
+text gOakSpeech_Text_RememberRivalsName {
+	"That's right! I remember now!
+	His name is {RIVAL}!\p"
+}
+
+text gOakSpeech_Text_LetsGo {
+	"{PLAYER}!
+
+	Your very own POKéMON legend is
+	about to unfold!
+
+	A world of dreams and adventures
+	with POKéMON awaits! Let's go!"
+}

@@ -1,0 +1,80 @@
+text Trade_Text_LookingForMonWannaTradeForMon {
+	"I'm looking for the POKéMON
+	{STR_VAR_1}!
+
+	Wanna trade one for my
+	{STR_VAR_2}?"
+}
+
+text Trade_Text_AwwOhWell {
+	"Awww!
+	Oh, well…"
+}
+
+text Trade_Text_WhatThatsNoMon {
+	"What?
+	That's no {STR_VAR_1}!"
+}
+
+text Trade_Text_HeyThanks {
+	"Hey, thanks!"
+}
+
+text Trade_Text_IsntMyOldMonGreat {
+	"Isn't my old {STR_VAR_2} great?"
+}
+
+text Trade_Text_DoYouHaveMonWouldYouTradeForMon {
+	"Hello, there! Do you happen to
+	have a {STR_VAR_1}?
+
+	Would you agree to a trade for
+	my {STR_VAR_2}?"
+}
+
+text Trade_Text_WellIfYouDontWantTo {
+	"Well, if you don't want to…"
+}
+
+text Trade_Text_ThisIsntMon {
+	"Hmmm?
+	This isn't a {STR_VAR_1}.
+
+	Think of me if you get one."
+}
+
+text Trade_Text_Thanks {
+	"Thanks!"
+}
+
+text Trade_Text_HasTradedMonGrownStronger {
+	"The {STR_VAR_2} that I traded you,
+	has it grown stronger?"
+}
+
+text Trade_Text_DoYouHaveMonWantToTradeForMon {
+	"Hi!
+	Do you have a {STR_VAR_1}?
+
+	Want to trade it for my
+	{STR_VAR_2}?"
+}
+
+text Trade_Text_ThatsTooBad {
+	"That's too bad."
+}
+
+text Trade_Text_ThisIsNoMon {
+	"…This is no {STR_VAR_1}.
+
+	If you get one, trade it with me."
+}
+
+text Trade_Text_ThanksYoureAPal {
+	"Thanks, you're a pal!"
+}
+
+text Trade_Text_HowIsMyOldMon {
+	"How is my old {STR_VAR_2}?
+	My {STR_VAR_1} is doing great!"
+}

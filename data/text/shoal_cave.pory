@@ -1,0 +1,71 @@
+text ShoalCave_LowTideEntranceRoom_Text_AreYouPlanningOnGoingInThere {
+	"Are you planning on going deep
+	in there?
+
+	How about bringing me back some
+	SHOAL SALT and SHOAL SHELLS?
+
+	I can make you something good if
+	you bring me the ingredients."
+}
+
+text ShoalCave_LowTideEntranceRoom_Text_BringMe4ShoalSaltAndShells {
+	"If you bring me four each of the
+	SHOAL SALT and SHOAL SHELLS,
+	I can make you a SHELL BELL…
+
+	You can get those ingredients
+	every day."
+}
+
+text ShoalCave_LowTideEntranceRoom_Text_WouldYouLikeShellBell {
+	"Oh, hey! SHOAL SALT and SHOAL SHELLS!
+	And enough of them, too!
+
+	Would you like me to make you
+	a SHELL BELL with them?"
+}
+
+text ShoalCave_LowTideEntranceRoom_Text_MakeShellBellRightAway {
+	"All righty, then! I'll make you
+	a SHELL BELL right away.
+
+	… … … … … … … …
+	… … … … … … … …
+
+	There! Done!"
+}
+
+text ShoalCave_LowTideEntranceRoom_Text_ExplainShellBell {
+	"Have a POKéMON hold on to that.
+	It'll love it, that's for certain.
+
+	Why, the SHELL BELL's chime…
+	It's simply sublime!
+
+	You can get its ingredients every day,
+	so I can make you more."
+}
+
+text ShoalCave_LowTideEntranceRoom_Text_WantedToMakeShellBell {
+	"Oh… Is that so…
+	I wanted to make a SHELL BELL…"
+}
+
+text ShoalCave_LowTideEntranceRoom_Text_NoSpaceInYourBag {
+	"You don't have space in your BAG
+	if I were to make it for you.
+
+	You should make room and come back
+	for a SHELL BELL."
+}
+
+text ShoalCave_Text_WasShoalSaltNowNothing {
+	"There was some SHOAL SALT here.
+	But, there's nothing here now."
+}
+
+text ShoalCave_Text_WasShoallShellNowNothing {
+	"There was a SHOAL SHELL here.
+	But, there's nothing here now."
+}

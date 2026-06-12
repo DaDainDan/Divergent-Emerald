@@ -1,0 +1,27 @@
+text(local) Text_BootUpPC {
+	"{PLAYER} booted up the PC."
+}
+
+text gText_WhichPCShouldBeAccessed {
+	"Which PC should be accessed?"
+}
+
+text gText_AccessedSomeonesPC {
+	"Accessed SOMEONE'S PC."
+}
+
+text gText_StorageSystemOpened {
+	"POKéMON Storage System opened."
+}
+
+text gText_AccessedPlayersPC {
+	"Accessed {PLAYER}'s PC."
+}
+
+text gText_AccessedLanettesPC {
+	"Accessed LANETTE's PC."
+}
+
+text gText_AccessedBillsPC {
+	"Accessed BILL's PC."
+}

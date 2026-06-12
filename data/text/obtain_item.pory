@@ -1,0 +1,73 @@
+text gText_ObtainedTheItem {
+	"Obtained the {STR_VAR_2}!"
+}
+
+text gText_TheBagIsFull {
+	"The BAG is full…"
+}
+
+text gText_PutItemInPocket {
+	"{PLAYER} put away the {STR_VAR_2}
+	in the {STR_VAR_3} POCKET."
+}
+
+text gText_PlayerFoundOneItem {
+	"{PLAYER} found one {STR_VAR_2}!"
+}
+
+text gText_TooBadBagIsFull {
+	"Too bad!
+	The BAG is full…"
+}
+
+text gText_PlayerPutItemInBag {
+	"{PLAYER} put away the {STR_VAR_2}
+	in the BAG."
+}
+
+text gText_ObtainedTheDecor {
+	"Obtained the {STR_VAR_2}!"
+}
+
+text gText_NoRoomLeftForAnother {
+	"Too bad! There's no room left for
+	another {STR_VAR_2}…"
+}
+
+text gText_TheDecorWasTransferredToThePC {
+	"The {STR_VAR_2} was transferred
+	to the PC."
+}
+
+text gText_ObtainedTheItems {
+	"Obtained {STR_VAR_1} {STR_VAR_2}!"
+}
+
+text gText_PlayerFoundItems {
+	"{PLAYER} found {STR_VAR_1} {STR_VAR_2}!"
+}
+
+text gText_PutCoinsAwayInCoinCase {
+	"{PLAYER} put the COINS away in
+	the COIN CASE."
+}
+
+text gText_FoundXCoins {
+	"{PLAYER} found
+	{STR_VAR_1} {STR_VAR_2}!"
+}
+
+text gText_FoundXItems {
+	"{PLAYER} found
+	{STR_VAR_1} {STR_VAR_2}(s)!"
+}
+
+text gText_CoinCaseIsFull {
+	"Too bad!
+	The COIN CASE is full…"
+}
+
+text gText_NothingToPutThemIn {
+	"Too bad!
+	There's nothing to put them in…"
+}

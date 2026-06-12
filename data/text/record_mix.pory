@@ -1,0 +1,8 @@
+text(local) Text_WouldYouLikeToMixRecords {
+	"Would you like to mix records with
+	other TRAINERS?"
+}
+
+text(local) Text_WeHopeToSeeYouAgain {
+	"We hope to see you again!"
+}

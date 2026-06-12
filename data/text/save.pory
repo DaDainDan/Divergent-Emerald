@@ -1,0 +1,45 @@
+raw `
+    .align 2
+gText_ConfirmSave::
+	.string "Would you like to save the game?$"
+` 
+
+text gText_AlreadySavedFile {
+	"There is already a saved file.
+	Is it okay to overwrite it?"
+}
+
+text gText_SavingDontTurnOff {
+	"SAVING…
+	DON'T TURN OFF THE POWER."
+}
+
+text gText_PlayerSavedGame {
+	"{PLAYER} saved the game."
+}
+
+text gText_DifferentSaveFile {
+	"WARNING!
+
+	There is a different game file that
+	is already saved.
+
+	If you save now, the other file's
+	adventure, including items and
+	POKéMON, will be entirely lost.
+
+	Are you sure you want to save now
+	and overwrite the other save file?"
+}
+
+text gText_SaveError {
+	"Save error.
+
+	Please exchange the
+	backup memory."
+}
+
+text gText_SavingDontTurnOffPower {
+	"SAVING…
+	DON'T TURN OFF THE POWER."
+}

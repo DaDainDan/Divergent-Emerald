@@ -1,0 +1,77 @@
+text(local) MoveRelearner_Text_WouldLearnNewMoves {
+	"Hi, I'm the Move Relearner.
+	Would you like to learn new moves?"
+}
+
+text(local) MoveRelearner_Text_LevelUpMoves {
+	"Level Up Moves"
+}
+
+text(local) MoveRelearner_Text_EggMoves {
+	"Egg Moves"
+}
+
+text(local) MoveRelearner_Text_TMMoves {
+	"TM Moves"
+}
+
+text(local) MoveRelearner_Text_TutormoveMoves {
+	"Tutor Moves"
+}
+
+text(local) MoveRelearner_Text_SeeYa {
+	"See ya!"
+}
+
+text(local) MoveRelearner_Text_AnythingElse {
+	"Is there anything else I may do for you?"
+}
+
+text(local) MoveRelearner_Text_ChoosePkmn {
+	"Please choose your Pokémon."
+}
+
+text(local) MoveRelearner_Text_HaveNoPkmn {
+	"You have no Pokémon."
+}
+
+text(local) MoveRelearner_Text_CantTeachMoveToEgg {
+	"Sorry…
+	But an Egg can't learn moves."
+}
+
+text(local) MoveRelearner_Text_CantTeachMoveToPkmn {
+	"Sorry…
+
+	It doesn't appear as if I have any move
+	I can teach that Pokémon."
+}
+
+text MoveRelearner_Text_LevelUpMoveLWR {
+	"level up move"
+}
+
+text MoveRelearner_Text_EggMoveLWR {
+	"egg move"
+}
+
+text MoveRelearner_Text_TMMoveLWR {
+	"TM move"
+}
+
+text MoveRelearner_Text_TutorMoveLWR {
+	"tutor move"
+}
+
+text MoveRelearner_Text_MoveLWR {
+	"move"
+}
+
+text(local) MoveRelearner_Text_WhichXmoveShouldTeach {
+	"Which {STR_VAR_3} should I teach?"
+}
+
+text(local) MoveRelearner_Text_ThankYouComeAgain {
+	"Thank you for using our services.
+	Please come again!"
+}
