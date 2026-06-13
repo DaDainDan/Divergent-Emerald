@@ -280,16 +280,18 @@ MauvilleCity_GameCorner_EventScript_ChooseTMPrize_8:
 	goto MauvilleCity_GameCorner_EventScript_CancelTMSelect
 MauvilleCity_GameCorner_EventScript_ChooseTMPrize_1:
 # 150 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	bufferitemname STR_VAR_1, VAR_GIFT_ITEM
+	copyvar VAR_0x8004, VAR_GIFT_ITEM
 # 151 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	special BufferTMHMMoveName
+	bufferitemname STR_VAR_1, VAR_GIFT_ITEM
 # 152 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox MauvilleCity_GameCorner_Text_SoYourChoiceIsTheTMX, MSGBOX_YESNO
+	special BufferTMHMMoveName
 # 153 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox MauvilleCity_GameCorner_Text_SoYourChoiceIsTheTMX, MSGBOX_YESNO
+# 154 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MauvilleCity_GameCorner_EventScript_ChooseTMPrize_10
 MauvilleCity_GameCorner_EventScript_ChooseTMPrize_9:
-# 156 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 157 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_PurchaseTM
 	end
 
@@ -319,7 +321,7 @@ MauvilleCity_GameCorner_EventScript_ChooseTMPrize_7:
 	goto MauvilleCity_GameCorner_EventScript_ChooseTMPrize_1
 
 MauvilleCity_GameCorner_EventScript_ChooseTMPrize_10:
-# 154 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 155 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_CancelTMSelect
 	goto MauvilleCity_GameCorner_EventScript_ChooseTMPrize_9
 
@@ -333,154 +335,154 @@ MauvilleCity_GameCorner_EventScript_PurchaseTM::
 # 0 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq MauvilleCity_GameCorner_EventScript_PurchaseTM_3
-# 168 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	removecoins VAR_EXCHANGE_PRICE
 # 169 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	additem VAR_GIFT_ITEM
+	removecoins VAR_EXCHANGE_PRICE
 # 170 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	updatecoinsbox 1, 1
+	additem VAR_GIFT_ITEM
 # 171 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	playse SE_SHOP
+	updatecoinsbox 1, 1
 # 172 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	playse SE_SHOP
+# 173 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
 MauvilleCity_GameCorner_EventScript_PurchaseTM_1:
-# 174 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	message MauvilleCity_GameCorner_Text_WhichPrize
 # 175 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	waitmessage
+	message MauvilleCity_GameCorner_Text_WhichPrize
 # 176 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	waitmessage
+# 177 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ChooseTMPrize
 	end
 
 MauvilleCity_GameCorner_EventScript_PurchaseTM_2:
-# 162 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 163 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_NotEnoughCoins, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_PurchaseTM_1
 
 MauvilleCity_GameCorner_EventScript_PurchaseTM_3:
-# 165 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 166 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	call Common_EventScript_BagIsFull
 	goto MauvilleCity_GameCorner_EventScript_PurchaseTM_1
 
 
 MauvilleCity_GameCorner_EventScript_CancelTMSelect::
-# 181 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox MauvilleCity_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT
 # 182 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox MauvilleCity_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT
+# 183 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	hidecoinsbox 0, 0
 	release_end
 
 
 MauvilleCity_GameCorner_EventScript_Woman2::
-# 187 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 188 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay, MSGBOX_NPC
 	end
 
 
 MauvilleCity_GameCorner_EventScript_Gentleman::
-# 192 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 193 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_RouletteOnlyLuck, MSGBOX_NPC
 	end
 
 
 MauvilleCity_GameCorner_EventScript_Girl::
-# 197 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lock_faceplayer
 # 198 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	lock_faceplayer
+# 199 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_set FLAG_RECEIVED_STARTER_DOLL, MauvilleCity_GameCorner_EventScript_Girl_2
-# 202 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox MauvilleCity_GameCorner_Text_GotTwoOfSameDollWantOne, MSGBOX_YESNO
 # 203 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox MauvilleCity_GameCorner_Text_GotTwoOfSameDollWantOne, MSGBOX_YESNO
+# 204 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MauvilleCity_GameCorner_EventScript_Girl_5
-# 207 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	switch VAR_STARTER_MON
 # 208 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	case 0, MauvilleCity_GameCorner_EventScript_Girl_9
+	switch VAR_STARTER_MON
 # 209 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	case 1, MauvilleCity_GameCorner_EventScript_Girl_10
+	case 0, MauvilleCity_GameCorner_EventScript_Girl_9
 # 210 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	case 1, MauvilleCity_GameCorner_EventScript_Girl_10
+# 211 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	case 2, MauvilleCity_GameCorner_EventScript_Girl_11
 MauvilleCity_GameCorner_EventScript_Girl_7:
-# 212 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 213 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	bufferdecorationname STR_VAR_2, VAR_GIFT_ITEM
 	checkdecorspace VAR_GIFT_ITEM
 # 0 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq MauvilleCity_GameCorner_EventScript_Girl_13
-# 218 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox MauvilleCity_GameCorner_Text_HereYouGo2, MSGBOX_DEFAULT
 # 219 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	givedecoration VAR_GIFT_ITEM
+	msgbox MauvilleCity_GameCorner_Text_HereYouGo2, MSGBOX_DEFAULT
 # 220 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setflag FLAG_RECEIVED_STARTER_DOLL
+	givedecoration VAR_GIFT_ITEM
 # 221 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setflag FLAG_RECEIVED_STARTER_DOLL
+# 222 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_CantWinJackpot, MSGBOX_DEFAULT
 	release_end
 
 MauvilleCity_GameCorner_EventScript_Girl_2:
-# 199 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 200 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_CantWinJackpot, MSGBOX_DEFAULT
 	release_end
 
 MauvilleCity_GameCorner_EventScript_Girl_5:
-# 204 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 205 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_DontBeNegative, MSGBOX_DEFAULT
 	release_end
 
 MauvilleCity_GameCorner_EventScript_Girl_9:
-# 208 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 209 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_GIFT_ITEM, DECOR_TREECKO_DOLL
 	goto MauvilleCity_GameCorner_EventScript_Girl_7
 
 MauvilleCity_GameCorner_EventScript_Girl_10:
-# 209 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 210 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_GIFT_ITEM, DECOR_TORCHIC_DOLL
 	goto MauvilleCity_GameCorner_EventScript_Girl_7
 
 MauvilleCity_GameCorner_EventScript_Girl_11:
-# 210 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 211 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_GIFT_ITEM, DECOR_MUDKIP_DOLL
 	goto MauvilleCity_GameCorner_EventScript_Girl_7
 
 MauvilleCity_GameCorner_EventScript_Girl_13:
-# 214 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	call Common_EventScript_NoRoomForDecor
 # 215 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	call Common_EventScript_NoRoomForDecor
+# 216 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_YouWantItButNotNow, MSGBOX_DEFAULT
 	release_end
 
 
 MauvilleCity_GameCorner_EventScript_PokefanM::
-# 226 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 227 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	lock_faceplayer
 	checkitem ITEM_COIN_CASE
 # 0 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MauvilleCity_GameCorner_EventScript_PokefanM_2
-# 237 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 238 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor, MSGBOX_DEFAULT
 MauvilleCity_GameCorner_EventScript_PokefanM_1:
-# 239 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 240 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto Common_EventScript_FaceOriginalDirection
 	end
 
 MauvilleCity_GameCorner_EventScript_PokefanM_2:
-# 228 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 229 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_20_COINS, MauvilleCity_GameCorner_EventScript_PokefanM_7
 MauvilleCity_GameCorner_EventScript_PokefanM_6:
-# 234 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 235 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_MauvilleSomethingForEveryone, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_PokefanM_1
 
 MauvilleCity_GameCorner_EventScript_PokefanM_5:
-# 229 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setflag FLAG_RECEIVED_20_COINS
 # 230 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	addcoins 20
+	setflag FLAG_RECEIVED_20_COINS
 # 231 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins, MSGBOX_DEFAULT
+	addcoins 20
 # 232 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins, MSGBOX_DEFAULT
+# 233 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	playse SE_SHOP
 	goto MauvilleCity_GameCorner_EventScript_PokefanM_1
 
@@ -493,171 +495,171 @@ MauvilleCity_GameCorner_EventScript_PokefanM_7:
 
 
 MauvilleCity_GameCorner_EventScript_OldMan::
-# 244 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lock_faceplayer
 # 245 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox MauvilleCity_GameCorner_Text_RouletteTablesDifferentRates, MSGBOX_DEFAULT
+	lock_faceplayer
 # 246 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox MauvilleCity_GameCorner_Text_RouletteTablesDifferentRates, MSGBOX_DEFAULT
+# 247 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto Common_EventScript_FaceOriginalDirection
 	end
 
 
 MauvilleCity_GameCorner_EventScript_Cook::
-# 251 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lock_faceplayer
 # 252 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox MauvilleCity_GameCorner_Text_EasyToLoseTrackOfTime, MSGBOX_DEFAULT
+	lock_faceplayer
 # 253 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox MauvilleCity_GameCorner_Text_EasyToLoseTrackOfTime, MSGBOX_DEFAULT
+# 254 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto Common_EventScript_FaceOriginalDirection
 	end
 
 
 MauvilleCity_GameCorner_EventScript_Man::
-# 258 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lock_faceplayer
 # 259 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox MauvilleCity_GameCorner_Text_UpTo3CoinsCanBeUsed, MSGBOX_DEFAULT
+	lock_faceplayer
 # 260 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox MauvilleCity_GameCorner_Text_UpTo3CoinsCanBeUsed, MSGBOX_DEFAULT
+# 261 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto Common_EventScript_FaceOriginalDirection
 	end
 
 
 MauvilleCity_GameCorner_EventScript_Maniac::
-# 265 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lock_faceplayer
 # 266 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox MauvilleCity_GameCorner_Text_DifficultToStopOn7, MSGBOX_DEFAULT
+	lock_faceplayer
 # 267 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox MauvilleCity_GameCorner_Text_DifficultToStopOn7, MSGBOX_DEFAULT
+# 268 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto Common_EventScript_FaceOriginalDirection
 	end
 
 
 MauvilleCity_GameCorner_EventScript_Woman::
-# 272 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lock_faceplayer
 # 273 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	msgbox MauvilleCity_GameCorner_Text_HeresSomeSlotsInfo, MSGBOX_DEFAULT
+	lock_faceplayer
 # 274 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	msgbox MauvilleCity_GameCorner_Text_HeresSomeSlotsInfo, MSGBOX_DEFAULT
+# 275 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto Common_EventScript_FaceOriginalDirection
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine0::
-# 279 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 280 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 0
+	lockall
 # 281 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 0
+# 282 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine1::
-# 286 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 287 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 1
+	lockall
 # 288 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 1
+# 289 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine2::
-# 293 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 294 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 2
+	lockall
 # 295 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 2
+# 296 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine3::
-# 300 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 301 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 3
+	lockall
 # 302 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 3
+# 303 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine4::
-# 307 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 308 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 4
+	lockall
 # 309 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 4
+# 310 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine5::
-# 314 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 315 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 5
+	lockall
 # 316 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 5
+# 317 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine6::
-# 321 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 322 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 6
+	lockall
 # 323 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 6
+# 324 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine7::
-# 328 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 329 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 7
+	lockall
 # 330 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 7
+# 331 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine8::
-# 335 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 336 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 8
+	lockall
 # 337 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 8
+# 338 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine9::
-# 342 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 343 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 9
+	lockall
 # 344 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 9
+# 345 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine10::
-# 349 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 350 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 10
+	lockall
 # 351 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 10
+# 352 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
 
 MauvilleCity_GameCorner_EventScript_SlotMachine11::
-# 356 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	lockall
 # 357 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, 11
+	lockall
 # 358 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	setvar VAR_0x8004, 11
+# 359 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain
 	end
 
@@ -667,186 +669,186 @@ MauvilleCity_GameCorner_EventScript_SlotMachineMain::
 # 0 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq MauvilleCity_GameCorner_EventScript_SlotMachineMain_2
-# 366 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	specialvar VAR_RESULT, GetSlotMachineId
 # 367 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	specialvar VAR_RESULT, GetSlotMachineId
+# 368 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	playslotmachine VAR_RESULT
 MauvilleCity_GameCorner_EventScript_SlotMachineMain_1:
-# 369 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 370 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	releaseall
 	end
 
 MauvilleCity_GameCorner_EventScript_SlotMachineMain_2:
-# 364 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 365 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_SlotMachineMain_1
 
 
 MauvilleCity_GameCorner_Text_ThisIsMauvilleGameCorner::
-# 373 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 374 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "This is MAUVILLE GAME CORNER.$"
 
 MauvilleCity_GameCorner_Text_NeedCoinCaseForCoins::
-# 377 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 378 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Okay, you wanted some COINS for\n"
 	.string "the games?\p"
 	.string "But you don't have a COIN CASE for\n"
 	.string "stowing the COINS.$"
 
 MauvilleCity_GameCorner_Text_WereYouLookingForCoins::
-# 385 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 386 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Were you looking for COINS?\p"
 	.string "It's ¥1000 for 50 COINS.\n"
 	.string "Would you like some?$"
 
 MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins::
-# 392 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 393 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Thank you very much!\n"
 	.string "Here are your COINS!$"
 
 MauvilleCity_GameCorner_Text_DontHaveEnoughMoney::
-# 397 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 398 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Um… You don't appear to have\n"
 	.string "enough money…$"
 
 MauvilleCity_GameCorner_Text_CoinCaseIsFull::
-# 402 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 403 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Oh?\n"
 	.string "Your COIN CASE is full.$"
 
 MauvilleCity_GameCorner_Text_DontNeedCoinsThen::
-# 407 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 408 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Oh… You don't need COINS, then?\n"
 	.string "Good luck on your adventure!$"
 
 MauvilleCity_GameCorner_Text_ExchangeCoinsForPrizes::
-# 412 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 413 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Welcome.\p"
 	.string "You can exchange your COINS for\n"
 	.string "prizes here.$"
 
 MauvilleCity_GameCorner_Text_WhichPrize::
-# 419 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 420 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Which prize would you like?$"
 
 MauvilleCity_GameCorner_Text_SoYourChoiceIsTheTMX::
-# 423 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 424 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "So your choice is\n"
 	.string "the {STR_VAR_1} {STR_VAR_2}?$"
 
 MauvilleCity_GameCorner_Text_SendToYourHomePC::
-# 428 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 429 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Thank you!\n"
 	.string "We'll send it to your PC at home.$"
 
 MauvilleCity_GameCorner_Text_NotEnoughCoins::
-# 433 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 434 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "You don't have enough COINS.$"
 
 MauvilleCity_GameCorner_Text_NoRoomForPlacingDecor::
-# 437 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 438 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "There isn't any room available for\n"
 	.string "placing {STR_VAR_1}.$"
 
 MauvilleCity_GameCorner_Text_OhIsThatSo::
-# 442 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 443 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Oh, is that so? \n"
 	.string "You need to save some COINS before\l"
 	.string "coming back here.$"
 
 MauvilleCity_GameCorner_Text_SoYourChoiceIsX::
-# 448 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 449 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "So your choice is {STR_VAR_1}?$"
 
 MauvilleCity_GameCorner_Text_HereYouGo::
-# 452 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 453 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Here you go!$"
 
 MauvilleCity_GameCorner_Text_CantCarryAnyMore::
-# 456 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 457 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Oh, you can't carry any more than that.$"
 
 MauvilleCity_GameCorner_Text_GotTwoOfSameDollWantOne::
-# 460 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 461 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "I made a mistake and got two of\n"
 	.string "the same DOLLS.\p"
 	.string "Would you like one of them?$"
 
 MauvilleCity_GameCorner_Text_HereYouGo2::
-# 467 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 468 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Here you go!$"
 
 MauvilleCity_GameCorner_Text_YouWantItButNotNow::
-# 471 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 472 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Huh?\n"
 	.string "You want it, but not right now?$"
 
 MauvilleCity_GameCorner_Text_DontBeNegative::
-# 476 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 477 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Oh, don't be so negative!\n"
 	.string "You can have this!$"
 
 MauvilleCity_GameCorner_Text_CantWinJackpot::
-# 481 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 482 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "There's a prize I want, but I can't win\n"
 	.string "the jackpot.$"
 
 MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor::
-# 486 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 487 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Hey, kid, if you want to play here,\n"
 	.string "you need a COIN CASE.\p"
 	.string "I think the young lady next door\n"
 	.string "had one. Go see her!$"
 
 MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins::
-# 494 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 495 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "My luck can only last so long.\n"
 	.string "This is too much for me.\l"
 	.string "Here, take some COINS!$"
 
 MauvilleCity_GameCorner_Text_MauvilleSomethingForEveryone::
-# 500 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 501 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "MAUVILLE has something for\n"
 	.string "everyone.\p"
 	.string "For me, it's the GAME CORNER.$"
 
 MauvilleCity_GameCorner_Text_RouletteTablesDifferentRates::
-# 507 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 508 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "The ROULETTE tables have different\n"
 	.string "rates.\p"
 	.string "Check your COINS if you're going to\n"
 	.string "pick a table.$"
 
 MauvilleCity_GameCorner_Text_EasyToLoseTrackOfTime::
-# 515 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 516 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "It's easy to lose track of time in here. \n"
 	.string "I should get back to work.$"
 
 MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay::
-# 520 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 521 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "COINS are needed to play here\n"
 	.string "in the GAME CORNER.$"
 
 MauvilleCity_GameCorner_Text_RouletteOnlyLuck::
-# 525 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 526 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "This ROULETTE thing…\n"
 	.string "It's rather demanding.\p"
 	.string "Win or lose, it's only by luck.$"
 
 MauvilleCity_GameCorner_Text_UpTo3CoinsCanBeUsed::
-# 532 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 533 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Up to three COINS can be used to play\n"
 	.string "the SLOTS.$"
 
 MauvilleCity_GameCorner_Text_DifficultToStopOn7::
-# 537 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 538 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "It's very difficult to make it stop\n"
 	.string "right on “7.”\p"
 	.string "If it stops on “7” during the REEL TIME\n"
 	.string "bonus game, you'll receive extra COINS.$"
 
 MauvilleCity_GameCorner_Text_HeresSomeSlotsInfo::
-# 545 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 546 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "Here's some information for you\n"
 	.string "about the SLOTS.\p"
 	.string "The more lightning bolts you stock,\n"
@@ -859,6 +861,6 @@ MauvilleCity_GameCorner_Text_HeresSomeSlotsInfo::
 	.string "very difficult to get.$"
 
 MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase::
-# 562 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+# 563 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "You can't play if you don't have\n"
 	.string "a COIN CASE.$"

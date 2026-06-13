@@ -147,6 +147,7 @@ script MauvilleCity_GameCorner_EventScript_ChooseTMPrize {
         case 5: 
         default: goto(MauvilleCity_GameCorner_EventScript_CancelTMSelect)
     }
+    copyvar(VAR_0x8004, VAR_GIFT_ITEM)
     bufferitemname(STR_VAR_1, VAR_GIFT_ITEM)
     special(BufferTMHMMoveName)
     msgbox(MauvilleCity_GameCorner_Text_SoYourChoiceIsTheTMX, MSGBOX_YESNO)
