@@ -121,13 +121,13 @@ enum {
 // Starter Pokemon
 
 // Emerald
-#define CHOSE_TREECKO 0
-#define CHOSE_TORCHIC 1
-#define CHOSE_MUDKIP  2
+#define PC_CHOSE_TREECKO 0
+#define PC_CHOSE_TORCHIC 1
+#define PC_CHOSE_MUDKIP  2
 
 // FRLG
-#define CHOSE_BULBASAUR  0
-#define CHOSE_SQUIRTLE   1
-#define CHOSE_CHARMANDER 2
+#define PC_CHOSE_BULBASAUR  0
+#define PC_CHOSE_SQUIRTLE   1
+#define PC_CHOSE_CHARMANDER 2
 
 #endif // GUARD_CONSTANTS_FIELD_SPECIALS_H
