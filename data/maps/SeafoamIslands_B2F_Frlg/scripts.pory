@@ -1,4 +1,1 @@
-raw `
-SeafoamIslands_B2F_Frlg_MapScripts::
-	.byte 0
-`
+mapscripts SeafoamIslands_B2F_Frlg_MapScripts {}

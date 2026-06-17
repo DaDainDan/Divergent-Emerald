@@ -1,62 +1,69 @@
-raw `
-CinnabarIsland_PokemonLab_Entrance_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, CinnabarIsland_PokemonLab_Entrance_OnTransition
-	.byte 0
+mapscripts CinnabarIsland_PokemonLab_Entrance_Frlg_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_REVIVE_STATE) == 1) {
+			setvar(VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_REVIVE_STATE, 2)
+		}
+		end
+    }
+}
 
-CinnabarIsland_PokemonLab_Entrance_OnTransition::
-	call_if_eq VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_REVIVE_STATE, 1, CinnabarIsland_PokemonLab_Entrance_EventScript_ReadyFossil
-	end
+script CinnabarIsland_PokemonLab_Entrance_EventScript_Scientist {
+    msgbox(CinnabarIsland_PokemonLab_Entrance_Text_StudyMonsExtensively, MSGBOX_NPC)
+    end
+}
 
-CinnabarIsland_PokemonLab_Entrance_EventScript_ReadyFossil::
-	setvar VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_REVIVE_STATE, 2
-	return
+script CinnabarIsland_PokemonLab_Entrance_EventScript_DrFujiPhoto {
+    msgbox(CinnabarIsland_PokemonLab_Entrance_Text_PhotoOfLabFounderDrFuji, MSGBOX_SIGN)
+    end
+}
 
-CinnabarIsland_PokemonLab_Entrance_EventScript_Scientist::
-	msgbox CinnabarIsland_PokemonLab_Entrance_Text_StudyMonsExtensively, MSGBOX_NPC
-	end
+script CinnabarIsland_PokemonLab_Entrance_EventScript_MeetingRoomSign {
+    msgbox(CinnabarIsland_PokemonLab_Entrance_Text_MeetingRoomSign, MSGBOX_SIGN)
+    end
+}
 
-CinnabarIsland_PokemonLab_Entrance_EventScript_DrFujiPhoto::
-	msgbox CinnabarIsland_PokemonLab_Entrance_Text_PhotoOfLabFounderDrFuji, MSGBOX_SIGN
-	end
+script CinnabarIsland_PokemonLab_Entrance_EventScript_RAndDRoomSign {
+    msgbox(CinnabarIsland_PokemonLab_Entrance_Text_RAndDRoomSign, MSGBOX_SIGN)
+    end
+}
 
-CinnabarIsland_PokemonLab_Entrance_EventScript_MeetingRoomSign::
-	msgbox CinnabarIsland_PokemonLab_Entrance_Text_MeetingRoomSign, MSGBOX_SIGN
-	end
+script CinnabarIsland_PokemonLab_Entrance_EventScript_TestingRoomSign {
+    msgbox(CinnabarIsland_PokemonLab_Entrance_Text_TestingRoomSign, MSGBOX_SIGN)
+    end
+}
 
-CinnabarIsland_PokemonLab_Entrance_EventScript_RAndDRoomSign::
-	msgbox CinnabarIsland_PokemonLab_Entrance_Text_RAndDRoomSign, MSGBOX_SIGN
-	end
+text CinnabarIsland_Gym_Text_PhotoOfBlaineAndFuji {
+	"It's a photo of BLAINE and
+	MR. FUJI.
 
-CinnabarIsland_PokemonLab_Entrance_EventScript_TestingRoomSign::
-	msgbox CinnabarIsland_PokemonLab_Entrance_Text_TestingRoomSign, MSGBOX_SIGN
-	end
+	They're standing shoulder to
+	shoulder with big grins."
+}
 
-CinnabarIsland_Gym_Text_PhotoOfBlaineAndFuji::
-	.string "It's a photo of BLAINE and\n"
-	.string "MR. FUJI.\p"
-	.string "They're standing shoulder to\n"
-	.string "shoulder with big grins.$"
+text CinnabarIsland_PokemonLab_Entrance_Text_StudyMonsExtensively {
+	"We study POKéMON extensively
+	every day.
 
-CinnabarIsland_PokemonLab_Entrance_Text_StudyMonsExtensively::
-	.string "We study POKéMON extensively\n"
-	.string "every day.\p"
-	.string "People often bring us rare POKéMON\n"
-	.string "for examination.$"
+	People often bring us rare POKéMON
+	for examination."
+}
 
-CinnabarIsland_PokemonLab_Entrance_Text_PhotoOfLabFounderDrFuji::
-	.string "A photo of the LAB's founder…\n"
-	.string "DR. FUJI?!$"
+text CinnabarIsland_PokemonLab_Entrance_Text_PhotoOfLabFounderDrFuji {
+	"A photo of the LAB's founder…
+	DR. FUJI?!"
+}
 
-CinnabarIsland_PokemonLab_Entrance_Text_MeetingRoomSign::
-	.string "POKéMON LAB\n"
-	.string "Meeting Room$"
+text CinnabarIsland_PokemonLab_Entrance_Text_MeetingRoomSign {
+	"POKéMON LAB
+	Meeting Room"
+}
 
-CinnabarIsland_PokemonLab_Entrance_Text_RAndDRoomSign::
-	.string "POKéMON LAB\n"
-	.string "R & D Room$"
+text CinnabarIsland_PokemonLab_Entrance_Text_RAndDRoomSign {
+	"POKéMON LAB
+	R & D Room"
+}
 
-CinnabarIsland_PokemonLab_Entrance_Text_TestingRoomSign::
-	.string "POKéMON LAB\n"
-	.string "Testing Room$"
-
-`
+text CinnabarIsland_PokemonLab_Entrance_Text_TestingRoomSign {
+	"POKéMON LAB
+	Testing Room"
+}

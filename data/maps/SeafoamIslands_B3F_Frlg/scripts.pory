@@ -1,97 +1,52 @@
-raw `
-.equ NUM_BOULDERS_PRESENT, VAR_TEMP_2
+const NUM_BOULDERS_PRESENT = VAR_TEMP_2
 
-SeafoamIslands_B3F_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, SeafoamIslands_B3F_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, SeafoamIslands_B3F_OnFrame
-	.byte 0
+mapscripts SeafoamIslands_B3F_Frlg_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (!flag(FLAG_STOPPED_SEAFOAM_B3F_CURRENT)) {
+			call(SeafoamIslands_B3F_EventScript_CheckBoulders)
+			if (var(NUM_BOULDERS_PRESENT) == 2) {
+				setflag(FLAG_STOPPED_SEAFOAM_B3F_CURRENT)
+			}
+		}
+		if (flag(FLAG_STOPPED_SEAFOAM_B3F_CURRENT)) {
+			setmaplayoutindex(LAYOUT_SEAFOAM_ISLANDS_B3F_CURRENT_STOPPED)
+		}
+		end
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_1, 1: SeafoamIslands_B3F_EventScript_EnterByFalling
+    ]
+}
 
-SeafoamIslands_B3F_OnTransition::
-	call_if_unset FLAG_STOPPED_SEAFOAM_B3F_CURRENT, SeafoamIslands_B3F_EventScript_CheckStoppedCurrent
-	call_if_set FLAG_STOPPED_SEAFOAM_B3F_CURRENT, SeafoamIslands_B3F_EventScript_SetNoCurrentLayout
-	end
-
-SeafoamIslands_B3F_EventScript_CheckStoppedCurrent::
-	setvar NUM_BOULDERS_PRESENT, 0
-	call_if_unset FLAG_HIDE_SEAFOAM_B3F_BOULDER_1, SeafoamIslands_B3F_EventScript_AddBoulderPresent
-	call_if_unset FLAG_HIDE_SEAFOAM_B3F_BOULDER_2, SeafoamIslands_B3F_EventScript_AddBoulderPresent
-	call_if_eq NUM_BOULDERS_PRESENT, 2, SeafoamIslands_B3F_EventScript_StoppedCurrent
+script SeafoamIslands_B3F_EventScript_CheckBoulders {
+	setvar(NUM_BOULDERS_PRESENT, 0)
+    if (!flag(FLAG_HIDE_SEAFOAM_B3F_BOULDER_1)) {
+        addvar(NUM_BOULDERS_PRESENT, 1)
+    }
+    if (!flag(FLAG_HIDE_SEAFOAM_B3F_BOULDER_2)) {
+        addvar(NUM_BOULDERS_PRESENT, 1)
+    }
 	return
+}
 
-SeafoamIslands_B3F_EventScript_StoppedCurrent::
-	setflag FLAG_STOPPED_SEAFOAM_B3F_CURRENT
-	return
-
-SeafoamIslands_B3F_EventScript_SetNoCurrentLayout::
-	setmaplayoutindex LAYOUT_SEAFOAM_ISLANDS_B3F_CURRENT_STOPPED
-	return
-
-SeafoamIslands_B3F_OnFrame::
-	map_script_2 VAR_TEMP_1, 1, SeafoamIslands_B3F_EventScript_EnterByFalling
-	.2byte 0
-
-SeafoamIslands_B3F_EventScript_EnterByFalling::
-	lockall
-	setvar NUM_BOULDERS_PRESENT, 0
-	call_if_unset FLAG_HIDE_SEAFOAM_B3F_BOULDER_1, SeafoamIslands_B3F_EventScript_AddBoulderPresent
-	call_if_unset FLAG_HIDE_SEAFOAM_B3F_BOULDER_2, SeafoamIslands_B3F_EventScript_AddBoulderPresent
-	goto_if_eq NUM_BOULDERS_PRESENT, 2, SeafoamIslands_B3F_EventScript_CurrentBlocked
-	getplayerxy VAR_0x8008, VAR_0x8009
-	call_if_lt VAR_0x8008, 24, SeafoamIslands_B3F_EventScript_RideCurrentFar
-	call_if_ge VAR_0x8008, 24, SeafoamIslands_B3F_EventScript_RideCurrentClose
-	setvar VAR_MAP_SCENE_SEAFOAM_ISLANDS_B4F, 1
-	warp MAP_SEAFOAM_ISLANDS_B4F, 27, 21
-	waitstate
-	releaseall
-	end
-
-SeafoamIslands_B3F_EventScript_AddBoulderPresent::
-	addvar NUM_BOULDERS_PRESENT, 1
-	return
-
-SeafoamIslands_B3F_EventScript_RideCurrentFar::
-	applymovement LOCALID_PLAYER, SeafoamIslands_B3F_Movement_RideCurrentFar
-	waitmovement 0
-	return
-
-SeafoamIslands_B3F_EventScript_RideCurrentClose::
-	applymovement LOCALID_PLAYER, SeafoamIslands_B3F_Movement_RideCurrentClose
-	waitmovement 0
-	return
-
-SeafoamIslands_B3F_EventScript_CurrentBlocked::
-	setvar VAR_TEMP_1, 0
-	releaseall
-	end
-
-SeafoamIslands_B3F_Movement_RideCurrentFar::
-	run_down
-	run_down
-	run_down
-	run_down
-	run_right
-	run_right
-	run_right
-	run_down
-	run_down
-	run_down
-	run_down
-	run_down
-	run_down
-	step_end
-
-SeafoamIslands_B3F_Movement_RideCurrentClose::
-	run_down
-	run_down
-	run_down
-	run_down
-	run_right
-	run_right
-	run_down
-	run_down
-	run_down
-	run_down
-	run_down
-	run_down
-	step_end
-`
+script SeafoamIslands_B3F_EventScript_EnterByFalling {
+    lockall
+    call(SeafoamIslands_B3F_EventScript_CheckBoulders)
+    if (var(NUM_BOULDERS_PRESENT) == 2) {
+        setvar(VAR_TEMP_1, 0)
+		releaseall
+		end
+    }
+    getplayerxy(VAR_0x8008, VAR_0x8009)
+    if (var(VAR_0x8008) < 24) {
+        applymovement(LOCALID_PLAYER, moves(run_down * 4,  run_right * 3,  run_down * 6))
+    } else {
+        applymovement(LOCALID_PLAYER, moves(run_down * 4,  run_right * 2,  run_down * 6))
+    }
+	waitmovement(0)
+    setvar(VAR_MAP_SCENE_SEAFOAM_ISLANDS_B4F, 1)
+    warp(MAP_SEAFOAM_ISLANDS_B4F, 27, 21)
+    waitstate
+    releaseall
+    end
+}
