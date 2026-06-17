@@ -1,57 +1,92 @@
 VermilionCity_House2_Frlg_MapScripts::
 	.byte 0
 
+
 VermilionCity_House2_EventScript_Elyssa::
-	lock
-	faceplayer
+# 4 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
+	lock_faceplayer
+# 5 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	setvar VAR_0x8008, INGAME_TRADE_FARFETCHD
+# 6 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	call EventScript_GetInGameTradeSpeciesInfo
-	goto_if_set FLAG_DID_CH_DING_TRADE, VermilionCity_House2_EventScript_AlreadyTraded
+# 7 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
+	goto_if_set FLAG_DID_CH_DING_TRADE, VermilionCity_House2_EventScript_Elyssa_2
+# 11 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	msgbox VermilionCity_House2_Text_DoYouHaveMonWantToTradeForMyMon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, VermilionCity_House2_EventScript_DeclineTrade
+# 12 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq VermilionCity_House2_EventScript_Elyssa_5
+VermilionCity_House2_EventScript_Elyssa_4:
+# 15 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	call EventScript_ChooseMonForInGameTrade
-	goto_if_ge VAR_0x8004, PARTY_SIZE, VermilionCity_House2_EventScript_DeclineTrade
+# 16 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
+	compare VAR_0x8004, PARTY_SIZE
+	goto_if_ge VermilionCity_House2_EventScript_Elyssa_8
+VermilionCity_House2_EventScript_Elyssa_7:
+# 19 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	call EventScript_GetInGameTradeSpecies
-	goto_if_ne VAR_RESULT, VAR_0x8009, VermilionCity_House2_EventScript_NotRequestedMon
+# 20 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
+	compare VAR_RESULT, VAR_0x8009
+	goto_if_ne VermilionCity_House2_EventScript_Elyssa_11
+# 25 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	call EventScript_DoInGameTrade
+# 26 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	msgbox VermilionCity_House2_Text_ThankYou
+# 27 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	setflag FLAG_DID_CH_DING_TRADE
-	release
-	end
+	release_end
+
+VermilionCity_House2_EventScript_Elyssa_2:
+# 8 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
+	msgbox VermilionCity_House2_Text_HowIsMyOldMon
+	release_end
+
+VermilionCity_House2_EventScript_Elyssa_5:
+# 13 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
+	goto VermilionCity_House2_EventScript_DeclineTrade
+	goto VermilionCity_House2_EventScript_Elyssa_4
+
+VermilionCity_House2_EventScript_Elyssa_8:
+# 17 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
+	goto VermilionCity_House2_EventScript_DeclineTrade
+	goto VermilionCity_House2_EventScript_Elyssa_7
+
+VermilionCity_House2_EventScript_Elyssa_11:
+# 21 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+# 22 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
+	msgbox VermilionCity_House2_Text_ThisIsNoMon
+	release_end
+
 
 VermilionCity_House2_EventScript_DeclineTrade::
+# 32 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	msgbox VermilionCity_House2_Text_ThatsTooBad
-	release
-	end
+	release_end
 
-VermilionCity_House2_EventScript_NotRequestedMon::
-	bufferspeciesname STR_VAR_1, VAR_0x8009
-	msgbox VermilionCity_House2_Text_ThisIsNoMon
-	release
-	end
-
-VermilionCity_House2_EventScript_AlreadyTraded::
-	msgbox VermilionCity_House2_Text_HowIsMyOldMon
-	release
-	end
 
 VermilionCity_House2_Text_DoYouHaveMonWantToTradeForMyMon::
+# 36 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	.string "Hi!\n"
 	.string "Do you have a {STR_VAR_1}?\p"
 	.string "Want to trade it for my\n"
 	.string "{STR_VAR_2}?$"
 
 VermilionCity_House2_Text_ThatsTooBad::
+# 44 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	.string "That's too bad.$"
 
 VermilionCity_House2_Text_ThisIsNoMon::
+# 48 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	.string "…This is no {STR_VAR_1}.\p"
 	.string "If you get one, please trade it\n"
 	.string "to me!$"
 
 VermilionCity_House2_Text_ThankYou::
+# 55 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	.string "Thank you!$"
 
 VermilionCity_House2_Text_HowIsMyOldMon::
+# 59 "data/maps/VermilionCity_House2_Frlg/scripts.pory"
 	.string "How is my old {STR_VAR_2}?\p"
 	.string "My {STR_VAR_1} is doing great!$"

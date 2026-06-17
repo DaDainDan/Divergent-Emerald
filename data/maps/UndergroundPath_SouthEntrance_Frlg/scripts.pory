@@ -1,13 +1,11 @@
-raw `
-UndergroundPath_SouthEntrance_Frlg_MapScripts::
-	.byte 0
+mapscripts UndergroundPath_SouthEntrance_Frlg_MapScripts {}
 
-UndergroundPath_SouthEntrance_EventScript_Woman::
-	msgbox UndergroundPath_SouthEntrance_Text_PeopleLoseThingsInTheDarkness, MSGBOX_NPC
-	end
+script UndergroundPath_SouthEntrance_EventScript_Woman {
+    msgbox(UndergroundPath_SouthEntrance_Text_PeopleLoseThingsInTheDarkness, MSGBOX_NPC)
+    end
+}
 
-UndergroundPath_SouthEntrance_Text_PeopleLoseThingsInTheDarkness::
-	.string "People often lose things in the\n"
-	.string "darkness of the UNDERGROUND PATH.$"
-
-`
+text UndergroundPath_SouthEntrance_Text_PeopleLoseThingsInTheDarkness {
+	"People often lose things in the
+	darkness of the UNDERGROUND PATH."
+}

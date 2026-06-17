@@ -1,42 +1,55 @@
 SSAnne_1F_Room6_Frlg_MapScripts::
 	.byte 0
 
+
 SSAnne_1F_Room6_EventScript_Woman::
-	lock
-	faceplayer
+# 4 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
+	lock_faceplayer
+# 5 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
 	msgbox SSAnne_1F_Room6_Text_TakeAShortRest, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, SSAnne_1F_Room6_EventScript_DeclineHeal
-	closemessage
-	call Common_EventScript_OutOfCenterPartyHeal
-	msgbox SSAnne_1F_Room6_Text_GladEveryoneIsRefreshed
-	release
-	end
-
-SSAnne_1F_Room6_EventScript_DeclineHeal::
+# 6 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq SSAnne_1F_Room6_EventScript_Woman_2
 	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, SSAnne_1F_Room6_EventScript_DeclineHealMale
+# 0 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq SSAnne_1F_Room6_EventScript_Woman_3
+# 15 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
 	msgbox SSAnne_1F_Room6_Text_SorryYouLookLikeMySister
-	release
-	end
+SSAnne_1F_Room6_EventScript_Woman_1:
+	release_end
 
-SSAnne_1F_Room6_EventScript_DeclineHealMale::
+SSAnne_1F_Room6_EventScript_Woman_2:
+# 7 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
+	closemessage
+# 8 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
+	call Common_EventScript_OutOfCenterPartyHeal
+# 9 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
+	msgbox SSAnne_1F_Room6_Text_GladEveryoneIsRefreshed
+	goto SSAnne_1F_Room6_EventScript_Woman_1
+
+SSAnne_1F_Room6_EventScript_Woman_3:
+# 12 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
 	msgbox SSAnne_1F_Room6_Text_SorryYouLookLikeMyBrother
-	release
-	end
+	goto SSAnne_1F_Room6_EventScript_Woman_1
+
 
 SSAnne_1F_Room6_Text_TakeAShortRest::
+# 20 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
 	.string "You look tired. Would you like to\n"
 	.string "take a short rest?$"
 
 SSAnne_1F_Room6_Text_GladEveryoneIsRefreshed::
+# 25 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
 	.string "I'm glad to see that everyone is\n"
 	.string "looking refreshed and chipper.$"
 
 SSAnne_1F_Room6_Text_SorryYouLookLikeMyBrother::
+# 30 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
 	.string "Oh, I'm sorry for fussing over you.\n"
 	.string "You look like my little brother…$"
 
 SSAnne_1F_Room6_Text_SorryYouLookLikeMySister::
+# 35 "data/maps/SSAnne_1F_Room6_Frlg/scripts.pory"
 	.string "Oh, I'm sorry for fussing over you.\n"
 	.string "You look like my little sister…$"
-
