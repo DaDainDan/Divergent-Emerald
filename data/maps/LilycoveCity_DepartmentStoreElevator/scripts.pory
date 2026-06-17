@@ -42,7 +42,8 @@ script LilycoveCity_DepartmentStoreElevator_EventScript_ChooseFloor {
 			setvar(VAR_0x8006, DEPT_STORE_FLOORNUM_1F)
     		setdynamicwarp(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F, 2, 1)
         case 5:
-        case MULTI_B_PRESSED: goto(LilycoveCity_DepartmentStoreElevator_EventScript_ExitFloorSelect)
+        case MULTI_B_PRESSED: 
+            goto(LilycoveCity_DepartmentStoreElevator_EventScript_ExitFloorSelect)
     }
 	goto(LilycoveCity_DepartmentStoreElevator_EventScript_GoToFloor)
     end
@@ -50,7 +51,13 @@ script LilycoveCity_DepartmentStoreElevator_EventScript_ChooseFloor {
 
 script LilycoveCity_DepartmentStoreElevator_EventScript_GoToFloor {
     if (var(VAR_DEPT_STORE_FLOOR) != VAR_0x8006) {
-        call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+        special(CloseDeptStoreElevatorWindow)
+        closemessage
+        applymovement(VAR_LAST_TALKED, Common_Movement_StepFasterDown)
+        waitmovement(0)
+        waitse
+        special(MoveElevator)
+        setflag(FLAG_TEMP_2)
     	copyvar(VAR_DEPT_STORE_FLOOR, VAR_0x8006)
     }
     goto(LilycoveCity_DepartmentStoreElevator_EventScript_ExitFloorSelect)
@@ -60,15 +67,4 @@ script LilycoveCity_DepartmentStoreElevator_EventScript_GoToFloor {
 script LilycoveCity_DepartmentStoreElevator_EventScript_ExitFloorSelect {
     special(CloseDeptStoreElevatorWindow)
     release_end
-}
-
-script LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator {
-    special(CloseDeptStoreElevatorWindow)
-    closemessage
-    applymovement(VAR_LAST_TALKED, Common_Movement_StepFasterDown)
-    waitmovement(0)
-    waitse
-    special(MoveElevator)
-    setflag(FLAG_TEMP_2)
-    return
 }

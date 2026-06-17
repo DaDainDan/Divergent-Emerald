@@ -280,30 +280,30 @@ BattleFrontier_BattlePalaceLobby_EventScript_AskTakeChallenge_8:
 	goto BattleFrontier_BattlePalaceLobby_EventScript_AskTakeChallenge_5
 
 BattleFrontier_BattlePalaceLobby_EventScript_AskTakeChallenge_9:
-# 137 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
+# 138 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	goto BattleFrontier_BattlePalaceLobby_EventScript_CancelChallenge
 	goto BattleFrontier_BattlePalaceLobby_EventScript_AskTakeChallenge_5
 
 
 BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge::
-# 143 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	message BattleFrontier_BattlePalaceLobby_Text_WhichChallenge
 # 144 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	waitmessage
+	message BattleFrontier_BattlePalaceLobby_Text_WhichChallenge
 # 145 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
+	waitmessage
 # 146 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	switch VAR_RESULT
+	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
 # 147 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	case FRONTIER_LVL_TENT, BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_3
-# 148 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	case MULTI_B_PRESSED, BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_4
+	compare VAR_RESULT, FRONTIER_LVL_TENT
+	goto_if_eq BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_2
+# 147 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
+	compare VAR_RESULT, MULTI_B_PRESSED
+	goto_if_eq BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_2
 BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_1:
 # 150 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	frontier_checkineligible
 # 151 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	compare VAR_0x8004, TRUE
-	goto_if_eq BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_6
+	goto_if_eq BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_7
 # 160 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	frontier_set FRONTIER_DATA_LVL_MODE, VAR_RESULT
 # 161 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
@@ -322,55 +322,50 @@ BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_1:
 	special ChoosePartyForBattleFrontier
 # 168 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_ne BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_9
-BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_8:
+	goto_if_ne BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_10
+BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_9:
 # 189 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	goto BattleFrontier_BattlePalaceLobby_EventScript_LoadPartyAndCancelChallenge
 	end
 
-BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_3:
-# 147 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	goto BattleFrontier_BattlePalaceLobby_EventScript_CancelChallenge
-	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_1
-
-BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_4:
+BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_2:
 # 148 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	goto BattleFrontier_BattlePalaceLobby_EventScript_CancelChallenge
 	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_1
 
-BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_6:
+BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_7:
 # 152 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	switch VAR_RESULT
 # 153 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	case FRONTIER_LVL_50, BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_13
+	case FRONTIER_LVL_50, BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_14
 # 154 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	case FRONTIER_LVL_OPEN, BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_14
-BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_11:
+	case FRONTIER_LVL_OPEN, BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_15
+BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_12:
 # 156 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	call BattleFrontier_ShowCaughtBannedSpecies
 # 157 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	msgbox BattleFrontier_BattlePalaceLobby_Text_NotEnoughValidMonsEnd, MSGBOX_DEFAULT
 	release_end
 
-BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_9:
+BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_10:
 # 169 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	msgbox BattleFrontier_BattlePalaceLobby_Text_MustSaveBeforeChallenge2, MSGBOX_YESNO
 # 170 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_15
-	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_8
-
-BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_13:
-# 153 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	msgbox BattleFrontier_BattlePalaceLobby_Text_NotEnoughValidMonsLv50, MSGBOX_DEFAULT
-	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_11
+	goto_if_eq BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_16
+	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_9
 
 BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_14:
-# 154 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
-	msgbox BattleFrontier_BattlePalaceLobby_Text_NotEnoughValidMonsLvOpen, MSGBOX_DEFAULT
-	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_11
+# 153 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
+	msgbox BattleFrontier_BattlePalaceLobby_Text_NotEnoughValidMonsLv50, MSGBOX_DEFAULT
+	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_12
 
 BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_15:
+# 154 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
+	msgbox BattleFrontier_BattlePalaceLobby_Text_NotEnoughValidMonsLvOpen, MSGBOX_DEFAULT
+	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_12
+
+BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_16:
 # 171 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	setvar VAR_TEMP_CHALLENGE_STATUS, 0
 # 172 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
@@ -395,18 +390,18 @@ BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_15:
 	setvar VAR_TEMP_CHALLENGE_STATUS, 255
 # 182 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_eq BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_18
-BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_17:
+	goto_if_eq BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_19
+BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_18:
 # 186 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	goto BattleFrontier_BattlePalaceLobby_EventScript_EnterChallenge
-	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_8
+	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_9
 
-BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_18:
+BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_19:
 # 183 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, 0
 # 184 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	goto BattleFrontier_BattlePalaceLobby_EventScript_CancelChallenge
-	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_17
+	goto BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge_18
 
 
 BattleFrontier_BattlePalaceLobby_EventScript_EnterChallenge::

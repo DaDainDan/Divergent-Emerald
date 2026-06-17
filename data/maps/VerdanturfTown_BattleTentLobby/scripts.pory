@@ -114,7 +114,8 @@ script VerdanturfTown_BattleTentLobby_EventScript_AskEnterChallenge {
 			msgbox(VerdanturfTown_BattleTentLobby_Text_ExplainVerdanturfTent, MSGBOX_DEFAULT)
     		goto(VerdanturfTown_BattleTentLobby_EventScript_AskEnterChallenge)
         case 2:
-        case MULTI_B_PRESSED: goto(VerdanturfTown_BattleTentLobby_EventScript_CancelChallenge)
+        case MULTI_B_PRESSED: 
+            goto(VerdanturfTown_BattleTentLobby_EventScript_CancelChallenge)
     }
     end
 }
@@ -144,7 +145,8 @@ script VerdanturfTown_BattleTentLobby_EventScript_TryEnterChallenge {
     switch (var(VAR_RESULT)) {
         case YES: goto(VerdanturfTown_BattleTentLobby_EventScript_SaveBeforeChallenge)
 		case NO:
-        case MULTI_B_PRESSED: goto(VerdanturfTown_BattleTentLobby_EventScript_LoadPartyCancelChallenge)
+        case MULTI_B_PRESSED: 
+            goto(VerdanturfTown_BattleTentLobby_EventScript_LoadPartyCancelChallenge)
     }
     end
 }

@@ -107,7 +107,7 @@ Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions_10:
 # 58 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	case MULTI_B_PRESSED, Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions_19
 Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions_13:
-# 60 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 61 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 	end
 
@@ -152,19 +152,19 @@ Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions_18:
 	goto Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions_13
 
 Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions_19:
-# 58 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 59 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	goto Route124_DivingTreasureHuntersHouse_EventScript_DeclineTrade
 	goto Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions_13
 
 
 Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard::
-# 65 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
-	bufferitemname STR_VAR_1, VAR_EXCHANGE_ITEM
 # 66 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
-	bufferitemname STR_VAR_2, VAR_GIFT_ITEM
+	bufferitemname STR_VAR_1, VAR_EXCHANGE_ITEM
 # 67 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
-	msgbox Route124_DivingTreasureHuntersHouse_Text_YoullTradeShardForStone, MSGBOX_YESNO
+	bufferitemname STR_VAR_2, VAR_GIFT_ITEM
 # 68 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox Route124_DivingTreasureHuntersHouse_Text_YoullTradeShardForStone, MSGBOX_YESNO
+# 69 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_2
 Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_1:
@@ -177,21 +177,21 @@ Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_1:
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_5
 Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_4:
-# 83 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 84 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	msgbox Route124_DivingTreasureHuntersHouse_Text_BagFull, MSGBOX_DEFAULT
 	release_end
 
 Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_2:
-# 69 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 70 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	goto Route124_DivingTreasureHuntersHouse_EventScript_DeclineTrade
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_1
 
 Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_5:
-# 72 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
-	removeitem VAR_EXCHANGE_ITEM
 # 73 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
-	giveitem VAR_GIFT_ITEM
+	removeitem VAR_EXCHANGE_ITEM
 # 74 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	giveitem VAR_GIFT_ITEM
+# 75 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	msgbox Route124_DivingTreasureHuntersHouse_Text_ItsADeal, MSGBOX_DEFAULT
 	checkitem ITEM_RED_SHARD
 # 0 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
@@ -212,30 +212,30 @@ Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_5:
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_4
 
 Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_9:
-# 76 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
-	msgbox Route124_DivingTreasureHuntersHouse_Text_TradeSomethingElse, MSGBOX_YESNO
 # 77 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox Route124_DivingTreasureHuntersHouse_Text_TradeSomethingElse, MSGBOX_YESNO
+# 78 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_18
 Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_17:
-# 80 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 81 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	goto Route124_DivingTreasureHuntersHouse_EventScript_DeclineTrade
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_4
 
 Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_18:
-# 78 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 79 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	goto Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard_17
 
 
 Route124_DivingTreasureHuntersHouse_EventScript_DeclineTrade::
-# 88 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 89 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	msgbox Route124_DivingTreasureHuntersHouse_Text_ComeBackIfYouChangeMind, MSGBOX_DEFAULT
 	release_end
 
 
 Route124_DivingTreasureHuntersHouse_EventScript_ShardTradeBoard::
-# 93 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 94 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	msgbox Route124_DivingTreasureHuntersHouse_Text_ShardTradeBoard, MSGBOX_SIGN
 	end
 
@@ -261,61 +261,61 @@ Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions_Text_4:
 	.string "EXIT$"
 
 Route124_DivingTreasureHuntersHouse_Text_Greeting::
-# 97 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 98 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "I'm the DIVING TREASURE HUNTER!\p"
 	.string "I'm the awesome dude who makes\n"
 	.string "deep-sea dives to gather treasures\l"
 	.string "resting at the bottom.$"
 
 Route124_DivingTreasureHuntersHouse_Text_HaveYouSeenAnyShards::
-# 105 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 106 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "Tell me, have you seen any SHARDS of\n"
 	.string "tools made in ancient times?$"
 
 Route124_DivingTreasureHuntersHouse_Text_YouHaventGotAnyShards::
-# 110 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 111 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "You haven't got any treasures\n"
 	.string "for me…\p"
 	.string "If you see any SHARDS, like the RED\n"
 	.string "SHARD, you've got to trade it with me!$"
 
 Route124_DivingTreasureHuntersHouse_Text_ThatsAShardIllTradeYou::
-# 118 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 119 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "Oh, hey! That…\n"
 	.string "That's a SHARD! I'm looking for those!\p"
 	.string "Oh, man, you've got to trade that\n"
 	.string "with me! I'll give you something good!$"
 
 Route124_DivingTreasureHuntersHouse_Text_WhatDoYouWantToTrade::
-# 126 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 127 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "What do you want to trade?$"
 
 Route124_DivingTreasureHuntersHouse_Text_YoullTradeShardForStone::
-# 130 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 131 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "You'll trade your {STR_VAR_1} for\n"
 	.string "my {STR_VAR_2}, then?$"
 
 Route124_DivingTreasureHuntersHouse_Text_ItsADeal::
-# 135 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 136 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "It's a done deal!\n"
 	.string "Use that wisely!$"
 
 Route124_DivingTreasureHuntersHouse_Text_TradeSomethingElse::
-# 140 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 141 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "Do you want to trade something else?$"
 
 Route124_DivingTreasureHuntersHouse_Text_BagFull::
-# 144 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 145 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "Whoops, your BAG's full.\n"
 	.string "Get rid of some items, friend!$"
 
 Route124_DivingTreasureHuntersHouse_Text_ComeBackIfYouChangeMind::
-# 149 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 150 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "No? That's a downer.\n"
 	.string "Well, if you change your mind, come back.$"
 
 Route124_DivingTreasureHuntersHouse_Text_ShardTradeBoard::
-# 154 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+# 155 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "{CLEAR_TO 10}Wanted item{CLEAR_TO 124}Trade item\n"
 	.string "{CLEAR_TO 15}RED SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 123}FIRE STONE{CLEAR_TO 200}\p"
 	.string "{CLEAR_TO 10}Wanted item{CLEAR_TO 124}Trade item\n"

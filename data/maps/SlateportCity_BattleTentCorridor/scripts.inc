@@ -228,38 +228,38 @@ SlateportCity_BattleTentCorridor_EventScript_AskRetireChallenge_3:
 	goto SlateportCity_BattleTentCorridor_EventScript_AskRetireChallenge_1
 
 SlateportCity_BattleTentCorridor_EventScript_AskRetireChallenge_4:
-# 103 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 104 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	goto SlateportCity_BattleTentCorridor_EventScript_AskReadyForOpponent
 	goto SlateportCity_BattleTentCorridor_EventScript_AskRetireChallenge_1
 
 
 SlateportCity_BattleTentCorridor_EventScript_AskSwapMon::
-# 109 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
-	slateporttent_generateopponentmons
 # 110 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
-	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_LikeToSwapMon, MSGBOX_YESNO
+	slateporttent_generateopponentmons
 # 111 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_LikeToSwapMon, MSGBOX_YESNO
+# 112 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq SlateportCity_BattleTentCorridor_EventScript_AskSwapMon_2
 SlateportCity_BattleTentCorridor_EventScript_AskSwapMon_1:
-# 119 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 120 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	goto SlateportCity_BattleTentCorridor_EventScript_EnterBattleRoom
 	end
 
 SlateportCity_BattleTentCorridor_EventScript_AskSwapMon_2:
-# 112 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
-	fadescreen FADE_TO_BLACK
 # 113 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
-	slateporttent_swapmons
+	fadescreen FADE_TO_BLACK
 # 114 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
-	waitstate
+	slateporttent_swapmons
 # 115 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+	waitstate
+# 116 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_ne SlateportCity_BattleTentCorridor_EventScript_AskSwapMon_4
 	goto SlateportCity_BattleTentCorridor_EventScript_AskSwapMon_1
 
 SlateportCity_BattleTentCorridor_EventScript_AskSwapMon_4:
-# 116 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 117 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_YourSwapIsComplete, MSGBOX_DEFAULT
 	goto SlateportCity_BattleTentCorridor_EventScript_AskSwapMon_1
 
@@ -309,7 +309,7 @@ SlateportCity_BattleTentCorridor_EventScript_EnterBattleRoom_Movement_1:
 	step_end
 
 SlateportCity_ContestHall_Text_AdviceForContests::
-# 125 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 126 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "Want a tasty little bit of advice\n"
 	.string "for CONTESTS?\p"
 	.string "Using a certain move after another\n"
@@ -321,13 +321,13 @@ SlateportCity_ContestHall_Text_AdviceForContests::
 	.string "disrupting your POKéMON's showing.$"
 
 SlateportCity_ContestHall_Text_MyPapaIsContestJudge::
-# 140 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 141 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "My papa, he's a CONTEST JUDGE.\p"
 	.string "I wonder what I should be when I\n"
 	.string "grow up, a JUDGE or a GYM LEADER?$"
 
 SlateportCity_ContestHall_Text_ImLikeMajorlyCheesed::
-# 147 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 148 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "Hey, man, I'm like majorly cheesed,\n"
 	.string "you know. Like, you know, I just\l"
 	.string "wanted to know why my POKéMON\l"
@@ -340,7 +340,7 @@ SlateportCity_ContestHall_Text_ImLikeMajorlyCheesed::
 	.string "Just, you know, take this!$"
 
 SlateportCity_ContestHall_Text_ExplainTorment::
-# 163 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 164 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "That's, like, TM41, you know?\n"
 	.string "Hey, it's TORMENT, you hearing me?\p"
 	.string "Like, it won't let the other guy\n"
@@ -349,7 +349,7 @@ SlateportCity_ContestHall_Text_ExplainTorment::
 	.string "I'm not laying a torment on you!$"
 
 SlateportCity_ContestHall_Text_MCStepUpTakePartInContest::
-# 174 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 175 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "MC: Oh, my, my!\n"
 	.string "Now isn't that a dandy of a POKéMON?\p"
 	.string "Please! Do step right up and take\n"
@@ -358,7 +358,7 @@ SlateportCity_ContestHall_Text_MCStepUpTakePartInContest::
 	.string "My eyes have never failed me!$"
 
 SlateportCity_ContestHall_Text_JudgeWouldntDoToMissContest::
-# 185 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 186 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "JUDGE: Well, hello there!\n"
 	.string "I see that you're a TRAINER!\p"
 	.string "Then, it just wouldn't do for you\n"
@@ -367,19 +367,19 @@ SlateportCity_ContestHall_Text_JudgeWouldntDoToMissContest::
 	.string "CITY and enter anytime!$"
 
 SlateportCity_ContestHall_Text_ItsAppealTime::
-# 196 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 197 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "It's appeal time!\n"
 	.string "What should I lead with?$"
 
 SlateportCity_ContestHall_Text_DidntPayAttentionToAppeal::
-# 201 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 202 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "They didn't pay much attention to\n"
 	.string "my POKéMON's appeal…\p"
 	.string "Humph, that JUDGE, he doesn't know\n"
 	.string "a good thing when he sees it.$"
 
 SlateportCity_ContestHall_Text_RewardWithSageAdvice::
-# 209 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 210 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "Oh, hi! You must be a serious fan to get\n"
 	.string "this close to the action.\p"
 	.string "I'll reward your enthusiasm with\n"
@@ -392,20 +392,20 @@ SlateportCity_ContestHall_Text_RewardWithSageAdvice::
 	.string "to happen!$"
 
 SlateportCity_ContestHall_Text_MoreFreakedOutThanMon::
-# 226 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 227 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "I can't do this! I'm more freaked out\n"
 	.string "than my POKéMON.\p"
 	.string "I'm shivering and my heart is racing!$"
 
 SlateportCity_ContestHall_Text_BattleAndContestAlike::
-# 233 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 234 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "A battle and a CONTEST aren't the\n"
 	.string "same, but they are alike, too.\p"
 	.string "You need to work hard and believe\n"
 	.string "in the POKéMON you've raised.$"
 
 SlateportCity_ContestHall_Text_MonLooksOnTopOfGame::
-# 241 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 242 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "That POKéMON looks like it's on top\n"
 	.string "of its game, huh?\p"
 	.string "A POKéMON that does good in the\n"
@@ -413,18 +413,18 @@ SlateportCity_ContestHall_Text_MonLooksOnTopOfGame::
 	.string "relaxed when it's doing appeals.$"
 
 SlateportCity_ContestHall_Text_MyMonBetterThanThatLot::
-# 250 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 251 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "Will you look at that sorry sight?\p"
 	.string "Heh, my POKéMON's absolutely better\n"
 	.string "than that lot!$"
 
 SlateportCity_ContestHall_Text_GetUrgeToMoveWithMon::
-# 257 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 258 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "Don't you get the urge to move with\n"
 	.string "POKéMON if they're putting on an\l"
 	.string "energetic appeal?$"
 
 SlateportCity_ContestHall_Text_HyperRankStage::
-# 263 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
+# 264 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	.string "POKéMON CONTESTS\n"
 	.string "HYPER RANK STAGE!$"

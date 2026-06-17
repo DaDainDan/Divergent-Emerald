@@ -125,7 +125,8 @@ script VerdanturfTown_BattleTentBattleRoom_EventScript_AskPauseChallenge {
 			fadescreen(FADE_TO_BLACK)
 			frontier_reset
 		case NO:
-        case MULTI_B_PRESSED: goto(VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge)
+        case MULTI_B_PRESSED: 
+			goto(VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge)
     }
     end
 }
@@ -137,7 +138,8 @@ script VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge {
     switch (var(VAR_RESULT)) {
         case 0: goto(VerdanturfTown_BattleTentBattleRoom_EventScript_WarpToLobbyLost)
 		case 1:
-        case MULTI_B_PRESSED: goto(VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge)
+        case MULTI_B_PRESSED: 
+			goto(VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge)
     }
     end
 }

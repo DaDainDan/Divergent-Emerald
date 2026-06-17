@@ -218,313 +218,313 @@ FallarborTown_BattleTentLobby_EventScript_AskEnterChallenge_4:
 	goto FallarborTown_BattleTentLobby_EventScript_AskEnterChallenge_1
 
 FallarborTown_BattleTentLobby_EventScript_AskEnterChallenge_5:
-# 114 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 115 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	goto FallarborTown_BattleTentLobby_EventScript_CancelChallenge
 	goto FallarborTown_BattleTentLobby_EventScript_AskEnterChallenge_1
 
 
 FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge::
-# 120 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	setvar VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_ARENA
 # 121 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	setvar VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_SINGLES
+	setvar VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_ARENA
 # 122 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	setvar VAR_RESULT, 2
+	setvar VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_SINGLES
 # 123 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	frontier_checkineligible
+	setvar VAR_RESULT, 2
 # 124 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	frontier_checkineligible
+# 125 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	compare VAR_0x8004, TRUE
 	goto_if_eq FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_2
-# 131 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	frontier_set FRONTIER_DATA_LVL_MODE, FRONTIER_LVL_TENT
 # 132 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	msgbox FallarborTown_BattleTentLobby_Text_SelectThreeMons, MSGBOX_DEFAULT
+	frontier_set FRONTIER_DATA_LVL_MODE, FRONTIER_LVL_TENT
 # 133 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	msgbox FallarborTown_BattleTentLobby_Text_SelectThreeMons, MSGBOX_DEFAULT
 # 134 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	setvar VAR_0x8004, 2
+	fadescreen FADE_TO_BLACK
 # 135 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	setvar VAR_0x8005, FRONTIER_PARTY_SIZE
+	setvar VAR_0x8004, 2
 # 136 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	special ChoosePartyForBattleFrontier
+	setvar VAR_0x8005, FRONTIER_PARTY_SIZE
 # 137 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	special ChoosePartyForBattleFrontier
+# 138 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_5
 FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_4:
-# 140 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	msgbox FallarborTown_BattleTentLobby_Text_SaveBeforeChallenge, MSGBOX_YESNO
 # 141 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	switch VAR_RESULT
+	msgbox FallarborTown_BattleTentLobby_Text_SaveBeforeChallenge, MSGBOX_YESNO
 # 142 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	case YES, FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_13
+	switch VAR_RESULT
 # 143 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	case NO, FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_14
+	case YES, FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_13
 # 144 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	case NO, FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_14
+# 145 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	case MULTI_B_PRESSED, FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_14
 FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_11:
 	end
 
 FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_2:
-# 125 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	switch VAR_RESULT
 # 126 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	case FRONTIER_LVL_50, FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_9
+	switch VAR_RESULT
 # 127 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	case FRONTIER_LVL_50, FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_9
+# 128 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	case FRONTIER_LVL_OPEN, FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_10
 FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_7:
 	release_end
 
 FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_5:
-# 138 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 139 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	goto FallarborTown_BattleTentLobby_EventScript_LoadPartyCancelChallenge
 	goto FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_4
 
 FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_9:
-# 126 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 127 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox FallarborTown_BattleTentLobby_Text_NotEnoughValidMonsLv50, MSGBOX_DEFAULT
 	goto FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_7
 
 FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_10:
-# 127 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 128 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox FallarborTown_BattleTentLobby_Text_NotEnoughValidMonsLvOpen, MSGBOX_DEFAULT
 	goto FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_7
 
 FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_13:
-# 142 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 143 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	goto FallarborTown_BattleTentLobby_EventScript_SaveBeforeChallenge
 	goto FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_11
 
 FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_14:
-# 144 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 146 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	goto FallarborTown_BattleTentLobby_EventScript_LoadPartyCancelChallenge
 	goto FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge_11
 
 
 FallarborTown_BattleTentLobby_EventScript_SaveBeforeChallenge::
-# 150 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	setvar VAR_TEMP_CHALLENGE_STATUS, 0
-# 151 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER
 # 152 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	fallarbortent_init
+	setvar VAR_TEMP_CHALLENGE_STATUS, 0
 # 153 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, CHALLENGE_STATUS_SAVING
+	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER
 # 154 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	frontier_set FRONTIER_DATA_PAUSED, FALSE
+	fallarbortent_init
 # 155 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	special LoadPlayerParty
+	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, CHALLENGE_STATUS_SAVING
 # 156 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	closemessage
+	frontier_set FRONTIER_DATA_PAUSED, FALSE
 # 157 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	delay 2
+	special LoadPlayerParty
 # 158 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	call Common_EventScript_SaveGame
+	closemessage
 # 159 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	setvar VAR_TEMP_CHALLENGE_STATUS, 255
+	delay 2
 # 160 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	call Common_EventScript_SaveGame
+# 161 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	setvar VAR_TEMP_CHALLENGE_STATUS, 255
+# 162 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq FallarborTown_BattleTentLobby_EventScript_SaveBeforeChallenge_2
 FallarborTown_BattleTentLobby_EventScript_SaveBeforeChallenge_1:
-# 164 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 166 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	goto FallarborTown_BattleTentLobby_EventScript_EnterChallenge
 	end
 
 FallarborTown_BattleTentLobby_EventScript_SaveBeforeChallenge_2:
-# 161 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 163 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, 0
-# 162 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 164 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	goto FallarborTown_BattleTentLobby_EventScript_CancelChallenge
 	goto FallarborTown_BattleTentLobby_EventScript_SaveBeforeChallenge_1
 
 
 FallarborTown_BattleTentLobby_EventScript_EnterChallenge::
-# 169 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	special SavePlayerParty
-# 170 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	frontier_setpartyorder FRONTIER_PARTY_SIZE
 # 171 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	msgbox FallarborTown_BattleTentLobby_Text_GuideYouToBattleTent, MSGBOX_DEFAULT
+	special SavePlayerParty
 # 172 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	closemessage
+	frontier_setpartyorder FRONTIER_PARTY_SIZE
 # 173 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	applymovement LOCALID_FALLARBOR_TENT_ATTENDANT, FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_0
+	msgbox FallarborTown_BattleTentLobby_Text_GuideYouToBattleTent, MSGBOX_DEFAULT
 # 174 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	applymovement LOCALID_PLAYER, FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_0
+	closemessage
 # 175 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_FALLARBOR_TENT_ATTENDANT, FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_0
 # 176 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	opendoor 6, 1
+	applymovement LOCALID_PLAYER, FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_0
 # 177 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	waitdooranim
-# 178 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	applymovement LOCALID_FALLARBOR_TENT_ATTENDANT, FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_1
-# 179 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	applymovement LOCALID_PLAYER, FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_2
-# 180 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	waitmovement 0
-# 181 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	closedoor 6, 1
-# 182 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 178 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	opendoor 6, 1
+# 179 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	waitdooranim
+# 180 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	applymovement LOCALID_FALLARBOR_TENT_ATTENDANT, FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_1
+# 181 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	applymovement LOCALID_PLAYER, FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_2
+# 182 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	waitmovement 0
 # 183 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	warp MAP_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR, 2, 7
+	closedoor 6, 1
 # 184 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	setvar VAR_TEMP_CHALLENGE_STATUS, 0
+	waitdooranim
 # 185 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	warp MAP_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR, 2, 7
+# 186 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	setvar VAR_TEMP_CHALLENGE_STATUS, 0
+# 187 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	waitstate
 	end
 
 
 FallarborTown_BattleTentLobby_EventScript_LoadPartyCancelChallenge::
-# 190 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 192 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	special LoadPlayerParty
-# 191 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 193 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	goto FallarborTown_BattleTentLobby_EventScript_CancelChallenge
 	end
 
 
 FallarborTown_BattleTentLobby_EventScript_CancelChallenge::
-# 196 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 198 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox FallarborTown_BattleTentLobby_Text_AwaitAnotherChallenge, MSGBOX_DEFAULT
 	release_end
 
 
 FallarborTown_BattleTentLobby_EventScript_Hiker::
-# 201 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 203 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox FallarborTown_BattleTentLobby_Text_CameToCampOut, MSGBOX_NPC
 	end
 
 
 FallarborTown_BattleTentLobby_EventScript_LittleBoy::
-# 206 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 208 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox FallarborTown_BattleTentLobby_Text_MakeThinkImJustKid, MSGBOX_NPC
 	end
 
 
 FallarborTown_BattleTentLobby_EventScript_Lass::
-# 211 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 213 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox FallarborTown_BattleTentLobby_Text_FallarborTentMyFavorite, MSGBOX_NPC
 	end
 
 
 FallarborTown_BattleTentLobby_EventScript_Scott::
-# 216 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 218 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	lock_faceplayer
-# 217 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 219 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	goto_if_set FLAG_MET_SCOTT_IN_FALLARBOR, FallarborTown_BattleTentLobby_EventScript_Scott_2
-# 221 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	msgbox FallarborTown_BattleTentLobby_Text_ScottLookingForSomeone, MSGBOX_DEFAULT
-# 222 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	addvar VAR_SCOTT_STATE, 1
 # 223 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	msgbox FallarborTown_BattleTentLobby_Text_ScottLookingForSomeone, MSGBOX_DEFAULT
+# 224 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	addvar VAR_SCOTT_STATE, 1
+# 225 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	setflag FLAG_MET_SCOTT_IN_FALLARBOR
 	release_end
 
 FallarborTown_BattleTentLobby_EventScript_Scott_2:
-# 218 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 220 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox FallarborTown_BattleTentLobby_Text_ScottMakeChallenge, MSGBOX_DEFAULT
 	release_end
 
 
 FallarborTown_BattleTentLobby_EventScript_RulesBoard::
-# 228 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	lockall
-# 229 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	msgbox BattleFrontier_BattleArenaLobby_Text_RulesAreListed, MSGBOX_DEFAULT
 # 230 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	lockall
+# 231 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	msgbox BattleFrontier_BattleArenaLobby_Text_RulesAreListed, MSGBOX_DEFAULT
+# 232 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	goto FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard
 	end
 
 
 FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard::
-# 235 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	message BattleFrontier_BattleArenaLobby_Text_ReadWhichHeading
-# 236 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	waitmessage
 # 237 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	multichoice 17, 0, MULTI_FALLARBOR_TENT_RULES, FALSE
+	message BattleFrontier_BattleArenaLobby_Text_ReadWhichHeading
 # 238 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	switch VAR_RESULT
+	waitmessage
 # 239 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	case 0, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_3
+	multichoice 17, 0, MULTI_FALLARBOR_TENT_RULES, FALSE
 # 240 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	case 1, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_4
+	switch VAR_RESULT
 # 241 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	case 2, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_5
+	case 0, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_3
 # 242 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	case 3, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_6
+	case 1, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_4
 # 243 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	case 4, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_7
+	case 2, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_5
 # 244 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	case 5, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_8
+	case 3, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_6
 # 245 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	case 4, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_7
+# 246 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+	case 5, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_8
+# 247 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	case MULTI_B_PRESSED, FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_8
 FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_1:
-# 249 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 251 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	goto FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard
 	end
 
 FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_3:
-# 239 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 241 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox BattleTentLobby_Text_ExplainLevelRules, MSGBOX_DEFAULT
 	goto FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_1
 
 FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_4:
-# 240 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 242 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox BattleFrontier_BattleArenaLobby_Text_ExplainBattleRules, MSGBOX_DEFAULT
 	goto FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_1
 
 FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_5:
-# 241 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 243 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox BattleFrontier_BattleArenaLobby_Text_ExplainMindRules, MSGBOX_DEFAULT
 	goto FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_1
 
 FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_6:
-# 242 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 244 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox BattleFrontier_BattleArenaLobby_Text_ExplainSkillRules, MSGBOX_DEFAULT
 	goto FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_1
 
 FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_7:
-# 243 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 245 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	msgbox BattleFrontier_BattleArenaLobby_Text_ExplainBodyRules, MSGBOX_DEFAULT
 	goto FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_1
 
 FallarborTown_BattleTentLobby_EventScript_ReadRulesBoard_8:
-# 246 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 248 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	releaseall
 	end
 
 
-# 173 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 175 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_0:
-# 173 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 175 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	walk_up
-# 173 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 175 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	walk_up
-# 173 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 175 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	walk_up
 	step_end
 
-# 178 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 180 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_1:
-# 178 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 180 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	walk_up
-# 178 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 180 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	set_invisible
 	step_end
 
-# 179 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 181 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 FallarborTown_BattleTentLobby_EventScript_EnterChallenge_Movement_2:
-# 179 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 181 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	walk_up
-# 179 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 181 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	walk_up
-# 179 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 181 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	set_invisible
 	step_end
 
 FallarborTown_BattleTentLobby_Text_MakeThinkImJustKid::
-# 253 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 255 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	.string "Fufufufufu.\p"
 	.string "I'm going to make everyone think\n"
 	.string "I'm just a kid and let them play down.\p"
@@ -532,7 +532,7 @@ FallarborTown_BattleTentLobby_Text_MakeThinkImJustKid::
 	.string "the title!$"
 
 FallarborTown_BattleTentLobby_Text_FallarborTentMyFavorite::
-# 263 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 265 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	.string "You know how BATTLE TENTS offer\n"
 	.string "different events in different towns?\p"
 	.string "My favorite is definitely the BATTLE\n"
@@ -542,7 +542,7 @@ FallarborTown_BattleTentLobby_Text_FallarborTentMyFavorite::
 	.string "their POKéMON.$"
 
 FallarborTown_BattleTentLobby_Text_CameToCampOut::
-# 275 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 277 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	.string "I heard something about some tent,\n"
 	.string "so I came to camp out.\p"
 	.string "I didn't know that tents these days\n"
@@ -551,7 +551,7 @@ FallarborTown_BattleTentLobby_Text_CameToCampOut::
 	.string "my hand at battling!$"
 
 FallarborTown_BattleTentLobby_Text_ScottLookingForSomeone::
-# 286 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 288 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	.string "SCOTT: Hi, {PLAYER}{KUN}!\n"
 	.string "So you came out to this BATTLE TENT!\p"
 	.string "The people in these parts tend to be\n"
@@ -567,7 +567,7 @@ FallarborTown_BattleTentLobby_Text_ScottLookingForSomeone::
 	.string "Keep working at it!$"
 
 FallarborTown_BattleTentLobby_Text_ScottMakeChallenge::
-# 308 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
+# 310 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
 	.string "SCOTT: Instead of wasting your\n"
 	.string "time with the likes of me, why not\l"
 	.string "make a challenge?$"

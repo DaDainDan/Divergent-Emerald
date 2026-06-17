@@ -88,7 +88,7 @@ LilycoveCity_DepartmentStoreElevator_EventScript_ChooseFloor::
 # 45 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
 	case MULTI_B_PRESSED, LilycoveCity_DepartmentStoreElevator_EventScript_ChooseFloor_8
 LilycoveCity_DepartmentStoreElevator_EventScript_ChooseFloor_1:
-# 47 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+# 48 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
 	goto LilycoveCity_DepartmentStoreElevator_EventScript_GoToFloor
 	end
 
@@ -128,48 +128,42 @@ LilycoveCity_DepartmentStoreElevator_EventScript_ChooseFloor_7:
 	goto LilycoveCity_DepartmentStoreElevator_EventScript_ChooseFloor_1
 
 LilycoveCity_DepartmentStoreElevator_EventScript_ChooseFloor_8:
-# 45 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+# 46 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
 	goto LilycoveCity_DepartmentStoreElevator_EventScript_ExitFloorSelect
 	goto LilycoveCity_DepartmentStoreElevator_EventScript_ChooseFloor_1
 
 
 LilycoveCity_DepartmentStoreElevator_EventScript_GoToFloor::
-# 52 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+# 53 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
 	compare VAR_DEPT_STORE_FLOOR, VAR_0x8006
 	goto_if_ne LilycoveCity_DepartmentStoreElevator_EventScript_GoToFloor_2
 LilycoveCity_DepartmentStoreElevator_EventScript_GoToFloor_1:
-# 56 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+# 63 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
 	goto LilycoveCity_DepartmentStoreElevator_EventScript_ExitFloorSelect
 	end
 
 LilycoveCity_DepartmentStoreElevator_EventScript_GoToFloor_2:
-# 53 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
-	call LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator
 # 54 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+	special CloseDeptStoreElevatorWindow
+# 55 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+	closemessage
+# 56 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_StepFasterDown
+# 57 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+	waitmovement 0
+# 58 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+	waitse
+# 59 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+	special MoveElevator
+# 60 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+	setflag FLAG_TEMP_2
+# 61 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
 	copyvar VAR_DEPT_STORE_FLOOR, VAR_0x8006
 	goto LilycoveCity_DepartmentStoreElevator_EventScript_GoToFloor_1
 
 
 LilycoveCity_DepartmentStoreElevator_EventScript_ExitFloorSelect::
-# 61 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
+# 68 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
 	special CloseDeptStoreElevatorWindow
 	release_end
-
-
-LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator::
-# 66 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
-	special CloseDeptStoreElevatorWindow
-# 67 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
-	closemessage
-# 68 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
-	applymovement VAR_LAST_TALKED, Common_Movement_StepFasterDown
-# 69 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
-	waitmovement 0
-# 70 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
-	waitse
-# 71 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
-	special MoveElevator
-# 72 "data/maps/LilycoveCity_DepartmentStoreElevator/scripts.pory"
-	setflag FLAG_TEMP_2
-	return
 

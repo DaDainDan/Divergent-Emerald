@@ -146,148 +146,141 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastform::
 	msgbox Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon, MSGBOX_DEFAULT
 # 82 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CASTFORM_NORMAL
-# 83 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	givemon SPECIES_CASTFORM_NORMAL, 25, ITEM_MYSTIC_WATER
-# 84 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	switch VAR_RESULT
-# 85 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	case MON_GIVEN_TO_PARTY, Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_3
-# 92 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	case MON_GIVEN_TO_PC, Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_4
-# 99 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	case MON_CANT_GIVE, Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_5
+# 0 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	compare VAR_RESULT, MON_CANT_GIVE
+	goto_if_eq Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_2
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_1:
-# 102 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 86 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	copyvar VAR_0x8007, VAR_RESULT
+# 87 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 88 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	message Route119_WeatherInstitute_2F_Text_PlayerReceivedCastform
+# 89 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	waitmessage
+# 90 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	waitfanfare
+# 91 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_CASTFORM_NORMAL
+# 92 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 93 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	switch VAR_0x8007
+# 94 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	case MON_GIVEN_TO_PARTY, Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_6
+# 99 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	case MON_GIVEN_TO_PC, Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_7
+Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_4:
+# 105 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather, MSGBOX_DEFAULT
-# 103 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 106 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	setflag FLAG_RECEIVED_CASTFORM
 	release_end
 
-Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_3:
-# 86 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	call Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare
-# 87 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 88 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_6
-	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_1
-
-Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_4:
-# 93 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	call Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare
-# 94 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 95 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_9
-Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_8:
-# 98 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	call Common_EventScript_TransferredToPC
-	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_1
-
-Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_5:
-# 100 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_2:
+# 84 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_1
 
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_6:
-# 89 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
-# 90 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
-	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_1
+# 95 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_8
+	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_4
 
-Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_9:
+Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_7:
+# 100 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_11
+Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_10:
+# 103 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	call Common_EventScript_TransferredToPC
+	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_4
+
+Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_8:
 # 96 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 97 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_4
+
+Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_11:
+# 101 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_8
-
-
-Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare::
-# 108 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 109 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	message Route119_WeatherInstitute_2F_Text_PlayerReceivedCastform
-# 110 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	waitmessage
-# 111 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	waitfanfare
-# 112 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_CASTFORM_NORMAL
-	return
+	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform_10
 
 
 Route119_WeatherInstitute_2F_EventScript_WeatherScientist::
-# 117 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 111 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	lock_faceplayer
-# 118 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 112 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto_if_set FLAG_RECEIVED_CASTFORM, Route119_WeatherInstitute_2F_EventScript_WeatherScientist_2
-# 125 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 119 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
 	end
 
 Route119_WeatherInstitute_2F_EventScript_WeatherScientist_2:
-# 119 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 113 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto_if_set FLAG_SYS_GAME_CLEAR, Route119_WeatherInstitute_2F_EventScript_WeatherScientist_5
 Route119_WeatherInstitute_2F_EventScript_WeatherScientist_4:
-# 122 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 116 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_Text_ChangingWeatherRidiculous, MSGBOX_DEFAULT
 	release_end
 
 Route119_WeatherInstitute_2F_EventScript_WeatherScientist_5:
-# 120 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 114 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather
 	goto Route119_WeatherInstitute_2F_EventScript_WeatherScientist_4
 
 
 Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather::
-# 130 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 124 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	setvar VAR_0x8004, 0
-# 131 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 125 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto_if_set FLAG_DEFEATED_KYOGRE, Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_2
 Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_1:
-# 134 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 128 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto_if_set FLAG_DEFEATED_GROUDON, Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_5
 Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_4:
-# 137 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 131 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	compare VAR_0x8004, 2
 	goto_if_eq Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_8
-# 141 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 135 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto_if_unset FLAG_TEMP_2, Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_11
 Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_10:
 	specialvar VAR_RESULT, GetAbnormalWeatherMapNameAndType
 # 0 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_14
-# 149 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 143 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_Text_GroudonWeather, MSGBOX_DEFAULT
 	release_end
 
 Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_2:
-# 132 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 126 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	addvar VAR_0x8004, 1
 	goto Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_1
 
 Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_5:
-# 135 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 129 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	addvar VAR_0x8004, 1
 	goto Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_4
 
 Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_8:
-# 138 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 132 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_Text_NoAbnormalWeather, MSGBOX_DEFAULT
 	release_end
 
 Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_11:
-# 142 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 136 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	special CreateAbnormalWeatherEvent
-# 143 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 137 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	setflag FLAG_TEMP_2
 	goto Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_10
 
 Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather_14:
-# 146 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 140 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_Text_KyogreWeather, MSGBOX_DEFAULT
 	release_end
 
@@ -355,57 +348,57 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Movement_3:
 	step_end
 
 Route119_WeatherInstitute_2F_Text_Grunt2Intro::
-# 153 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 147 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "The INSTITUTE created a type of\n"
 	.string "POKéMON that has something to do with\l"
 	.string "the weather. We're here to take them!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt2Defeat::
-# 159 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 153 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Our plan's being spoiled by a kid?$"
 
 Route119_WeatherInstitute_2F_Text_Grunt2PostBattle::
-# 163 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 157 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "If the POKéMON they made here can\n"
 	.string "control the weather freely, then we of\l"
 	.string "TEAM AQUA definitely need it!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt3Intro::
-# 169 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 163 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "We're TEAM AQUA!\n"
 	.string "We appear wherever anything rare is\l"
 	.string "found!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt3Defeat::
-# 175 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 169 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "You got me!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt3PostBattle::
-# 179 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 173 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "You don't have any idea what we of\n"
 	.string "TEAM AQUA are working towards!\l"
 	.string "You stay out of our way!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt5Intro::
-# 185 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 179 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Don't tell me you're looking for that\n"
 	.string "weather POKéMON, too?\p"
 	.string "That's a no-no!\n"
 	.string "We were here to get it first!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt5Defeat::
-# 193 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 187 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Oh, will you look at my POKéMON?$"
 
 Route119_WeatherInstitute_2F_Text_Grunt5PostBattle::
-# 197 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 191 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Humph, so what?\n"
 	.string "What we want…\p"
 	.string "What we really want isn't here…\n"
 	.string "Ihihihihi…$"
 
 Route119_WeatherInstitute_2F_Text_ShellyIntro::
-# 205 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 199 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Ahahahaha!\p"
 	.string "You're going to meddle in TEAM AQUA's\n"
 	.string "affairs?\p"
@@ -415,19 +408,19 @@ Route119_WeatherInstitute_2F_Text_ShellyIntro::
 	.string "I'll put you down, kiddy!$"
 
 Route119_WeatherInstitute_2F_Text_ShellyDefeat::
-# 218 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 212 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Ahahahaha!\n"
 	.string "You're disgustingly strong!$"
 
 Route119_WeatherInstitute_2F_Text_ShellyPostBattle::
-# 223 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 217 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "It's bad enough to have TEAM MAGMA\n"
 	.string "blunder about, but now there's you!\p"
 	.string "What makes you want to sniff around\n"
 	.string "in our business, anyway?$"
 
 Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy::
-# 231 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 225 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "We have a situation here!\p"
 	.string "A TEAM MAGMA mob just passed\n"
 	.string "the WEATHER INSTITUTE.\p"
@@ -435,7 +428,7 @@ Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy::
 	.string "MT. PYRE!$"
 
 Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre::
-# 241 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 235 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "What?!\p"
 	.string "We can't waste any more time here!\n"
 	.string "We have to hurry to MT. PYRE, too!\p"
@@ -443,36 +436,36 @@ Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre::
 	.string "TEAM MAGMA, just you wait!$"
 
 Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon::
-# 251 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 245 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Thanks!\n"
 	.string "Thanks to you, we're safe!\p"
 	.string "It might be an odd way of thanking you,\n"
 	.string "but take this POKéMON.$"
 
 Route119_WeatherInstitute_2F_Text_NoRoomForPokemon::
-# 259 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 253 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Hm? You don't seem to have any room\n"
 	.string "for this POKéMON.$"
 
 Route119_WeatherInstitute_2F_Text_PlayerReceivedCastform::
-# 264 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 258 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "{PLAYER} received CASTFORM!$"
 
 Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather::
-# 268 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 262 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "That POKéMON changes shape according\n"
 	.string "to the weather conditions.\p"
 	.string "There're plenty of them in the\n"
 	.string "INSTITUTE--go ahead and take it.$"
 
 Route119_WeatherInstitute_2F_Text_ChangingWeatherRidiculous::
-# 276 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 270 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "I've been researching rain for many\n"
 	.string "years, but it's ridiculous to think that\l"
 	.string "humans can freely change the weather.$"
 
 Route119_WeatherInstitute_2F_Text_GroudonWeather::
-# 282 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 276 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "I track weather patterns over\n"
 	.string "the HOENN region.\p"
 	.string "Presently, a drought has been recorded\n"
@@ -481,7 +474,7 @@ Route119_WeatherInstitute_2F_Text_GroudonWeather::
 	.string "{STR_VAR_1}…$"
 
 Route119_WeatherInstitute_2F_Text_KyogreWeather::
-# 293 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 287 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "I track weather patterns over\n"
 	.string "the HOENN region.\p"
 	.string "Presently, heavy rainfall has been\n"
@@ -490,7 +483,7 @@ Route119_WeatherInstitute_2F_Text_KyogreWeather::
 	.string "{STR_VAR_1}…$"
 
 Route119_WeatherInstitute_2F_Text_NoAbnormalWeather::
-# 304 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 298 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Abnormal weather conditions are\n"
 	.string "no longer being reported.\p"
 	.string "The occasional rainfall is a blessing,\n"

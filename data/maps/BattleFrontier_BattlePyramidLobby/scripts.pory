@@ -114,7 +114,8 @@ script BattleFrontier_BattlePyramidLobby_EventScript_AskTakeChallenge {
 			msgbox(BattleFrontier_BattlePyramidLobby_Text_ExplainBattlePyramid, MSGBOX_DEFAULT)
     		goto(BattleFrontier_BattlePyramidLobby_EventScript_AskTakeChallenge)
         case 2:
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattlePyramidLobby_EventScript_CancelChallenge)
+        case MULTI_B_PRESSED: 
+			goto(BattleFrontier_BattlePyramidLobby_EventScript_CancelChallenge)
     }
     end
 }
@@ -313,7 +314,8 @@ script BattleFrontier_BattlePyramidLobby_EventScript_PickItemsToKeep {
         case 0: goto(BattleFrontier_BattlePyramidLobby_EventScript_PickItemsFromBag)
         case 1: goto(BattleFrontier_BattlePyramidLobby_EventScript_PickItemsFromParty)
         case 2:
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattlePyramidLobby_EventScript_ExitPickItems)
+        case MULTI_B_PRESSED: 
+			goto(BattleFrontier_BattlePyramidLobby_EventScript_ExitPickItems)
     }
     end
 }

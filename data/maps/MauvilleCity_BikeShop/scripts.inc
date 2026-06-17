@@ -180,9 +180,9 @@ MauvilleCity_BikeShop_EventScript_ChooseMachHandbookPage::
 # 97 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	case MULTI_B_PRESSED, MauvilleCity_BikeShop_EventScript_ChooseMachHandbookPage_6
 MauvilleCity_BikeShop_EventScript_ChooseMachHandbookPage_1:
-# 99 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	waitmessage
 # 100 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+	waitmessage
+# 101 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	goto MauvilleCity_BikeShop_EventScript_ChooseMachHandbookPage
 	end
 
@@ -206,49 +206,49 @@ MauvilleCity_BikeShop_EventScript_ChooseMachHandbookPage_6:
 
 
 MauvilleCity_BikeShop_EventScript_AcroBikeHandbook::
-# 105 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	message MauvilleCity_BikeShop_Text_AcroHandbookWhichPage
 # 106 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	waitmessage
+	message MauvilleCity_BikeShop_Text_AcroHandbookWhichPage
 # 107 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+	waitmessage
+# 108 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	goto MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage
 	end
 
 
 MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage::
-# 112 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	multichoice 0, 0, MULTI_ACRO_BIKE_INFO, FALSE
 # 113 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	switch VAR_RESULT
+	multichoice 0, 0, MULTI_ACRO_BIKE_INFO, FALSE
 # 114 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	case 0, MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_3
+	switch VAR_RESULT
 # 115 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	case 1, MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_4
+	case 0, MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_3
 # 116 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	case 2, MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_5
+	case 1, MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_4
 # 117 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	case 3, MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_6
+	case 2, MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_5
 # 118 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+	case 3, MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_6
+# 119 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	case MULTI_B_PRESSED, MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_6
 MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_1:
-# 120 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 122 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	waitmessage
-# 121 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 123 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	goto MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage
 	end
 
 MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_3:
-# 114 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 115 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	message MauvilleCity_BikeShop_Text_Wheelies
 	goto MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_1
 
 MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_4:
-# 115 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 116 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	message MauvilleCity_BikeShop_Text_BunnyHops
 	goto MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_1
 
 MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_5:
-# 116 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 117 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	message MauvilleCity_BikeShop_Text_Jumps
 	goto MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_1
 
@@ -257,26 +257,26 @@ MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage_6:
 
 
 MauvilleCity_BikeShop_Text_RydelGreeting::
-# 125 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 127 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "Well, well, what have we here?\n"
 	.string "A most energetic customer!\p"
 	.string "Me? You may call me RYDEL.\n"
 	.string "I'm the owner of this cycle shop.$"
 
 MauvilleCity_BikeShop_Text_DidYouComeFromFarAway::
-# 133 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 135 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "RYDEL: Your RUNNING SHOES…\n"
 	.string "They're awfully filthy.\p"
 	.string "Did you come from far away?$"
 
 MauvilleCity_BikeShop_Text_GuessYouDontNeedBike::
-# 140 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 142 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "RYDEL: Is that right?\p"
 	.string "Then, I guess you have no need for\n"
 	.string "any of my BIKES.$"
 
 MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne::
-# 147 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 149 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "RYDEL: Hm, hm… … … … …\p"
 	.string "You're saying that you came all this\n"
 	.string "way from LITTLEROOT?\p"
@@ -301,45 +301,45 @@ MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne::
 	.string "Which one will you choose?$"
 
 MauvilleCity_BikeShop_Text_ChoseMachBike::
-# 183 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 185 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "{PLAYER} chose the MACH BIKE.$"
 
 MauvilleCity_BikeShop_Text_ChoseAcroBike::
-# 187 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 189 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "{PLAYER} chose the ACRO BIKE.$"
 
 MauvilleCity_BikeShop_Text_ComeBackToSwitchBikes::
-# 191 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 193 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "RYDEL: If you get the urge to switch\n"
 	.string "BIKES, just come see me!$"
 
 MauvilleCity_BikeShop_Text_WantToSwitchBikes::
-# 196 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 198 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "RYDEL: Oh? Were you thinking about\n"
 	.string "switching BIKES?$"
 
 MauvilleCity_BikeShop_Text_IllSwitchBikes::
-# 201 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 203 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "RYDEL: Okay, no problem!\n"
 	.string "I'll switch BIKES for you!$"
 
 MauvilleCity_BikeShop_Text_ExchangedMachForAcro::
-# 206 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 208 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "{PLAYER} got the MACH BIKE exchanged\n"
 	.string "for an ACRO BIKE.$"
 
 MauvilleCity_BikeShop_Text_ExchangedAcroForMach::
-# 211 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 213 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "{PLAYER} got the ACRO BIKE exchanged\n"
 	.string "for a MACH BIKE.$"
 
 MauvilleCity_BikeShop_Text_HappyYouLikeIt::
-# 216 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 218 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "RYDEL: Good, good!\n"
 	.string "I'm happy that you like it!$"
 
 MauvilleCity_BikeShop_Text_OhYourBikeIsInPC::
-# 221 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 223 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "Oh? What happened to that BIKE\n"
 	.string "I gave you?\p"
 	.string "Oh, I get it, you stored it using your PC.\p"
@@ -349,7 +349,7 @@ MauvilleCity_BikeShop_Text_OhYourBikeIsInPC::
 	.string "on your adventure!$"
 
 MauvilleCity_BikeShop_Text_HandbooksAreInBack::
-# 234 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 236 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "I'm learning about BIKES while\n"
 	.string "I work here.\p"
 	.string "If you need advice on how to ride your\n"
@@ -357,12 +357,12 @@ MauvilleCity_BikeShop_Text_HandbooksAreInBack::
 	.string "the back.$"
 
 MauvilleCity_BikeShop_Text_MachHandbookWhichPage::
-# 243 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 245 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "It's a handbook on the MACH BIKE.\p"
 	.string "Which page do you want to read?$"
 
 MauvilleCity_BikeShop_Text_HowToRideMachBike::
-# 249 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 251 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "A BIKE moves in the direction that\n"
 	.string "the + Control Pad is pressed.\p"
 	.string "It will speed up once it gets rolling.\p"
@@ -371,7 +371,7 @@ MauvilleCity_BikeShop_Text_HowToRideMachBike::
 	.string "Want to read a different page?$"
 
 MauvilleCity_BikeShop_Text_HowToTurnMachBike::
-# 261 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 263 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "A MACH BIKE is speedy, but it can't\n"
 	.string "stop very quickly.\p"
 	.string "It gets a little tricky to get around\n"
@@ -381,7 +381,7 @@ MauvilleCity_BikeShop_Text_HowToTurnMachBike::
 	.string "Want to read a different page?$"
 
 MauvilleCity_BikeShop_Text_SandySlopes::
-# 274 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 276 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "There are small sandy slopes\n"
 	.string "throughout the HOENN region.\p"
 	.string "The loose, crumbly sand makes it\n"
@@ -391,12 +391,12 @@ MauvilleCity_BikeShop_Text_SandySlopes::
 	.string "Want to read a different page?$"
 
 MauvilleCity_BikeShop_Text_AcroHandbookWhichPage::
-# 287 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 289 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "It's a handbook on the ACRO BIKE.\p"
 	.string "Which page do you want to read?$"
 
 MauvilleCity_BikeShop_Text_Wheelies::
-# 293 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 295 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "Press the B Button while riding,\n"
 	.string "and the front wheel lifts up.\p"
 	.string "You can zip around with the front\n"
@@ -405,7 +405,7 @@ MauvilleCity_BikeShop_Text_Wheelies::
 	.string "Want to read a different page?$"
 
 MauvilleCity_BikeShop_Text_BunnyHops::
-# 305 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 307 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "Keeping the B Button pressed,\n"
 	.string "your BIKE can hop on the spot.\p"
 	.string "This technique is called a bunny hop.\p"
@@ -413,7 +413,7 @@ MauvilleCity_BikeShop_Text_BunnyHops::
 	.string "Want to read a different page?$"
 
 MauvilleCity_BikeShop_Text_Jumps::
-# 316 "data/maps/MauvilleCity_BikeShop/scripts.pory"
+# 318 "data/maps/MauvilleCity_BikeShop/scripts.pory"
 	.string "Press the B Button and the + Control\n"
 	.string "Pad at the same time to jump.\p"
 	.string "Press the + Control Pad to the side\n"

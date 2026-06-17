@@ -281,300 +281,300 @@ BattleFrontier_BattleFactoryLobby_EventScript_AskTakeChallenge_8:
 	goto BattleFrontier_BattleFactoryLobby_EventScript_AskTakeChallenge_5
 
 BattleFrontier_BattleFactoryLobby_EventScript_AskTakeChallenge_9:
-# 139 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 140 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	goto BattleFrontier_BattleFactoryLobby_EventScript_CancelChallenge
 	goto BattleFrontier_BattleFactoryLobby_EventScript_AskTakeChallenge_5
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge::
-# 145 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	message BattleFrontier_BattleFactoryLobby_Text_WhichLevelMode
 # 146 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	waitmessage
+	message BattleFrontier_BattleFactoryLobby_Text_WhichLevelMode
 # 147 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
+	waitmessage
 # 148 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
+# 149 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	compare VAR_RESULT, FRONTIER_LVL_TENT
 	goto_if_eq BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_2
-# 148 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 149 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	compare VAR_RESULT, MULTI_B_PRESSED
 	goto_if_eq BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_2
 BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_1:
-# 151 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	frontier_set FRONTIER_DATA_LVL_MODE, VAR_RESULT
 # 152 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	msgbox BattleFrontier_BattleFactoryLobby_Text_OkayToSaveBeforeChallenge, MSGBOX_YESNO
+	frontier_set FRONTIER_DATA_LVL_MODE, VAR_RESULT
 # 153 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	msgbox BattleFrontier_BattleFactoryLobby_Text_OkayToSaveBeforeChallenge, MSGBOX_YESNO
+# 154 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_7
 BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_6:
-# 170 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	special LoadPlayerParty
 # 171 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	callnative UpdateFollowingPokemon
+	special LoadPlayerParty
 # 172 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	callnative UpdateFollowingPokemon
+# 173 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	goto BattleFrontier_BattleFactoryLobby_EventScript_CancelChallenge
 	end
 
 BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_2:
-# 149 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 150 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	goto BattleFrontier_BattleFactoryLobby_EventScript_CancelChallenge
 	goto BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_1
 
 BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_7:
-# 154 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	setvar VAR_TEMP_CHALLENGE_STATUS, 0
 # 155 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	factory_init
+	setvar VAR_TEMP_CHALLENGE_STATUS, 0
 # 156 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, CHALLENGE_STATUS_SAVING
+	factory_init
 # 157 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	factory_set FACTORY_DATA_WIN_STREAK_ACTIVE, TRUE
+	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, CHALLENGE_STATUS_SAVING
 # 158 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	frontier_set FRONTIER_DATA_PAUSED, FALSE
+	factory_set FACTORY_DATA_WIN_STREAK_ACTIVE, TRUE
 # 159 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	closemessage
+	frontier_set FRONTIER_DATA_PAUSED, FALSE
 # 160 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	delay 2
+	closemessage
 # 161 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	call Common_EventScript_SaveGame
+	delay 2
 # 162 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	setvar VAR_TEMP_CHALLENGE_STATUS, 255
+	call Common_EventScript_SaveGame
 # 163 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	setvar VAR_TEMP_CHALLENGE_STATUS, 255
+# 164 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_10
 BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_9:
-# 167 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	setvar VAR_0x8006, 0
 # 168 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	setvar VAR_0x8006, 0
+# 169 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	goto BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge
 	goto BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_6
 
 BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_10:
-# 164 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, 0
 # 165 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, 0
+# 166 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	goto BattleFrontier_BattleFactoryLobby_EventScript_CancelChallenge
 	goto BattleFrontier_BattleFactoryLobby_EventScript_TryEnterChallenge_9
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge::
-# 177 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	special SavePlayerParty
 # 178 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	msgbox BattleFrontier_BattleFactoryLobby_Text_StepThisWay, MSGBOX_DEFAULT
+	special SavePlayerParty
 # 179 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	closemessage
+	msgbox BattleFrontier_BattleFactoryLobby_Text_StepThisWay, MSGBOX_DEFAULT
 # 180 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	switch VAR_FRONTIER_BATTLE_MODE
+	closemessage
 # 181 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	case FRONTIER_MODE_SINGLES, BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_3
+	switch VAR_FRONTIER_BATTLE_MODE
 # 182 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	case FRONTIER_MODE_SINGLES, BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_3
+# 183 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	case FRONTIER_MODE_DOUBLES, BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_4
 BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_1:
-# 184 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	applymovement VAR_LAST_TALKED, BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_Movement_0
 # 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	applymovement LOCALID_PLAYER, BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_Movement_1
+	applymovement VAR_LAST_TALKED, BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_Movement_0
 # 186 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_Movement_1
 # 187 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	warp MAP_BATTLE_FRONTIER_BATTLE_FACTORY_PRE_BATTLE_ROOM, 8, 13
+	waitmovement 0
 # 188 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	setvar VAR_TEMP_CHALLENGE_STATUS, 0
+	warp MAP_BATTLE_FRONTIER_BATTLE_FACTORY_PRE_BATTLE_ROOM, 8, 13
 # 189 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	setvar VAR_TEMP_CHALLENGE_STATUS, 0
+# 190 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	waitstate
 	end
 
 BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_3:
-# 181 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 182 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_FACTORY_ATTENDANT_SINGLES
 	goto BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_1
 
 BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_4:
-# 182 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 183 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_FACTORY_ATTENDANT_DOUBLES
 	goto BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_1
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_ExplainChallenge::
-# 194 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	switch VAR_FRONTIER_BATTLE_MODE
 # 195 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	case FRONTIER_MODE_SINGLES, BattleFrontier_BattleFactoryLobby_EventScript_ExplainChallenge_3
+	switch VAR_FRONTIER_BATTLE_MODE
 # 196 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	case FRONTIER_MODE_SINGLES, BattleFrontier_BattleFactoryLobby_EventScript_ExplainChallenge_3
+# 197 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	case FRONTIER_MODE_DOUBLES, BattleFrontier_BattleFactoryLobby_EventScript_ExplainChallenge_4
 BattleFrontier_BattleFactoryLobby_EventScript_ExplainChallenge_1:
-# 198 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 199 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	goto BattleFrontier_BattleFactoryLobby_EventScript_AskTakeChallenge
 	end
 
 BattleFrontier_BattleFactoryLobby_EventScript_ExplainChallenge_3:
-# 195 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 196 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_ExplainSinglesChallenge, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleFactoryLobby_EventScript_ExplainChallenge_1
 
 BattleFrontier_BattleFactoryLobby_EventScript_ExplainChallenge_4:
-# 196 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 197 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_ExplainDoublesChallenge, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleFactoryLobby_EventScript_ExplainChallenge_1
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_CancelChallenge::
-# 203 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 204 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_LookForwardToNextVisit, MSGBOX_DEFAULT
 	release_end
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_ShowSinglesResults::
-# 208 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	lockall
 # 209 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	frontier_results FRONTIER_FACILITY_FACTORY, FRONTIER_MODE_SINGLES
+	lockall
 # 210 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	waitbuttonpress
+	frontier_results FRONTIER_FACILITY_FACTORY, FRONTIER_MODE_SINGLES
 # 211 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	special RemoveRecordsWindow
+	waitbuttonpress
 # 212 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	special RemoveRecordsWindow
+# 213 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	releaseall
 	end
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_ShowDoublesResults::
-# 217 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	lockall
 # 218 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	frontier_results FRONTIER_FACILITY_FACTORY, FRONTIER_MODE_DOUBLES
+	lockall
 # 219 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	waitbuttonpress
+	frontier_results FRONTIER_FACILITY_FACTORY, FRONTIER_MODE_DOUBLES
 # 220 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	special RemoveRecordsWindow
+	waitbuttonpress
 # 221 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	special RemoveRecordsWindow
+# 222 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	releaseall
 	end
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_Woman::
-# 226 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 227 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_NeedKnowledgeOfMonsMoves, MSGBOX_NPC
 	end
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_Camper::
-# 231 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 232 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_SwappedForWeakMon, MSGBOX_NPC
 	end
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_Picnicker::
-# 236 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	lock
 # 237 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	lock
+# 238 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_NeedToCheckOpponentsMons, MSGBOX_DEFAULT
 	release_end
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_FatMan::
-# 242 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 243 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_CantFigureOutStaffHints, MSGBOX_NPC
 	end
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_RulesBoard::
-# 247 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	lockall
 # 248 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	msgbox BattleFrontier_BattleFactoryLobby_Text_RulesAreListed, MSGBOX_DEFAULT
+	lockall
 # 249 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	msgbox BattleFrontier_BattleFactoryLobby_Text_RulesAreListed, MSGBOX_DEFAULT
+# 250 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	goto BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard
 	end
 
 
 BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard::
-# 254 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	message BattleFrontier_BattleFactoryLobby_Text_ReadWhichHeading
 # 255 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	waitmessage
+	message BattleFrontier_BattleFactoryLobby_Text_ReadWhichHeading
 # 256 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	multichoice 17, 0, MULTI_BATTLE_FACTORY_RULES, FALSE
+	waitmessage
 # 257 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	switch VAR_RESULT
+	multichoice 17, 0, MULTI_BATTLE_FACTORY_RULES, FALSE
 # 258 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	case 0, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_3
+	switch VAR_RESULT
 # 259 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	case 1, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_4
+	case 0, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_3
 # 260 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	case 2, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_5
+	case 1, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_4
 # 261 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	case 3, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_6
+	case 2, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_5
 # 262 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	case 4, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_7
+	case 3, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_6
 # 263 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
-	case 5, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_8
+	case 4, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_7
 # 264 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+	case 5, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_8
+# 265 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	case MULTI_B_PRESSED, BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_8
 BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_1:
-# 268 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 269 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	goto BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard
 	end
 
 BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_3:
-# 258 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 259 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_ExplainBasicRules, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_1
 
 BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_4:
-# 259 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 260 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_ExplainSwapPartnerRules, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_1
 
 BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_5:
-# 260 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 261 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_ExplainSwapNumberRules, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_1
 
 BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_6:
-# 261 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 262 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_ExplainSwapNotesRules, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_1
 
 BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_7:
-# 262 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 263 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_ExplainOpenLvRules, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_1
 
 BattleFrontier_BattleFactoryLobby_EventScript_ReadRulesBoard_8:
-# 265 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 266 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	releaseall
 	end
 
 
-# 184 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_Movement_0:
-# 184 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	walk_up
-# 184 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	walk_up
-# 184 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	walk_up
-# 184 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	set_invisible
 	step_end
 
-# 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 186 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 BattleFrontier_BattleFactoryLobby_EventScript_EnterChallenge_Movement_1:
-# 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 186 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	walk_up
-# 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 186 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	walk_up
-# 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 186 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	walk_up
-# 185 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 186 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	walk_up
 	step_end
 
 BattleFrontier_BattleFactoryLobby_Text_WelcomeForSingleBattle::
-# 272 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 273 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Where the intelligence of TRAINERS\n"
 	.string "is put to the test!\p"
 	.string "Welcome to the BATTLE FACTORY!\p"
@@ -582,12 +582,12 @@ BattleFrontier_BattleFactoryLobby_Text_WelcomeForSingleBattle::
 	.string "Single Tournament.$"
 
 BattleFrontier_BattleFactoryLobby_Text_TakeSinglesChallenge::
-# 282 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 283 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Would you like to take the Battle\n"
 	.string "Swap Single challenge?$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainSinglesChallenge::
-# 287 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 288 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "The Battle Swap Single Tournament\n"
 	.string "is a SINGLE BATTLE competition using\l"
 	.string "only rental POKéMON.\p"
@@ -606,30 +606,30 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainSinglesChallenge::
 	.string "disqualified from your challenge.$"
 
 BattleFrontier_BattleFactoryLobby_Text_LookForwardToNextVisit::
-# 312 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 313 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "We look forward to your next visit.$"
 
 BattleFrontier_BattleFactoryLobby_Text_WhichLevelMode::
-# 316 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 317 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Which level do you wish to challenge?\n"
 	.string "Level 50 or Open Level?$"
 
 BattleFrontier_BattleFactoryLobby_Text_OkayToSaveBeforeChallenge::
-# 321 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 322 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Before you begin your challenge,\n"
 	.string "I need to save the game. Is that okay?$"
 
 BattleFrontier_BattleFactoryLobby_Text_WillHoldMonsForSafekeeping::
-# 327 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 328 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Okay, I will hold your POKéMON for\n"
 	.string "safekeeping while you compete.$"
 
 BattleFrontier_BattleFactoryLobby_Text_StepThisWay::
-# 332 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 333 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Please step this way.$"
 
 BattleFrontier_BattleFactoryLobby_Text_ReturnMonsSaveResults::
-# 336 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 337 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Thank you for participating!\p"
 	.string "I will return your POKéMON in exchange\n"
 	.string "for our rental POKéMON.\p"
@@ -637,51 +637,51 @@ BattleFrontier_BattleFactoryLobby_Text_ReturnMonsSaveResults::
 	.string "Please wait.$"
 
 BattleFrontier_BattleFactoryLobby_Text_ReturnMons::
-# 347 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 348 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "I will return your POKéMON in exchange\n"
 	.string "for our rental POKéMON.$"
 
 BattleFrontier_BattleFactoryLobby_Text_CongratsSevenWins::
-# 352 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 353 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Congratulations! You've won seven\n"
 	.string "straight Battle Swap matches!$"
 
 BattleFrontier_BattleFactoryLobby_Text_AwardBattlePointsForStreak::
-# 358 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 359 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "In recognition of your 7-win streak,\n"
 	.string "we award you these Battle Point(s).$"
 
 BattleFrontier_BattleFactoryLobby_Text_MaxBattlePoints::
-# 364 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 365 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Oh, oh, oh!\p"
 	.string "Your Battle Points are maxed.\p"
 	.string "Please come back after using\n"
 	.string "some Battle Points.$"
 
 BattleFrontier_BattleFactoryLobby_Text_WaitingForYouToResume::
-# 373 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 374 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "We've been waiting for you!\p"
 	.string "Before we resume your challenge,\n"
 	.string "I must save the game.$"
 
 BattleFrontier_BattleFactoryLobby_Text_DidntSaveBeforeQuitting::
-# 380 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 381 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "I'm sorry to say this, but you didn't\n"
 	.string "save before you quit playing last time.\p"
 	.string "As a result, you have been disqualified\n"
 	.string "from your challenge.$"
 
 BattleFrontier_BattleFactoryLobby_Text_WellReturnMons::
-# 389 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 390 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "We'll return your personal POKéMON.$"
 
 BattleFrontier_BattleFactoryLobby_Text_ReceivedPrizeItem::
-# 394 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 395 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "{PLAYER} received the prize\n"
 	.string "{STR_VAR_1}.$"
 
 BattleFrontier_BattleFactoryLobby_Text_WelcomeForDoubleBattle::
-# 399 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 400 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Where the intelligence of TRAINERS\n"
 	.string "is put to the test!\p"
 	.string "Welcome to the BATTLE FACTORY!\p"
@@ -689,12 +689,12 @@ BattleFrontier_BattleFactoryLobby_Text_WelcomeForDoubleBattle::
 	.string "Double Tournament.$"
 
 BattleFrontier_BattleFactoryLobby_Text_TakeDoublesChallenge::
-# 409 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 410 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Would you like to take the Battle\n"
 	.string "Swap Double challenge?$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainDoublesChallenge::
-# 414 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 415 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "The Battle Swap Double Tournament\n"
 	.string "is a DOUBLE BATTLE competition using\l"
 	.string "only rental POKéMON.\p"
@@ -713,32 +713,32 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainDoublesChallenge::
 	.string "you will be disqualified.$"
 
 BattleFrontier_BattleFactoryLobby_Text_CongratsForDefeatingHead::
-# 439 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 440 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Congratulations for defeating\n"
 	.string "the FACTORY HEAD and winning\l"
 	.string "seven matches in a row!$"
 
 BattleFrontier_BattleFactoryLobby_Text_AwardBattlePoints::
-# 445 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 446 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "In recognition of your wealth of\n"
 	.string "knowledge and keen intelligence,\l"
 	.string "we award you these Battle Point(s).$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExchangeMonsAndSave::
-# 451 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 452 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Let me exchange your POKéMON\n"
 	.string "for our rental POKéMON.\p"
 	.string "I need to save the battle data,\n"
 	.string "so please wait.$"
 
 BattleFrontier_BattleFactoryLobby_Text_RecordLastMatch::
-# 459 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 460 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Would you like to record your last\n"
 	.string "BATTLE FACTORY match on your\l"
 	.string "FRONTIER PASS?$"
 
 BattleFrontier_BattleFactoryLobby_Text_NeedKnowledgeOfMonsMoves::
-# 465 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 466 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Hi!\n"
 	.string "You, there!\p"
 	.string "Are you thinking that the events here\n"
@@ -751,13 +751,13 @@ BattleFrontier_BattleFactoryLobby_Text_NeedKnowledgeOfMonsMoves::
 	.string "it will be tough to keep winning.$"
 
 BattleFrontier_BattleFactoryLobby_Text_SwappedForWeakMon::
-# 481 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 482 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "I swapped for a weak POKéMON…\n"
 	.string "I thought it was a good kind to have…\p"
 	.string "They wiped the floor with us…$"
 
 BattleFrontier_BattleFactoryLobby_Text_NeedToCheckOpponentsMons::
-# 488 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 489 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Things haven't been going my way\n"
 	.string "at all.\p"
 	.string "You need to check your opponent's\n"
@@ -765,14 +765,14 @@ BattleFrontier_BattleFactoryLobby_Text_NeedToCheckOpponentsMons::
 	.string "they're any good.$"
 
 BattleFrontier_BattleFactoryLobby_Text_CantFigureOutStaffHints::
-# 497 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 498 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "You know how the staff here give you\n"
 	.string "a few hints about your next opponent?\p"
 	.string "Well, I'm a full-grown man, but I have\n"
 	.string "trouble figuring out their hints.$"
 
 BattleFrontier_BattleFactoryLobby_Text_RentalMonsAreVaried::
-# 506 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 507 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Like, I'm really tough, but I get bored\n"
 	.string "really easily, so I just kept swapping\l"
 	.string "and battling over and over.\p"
@@ -781,15 +781,15 @@ BattleFrontier_BattleFactoryLobby_Text_RentalMonsAreVaried::
 	.string "varied the rental POKéMON.$"
 
 BattleFrontier_BattleFactoryLobby_Text_RulesAreListed::
-# 516 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 517 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "The Battle Swap rules are listed.$"
 
 BattleFrontier_BattleFactoryLobby_Text_ReadWhichHeading::
-# 520 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 521 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "Which heading do you want to read?$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainBasicRules::
-# 524 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 525 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "In a Battle Swap event, you may use\n"
 	.string "only three POKéMON.\p"
 	.string "Whether you are renting or swapping,\n"
@@ -797,14 +797,14 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainBasicRules::
 	.string "of the same POKéMON.$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainSwapPartnerRules::
-# 533 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 534 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "You may swap POKéMON only with\n"
 	.string "the TRAINER you have just defeated.\p"
 	.string "You may swap for only those POKéMON\n"
 	.string "used by the beaten TRAINER.$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainSwapNumberRules::
-# 541 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 542 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "After every battle you win, you may\n"
 	.string "swap for one of your defeated\l"
 	.string "opponent's POKéMON.\p"
@@ -812,7 +812,7 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainSwapNumberRules::
 	.string "with the seventh TRAINER in the event.$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainSwapNotesRules::
-# 550 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 551 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "There are two key points to be aware\n"
 	.string "of when swapping POKéMON.\p"
 	.string "First, when swapping, you can't check\n"
@@ -825,7 +825,7 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainSwapNotesRules::
 	.string "even when swaps are made.$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainOpenLvRules::
-# 566 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
+# 567 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	.string "In the Open Level, the rental POKéMON\n"
 	.string "and the opposing TRAINERS' POKéMON\l"
 	.string "are all Level 100.$"

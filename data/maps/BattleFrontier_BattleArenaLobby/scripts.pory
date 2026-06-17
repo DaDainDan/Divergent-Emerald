@@ -123,7 +123,8 @@ script BattleFrontier_BattleArenaLobby_EventScript_AskTakeChallenge {
 			msgbox(BattleFrontier_BattleArenaLobby_Text_ExplainChallenge, MSGBOX_DEFAULT)
     		goto(BattleFrontier_BattleArenaLobby_EventScript_AskTakeChallenge)
         case 2:
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattleArenaLobby_EventScript_CancelChallenge)
+        case MULTI_B_PRESSED: 
+            goto(BattleFrontier_BattleArenaLobby_EventScript_CancelChallenge)
     }
     end
 }
@@ -160,7 +161,8 @@ script BattleFrontier_BattleArenaLobby_EventScript_TryEnterChallenge {
     switch (var(VAR_RESULT)) {
         case YES: goto(BattleFrontier_BattleArenaLobby_EventScript_SaveBeforeChallenge)
 		case NO:
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattleArenaLobby_EventScript_LoadPartyAndCancelChallenge)
+        case MULTI_B_PRESSED: 
+            goto(BattleFrontier_BattleArenaLobby_EventScript_LoadPartyAndCancelChallenge)
     }
     end
 }

@@ -261,36 +261,36 @@ VerdanturfTown_BattleTentBattleRoom_EventScript_AskPauseChallenge_3:
 	goto VerdanturfTown_BattleTentBattleRoom_EventScript_AskPauseChallenge_1
 
 VerdanturfTown_BattleTentBattleRoom_EventScript_AskPauseChallenge_4:
-# 128 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 129 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	goto VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge
 	goto VerdanturfTown_BattleTentBattleRoom_EventScript_AskPauseChallenge_1
 
 
 VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge::
-# 134 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	message BattleFrontier_BattlePalaceBattleRoom_Text_WishToQuitChallenge
 # 135 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	waitmessage
+	message BattleFrontier_BattlePalaceBattleRoom_Text_WishToQuitChallenge
 # 136 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	multichoicedefault 20, 8, MULTI_YESNO, 1, FALSE
+	waitmessage
 # 137 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	switch VAR_RESULT
+	multichoicedefault 20, 8, MULTI_YESNO, 1, FALSE
 # 138 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	case 0, VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge_3
+	switch VAR_RESULT
 # 139 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	case 1, VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge_4
+	case 0, VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge_3
 # 140 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+	case 1, VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge_4
+# 141 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	case MULTI_B_PRESSED, VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge_4
 VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge_1:
 	end
 
 VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge_3:
-# 138 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 139 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	goto VerdanturfTown_BattleTentBattleRoom_EventScript_WarpToLobbyLost
 	goto VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge_1
 
 VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge_4:
-# 140 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
+# 142 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	goto VerdanturfTown_BattleTentBattleRoom_EventScript_AskContinueChallenge
 	goto VerdanturfTown_BattleTentBattleRoom_EventScript_AskRetireChallenge_1
 

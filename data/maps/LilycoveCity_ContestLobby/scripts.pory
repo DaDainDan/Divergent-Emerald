@@ -457,7 +457,8 @@ script LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest {
         case 0: goto(LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest)
         case 1: goto(LilycoveCity_ContestLobby_EventScript_LinkContestInfo)
         case 2:
-        case MULTI_B_PRESSED: goto(LilycoveCity_ContestLobby_EventScript_CancelLinkContest)
+        case MULTI_B_PRESSED: 
+            goto(LilycoveCity_ContestLobby_EventScript_CancelLinkContest)
     }
     end
 }
@@ -629,7 +630,8 @@ script LilycoveCity_ContestLobby_EventScript_DecideLinkLeader {
         case 0: goto(LilycoveCity_ContestLobby_EventScript_TryJoinGroup)
         case 1: goto(LilycoveCity_ContestLobby_EventScript_TryLeadGroup)
         case 2:
-        case MULTI_B_PRESSED: goto(LilycoveCity_ContestLobby_EventScript_CancelLinkContest)
+        case MULTI_B_PRESSED: 
+            goto(LilycoveCity_ContestLobby_EventScript_CancelLinkContest)
     }
     end
 }

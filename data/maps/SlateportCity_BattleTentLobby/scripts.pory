@@ -108,7 +108,8 @@ script SlateportCity_BattleTentLobby_EventScript_AskEnterChallenge {
 			msgbox(SlateportCity_BattleTentLobby_Text_ExplainSlateportTent, MSGBOX_DEFAULT)
     		goto(SlateportCity_BattleTentLobby_EventScript_AskEnterChallenge)
         case 2:
-        case MULTI_B_PRESSED: goto(SlateportCity_BattleTentLobby_EventScript_CancelChallenge)
+        case MULTI_B_PRESSED: 
+            goto(SlateportCity_BattleTentLobby_EventScript_CancelChallenge)
     }
     end
 }

@@ -20,7 +20,8 @@ script Route109_EventScript_MrBriney {
     switch (var(VAR_RESULT)) {
         case 0: goto(Route109_EventScript_SailToDewford)
         case 1:
-        case MULTI_B_PRESSED: msgbox(Route109_Text_BrineyTellMeWhenYouNeedToSail, MSGBOX_DEFAULT)
+        case MULTI_B_PRESSED: 
+            msgbox(Route109_Text_BrineyTellMeWhenYouNeedToSail, MSGBOX_DEFAULT)
     }
     release_end
 }

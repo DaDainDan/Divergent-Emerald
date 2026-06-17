@@ -55,7 +55,8 @@ script Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions {
 		case ITEM_BLUE_SHARD: settradeitems(ITEM_BLUE_SHARD, ITEM_WATER_STONE)
 		case ITEM_GREEN_SHARD: settradeitems(ITEM_GREEN_SHARD, ITEM_LEAF_STONE)
 		case 0:
-		case MULTI_B_PRESSED: goto(Route124_DivingTreasureHuntersHouse_EventScript_DeclineTrade)
+		case MULTI_B_PRESSED: 
+			goto(Route124_DivingTreasureHuntersHouse_EventScript_DeclineTrade)
 	}
 	goto(Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard)
     end

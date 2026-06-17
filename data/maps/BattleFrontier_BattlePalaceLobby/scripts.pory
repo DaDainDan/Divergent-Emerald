@@ -134,7 +134,8 @@ script BattleFrontier_BattlePalaceLobby_EventScript_AskTakeChallenge {
         case 0: goto(BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge)
         case 1: goto(BattleFrontier_BattlePalaceLobby_EventScript_ExplainChallenge)
         case 2:
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattlePalaceLobby_EventScript_CancelChallenge)
+        case MULTI_B_PRESSED: 
+			goto(BattleFrontier_BattlePalaceLobby_EventScript_CancelChallenge)
     }
     end
 }
@@ -143,10 +144,9 @@ script BattleFrontier_BattlePalaceLobby_EventScript_TryEnterChallenge {
     message(BattleFrontier_BattlePalaceLobby_Text_WhichChallenge)
     waitmessage
     multichoice(17, 6, MULTI_LEVEL_MODE, FALSE)
-    switch (var(VAR_RESULT)) {
-        case FRONTIER_LVL_TENT: goto(BattleFrontier_BattlePalaceLobby_EventScript_CancelChallenge)
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattlePalaceLobby_EventScript_CancelChallenge)
-    }
+	if (var(VAR_RESULT) == FRONTIER_LVL_TENT || var(VAR_RESULT) == MULTI_B_PRESSED) {
+		goto(BattleFrontier_BattlePalaceLobby_EventScript_CancelChallenge)
+	}
     frontier_checkineligible
     if (var(VAR_0x8004) == TRUE) {
         switch (var(VAR_RESULT)) {

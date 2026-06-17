@@ -113,14 +113,16 @@ script SlateportCity_Harbor_EventScript_ChooseDestination {
 			case 0: goto(SlateportCity_Harbor_EventScript_Lilycove)
 			case 1: goto(SlateportCity_Harbor_EventScript_BattleFrontier)
 			case 2:
-			case MULTI_B_PRESSED: goto(SlateportCity_Harbor_EventScript_CancelDestinationSelect)
+			case MULTI_B_PRESSED: 
+                goto(SlateportCity_Harbor_EventScript_CancelDestinationSelect)
 		}
     } else {
 		multichoicedefault(18, 8, MULTI_SSTIDAL_SLATEPORT_NO_BF, 2, FALSE)
 		switch (var(VAR_RESULT)) {
 			case 0: goto(SlateportCity_Harbor_EventScript_Lilycove)
 			case 1:
-			case MULTI_B_PRESSED: goto(SlateportCity_Harbor_EventScript_CancelDestinationSelect)
+			case MULTI_B_PRESSED: 
+                goto(SlateportCity_Harbor_EventScript_CancelDestinationSelect)
 		}
 	}
     end

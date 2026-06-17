@@ -164,7 +164,8 @@ script BattleFrontier_BattleTowerLobby_EventScript_AskEnterSinglesChallenge {
 			msgbox(BattleFrontier_BattleTowerLobby_Text_ExplainSinglesChallenge, MSGBOX_DEFAULT)
     		goto(BattleFrontier_BattleTowerLobby_EventScript_AskEnterSinglesChallenge)
         case 2:
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge)
+        case MULTI_B_PRESSED: 
+			goto(BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge)
     }
     end
 }
@@ -233,7 +234,8 @@ script BattleFrontier_BattleTowerLobby_EventScript_AskEnterDoublesChallenge {
 			msgbox(BattleFrontier_BattleTowerLobby_Text_ExplainDoublesChallenge, MSGBOX_DEFAULT)
     		goto(BattleFrontier_BattleTowerLobby_EventScript_AskEnterDoublesChallenge)
         case 2:
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge)
+        case MULTI_B_PRESSED: 
+			goto(BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge)
     }
     end
 }
@@ -303,7 +305,8 @@ script BattleFrontier_BattleTowerLobby_EventScript_AskEnterMultisChallenge {
 			msgbox(BattleFrontier_BattleTowerLobby_Text_ExplainMultisChallenge, MSGBOX_DEFAULT)
     		goto(BattleFrontier_BattleTowerLobby_EventScript_AskEnterMultisChallenge)
         case 2:
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge)
+        case MULTI_B_PRESSED: 
+			goto(BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge)
     }
     end
 }
@@ -372,7 +375,8 @@ script BattleFrontier_BattleTowerLobby_EventScript_AskEnterLinkMultisChallenge {
 			msgbox(BattleFrontier_BattleTowerLobby_Text_ExplainLinkMultisChallenge, MSGBOX_DEFAULT)
     		goto(BattleFrontier_BattleTowerLobby_EventScript_AskEnterLinkMultisChallenge)
         case 2:
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge)
+        case MULTI_B_PRESSED: 
+			goto(BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge)
     }
     end
 }
@@ -700,7 +704,8 @@ script BattleFrontier_BattleTowerLobby_EventScript_ChooseLeader {
         case 0: goto(BattleFrontier_BattleTowerLobby_EventScript_TryJoinGroup)
         case 1: goto(BattleFrontier_BattleTowerLobby_EventScript_TryBecomeLeader)
         case 2:
-        case MULTI_B_PRESSED: goto(BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge)
+        case MULTI_B_PRESSED: 
+			goto(BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge)
     }
     end
 }

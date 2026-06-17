@@ -53,40 +53,34 @@ script MossdeepCity_StevensHouse_EventScript_BeldumPokeball {
 		end
     }
     setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BELDUM)
-    givemon(SPECIES_BELDUM, 5)
-	switch (var(VAR_RESULT)) {
-		case MON_GIVEN_TO_PARTY:
-			call(MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare)
-			msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Common_EventScript_GetGiftMonPartySlot)
-				call(Common_EventScript_NameReceivedPartyMon)
-			}
-		case MON_GIVEN_TO_PC:
-			call(MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare)
-			msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Common_EventScript_NameReceivedBoxMon)
-			}
-			call(Common_EventScript_TransferredToPC)
-		case MON_CANT_GIVE: 
-			goto(Common_EventScript_NoMoreRoomForPokemon)
+    if (givemon(SPECIES_BELDUM, 5) == MON_CANT_GIVE) {
+		goto(Common_EventScript_NoMoreRoomForPokemon)
 	}
-    setflag(FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL)
-    setflag(FLAG_RECEIVED_BELDUM)
-    releaseall
-    end
-}
-
-script MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare {
-    bufferspeciesname(STR_VAR_2, SPECIES_BELDUM)
+	copyvar(VAR_0x8007, VAR_RESULT)
+	bufferspeciesname(STR_VAR_2, SPECIES_BELDUM)
     removeobject(LOCALID_STEVENS_HOUSE_BALL)
     playfanfare(MUS_OBTAIN_ITEM)
     message(MossdeepCity_StevensHouse_Text_ObtainedBeldum)
     waitmessage
     waitfanfare
     bufferspeciesname(STR_VAR_1, SPECIES_BELDUM)
-    return
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	switch (var(VAR_0x8007)) {
+		case MON_GIVEN_TO_PARTY:
+			if (var(VAR_RESULT) == YES) {
+				call(Common_EventScript_GetGiftMonPartySlot)
+				call(Common_EventScript_NameReceivedPartyMon)
+			}
+		case MON_GIVEN_TO_PC:
+			if (var(VAR_RESULT) == YES) {
+				call(Common_EventScript_NameReceivedBoxMon)
+			}
+			call(Common_EventScript_TransferredToPC)
+	}
+    setflag(FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL)
+    setflag(FLAG_RECEIVED_BELDUM)
+    releaseall
+    end
 }
 
 script MossdeepCity_StevensHouse_EventScript_RockDisplay {

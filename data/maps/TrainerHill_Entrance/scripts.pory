@@ -140,7 +140,8 @@ script TrainerHill_Entrance_EventScript_AskChallengeTrainers {
 			msgbox(TrainerHill_Entrance_Text_ExplainTrainerHill, MSGBOX_DEFAULT)
     		goto(TrainerHill_Entrance_EventScript_AskChallengeTrainers)
 		case 1:
-        case MULTI_B_PRESSED: goto(TrainerHill_Entrance_EventScript_CancelEntry)
+        case MULTI_B_PRESSED: 
+			goto(TrainerHill_Entrance_EventScript_CancelEntry)
     }
     end
 }

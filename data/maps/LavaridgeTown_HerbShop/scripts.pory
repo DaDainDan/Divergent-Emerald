@@ -35,10 +35,6 @@ script LavaridgeTown_HerbShop_EventScript_OldMan {
     release_end
 }
 
-script LavaridgeTown_HerbShop_EventScript_ExplainCharcoal {
-    
-}
-
 text LavaridgeTown_HerbShop_Text_WelcomeToHerbShop {
 	"Welcome to the HERB SHOP, home of
 	effective and inexpensive medicine!"

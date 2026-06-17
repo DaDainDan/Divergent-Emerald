@@ -94,7 +94,8 @@ script MauvilleCity_BikeShop_EventScript_ChooseMachHandbookPage {
         case 1: message(MauvilleCity_BikeShop_Text_HowToTurnMachBike)
         case 2: message(MauvilleCity_BikeShop_Text_SandySlopes)
         case 3:
-        case MULTI_B_PRESSED: release_end
+        case MULTI_B_PRESSED: 
+			release_end
     }
     waitmessage
     goto(MauvilleCity_BikeShop_EventScript_ChooseMachHandbookPage)
@@ -115,7 +116,8 @@ script MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage {
         case 1: message(MauvilleCity_BikeShop_Text_BunnyHops)
         case 2: message(MauvilleCity_BikeShop_Text_Jumps)
         case 3:
-        case MULTI_B_PRESSED: release_end
+        case MULTI_B_PRESSED: 
+			release_end
     }
     waitmessage
     goto(MauvilleCity_BikeShop_EventScript_ChooseAcroHandbookPage)

@@ -32,13 +32,10 @@ mapscripts BirthIsland_Exterior_MapScripts {
 script BirthIsland_Exterior_EventScript_Triangle {
     lock_faceplayer
     special(DoDeoxysRockInteraction)
-    switch (var(VAR_RESULT)) {
-        case DEOXYS_ROCK_FAILED:
-        case DEOXYS_ROCK_PROGRESSED:
-		case DEOXYS_ROCK_COMPLETE: release_end
-        case DEOXYS_ROCK_SOLVED: goto(BirthIsland_Exterior_EventScript_Deoxys)
+    if (var(VAR_RESULT) == DEOXYS_ROCK_SOLVED) {
+        goto(BirthIsland_Exterior_EventScript_Deoxys)
     }
-    end
+    release_end
 }
 
 // The actual rock triangle movement is handled by DoDeoxysRockInteraction.

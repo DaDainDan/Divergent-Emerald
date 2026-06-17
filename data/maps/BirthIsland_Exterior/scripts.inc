@@ -67,111 +67,101 @@ BirthIsland_Exterior_EventScript_Triangle::
 # 34 "data/maps/BirthIsland_Exterior/scripts.pory"
 	special DoDeoxysRockInteraction
 # 35 "data/maps/BirthIsland_Exterior/scripts.pory"
-	switch VAR_RESULT
-# 36 "data/maps/BirthIsland_Exterior/scripts.pory"
-	case DEOXYS_ROCK_FAILED, BirthIsland_Exterior_EventScript_Triangle_3
-# 37 "data/maps/BirthIsland_Exterior/scripts.pory"
-	case DEOXYS_ROCK_PROGRESSED, BirthIsland_Exterior_EventScript_Triangle_3
-# 38 "data/maps/BirthIsland_Exterior/scripts.pory"
-	case DEOXYS_ROCK_COMPLETE, BirthIsland_Exterior_EventScript_Triangle_3
-# 39 "data/maps/BirthIsland_Exterior/scripts.pory"
-	case DEOXYS_ROCK_SOLVED, BirthIsland_Exterior_EventScript_Triangle_4
+	compare VAR_RESULT, DEOXYS_ROCK_SOLVED
+	goto_if_eq BirthIsland_Exterior_EventScript_Triangle_2
 BirthIsland_Exterior_EventScript_Triangle_1:
-	end
-
-BirthIsland_Exterior_EventScript_Triangle_3:
 	release_end
 
-BirthIsland_Exterior_EventScript_Triangle_4:
-# 39 "data/maps/BirthIsland_Exterior/scripts.pory"
+BirthIsland_Exterior_EventScript_Triangle_2:
+# 36 "data/maps/BirthIsland_Exterior/scripts.pory"
 	goto BirthIsland_Exterior_EventScript_Deoxys
 	goto BirthIsland_Exterior_EventScript_Triangle_1
 
 
 BirthIsland_Exterior_EventScript_Deoxys::
-# 48 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 45 "data/maps/BirthIsland_Exterior/scripts.pory"
 	waitse
-# 49 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 46 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setfieldeffectargument 0, LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK
-# 50 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 47 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setfieldeffectargument 1, MAP_NUM ( MAP_BIRTH_ISLAND_EXTERIOR )
-# 51 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 48 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setfieldeffectargument 2, MAP_GROUP ( MAP_BIRTH_ISLAND_EXTERIOR )
-# 52 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 49 "data/maps/BirthIsland_Exterior/scripts.pory"
 	dofieldeffect FLDEFF_DESTROY_DEOXYS_ROCK
-# 53 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 50 "data/maps/BirthIsland_Exterior/scripts.pory"
 	playbgm MUS_RG_ENCOUNTER_DEOXYS, FALSE
-# 54 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 51 "data/maps/BirthIsland_Exterior/scripts.pory"
 	waitfieldeffect FLDEFF_DESTROY_DEOXYS_ROCK
-# 55 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 52 "data/maps/BirthIsland_Exterior/scripts.pory"
 	addobject LOCALID_BIRTH_ISLAND_DEOXYS
-# 56 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 53 "data/maps/BirthIsland_Exterior/scripts.pory"
 	applymovement LOCALID_BIRTH_ISLAND_DEOXYS, BirthIsland_Exterior_EventScript_Deoxys_Movement_0
-# 57 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 54 "data/maps/BirthIsland_Exterior/scripts.pory"
 	waitmovement 0
-# 58 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 55 "data/maps/BirthIsland_Exterior/scripts.pory"
 	waitse
-# 59 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 56 "data/maps/BirthIsland_Exterior/scripts.pory"
 	playmoncry SPECIES_DEOXYS_NORMAL, CRY_MODE_ENCOUNTER
-# 60 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 57 "data/maps/BirthIsland_Exterior/scripts.pory"
 	delay 40
-# 61 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 58 "data/maps/BirthIsland_Exterior/scripts.pory"
 	waitmoncry
-# 62 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 59 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_BIRTH_ISLAND_DEOXYS
-# 63 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 60 "data/maps/BirthIsland_Exterior/scripts.pory"
 	seteventmon SPECIES_DEOXYS_NORMAL, 30
-# 64 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 61 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 65 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 62 "data/maps/BirthIsland_Exterior/scripts.pory"
 	special BattleSetup_StartLegendaryBattle
-# 66 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 63 "data/maps/BirthIsland_Exterior/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-# 67 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 64 "data/maps/BirthIsland_Exterior/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 68 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 65 "data/maps/BirthIsland_Exterior/scripts.pory"
 	switch VAR_RESULT
-# 69 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 66 "data/maps/BirthIsland_Exterior/scripts.pory"
 	case B_OUTCOME_WON, BirthIsland_Exterior_EventScript_Deoxys_3
-# 74 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 71 "data/maps/BirthIsland_Exterior/scripts.pory"
 	case B_OUTCOME_RAN, BirthIsland_Exterior_EventScript_Deoxys_4
-# 75 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 72 "data/maps/BirthIsland_Exterior/scripts.pory"
 	case B_OUTCOME_PLAYER_TELEPORTED, BirthIsland_Exterior_EventScript_Deoxys_4
-# 80 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 77 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setflag FLAG_BATTLED_DEOXYS
 	release_end
 
 BirthIsland_Exterior_EventScript_Deoxys_3:
-# 70 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 67 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setflag FLAG_DEFEATED_DEOXYS
-# 71 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 68 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setvar VAR_0x8004, SPECIES_DEOXYS_NORMAL
-# 72 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 69 "data/maps/BirthIsland_Exterior/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
 BirthIsland_Exterior_EventScript_Deoxys_4:
-# 76 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 73 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setvar VAR_0x8004, SPECIES_DEOXYS_NORMAL
-# 77 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 74 "data/maps/BirthIsland_Exterior/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
 
-# 56 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 53 "data/maps/BirthIsland_Exterior/scripts.pory"
 BirthIsland_Exterior_EventScript_Deoxys_Movement_0:
-# 56 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 53 "data/maps/BirthIsland_Exterior/scripts.pory"
 	creep_down
-# 56 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 53 "data/maps/BirthIsland_Exterior/scripts.pory"
 	creep_down
-# 56 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 53 "data/maps/BirthIsland_Exterior/scripts.pory"
 	creep_down
-# 56 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 53 "data/maps/BirthIsland_Exterior/scripts.pory"
 	creep_down
-# 56 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 53 "data/maps/BirthIsland_Exterior/scripts.pory"
 	creep_down
-# 56 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 53 "data/maps/BirthIsland_Exterior/scripts.pory"
 	creep_down
-# 56 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 53 "data/maps/BirthIsland_Exterior/scripts.pory"
 	creep_down
 	step_end

@@ -264,20 +264,9 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_Cyndaquil {
     if (var(VAR_DEX_UPGRADE_JOHTO_STARTER_STATE) >= 6) {
         goto(LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyChoseJohtoStarter)
     }
-    applymovement(LOCALID_BIRCHS_LAB_BIRCH, Common_Movement_StepFasterRight)
-    waitmovement(0)
-    showmonpic(SPECIES_CYNDAQUIL, 10, 3)
-    msgbox(LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil, MSGBOX_YESNO)
-    if (var(VAR_RESULT) == NO) {
-        goto(LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime)
-    }
-    bufferspeciesname(STR_VAR_1, SPECIES_CYNDAQUIL)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CYNDAQUIL)
-    if (givemon(SPECIES_CYNDAQUIL, 5) == MON_CANT_GIVE) {
-		goto(LittlerootTown_ProfessorBirchsLab_EventScript_NoRoomForStarter)
-	}
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CYNDAQUIL)
 	goto(LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterMon)
-    end
+	end
 }
 
 script LittlerootTown_ProfessorBirchsLab_EventScript_Totodile {
@@ -285,20 +274,9 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_Totodile {
     if (var(VAR_DEX_UPGRADE_JOHTO_STARTER_STATE) >= 6) {
         goto(LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyChoseJohtoStarter)
     }
-    applymovement(LOCALID_BIRCHS_LAB_BIRCH, Common_Movement_StepFasterRight)
-    waitmovement(0)
-    showmonpic(SPECIES_TOTODILE, 10, 3)
-    msgbox(LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile, MSGBOX_YESNO)
-    if (var(VAR_RESULT) == NO) {
-        goto(LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime)
-    }
-    bufferspeciesname(STR_VAR_1, SPECIES_TOTODILE)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOTODILE)
-    if (givemon(SPECIES_TOTODILE, 5) == MON_CANT_GIVE) {
-		goto(LittlerootTown_ProfessorBirchsLab_EventScript_NoRoomForStarter)
-	}
-	goto(LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterMon)
-    end
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOTODILE)
+    goto(LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterMon)
+	end
 }
 
 script LittlerootTown_ProfessorBirchsLab_EventScript_Chikorita {
@@ -306,18 +284,7 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_Chikorita {
     if (var(VAR_DEX_UPGRADE_JOHTO_STARTER_STATE) >= 6) {
         goto(LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyChoseJohtoStarter)
     }
-    applymovement(LOCALID_BIRCHS_LAB_BIRCH, Common_Movement_StepFasterRight)
-    waitmovement(0)
-    showmonpic(SPECIES_CHIKORITA, 10, 3)
-    msgbox(LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita, MSGBOX_YESNO)
-    if (var(VAR_RESULT) == NO) {
-        goto(LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime)
-    }
-    bufferspeciesname(STR_VAR_1, SPECIES_CHIKORITA)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHIKORITA)
-    if (givemon(SPECIES_CHIKORITA, 5) == MON_CANT_GIVE) {
-		goto(LittlerootTown_ProfessorBirchsLab_EventScript_NoRoomForStarter)
-	}
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHIKORITA)
 	goto(LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterMon)
     end
 }
@@ -328,20 +295,27 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyChoseJohtoStarter {
     end
 }
 
-script LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime {
-    hidemonpic
-    msgbox(LittlerootTown_ProfessorBirchsLab_Text_TakeYourTimeAllInvaluable, MSGBOX_DEFAULT)
-    releaseall
-    end
-}
-
-script LittlerootTown_ProfessorBirchsLab_EventScript_NoRoomForStarter {
-	hidemonpic
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-	end
-}
-
 script LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterMon {
+	applymovement(LOCALID_BIRCHS_LAB_BIRCH, Common_Movement_StepFasterRight)
+    waitmovement(0)
+	showmonpic(VAR_TEMP_TRANSFERRED_SPECIES, 10, 3)
+	switch (var(VAR_TEMP_TRANSFERRED_SPECIES)) {
+		case SPECIES_CYNDAQUIL: msgbox(LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil, MSGBOX_YESNO)
+		case SPECIES_TOTODILE: msgbox(LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile, MSGBOX_YESNO)
+		case SPECIES_CHIKORITA: msgbox(LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita, MSGBOX_YESNO)
+	}
+    if (var(VAR_RESULT) == NO) {
+        hidemonpic
+		msgbox(LittlerootTown_ProfessorBirchsLab_Text_TakeYourTimeAllInvaluable, MSGBOX_DEFAULT)
+		releaseall
+		end
+    }
+    bufferspeciesname(STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES)
+    if (givemon(VAR_TEMP_TRANSFERRED_SPECIES, 5) == MON_CANT_GIVE) {
+		hidemonpic
+    	goto(Common_EventScript_NoMoreRoomForPokemon)
+	}
+	copyvar(VAR_0x8007, VAR_RESULT)
 	playfanfare(MUS_OBTAIN_ITEM)
     message(LittlerootTown_ProfessorBirchsLab_Text_ReceivedJohtoStarter)
     waitmessage
@@ -351,16 +325,14 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterMon {
 		case SPECIES_TOTODILE: removeobject(LOCALID_BIRCHS_LAB_TOTODILE_BALL)
 		case SPECIES_CHIKORITA: removeobject(LOCALID_BIRCHS_LAB_CHIKORITA_BALL)
 	}
-	switch (var(VAR_RESULT)) {
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	switch (var(VAR_0x8007)) {
 		case MON_GIVEN_TO_PARTY:
-			msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				call(Common_EventScript_GetGiftMonPartySlot)
 				call(Common_EventScript_NameReceivedPartyMon)
 			}
 		case MON_GIVEN_TO_PC:
-    		removeobject(LOCALID_BIRCHS_LAB_CYNDAQUIL_BALL)
-			msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				call(Common_EventScript_NameReceivedBoxMon)
 			}

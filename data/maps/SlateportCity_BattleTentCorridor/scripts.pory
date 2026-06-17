@@ -100,7 +100,8 @@ script SlateportCity_BattleTentCorridor_EventScript_AskRetireChallenge {
     switch (var(VAR_RESULT)) {
 		case 0: goto(SlateportCity_BattleTent_EventScript_WarpToLobbyLost)
         case 1:
-        case MULTI_B_PRESSED: goto(SlateportCity_BattleTentCorridor_EventScript_AskReadyForOpponent)
+        case MULTI_B_PRESSED: 
+			goto(SlateportCity_BattleTentCorridor_EventScript_AskReadyForOpponent)
     }
     end
 }
