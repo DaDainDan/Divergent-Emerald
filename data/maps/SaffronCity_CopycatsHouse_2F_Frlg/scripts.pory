@@ -1,121 +1,139 @@
-raw `
-SaffronCity_CopycatsHouse_2F_Frlg_MapScripts::
-	.byte 0
+mapscripts SaffronCity_CopycatsHouse_2F_Frlg_MapScripts {}
 
-SaffronCity_CopycatsHouse_2F_EventScript_Doduo::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_DODUO, CRY_MODE_NORMAL
-	msgbox SaffronCity_CopycatsHouse_2F_Text_Doduo
-	waitmoncry
-	release
-	end
+script SaffronCity_CopycatsHouse_2F_EventScript_Doduo {
+    lock_faceplayer
+    waitse
+    playmoncry(SPECIES_DODUO, CRY_MODE_NORMAL)
+    msgbox(SaffronCity_CopycatsHouse_2F_Text_Doduo)
+    waitmoncry
+    release_end
+}
 
-SaffronCity_CopycatsHouse_2F_EventScript_Doll::
-	lock
-	msgbox SaffronCity_CopycatsHouse_2F_Text_RareMonOnlyDoll
-	release
-	end
+script SaffronCity_CopycatsHouse_2F_EventScript_Doll {
+    lock
+    msgbox(SaffronCity_CopycatsHouse_2F_Text_RareMonOnlyDoll)
+    release_end
+}
 
-SaffronCity_CopycatsHouse_2F_EventScript_Copycat::
-	lock
-	faceplayer
-	checkitem ITEM_POKE_DOLL
-	goto_if_eq VAR_RESULT, TRUE, EventScript_MimicTutor
-	checkplayergender
-	call_if_eq VAR_RESULT, MALE, SaffronCity_CopycatsHouse_2F_EventScript_MimicPlayerMale
-	call_if_eq VAR_RESULT, FEMALE, SaffronCity_CopycatsHouse_2F_EventScript_MimicPlayerFemale
-	release
-	end
+script SaffronCity_CopycatsHouse_2F_EventScript_Copycat {
+    lock_faceplayer
+    if (checkitem(ITEM_POKE_DOLL) == TRUE) {
+        goto(EventScript_MimicTutor)
+    }
+    if (checkplayergender == MALE) {
+		msgbox(SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyMale)
+	} else {
+        msgbox(SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyFemale)
+    }
+    release_end
+}
 
-SaffronCity_CopycatsHouse_2F_EventScript_MimicPlayerMale::
-	msgbox SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyMale
-	return
+script SaffronCity_CopycatsHouse_2F_EventScript_Computer {
+    msgbox(SaffronCity_CopycatsHouse_2F_Text_MySecrets, MSGBOX_SIGN)
+    end
+}
 
-SaffronCity_CopycatsHouse_2F_EventScript_MimicPlayerFemale::
-	msgbox SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyFemale
-	return
+script SaffronCity_CopycatsHouse_2F_EventScript_Game {
+    msgbox(SaffronCity_CopycatsHouse_2F_Text_MarioWearingABucket, MSGBOX_SIGN)
+    end
+}
 
-SaffronCity_CopycatsHouse_2F_EventScript_Computer::
-	msgbox SaffronCity_CopycatsHouse_2F_Text_MySecrets, MSGBOX_SIGN
-	end
+text SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyMale {
+	"{PLAYER}: Hi!
+	Do you like POKéMON?
 
-SaffronCity_CopycatsHouse_2F_EventScript_Game::
-	msgbox SaffronCity_CopycatsHouse_2F_Text_MarioWearingABucket, MSGBOX_SIGN
-	end
+	{PLAYER}: Uh, no, I just asked you.
 
-SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyMale::
-	.string "{PLAYER}: Hi!\n"
-	.string "Do you like POKéMON?\p"
-	.string "{PLAYER}: Uh, no, I just asked you.\p"
-	.string "{PLAYER}: Huh?\n"
-	.string "You're strange!\p"
-	.string "COPYCAT: Hmm? Quit mimicking?\n"
-	.string "But, that's my favorite hobby!$"
+	{PLAYER}: Huh?
+	You're strange!
 
-SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyFemale::
-	.string "{PLAYER}: Hi.\n"
-	.string "You must like POKéMON.\p"
-	.string "{PLAYER}: No, not me.\n"
-	.string "I asked you.\p"
-	.string "{PLAYER}: Pardon?\n"
-	.string "You're weird!\l"
-	.string " \l"
-	.string "COPYCAT: Hmm? Quit mimicking?\l"
-	.string "But that's my favorite hobby!$"
+	COPYCAT: Hmm? Quit mimicking?
+	But, that's my favorite hobby!"
+}
 
-Text_MimicTeach::
-	.string "Oh wow!\n"
-	.string "A POKé DOLL!\p"
-	.string "For me?\n"
-	.string "Thank you!\p"
-	.string "You know what?\n"
-	.string "I can teach the move MIMIC.$"
+text SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyFemale {
+	"{PLAYER}: Hi.
+	You must like POKéMON.
 
-Text_MimicDeclined::
-	.string "Don't you like MIMIC?$"
+	{PLAYER}: No, not me.
+	I asked you.
 
-Text_MimicWhichMon::
-	.string "I really love MIMIC!\n"
-	.string "Who's going to learn it?$"
+	{PLAYER}: Pardon?
+	You're weird!
+	 
+	COPYCAT: Hmm? Quit mimicking?
+	But that's my favorite hobby!"
+}
 
-Text_MimicTaughtMale::
-	.string "{PLAYER}: Hi!\n"
-	.string "Thanks for earlier!\p"
-	.string "{PLAYER}: Pardon?\p"
-	.string "{PLAYER}: Is it that fun to mimic my\n"
-	.string "every move?\p"
-	.string "COPYCAT: You bet!\n"
-	.string "It's a scream!$"
+text Text_MimicTeach {
+	"Oh wow!
+	A POKé DOLL!
 
-Text_MimicTaughtFemale::
-	.string "{PLAYER}: Hi!\n"
-	.string "Thanks for what you did for us.\p"
-	.string "{PLAYER}: Pardon?\p"
-	.string "{PLAYER}: Is it really that fun to\n"
-	.string "copy what I say and do?\p"
-	.string "COPYCAT: You bet!\n"
-	.string "It's a scream!$"
+	For me?
+	Thank you!
 
-SaffronCity_CopycatsHouse_2F_Text_Doduo::
-	.string "DODUO: Giiih!\p"
-	.string "PRETTY MIRROR LOOK AT ME,\n"
-	.string "SEE HOW PRETTY I CAN BE?$"
+	You know what?
+	I can teach the move MIMIC."
+}
 
-SaffronCity_CopycatsHouse_2F_Text_RareMonOnlyDoll::
-	.string "This is a rare POKéMON!\n"
-	.string "Huh? It's only a doll!$"
+text Text_MimicDeclined {
+	"Don't you like MIMIC?"
+}
 
-SaffronCity_CopycatsHouse_2F_Text_MarioWearingABucket::
-	.string "A game with MARIO wearing a bucket\n"
-	.string "on his head!$"
+text Text_MimicWhichMon {
+	"I really love MIMIC!
+	Who's going to learn it?"
+}
 
-SaffronCity_CopycatsHouse_2F_Text_MySecrets::
-	.string "…\p"
-	.string "My Secrets!\p"
-	.string "Skill: Mimicry!\n"
-	.string "Hobby: Collecting dolls!\l"
-	.string "Favorite POKéMON: CLEFAIRY!$"
+text Text_MimicTaughtMale {
+	"{PLAYER}: Hi!
+	Thanks for earlier!
 
-`
+	{PLAYER}: Pardon?
+
+	{PLAYER}: Is it that fun to mimic my
+	every move?
+
+	COPYCAT: You bet!
+	It's a scream!"
+}
+
+text Text_MimicTaughtFemale {
+	"{PLAYER}: Hi!
+	Thanks for what you did for us.
+
+	{PLAYER}: Pardon?
+
+	{PLAYER}: Is it really that fun to
+	copy what I say and do?
+
+	COPYCAT: You bet!
+	It's a scream!"
+}
+
+text SaffronCity_CopycatsHouse_2F_Text_Doduo {
+	"DODUO: Giiih!
+
+	PRETTY MIRROR LOOK AT ME,
+	SEE HOW PRETTY I CAN BE?"
+}
+
+text SaffronCity_CopycatsHouse_2F_Text_RareMonOnlyDoll {
+	"This is a rare POKéMON!
+	Huh? It's only a doll!"
+}
+
+text SaffronCity_CopycatsHouse_2F_Text_MarioWearingABucket {
+	"A game with MARIO wearing a bucket
+	on his head!"
+}
+
+text SaffronCity_CopycatsHouse_2F_Text_MySecrets {
+	"…
+
+	My Secrets!
+
+	Skill: Mimicry!
+	Hobby: Collecting dolls!
+	Favorite POKéMON: CLEFAIRY!"
+}

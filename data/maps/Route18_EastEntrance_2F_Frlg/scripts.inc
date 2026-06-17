@@ -1,55 +1,90 @@
 Route18_EastEntrance_2F_Frlg_MapScripts::
 	.byte 0
 
+
 Route18_EastEntrance_2F_EventScript_LeftBinoculars::
+# 4 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	msgbox Route18_EastEntrance_2F_Text_PalletTownInWest, MSGBOX_SIGN
 	end
 
+
 Route18_EastEntrance_2F_EventScript_RightBinoculars::
+# 9 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	msgbox Route18_EastEntrance_2F_Text_PeopleSwimming, MSGBOX_SIGN
 	end
 
+
 Route18_EastEntrance_2F_EventScript_Haden::
-	lock
-	faceplayer
+# 14 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
+	lock_faceplayer
+# 15 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	setvar VAR_0x8008, INGAME_TRADE_LICKITUNG
+# 16 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	call EventScript_GetInGameTradeSpeciesInfo
-	goto_if_set FLAG_DID_MARC_TRADE, Route18_EastEntrance_2F_EventScript_AlreadyTraded
+# 17 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
+	goto_if_set FLAG_DID_MARC_TRADE, Route18_EastEntrance_2F_EventScript_Haden_2
+# 21 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	msgbox Trade_Text_LookingForMonWannaTradeForMon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Route18_EastEntrance_2F_EventScript_DeclineTrade
+# 22 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Route18_EastEntrance_2F_EventScript_Haden_5
+Route18_EastEntrance_2F_EventScript_Haden_4:
+# 25 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	call EventScript_ChooseMonForInGameTrade
-	goto_if_ge VAR_0x8004, PARTY_SIZE, Route18_EastEntrance_2F_EventScript_DeclineTrade
+# 26 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
+	compare VAR_0x8004, PARTY_SIZE
+	goto_if_ge Route18_EastEntrance_2F_EventScript_Haden_8
+Route18_EastEntrance_2F_EventScript_Haden_7:
+# 29 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	call EventScript_GetInGameTradeSpecies
-	goto_if_ne VAR_RESULT, VAR_0x8009, Route18_EastEntrance_2F_EventScript_NotRequestedMon
+# 30 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
+	compare VAR_RESULT, VAR_0x8009
+	goto_if_ne Route18_EastEntrance_2F_EventScript_Haden_11
+# 35 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	call EventScript_DoInGameTrade
+# 36 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	msgbox Trade_Text_HeyThanks
+# 37 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	setflag FLAG_DID_MARC_TRADE
-	release
-	end
+	release_end
+
+Route18_EastEntrance_2F_EventScript_Haden_2:
+# 18 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
+	msgbox Trade_Text_IsntMyOldMonGreat
+	release_end
+
+Route18_EastEntrance_2F_EventScript_Haden_5:
+# 23 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
+	goto Route18_EastEntrance_2F_EventScript_DeclineTrade
+	goto Route18_EastEntrance_2F_EventScript_Haden_4
+
+Route18_EastEntrance_2F_EventScript_Haden_8:
+# 27 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
+	goto Route18_EastEntrance_2F_EventScript_DeclineTrade
+	goto Route18_EastEntrance_2F_EventScript_Haden_7
+
+Route18_EastEntrance_2F_EventScript_Haden_11:
+# 31 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+# 32 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
+	msgbox Trade_Text_WhatThatsNoMon
+	release_end
+
 
 Route18_EastEntrance_2F_EventScript_DeclineTrade::
+# 42 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	msgbox Trade_Text_AwwOhWell
-	release
-	end
+	release_end
 
-Route18_EastEntrance_2F_EventScript_NotRequestedMon::
-	bufferspeciesname STR_VAR_1, VAR_0x8009
-	msgbox Trade_Text_WhatThatsNoMon
-	release
-	end
-
-Route18_EastEntrance_2F_EventScript_AlreadyTraded::
-	msgbox Trade_Text_IsntMyOldMonGreat
-	release
-	end
 
 Route18_EastEntrance_2F_Text_PalletTownInWest::
+# 46 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	.string "Let's see what the binoculars have\n"
 	.string "to show…\p"
 	.string "PALLET TOWN is in the west.$"
 
 Route18_EastEntrance_2F_Text_PeopleSwimming::
+# 53 "data/maps/Route18_EastEntrance_2F_Frlg/scripts.pory"
 	.string "Let's see what the binoculars have\n"
 	.string "to show…\p"
 	.string "There are people swimming.$"
-

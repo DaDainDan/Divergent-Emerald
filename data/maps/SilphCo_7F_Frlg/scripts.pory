@@ -1,370 +1,344 @@
-raw `
-SilphCo_7F_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, SilphCo_7F_OnLoad
-	map_script MAP_SCRIPT_ON_TRANSITION, SilphCo_7F_OnTransition
-	.byte 0
+mapscripts SilphCo_7F_Frlg_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        if (!flag(FLAG_SILPH_7F_DOOR_1)) {
+			call(EventScript_Close7FDoor1)
+		}
+		if (!flag(FLAG_SILPH_7F_DOOR_2)) {
+			call(EventScript_Close7FDoor2)
+		}
+		if (!flag(FLAG_SILPH_7F_DOOR_3)) {
+			call(EventScript_Close7FDoor3)
+		}
+		end
+    }
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_MAP_SCENE_SILPH_CO_11F) >= 1) {
+			setobjectmovementtype(LOCALID_SILPH_CO_7F_WORKER_M2, MOVEMENT_TYPE_FACE_UP)
+		}
+		end
+    }
+}
 
-SilphCo_7F_OnLoad::
-	call_if_unset FLAG_SILPH_7F_DOOR_1, EventScript_Close7FDoor1
-	call_if_unset FLAG_SILPH_7F_DOOR_2, EventScript_Close7FDoor2
-	call_if_unset FLAG_SILPH_7F_DOOR_3, EventScript_Close7FDoor3
-	end
+script SilphCo_7F_EventScript_RivalTriggerTop {
+    lockall
+    setvar(VAR_TEMP_1, 0)
+    goto(SilphCo_7F_EventScript_RivalScene)
+    end
+}
 
-SilphCo_7F_OnTransition::
-	call_if_ge VAR_MAP_SCENE_SILPH_CO_11F, 1, SilphCo_7F_EventScript_SetObjRocketsGone
-	end
+script SilphCo_7F_EventScript_RivalTriggerBottom {
+    lockall
+    setvar(VAR_TEMP_1, 1)
+    goto(SilphCo_7F_EventScript_RivalScene)
+    end
+}
 
-SilphCo_7F_EventScript_SetObjRocketsGone::
-	setobjectmovementtype LOCALID_SILPH_CO_7F_WORKER_M2, MOVEMENT_TYPE_FACE_UP
-	return
+script SilphCo_7F_EventScript_RivalScene {
+    textcolor(NPC_TEXT_COLOR_MALE)
+    playbgm(MUS_RG_ENCOUNTER_RIVAL, 0)
+    applymovement(LOCALID_SILPH_CO_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(LOCALID_PLAYER, Common_Movement_StepFasterDown)
+    applymovement(LOCALID_SILPH_CO_RIVAL, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(SilphCo_7F_Text_RivalWhatKeptYou)
+    if (var(VAR_TEMP_1) == 0) {
+        closemessage
+		applymovement(LOCALID_SILPH_CO_RIVAL, Common_Movement_WalkUp)
+		waitmovement(0)
+    }
+    msgbox(SilphCo_7F_Text_RivalIntro)
+    setvar(VAR_LAST_TALKED, LOCALID_SILPH_CO_RIVAL)
+	switch (var(VAR_STARTER_MON)) {
+		case CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_SILPH_CHARMANDER, SilphCo_7F_Text_RivalDefeat)
+		case CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_SILPH_BULBASAUR, SilphCo_7F_Text_RivalDefeat)
+		case CHOSE_CHARMENDER: trainerbattle_no_intro(TRAINER_RIVAL_SILPH_SQUIRTLE, SilphCo_7F_Text_RivalDefeat)
+	}
+    msgbox(SilphCo_7F_Text_RivalPostBattle)
+    closemessage
+    playbgm(MUS_RG_RIVAL_EXIT, 0)
+	switch (var(VAR_TEMP_1)) {
+		case 0: applymovement(LOCALID_SILPH_CO_RIVAL, moves(walk_right * 3,  walk_up,  delay_16))
+		case 1: applymovement(LOCALID_SILPH_CO_RIVAL, moves(walk_left,  walk_up * 2,  walk_right * 4,  delay_16))
+	}
+	waitmovement(0)
+    playse(SE_WARP_IN)
+    fadedefaultbgm
+    removeobject(LOCALID_SILPH_CO_RIVAL)
+    waitse
+    setvar(VAR_MAP_SCENE_SILPH_CO_7F, 1)
+    releaseall
+    end
+}
 
-SilphCo_7F_EventScript_RivalTriggerTop::
-	lockall
-	setvar VAR_TEMP_1, 0
-	goto SilphCo_7F_EventScript_RivalScene
-	end
+script SilphCo_7F_EventScript_LaprasGuy {
+    lock_faceplayer
+    if (flag(FLAG_GOT_LAPRAS_FROM_SILPH)) {
+        msgbox(SilphCo_7F_Text_RocketBossWentToBoardroom)
+    	release_end
+    }
+    msgbox(SilphCo_7F_Text_HaveMonForSavingUs)
+    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LAPRAS)
+    if (givemon(SPECIES_LAPRAS, 25) == MON_CANT_GIVE) {
+		goto(Common_EventScript_NoMoreRoomForPokemon)
+	}
+	copyvar(VAR_0x8007, VAR_RESULT)
+	textcolor(NPC_TEXT_COLOR_NEUTRAL)
+    playfanfare(MUS_LEVEL_UP)
+    message(SilphCo_7F_Text_ObtainedLaprasFromEmployee)
+    waitmessage
+    waitfanfare
+    bufferspeciesname(STR_VAR_1, SPECIES_LAPRAS)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	switch (var(VAR_0x8007)) {
+		case MON_GIVEN_TO_PARTY:
+			if (var(VAR_RESULT) == YES) {
+				call(Common_EventScript_GetGiftMonPartySlot)
+				call(Common_EventScript_NameReceivedPartyMon)
+			}
+		case MON_GIVEN_TO_PC:
+			if (var(VAR_RESULT) == YES) {
+				call(Common_EventScript_NameReceivedBoxMon)
+			}
+			call(Common_EventScript_TransferredToPC)
+	}
+	textcolor(NPC_TEXT_COLOR_MALE)
+    msgbox(SilphCo_7F_Text_ExplainLapras)
+    setflag(FLAG_GOT_LAPRAS_FROM_SILPH)
+    release_end
+}
 
-SilphCo_7F_EventScript_RivalTriggerBottom::
-	lockall
-	setvar VAR_TEMP_1, 1
-	goto SilphCo_7F_EventScript_RivalScene
-	end
+script SilphCo_7F_EventScript_WorkerM1 {
+    lock_faceplayer
+    if (var(VAR_MAP_SCENE_SILPH_CO_11F) >= 1) {
+        msgbox(SilphCo_7F_Text_CanceledMasterBallProject)
+    	release_end
+    }
+    msgbox(SilphCo_7F_Text_RocketsAfterMasterBall)
+    release_end
+}
 
-SilphCo_7F_EventScript_RivalScene::
-	textcolor NPC_TEXT_COLOR_MALE
-	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
-	applymovement LOCALID_SILPH_CO_RIVAL, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
-	applymovement LOCALID_SILPH_CO_RIVAL, Common_Movement_Delay48
-	waitmovement 0
-	msgbox SilphCo_7F_Text_RivalWhatKeptYou
-	call_if_eq VAR_TEMP_1, 0, SilphCo_7F_EventScript_RivalApproachTop
-	call_if_eq VAR_TEMP_1, 1, SilphCo_7F_EventScript_RivalApproachBottom
-	msgbox SilphCo_7F_Text_RivalIntro
-	setvar VAR_LAST_TALKED, LOCALID_SILPH_CO_RIVAL
-	call_if_eq VAR_STARTER_MON, 2, SilphCo_7F_EventScript_RivalSquirtle
-	call_if_eq VAR_STARTER_MON, 1, SilphCo_7F_EventScript_RivalBulbasaur
-	call_if_eq VAR_STARTER_MON, 0, SilphCo_7F_EventScript_RivalCharmander
-	msgbox SilphCo_7F_Text_RivalPostBattle
-	closemessage
-	playbgm MUS_RG_RIVAL_EXIT, 0
-	call_if_eq VAR_TEMP_1, 0, SilphCo_7F_EventScript_RivalExitTop
-	call_if_eq VAR_TEMP_1, 1, SilphCo_7F_EventScript_RivalExitBottom
-	playse SE_WARP_IN
-	fadedefaultbgm
-	removeobject LOCALID_SILPH_CO_RIVAL
-	waitse
-	setvar VAR_MAP_SCENE_SILPH_CO_7F, 1
-	releaseall
-	end
+script SilphCo_7F_EventScript_WorkerM2 {
+    lock_faceplayer
+    if (var(VAR_MAP_SCENE_SILPH_CO_11F) >= 1) {
+        msgbox(SilphCo_7F_Text_WowYouChasedOffTeamRocket)
+    	release_end
+    }
+    msgbox(SilphCo_7F_Text_BadIfTeamRocketTookOver)
+    release_end
+}
 
-SilphCo_7F_EventScript_RivalApproachTop::
-	closemessage
-	applymovement LOCALID_SILPH_CO_RIVAL, SilphCo_7F_Movement_RivalApproachTop
-	waitmovement 0
-	return
+script SilphCo_7F_EventScript_WorkerF {
+    lock_faceplayer
+    if (var(VAR_MAP_SCENE_SILPH_CO_11F) >= 1) {
+        msgbox(SilphCo_7F_Text_ThankYouSoMuch)
+    	release_end
+    }
+    msgbox(SilphCo_7F_Text_ReallyDangerousHere)
+    release_end
+}
 
-SilphCo_7F_EventScript_RivalApproachBottom::
-	return
+script SilphCo_7F_EventScript_FloorSign {
+    msgbox(SilphCo_7F_Text_FloorSign, MSGBOX_SIGN)
+    end
+}
 
-SilphCo_7F_EventScript_RivalSquirtle::
-	trainerbattle_no_intro TRAINER_RIVAL_SILPH_SQUIRTLE, SilphCo_7F_Text_RivalDefeat
-	return
+script SilphCo_7F_EventScript_Joshua {
+    trainerbattle_single(TRAINER_SCIENTIST_JOSHUA, SilphCo_7F_Text_JoshuaIntro, SilphCo_7F_Text_JoshuaDefeat)
+    msgbox(SilphCo_7F_Text_JoshuaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
 
-SilphCo_7F_EventScript_RivalBulbasaur::
-	trainerbattle_no_intro TRAINER_RIVAL_SILPH_BULBASAUR, SilphCo_7F_Text_RivalDefeat
-	return
+script SilphCo_7F_EventScript_Grunt1 {
+    trainerbattle_single(TRAINER_TEAM_ROCKET_GRUNT_33, SilphCo_7F_Text_Grunt1Intro, SilphCo_7F_Text_Grunt1Defeat)
+    msgbox(SilphCo_7F_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
 
-SilphCo_7F_EventScript_RivalCharmander::
-	trainerbattle_no_intro TRAINER_RIVAL_SILPH_CHARMANDER, SilphCo_7F_Text_RivalDefeat
-	return
+script SilphCo_7F_EventScript_Grunt2 {
+    trainerbattle_single(TRAINER_TEAM_ROCKET_GRUNT_34, SilphCo_7F_Text_Grunt2Intro, SilphCo_7F_Text_Grunt2Defeat)
+    msgbox(SilphCo_7F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
 
-SilphCo_7F_EventScript_RivalExitTop::
-	applymovement LOCALID_SILPH_CO_RIVAL, SilphCo_7F_Movement_RivalExitTop
-	waitmovement 0
-	return
+script SilphCo_7F_EventScript_Grunt3 {
+    trainerbattle_single(TRAINER_TEAM_ROCKET_GRUNT_35, SilphCo_7F_Text_Grunt3Intro, SilphCo_7F_Text_Grunt3Defeat)
+    msgbox(SilphCo_7F_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
 
-SilphCo_7F_EventScript_RivalExitBottom::
-	applymovement LOCALID_SILPH_CO_RIVAL, SilphCo_7F_Movement_RivalExitBottom
-	waitmovement 0
-	return
+text SilphCo_7F_Text_HaveMonForSavingUs {
+	"Oh! Hi! You're not a ROCKET!
+	You came to save us?
+	Why, thank you!
 
-SilphCo_7F_Movement_RivalApproachTop::
-	walk_up
-	step_end
+	I want you to have this POKéMON
+	for saving us."
+}
 
-SilphCo_7F_Movement_RivalExitTop::
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	delay_16
-	step_end
+text SilphCo_7F_Text_ObtainedLaprasFromEmployee {
+	"{PLAYER} obtained a LAPRAS from
+	the SILPH employee!"
+}
 
-SilphCo_7F_Movement_RivalExitBottom::
-	walk_left
-	walk_up
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	delay_16
-	step_end
+text SilphCo_7F_Text_ExplainLapras {
+	"It's a LAPRAS.
+	It's a very intelligent POKéMON.
 
-SilphCo_7F_EventScript_LaprasGuy::
-	lock
-	faceplayer
-	goto_if_set FLAG_GOT_LAPRAS_FROM_SILPH, SilphCo_7F_EventScript_AlreadyGotLapras
-	msgbox SilphCo_7F_Text_HaveMonForSavingUs
-	setvar VAR_TEMP_1, SPECIES_LAPRAS
-	givemon SPECIES_LAPRAS, 25
-	goto_if_eq VAR_RESULT, 0, SilphCo_7F_EventScript_ReceiveLaprasParty
-	goto_if_eq VAR_RESULT, 1, SilphCo_7F_EventScript_ReceiveLaprasPC
-	goto_if_eq VAR_RESULT, 2, Common_EventScript_NoMoreRoomForPokemon
-	release
-	end
+	We kept it in our lab, but it will
+	be much better off with you.
 
-SilphCo_7F_EventScript_ReceiveLaprasParty::
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_LEVEL_UP
-	message SilphCo_7F_Text_ObtainedLaprasFromEmployee
-	waitmessage
-	waitfanfare
-	bufferspeciesname STR_VAR_1, SPECIES_LAPRAS
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, SilphCo_7F_EventScript_EndReceiveLapras
-	call Common_EventScript_GetGiftMonPartySlot
-	call Common_EventScript_NameReceivedPartyMon
-	goto SilphCo_7F_EventScript_EndReceiveLapras
-	end
+	I think you will be a good TRAINER
+	for LAPRAS!
 
-SilphCo_7F_EventScript_ReceiveLaprasPC::
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_LEVEL_UP
-	message SilphCo_7F_Text_ObtainedLaprasFromEmployee
-	waitmessage
-	waitfanfare
-	bufferspeciesname STR_VAR_1, SPECIES_LAPRAS
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, SilphCo_7F_EventScript_LaprasTransferredToPC
-	call Common_EventScript_NameReceivedBoxMon
-	goto SilphCo_7F_EventScript_LaprasTransferredToPC
-	end
+	It's a good swimmer.
+	It'll give you a lift across water!"
+}
 
-SilphCo_7F_EventScript_LaprasTransferredToPC::
-	call Common_EventScript_TransferredToPC
-	goto SilphCo_7F_EventScript_EndReceiveLapras
-	end
+text SilphCo_7F_Text_RocketBossWentToBoardroom {
+	"TEAM ROCKET's BOSS went to the
+	boardroom!
 
-SilphCo_7F_EventScript_EndReceiveLapras::
-	textcolor NPC_TEXT_COLOR_MALE
-	msgbox SilphCo_7F_Text_ExplainLapras
-	setflag FLAG_GOT_LAPRAS_FROM_SILPH
-	release
-	end
+	Is our PRESIDENT okay?
+	I'm worried."
+}
 
-SilphCo_7F_EventScript_AlreadyGotLapras::
-	msgbox SilphCo_7F_Text_RocketBossWentToBoardroom
-	release
-	end
+text SilphCo_7F_Text_RocketsAfterMasterBall {
+	"TEAM ROCKET was after the MASTER
+	BALL, which catches any POKéMON."
+}
 
-SilphCo_7F_EventScript_WorkerM1::
-	lock
-	faceplayer
-	goto_if_ge VAR_MAP_SCENE_SILPH_CO_11F, 1, SilphCo_7F_EventScript_WorkerM1RocketsGone
-	msgbox SilphCo_7F_Text_RocketsAfterMasterBall
-	release
-	end
+text SilphCo_7F_Text_CanceledMasterBallProject {
+	"We canceled the MASTER BALL
+	project because of TEAM ROCKET."
+}
 
-SilphCo_7F_EventScript_WorkerM1RocketsGone::
-	msgbox SilphCo_7F_Text_CanceledMasterBallProject
-	release
-	end
+text SilphCo_7F_Text_BadIfTeamRocketTookOver {
+	"It would be bad if TEAM ROCKET
+	took over SILPH or our POKéMON."
+}
 
-SilphCo_7F_EventScript_WorkerM2::
-	lock
-	faceplayer
-	goto_if_ge VAR_MAP_SCENE_SILPH_CO_11F, 1, SilphCo_7F_EventScript_WorkerM2RocketsGone
-	msgbox SilphCo_7F_Text_BadIfTeamRocketTookOver
-	release
-	end
+text SilphCo_7F_Text_WowYouChasedOffTeamRocket {
+	"Wow!
 
-SilphCo_7F_EventScript_WorkerM2RocketsGone::
-	msgbox SilphCo_7F_Text_WowYouChasedOffTeamRocket
-	release
-	end
+	You chased off TEAM ROCKET all by
+	yourself?"
+}
 
-SilphCo_7F_EventScript_WorkerF::
-	lock
-	faceplayer
-	goto_if_ge VAR_MAP_SCENE_SILPH_CO_11F, 1, SilphCo_7F_EventScript_WorkerFRocketsGone
-	msgbox SilphCo_7F_Text_ReallyDangerousHere
-	release
-	end
+text SilphCo_7F_Text_ReallyDangerousHere {
+	"You!
+	It's really dangerous here!
 
-SilphCo_7F_EventScript_WorkerFRocketsGone::
-	msgbox SilphCo_7F_Text_ThankYouSoMuch
-	release
-	end
+	You came to save me?
+	You can't!"
+}
 
-SilphCo_7F_EventScript_FloorSign::
-	msgbox SilphCo_7F_Text_FloorSign, MSGBOX_SIGN
-	end
+text SilphCo_7F_Text_ThankYouSoMuch {
+	"Thank you so much!"
+}
 
-SilphCo_7F_EventScript_Joshua::
-	trainerbattle_single TRAINER_SCIENTIST_JOSHUA, SilphCo_7F_Text_JoshuaIntro, SilphCo_7F_Text_JoshuaDefeat
-	msgbox SilphCo_7F_Text_JoshuaPostBattle, MSGBOX_AUTOCLOSE
-	end
+text SilphCo_7F_Text_Grunt3Intro {
+	"Uh-oh!
+	I smell a little mouse!"
+}
 
-SilphCo_7F_EventScript_Grunt1::
-	trainerbattle_single TRAINER_TEAM_ROCKET_GRUNT_33, SilphCo_7F_Text_Grunt1Intro, SilphCo_7F_Text_Grunt1Defeat
-	msgbox SilphCo_7F_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
-	end
+text SilphCo_7F_Text_Grunt3Defeat {
+	"Lights out!"
+}
 
-SilphCo_7F_EventScript_Grunt2::
-	trainerbattle_single TRAINER_TEAM_ROCKET_GRUNT_34, SilphCo_7F_Text_Grunt2Intro, SilphCo_7F_Text_Grunt2Defeat
-	msgbox SilphCo_7F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
-	end
+text SilphCo_7F_Text_Grunt3PostBattle {
+	"You won't find my BOSS by just
+	scurrying around!"
+}
 
-SilphCo_7F_EventScript_Grunt3::
-	trainerbattle_single TRAINER_TEAM_ROCKET_GRUNT_35, SilphCo_7F_Text_Grunt3Intro, SilphCo_7F_Text_Grunt3Defeat
-	msgbox SilphCo_7F_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
-	end
+text SilphCo_7F_Text_JoshuaIntro {
+	"Heheh!
 
-SilphCo_7F_Text_HaveMonForSavingUs::
-	.string "Oh! Hi! You're not a ROCKET!\n"
-	.string "You came to save us?\l"
-	.string "Why, thank you!\p"
-	.string "I want you to have this POKéMON\n"
-	.string "for saving us.$"
+	You mistook me for a SILPH worker?"
+}
 
-SilphCo_7F_Text_ObtainedLaprasFromEmployee::
-	.string "{PLAYER} obtained a LAPRAS from\n"
-	.string "the SILPH employee!$"
+text SilphCo_7F_Text_JoshuaDefeat {
+	"I'm done!"
+}
 
-SilphCo_7F_Text_ExplainLapras::
-	.string "It's a LAPRAS.\n"
-	.string "It's a very intelligent POKéMON.\p"
-	.string "We kept it in our lab, but it will\n"
-	.string "be much better off with you.\p"
-	.string "I think you will be a good TRAINER\n"
-	.string "for LAPRAS!\p"
-	.string "It's a good swimmer.\n"
-	.string "It'll give you a lift across water!$"
+text SilphCo_7F_Text_JoshuaPostBattle {
+	"Despite your age, you are a
+	skilled TRAINER!"
+}
 
-SilphCo_7F_Text_RocketBossWentToBoardroom::
-	.string "TEAM ROCKET's BOSS went to the\n"
-	.string "boardroom!\p"
-	.string "Is our PRESIDENT okay?\n"
-	.string "I'm worried.$"
+text SilphCo_7F_Text_Grunt1Intro {
+	"I am one of the four ROCKET
+	BROTHERS!"
+}
 
-SilphCo_7F_Text_RocketsAfterMasterBall::
-	.string "TEAM ROCKET was after the MASTER\n"
-	.string "BALL, which catches any POKéMON.$"
+text SilphCo_7F_Text_Grunt1Defeat {
+	"Aack!
+	Brothers, I lost!"
+}
 
-SilphCo_7F_Text_CanceledMasterBallProject::
-	.string "We canceled the MASTER BALL\n"
-	.string "project because of TEAM ROCKET.$"
+text SilphCo_7F_Text_Grunt1PostBattle {
+	"Doesn't matter.
+	My brothers will repay the favor!"
+}
 
-SilphCo_7F_Text_BadIfTeamRocketTookOver::
-	.string "It would be bad if TEAM ROCKET\n"
-	.string "took over SILPH or our POKéMON.$"
+text SilphCo_7F_Text_Grunt2Intro {
+	"A child intruder?
+	That must be you!"
+}
 
-SilphCo_7F_Text_WowYouChasedOffTeamRocket::
-	.string "Wow!\p"
-	.string "You chased off TEAM ROCKET all by\n"
-	.string "yourself?$"
+text SilphCo_7F_Text_Grunt2Defeat {
+	"Fine!
+	I lost!"
+}
 
-SilphCo_7F_Text_ReallyDangerousHere::
-	.string "You!\n"
-	.string "It's really dangerous here!\p"
-	.string "You came to save me?\n"
-	.string "You can't!$"
+text SilphCo_7F_Text_Grunt2PostBattle {
+	"Go on home before my BOSS gets
+	ticked off!"
+}
 
-SilphCo_7F_Text_ThankYouSoMuch::
-	.string "Thank you so much!$"
+text SilphCo_7F_Text_RivalWhatKeptYou {
+	"{RIVAL}: What kept you, {PLAYER}?"
+}
 
-SilphCo_7F_Text_Grunt3Intro::
-	.string "Uh-oh!\n"
-	.string "I smell a little mouse!$"
+text SilphCo_7F_Text_RivalIntro {
+	"{RIVAL}: Hahaha! I thought you'd
+	turn up if I waited here!
 
-SilphCo_7F_Text_Grunt3Defeat::
-	.string "Lights out!$"
+	I guess TEAM ROCKET slowed you
+	down! Not that I care!
 
-SilphCo_7F_Text_Grunt3PostBattle::
-	.string "You won't find my BOSS by just\n"
-	.string "scurrying around!$"
+	I saw you in SAFFRON, so I decided
+	to see if you got better!"
+}
 
-SilphCo_7F_Text_JoshuaIntro::
-	.string "Heheh!\p"
-	.string "You mistook me for a SILPH worker?$"
+text SilphCo_7F_Text_RivalDefeat {
+	"Oh, man!
+	So, you are ready for BOSS
+	ROCKET!"
+}
 
-SilphCo_7F_Text_JoshuaDefeat::
-	.string "I'm done!$"
+text SilphCo_7F_Text_RivalPostBattle {
+	"Well, {PLAYER}!
+	I'm moving on up and ahead!
 
-SilphCo_7F_Text_JoshuaPostBattle::
-	.string "Despite your age, you are a\n"
-	.string "skilled TRAINER!$"
+	By checking my POKéDEX, I'm
+	starting to see what's strong and
+	how they evolve!
 
-SilphCo_7F_Text_Grunt1Intro::
-	.string "I am one of the four ROCKET\n"
-	.string "BROTHERS!$"
+	Am I a genius or what?
 
-SilphCo_7F_Text_Grunt1Defeat::
-	.string "Aack!\n"
-	.string "Brothers, I lost!$"
+	I'm going to the POKéMON LEAGUE to
+	boot out the ELITE FOUR.
 
-SilphCo_7F_Text_Grunt1PostBattle::
-	.string "Doesn't matter.\n"
-	.string "My brothers will repay the favor!$"
+	I'll become the world's most
+	powerful TRAINER!
 
-SilphCo_7F_Text_Grunt2Intro::
-	.string "A child intruder?\n"
-	.string "That must be you!$"
+	{PLAYER}, well, good luck to you!
+	Don't sweat it!
+	Smell ya!"
+}
 
-SilphCo_7F_Text_Grunt2Defeat::
-	.string "Fine!\n"
-	.string "I lost!$"
-
-SilphCo_7F_Text_Grunt2PostBattle::
-	.string "Go on home before my BOSS gets\n"
-	.string "ticked off!$"
-
-SilphCo_7F_Text_RivalWhatKeptYou::
-	.string "{RIVAL}: What kept you, {PLAYER}?$"
-
-SilphCo_7F_Text_RivalIntro::
-	.string "{RIVAL}: Hahaha! I thought you'd\n"
-	.string "turn up if I waited here!\p"
-	.string "I guess TEAM ROCKET slowed you\n"
-	.string "down! Not that I care!\p"
-	.string "I saw you in SAFFRON, so I decided\n"
-	.string "to see if you got better!$"
-
-SilphCo_7F_Text_RivalDefeat::
-	.string "Oh, man!\n"
-	.string "So, you are ready for BOSS\l"
-	.string "ROCKET!$"
-
-SilphCo_7F_Text_RivalPostBattle::
-	.string "Well, {PLAYER}!\n"
-	.string "I'm moving on up and ahead!\p"
-	.string "By checking my POKéDEX, I'm\n"
-	.string "starting to see what's strong and\l"
-	.string "how they evolve!\p"
-	.string "Am I a genius or what?\p"
-	.string "I'm going to the POKéMON LEAGUE to\n"
-	.string "boot out the ELITE FOUR.\p"
-	.string "I'll become the world's most\n"
-	.string "powerful TRAINER!\p"
-	.string "{PLAYER}, well, good luck to you!\n"
-	.string "Don't sweat it!\l"
-	.string "Smell ya!$"
-
-SilphCo_7F_Text_FloorSign::
-	.string "SILPH CO. HEAD OFFICE\n"
-	.string "7F$"
-
-`
+text SilphCo_7F_Text_FloorSign {
+	"SILPH CO. HEAD OFFICE
+	7F"
+}

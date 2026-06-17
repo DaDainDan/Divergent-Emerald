@@ -1,69 +1,92 @@
 Route18_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route18_OnTransition
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route18_OnWarp
+# 2 "data/maps/Route18_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, Route18_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION
+# 8 "data/maps/Route18_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route18_Frlg_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 
-Route18_OnTransition::
-	call_if_eq VAR_MAP_SCENE_ROUTE16, 1, Route18_OnTransitionCyclingRoad
+Route18_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/Route18_Frlg/scripts.pory"
+	compare VAR_MAP_SCENE_ROUTE16, 1
+	goto_if_eq Route18_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+Route18_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	end
 
-Route18_OnTransitionCyclingRoad::
+Route18_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+# 4 "data/maps/Route18_Frlg/scripts.pory"
 	setflag FLAG_SYS_ON_CYCLING_ROAD
-	return
+	goto Route18_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
-Route18_OnWarp::
-	map_script_2 VAR_MAP_SCENE_ROUTE16, 1, Route18_OnWarpCyclingRoad
+Route18_Frlg_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+# 9 "data/maps/Route18_Frlg/scripts.pory"
+	map_script_2 VAR_MAP_SCENE_ROUTE16, 1, Route18_Frlg_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
 	.2byte 0
 
-Route18_OnWarpCyclingRoad::
+Route18_Frlg_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
+# 10 "data/maps/Route18_Frlg/scripts.pory"
 	special ForcePlayerOntoBike
 	end
 
+
 Route18_EventScript_RouteSign::
+# 17 "data/maps/Route18_Frlg/scripts.pory"
 	msgbox Route18_Text_RouteSign, MSGBOX_SIGN
 	end
 
+
 Route18_EventScript_CyclingRoadSign::
+# 22 "data/maps/Route18_Frlg/scripts.pory"
 	msgbox Route18_Text_CyclingRoadSign, MSGBOX_SIGN
 	end
 
+
 Route18_Text_WiltonIntro::
+# 26 "data/maps/Route18_Frlg/scripts.pory"
 	.string "I always check every grassy area\n"
 	.string "for new POKéMON.$"
 
 Route18_Text_WiltonDefeat::
+# 31 "data/maps/Route18_Frlg/scripts.pory"
 	.string "Tch!$"
 
 Route18_Text_WiltonPostBattle::
+# 35 "data/maps/Route18_Frlg/scripts.pory"
 	.string "I wish I had a BIKE!$"
 
 Route18_Text_RamiroIntro::
+# 39 "data/maps/Route18_Frlg/scripts.pory"
 	.string "Kurukkoo!\n"
 	.string "How do you like my birdcall?$"
 
 Route18_Text_RamiroDefeat::
+# 44 "data/maps/Route18_Frlg/scripts.pory"
 	.string "I had to bug you!$"
 
 Route18_Text_RamiroPostBattle::
+# 48 "data/maps/Route18_Frlg/scripts.pory"
 	.string "I collect sea POKéMON on weekends\n"
 	.string "because the sea is so close.$"
 
 Route18_Text_JacobIntro::
+# 53 "data/maps/Route18_Frlg/scripts.pory"
 	.string "This is my turf!\n"
 	.string "Get out of here!$"
 
 Route18_Text_JacobDefeat::
+# 58 "data/maps/Route18_Frlg/scripts.pory"
 	.string "Darn!$"
 
 Route18_Text_JacobPostBattle::
+# 62 "data/maps/Route18_Frlg/scripts.pory"
 	.string "This is my fave area for catching\n"
 	.string "POKéMON.$"
 
 Route18_Text_RouteSign::
+# 67 "data/maps/Route18_Frlg/scripts.pory"
 	.string "ROUTE 18\n"
 	.string "CELADON CITY - FUCHSIA CITY$"
 
 Route18_Text_CyclingRoadSign::
+# 72 "data/maps/Route18_Frlg/scripts.pory"
 	.string "CYCLING ROAD\n"
 	.string "No pedestrians permitted!$"
-

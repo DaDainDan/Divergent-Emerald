@@ -1,36 +1,37 @@
-raw `
-SaffronCity_CopycatsHouse_1F_Frlg_MapScripts::
-	.byte 0
+mapscripts SaffronCity_CopycatsHouse_1F_Frlg_MapScripts {}
 
-SaffronCity_CopycatsHouse_1F_EventScript_CopycatsMom::
-	msgbox SaffronCity_CopycatsHouse_1F_Text_DaughterIsSelfCentered, MSGBOX_NPC
-	end
+script SaffronCity_CopycatsHouse_1F_EventScript_CopycatsMom {
+    msgbox(SaffronCity_CopycatsHouse_1F_Text_DaughterIsSelfCentered, MSGBOX_NPC)
+    end
+}
 
-SaffronCity_CopycatsHouse_1F_EventScript_CopycatsDad::
-	msgbox SaffronCity_CopycatsHouse_1F_Text_DaughterLikesToMimicPeople, MSGBOX_NPC
-	end
+script SaffronCity_CopycatsHouse_1F_EventScript_CopycatsDad {
+    msgbox(SaffronCity_CopycatsHouse_1F_Text_DaughterLikesToMimicPeople, MSGBOX_NPC)
+    end
+}
 
-SaffronCity_CopycatsHouse_1F_EventScript_Chansey::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_CHANSEY, CRY_MODE_NORMAL
-	msgbox SaffronCity_CopycatsHouse_1F_Text_Chansey
-	waitmoncry
-	release
-	end
+script SaffronCity_CopycatsHouse_1F_EventScript_Chansey {
+    lock_faceplayer
+    waitse
+    playmoncry(SPECIES_CHANSEY, CRY_MODE_NORMAL)
+    msgbox(SaffronCity_CopycatsHouse_1F_Text_Chansey)
+    waitmoncry
+    release_end
+}
 
-SaffronCity_CopycatsHouse_1F_Text_DaughterIsSelfCentered::
-	.string "My daughter is so self-centered.\n"
-	.string "She has but a few friends.$"
+text SaffronCity_CopycatsHouse_1F_Text_DaughterIsSelfCentered {
+	"My daughter is so self-centered.
+	She has but a few friends."
+}
 
-SaffronCity_CopycatsHouse_1F_Text_DaughterLikesToMimicPeople::
-	.string "My daughter likes to mimic people.\n"
-	.string "It's rather vexing.\p"
-	.string "Her mimicry has earned her the\n"
-	.string "nickname COPYCAT around here.$"
+text SaffronCity_CopycatsHouse_1F_Text_DaughterLikesToMimicPeople {
+	"My daughter likes to mimic people.
+	It's rather vexing.
 
-SaffronCity_CopycatsHouse_1F_Text_Chansey::
-	.string "CHANSEY: Chaan! Sii!$"
+	Her mimicry has earned her the
+	nickname COPYCAT around here."
+}
 
-`
+text SaffronCity_CopycatsHouse_1F_Text_Chansey {
+	"CHANSEY: Chaan! Sii!"
+}
