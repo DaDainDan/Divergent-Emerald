@@ -1,12 +1,10 @@
-raw `
-CeladonCity_Condominiums_Roof_Frlg_MapScripts::
-	.byte 0
+mapscripts CeladonCity_Condominiums_Roof_Frlg_MapScripts {}
 
-CeladonCity_Condominiums_Roof_EventScript_Sign::
-	msgbox CeladonCity_Condominiums_Roof_Text_IKnowEverything, MSGBOX_SIGN
-	end
+script CeladonCity_Condominiums_Roof_EventScript_Sign {
+    msgbox(CeladonCity_Condominiums_Roof_Text_IKnowEverything, MSGBOX_SIGN)
+    end
+}
 
-CeladonCity_Condominiums_Roof_Text_IKnowEverything::
-	.string "I KNOW EVERYTHING!$"
-
-`
+text CeladonCity_Condominiums_Roof_Text_IKnowEverything {
+	"I KNOW EVERYTHING!"
+}

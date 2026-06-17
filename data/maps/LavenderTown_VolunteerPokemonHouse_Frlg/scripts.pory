@@ -1,151 +1,163 @@
-raw `
-LavenderTown_VolunteerPokemonHouse_Frlg_MapScripts::
-	.byte 0
+mapscripts LavenderTown_VolunteerPokemonHouse_Frlg_MapScripts {}
 
-LavenderTown_VolunteerPokemonHouse_EventScript_MrFuji::
-	lock
-	faceplayer
-	goto_if_set FLAG_GOT_POKE_FLUTE, LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_IdLikeYouToHaveThis
-	checkitemspace ITEM_POKE_FLUTE
-	goto_if_eq VAR_RESULT, FALSE, LavenderTown_VolunteerPokemonHouse_EventScript_NoRoomForPokeFlute
-	setflag FLAG_GOT_POKE_FLUTE
-	giveitem_msg LavenderTown_VolunteerPokemonHouse_Text_ReceivedPokeFluteFromMrFuji, ITEM_POKE_FLUTE, 1, MUS_RG_OBTAIN_KEY_ITEM
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_ExplainPokeFlute
-	release
-	end
+script LavenderTown_VolunteerPokemonHouse_EventScript_MrFuji {
+    lock_faceplayer
+    if (flag(FLAG_GOT_POKE_FLUTE)) {
+        msgbox(LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou)
+    	release_end
+    }
+    msgbox(LavenderTown_VolunteerPokemonHouse_Text_IdLikeYouToHaveThis)
+    if (checkitemspace(ITEM_POKE_FLUTE) == FALSE) {
+        msgbox(LavenderTown_VolunteerPokemonHouse_Text_MustMakeRoomForThis)
+    	release_end
+    }
+    setflag(FLAG_GOT_POKE_FLUTE)
+    giveitem_msg(LavenderTown_VolunteerPokemonHouse_Text_ReceivedPokeFluteFromMrFuji, ITEM_POKE_FLUTE, 1, MUS_RG_OBTAIN_KEY_ITEM)
+    msgbox(LavenderTown_VolunteerPokemonHouse_Text_ExplainPokeFlute)
+    release_end
+}
 
-LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute::
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou
-	release
-	end
+script LavenderTown_VolunteerPokemonHouse_EventScript_LittleGirl {
+    lock_faceplayer
+    famechecker(FAMECHECKER_MRFUJI, 0)
+    msgbox(LavenderTown_VolunteerPokemonHouse_Text_MrFujiLooksAfterOrphanedMons)
+    release_end
+}
 
-LavenderTown_VolunteerPokemonHouse_EventScript_NoRoomForPokeFlute::
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_MustMakeRoomForThis
-	release
-	end
+script LavenderTown_VolunteerPokemonHouse_EventScript_LittleBoy {
+    msgbox(LavenderTown_VolunteerPokemonHouse_Text_MonsNiceToHug, MSGBOX_NPC)
+    end
+}
 
-LavenderTown_VolunteerPokemonHouse_EventScript_LittleGirl::
-	lock
-	faceplayer
-	famechecker FAMECHECKER_MRFUJI, 0
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_MrFujiLooksAfterOrphanedMons
-	release
-	end
+script LavenderTown_VolunteerPokemonHouse_EventScript_Youngster {
+    lock_faceplayer
+    if (flag(FLAG_RESCUED_MR_FUJI)) {
+        msgbox(LavenderTown_VolunteerPokemonHouse_Text_MrFujiWasPrayingForCubonesMother)
+    	release_end
+    }
+    msgbox(LavenderTown_VolunteerPokemonHouse_Text_WhereDidMrFujiGo)
+    release_end
+}
 
-LavenderTown_VolunteerPokemonHouse_EventScript_LittleBoy::
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_MonsNiceToHug, MSGBOX_NPC
-	end
+script LavenderTown_VolunteerPokemonHouse_EventScript_Nidorino {
+    lock_faceplayer
+    waitse
+    playmoncry(SPECIES_NIDORINO, CRY_MODE_NORMAL)
+    msgbox(LavenderTown_VolunteerPokemonHouse_Text_Nidorino)
+    waitmoncry
+    release_end
+}
 
-LavenderTown_VolunteerPokemonHouse_EventScript_Youngster::
-	lock
-	faceplayer
-	goto_if_set FLAG_RESCUED_MR_FUJI, LavenderTown_VolunteerPokemonHouse_EventScript_YoungsterFujiBack
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_WhereDidMrFujiGo
-	release
-	end
+script LavenderTown_VolunteerPokemonHouse_EventScript_Psyduck {
+    lock_faceplayer
+    waitse
+    playmoncry(SPECIES_PSYDUCK, CRY_MODE_NORMAL)
+    msgbox(LavenderTown_VolunteerPokemonHouse_Text_Psyduck)
+    waitmoncry
+    release_end
+}
 
-LavenderTown_VolunteerPokemonHouse_EventScript_YoungsterFujiBack::
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_MrFujiWasPrayingForCubonesMother
-	release
-	end
+script LavenderTown_VolunteerPokemonHouse_EventScript_PokemonFanMagazine {
+    lockall
+    famechecker(FAMECHECKER_MRFUJI, 2)
+    msgbox(LavenderTown_VolunteerPokemonHouse_Text_GrandPrizeDrawingClipped)
+    releaseall
+    end
+}
 
-LavenderTown_VolunteerPokemonHouse_EventScript_Nidorino::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_NIDORINO, CRY_MODE_NORMAL
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_Nidorino
-	waitmoncry
-	release
-	end
+script LavenderTown_VolunteerPokemonHouse_EventScript_Bookshelf {
+    msgbox(LavenderTown_VolunteerPokemonHouse_Text_PokemonMagazinesLineShelf, MSGBOX_SIGN)
+    end
+}
 
-LavenderTown_VolunteerPokemonHouse_EventScript_Psyduck::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_Psyduck
-	waitmoncry
-	release
-	end
+text LavenderTown_PokemonCenter_1F_Text_HearMrFujiNotFromAroundHere {
+	"I recently moved to this town.
 
-LavenderTown_VolunteerPokemonHouse_EventScript_PokemonFanMagazine::
-	lockall
-	famechecker FAMECHECKER_MRFUJI, 2
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_GrandPrizeDrawingClipped
-	releaseall
-	end
+	I hear that MR. FUJI's not from
+	these parts originally, either."
+}
 
-LavenderTown_VolunteerPokemonHouse_EventScript_Bookshelf::
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_PokemonMagazinesLineShelf, MSGBOX_SIGN
-	end
+text LavenderTown_VolunteerPokemonHouse_Text_WhereDidMrFujiGo {
+	"That's odd, MR. FUJI isn't here.
+	Where'd he go?"
+}
 
-LavenderTown_PokemonCenter_1F_Text_HearMrFujiNotFromAroundHere::
-	.string "I recently moved to this town.\p"
-	.string "I hear that MR. FUJI's not from\n"
-	.string "these parts originally, either.$"
+text LavenderTown_VolunteerPokemonHouse_Text_MrFujiWasPrayingForCubonesMother {
+	"MR. FUJI had been praying alone
+	for CUBONE's mother."
+}
 
-LavenderTown_VolunteerPokemonHouse_Text_WhereDidMrFujiGo::
-	.string "That's odd, MR. FUJI isn't here.\n"
-	.string "Where'd he go?$"
+text LavenderTown_VolunteerPokemonHouse_Text_MrFujiLooksAfterOrphanedMons {
+	"This is really MR. FUJI's house.
 
-LavenderTown_VolunteerPokemonHouse_Text_MrFujiWasPrayingForCubonesMother::
-	.string "MR. FUJI had been praying alone\n"
-	.string "for CUBONE's mother.$"
+	He's really kind.
 
-LavenderTown_VolunteerPokemonHouse_Text_MrFujiLooksAfterOrphanedMons::
-	.string "This is really MR. FUJI's house.\p"
-	.string "He's really kind.\p"
-	.string "He looks after abandoned and\n"
-	.string "orphaned POKéMON.$"
+	He looks after abandoned and
+	orphaned POKéMON."
+}
 
-LavenderTown_VolunteerPokemonHouse_Text_MonsNiceToHug::
-	.string "It's so warm!\n"
-	.string "POKéMON are so nice to hug.$"
+text LavenderTown_VolunteerPokemonHouse_Text_MonsNiceToHug {
+	"It's so warm!
+	POKéMON are so nice to hug."
+}
 
-LavenderTown_VolunteerPokemonHouse_Text_Nidorino::
-	.string "NIDORINO: Gaoo!$"
+text LavenderTown_VolunteerPokemonHouse_Text_Nidorino {
+	"NIDORINO: Gaoo!"
+}
 
-LavenderTown_VolunteerPokemonHouse_Text_Psyduck::
-	.string "PSYDUCK: Gwappa!$"
+text LavenderTown_VolunteerPokemonHouse_Text_Psyduck {
+	"PSYDUCK: Gwappa!"
+}
 
-LavenderTown_VolunteerPokemonHouse_Text_IdLikeYouToHaveThis::
-	.string "MR. FUJI: {PLAYER}…\p"
-	.string "Your POKéDEX quest is one that\n"
-	.string "requires strong dedication.\p"
-	.string "Without deep love for POKéMON,\n"
-	.string "your quest may fail.\p"
-	.string "I'm not sure if this will help you,\n"
-	.string "but I'd like you to have it.$"
+text LavenderTown_VolunteerPokemonHouse_Text_IdLikeYouToHaveThis {
+	"MR. FUJI: {PLAYER}…
 
-LavenderTown_VolunteerPokemonHouse_Text_ReceivedPokeFluteFromMrFuji::
-	.string "{PLAYER} received a POKé FLUTE\n"
-	.string "from MR. FUJI.$"
+	Your POKéDEX quest is one that
+	requires strong dedication.
 
-LavenderTown_VolunteerPokemonHouse_Text_ExplainPokeFlute::
-	.string "Upon hearing the POKé FLUTE,\n"
-	.string "sleeping POKéMON will spring awake.\p"
-	.string "Try using it on POKéMON that are\n"
-	.string "sleeping obstacles.$"
+	Without deep love for POKéMON,
+	your quest may fail.
 
-LavenderTown_VolunteerPokemonHouse_Text_MustMakeRoomForThis::
-	.string "You must make room for this!$"
+	I'm not sure if this will help you,
+	but I'd like you to have it."
+}
 
-LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou::
-	.string "MR. FUJI: Has my POKé FLUTE\n"
-	.string "helped you?$"
+text LavenderTown_VolunteerPokemonHouse_Text_ReceivedPokeFluteFromMrFuji {
+	"{PLAYER} received a POKé FLUTE
+	from MR. FUJI."
+}
 
-LavenderTown_VolunteerPokemonHouse_Text_GrandPrizeDrawingClipped::
-	.string "POKéMON FAN MAGAZINE\n"
-	.string "Monthly Grand Prize Drawing!\p"
-	.string "The application form is…\p"
-	.string "Gone! It's been clipped out.\n"
-	.string "Someone must have applied already.$"
+text LavenderTown_VolunteerPokemonHouse_Text_ExplainPokeFlute {
+	"Upon hearing the POKé FLUTE,
+	sleeping POKéMON will spring awake.
 
-LavenderTown_VolunteerPokemonHouse_Text_PokemonMagazinesLineShelf::
-	.string "POKéMON magazines line the shelf.\p"
-	.string "POKéMON INSIDER…\p"
-	.string "POKéMON FAN…$"
+	Try using it on POKéMON that are
+	sleeping obstacles."
+}
 
-`
+text LavenderTown_VolunteerPokemonHouse_Text_MustMakeRoomForThis {
+	"You must make room for this!"
+}
+
+text LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou {
+	"MR. FUJI: Has my POKé FLUTE
+	helped you?"
+}
+
+text LavenderTown_VolunteerPokemonHouse_Text_GrandPrizeDrawingClipped {
+	"POKéMON FAN MAGAZINE
+	Monthly Grand Prize Drawing!
+
+	The application form is…
+
+	Gone! It's been clipped out.
+	Someone must have applied already."
+}
+
+text LavenderTown_VolunteerPokemonHouse_Text_PokemonMagazinesLineShelf {
+	"POKéMON magazines line the shelf.
+
+	POKéMON INSIDER…
+
+	POKéMON FAN…"
+}

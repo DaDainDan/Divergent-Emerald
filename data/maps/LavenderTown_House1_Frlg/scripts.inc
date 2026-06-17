@@ -1,33 +1,42 @@
 LavenderTown_House1_Frlg_MapScripts::
 	.byte 0
 
-LavenderTown_House1_EventScript_CooltrainerF::
-	lock
-	faceplayer
-	goto_if_set FLAG_RESCUED_MR_FUJI, LavenderTown_House1_EventScript_CooltrainerFGhostGone
-	msgbox LavenderTown_House1_Text_RocketsKilledCubonesMother
-	release
-	end
 
-LavenderTown_House1_EventScript_CooltrainerFGhostGone::
+LavenderTown_House1_EventScript_CooltrainerF::
+# 4 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
+	lock_faceplayer
+# 5 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
+	goto_if_set FLAG_RESCUED_MR_FUJI, LavenderTown_House1_EventScript_CooltrainerF_2
+# 9 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
+	msgbox LavenderTown_House1_Text_RocketsKilledCubonesMother
+	release_end
+
+LavenderTown_House1_EventScript_CooltrainerF_2:
+# 6 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
 	msgbox LavenderTown_House1_Text_GhostOfPokemonTowerIsGone
-	release
-	end
+	release_end
+
 
 LavenderTown_House1_EventScript_Cubone::
-	lock
-	faceplayer
+# 14 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
+	lock_faceplayer
+# 15 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
 	waitse
+# 16 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
 	playmoncry SPECIES_CUBONE, CRY_MODE_NORMAL
+# 17 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
 	msgbox LavenderTown_House1_Text_Cubone
+# 18 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
 	waitmoncry
-	release
-	end
+	release_end
+
 
 LavenderTown_House1_Text_Cubone::
+# 22 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
 	.string "CUBONE: Kyarugoo!$"
 
 LavenderTown_House1_Text_RocketsKilledCubonesMother::
+# 26 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
 	.string "Those horrible ROCKETS!\n"
 	.string "They deserve no mercy!\p"
 	.string "That poor CUBONE's mother…\p"
@@ -35,8 +44,8 @@ LavenderTown_House1_Text_RocketsKilledCubonesMother::
 	.string "TEAM ROCKET.$"
 
 LavenderTown_House1_Text_GhostOfPokemonTowerIsGone::
+# 36 "data/maps/LavenderTown_House1_Frlg/scripts.pory"
 	.string "The ghost of POKéMON TOWER is\n"
 	.string "gone!\p"
 	.string "Someone must have soothed its\n"
 	.string "restless spirit!$"
-

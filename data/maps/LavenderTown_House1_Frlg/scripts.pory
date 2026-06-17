@@ -1,44 +1,42 @@
-raw `
-LavenderTown_House1_Frlg_MapScripts::
-	.byte 0
+mapscripts LavenderTown_House1_Frlg_MapScripts {}
 
-LavenderTown_House1_EventScript_CooltrainerF::
-	lock
-	faceplayer
-	goto_if_set FLAG_RESCUED_MR_FUJI, LavenderTown_House1_EventScript_CooltrainerFGhostGone
-	msgbox LavenderTown_House1_Text_RocketsKilledCubonesMother
-	release
-	end
+script LavenderTown_House1_EventScript_CooltrainerF {
+    lock_faceplayer
+    if (flag(FLAG_RESCUED_MR_FUJI)) {
+        msgbox(LavenderTown_House1_Text_GhostOfPokemonTowerIsGone)
+    	release_end
+    }
+    msgbox(LavenderTown_House1_Text_RocketsKilledCubonesMother)
+    release_end
+}
 
-LavenderTown_House1_EventScript_CooltrainerFGhostGone::
-	msgbox LavenderTown_House1_Text_GhostOfPokemonTowerIsGone
-	release
-	end
+script LavenderTown_House1_EventScript_Cubone {
+    lock_faceplayer
+    waitse
+    playmoncry(SPECIES_CUBONE, CRY_MODE_NORMAL)
+    msgbox(LavenderTown_House1_Text_Cubone)
+    waitmoncry
+    release_end
+}
 
-LavenderTown_House1_EventScript_Cubone::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_CUBONE, CRY_MODE_NORMAL
-	msgbox LavenderTown_House1_Text_Cubone
-	waitmoncry
-	release
-	end
+text LavenderTown_House1_Text_Cubone {
+	"CUBONE: Kyarugoo!"
+}
 
-LavenderTown_House1_Text_Cubone::
-	.string "CUBONE: Kyarugoo!$"
+text LavenderTown_House1_Text_RocketsKilledCubonesMother {
+	"Those horrible ROCKETS!
+	They deserve no mercy!
 
-LavenderTown_House1_Text_RocketsKilledCubonesMother::
-	.string "Those horrible ROCKETS!\n"
-	.string "They deserve no mercy!\p"
-	.string "That poor CUBONE's mother…\p"
-	.string "It was killed trying to escape from\n"
-	.string "TEAM ROCKET.$"
+	That poor CUBONE's mother…
 
-LavenderTown_House1_Text_GhostOfPokemonTowerIsGone::
-	.string "The ghost of POKéMON TOWER is\n"
-	.string "gone!\p"
-	.string "Someone must have soothed its\n"
-	.string "restless spirit!$"
+	It was killed trying to escape from
+	TEAM ROCKET."
+}
 
-`
+text LavenderTown_House1_Text_GhostOfPokemonTowerIsGone {
+	"The ghost of POKéMON TOWER is
+	gone!
+
+	Someone must have soothed its
+	restless spirit!"
+}

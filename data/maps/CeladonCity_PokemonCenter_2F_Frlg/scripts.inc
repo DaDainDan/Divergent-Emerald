@@ -1,19 +1,29 @@
 CeladonCity_PokemonCenter_2F_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, CableClub_OnFrame_Frlg
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, CableClub_OnWarp_Frlg
-	map_script MAP_SCRIPT_ON_LOAD, CableClub_OnLoad_Frlg
-	map_script MAP_SCRIPT_ON_TRANSITION, CableClub_OnTransition_Frlg
+# 2 "data/maps/CeladonCity_PokemonCenter_2F_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, CableClub_OnFrame
+# 3 "data/maps/CeladonCity_PokemonCenter_2F_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, CableClub_OnWarp
+# 4 "data/maps/CeladonCity_PokemonCenter_2F_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, CableClub_OnLoad
+# 5 "data/maps/CeladonCity_PokemonCenter_2F_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, CableClub_OnTransition
 	.byte 0
 
-@ The below 3 are unused and leftover from RS
+
 CeladonCity_PokemonCenter_2F_EventScript_Colosseum::
+# 10 "data/maps/CeladonCity_PokemonCenter_2F_Frlg/scripts.pory"
 	call CableClub_EventScript_Colosseum_Frlg
 	end
 
+
 CeladonCity_PokemonCenter_2F_EventScript_TradeCenter::
+# 15 "data/maps/CeladonCity_PokemonCenter_2F_Frlg/scripts.pory"
 	call CableClub_EventScript_TradeCenter_Frlg
 	end
 
+
 CeladonCity_PokemonCenter_2F_EventScript_RecordCorner::
+# 20 "data/maps/CeladonCity_PokemonCenter_2F_Frlg/scripts.pory"
 	call CableClub_EventScript_RecordCorner_Frlg
 	end
+

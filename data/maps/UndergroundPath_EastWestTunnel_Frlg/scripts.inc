@@ -1,7 +1,10 @@
 UndergroundPath_EastWestTunnel_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, UndergroundPath_EastWestTunnel_OnTransition
+# 2 "data/maps/UndergroundPath_EastWestTunnel_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, UndergroundPath_EastWestTunnel_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-UndergroundPath_EastWestTunnel_OnTransition::
+UndergroundPath_EastWestTunnel_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/UndergroundPath_EastWestTunnel_Frlg/scripts.pory"
 	setworldmapflag FLAG_WORLD_MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL
 	end
+
