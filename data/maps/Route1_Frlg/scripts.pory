@@ -1,66 +1,72 @@
-raw `
-Route1_Frlg_MapScripts::
-	.byte 0
+mapscripts Route1_Frlg_MapScripts {}
 
-Route1_EventScript_MartClerk::
-	lock
-	faceplayer
-	goto_if_set FLAG_GOT_POTION_ON_ROUTE_1, Route1_EventScript_AlreadyGotPotion
-	msgbox Route1_Text_WorkAtPokeMartTakeSample
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	checkitemspace ITEM_POTION
-	goto_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
-	bufferitemname STR_VAR_2, ITEM_POTION
-	playfanfare MUS_LEVEL_UP
-	message gText_ObtainedTheItem
-	waitmessage
-	waitfanfare
-	additem ITEM_POTION
-	msgbox Route1_Text_PutPotionAway
-	call EventScript_RestorePrevTextColor
-	setflag FLAG_GOT_POTION_ON_ROUTE_1
-	release
-	end
+script Route1_EventScript_MartClerk {
+    lock_faceplayer
+    if (flag(FLAG_GOT_POTION_ON_ROUTE_1)) {
+        msgbox(Route1_Text_ComeSeeUsIfYouNeedPokeBalls)
+    	release_end
+    }
+    msgbox(Route1_Text_WorkAtPokeMartTakeSample)
+    textcolor(NPC_TEXT_COLOR_NEUTRAL)
+    if (checkitemspace(ITEM_POTION) == FALSE) {
+        goto(EventScript_BagIsFull)
+    }
+    bufferitemname(STR_VAR_2, ITEM_POTION)
+    playfanfare(MUS_LEVEL_UP)
+    message(gText_ObtainedTheItem)
+    waitmessage
+    waitfanfare
+    additem(ITEM_POTION)
+    msgbox(Route1_Text_PutPotionAway)
+    call(EventScript_RestorePrevTextColor)
+    setflag(FLAG_GOT_POTION_ON_ROUTE_1)
+    release_end
+}
 
-Route1_EventScript_AlreadyGotPotion::
-	msgbox Route1_Text_ComeSeeUsIfYouNeedPokeBalls
-	release
-	end
+script Route1_EventScript_Boy {
+    msgbox(Route1_Text_CanJumpFromLedges, MSGBOX_NPC)
+    end
+}
 
-Route1_EventScript_Boy::
-	msgbox Route1_Text_CanJumpFromLedges, MSGBOX_NPC
-	end
+script Route1_EventScript_RouteSign {
+    msgbox(Route1_Text_RouteSign, MSGBOX_SIGN)
+    end
+}
 
-Route1_EventScript_RouteSign::
-	msgbox Route1_Text_RouteSign, MSGBOX_SIGN
-	end
+text Route1_Text_WorkAtPokeMartTakeSample {
+	"Hi!
+	I work at a POKéMON MART.
 
-Route1_Text_WorkAtPokeMartTakeSample::
-	.string "Hi!\n"
-	.string "I work at a POKéMON MART.\p"
-	.string "It's part of a convenient chain\n"
-	.string "selling all sorts of items.\p"
-	.string "Please, visit us in VIRIDIAN CITY.\p"
-	.string "I know, I'll give you a sample.\n"
-	.string "Here you go!$"
+	It's part of a convenient chain
+	selling all sorts of items.
 
-Route1_Text_ComeSeeUsIfYouNeedPokeBalls::
-	.string "Please come see us if you need\n"
-	.string "POKé BALLS for catching POKéMON.$"
+	Please, visit us in VIRIDIAN CITY.
 
-Route1_Text_PutPotionAway::
-	.string "{PLAYER} put the POTION away in\n"
-	.string "the BAG's ITEMS POCKET.$"
+	I know, I'll give you a sample.
+	Here you go!"
+}
 
-Route1_Text_CanJumpFromLedges::
-	.string "See those ledges along the road?\p"
-	.string "It's a bit scary, but you can jump\n"
-	.string "from them.\p"
-	.string "You can get back to PALLET TOWN\n"
-	.string "quicker that way.$"
+text Route1_Text_ComeSeeUsIfYouNeedPokeBalls {
+	"Please come see us if you need
+	POKé BALLS for catching POKéMON."
+}
 
-Route1_Text_RouteSign::
-	.string "ROUTE 1\n"
-	.string "PALLET TOWN - VIRIDIAN CITY$"
+text Route1_Text_PutPotionAway {
+	"{PLAYER} put the POTION away in
+	the BAG's ITEMS POCKET."
+}
 
-`
+text Route1_Text_CanJumpFromLedges {
+	"See those ledges along the road?
+
+	It's a bit scary, but you can jump
+	from them.
+
+	You can get back to PALLET TOWN
+	quicker that way."
+}
+
+text Route1_Text_RouteSign {
+	"ROUTE 1
+	PALLET TOWN - VIRIDIAN CITY"
+}

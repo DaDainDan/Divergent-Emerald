@@ -1,7 +1,10 @@
 DiglettsCave_B1F_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, DiglettsCave_B1F_OnTransition
+# 2 "data/maps/DiglettsCave_B1F_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, DiglettsCave_B1F_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-DiglettsCave_B1F_OnTransition::
+DiglettsCave_B1F_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/DiglettsCave_B1F_Frlg/scripts.pory"
 	setworldmapflag FLAG_WORLD_MAP_DIGLETTS_CAVE_B1F
 	end
+

@@ -1,44 +1,84 @@
-.equ REQUIRED_SEEN_MONS, 10
-
 Route2_EastBuilding_Frlg_MapScripts::
 	.byte 0
 
+
 Route2_EastBuilding_EventScript_Aide::
-	lock
-	faceplayer
+# 6 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
+	lock_faceplayer
+# 7 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	call Route2_EastBuilding_EventScript_GetAideRequestInfo
-	goto_if_set FLAG_GOT_HM05, Route2_EastBuilding_EventScript_AlreadyGotHM05
+# 8 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
+	goto_if_set FLAG_GOT_HM05, Route2_EastBuilding_EventScript_Aide_2
+# 12 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	msgbox Route2_EastBuilding_Text_GiveHM05IfSeen10Mons, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Aide_EventScript_DeclineCheckMons
+# 13 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Route2_EastBuilding_EventScript_Aide_5
+Route2_EastBuilding_EventScript_Aide_4:
+# 16 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	setvar VAR_0x8004, 0
+# 17 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	specialvar VAR_RESULT, GetFrlgPokedexCount
+# 18 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	buffernumberstring STR_VAR_3, VAR_0x8006
+# 19 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	call Route2_EastBuilding_EventScript_GetAideRequestInfo
-	goto_if_lt VAR_0x8006, REQUIRED_SEEN_MONS, Aide_EventScript_HaventCaughtEnough
+# 20 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
+	compare VAR_0x8006, 10
+	goto_if_lt Route2_EastBuilding_EventScript_Aide_8
+Route2_EastBuilding_EventScript_Aide_7:
+# 23 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	msgbox Route2_EastBuilding_Text_GreatHereYouGo
 	checkitemspace ITEM_HM05
-	goto_if_eq VAR_RESULT, FALSE, Aide_EventScript_NoRoomForItem
+# 0 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route2_EastBuilding_EventScript_Aide_11
+Route2_EastBuilding_EventScript_Aide_10:
+# 27 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	giveitem_msg Route2_EastBuilding_Text_ReceivedHM05FromAide, ITEM_HM05
+# 28 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	setflag FLAG_GOT_HM05
+# 29 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	msgbox Route2_EastBuilding_Text_ExplainHM05
-	release
-	end
+	release_end
 
-Route2_EastBuilding_EventScript_AlreadyGotHM05::
+Route2_EastBuilding_EventScript_Aide_2:
+# 9 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	msgbox Route2_EastBuilding_Text_ExplainHM05
-	release
-	end
+	release_end
+
+Route2_EastBuilding_EventScript_Aide_5:
+# 14 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
+	goto Aide_EventScript_DeclineCheckMons
+	goto Route2_EastBuilding_EventScript_Aide_4
+
+Route2_EastBuilding_EventScript_Aide_8:
+# 21 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
+	goto Aide_EventScript_HaventCaughtEnough
+	goto Route2_EastBuilding_EventScript_Aide_7
+
+Route2_EastBuilding_EventScript_Aide_11:
+# 25 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
+	goto Aide_EventScript_NoRoomForItem
+	goto Route2_EastBuilding_EventScript_Aide_10
+
 
 Route2_EastBuilding_EventScript_GetAideRequestInfo::
-	buffernumberstring STR_VAR_1, REQUIRED_SEEN_MONS
+# 34 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
+	buffernumberstring STR_VAR_1, 10
+# 35 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	bufferitemname STR_VAR_2, ITEM_HM05
 	return
 
+
 Route2_EastBuilding_EventScript_Rocker::
+# 40 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	msgbox Route2_EastBuilding_Text_CanGetThroughRockTunnel, MSGBOX_NPC
 	end
 
+
 Route2_EastBuilding_Text_GiveHM05IfSeen10Mons::
+# 44 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	.string "Hi! Remember me?\n"
 	.string "I'm one of PROF. OAK's AIDES.\p"
 	.string "If your POKéDEX has complete data\n"
@@ -51,22 +91,25 @@ Route2_EastBuilding_Text_GiveHM05IfSeen10Mons::
 	.string "ten kinds of POKéMON?$"
 
 Route2_EastBuilding_Text_GreatHereYouGo::
+# 61 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	.string "Great! You have caught or owned\n"
 	.string "{STR_VAR_3} kinds of POKéMON!\p"
 	.string "Congratulations!\n"
 	.string "Here you go!$"
 
 Route2_EastBuilding_Text_ReceivedHM05FromAide::
+# 69 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	.string "{PLAYER} received HM05\n"
 	.string "from the AIDE.$"
 
 Route2_EastBuilding_Text_ExplainHM05::
+# 74 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	.string "HM05 contains the hidden move\n"
 	.string "FLASH.\p"
 	.string "FLASH lights up even the darkest\n"
 	.string "of caves and dungeons.$"
 
 Route2_EastBuilding_Text_CanGetThroughRockTunnel::
+# 82 "data/maps/Route2_EastBuilding_Frlg/scripts.pory"
 	.string "Once a POKéMON learns FLASH, you\n"
 	.string "can get through ROCK TUNNEL.$"
-
