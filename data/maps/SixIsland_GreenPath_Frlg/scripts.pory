@@ -1,34 +1,39 @@
-raw `
-SixIsland_GreenPath_Frlg_MapScripts::
-	.byte 0
+mapscripts SixIsland_GreenPath_Frlg_MapScripts {}
 
-SixIsland_GreenPath_EventScript_RightRouteSign::
-	msgbox SixIsland_GreenPath_Text_LeftRouteSign, MSGBOX_SIGN
-	end
+script SixIsland_GreenPath_EventScript_RightRouteSign {
+    msgbox(SixIsland_GreenPath_Text_LeftRouteSign, MSGBOX_SIGN)
+    end
+}
 
-SixIsland_GreenPath_EventScript_LeftRouteSign::
-	msgbox SixIsland_GreenPath_Text_RightRouteSign, MSGBOX_SIGN
-	end
+script SixIsland_GreenPath_EventScript_LeftRouteSign {
+    msgbox(SixIsland_GreenPath_Text_RightRouteSign, MSGBOX_SIGN)
+    end
+}
 
-SixIsland_GreenPath_Text_JaclynIntro::
-	.string "…Huh?\p"
-	.string "I was envisioning my house, but\n"
-	.string "this is where I TELEPORT?$"
+text SixIsland_GreenPath_Text_JaclynIntro {
+	"…Huh?
 
-SixIsland_GreenPath_Text_JaclynDefeat::
-	.string "Big boo-boo!$"
+	I was envisioning my house, but
+	this is where I TELEPORT?"
+}
 
-SixIsland_GreenPath_Text_JaclynPostBattle::
-	.string "I am so scatterbrained!\p"
-	.string "I need to focus so I can TELEPORT\n"
-	.string "properly to my house!$"
+text SixIsland_GreenPath_Text_JaclynDefeat {
+	"Big boo-boo!"
+}
 
-SixIsland_GreenPath_Text_LeftRouteSign::
-	.string "GREEN PATH\n"
-	.string "PATTERN BUSH AHEAD$"
+text SixIsland_GreenPath_Text_JaclynPostBattle {
+	"I am so scatterbrained!
 
-SixIsland_GreenPath_Text_RightRouteSign::
-	.string "GREEN PATH\n"
-	.string "Think Green, Keep Nature Clean!$"
+	I need to focus so I can TELEPORT
+	properly to my house!"
+}
 
-`
+text SixIsland_GreenPath_Text_LeftRouteSign {
+	"GREEN PATH
+	PATTERN BUSH AHEAD"
+}
+
+text SixIsland_GreenPath_Text_RightRouteSign {
+	"GREEN PATH
+	Think Green, Keep Nature Clean!"
+}

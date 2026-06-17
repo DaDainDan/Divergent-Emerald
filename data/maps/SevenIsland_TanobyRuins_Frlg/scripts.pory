@@ -1,57 +1,70 @@
-raw `
-SevenIsland_TanobyRuins_Frlg_MapScripts::
-	.byte 0
+mapscripts SevenIsland_TanobyRuins_Frlg_MapScripts {}
 
-SevenIsland_TanobyRuins_Text_BrandonIntro::
-	.string "Do you know anything about this\n"
-	.string "stone chamber?$"
+text SevenIsland_TanobyRuins_Text_BrandonIntro {
+	"Do you know anything about this
+	stone chamber?"
+}
 
-SevenIsland_TanobyRuins_Text_BrandonDefeat::
-	.string "That was uncalled for.\n"
-	.string "You didn't have to be so rough.$"
+text SevenIsland_TanobyRuins_Text_BrandonDefeat {
+	"That was uncalled for.
+	You didn't have to be so rough."
+}
 
-SevenIsland_TanobyRuins_Text_BrandonPostBattle::
-	.string "The TANOBY RUINS date back at\n"
-	.string "least 1,500 years.\p"
-	.string "But it's a baffling mystery as to\n"
-	.string "why it was built in the first place.$"
+text SevenIsland_TanobyRuins_Text_BrandonPostBattle {
+	"The TANOBY RUINS date back at
+	least 1,500 years.
 
-SevenIsland_TanobyRuins_Text_BenjaminIntro::
-	.string "A mystic POKéMON is said to sleep\n"
-	.string "inside here.$"
+	But it's a baffling mystery as to
+	why it was built in the first place."
+}
 
-SevenIsland_TanobyRuins_Text_BenjaminDefeat::
-	.string "I'm not much good in battle.$"
+text SevenIsland_TanobyRuins_Text_BenjaminIntro {
+	"A mystic POKéMON is said to sleep
+	inside here."
+}
 
-SevenIsland_TanobyRuins_Text_BenjaminPostBattle::
-	.string "I hear there are other ruins like\n"
-	.string "the one here.\p"
-	.string "Might they be the resting places\n"
-	.string "of other mystic POKéMON?$"
+text SevenIsland_TanobyRuins_Text_BenjaminDefeat {
+	"I'm not much good in battle."
+}
 
-SevenIsland_TanobyRuins_Text_EdnaIntro::
-	.string "CLIFFORD is teaching me how to\n"
-	.string "paint.$"
+text SevenIsland_TanobyRuins_Text_BenjaminPostBattle {
+	"I hear there are other ruins like
+	the one here.
 
-SevenIsland_TanobyRuins_Text_EdnaDefeat::
-	.string "We might get in trouble for being\n"
-	.string "noisy here.$"
+	Might they be the resting places
+	of other mystic POKéMON?"
+}
 
-SevenIsland_TanobyRuins_Text_EdnaPostBattle::
-	.string "I said that I wanted to paint an\n"
-	.string "old building.\p"
-	.string "So CLIFFORD brought me here.$"
+text SevenIsland_TanobyRuins_Text_EdnaIntro {
+	"CLIFFORD is teaching me how to
+	paint."
+}
 
-SevenIsland_TanobyRuins_Text_CliffordIntro::
-	.string "Today, in addition to our lesson,\n"
-	.string "we came to see the chamber.$"
+text SevenIsland_TanobyRuins_Text_EdnaDefeat {
+	"We might get in trouble for being
+	noisy here."
+}
 
-SevenIsland_TanobyRuins_Text_CliffordDefeat::
-	.string "My, how extraordinary.$"
+text SevenIsland_TanobyRuins_Text_EdnaPostBattle {
+	"I said that I wanted to paint an
+	old building.
 
-SevenIsland_TanobyRuins_Text_CliffordPostBattle::
-	.string "Ah, so you are studying POKéMON\n"
-	.string "on your own…\p"
-	.string "Yes, you certainly are quite the\n"
-	.string "extraordinary person, indeed.$"
-`
+	So CLIFFORD brought me here."
+}
+
+text SevenIsland_TanobyRuins_Text_CliffordIntro {
+	"Today, in addition to our lesson,
+	we came to see the chamber."
+}
+
+text SevenIsland_TanobyRuins_Text_CliffordDefeat {
+	"My, how extraordinary."
+}
+
+text SevenIsland_TanobyRuins_Text_CliffordPostBattle {
+	"Ah, so you are studying POKéMON
+	on your own…
+
+	Yes, you certainly are quite the
+	extraordinary person, indeed."
+}

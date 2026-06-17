@@ -1,212 +1,176 @@
-raw `
-.equ SHOWN_REQUESTED_MON, FLAG_TEMP_2
+const SHOWN_REQUESTED_MON = FLAG_TEMP_2
 
-FiveIsland_ResortGorgeous_House_Frlg_MapScripts::
-	.byte 0
+mapscripts FiveIsland_ResortGorgeous_House_Frlg_MapScripts {}
 
-FiveIsland_ResortGorgeous_House_EventScript_Selphy::
-	lock
-	faceplayer
-	goto_if_set SHOWN_REQUESTED_MON, FiveIsland_ResortGorgeous_House_EventScript_JustFulfilledRequest
-	goto_if_eq VAR_RESORT_GORGEOUS_REQUESTED_MON, 0xFFFF, FiveIsland_ResortGorgeous_House_EventScript_RequestTookTooLong
-	goto_if_ne VAR_RESORT_GORGEOUS_REQUESTED_MON, SPECIES_NONE, FiveIsland_ResortGorgeous_House_EventScript_CheckForRequestedMon
-	msgbox FiveIsland_ResortGorgeous_House_Text_PleaseHearMyWish
-	goto FiveIsland_ResortGorgeous_House_EventScript_RequestMon
-	end
+script FiveIsland_ResortGorgeous_House_EventScript_Selphy {
+    lock_faceplayer
+    if (flag(SHOWN_REQUESTED_MON)) {
+        msgbox(FiveIsland_ResortGorgeous_House_Text_SelphyWishYouBestOfLuck)
+    	release_end
+    }
+    if (var(VAR_RESORT_GORGEOUS_REQUESTED_MON) == 0xFFFF) {
+        msgbox(FiveIsland_ResortGorgeous_House_Text_OhImTiredOfWaiting)
+    }
+    elif (var(VAR_RESORT_GORGEOUS_REQUESTED_MON) != SPECIES_NONE) {
+        copyvar(VAR_0x8004, VAR_RESORT_GORGEOUS_REQUESTED_MON)
+		if (specialvar(VAR_RESULT, DoesPlayerPartyContainSpecies) == TRUE) {
+			goto(FiveIsland_ResortGorgeous_House_EventScript_ShowRequestedMon)
+		}
+    }
+	else {
+		msgbox(FiveIsland_ResortGorgeous_House_Text_PleaseHearMyWish)
+	}
+    special(SampleResortGorgeousMonAndReward)
+    msgbox(FiveIsland_ResortGorgeous_House_Text_WishToSeeMonPlease)
+    release_end
+}
 
-FiveIsland_ResortGorgeous_House_EventScript_RequestMon::
-	special SampleResortGorgeousMonAndReward
-	msgbox FiveIsland_ResortGorgeous_House_Text_WishToSeeMonPlease
-	release
-	end
+script FiveIsland_ResortGorgeous_House_EventScript_ShowRequestedMon {
+    special(SampleResortGorgeousMonAndReward)
+    msgbox(FiveIsland_ResortGorgeous_House_Text_MonYouCaughtForMeThankYou)
+    addobject(LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER)
+    applymovement(LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, Common_Movement_StepDown)
+    waitmovement(0)
+    textcolor(NPC_TEXT_COLOR_MALE)
+    msgbox(FiveIsland_ResortGorgeous_House_Text_ButlerYesMyLady)
+    applymovement(LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_StepFasterUp)
+    waitmovement(0)
+    textcolor(NPC_TEXT_COLOR_FEMALE)
+    msgbox(FiveIsland_ResortGorgeous_House_Text_SelphyGiveTokenOfAppreciation)
+    textcolor(NPC_TEXT_COLOR_MALE)
+    msgbox(FiveIsland_ResortGorgeous_House_Text_ButlerIShallDoAsYouBid)
+    closemessage
+	switch (var(VAR_FACING)) {
+		// Very odd. If the player is talking to Selphy facing West, then the player has clipped through the table
+		// In this case rather than approach the player the Butler walks up, which clips the Butler into a wall
+		case DIR_WEST: applymovement(LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, Common_Movement_WalkUp)
+		case DIR_NORTH:
+			applymovement(LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_StepFasterDown)
+			applymovement(LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, moves(walk_left * 3,  walk_down * 3,  step_faster_right))
+			waitmovement(0)
+			applymovement(LOCALID_PLAYER, Common_Movement_StepFasterLeft)
+		case DIR_SOUTH:
+			applymovement(LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, moves(walk_left * 2,  step_faster_down))
+			waitmovement(0)
+			applymovement(LOCALID_PLAYER, Common_Movement_StepFasterUp)
+		case DIR_EAST:
+			applymovement(LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_StepFasterLeft)
+			applymovement(LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, moves(walk_left * 3,  walk_down))
+			waitmovement(0)
+			applymovement(LOCALID_PLAYER, Common_Movement_StepFasterUp)
+	}
+	waitmovement(0)
+    copyobjectxytoperm(LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER)
+    msgbox(FiveIsland_ResortGorgeous_House_Text_ButlerPleaseAcceptThisAsHerThanks)
+    if (giveitem(VAR_RESORT_GORGEOUS_REWARD) == FALSE) {
+        textcolor(NPC_TEXT_COLOR_MALE)
+		msgbox(FiveIsland_ResortGorgeous_House_Text_ButlerBagAppearsToBeFull)
+		textcolor(NPC_TEXT_COLOR_FEMALE)
+		msgbox(FiveIsland_ResortGorgeous_House_Text_OhHowDisappointing)
+		setflag(SHOWN_REQUESTED_MON)
+		setvar(VAR_RESORT_GORGEOUS_REQUESTED_MON, SPECIES_NONE)
+		release_end
+    }
+    setflag(SHOWN_REQUESTED_MON)
+    setvar(VAR_RESORT_GORGEOUS_REQUESTED_MON, SPECIES_NONE)
+    release_end
+}
 
-FiveIsland_ResortGorgeous_House_EventScript_RequestTookTooLong::
-	msgbox FiveIsland_ResortGorgeous_House_Text_OhImTiredOfWaiting
-	goto FiveIsland_ResortGorgeous_House_EventScript_RequestMon
-	end
+// Addressed as "Sebastian" but speaks only as "Butler"
+script FiveIsland_ResortGorgeous_House_EventScript_Butler {
+    msgbox(FiveIsland_ResortGorgeous_House_Text_LadySelphySmileHasBrillianceOfSun, MSGBOX_NPC)
+    end
+}
 
-FiveIsland_ResortGorgeous_House_EventScript_CheckForRequestedMon::
-	copyvar VAR_0x8004, VAR_RESORT_GORGEOUS_REQUESTED_MON
-	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
-	goto_if_eq VAR_RESULT, TRUE, FiveIsland_ResortGorgeous_House_EventScript_ShowRequestedMon
-	goto FiveIsland_ResortGorgeous_House_EventScript_RequestMon
-	end
+text FiveIsland_ResortGorgeous_House_Text_PleaseHearMyWish {
+	"SELPHY: Oh?
+	Do I know you from somewhere?
 
-FiveIsland_ResortGorgeous_House_EventScript_ShowRequestedMon::
-	special SampleResortGorgeousMonAndReward
-	msgbox FiveIsland_ResortGorgeous_House_Text_MonYouCaughtForMeThankYou
-	addobject LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, FiveIsland_ResortGorgeous_House_Movement_ButlerEnter
-	waitmovement 0
-	textcolor NPC_TEXT_COLOR_MALE
-	msgbox FiveIsland_ResortGorgeous_House_Text_ButlerYesMyLady
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_StepFasterUp
-	waitmovement 0
-	textcolor NPC_TEXT_COLOR_FEMALE
-	msgbox FiveIsland_ResortGorgeous_House_Text_SelphyGiveTokenOfAppreciation
-	textcolor NPC_TEXT_COLOR_MALE
-	msgbox FiveIsland_ResortGorgeous_House_Text_ButlerIShallDoAsYouBid
-	closemessage
-	call_if_eq VAR_FACING, DIR_NORTH, FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerNorth
-	call_if_eq VAR_FACING, DIR_SOUTH, FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerSouth
-	call_if_eq VAR_FACING, DIR_EAST, FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerEast
-	call_if_eq VAR_FACING, DIR_WEST, FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerWest
-	copyobjectxytoperm LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER
-	msgbox FiveIsland_ResortGorgeous_House_Text_ButlerPleaseAcceptThisAsHerThanks
-	giveitem VAR_RESORT_GORGEOUS_REWARD
-	goto_if_eq VAR_RESULT, FALSE, FiveIsland_ResortGorgeous_House_EventScript_NoRoomForReward
-	setflag SHOWN_REQUESTED_MON
-	setvar VAR_RESORT_GORGEOUS_REQUESTED_MON, SPECIES_NONE
-	release
-	end
+	Oh, but that doesn't matter.
 
-FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerNorth::
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_StepFasterDown
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerNorth
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
-	waitmovement 0
-	return
+	I am exquisitely bored.
+	Please, hear my wish."
+}
 
-FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerSouth::
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerSouth
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
-	waitmovement 0
-	return
+text FiveIsland_ResortGorgeous_House_Text_WishToSeeMonPlease {
+	"I wish to see a POKéMON.
+	A darling {STR_VAR_1}.
 
-FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerEast::
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_SELPHY, Common_Movement_StepFasterLeft
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerEast
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
-	waitmovement 0
-	return
+	I want to see one right away.
+	Please, make my wish come true."
+}
 
-FiveIsland_ResortGorgeous_House_EventScript_ButlerApproachPlayerWest::
-	applymovement LOCALID_RESORT_GORGEOUS_HOUSE_BUTLER, FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerWest
-	waitmovement 0
-	return
+text FiveIsland_ResortGorgeous_House_Text_OhImTiredOfWaiting {
+	"SELPHY: Oh, I'm tired of this.
+	I'm tired of waiting for you.
 
-FiveIsland_ResortGorgeous_House_EventScript_NoRoomForReward::
-	textcolor NPC_TEXT_COLOR_MALE
-	msgbox FiveIsland_ResortGorgeous_House_Text_ButlerBagAppearsToBeFull
-	textcolor NPC_TEXT_COLOR_FEMALE
-	msgbox FiveIsland_ResortGorgeous_House_Text_OhHowDisappointing
-	setflag SHOWN_REQUESTED_MON
-	setvar VAR_RESORT_GORGEOUS_REQUESTED_MON, SPECIES_NONE
-	release
-	end
+	I'll forgive you this time, but
+	please don't fail me next time."
+}
 
-FiveIsland_ResortGorgeous_House_EventScript_JustFulfilledRequest::
-	msgbox FiveIsland_ResortGorgeous_House_Text_SelphyWishYouBestOfLuck
-	release
-	end
+text FiveIsland_ResortGorgeous_House_Text_MonYouCaughtForMeThankYou {
+	"SELPHY: Oh, hello, there.
 
-FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerNorth::
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	step_faster_right
-	step_end
+	Oh, my gracious. That must be the
+	{STR_VAR_1} you caught for me.
 
-FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerSouth::
-	walk_left
-	walk_left
-	step_faster_down
-	step_end
+	Giggle…
+	I see a resemblance to you.
 
-FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerEast::
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	step_end
+	Thank you so kindly.
 
-@ Very odd. If the player is talking to Selphy facing West, then the player has clipped through the table
-@ In this case rather than approach the player the Butler walks up, which clips the Butler into a wall
-FiveIsland_ResortGorgeous_House_Movement_ButlerApproachPlayerWest::
-	walk_up
-	step_end
+	… …  … …  … …
+	Is something the matter?
 
-FiveIsland_ResortGorgeous_House_Movement_ButlerEnter::
-	step_down
-	step_end
+	You may leave.
 
-@ Addressed as "Sebastian" but speaks only as "Butler"
-FiveIsland_ResortGorgeous_House_EventScript_Butler::
-	msgbox FiveIsland_ResortGorgeous_House_Text_LadySelphySmileHasBrillianceOfSun, MSGBOX_NPC
-	end
+	… …  … …  … …
+	Oh, fine. I understand now.
 
-FiveIsland_ResortGorgeous_House_Text_PleaseHearMyWish::
-	.string "SELPHY: Oh?\n"
-	.string "Do I know you from somewhere?\p"
-	.string "Oh, but that doesn't matter.\p"
-	.string "I am exquisitely bored.\n"
-	.string "Please, hear my wish.$"
+	SEBASTIAN!
+	I need you here this instant!"
+}
 
-FiveIsland_ResortGorgeous_House_Text_WishToSeeMonPlease::
-	.string "I wish to see a POKéMON.\n"
-	.string "A darling {STR_VAR_1}.\p"
-	.string "I want to see one right away.\n"
-	.string "Please, make my wish come true.$"
+text FiveIsland_ResortGorgeous_House_Text_ButlerYesMyLady {
+	"Butler: Yes, my lady."
+}
 
-FiveIsland_ResortGorgeous_House_Text_OhImTiredOfWaiting::
-	.string "SELPHY: Oh, I'm tired of this.\n"
-	.string "I'm tired of waiting for you.\p"
-	.string "I'll forgive you this time, but\n"
-	.string "please don't fail me next time.$"
+text FiveIsland_ResortGorgeous_House_Text_SelphyGiveTokenOfAppreciation {
+	"SELPHY: See to it that this person
+	is given a token of appreciation."
+}
 
-FiveIsland_ResortGorgeous_House_Text_MonYouCaughtForMeThankYou::
-	.string "SELPHY: Oh, hello, there.\p"
-	.string "Oh, my gracious. That must be the\n"
-	.string "{STR_VAR_1} you caught for me.\p"
-	.string "Giggle…\n"
-	.string "I see a resemblance to you.\p"
-	.string "Thank you so kindly.\p"
-	.string "… …  … …  … …\n"
-	.string "Is something the matter?\p"
-	.string "You may leave.\p"
-	.string "… …  … …  … …\n"
-	.string "Oh, fine. I understand now.\p"
-	.string "SEBASTIAN!\n"
-	.string "I need you here this instant!$"
+text FiveIsland_ResortGorgeous_House_Text_ButlerIShallDoAsYouBid {
+	"Butler: I shall do as you bid,
+	my lady."
+}
 
-FiveIsland_ResortGorgeous_House_Text_ButlerYesMyLady::
-	.string "Butler: Yes, my lady.$"
+text FiveIsland_ResortGorgeous_House_Text_ButlerPleaseAcceptThisAsHerThanks {
+	"Butler: I sincerely thank you for
+	pleasing Lady SELPHY.
 
-FiveIsland_ResortGorgeous_House_Text_SelphyGiveTokenOfAppreciation::
-	.string "SELPHY: See to it that this person\n"
-	.string "is given a token of appreciation.$"
+	Please accept this as her thanks…"
+}
 
-FiveIsland_ResortGorgeous_House_Text_ButlerIShallDoAsYouBid::
-	.string "Butler: I shall do as you bid,\n"
-	.string "my lady.$"
+text FiveIsland_ResortGorgeous_House_Text_ButlerBagAppearsToBeFull {
+	"Butler: Your BAG appears to be
+	unfortunately full."
+}
 
-FiveIsland_ResortGorgeous_House_Text_ButlerPleaseAcceptThisAsHerThanks::
-	.string "Butler: I sincerely thank you for\n"
-	.string "pleasing Lady SELPHY.\p"
-	.string "Please accept this as her thanks…$"
+text FiveIsland_ResortGorgeous_House_Text_OhHowDisappointing {
+	"Oh…
+	How disappointing."
+}
 
-FiveIsland_ResortGorgeous_House_Text_ButlerBagAppearsToBeFull::
-	.string "Butler: Your BAG appears to be\n"
-	.string "unfortunately full.$"
+text FiveIsland_ResortGorgeous_House_Text_SelphyWishYouBestOfLuck {
+	"SELPHY: I wish you the best of
+	luck."
+}
 
-FiveIsland_ResortGorgeous_House_Text_OhHowDisappointing::
-	.string "Oh…\n"
-	.string "How disappointing.$"
+text FiveIsland_ResortGorgeous_House_Text_LadySelphySmileHasBrillianceOfSun {
+	"Butler: The smile of Lady SELPHY
+	has the brilliance of the sun.
 
-FiveIsland_ResortGorgeous_House_Text_SelphyWishYouBestOfLuck::
-	.string "SELPHY: I wish you the best of\n"
-	.string "luck.$"
-
-FiveIsland_ResortGorgeous_House_Text_LadySelphySmileHasBrillianceOfSun::
-	.string "Butler: The smile of Lady SELPHY\n"
-	.string "has the brilliance of the sun.\p"
-	.string "Please, I beg you to bring joy\n"
-	.string "to Lady SELPHY.$"
-
-`
+	Please, I beg you to bring joy
+	to Lady SELPHY."
+}

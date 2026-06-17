@@ -1,49 +1,48 @@
-raw `
-FourIsland_Mart_Frlg_MapScripts::
-	.byte 0
+mapscripts FourIsland_Mart_Frlg_MapScripts {}
 
-FourIsland_Mart_EventScript_Clerk::
-	lock
-	faceplayer
-	message gText_HowMayIServeYou
-	waitmessage
-	pokemart FourIsland_Mart_Items
-	msgbox gText_PleaseComeAgain
-	release
-	end
+script FourIsland_Mart_EventScript_Clerk {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(FourIsland_Mart_Items)
+    msgbox(gText_PleaseComeAgain)
+    release_end
+}
 
-	.align 2
-FourIsland_Mart_Items::
-	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_FULL_RESTORE
-	.2byte ITEM_MAX_POTION
-	.2byte ITEM_REVIVE
-	.2byte ITEM_ICE_HEAL
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_NONE
-	release
-	end
+mart FourIsland_Mart_Items {
+    ITEM_ULTRA_BALL
+    ITEM_FULL_RESTORE
+    ITEM_MAX_POTION
+    ITEM_REVIVE
+    ITEM_ICE_HEAL
+    ITEM_FULL_HEAL
+    ITEM_ESCAPE_ROPE
+    ITEM_MAX_REPEL
+}
 
-FourIsland_Mart_EventScript_Camper::
-	msgbox FourIsland_Mart_Text_IcefallCaveIsFrigid, MSGBOX_NPC
-	end
+script FourIsland_Mart_EventScript_Camper {
+    msgbox(FourIsland_Mart_Text_IcefallCaveIsFrigid, MSGBOX_NPC)
+    end
+}
 
-FourIsland_Mart_Text_LoreleiGrewUpOnThisIsland::
-	.string "We've had a great and powerful\n"
-	.string "TRAINER grow up on this island.\p"
-	.string "I bet even you'd know her.\n"
-	.string "It's LORELEI of the ELITE FOUR!\p"
-	.string "When LORELEI was just a tyke,\n"
-	.string "I taught her about POKéMON.$"
+text FourIsland_Mart_Text_LoreleiGrewUpOnThisIsland {
+	"We've had a great and powerful
+	TRAINER grow up on this island.
 
-FourIsland_Mart_Text_IcefallCaveIsFrigid::
-	.string "The SEVII ISLANDS are in a warm\n"
-	.string "region overall.\p"
-	.string "But there is one exception you\n"
-	.string "need to know about.\p"
-	.string "The ICEFALL CAVE is frigid because\n"
-	.string "of the POKéMON that live in it.$"
+	I bet even you'd know her.
+	It's LORELEI of the ELITE FOUR!
 
-`
+	When LORELEI was just a tyke,
+	I taught her about POKéMON."
+}
+
+text FourIsland_Mart_Text_IcefallCaveIsFrigid {
+	"The SEVII ISLANDS are in a warm
+	region overall.
+
+	But there is one exception you
+	need to know about.
+
+	The ICEFALL CAVE is frigid because
+	of the POKéMON that live in it."
+}

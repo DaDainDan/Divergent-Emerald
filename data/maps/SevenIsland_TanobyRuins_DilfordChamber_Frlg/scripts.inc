@@ -1,7 +1,10 @@
 SevenIsland_TanobyRuins_DilfordChamber_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, SevenIsland_TanobyRuins_DilfordChamber_OnTransition
+# 2 "data/maps/SevenIsland_TanobyRuins_DilfordChamber_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, SevenIsland_TanobyRuins_DilfordChamber_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-SevenIsland_TanobyRuins_DilfordChamber_OnTransition::
+SevenIsland_TanobyRuins_DilfordChamber_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/SevenIsland_TanobyRuins_DilfordChamber_Frlg/scripts.pory"
 	call EventScript_TryDarkenRuins
 	end
+

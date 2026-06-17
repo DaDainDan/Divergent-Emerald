@@ -1,50 +1,58 @@
-raw `
-SevenIsland_TrainerTower_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, SevenIsland_TrainerTower_OnTransition
-	.byte 0
+mapscripts SevenIsland_TrainerTower_Frlg_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_MAP_SCENE_TRAINER_TOWER, 0)
+    	end
+    }
+}
 
-SevenIsland_TrainerTower_OnTransition::
-	setvar VAR_MAP_SCENE_TRAINER_TOWER, 0
-	end
+script SevenIsland_TrainerTower_EventScript_TrainerTowerSign {
+    msgbox(SevenIsland_TrainerTower_Text_TrainerTowerSign, MSGBOX_SIGN)
+    end
+}
 
-SevenIsland_TrainerTower_EventScript_TrainerTowerSign::
-	msgbox SevenIsland_TrainerTower_Text_TrainerTowerSign, MSGBOX_SIGN
-	end
+script SevenIsland_TrainerTower_EventScript_TrainerTowerAheadSign {
+    msgbox(SevenIsland_TrainerTower_Text_TrainerTowerAhead, MSGBOX_SIGN)
+    end
+}
 
-SevenIsland_TrainerTower_EventScript_TrainerTowerAheadSign::
-	msgbox SevenIsland_TrainerTower_Text_TrainerTowerAhead, MSGBOX_SIGN
-	end
+text SevenIsland_TrainerTower_Text_DarioIntro {
+	"I sensed your approach."
+}
 
-SevenIsland_TrainerTower_Text_DarioIntro::
-	.string "I sensed your approach.$"
+text SevenIsland_TrainerTower_Text_DarioDefeat {
+	"Give up…"
+}
 
-SevenIsland_TrainerTower_Text_DarioDefeat::
-	.string "Give up…$"
+text SevenIsland_TrainerTower_Text_DarioPostBattle {
+	"In your future, I sense that you
+	will meet many others.
 
-SevenIsland_TrainerTower_Text_DarioPostBattle::
-	.string "In your future, I sense that you\n"
-	.string "will meet many others.\p"
-	.string "I think you will be linked to each\n"
-	.string "other by a strange power.$"
+	I think you will be linked to each
+	other by a strange power."
+}
 
-SevenIsland_TrainerTower_Text_RodetteIntro::
-	.string "Somewhere on this island, peculiar\n"
-	.string "POKéMON are sleeping.$"
+text SevenIsland_TrainerTower_Text_RodetteIntro {
+	"Somewhere on this island, peculiar
+	POKéMON are sleeping."
+}
 
-SevenIsland_TrainerTower_Text_RodetteDefeat::
-	.string "What an amazing TRAINER!$"
+text SevenIsland_TrainerTower_Text_RodetteDefeat {
+	"What an amazing TRAINER!"
+}
 
-SevenIsland_TrainerTower_Text_RodettePostBattle::
-	.string "Somewhere on this island, peculiar\n"
-	.string "POKéMON are sleeping.\p"
-	.string "Could it be that they're waiting\n"
-	.string "for you?$"
+text SevenIsland_TrainerTower_Text_RodettePostBattle {
+	"Somewhere on this island, peculiar
+	POKéMON are sleeping.
 
-SevenIsland_TrainerTower_Text_TrainerTowerSign::
-	.string "TRAINER TOWER ENTRANCE\n"
-	.string "Rise to the Challenge, TRAINERS!$"
+	Could it be that they're waiting
+	for you?"
+}
 
-SevenIsland_TrainerTower_Text_TrainerTowerAhead::
-	.string "TRAINER TOWER AHEAD$"
+text SevenIsland_TrainerTower_Text_TrainerTowerSign {
+	"TRAINER TOWER ENTRANCE
+	Rise to the Challenge, TRAINERS!"
+}
 
-`
+text SevenIsland_TrainerTower_Text_TrainerTowerAhead {
+	"TRAINER TOWER AHEAD"
+}

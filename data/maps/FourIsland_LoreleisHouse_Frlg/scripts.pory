@@ -1,65 +1,68 @@
-raw `
-FourIsland_LoreleisHouse_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, FourIsland_LoreleisHouse_OnTransition
-	.byte 0
+mapscripts FourIsland_LoreleisHouse_Frlg_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        special(UpdateLoreleiDollCollection)
+    	end
+    }
+}
 
-FourIsland_LoreleisHouse_OnTransition::
-	special UpdateLoreleiDollCollection
-	end
+script FourIsland_LoreleisHouse_EventScript_Lorelei {
+    lock_faceplayer
+    if (flag(FLAG_TALKED_TO_LORELEI_AFTER_WAREHOUSE)) {
+        msgbox(FourIsland_LoreleisHouse_Text_WillDoWhatICanHereAndNow)
+    }
+    elif (flag(FLAG_DEFEATED_ROCKETS_IN_WAREHOUSE)) {
+        setflag(FLAG_TALKED_TO_LORELEI_AFTER_WAREHOUSE)
+		msgbox(FourIsland_LoreleisHouse_Text_IllReturnToLeagueInShortWhile)
+    }
+	else {
+		msgbox(FourIsland_LoreleisHouse_Text_IfAnythingWereToHappenToIsland)
+	}
+    release_end
+}
 
-FourIsland_LoreleisHouse_EventScript_Lorelei::
-	lock
-	faceplayer
-	goto_if_set FLAG_TALKED_TO_LORELEI_AFTER_WAREHOUSE, FourIsland_LoreleisHouse_EventScript_Lorelei3
-	goto_if_set FLAG_DEFEATED_ROCKETS_IN_WAREHOUSE, FourIsland_LoreleisHouse_EventScript_Lorelei2
-	msgbox FourIsland_LoreleisHouse_Text_IfAnythingWereToHappenToIsland
-	release
-	end
+script FourIsland_LoreleisHouse_EventScript_Doll {
+    lock
+    msgbox(FourIsland_LoreleisHouse_Text_StuffedMonDollsGalore)
+    release_end
+}
 
-FourIsland_LoreleisHouse_EventScript_Lorelei2::
-	setflag FLAG_TALKED_TO_LORELEI_AFTER_WAREHOUSE
-	msgbox FourIsland_LoreleisHouse_Text_IllReturnToLeagueInShortWhile
-	release
-	end
+text FourIsland_LoreleisHouse_Text_IfAnythingWereToHappenToIsland {
+	"LORELEI: There's something weighing
+	heavily on my mind.
 
-FourIsland_LoreleisHouse_EventScript_Lorelei3::
-	msgbox FourIsland_LoreleisHouse_Text_WillDoWhatICanHereAndNow
-	release
-	end
+	If anything were to happen on
+	the island where I was born…
 
-FourIsland_LoreleisHouse_EventScript_Doll::
-	lock
-	msgbox FourIsland_LoreleisHouse_Text_StuffedMonDollsGalore
-	release
-	end
+	I wouldn't know about it if I were
+	in the POKéMON LEAGUE.
 
-FourIsland_LoreleisHouse_Text_IfAnythingWereToHappenToIsland::
-	.string "LORELEI: There's something weighing\n"
-	.string "heavily on my mind.\p"
-	.string "If anything were to happen on\n"
-	.string "the island where I was born…\p"
-	.string "I wouldn't know about it if I were\n"
-	.string "in the POKéMON LEAGUE.\p"
-	.string "I wonder if that would make me\n"
-	.string "irresponsible to my home…$"
+	I wonder if that would make me
+	irresponsible to my home…"
+}
 
-FourIsland_LoreleisHouse_Text_IllReturnToLeagueInShortWhile::
-	.string "LORELEI: So, you managed to solve\n"
-	.string "all the problems here?\p"
-	.string "That's wonderful.\p"
-	.string "That means there isn't any reason\n"
-	.string "for me to be here all the time.\p"
-	.string "Thank you…\p"
-	.string "I'll return to the POKéMON LEAGUE\n"
-	.string "in a short while.$"
+text FourIsland_LoreleisHouse_Text_IllReturnToLeagueInShortWhile {
+	"LORELEI: So, you managed to solve
+	all the problems here?
 
-FourIsland_LoreleisHouse_Text_WillDoWhatICanHereAndNow::
-	.string "I don't know what will happen in\n"
-	.string "the future, but…\p"
-	.string "I will do what I can here and now.\n"
-	.string "That's all I can do.$"
+	That's wonderful.
 
-FourIsland_LoreleisHouse_Text_StuffedMonDollsGalore::
-	.string "Stuffed POKéMON dolls galore!$"
+	That means there isn't any reason
+	for me to be here all the time.
 
-`
+	Thank you…
+
+	I'll return to the POKéMON LEAGUE
+	in a short while."
+}
+
+text FourIsland_LoreleisHouse_Text_WillDoWhatICanHereAndNow {
+	"I don't know what will happen in
+	the future, but…
+
+	I will do what I can here and now.
+	That's all I can do."
+}
+
+text FourIsland_LoreleisHouse_Text_StuffedMonDollsGalore {
+	"Stuffed POKéMON dolls galore!"
+}

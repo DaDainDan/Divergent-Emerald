@@ -1,7 +1,10 @@
 FourIsland_IcefallCave_Entrance_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, FourIsland_IcefallCave_Entrance_OnTransition
+# 2 "data/maps/FourIsland_IcefallCave_Entrance_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, FourIsland_IcefallCave_Entrance_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-FourIsland_IcefallCave_Entrance_OnTransition::
+FourIsland_IcefallCave_Entrance_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/FourIsland_IcefallCave_Entrance_Frlg/scripts.pory"
 	setworldmapflag FLAG_WORLD_MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE
 	end
+

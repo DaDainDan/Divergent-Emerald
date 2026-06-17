@@ -1,266 +1,131 @@
-raw `
-SixIsland_DottedHole_SapphireRoom_Frlg_MapScripts::
-	.byte 0
+mapscripts SixIsland_DottedHole_SapphireRoom_Frlg_MapScripts {}
 
-SixIsland_DottedHole_SapphireRoom_EventScript_Sapphire::
-	lock
-	faceplayer
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_RG_OBTAIN_KEY_ITEM
-	message SixIsland_DottedHole_SapphireRoom_Text_FoundSapphire
-	waitmessage
-	waitfanfare
-	closemessage
-	setobjectxyperm LOCALID_DOTTED_HOLE_THIEF, 5, 0
-	addobject LOCALID_DOTTED_HOLE_THIEF
-	playse SE_FALL
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefFallIn
-	waitmovement 0
-	playse SE_M_STRENGTH
-	call_if_eq VAR_FACING, DIR_NORTH, SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefLeft
-	call_if_eq VAR_FACING, DIR_SOUTH, SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefLeft
-	call_if_eq VAR_FACING, DIR_EAST, SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefDown
-	call_if_eq VAR_FACING, DIR_WEST, SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefDown
-	setvar VAR_0x8004, 3
-	setvar VAR_0x8005, 0
-	setvar VAR_0x8006, 12
-	setvar VAR_0x8007, 3
-	special ShakeScreen
-	delay 60
-	call_if_eq VAR_FACING, DIR_NORTH, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefLookAtSapphireNorth
-	call_if_eq VAR_FACING, DIR_SOUTH, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefLookAtSapphireSouth
-	call_if_eq VAR_FACING, DIR_EAST, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefLookAtSapphireEast
-	call_if_eq VAR_FACING, DIR_WEST, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefLookAtSapphireWest
-	textcolor NPC_TEXT_COLOR_MALE
-	msgbox SixIsland_DottedHole_SapphireRoom_Text_IWasRightInTailingYou
-	closemessage
-	call_if_eq VAR_FACING, DIR_NORTH, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefGetSapphireNorth
-	call_if_eq VAR_FACING, DIR_SOUTH, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefGetSapphireSouth
-	call_if_eq VAR_FACING, DIR_EAST, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefGetSapphireEast
-	call_if_eq VAR_FACING, DIR_WEST, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefGetSapphireWest
-	removeobject LOCALID_SAPPHIRE
-	call_if_eq VAR_FACING, DIR_NORTH, SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefLeft2
-	call_if_eq VAR_FACING, DIR_SOUTH, SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefLeft2
-	call_if_eq VAR_FACING, DIR_EAST, SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefDown2
-	call_if_eq VAR_FACING, DIR_WEST, SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefDown2
-	msgbox SixIsland_DottedHole_SapphireRoom_Text_SellToTeamRocketTellPassword
-	closemessage
-	call_if_eq VAR_FACING, DIR_NORTH, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefExitNorth
-	call_if_eq VAR_FACING, DIR_SOUTH, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefExitSouth
-	call_if_eq VAR_FACING, DIR_EAST, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefExitEast
-	call_if_eq VAR_FACING, DIR_WEST, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefExitWest
-	playse SE_EXIT
-	delay 35
-	removeobject LOCALID_DOTTED_HOLE_THIEF
-	setflag FLAG_LEARNED_YES_NAH_CHANSEY
-	release
-	end
+script SixIsland_DottedHole_SapphireRoom_EventScript_Sapphire {
+    lock_faceplayer
+    textcolor(NPC_TEXT_COLOR_NEUTRAL)
+    playfanfare(MUS_RG_OBTAIN_KEY_ITEM)
+    message(SixIsland_DottedHole_SapphireRoom_Text_FoundSapphire)
+    waitmessage
+    waitfanfare
+    closemessage
+    setobjectxyperm(LOCALID_DOTTED_HOLE_THIEF, 5, 0)
+    addobject(LOCALID_DOTTED_HOLE_THIEF)
+    playse(SE_FALL)
+    applymovement(LOCALID_DOTTED_HOLE_THIEF, moves(face_down,  disable_anim,  slide_down * 9,  restore_anim))
+    waitmovement(0)
+    playse(SE_M_STRENGTH)
+	if (var(VAR_FACING) == DIR_NORTH || var(VAR_FACING) == DIR_SOUTH) {
+		applymovement(LOCALID_PLAYER, Common_Movement_StepFasterLeft)
+	} else {
+		applymovement(LOCALID_PLAYER, Common_Movement_StepFasterDown)
+	}
+	waitmovement(0)
+    setvar(VAR_0x8004, 3)
+    setvar(VAR_0x8005, 0)
+    setvar(VAR_0x8006, 12)
+    setvar(VAR_0x8007, 3)
+    special(ShakeScreen)
+    delay(60)
+	if (var(VAR_FACING) == DIR_NORTH || var(VAR_FACING) == DIR_SOUTH) {
+		applymovement(LOCALID_DOTTED_HOLE_THIEF, moves(walk_up * 2,  step_faster_right))
+	} else {
+		applymovement(LOCALID_DOTTED_HOLE_THIEF, moves(walk_right * 2,  step_faster_up))
+	}
+	waitmovement(0)
+    textcolor(NPC_TEXT_COLOR_MALE)
+    msgbox(SixIsland_DottedHole_SapphireRoom_Text_IWasRightInTailingYou)
+    closemessage
+	if (var(VAR_FACING) == DIR_NORTH || var(VAR_FACING) == DIR_SOUTH) {
+		applymovement(LOCALID_DOTTED_HOLE_THIEF, Common_Movement_WalkRight)
+	} else {
+		applymovement(LOCALID_DOTTED_HOLE_THIEF, Common_Movement_WalkUp)
+	}
+	waitmovement(0)
+	switch (var(VAR_FACING)) {
+		case DIR_NORTH: applymovement(LOCALID_PLAYER, Common_Movement_StepFasterUp)
+		case DIR_SOUTH: applymovement(LOCALID_PLAYER, Common_Movement_StepFasterDown)
+		case DIR_EAST: applymovement(LOCALID_PLAYER, Common_Movement_StepFasterRight)
+		case DIR_WEST: applymovement(LOCALID_PLAYER, Common_Movement_StepFasterLeft)
+	}
+	waitmovement(0)
+    removeobject(LOCALID_SAPPHIRE)
+	if (var(VAR_FACING) == DIR_NORTH || var(VAR_FACING) == DIR_SOUTH) {
+		applymovement(LOCALID_PLAYER, Common_Movement_StepFasterLeft)
+	} else {
+		applymovement(LOCALID_PLAYER, Common_Movement_StepFasterDown)
+	}
+	waitmovement(0)
+    msgbox(SixIsland_DottedHole_SapphireRoom_Text_SellToTeamRocketTellPassword)
+    closemessage
+	applymovement(LOCALID_PLAYER, moves(delay_16,  step_faster_right))
+	switch (var(VAR_FACING)) {
+		case DIR_NORTH: applymovement(LOCALID_DOTTED_HOLE_THIEF, moves(run_up,  run_right * 3,  run_down,  run_right * 2))
+		case DIR_SOUTH: applymovement(LOCALID_DOTTED_HOLE_THIEF, moves(run_down,  run_right * 3,  run_up,  run_right * 2))
+		case DIR_EAST:
+		case DIR_WEST:
+    		applymovement(LOCALID_DOTTED_HOLE_THIEF, moves(run_right * 4,  run_up))
+	}
+	waitmovement(0)
+    playse(SE_EXIT)
+    delay(35)
+    removeobject(LOCALID_DOTTED_HOLE_THIEF)
+    setflag(FLAG_LEARNED_YES_NAH_CHANSEY)
+    release_end
+}
 
-@ Lots of redundant scripts below
-SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefLeft2::
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
-	waitmovement 0
-	return
+script SixIsland_DottedHole_SapphireRoom_EventScript_BrailleMessage {
+    lockall
+    setvar(VAR_0x8005, 130)
+    braillemessage_wait(Braille_Text_LetTheTwo)
+    braillemessage_wait(Braille_Text_Glittering)
+    braillemessage_wait(Braille_Text_Stones)
+    braillemessage_wait(Braille_Text_OneInRed)
+    braillemessage_wait(Braille_Text_OneInBlue)
+    braillemessage_wait(Braille_Text_ConnectThe)
+    braillemessage_wait(Braille_Text_Past)
+    braillemessage_wait(Braille_Text_TwoFriends)
+    braillemessage_wait(Braille_Text_Sharing)
+    braillemessage_wait(Braille_Text_PowerOpen)
+    braillemessage_wait(Braille_Text_AWindowTo)
+    braillemessage_wait(Braille_Text_ANewWorld)
+    braillemessage_wait(Braille_Text_ThatGlows)
+    braillemessage_wait(Braille_Text_TheNext)
+    braillemessage_wait(Braille_Text_WorldWaits)
+    braillemsgbox(Braille_Text_ForYou)
+    releaseall
+    end
+}
 
-SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefDown2::
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
-	waitmovement 0
-	return
+text SixIsland_DottedHole_SapphireRoom_Text_FoundSapphire {
+	"{PLAYER} found a SAPPHIRE!"
+}
 
-SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefLeft::
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
-	waitmovement 0
-	return
+text SixIsland_DottedHole_SapphireRoom_Text_IWasRightInTailingYou {
+	"Fufu… Fufufufu…
+	I guessed right.
 
-SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefDown::
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
-	waitmovement 0
-	return
+	I was right in tailing you!"
+}
 
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefLookAtSapphireNorth::
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefLookAtSapphireFromLeft
-	waitmovement 0
-	return
+text SixIsland_DottedHole_SapphireRoom_Text_SellToTeamRocketTellPassword {
+	"I knew that there was a SAPPHIRE
+	here, so it belongs to me!
 
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefLookAtSapphireSouth::
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefLookAtSapphireFromLeft
-	waitmovement 0
-	return
+	I'll sell it to TEAM ROCKET for
+	serious money.
 
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefLookAtSapphireEast::
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefLookAtSapphireFromBelow
-	waitmovement 0
-	return
+	…D-don't glare at me like that!
 
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefLookAtSapphireWest::
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefLookAtSapphireFromBelow
-	waitmovement 0
-	return
+	If you want it back, why don't you
+	go get it after I sell it?
 
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefGetSapphireNorth::
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefGetSapphireFromLeft
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
-	waitmovement 0
-	return
+	I'll even tell you one of the
+	passwords to TEAM ROCKET's
+	WAREHOUSE.
 
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefGetSapphireSouth::
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefGetSapphireFromLeft
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
-	waitmovement 0
-	return
+	The WAREHOUSE password I know is
+	“Yes, nah, CHANSEY.”
 
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefGetSapphireEast::
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefGetSapphireFromBelow
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
-	waitmovement 0
-	return
-
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefGetSapphireWest::
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefGetSapphireFromBelow
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
-	waitmovement 0
-	return
-
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefExitNorth::
-	applymovement LOCALID_PLAYER, SixIsland_DottedHole_SapphireRoom_Movement_PlayerWatchThiefExit
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefExitNorth
-	waitmovement 0
-	return
-
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefExitSouth::
-	applymovement LOCALID_PLAYER, SixIsland_DottedHole_SapphireRoom_Movement_PlayerWatchThiefExit
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefExitSouth
-	waitmovement 0
-	return
-
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefExitEast::
-	applymovement LOCALID_PLAYER, SixIsland_DottedHole_SapphireRoom_Movement_PlayerWatchThiefExit
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefExitEastWest
-	waitmovement 0
-	return
-
-SixIsland_DottedHole_SapphireRoom_EventScript_ThiefExitWest::
-	applymovement LOCALID_PLAYER, SixIsland_DottedHole_SapphireRoom_Movement_PlayerWatchThiefExit
-	applymovement LOCALID_DOTTED_HOLE_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefExitEastWest
-	waitmovement 0
-	return
-
-SixIsland_DottedHole_SapphireRoom_Movement_ThiefLookAtSapphireFromLeft::
-	walk_up
-	walk_up
-	step_faster_right
-	step_end
-
-SixIsland_DottedHole_SapphireRoom_Movement_ThiefLookAtSapphireFromBelow::
-	walk_right
-	walk_right
-	step_faster_up
-	step_end
-
-SixIsland_DottedHole_SapphireRoom_Movement_ThiefGetSapphireFromLeft::
-	walk_right
-	step_end
-
-SixIsland_DottedHole_SapphireRoom_Movement_ThiefGetSapphireFromBelow::
-	walk_up
-	step_end
-
-SixIsland_DottedHole_SapphireRoom_Movement_ThiefExitNorth::
-	run_up
-	run_right
-	run_right
-	run_right
-	run_down
-	run_right
-	run_right
-	step_end
-
-SixIsland_DottedHole_SapphireRoom_Movement_ThiefExitSouth::
-	run_down
-	run_right
-	run_right
-	run_right
-	run_up
-	run_right
-	run_right
-	step_end
-
-SixIsland_DottedHole_SapphireRoom_Movement_ThiefExitEastWest::
-	run_right
-	run_right
-	run_right
-	run_right
-	run_up
-	step_end
-
-SixIsland_DottedHole_SapphireRoom_Movement_ThiefFallIn::
-	face_down
-	disable_anim
-	slide_down
-	slide_down
-	slide_down
-	slide_down
-	slide_down
-	slide_down
-	slide_down
-	slide_down
-	slide_down
-	restore_anim
-	step_end
-
-SixIsland_DottedHole_SapphireRoom_Movement_PlayerWatchThiefExit::
-	delay_16
-	step_faster_right
-	step_end
-
-SixIsland_DottedHole_SapphireRoom_EventScript_BrailleMessage::
-	lockall
-	setvar VAR_0x8005, 130
-	braillemessage_wait Braille_Text_LetTheTwo
-	braillemessage_wait Braille_Text_Glittering
-	braillemessage_wait Braille_Text_Stones
-	braillemessage_wait Braille_Text_OneInRed
-	braillemessage_wait Braille_Text_OneInBlue
-	braillemessage_wait Braille_Text_ConnectThe
-	braillemessage_wait Braille_Text_Past
-	braillemessage_wait Braille_Text_TwoFriends
-	braillemessage_wait Braille_Text_Sharing
-	braillemessage_wait Braille_Text_PowerOpen
-	braillemessage_wait Braille_Text_AWindowTo
-	braillemessage_wait Braille_Text_ANewWorld
-	braillemessage_wait Braille_Text_ThatGlows
-	braillemessage_wait Braille_Text_TheNext
-	braillemessage_wait Braille_Text_WorldWaits
-	braillemsgbox Braille_Text_ForYou
-	releaseall
-	end
-
-SixIsland_DottedHole_SapphireRoom_Text_FoundSapphire::
-	.string "{PLAYER} found a SAPPHIRE!$"
-
-SixIsland_DottedHole_SapphireRoom_Text_IWasRightInTailingYou::
-	.string "Fufu… Fufufufu…\n"
-	.string "I guessed right.\p"
-	.string "I was right in tailing you!$"
-
-SixIsland_DottedHole_SapphireRoom_Text_SellToTeamRocketTellPassword::
-	.string "I knew that there was a SAPPHIRE\n"
-	.string "here, so it belongs to me!\p"
-	.string "I'll sell it to TEAM ROCKET for\n"
-	.string "serious money.\p"
-	.string "…D-don't glare at me like that!\p"
-	.string "If you want it back, why don't you\n"
-	.string "go get it after I sell it?\p"
-	.string "I'll even tell you one of the\n"
-	.string "passwords to TEAM ROCKET's\l"
-	.string "WAREHOUSE.\p"
-	.string "The WAREHOUSE password I know is\n"
-	.string "“Yes, nah, CHANSEY.”\p"
-	.string "I'm done.\n"
-	.string "Don't think badly of me!$"
-
-`
+	I'm done.
+	Don't think badly of me!"
+}

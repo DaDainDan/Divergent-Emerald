@@ -15,10 +15,8 @@ mapscripts BirthIsland_Exterior_Frlg_MapScripts {
 		}
     }
     MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
-			if (specialvar(VAR_RESULT, GetBattleOutcome) == B_OUTCOME_CAUGHT) {
-				removeobject(LOCALID_BIRTH_ISLAND_DEOXYS)
-			}
+		if (flag(FLAG_SYS_CTRL_OBJ_DELETE) && specialvar(VAR_RESULT, GetBattleOutcome) == B_OUTCOME_CAUGHT) {
+			removeobject(LOCALID_BIRTH_ISLAND_DEOXYS)
 		}
 		end
     }
@@ -31,14 +29,10 @@ mapscripts BirthIsland_Exterior_Frlg_MapScripts {
 script BirthIsland_Exterior_Frlg_EventScript_Triangle {
     lock_faceplayer
     special(DoDeoxysRockInteraction)
-    switch (var(VAR_RESULT)) {
-        case 0:
-        case 1:
-		case 3: release_end
-        case 2: goto(BirthIsland_Exterior_Frlg_EventScript_Deoxys)
-        
+    if (var(VAR_RESULT) == DEOXYS_ROCK_SOLVED) {
+        goto(BirthIsland_Exterior_Frlg_EventScript_Deoxys)
     }
-    end
+    release_end
 }
 
 script BirthIsland_Exterior_Frlg_EventScript_Deoxys {
@@ -67,12 +61,10 @@ script BirthIsland_Exterior_Frlg_EventScript_Deoxys {
 			setflag(FLAG_DEOXYS_FLEW_AWAY)
     		setvar(VAR_0x8004, SPECIES_DEOXYS)
     		goto(EventScript_MonFlewAway)
-			end
 		case B_OUTCOME_RAN:
 		case B_OUTCOME_PLAYER_TELEPORTED:
 			setvar(VAR_0x8004, SPECIES_DEOXYS)
     		goto(EventScript_MonFlewAway)
-    		end
 	}
     setflag(FLAG_FOUGHT_DEOXYS)
     release_end

@@ -1,7 +1,10 @@
 FiveIsland_LostCave_Entrance_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, FiveIsland_LostCave_Entrance_OnTransition
+# 2 "data/maps/FiveIsland_LostCave_Entrance_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, FiveIsland_LostCave_Entrance_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-FiveIsland_LostCave_Entrance_OnTransition::
+FiveIsland_LostCave_Entrance_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/FiveIsland_LostCave_Entrance_Frlg/scripts.pory"
 	setworldmapflag FLAG_WORLD_MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE
 	end
+

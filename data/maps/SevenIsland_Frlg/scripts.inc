@@ -1,24 +1,34 @@
 SevenIsland_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, SevenIsland_OnTransition
+# 2 "data/maps/SevenIsland_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, SevenIsland_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-SevenIsland_OnTransition::
+SevenIsland_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/SevenIsland_Frlg/scripts.pory"
 	setworldmapflag FLAG_WORLD_MAP_SEVEN_ISLAND
 	end
 
+
 SevenIsland_EventScript_IslandSign::
+# 9 "data/maps/SevenIsland_Frlg/scripts.pory"
 	msgbox SevenIsland_Text_IslandSign, MSGBOX_SIGN
 	end
 
+
 SevenIsland_EventScript_OldWoman::
+# 14 "data/maps/SevenIsland_Frlg/scripts.pory"
 	msgbox SevenIsland_Text_IslandsMadeInSevenDays, MSGBOX_NPC
 	end
 
+
 SevenIsland_EventScript_Scientist::
+# 19 "data/maps/SevenIsland_Frlg/scripts.pory"
 	msgbox SevenIsland_Text_IslandVirtuallyUntouched, MSGBOX_NPC
 	end
 
+
 Text_SwordsDanceTeach::
+# 23 "data/maps/SevenIsland_Frlg/scripts.pory"
 	.string "Not many people come out here.\p"
 	.string "If I train here, I'm convinced that\n"
 	.string "I'll get stronger and stronger.\p"
@@ -27,21 +37,26 @@ Text_SwordsDanceTeach::
 	.string "like that? It's SWORDS DANCE.$"
 
 Text_SwordsDanceDeclined::
+# 35 "data/maps/SevenIsland_Frlg/scripts.pory"
 	.string "Well, that's fine, too.$"
 
 Text_SwordsDanceWhichMon::
+# 39 "data/maps/SevenIsland_Frlg/scripts.pory"
 	.string "All right, pick which POKéMON\n"
 	.string "I should teach it to.$"
 
 Text_SwordsDanceTaught::
+# 44 "data/maps/SevenIsland_Frlg/scripts.pory"
 	.string "If only we could keep getting\n"
 	.string "stronger and stronger, eh?$"
 
 SevenIsland_Text_IslandSign::
+# 49 "data/maps/SevenIsland_Frlg/scripts.pory"
 	.string "SEVEN ISLAND\n"
 	.string "Quest Island of Infinity$"
 
 SevenIsland_Text_IslandsMadeInSevenDays::
+# 54 "data/maps/SevenIsland_Frlg/scripts.pory"
 	.string "These islands are called the SEVII\n"
 	.string "ISLANDS because there are seven.\p"
 	.string "…Or at least that's what the young\n"
@@ -51,8 +66,8 @@ SevenIsland_Text_IslandsMadeInSevenDays::
 	.string "have been made in seven days.$"
 
 SevenIsland_Text_IslandVirtuallyUntouched::
+# 66 "data/maps/SevenIsland_Frlg/scripts.pory"
 	.string "This island has been left virtually\n"
 	.string "untouched in its natural state.\p"
 	.string "It could be a little difficult to\n"
 	.string "hike around because of that.$"
-

@@ -1,189 +1,177 @@
-raw `
-FourIsland_PokemonDayCare_Frlg_MapScripts::
-	.byte 0
+mapscripts FourIsland_PokemonDayCare_Frlg_MapScripts {}
 
-FourIsland_PokemonDayCare_EventScript_DaycareWoman::
-	lock
-	faceplayer
-	specialvar VAR_RESULT, GetDaycareState
-	goto_if_eq VAR_RESULT, DAYCARE_EGG_WAITING, FourIsland_PokemonDayCare_EggWaiting
-	goto_if_eq VAR_RESULT, DAYCARE_ONE_MON, FourIsland_PokemonDayCare_OneMonInDaycare
-	goto_if_eq VAR_RESULT, DAYCARE_TWO_MONS, FourIsland_PokemonDayCare_TwoMonsInDaycare
-	msgbox DayCare_Text_WouldYouLikeUsToRaiseMon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, FourIsland_PokemonDayCare_GiveMonToRaise
-	msgbox DayCare_Text_FineThenComeAgain
-	release
-	end
+script FourIsland_PokemonDayCare_EventScript_DaycareWoman {
+    lock_faceplayer
+    specialvar(VAR_RESULT, GetDaycareState)
+    if (var(VAR_RESULT) == DAYCARE_EGG_WAITING) {
+        msgbox(DayCare_Text_HusbandWasLookingForYou)
+    	release_end
+    }
+    if (var(VAR_RESULT) == DAYCARE_ONE_MON) {
+        goto(FourIsland_PokemonDayCare_OneMonInDaycare)
+    }
+    if (var(VAR_RESULT) == DAYCARE_TWO_MONS) {
+        goto(FourIsland_PokemonDayCare_TwoMonsInDaycare)
+    }
+    msgbox(DayCare_Text_WouldYouLikeUsToRaiseMon, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        goto(FourIsland_PokemonDayCare_GiveMonToRaise)
+    }
+    msgbox(DayCare_Text_FineThenComeAgain)
+    release_end
+}
 
-FourIsland_PokemonDayCare_GiveMonToRaise::
-	specialvar VAR_RESULT, CountPartyNonEggMons
-	goto_if_eq VAR_RESULT, 1, FourIsland_PokemonDayCare_OnlyOneMonInParty
-	msgbox DayCare_Text_WhichMonShouldWeRaise
-	fadescreen FADE_TO_BLACK
-	special ChooseSendDaycareMon
-	goto_if_ge VAR_0x8004, PARTY_SIZE, FourIsland_PokemonDayCare_ComeAgain
-	specialvar VAR_RESULT, CountPartyAliveNonEggMons_IgnoreVar0x8004Slot
-	goto_if_eq VAR_RESULT, 0, FourIsland_PokemonDayCare_OnlyOneAliveMonInParty
-	specialvar VAR_0x8005, GetSelectedMonNicknameAndSpecies
-	waitse
-	playmoncry VAR_0x8005, CRY_MODE_NORMAL
-	msgbox DayCare_Text_WellRaiseYourMon
-	waitmoncry
-	special StoreSelectedPokemonInDaycare
-	callnative UpdateFollowingPokemon
-	incrementgamestat GAME_STAT_USED_DAYCARE
-	specialvar VAR_RESULT, GetDaycareState
-	goto_if_eq VAR_RESULT, DAYCARE_ONE_MON, FourIsland_PokemonDayCare_CanRaiseOneMore
-	release
-	end
+script FourIsland_PokemonDayCare_OneMonInDaycare {
+    msgbox(DayCare_Text_GoodToSeeYou)
+    setvar(VAR_0x8004, 0)
+    call(FourIsland_PokemonDayCare_DisplayLevelsGained)
+    msgbox(DayCare_Text_WeCanRaiseOneMore, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        goto(FourIsland_PokemonDayCare_GiveMonToRaise)
+    }
+    msgbox(DayCare_Text_TakeYourMonBack, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        goto(FourIsland_PokemonDayCare_TryRetrieveMon)
+    }
+    goto(FourIsland_PokemonDayCare_ComeAgain)
+    end
+}
 
-FourIsland_PokemonDayCare_ComeAgain::
-	msgbox DayCare_Text_ComeAgain
-	release
-	end
+script FourIsland_PokemonDayCare_TwoMonsInDaycare {
+    msgbox(DayCare_Text_GoodToSeeYou)
+    setvar(VAR_0x8004, 0)
+    call(FourIsland_PokemonDayCare_DisplayLevelsGained)
+    setvar(VAR_0x8004, 1)
+    call(FourIsland_PokemonDayCare_DisplayLevelsGained)
+    msgbox(DayCare_Text_TakeYourMonBack, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        goto(FourIsland_PokemonDayCare_TryRetrieveMon)
+    }
+    msgbox(DayCare_Text_ComeAgain)
+    release_end
+}
 
-FourIsland_PokemonDayCare_CanRaiseOneMore::
-	msgbox DayCare_Text_WeCanRaiseOneMore, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, FourIsland_PokemonDayCare_GiveMonToRaise
-	goto FourIsland_PokemonDayCare_ComeAgain
-	end
+script FourIsland_PokemonDayCare_GiveMonToRaise {
+    if (specialvar(VAR_RESULT, CountPartyNonEggMons) == 1) {
+        msgbox(DayCare_Text_YouHaveJustOneMon)
+    	release_end
+    }
+    msgbox(DayCare_Text_WhichMonShouldWeRaise)
+    fadescreen(FADE_TO_BLACK)
+    special(ChooseSendDaycareMon)
+    if (var(VAR_0x8004) >= PARTY_SIZE) {
+        goto(FourIsland_PokemonDayCare_ComeAgain)
+    }
+    if (specialvar(VAR_RESULT, CountPartyAliveNonEggMons_IgnoreVar0x8004Slot) == 0) {
+        msgbox(DayCare_Text_WhatWillYouBattleWith)
+    	release_end
+    }
+    specialvar(VAR_0x8005, GetSelectedMonNicknameAndSpecies)
+    waitse
+    playmoncry(VAR_0x8005, CRY_MODE_NORMAL)
+    msgbox(DayCare_Text_WellRaiseYourMon)
+    waitmoncry
+    special(StoreSelectedPokemonInDaycare)
+    callnative(UpdateFollowingPokemon)
+    incrementgamestat(GAME_STAT_USED_DAYCARE)
+    if (specialvar(VAR_RESULT, GetDaycareState) == DAYCARE_ONE_MON) {
+        msgbox(DayCare_Text_WeCanRaiseOneMore, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			goto(FourIsland_PokemonDayCare_GiveMonToRaise)
+		}
+		goto(FourIsland_PokemonDayCare_ComeAgain)
+    }
+    release_end
+}
 
-FourIsland_PokemonDayCare_OnlyOneMonInParty::
-	msgbox DayCare_Text_YouHaveJustOneMon
-	release
-	end
+script FourIsland_PokemonDayCare_ComeAgain {
+    msgbox(DayCare_Text_ComeAgain)
+    release_end
+}
 
-FourIsland_PokemonDayCare_OnlyOneAliveMonInParty::
-	msgbox DayCare_Text_WhatWillYouBattleWith
-	release
-	end
+script FourIsland_PokemonDayCare_DisplayLevelsGained {
+    if (specialvar(VAR_RESULT, GetNumLevelsGainedFromDaycare) != 0) {
+        msgbox(DayCare_Text_YourMonHasGrownXLevels)
+    }
+    return
+}
 
-FourIsland_PokemonDayCare_EggWaiting::
-	msgbox DayCare_Text_HusbandWasLookingForYou
-	release
-	end
+script FourIsland_PokemonDayCare_TryRetrieveMon {
+    specialvar(VAR_RESULT, CalculatePlayerPartyCount)
+    if (var(VAR_RESULT) == PARTY_SIZE) {
+        msgbox(DayCare_Text_YourPartyIsFull)
+    	release_end
+    }
+    specialvar(VAR_RESULT, GetDaycareState)
+    setvar(VAR_0x8004, 0)
+    if (var(VAR_RESULT) != DAYCARE_ONE_MON) {
+		special(ShowDaycareLevelMenu)
+		copyvar(VAR_0x8004, VAR_RESULT)
+		if (var(VAR_RESULT) == DAYCARE_EXITED_LEVEL_MENU) {
+			goto(FourIsland_PokemonDayCare_ComeAgain)
+		}	
+    }
+	special(GetDaycareCost)
+    msgbox(DayCare_Text_ItWillCostX, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        if (specialvar(VAR_RESULT, IsEnoughForCostInVar0x8005) == TRUE) {
+			applymovement(LOCALID_FOUR_ISLAND_DAYCARE_WOMAN, FourIsland_PokemonDayCare_Movement_RetrieveMon)
+			waitmovement(0)
+			specialvar(VAR_RESULT, TakePokemonFromDaycare)
+			special(SubtractMoneyFromVar0x8005)
+			playse(SE_SHOP)
+			msgbox(DayCare_Text_HeresYourMon)
+			waitse
+			playmoncry(VAR_RESULT, CRY_MODE_NORMAL)
+			textcolor(NPC_TEXT_COLOR_NEUTRAL)
+			msgbox(DayCare_Text_TookBackMon)
+			call(EventScript_RestorePrevTextColor)
+			waitmoncry
+			if (specialvar(VAR_RESULT, GetDaycareState) == DAYCARE_ONE_MON) {
+				msgbox(DayCare_Text_TakeOtherOneBackToo, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					goto(FourIsland_PokemonDayCare_TryRetrieveMon)
+				}
+			}
+			goto(FourIsland_PokemonDayCare_ComeAgain)
+		}
+		msgbox(DayCare_Text_NotEnoughMoney)
+		release_end
+    }
+    goto(FourIsland_PokemonDayCare_ComeAgain)
+    end
+}
 
-FourIsland_PokemonDayCare_MonHasGrownXLevels::
-	msgbox DayCare_Text_YourMonHasGrownXLevels
-	return
+movement FourIsland_PokemonDayCare_Movement_RetrieveMon {
+    // moves(delay_16 * 2,  face_right,  delay_16 * 2,  face_left,  delay_16 * 2,  face_up,  creep_up,  set_invisible,  delay_16 * 5,  face_down,  set_visible,  creep_down)
+    delay_16 * 2
+    face_right
+    delay_16 * 2
+    face_left
+    delay_16 * 2
+    face_up
+    creep_up
+    set_invisible
+    delay_16 * 5
+    face_down
+    set_visible
+    creep_down
+}
 
-FourIsland_PokemonDayCare_DisplayLevelsGained::
-	specialvar VAR_RESULT, GetNumLevelsGainedFromDaycare
-	call_if_ne VAR_RESULT, 0, FourIsland_PokemonDayCare_MonHasGrownXLevels
-	return
+// Unused. Possibly a commented script, or a typo end added to the above Movement script
+script FourIsland_PokemonDayCare_EventScript_UnusedEnd {
+    end
+}
 
-FourIsland_PokemonDayCare_OneMonInDaycare::
-	msgbox DayCare_Text_GoodToSeeYou
-	setvar VAR_0x8004, 0
-	call FourIsland_PokemonDayCare_DisplayLevelsGained
-	msgbox DayCare_Text_WeCanRaiseOneMore, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, FourIsland_PokemonDayCare_GiveMonToRaise
-	msgbox DayCare_Text_TakeYourMonBack, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, FourIsland_PokemonDayCare_TryRetrieveMon
-	goto FourIsland_PokemonDayCare_ComeAgain
-	end
-
-FourIsland_PokemonDayCare_TryRetrieveMon::
-	specialvar VAR_RESULT, CalculatePlayerPartyCount
-	goto_if_eq VAR_RESULT, PARTY_SIZE, FourIsland_PokemonDayCare_NoRoomInParty
-	specialvar VAR_RESULT, GetDaycareState
-	setvar VAR_0x8004, 0
-	goto_if_eq VAR_RESULT, DAYCARE_ONE_MON, FourIsland_PokemonDayCare_CostPrompt
-	special ShowDaycareLevelMenu
-	copyvar VAR_0x8004, VAR_RESULT
-	goto_if_eq VAR_RESULT, DAYCARE_EXITED_LEVEL_MENU, FourIsland_PokemonDayCare_ComeAgain
-	goto FourIsland_PokemonDayCare_CostPrompt
-	end
-
-FourIsland_PokemonDayCare_CostPrompt::
-	special GetDaycareCost
-	msgbox DayCare_Text_ItWillCostX, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, FourIsland_PokemonDayCare_CheckEnoughMoney
-	goto FourIsland_PokemonDayCare_ComeAgain
-	end
-
-FourIsland_PokemonDayCare_CheckEnoughMoney::
-	specialvar VAR_RESULT, IsEnoughForCostInVar0x8005
-	goto_if_eq VAR_RESULT, TRUE, FourIsland_PokemonDayCare_RetrieveMon
-	msgbox DayCare_Text_NotEnoughMoney
-	release
-	end
-
-FourIsland_PokemonDayCare_RetrieveMon::
-	applymovement LOCALID_FOUR_ISLAND_DAYCARE_WOMAN, FourIsland_PokemonDayCare_Movement_RetrieveMon
-	waitmovement 0
-	specialvar VAR_RESULT, TakePokemonFromDaycare
-	special SubtractMoneyFromVar0x8005
-	playse SE_SHOP
-	msgbox DayCare_Text_HeresYourMon
-	waitse
-	playmoncry VAR_RESULT, CRY_MODE_NORMAL
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	msgbox DayCare_Text_TookBackMon
-	call EventScript_RestorePrevTextColor
-	waitmoncry
-	specialvar VAR_RESULT, GetDaycareState
-	goto_if_eq VAR_RESULT, DAYCARE_ONE_MON, FourIsland_PokemonDayCare_AskRetrieveOtherMon
-	goto FourIsland_PokemonDayCare_ComeAgain
-	end
-
-FourIsland_PokemonDayCare_AskRetrieveOtherMon::
-	msgbox DayCare_Text_TakeOtherOneBackToo, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, FourIsland_PokemonDayCare_TryRetrieveMon
-	goto FourIsland_PokemonDayCare_ComeAgain
-	end
-
-FourIsland_PokemonDayCare_NoRoomInParty::
-	msgbox DayCare_Text_YourPartyIsFull
-	release
-	end
-
-FourIsland_PokemonDayCare_Movement_RetrieveMon::
-	delay_16
-	delay_16
-	face_right
-	delay_16
-	delay_16
-	face_left
-	delay_16
-	delay_16
-	face_up
-	creep_up
-	set_invisible
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	face_down
-	set_visible
-	creep_down
-	step_end
-
-@ Unused. Possibly a commented script, or a typo end added to the above Movement script
-FourIsland_PokemonDayCare_EventScript_UnusedEnd::
-	end
-
-FourIsland_PokemonDayCare_TwoMonsInDaycare::
-	msgbox DayCare_Text_GoodToSeeYou
-	setvar VAR_0x8004, 0
-	call FourIsland_PokemonDayCare_DisplayLevelsGained
-	setvar VAR_0x8004, 1
-	call FourIsland_PokemonDayCare_DisplayLevelsGained
-	msgbox DayCare_Text_TakeYourMonBack, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, FourIsland_PokemonDayCare_TryRetrieveMon
-	msgbox DayCare_Text_ComeAgain
-	release
-	end
-
-@ Unused
-FourIsland_PokemonDayCare_EventScript_UnusedRetrieveMon::
-	special ShowDaycareLevelMenu
-	goto_if_eq VAR_RESULT, 2, FourIsland_PokemonDayCare_ComeAgain
-	copyvar VAR_0x8004, VAR_RESULT
-	specialvar VAR_RESULT, TakePokemonFromDaycare
-	msgbox DayCare_Text_HeresYourMon
-	msgbox DayCare_Text_ComeAgain
-	release
-	end
-`
+// Unused
+script FourIsland_PokemonDayCare_EventScript_UnusedRetrieveMon {
+    special(ShowDaycareLevelMenu)
+    if (var(VAR_RESULT) == 2) {
+        goto(FourIsland_PokemonDayCare_ComeAgain)
+    }
+    copyvar(VAR_0x8004, VAR_RESULT)
+    specialvar(VAR_RESULT, TakePokemonFromDaycare)
+    msgbox(DayCare_Text_HeresYourMon)
+    msgbox(DayCare_Text_ComeAgain)
+    release_end
+}
