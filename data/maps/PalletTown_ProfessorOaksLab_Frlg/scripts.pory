@@ -205,9 +205,9 @@ script PalletTown_ProfessorOaksLab_EventScript_RivalBattle {
     applymovement(LOCALID_OAKS_LAB_PROF_OAK, Common_Movement_FaceDown)
     waitmovement(0)
 	switch (var(VAR_STARTER_MON)) {
-		case CHOSE_BULBASAUR: goto(PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleCharmander)
-		case CHOSE_SQUIRTLE: goto(PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleBulbasaur)
-		case CHOSE_CHARMANDER: goto(PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleSquirtle)
+		case PC_CHOSE_BULBASAUR: goto(PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleCharmander)
+		case PC_CHOSE_SQUIRTLE: goto(PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleBulbasaur)
+		case PC_CHOSE_CHARMANDER: goto(PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleSquirtle)
 	}
     end
 }

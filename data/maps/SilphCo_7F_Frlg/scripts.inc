@@ -93,11 +93,11 @@ SilphCo_7F_EventScript_RivalScene_1:
 # 52 "data/maps/SilphCo_7F_Frlg/scripts.pory"
 	switch VAR_STARTER_MON
 # 53 "data/maps/SilphCo_7F_Frlg/scripts.pory"
-	case CHOSE_BULBASAUR, SilphCo_7F_EventScript_RivalScene_6
+	case PC_CHOSE_BULBASAUR, SilphCo_7F_EventScript_RivalScene_6
 # 54 "data/maps/SilphCo_7F_Frlg/scripts.pory"
-	case CHOSE_SQUIRTLE, SilphCo_7F_EventScript_RivalScene_7
+	case PC_CHOSE_SQUIRTLE, SilphCo_7F_EventScript_RivalScene_7
 # 55 "data/maps/SilphCo_7F_Frlg/scripts.pory"
-	case CHOSE_CHARMENDER, SilphCo_7F_EventScript_RivalScene_8
+	case PC_CHOSE_CHARMANDER, SilphCo_7F_EventScript_RivalScene_8
 SilphCo_7F_EventScript_RivalScene_4:
 # 57 "data/maps/SilphCo_7F_Frlg/scripts.pory"
 	msgbox SilphCo_7F_Text_RivalPostBattle

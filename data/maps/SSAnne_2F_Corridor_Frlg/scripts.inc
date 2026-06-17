@@ -69,11 +69,11 @@ SSAnne_2F_Corridor_EventScript_RivalTrigger_1:
 # 46 "data/maps/SSAnne_2F_Corridor_Frlg/scripts.pory"
 	switch VAR_STARTER_MON
 # 47 "data/maps/SSAnne_2F_Corridor_Frlg/scripts.pory"
-	case CHOSE_BULBASAUR, SSAnne_2F_Corridor_EventScript_RivalTrigger_8
+	case PC_CHOSE_BULBASAUR, SSAnne_2F_Corridor_EventScript_RivalTrigger_8
 # 48 "data/maps/SSAnne_2F_Corridor_Frlg/scripts.pory"
-	case CHOSE_SQUIRTLE, SSAnne_2F_Corridor_EventScript_RivalTrigger_9
+	case PC_CHOSE_SQUIRTLE, SSAnne_2F_Corridor_EventScript_RivalTrigger_9
 # 49 "data/maps/SSAnne_2F_Corridor_Frlg/scripts.pory"
-	case CHOSE_CHARMANDER, SSAnne_2F_Corridor_EventScript_RivalTrigger_10
+	case PC_CHOSE_CHARMANDER, SSAnne_2F_Corridor_EventScript_RivalTrigger_10
 SSAnne_2F_Corridor_EventScript_RivalTrigger_6:
 # 51 "data/maps/SSAnne_2F_Corridor_Frlg/scripts.pory"
 	msgbox SSAnne_2F_Corridor_Text_RivalPostBattle

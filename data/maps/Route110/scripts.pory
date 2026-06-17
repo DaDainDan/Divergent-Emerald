@@ -365,9 +365,9 @@ script Route110_EventScript_RivalScene {
 script Route110_EventScript_MayBattle {
     msgbox(Route110_Text_MayLetsBattle, MSGBOX_DEFAULT)
     switch (var(VAR_STARTER_MON)) {
-        case 0: trainerbattle_no_intro(TRAINER_MAY_ROUTE_110_TREECKO, Route110_Text_MayDefeated)
-        case 1: trainerbattle_no_intro(TRAINER_MAY_ROUTE_110_TORCHIC, Route110_Text_MayDefeated)
-        case 2: trainerbattle_no_intro(TRAINER_MAY_ROUTE_110_MUDKIP, Route110_Text_MayDefeated)
+        case PC_CHOSE_TREECKO: trainerbattle_no_intro(TRAINER_MAY_ROUTE_110_TORCHIC, Route110_Text_MayDefeated)
+        case PC_CHOSE_TORCHIC: trainerbattle_no_intro(TRAINER_MAY_ROUTE_110_MUDKIP, Route110_Text_MayDefeated)
+        case PC_CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_MAY_ROUTE_110_TREECKO, Route110_Text_MayDefeated)
     }
 	msgbox(Route110_Text_MayTakeThis, MSGBOX_DEFAULT)
     giveitem(ITEM_DOWSING_MACHINE)
@@ -379,9 +379,9 @@ script Route110_EventScript_MayBattle {
 script Route110_EventScript_BrendanBattle {
     msgbox(Route110_Text_BrendanLetsBattle, MSGBOX_DEFAULT)
     switch (var(VAR_STARTER_MON)) {
-        case 0: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_110_TREECKO, Route110_Text_BrendanDefeated)
-        case 1: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_110_TORCHIC, Route110_Text_BrendanDefeated)
-        case 2: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_110_MUDKIP, Route110_Text_BrendanDefeated)
+        case PC_CHOSE_TREECKO: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_110_TORCHIC, Route110_Text_BrendanDefeated)
+        case PC_CHOSE_TORCHIC: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_110_MUDKIP, Route110_Text_BrendanDefeated)
+        case PC_CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_110_TREECKO, Route110_Text_BrendanDefeated)
     }
 	msgbox(Route110_Text_BrendanTakeThis, MSGBOX_DEFAULT)
     giveitem(ITEM_DOWSING_MACHINE)

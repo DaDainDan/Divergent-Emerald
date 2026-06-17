@@ -50,9 +50,9 @@ script SilphCo_7F_EventScript_RivalScene {
     msgbox(SilphCo_7F_Text_RivalIntro)
     setvar(VAR_LAST_TALKED, LOCALID_SILPH_CO_RIVAL)
 	switch (var(VAR_STARTER_MON)) {
-		case CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_SILPH_CHARMANDER, SilphCo_7F_Text_RivalDefeat)
-		case CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_SILPH_BULBASAUR, SilphCo_7F_Text_RivalDefeat)
-		case CHOSE_CHARMENDER: trainerbattle_no_intro(TRAINER_RIVAL_SILPH_SQUIRTLE, SilphCo_7F_Text_RivalDefeat)
+		case PC_CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_SILPH_CHARMANDER, SilphCo_7F_Text_RivalDefeat)
+		case PC_CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_SILPH_BULBASAUR, SilphCo_7F_Text_RivalDefeat)
+		case PC_CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_RIVAL_SILPH_SQUIRTLE, SilphCo_7F_Text_RivalDefeat)
 	}
     msgbox(SilphCo_7F_Text_RivalPostBattle)
     closemessage

@@ -1120,11 +1120,11 @@ RustboroCity_EventScript_BattleMay::
 # 622 "data/maps/RustboroCity/scripts.pory"
 	switch VAR_STARTER_MON
 # 623 "data/maps/RustboroCity/scripts.pory"
-	case CHOSE_TREECKO, RustboroCity_EventScript_BattleMay_3
+	case PC_CHOSE_TREECKO, RustboroCity_EventScript_BattleMay_3
 # 624 "data/maps/RustboroCity/scripts.pory"
-	case CHOSE_TORCHIC, RustboroCity_EventScript_BattleMay_4
+	case PC_CHOSE_TORCHIC, RustboroCity_EventScript_BattleMay_4
 # 625 "data/maps/RustboroCity/scripts.pory"
-	case CHOSE_MUDKIP, RustboroCity_EventScript_BattleMay_5
+	case PC_CHOSE_MUDKIP, RustboroCity_EventScript_BattleMay_5
 RustboroCity_EventScript_BattleMay_1:
 # 627 "data/maps/RustboroCity/scripts.pory"
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
@@ -1134,17 +1134,17 @@ RustboroCity_EventScript_BattleMay_1:
 
 RustboroCity_EventScript_BattleMay_3:
 # 623 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_MayDefeat
 	goto RustboroCity_EventScript_BattleMay_1
 
 RustboroCity_EventScript_BattleMay_4:
 # 624 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_MayDefeat
 	goto RustboroCity_EventScript_BattleMay_1
 
 RustboroCity_EventScript_BattleMay_5:
 # 625 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_MayDefeat
 	goto RustboroCity_EventScript_BattleMay_1
 
 
@@ -1252,11 +1252,11 @@ RustboroCity_EventScript_BattleBrendan::
 # 684 "data/maps/RustboroCity/scripts.pory"
 	switch VAR_STARTER_MON
 # 685 "data/maps/RustboroCity/scripts.pory"
-	case CHOSE_TREECKO, RustboroCity_EventScript_BattleBrendan_3
+	case PC_CHOSE_TREECKO, RustboroCity_EventScript_BattleBrendan_3
 # 686 "data/maps/RustboroCity/scripts.pory"
-	case CHOSE_TORCHIC, RustboroCity_EventScript_BattleBrendan_4
+	case PC_CHOSE_TORCHIC, RustboroCity_EventScript_BattleBrendan_4
 # 687 "data/maps/RustboroCity/scripts.pory"
-	case CHOSE_MUDKIP, RustboroCity_EventScript_BattleBrendan_5
+	case PC_CHOSE_MUDKIP, RustboroCity_EventScript_BattleBrendan_5
 RustboroCity_EventScript_BattleBrendan_1:
 # 689 "data/maps/RustboroCity/scripts.pory"
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
@@ -1266,17 +1266,17 @@ RustboroCity_EventScript_BattleBrendan_1:
 
 RustboroCity_EventScript_BattleBrendan_3:
 # 685 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, RustboroCity_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, RustboroCity_Text_BrendanDefeat
 	goto RustboroCity_EventScript_BattleBrendan_1
 
 RustboroCity_EventScript_BattleBrendan_4:
 # 686 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, RustboroCity_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, RustboroCity_Text_BrendanDefeat
 	goto RustboroCity_EventScript_BattleBrendan_1
 
 RustboroCity_EventScript_BattleBrendan_5:
 # 687 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, RustboroCity_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, RustboroCity_Text_BrendanDefeat
 	goto RustboroCity_EventScript_BattleBrendan_1
 
 

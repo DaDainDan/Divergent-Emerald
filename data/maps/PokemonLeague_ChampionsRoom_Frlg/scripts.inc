@@ -15,11 +15,11 @@ PokemonLeague_ChampionsRoom_Frlg_MapScripts_MAP_SCRIPT_ON_RESUME:
 # 11 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
 	switch VAR_STARTER_MON
 # 12 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
-	case CHOSE_BULBASAUR, PokemonLeague_ChampionsRoom_Frlg_MapScripts_MAP_SCRIPT_ON_RESUME_3
+	case PC_CHOSE_BULBASAUR, PokemonLeague_ChampionsRoom_Frlg_MapScripts_MAP_SCRIPT_ON_RESUME_3
 # 16 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
-	case CHOSE_SQUIRTLE, PokemonLeague_ChampionsRoom_Frlg_MapScripts_MAP_SCRIPT_ON_RESUME_4
+	case PC_CHOSE_SQUIRTLE, PokemonLeague_ChampionsRoom_Frlg_MapScripts_MAP_SCRIPT_ON_RESUME_4
 # 20 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
-	case CHOSE_CHARMANDER, PokemonLeague_ChampionsRoom_Frlg_MapScripts_MAP_SCRIPT_ON_RESUME_5
+	case PC_CHOSE_CHARMANDER, PokemonLeague_ChampionsRoom_Frlg_MapScripts_MAP_SCRIPT_ON_RESUME_5
 PokemonLeague_ChampionsRoom_Frlg_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 	end
 
@@ -110,11 +110,11 @@ PokemonLeague_ChampionsRoom_EventScript_EnterRoom_1:
 # 54 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
 	switch VAR_STARTER_MON
 # 55 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
-	case CHOSE_BULBASAUR, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_14
+	case PC_CHOSE_BULBASAUR, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_14
 # 56 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
-	case CHOSE_SQUIRTLE, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_15
+	case PC_CHOSE_SQUIRTLE, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_15
 # 57 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
-	case CHOSE_CHARMANDER, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_16
+	case PC_CHOSE_CHARMANDER, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_16
 PokemonLeague_ChampionsRoom_EventScript_EnterRoom_5:
 # 60 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
 	setflag FLAG_TEMP_4
@@ -197,11 +197,11 @@ PokemonLeague_ChampionsRoom_EventScript_EnterRoom_6:
 # 48 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
 	switch VAR_STARTER_MON
 # 49 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
-	case CHOSE_BULBASAUR, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_10
+	case PC_CHOSE_BULBASAUR, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_10
 # 50 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
-	case CHOSE_SQUIRTLE, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_11
+	case PC_CHOSE_SQUIRTLE, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_11
 # 51 "data/maps/PokemonLeague_ChampionsRoom_Frlg/scripts.pory"
-	case CHOSE_CHARMANDER, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_12
+	case PC_CHOSE_CHARMANDER, PokemonLeague_ChampionsRoom_EventScript_EnterRoom_12
 	goto PokemonLeague_ChampionsRoom_EventScript_EnterRoom_5
 
 PokemonLeague_ChampionsRoom_EventScript_EnterRoom_10:

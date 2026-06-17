@@ -43,9 +43,9 @@ script CeruleanCity_EventScript_Rival {
     msgbox(CeruleanCity_Text_RivalIntro)
     setvar(VAR_LAST_TALKED, LOCALID_CERULEAN_RIVAL)
 	switch (var(VAR_STARTER_MON)) {
-		case CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_CERULEAN_CHARMANDER, CeruleanCity_Text_RivalDefeat)
-		case CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_CERULEAN_BULBASAUR, CeruleanCity_Text_RivalDefeat)
-		case CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_RIVAL_CERULEAN_SQUIRTLE, CeruleanCity_Text_RivalDefeat)
+		case PC_CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_CERULEAN_CHARMANDER, CeruleanCity_Text_RivalDefeat)
+		case PC_CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_CERULEAN_BULBASAUR, CeruleanCity_Text_RivalDefeat)
+		case PC_CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_RIVAL_CERULEAN_SQUIRTLE, CeruleanCity_Text_RivalDefeat)
 	}
     famechecker(FAMECHECKER_BILL, 0)
     msgbox(CeruleanCity_Text_RivalPostBattle)

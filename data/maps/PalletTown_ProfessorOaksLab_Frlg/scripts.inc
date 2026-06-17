@@ -431,11 +431,11 @@ PalletTown_ProfessorOaksLab_EventScript_RivalBattle::
 # 207 "data/maps/PalletTown_ProfessorOaksLab_Frlg/scripts.pory"
 	switch VAR_STARTER_MON
 # 208 "data/maps/PalletTown_ProfessorOaksLab_Frlg/scripts.pory"
-	case CHOSE_BULBASAUR, PalletTown_ProfessorOaksLab_EventScript_RivalBattle_3
+	case PC_CHOSE_BULBASAUR, PalletTown_ProfessorOaksLab_EventScript_RivalBattle_3
 # 209 "data/maps/PalletTown_ProfessorOaksLab_Frlg/scripts.pory"
-	case CHOSE_SQUIRTLE, PalletTown_ProfessorOaksLab_EventScript_RivalBattle_4
+	case PC_CHOSE_SQUIRTLE, PalletTown_ProfessorOaksLab_EventScript_RivalBattle_4
 # 210 "data/maps/PalletTown_ProfessorOaksLab_Frlg/scripts.pory"
-	case CHOSE_CHARMANDER, PalletTown_ProfessorOaksLab_EventScript_RivalBattle_5
+	case PC_CHOSE_CHARMANDER, PalletTown_ProfessorOaksLab_EventScript_RivalBattle_5
 PalletTown_ProfessorOaksLab_EventScript_RivalBattle_1:
 	end
 

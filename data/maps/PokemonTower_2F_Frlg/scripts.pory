@@ -38,9 +38,9 @@ script PokemonTower_2F_EventScript_Rival {
     msgbox(PokemonTower_2F_Text_RivalIntro)
     setvar(VAR_LAST_TALKED, LOCALID_POKEMON_TOWER_RIVAL)
 	switch(var(VAR_STARTER_MON)) {
-		case CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_POKEMON_TOWER_CHARMANDER, PokemonTower_2F_Text_RivalDefeat)
-		case CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_POKEMON_TOWER_BULBASAUR, PokemonTower_2F_Text_RivalDefeat)
-		case CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_RIVAL_POKEMON_TOWER_SQUIRTLE, PokemonTower_2F_Text_RivalDefeat)
+		case PC_CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_POKEMON_TOWER_CHARMANDER, PokemonTower_2F_Text_RivalDefeat)
+		case PC_CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_POKEMON_TOWER_BULBASAUR, PokemonTower_2F_Text_RivalDefeat)
+		case PC_CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_RIVAL_POKEMON_TOWER_SQUIRTLE, PokemonTower_2F_Text_RivalDefeat)
 	}
     msgbox(PokemonTower_2F_Text_RivalPostBattle)
     closemessage

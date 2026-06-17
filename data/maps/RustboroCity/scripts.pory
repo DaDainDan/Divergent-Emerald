@@ -620,9 +620,9 @@ script RustboroCity_EventScript_MayEncounter {
 script RustboroCity_EventScript_BattleMay {
     msgbox(RustboroCity_Text_MayImNotGoingToLose, MSGBOX_DEFAULT)
     switch (var(VAR_STARTER_MON)) {
-        case CHOSE_TREECKO: trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_MayDefeat)
-        case CHOSE_TORCHIC: trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_MayDefeat)
-        case CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_MayDefeat)
+        case PC_CHOSE_TREECKO: trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_MayDefeat)
+        case PC_CHOSE_TORCHIC: trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_MayDefeat)
+        case PC_CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_MayDefeat)
     }
     setflag(FLAG_DEFEATED_RIVAL_RUSTBORO)
     goto(RustboroCity_EventScript_MayBrineyHint)
@@ -682,9 +682,9 @@ script RustboroCity_EventScript_BrendanEncounter {
 script RustboroCity_EventScript_BattleBrendan {
     msgbox(RustboroCity_Text_BrendanIWontGoEasy, MSGBOX_DEFAULT)
     switch (var(VAR_STARTER_MON)) {
-        case CHOSE_TREECKO: trainerbattle_no_intro(TRAINER_BRENDAN_RUSTBORO_TREECKO, RustboroCity_Text_BrendanDefeat)
-        case CHOSE_TORCHIC: trainerbattle_no_intro(TRAINER_BRENDAN_RUSTBORO_TORCHIC, RustboroCity_Text_BrendanDefeat)
-        case CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_BRENDAN_RUSTBORO_MUDKIP, RustboroCity_Text_BrendanDefeat)
+        case PC_CHOSE_TREECKO: trainerbattle_no_intro(TRAINER_BRENDAN_RUSTBORO_TORCHIC, RustboroCity_Text_BrendanDefeat)
+        case PC_CHOSE_TORCHIC: trainerbattle_no_intro(TRAINER_BRENDAN_RUSTBORO_MUDKIP, RustboroCity_Text_BrendanDefeat)
+        case PC_CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_BRENDAN_RUSTBORO_TREECKO, RustboroCity_Text_BrendanDefeat)
     }
     setflag(FLAG_DEFEATED_RIVAL_RUSTBORO)
     goto(RustboroCity_EventScript_BrendanBrineyHint)

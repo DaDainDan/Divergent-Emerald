@@ -9,15 +9,15 @@ mapscripts PokemonLeague_ChampionsRoom_Frlg_MapScripts {
         setvar(VAR_0x8004, 4)
 		call(PokemonLeague_EventScript_DoLightingEffect)
 		switch (var(VAR_STARTER_MON)) {
-			case CHOSE_BULBASAUR:
+			case PC_CHOSE_BULBASAUR:
 				if (defeated(TRAINER_CHAMPION_FIRST_CHARMANDER) || defeated(TRAINER_CHAMPION_REMATCH_CHARMANDER)) {
 					setvar(VAR_TEMP_1, 1)
 				}
-			case CHOSE_SQUIRTLE:
+			case PC_CHOSE_SQUIRTLE:
 				if (defeated(TRAINER_CHAMPION_FIRST_BULBASAUR) || defeated(TRAINER_CHAMPION_REMATCH_BULBASAUR)) {
 					setvar(VAR_TEMP_1, 1)
 				}
-			case CHOSE_CHARMANDER:
+			case PC_CHOSE_CHARMANDER:
 				if (defeated(TRAINER_CHAMPION_FIRST_SQUIRTLE) || defeated(TRAINER_CHAMPION_REMATCH_SQUIRTLE)) {
 					setvar(VAR_TEMP_1, 1)
 				}
@@ -46,15 +46,15 @@ script PokemonLeague_ChampionsRoom_EventScript_EnterRoom {
     savebgm(MUS_VICTORY_GYM_LEADER)
 	if (flag(FLAG_IS_CHAMPION)) {
         switch (var(VAR_STARTER_MON)) {
-			case CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_CHAMPION_REMATCH_CHARMANDER, PokemonLeague_ChampionsRoom_Text_Defeat)
-			case CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_CHAMPION_REMATCH_BULBASAUR, PokemonLeague_ChampionsRoom_Text_Defeat)
-			case CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_CHAMPION_REMATCH_SQUIRTLE, PokemonLeague_ChampionsRoom_Text_Defeat)
+			case PC_CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_CHAMPION_REMATCH_CHARMANDER, PokemonLeague_ChampionsRoom_Text_Defeat)
+			case PC_CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_CHAMPION_REMATCH_BULBASAUR, PokemonLeague_ChampionsRoom_Text_Defeat)
+			case PC_CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_CHAMPION_REMATCH_SQUIRTLE, PokemonLeague_ChampionsRoom_Text_Defeat)
 		}
     } else {
         switch (var(VAR_STARTER_MON)) {
-			case CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_CHAMPION_FIRST_CHARMANDER, PokemonLeague_ChampionsRoom_Text_Defeat)
-			case CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_CHAMPION_FIRST_BULBASAUR, PokemonLeague_ChampionsRoom_Text_Defeat)
-			case CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_CHAMPION_FIRST_SQUIRTLE, PokemonLeague_ChampionsRoom_Text_Defeat)
+			case PC_CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_CHAMPION_FIRST_CHARMANDER, PokemonLeague_ChampionsRoom_Text_Defeat)
+			case PC_CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_CHAMPION_FIRST_BULBASAUR, PokemonLeague_ChampionsRoom_Text_Defeat)
+			case PC_CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_CHAMPION_FIRST_SQUIRTLE, PokemonLeague_ChampionsRoom_Text_Defeat)
 		}
     }
     setflag(FLAG_TEMP_4)

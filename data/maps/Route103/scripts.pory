@@ -30,9 +30,9 @@ script Route103_EventScript_RivalMay {
     call(Route103_EventScript_RivalNoticePlayer)
     msgbox(Route103_Text_MayLetsBattle, MSGBOX_DEFAULT)
     switch (var(VAR_STARTER_MON)) {
-        case CHOSE_TREECKO: trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated)
-        case CHOSE_TORCHIC: trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated)
-        case CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated)
+        case PC_CHOSE_TREECKO: trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated)
+        case PC_CHOSE_TORCHIC: trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated)
+        case PC_CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated)
     }
 	msgbox(Route103_Text_MayTimeToHeadBack, MSGBOX_DEFAULT)
 	goto(Route103_EventScript_RivalExit)
@@ -46,9 +46,9 @@ script Route103_EventScript_RivalBrendan {
     call(Route103_EventScript_RivalNoticePlayer)
     msgbox(Route103_Text_BrendanLetsBattle, MSGBOX_DEFAULT)
     switch (var(VAR_STARTER_MON)) {
-        case CHOSE_TREECKO: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_BrendanDefeated)
-        case CHOSE_TORCHIC: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanDefeated)
-        case CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanDefeated)
+        case PC_CHOSE_TREECKO: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanDefeated)
+        case PC_CHOSE_TORCHIC: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanDefeated)
+        case PC_CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_BrendanDefeated)
     }
 	msgbox(Route103_Text_BrendanTimeToHeadBack, MSGBOX_DEFAULT)
 	goto(Route103_EventScript_RivalExit)

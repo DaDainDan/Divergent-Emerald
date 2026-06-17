@@ -59,11 +59,11 @@ Route22_EventScript_EarlyRival_1:
 # 39 "data/maps/Route22_Frlg/scripts.pory"
 	switch VAR_STARTER_MON
 # 40 "data/maps/Route22_Frlg/scripts.pory"
-	case CHOSE_BULBASAUR, Route22_EventScript_EarlyRival_7
+	case PC_CHOSE_BULBASAUR, Route22_EventScript_EarlyRival_7
 # 41 "data/maps/Route22_Frlg/scripts.pory"
-	case CHOSE_SQUIRTLE, Route22_EventScript_EarlyRival_8
+	case PC_CHOSE_SQUIRTLE, Route22_EventScript_EarlyRival_8
 # 42 "data/maps/Route22_Frlg/scripts.pory"
-	case CHOSE_CHARMANDER, Route22_EventScript_EarlyRival_9
+	case PC_CHOSE_CHARMANDER, Route22_EventScript_EarlyRival_9
 Route22_EventScript_EarlyRival_5:
 # 44 "data/maps/Route22_Frlg/scripts.pory"
 	msgbox Route22_Text_EarlyRivalPostBattle
@@ -193,11 +193,11 @@ Route22_EventScript_LateRival_1:
 # 101 "data/maps/Route22_Frlg/scripts.pory"
 	switch VAR_STARTER_MON
 # 102 "data/maps/Route22_Frlg/scripts.pory"
-	case CHOSE_BULBASAUR, Route22_EventScript_LateRival_7
+	case PC_CHOSE_BULBASAUR, Route22_EventScript_LateRival_7
 # 103 "data/maps/Route22_Frlg/scripts.pory"
-	case CHOSE_SQUIRTLE, Route22_EventScript_LateRival_8
+	case PC_CHOSE_SQUIRTLE, Route22_EventScript_LateRival_8
 # 104 "data/maps/Route22_Frlg/scripts.pory"
-	case CHOSE_CHARMANDER, Route22_EventScript_LateRival_9
+	case PC_CHOSE_CHARMANDER, Route22_EventScript_LateRival_9
 Route22_EventScript_LateRival_5:
 # 106 "data/maps/Route22_Frlg/scripts.pory"
 	msgbox Route22_Text_LateRivalPostBattle

@@ -37,9 +37,9 @@ script Route22_EventScript_EarlyRival {
     delay(6)
     msgbox(Route22_Text_EarlyRivalIntro)
 	switch (var(VAR_STARTER_MON)) {
-		case CHOSE_BULBASAUR: trainerbattle_earlyrival(TRAINER_RIVAL_ROUTE22_EARLY_CHARMANDER, 0, Route22_Text_EarlyRivalDefeat, Text_RivalVictory)
-		case CHOSE_SQUIRTLE: trainerbattle_earlyrival(TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR, 0, Route22_Text_EarlyRivalDefeat, Text_RivalVictory)
-		case CHOSE_CHARMANDER: trainerbattle_earlyrival(TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE, 0, Route22_Text_EarlyRivalDefeat, Text_RivalVictory)
+		case PC_CHOSE_BULBASAUR: trainerbattle_earlyrival(TRAINER_RIVAL_ROUTE22_EARLY_CHARMANDER, 0, Route22_Text_EarlyRivalDefeat, Text_RivalVictory)
+		case PC_CHOSE_SQUIRTLE: trainerbattle_earlyrival(TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR, 0, Route22_Text_EarlyRivalDefeat, Text_RivalVictory)
+		case PC_CHOSE_CHARMANDER: trainerbattle_earlyrival(TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE, 0, Route22_Text_EarlyRivalDefeat, Text_RivalVictory)
 	}
     msgbox(Route22_Text_EarlyRivalPostBattle)
     closemessage
@@ -99,9 +99,9 @@ script Route22_EventScript_LateRival {
     msgbox(Route22_Text_LateRivalIntro)
     setvar(VAR_LAST_TALKED, LOCALID_ROUTE22_RIVAL)
 	switch (var(VAR_STARTER_MON)) {
-		case CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_ROUTE22_LATE_CHARMANDER, Route22_Text_LateRivalDefeat)
-		case CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_ROUTE22_LATE_BULBASAUR, Route22_Text_LateRivalDefeat)
-		case CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_RIVAL_ROUTE22_LATE_SQUIRTLE, Route22_Text_LateRivalDefeat)
+		case PC_CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_ROUTE22_LATE_CHARMANDER, Route22_Text_LateRivalDefeat)
+		case PC_CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_ROUTE22_LATE_BULBASAUR, Route22_Text_LateRivalDefeat)
+		case PC_CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_RIVAL_ROUTE22_LATE_SQUIRTLE, Route22_Text_LateRivalDefeat)
 	}
     msgbox(Route22_Text_LateRivalPostBattle)
     closemessage

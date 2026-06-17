@@ -57,11 +57,11 @@ PokemonTower_2F_EventScript_Rival_1:
 # 40 "data/maps/PokemonTower_2F_Frlg/scripts.pory"
 	switch VAR_STARTER_MON
 # 41 "data/maps/PokemonTower_2F_Frlg/scripts.pory"
-	case CHOSE_BULBASAUR, PokemonTower_2F_EventScript_Rival_7
+	case PC_CHOSE_BULBASAUR, PokemonTower_2F_EventScript_Rival_7
 # 42 "data/maps/PokemonTower_2F_Frlg/scripts.pory"
-	case CHOSE_SQUIRTLE, PokemonTower_2F_EventScript_Rival_8
+	case PC_CHOSE_SQUIRTLE, PokemonTower_2F_EventScript_Rival_8
 # 43 "data/maps/PokemonTower_2F_Frlg/scripts.pory"
-	case CHOSE_CHARMANDER, PokemonTower_2F_EventScript_Rival_9
+	case PC_CHOSE_CHARMANDER, PokemonTower_2F_EventScript_Rival_9
 PokemonTower_2F_EventScript_Rival_5:
 # 45 "data/maps/PokemonTower_2F_Frlg/scripts.pory"
 	msgbox PokemonTower_2F_Text_RivalPostBattle

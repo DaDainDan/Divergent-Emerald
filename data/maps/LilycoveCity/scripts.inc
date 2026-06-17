@@ -374,11 +374,11 @@ LilycoveCity_EventScript_May_1:
 # 251 "data/maps/LilycoveCity/scripts.pory"
 	switch VAR_STARTER_MON
 # 252 "data/maps/LilycoveCity/scripts.pory"
-	case 0, LilycoveCity_EventScript_May_10
+	case PC_CHOSE_TREECKO, LilycoveCity_EventScript_May_10
 # 253 "data/maps/LilycoveCity/scripts.pory"
-	case 1, LilycoveCity_EventScript_May_11
+	case PC_CHOSE_TORCHIC, LilycoveCity_EventScript_May_11
 # 254 "data/maps/LilycoveCity/scripts.pory"
-	case 2, LilycoveCity_EventScript_May_12
+	case PC_CHOSE_MUDKIP, LilycoveCity_EventScript_May_12
 LilycoveCity_EventScript_May_8:
 # 256 "data/maps/LilycoveCity/scripts.pory"
 	goto LilycoveCity_EventScript_DefeatedMay
@@ -402,17 +402,17 @@ LilycoveCity_EventScript_May_6:
 
 LilycoveCity_EventScript_May_10:
 # 252 "data/maps/LilycoveCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TREECKO, LilycoveCity_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TORCHIC, LilycoveCity_Text_MayDefeat
 	goto LilycoveCity_EventScript_May_8
 
 LilycoveCity_EventScript_May_11:
 # 253 "data/maps/LilycoveCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TORCHIC, LilycoveCity_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_MUDKIP, LilycoveCity_Text_MayDefeat
 	goto LilycoveCity_EventScript_May_8
 
 LilycoveCity_EventScript_May_12:
 # 254 "data/maps/LilycoveCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_MUDKIP, LilycoveCity_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TREECKO, LilycoveCity_Text_MayDefeat
 	goto LilycoveCity_EventScript_May_8
 
 
@@ -432,11 +432,11 @@ LilycoveCity_EventScript_Brendan_1:
 # 275 "data/maps/LilycoveCity/scripts.pory"
 	switch VAR_STARTER_MON
 # 276 "data/maps/LilycoveCity/scripts.pory"
-	case CHOSE_TREECKO, LilycoveCity_EventScript_Brendan_10
+	case PC_CHOSE_TREECKO, LilycoveCity_EventScript_Brendan_10
 # 277 "data/maps/LilycoveCity/scripts.pory"
-	case CHOSE_TORCHIC, LilycoveCity_EventScript_Brendan_11
+	case PC_CHOSE_TORCHIC, LilycoveCity_EventScript_Brendan_11
 # 278 "data/maps/LilycoveCity/scripts.pory"
-	case CHOSE_MUDKIP, LilycoveCity_EventScript_Brendan_12
+	case PC_CHOSE_MUDKIP, LilycoveCity_EventScript_Brendan_12
 LilycoveCity_EventScript_Brendan_8:
 # 280 "data/maps/LilycoveCity/scripts.pory"
 	goto LilycoveCity_EventScript_DefeatedBrendan
@@ -460,17 +460,17 @@ LilycoveCity_EventScript_Brendan_6:
 
 LilycoveCity_EventScript_Brendan_10:
 # 276 "data/maps/LilycoveCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TREECKO, LilycoveCity_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TORCHIC, LilycoveCity_Text_BrendanDefeat
 	goto LilycoveCity_EventScript_Brendan_8
 
 LilycoveCity_EventScript_Brendan_11:
 # 277 "data/maps/LilycoveCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TORCHIC, LilycoveCity_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_MUDKIP, LilycoveCity_Text_BrendanDefeat
 	goto LilycoveCity_EventScript_Brendan_8
 
 LilycoveCity_EventScript_Brendan_12:
 # 278 "data/maps/LilycoveCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_MUDKIP, LilycoveCity_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TREECKO, LilycoveCity_Text_BrendanDefeat
 	goto LilycoveCity_EventScript_Brendan_8
 
 

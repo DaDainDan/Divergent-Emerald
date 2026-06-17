@@ -75,11 +75,11 @@ CeruleanCity_EventScript_Rival::
 # 45 "data/maps/CeruleanCity_Frlg/scripts.pory"
 	switch VAR_STARTER_MON
 # 46 "data/maps/CeruleanCity_Frlg/scripts.pory"
-	case CHOSE_BULBASAUR, CeruleanCity_EventScript_Rival_3
+	case PC_CHOSE_BULBASAUR, CeruleanCity_EventScript_Rival_3
 # 47 "data/maps/CeruleanCity_Frlg/scripts.pory"
-	case CHOSE_SQUIRTLE, CeruleanCity_EventScript_Rival_4
+	case PC_CHOSE_SQUIRTLE, CeruleanCity_EventScript_Rival_4
 # 48 "data/maps/CeruleanCity_Frlg/scripts.pory"
-	case CHOSE_CHARMANDER, CeruleanCity_EventScript_Rival_5
+	case PC_CHOSE_CHARMANDER, CeruleanCity_EventScript_Rival_5
 CeruleanCity_EventScript_Rival_1:
 # 50 "data/maps/CeruleanCity_Frlg/scripts.pory"
 	famechecker FAMECHECKER_BILL, 0

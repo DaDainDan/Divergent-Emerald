@@ -58,11 +58,11 @@ Route103_EventScript_RivalMay::
 # 32 "data/maps/Route103/scripts.pory"
 	switch VAR_STARTER_MON
 # 33 "data/maps/Route103/scripts.pory"
-	case CHOSE_TREECKO, Route103_EventScript_RivalMay_3
+	case PC_CHOSE_TREECKO, Route103_EventScript_RivalMay_3
 # 34 "data/maps/Route103/scripts.pory"
-	case CHOSE_TORCHIC, Route103_EventScript_RivalMay_4
+	case PC_CHOSE_TORCHIC, Route103_EventScript_RivalMay_4
 # 35 "data/maps/Route103/scripts.pory"
-	case CHOSE_MUDKIP, Route103_EventScript_RivalMay_5
+	case PC_CHOSE_MUDKIP, Route103_EventScript_RivalMay_5
 Route103_EventScript_RivalMay_1:
 # 37 "data/maps/Route103/scripts.pory"
 	msgbox Route103_Text_MayTimeToHeadBack, MSGBOX_DEFAULT
@@ -72,17 +72,17 @@ Route103_EventScript_RivalMay_1:
 
 Route103_EventScript_RivalMay_3:
 # 33 "data/maps/Route103/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated
 	goto Route103_EventScript_RivalMay_1
 
 Route103_EventScript_RivalMay_4:
 # 34 "data/maps/Route103/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated
 	goto Route103_EventScript_RivalMay_1
 
 Route103_EventScript_RivalMay_5:
 # 35 "data/maps/Route103/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated
 	goto Route103_EventScript_RivalMay_1
 
 
@@ -100,11 +100,11 @@ Route103_EventScript_RivalBrendan::
 # 48 "data/maps/Route103/scripts.pory"
 	switch VAR_STARTER_MON
 # 49 "data/maps/Route103/scripts.pory"
-	case CHOSE_TREECKO, Route103_EventScript_RivalBrendan_3
+	case PC_CHOSE_TREECKO, Route103_EventScript_RivalBrendan_3
 # 50 "data/maps/Route103/scripts.pory"
-	case CHOSE_TORCHIC, Route103_EventScript_RivalBrendan_4
+	case PC_CHOSE_TORCHIC, Route103_EventScript_RivalBrendan_4
 # 51 "data/maps/Route103/scripts.pory"
-	case CHOSE_MUDKIP, Route103_EventScript_RivalBrendan_5
+	case PC_CHOSE_MUDKIP, Route103_EventScript_RivalBrendan_5
 Route103_EventScript_RivalBrendan_1:
 # 53 "data/maps/Route103/scripts.pory"
 	msgbox Route103_Text_BrendanTimeToHeadBack, MSGBOX_DEFAULT
@@ -114,17 +114,17 @@ Route103_EventScript_RivalBrendan_1:
 
 Route103_EventScript_RivalBrendan_3:
 # 49 "data/maps/Route103/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_BrendanDefeated
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanDefeated
 	goto Route103_EventScript_RivalBrendan_1
 
 Route103_EventScript_RivalBrendan_4:
 # 50 "data/maps/Route103/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanDefeated
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanDefeated
 	goto Route103_EventScript_RivalBrendan_1
 
 Route103_EventScript_RivalBrendan_5:
 # 51 "data/maps/Route103/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanDefeated
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_BrendanDefeated
 	goto Route103_EventScript_RivalBrendan_1
 
 

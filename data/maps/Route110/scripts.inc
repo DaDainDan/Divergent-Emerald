@@ -605,11 +605,11 @@ Route110_EventScript_MayBattle::
 # 367 "data/maps/Route110/scripts.pory"
 	switch VAR_STARTER_MON
 # 368 "data/maps/Route110/scripts.pory"
-	case 0, Route110_EventScript_MayBattle_3
+	case PC_CHOSE_TREECKO, Route110_EventScript_MayBattle_3
 # 369 "data/maps/Route110/scripts.pory"
-	case 1, Route110_EventScript_MayBattle_4
+	case PC_CHOSE_TORCHIC, Route110_EventScript_MayBattle_4
 # 370 "data/maps/Route110/scripts.pory"
-	case 2, Route110_EventScript_MayBattle_5
+	case PC_CHOSE_MUDKIP, Route110_EventScript_MayBattle_5
 Route110_EventScript_MayBattle_1:
 # 372 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_MayTakeThis, MSGBOX_DEFAULT
@@ -623,17 +623,17 @@ Route110_EventScript_MayBattle_1:
 
 Route110_EventScript_MayBattle_3:
 # 368 "data/maps/Route110/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TREECKO, Route110_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TORCHIC, Route110_Text_MayDefeated
 	goto Route110_EventScript_MayBattle_1
 
 Route110_EventScript_MayBattle_4:
 # 369 "data/maps/Route110/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TORCHIC, Route110_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_MUDKIP, Route110_Text_MayDefeated
 	goto Route110_EventScript_MayBattle_1
 
 Route110_EventScript_MayBattle_5:
 # 370 "data/maps/Route110/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_MUDKIP, Route110_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TREECKO, Route110_Text_MayDefeated
 	goto Route110_EventScript_MayBattle_1
 
 
@@ -643,11 +643,11 @@ Route110_EventScript_BrendanBattle::
 # 381 "data/maps/Route110/scripts.pory"
 	switch VAR_STARTER_MON
 # 382 "data/maps/Route110/scripts.pory"
-	case 0, Route110_EventScript_BrendanBattle_3
+	case PC_CHOSE_TREECKO, Route110_EventScript_BrendanBattle_3
 # 383 "data/maps/Route110/scripts.pory"
-	case 1, Route110_EventScript_BrendanBattle_4
+	case PC_CHOSE_TORCHIC, Route110_EventScript_BrendanBattle_4
 # 384 "data/maps/Route110/scripts.pory"
-	case 2, Route110_EventScript_BrendanBattle_5
+	case PC_CHOSE_MUDKIP, Route110_EventScript_BrendanBattle_5
 Route110_EventScript_BrendanBattle_1:
 # 386 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_BrendanTakeThis, MSGBOX_DEFAULT
@@ -661,17 +661,17 @@ Route110_EventScript_BrendanBattle_1:
 
 Route110_EventScript_BrendanBattle_3:
 # 382 "data/maps/Route110/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_TREECKO, Route110_Text_BrendanDefeated
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_TORCHIC, Route110_Text_BrendanDefeated
 	goto Route110_EventScript_BrendanBattle_1
 
 Route110_EventScript_BrendanBattle_4:
 # 383 "data/maps/Route110/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_TORCHIC, Route110_Text_BrendanDefeated
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_MUDKIP, Route110_Text_BrendanDefeated
 	goto Route110_EventScript_BrendanBattle_1
 
 Route110_EventScript_BrendanBattle_5:
 # 384 "data/maps/Route110/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_MUDKIP, Route110_Text_BrendanDefeated
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_TREECKO, Route110_Text_BrendanDefeated
 	goto Route110_EventScript_BrendanBattle_1
 
 

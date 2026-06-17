@@ -206,9 +206,9 @@ script MauvilleCity_GameCorner_EventScript_Girl {
     	release_end
     }
     switch (var(VAR_STARTER_MON)) {
-        case 0: setvar(VAR_GIFT_ITEM, DECOR_TREECKO_DOLL)
-        case 1: setvar(VAR_GIFT_ITEM, DECOR_TORCHIC_DOLL)
-        case 2: setvar(VAR_GIFT_ITEM, DECOR_MUDKIP_DOLL)
+        case PC_CHOSE_TREECKO: setvar(VAR_GIFT_ITEM, DECOR_TREECKO_DOLL)
+        case PC_CHOSE_TORCHIC: setvar(VAR_GIFT_ITEM, DECOR_TORCHIC_DOLL)
+        case PC_CHOSE_MUDKIP: setvar(VAR_GIFT_ITEM, DECOR_MUDKIP_DOLL)
     }
     bufferdecorationname(STR_VAR_2, VAR_GIFT_ITEM)
     if (checkdecorspace(VAR_GIFT_ITEM) == FALSE) {

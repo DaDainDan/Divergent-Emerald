@@ -53,11 +53,11 @@ PetalburgCity_PokemonCenter_1F_EventScript_Woman_2:
 # 32 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	switch VAR_STARTER_MON
 # 33 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	case CHOSE_TREECKO, PetalburgCity_PokemonCenter_1F_EventScript_Woman_5
+	case PC_CHOSE_TREECKO, PetalburgCity_PokemonCenter_1F_EventScript_Woman_5
 # 34 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	case CHOSE_TORCHIC, PetalburgCity_PokemonCenter_1F_EventScript_Woman_6
+	case PC_CHOSE_TORCHIC, PetalburgCity_PokemonCenter_1F_EventScript_Woman_6
 # 35 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	case CHOSE_MUDKIP, PetalburgCity_PokemonCenter_1F_EventScript_Woman_7
+	case PC_CHOSE_MUDKIP, PetalburgCity_PokemonCenter_1F_EventScript_Woman_7
 	goto PetalburgCity_PokemonCenter_1F_EventScript_Woman_1
 
 PetalburgCity_PokemonCenter_1F_EventScript_Woman_5:

@@ -239,11 +239,11 @@ Route104_EventScript_BattleMay::
 # 118 "data/maps/Route104/scripts.pory"
 	switch VAR_STARTER_MON
 # 119 "data/maps/Route104/scripts.pory"
-	case CHOSE_TREECKO, Route104_EventScript_BattleMay_3
+	case PC_CHOSE_TREECKO, Route104_EventScript_BattleMay_3
 # 120 "data/maps/Route104/scripts.pory"
-	case CHOSE_TORCHIC, Route104_EventScript_BattleMay_4
+	case PC_CHOSE_TORCHIC, Route104_EventScript_BattleMay_4
 # 121 "data/maps/Route104/scripts.pory"
-	case CHOSE_MUDKIP, Route104_EventScript_BattleMay_5
+	case PC_CHOSE_MUDKIP, Route104_EventScript_BattleMay_5
 Route104_EventScript_BattleMay_1:
 # 123 "data/maps/Route104/scripts.pory"
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
@@ -253,17 +253,17 @@ Route104_EventScript_BattleMay_1:
 
 Route104_EventScript_BattleMay_3:
 # 119 "data/maps/Route104/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, Route104_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, Route104_Text_MayDefeat
 	goto Route104_EventScript_BattleMay_1
 
 Route104_EventScript_BattleMay_4:
 # 120 "data/maps/Route104/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, Route104_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, Route104_Text_MayDefeat
 	goto Route104_EventScript_BattleMay_1
 
 Route104_EventScript_BattleMay_5:
 # 121 "data/maps/Route104/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, Route104_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, Route104_Text_MayDefeat
 	goto Route104_EventScript_BattleMay_1
 
 
@@ -383,11 +383,11 @@ Route104_EventScript_BattleBrendan::
 # 186 "data/maps/Route104/scripts.pory"
 	switch VAR_STARTER_MON
 # 187 "data/maps/Route104/scripts.pory"
-	case CHOSE_TREECKO, Route104_EventScript_BattleBrendan_3
+	case PC_CHOSE_TREECKO, Route104_EventScript_BattleBrendan_3
 # 188 "data/maps/Route104/scripts.pory"
-	case CHOSE_TORCHIC, Route104_EventScript_BattleBrendan_4
+	case PC_CHOSE_TORCHIC, Route104_EventScript_BattleBrendan_4
 # 189 "data/maps/Route104/scripts.pory"
-	case CHOSE_MUDKIP, Route104_EventScript_BattleBrendan_5
+	case PC_CHOSE_MUDKIP, Route104_EventScript_BattleBrendan_5
 Route104_EventScript_BattleBrendan_1:
 # 191 "data/maps/Route104/scripts.pory"
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
@@ -397,17 +397,17 @@ Route104_EventScript_BattleBrendan_1:
 
 Route104_EventScript_BattleBrendan_3:
 # 187 "data/maps/Route104/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, Route104_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, Route104_Text_BrendanDefeat
 	goto Route104_EventScript_BattleBrendan_1
 
 Route104_EventScript_BattleBrendan_4:
 # 188 "data/maps/Route104/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, Route104_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, Route104_Text_BrendanDefeat
 	goto Route104_EventScript_BattleBrendan_1
 
 Route104_EventScript_BattleBrendan_5:
 # 189 "data/maps/Route104/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, Route104_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, Route104_Text_BrendanDefeat
 	goto Route104_EventScript_BattleBrendan_1
 
 

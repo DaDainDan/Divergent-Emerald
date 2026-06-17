@@ -398,11 +398,11 @@ MauvilleCity_GameCorner_EventScript_Girl::
 # 208 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	switch VAR_STARTER_MON
 # 209 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	case 0, MauvilleCity_GameCorner_EventScript_Girl_9
+	case PC_CHOSE_TREECKO, MauvilleCity_GameCorner_EventScript_Girl_9
 # 210 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	case 1, MauvilleCity_GameCorner_EventScript_Girl_10
+	case PC_CHOSE_TORCHIC, MauvilleCity_GameCorner_EventScript_Girl_10
 # 211 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	case 2, MauvilleCity_GameCorner_EventScript_Girl_11
+	case PC_CHOSE_MUDKIP, MauvilleCity_GameCorner_EventScript_Girl_11
 MauvilleCity_GameCorner_EventScript_Girl_7:
 # 213 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	bufferdecorationname STR_VAR_2, VAR_GIFT_ITEM

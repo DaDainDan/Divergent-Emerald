@@ -30,9 +30,9 @@ script PetalburgCity_PokemonCenter_1F_EventScript_Woman {
     msgbox(PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon, MSGBOX_DEFAULT)
     if (specialvar(VAR_RESULT, IsStarterInParty) == TRUE) {
 		switch (var(VAR_STARTER_MON)) {
-			case CHOSE_TREECKO: msgbox(PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType, MSGBOX_DEFAULT)
-			case CHOSE_TORCHIC: msgbox(PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType, MSGBOX_DEFAULT)
-			case CHOSE_MUDKIP: msgbox(PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType, MSGBOX_DEFAULT)
+			case PC_CHOSE_TREECKO: msgbox(PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType, MSGBOX_DEFAULT)
+			case PC_CHOSE_TORCHIC: msgbox(PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType, MSGBOX_DEFAULT)
+			case PC_CHOSE_MUDKIP: msgbox(PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType, MSGBOX_DEFAULT)
 		}
 	}
     release_end

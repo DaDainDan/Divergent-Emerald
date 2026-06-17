@@ -44,9 +44,9 @@ script SSAnne_2F_Corridor_EventScript_RivalTrigger {
     msgbox(SSAnne_2F_Corridor_Text_RivalIntro)
     setvar(VAR_LAST_TALKED, LOCALID_SS_ANNE_RIVAL)
 	switch (var(VAR_STARTER_MON)) {
-		case CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_SS_ANNE_CHARMANDER, SSAnne_2F_Corridor_Text_RivalDefeat)
-		case CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_SS_ANNE_BULBASAUR, SSAnne_2F_Corridor_Text_RivalDefeat)
-		case CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_RIVAL_SS_ANNE_SQUIRTLE, SSAnne_2F_Corridor_Text_RivalDefeat)
+		case PC_CHOSE_BULBASAUR: trainerbattle_no_intro(TRAINER_RIVAL_SS_ANNE_CHARMANDER, SSAnne_2F_Corridor_Text_RivalDefeat)
+		case PC_CHOSE_SQUIRTLE: trainerbattle_no_intro(TRAINER_RIVAL_SS_ANNE_BULBASAUR, SSAnne_2F_Corridor_Text_RivalDefeat)
+		case PC_CHOSE_CHARMANDER: trainerbattle_no_intro(TRAINER_RIVAL_SS_ANNE_SQUIRTLE, SSAnne_2F_Corridor_Text_RivalDefeat)
 	}
     msgbox(SSAnne_2F_Corridor_Text_RivalPostBattle)
     closemessage
