@@ -325,7 +325,7 @@ SlateportCity_BattleTentLobby_EventScript_CancelChallenge::
 
 
 # 176 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
-SlateportCity_BattleTentLobby_Movement_UnusedEnterDoor::
+SlateportCity_BattleTentLobby_Movement_UnusedEnterDoor:
 # 178 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 	walk_up
 # 178 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"

@@ -435,7 +435,7 @@ PetalburgCity_EventScript_ShowGymToPlayer_12:
 
 
 # 205 "data/maps/PetalburgCity/scripts.pory"
-PetalburgCity_Movement_Delay48::
+PetalburgCity_Movement_Delay48:
 # 206 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
 # 206 "data/maps/PetalburgCity/scripts.pory"

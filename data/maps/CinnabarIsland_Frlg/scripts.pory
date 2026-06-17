@@ -147,7 +147,7 @@ script CinnabarIsland_EventScript_SailToOneIsland {
     end
 }
 
-movement(global) CinnabarIsland_Movement_PlayerBoardBoat {
+movement CinnabarIsland_Movement_PlayerBoardBoat {
     // moves(walk_down,  walk_right,  walk_down * 2,  step_faster_right,  delay_4,  walk_right,  delay_4,  set_invisible)
     walk_down
     walk_right

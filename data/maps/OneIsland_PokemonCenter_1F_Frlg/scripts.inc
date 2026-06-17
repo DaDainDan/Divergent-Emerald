@@ -248,7 +248,7 @@ OneIsland_PokemonCenter_1F_Movement_WalkUp:
 	step_end
 
 # 127 "data/maps/OneIsland_PokemonCenter_1F_Frlg/scripts.pory"
-OneIsland_PokemonCenter_1F_Movement_StepAsideLeft::
+OneIsland_PokemonCenter_1F_Movement_StepAsideLeft:
 # 129 "data/maps/OneIsland_PokemonCenter_1F_Frlg/scripts.pory"
 	walk_left
 # 130 "data/maps/OneIsland_PokemonCenter_1F_Frlg/scripts.pory"
@@ -790,7 +790,7 @@ OneIsland_PokemonCenter_1F_EventScript_LeaveOneIslandScene_6:
 
 
 # 414 "data/maps/OneIsland_PokemonCenter_1F_Frlg/scripts.pory"
-OneIsland_PokemonCenter_1F_Movement_DelayStepLeft::
+OneIsland_PokemonCenter_1F_Movement_DelayStepLeft:
 # 416 "data/maps/OneIsland_PokemonCenter_1F_Frlg/scripts.pory"
 	delay_16
 # 416 "data/maps/OneIsland_PokemonCenter_1F_Frlg/scripts.pory"
@@ -802,7 +802,7 @@ OneIsland_PokemonCenter_1F_Movement_DelayStepLeft::
 	step_end
 
 # 422 "data/maps/OneIsland_PokemonCenter_1F_Frlg/scripts.pory"
-OneIsland_PokemonCenter_1F_Movement_StepDown::
+OneIsland_PokemonCenter_1F_Movement_StepDown:
 # 424 "data/maps/OneIsland_PokemonCenter_1F_Frlg/scripts.pory"
 	step_fast_down
 	step_end

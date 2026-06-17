@@ -202,7 +202,7 @@ script PetalburgCity_EventScript_ShowGymToPlayer {
 }
 
 // Unused
-movement(global) PetalburgCity_Movement_Delay48 {
+movement PetalburgCity_Movement_Delay48 {
     delay_16 * 3
 }
 

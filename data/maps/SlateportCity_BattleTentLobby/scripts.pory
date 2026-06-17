@@ -173,7 +173,7 @@ script SlateportCity_BattleTentLobby_EventScript_CancelChallenge {
 }
 
 // Unused
-movement(global) SlateportCity_BattleTentLobby_Movement_UnusedEnterDoor {
+movement SlateportCity_BattleTentLobby_Movement_UnusedEnterDoor {
     // moves(walk_up * 3,  set_invisible)
     walk_up * 3
     set_invisible

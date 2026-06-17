@@ -1948,13 +1948,13 @@ SootopolisCity_EventScript_MaxieArchieLeave::
 
 
 # 762 "data/maps/SootopolisCity/scripts.pory"
-SootopolisCity_Movement_Levitate::
+SootopolisCity_Movement_Levitate:
 # 764 "data/maps/SootopolisCity/scripts.pory"
 	levitate
 	step_end
 
 # 768 "data/maps/SootopolisCity/scripts.pory"
-SootopolisCity_Movement_DestroyTask::
+SootopolisCity_Movement_DestroyTask:
 # 770 "data/maps/SootopolisCity/scripts.pory"
 	destroy_extra_task
 	step_end

@@ -296,7 +296,7 @@ CinnabarIsland_EventScript_SailToOneIsland_9:
 
 
 # 150 "data/maps/CinnabarIsland_Frlg/scripts.pory"
-CinnabarIsland_Movement_PlayerBoardBoat::
+CinnabarIsland_Movement_PlayerBoardBoat:
 # 152 "data/maps/CinnabarIsland_Frlg/scripts.pory"
 	walk_down
 # 153 "data/maps/CinnabarIsland_Frlg/scripts.pory"

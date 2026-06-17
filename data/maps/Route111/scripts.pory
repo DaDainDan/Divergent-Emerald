@@ -102,7 +102,7 @@ script Route111_EventScript_MirageTowerDisappear {
 }
 
 // Unused
-movement(global) Route111_Movement_PlayerFall {
+movement Route111_Movement_PlayerFall {
     // moves(lock_anim,  run_down * 6)
     lock_anim
     run_down * 6

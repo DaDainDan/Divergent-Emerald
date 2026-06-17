@@ -231,7 +231,7 @@ Route111_EventScript_MirageTowerDisappear_2:
 
 
 # 105 "data/maps/Route111/scripts.pory"
-Route111_Movement_PlayerFall::
+Route111_Movement_PlayerFall:
 # 107 "data/maps/Route111/scripts.pory"
 	lock_anim
 # 108 "data/maps/Route111/scripts.pory"

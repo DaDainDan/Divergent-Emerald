@@ -124,7 +124,7 @@ movement OneIsland_PokemonCenter_1F_Movement_WalkUp {
 }
 
 // Unused
-movement(global) OneIsland_PokemonCenter_1F_Movement_StepAsideLeft {
+movement OneIsland_PokemonCenter_1F_Movement_StepAsideLeft {
     // moves(walk_left,  step_faster_right)
     walk_left
     step_faster_right
@@ -411,7 +411,7 @@ script OneIsland_PokemonCenter_1F_EventScript_LeaveOneIslandScene {
 }
 
 // Unused
-movement(global) OneIsland_PokemonCenter_1F_Movement_DelayStepLeft {
+movement OneIsland_PokemonCenter_1F_Movement_DelayStepLeft {
     // moves(delay_16 * 2,  delay_4,  step_faster_left)
     delay_16 * 2
     delay_4
@@ -419,7 +419,7 @@ movement(global) OneIsland_PokemonCenter_1F_Movement_DelayStepLeft {
 }
 
 // Unused
-movement(global) OneIsland_PokemonCenter_1F_Movement_StepDown {
+movement OneIsland_PokemonCenter_1F_Movement_StepDown {
     // moves(step_fast_down)
     step_fast_down
 }

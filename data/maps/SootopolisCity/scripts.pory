@@ -759,13 +759,13 @@ script SootopolisCity_EventScript_MaxieArchieLeave {
 }
 
 // Unused
-movement(global) SootopolisCity_Movement_Levitate {
+movement SootopolisCity_Movement_Levitate {
     // moves(levitate)
     levitate
 }
 
 // Unused
-movement(global) SootopolisCity_Movement_DestroyTask {
+movement SootopolisCity_Movement_DestroyTask {
     // moves(destroy_extra_task)
     destroy_extra_task
 }
