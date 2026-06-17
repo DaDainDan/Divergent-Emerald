@@ -68,3 +68,4 @@ __pycache__
 .map_version
 tools/poryscript/poryscript
 convert_scripts_inc.sh
+triple_layer_converter.py
