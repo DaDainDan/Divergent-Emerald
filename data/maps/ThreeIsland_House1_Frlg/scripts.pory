@@ -1,26 +1,25 @@
-raw `
-ThreeIsland_House1_Frlg_MapScripts::
-	.byte 0
+mapscripts ThreeIsland_House1_Frlg_MapScripts {}
 
-ThreeIsland_House1_EventScript_Lostelle::
-	lock
-	faceplayer
-	special GetPlayerBigGuyGirlString
-	msgbox ThreeIsland_House1_Text_YoureAlwaysSoCool
-	release
-	end
+script ThreeIsland_House1_EventScript_Lostelle {
+    lock_faceplayer
+    special(GetPlayerBigGuyGirlString)
+    msgbox(ThreeIsland_House1_Text_YoureAlwaysSoCool)
+    release_end
+}
 
-ThreeIsland_House1_EventScript_DisplayCase::
-	msgbox ThreeIsland_House1_Text_RareRocksGemsDisplayed, MSGBOX_SIGN
-	end
+script ThreeIsland_House1_EventScript_DisplayCase {
+    msgbox(ThreeIsland_House1_Text_RareRocksGemsDisplayed, MSGBOX_SIGN)
+    end
+}
 
-ThreeIsland_House1_Text_YoureAlwaysSoCool::
-	.string "LOSTELLE: Hi, {PLAYER}!\n"
-	.string "You're always so cool!\p"
-	.string "I'll make lunch for you, too, one\n"
-	.string "day, {PLAYER}.$"
+text ThreeIsland_House1_Text_YoureAlwaysSoCool {
+	"LOSTELLE: Hi, {PLAYER}!
+	You're always so cool!
 
-ThreeIsland_House1_Text_RareRocksGemsDisplayed::
-	.string "Rare rocks and gems are displayed.$"
+	I'll make lunch for you, too, one
+	day, {PLAYER}."
+}
 
-`
+text ThreeIsland_House1_Text_RareRocksGemsDisplayed {
+	"Rare rocks and gems are displayed."
+}

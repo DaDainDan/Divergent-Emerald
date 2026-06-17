@@ -1,49 +1,54 @@
-raw `
-ThreeIsland_PokemonCenter_1F_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, ThreeIsland_PokemonCenter_1F_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
-	.byte 0
+mapscripts ThreeIsland_PokemonCenter_1F_Frlg_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setrespawn(HEAL_LOCATION_THREE_ISLAND)
+    	end
+    }
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+}
 
-ThreeIsland_PokemonCenter_1F_OnTransition::
-	setrespawn HEAL_LOCATION_THREE_ISLAND
-	end
+script ThreeIsland_PokemonCenter_1F_EventScript_Nurse {
+    lock_faceplayer
+    call(EventScript_PkmnCenterNurse_Frlg)
+    release_end
+}
 
-ThreeIsland_PokemonCenter_1F_EventScript_Nurse::
-	lock
-	faceplayer
-	call EventScript_PkmnCenterNurse_Frlg
-	release
-	end
+script ThreeIsland_PokemonCenter_1F_EventScript_Sailor {
+    msgbox(ThreeIsland_PokemonCenter_1F_Text_ImpossibleToSurfBetweenIslands, MSGBOX_NPC)
+    end
+}
 
-ThreeIsland_PokemonCenter_1F_EventScript_Sailor::
-	msgbox ThreeIsland_PokemonCenter_1F_Text_ImpossibleToSurfBetweenIslands, MSGBOX_NPC
-	end
+script ThreeIsland_PokemonCenter_1F_EventScript_Lass {
+    msgbox(ThreeIsland_PokemonCenter_1F_Text_AlwaysBerriesInBerryForest, MSGBOX_NPC)
+    end
+}
 
-ThreeIsland_PokemonCenter_1F_EventScript_Lass::
-	msgbox ThreeIsland_PokemonCenter_1F_Text_AlwaysBerriesInBerryForest, MSGBOX_NPC
-	end
+script ThreeIsland_PokemonCenter_1F_EventScript_Rocker {
+    msgbox(ThreeIsland_PokemonCenter_1F_Text_PCNetworkCanLinkWithKanto, MSGBOX_NPC)
+    end
+}
 
-ThreeIsland_PokemonCenter_1F_EventScript_Rocker::
-	msgbox ThreeIsland_PokemonCenter_1F_Text_PCNetworkCanLinkWithKanto, MSGBOX_NPC
-	end
+text ThreeIsland_PokemonCenter_1F_Text_PCNetworkCanLinkWithKanto {
+	"Hey, did you hear the news?
 
-ThreeIsland_PokemonCenter_1F_Text_PCNetworkCanLinkWithKanto::
-	.string "Hey, did you hear the news?\p"
-	.string "The PC network here can now link\n"
-	.string "with PCs in KANTO.\p"
-	.string "I don't know how that came about,\n"
-	.string "but it's fantastic!$"
+	The PC network here can now link
+	with PCs in KANTO.
 
-ThreeIsland_PokemonCenter_1F_Text_ImpossibleToSurfBetweenIslands::
-	.string "It's impossible to SURF between the\n"
-	.string "islands around these parts.\p"
-	.string "The tides are too fast and\n"
-	.string "treacherous.$"
+	I don't know how that came about,
+	but it's fantastic!"
+}
 
-ThreeIsland_PokemonCenter_1F_Text_AlwaysBerriesInBerryForest::
-	.string "Let's crush BERRIES!\n"
-	.string "…That'd be wasting BERRIES?\p"
-	.string "You can always find some BERRIES\n"
-	.string "on the ground in BERRY FOREST.$"
+text ThreeIsland_PokemonCenter_1F_Text_ImpossibleToSurfBetweenIslands {
+	"It's impossible to SURF between the
+	islands around these parts.
 
-`
+	The tides are too fast and
+	treacherous."
+}
+
+text ThreeIsland_PokemonCenter_1F_Text_AlwaysBerriesInBerryForest {
+	"Let's crush BERRIES!
+	…That'd be wasting BERRIES?
+
+	You can always find some BERRIES
+	on the ground in BERRY FOREST."
+}

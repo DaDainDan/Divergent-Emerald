@@ -1,11 +1,17 @@
 ThreeIsland_Harbor_Frlg_MapScripts::
 	.byte 0
 
+
 ThreeIsland_Harbor_EventScript_Sailor::
-	lock
-	faceplayer
+# 4 "data/maps/ThreeIsland_Harbor_Frlg/scripts.pory"
+	lock_faceplayer
+# 5 "data/maps/ThreeIsland_Harbor_Frlg/scripts.pory"
 	message Text_WhereDoYouWantToSail
+# 6 "data/maps/ThreeIsland_Harbor_Frlg/scripts.pory"
 	waitmessage
+# 7 "data/maps/ThreeIsland_Harbor_Frlg/scripts.pory"
 	setvar VAR_0x8004, SEAGALLOP_THREE_ISLAND
+# 8 "data/maps/ThreeIsland_Harbor_Frlg/scripts.pory"
 	goto EventScript_ChooseDestFromIsland
 	end
+

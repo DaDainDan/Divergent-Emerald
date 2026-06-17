@@ -1,66 +1,67 @@
-raw `
-ThreeIsland_Port_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, ThreeIsland_Port_OnTransition
-	.byte 0
+mapscripts ThreeIsland_Port_Frlg_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        clearflag(FLAG_SYS_PC_STORAGE_DISABLED)
+		setflag(FLAG_SEVII_DETOUR_FINISHED)
+		end
+    }
+}
 
-ThreeIsland_Port_OnTransition::
-	clearflag FLAG_SYS_PC_STORAGE_DISABLED
-	setflag FLAG_SEVII_DETOUR_FINISHED
-	end
+script ThreeIsland_Port_EventScript_Woman {
+    lock_faceplayer
+    if (var(VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER) >= 2) {
+        msgbox(ThreeIsland_Port_Text_EverythingTurnedOutForBest)
+    }
+    elif (var(VAR_MAP_SCENE_THREE_ISLAND) >= 4) {
+        msgbox(ThreeIsland_Port_Text_ThankGoodnessBikersGone)
+    }
+	else {
+		msgbox(ThreeIsland_Port_Text_IllCallThePolice)
+	}
+    release_end
+}
 
-ThreeIsland_Port_EventScript_Woman::
-	lock
-	faceplayer
-	goto_if_ge VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 2, ThreeIsland_Port_EventScript_WomanLostelleFound
-	goto_if_ge VAR_MAP_SCENE_THREE_ISLAND, 4, ThreeIsland_Port_EventScript_WomanBikersGone
-	msgbox ThreeIsland_Port_Text_IllCallThePolice
-	release
-	end
+script ThreeIsland_Port_EventScript_Biker1 {
+    msgbox(ThreeIsland_Port_Text_WereKantoRiderFederation, MSGBOX_NPC)
+    end
+}
 
-ThreeIsland_Port_EventScript_WomanLostelleFound::
-	msgbox ThreeIsland_Port_Text_EverythingTurnedOutForBest
-	release
-	end
+script ThreeIsland_Port_EventScript_Biker2 {
+    lock
+    msgbox(ThreeIsland_Port_Text_ForkOverMoney)
+    release_end
+}
 
-ThreeIsland_Port_EventScript_WomanBikersGone::
-	msgbox ThreeIsland_Port_Text_ThankGoodnessBikersGone
-	release
-	end
+text ThreeIsland_Port_Text_WereKantoRiderFederation {
+	"We're the KANTO RIDER FEDERATION!
+	Vroom! Vavavavooom! Vroom!
 
-ThreeIsland_Port_EventScript_Biker1::
-	msgbox ThreeIsland_Port_Text_WereKantoRiderFederation, MSGBOX_NPC
-	end
+	My bike's wimpy, so I have to
+	make exhaust noises myself!"
+}
 
-ThreeIsland_Port_EventScript_Biker2::
-	lock
-	msgbox ThreeIsland_Port_Text_ForkOverMoney
-	release
-	end
+text ThreeIsland_Port_Text_ForkOverMoney {
+	"Hey, hey, lady!
+	Fork over some spending money!"
+}
 
-ThreeIsland_Port_Text_WereKantoRiderFederation::
-	.string "We're the KANTO RIDER FEDERATION!\n"
-	.string "Vroom! Vavavavooom! Vroom!\p"
-	.string "My bike's wimpy, so I have to\n"
-	.string "make exhaust noises myself!$"
+text ThreeIsland_Port_Text_IllCallThePolice {
+	"Aiyeeh!
 
-ThreeIsland_Port_Text_ForkOverMoney::
-	.string "Hey, hey, lady!\n"
-	.string "Fork over some spending money!$"
+	Wh-who are you?!
+	I… I'll call the police!"
+}
 
-ThreeIsland_Port_Text_IllCallThePolice::
-	.string "Aiyeeh!\p"
-	.string "Wh-who are you?!\n"
-	.string "I… I'll call the police!$"
+text ThreeIsland_Port_Text_ThankGoodnessBikersGone {
+	"Those BIKERS…
+	Are they gone?
 
-ThreeIsland_Port_Text_ThankGoodnessBikersGone::
-	.string "Those BIKERS…\n"
-	.string "Are they gone?\p"
-	.string "Oh, thank goodness!\n"
-	.string "They certainly had me terrified!$"
+	Oh, thank goodness!
+	They certainly had me terrified!"
+}
 
-ThreeIsland_Port_Text_EverythingTurnedOutForBest::
-	.string "Those BIKERS ran off, and\n"
-	.string "LOSTELLE was found safe.\p"
-	.string "Everything turned out for the best!$"
+text ThreeIsland_Port_Text_EverythingTurnedOutForBest {
+	"Those BIKERS ran off, and
+	LOSTELLE was found safe.
 
-`
+	Everything turned out for the best!"
+}

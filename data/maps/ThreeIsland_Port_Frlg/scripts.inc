@@ -1,64 +1,82 @@
 ThreeIsland_Port_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, ThreeIsland_Port_OnTransition
+# 2 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, ThreeIsland_Port_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-ThreeIsland_Port_OnTransition::
+ThreeIsland_Port_Frlg_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	clearflag FLAG_SYS_PC_STORAGE_DISABLED
+# 4 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	setflag FLAG_SEVII_DETOUR_FINISHED
 	end
 
+
 ThreeIsland_Port_EventScript_Woman::
-	lock
-	faceplayer
-	goto_if_ge VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 2, ThreeIsland_Port_EventScript_WomanLostelleFound
-	goto_if_ge VAR_MAP_SCENE_THREE_ISLAND, 4, ThreeIsland_Port_EventScript_WomanBikersGone
+# 10 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
+	lock_faceplayer
+# 11 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
+	compare VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 2
+	goto_if_ge ThreeIsland_Port_EventScript_Woman_2
+# 14 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
+	compare VAR_MAP_SCENE_THREE_ISLAND, 4
+	goto_if_ge ThreeIsland_Port_EventScript_Woman_3
+# 18 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	msgbox ThreeIsland_Port_Text_IllCallThePolice
-	release
-	end
+ThreeIsland_Port_EventScript_Woman_1:
+	release_end
 
-ThreeIsland_Port_EventScript_WomanLostelleFound::
+ThreeIsland_Port_EventScript_Woman_2:
+# 12 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	msgbox ThreeIsland_Port_Text_EverythingTurnedOutForBest
-	release
-	end
+	goto ThreeIsland_Port_EventScript_Woman_1
 
-ThreeIsland_Port_EventScript_WomanBikersGone::
+ThreeIsland_Port_EventScript_Woman_3:
+# 15 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	msgbox ThreeIsland_Port_Text_ThankGoodnessBikersGone
-	release
-	end
+	goto ThreeIsland_Port_EventScript_Woman_1
+
 
 ThreeIsland_Port_EventScript_Biker1::
+# 24 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	msgbox ThreeIsland_Port_Text_WereKantoRiderFederation, MSGBOX_NPC
 	end
 
+
 ThreeIsland_Port_EventScript_Biker2::
+# 29 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	lock
+# 30 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	msgbox ThreeIsland_Port_Text_ForkOverMoney
-	release
-	end
+	release_end
+
 
 ThreeIsland_Port_Text_WereKantoRiderFederation::
+# 34 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	.string "We're the KANTO RIDER FEDERATION!\n"
 	.string "Vroom! Vavavavooom! Vroom!\p"
 	.string "My bike's wimpy, so I have to\n"
 	.string "make exhaust noises myself!$"
 
 ThreeIsland_Port_Text_ForkOverMoney::
+# 42 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	.string "Hey, hey, lady!\n"
 	.string "Fork over some spending money!$"
 
 ThreeIsland_Port_Text_IllCallThePolice::
+# 47 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	.string "Aiyeeh!\p"
 	.string "Wh-who are you?!\n"
 	.string "I… I'll call the police!$"
 
 ThreeIsland_Port_Text_ThankGoodnessBikersGone::
+# 54 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	.string "Those BIKERS…\n"
 	.string "Are they gone?\p"
 	.string "Oh, thank goodness!\n"
 	.string "They certainly had me terrified!$"
 
 ThreeIsland_Port_Text_EverythingTurnedOutForBest::
+# 62 "data/maps/ThreeIsland_Port_Frlg/scripts.pory"
 	.string "Those BIKERS ran off, and\n"
 	.string "LOSTELLE was found safe.\p"
 	.string "Everything turned out for the best!$"
-
