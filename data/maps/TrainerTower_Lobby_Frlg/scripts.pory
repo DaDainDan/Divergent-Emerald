@@ -62,16 +62,11 @@ script TrainerTower_Lobby_EventScript_Enter {
         case TT_CHALLENGE_STATUS_UNK: msgbox(TrainerTower_Lobby_Text_MoveCounterHereWhenTrainersSwitch)
 		default: end
     }
-	goto(TrainerTower_Lobby_EventScript_ExitChallenge)
-    end
-}
-
-script TrainerTower_Lobby_EventScript_LostChallenge {
-    lock_faceplayer
-    applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
-    textcolor(NPC_TEXT_COLOR_FEMALE)
-    msgbox(TrainerTower_Lobby_Text_TooBadComeBackTryAgain)
-    goto(TrainerTower_Lobby_EventScript_ExitChallenge)
+	closemessage
+    applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+    waitmovement(0)
+    setvar(VAR_MAP_SCENE_TRAINER_TOWER, 0)
+    release_end
 }
 
 script TrainerTower_Lobby_EventScript_Nurse {
@@ -151,14 +146,20 @@ script TrainerTower_Lobby_EventScript_ChooseChallenge {
 		special(HealPlayerParty)
 		msgbox(TrainerTower_Lobby_Text_StartClockGetSetGo)
 		ttower_startchallenge
-	} else {
-		msgbox(TrainerTower_Lobby_Text_PleaseVisitUsAgain)
-		closemessage
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-		waitmovement(0)
+		releaseall
+		end
 	}
-    releaseall
+    goto(TrainerTower_Lobby_EventScript_DeclineChallenge)
 	end
+}
+
+script TrainerTower_Lobby_EventScript_DeclineChallenge {
+    msgbox(TrainerTower_Lobby_Text_PleaseVisitUsAgain)
+    closemessage
+    applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+    waitmovement(0)
+    releaseall
+    end
 }
 
 script TrainerTower_Lobby_EventScript_ShowRecords {

@@ -388,7 +388,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_GivePorygon::
 
 CeladonCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon::
 # 175 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
-	compare VAR_RESULT, CANT_GIVE_MON
+	compare VAR_RESULT, MON_CANT_GIVE
 	goto_if_eq CeladonCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon_2
 # 181 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
 	copyvar VAR_0x8007, VAR_RESULT

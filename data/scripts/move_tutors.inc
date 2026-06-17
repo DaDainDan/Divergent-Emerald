@@ -51,11 +51,11 @@ MoveTutor_EventScript_FuryCutterTaught::
 LavaridgeTown_House_EventScript_MimicTutor::
 	lock
 	faceplayer
-	move_tutor MOVE_MIMIC, MoveTutor_MimicTeach, MoveTutor_Text_MimicWhichMon, MoveTutor_EventScript_MimicDeclined, MoveTutor_EventScript_MimicTaught, FLAG_MOVE_TUTOR_TAUGHT_MIMIC
+	move_tutor MOVE_MIMIC, MoveTutor_Text_MimicTeach, MoveTutor_Text_MimicWhichMon, MoveTutor_EventScript_MimicDeclined, MoveTutor_EventScript_MimicTaught, FLAG_MOVE_TUTOR_TAUGHT_MIMIC
 	end
 
 MoveTutor_EventScript_MimicDeclined::
-	msgbox MoveTutor_MimicDeclined, MSGBOX_DEFAULT
+	msgbox MoveTutor_Text_MimicDeclined, MSGBOX_DEFAULT
 	release
 	end
 

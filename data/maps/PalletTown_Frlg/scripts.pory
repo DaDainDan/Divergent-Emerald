@@ -152,7 +152,7 @@ script PalletTown_EventScript_OakTrigger {
 
 script PalletTown_EventScript_SignLady {
     lock
-	if (var(VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY) == 2 || var(VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY) == 1 || var(SING_LADY_READY) == TRUE || flag(FLAG_TEMP_2) == TRUE) {
+	if (var(VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY) == 2 || var(VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY) == 1 || var(SIGN_LADY_READY) == TRUE || flag(FLAG_TEMP_2) == TRUE) {
 		applymovement(LOCALID_PALLET_SIGN_LADY, Common_Movement_FacePlayer)
 		waitmovement(0)
 	}

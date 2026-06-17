@@ -317,7 +317,7 @@ PalletTown_EventScript_SignLady::
 	compare VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1
 	goto_if_eq PalletTown_EventScript_SignLady_2
 # 155 "data/maps/PalletTown_Frlg/scripts.pory"
-	compare SING_LADY_READY, TRUE
+	compare VAR_TEMP_2, TRUE
 	goto_if_eq PalletTown_EventScript_SignLady_2
 # 155 "data/maps/PalletTown_Frlg/scripts.pory"
 	goto_if_set FLAG_TEMP_2, PalletTown_EventScript_SignLady_2

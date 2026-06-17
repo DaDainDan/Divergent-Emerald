@@ -172,7 +172,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_GivePorygon::
 `
 
 script CeladonCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon {
-	if (var(VAR_RESULT) == CANT_GIVE_MON) {
+	if (var(VAR_RESULT) == MON_CANT_GIVE) {
 		textcolor(NPC_TEXT_COLOR_NEUTRAL)
 		msgbox(gText_NoMoreRoomForPokemon)
 		hidecoinsbox(0, 0)
