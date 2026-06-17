@@ -1,156 +1,186 @@
-raw `
-.set REWARD_TYPE, VAR_0x8004
-.set REWARD_ITEM, VAR_0x8008
+const REWARD_TYPE = VAR_0x8004
+const REWARD_ITEM = VAR_0x8008
 
-CeruleanCity_House4_Frlg_MapScripts::
-	.byte 0
+mapscripts CeruleanCity_House4_Frlg_MapScripts {}
 
-CeruleanCity_House4_EventScript_WonderNewsBerryMan::
-	lock
-	specialvar REWARD_TYPE, WonderNews_GetRewardInfo
-	copyvar REWARD_ITEM, VAR_RESULT
-	goto_if_eq REWARD_TYPE, NEWS_REWARD_NONE,       CeruleanCity_House4_EventScript_NoNews
-	goto_if_eq REWARD_TYPE, NEWS_REWARD_RECV_SMALL, CeruleanCity_House4_EventScript_Reward_RecvSmall
-	goto_if_eq REWARD_TYPE, NEWS_REWARD_RECV_BIG,   CeruleanCity_House4_EventScript_Reward_RecvBig
-	goto_if_eq REWARD_TYPE, NEWS_REWARD_WAITING,    CeruleanCity_House4_EventScript_Waiting
-	goto_if_eq REWARD_TYPE, NEWS_REWARD_SENT_SMALL, CeruleanCity_House4_EventScript_Reward_SentSmall
-	goto_if_eq REWARD_TYPE, NEWS_REWARD_SENT_BIG,   CeruleanCity_House4_EventScript_Reward_SentBig
-	goto_if_eq REWARD_TYPE, NEWS_REWARD_AT_MAX,     CeruleanCity_House4_EventScript_AtMax
-	end
+script CeruleanCity_House4_EventScript_WonderNewsBerryMan {
+    lock
+    specialvar(REWARD_TYPE, WonderNews_GetRewardInfo)
+    copyvar(REWARD_ITEM, VAR_RESULT)
+	switch (var(REWARD_TYPE)) {
+		case NEWS_REWARD_NONE: goto(CeruleanCity_House4_EventScript_NoNews)
+		case NEWS_REWARD_RECV_SMALL: goto(CeruleanCity_House4_EventScript_Reward_RecvSmall)
+		case NEWS_REWARD_RECV_BIG: goto(CeruleanCity_House4_EventScript_Reward_RecvBig)
+		case NEWS_REWARD_WAITING: goto(CeruleanCity_House4_EventScript_Waiting)
+		case NEWS_REWARD_SENT_SMALL: goto(CeruleanCity_House4_EventScript_Reward_SentSmall)
+		case NEWS_REWARD_SENT_BIG: goto(CeruleanCity_House4_EventScript_Reward_SentBig)
+		case NEWS_REWARD_AT_MAX: goto(CeruleanCity_House4_EventScript_AtMax)
+	}
+    end
+}
 
-@ Mystery Gift is not enabled, or the player has no saved Wonder News
-CeruleanCity_House4_EventScript_NoNews::
-	msgbox CeruleanCity_House4_Text_NothingEntertaining
-	release
-	end
+// Mystery Gift is not enabled, or the player has no saved Wonder News
+script CeruleanCity_House4_EventScript_NoNews {
+    msgbox(CeruleanCity_House4_Text_NothingEntertaining)
+    release_end
+}
 
-@ Small reward for receiving Wonder News from friend
-CeruleanCity_House4_EventScript_Reward_RecvSmall::
-	call CeruleanCity_House4_EventScript_MovementReactionToNews
-	msgbox CeruleanCity_House4_Text_NewNewsInformativeHaveThis
-	giveitem REWARD_ITEM
-	goto_if_eq VAR_RESULT, FALSE, CeruleanCity_House4_EventScript_NoRoomForBerries
-	release
-	end
+// Small reward for receiving Wonder News from friend
+script CeruleanCity_House4_EventScript_Reward_RecvSmall {
+    call(CeruleanCity_House4_EventScript_MovementReactionToNews)
+    msgbox(CeruleanCity_House4_Text_NewNewsInformativeHaveThis)
+    giveitem(REWARD_ITEM)
+    if (var(VAR_RESULT) == FALSE) {
+        goto(CeruleanCity_House4_EventScript_NoRoomForBerries)
+    }
+    release_end
+}
 
-@ Big reward for receiving Wonder News from non-friend source
-CeruleanCity_House4_EventScript_Reward_RecvBig::
-	call CeruleanCity_House4_EventScript_MovementReactionToNews
-	msgbox CeruleanCity_House4_Text_IncredibleNewsHaveBerries
-	giveitem REWARD_ITEM, 4
-	goto_if_eq VAR_RESULT, FALSE, CeruleanCity_House4_EventScript_NoRoomForBerries
-	release
-	end
+// Big reward for receiving Wonder News from non-friend source
+script CeruleanCity_House4_EventScript_Reward_RecvBig {
+    call(CeruleanCity_House4_EventScript_MovementReactionToNews)
+    msgbox(CeruleanCity_House4_Text_IncredibleNewsHaveBerries)
+    if (giveitem(REWARD_ITEM, 4) == FALSE) {
+        goto(CeruleanCity_House4_EventScript_NoRoomForBerries)
+    }
+    release_end
+}
 
-@ Player has not recently sent Wonder News
-CeruleanCity_House4_EventScript_Waiting::
-	applymovement LOCALID_WONDER_NEWS_BERRY_MAN, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox CeruleanCity_House4_Text_WishCouldShareNewsWithOthers
-	release
-	end
+// Player has not recently sent Wonder News
+script CeruleanCity_House4_EventScript_Waiting {
+    applymovement(LOCALID_WONDER_NEWS_BERRY_MAN, Common_Movement_FacePlayer)
+    waitmovement(0)
+    msgbox(CeruleanCity_House4_Text_WishCouldShareNewsWithOthers)
+    release_end
+}
 
-@ Small reward for sending Wonder News every 1-3 times
-CeruleanCity_House4_EventScript_Reward_SentSmall::
-	call CeruleanCity_House4_EventScript_MovementReactionToNews
-	msgbox CeruleanCity_House4_Text_ThanksForSpreadingNewsTakeThis
-	giveitem REWARD_ITEM
-	goto_if_eq VAR_RESULT, FALSE, CeruleanCity_House4_EventScript_NoRoomForBerries
-	release
-	end
+// Small reward for sending Wonder News every 1-3 times
+script CeruleanCity_House4_EventScript_Reward_SentSmall {
+    call(CeruleanCity_House4_EventScript_MovementReactionToNews)
+    msgbox(CeruleanCity_House4_Text_ThanksForSpreadingNewsTakeThis)
+    if (giveitem(REWARD_ITEM) == FALSE) {
+        goto(CeruleanCity_House4_EventScript_NoRoomForBerries)
+    }
+    release_end
+}
 
-@ Big reward for sending Wonder News every 4th time
-CeruleanCity_House4_EventScript_Reward_SentBig::
-	call CeruleanCity_House4_EventScript_MovementReactionToNews
-	msgbox CeruleanCity_House4_Text_MagnificentNewsSpreadHaveBerries
-	giveitem REWARD_ITEM, 4
-	goto_if_eq VAR_RESULT, FALSE, CeruleanCity_House4_EventScript_NoRoomForBerries
-	release
-	end
+// Big reward for sending Wonder News every 4th time
+script CeruleanCity_House4_EventScript_Reward_SentBig {
+    call(CeruleanCity_House4_EventScript_MovementReactionToNews)
+    msgbox(CeruleanCity_House4_Text_MagnificentNewsSpreadHaveBerries)
+    if (giveitem(REWARD_ITEM, 4) == FALSE) {
+        goto(CeruleanCity_House4_EventScript_NoRoomForBerries)
+    }
+    release_end
+}
 
-@ Player has hit reward limit and must wait to receive new rewards
-CeruleanCity_House4_EventScript_AtMax::
-	applymovement LOCALID_WONDER_NEWS_BERRY_MAN, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox CeruleanCity_House4_Text_EnjoyingMyselfWithAllSortsOfNews
-	release
-	end
+// Player has hit reward limit and must wait to receive new rewards
+script CeruleanCity_House4_EventScript_AtMax {
+    applymovement(LOCALID_WONDER_NEWS_BERRY_MAN, Common_Movement_FacePlayer)
+    waitmovement(0)
+    msgbox(CeruleanCity_House4_Text_EnjoyingMyselfWithAllSortsOfNews)
+    release_end
+}
 
-CeruleanCity_House4_EventScript_MovementReactionToNews::
-	playse SE_PIN
-	applymovement LOCALID_WONDER_NEWS_BERRY_MAN, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_WONDER_NEWS_BERRY_MAN, Common_Movement_FacePlayer
-	waitmovement 0
-	applymovement LOCALID_WONDER_NEWS_BERRY_MAN, Common_Movement_Delay48
-	waitmovement 0
-	return
+script CeruleanCity_House4_EventScript_MovementReactionToNews {
+    playse(SE_PIN)
+    applymovement(LOCALID_WONDER_NEWS_BERRY_MAN, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(LOCALID_WONDER_NEWS_BERRY_MAN, Common_Movement_FacePlayer)
+    waitmovement(0)
+    applymovement(LOCALID_WONDER_NEWS_BERRY_MAN, Common_Movement_Delay48)
+    waitmovement(0)
+    return
+}
 
-CeruleanCity_House4_EventScript_NoRoomForBerries::
-	msgbox CeruleanCity_House4_Text_YourBerryPouchIsFull
-	release
-	end
+script CeruleanCity_House4_EventScript_NoRoomForBerries {
+    msgbox(CeruleanCity_House4_Text_YourBerryPouchIsFull)
+    release_end
+}
 
-CeruleanCity_House4_Text_NothingEntertaining::
-	.string "Sigh…\n"
-	.string "Too much time, too little to do…\p"
-	.string "Is nothing entertaining happening\n"
-	.string "anywhere?$"
+text CeruleanCity_House4_Text_NothingEntertaining {
+	"Sigh…
+	Too much time, too little to do…
 
-CeruleanCity_House4_Text_NewNewsInformativeHaveThis::
-	.string "Ah!\n"
-	.string "A new news report!\p"
-	.string "Hmm…\p"
-	.string "I see!\n"
-	.string "That was quite informative!\p"
-	.string "I applaud you for taking interest\n"
-	.string "in the news at your young age.\p"
-	.string "As my thanks for sharing the news\n"
-	.string "with me, I want you to have this.$"
+	Is nothing entertaining happening
+	anywhere?"
+}
 
-CeruleanCity_House4_Text_IncredibleNewsHaveBerries::
-	.string "Oh, oh!\n"
-	.string "Th-this news report!\p"
-	.string "Hmm…\p"
-	.string "Amazing!\n"
-	.string "What an incredible piece of news!\p"
-	.string "I haven't seen a news story this\n"
-	.string "incredible in too long a time!\p"
-	.string "Thanks for sharing this fantastic\n"
-	.string "news. Have a bunch of BERRIES!$"
+text CeruleanCity_House4_Text_NewNewsInformativeHaveThis {
+	"Ah!
+	A new news report!
 
-CeruleanCity_House4_Text_WishCouldShareNewsWithOthers::
-	.string "It seems such a shame to not share\n"
-	.string "this news with other folks…\p"
-	.string "I wish I could tell someone…\n"
-	.string "Let others know the news…$"
+	Hmm…
 
-CeruleanCity_House4_Text_ThanksForSpreadingNewsTakeThis::
-	.string "Ah, you've spread the news for me?\p"
-	.string "Good news becomes worthwhile when\n"
-	.string "all sorts of people share it.\p"
-	.string "As my thanks for your spreading\n"
-	.string "the news, take this!$"
+	I see!
+	That was quite informative!
 
-CeruleanCity_House4_Text_MagnificentNewsSpreadHaveBerries::
-	.string "You've spread the news some more?\n"
-	.string "Magnificent!\p"
-	.string "That piece of news must be\n"
-	.string "delighted to be passed around so.\p"
-	.string "Yes, indeed!\p"
-	.string "Consider this a show of\n"
-	.string "appreciation from me and the news.\p"
-	.string "I'll give you more BERRIES than\n"
-	.string "I usually do.$"
+	I applaud you for taking interest
+	in the news at your young age.
 
-CeruleanCity_House4_Text_EnjoyingMyselfWithAllSortsOfNews::
-	.string "I'm quite enjoying myself with all\n"
-	.string "sorts of news.\p"
-	.string "Yes, I am satisfied!\n"
-	.string "I won't be bored for a while.$"
+	As my thanks for sharing the news
+	with me, I want you to have this."
+}
 
-CeruleanCity_House4_Text_YourBerryPouchIsFull::
-	.string "Hm? Your BERRY POUCH is full.\n"
-	.string "My gift remains ungiven, then.$"
+text CeruleanCity_House4_Text_IncredibleNewsHaveBerries {
+	"Oh, oh!
+	Th-this news report!
 
-`
+	Hmm…
+
+	Amazing!
+	What an incredible piece of news!
+
+	I haven't seen a news story this
+	incredible in too long a time!
+
+	Thanks for sharing this fantastic
+	news. Have a bunch of BERRIES!"
+}
+
+text CeruleanCity_House4_Text_WishCouldShareNewsWithOthers {
+	"It seems such a shame to not share
+	this news with other folks…
+
+	I wish I could tell someone…
+	Let others know the news…"
+}
+
+text CeruleanCity_House4_Text_ThanksForSpreadingNewsTakeThis {
+	"Ah, you've spread the news for me?
+
+	Good news becomes worthwhile when
+	all sorts of people share it.
+
+	As my thanks for your spreading
+	the news, take this!"
+}
+
+text CeruleanCity_House4_Text_MagnificentNewsSpreadHaveBerries {
+	"You've spread the news some more?
+	Magnificent!
+
+	That piece of news must be
+	delighted to be passed around so.
+
+	Yes, indeed!
+
+	Consider this a show of
+	appreciation from me and the news.
+
+	I'll give you more BERRIES than
+	I usually do."
+}
+
+text CeruleanCity_House4_Text_EnjoyingMyselfWithAllSortsOfNews {
+	"I'm quite enjoying myself with all
+	sorts of news.
+
+	Yes, I am satisfied!
+	I won't be bored for a while."
+}
+
+text CeruleanCity_House4_Text_YourBerryPouchIsFull {
+	"Hm? Your BERRY POUCH is full.
+	My gift remains ungiven, then."
+}

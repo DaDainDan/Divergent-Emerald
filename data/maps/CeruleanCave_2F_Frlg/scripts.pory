@@ -1,4 +1,1 @@
-raw `
-CeruleanCave_2F_Frlg_MapScripts::
-	.byte 0
-`
+mapscripts CeruleanCave_2F_Frlg_MapScripts {}
