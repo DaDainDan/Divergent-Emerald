@@ -1,29 +1,32 @@
-raw `
-SafariZone_East_Frlg_MapScripts::
-	.byte 0
+mapscripts SafariZone_East_Frlg_MapScripts {}
 
-SafariZone_East_EventScript_RestHouseSign::
-	msgbox SafariZone_East_Text_RestHouse, MSGBOX_SIGN
-	end
+script SafariZone_East_EventScript_RestHouseSign {
+    msgbox(SafariZone_East_Text_RestHouse, MSGBOX_SIGN)
+    end
+}
 
-SafariZone_East_EventScript_TrainerTips::
-	msgbox SafariZone_East_Text_TimeDeclinesOnlyWhileYouWalk, MSGBOX_SIGN
-	end
+script SafariZone_East_EventScript_TrainerTips {
+    msgbox(SafariZone_East_Text_TimeDeclinesOnlyWhileYouWalk, MSGBOX_SIGN)
+    end
+}
 
-SafariZone_East_EventScript_AreaSign::
-	msgbox SafariZone_East_Text_AreaSign, MSGBOX_SIGN
-	end
+script SafariZone_East_EventScript_AreaSign {
+    msgbox(SafariZone_East_Text_AreaSign, MSGBOX_SIGN)
+    end
+}
 
-SafariZone_East_Text_RestHouse::
-	.string "REST HOUSE$"
+text SafariZone_East_Text_RestHouse {
+	"REST HOUSE"
+}
 
-SafariZone_East_Text_TimeDeclinesOnlyWhileYouWalk::
-	.string "TRAINER TIPS\p"
-	.string "The remaining time declines only\n"
-	.string "while you walk.$"
+text SafariZone_East_Text_TimeDeclinesOnlyWhileYouWalk {
+	"TRAINER TIPS
 
-SafariZone_East_Text_AreaSign::
-	.string "AREA 1\n"
-	.string "WEST: CENTER AREA$"
+	The remaining time declines only
+	while you walk."
+}
 
-`
+text SafariZone_East_Text_AreaSign {
+	"AREA 1
+	WEST: CENTER AREA"
+}

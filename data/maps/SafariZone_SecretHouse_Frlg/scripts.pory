@@ -1,56 +1,57 @@
-raw `
-SafariZone_SecretHouse_Frlg_MapScripts::
-	.byte 0
+mapscripts SafariZone_SecretHouse_Frlg_MapScripts {}
 
-SafariZone_SecretHouse_EventScript_Attendant::
-	lock
-	faceplayer
-	goto_if_set FLAG_GOT_HM03, SafariZone_SecretHouse_EventScript_ExplainSurf
-	msgbox SafariZone_SecretHouse_Text_CongratsYouveWon
-	checkitemspace ITEM_HM03
-	goto_if_eq VAR_RESULT, FALSE, SafariZone_SecretHouse_EventScript_NoRoomForHM03
-	giveitem_msg SafariZone_SecretHouse_Text_ReceivedHM03FromAttendant, ITEM_HM03
-	msgbox SafariZone_SecretHouse_Text_ExplainSurf
-	setflag FLAG_GOT_HM03
-	release
-	end
+script SafariZone_SecretHouse_EventScript_Attendant {
+    lock_faceplayer
+    if (flag(FLAG_GOT_HM03)) {
+        msgbox(SafariZone_SecretHouse_Text_ExplainSurf)
+    	release_end
+    }
+    msgbox(SafariZone_SecretHouse_Text_CongratsYouveWon)
+    if (checkitemspace(ITEM_HM03) == FALSE) {
+        msgbox(SafariZone_SecretHouse_Text_DontHaveRoomForPrize)
+    	release_end
+    }
+    giveitem_msg(SafariZone_SecretHouse_Text_ReceivedHM03FromAttendant, ITEM_HM03)
+    msgbox(SafariZone_SecretHouse_Text_ExplainSurf)
+    setflag(FLAG_GOT_HM03)
+    release_end
+}
 
-SafariZone_SecretHouse_EventScript_NoRoomForHM03::
-	msgbox SafariZone_SecretHouse_Text_DontHaveRoomForPrize
-	release
-	end
+text SafariZone_SecretHouse_Text_CongratsYouveWon {
+	"Ah! Finally!
 
-SafariZone_SecretHouse_EventScript_ExplainSurf::
-	msgbox SafariZone_SecretHouse_Text_ExplainSurf
-	release
-	end
+	You're the first person to reach
+	the SECRET HOUSE!
 
-SafariZone_SecretHouse_Text_CongratsYouveWon::
-	.string "Ah! Finally!\p"
-	.string "You're the first person to reach\n"
-	.string "the SECRET HOUSE!\p"
-	.string "Although I made a campaign\n"
-	.string "for our grand opening,\p"
-	.string "I was getting worried that no one\n"
-	.string "would win our campaign prize.\p"
-	.string "Congratulations!\n"
-	.string "You have won!$"
+	Although I made a campaign
+	for our grand opening,
 
-SafariZone_SecretHouse_Text_ReceivedHM03FromAttendant::
-	.string "{PLAYER} received HM03\n"
-	.string "from the attendant!$"
+	I was getting worried that no one
+	would win our campaign prize.
 
-SafariZone_SecretHouse_Text_ExplainSurf::
-	.string "HM03 is SURF.\p"
-	.string "POKéMON will be able to ferry you\n"
-	.string "across water using it.\p"
-	.string "And, this HM isn't disposable, so\n"
-	.string "you can use it over and over.\p"
-	.string "You're super lucky for winning this\n"
-	.string "fabulous prize!$"
+	Congratulations!
+	You have won!"
+}
 
-SafariZone_SecretHouse_Text_DontHaveRoomForPrize::
-	.string "You don't have room for this\n"
-	.string "fabulous prize!$"
+text SafariZone_SecretHouse_Text_ReceivedHM03FromAttendant {
+	"{PLAYER} received HM03
+	from the attendant!"
+}
 
-`
+text SafariZone_SecretHouse_Text_ExplainSurf {
+	"HM03 is SURF.
+
+	POKéMON will be able to ferry you
+	across water using it.
+
+	And, this HM isn't disposable, so
+	you can use it over and over.
+
+	You're super lucky for winning this
+	fabulous prize!"
+}
+
+text SafariZone_SecretHouse_Text_DontHaveRoomForPrize {
+	"You don't have room for this
+	fabulous prize!"
+}

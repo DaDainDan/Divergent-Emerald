@@ -1,204 +1,236 @@
-raw `
-Route12_Frlg_MapScripts::
-	map_script MAP_SCRIPT_ON_RESUME, Route12_OnResume
-	.byte 0
+mapscripts Route12_Frlg_MapScripts {
+    MAP_SCRIPT_ON_RESUME {
+        if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+			removeobject(VAR_LAST_TALKED)
+		}
+		end
+    }
+}
 
-Route12_OnResume::
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route12_EventScript_TryRemoveSnorlax
-	end
+script Route12_EventScript_Snorlax {
+    lock_faceplayer
+    if (!flag(FLAG_GOT_POKE_FLUTE)) {
+        msgbox(Route12_Text_MonSprawledOutInSlumber)
+    	release_end
+    }
+    msgbox(Text_WantToUsePokeFlute, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        call(EventScript_AwakenSnorlax)
+		setwildbattle(SPECIES_SNORLAX, 30)
+		waitse
+		playmoncry(SPECIES_SNORLAX, CRY_MODE_ENCOUNTER)
+		delay(40)
+		waitmoncry
+		setflag(FLAG_HIDE_ROUTE_12_SNORLAX)
+		setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+		setflag(FLAG_WOKE_UP_ROUTE_12_SNORLAX)
+		dowildbattle
+		clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+		specialvar(VAR_RESULT, GetBattleOutcome)
+		if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_RAN || var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED) {
+			msgbox(Text_SnorlaxReturnedToMountains)
+		}
+    }
+    release_end
+}
 
-Route12_EventScript_TryRemoveSnorlax::
-	removeobject VAR_LAST_TALKED
-	return
+script Route12_EventScript_RouteSign {
+    msgbox(Route12_Text_RouteSign, MSGBOX_SIGN)
+    end
+}
 
-Route12_EventScript_Snorlax::
-	lock
-	faceplayer
-	goto_if_unset FLAG_GOT_POKE_FLUTE, Route12_EventScript_SnorlaxNoPokeFlute
-	msgbox Text_WantToUsePokeFlute, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Route12_EventScript_DontUsePokeFlute
-	call EventScript_AwakenSnorlax
-	setwildbattle SPECIES_SNORLAX, 30
-	waitse
-	playmoncry SPECIES_SNORLAX, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setflag FLAG_HIDE_ROUTE_12_SNORLAX
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	setflag FLAG_WOKE_UP_ROUTE_12_SNORLAX
-	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route12_EventScript_FoughtSnorlax
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route12_EventScript_FoughtSnorlax
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route12_EventScript_FoughtSnorlax
-	release
-	end
+script Route12_EventScript_FishingSign {
+    msgbox(Route12_Text_SportfishingArea, MSGBOX_SIGN)
+    end
+}
 
-Route12_EventScript_DontUsePokeFlute::
-	release
-	end
+text Route12_Text_MonSprawledOutInSlumber {
+	"A POKéMON is sprawled out in
+	a deep and comfortable slumber."
+}
 
-Route12_EventScript_FoughtSnorlax::
-	msgbox Text_SnorlaxReturnedToMountains
-	release
-	end
+text Text_SnorlaxWokeUp {
+	"SNORLAX woke up!
 
-Route12_EventScript_SnorlaxNoPokeFlute::
-	msgbox Route12_Text_MonSprawledOutInSlumber
-	release
-	end
+	It attacked in a grumpy rage!"
+}
 
-Route12_EventScript_RouteSign::
-	msgbox Route12_Text_RouteSign, MSGBOX_SIGN
-	end
+text Text_SnorlaxReturnedToMountains {
+	"SNORLAX calmed down.
+	It gave a huge yawn…
+	And returned to the mountains."
+}
 
-Route12_EventScript_FishingSign::
-	msgbox Route12_Text_SportfishingArea, MSGBOX_SIGN
-	end
+text Text_WantToUsePokeFlute {
+	"Want to use the POKé FLUTE?"
+}
 
-Route12_Text_MonSprawledOutInSlumber::
-	.string "A POKéMON is sprawled out in\n"
-	.string "a deep and comfortable slumber.$"
+text Text_PlayedPokeFlute {
+	"{PLAYER} played the POKé FLUTE."
+}
 
-Text_SnorlaxWokeUp::
-	.string "SNORLAX woke up!\p"
-	.string "It attacked in a grumpy rage!$"
+text Route12_Text_NedIntro {
+	"Yeah!
+	I got a bite here!"
+}
 
-Text_SnorlaxReturnedToMountains::
-	.string "SNORLAX calmed down.\n"
-	.string "It gave a huge yawn…\l"
-	.string "And returned to the mountains.$"
+text Route12_Text_NedDefeat {
+	"Tch!
+	Just a small fry…"
+}
 
-Text_WantToUsePokeFlute::
-	.string "Want to use the POKé FLUTE?$"
+text Route12_Text_NedPostBattle {
+	"Hang on!
+	My line's snagged!"
+}
 
-Text_PlayedPokeFlute::
-	.string "{PLAYER} played the POKé FLUTE.$"
+text Route12_Text_ChipIntro {
+	"Be patient.
+	Fishing is a waiting game."
+}
 
-Route12_Text_NedIntro::
-	.string "Yeah!\n"
-	.string "I got a bite here!$"
+text Route12_Text_ChipDefeat {
+	"That one got away!"
+}
 
-Route12_Text_NedDefeat::
-	.string "Tch!\n"
-	.string "Just a small fry…$"
+text Route12_Text_ChipPostBattle {
+	"With a better ROD, I could catch
+	better POKéMON…"
+}
 
-Route12_Text_NedPostBattle::
-	.string "Hang on!\n"
-	.string "My line's snagged!$"
+text Route12_Text_JustinIntro {
+	"I'm searching for a MOON STONE.
+	Have you found one?"
+}
 
-Route12_Text_ChipIntro::
-	.string "Be patient.\n"
-	.string "Fishing is a waiting game.$"
+text Route12_Text_JustinDefeat {
+	"Oww!"
+}
 
-Route12_Text_ChipDefeat::
-	.string "That one got away!$"
+text Route12_Text_JustinPostBattle {
+	"I could have made my POKéMON
+	evolve with a MOON STONE.
 
-Route12_Text_ChipPostBattle::
-	.string "With a better ROD, I could catch\n"
-	.string "better POKéMON…$"
+	I would have won then, I bet."
+}
 
-Route12_Text_JustinIntro::
-	.string "I'm searching for a MOON STONE.\n"
-	.string "Have you found one?$"
+text Route12_Text_LucaIntro {
+	"Electricity is my specialty.
 
-Route12_Text_JustinDefeat::
-	.string "Oww!$"
+	I don't know a thing about POKéMON
+	of the sea, though."
+}
 
-Route12_Text_JustinPostBattle::
-	.string "I could have made my POKéMON\n"
-	.string "evolve with a MOON STONE.\p"
-	.string "I would have won then, I bet.$"
+text Route12_Text_LucaDefeat {
+	"Unplugged!"
+}
 
-Route12_Text_LucaIntro::
-	.string "Electricity is my specialty.\p"
-	.string "I don't know a thing about POKéMON\n"
-	.string "of the sea, though.$"
+text Route12_Text_LucaPostBattle {
+	"Water conducts electricity, so you
+	should zap sea POKéMON."
+}
 
-Route12_Text_LucaDefeat::
-	.string "Unplugged!$"
+text Route12_Text_HankIntro {
+	"The FISHING FOOL versus POKéMON
+	KID!"
+}
 
-Route12_Text_LucaPostBattle::
-	.string "Water conducts electricity, so you\n"
-	.string "should zap sea POKéMON.$"
+text Route12_Text_HankDefeat {
+	"Touch too much!"
+}
 
-Route12_Text_HankIntro::
-	.string "The FISHING FOOL versus POKéMON\n"
-	.string "KID!$"
+text Route12_Text_HankPostBattle {
+	"I guess you get to be good at
+	what you like.
 
-Route12_Text_HankDefeat::
-	.string "Touch too much!$"
+	Well, you beat me at POKéMON,
+	but you can't top me at fishing."
+}
 
-Route12_Text_HankPostBattle::
-	.string "I guess you get to be good at\n"
-	.string "what you like.\p"
-	.string "Well, you beat me at POKéMON,\n"
-	.string "but you can't top me at fishing.$"
+text Route12_Text_ElliotIntro {
+	"I love fishing, don't get me wrong.
 
-Route12_Text_ElliotIntro::
-	.string "I love fishing, don't get me wrong.\p"
-	.string "But it'd be best if I also had more\n"
-	.string "work.$"
+	But it'd be best if I also had more
+	work."
+}
 
-Route12_Text_ElliotDefeat::
-	.string "It's not easy…$"
+text Route12_Text_ElliotDefeat {
+	"It's not easy…"
+}
 
-Route12_Text_ElliotPostBattle::
-	.string "It's all right.\n"
-	.string "Losing doesn't bug me anymore.$"
+text Route12_Text_ElliotPostBattle {
+	"It's all right.
+	Losing doesn't bug me anymore."
+}
 
-Route12_Text_AndrewIntro::
-	.string "What's catching?\p"
-	.string "You never know what you could\n"
-	.string "catch!$"
+text Route12_Text_AndrewIntro {
+	"What's catching?
 
-Route12_Text_AndrewDefeat::
-	.string "Lost it!$"
+	You never know what you could
+	catch!"
+}
 
-Route12_Text_AndrewPostBattle::
-	.string "What, MAGIKARP?\p"
-	.string "I catch them all the time, sure.\n"
-	.string "But, boy are they wimpy.$"
+text Route12_Text_AndrewDefeat {
+	"Lost it!"
+}
 
-Route12_Text_RouteSign::
-	.string "ROUTE 12 \n"
-	.string "North to LAVENDER$"
+text Route12_Text_AndrewPostBattle {
+	"What, MAGIKARP?
 
-Route12_Text_SportfishingArea::
-	.string "SPORTFISHING AREA$"
+	I catch them all the time, sure.
+	But, boy are they wimpy."
+}
 
-Route12_Text_JesIntro::
-	.string "JES: If I win, I'm going to\n"
-	.string "propose to GIA.$"
+text Route12_Text_RouteSign {
+	"ROUTE 12 
+	North to LAVENDER"
+}
 
-Route12_Text_JesDefeat::
-	.string "JES: Oh, please, why couldn't you\n"
-	.string "let us win?$"
+text Route12_Text_SportfishingArea {
+	"SPORTFISHING AREA"
+}
 
-Route12_Text_JesPostBattle::
-	.string "JES: Oh, GIA, forgive me,\n"
-	.string "my love!$"
+text Route12_Text_JesIntro {
+	"JES: If I win, I'm going to
+	propose to GIA."
+}
 
-Route12_Text_JesNotEnoughMons::
-	.string "JES: GIA and I, we'll be\n"
-	.string "together forever.\p"
-	.string "We won't battle unless you have\n"
-	.string "two POKéMON of your own.$"
+text Route12_Text_JesDefeat {
+	"JES: Oh, please, why couldn't you
+	let us win?"
+}
 
-Route12_Text_GiaIntro::
-	.string "GIA: Hey, JES…\p"
-	.string "If we win, I'll marry you!$"
+text Route12_Text_JesPostBattle {
+	"JES: Oh, GIA, forgive me,
+	my love!"
+}
 
-Route12_Text_GiaDefeat::
-	.string "GIA: Oh, but why?$"
+text Route12_Text_JesNotEnoughMons {
+	"JES: GIA and I, we'll be
+	together forever.
 
-Route12_Text_GiaPostBattle::
-	.string "GIA: JES, you silly!\n"
-	.string "You ruined this!$"
+	We won't battle unless you have
+	two POKéMON of your own."
+}
 
-Route12_Text_GiaNotEnoughMons::
-	.string "GIA: I can't bear to battle\n"
-	.string "without my JES!\p"
-	.string "Don't you have one more POKéMON?$"
-`
+text Route12_Text_GiaIntro {
+	"GIA: Hey, JES…
+
+	If we win, I'll marry you!"
+}
+
+text Route12_Text_GiaDefeat {
+	"GIA: Oh, but why?"
+}
+
+text Route12_Text_GiaPostBattle {
+	"GIA: JES, you silly!
+	You ruined this!"
+}
+
+text Route12_Text_GiaNotEnoughMons {
+	"GIA: I can't bear to battle
+	without my JES!
+
+	Don't you have one more POKéMON?"
+}

@@ -1,91 +1,99 @@
-raw `
-FuchsiaCity_House3_Frlg_MapScripts::
-	.byte 0
+mapscripts FuchsiaCity_House3_Frlg_MapScripts {}
 
-FuchsiaCity_House3_EventScript_MoveDeleter::
-	lock
-	faceplayer
-	msgbox FuchsiaCity_House3_Text_WouldYouLikeToForgetMove, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, FuchsiaCity_House3_EventScript_ChooseMonForMoveDeleter
-	goto FuchsiaCity_House3_EventScript_CancelForgetMove
-	end
+script FuchsiaCity_House3_EventScript_MoveDeleter {
+    lock_faceplayer
+    msgbox(FuchsiaCity_House3_Text_WouldYouLikeToForgetMove, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        goto(FuchsiaCity_House3_EventScript_ChooseMonForMoveDeleter)
+    }
+    goto(FuchsiaCity_House3_EventScript_CancelForgetMove)
+    end
+}
 
-FuchsiaCity_House3_EventScript_ChooseMonForMoveDeleter::
-	msgbox FuchsiaCity_House3_Text_WhichMonShouldForgetMove
-	special ChoosePartyMon
-	goto_if_ge VAR_0x8004, PARTY_SIZE, FuchsiaCity_House3_EventScript_CancelForgetMove
-	special IsSelectedMonEgg
-	goto_if_eq VAR_RESULT, TRUE, FuchsiaCity_House3_EventScript_CantForgetMoveEgg
-	special GetNumMovesSelectedMonHas
-	goto_if_eq VAR_RESULT, 1, FuchsiaCity_House3_EventScript_CantForgetOnlyMove
-	msgbox FuchsiaCity_House3_Text_WhichMoveShouldBeForgotten
-	fadescreen FADE_TO_BLACK
-	special MoveDeleterChooseMoveToForget
-	fadescreen FADE_FROM_BLACK
-	goto_if_eq VAR_0x8005, MAX_MON_MOVES, FuchsiaCity_House3_EventScript_ChooseMonForMoveDeleter
-	special BufferMoveDeleterNicknameAndMove
-	msgbox FuchsiaCity_House3_Text_MonsMoveShouldBeForgotten, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, FuchsiaCity_House3_EventScript_ForgetMove
-	goto FuchsiaCity_House3_EventScript_CancelForgetMove
-	end
+script FuchsiaCity_House3_EventScript_ChooseMonForMoveDeleter {
+    msgbox(FuchsiaCity_House3_Text_WhichMonShouldForgetMove)
+    special(ChoosePartyMon)
+    if (var(VAR_0x8004) >= PARTY_SIZE) {
+        goto(FuchsiaCity_House3_EventScript_CancelForgetMove)
+    }
+    special(IsSelectedMonEgg)
+    if (var(VAR_RESULT) == TRUE) {
+        msgbox(FuchsiaCity_House3_Text_NoEggShouldKnowMoves)
+    	release_end
+    }
+    special(GetNumMovesSelectedMonHas)
+    if (var(VAR_RESULT) == 1) {
+        special(BufferMoveDeleterNicknameAndMove)
+		msgbox(FuchsiaCity_House3_Text_MonOnlyKnowsOneMove)
+		release_end
+    }
+    msgbox(FuchsiaCity_House3_Text_WhichMoveShouldBeForgotten)
+    fadescreen(FADE_TO_BLACK)
+    special(MoveDeleterChooseMoveToForget)
+    fadescreen(FADE_FROM_BLACK)
+    if (var(VAR_0x8005) == MAX_MON_MOVES) {
+        goto(FuchsiaCity_House3_EventScript_ChooseMonForMoveDeleter)
+    }
+    special(BufferMoveDeleterNicknameAndMove)
+    msgbox(FuchsiaCity_House3_Text_MonsMoveShouldBeForgotten, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        special(MoveDeleterForgetMove)
+		playfanfare(MUS_MOVE_DELETED)
+		waitfanfare
+		msgbox(FuchsiaCity_House3_Text_MonHasForgottenMoveCompletely)
+		release_end
+    }
+    goto(FuchsiaCity_House3_EventScript_CancelForgetMove)
+    end
+}
 
-FuchsiaCity_House3_EventScript_ForgetMove::
-	special MoveDeleterForgetMove
-	playfanfare MUS_MOVE_DELETED
-	waitfanfare
-	msgbox FuchsiaCity_House3_Text_MonHasForgottenMoveCompletely
-	release
-	end
+script FuchsiaCity_House3_EventScript_CancelForgetMove {
+    msgbox(FuchsiaCity_House3_Text_ComeAgainToForgetOtherMoves)
+    release_end
+}
 
-FuchsiaCity_House3_EventScript_CantForgetOnlyMove::
-	special BufferMoveDeleterNicknameAndMove
-	msgbox FuchsiaCity_House3_Text_MonOnlyKnowsOneMove
-	release
-	end
+text FuchsiaCity_House3_Text_WouldYouLikeToForgetMove {
+	"Uh…
+	Oh, yes, I'm the MOVE DELETER.
 
-FuchsiaCity_House3_EventScript_CantForgetMoveEgg::
-	msgbox FuchsiaCity_House3_Text_NoEggShouldKnowMoves
-	release
-	end
+	I can make POKéMON forget their
+	moves.
 
-FuchsiaCity_House3_EventScript_CancelForgetMove::
-	msgbox FuchsiaCity_House3_Text_ComeAgainToForgetOtherMoves
-	release
-	end
+	Would you like me to do that?"
+}
 
-FuchsiaCity_House3_Text_WouldYouLikeToForgetMove::
-	.string "Uh…\n"
-	.string "Oh, yes, I'm the MOVE DELETER.\p"
-	.string "I can make POKéMON forget their\n"
-	.string "moves.\p"
-	.string "Would you like me to do that?$"
+text FuchsiaCity_House3_Text_WhichMonShouldForgetMove {
+	"Which POKéMON should forget a
+	move?"
+}
 
-FuchsiaCity_House3_Text_WhichMonShouldForgetMove::
-	.string "Which POKéMON should forget a\n"
-	.string "move?$"
+text FuchsiaCity_House3_Text_WhichMoveShouldBeForgotten {
+	"Which move should be forgotten?"
+}
 
-FuchsiaCity_House3_Text_WhichMoveShouldBeForgotten::
-	.string "Which move should be forgotten?$"
+text FuchsiaCity_House3_Text_MonOnlyKnowsOneMove {
+	"{STR_VAR_1} seems to know only one
+	move…"
+}
 
-FuchsiaCity_House3_Text_MonOnlyKnowsOneMove::
-	.string "{STR_VAR_1} seems to know only one\n"
-	.string "move…$"
+text FuchsiaCity_House3_Text_MonsMoveShouldBeForgotten {
+	"Hm! {STR_VAR_1}'s {STR_VAR_2}?
+	That move should be forgotten?"
+}
 
-FuchsiaCity_House3_Text_MonsMoveShouldBeForgotten::
-	.string "Hm! {STR_VAR_1}'s {STR_VAR_2}?\n"
-	.string "That move should be forgotten?$"
+text FuchsiaCity_House3_Text_MonHasForgottenMoveCompletely {
+	"It worked to perfection!
 
-FuchsiaCity_House3_Text_MonHasForgottenMoveCompletely::
-	.string "It worked to perfection!\p"
-	.string "{STR_VAR_1} has forgotten\n"
-	.string "{STR_VAR_2} completely.$"
+	{STR_VAR_1} has forgotten
+	{STR_VAR_2} completely."
+}
 
-FuchsiaCity_House3_Text_ComeAgainToForgetOtherMoves::
-	.string "Come again if there are other\n"
-	.string "moves to be forgotten.$"
+text FuchsiaCity_House3_Text_ComeAgainToForgetOtherMoves {
+	"Come again if there are other
+	moves to be forgotten."
+}
 
-FuchsiaCity_House3_Text_NoEggShouldKnowMoves::
-	.string "What?\n"
-	.string "No EGG should know any moves.$"
-
-`
+text FuchsiaCity_House3_Text_NoEggShouldKnowMoves {
+	"What?
+	No EGG should know any moves."
+}
