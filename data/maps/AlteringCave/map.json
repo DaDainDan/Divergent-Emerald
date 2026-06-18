@@ -22,6 +22,20 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE103",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_ALTERING_CAVE_B1F_2R",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_ALTERING_CAVE_B1F_1R",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

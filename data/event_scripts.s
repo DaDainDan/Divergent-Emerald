@@ -1746,3 +1746,9 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/wild_encounter.inc"
 
 	.include "data/maps/Underwater_Route107/scripts.inc"
+
+	.include "data/maps/AlteringCave_B1F_1R/scripts.inc"
+
+	.include "data/maps/AlteringCave_B1F_2R/scripts.inc"
+
+	.include "data/maps/AlteringCave_B2F/scripts.inc"
