@@ -189,9 +189,90 @@ script OldaleTown_EventScript_RivalFinish {
     end
 }
 
+script OldaleTown_EventScript_CandyGirl {
+	lock_faceplayer
+	if (!(flag(FLAG_RARE_CANDY_GIRL))) {
+		msgbox(OldaleTown_Text_CandyGirlInitial, MSGBOX_DEFAULT)
+		if (giveitem(ITEM_RARE_CANDY) == FALSE) {
+			goto(Common_EventScript_ShowBagIsFull)
+		}
+		setflag(FLAG_RARE_CANDY_GIRL)
+	}
+	elif (flag(FLAG_BADGE05_GET) && !(flag(FLAG_RARE_CANDY_GIRL2))) {
+		msgbox(OldaleTown_Text_CandyGirl2nd, MSGBOX_DEFAULT)
+		if (giveitem(ITEM_RARE_CANDY, 5) == FALSE) {
+			goto(Common_EventScript_ShowBagIsFull)
+		}
+		setflag(FLAG_RARE_CANDY_GIRL2)
+	}
+	elif (flag(FLAG_SYS_GAME_CLEAR) && !(flag(FLAG_RARE_CANDY_GIRL3))) {
+		msgbox(OldaleTown_Text_CandyGirlFinal, MSGBOX_DEFAULT)
+		if (giveitem(ITEM_RARE_CANDY, 10) == FALSE) {
+			goto(Common_EventScript_ShowBagIsFull)
+		}
+		setflag(FLAG_RARE_CANDY_GIRL3)
+		msgbox("Come back for more anytime!", MSGBOX_DEFAULT)
+	}
+	elif (flag(FLAG_RARE_CANDY_GIRL3)) {
+		msgbox("Back for some more candy?\nHere ya go!", MSGBOX_DEFAULT)
+		if (giveitem(ITEM_RARE_CANDY, 10) == FALSE) {
+			goto(Common_EventScript_ShowBagIsFull)
+		}
+	}
+	else {
+		msgbox(OldaleTown_Text_CandyGirlCandyGiven, MSGBOX_AUTOCLOSE)
+	}
+	release_end
+}
+
+// Unused
 text OldaleTown_Text_SavingMyProgress {
 	"I want to take a rest, so I'm saving my
 	progress."
+}
+
+text OldaleTown_Text_CandyGirlInitial {
+	"My mom doesn't let me eat candy, but my
+	friend from Littleroot gave me these.
+
+	Here, you can have one so long as you
+	keep it a secret. Teehee!"
+}
+
+text OldaleTown_Text_CandyGirl2nd {
+	"Long time no see!
+  
+  	Consider yourself in luck because I
+  	just got a bunch more candies in stock.
+  
+  	Someone just left them lying in a bag
+  	behind the POKéMART.
+  
+  	No one claimed them, so I figured this
+  	was a nice score for me.
+  
+  	Here's your share of the loot, amigo."
+}
+
+text OldaleTown_Text_CandyGirlFinal {
+	"Heya, hotshot!
+  	I heard you became the Champion.
+  
+  	It's gonna sound dumb, but I actually
+  	bet my mom that if you became the
+  	champion, then I would get a lifetime
+  	supply of candy.
+  
+  	Guess who's laughing now."
+}
+
+text OldaleTown_Text_CandyGirlCandyGiven {
+	"Now don't be greedy.
+  	I already gave you your share.
+  
+  	Tell you what, if I get any more, I'll
+  	share them with you. 
+	Deal?"
 }
 
 text OldaleTown_Text_IWorkAtPokemonMart {
@@ -239,10 +320,11 @@ text OldaleTown_Text_DiscoveredFootprints {
 
 text OldaleTown_Text_FinishedSketchingFootprints {
 	"I finished sketching the footprints of
-	a rare POKéMON.
+	that rare POKéMON.
 
-	But it turns out they were only my
-	own footprints…"
+	I can't fully identify the species by
+	these tracks, but it must be bipedal
+	and about the size of a small child."
 }
 
 text OldaleTown_Text_MayLetsGoBack {

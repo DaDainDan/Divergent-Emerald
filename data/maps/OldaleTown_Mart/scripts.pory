@@ -15,17 +15,19 @@ script OldaleTown_Mart_EventScript_Clerk {
 
 mart OldaleTown_Mart_Pokemart_Basic {
     ITEM_POTION
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_AWAKENING
+    ITEM_FULL_HEAL
+	ITEM_MAX_ETHER
+	ITEM_REPEL
+	ITEM_LURE
 }
 
 mart OldaleTown_Mart_Pokemart_Expanded {
     ITEM_POKE_BALL
     ITEM_POTION
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_AWAKENING
+    ITEM_FULL_HEAL
+	ITEM_MAX_ETHER
+	ITEM_REPEL
+	ITEM_LURE
 }
 
 script OldaleTown_Mart_EventScript_Woman {
@@ -44,19 +46,20 @@ script OldaleTown_Mart_EventScript_Boy {
 }
 
 text OldaleTown_Mart_Text_PokeBallsAreSoldOut {
-	"The clerk says they're all sold out.
-	I can't buy any POKé BALLS."
+	"The clerk says they're all sold out, so
+	I can't stock up on POKé BALLS."
 }
 
 text OldaleTown_Mart_Text_ImGoingToBuyPokeBalls {
-	"I'm going to buy a bunch of POKé BALLS
-	and catch a bunch of POKéMON!"
+	"I buy plenty of POK\e BALLS so I won't
+	run out when I try to catch POK\eMON!"
 }
 
 text OldaleTown_Mart_Text_RestoreHPWithPotion {
-	"If a POKéMON gets hurt and loses its HP
-	and faints, it won't be able to battle.
-
-	To prevent your POKéMON from fainting,
-	restore its HP with a POTION."
+	"It's important to stock up on POTIONS
+  	so you can keep your POKéMON healthy.
+  
+  	Don't be stingy about using them.
+  	If your POKéMON faints, POTIONS won't
+  	be able to revive them."
 }

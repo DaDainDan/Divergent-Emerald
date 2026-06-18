@@ -162,31 +162,38 @@ script DewfordTown_EventScript_HallSign {
     end
 }
 
-script DewfordTown_EventScript_OldRodFisherman {
-    lock_faceplayer
-    if (flag(FLAG_RECEIVED_OLD_ROD)) {
-        message(DewfordTown_Text_HowsYourFishing)
-		waitmessage
-		multichoice(20, 8, MULTI_HOWS_FISHING, TRUE)
-		switch (var(VAR_RESULT)) {
-			case 0: msgbox(DewfordTown_Text_GreatHaulInSomeBigOnes, MSGBOX_DEFAULT)
-			default: msgbox(DewfordTown_Text_FishingAdvice, MSGBOX_DEFAULT)
-		}
-		release_end
-    }
-    msgbox(DewfordTown_Text_GettingItchToFish, MSGBOX_YESNO)
-    if (var(VAR_RESULT) == YES) {
-        msgbox(DewfordTown_Text_GiveYouOneOfMyRods, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_OLD_ROD) == FALSE) {
-			goto(Common_EventScript_ShowBagIsFull)
-		}
-		setflag(FLAG_RECEIVED_OLD_ROD)
-		msgbox(DewfordTown_Text_ThrowInFishingAdvice, MSGBOX_DEFAULT)
-    } else {
-        msgbox(DewfordTown_Text_ThatsTooBadThen, MSGBOX_DEFAULT)
-    }
-    release_end
+script DewfordTown_EventScript_Fisherman {
+	lock_faceplayer
+	msgbox(DewfordTown_Text_UpsetFisherman, MSGBOX_DEFAULT)
+	release_end
 }
+
+// Unused
+// script DewfordTown_EventScript_OldRodFisherman {
+//     lock_faceplayer
+//     if (flag(FLAG_RECEIVED_OLD_ROD)) {
+//         message(DewfordTown_Text_HowsYourFishing)
+// 		waitmessage
+// 		multichoice(20, 8, MULTI_HOWS_FISHING, TRUE)
+// 		switch (var(VAR_RESULT)) {
+// 			case 0: msgbox(DewfordTown_Text_GreatHaulInSomeBigOnes, MSGBOX_DEFAULT)
+// 			default: msgbox(DewfordTown_Text_FishingAdvice, MSGBOX_DEFAULT)
+// 		}
+// 		release_end
+//     }
+//     msgbox(DewfordTown_Text_GettingItchToFish, MSGBOX_YESNO)
+//     if (var(VAR_RESULT) == YES) {
+//         msgbox(DewfordTown_Text_GiveYouOneOfMyRods, MSGBOX_DEFAULT)
+// 		if (giveitem(ITEM_OLD_ROD) == FALSE) {
+// 			goto(Common_EventScript_ShowBagIsFull)
+// 		}
+// 		setflag(FLAG_RECEIVED_OLD_ROD)
+// 		msgbox(DewfordTown_Text_ThrowInFishingAdvice, MSGBOX_DEFAULT)
+//     } else {
+//         msgbox(DewfordTown_Text_ThatsTooBadThen, MSGBOX_DEFAULT)
+//     }
+//     release_end
+// }
 
 script DewfordTown_EventScript_TrendyPhraseBoy {
     lock_faceplayer
@@ -428,4 +435,13 @@ text DewfordTown_Text_YeahDefinitionOfInRightNow {
 
 	“{STR_VAR_1}” is the
 	definition of “in” right now."
+}
+
+text DewfordTown_Text_UpsetFisherman {
+	"I can't believe this.
+
+	It's the start of fishing season and
+	someone's stolen my fishing rods.
+
+	Talk about a cruel world."
 }

@@ -108,21 +108,6 @@ movement Route101_Movement_Unused2 {
     walk_up
 }
 
-script Route101_EventScript_Youngster {
-    msgbox(Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC)
-    end
-}
-
-script Route101_EventScript_Boy {
-    msgbox(Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC)
-    end
-}
-
-script Route101_EventScript_RouteSign {
-    msgbox(Route101_Text_RouteSign, MSGBOX_SIGN)
-    end
-}
-
 script Route101_EventScript_BirchsBag {
     lock_faceplayer
     setflag(FLAG_SYS_POKEMON_GET)
@@ -151,6 +136,48 @@ script Route101_EventScript_BirchsBag {
     warp(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 5)
     waitstate
     release_end
+}
+
+script Route101_EventScript_Calvin {
+    trainerbattle_single(TRAINER_CALVIN_1, Route101_Text_CalvinIntro, Route101_Text_CalvinDefeated, Route101_EventScript_CalvinRegisterMatchCallAfterBattle)
+    if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
+		trainerbattle_rematch(TRAINER_CALVIN_1, Route101_Text_CalvinRematchIntro, Route101_Text_CalvinRematchDefeated)
+		msgbox(Route101_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE)
+		end
+	}
+    setvar(VAR_0x8004, TRAINER_CALVIN_1)
+    if (flag(FLAG_HAS_MATCH_CALL) && specialvar(VAR_RESULT, IsTrainerRegistered) == FALSE) {
+		msgbox(Route101_Text_CalvinRegister, MSGBOX_DEFAULT)
+    	register_matchcall(TRAINER_CALVIN_1)
+	}
+    msgbox(Route101_Text_CalvinPostBattle, MSGBOX_DEFAULT)
+    release_end
+}
+
+script Route101_EventScript_CalvinRegisterMatchCallAfterBattle {
+    special(PlayerFaceTrainerAfterBattle)
+    waitmovement(0)
+    if (flag(FLAG_HAS_MATCH_CALL)) {
+        msgbox(Route101_Text_CalvinRegisterShort, MSGBOX_DEFAULT)
+    	register_matchcall(TRAINER_CALVIN_1)
+    }
+    release_end
+}
+
+// Unused
+script Route101_EventScript_Youngster {
+    msgbox(Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC)
+    end
+}
+
+script Route101_EventScript_Boy {
+    msgbox(Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC)
+    end
+}
+
+script Route101_EventScript_RouteSign {
+    msgbox(Route101_Text_RouteSign, MSGBOX_SIGN)
+    end
 }
 
 text Route101_Text_HelpMe {

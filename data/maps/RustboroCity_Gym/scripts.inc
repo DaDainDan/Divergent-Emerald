@@ -10,9 +10,8 @@ RustboroCity_Gym_EventScript_Roxanne::
 	compare VAR_RESULT, TRUE
 	goto_if_eq RustboroCity_Gym_EventScript_Roxanne_2
 # 10 "data/maps/RustboroCity_Gym/scripts.pory"
-	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, RustboroCity_Gym_EventScript_Roxanne_5
-RustboroCity_Gym_EventScript_Roxanne_4:
-# 13 "data/maps/RustboroCity_Gym/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_HM_CUT, RustboroCity_Gym_EventScript_Roxanne_5
+# 14 "data/maps/RustboroCity_Gym/scripts.pory"
 	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
 	release_end
 
@@ -25,311 +24,359 @@ RustboroCity_Gym_EventScript_Roxanne_2:
 
 RustboroCity_Gym_EventScript_Roxanne_5:
 # 11 "data/maps/RustboroCity_Gym/scripts.pory"
-	goto RustboroCity_Gym_EventScript_GiveRockTomb
-	goto RustboroCity_Gym_EventScript_Roxanne_4
+	call RustboroCity_Gym_EventScript_GiveCut
+	release_end
 
 
 RustboroCity_Gym_EventScript_RoxanneDefeated::
-# 18 "data/maps/RustboroCity_Gym/scripts.pory"
-	message RustboroCity_Gym_Text_ReceivedStoneBadge
 # 19 "data/maps/RustboroCity_Gym/scripts.pory"
-	waitmessage
+	message RustboroCity_Gym_Text_ReceivedStoneBadge
 # 20 "data/maps/RustboroCity_Gym/scripts.pory"
-	call Common_EventScript_PlayGymBadgeFanfare
+	waitmessage
 # 21 "data/maps/RustboroCity_Gym/scripts.pory"
-	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
+	call Common_EventScript_PlayGymBadgeFanfare
 # 22 "data/maps/RustboroCity_Gym/scripts.pory"
-	setflag FLAG_DEFEATED_RUSTBORO_GYM
+	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
 # 23 "data/maps/RustboroCity_Gym/scripts.pory"
-	setflag FLAG_BADGE01_GET
+	call RustboroCity_Gym_EventScript_GiveCut
 # 24 "data/maps/RustboroCity_Gym/scripts.pory"
-	setvar VAR_RUSTBORO_CITY_STATE, 1
+	setflag FLAG_DEFEATED_RUSTBORO_GYM
 # 25 "data/maps/RustboroCity_Gym/scripts.pory"
-	addvar VAR_PETALBURG_GYM_STATE, 1
+	setflag FLAG_BADGE01_GET
 # 26 "data/maps/RustboroCity_Gym/scripts.pory"
-	setvar VAR_0x8008, 1
+	setvar VAR_RUSTBORO_CITY_STATE, 1
 # 27 "data/maps/RustboroCity_Gym/scripts.pory"
-	call Common_EventScript_SetGymTrainers
+	addvar VAR_PETALBURG_GYM_STATE, 1
 # 28 "data/maps/RustboroCity_Gym/scripts.pory"
+	setvar VAR_0x8008, 1
+# 29 "data/maps/RustboroCity_Gym/scripts.pory"
+	call Common_EventScript_SetGymTrainers
+# 30 "data/maps/RustboroCity_Gym/scripts.pory"
 	compare VAR_PETALBURG_GYM_STATE, 6
 	goto_if_eq RustboroCity_Gym_EventScript_RoxanneDefeated_2
 RustboroCity_Gym_EventScript_RoxanneDefeated_1:
-# 31 "data/maps/RustboroCity_Gym/scripts.pory"
-	goto RustboroCity_Gym_EventScript_GiveRockTomb
 	end
 
 RustboroCity_Gym_EventScript_RoxanneDefeated_2:
-# 29 "data/maps/RustboroCity_Gym/scripts.pory"
+# 31 "data/maps/RustboroCity_Gym/scripts.pory"
 	call Common_EventScript_ReadyPetalburgGymForBattle
 	goto RustboroCity_Gym_EventScript_RoxanneDefeated_1
 
 
-RustboroCity_Gym_EventScript_GiveRockTomb::
-	giveitem ITEM_TM_ROCK_TOMB
+RustboroCity_Gym_EventScript_GiveCut::
+	giveitem ITEM_HM_CUT
 # 0 "data/maps/RustboroCity_Gym/scripts.pory"
 	compare VAR_RESULT, FALSE
-	goto_if_eq RustboroCity_Gym_EventScript_GiveRockTomb_2
-RustboroCity_Gym_EventScript_GiveRockTomb_1:
-# 39 "data/maps/RustboroCity_Gym/scripts.pory"
-	setflag FLAG_RECEIVED_TM_ROCK_TOMB
+	goto_if_eq RustboroCity_Gym_EventScript_GiveCut_2
+RustboroCity_Gym_EventScript_GiveCut_1:
 # 40 "data/maps/RustboroCity_Gym/scripts.pory"
-	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
-	release_end
+	setflag FLAG_RECEIVED_HM_CUT
+# 41 "data/maps/RustboroCity_Gym/scripts.pory"
+	msgbox RustboroCity_Gym_Text_ExplainCut, MSGBOX_DEFAULT
+	return
 
-RustboroCity_Gym_EventScript_GiveRockTomb_2:
-# 37 "data/maps/RustboroCity_Gym/scripts.pory"
-	goto Common_EventScript_ShowBagIsFull
-	goto RustboroCity_Gym_EventScript_GiveRockTomb_1
+RustboroCity_Gym_EventScript_GiveCut_2:
+# 38 "data/maps/RustboroCity_Gym/scripts.pory"
+	goto Common_EventScript_BagIsFull
+	goto RustboroCity_Gym_EventScript_GiveCut_1
 
 
-RustboroCity_Gym_EventScript_Josh::
-# 45 "data/maps/RustboroCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_JOSH, RustboroCity_Gym_Text_JoshIntro, RustboroCity_Gym_Text_JoshDefeat
+RustboroCity_Gym_EventScript_Trinity::
 # 46 "data/maps/RustboroCity_Gym/scripts.pory"
-	msgbox RustboroCity_Gym_Text_JoshPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_TRINITY, RustboroCity_Gym_Text_TrinityIntro, RustboroCity_Gym_Text_TrinityDefeat
+# 47 "data/maps/RustboroCity_Gym/scripts.pory"
+	msgbox RustboroCity_Gym_Text_TrinityPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 RustboroCity_Gym_EventScript_Tommy::
-# 51 "data/maps/RustboroCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_TOMMY, RustboroCity_Gym_Text_TommyIntro, RustboroCity_Gym_Text_TommyDefeat
 # 52 "data/maps/RustboroCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_TOMMY, RustboroCity_Gym_Text_TommyIntro, RustboroCity_Gym_Text_TommyDefeat
+# 53 "data/maps/RustboroCity_Gym/scripts.pory"
 	msgbox RustboroCity_Gym_Text_TommyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 RustboroCity_Gym_EventScript_Marc::
-# 57 "data/maps/RustboroCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_MARC, RustboroCity_Gym_Text_MarcIntro, RustboroCity_Gym_Text_MarcDefeat
 # 58 "data/maps/RustboroCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_MARC, RustboroCity_Gym_Text_MarcIntro, RustboroCity_Gym_Text_MarcDefeat
+# 59 "data/maps/RustboroCity_Gym/scripts.pory"
 	msgbox RustboroCity_Gym_Text_MarcPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 RustboroCity_Gym_EventScript_GymGuide::
-# 63 "data/maps/RustboroCity_Gym/scripts.pory"
-	lock_faceplayer
 # 64 "data/maps/RustboroCity_Gym/scripts.pory"
-	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuide_2
+	lock_faceplayer
+# 65 "data/maps/RustboroCity_Gym/scripts.pory"
+	goto_if_set FLAG_RECEIVED_TM_ROCK_TOMB, RustboroCity_Gym_EventScript_GymGuide_2
 # 68 "data/maps/RustboroCity_Gym/scripts.pory"
+	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuide_3
+# 77 "data/maps/RustboroCity_Gym/scripts.pory"
 	msgbox RustboroCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+RustboroCity_Gym_EventScript_GymGuide_1:
 	release_end
 
 RustboroCity_Gym_EventScript_GymGuide_2:
-# 65 "data/maps/RustboroCity_Gym/scripts.pory"
+# 66 "data/maps/RustboroCity_Gym/scripts.pory"
+	msgbox RustboroCity_Gym_Text_GymGuideNextGym, MSGBOX_DEFAULT
+	goto RustboroCity_Gym_EventScript_GymGuide_1
+
+RustboroCity_Gym_EventScript_GymGuide_3:
+# 69 "data/maps/RustboroCity_Gym/scripts.pory"
 	msgbox RustboroCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
-	release_end
+	giveitem ITEM_TM_ROCK_TOMB
+# 0 "data/maps/RustboroCity_Gym/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq RustboroCity_Gym_EventScript_GymGuide_8
+RustboroCity_Gym_EventScript_GymGuide_7:
+# 73 "data/maps/RustboroCity_Gym/scripts.pory"
+	setflag FLAG_RECEIVED_TM_ROCK_TOMB
+# 74 "data/maps/RustboroCity_Gym/scripts.pory"
+	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
+	goto RustboroCity_Gym_EventScript_GymGuide_1
+
+RustboroCity_Gym_EventScript_GymGuide_8:
+# 71 "data/maps/RustboroCity_Gym/scripts.pory"
+	goto Common_EventScript_ShowBagIsFull
+	goto RustboroCity_Gym_EventScript_GymGuide_7
 
 
 RustboroCity_Gym_EventScript_LeftGymStatue::
-# 73 "data/maps/RustboroCity_Gym/scripts.pory"
+# 83 "data/maps/RustboroCity_Gym/scripts.pory"
 	lockall
-# 74 "data/maps/RustboroCity_Gym/scripts.pory"
+# 84 "data/maps/RustboroCity_Gym/scripts.pory"
 	goto RustboroCity_Gym_EventScript_GymStatue
 	return
 
 
 RustboroCity_Gym_EventScript_RightGymStatue::
-# 78 "data/maps/RustboroCity_Gym/scripts.pory"
+# 88 "data/maps/RustboroCity_Gym/scripts.pory"
 	lockall
-# 79 "data/maps/RustboroCity_Gym/scripts.pory"
+# 89 "data/maps/RustboroCity_Gym/scripts.pory"
 	goto RustboroCity_Gym_EventScript_GymStatue
 	return
 
 
 RustboroCity_Gym_EventScript_GymStatue::
-# 83 "data/maps/RustboroCity_Gym/scripts.pory"
+# 93 "data/maps/RustboroCity_Gym/scripts.pory"
 	goto_if_set FLAG_BADGE01_GET, RustboroCity_Gym_EventScript_GymStatue_2
-# 86 "data/maps/RustboroCity_Gym/scripts.pory"
+# 96 "data/maps/RustboroCity_Gym/scripts.pory"
 	msgbox RustboroCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
 RustboroCity_Gym_EventScript_GymStatue_1:
-# 88 "data/maps/RustboroCity_Gym/scripts.pory"
+# 98 "data/maps/RustboroCity_Gym/scripts.pory"
 	releaseall
 	end
 
 RustboroCity_Gym_EventScript_GymStatue_2:
-# 84 "data/maps/RustboroCity_Gym/scripts.pory"
+# 94 "data/maps/RustboroCity_Gym/scripts.pory"
 	msgbox RustboroCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT
 	goto RustboroCity_Gym_EventScript_GymStatue_1
 
 
 RustboroCity_Gym_EventScript_RegisterRoxanne::
-# 93 "data/maps/RustboroCity_Gym/scripts.pory"
-	lockall
-# 94 "data/maps/RustboroCity_Gym/scripts.pory"
-	pokenavcall RustboroCity_Gym_Text_RoxanneRegisterCall
-# 95 "data/maps/RustboroCity_Gym/scripts.pory"
-	waitmessage
-# 96 "data/maps/RustboroCity_Gym/scripts.pory"
-	delay 30
-# 97 "data/maps/RustboroCity_Gym/scripts.pory"
-	playfanfare MUS_REGISTER_MATCH_CALL
-# 98 "data/maps/RustboroCity_Gym/scripts.pory"
-	msgbox RustboroCity_Gym_Text_RegisteredRoxanne, MSGBOX_DEFAULT
-# 99 "data/maps/RustboroCity_Gym/scripts.pory"
-	waitfanfare
-# 100 "data/maps/RustboroCity_Gym/scripts.pory"
-	closemessage
-# 101 "data/maps/RustboroCity_Gym/scripts.pory"
-	delay 30
-# 102 "data/maps/RustboroCity_Gym/scripts.pory"
-	setflag FLAG_ENABLE_ROXANNE_MATCH_CALL
 # 103 "data/maps/RustboroCity_Gym/scripts.pory"
-	clearflag FLAG_ENABLE_ROXANNE_FIRST_CALL
+	lockall
 # 104 "data/maps/RustboroCity_Gym/scripts.pory"
+	pokenavcall RustboroCity_Gym_Text_RoxanneRegisterCall
+# 105 "data/maps/RustboroCity_Gym/scripts.pory"
+	waitmessage
+# 106 "data/maps/RustboroCity_Gym/scripts.pory"
+	delay 30
+# 107 "data/maps/RustboroCity_Gym/scripts.pory"
+	playfanfare MUS_REGISTER_MATCH_CALL
+# 108 "data/maps/RustboroCity_Gym/scripts.pory"
+	msgbox RustboroCity_Gym_Text_RegisteredRoxanne, MSGBOX_DEFAULT
+# 109 "data/maps/RustboroCity_Gym/scripts.pory"
+	waitfanfare
+# 110 "data/maps/RustboroCity_Gym/scripts.pory"
+	closemessage
+# 111 "data/maps/RustboroCity_Gym/scripts.pory"
+	delay 30
+# 112 "data/maps/RustboroCity_Gym/scripts.pory"
+	setflag FLAG_ENABLE_ROXANNE_MATCH_CALL
+# 113 "data/maps/RustboroCity_Gym/scripts.pory"
+	clearflag FLAG_ENABLE_ROXANNE_FIRST_CALL
+# 114 "data/maps/RustboroCity_Gym/scripts.pory"
 	releaseall
 	end
 
 
 RustboroCity_Gym_Text_GymGuideAdvice::
-# 108 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "Yo, how's it going?\p"
-	.string "Listen, my friend!\n"
-	.string "Would you like to become the CHAMPION?\p"
-	.string "I'm no TRAINER, not me, but I can\n"
-	.string "sure give you winning advice.\p"
-	.string "That's settled, then! We'll aim for the\n"
-	.string "POKéMON CHAMPIONSHIP together!\p"
-	.string "It's your job as a TRAINER to collect\n"
-	.string "GYM BADGES, am I right?\p"
-	.string "But GYM LEADERS aren't pushovers!\p"
-	.string "And that's where I come in!\n"
-	.string "I'm here to provide expert advice!\p"
-	.string "ROXANNE, the GYM LEADER, is a user\n"
-	.string "of ROCK-type POKéMON.\p"
-	.string "The ROCK type is very durable, but\n"
-	.string "it can't stand WATER-type and\l"
-	.string "GRASS-type moves.\p"
-	.string "Come see me afterwards, if you beat\n"
-	.string "the GYM LEADER.\p"
-	.string "Well, go for it!$"
+# 118 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "Welcome to Rustboro Gym, young trainer!\p"
+	.string "This gym is helmed by the formidable \n"
+	.string "Roxanne, known for her POKéMON's\l"
+	.string "strength and resilience!\p"
+	.string "She was a child prodigy born right here\n"
+	.string "in Rustboro City.\p"
+	.string "After graduating at the top of her\n"
+	.string "class at Rustboro Trainer's School,\l"
+	.string "she was quickly elevated to the rank of\l"
+	.string "Gym Leader.\p"
+	.string "Her advancement was not only\n"
+	.string "unprecedented but also made her the\l"
+	.string "youngest Gym Leader in the history of\l"
+	.string "the Pokemon League!\p"
+	.string "Proceed forward and defeat Roxanne's\n"
+	.string "handpicked Gym Trainers!\p"
+	.string "These Trainers will give you useful\n"
+	.string "information about their Gym Leader,\l"
+	.string "so you should listen carefully to what\l"
+	.string "they have to say.\p"
+	.string "Once they are all defeated, you will be\n"
+	.string "able to challenge Roxanne herself!$"
 
 RustboroCity_Gym_Text_GymGuidePostVictory::
-# 141 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "Whoa! What a breathtaking victory!\n"
-	.string "My cheering must've worked!\p"
-	.string "Great!\n"
-	.string "Check your TRAINER CARD.\p"
-	.string "The STONE BADGE you got should be\n"
-	.string "properly recorded on it.\p"
-	.string "In other words…\p"
-	.string "You've climbed the first step on\n"
-	.string "the stairs to the CHAMPIONSHIP!\p"
-	.string "That's got to feel awesome!$"
+# 150 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "Outstanding!\n"
+	.string "You've defeated Roxanne!\p"
+	.string "Now that you've earned a badge,\n"
+	.string "you're one step closer to completing\l"
+	.string "the Gym Challenge!\p"
+	.string "As a badge holder, you are also entitled\n"
+	.string "to our GYM's unique TECHNICAL MACHINE!$"
 
-RustboroCity_Gym_Text_JoshIntro::
-# 159 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "Don't take us GYM TRAINERS lightly!\n"
-	.string "I'll show you why we're better!$"
+RustboroCity_Gym_Text_GymGuideNextGym::
+# 162 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "Your next challenge lies to the east in\n"
+	.string "Mauville City.\p"
+	.string "There, you will be able to challenge\n"
+	.string "Watson, the Gregarious Engineer.$"
 
-RustboroCity_Gym_Text_JoshDefeat::
-# 164 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "You were too good for me…$"
+RustboroCity_Gym_Text_TrinityIntro::
+# 170 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "You don't look like much!\n"
+	.string "You won't even make it to Roxanne!$"
 
-RustboroCity_Gym_Text_JoshPostBattle::
-# 168 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "You haven't seen anything of the ROCK\n"
-	.string "type's terrifying power!$"
+RustboroCity_Gym_Text_TrinityDefeat::
+# 175 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "Hmph... not bad for a newbie.$"
+
+RustboroCity_Gym_Text_TrinityPostBattle::
+# 179 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "I have a lot in common with Roxanne.\n"
+	.string "I'm top of my class in Trainer's School,\l"
+	.string "and my Phanpy fights just like one of\l"
+	.string "her POKéMON.\p"
+	.string "I know I'll be a Gym Leader too\n"
+	.string "one day!$"
 
 RustboroCity_Gym_Text_TommyIntro::
-# 173 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "If you can't beat me, you won't stand\n"
-	.string "a chance against ROXANNE!$"
+# 189 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "Roxanne believed in me enough to make\n"
+	.string "me one of her Gym Trainers!\p"
+	.string "I have to win, so I won't let her down!$"
 
 RustboroCity_Gym_Text_TommyDefeat::
-# 178 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "Wow! You've got some potential!$"
+# 196 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "I'm sorry Roxanne...\n"
+	.string "I lost.$"
 
 RustboroCity_Gym_Text_TommyPostBattle::
-# 182 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROXANNE is stronger than me by\n"
-	.string "several times.\p"
-	.string "You'd better be on your guard!$"
+# 201 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "I chose Nacli as my POKéMON because\n"
+	.string "it's the same type as Roxanne's ace.\p"
+	.string "Maybe I can't follow in her footsteps\n"
+	.string "like I thought I could.$"
 
 RustboroCity_Gym_Text_MarcIntro::
-# 189 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "We might be in the middle of town,\n"
-	.string "but so what?\p"
-	.string "My ROCK POKéMON need room to\n"
-	.string "rampage!$"
+# 209 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "Not just anyone can battle my niece!\n"
+	.string "Prove your metal to me or get lost!$"
 
 RustboroCity_Gym_Text_MarcDefeat::
-# 197 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "Oh, man oh man!\n"
-	.string "Our challenger is one feisty customer!$"
+# 214 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "The way you battle…\n"
+	.string "It almost reminds me of…$"
 
 RustboroCity_Gym_Text_MarcPostBattle::
-# 202 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "I have to hand it to our LEADER.\p"
-	.string "It took smarts and sense for her to\n"
-	.string "pick the ROCK type at her young age.$"
+# 219 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "I used to take Roxanne hiking around\n"
+	.string "Meteor Falls when she was young.\p"
+	.string "I think that's where she developed her\n"
+	.string "passion for POKéMON.\p"
+	.string "She even met one of her favorite\n"
+	.string "POKéMON on Route 115!$"
 
 RustboroCity_Gym_Text_RoxanneIntro::
-# 209 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "Hello, I am ROXANNE, the RUSTBORO\n"
-	.string "POKéMON GYM LEADER.\p"
-	.string "I became a GYM LEADER so that I might\n"
-	.string "apply what I learned at the POKéMON\l"
-	.string "TRAINER'S SCHOOL in battle.\p"
-	.string "Would you kindly demonstrate how you\n"
-	.string "battle, and with which POKéMON?$"
+# 230 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "Hello, challenger.\p"
+	.string "I am ROXANNE, the GYM LEADER for\n"
+	.string "RUSTBORO CITY.\p"
+	.string "I'm always glad to be challenged by\n"
+	.string "young trainers such as yourself.\p"
+	.string "It takes courage and willpower for\n"
+	.string "ANYONE to attempt the Gym Challenge,\l"
+	.string "let alone one as young as you.\p"
+	.string "Now, show me what you've learned.\p"
+	.string "Let this battle mark the next stage in\n"
+	.string "your development.$"
 
 RustboroCity_Gym_Text_RoxanneDefeat::
-# 221 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "So…\n"
-	.string "I lost…\p"
-	.string "It seems that I still have much more\n"
-	.string "to learn…\p"
-	.string "I understand.\p"
-	.string "The POKéMON LEAGUE's rules state\n"
-	.string "that TRAINERS are to be given this\l"
-	.string "if they defeat a GYM LEADER.\p"
-	.string "Please accept the official POKéMON\n"
-	.string "LEAGUE STONE BADGE.$"
+# 249 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "Congratulations!\n"
+	.string "You've beaten me.\p"
+	.string "I see that you've learned a lot despite\n"
+	.string "only being a trainer for a short time.\p"
+	.string "Please accept this badge as a\n"
+	.string "commemoration of your victory.$"
 
 RustboroCity_Gym_Text_ReceivedStoneBadge::
-# 238 "data/maps/RustboroCity_Gym/scripts.pory"
+# 260 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "{PLAYER} received the STONE BADGE\n"
 	.string "from ROXANNE.$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis::
-# 243 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "The STONE BADGE heightens the ATTACK\n"
-	.string "power of your POKéMON.\p"
-	.string "It also enables them to use the HM move\n"
-	.string "CUT outside of battle.\p"
-	.string "Please take this with you, too.$"
+# 265 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "It is also my duty as Gym Leader to\n"
+	.string "reward you with this HM.$"
+
+RustboroCity_Gym_Text_ExplainCut::
+# 270 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "HIDDEN MACHINES, or HMs, contain the\n"
+	.string "instructions to teach any eligible\l"
+	.string "POKéMON moves that can be helpful for\l"
+	.string "traversing terrain, but they do not\l"
+	.string "have to be taught in order for a\l"
+	.string "POKéMON to use them.\p"
+	.string "In this case, HM01:CUT allows you to\n"
+	.string "chop down small trees that are blocking\l"
+	.string "your path.\p"
+	.string "I hope this machine proves useful\n"
+	.string "throughout your journey.$"
 
 RustboroCity_Gym_Text_ExplainRockTomb::
-# 253 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "That TECHNICAL MACHINE, TM39,\n"
-	.string "contains ROCK TOMB.\p"
-	.string "It not only inflicts damage by dropping\n"
-	.string "rocks, it also lowers SPEED.\p"
-	.string "If you use a TM, it instantly teaches\n"
-	.string "the move to a POKéMON.\p"
-	.string "Remember, a TM can be used only once,\n"
-	.string "so think before you use it.$"
+# 286 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "That TM contains the instructions in\n"
+	.string "order to teach the move ROCK TOMB to\l"
+	.string "any eligible POKéMON.\p"
+	.string "As the name clearly indicates, it's a\n"
+	.string "ROCK-TYPE move, but in addition to\l"
+	.string "dealing damage, it also lowers the\l"
+	.string "opponent's SPEED.\p"
+	.string "This can allow you to turn the tables on\n"
+	.string "your opponent if used effectively.$"
 
 RustboroCity_Gym_Text_RoxannePostBattle::
-# 267 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "Since you are so strong, you should\n"
-	.string "challenge other GYM LEADERS.\p"
-	.string "By battling many TRAINERS, you should\n"
-	.string "learn many things.$"
+# 300 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "Talent like yours is rare to come by.\p"
+	.string "I hope you continue to hone your skills,\n"
+	.string "and perhaps, we'll meet again one day.\p"
+	.string "Until then, you have my best wishes!$"
 
 RustboroCity_Gym_Text_GymStatue::
-# 275 "data/maps/RustboroCity_Gym/scripts.pory"
+# 309 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "RUSTBORO CITY POKéMON GYM$"
 
 RustboroCity_Gym_Text_GymStatueCertified::
-# 279 "data/maps/RustboroCity_Gym/scripts.pory"
+# 313 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "RUSTBORO CITY POKéMON GYM\p"
-	.string "ROXANNE'S CERTIFIED TRAINERS:\n"
+	.string "NEWEST VICTOR:\n"
 	.string "{PLAYER}$"
 
 RustboroCity_Gym_Text_RoxanneRegisterCall::
-# 286 "data/maps/RustboroCity_Gym/scripts.pory"
+# 320 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
 	.string "ROXANNE: Oh, hello, {PLAYER}?\n"
@@ -347,12 +394,12 @@ RustboroCity_Gym_Text_RoxanneRegisterCall::
 	.string "… … … … … Click!$"
 
 RustboroCity_Gym_Text_RegisteredRoxanne::
-# 310 "data/maps/RustboroCity_Gym/scripts.pory"
+# 344 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "Registered GYM LEADER ROXANNE\n"
 	.string "in the POKéNAV.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch::
-# 315 "data/maps/RustboroCity_Gym/scripts.pory"
+# 349 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "ROXANNE: I'm so glad to see you again.\n"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 	.string "I'm sure we've both experienced many\n"
@@ -361,19 +408,19 @@ RustboroCity_Gym_Text_RoxannePreRematch::
 	.string "we've become. Let us battle!$"
 
 RustboroCity_Gym_Text_RoxanneRematchDefeat::
-# 326 "data/maps/RustboroCity_Gym/scripts.pory"
+# 360 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "Grr…\n"
 	.string "Again, I have lost…$"
 
 RustboroCity_Gym_Text_RoxannePostRematch::
-# 331 "data/maps/RustboroCity_Gym/scripts.pory"
+# 365 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "ROXANNE: I still have much to learn\n"
 	.string "when it comes to battling POKéMON.\p"
 	.string "That awareness makes me love battling\n"
 	.string "all that much more!$"
 
 RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons::
-# 339 "data/maps/RustboroCity_Gym/scripts.pory"
+# 373 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "ROXANNE: I'm so glad to see you again.\n"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 	.string "I'm sure we've both experienced many\n"

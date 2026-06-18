@@ -30,63 +30,68 @@ OldaleTown_Mart_Pokemart_Basic:
 # 17 "data/maps/OldaleTown_Mart/scripts.pory"
 	.2byte ITEM_POTION
 # 18 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_FULL_HEAL
 # 19 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_MAX_ETHER
 # 20 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_AWAKENING
+	.2byte ITEM_REPEL
+# 21 "data/maps/OldaleTown_Mart/scripts.pory"
+	.2byte ITEM_LURE
 	.2byte ITEM_NONE
 
 	.align 2
-# 23 "data/maps/OldaleTown_Mart/scripts.pory"
-OldaleTown_Mart_Pokemart_Expanded:
 # 24 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_POKE_BALL
+OldaleTown_Mart_Pokemart_Expanded:
 # 25 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_POTION
+	.2byte ITEM_POKE_BALL
 # 26 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_POTION
 # 27 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_FULL_HEAL
 # 28 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_AWAKENING
+	.2byte ITEM_MAX_ETHER
+# 29 "data/maps/OldaleTown_Mart/scripts.pory"
+	.2byte ITEM_REPEL
+# 30 "data/maps/OldaleTown_Mart/scripts.pory"
+	.2byte ITEM_LURE
 	.2byte ITEM_NONE
 
 OldaleTown_Mart_EventScript_Woman::
-# 32 "data/maps/OldaleTown_Mart/scripts.pory"
+# 34 "data/maps/OldaleTown_Mart/scripts.pory"
 	lock_faceplayer
-# 33 "data/maps/OldaleTown_Mart/scripts.pory"
+# 35 "data/maps/OldaleTown_Mart/scripts.pory"
 	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_Mart_EventScript_Woman_2
-# 36 "data/maps/OldaleTown_Mart/scripts.pory"
+# 38 "data/maps/OldaleTown_Mart/scripts.pory"
 	msgbox OldaleTown_Mart_Text_PokeBallsAreSoldOut, MSGBOX_DEFAULT
 OldaleTown_Mart_EventScript_Woman_1:
 	release_end
 
 OldaleTown_Mart_EventScript_Woman_2:
-# 34 "data/maps/OldaleTown_Mart/scripts.pory"
+# 36 "data/maps/OldaleTown_Mart/scripts.pory"
 	msgbox OldaleTown_Mart_Text_ImGoingToBuyPokeBalls, MSGBOX_DEFAULT
 	goto OldaleTown_Mart_EventScript_Woman_1
 
 
 OldaleTown_Mart_EventScript_Boy::
-# 42 "data/maps/OldaleTown_Mart/scripts.pory"
+# 44 "data/maps/OldaleTown_Mart/scripts.pory"
 	msgbox OldaleTown_Mart_Text_RestoreHPWithPotion, MSGBOX_NPC
 	end
 
 
 OldaleTown_Mart_Text_PokeBallsAreSoldOut::
-# 46 "data/maps/OldaleTown_Mart/scripts.pory"
-	.string "The clerk says they're all sold out.\n"
-	.string "I can't buy any POKé BALLS.$"
+# 48 "data/maps/OldaleTown_Mart/scripts.pory"
+	.string "The clerk says they're all sold out, so\n"
+	.string "I can't stock up on POKé BALLS.$"
 
 OldaleTown_Mart_Text_ImGoingToBuyPokeBalls::
-# 51 "data/maps/OldaleTown_Mart/scripts.pory"
-	.string "I'm going to buy a bunch of POKé BALLS\n"
-	.string "and catch a bunch of POKéMON!$"
+# 53 "data/maps/OldaleTown_Mart/scripts.pory"
+	.string "I buy plenty of POKé BALLS so I won't\n"
+	.string "run out when I try to catch POKéMON!$"
 
 OldaleTown_Mart_Text_RestoreHPWithPotion::
-# 56 "data/maps/OldaleTown_Mart/scripts.pory"
-	.string "If a POKéMON gets hurt and loses its HP\n"
-	.string "and faints, it won't be able to battle.\p"
-	.string "To prevent your POKéMON from fainting,\n"
-	.string "restore its HP with a POTION.$"
+# 58 "data/maps/OldaleTown_Mart/scripts.pory"
+	.string "It's important to stock up on POTIONS\n"
+	.string "so you can keep your POKéMON healthy.\p"
+	.string "Don't be stingy about using them.\n"
+	.string "If your POKéMON faints, POTIONS won't\l"
+	.string "be able to revive them.$"

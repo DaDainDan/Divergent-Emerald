@@ -265,80 +265,136 @@ Route101_Movement_Unused2:
 	walk_up
 	step_end
 
-Route101_EventScript_Youngster::
-# 112 "data/maps/Route101/scripts.pory"
-	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
-	end
-
-
-Route101_EventScript_Boy::
-# 117 "data/maps/Route101/scripts.pory"
-	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
-	end
-
-
-Route101_EventScript_RouteSign::
-# 122 "data/maps/Route101/scripts.pory"
-	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
-	end
-
-
 Route101_EventScript_BirchsBag::
-# 127 "data/maps/Route101/scripts.pory"
+# 112 "data/maps/Route101/scripts.pory"
 	lock_faceplayer
-# 128 "data/maps/Route101/scripts.pory"
+# 113 "data/maps/Route101/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 129 "data/maps/Route101/scripts.pory"
+# 114 "data/maps/Route101/scripts.pory"
 	setflag FLAG_RESCUED_BIRCH
-# 130 "data/maps/Route101/scripts.pory"
+# 115 "data/maps/Route101/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 131 "data/maps/Route101/scripts.pory"
+# 116 "data/maps/Route101/scripts.pory"
 	removeobject LOCALID_ROUTE101_ZIGZAGOON
-# 132 "data/maps/Route101/scripts.pory"
+# 117 "data/maps/Route101/scripts.pory"
 	setobjectxy LOCALID_PLAYER, 6, 13
-# 133 "data/maps/Route101/scripts.pory"
+# 118 "data/maps/Route101/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
-# 134 "data/maps/Route101/scripts.pory"
+# 119 "data/maps/Route101/scripts.pory"
 	waitmovement 0
-# 135 "data/maps/Route101/scripts.pory"
+# 120 "data/maps/Route101/scripts.pory"
 	special ChooseStarter
-# 136 "data/maps/Route101/scripts.pory"
+# 121 "data/maps/Route101/scripts.pory"
 	applymovement LOCALID_ROUTE101_BIRCH, Common_Movement_WalkRight
-# 137 "data/maps/Route101/scripts.pory"
+# 122 "data/maps/Route101/scripts.pory"
 	waitmovement 0
-# 138 "data/maps/Route101/scripts.pory"
+# 123 "data/maps/Route101/scripts.pory"
 	msgbox Route101_Text_YouSavedMe, MSGBOX_DEFAULT
-# 139 "data/maps/Route101/scripts.pory"
+# 124 "data/maps/Route101/scripts.pory"
 	special HealPlayerParty
-# 140 "data/maps/Route101/scripts.pory"
+# 125 "data/maps/Route101/scripts.pory"
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
-# 141 "data/maps/Route101/scripts.pory"
+# 126 "data/maps/Route101/scripts.pory"
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
-# 142 "data/maps/Route101/scripts.pory"
+# 127 "data/maps/Route101/scripts.pory"
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
-# 143 "data/maps/Route101/scripts.pory"
+# 128 "data/maps/Route101/scripts.pory"
 	setvar VAR_BIRCH_LAB_STATE, 2
-# 144 "data/maps/Route101/scripts.pory"
+# 129 "data/maps/Route101/scripts.pory"
 	setvar VAR_ROUTE101_STATE, 3
-# 145 "data/maps/Route101/scripts.pory"
+# 130 "data/maps/Route101/scripts.pory"
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	checkplayergender
 # 0 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Route101_EventScript_BirchsBag_2
-# 149 "data/maps/Route101/scripts.pory"
+# 134 "data/maps/Route101/scripts.pory"
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
 Route101_EventScript_BirchsBag_1:
-# 151 "data/maps/Route101/scripts.pory"
+# 136 "data/maps/Route101/scripts.pory"
 	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 5
-# 152 "data/maps/Route101/scripts.pory"
+# 137 "data/maps/Route101/scripts.pory"
 	waitstate
 	release_end
 
 Route101_EventScript_BirchsBag_2:
-# 147 "data/maps/Route101/scripts.pory"
+# 132 "data/maps/Route101/scripts.pory"
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 	goto Route101_EventScript_BirchsBag_1
+
+
+Route101_EventScript_Calvin::
+# 142 "data/maps/Route101/scripts.pory"
+	trainerbattle_single TRAINER_CALVIN_1, Route101_Text_CalvinIntro, Route101_Text_CalvinDefeated, Route101_EventScript_CalvinRegisterMatchCallAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+# 0 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route101_EventScript_Calvin_2
+# 148 "data/maps/Route101/scripts.pory"
+	setvar VAR_0x8004, TRAINER_CALVIN_1
+# 149 "data/maps/Route101/scripts.pory"
+	goto_if_set FLAG_HAS_MATCH_CALL, Route101_EventScript_Calvin_6
+Route101_EventScript_Calvin_4:
+# 153 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_CalvinPostBattle, MSGBOX_DEFAULT
+	release_end
+
+Route101_EventScript_Calvin_2:
+# 144 "data/maps/Route101/scripts.pory"
+	trainerbattle_rematch TRAINER_CALVIN_1, Route101_Text_CalvinRematchIntro, Route101_Text_CalvinRematchDefeated
+# 145 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route101_EventScript_Calvin_5:
+# 150 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_CalvinRegister, MSGBOX_DEFAULT
+# 151 "data/maps/Route101/scripts.pory"
+	register_matchcall TRAINER_CALVIN_1
+	goto Route101_EventScript_Calvin_4
+
+Route101_EventScript_Calvin_6:
+	specialvar VAR_RESULT, IsTrainerRegistered
+# 0 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route101_EventScript_Calvin_5
+	goto Route101_EventScript_Calvin_4
+
+
+Route101_EventScript_CalvinRegisterMatchCallAfterBattle::
+# 158 "data/maps/Route101/scripts.pory"
+	special PlayerFaceTrainerAfterBattle
+# 159 "data/maps/Route101/scripts.pory"
+	waitmovement 0
+# 160 "data/maps/Route101/scripts.pory"
+	goto_if_set FLAG_HAS_MATCH_CALL, Route101_EventScript_CalvinRegisterMatchCallAfterBattle_2
+Route101_EventScript_CalvinRegisterMatchCallAfterBattle_1:
+	release_end
+
+Route101_EventScript_CalvinRegisterMatchCallAfterBattle_2:
+# 161 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_CalvinRegisterShort, MSGBOX_DEFAULT
+# 162 "data/maps/Route101/scripts.pory"
+	register_matchcall TRAINER_CALVIN_1
+	goto Route101_EventScript_CalvinRegisterMatchCallAfterBattle_1
+
+
+Route101_EventScript_Youngster::
+# 169 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
+	end
+
+
+Route101_EventScript_Boy::
+# 174 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
+	end
+
+
+Route101_EventScript_RouteSign::
+# 179 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
+	end
 
 
 # 22 "data/maps/Route101/scripts.pory"
@@ -412,23 +468,23 @@ Route101_EventScript_StartBirchRescue_Movement_4:
 	step_end
 
 Route101_Text_HelpMe::
-# 156 "data/maps/Route101/scripts.pory"
+# 183 "data/maps/Route101/scripts.pory"
 	.string "H-help me!$"
 
 Route101_Text_PleaseHelp::
-# 160 "data/maps/Route101/scripts.pory"
+# 187 "data/maps/Route101/scripts.pory"
 	.string "Hello! You over there!\n"
 	.string "Please! Help!\p"
 	.string "In my BAG!\n"
 	.string "There's a POKé BALL!$"
 
 Route101_Text_DontLeaveMe::
-# 168 "data/maps/Route101/scripts.pory"
+# 195 "data/maps/Route101/scripts.pory"
 	.string "Wh-Where are you going?!\n"
 	.string "Don't leave me like this!$"
 
 Route101_Text_YouSavedMe::
-# 173 "data/maps/Route101/scripts.pory"
+# 200 "data/maps/Route101/scripts.pory"
 	.string "PROF. BIRCH: Whew…\p"
 	.string "I was in the tall grass studying wild\n"
 	.string "POKéMON when I was jumped.\p"
@@ -440,20 +496,20 @@ Route101_Text_YouSavedMe::
 	.string "by my POKéMON LAB later, okay?$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter::
-# 190 "data/maps/Route101/scripts.pory"
+# 217 "data/maps/Route101/scripts.pory"
 	.string "If POKéMON get tired, take them to\n"
 	.string "a POKéMON CENTER.\p"
 	.string "There's a POKéMON CENTER in OLDALE\n"
 	.string "TOWN right close by.$"
 
 Route101_Text_WildPokemonInTallGrass::
-# 198 "data/maps/Route101/scripts.pory"
+# 225 "data/maps/Route101/scripts.pory"
 	.string "Wild POKéMON will jump out at you in\n"
 	.string "tall grass.\p"
 	.string "If you want to catch POKéMON, you have\n"
 	.string "to go into the tall grass and search.$"
 
 Route101_Text_RouteSign::
-# 206 "data/maps/Route101/scripts.pory"
+# 233 "data/maps/Route101/scripts.pory"
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"

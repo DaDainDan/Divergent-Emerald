@@ -979,105 +979,57 @@ DewfordTown_EventScript_HallSign::
 	end
 
 
-DewfordTown_EventScript_OldRodFisherman::
+DewfordTown_EventScript_Fisherman::
 # 166 "data/maps/DewfordTown/scripts.pory"
 	lock_faceplayer
 # 167 "data/maps/DewfordTown/scripts.pory"
-	goto_if_set FLAG_RECEIVED_OLD_ROD, DewfordTown_EventScript_OldRodFisherman_2
-# 177 "data/maps/DewfordTown/scripts.pory"
-	msgbox DewfordTown_Text_GettingItchToFish, MSGBOX_YESNO
-# 178 "data/maps/DewfordTown/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq DewfordTown_EventScript_OldRodFisherman_5
-# 186 "data/maps/DewfordTown/scripts.pory"
-	msgbox DewfordTown_Text_ThatsTooBadThen, MSGBOX_DEFAULT
-DewfordTown_EventScript_OldRodFisherman_4:
+	msgbox DewfordTown_Text_UpsetFisherman, MSGBOX_DEFAULT
 	release_end
-
-DewfordTown_EventScript_OldRodFisherman_2:
-# 168 "data/maps/DewfordTown/scripts.pory"
-	message DewfordTown_Text_HowsYourFishing
-# 169 "data/maps/DewfordTown/scripts.pory"
-	waitmessage
-# 170 "data/maps/DewfordTown/scripts.pory"
-	multichoice 20, 8, MULTI_HOWS_FISHING, TRUE
-# 171 "data/maps/DewfordTown/scripts.pory"
-	switch VAR_RESULT
-# 172 "data/maps/DewfordTown/scripts.pory"
-	case 0, DewfordTown_EventScript_OldRodFisherman_10
-# 173 "data/maps/DewfordTown/scripts.pory"
-	msgbox DewfordTown_Text_FishingAdvice, MSGBOX_DEFAULT
-DewfordTown_EventScript_OldRodFisherman_8:
-	release_end
-
-DewfordTown_EventScript_OldRodFisherman_5:
-# 179 "data/maps/DewfordTown/scripts.pory"
-	msgbox DewfordTown_Text_GiveYouOneOfMyRods, MSGBOX_DEFAULT
-	giveitem ITEM_OLD_ROD
-# 0 "data/maps/DewfordTown/scripts.pory"
-	compare VAR_RESULT, FALSE
-	goto_if_eq DewfordTown_EventScript_OldRodFisherman_13
-DewfordTown_EventScript_OldRodFisherman_12:
-# 183 "data/maps/DewfordTown/scripts.pory"
-	setflag FLAG_RECEIVED_OLD_ROD
-# 184 "data/maps/DewfordTown/scripts.pory"
-	msgbox DewfordTown_Text_ThrowInFishingAdvice, MSGBOX_DEFAULT
-	goto DewfordTown_EventScript_OldRodFisherman_4
-
-DewfordTown_EventScript_OldRodFisherman_10:
-# 172 "data/maps/DewfordTown/scripts.pory"
-	msgbox DewfordTown_Text_GreatHaulInSomeBigOnes, MSGBOX_DEFAULT
-	goto DewfordTown_EventScript_OldRodFisherman_8
-
-DewfordTown_EventScript_OldRodFisherman_13:
-# 181 "data/maps/DewfordTown/scripts.pory"
-	goto Common_EventScript_ShowBagIsFull
-	goto DewfordTown_EventScript_OldRodFisherman_12
 
 
 DewfordTown_EventScript_TrendyPhraseBoy::
-# 192 "data/maps/DewfordTown/scripts.pory"
+# 199 "data/maps/DewfordTown/scripts.pory"
 	lock_faceplayer
-# 193 "data/maps/DewfordTown/scripts.pory"
+# 200 "data/maps/DewfordTown/scripts.pory"
 	call Common_EventScript_BufferTrendyPhrase
-# 194 "data/maps/DewfordTown/scripts.pory"
+# 201 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_XIsTheBiggestHappeningThingRight, MSGBOX_YESNO
-# 195 "data/maps/DewfordTown/scripts.pory"
+# 202 "data/maps/DewfordTown/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DewfordTown_EventScript_TrendyPhraseBoy_2
-# 198 "data/maps/DewfordTown/scripts.pory"
+# 205 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_TellMeWhatsNewAndIn, MSGBOX_DEFAULT
-# 199 "data/maps/DewfordTown/scripts.pory"
+# 206 "data/maps/DewfordTown/scripts.pory"
 	setvar VAR_0x8004, EASY_CHAT_TYPE_TRENDY_PHRASE
-# 200 "data/maps/DewfordTown/scripts.pory"
+# 207 "data/maps/DewfordTown/scripts.pory"
 	call Common_ShowEasyChatScreen
-# 201 "data/maps/DewfordTown/scripts.pory"
+# 208 "data/maps/DewfordTown/scripts.pory"
 	lock_faceplayer
-# 202 "data/maps/DewfordTown/scripts.pory"
+# 209 "data/maps/DewfordTown/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DewfordTown_EventScript_TrendyPhraseBoy_5
-# 210 "data/maps/DewfordTown/scripts.pory"
+# 217 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_HearOfAnyTrendsComeShareWithMe, MSGBOX_DEFAULT
 DewfordTown_EventScript_TrendyPhraseBoy_1:
 	release_end
 
 DewfordTown_EventScript_TrendyPhraseBoy_2:
-# 196 "data/maps/DewfordTown/scripts.pory"
+# 203 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_YeahDefinitionOfInRightNow, MSGBOX_DEFAULT
 	goto DewfordTown_EventScript_TrendyPhraseBoy_1
 
 DewfordTown_EventScript_TrendyPhraseBoy_5:
-# 203 "data/maps/DewfordTown/scripts.pory"
+# 210 "data/maps/DewfordTown/scripts.pory"
 	incrementgamestat GAME_STAT_STARTED_TRENDS
-# 204 "data/maps/DewfordTown/scripts.pory"
+# 211 "data/maps/DewfordTown/scripts.pory"
 	compare VAR_0x8004, FALSE
 	goto_if_eq DewfordTown_EventScript_TrendyPhraseBoy_9
-# 208 "data/maps/DewfordTown/scripts.pory"
+# 215 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_OfCourseIKnowAboutThat, MSGBOX_DEFAULT
 	goto DewfordTown_EventScript_TrendyPhraseBoy_1
 
 DewfordTown_EventScript_TrendyPhraseBoy_9:
-# 205 "data/maps/DewfordTown/scripts.pory"
+# 212 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_XHuhIThinkYIsCool, MSGBOX_DEFAULT
 	release_end
 
@@ -1121,95 +1073,95 @@ DewfordTown_EventScript_SailToSlateport_Movement_1:
 	step_end
 
 DewfordTown_Text_TinyIslandCommunity::
-# 216 "data/maps/DewfordTown/scripts.pory"
+# 223 "data/maps/DewfordTown/scripts.pory"
 	.string "DEWFORD is a tiny island community.\n"
 	.string "If something gets trendy here,\l"
 	.string "everyone picks up on it right away.$"
 
 DewfordTown_Text_TownSign::
-# 222 "data/maps/DewfordTown/scripts.pory"
+# 229 "data/maps/DewfordTown/scripts.pory"
 	.string "DEWFORD TOWN\n"
 	.string "“A tiny island in the blue sea.”$"
 
 DewfordTown_Text_GymSign::
-# 227 "data/maps/DewfordTown/scripts.pory"
+# 234 "data/maps/DewfordTown/scripts.pory"
 	.string "DEWFORD TOWN POKéMON GYM\n"
 	.string "LEADER: BRAWLY\l"
 	.string "“A big wave in fighting!”$"
 
 DewfordTown_Text_HallSign::
-# 233 "data/maps/DewfordTown/scripts.pory"
+# 240 "data/maps/DewfordTown/scripts.pory"
 	.string "DEWFORD HALL\n"
 	.string "“Everyone's information exchange!”$"
 
 Route104_Text_LandedInDewfordDeliverLetter::
-# 238 "data/maps/DewfordTown/scripts.pory"
+# 245 "data/maps/DewfordTown/scripts.pory"
 	.string "MR. BRINEY: Ahoy!\n"
 	.string "We've hit land in DEWFORD.\p"
 	.string "I suppose you're off to deliver that\n"
 	.string "LETTER to, who was it now, STEVEN!$"
 
 DewfordTown_Text_SetSailBackToPetalburg::
-# 246 "data/maps/DewfordTown/scripts.pory"
+# 253 "data/maps/DewfordTown/scripts.pory"
 	.string "MR. BRINEY: Have you delivered your\n"
 	.string "LETTER?\p"
 	.string "Or were you meaning to sail back to\n"
 	.string "PETALBURG?$"
 
 DewfordTown_Text_PetalburgWereSettingSail2::
-# 254 "data/maps/DewfordTown/scripts.pory"
+# 261 "data/maps/DewfordTown/scripts.pory"
 	.string "MR. BRINEY: PETALBURG it is, then!\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
 DewfordTown_Text_GoDeliverIllBeWaiting::
-# 261 "data/maps/DewfordTown/scripts.pory"
+# 268 "data/maps/DewfordTown/scripts.pory"
 	.string "MR. BRINEY: Then you go on and deliver\n"
 	.string "the LETTER. I'll be waiting.$"
 
 DewfordTown_Text_BrineyLandedInDewford::
-# 266 "data/maps/DewfordTown/scripts.pory"
+# 273 "data/maps/DewfordTown/scripts.pory"
 	.string "MR. BRINEY: Ahoy!\n"
 	.string "We've hit land in DEWFORD!\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail again!$"
 
 DewfordTown_Text_WhereAreWeBound::
-# 274 "data/maps/DewfordTown/scripts.pory"
+# 281 "data/maps/DewfordTown/scripts.pory"
 	.string "MR. BRINEY: Ahoy!\n"
 	.string "For you, I'll go out to sea anytime!\p"
 	.string "Now, my friend, where are we bound?$"
 
 DewfordTown_Text_PetalburgWereSettingSail::
-# 281 "data/maps/DewfordTown/scripts.pory"
+# 288 "data/maps/DewfordTown/scripts.pory"
 	.string "MR. BRINEY: PETALBURG, is it?\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
 DewfordTown_Text_SlateportWereSettingSail::
-# 288 "data/maps/DewfordTown/scripts.pory"
+# 295 "data/maps/DewfordTown/scripts.pory"
 	.string "MR. BRINEY: SLATEPORT, is it?\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
 DewfordTown_Text_JustTellMeWhenYouNeedToSetSail::
-# 295 "data/maps/DewfordTown/scripts.pory"
+# 302 "data/maps/DewfordTown/scripts.pory"
 	.string "MR. BRINEY: You just tell me whenever\n"
 	.string "you need to set sail again!$"
 
 DewfordTown_Text_GettingItchToFish::
-# 300 "data/maps/DewfordTown/scripts.pory"
+# 307 "data/maps/DewfordTown/scripts.pory"
 	.string "This is a renowned fishing spot.\n"
 	.string "Are you getting the itch to fish?$"
 
 DewfordTown_Text_GiveYouOneOfMyRods::
-# 305 "data/maps/DewfordTown/scripts.pory"
+# 312 "data/maps/DewfordTown/scripts.pory"
 	.string "I hear you, and I like what\n"
 	.string "you're saying!\p"
 	.string "I'll give you one of my fishing RODS.$"
 
 DewfordTown_Text_ThrowInFishingAdvice::
-# 312 "data/maps/DewfordTown/scripts.pory"
+# 319 "data/maps/DewfordTown/scripts.pory"
 	.string "And, as an added bonus, I'll even throw\n"
 	.string "in a little fishing advice!\p"
 	.string "First, you want to face the water,\n"
@@ -1222,22 +1174,22 @@ DewfordTown_Text_ThrowInFishingAdvice::
 	.string "to haul them in.$"
 
 DewfordTown_Text_ThatsTooBadThen::
-# 328 "data/maps/DewfordTown/scripts.pory"
+# 335 "data/maps/DewfordTown/scripts.pory"
 	.string "Oh, is that so?\n"
 	.string "That's too bad, then.$"
 
 DewfordTown_Text_HowsYourFishing::
-# 333 "data/maps/DewfordTown/scripts.pory"
+# 340 "data/maps/DewfordTown/scripts.pory"
 	.string "Yo!\n"
 	.string "How's your fishing?$"
 
 DewfordTown_Text_GreatHaulInSomeBigOnes::
-# 338 "data/maps/DewfordTown/scripts.pory"
+# 345 "data/maps/DewfordTown/scripts.pory"
 	.string "Is that right! That's great!\n"
 	.string "Haul in some big ones!$"
 
 DewfordTown_Text_FishingAdvice::
-# 343 "data/maps/DewfordTown/scripts.pory"
+# 350 "data/maps/DewfordTown/scripts.pory"
 	.string "Oh, hey, don't get down on yourself!\n"
 	.string "I'll give you a little fishing advice.\p"
 	.string "First, you want to face the water,\n"
@@ -1250,7 +1202,7 @@ DewfordTown_Text_FishingAdvice::
 	.string "to haul them in.$"
 
 DewfordTown_Text_XIsTheBiggestHappeningThingRight::
-# 359 "data/maps/DewfordTown/scripts.pory"
+# 366 "data/maps/DewfordTown/scripts.pory"
 	.string "I like what's hip, happening, and trendy.\n"
 	.string "I'm always checking it out.\p"
 	.string "Listen, have you heard about this new\n"
@@ -1265,14 +1217,14 @@ DewfordTown_Text_XIsTheBiggestHappeningThingRight::
 	.string "is the biggest happening thing, right?$"
 
 DewfordTown_Text_TellMeWhatsNewAndIn::
-# 378 "data/maps/DewfordTown/scripts.pory"
+# 385 "data/maps/DewfordTown/scripts.pory"
 	.string "Hunh?\n"
 	.string "It's not the hip and happening thing?\p"
 	.string "Well, hey, you have to tell me,\n"
 	.string "what's new and what's “in”?$"
 
 DewfordTown_Text_OfCourseIKnowAboutThat::
-# 386 "data/maps/DewfordTown/scripts.pory"
+# 393 "data/maps/DewfordTown/scripts.pory"
 	.string "Hunh?\n"
 	.string "“{STR_VAR_2}”?\p"
 	.string "… …\p"
@@ -1291,7 +1243,7 @@ DewfordTown_Text_OfCourseIKnowAboutThat::
 	.string "what's vital and in tune with the times!$"
 
 DewfordTown_Text_XHuhIThinkYIsCool::
-# 412 "data/maps/DewfordTown/scripts.pory"
+# 419 "data/maps/DewfordTown/scripts.pory"
 	.string "Hmm…\n"
 	.string "“{STR_VAR_2},” huh?\p"
 	.string "But personally, I think\n"
@@ -1299,12 +1251,19 @@ DewfordTown_Text_XHuhIThinkYIsCool::
 	.string "is what's real in cool.$"
 
 DewfordTown_Text_HearOfAnyTrendsComeShareWithMe::
-# 421 "data/maps/DewfordTown/scripts.pory"
+# 428 "data/maps/DewfordTown/scripts.pory"
 	.string "Well, if you hear of any happening new\n"
 	.string "trends, come share them with me, okay?$"
 
 DewfordTown_Text_YeahDefinitionOfInRightNow::
-# 426 "data/maps/DewfordTown/scripts.pory"
+# 433 "data/maps/DewfordTown/scripts.pory"
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+DewfordTown_Text_UpsetFisherman::
+# 440 "data/maps/DewfordTown/scripts.pory"
+	.string "I can't believe this.\p"
+	.string "It's the start of fishing season and\n"
+	.string "someone's stolen my fishing rods.\p"
+	.string "Talk about a cruel world.$"

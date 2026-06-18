@@ -13,34 +13,43 @@ script PetalburgCity_Mart_EventScript_Clerk {
     release_end
 }
 
+script PetalburgCity_Mart_EventScript_EnhancementClerk {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(PetalburgCity_Mart_Pokemart_Enhancement)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
+
 mart PetalburgCity_Mart_Pokemart_Basic {
     ITEM_POKE_BALL
     ITEM_POTION
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_AWAKENING
-    ITEM_ESCAPE_ROPE
+    ITEM_FULL_HEAL
+    ITEM_MAX_ETHER
     ITEM_REPEL
-    ITEM_X_SPEED
-    ITEM_X_ATTACK
-    ITEM_X_DEFENSE
-    ITEM_ORANGE_MAIL
+    ITEM_LURE
 }
 
 mart PetalburgCity_Mart_Pokemart_Expanded {
-    ITEM_POKE_BALL
     ITEM_GREAT_BALL
-    ITEM_POTION
-    ITEM_SUPER_POTION
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_AWAKENING
-    ITEM_ESCAPE_ROPE
-    ITEM_REPEL
-    ITEM_X_SPEED
-    ITEM_X_ATTACK
-    ITEM_X_DEFENSE
-    ITEM_ORANGE_MAIL
+    ITEM_HYPER_POTION
+    ITEM_FULL_HEAL
+    ITEM_REVIVE
+    ITEM_MAX_ELIXIR
+    ITEM_SUPER_REPEL
+    ITEM_SUPER_LURE
+}
+
+mart PetalburgCity_Mart_Pokemart_Enhancement {
+    ITEM_EXP_CANDY_M
+    ITEM_HP_UP
+    ITEM_PROTEIN
+    ITEM_IRON
+    ITEM_CARBOS
+    ITEM_CALCIUM
+    ITEM_ZINC
+    ITEM_PP_UP
 }
 
 script PetalburgCity_Mart_EventScript_Woman {

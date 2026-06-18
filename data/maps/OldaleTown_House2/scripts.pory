@@ -1,20 +1,35 @@
 mapscripts OldaleTown_House2_MapScripts {}
 
 script OldaleTown_House2_EventScript_Woman {
-    msgbox(OldaleTown_House2_Text_PokemonLevelUp, MSGBOX_NPC)
+    msgbox(OldaleTown_House2_Text_MySon, MSGBOX_NPC)
     end
 }
 
-script OldaleTown_House2_EventScript_Man {
-    msgbox(OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon, MSGBOX_NPC)
+script OldaleTown_House2_EventScript_SchoolBoy {
+    msgbox(OldaleTown_House2_Text_MoveFarAway, MSGBOX_NPC)
     end
 }
 
+text OldaleTown_House2_Text_MoveFarAway {
+	"One day, I'm gonna train to become a
+	great POK\eMON battler, and then I'll
+	move far away from her."
+}
+
+text OldaleTown_House2_Text_MySon {
+	"Don't talk to my son about POK\eMON
+	battles.
+	
+	He's still too young for that."
+}
+
+// Unused
 text OldaleTown_House2_Text_PokemonLevelUp {
 	"When POKéMON battle, they eventually
 	level up and become stronger."
 }
 
+// Unused
 text OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon {
 	"If the POKéMON with you become
 	stronger, you'll be able to go farther

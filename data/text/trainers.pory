@@ -1,20 +1,20 @@
-text(local) Route102_Text_CalvinIntro {
+text(local) Route101_Text_CalvinIntro {
 	"If you have POKéMON with you, then
 	you're an official POKéMON TRAINER!
 	You can't say no to my challenge!"
 }
 
-text(local) Route102_Text_CalvinDefeated {
+text(local) Route101_Text_CalvinDefeated {
 	"Arrgh, I lost…
 	I should have trained mine more…"
 }
 
-text(local) Route102_Text_CalvinPostBattle {
+text(local) Route101_Text_CalvinPostBattle {
 	"Listen, you. If you're strong,
 	you should have told me before!"
 }
 
-text(local) Route102_Text_CalvinRegister {
+text(local) Route101_Text_CalvinRegister {
 	"I've been working hard at this since
 	I saw you before.
 
@@ -22,23 +22,23 @@ text(local) Route102_Text_CalvinRegister {
 	you register me in your POKéNAV?"
 }
 
-text(local) Route102_Text_CalvinRegisterShort {
+text(local) Route101_Text_CalvinRegisterShort {
 	"I'd like to battle you again, so can
 	you register me in your POKéNAV?"
 }
 
-text(local) Route102_Text_CalvinRematchIntro {
+text(local) Route101_Text_CalvinRematchIntro {
 	"Ever since I lost to you, I desperately
 	trained my POKéMON.
 	You can't say no to my challenge!"
 }
 
-text(local) Route102_Text_CalvinRematchDefeated {
+text(local) Route101_Text_CalvinRematchDefeated {
 	"Arrgh, I lost…
 	Is my training method not right?"
 }
 
-text(local) Route102_Text_CalvinRematchPostBattle {
+text(local) Route101_Text_CalvinRematchPostBattle {
 	"If you're going to get stronger,
 	I'll get stronger, too."
 }

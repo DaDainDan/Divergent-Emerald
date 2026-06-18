@@ -1,10 +1,78 @@
 mapscripts OldaleTown_House1_MapScripts {}
 
+script OldaleTown_House1_EventScript_OldRodFisherman {
+    lock_faceplayer
+    if (!(flag(FLAG_RECEIVED_OLD_ROD))) {
+		msgbox(OldaleTown_House1_Text_OldRodFishermanIntro, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+        	msgbox("That's great to hear.\pHere, why don't you take my OLD\nfishing ROD.", MSGBOX_DEFAULT)
+            if (giveitem(ITEM_OLD_ROD) == FALSE) {
+            	goto(Common_EventScript_ShowBagIsFull)
+            }
+            setflag(FLAG_RECEIVED_OLD_ROD)
+            msgbox(OldaleTown_House1_Text_FishermanStory, MSGBOX_DEFAULT)
+        } else {
+        	msgbox("Oh, is that so?\nThat's too bad, then.", MSGBOX_DEFAULT)
+        }
+    } else {	
+		message("Howdy!\nThe fishing going good?")
+        waitmessage
+        multichoice(20, 8, MULTI_HOWS_FISHING, TRUE)
+        if (var(VAR_RESULT) == 0) {
+        	msgbox("Is that right!? That's great!\nHaul in some big ones for me!", MSGBOX_DEFAULT)
+        } else {
+        	msgbox(OldaleTown_House1_Text_FishingAdvice, MSGBOX_DEFAULT)
+        }
+    }
+    release_end
+}
+
+// Unused
 script OldaleTown_House1_EventScript_Woman {
     msgbox(OldaleTown_House1_Text_LeftPokemonGoesOutFirst, MSGBOX_NPC)
     end
 }
 
+text OldaleTown_House1_Text_OldRodFishermanIntro {
+	"Oh, hello, youngster.
+  	Wonderful weather out, huh?
+  
+  	Lemme tell ya, it would be great day to
+  	be anglin' out on the water.
+  
+  	Say, are you itchin' to do some fishin'?"
+}
+
+text OldaleTown_House1_Text_FishingAdvice {
+	"Oh, hey, don't get down on yourself!
+  	I'll give you a little fishing advice.
+  
+  	Every catch is a battle of wills.
+  	You need to be calm, patient, and
+  	focused.
+	
+  	The fish'll know if you're not.
+  
+  	The biggest thing is to be ready when
+  	one comes bitin'."
+}
+
+text OldaleTown_House1_Text_FishermanStory {
+	"What about me, you say? 
+  
+  	Oh, I haven't fished in a long while.
+  
+  	Doctor said it was causing to much
+  	strain on my joints.
+  
+  	Too much of a good thing, right?
+  
+  	You shouldn't have to worry about that
+  	though, being as young as you are.
+  	Just don't go taking it for granted."
+}
+
+// Unused
 text OldaleTown_House1_Text_LeftPokemonGoesOutFirst {
 	"When a POKéMON battle starts, the one
 	at the left of the list goes out first.
