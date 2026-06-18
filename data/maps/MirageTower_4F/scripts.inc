@@ -1,13 +1,101 @@
 MirageTower_4F_MapScripts::
+# 2 "data/maps/MirageTower_4F/scripts.pory"
+	map_script MAP_SCRIPT_ON_RESUME, MirageTower_4F_MapScripts_MAP_SCRIPT_ON_RESUME
+# 8 "data/maps/MirageTower_4F/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, MirageTower_4F_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+MirageTower_4F_MapScripts_MAP_SCRIPT_ON_RESUME:
+# 3 "data/maps/MirageTower_4F/scripts.pory"
+	goto_if_set FLAG_SYS_CTRL_OBJ_DELETE, MirageTower_4F_MapScripts_MAP_SCRIPT_ON_RESUME_3
+MirageTower_4F_MapScripts_MAP_SCRIPT_ON_RESUME_1:
+	end
+
+MirageTower_4F_MapScripts_MAP_SCRIPT_ON_RESUME_2:
+# 4 "data/maps/MirageTower_4F/scripts.pory"
+	removeobject VAR_LAST_TALKED
+	goto MirageTower_4F_MapScripts_MAP_SCRIPT_ON_RESUME_1
+
+MirageTower_4F_MapScripts_MAP_SCRIPT_ON_RESUME_3:
+	specialvar VAR_RESULT, GetBattleOutcome
+# 0 "data/maps/MirageTower_4F/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq MirageTower_4F_MapScripts_MAP_SCRIPT_ON_RESUME_2
+	goto MirageTower_4F_MapScripts_MAP_SCRIPT_ON_RESUME_1
+
+MirageTower_4F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 9 "data/maps/MirageTower_4F/scripts.pory"
+	goto_if_unset FLAG_DEFEATED_MIRAGE_TOWER_COFAGRIGUS, MirageTower_4F_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+MirageTower_4F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	end
+
+MirageTower_4F_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+# 10 "data/maps/MirageTower_4F/scripts.pory"
+	clearflag FLAG_HIDE_MIRAGE_TOWER_COFAGRIGUS
+	goto MirageTower_4F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+
+MirageTower_4F_EventScript_Cofagrigus::
+# 17 "data/maps/MirageTower_4F/scripts.pory"
+	lock_faceplayer
+# 18 "data/maps/MirageTower_4F/scripts.pory"
+	setvar VAR_0x8004, 1
+# 19 "data/maps/MirageTower_4F/scripts.pory"
+	setvar VAR_0x8005, 1
+# 20 "data/maps/MirageTower_4F/scripts.pory"
+	setvar VAR_0x8006, 8
+# 21 "data/maps/MirageTower_4F/scripts.pory"
+	setvar VAR_0x8007, 5
+# 22 "data/maps/MirageTower_4F/scripts.pory"
+	special ShakeCamera
+# 23 "data/maps/MirageTower_4F/scripts.pory"
+	waitstate
+# 24 "data/maps/MirageTower_4F/scripts.pory"
+	setwildbattle SPECIES_COFAGRIGUS, 50, ITEM_REAPER_CLOTH
+# 25 "data/maps/MirageTower_4F/scripts.pory"
+	waitse
+# 26 "data/maps/MirageTower_4F/scripts.pory"
+	playmoncry SPECIES_COFAGRIGUS, CRY_MODE_ENCOUNTER
+# 27 "data/maps/MirageTower_4F/scripts.pory"
+	delay 40
+# 28 "data/maps/MirageTower_4F/scripts.pory"
+	waitmoncry
+# 29 "data/maps/MirageTower_4F/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 30 "data/maps/MirageTower_4F/scripts.pory"
+	dowildbattle
+# 31 "data/maps/MirageTower_4F/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 32 "data/maps/MirageTower_4F/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 33 "data/maps/MirageTower_4F/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq MirageTower_4F_EventScript_Cofagrigus_2
+# 33 "data/maps/MirageTower_4F/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq MirageTower_4F_EventScript_Cofagrigus_2
+# 33 "data/maps/MirageTower_4F/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
+	goto_if_eq MirageTower_4F_EventScript_Cofagrigus_2
+MirageTower_4F_EventScript_Cofagrigus_1:
+# 37 "data/maps/MirageTower_4F/scripts.pory"
+	setflag FLAG_DEFEATED_MIRAGE_TOWER_COFAGRIGUS
+	release_end
+
+MirageTower_4F_EventScript_Cofagrigus_2:
+# 34 "data/maps/MirageTower_4F/scripts.pory"
+	setflag FLAG_DEFEATED_MIRAGE_TOWER_COFAGRIGUS
+# 35 "data/maps/MirageTower_4F/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto MirageTower_4F_EventScript_Cofagrigus_1
 
 
 MirageTower_4F_EventScript_RootFossil::
-# 4 "data/maps/MirageTower_4F/scripts.pory"
+# 42 "data/maps/MirageTower_4F/scripts.pory"
 	lock_faceplayer
-# 5 "data/maps/MirageTower_4F/scripts.pory"
+# 43 "data/maps/MirageTower_4F/scripts.pory"
 	msgbox MirageTower_4F_Text_TakeRootFossil, MSGBOX_YESNO
-# 6 "data/maps/MirageTower_4F/scripts.pory"
+# 44 "data/maps/MirageTower_4F/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MirageTower_4F_EventScript_RootFossil_2
 	giveitem ITEM_ROOT_FOSSIL
@@ -15,39 +103,39 @@ MirageTower_4F_EventScript_RootFossil::
 	compare VAR_RESULT, FALSE
 	goto_if_eq MirageTower_4F_EventScript_RootFossil_5
 MirageTower_4F_EventScript_RootFossil_4:
-# 13 "data/maps/MirageTower_4F/scripts.pory"
+# 51 "data/maps/MirageTower_4F/scripts.pory"
 	closemessage
-# 14 "data/maps/MirageTower_4F/scripts.pory"
+# 52 "data/maps/MirageTower_4F/scripts.pory"
 	setflag FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
-# 15 "data/maps/MirageTower_4F/scripts.pory"
+# 53 "data/maps/MirageTower_4F/scripts.pory"
 	setflag FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
-# 16 "data/maps/MirageTower_4F/scripts.pory"
+# 54 "data/maps/MirageTower_4F/scripts.pory"
 	removeobject LOCALID_MIRAGE_ROOT_FOSSIL
-# 17 "data/maps/MirageTower_4F/scripts.pory"
+# 55 "data/maps/MirageTower_4F/scripts.pory"
 	delay 30
-# 18 "data/maps/MirageTower_4F/scripts.pory"
+# 56 "data/maps/MirageTower_4F/scripts.pory"
 	setflag FLAG_CHOSE_ROOT_FOSSIL
-# 19 "data/maps/MirageTower_4F/scripts.pory"
+# 57 "data/maps/MirageTower_4F/scripts.pory"
 	goto MirageTower_4F_EventScript_CollapseMirageTower
 	end
 
 MirageTower_4F_EventScript_RootFossil_2:
-# 7 "data/maps/MirageTower_4F/scripts.pory"
+# 45 "data/maps/MirageTower_4F/scripts.pory"
 	msgbox MirageTower_4F_Text_LeftRootFossilAlone, MSGBOX_DEFAULT
 	release_end
 
 MirageTower_4F_EventScript_RootFossil_5:
-# 11 "data/maps/MirageTower_4F/scripts.pory"
+# 49 "data/maps/MirageTower_4F/scripts.pory"
 	goto Common_EventScript_ShowBagIsFull
 	goto MirageTower_4F_EventScript_RootFossil_4
 
 
 MirageTower_4F_EventScript_ClawFossil::
-# 24 "data/maps/MirageTower_4F/scripts.pory"
+# 62 "data/maps/MirageTower_4F/scripts.pory"
 	lock_faceplayer
-# 25 "data/maps/MirageTower_4F/scripts.pory"
+# 63 "data/maps/MirageTower_4F/scripts.pory"
 	msgbox MirageTower_4F_Text_TakeClawFossil, MSGBOX_YESNO
-# 26 "data/maps/MirageTower_4F/scripts.pory"
+# 64 "data/maps/MirageTower_4F/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MirageTower_4F_EventScript_ClawFossil_2
 	giveitem ITEM_CLAW_FOSSIL
@@ -55,77 +143,77 @@ MirageTower_4F_EventScript_ClawFossil::
 	compare VAR_RESULT, FALSE
 	goto_if_eq MirageTower_4F_EventScript_ClawFossil_5
 MirageTower_4F_EventScript_ClawFossil_4:
-# 33 "data/maps/MirageTower_4F/scripts.pory"
+# 71 "data/maps/MirageTower_4F/scripts.pory"
 	closemessage
-# 34 "data/maps/MirageTower_4F/scripts.pory"
+# 72 "data/maps/MirageTower_4F/scripts.pory"
 	setflag FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
-# 35 "data/maps/MirageTower_4F/scripts.pory"
+# 73 "data/maps/MirageTower_4F/scripts.pory"
 	setflag FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
-# 36 "data/maps/MirageTower_4F/scripts.pory"
+# 74 "data/maps/MirageTower_4F/scripts.pory"
 	removeobject LOCALID_MIRAGE_CLAW_FOSSIL
-# 37 "data/maps/MirageTower_4F/scripts.pory"
+# 75 "data/maps/MirageTower_4F/scripts.pory"
 	delay 30
-# 38 "data/maps/MirageTower_4F/scripts.pory"
+# 76 "data/maps/MirageTower_4F/scripts.pory"
 	setflag FLAG_CHOSE_CLAW_FOSSIL
-# 39 "data/maps/MirageTower_4F/scripts.pory"
+# 77 "data/maps/MirageTower_4F/scripts.pory"
 	goto MirageTower_4F_EventScript_CollapseMirageTower
 	end
 
 MirageTower_4F_EventScript_ClawFossil_2:
-# 27 "data/maps/MirageTower_4F/scripts.pory"
+# 65 "data/maps/MirageTower_4F/scripts.pory"
 	msgbox MirageTower_4F_Text_LeaveClawFossilAlone, MSGBOX_DEFAULT
 	release_end
 
 MirageTower_4F_EventScript_ClawFossil_5:
-# 31 "data/maps/MirageTower_4F/scripts.pory"
+# 69 "data/maps/MirageTower_4F/scripts.pory"
 	goto Common_EventScript_ShowBagIsFull
 	goto MirageTower_4F_EventScript_ClawFossil_4
 
 
 MirageTower_4F_EventScript_CollapseMirageTower::
-# 44 "data/maps/MirageTower_4F/scripts.pory"
+# 82 "data/maps/MirageTower_4F/scripts.pory"
 	setvar VAR_0x8004, 1
-# 45 "data/maps/MirageTower_4F/scripts.pory"
+# 83 "data/maps/MirageTower_4F/scripts.pory"
 	setvar VAR_0x8005, 1
-# 46 "data/maps/MirageTower_4F/scripts.pory"
+# 84 "data/maps/MirageTower_4F/scripts.pory"
 	setvar VAR_0x8006, 32
-# 47 "data/maps/MirageTower_4F/scripts.pory"
+# 85 "data/maps/MirageTower_4F/scripts.pory"
 	setvar VAR_0x8007, 2
-# 48 "data/maps/MirageTower_4F/scripts.pory"
+# 86 "data/maps/MirageTower_4F/scripts.pory"
 	special ShakeCamera
-# 49 "data/maps/MirageTower_4F/scripts.pory"
+# 87 "data/maps/MirageTower_4F/scripts.pory"
 	waitstate
-# 50 "data/maps/MirageTower_4F/scripts.pory"
+# 88 "data/maps/MirageTower_4F/scripts.pory"
 	special DoMirageTowerCeilingCrumble
-# 51 "data/maps/MirageTower_4F/scripts.pory"
+# 89 "data/maps/MirageTower_4F/scripts.pory"
 	setvar VAR_MIRAGE_TOWER_STATE, 1
-# 52 "data/maps/MirageTower_4F/scripts.pory"
+# 90 "data/maps/MirageTower_4F/scripts.pory"
 	clearflag FLAG_LANDMARK_MIRAGE_TOWER
-# 53 "data/maps/MirageTower_4F/scripts.pory"
+# 91 "data/maps/MirageTower_4F/scripts.pory"
 	warp MAP_ROUTE111, 19, 59
-# 54 "data/maps/MirageTower_4F/scripts.pory"
+# 92 "data/maps/MirageTower_4F/scripts.pory"
 	waitstate
 	release_end
 
 
 MirageTower_4F_Text_TakeRootFossil::
-# 58 "data/maps/MirageTower_4F/scripts.pory"
+# 96 "data/maps/MirageTower_4F/scripts.pory"
 	.string "You found the ROOT FOSSIL.\p"
 	.string "If this FOSSIL is taken, the ground\n"
 	.string "around it will likely crumble away…\p"
 	.string "Take the ROOT FOSSIL anyway?$"
 
 MirageTower_4F_Text_LeftRootFossilAlone::
-# 67 "data/maps/MirageTower_4F/scripts.pory"
+# 105 "data/maps/MirageTower_4F/scripts.pory"
 	.string "{PLAYER} left the ROOT FOSSIL alone.$"
 
 MirageTower_4F_Text_TakeClawFossil::
-# 71 "data/maps/MirageTower_4F/scripts.pory"
+# 109 "data/maps/MirageTower_4F/scripts.pory"
 	.string "You found the CLAW FOSSIL.\p"
 	.string "If this FOSSIL is taken, the ground\n"
 	.string "around it will likely crumble away…\p"
 	.string "Take the CLAW FOSSIL anyway?$"
 
 MirageTower_4F_Text_LeaveClawFossilAlone::
-# 80 "data/maps/MirageTower_4F/scripts.pory"
+# 118 "data/maps/MirageTower_4F/scripts.pory"
 	.string "{PLAYER} left the CLAW FOSSIL alone.$"

@@ -21,6 +21,10 @@ mapscripts LavaridgeTown_MapScripts {
 		}
 		end
     }
+	MAP_SCRIPT_ON_RESUME {
+		setstepcallback(STEP_CB_ASH)
+		end
+	}
     MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_LAVARIDGE_TOWN_STATE, 1: LavaridgeTown_EventScript_RivalGiveGoGoggles
     ]

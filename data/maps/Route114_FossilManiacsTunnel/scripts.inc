@@ -7,7 +7,7 @@ Route114_FossilManiacsTunnel_MapScripts::
 
 Route114_FossilManiacsTunnel_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
-	goto_if_set FLAG_SYS_GAME_CLEAR, Route114_FossilManiacsTunnel_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	goto_if_set FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, Route114_FossilManiacsTunnel_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 Route114_FossilManiacsTunnel_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	end
 
@@ -20,7 +20,7 @@ Route114_FossilManiacsTunnel_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 
 Route114_FossilManiacsTunnel_MapScripts_MAP_SCRIPT_ON_LOAD:
 # 10 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
-	goto_if_unset FLAG_SYS_GAME_CLEAR, Route114_FossilManiacsTunnel_MapScripts_MAP_SCRIPT_ON_LOAD_2
+	goto_if_unset FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, Route114_FossilManiacsTunnel_MapScripts_MAP_SCRIPT_ON_LOAD_2
 Route114_FossilManiacsTunnel_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 	end
 

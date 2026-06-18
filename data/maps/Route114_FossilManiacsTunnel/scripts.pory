@@ -1,13 +1,13 @@
 mapscripts Route114_FossilManiacsTunnel_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (flag(FLAG_SYS_GAME_CLEAR)) {
+        if (flag(FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT)) {
 			setobjectxyperm(LOCALID_FOSSIL_MANIAC, 6, 5)
     		setobjectmovementtype(LOCALID_FOSSIL_MANIAC, MOVEMENT_TYPE_FACE_DOWN)
 		}
 		end
     }
     MAP_SCRIPT_ON_LOAD {
-        if (!flag(FLAG_SYS_GAME_CLEAR)) {
+        if (!flag(FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT)) {
 			setmetatile(6, 1, METATILE_Fallarbor_RedRockWall, TRUE)
     		setmetatile(6, 2, METATILE_Fallarbor_RedRockWall, TRUE)
 		}
