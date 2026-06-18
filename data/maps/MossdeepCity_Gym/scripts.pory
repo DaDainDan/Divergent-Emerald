@@ -68,7 +68,7 @@ script MossdeepCity_Gym_EventScript_TateAndLizaDefeated {
     setflag(FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN)
     setvar(VAR_MOSSDEEP_SPACE_CENTER_STATE, 1)
     if (giveitem(ITEM_TM_CALM_MIND) == FALSE) {
-        goto(Common_EventScript_BagIsFull)
+        call(Common_EventScript_BagIsFull)
     }
     msgbox(MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT)
     setflag(FLAG_RECEIVED_TM_CALM_MIND)

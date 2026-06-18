@@ -209,7 +209,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated_1:
 
 SootopolisCity_Gym_1F_EventScript_JuanDefeated_2:
 # 96 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	goto Common_EventScript_BagIsFull
+	call Common_EventScript_BagIsFull
 	goto SootopolisCity_Gym_1F_EventScript_JuanDefeated_1
 
 

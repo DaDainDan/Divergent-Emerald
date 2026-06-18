@@ -111,7 +111,7 @@ FortreeCity_Gym_EventScript_WinonaDefeated_1:
 
 FortreeCity_Gym_EventScript_WinonaDefeated_2:
 # 45 "data/maps/FortreeCity_Gym/scripts.pory"
-	goto Common_EventScript_BagIsFull
+	call Common_EventScript_BagIsFull
 	goto FortreeCity_Gym_EventScript_WinonaDefeated_1
 
 

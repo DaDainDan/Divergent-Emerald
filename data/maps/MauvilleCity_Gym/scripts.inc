@@ -232,7 +232,7 @@ MauvilleCity_Gym_EventScript_WattsonDefeated_2:
 
 MauvilleCity_Gym_EventScript_WattsonDefeated_5:
 # 94 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto Common_EventScript_BagIsFull
+	call Common_EventScript_BagIsFull
 	goto MauvilleCity_Gym_EventScript_WattsonDefeated_4
 
 

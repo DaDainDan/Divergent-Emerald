@@ -93,7 +93,7 @@ script SootopolisCity_Gym_1F_EventScript_JuanDefeated {
     setvar(VAR_0x8008, 8)
     call(Common_EventScript_SetGymTrainers)
     if (giveitem(ITEM_TM_WATER_PULSE) == FALSE) {
-        goto(Common_EventScript_BagIsFull)
+        call(Common_EventScript_BagIsFull)
     }
     msgbox(SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT)
     setflag(FLAG_RECEIVED_TM_WATER_PULSE)

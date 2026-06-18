@@ -161,7 +161,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated_1:
 
 MossdeepCity_Gym_EventScript_TateAndLizaDefeated_2:
 # 71 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto Common_EventScript_BagIsFull
+	call Common_EventScript_BagIsFull
 	goto MossdeepCity_Gym_EventScript_TateAndLizaDefeated_1
 
 

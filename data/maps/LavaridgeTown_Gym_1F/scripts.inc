@@ -196,7 +196,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated_2:
 
 LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated_5:
 # 78 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	goto Common_EventScript_BagIsFull
+	call Common_EventScript_BagIsFull
 	goto LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated_4
 
 

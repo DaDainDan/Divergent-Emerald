@@ -308,7 +308,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated_2:
 
 DewfordTown_Gym_EventScript_BrawlyDefeated_5:
 # 109 "data/maps/DewfordTown_Gym/scripts.pory"
-	goto Common_EventScript_BagIsFull
+	call Common_EventScript_BagIsFull
 	goto DewfordTown_Gym_EventScript_BrawlyDefeated_4
 
 
