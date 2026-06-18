@@ -1242,23 +1242,23 @@ u16 GetCurrLocationDefaultMusic(void)
         return MUS_DESERT;
 
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
-    if (music != MUS_ROUTE118)
+    if (music != MUS_ROUTE123)
     {
         return music;
     }
     else
     {
-        if (gSaveBlock1Ptr->pos.x < 24)
-            return MUS_ROUTE110;
+        if (gSaveBlock1Ptr->pos.x < 29 || (gSaveBlock1Ptr->pos.x < 42 && gSaveBlock1Ptr->pos.y < 11))
+            return MUS_FALLARBOR;
         else
-            return MUS_ROUTE119;
+            return MUS_RG_SEVII_ROUTE;
     }
 }
 
 u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination);
-    if (music != MUS_ROUTE118)
+    if (music != MUS_ROUTE123)
     {
         return music;
     }
@@ -1295,8 +1295,8 @@ void Overworld_PlaySpecialMapMusic(void)
             music = gSaveBlock1Ptr->savedMusic;
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
             music = MUS_UNDERWATER;
-        else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-            music = (IS_FRLG ? MUS_RG_SURF : MUS_SURF);
+        else if (IS_FRLG && TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+            music = MUS_RG_SURF;
     }
 
     if (music != GetCurrentMapMusic())
@@ -1329,10 +1329,11 @@ static void TransitionMapMusic(void)
         u16 currentMusic = GetCurrentMapMusic();
         if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
         {
-            if (currentMusic == MUS_UNDERWATER || currentMusic == (IS_FRLG ? MUS_RG_SURF : MUS_SURF))
+            if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_RG_SURF)
                 return;
-            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-                newMusic = (IS_FRLG ? MUS_RG_SURF : MUS_SURF);
+            if (IS_FRLG && TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)) {
+                newMusic = MUS_RG_SURF;
+            }
         }
         if (newMusic != currentMusic)
         {

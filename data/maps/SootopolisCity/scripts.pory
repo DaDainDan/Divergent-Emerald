@@ -246,10 +246,7 @@ script SootopolisCity_EventScript_RayquazaScene {
 		case 1: setvar(VAR_SKY_PILLAR_STATE, 2)
 	}
     clearflag(FLAG_LEGENDARIES_IN_SOOTOPOLIS)
-	switch (var(VAR_0x8002)) {
-		case 0: fadenewbgm(MUS_SOOTOPOLIS)
-		case 1: fadenewbgm(MUS_SURF)
-	}
+	fadenewbgm(MUS_CAVE_OF_ORIGIN)
     delay(120)
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 	switch (var(VAR_0x8002)) {
