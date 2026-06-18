@@ -4897,6 +4897,17 @@
       "layout_version": "emerald"
     },
     {
+      "id": "LAYOUT_SCORCHED_SLAB_B1F",
+      "name": "ScorchedSlab_B1F_Layout",
+      "width": 26,
+      "height": 47,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ScorchedSlab_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/ScorchedSlab_B1F/map.bin",
+      "layout_version": "emerald"
+    },
+    {
       "id": "LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_1F_FRLG",
       "name": "PalletTown_PlayersHouse_1F_Layout",
       "width": 13,

@@ -1752,3 +1752,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/AlteringCave_B1F_2R/scripts.inc"
 
 	.include "data/maps/AlteringCave_B2F/scripts.inc"
+
+	.include "data/maps/ScorchedSlab_B1F/scripts.inc"
