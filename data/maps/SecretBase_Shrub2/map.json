@@ -1,7 +1,6 @@
 {
   "id": "MAP_SECRET_BASE_SHRUB2",
   "name": "SecretBase_Shrub2",
-  "shared_scripts_map": "SecretBase",
   "layout": "LAYOUT_SECRET_BASE_SHRUB2",
   "music": "MUS_FORTREE",
   "region": "REGION_HOENN",
@@ -222,5 +221,6 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "shared_scripts_map": "SecretBase"
 }

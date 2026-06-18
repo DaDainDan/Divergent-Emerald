@@ -409,7 +409,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial_20:
 # 211 "data/maps/PetalburgCity_Gym/scripts.pory"
 	special InitBirchState
 # 212 "data/maps/PetalburgCity_Gym/scripts.pory"
-	warp MAP_PETALBURG_CITY, 15, 8
+	warp MAP_PETALBURG_CITY, 17, 6
 # 213 "data/maps/PetalburgCity_Gym/scripts.pory"
 	waitstate
 	release_end
