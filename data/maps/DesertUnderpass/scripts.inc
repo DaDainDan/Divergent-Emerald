@@ -13,7 +13,7 @@ DesertUnderpass_EventScript_Fossil::
 # 9 "data/maps/DesertUnderpass/scripts.pory"
 	lock_faceplayer
 # 10 "data/maps/DesertUnderpass/scripts.pory"
-	goto_if_set FLAG_CHOSE_ROOT_FOSSIL, DesertUnderpass_EventScript_Fossil_2
+	goto_if_set FLAG_CHOSE_HELIX_FOSSIL, DesertUnderpass_EventScript_Fossil_2
 # 13 "data/maps/DesertUnderpass/scripts.pory"
 	giveitem ITEM_ROOT_FOSSIL
 DesertUnderpass_EventScript_Fossil_1:

@@ -1,6 +1,6 @@
 mapscripts MeteorFalls_1F_1R_MapScripts {
     MAP_SCRIPT_ON_LOAD {
-        if (flag(FLAG_SYS_GAME_CLEAR)) {
+        if (flag(FLAG_BADGE08_GET)) {
 			setmetatile(4, 1, METATILE_MeteorFalls_CaveEntrance_Top, TRUE)
 			setmetatile(3, 2, METATILE_MeteorFalls_CaveEntrance_Left, TRUE)
 			setmetatile(4, 2, METATILE_MeteorFalls_CaveEntrance_Bottom, FALSE)

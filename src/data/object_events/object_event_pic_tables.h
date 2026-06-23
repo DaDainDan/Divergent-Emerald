@@ -980,6 +980,10 @@ static const struct SpriteFrameImage sPicTable_Fossil[] = {
     obj_frame_tiles(gObjectEventPic_Fossil),
 };
 
+static const struct SpriteFrameImage sPicTable_FossilBlue[] = {
+    obj_frame_tiles(gObjectEventPic_FossilBlue),
+};
+
 static const struct SpriteFrameImage sPicTable_Regi[] = {
     obj_frame_tiles(gObjectEventPic_Regi),
     obj_frame_tiles(gObjectEventPic_Regi),

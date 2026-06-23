@@ -224,6 +224,7 @@ const u32 gObjectEventPic_BreakableRock[] = INCGFX_U32("graphics/object_events/p
 const u32 gObjectEventPic_PushableBoulder[] = INCGFX_U32("graphics/object_events/pics/misc/pushable_boulder.png", ".4bpp");
 const u32 gObjectEventPic_MrBrineysBoat[] = INCGFX_U32("graphics/object_events/pics/misc/mr_brineys_boat.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_Fossil[] = INCGFX_U32("graphics/object_events/pics/misc/fossil.png", ".4bpp");
+const u32 gObjectEventPic_FossilBlue[] = INCGFX_U32("graphics/object_events/pics/misc/fossil_blue.png", ".4bpp");
 const u32 gObjectEventPic_SubmarineShadow[] = INCGFX_U32("graphics/object_events/pics/misc/submarine_shadow.png", ".4bpp");
 const u16 gObjectEventPal_SubmarineShadow[] = INCGFX_U16("graphics/object_events/palettes/submarine_shadow.pal", ".gbapal");
 const u32 gObjectEventPic_Truck[] = INCGFX_U32("graphics/object_events/pics/misc/truck.png", ".4bpp");

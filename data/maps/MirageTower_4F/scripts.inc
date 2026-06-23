@@ -90,84 +90,84 @@ MirageTower_4F_EventScript_Cofagrigus_2:
 	goto MirageTower_4F_EventScript_Cofagrigus_1
 
 
-MirageTower_4F_EventScript_RootFossil::
+MirageTower_4F_EventScript_HelixFossil::
 # 42 "data/maps/MirageTower_4F/scripts.pory"
 	lock_faceplayer
 # 43 "data/maps/MirageTower_4F/scripts.pory"
-	msgbox MirageTower_4F_Text_TakeRootFossil, MSGBOX_YESNO
+	msgbox MirageTower_4F_Text_TakeHelixFossil, MSGBOX_YESNO
 # 44 "data/maps/MirageTower_4F/scripts.pory"
 	compare VAR_RESULT, NO
-	goto_if_eq MirageTower_4F_EventScript_RootFossil_2
-	giveitem ITEM_ROOT_FOSSIL
+	goto_if_eq MirageTower_4F_EventScript_HelixFossil_2
+	giveitem ITEM_HELIX_FOSSIL
 # 0 "data/maps/MirageTower_4F/scripts.pory"
 	compare VAR_RESULT, FALSE
-	goto_if_eq MirageTower_4F_EventScript_RootFossil_5
-MirageTower_4F_EventScript_RootFossil_4:
+	goto_if_eq MirageTower_4F_EventScript_HelixFossil_5
+MirageTower_4F_EventScript_HelixFossil_4:
 # 51 "data/maps/MirageTower_4F/scripts.pory"
 	closemessage
 # 52 "data/maps/MirageTower_4F/scripts.pory"
-	setflag FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
+	setflag FLAG_HIDE_MIRAGE_TOWER_HELIX_FOSSIL
 # 53 "data/maps/MirageTower_4F/scripts.pory"
-	setflag FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
+	setflag FLAG_HIDE_MIRAGE_TOWER_DOME_FOSSIL
 # 54 "data/maps/MirageTower_4F/scripts.pory"
-	removeobject LOCALID_MIRAGE_ROOT_FOSSIL
+	removeobject LOCALID_MIRAGE_HELIX_FOSSIL
 # 55 "data/maps/MirageTower_4F/scripts.pory"
 	delay 30
 # 56 "data/maps/MirageTower_4F/scripts.pory"
-	setflag FLAG_CHOSE_ROOT_FOSSIL
+	setflag FLAG_CHOSE_HELIX_FOSSIL
 # 57 "data/maps/MirageTower_4F/scripts.pory"
 	goto MirageTower_4F_EventScript_CollapseMirageTower
 	end
 
-MirageTower_4F_EventScript_RootFossil_2:
+MirageTower_4F_EventScript_HelixFossil_2:
 # 45 "data/maps/MirageTower_4F/scripts.pory"
-	msgbox MirageTower_4F_Text_LeftRootFossilAlone, MSGBOX_DEFAULT
+	msgbox MirageTower_4F_Text_LeftHelixFossilAlone, MSGBOX_DEFAULT
 	release_end
 
-MirageTower_4F_EventScript_RootFossil_5:
+MirageTower_4F_EventScript_HelixFossil_5:
 # 49 "data/maps/MirageTower_4F/scripts.pory"
 	goto Common_EventScript_ShowBagIsFull
-	goto MirageTower_4F_EventScript_RootFossil_4
+	goto MirageTower_4F_EventScript_HelixFossil_4
 
 
-MirageTower_4F_EventScript_ClawFossil::
+MirageTower_4F_EventScript_DomeFossil::
 # 62 "data/maps/MirageTower_4F/scripts.pory"
 	lock_faceplayer
 # 63 "data/maps/MirageTower_4F/scripts.pory"
-	msgbox MirageTower_4F_Text_TakeClawFossil, MSGBOX_YESNO
+	msgbox MirageTower_4F_Text_TakeDomeFossil, MSGBOX_YESNO
 # 64 "data/maps/MirageTower_4F/scripts.pory"
 	compare VAR_RESULT, NO
-	goto_if_eq MirageTower_4F_EventScript_ClawFossil_2
-	giveitem ITEM_CLAW_FOSSIL
+	goto_if_eq MirageTower_4F_EventScript_DomeFossil_2
+	giveitem ITEM_DOME_FOSSIL
 # 0 "data/maps/MirageTower_4F/scripts.pory"
 	compare VAR_RESULT, FALSE
-	goto_if_eq MirageTower_4F_EventScript_ClawFossil_5
-MirageTower_4F_EventScript_ClawFossil_4:
+	goto_if_eq MirageTower_4F_EventScript_DomeFossil_5
+MirageTower_4F_EventScript_DomeFossil_4:
 # 71 "data/maps/MirageTower_4F/scripts.pory"
 	closemessage
 # 72 "data/maps/MirageTower_4F/scripts.pory"
-	setflag FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
+	setflag FLAG_HIDE_MIRAGE_TOWER_DOME_FOSSIL
 # 73 "data/maps/MirageTower_4F/scripts.pory"
-	setflag FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
+	setflag FLAG_HIDE_MIRAGE_TOWER_HELIX_FOSSIL
 # 74 "data/maps/MirageTower_4F/scripts.pory"
-	removeobject LOCALID_MIRAGE_CLAW_FOSSIL
+	removeobject LOCALID_MIRAGE_DOME_FOSSIL
 # 75 "data/maps/MirageTower_4F/scripts.pory"
 	delay 30
 # 76 "data/maps/MirageTower_4F/scripts.pory"
-	setflag FLAG_CHOSE_CLAW_FOSSIL
+	setflag FLAG_CHOSE_DOME_FOSSIL
 # 77 "data/maps/MirageTower_4F/scripts.pory"
 	goto MirageTower_4F_EventScript_CollapseMirageTower
 	end
 
-MirageTower_4F_EventScript_ClawFossil_2:
+MirageTower_4F_EventScript_DomeFossil_2:
 # 65 "data/maps/MirageTower_4F/scripts.pory"
-	msgbox MirageTower_4F_Text_LeaveClawFossilAlone, MSGBOX_DEFAULT
+	msgbox MirageTower_4F_Text_LeaveDomeFossilAlone, MSGBOX_DEFAULT
 	release_end
 
-MirageTower_4F_EventScript_ClawFossil_5:
+MirageTower_4F_EventScript_DomeFossil_5:
 # 69 "data/maps/MirageTower_4F/scripts.pory"
 	goto Common_EventScript_ShowBagIsFull
-	goto MirageTower_4F_EventScript_ClawFossil_4
+	goto MirageTower_4F_EventScript_DomeFossil_4
 
 
 MirageTower_4F_EventScript_CollapseMirageTower::
@@ -196,24 +196,24 @@ MirageTower_4F_EventScript_CollapseMirageTower::
 	release_end
 
 
-MirageTower_4F_Text_TakeRootFossil::
+MirageTower_4F_Text_TakeHelixFossil::
 # 96 "data/maps/MirageTower_4F/scripts.pory"
-	.string "You found the ROOT FOSSIL.\p"
+	.string "You found the HELIX FOSSIL.\p"
 	.string "If this FOSSIL is taken, the ground\n"
 	.string "around it will likely crumble away…\p"
-	.string "Take the ROOT FOSSIL anyway?$"
+	.string "Take the HELIX FOSSIL anyway?$"
 
-MirageTower_4F_Text_LeftRootFossilAlone::
+MirageTower_4F_Text_LeftHelixFossilAlone::
 # 105 "data/maps/MirageTower_4F/scripts.pory"
-	.string "{PLAYER} left the ROOT FOSSIL alone.$"
+	.string "{PLAYER} left the HELIX FOSSIL alone.$"
 
-MirageTower_4F_Text_TakeClawFossil::
+MirageTower_4F_Text_TakeDomeFossil::
 # 109 "data/maps/MirageTower_4F/scripts.pory"
-	.string "You found the CLAW FOSSIL.\p"
+	.string "You found the DOME FOSSIL.\p"
 	.string "If this FOSSIL is taken, the ground\n"
 	.string "around it will likely crumble away…\p"
-	.string "Take the CLAW FOSSIL anyway?$"
+	.string "Take the DOME FOSSIL anyway?$"
 
-MirageTower_4F_Text_LeaveClawFossilAlone::
+MirageTower_4F_Text_LeaveDomeFossilAlone::
 # 118 "data/maps/MirageTower_4F/scripts.pory"
-	.string "{PLAYER} left the CLAW FOSSIL alone.$"
+	.string "{PLAYER} left the DOME FOSSIL alone.$"

@@ -5,7 +5,7 @@ MeteorFalls_1F_1R_MapScripts::
 
 MeteorFalls_1F_1R_MapScripts_MAP_SCRIPT_ON_LOAD:
 # 3 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	goto_if_set FLAG_SYS_GAME_CLEAR, MeteorFalls_1F_1R_MapScripts_MAP_SCRIPT_ON_LOAD_2
+	goto_if_set FLAG_BADGE08_GET, MeteorFalls_1F_1R_MapScripts_MAP_SCRIPT_ON_LOAD_2
 MeteorFalls_1F_1R_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 	end
 

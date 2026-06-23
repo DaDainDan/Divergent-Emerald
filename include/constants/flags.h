@@ -368,8 +368,8 @@
 #define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_RECEIVED_AURORA_TICKET)
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
-#define FLAG_CHOSE_ROOT_FOSSIL               0x14F
-#define FLAG_CHOSE_CLAW_FOSSIL               0x150
+#define FLAG_CHOSE_HELIX_FOSSIL              0x14F
+#define FLAG_CHOSE_DOME_FOSSIL               0x150
 #define FLAG_RECEIVED_POWDER_JAR             0x151
 
 #define FLAG_CHOSEN_MULTI_BATTLE_NPC_PARTNER 0x152
@@ -1011,8 +1011,8 @@
 #define FLAG_HIDE_ROUTE_111_SECRET_POWER_MAN                        0x3C0
 #define FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION                       0x3C1
 #define FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN      0x3C2
-#define FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL                          0x3C3
-#define FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL                          0x3C4
+#define FLAG_HIDE_MIRAGE_TOWER_HELIX_FOSSIL                         0x3C3
+#define FLAG_HIDE_MIRAGE_TOWER_DOME_FOSSIL                          0x3C4
 #define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_FAMILIAR_AQUA_GRUNT 0x3C5
 #define FLAG_HIDE_ROUTE_118_STEVEN                                  0x3C6
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN                0x3C7
@@ -1223,10 +1223,10 @@
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
 #define FLAG_HIDE_MIRAGE_TOWER_COFAGRIGUS                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
+#define FLAG_ITEM_NEW_MAUVILLE_B1F_DUBIOUS_DISC                     0x494 // Unused Flag
+#define FLAG_DEFEATED_NEW_MAUVILLE_B1F_ROTOM                        0x495 // Unused Flag
+#define FLAG_HIDE_NEW_MAUVILLE_B1F_ROTOM                            0x496 // Unused Flag
+#define FLAG_ITEM_NEW_MAUVILLE_B1F_LIGHT_BALL                       0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag

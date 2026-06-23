@@ -197,6 +197,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maxie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KyogreFront;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroudonFront;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fossil;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FossilBlue;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regirock;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regice;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Registeel;
@@ -602,6 +603,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KYOGRE_FRONT] =             &gObjectEventGraphicsInfo_KyogreFront,
     [OBJ_EVENT_GFX_GROUDON_FRONT] =            &gObjectEventGraphicsInfo_GroudonFront,
     [OBJ_EVENT_GFX_FOSSIL] =                   &gObjectEventGraphicsInfo_Fossil,
+    [OBJ_EVENT_GFX_FOSSIL_BLUE] =              &gObjectEventGraphicsInfo_FossilBlue,
     [OBJ_EVENT_GFX_REGIROCK] =                 &gObjectEventGraphicsInfo_Regirock,
     [OBJ_EVENT_GFX_REGICE] =                   &gObjectEventGraphicsInfo_Regice,
     [OBJ_EVENT_GFX_REGISTEEL] =                &gObjectEventGraphicsInfo_Registeel,

@@ -408,7 +408,7 @@ script MauvilleCity_GameCorner_EventScript_ChoosePrizeMon {
         case 4: 
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM)
 			setvar(VAR_EXCHANGE_PRICE, 5000)
-        case 5: 
+        default:
 			goto(MauvilleCity_GameCorner_EventScript_CancelMonSelect)
     }
     bufferspeciesname(STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES)

@@ -7,7 +7,7 @@ mapscripts DesertUnderpass_MapScripts {
 
 script DesertUnderpass_EventScript_Fossil {
     lock_faceplayer
-    if (flag(FLAG_CHOSE_ROOT_FOSSIL)) {
+    if (flag(FLAG_CHOSE_HELIX_FOSSIL)) {
         giveitem(ITEM_CLAW_FOSSIL)
     } else {
         giveitem(ITEM_ROOT_FOSSIL)

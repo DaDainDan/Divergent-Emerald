@@ -100,6 +100,7 @@
 #define METATILE_BikeShop_Generator_Off_Tile5      0x2F5
 #define METATILE_BikeShop_Generator_Off_Tile6      0x2F6
 #define METATILE_BikeShop_Generator_Off_Tile7      0x2F7
+#define METATILE_BikeShop_SidewaysStairs_Entrance  0x23D
 #define METATILE_BikeShop_Wall_Edge_Top            0x281
 
 // gTileset_BrendansMaysHouse
@@ -140,6 +141,7 @@
 #define METATILE_Cave_ShoalCave_BlueStone_Small          0x35B
 #define METATILE_Cave_ShoalCave_DirtPile_Large           0x358
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
+#define METATILE_Cave_ShoalCave_IcyDirtPile_Large        0x397
 
 // gTileset_CeladonCity
 #define METATILE_CeladonCity_CyclingRoad_Grass  0x352

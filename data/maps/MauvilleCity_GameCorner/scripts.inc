@@ -735,8 +735,8 @@ MauvilleCity_GameCorner_EventScript_ChoosePrizeMon::
 	case 3, MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_6
 # 408 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	case 4, MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_7
-# 411 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	case 5, MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_8
+# 412 "data/maps/MauvilleCity_GameCorner/scripts.pory"
+	goto MauvilleCity_GameCorner_EventScript_CancelMonSelect
 MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_1:
 # 414 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	bufferspeciesname STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES
@@ -833,11 +833,6 @@ MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_7:
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROTOM
 # 410 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_EXCHANGE_PRICE, 5000
-	goto MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_1
-
-MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_8:
-# 412 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	goto MauvilleCity_GameCorner_EventScript_CancelMonSelect
 	goto MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_1
 
 MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_10:

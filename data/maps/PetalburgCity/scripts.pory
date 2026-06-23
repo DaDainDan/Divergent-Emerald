@@ -183,7 +183,7 @@ script PetalburgCity_EventScript_ShowGymToPlayer {
 			applymovement(LOCALID_GYM_BOY, moves(walk_down,  walk_right * 7,  walk_up * 6,  walk_right,  walk_up * 2))
 			applymovement(LOCALID_PLAYER, moves(delay_16 * 2,  walk_down,  walk_right * 6,  walk_up * 6,  walk_right,  walk_up,  walk_right,  walk_up))
 		case 2:
-			applymovement(LOCALID_GYM_BOY, moves(walk_right * 7,  walk_up,  walk_right * 6))
+			applymovement(LOCALID_GYM_BOY, moves(walk_right * 7,  walk_up,  walk_up * 6))
 			applymovement(LOCALID_PLAYER, moves(walk_up,  walk_right * 7,  walk_up * 6,  walk_right,  walk_up))
 		case 3:
 			applymovement(LOCALID_GYM_BOY, moves(walk_right * 7,  walk_up * 2,  walk_up * 6))
@@ -196,7 +196,7 @@ script PetalburgCity_EventScript_ShowGymToPlayer {
     waitmovement(0)
     msgbox(PetalburgCity_Text_ThisIsGymSign, MSGBOX_DEFAULT)
     closemessage
-    applymovement(LOCALID_GYM_BOY, moves(walk_down * 7,  walk_left * 10,  step_faster_down))
+    applymovement(LOCALID_GYM_BOY, moves(walk_down * 7,  sprint_left * 10,  step_faster_down))
     waitmovement(0)
     fadedefaultbgm
     releaseall

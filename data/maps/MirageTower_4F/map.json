@@ -16,7 +16,7 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_MIRAGE_ROOT_FOSSIL",
+      "local_id": "LOCALID_MIRAGE_HELIX_FOSSIL",
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
       "x": 5,
       "y": 4,
@@ -26,11 +26,11 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MirageTower_4F_EventScript_RootFossil",
-      "flag": "FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL"
+      "script": "MirageTower_4F_EventScript_HelixFossil",
+      "flag": "FLAG_HIDE_MIRAGE_TOWER_HELIX_FOSSIL"
     },
     {
-      "local_id": "LOCALID_MIRAGE_CLAW_FOSSIL",
+      "local_id": "LOCALID_MIRAGE_DOME_FOSSIL",
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
       "x": 7,
       "y": 4,
@@ -40,8 +40,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MirageTower_4F_EventScript_ClawFossil",
-      "flag": "FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL"
+      "script": "MirageTower_4F_EventScript_DomeFossil",
+      "flag": "FLAG_HIDE_MIRAGE_TOWER_DOME_FOSSIL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(COFAGRIGUS)",

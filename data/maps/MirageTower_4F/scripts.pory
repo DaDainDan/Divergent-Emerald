@@ -38,42 +38,42 @@ script MirageTower_4F_EventScript_Cofagrigus {
     release_end
 }
 
-script MirageTower_4F_EventScript_RootFossil {
+script MirageTower_4F_EventScript_HelixFossil {
     lock_faceplayer
-    msgbox(MirageTower_4F_Text_TakeRootFossil, MSGBOX_YESNO)
+    msgbox(MirageTower_4F_Text_TakeHelixFossil, MSGBOX_YESNO)
     if (var(VAR_RESULT) == NO) {
-        msgbox(MirageTower_4F_Text_LeftRootFossilAlone, MSGBOX_DEFAULT)
+        msgbox(MirageTower_4F_Text_LeftHelixFossilAlone, MSGBOX_DEFAULT)
     	release_end
     }
-    if (giveitem(ITEM_ROOT_FOSSIL) == FALSE) {
+    if (giveitem(ITEM_HELIX_FOSSIL) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     closemessage
-    setflag(FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL)
-    setflag(FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL)
-    removeobject(LOCALID_MIRAGE_ROOT_FOSSIL)
+    setflag(FLAG_HIDE_MIRAGE_TOWER_HELIX_FOSSIL)
+    setflag(FLAG_HIDE_MIRAGE_TOWER_DOME_FOSSIL)
+    removeobject(LOCALID_MIRAGE_HELIX_FOSSIL)
     delay(30)
-    setflag(FLAG_CHOSE_ROOT_FOSSIL)
+    setflag(FLAG_CHOSE_HELIX_FOSSIL)
     goto(MirageTower_4F_EventScript_CollapseMirageTower)
     end
 }
 
-script MirageTower_4F_EventScript_ClawFossil {
+script MirageTower_4F_EventScript_DomeFossil {
     lock_faceplayer
-    msgbox(MirageTower_4F_Text_TakeClawFossil, MSGBOX_YESNO)
+    msgbox(MirageTower_4F_Text_TakeDomeFossil, MSGBOX_YESNO)
     if (var(VAR_RESULT) == NO) {
-        msgbox(MirageTower_4F_Text_LeaveClawFossilAlone, MSGBOX_DEFAULT)
+        msgbox(MirageTower_4F_Text_LeaveDomeFossilAlone, MSGBOX_DEFAULT)
     	release_end
     }
-    if (giveitem(ITEM_CLAW_FOSSIL) == FALSE) {
+    if (giveitem(ITEM_DOME_FOSSIL) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     closemessage
-    setflag(FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL)
-    setflag(FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL)
-    removeobject(LOCALID_MIRAGE_CLAW_FOSSIL)
+    setflag(FLAG_HIDE_MIRAGE_TOWER_DOME_FOSSIL)
+    setflag(FLAG_HIDE_MIRAGE_TOWER_HELIX_FOSSIL)
+    removeobject(LOCALID_MIRAGE_DOME_FOSSIL)
     delay(30)
-    setflag(FLAG_CHOSE_CLAW_FOSSIL)
+    setflag(FLAG_CHOSE_DOME_FOSSIL)
     goto(MirageTower_4F_EventScript_CollapseMirageTower)
     end
 }
@@ -93,28 +93,28 @@ script MirageTower_4F_EventScript_CollapseMirageTower {
     release_end
 }
 
-text MirageTower_4F_Text_TakeRootFossil {
-	"You found the ROOT FOSSIL.
+text MirageTower_4F_Text_TakeHelixFossil {
+	"You found the HELIX FOSSIL.
 
 	If this FOSSIL is taken, the ground
 	around it will likely crumble away…
 
-	Take the ROOT FOSSIL anyway?"
+	Take the HELIX FOSSIL anyway?"
 }
 
-text MirageTower_4F_Text_LeftRootFossilAlone {
-	"{PLAYER} left the ROOT FOSSIL alone."
+text MirageTower_4F_Text_LeftHelixFossilAlone {
+	"{PLAYER} left the HELIX FOSSIL alone."
 }
 
-text MirageTower_4F_Text_TakeClawFossil {
-	"You found the CLAW FOSSIL.
+text MirageTower_4F_Text_TakeDomeFossil {
+	"You found the DOME FOSSIL.
 
 	If this FOSSIL is taken, the ground
 	around it will likely crumble away…
 
-	Take the CLAW FOSSIL anyway?"
+	Take the DOME FOSSIL anyway?"
 }
 
-text MirageTower_4F_Text_LeaveClawFossilAlone {
-	"{PLAYER} left the CLAW FOSSIL alone."
+text MirageTower_4F_Text_LeaveDomeFossilAlone {
+	"{PLAYER} left the DOME FOSSIL alone."
 }

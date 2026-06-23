@@ -1248,7 +1248,7 @@ u16 GetCurrLocationDefaultMusic(void)
     }
     else
     {
-        if (gSaveBlock1Ptr->pos.x < 29 || (gSaveBlock1Ptr->pos.x < 42 && gSaveBlock1Ptr->pos.y < 11))
+        if (gSaveBlock1Ptr->pos.x < 29 || (gSaveBlock1Ptr->pos.x < 42 && gSaveBlock1Ptr->pos.y > 11))
             return MUS_FALLARBOR;
         else
             return MUS_RG_SEVII_ROUTE;
@@ -1264,11 +1264,11 @@ u16 GetWarpDestinationMusic(void)
     }
     else
     {
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAUVILLE_CITY)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAUVILLE_CITY))
-            return MUS_ROUTE110;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE118)
+         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE118))
+            return MUS_FALLARBOR;
         else
-            return MUS_ROUTE119;
+            return MUS_RG_SEVII_ROUTE;
     }
 }
 
