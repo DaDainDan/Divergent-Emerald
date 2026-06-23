@@ -1,0 +1,143 @@
+{
+  "id": "MAP_RUSTURF_TUNNEL_B1F",
+  "name": "RusturfTunnel_B1F",
+  "layout": "LAYOUT_RUSTURF_TUNNEL_B1F",
+  "music": "MUS_CAVE_OF_ORIGIN",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_RUSTURF_TUNNEL",
+  "requires_flash": false,
+  "weather": "WEATHER_FOG_HORIZONTAL",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_13"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 5,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_14"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 10,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_15"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 31,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_18"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 26,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_17"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 18,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_16"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 32,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTURF_TUNNEL",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 11,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTURF_TUNNEL_B1F_MAZE",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 18,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTURF_TUNNEL_B1F_MAZE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 24,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTURF_TUNNEL_B1F_MAZE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTURF_TUNNEL_B1F_MAZE",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 25,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTURF_TUNNEL_B1F_MAZE",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

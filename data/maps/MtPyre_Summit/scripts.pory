@@ -8,6 +8,18 @@ mapscripts MtPyre_Summit_MapScripts {
     }
 }
 
+script MtPyre_Summit_EventScript_FogTrigger {
+    setweather(WEATHER_FOG_HORIZONTAL)
+    doweather
+    end
+}
+
+script MtPyre_Summit_EventScript_SnowTrigger {
+    setweather(WEATHER_SNOW)
+    doweather
+    end
+}
+
 script MtPyre_Summit_EventScript_TeamAquaTrigger0 {
     lockall
     setvar(VAR_0x8008, 0)

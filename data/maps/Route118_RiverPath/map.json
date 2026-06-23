@@ -1,0 +1,40 @@
+{
+  "id": "MAP_ROUTE118_RIVER_PATH",
+  "name": "Route118_RiverPath",
+  "layout": "LAYOUT_ROUTE118_RIVER_PATH",
+  "music": "MUS_ROUTE119",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_ROUTE_118",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE118",
+      "offset": -7,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE119",
+      "offset": -85,
+      "direction": "right"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_DUNE_CAVERN_B2F",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

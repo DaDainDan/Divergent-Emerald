@@ -68,11 +68,11 @@ script Route110_TrickHouseEntrance_EventScript_CheckReadyForNextPuzzle {
     setvar(VAR_TRICK_HOUSE_ENTRANCE_STATE, 0)
 	switch (var(VAR_TRICK_HOUSE_LEVEL)) {
 		case 1:
-			if (!flag(FLAG_BADGE03_GET)) {
+			if (!flag(FLAG_BADGE04_GET)) {
 				setvar(VAR_TRICK_HOUSE_ENTRANCE_STATE, 3)
 			}
 		case 2:
-			if (!flag(FLAG_BADGE04_GET)) {
+			if (!flag(FLAG_BADGE06_GET)) {
 				setvar(VAR_TRICK_HOUSE_ENTRANCE_STATE, 3)
 			}
 		case 3:
@@ -80,7 +80,7 @@ script Route110_TrickHouseEntrance_EventScript_CheckReadyForNextPuzzle {
 				setvar(VAR_TRICK_HOUSE_ENTRANCE_STATE, 3)
 			}
 		case 4:
-			if (!flag(FLAG_BADGE06_GET)) {
+			if (!flag(FLAG_BADGE02_GET)) {
 				setvar(VAR_TRICK_HOUSE_ENTRANCE_STATE, 3)
 			}
 		case 5:

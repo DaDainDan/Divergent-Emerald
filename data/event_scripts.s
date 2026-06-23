@@ -1754,3 +1754,23 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/AlteringCave_B2F/scripts.inc"
 
 	.include "data/maps/ScorchedSlab_B1F/scripts.inc"
+
+	.include "data/maps/ScorchedSlab_Down03/scripts.inc"
+
+	.include "data/maps/ScorchedSlab_Down01/scripts.inc"
+
+	.include "data/maps/ScorchedSlab_Down02/scripts.inc"
+
+	.include "data/maps/RusturfTunnel_B1F/scripts.inc"
+
+	.include "data/maps/Route118_RiverPath/scripts.inc"
+
+	.include "data/maps/DuneCavern/scripts.inc"
+
+	.include "data/maps/DuneCavern_B1F/scripts.inc"
+
+	.include "data/maps/RusturfTunnel_B1F_Maze/scripts.inc"
+
+	.include "data/maps/DuneCavernB2F/scripts.inc"
+
+	.include "data/maps/NewMauville_B1F/scripts.inc"

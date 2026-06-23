@@ -677,6 +677,13 @@
       "elevation": 0,
       "dest_map": "MAP_TRAINER_HILL_ENTRANCE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 32,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_DUNE_CAVERN",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [
@@ -1036,8 +1043,8 @@
     },
     {
       "type": "secret_base",
-      "x": 33,
-      "y": 34,
+      "x": 37,
+      "y": 29,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_YELLOW_CAVE1_1"
     },

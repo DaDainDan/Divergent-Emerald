@@ -144,13 +144,42 @@
       "flag": "FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_SAFARI_ZONE_SOUTHEAST",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_SAFARI_ZONE_SOUTHEAST",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 30,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_SAFARI_ZONE_SOUTHEAST",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 31,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_SAFARI_ZONE_SOUTHEAST",
+      "dest_warp_id": "3"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",
       "x": 31,
-      "y": 35,
+      "y": 36,
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_RARE_CANDY"

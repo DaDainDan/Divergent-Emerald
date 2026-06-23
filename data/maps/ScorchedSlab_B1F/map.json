@@ -31,14 +31,14 @@
   "warp_events": [
     {
       "x": 12,
-      "y": 40,
+      "y": 42,
       "elevation": 0,
-      "dest_map": "MAP_SCORCHED_SLAB",
+      "dest_map": "MAP_SCORCHED_SLAB_DOWN03",
       "dest_warp_id": "1"
     },
     {
       "x": 12,
-      "y": 19,
+      "y": 21,
       "elevation": 0,
       "dest_map": "MAP_SCORCHED_SLAB_B1F",
       "dest_warp_id": "2"

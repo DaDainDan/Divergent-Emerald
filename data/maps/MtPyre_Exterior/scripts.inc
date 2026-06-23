@@ -6,16 +6,7 @@ MtPyre_Exterior_MapScripts::
 MtPyre_Exterior_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/MtPyre_Exterior/scripts.pory"
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-# 4 "data/maps/MtPyre_Exterior/scripts.pory"
-	compare VAR_TEMP_1, 12
-	goto_if_lt MtPyre_Exterior_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
-MtPyre_Exterior_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	end
-
-MtPyre_Exterior_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
-# 5 "data/maps/MtPyre_Exterior/scripts.pory"
-	setweather WEATHER_FOG_HORIZONTAL
-	goto MtPyre_Exterior_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 
 MtPyre_Exterior_EventScript_FogTrigger::

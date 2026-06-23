@@ -83,7 +83,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 15,
-      "y": 17,
+      "y": 16,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -96,7 +96,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 24,
-      "y": 13,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -109,7 +109,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
       "x": 19,
-      "y": 10,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -122,7 +122,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
       "x": 22,
-      "y": 7,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
       "movement_range_x": 0,
@@ -135,7 +135,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 11,
-      "y": 6,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -200,7 +200,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
       "x": 24,
-      "y": 18,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -213,7 +213,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
       "x": 25,
-      "y": 18,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -265,7 +265,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
       "x": 33,
-      "y": 6,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -278,7 +278,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_2",
       "x": 32,
-      "y": 6,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -291,7 +291,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
       "x": 17,
-      "y": 13,
+      "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
       "movement_range_x": 1,
@@ -304,7 +304,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
       "x": 27,
-      "y": 7,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
       "movement_range_x": 1,
@@ -317,7 +317,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 25,
-      "y": 6,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -344,7 +344,7 @@
   "warp_events": [
     {
       "x": 12,
-      "y": 5,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_ROUTE109_SEASHORE_HOUSE",
       "dest_warp_id": "0"
@@ -355,7 +355,7 @@
     {
       "type": "sign",
       "x": 15,
-      "y": 5,
+      "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route109_EventScript_SeashoreHouseSign"
@@ -363,7 +363,7 @@
     {
       "type": "sign",
       "x": 29,
-      "y": 10,
+      "y": 8,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route109_EventScript_TrainerTipsSign"
@@ -379,7 +379,7 @@
     {
       "type": "hidden_item",
       "x": 33,
-      "y": 5,
+      "y": 4,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1"
@@ -387,7 +387,7 @@
     {
       "type": "hidden_item",
       "x": 9,
-      "y": 10,
+      "y": 8,
       "elevation": 3,
       "item": "ITEM_GREAT_BALL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL"
@@ -403,7 +403,7 @@
     {
       "type": "hidden_item",
       "x": 13,
-      "y": 16,
+      "y": 15,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_2"

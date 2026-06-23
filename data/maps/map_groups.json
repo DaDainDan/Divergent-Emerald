@@ -134,7 +134,8 @@
     "Underwater_Route129",
     "Underwater_Route105",
     "Underwater_Route125",
-    "Underwater_Route107"
+    "Underwater_Route107",
+    "Route118_RiverPath"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -475,7 +476,16 @@
     "AlteringCave_B1F_1R",
     "AlteringCave_B1F_2R",
     "AlteringCave_B2F",
-    "ScorchedSlab_B1F"
+    "ScorchedSlab_B1F",
+    "ScorchedSlab_Down01",
+    "ScorchedSlab_Down02",
+    "ScorchedSlab_Down03",
+    "RusturfTunnel_B1F",
+    "DuneCavern",
+    "DuneCavern_B1F",
+    "DuneCavernB2F",
+    "RusturfTunnel_B1F_Maze",
+    "NewMauville_B1F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

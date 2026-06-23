@@ -1,7 +1,7 @@
 mapscripts Route104_PrettyPetalFlowerShop_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_LANDMARK_FLOWER_SHOP)
-		if (!flag(FLAG_MET_PRETTY_PETAL_SHOP_OWNER) || !flag(FLAG_BADGE03_GET)) {
+		if (!flag(FLAG_MET_PRETTY_PETAL_SHOP_OWNER) || !flag(FLAG_BADGE01_GET)) {
 			setobjectxyperm(LOCALID_FLOWER_SHOP_OWNER, 4, 6)
 		} else {
 			setflag(FLAG_TEMP_1)

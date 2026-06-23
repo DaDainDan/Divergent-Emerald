@@ -1,9 +1,9 @@
 mapscripts MtPyre_Exterior_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-		if (var(VAR_TEMP_1) < 12) {
-			setweather(WEATHER_FOG_HORIZONTAL)
-		}
+		// if (var(VAR_TEMP_1) < 12) {
+		// 	setweather(WEATHER_FOG_HORIZONTAL)
+		// }
 		end
     }
 }

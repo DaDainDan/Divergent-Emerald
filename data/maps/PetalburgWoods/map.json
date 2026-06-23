@@ -249,6 +249,42 @@
       "var": "VAR_PETALBURG_WOODS_STATE",
       "var_value": "0",
       "script": "PetalburgWoods_EventScript_DevonResearcherRight"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_WOODS_WILD_SET",
+      "var_value": "1",
+      "script": "PetalburgWoods_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_WOODS_WILD_SET",
+      "var_value": "1",
+      "script": "PetalburgWoods_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_WOODS_WILD_SET",
+      "var_value": "0",
+      "script": "PetalburgWoods_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PETALBURG_WOODS_WILD_SET",
+      "var_value": "0",
+      "script": "PetalburgWoods_WildSet2Trigger"
     }
   ],
   "bg_events": [

@@ -15,7 +15,7 @@ Route104_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 14 "data/maps/Route104/scripts.pory"
 	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_MapScripts_MAP_SCRIPT_ON_TRANSITION_9
 # 14 "data/maps/Route104/scripts.pory"
-	goto_if_unset FLAG_BADGE03_GET, Route104_MapScripts_MAP_SCRIPT_ON_TRANSITION_9
+	goto_if_unset FLAG_BADGE01_GET, Route104_MapScripts_MAP_SCRIPT_ON_TRANSITION_9
 # 17 "data/maps/Route104/scripts.pory"
 	clearflag FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST
 Route104_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:

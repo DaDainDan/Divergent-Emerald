@@ -9,7 +9,7 @@ Route104_PrettyPetalFlowerShop_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 4 "data/maps/Route104_PrettyPetalFlowerShop/scripts.pory"
 	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_PrettyPetalFlowerShop_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 # 4 "data/maps/Route104_PrettyPetalFlowerShop/scripts.pory"
-	goto_if_unset FLAG_BADGE03_GET, Route104_PrettyPetalFlowerShop_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	goto_if_unset FLAG_BADGE01_GET, Route104_PrettyPetalFlowerShop_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 # 7 "data/maps/Route104_PrettyPetalFlowerShop/scripts.pory"
 	setflag FLAG_TEMP_1
 Route104_PrettyPetalFlowerShop_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:

@@ -1630,6 +1630,14 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_DUNE_CAVERN",
+      "name": "DUNE CAVERN",
+      "x": 8,
+      "y": 4,
+      "width": 1,
+      "height": 1
     }
   ]
 }
