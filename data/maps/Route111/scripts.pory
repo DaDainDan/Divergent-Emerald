@@ -29,6 +29,12 @@ mapscripts Route111_MapScripts {
 		if (var(VAR_TEMP_1) >= 34 && var(VAR_TEMP_1) <= 107
 		&& (var(VAR_TEMP_1) > 72 || (var(VAR_TEMP_0) >= 8 && var(VAR_TEMP_0) <= 2000))) {
 			setweather(WEATHER_SANDSTORM)
+			setvar(VAR_ROUTE111_WILD_SET, 1)
+		}
+		if (var(VAR_TEMP_1) < 34) {
+			setvar(VAR_ROUTE111_WILD_SET, 2)
+		} else {
+			setvar(VAR_ROUTE111_WILD_SET, 0)
 		}
 		call(GabbyAndTy_EventScript_UpdateLocation)
 		if (!defeated(TRAINER_VICKY)) {
@@ -92,10 +98,10 @@ script Route111_EventScript_MirageTowerDisappear {
     special(StartMirageTowerFossilFallAndSink)
     setvar(VAR_MIRAGE_TOWER_STATE, 2)
     clearflag(FLAG_HIDE_DESERT_UNDERPASS_FOSSIL)
-    if (flag(FLAG_CHOSE_CLAW_FOSSIL)) {
-        msgbox(Route111_Text_RootFossilDisappeared, MSGBOX_DEFAULT)
+    if (flag(FLAG_CHOSE_DOME_FOSSIL)) {
+        msgbox(Route111_Text_HelixFossilDisappeared, MSGBOX_DEFAULT)
     } else {
-		msgbox(Route111_Text_ClawFossilDisappeared, MSGBOX_DEFAULT)
+		msgbox(Route111_Text_DomeFossilDisappeared, MSGBOX_DEFAULT)
 	}
     releaseall
     end
@@ -178,6 +184,12 @@ script Route111_EventScript_SunTrigger {
     fadenewbgm(MUS_ROUTE110)
     doweather
     setvar(VAR_TEMP_3, 0)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) < 46) {
+		setvar(VAR_ROUTE111_WILD_SET, 2)
+	} else {
+		setvar(VAR_ROUTE111_WILD_SET, 0)
+	}
     end
 }
 
@@ -185,6 +197,7 @@ script Route111_EventScript_SandstormTrigger {
     setweather(WEATHER_SANDSTORM)
     fadenewbgm(MUS_DESERT)
     doweather
+	setvar(VAR_ROUTE111_WILD_SET, 1)
     end
 }
 
@@ -671,13 +684,13 @@ text Route111_Text_MirageTowerHasntBeenSeenSince {
 	the MIRAGE TOWER…"
 }
 
-text Route111_Text_ClawFossilDisappeared {
-	"The CLAW FOSSIL disappeared into
+text Route111_Text_DomeFossilDisappeared {
+	"The DOME FOSSIL disappeared into
 	the sand…"
 }
 
-text Route111_Text_RootFossilDisappeared {
-	"The ROOT FOSSIL disappeared into
+text Route111_Text_HelixFossilDisappeared {
+	"The HELIX FOSSIL disappeared into
 	the sand…"
 }
 

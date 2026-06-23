@@ -775,6 +775,123 @@
       "y": 13,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 102,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "1",
+      "script": "Route119_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 102,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "1",
+      "script": "Route119_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 102,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "1",
+      "script": "Route119_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 102,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "1",
+      "script": "Route119_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 135,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "0",
+      "script": "Route119_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 135,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "0",
+      "script": "Route119_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 135,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "0",
+      "script": "Route119_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 135,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "0",
+      "script": "Route119_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 135,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "0",
+      "script": "Route119_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 104,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "0",
+      "script": "Route119_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 104,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "0",
+      "script": "Route119_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 104,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "0",
+      "script": "Route119_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 104,
+      "elevation": 0,
+      "var": "VAR_ROUTE119_WILD_SET",
+      "var_value": "0",
+      "script": "Route119_WildSet1Trigger"
     }
   ],
   "bg_events": [

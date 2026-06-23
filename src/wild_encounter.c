@@ -285,27 +285,27 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
     case OLD_ROD:
         if (rand < ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_0)
             wildMonIndex = 0;
-        else
+        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_0 && rand < ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_1)
             wildMonIndex = 1;
+        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_1 && rand < ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_2)
+            wildMonIndex = 2;
 
         if (swap)
-            wildMonIndex = 1 - wildMonIndex;
+            wildMonIndex = 2 - wildMonIndex;
         break;
     case GOOD_ROD:
-        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_2)
-            wildMonIndex = 2;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_2 && rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_3)
+        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_3)
             wildMonIndex = 3;
         if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_3 && rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_4)
             wildMonIndex = 4;
+        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_4 && rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_5)
+            wildMonIndex = 5;
 
         if (swap)
-            wildMonIndex = 6 - wildMonIndex;
+            wildMonIndex = 8 - wildMonIndex;
         break;
     case SUPER_ROD:
-        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_5)
-            wildMonIndex = 5;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_5 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_6)
+        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_6)
             wildMonIndex = 6;
         if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_6 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_7)
             wildMonIndex = 7;
@@ -315,7 +315,7 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
             wildMonIndex = 9;
 
         if (swap)
-            wildMonIndex = 14 - wildMonIndex;
+            wildMonIndex = 15 - wildMonIndex;
         break;
     }
     return wildMonIndex;
@@ -383,6 +383,41 @@ u16 GetCurrentMapWildMonHeaderId(void)
         if (gWildMonHeaders[i].mapGroup == gSaveBlock1Ptr->location.mapGroup &&
             gWildMonHeaders[i].mapNum == gSaveBlock1Ptr->location.mapNum)
         {
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE104) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE104))
+            {
+                i += VarGet(VAR_ROUTE104_WILD_SET);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111))
+            {
+                i += VarGet(VAR_ROUTE111_WILD_SET);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE112) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE112))
+            {
+                i += VarGet(VAR_ROUTE112_WILD_SET);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE115) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE115))
+            {
+                i += VarGet(VAR_ROUTE115_WILD_SET);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE119) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE119))
+            {
+                i += VarGet(VAR_ROUTE119_WILD_SET);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE123) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE123))
+            {
+                i += VarGet(VAR_ROUTE123_WILD_SET);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_PETALBURG_WOODS) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_PETALBURG_WOODS))
+            {
+                i += VarGet(VAR_PETALBURG_WOODS_WILD_SET);
+            }
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ALTERING_CAVE) &&
                 gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ALTERING_CAVE))
             {

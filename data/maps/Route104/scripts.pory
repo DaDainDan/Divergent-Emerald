@@ -16,8 +16,24 @@ mapscripts Route104_MapScripts {
 		} else {
 			clearflag(FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST)
 		}
+		getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+		if (var(VAR_TEMP_1) > 34) {
+			call(Route104_WildSet1Trigger)
+		} else {
+			call(Route104_WildSet2Trigger)
+		}
 		end
     }
+}
+
+script Route104_WildSet1Trigger {
+    setvar(VAR_ROUTE104_WILD_SET, 1)
+    return
+}
+
+script Route104_WildSet2Trigger {
+    setvar(VAR_ROUTE104_WILD_SET, 0)
+    return
 }
 
 script Route104_EventScript_Rival {

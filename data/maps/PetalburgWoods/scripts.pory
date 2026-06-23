@@ -1,4 +1,26 @@
-mapscripts PetalburgWoods_MapScripts {}
+mapscripts PetalburgWoods_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+		if (var(VAR_TEMP_0) < 31) {
+			call(PetalburgWoods_WildSet1Trigger)
+		} else {
+			call(PetalburgWoods_WildSet2Trigger)
+		}
+		end
+    }
+}
+
+script PetalburgWoods_WildSet1Trigger {
+    setvar(VAR_PETALBURG_WOODS_WILD_SET, 0)
+    return
+}
+
+script PetalburgWoods_WildSet2Trigger {
+    setvar(VAR_PETALBURG_WOODS_WILD_SET, 1)
+    return
+}
+
+
 
 script PetalburgWoods_EventScript_DevonResearcherLeft {
     lockall

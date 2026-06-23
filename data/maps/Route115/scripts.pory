@@ -22,6 +22,16 @@ mapscripts Route115_MapScripts {
     ]
 }
 
+script Route115_WildSet2Trigger {
+    setvar(VAR_ROUTE115_WILD_SET, 1)
+    return
+}
+
+script Route115_WildSet1Trigger {
+    setvar(VAR_ROUTE115_WILD_SET, 0)
+    return
+}
+
 script Route115_EventScript_Woman {
     msgbox(Route115_Text_NeverKnowWhenCavePokemonWillAppear, MSGBOX_NPC)
     end

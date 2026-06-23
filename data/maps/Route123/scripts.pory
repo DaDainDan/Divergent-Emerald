@@ -1,8 +1,37 @@
 mapscripts Route123_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         special(SetRoute123Weather)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_0) > 29) {
+            call(Route123_WildSet1Trigger)
+        }
+        if (var(VAR_TEMP_0) < 29) {
+            call(Route123_WildSet2Trigger)
+        }
     	end
     }
+}
+
+script Route123_WildSet1Trigger {
+    setvar(VAR_ROUTE123_WILD_SET, 0)
+    return
+}
+
+script Route123_WildSet2Trigger {
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (var(VAR_TEMP_0) > 10) {
+        fadenewbgm(MUS_FALLARBOR)
+    }
+    setvar(VAR_ROUTE123_WILD_SET, 1)
+    return
+}
+
+script Route123_WildSet3Trigger {
+    if (var(VAR_ROUTE123_WILD_SET) == 1) {
+        fadenewbgm(MUS_RG_SEVII_ROUTE)
+    }
+    setvar(VAR_ROUTE123_WILD_SET, 2)
+    return
 }
 
 script Route123_EventScript_GigaDrainGirl {

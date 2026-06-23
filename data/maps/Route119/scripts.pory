@@ -14,8 +14,24 @@ mapscripts Route119_MapScripts {
 			setvar(VAR_WEATHER_INSTITUTE_STATE, 2)
 		}
 		special(SetRoute119Weather)
+		getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+		if (var(VAR_TEMP_1) >= 104) {
+			call(Route119_WildSet1Trigger)
+		} else {
+			call(Route119_WildSet2Trigger)
+		}
 		end
     }
+}
+
+script Route119_WildSet1Trigger {
+    setvar(VAR_ROUTE119_WILD_SET, 1)
+    return
+}
+
+script Route119_WildSet2Trigger {
+    setvar(VAR_ROUTE119_WILD_SET, 0)
+    return
 }
 
 script Route119_EventScript_RivalTrigger1 {

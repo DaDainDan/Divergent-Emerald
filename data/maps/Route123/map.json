@@ -301,10 +301,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 108,
-      "y": 13,
+      "x": 88,
+      "y": 25,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -775,6 +775,159 @@
       "y": 10,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 126,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "2",
+      "script": "Route123_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 132,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet3Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "0",
+      "script": "Route123_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "1",
+      "script": "Route123_WildSet3Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "1",
+      "script": "Route123_WildSet3Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_ROUTE123_WILD_SET",
+      "var_value": "2",
+      "script": "Route123_WildSet2Trigger"
     }
   ],
   "bg_events": [

@@ -3,7 +3,6 @@
   "name": "Route115",
   "layout": "LAYOUT_ROUTE115",
   "music": "MUS_ROUTE104",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_115",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -388,7 +387,80 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ROUTE115_WILD_SET",
+      "var_value": "0",
+      "script": "Route115_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ROUTE115_WILD_SET",
+      "var_value": "0",
+      "script": "Route115_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_ROUTE115_WILD_SET",
+      "var_value": "0",
+      "script": "Route115_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_ROUTE115_WILD_SET",
+      "var_value": "0",
+      "script": "Route115_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_ROUTE115_WILD_SET",
+      "var_value": "0",
+      "script": "Route115_WildSet2Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 43,
+      "elevation": 0,
+      "var": "VAR_ROUTE115_WILD_SET",
+      "var_value": "1",
+      "script": "Route115_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 43,
+      "elevation": 0,
+      "var": "VAR_ROUTE115_WILD_SET",
+      "var_value": "1",
+      "script": "Route115_WildSet1Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 43,
+      "elevation": 0,
+      "var": "VAR_ROUTE115_WILD_SET",
+      "var_value": "1",
+      "script": "Route115_WildSet1Trigger"
+    }
+  ],
   "bg_events": [
     {
       "type": "secret_base",
@@ -491,5 +563,6 @@
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }
