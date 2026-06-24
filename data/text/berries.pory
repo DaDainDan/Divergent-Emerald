@@ -1,5 +1,5 @@
 text(local) PetalburgCity_Gym_Text_GiveEnigmaBerry {
-	"DAD: Hi, {PLAYER}!
+	"{SPEAKER NAME_DAD}Hi, {PLAYER}!
 
 	I just received a very rare BERRY.
 	I'd like you to have it."

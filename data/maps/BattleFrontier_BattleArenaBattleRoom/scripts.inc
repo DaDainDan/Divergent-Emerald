@@ -1152,7 +1152,7 @@ BattleFrontier_BattleArenaBattleRoom_Text_MakeWayForGreta::
 
 BattleFrontier_BattleArenaBattleRoom_Text_GretaYoureChallenger::
 # 537 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "GRETA: Hey!\n"
+	.string "{SPEAKER NAME_GRETA}Hey!\n"
 	.string "Howdy!\p"
 	.string "…Wait, are you the challenger?$"
 
@@ -1177,7 +1177,7 @@ BattleFrontier_BattleArenaBattleRoom_Text_IgniteMyPassionForBattle::
 
 BattleFrontier_BattleArenaBattleRoom_Text_GretaYoureToughAfterAll::
 # 565 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "GRETA: Ow, wait a second!\n"
+	.string "{SPEAKER NAME_GRETA}Ow, wait a second!\n"
 	.string "You are tough after all!\p"
 	.string "I like you!\n"
 	.string "Let's see your FRONTIER PASS.$"
@@ -1195,7 +1195,7 @@ BattleFrontier_BattleArenaBattleRoom_Text_GoingToBeFunNextTime::
 
 BattleFrontier_BattleArenaBattleRoom_Text_GretaLookingForwardToSeeingAgain::
 # 585 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "GRETA: Hey! Howdy!\n"
+	.string "{SPEAKER NAME_GRETA}Hey! Howdy!\n"
 	.string "You finally won your way up to me!\p"
 	.string "I was getting worried waiting for you!\n"
 	.string "I was really looking forward to seeing\l"
@@ -1218,7 +1218,7 @@ BattleFrontier_BattleArenaBattleRoom_Text_LetsGetThisStarted::
 
 BattleFrontier_BattleArenaBattleRoom_Text_GretaBlownAway::
 # 609 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "GRETA: Gaaah! Blown away!\n"
+	.string "{SPEAKER NAME_GRETA}Gaaah! Blown away!\n"
 	.string "Let's see your FRONTIER PASS!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_GutsSymbolTookGoldenShine::

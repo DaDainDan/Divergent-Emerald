@@ -1897,7 +1897,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_SpectatorTuckerChant::
 
 BattleFrontier_BattleDomeBattleRoom_Text_TuckerSilverIntro::
 # 926 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	.string "TUCKER: Ahahah!\p"
+	.string "{SPEAKER NAME_TUCKER}Ahahah!\p"
 	.string "Do you hear it? This crowd!\n"
 	.string "They're all itching to see our match!\p"
 	.string "Ahahah!\p"
@@ -1926,7 +1926,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_WinnerIsTucker::
 
 BattleFrontier_BattleDomeBattleRoom_Text_SeeYourFrontierPass::
 # 961 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	.string "TUCKER: Rules are rules!\n"
+	.string "{SPEAKER NAME_TUCKER}Rules are rules!\n"
 	.string "Let me see your FRONTIER PASS.$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_ReceivedTacticsSymbol::
@@ -1957,7 +1957,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_LegendHasReturnedDomeAceTucker::
 
 BattleFrontier_BattleDomeBattleRoom_Text_TuckerGoldIntro::
 # 995 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	.string "TUCKER: Ah…\n"
+	.string "{SPEAKER NAME_TUCKER}Ah…\n"
 	.string "The pummeling roar of the crowd…\l"
 	.string "Their furnace-like heat of excitement…\l"
 	.string "This is a wonderful place…\p"
@@ -1975,7 +1975,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_UnleashAllPowerIPossess::
 
 BattleFrontier_BattleDomeBattleRoom_Text_NeverLostWhenPowerUnleashed::
 # 1015 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	.string "TUCKER: You're genuinely fantastic!\p"
+	.string "{SPEAKER NAME_TUCKER}You're genuinely fantastic!\p"
 	.string "Never before! I haven't ever lost in the\n"
 	.string "times I've had to unleash my power.\p"
 	.string "Yes, quite fantastic!\n"

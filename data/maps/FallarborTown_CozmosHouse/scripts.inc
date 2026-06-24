@@ -99,7 +99,7 @@ FallarborTown_CozmosHouse_EventScript_CozmosWife_3:
 
 FallarborTown_CozmosHouse_Text_MeteoriteWillNeverBeMineNow::
 # 53 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
-	.string "PROF. COZMO: Oh…\n"
+	.string "{SPEAKER NAME_COZMO}Oh…\n"
 	.string "I never should have let myself be\l"
 	.string "conned into telling TEAM MAGMA where\l"
 	.string "you can find METEORITES…\p"
@@ -120,24 +120,24 @@ FallarborTown_CozmosHouse_Text_IsThatMeteoriteMayIHaveIt::
 
 FallarborTown_CozmosHouse_Text_PleaseUseThisTM::
 # 80 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
-	.string "PROF. COZMO: This TM, it represents\n"
+	.string "{SPEAKER NAME_COZMO}This TM, it represents\n"
 	.string "my feeling of gratitude.\l"
 	.string "Please use it!$"
 
 FallarborTown_CozmosHouse_Text_ReallyGoingToHelpMyResearch::
 # 86 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
-	.string "PROF. COZMO: Oh, I can't believe it.\n"
+	.string "{SPEAKER NAME_COZMO}Oh, I can't believe it.\n"
 	.string "This is really, really great!\p"
 	.string "This is really going to help my research!$"
 
 FallarborTown_CozmosHouse_Text_CrushedWithDisappointment::
 # 93 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
-	.string "PROF. COZMO: Oh, but…\n"
+	.string "{SPEAKER NAME_COZMO}Oh, but…\n"
 	.string "I'm crushed with disappointment…$"
 
 FallarborTown_CozmosHouse_Text_MayIHaveMeteorite::
 # 98 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
-	.string "PROF. COZMO: Please, may I have that\n"
+	.string "{SPEAKER NAME_COZMO}Please, may I have that\n"
 	.string "METEORITE?\p"
 	.string "I'm not asking for it for free.\n"
 	.string "How about in exchange for this TM?$"

@@ -490,7 +490,7 @@ MossdeepCity_SpaceCenter_1F_Text_MagmaWantsToSpoilMyDream::
 
 MossdeepCity_SpaceCenter_1F_Text_StevenMagmaCantBeAllowedToTakeFuel::
 # 311 "data/maps/MossdeepCity_SpaceCenter_1F/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}, have you read that\n"
+	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}, have you read that\n"
 	.string "proclamation already?\p"
 	.string "TEAM MAGMA is coming after the rocket\n"
 	.string "fuel on this island.\p"

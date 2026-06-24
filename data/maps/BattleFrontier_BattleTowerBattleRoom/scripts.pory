@@ -441,7 +441,7 @@ text BattleFrontier_BattleTowerBattleRoom_Text_LetMeSeeYourTalent {
 }
 
 text BattleFrontier_BattleTowerBattleRoom_Text_AnabelTalentShallBeRecognized {
-	"ANABEL: Fufufu, nicely done…
+	"{SPEAKER NAME_ANABEL}Fufufu, nicely done…
 
 	Your FRONTIER PASS, please…
 	Your talent shall be recognized."
@@ -466,7 +466,7 @@ text BattleFrontier_BattleTowerBattleRoom_Text_UntilNextTime {
 }
 
 text BattleFrontier_BattleTowerBattleRoom_Text_AnabelYouCameBack {
-	"ANABEL: You really did come back to
+	"{SPEAKER NAME_ANABEL}You really did come back to
 	see me…
 
 	… … … … … …
@@ -485,7 +485,7 @@ text BattleFrontier_BattleTowerBattleRoom_Text_LetsBeginShallWe {
 }
 
 text BattleFrontier_BattleTowerBattleRoom_Text_AnabelCongratsYourPassPlease {
-	"ANABEL: Fufu, congratulations…
+	"{SPEAKER NAME_ANABEL}Fufu, congratulations…
 	Your FRONTIER PASS, please…"
 }
 

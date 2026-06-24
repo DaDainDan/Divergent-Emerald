@@ -442,13 +442,13 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut::
 
 RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown::
 # 303 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "SCOTT: Hmm…\p"
+	.string "{SPEAKER NAME_SCOTT}Hmm…\p"
 	.string "The talent levels of the students here\n"
 	.string "are unknown. The potential's there.$"
 
 RustboroCity_PokemonSchool_Text_ScottStoneBadge::
 # 310 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "SCOTT: Oh, what's that?\p"
+	.string "{SPEAKER NAME_SCOTT}Oh, what's that?\p"
 	.string "It's a STONE BADGE, isn't it?\n"
 	.string "That's pretty impressive, I'd say.\p"
 	.string "But, you know, I would've loved to see\n"

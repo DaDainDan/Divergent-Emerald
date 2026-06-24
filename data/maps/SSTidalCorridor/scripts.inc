@@ -460,7 +460,7 @@ SSTidalCorridor_EventScript_ScottScene_Movement_4:
 
 SSTidalCorridor_Text_ScottBattleFrontierInvite::
 # 183 "data/maps/SSTidalCorridor/scripts.pory"
-	.string "SCOTT: Well, hi, hi!\n"
+	.string "{SPEAKER NAME_SCOTT}Well, hi, hi!\n"
 	.string "{PLAYER}{KUN}, {PLAYER}{KUN}!\p"
 	.string "Something's come up, so I have to\n"
 	.string "disembark, but am I glad to see you!\p"

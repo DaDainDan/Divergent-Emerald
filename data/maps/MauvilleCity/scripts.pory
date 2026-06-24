@@ -246,7 +246,7 @@ text MauvilleCity_Text_UncleHesTooPeppy {
 }
 
 text MauvilleCity_Text_WallyWantToChallengeGym {
-	"WALLY: Aww, UNCLE, please?
+	"{SPEAKER NAME_WALLY}Aww, UNCLE, please?
 
 	I want to challenge this GYM and see
 	how much better I've become.
@@ -265,14 +265,14 @@ text MauvilleCity_Text_UncleYourePushingIt {
 }
 
 text MauvilleCity_Text_WallyWeCanBeatAnyone {
-	"WALLY: I'm not pushing it.
+	"{SPEAKER NAME_WALLY}I'm not pushing it.
 
 	If I combine forces with RALTS,
 	we can beat anyone!"
 }
 
 text MauvilleCity_Text_WallyWillYouBattleMe {
-	"WALLY: Oh! Hi, {PLAYER}!
+	"{SPEAKER NAME_WALLY}Oh! Hi, {PLAYER}!
 
 	I've gotten a lot stronger since
 	we met.
@@ -285,7 +285,7 @@ text MauvilleCity_Text_WallyWillYouBattleMe {
 }
 
 text MauvilleCity_Text_WallyMyUncleWontKnowImStrong {
-	"WALLY: Oh… If you won't battle me,
+	"{SPEAKER NAME_WALLY}Oh… If you won't battle me,
 	{PLAYER}, my UNCLE won't know that I've
 	become really strong."
 }
@@ -300,18 +300,18 @@ text MauvilleCity_Text_UncleCanYouBattleWally {
 }
 
 text MauvilleCity_Text_WallyPleaseBattleMe {
-	"WALLY: {PLAYER}, please!
+	"{SPEAKER NAME_WALLY}{PLAYER}, please!
 	Battle with me, please."
 }
 
 text MauvilleCity_Text_WallyHereICome {
-	"WALLY: {PLAYER}, thank you.
+	"{SPEAKER NAME_WALLY}{PLAYER}, thank you.
 
 	Okay… Here I come!"
 }
 
 text MauvilleCity_Text_WallyDefeat {
-	"WALLY: … … … … … … …
+	"{SPEAKER NAME_WALLY}… … … … … … …
 
 	… … … … … … … …
 
@@ -319,7 +319,7 @@ text MauvilleCity_Text_WallyDefeat {
 }
 
 text MauvilleCity_Text_WallyIllGoBackToVerdanturf {
-	"WALLY: UNCLE…
+	"{SPEAKER NAME_WALLY}UNCLE…
 	I'll go back to VERDANTURF…"
 }
 
@@ -358,7 +358,7 @@ text MauvilleCity_Text_WallyPokenavCall {
 	"… … … … … …
 	… … … … … Beep!
 
-	WALLY: Oh, hello, {PLAYER}!
+	{SPEAKER NAME_WALLY}Oh, hello, {PLAYER}!
 
 	I just wanted to tell you that
 	my uncle bought me a POKéNAV!
@@ -366,7 +366,7 @@ text MauvilleCity_Text_WallyPokenavCall {
 	Now I can get in touch with you
 	anytime, {PLAYER}!
 
-	… … … … … …
+	{SPEAKER NAME_NONE}… … … … … …
 	… … … … … Click!"
 }
 
@@ -376,7 +376,7 @@ text MauvilleCity_Text_RegisteredWally {
 }
 
 text MauvilleCity_Text_ScottYouDidntHoldBack {
-	"SCOTT: Hehe…
+	"{SPEAKER NAME_SCOTT}Hehe…
 	I was watching that match!
 
 	You're friends with that boy WALLY,
@@ -395,7 +395,7 @@ text MauvilleCity_Text_ScottYouDidntHoldBack {
 }
 
 text MauvilleCity_Text_WattsonNeedFavorTakeKey {
-	"WATTSON: Oh, {PLAYER}{KUN}!
+	"{SPEAKER NAME_WATSON}Oh, {PLAYER}{KUN}!
 	You look like you have a lot of zip!
 	That's a good thing, wahahahaha!
 
@@ -416,7 +416,7 @@ text MauvilleCity_Text_WattsonNeedFavorTakeKey {
 }
 
 text MauvilleCity_Text_WattsonWontBeChallenge {
-	"WATTSON: Don't you worry about it.
+	"{SPEAKER NAME_WATSON}Don't you worry about it.
 	It won't be a challenge to you.
 
 	The entrance to NEW MAUVILLE is just
@@ -427,7 +427,7 @@ text MauvilleCity_Text_WattsonWontBeChallenge {
 }
 
 text MauvilleCity_Text_WattsonThanksTakeTM {
-	"WATTSON: Wahahahaha!
+	"{SPEAKER NAME_WATSON}Wahahahaha!
 
 	I knew it, {PLAYER}{KUN}! I knew I'd made
 	the right choice asking you!
@@ -439,7 +439,7 @@ text MauvilleCity_Text_WattsonThanksTakeTM {
 }
 
 text MauvilleCity_Text_WattsonYoungTakeCharge {
-	"WATTSON: Wahahahaha!
+	"{SPEAKER NAME_WATSON}Wahahahaha!
 
 	It pleases me to no end to see
 	the young step up and take charge!"

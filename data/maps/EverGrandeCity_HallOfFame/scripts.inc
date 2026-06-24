@@ -129,7 +129,7 @@ EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame_Movement_1:
 
 EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions::
 # 52 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "WALLACE: This room…\p"
+	.string "{SPEAKER NAME_WALLACE}This room…\p"
 	.string "This is where we keep records of\n"
 	.string "POKéMON that prevailed through\l"
 	.string "harsh battles.\p"
@@ -138,7 +138,7 @@ EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions::
 
 EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames::
 # 63 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "WALLACE: Come on, let's record your\n"
+	.string "{SPEAKER NAME_WALLACE}Come on, let's record your\n"
 	.string "name as a TRAINER who triumphed over\l"
 	.string "the POKéMON LEAGUE, and the names of\l"
 	.string "the partners who battled with you.$"

@@ -85,14 +85,14 @@ text CaveOfOrigin_B1F_Text_WallaceStory {
 }
 
 text CaveOfOrigin_B1F_Text_WhereIsRayquaza {
-	"WALLACE: {PLAYER}{KUN}, do you perhaps
+	"{SPEAKER NAME_WALLACE}{PLAYER}{KUN}, do you perhaps
 	know where RAYQUAZA is now?
 
 	If you do, please tell me."
 }
 
 text CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin {
-	"WALLACE: The CAVE OF ORIGIN?
+	"{SPEAKER NAME_WALLACE}The CAVE OF ORIGIN?
 
 	But that's right here!
 	I need you to do better than that!
@@ -102,7 +102,7 @@ text CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin {
 }
 
 text CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat {
-	"WALLACE: MT. PYRE?
+	"{SPEAKER NAME_WALLACE}MT. PYRE?
 
 	But when I met the old lady there
 	earlier, she made no mention of it.
@@ -115,14 +115,14 @@ text CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat {
 }
 
 text CaveOfOrigin_B1F_Text_CantYouRememberSomehow {
-	"WALLACE: Huh? You don't remember?
+	"{SPEAKER NAME_WALLACE}Huh? You don't remember?
 	Hmm… That's a problem…
 
 	Can't you remember somehow?"
 }
 
 text CaveOfOrigin_B1F_Text_WellHeadToSkyPillar {
-	"WALLACE: The SKY PILLAR?
+	"{SPEAKER NAME_WALLACE}The SKY PILLAR?
 
 	That's it!
 	It must be the SKY PILLAR!

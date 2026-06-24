@@ -119,7 +119,7 @@ text LilycoveCity_CoveLilyMotel_2F_Text_NeverLeaveWithoutGameBoy {
 }
 
 text LilycoveCity_CoveLilyMotel_2F_Text_SnoozingPreferBattles {
-	"SCOTT: … … … … …
+	"{SPEAKER NAME_SCOTT}… … … … …
 	… … … … … Zzz…
 
 	… … … … … Huh?!
@@ -142,7 +142,7 @@ text LilycoveCity_CoveLilyMotel_2F_Text_SnoozingPreferBattles {
 }
 
 text LilycoveCity_CoveLilyMotel_2F_Text_ContestsDoTakeStrategy {
-	"SCOTT: I think it does take strategy
+	"{SPEAKER NAME_SCOTT}I think it does take strategy
 	to win a CONTEST.
 
 	Devising CONTEST strategies is one way

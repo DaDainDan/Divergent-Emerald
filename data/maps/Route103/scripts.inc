@@ -403,7 +403,7 @@ Route103_EventScript_RivalExit_Movement_4:
 
 Route103_Text_MayRoute103Pokemon::
 # 194 "data/maps/Route103/scripts.pory"
-	.string "MAY: Let's see… The POKéMON found\n"
+	.string "{SPEAKER NAME_MAY}Let's see… The POKéMON found\n"
 	.string "on ROUTE 103 include…$"
 
 Route103_Text_MayLetsBattle::
@@ -423,7 +423,7 @@ Route103_Text_MayDefeated::
 
 Route103_Text_MayTimeToHeadBack::
 # 217 "data/maps/Route103/scripts.pory"
-	.string "MAY: I think I know why my dad has\n"
+	.string "{SPEAKER NAME_MAY}I think I know why my dad has\n"
 	.string "an eye out for you now.\p"
 	.string "I mean, you just got that POKéMON,\n"
 	.string "but it already likes you.\p"
@@ -434,7 +434,7 @@ Route103_Text_MayTimeToHeadBack::
 
 Route103_Text_BrendanRoute103Pokemon::
 # 231 "data/maps/Route103/scripts.pory"
-	.string "BRENDAN: Okay, so it's this one and\n"
+	.string "{SPEAKER NAME_BRENDAN}Okay, so it's this one and\n"
 	.string "that one that live on ROUTE 103…$"
 
 Route103_Text_BrendanLetsBattle::
@@ -452,7 +452,7 @@ Route103_Text_BrendanDefeated::
 
 Route103_Text_BrendanTimeToHeadBack::
 # 252 "data/maps/Route103/scripts.pory"
-	.string "BRENDAN: I think I get it.\n"
+	.string "{SPEAKER NAME_BRENDAN}I think I get it.\n"
 	.string "I think I know why my dad has his eye\l"
 	.string "out for you now.\p"
 	.string "Look, your POKéMON already likes you,\n"

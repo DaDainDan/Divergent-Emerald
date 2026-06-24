@@ -39,7 +39,7 @@ script Route102_EventScript_Allen {
 }
 
 text Route102_Text_WatchMeCatchPokemon {
-	"WALLY: {PLAYER}…
+	"{SPEAKER NAME_WALLY}{PLAYER}…
 	POKéMON hide in tall grass like this,
 	don't they?
 
@@ -50,7 +50,7 @@ text Route102_Text_WatchMeCatchPokemon {
 }
 
 text Route102_Text_WallyIDidIt {
-	"WALLY: I did it… It's my…
+	"{SPEAKER NAME_WALLY}I did it… It's my…
 	My POKéMON!"
 }
 

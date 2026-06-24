@@ -184,7 +184,7 @@ text MagmaHideout_4F_Text_TabithaPostBattle {
 }
 
 text MagmaHideout_4F_Text_MaxieAwakenGroudon {
-	"MAXIE: GROUDON…
+	"{SPEAKER NAME_MAXIE}GROUDON…
 
 	Nothing could awaken you from your
 	sleep bathed in magma…
@@ -200,7 +200,7 @@ text MagmaHideout_4F_Text_MaxieAwakenGroudon {
 }
 
 text MagmaHideout_4F_Text_MaxieGroudonWhatsWrong {
-	"MAXIE: GROUDON!
+	"{SPEAKER NAME_MAXIE}GROUDON!
 	What's wrong?
 
 	Wasn't the BLUE ORB the key?
@@ -210,7 +210,7 @@ text MagmaHideout_4F_Text_MaxieGroudonWhatsWrong {
 }
 
 text MagmaHideout_4F_Text_MaxieOhItWasYou {
-	"MAXIE: Oh, so it was you?
+	"{SPEAKER NAME_MAXIE}Oh, so it was you?
 
 	I've seen you poking around uninvited
 	here and there…
@@ -225,7 +225,7 @@ text MagmaHideout_4F_Text_MaxieDefeat {
 }
 
 text MagmaHideout_4F_Text_MaxieImGoingAfterGroudon {
-	"MAXIE: There has to be some reason
+	"{SPEAKER NAME_MAXIE}There has to be some reason
 	why GROUDON fled…
 
 	That's what you're trying to say,

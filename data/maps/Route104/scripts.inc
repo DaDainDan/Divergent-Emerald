@@ -1895,7 +1895,7 @@ Route104_Text_TrainerTipsDoubleBattles::
 
 Route104_Text_MayWeShouldRegister::
 # 658 "data/maps/Route104/scripts.pory"
-	.string "MAY: Oh, hi, {PLAYER}{KUN}!\p"
+	.string "{SPEAKER NAME_MAY}Oh, hi, {PLAYER}{KUN}!\p"
 	.string "DEVON upgraded your POKéNAV with\n"
 	.string "the MATCH CALL system, huh?\p"
 	.string "We should register each other so we\n"
@@ -1908,7 +1908,7 @@ Route104_Text_RegisteredMay::
 
 Route104_Text_MayHowsYourPokedex::
 # 673 "data/maps/Route104/scripts.pory"
-	.string "MAY: Oh, by the way, {PLAYER}{KUN},\n"
+	.string "{SPEAKER NAME_MAY}Oh, by the way, {PLAYER}{KUN},\n"
 	.string "how's your POKéDEX coming along?$"
 
 Route104_Text_MayMinesDecentLetsBattle::
@@ -1919,19 +1919,19 @@ Route104_Text_MayMinesDecentLetsBattle::
 
 Route104_Text_MayHaventRaisedPokemon::
 # 684 "data/maps/Route104/scripts.pory"
-	.string "MAY: Oh, what's the matter?\p"
+	.string "{SPEAKER NAME_MAY}Oh, what's the matter?\p"
 	.string "Haven't you caught or raised your\n"
 	.string "POKéMON very much?\p"
 	.string "That's not very good for a TRAINER!$"
 
 Route104_Text_MayLetsBattle::
 # 693 "data/maps/Route104/scripts.pory"
-	.string "MAY: So, what do you think?\n"
+	.string "{SPEAKER NAME_MAY}So, what do you think?\n"
 	.string "How about a little battle here?$"
 
 Route104_Text_MayIntro::
 # 698 "data/maps/Route104/scripts.pory"
-	.string "MAY: You just became a TRAINER,\n"
+	.string "{SPEAKER NAME_MAY}You just became a TRAINER,\n"
 	.string "{PLAYER}{KUN}. I'm not going to lose!$"
 
 Route104_Text_MayDefeat::
@@ -1941,7 +1941,7 @@ Route104_Text_MayDefeat::
 
 Route104_Text_MayPostBattle::
 # 708 "data/maps/Route104/scripts.pory"
-	.string "MAY: I can tell you've gotten pretty\n"
+	.string "{SPEAKER NAME_MAY}I can tell you've gotten pretty\n"
 	.string "good with the way you handle POKéMON.\p"
 	.string "But instead of only making them\n"
 	.string "battle, you should be like MR. BRINEY.\p"
@@ -1950,7 +1950,7 @@ Route104_Text_MayPostBattle::
 
 Route104_Text_BrendanWeShouldRegister::
 # 719 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: Oh, hey, {PLAYER}!\p"
+	.string "{SPEAKER NAME_BRENDAN}Oh, hey, {PLAYER}!\p"
 	.string "Cool, you had DEVON install the MATCH\n"
 	.string "CALL system on your POKéNAV!\p"
 	.string "Let's register each other in our\n"
@@ -1963,7 +1963,7 @@ Route104_Text_RegisteredBrendan::
 
 Route104_Text_BrendanHowsYourPokedex::
 # 734 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: {PLAYER}, how's your POKéDEX?\n"
+	.string "{SPEAKER NAME_BRENDAN}{PLAYER}, how's your POKéDEX?\n"
 	.string "Have you filled in any pages yet?$"
 
 Route104_Text_BrendanDoingGreatLetsBattle::
@@ -1974,17 +1974,17 @@ Route104_Text_BrendanDoingGreatLetsBattle::
 
 Route104_Text_BrendanNoConfidence::
 # 746 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: What's the matter? Don't have\n"
+	.string "{SPEAKER NAME_BRENDAN}What's the matter? Don't have\n"
 	.string "any confidence in your POKéMON?$"
 
 Route104_Text_BrendanLetsBattle::
 # 751 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: What's up?\n"
+	.string "{SPEAKER NAME_BRENDAN}What's up?\n"
 	.string "Want to have a battle with me?$"
 
 Route104_Text_BrendanIntro::
 # 756 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: I know you just became\n"
+	.string "{SPEAKER NAME_BRENDAN}I know you just became\n"
 	.string "a TRAINER, but I won't go easy!$"
 
 Route104_Text_BrendanDefeat::
@@ -1994,7 +1994,7 @@ Route104_Text_BrendanDefeat::
 
 Route104_Text_BrendanPostBattle::
 # 766 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: You've gotten pretty decent\n"
+	.string "{SPEAKER NAME_BRENDAN}You've gotten pretty decent\n"
 	.string "at handling POKéMON.\p"
 	.string "But, you know, you shouldn't just be\n"
 	.string "making POKéMON battle.\p"

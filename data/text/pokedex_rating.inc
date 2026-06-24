@@ -1,6 +1,6 @@
 gBirchDexRatingText_AreYouCurious::
 # 1 "data/text/pokedex_rating.pory"
-	.string "PROF. BIRCH: Ah, {PLAYER}{KUN}!\p"
+	.string "{SPEAKER NAME_BIRCH}Ah, {PLAYER}{KUN}!\p"
 	.string "Are you curious about how your\n"
 	.string "POKéDEX is coming along?$"
 

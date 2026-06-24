@@ -421,7 +421,7 @@ BattleFrontier_ScottsHouse_EventScript_WelcomeToFrontier_10:
 
 BattleFrontier_ScottsHouse_Text_WelcomeToBattleFrontier::
 # 192 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Well, hello and welcome!\n"
+	.string "{SPEAKER NAME_SCOTT}Well, hello and welcome!\n"
 	.string "Heheh… Sorry about the cramped space.\p"
 	.string "Anyway, {PLAYER}{KUN}, let me formally\n"
 	.string "welcome you to the BATTLE FRONTIER.\p"
@@ -455,7 +455,7 @@ BattleFrontier_ScottsHouse_Text_ObtainedXBattlePoints::
 
 BattleFrontier_ScottsHouse_Text_ExplainBattlePoints::
 # 232 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: You can check your Battle\n"
+	.string "{SPEAKER NAME_SCOTT}You can check your Battle\n"
 	.string "Points on your FRONTIER PASS.\p"
 	.string "The more success you have here at\n"
 	.string "the BATTLE FRONTIER, the more Battle\l"
@@ -469,7 +469,7 @@ BattleFrontier_ScottsHouse_Text_ExpectingGreatThings::
 
 BattleFrontier_ScottsHouse_Text_WhyIGoSeekingTrainers::
 # 248 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Every TRAINER is an individual.\n"
+	.string "{SPEAKER NAME_SCOTT}Every TRAINER is an individual.\n"
 	.string "They all lead lives of their own.\p"
 	.string "But when they're in a battle,\n"
 	.string "it doesn't matter who they are.\p"
@@ -482,7 +482,7 @@ BattleFrontier_ScottsHouse_Text_WhyIGoSeekingTrainers::
 
 BattleFrontier_ScottsHouse_Text_HaveYouMetFrontierBrain::
 # 265 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Have you met any of\n"
+	.string "{SPEAKER NAME_SCOTT}Have you met any of\n"
 	.string "the FRONTIER BRAINS?\p"
 	.string "Better yet, have you obtained any\n"
 	.string "symbols from them?\p"
@@ -493,7 +493,7 @@ BattleFrontier_ScottsHouse_Text_HaveYouMetFrontierBrain::
 
 BattleFrontier_ScottsHouse_Text_MayFindWildMonsInFrontier::
 # 279 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: You don't just train for battle,\n"
+	.string "{SPEAKER NAME_SCOTT}You don't just train for battle,\n"
 	.string "right?\p"
 	.string "I think I remember you working on\n"
 	.string "a POKéDEX as well.\p"
@@ -504,7 +504,7 @@ BattleFrontier_ScottsHouse_Text_MayFindWildMonsInFrontier::
 
 BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols::
 # 293 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Are you enjoying things in\n"
+	.string "{SPEAKER NAME_SCOTT}Are you enjoying things in\n"
 	.string "the BATTLE FRONTIER?\p"
 	.string "…Wait a second…\n"
 	.string "Oh!\p"
@@ -520,7 +520,7 @@ BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols::
 
 BattleFrontier_ScottsHouse_Text_YouveCollectedAllGoldSymbols::
 # 314 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: I hope you're enjoying\n"
+	.string "{SPEAKER NAME_SCOTT}I hope you're enjoying\n"
 	.string "everything in the BATTLE FRONTIER.\p"
 	.string "…Wait a second…\n"
 	.string "Oh, my disbelieving eyes!\p"
@@ -548,7 +548,7 @@ BattleFrontier_ScottsHouse_Text_BerryPocketStuffed::
 
 BattleFrontier_ScottsHouse_Text_Beat50TrainersInARow::
 # 349 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Oh, I heard about you!\n"
+	.string "{SPEAKER NAME_SCOTT}Oh, I heard about you!\n"
 	.string "How you ruled the BATTLE TOWER!\l"
 	.string "You beat over 50 TRAINERS in a row?\p"
 	.string "That's fantastic!\n"
@@ -556,7 +556,7 @@ BattleFrontier_ScottsHouse_Text_Beat50TrainersInARow::
 
 BattleFrontier_ScottsHouse_Text_Beat100TrainersInARow::
 # 358 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Oh, my! I heard about you!\n"
+	.string "{SPEAKER NAME_SCOTT}Oh, my! I heard about you!\n"
 	.string "How you overwhelmed the BATTLE TOWER!\l"
 	.string "You beat over 100 TRAINERS in a row?\p"
 	.string "That's ridiculously spectacular!\n"

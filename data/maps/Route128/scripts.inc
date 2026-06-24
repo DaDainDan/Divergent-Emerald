@@ -414,7 +414,7 @@ Route128_EventScript_KyogreAwakenedScene_Movement_6:
 
 Route128_Text_ArchieWhatHappened::
 # 170 "data/maps/Route128/scripts.pory"
-	.string "ARCHIE: What happened…\n"
+	.string "{SPEAKER NAME_ARCHIE}What happened…\n"
 	.string "What is this wretched scene…\p"
 	.string "Did I…make a horrible mistake?$"
 
@@ -425,7 +425,7 @@ Route128_Text_ArchieIOnlyWanted::
 
 Route128_Text_MaxieDoYouUnderstandNow::
 # 182 "data/maps/Route128/scripts.pory"
-	.string "MAXIE: Do you understand now,\n"
+	.string "{SPEAKER NAME_MAXIE}Do you understand now,\n"
 	.string "ARCHIE?\p"
 	.string "Do you finally see how disastrous\n"
 	.string "your dream turned out to be?\p"
@@ -435,7 +435,7 @@ Route128_Text_MaxieDoYouUnderstandNow::
 
 Route128_Text_MaxieResposibilityFallsToArchieAndMe::
 # 194 "data/maps/Route128/scripts.pory"
-	.string "MAXIE: {PLAYER}, don't say anything.\p"
+	.string "{SPEAKER NAME_MAXIE}{PLAYER}, don't say anything.\p"
 	.string "I know that I have no right to be\n"
 	.string "critical of ARCHIE…\p"
 	.string "But the way things are now, I doubt\n"
@@ -448,14 +448,14 @@ Route128_Text_MaxieResposibilityFallsToArchieAndMe::
 
 Route128_Text_MaxieThisDefiesBelief::
 # 211 "data/maps/Route128/scripts.pory"
-	.string "MAXIE: This defies belief…\p"
+	.string "{SPEAKER NAME_MAXIE}This defies belief…\p"
 	.string "Those super-ancient POKéMON…\p"
 	.string "Their power is unbelievable.\n"
 	.string "They've upset the balance of nature…$"
 
 Route128_Text_StevenWhatIsHappening::
 # 220 "data/maps/Route128/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}!\n"
 	.string "What is happening?$"
 
 Route128_Text_StevenWholeWorldWillDrown::

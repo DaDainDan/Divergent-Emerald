@@ -333,7 +333,7 @@ EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF_Movement_4:
 
 EverGrandeCity_ChampionsRoom_Text_IntroSpeech::
 # 126 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "WALLACE: Welcome, {PLAYER}{KUN}.\p"
+	.string "{SPEAKER NAME_WALLACE}Welcome, {PLAYER}{KUN}.\p"
 	.string "That incident in SOOTOPOLIS CITY…\n"
 	.string "That was superb work, putting an end\l"
 	.string "to that crisis all by yourself.\p"
@@ -367,7 +367,7 @@ EverGrandeCity_ChampionsRoom_Text_Defeat::
 
 EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech::
 # 173 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "WALLACE: The POKéMON you sent into\n"
+	.string "{SPEAKER NAME_WALLACE}The POKéMON you sent into\n"
 	.string "battle…\p"
 	.string "At times they danced like a spring\n"
 	.string "breeze, and at times they struck\l"
@@ -383,13 +383,13 @@ EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech::
 
 EverGrandeCity_ChampionsRoom_Text_MayAdvice::
 # 194 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "MAY: {PLAYER}{KUN}!\p"
+	.string "{SPEAKER NAME_MAY}{PLAYER}{KUN}!\p"
 	.string "Here's some advice before you challenge\n"
 	.string "the CHAMPION…$"
 
 EverGrandeCity_ChampionsRoom_Text_MayItsAlreadyOver::
 # 201 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "MAY: Huh?\n"
+	.string "{SPEAKER NAME_MAY}Huh?\n"
 	.string "What, what, what?\p"
 	.string "{PLAYER}{KUN}…\n"
 	.string "Could it be that…\l"
@@ -397,19 +397,19 @@ EverGrandeCity_ChampionsRoom_Text_MayItsAlreadyOver::
 
 EverGrandeCity_ChampionsRoom_Text_BrendanAdvice::
 # 210 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "BRENDAN: {PLAYER}!\p"
+	.string "{SPEAKER NAME_BRENDAN}{PLAYER}!\p"
 	.string "How would you like some advice before\n"
 	.string "you challenge the CHAMPION?…$"
 
 EverGrandeCity_ChampionsRoom_Text_BrendanYouveWon::
 # 217 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "BRENDAN: {PLAYER}…\p"
+	.string "{SPEAKER NAME_BRENDAN}{PLAYER}…\p"
 	.string "Are you trying to tell me…\n"
 	.string "You've beaten the CHAMPION?$"
 
 EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex::
 # 224 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "PROF. BIRCH: See?\n"
+	.string "{SPEAKER NAME_BIRCH}See?\n"
 	.string "What did I tell you, {RIVAL}?\p"
 	.string "Didn't I tell you that you don't need\n"
 	.string "to worry about {PLAYER}{KUN}?\p"
@@ -426,20 +426,20 @@ EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex::
 
 EverGrandeCity_ChampionsRoom_Text_BirchCongratulations::
 # 247 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "PROF. BIRCH: Anyways,\n"
+	.string "{SPEAKER NAME_BIRCH}Anyways,\n"
 	.string "congratulations!\p"
 	.string "Now, go proudly into the final room!$"
 
 EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe::
 # 254 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "WALLACE: {PLAYER}{KUN}…\p"
+	.string "{SPEAKER NAME_WALLACE}{PLAYER}{KUN}…\p"
 	.string "No, let me rephrase that properly.\p"
 	.string "The new CHAMPION!\p"
 	.string "Come with me.$"
 
 EverGrandeCity_ChampionsRoom_Text_WallaceWaitOutside::
 # 264 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "WALLACE: I'm sorry, but…\p"
+	.string "{SPEAKER NAME_WALLACE}I'm sorry, but…\p"
 	.string "From here on, only those TRAINERS who\n"
 	.string "have become CHAMPIONS may enter.\p"
 	.string "You'll have to wait outside with\n"
@@ -447,7 +447,7 @@ EverGrandeCity_ChampionsRoom_Text_WallaceWaitOutside::
 
 EverGrandeCity_ChampionsRoom_Text_MayCongratulations::
 # 274 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "MAY: Groan…\p"
+	.string "{SPEAKER NAME_MAY}Groan…\p"
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "I'm just joking! That's okay!\n"
@@ -457,7 +457,7 @@ EverGrandeCity_ChampionsRoom_Text_MayCongratulations::
 
 EverGrandeCity_ChampionsRoom_Text_BrendanCongratulations::
 # 287 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "BRENDAN: Whaaaat?! … … … … …\n"
+	.string "{SPEAKER NAME_BRENDAN}Whaaaat?! … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "It can't be helped if that's the rule.\p"
 	.string "{PLAYER}, way to go!\n"

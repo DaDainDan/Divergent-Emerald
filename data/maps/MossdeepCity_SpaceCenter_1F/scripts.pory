@@ -309,7 +309,7 @@ text MossdeepCity_SpaceCenter_1F_Text_MagmaWantsToSpoilMyDream {
 }
 
 text MossdeepCity_SpaceCenter_1F_Text_StevenMagmaCantBeAllowedToTakeFuel {
-	"STEVEN: {PLAYER}{KUN}, have you read that
+	"{SPEAKER NAME_STEVEN}{PLAYER}{KUN}, have you read that
 	proclamation already?
 
 	TEAM MAGMA is coming after the rocket

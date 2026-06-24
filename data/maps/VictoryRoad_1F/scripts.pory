@@ -95,7 +95,7 @@ script VictoryRoad_1F_EventScript_Katelynn {
 }
 
 text VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore {
-	"WALLY: Hi! {PLAYER}!
+	"{SPEAKER NAME_WALLY}Hi! {PLAYER}!
 
 	I bet you're surprised to see me here!
 
@@ -119,13 +119,13 @@ text VictoryRoad_1F_Text_WallyEntranceDefeat {
 }
 
 text VictoryRoad_1F_Text_WallyPostEntranceBattle {
-	"WALLY: I couldn't beat you today,
+	"{SPEAKER NAME_WALLY}I couldn't beat you today,
 	{PLAYER}, but one of these days, I'll
 	catch up to you!"
 }
 
 text VictoryRoad_1F_Text_WallyIntro {
-	"WALLY: Hi! {PLAYER}!
+	"{SPEAKER NAME_WALLY}Hi! {PLAYER}!
 
 	I've gotten stronger since that last
 	time! I wanted to show you, {PLAYER}!
@@ -139,7 +139,7 @@ text VictoryRoad_1F_Text_WallyDefeat {
 }
 
 text VictoryRoad_1F_Text_WallyPostBattle {
-	"WALLY: I couldn't beat you this time,
+	"{SPEAKER NAME_WALLY}I couldn't beat you this time,
 	too… But one of these days, {PLAYER},
 	I'm going to catch up to you…
 

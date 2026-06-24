@@ -151,7 +151,7 @@ Route104_Text_DadPokenavCall::
 # 85 "data/maps/Route105/scripts.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "DAD: Oh, {PLAYER}?\p"
+	.string "{SPEAKER NAME_NORMAN}Oh, {PLAYER}?\p"
 	.string "… … … … … …\n"
 	.string "Where are you now?\l"
 	.string "It sounds windy wherever you are.\p"

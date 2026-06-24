@@ -50,7 +50,7 @@ script EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame {
 }
 
 text EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions {
-	"WALLACE: This room…
+	"{SPEAKER NAME_WALLACE}This room…
 
 	This is where we keep records of
 	POKéMON that prevailed through
@@ -61,7 +61,7 @@ text EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions {
 }
 
 text EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames {
-	"WALLACE: Come on, let's record your
+	"{SPEAKER NAME_WALLACE}Come on, let's record your
 	name as a TRAINER who triumphed over
 	the POKéMON LEAGUE, and the names of
 	the partners who battled with you."

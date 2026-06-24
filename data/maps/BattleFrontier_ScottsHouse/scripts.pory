@@ -190,7 +190,7 @@ script BattleFrontier_ScottsHouse_EventScript_WelcomeToFrontier {
 }
 
 text BattleFrontier_ScottsHouse_Text_WelcomeToBattleFrontier {
-	"SCOTT: Well, hello and welcome!
+	"{SPEAKER NAME_SCOTT}Well, hello and welcome!
 	Heheh… Sorry about the cramped space.
 
 	Anyway, {PLAYER}{KUN}, let me formally
@@ -230,7 +230,7 @@ text BattleFrontier_ScottsHouse_Text_ObtainedXBattlePoints {
 }
 
 text BattleFrontier_ScottsHouse_Text_ExplainBattlePoints {
-	"SCOTT: You can check your Battle
+	"{SPEAKER NAME_SCOTT}You can check your Battle
 	Points on your FRONTIER PASS.
 
 	The more success you have here at
@@ -246,7 +246,7 @@ text BattleFrontier_ScottsHouse_Text_ExpectingGreatThings {
 }
 
 text BattleFrontier_ScottsHouse_Text_WhyIGoSeekingTrainers {
-	"SCOTT: Every TRAINER is an individual.
+	"{SPEAKER NAME_SCOTT}Every TRAINER is an individual.
 	They all lead lives of their own.
 
 	But when they're in a battle,
@@ -263,7 +263,7 @@ text BattleFrontier_ScottsHouse_Text_WhyIGoSeekingTrainers {
 }
 
 text BattleFrontier_ScottsHouse_Text_HaveYouMetFrontierBrain {
-	"SCOTT: Have you met any of
+	"{SPEAKER NAME_SCOTT}Have you met any of
 	the FRONTIER BRAINS?
 
 	Better yet, have you obtained any
@@ -277,7 +277,7 @@ text BattleFrontier_ScottsHouse_Text_HaveYouMetFrontierBrain {
 }
 
 text BattleFrontier_ScottsHouse_Text_MayFindWildMonsInFrontier {
-	"SCOTT: You don't just train for battle,
+	"{SPEAKER NAME_SCOTT}You don't just train for battle,
 	right?
 
 	I think I remember you working on
@@ -291,7 +291,7 @@ text BattleFrontier_ScottsHouse_Text_MayFindWildMonsInFrontier {
 }
 
 text BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols {
-	"SCOTT: Are you enjoying things in
+	"{SPEAKER NAME_SCOTT}Are you enjoying things in
 	the BATTLE FRONTIER?
 
 	…Wait a second…
@@ -312,7 +312,7 @@ text BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols {
 }
 
 text BattleFrontier_ScottsHouse_Text_YouveCollectedAllGoldSymbols {
-	"SCOTT: I hope you're enjoying
+	"{SPEAKER NAME_SCOTT}I hope you're enjoying
 	everything in the BATTLE FRONTIER.
 
 	…Wait a second…
@@ -347,7 +347,7 @@ text BattleFrontier_ScottsHouse_Text_BerryPocketStuffed {
 }
 
 text BattleFrontier_ScottsHouse_Text_Beat50TrainersInARow {
-	"SCOTT: Oh, I heard about you!
+	"{SPEAKER NAME_SCOTT}Oh, I heard about you!
 	How you ruled the BATTLE TOWER!
 	You beat over 50 TRAINERS in a row?
 
@@ -356,7 +356,7 @@ text BattleFrontier_ScottsHouse_Text_Beat50TrainersInARow {
 }
 
 text BattleFrontier_ScottsHouse_Text_Beat100TrainersInARow {
-	"SCOTT: Oh, my! I heard about you!
+	"{SPEAKER NAME_SCOTT}Oh, my! I heard about you!
 	How you overwhelmed the BATTLE TOWER!
 	You beat over 100 TRAINERS in a row?
 

@@ -328,13 +328,13 @@ text OldaleTown_Text_FinishedSketchingFootprints {
 }
 
 text OldaleTown_Text_MayLetsGoBack {
-	"MAY: {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}!
 	Over here!
 	Let's hurry home!"
 }
 
 text OldaleTown_Text_BrendanLetsGoBack {
-	"BRENDAN: I'm heading back to my dad's
+	"{SPEAKER NAME_BRENDAN}I'm heading back to my dad's
 	LAB now.
 	{PLAYER}, you should hustle back, too."
 }

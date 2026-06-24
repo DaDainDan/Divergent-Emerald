@@ -86,7 +86,7 @@ text Route104_Text_DadPokenavCall {
 	"… … … … … …
 	… … … … … Beep!
 
-	DAD: Oh, {PLAYER}?
+	{SPEAKER NAME_NORMAN}Oh, {PLAYER}?
 
 	… … … … … …
 	Where are you now?

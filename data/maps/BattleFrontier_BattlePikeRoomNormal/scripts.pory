@@ -639,7 +639,7 @@ text BattleFrontier_BattlePikeRoomNormal_Text_HopeYouDidntUseUpLuck {
 }
 
 text BattleFrontier_BattlePikeRoomNormal_Text_LucyShowMeFrontierPass {
-	"LUCY: … … … … … …
+	"{SPEAKER NAME_LUCY}… … … … … …
 	Show me your FRONTIER PASS…"
 }
 
@@ -654,7 +654,7 @@ text BattleFrontier_BattlePikeRoomNormal_Text_AllThereIsDisappear {
 }
 
 text BattleFrontier_BattlePikeRoomNormal_Text_LucyYouAgain {
-	"LUCY: …You again…
+	"{SPEAKER NAME_LUCY}…You again…
 
 	… … … … … …
 
@@ -674,7 +674,7 @@ text BattleFrontier_BattlePikeRoomNormal_Text_NowComeOn {
 }
 
 text BattleFrontier_BattlePikeRoomNormal_Text_LucyFrontierPass {
-	"LUCY: … … … … … …
+	"{SPEAKER NAME_LUCY}… … … … … …
 
 	…FRONTIER PASS…"
 }

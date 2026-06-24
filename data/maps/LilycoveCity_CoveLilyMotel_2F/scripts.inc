@@ -141,7 +141,7 @@ LilycoveCity_CoveLilyMotel_2F_Text_NeverLeaveWithoutGameBoy::
 
 LilycoveCity_CoveLilyMotel_2F_Text_SnoozingPreferBattles::
 # 121 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
-	.string "SCOTT: … … … … …\n"
+	.string "{SPEAKER NAME_SCOTT}… … … … …\n"
 	.string "… … … … … Zzz…\p"
 	.string "… … … … … Huh?!\n"
 	.string "Oh, sorry, sorry! I was snoozing!\p"
@@ -158,7 +158,7 @@ LilycoveCity_CoveLilyMotel_2F_Text_SnoozingPreferBattles::
 
 LilycoveCity_CoveLilyMotel_2F_Text_ContestsDoTakeStrategy::
 # 144 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
-	.string "SCOTT: I think it does take strategy\n"
+	.string "{SPEAKER NAME_SCOTT}I think it does take strategy\n"
 	.string "to win a CONTEST.\p"
 	.string "Devising CONTEST strategies is one way\n"
 	.string "of becoming a better TRAINER, I'd say.$"

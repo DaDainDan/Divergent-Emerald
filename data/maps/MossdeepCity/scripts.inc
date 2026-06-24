@@ -636,7 +636,7 @@ MossdeepCity_Text_SpaceCenterSign::
 
 MossdeepCity_Text_ScottSomethingWrongWithTown::
 # 321 "data/maps/MossdeepCity/scripts.pory"
-	.string "SCOTT: {PLAYER}{KUN}, feeling good?\n"
+	.string "{SPEAKER NAME_SCOTT}{PLAYER}{KUN}, feeling good?\n"
 	.string "I'm doing great!\p"
 	.string "I'd heard MOSSDEEP's GYM LEADER is\n"
 	.string "pretty strong, so I decided to come\l"

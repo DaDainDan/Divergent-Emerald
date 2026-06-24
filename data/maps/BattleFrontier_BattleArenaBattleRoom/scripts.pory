@@ -535,7 +535,7 @@ text BattleFrontier_BattleArenaBattleRoom_Text_MakeWayForGreta {
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_GretaYoureChallenger {
-	"GRETA: Hey!
+	"{SPEAKER NAME_GRETA}Hey!
 	Howdy!
 
 	…Wait, are you the challenger?"
@@ -563,7 +563,7 @@ text BattleFrontier_BattleArenaBattleRoom_Text_IgniteMyPassionForBattle {
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_GretaYoureToughAfterAll {
-	"GRETA: Ow, wait a second!
+	"{SPEAKER NAME_GRETA}Ow, wait a second!
 	You are tough after all!
 
 	I like you!
@@ -583,7 +583,7 @@ text BattleFrontier_BattleArenaBattleRoom_Text_GoingToBeFunNextTime {
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_GretaLookingForwardToSeeingAgain {
-	"GRETA: Hey! Howdy!
+	"{SPEAKER NAME_GRETA}Hey! Howdy!
 	You finally won your way up to me!
 
 	I was getting worried waiting for you!
@@ -607,7 +607,7 @@ text BattleFrontier_BattleArenaBattleRoom_Text_LetsGetThisStarted {
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_GretaBlownAway {
-	"GRETA: Gaaah! Blown away!
+	"{SPEAKER NAME_GRETA}Gaaah! Blown away!
 	Let's see your FRONTIER PASS!"
 }
 

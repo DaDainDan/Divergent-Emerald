@@ -395,7 +395,7 @@ text DewfordTown_Gym_Text_GymStatueCertified {
 }
 
 text DewfordTown_Gym_Text_BrawlyPreRematch {
-	"BRAWLY: A wave may draw back, but it
+	"{SPEAKER NAME_BRAWLY}A wave may draw back, but it
 	always returns to the shore.
 
 	A giant wave of a talent like you…
@@ -411,13 +411,13 @@ text DewfordTown_Gym_Text_BrawlyRematchDefeat {
 }
 
 text DewfordTown_Gym_Text_BrawlyPostRematch {
-	"BRAWLY: Battling is vast and it's deep.
+	"{SPEAKER NAME_BRAWLY}Battling is vast and it's deep.
 	You can't see the bottom.
 	It's just like the sea of HOENN!"
 }
 
 text DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons {
-	"BRAWLY: A wave may draw back, but it
+	"{SPEAKER NAME_BRAWLY}A wave may draw back, but it
 	always returns to the shore.
 
 	A giant wave of a talent like you…

@@ -425,7 +425,7 @@ text LavaridgeTown_Gym_1F_Text_GymStatueCertified {
 }
 
 text LavaridgeTown_Gym_1F_Text_FlanneryPreRematch {
-	"FLANNERY: Losing a battle isn't going
+	"{SPEAKER NAME_FLANNERY}Losing a battle isn't going
 	to deflate me.
 
 	I love POKéMON.
@@ -442,7 +442,7 @@ text LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat {
 }
 
 text LavaridgeTown_Gym_1F_Text_FlanneryPostRematch {
-	"FLANNERY: I lost the match,
+	"{SPEAKER NAME_FLANNERY}I lost the match,
 	but I'm completely satisfied.
 
 	It's not often I get to enjoy a battle
@@ -453,7 +453,7 @@ text LavaridgeTown_Gym_1F_Text_FlanneryPostRematch {
 }
 
 text LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons {
-	"FLANNERY: Losing a battle isn't going
+	"{SPEAKER NAME_FLANNERY}Losing a battle isn't going
 	to deflate me.
 
 	I love POKéMON.

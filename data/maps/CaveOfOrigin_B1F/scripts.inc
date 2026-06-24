@@ -128,13 +128,13 @@ CaveOfOrigin_B1F_Text_WallaceStory::
 
 CaveOfOrigin_B1F_Text_WhereIsRayquaza::
 # 87 "data/maps/CaveOfOrigin_B1F/scripts.pory"
-	.string "WALLACE: {PLAYER}{KUN}, do you perhaps\n"
+	.string "{SPEAKER NAME_WALLACE}{PLAYER}{KUN}, do you perhaps\n"
 	.string "know where RAYQUAZA is now?\p"
 	.string "If you do, please tell me.$"
 
 CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin::
 # 94 "data/maps/CaveOfOrigin_B1F/scripts.pory"
-	.string "WALLACE: The CAVE OF ORIGIN?\p"
+	.string "{SPEAKER NAME_WALLACE}The CAVE OF ORIGIN?\p"
 	.string "But that's right here!\n"
 	.string "I need you to do better than that!\p"
 	.string "Please, I need you to think about\n"
@@ -142,7 +142,7 @@ CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin::
 
 CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat::
 # 104 "data/maps/CaveOfOrigin_B1F/scripts.pory"
-	.string "WALLACE: MT. PYRE?\p"
+	.string "{SPEAKER NAME_WALLACE}MT. PYRE?\p"
 	.string "But when I met the old lady there\n"
 	.string "earlier, she made no mention of it.\p"
 	.string "I very much doubt that the old lady\n"
@@ -152,13 +152,13 @@ CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat::
 
 CaveOfOrigin_B1F_Text_CantYouRememberSomehow::
 # 117 "data/maps/CaveOfOrigin_B1F/scripts.pory"
-	.string "WALLACE: Huh? You don't remember?\n"
+	.string "{SPEAKER NAME_WALLACE}Huh? You don't remember?\n"
 	.string "Hmm… That's a problem…\p"
 	.string "Can't you remember somehow?$"
 
 CaveOfOrigin_B1F_Text_WellHeadToSkyPillar::
 # 124 "data/maps/CaveOfOrigin_B1F/scripts.pory"
-	.string "WALLACE: The SKY PILLAR?\p"
+	.string "{SPEAKER NAME_WALLACE}The SKY PILLAR?\p"
 	.string "That's it!\n"
 	.string "It must be the SKY PILLAR!\p"
 	.string "{PLAYER}{KUN}, there's not a moment to lose!\n"

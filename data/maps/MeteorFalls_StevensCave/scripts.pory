@@ -24,7 +24,7 @@ script MeteorFalls_StevensCave_EventScript_Steven {
 }
 
 text MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst {
-	"STEVEN: Oh, wow, {PLAYER}{KUN}.
+	"{SPEAKER NAME_STEVEN}Oh, wow, {PLAYER}{KUN}.
 	I'm amazed you knew where to find me.
 
 	Do you, uh…maybe think of me as
@@ -48,7 +48,7 @@ text MeteorFalls_StevensCave_Text_StevenDefeat {
 }
 
 text MeteorFalls_StevensCave_Text_MyPredictionCameTrue {
-	"STEVEN: Come to think of it, ever since
+	"{SPEAKER NAME_STEVEN}Come to think of it, ever since
 	our paths first crossed in GRANITE
 	CAVE in DEWFORD, I had this feeling.
 

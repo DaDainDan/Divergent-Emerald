@@ -286,7 +286,7 @@ text FallarborTown_BattleTentLobby_Text_CameToCampOut {
 }
 
 text FallarborTown_BattleTentLobby_Text_ScottLookingForSomeone {
-	"SCOTT: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_SCOTT}Hi, {PLAYER}{KUN}!
 	So you came out to this BATTLE TENT!
 
 	The people in these parts tend to be
@@ -308,7 +308,7 @@ text FallarborTown_BattleTentLobby_Text_ScottLookingForSomeone {
 }
 
 text FallarborTown_BattleTentLobby_Text_ScottMakeChallenge {
-	"SCOTT: Instead of wasting your
+	"{SPEAKER NAME_SCOTT}Instead of wasting your
 	time with the likes of me, why not
 	make a challenge?"
 }

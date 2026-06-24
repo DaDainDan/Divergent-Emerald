@@ -265,19 +265,19 @@ MauvilleCity_BikeShop_Text_RydelGreeting::
 
 MauvilleCity_BikeShop_Text_DidYouComeFromFarAway::
 # 135 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	.string "RYDEL: Your RUNNING SHOES…\n"
+	.string "{SPEAKER NAME_RYDEL}Your RUNNING SHOES…\n"
 	.string "They're awfully filthy.\p"
 	.string "Did you come from far away?$"
 
 MauvilleCity_BikeShop_Text_GuessYouDontNeedBike::
 # 142 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	.string "RYDEL: Is that right?\p"
+	.string "{SPEAKER NAME_RYDEL}Is that right?\p"
 	.string "Then, I guess you have no need for\n"
 	.string "any of my BIKES.$"
 
 MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne::
 # 149 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	.string "RYDEL: Hm, hm… … … … …\p"
+	.string "{SPEAKER NAME_RYDEL}Hm, hm… … … … …\p"
 	.string "You're saying that you came all this\n"
 	.string "way from LITTLEROOT?\p"
 	.string "My goodness!\n"
@@ -310,17 +310,17 @@ MauvilleCity_BikeShop_Text_ChoseAcroBike::
 
 MauvilleCity_BikeShop_Text_ComeBackToSwitchBikes::
 # 193 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	.string "RYDEL: If you get the urge to switch\n"
+	.string "{SPEAKER NAME_RYDEL}If you get the urge to switch\n"
 	.string "BIKES, just come see me!$"
 
 MauvilleCity_BikeShop_Text_WantToSwitchBikes::
 # 198 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	.string "RYDEL: Oh? Were you thinking about\n"
+	.string "{SPEAKER NAME_RYDEL}Oh? Were you thinking about\n"
 	.string "switching BIKES?$"
 
 MauvilleCity_BikeShop_Text_IllSwitchBikes::
 # 203 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	.string "RYDEL: Okay, no problem!\n"
+	.string "{SPEAKER NAME_RYDEL}Okay, no problem!\n"
 	.string "I'll switch BIKES for you!$"
 
 MauvilleCity_BikeShop_Text_ExchangedMachForAcro::
@@ -335,7 +335,7 @@ MauvilleCity_BikeShop_Text_ExchangedAcroForMach::
 
 MauvilleCity_BikeShop_Text_HappyYouLikeIt::
 # 218 "data/maps/MauvilleCity_BikeShop/scripts.pory"
-	.string "RYDEL: Good, good!\n"
+	.string "{SPEAKER NAME_RYDEL}Good, good!\n"
 	.string "I'm happy that you like it!$"
 
 MauvilleCity_BikeShop_Text_OhYourBikeIsInPC::

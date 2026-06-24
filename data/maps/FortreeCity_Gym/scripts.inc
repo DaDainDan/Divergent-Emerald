@@ -391,7 +391,7 @@ FortreeCity_Gym_Text_GymStatueCertified::
 
 FortreeCity_Gym_Text_WinonaPreRematch::
 # 328 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "WINONA: We humans can never escape\n"
+	.string "{SPEAKER NAME_WINONA}We humans can never escape\n"
 	.string "gravity's pull on the ground.\p"
 	.string "But by striving for excellence,\n"
 	.string "we have the power to soar!\p"
@@ -406,7 +406,7 @@ FortreeCity_Gym_Text_WinonaRematchDefeat::
 
 FortreeCity_Gym_Text_WinonaPostRematch::
 # 346 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "WINONA: Even though I have lost,\n"
+	.string "{SPEAKER NAME_WINONA}Even though I have lost,\n"
 	.string "the wings of my heart remain unbroken.\p"
 	.string "I can rise and soar again and\n"
 	.string "yet again.\p"
@@ -414,7 +414,7 @@ FortreeCity_Gym_Text_WinonaPostRematch::
 
 FortreeCity_Gym_Text_WinonaRematchNeedTwoMons::
 # 356 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "WINONA: We humans can never escape\n"
+	.string "{SPEAKER NAME_WINONA}We humans can never escape\n"
 	.string "gravity's pull on the ground.\p"
 	.string "But by striving for excellence,\n"
 	.string "we have the power to soar!\p"

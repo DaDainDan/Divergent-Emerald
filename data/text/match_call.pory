@@ -2810,7 +2810,7 @@ text MatchCall_BattlePyramidText14 {
 }
 
 text MatchCall_Text_Mom1 {
-	"MOM: Your father and you…
+	"{SPEAKER NAME_MOM}Your father and you…
 	Everyone is captivated by POKéMON.
 
 	What is the charm of POKéMON?
@@ -2821,7 +2821,7 @@ text MatchCall_Text_Mom1 {
 }
 
 text MatchCall_Text_Mom2 {
-	"MOM: Hi, {PLAYER}!
+	"{SPEAKER NAME_MOM}Hi, {PLAYER}!
 	Your father keeps himself locked
 	away in the PETALBURG GYM.
 
@@ -2834,7 +2834,7 @@ text MatchCall_Text_Mom2 {
 }
 
 text MatchCall_Text_Mom3 {
-	"MOM: {PLAYER}…
+	"{SPEAKER NAME_MOM}{PLAYER}…
 	Don't worry about me or the house.
 
 	Wear those RUNNING SHOES until
@@ -2842,7 +2842,7 @@ text MatchCall_Text_Mom3 {
 }
 
 text MatchCall_Text_Roxanne_Preparing {
-	"ROXANNE: Oh, hello, {PLAYER}!
+	"{SPEAKER NAME_ROXANNE}Oh, hello, {PLAYER}!
 
 	I've been hard at work retraining
 	since we met.
@@ -2855,7 +2855,7 @@ text MatchCall_Text_Roxanne_Preparing {
 }
 
 text MatchCall_Text_Roxanne_PreparingPostGame {
-	"ROXANNE: Is this {PLAYER}?
+	"{SPEAKER NAME_ROXANNE}Is this {PLAYER}?
 	Congratulations!
 	I've been hearing about you!
 
@@ -2867,7 +2867,7 @@ text MatchCall_Text_Roxanne_PreparingPostGame {
 }
 
 text MatchCall_Text_Roxanne_RematchReady {
-	"ROXANNE: {PLAYER}!
+	"{SPEAKER NAME_ROXANNE}{PLAYER}!
 	My GYM is ready!
 
 	Please visit RUSTBORO whenever
@@ -2875,13 +2875,13 @@ text MatchCall_Text_Roxanne_RematchReady {
 }
 
 text MatchCall_Text_Roxanne_PostRematch {
-	"ROXANNE: At the RUSTBORO GYM,
+	"{SPEAKER NAME_ROXANNE}At the RUSTBORO GYM,
 	the fact that we battled, {PLAYER},
 	is a matter of pride."
 }
 
 text MatchCall_Text_Brawly_Preparing {
-	"BRAWLY: Hey, there, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BRAWLY}Hey, there, {PLAYER}{KUN}!
 
 	I learned a lot from the battle we
 	had together.
@@ -2897,7 +2897,7 @@ text MatchCall_Text_Brawly_Preparing {
 }
 
 text MatchCall_Text_Brawly_PreparingPostGame {
-	"BRAWLY: Hey, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BRAWLY}Hey, {PLAYER}{KUN}!
 	Congratulations!
 
 	Word about your exploits arrived
@@ -2914,7 +2914,7 @@ text MatchCall_Text_Brawly_PreparingPostGame {
 }
 
 text MatchCall_Text_Brawly_RematchReady {
-	"BRAWLY: Hey, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BRAWLY}Hey, {PLAYER}{KUN}!
 	My GYM's ready for action!
 
 	Come back to DEWFORD anytime
@@ -2922,12 +2922,12 @@ text MatchCall_Text_Brawly_RematchReady {
 }
 
 text MatchCall_Text_Brawly_PostRematch {
-	"BRAWLY: {PLAYER}{KUN}, I don't think
+	"{SPEAKER NAME_BRAWLY}{PLAYER}{KUN}, I don't think
 	I'll ever get bored of battling you!"
 }
 
 text MatchCall_Text_Wattson_Preparing {
-	"WATTSON: Oh, it's you!
+	"{SPEAKER NAME_WATSON}Oh, it's you!
 
 	After you left, I've been redoing
 	my training from scratch.
@@ -2940,7 +2940,7 @@ text MatchCall_Text_Wattson_Preparing {
 }
 
 text MatchCall_Text_Wattson_PreparingPostGame {
-	"WATTSON: Wahahahaha!
+	"{SPEAKER NAME_WATSON}Wahahahaha!
 
 	You've really done it, haven't you?
 	I've been getting word about you!
@@ -2956,7 +2956,7 @@ text MatchCall_Text_Wattson_PreparingPostGame {
 }
 
 text MatchCall_Text_Wattson_RematchReady {
-	"WATTSON: Oh, it's you!
+	"{SPEAKER NAME_WATSON}Oh, it's you!
 	My GYM's ready!
 
 	Visit MAUVILLE anytime!
@@ -2964,14 +2964,14 @@ text MatchCall_Text_Wattson_RematchReady {
 }
 
 text MatchCall_Text_Wattson_PostRematch {
-	"WATTSON: Wahahaha!
+	"{SPEAKER NAME_WATSON}Wahahaha!
 
 	A battle with you is always charged
 	with shocking power!"
 }
 
 text MatchCall_Text_Flannery_Preparing {
-	"FLANNERY: {PLAYER}…
+	"{SPEAKER NAME_FLANNERY}{PLAYER}…
 
 	When we battled, I learned exactly
 	how immature I was.
@@ -2986,7 +2986,7 @@ text MatchCall_Text_Flannery_Preparing {
 }
 
 text MatchCall_Text_Flannery_PreparingPostGame {
-	"FLANNERY: Hello, {PLAYER}?
+	"{SPEAKER NAME_FLANNERY}Hello, {PLAYER}?
 	Congratulations!
 
 	Word of your success has reached
@@ -3001,7 +3001,7 @@ text MatchCall_Text_Flannery_PreparingPostGame {
 }
 
 text MatchCall_Text_Flannery_RematchReady {
-	"FLANNERY: Oh, {PLAYER}?
+	"{SPEAKER NAME_FLANNERY}Oh, {PLAYER}?
 	Our GYM's ready!
 
 	Come to LAVARIDGE for a soak
@@ -3009,13 +3009,13 @@ text MatchCall_Text_Flannery_RematchReady {
 }
 
 text MatchCall_Text_Flannery_PostRematch {
-	"FLANNERY: {PLAYER}…
+	"{SPEAKER NAME_FLANNERY}{PLAYER}…
 	I'm positive that you keep getting
 	better at training every time."
 }
 
 text MatchCall_Text_Winona_Preparing {
-	"WINONA: Hello, {PLAYER}!
+	"{SPEAKER NAME_WINONA}Hello, {PLAYER}!
 
 	Thanks to our battle, I've come
 	to understand my weak points!
@@ -3025,7 +3025,7 @@ text MatchCall_Text_Winona_Preparing {
 }
 
 text MatchCall_Text_Winona_PreparingPostGame {
-	"WINONA: You've done it, {PLAYER}!
+	"{SPEAKER NAME_WINONA}You've done it, {PLAYER}!
 
 	News about the new CHAMPION
 	has reached us in FORTREE!
@@ -3035,14 +3035,14 @@ text MatchCall_Text_Winona_PreparingPostGame {
 }
 
 text MatchCall_Text_Winona_RematchReady {
-	"WINONA: Is this {PLAYER}?
+	"{SPEAKER NAME_WINONA}Is this {PLAYER}?
 	Our GYM is back in operation!
 
 	We're waiting for you in FORTREE!"
 }
 
 text MatchCall_Text_Winona_PostRematch {
-	"WINONA: {PLAYER}…
+	"{SPEAKER NAME_WINONA}{PLAYER}…
 	Though I have lost, my wings will
 	never break.
 
@@ -3098,7 +3098,7 @@ text MatchCall_Text_TateLiza_PostRematch {
 }
 
 text MatchCall_Text_Juan_Preparing {
-	"JUAN: Hmm…
+	"{SPEAKER NAME_JUAN}Hmm…
 	{PLAYER}{KUN}… Was it?
 
 	Our battle together--it brought
@@ -3110,7 +3110,7 @@ text MatchCall_Text_Juan_Preparing {
 }
 
 text MatchCall_Text_Juan_PreparingPostGame {
-	"JUAN: Fufu… {PLAYER}{KUN}…
+	"{SPEAKER NAME_JUAN}Fufu… {PLAYER}{KUN}…
 	You've finally achieved your goal.
 
 	My eye for appraising talent wasn't
@@ -3122,7 +3122,7 @@ text MatchCall_Text_Juan_PreparingPostGame {
 }
 
 text MatchCall_Text_Juan_RematchReady {
-	"JUAN: Hoho… {PLAYER}{KUN}…
+	"{SPEAKER NAME_JUAN}Hoho… {PLAYER}{KUN}…
 
 	Our SOOTOPOLIS GYM has finally
 	reopened.
@@ -3132,7 +3132,7 @@ text MatchCall_Text_Juan_RematchReady {
 }
 
 text MatchCall_Text_Juan_PostRematch {
-	"JUAN: {PLAYER}{KUN}…
+	"{SPEAKER NAME_JUAN}{PLAYER}{KUN}…
 
 	Like the finest music, the battles
 	we wage together strike chords
@@ -3143,7 +3143,7 @@ text MatchCall_Text_Juan_PostRematch {
 }
 
 text MatchCall_Text_Sidney {
-	"SIDNEY: Yo, {PLAYER}!
+	"{SPEAKER NAME_SIDNEY}Yo, {PLAYER}!
 
 	If you want to battle with me
 	again, you come on back whenever
@@ -3154,7 +3154,7 @@ text MatchCall_Text_Sidney {
 }
 
 text MatchCall_Text_Phoebe {
-	"PHOEBE: Hi, {PLAYER}!
+	"{SPEAKER NAME_PHOEBE}Hi, {PLAYER}!
 
 	How about coming back here again
 	sometime?
@@ -3165,7 +3165,7 @@ text MatchCall_Text_Phoebe {
 }
 
 text MatchCall_Text_Glacia {
-	"GLACIA: Hello, {PLAYER}.
+	"{SPEAKER NAME_GLACIA}Hello, {PLAYER}.
 
 	I trust you haven't become
 	complacent with your power?
@@ -3176,7 +3176,7 @@ text MatchCall_Text_Glacia {
 }
 
 text MatchCall_Text_Drake {
-	"DRAKE: That voice… {PLAYER}, is it?
+	"{SPEAKER NAME_DRAKE}That voice… {PLAYER}, is it?
 	You sound well…
 
 	I understand that there is now
@@ -3192,7 +3192,7 @@ text MatchCall_Text_Drake {
 }
 
 text MatchCall_Text_Wallace {
-	"WALLACE: Hello, {PLAYER}{KUN}.
+	"{SPEAKER NAME_WALLACE}Hello, {PLAYER}{KUN}.
 	Have you met STEVEN?
 
 	He is…
@@ -3215,7 +3215,7 @@ text(local) MatchCall_Text_MayRayquazaCall {
 	"… … … … … …
 	… … … … … Beep!
 
-	MAY: Hi, {PLAYER}{KUN}!
+	{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!
 
 	I was just in PACIFIDLOG a little
 	while ago.
@@ -3237,7 +3237,7 @@ text(local) MatchCall_Text_BrendanRayquazaCall {
 	"… … … … … …
 	… … … … … Beep!
 
-	BRENDAN: Hey, {PLAYER}!
+	{SPEAKER NAME_BRENDAN}Hey, {PLAYER}!
 	I was in PACIFIDLOG just now.
 
 	I saw this huge green POKéMON
@@ -3254,7 +3254,7 @@ text(local) MatchCall_Text_BrendanRayquazaCall {
 }
 
 text MatchCall_Text_May1 {
-	"MAY: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!
 
 	MR. BRINEY retired as a SAILOR,
 	but I still see him out on the sea
@@ -3264,7 +3264,7 @@ text MatchCall_Text_May1 {
 }
 
 text MatchCall_Text_May2 {
-	"MAY: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!
 
 	You know how little towns like
 	PETALBURG and DEWFORD have GYMS?
@@ -3277,7 +3277,7 @@ text MatchCall_Text_May2 {
 }
 
 text MatchCall_Text_May3 {
-	"MAY: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!
 
 	Do you remember a man named
 	the CUTTER in RUSTBORO?
@@ -3295,7 +3295,7 @@ text MatchCall_Text_May3 {
 }
 
 text MatchCall_Text_May4 {
-	"MAY: {PLAYER}{KUN}?
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}?
 
 	RUSTURF TUNNEL…
 	They named it that because it
@@ -3303,7 +3303,7 @@ text MatchCall_Text_May4 {
 }
 
 text MatchCall_Text_May5 {
-	"MAY: {PLAYER}{KUN}, how are you?
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}, how are you?
 
 	I'm out on ROUTE 111 now.
 
@@ -3315,7 +3315,7 @@ text MatchCall_Text_May5 {
 }
 
 text MatchCall_Text_May6 {
-	"MAY: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!
 
 	Did you know about the MIRAGE
 	TOWER in the desert?
@@ -3327,7 +3327,7 @@ text MatchCall_Text_May6 {
 }
 
 text MatchCall_Text_May7 {
-	"MAY: {PLAYER}{KUN}, yahoo!
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}, yahoo!
 	I'm on ROUTE 119 now.
 
 	There's a big river here, and
@@ -3337,7 +3337,7 @@ text MatchCall_Text_May7 {
 }
 
 text MatchCall_Text_May8 {
-	"MAY: {PLAYER}{KUN}, hi.
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}, hi.
 
 	MT. PYRE is a memorial to POKéMON
 	whose lives have ended.
@@ -3347,7 +3347,7 @@ text MatchCall_Text_May8 {
 }
 
 text MatchCall_Text_May9 {
-	"MAY: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!
 
 	I was thinking of going to the hot
 	spring in LAVARIDGE.
@@ -3358,7 +3358,7 @@ text MatchCall_Text_May9 {
 }
 
 text MatchCall_Text_May10 {
-	"MAY: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!
 	Did you see the news?
 
 	They say CAPT. STERN discovered
@@ -3367,7 +3367,7 @@ text MatchCall_Text_May10 {
 }
 
 text MatchCall_Text_May11 {
-	"MAY: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!
 	Don't you think it's neat?
 
 	Even if you don't have a boat,
@@ -3381,7 +3381,7 @@ text MatchCall_Text_May11 {
 }
 
 text MatchCall_Text_May12 {
-	"MAY: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!
 	Hope things are okay!
 
 	Have you been on the sea and
@@ -3396,7 +3396,7 @@ text MatchCall_Text_May12 {
 }
 
 text MatchCall_Text_May13 {
-	"MAY: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!
 
 	How's it going?
 	Are you filling your POKéDEX?
@@ -3409,7 +3409,7 @@ text MatchCall_Text_May13 {
 }
 
 text MatchCall_Text_May14 {
-	"MAY: {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}!
 	I heard the rumors!
 
 	You beat the SOOTOPOLIS GYM
@@ -3420,7 +3420,7 @@ text MatchCall_Text_May14 {
 }
 
 text MatchCall_Text_May15 {
-	"MAY: There isn't a single TRAINER
+	"{SPEAKER NAME_MAY}There isn't a single TRAINER
 	left in HOENN who doesn't know who
 	you are, {PLAYER}{KUN}!
 
@@ -3430,7 +3430,7 @@ text MatchCall_Text_May15 {
 }
 
 text MatchCall_Text_Brendan1 {
-	"BRENDAN: Hey, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Hey, {PLAYER}!
 
 	MR. BRINEY retired as a SAILOR,
 	but I still see him out on the sea
@@ -3441,7 +3441,7 @@ text MatchCall_Text_Brendan1 {
 }
 
 text MatchCall_Text_Brendan2 {
-	"BRENDAN: Hey, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Hey, {PLAYER}!
 
 	I don't get how little towns like
 	PETALBURG and DEWFORD have GYMS.
@@ -3454,7 +3454,7 @@ text MatchCall_Text_Brendan2 {
 }
 
 text MatchCall_Text_Brendan3 {
-	"BRENDAN: Yo, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Yo, {PLAYER}!
 
 	Do you remember a guy named
 	the CUTTER in RUSTBORO?
@@ -3472,7 +3472,7 @@ text MatchCall_Text_Brendan3 {
 }
 
 text MatchCall_Text_Brendan4 {
-	"BRENDAN: This voice… {PLAYER}?
+	"{SPEAKER NAME_BRENDAN}This voice… {PLAYER}?
 
 	They gave RUSTURF TUNNEL its name
 	because it joins RUSTBORO and
@@ -3482,7 +3482,7 @@ text MatchCall_Text_Brendan4 {
 }
 
 text MatchCall_Text_Brendan5 {
-	"BRENDAN: {PLAYER}, what's up?
+	"{SPEAKER NAME_BRENDAN}{PLAYER}, what's up?
 
 	Hey, I'm out on ROUTE 111 now.
 
@@ -3494,7 +3494,7 @@ text MatchCall_Text_Brendan5 {
 }
 
 text MatchCall_Text_Brendan6 {
-	"BRENDAN: Hey, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Hey, {PLAYER}!
 
 	Did you know about the MIRAGE
 	TOWER in the desert?
@@ -3506,7 +3506,7 @@ text MatchCall_Text_Brendan6 {
 }
 
 text MatchCall_Text_Brendan7 {
-	"BRENDAN: Who's this? Oh, {PLAYER}?
+	"{SPEAKER NAME_BRENDAN}Who's this? Oh, {PLAYER}?
 	Guess what? I'm on ROUTE 119 now.
 
 	There's a big river here, and
@@ -3516,7 +3516,7 @@ text MatchCall_Text_Brendan7 {
 }
 
 text MatchCall_Text_Brendan8 {
-	"BRENDAN: {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}{PLAYER}!
 
 	MT. PYRE is a memorial to POKéMON
 	whose lives have ended.
@@ -3526,7 +3526,7 @@ text MatchCall_Text_Brendan8 {
 }
 
 text MatchCall_Text_Brendan9 {
-	"BRENDAN: Hey there, {PLAYER}.
+	"{SPEAKER NAME_BRENDAN}Hey there, {PLAYER}.
 
 	I was on my way back to the hot
 	spring in LAVARIDGE.
@@ -3539,7 +3539,7 @@ text MatchCall_Text_Brendan9 {
 }
 
 text MatchCall_Text_Brendan10 {
-	"BRENDAN: Hi, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Hi, {PLAYER}!
 	Did you catch the news?
 
 	They say CAPT. STERN discovered
@@ -3548,7 +3548,7 @@ text MatchCall_Text_Brendan10 {
 }
 
 text MatchCall_Text_Brendan11 {
-	"BRENDAN: Hey there, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Hey there, {PLAYER}!
 	Don't you think it's awesome?
 
 	Even if you don't have a boat,
@@ -3562,7 +3562,7 @@ text MatchCall_Text_Brendan11 {
 }
 
 text MatchCall_Text_Brendan12 {
-	"BRENDAN: Howdy, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Howdy, {PLAYER}!
 	How are you holding up?
 
 	Ever found your way to the other
@@ -3576,7 +3576,7 @@ text MatchCall_Text_Brendan12 {
 }
 
 text MatchCall_Text_Brendan13 {
-	"BRENDAN: Hey there, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Hey there, {PLAYER}!
 
 	How's it going? Filling up your
 	POKéDEX successfully?
@@ -3589,7 +3589,7 @@ text MatchCall_Text_Brendan13 {
 }
 
 text MatchCall_Text_Brendan14 {
-	"BRENDAN: {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}{PLAYER}!
 	I heard the rumors!
 
 	You beat the SOOTOPOLIS GYM
@@ -3599,7 +3599,7 @@ text MatchCall_Text_Brendan14 {
 }
 
 text MatchCall_Text_Brendan15 {
-	"BRENDAN: There isn't a TRAINER in
+	"{SPEAKER NAME_BRENDAN}There isn't a TRAINER in
 	all of HOENN who doesn't know who
 	you are, {PLAYER}!
 
@@ -3609,7 +3609,7 @@ text MatchCall_Text_Brendan15 {
 }
 
 text MatchCall_Text_Wally1 {
-	"WALLY: Oh, {PLAYER}!
+	"{SPEAKER NAME_WALLY}Oh, {PLAYER}!
 
 	I've been getting healthier and
 	more physically fit.
@@ -3619,14 +3619,14 @@ text MatchCall_Text_Wally1 {
 }
 
 text MatchCall_Text_Wally2 {
-	"WALLY: {PLAYER}, hello!
+	"{SPEAKER NAME_WALLY}{PLAYER}, hello!
 
 	After RUSTURF TUNNEL went
 	through, WANDA's been very happy!"
 }
 
 text MatchCall_Text_Wally3 {
-	"WALLY: Oh, {PLAYER}!
+	"{SPEAKER NAME_WALLY}Oh, {PLAYER}!
 
 	I… I left my uncle's place in
 	VERDANTURF without telling anyone.
@@ -3638,7 +3638,7 @@ text MatchCall_Text_Wally3 {
 }
 
 text MatchCall_Text_Wally4 {
-	"WALLY: {PLAYER}?
+	"{SPEAKER NAME_WALLY}{PLAYER}?
 	It's me, WALLY!
 
 	The world of TRAINERS is amazing!
@@ -3651,7 +3651,7 @@ text MatchCall_Text_Wally4 {
 }
 
 text MatchCall_Text_Wally5 {
-	"WALLY: {PLAYER}? It's awesome!
+	"{SPEAKER NAME_WALLY}{PLAYER}? It's awesome!
 	That RALTS we caught together?
 	It evolved, {PLAYER}!
 
@@ -3673,7 +3673,7 @@ text MatchCall_Text_Wally6 {
 }
 
 text MatchCall_Text_Wally7 {
-	"WALLY: Oh, {PLAYER}!
+	"{SPEAKER NAME_WALLY}Oh, {PLAYER}!
 
 	Before I met you, I hardly ever
 	left my house…
@@ -3686,7 +3686,7 @@ text MatchCall_Text_Wally7 {
 }
 
 text MatchCall_Text_Scott1 {
-	"SCOTT: Howdy, {PLAYER}{KUN}!
+	"{SPEAKER NAME_SCOTT}Howdy, {PLAYER}{KUN}!
 
 	You know how POKéMON can be found
 	everywhere?
@@ -3702,7 +3702,7 @@ text MatchCall_Text_Scott1 {
 }
 
 text MatchCall_Text_Scott2 {
-	"SCOTT: I'm on ROUTE 119 right now.
+	"{SPEAKER NAME_SCOTT}I'm on ROUTE 119 right now.
 	It's teeming with TRAINERS!
 
 	It's also overgrown with tall grass
@@ -3713,7 +3713,7 @@ text MatchCall_Text_Scott2 {
 }
 
 text MatchCall_Text_Scott3 {
-	"SCOTT: Hi, hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_SCOTT}Hi, hi, {PLAYER}{KUN}!
 
 	Have you had the chance to climb
 	MT. PYRE?
@@ -3726,7 +3726,7 @@ text MatchCall_Text_Scott3 {
 }
 
 text MatchCall_Text_Scott4 {
-	"SCOTT: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_SCOTT}Hi, {PLAYER}{KUN}!
 
 	I've been hearing about these odd
 	gangs being a nuisance.
@@ -3741,7 +3741,7 @@ text MatchCall_Text_Scott4 {
 }
 
 text MatchCall_Text_Scott5 {
-	"SCOTT: Oh, hi, {PLAYER}{KUN}.
+	"{SPEAKER NAME_SCOTT}Oh, hi, {PLAYER}{KUN}.
 
 	Might there be tough TRAINERS
 	at the bottom of the sea?
@@ -3752,7 +3752,7 @@ text MatchCall_Text_Scott5 {
 }
 
 text MatchCall_Text_Scott6 {
-	"SCOTT: Hi, hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_SCOTT}Hi, hi, {PLAYER}{KUN}!
 
 	You know that you can challenge
 	the POKéMON LEAGUE when you've
@@ -3784,7 +3784,7 @@ text MatchCall_Text_Scott7 {
 }
 
 text MatchCall_Text_Norman1 {
-	"DAD: In RUSTBORO, there's a man
+	"{SPEAKER NAME_NORMAN}In RUSTBORO, there's a man
 	that goes by the odd name of
 	the CUTTER.
 
@@ -3793,7 +3793,7 @@ text MatchCall_Text_Norman1 {
 }
 
 text MatchCall_Text_Norman2 {
-	"DAD: Hm… Little by little, but also
+	"{SPEAKER NAME_NORMAN}Hm… Little by little, but also
 	very surely, you're getting
 	tougher, {PLAYER}.
 
@@ -3805,7 +3805,7 @@ text MatchCall_Text_Norman2 {
 }
 
 text MatchCall_Text_Norman3 {
-	"DAD: I see…
+	"{SPEAKER NAME_NORMAN}I see…
 	You've collected four GYM BADGES…
 
 	There's no avoiding it now.
@@ -3816,7 +3816,7 @@ text MatchCall_Text_Norman3 {
 }
 
 text MatchCall_Text_Norman4 {
-	"DAD: {PLAYER}! You'd better go visit
+	"{SPEAKER NAME_DAD}{PLAYER}! You'd better go visit
 	Mother every so often.
 
 	I'm going to remain here and
@@ -3827,7 +3827,7 @@ text MatchCall_Text_Norman4 {
 }
 
 text MatchCall_Text_Norman5 {
-	"DAD: Oh, hi, {PLAYER}!
+	"{SPEAKER NAME_NORMAN}Oh, hi, {PLAYER}!
 
 	What's that? MAGMA EMBLEM?
 	I don't know what that's about.
@@ -3837,7 +3837,7 @@ text MatchCall_Text_Norman5 {
 }
 
 text MatchCall_Text_Norman_Preparing {
-	"DAD: Hiyah! Haah! Dwah!
+	"{SPEAKER NAME_NORMAN}Hiyah! Haah! Dwah!
 
 	…Oh? {PLAYER}!
 
@@ -3846,7 +3846,7 @@ text MatchCall_Text_Norman_Preparing {
 }
 
 text MatchCall_Text_Norman_PreparingPostGame {
-	"DAD: {PLAYER}!
+	"{SPEAKER NAME_NORMAN}{PLAYER}!
 
 	Who would've thought you'd become
 	the POKéMON LEAGUE CHAMPION…
@@ -3856,7 +3856,7 @@ text MatchCall_Text_Norman_PreparingPostGame {
 }
 
 text MatchCall_Text_Norman_RematchReady {
-	"DAD: Hm? {PLAYER}?
+	"{SPEAKER NAME_NORMAN}Hm? {PLAYER}?
 	What good timing!
 
 	This time, I'm going to challenge
@@ -3867,12 +3867,12 @@ text MatchCall_Text_Norman_RematchReady {
 }
 
 text MatchCall_Text_Norman_PostRematch {
-	"DAD: …You amaze me, {PLAYER}.
+	"{SPEAKER NAME_NORMAN}…You amaze me, {PLAYER}.
 	How much higher will you soar?"
 }
 
 text MatchCall_Text_Steven1 {
-	"STEVEN: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_STEVEN}Hi, {PLAYER}{KUN}!
 
 	Have you been to MAUVILLE
 	already?
@@ -3888,7 +3888,7 @@ text MatchCall_Text_Steven1 {
 }
 
 text MatchCall_Text_Steven2 {
-	"STEVEN: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_STEVEN}Hi, {PLAYER}{KUN}!
 
 	I've met a lot of different
 	TRAINERS so far.
@@ -3898,7 +3898,7 @@ text MatchCall_Text_Steven2 {
 }
 
 text MatchCall_Text_Steven3 {
-	"STEVEN: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_STEVEN}Hi, {PLAYER}{KUN}!
 
 	When you're on an adventure with
 	your POKéMON, what do you think?
@@ -3914,7 +3914,7 @@ text MatchCall_Text_Steven3 {
 }
 
 text MatchCall_Text_Steven4 {
-	"STEVEN: Hello?
+	"{SPEAKER NAME_STEVEN}Hello?
 	{PLAYER}{KUN}?
 
 	I'm involved in a spot of trouble
@@ -3925,7 +3925,7 @@ text MatchCall_Text_Steven4 {
 }
 
 text MatchCall_Text_Steven5 {
-	"STEVEN: Oh!
+	"{SPEAKER NAME_STEVEN}Oh!
 	{PLAYER}{KUN}!
 
 	There's no need to talk.
@@ -3943,7 +3943,7 @@ text MatchCall_Text_Steven6 {
 }
 
 text MatchCall_Text_Steven7 {
-	"STEVEN: {PLAYER}{KUN}… Congratulations
+	"{SPEAKER NAME_STEVEN}{PLAYER}{KUN}… Congratulations
 	for entering the HALL OF FAME.
 
 	… … … … … …
@@ -3954,7 +3954,7 @@ text MatchCall_Text_Steven7 {
 }
 
 text(local) MatchCall_Text_BirchRegisterCall {
-	"PROF. BIRCH: Oh, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BIRCH}Oh, {PLAYER}{KUN}!
 	I've already heard about you!
 
 	It seems your POKéNAV's been
@@ -3975,13 +3975,13 @@ text(local) MatchCall_Text_RegisteredBirch {
 }
 
 text(local) MatchCall_Text_UnusedProfBirch {
-	"PROF. BIRCH: When one has both
+	"{SPEAKER NAME_BIRCH}When one has both
 	the POKéDEX and POKéNAV, studying
 	POKéMON becomes more fun, eh?"
 }
 
 text MatchCall_Text_MrStone1 {
-	"MR. STONE: Oh? {PLAYER}{KUN}!
+	"{SPEAKER NAME_MR_STONE}Oh? {PLAYER}{KUN}!
 
 	Since you called me, the POKéNAV
 	must be working properly!
@@ -4003,7 +4003,7 @@ text MatchCall_Text_MrStone1 {
 }
 
 text MatchCall_Text_MrStone2 {
-	"MR. STONE: Oh? {PLAYER}{KUN}!
+	"{SPEAKER NAME_MR_STONE}Oh? {PLAYER}{KUN}!
 
 	What's wrong? Have you forgotten
 	about that little errand of mine?
@@ -4021,7 +4021,7 @@ text MatchCall_Text_MrStone2 {
 }
 
 text MatchCall_Text_MrStone3 {
-	"MR. STONE: Oh! {PLAYER}{KUN}!
+	"{SPEAKER NAME_MR_STONE}Oh! {PLAYER}{KUN}!
 
 	Ah, so you've met STEVEN!
 	I'd better reward you, then!
@@ -4033,7 +4033,7 @@ text MatchCall_Text_MrStone3 {
 }
 
 text MatchCall_Text_MrStone4 {
-	"MR. STONE: Oh! {PLAYER}{KUN}!
+	"{SPEAKER NAME_MR_STONE}Oh! {PLAYER}{KUN}!
 
 	Did you know that DEVON was
 	digging the RUSTURF TUNNEL?
@@ -4049,7 +4049,7 @@ text MatchCall_Text_MrStone4 {
 }
 
 text MatchCall_Text_MrStone5 {
-	"MR. STONE: Hello, hello, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MR_STONE}Hello, hello, {PLAYER}{KUN}!
 
 	I heard from someone in PETALBURG
 	that you're NORMAN's child!
@@ -4059,7 +4059,7 @@ text MatchCall_Text_MrStone5 {
 }
 
 text MatchCall_Text_MrStone6 {
-	"MR. STONE: What's that?
+	"{SPEAKER NAME_MR_STONE}What's that?
 
 	You battled your own father and
 	defeated him?
@@ -4105,7 +4105,7 @@ text MatchCall_Text_MrStone9 {
 }
 
 text MatchCall_Text_MrStone10 {
-	"MR. STONE: {PLAYER}{KUN}! It's me!
+	"{SPEAKER NAME_MR_STONE}{PLAYER}{KUN}! It's me!
 
 	You were apparently involved in all
 	sorts of things, but I, being busy,
@@ -4119,7 +4119,7 @@ text MatchCall_Text_MrStone10 {
 }
 
 text MatchCall_Text_MrStone11 {
-	"MR. STONE: … … … … … …
+	"{SPEAKER NAME_MR_STONE}… … … … … …
 	Is this maybe {PLAYER}{KUN}?
 
 	Your voice is so full of confidence,

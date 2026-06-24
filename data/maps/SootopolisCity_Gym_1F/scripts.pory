@@ -284,7 +284,7 @@ text SootopolisCity_Gym_1F_Text_GymStatueCertified {
 }
 
 text SootopolisCity_Gym_1F_Text_JuanPreRematch {
-	"JUAN: Ah, this GYM had returned to its
+	"{SPEAKER NAME_JUAN}Ah, this GYM had returned to its
 	usual state of serenity…
 
 	But our young typhoon has returned
@@ -302,7 +302,7 @@ text SootopolisCity_Gym_1F_Text_JuanRematchDefeat {
 }
 
 text SootopolisCity_Gym_1F_Text_JuanPostRematch {
-	"JUAN: If I told you to become my
+	"{SPEAKER NAME_JUAN}If I told you to become my
 	apprentice, you will refuse, I am sure.
 
 	I would like to make a gift of my coat
@@ -316,7 +316,7 @@ text SootopolisCity_Gym_1F_Text_JuanPostRematch {
 }
 
 text SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons {
-	"JUAN: Ah, this GYM had returned to its
+	"{SPEAKER NAME_JUAN}Ah, this GYM had returned to its
 	usual state of serenity…
 
 	But our young typhoon has returned

@@ -52,7 +52,7 @@ Route102_EventScript_Allen::
 
 Route102_Text_WatchMeCatchPokemon::
 # 41 "data/maps/Route102/scripts.pory"
-	.string "WALLY: {PLAYER}…\n"
+	.string "{SPEAKER NAME_WALLY}{PLAYER}…\n"
 	.string "POKéMON hide in tall grass like this,\l"
 	.string "don't they?\p"
 	.string "Please watch me and see if I can\n"
@@ -61,7 +61,7 @@ Route102_Text_WatchMeCatchPokemon::
 
 Route102_Text_WallyIDidIt::
 # 52 "data/maps/Route102/scripts.pory"
-	.string "WALLY: I did it… It's my…\n"
+	.string "{SPEAKER NAME_WALLY}I did it… It's my…\n"
 	.string "My POKéMON!$"
 
 Route102_Text_LetsGoBack::

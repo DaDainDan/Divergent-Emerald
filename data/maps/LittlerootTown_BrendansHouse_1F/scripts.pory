@@ -40,7 +40,7 @@ mapscripts LittlerootTown_BrendansHouse_1F_MapScripts {
 			lockall
 			setvar(VAR_0x8004, MALE)
 			setvar(VAR_0x8005, LOCALID_PLAYERS_HOUSE_1F_MOM)
-			goto(PlayersHouse_1F_EventScript_PetalburgGymReportMale)
+			goto(PlayersHouse_1F_EventScript_PetalburgGymReport)
 			end
 		}
     	VAR_LITTLEROOT_HOUSES_STATE_MAY, 1: LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor
@@ -171,7 +171,7 @@ movement LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs1 {
 }
 
 text PlayersHouse_1F_Text_IsntItNiceInHere {
-	"MOM: See, {PLAYER}?
+	"{SPEAKER NAME_MOM}See, {PLAYER}?
 	Isn't it nice in here, too?"
 }
 
@@ -189,30 +189,30 @@ text PlayersHouse_1F_Text_MoversPokemonGoSetClock {
 }
 
 text PlayersHouse_1F_Text_ArentYouInterestedInRoom {
-	"MOM: Well, {PLAYER}?
+	"{SPEAKER NAME_MOM}Well, {PLAYER}?
 
 	Aren't you interested in seeing your
 	very own room?"
 }
 
 text PlayersHouse_1F_Text_GoSetTheClock {
-	"MOM: {PLAYER}.
+	"{SPEAKER NAME_MOM}{PLAYER}.
 
 	Go set the clock in your room, honey."
 }
 
 text PlayersHouse_1F_Text_OhComeQuickly {
-	"MOM: Oh! {PLAYER}, {PLAYER}!
+	"{SPEAKER NAME_MOM}Oh! {PLAYER}, {PLAYER}!
 	Quick! Come quickly!"
 }
 
 text PlayersHouse_1F_Text_MaybeDadWillBeOn {
-	"MOM: Look! It's PETALBURG GYM!
+	"{SPEAKER NAME_MOM}Look! It's PETALBURG GYM!
 	Maybe DAD will be on!"
 }
 
 text PlayersHouse_1F_Text_ItsOverWeMissedHim {
-	"MOM: Oh… It's over.
+	"{SPEAKER NAME_MOM}Oh… It's over.
 
 	I think DAD was on, but we missed him.
 	Too bad."
@@ -229,40 +229,40 @@ text PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor {
 }
 
 text PlayersHouse_1F_Text_SeeYouHoney {
-	"MOM: See you, honey!"
+	"{SPEAKER NAME_MOM}See you, honey!"
 }
 
 text PlayersHouse_1F_Text_DidYouMeetProfBirch {
-	"MOM: Did you introduce yourself to
+	"{SPEAKER NAME_MOM}Did you introduce yourself to
 	PROF. BIRCH?"
 }
 
 text PlayersHouse_1F_Text_YouShouldRestABit {
-	"MOM: How are you doing, {PLAYER}?
+	"{SPEAKER NAME_MOM}How are you doing, {PLAYER}?
 	You look a little tired.
 
 	I think you should rest a bit."
 }
 
 text PlayersHouse_1F_Text_TakeCareHoney {
-	"MOM: Take care, honey!"
+	"{SPEAKER NAME_MOM}Take care, honey!"
 }
 
 text PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom {
-	"MOM: Oh? Did DAD give you that BADGE?
+	"{SPEAKER NAME_MOM}Oh? Did DAD give you that BADGE?
 
 	Then here's something from your MOM!"
 }
 
 text PlayersHouse_1F_Text_DontPushYourselfTooHard {
-	"Don't push yourself too hard, dear.
+	"{SPEAKER NAME_MOM}Don't push yourself too hard, dear.
 	You can always come home.
 
 	Go for it, honey!"
 }
 
 text PlayersHouse_1F_Text_IsThatAPokenav {
-	"MOM: What is that, honey? A POKéNAV?
+	"{SPEAKER NAME_MOM}What is that, honey? A POKéNAV?
 	Someone from DEVON gave it to you?
 
 	Well, honey, how about registering
@@ -285,7 +285,7 @@ text PlayersHouse_1F_Text_Vigoroth2 {
 }
 
 text PlayersHouse_1F_Text_ReportFromPetalburgGym {
-	"INTERVIEWER: …We brought you this
+	"{SPEAKER NAME_INTERVIEWER}…We brought you this
 	report from in front of PETALBURG GYM."
 }
 
@@ -310,7 +310,7 @@ text PlayersHouse_1F_Text_RunningShoesManual {
 }
 
 text PlayersHouse_1F_Text_TicketFromBrineyCameForYou {
-	"DAD: Hm?
+	"{SPEAKER NAME_DAD}Hm?
 
 	Hey, it's {PLAYER}!
 
@@ -326,21 +326,21 @@ text PlayersHouse_1F_Text_TicketFromBrineyCameForYou {
 }
 
 text PlayersHouse_1F_Text_PortsInSlateportLilycove {
-	"DAD: Hm, a TICKET for a ferry?
+	"{SPEAKER NAME_DAD}Hm, a TICKET for a ferry?
 
 	If I recall, there are ferry ports in
 	SLATEPORT and LILYCOVE."
 }
 
 text PlayersHouse_1F_Text_BetterGetBackToGym {
-	"I'd better get back to PETALBURG GYM.
+	"{SPEAKER NAME_DAD}I'd better get back to PETALBURG GYM.
 
 	MOM, thanks for looking after the house
 	while I'm away."
 }
 
 text PlayersHouse_1F_Text_DadShouldStayLonger {
-	"MOM: That DAD of yours…
+	"{SPEAKER NAME_MOM}That DAD of yours…
 
 	He comes home for the first time in a
 	while, but all he talks about is POKéMON.
@@ -349,7 +349,7 @@ text PlayersHouse_1F_Text_DadShouldStayLonger {
 }
 
 text PlayersHouse_1F_Text_IsThatABreakingStory {
-	"MOM: Is that a breaking news story?"
+	"{SPEAKER NAME_MOM}Is that a breaking news story?"
 }
 
 text PlayersHouse_1F_Text_LatiEmergencyNewsFlash {
@@ -368,13 +368,13 @@ text PlayersHouse_1F_Text_LatiEmergencyNewsFlash {
 }
 
 text PlayersHouse_1F_Text_WhatColorDidTheySay {
-	"MOM: {PLAYER}, did you catch that?
+	"{SPEAKER NAME_MOM}{PLAYER}, did you catch that?
 
 	What color did the announcer say
 	that POKéMON was?"
 }
 
 text PlayersHouse_1F_Text_StillUnknownPokemon {
-	"MOM: Well, isn't that something!
+	"{SPEAKER NAME_MOM}Well, isn't that something!
 	There are still unknown POKéMON."
 }

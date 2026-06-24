@@ -1431,7 +1431,7 @@ text SmartShopper_Text_Intro {
 
 	It's time for TODAY'S SMART SHOPPER.
 
-	INTERVIEWER: How are you, viewers?
+	{SPEAKER NAME_INTERVIEWER}How are you, viewers?
 
 	Today we're visiting a shop
 	in {STR_VAR_2}.
@@ -1456,7 +1456,7 @@ text SmartShopper_Text_ClerkNormal {
 }
 
 text SmartShopper_Text_RandomComment1 {
-	"INTERVIEWER: The TRAINER bought
+	"{SPEAKER NAME_INTERVIEWER}The TRAINER bought
 	{STR_VAR_3} {STR_VAR_2}S? That's a haul!
 
 	If I may say so, {STR_VAR_1} must have
@@ -1468,7 +1468,7 @@ text SmartShopper_Text_RandomComment1 {
 }
 
 text SmartShopper_Text_RandomComment2 {
-	"INTERVIEWER: Speaking of the item
+	"{SPEAKER NAME_INTERVIEWER}Speaking of the item
 	{STR_VAR_2}, I just bought {STR_VAR_3} of
 	them recently.
 
@@ -1476,7 +1476,7 @@ text SmartShopper_Text_RandomComment2 {
 }
 
 text SmartShopper_Text_RandomComment3 {
-	"INTERVIEWER: {STR_VAR_2}?!
+	"{SPEAKER NAME_INTERVIEWER}{STR_VAR_2}?!
 	But {STR_VAR_3} of them?!
 
 	I didn't think there would be anyone
@@ -1487,7 +1487,7 @@ text SmartShopper_Text_RandomComment3 {
 }
 
 text SmartShopper_Text_RandomComment4 {
-	"INTERVIEWER: One time, I bought
+	"{SPEAKER NAME_INTERVIEWER}One time, I bought
 	a whole lot of the item {STR_VAR_2}.
 
 	But it turned out to be too many.
@@ -1505,7 +1505,7 @@ text SmartShopper_Text_SecondItem {
 	"CLERK: {STR_VAR_1} also bought the item
 	{STR_VAR_2} in bulk, taking {STR_VAR_3}.
 
-	INTERVIEWER: Oh, that's smart.
+	{SPEAKER NAME_INTERVIEWER}Oh, that's smart.
 	{STR_VAR_2}'s a very good item, too."
 }
 
@@ -1520,7 +1520,7 @@ text SmartShopper_Text_DuringSale {
 }
 
 text SmartShopper_Text_OutroNormal {
-	"INTERVIEWER: Hmm… {STR_VAR_1} sounds like
+	"{SPEAKER NAME_INTERVIEWER}Hmm… {STR_VAR_1} sounds like
 	quite the shrewd bargain hunter!
 
 	In total, {STR_VAR_1}'s purchases came to…
@@ -1556,12 +1556,12 @@ text SmartShopper_Text_ClerkMax {
 	would ever need so many {STR_VAR_2}S.
 	It's just unheard of!
 
-	INTERVIEWER: So that would be like 100
+	{SPEAKER NAME_INTERVIEWER}So that would be like 100
 	or 200 sold?
 
 	CLERK: Oh, no, much more than that!
 
-	INTERVIEWER: Oh, my goodness!
+	{SPEAKER NAME_INTERVIEWER}Oh, my goodness!
 	{STR_VAR_1} must be a special shopper!
 
 	CLERK: {STR_VAR_1} is a VIP customer,
@@ -1569,7 +1569,7 @@ text SmartShopper_Text_ClerkMax {
 }
 
 text SmartShopper_Text_OutroMax {
-	"INTERVIEWER: Hmm…
+	"{SPEAKER NAME_INTERVIEWER}Hmm…
 	That is amazing.
 
 	But why would the TRAINER need to buy

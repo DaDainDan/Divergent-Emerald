@@ -360,7 +360,7 @@ script LilycoveCity_EventScript_SchoolKidM {
 }
 
 text LilycoveCity_Text_MayShoppingLetsBattle {
-	"MAY: Oh, hey?
+	"{SPEAKER NAME_MAY}Oh, hey?
 	{PLAYER}{KUN}, are you shopping, too?
 
 	I bought a whole bunch of DOLLS and
@@ -378,7 +378,7 @@ text LilycoveCity_Text_MayShoppingLetsBattle {
 }
 
 text LilycoveCity_Text_MayNotRaisingPokemon {
-	"MAY: Oh, why? {PLAYER}{KUN}, haven't you
+	"{SPEAKER NAME_MAY}Oh, why? {PLAYER}{KUN}, haven't you
 	been raising your POKéMON?
 
 	That's not a very good showing as a
@@ -386,12 +386,12 @@ text LilycoveCity_Text_MayNotRaisingPokemon {
 }
 
 text LilycoveCity_Text_MayBattleMe {
-	"MAY: Come on, battle with me, so I can
+	"{SPEAKER NAME_MAY}Come on, battle with me, so I can
 	check out your POKéMON!"
 }
 
 text LilycoveCity_Text_MayWontBeBeaten {
-	"MAY: The POKéMON I raised won't be
+	"{SPEAKER NAME_MAY}The POKéMON I raised won't be
 	beaten by your POKéMON, {PLAYER}{KUN}!"
 }
 
@@ -406,7 +406,7 @@ text LilycoveCity_Text_MayDefeat {
 }
 
 text LilycoveCity_Text_MayGoingBackToLittleroot {
-	"MAY: I'm thinking of going back to
+	"{SPEAKER NAME_MAY}I'm thinking of going back to
 	LITTLEROOT soon.
 
 	I've caught a decent group of POKéMON,
@@ -458,7 +458,7 @@ text LilycoveCity_Text_MayYouGoingToBattleFrontier {
 }
 
 text LilycoveCity_Text_BrendanShoppingLetsBattle {
-	"BRENDAN: Oh, hey, it's {PLAYER}.
+	"{SPEAKER NAME_BRENDAN}Oh, hey, it's {PLAYER}.
 
 	I'm running an errand for my dad.
 	No, I'm not buying any DOLLS.
@@ -470,17 +470,17 @@ text LilycoveCity_Text_BrendanShoppingLetsBattle {
 }
 
 text LilycoveCity_Text_BrendanNoConfidence {
-	"BRENDAN: Oh, what's the matter?
+	"{SPEAKER NAME_BRENDAN}Oh, what's the matter?
 	Don't have the confidence?"
 }
 
 text LilycoveCity_Text_BrendanBattleMe {
-	"BRENDAN: Want to battle to see who's
+	"{SPEAKER NAME_BRENDAN}Want to battle to see who's
 	been raising POKéMON better?"
 }
 
 text LilycoveCity_Text_BrendanWontBeBeaten {
-	"BRENDAN: Aww, but you know I'm not
+	"{SPEAKER NAME_BRENDAN}Aww, but you know I'm not
 	going to lose to no {PLAYER}."
 }
 
@@ -493,7 +493,7 @@ text LilycoveCity_Text_BrendanDefeat {
 }
 
 text LilycoveCity_Text_BrendanGoingBackToLittleroot {
-	"BRENDAN: I…
+	"{SPEAKER NAME_BRENDAN}I…
 	I plan on going home to LITTLEROOT.
 
 	You know I'm helping out my dad on his

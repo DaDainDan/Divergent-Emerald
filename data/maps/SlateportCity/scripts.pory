@@ -937,7 +937,7 @@ text SlateportCity_Text_MostInvaluableExperience {
 }
 
 text SlateportCity_Text_SternMoveAheadWithExploration {
-	"CAPT. STERN: Yes, indeed. We intend to
+	"{SPEAKER NAME_STERN}Yes, indeed. We intend to
 	move ahead with our exploration."
 }
 
@@ -951,7 +951,7 @@ text SlateportCity_Text_GabbyWonderfulThanksForInterview {
 }
 
 text SlateportCity_Text_SternWhewFirstInterview {
-	"CAPT. STERN: Whew…
+	"{SPEAKER NAME_STERN}Whew…
 
 	That was my first time to be filmed for
 	TV. That was nerve-wracking."
@@ -987,7 +987,7 @@ text SlateportCity_Text_AquaWillAssumeControlOfSubmarine {
 }
 
 text SlateportCity_Text_SternWhatWasAllThat {
-	"CAPT. STERN: What was that all about?
+	"{SPEAKER NAME_STERN}What was that all about?
 
 	It sounded like someone using
 	a megaphone…
@@ -1163,7 +1163,7 @@ text SlateportCity_Text_ComeBackToTradeBerryPowder {
 }
 
 text SlateportCity_Text_YouDroveTeamAquaAway {
-	"SCOTT: Huh?
+	"{SPEAKER NAME_SCOTT}Huh?
 	I'm sure I met you somewhere before.
 
 	Have I introduced myself to you?
@@ -1176,12 +1176,12 @@ text SlateportCity_Text_YouDroveTeamAquaAway {
 }
 
 text SlateportCity_Text_MaybeThisTrainer {
-	"SCOTT: Hmm…
+	"{SPEAKER NAME_SCOTT}Hmm…
 	Maybe, just maybe, this TRAINER…"
 }
 
 text SlateportCity_Text_LetsRegisterEachOther {
-	"SCOTT: All right! I think you're going
+	"{SPEAKER NAME_SCOTT}All right! I think you're going
 	to become a good friend.
 
 	So, let's register each other in our
@@ -1196,7 +1196,7 @@ text SlateportCity_Text_RegisteredScott {
 }
 
 text SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou {
-	"SCOTT: What I'd like to do is tag along
+	"{SPEAKER NAME_SCOTT}What I'd like to do is tag along
 	with you, but I do want to keep an eye
 	on the talents of other people, too.
 
@@ -1207,7 +1207,7 @@ text SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou {
 }
 
 text SlateportCity_Text_TakingBattleTentChallenge {
-	"SCOTT: Oh, hey!
+	"{SPEAKER NAME_SCOTT}Oh, hey!
 	If it isn't {PLAYER}{KUN}!
 
 	{PLAYER}{KUN}, let me guess--you're going

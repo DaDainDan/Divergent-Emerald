@@ -301,14 +301,14 @@ text RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut {
 }
 
 text RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown {
-	"SCOTT: Hmm…
+	"{SPEAKER NAME_SCOTT}Hmm…
 
 	The talent levels of the students here
 	are unknown. The potential's there."
 }
 
 text RustboroCity_PokemonSchool_Text_ScottStoneBadge {
-	"SCOTT: Oh, what's that?
+	"{SPEAKER NAME_SCOTT}Oh, what's that?
 
 	It's a STONE BADGE, isn't it?
 	That's pretty impressive, I'd say.

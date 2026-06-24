@@ -1,6 +1,6 @@
 PetalburgCity_Gym_Text_GiveEnigmaBerry:
 # 1 "data/text/berries.pory"
-	.string "DAD: Hi, {PLAYER}!\p"
+	.string "{SPEAKER NAME_DAD}Hi, {PLAYER}!\p"
 	.string "I just received a very rare BERRY.\n"
 	.string "I'd like you to have it.$"
 

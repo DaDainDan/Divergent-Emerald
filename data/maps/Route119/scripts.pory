@@ -344,7 +344,7 @@ script Route119_EventScript_ScottWonAtFortreeGymCall {
 }
 
 text Route119_Text_MayIntro {
-	"MAY: {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}!
 	Where were you? I was looking for you!
 
 	How much stronger have you gotten?
@@ -363,14 +363,14 @@ text Route119_Text_MayDefeat {
 }
 
 text Route119_Text_MayPresentForYou {
-	"MAY: But I had absolutely nothing to
+	"{SPEAKER NAME_MAY}But I had absolutely nothing to
 	worry about! Keep it up!
 
 	And, here! I have a present for you."
 }
 
 text Route119_Text_MayExplainFly {
-	"MAY: Use FLY, and your POKéMON will
+	"{SPEAKER NAME_MAY}Use FLY, and your POKéMON will
 	instantly carry you to any town you've
 	already visited.
 
@@ -388,7 +388,7 @@ text Route119_Text_MayExplainFly {
 }
 
 text Route119_Text_BrendanIntro {
-	"BRENDAN: {PLAYER}! So this is where
+	"{SPEAKER NAME_BRENDAN}{PLAYER}! So this is where
 	you've been looking for POKéMON?
 
 	Let me see how good you got.
@@ -404,7 +404,7 @@ text Route119_Text_BrendanDefeat {
 }
 
 text Route119_Text_BrendanIllGiveYouThis {
-	"BRENDAN: I'd say you're good enough
+	"{SPEAKER NAME_BRENDAN}I'd say you're good enough
 	to search for POKéMON anywhere.
 
 	Here, I'll give you this.
@@ -412,7 +412,7 @@ text Route119_Text_BrendanIllGiveYouThis {
 }
 
 text Route119_Text_BrendanExplainFly {
-	"BRENDAN: Use FLY, and your POKéMON
+	"{SPEAKER NAME_BRENDAN}Use FLY, and your POKéMON
 	instantly carries you to any town
 	you've already visited.
 
@@ -423,7 +423,7 @@ text Route119_Text_BrendanExplainFly {
 }
 
 text Route119_Text_ScottWayToGoBeSeeingYou {
-	"SCOTT: Hahahah!
+	"{SPEAKER NAME_SCOTT}Hahahah!
 	Way to go, {PLAYER}{KUN}!
 
 	I just passed by a TRAINER riding
@@ -446,7 +446,7 @@ text Route119_Text_ScottYouWonAtFortreeGym {
 	"… … … … … …
 	… … … … … Beep!
 
-	SCOTT: Hiya, {PLAYER}{KUN}, it's me!
+	{SPEAKER NAME_SCOTT}Hiya, {PLAYER}{KUN}, it's me!
 
 	Just as I thought, you won at
 	the FORTREE GYM.

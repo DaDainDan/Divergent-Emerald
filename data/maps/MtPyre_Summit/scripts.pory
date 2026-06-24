@@ -308,7 +308,7 @@ text MtPyre_Summit_Text_Grunt4PostBattle {
 }
 
 text MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo {
-	"ARCHIE: TEAM MAGMA's MAXIE got ahead
+	"{SPEAKER NAME_ARCHIE}TEAM MAGMA's MAXIE got ahead
 	of us, but we also got what we wanted.
 
 	The RED ORB preserved at MT. PYRE…
@@ -452,7 +452,7 @@ text MtPyre_Summit_Text_WellThatTooIsFine {
 }
 
 text MtPyre_Summit_Text_MaxieSilence {
-	"MAXIE: {PLAYER}…
+	"{SPEAKER NAME_MAXIE}{PLAYER}…
 
 	… … … … … …
 	… … … … … …"

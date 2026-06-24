@@ -46,17 +46,15 @@ text gText_Birch_AndYouAre {
 }
 
 text gText_Birch_BoyOrGirl {
-	"Are you a boy?
-	Or are you a girl?"
+	"Please select a gender."
 }
 
 text gText_Birch_WhatsYourName {
-	"All right.
-	What's your name?"
+	"Now, enter your name."
 }
 
 text gText_Birch_SoItsPlayer {
-	"So it's {PLAYER}{KUN}?"
+	"Your name is {PLAYER}{KUN}?"
 }
 
 text gText_Birch_YourePlayer {

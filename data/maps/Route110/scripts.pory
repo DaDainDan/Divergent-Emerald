@@ -512,7 +512,7 @@ text Route110_Text_AquaActionsBringSmiles {
 }
 
 text Route110_Text_MayLetsBattle {
-	"MAY: Hi, {PLAYER}{KUN}, long time no see!
+	"{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}, long time no see!
 
 	While I was searching for other
 	POKéMON, my POKéMON grew stronger.
@@ -527,7 +527,7 @@ text Route110_Text_MayDefeated {
 }
 
 text Route110_Text_MayTakeThis {
-	"MAY: {PLAYER}{KUN}, you've been busy
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}, you've been busy
 	training, too, haven't you?
 
 	I think you deserve a reward!
@@ -535,7 +535,7 @@ text Route110_Text_MayTakeThis {
 }
 
 text Route110_Text_MayExplainItemfinder {
-	"MAY: That's an ITEMFINDER.
+	"{SPEAKER NAME_MAY}That's an ITEMFINDER.
 
 	Try it out. If there is an item that's
 	not visible, it emits a sound.
@@ -548,7 +548,7 @@ text Route110_Text_MayExplainItemfinder {
 }
 
 text Route110_Text_BrendanLetsBattle {
-	"BRENDAN: Hey, {PLAYER}.
+	"{SPEAKER NAME_BRENDAN}Hey, {PLAYER}.
 	So this is where you were.
 	How's it going?
 
@@ -562,7 +562,7 @@ text Route110_Text_BrendanDefeated {
 }
 
 text Route110_Text_BrendanTakeThis {
-	"BRENDAN: {PLAYER}, you've trained
+	"{SPEAKER NAME_BRENDAN}{PLAYER}, you've trained
 	without me noticing…
 
 	Good enough!
@@ -570,7 +570,7 @@ text Route110_Text_BrendanTakeThis {
 }
 
 text Route110_Text_BrendanExplainItemfinder {
-	"BRENDAN: That's an ITEMFINDER.
+	"{SPEAKER NAME_BRENDAN}That's an ITEMFINDER.
 
 	Use it to root around for items that
 	aren't visible.
@@ -791,7 +791,7 @@ text Route110_Text_ThereIsNoRecord {
 }
 
 text Route110_Text_ImagineSeeingYouHere {
-	"PROF. BIRCH: Oh, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BIRCH}Oh, {PLAYER}{KUN}!
 	Imagine seeing you here!
 
 	And where might my {RIVAL} be?"
@@ -820,7 +820,7 @@ text Route110_Text_RegisteredBirchInPokenav {
 }
 
 text Route110_Text_KeepAnEyeOutForRival {
-	"PROF. BIRCH: {PLAYER}{KUN}…
+	"{SPEAKER NAME_BIRCH}{PLAYER}{KUN}…
 
 	Please keep an eye out for my {RIVAL}.
 	… … … … … …

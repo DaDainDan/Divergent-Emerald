@@ -127,7 +127,7 @@ text RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor {
 }
 
 text RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis {
-	"MR. STONE: Now, you should know that
+	"{SPEAKER NAME_MR_STONE}Now, you should know that
 	I am a great PRESIDENT.
 
 	So, I'd never be so cheap as to ask
@@ -141,7 +141,7 @@ text RustboroCity_DevonCorp_3F_Text_ReceivedPokenav {
 }
 
 text RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp {
-	"MR. STONE: That device…
+	"{SPEAKER NAME_MR_STONE}That device…
 
 	It's a POKéMON NAVIGATOR, or POKéNAV
 	for short.
@@ -163,16 +163,16 @@ text RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp {
 }
 
 text RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare {
-	"MR. STONE: Well, then, {PLAYER}{KUN},
+	"{SPEAKER NAME_MR_STONE}Well, then, {PLAYER}{KUN},
 	go with caution and care!"
 }
 
 text RustboroCity_DevonCorp_3F_Text_CountingOnYou {
-	"MR. STONE: I'm counting on you!"
+	"{SPEAKER NAME_MR_STONE}I'm counting on you!"
 }
 
 text RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter {
-	"MR. STONE: You delivered my LETTER?
+	"{SPEAKER NAME_MR_STONE}You delivered my LETTER?
 	Thank you kindly!
 
 	This is my way of thanking you.
@@ -180,7 +180,7 @@ text RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter {
 }
 
 text RustboroCity_DevonCorp_3F_Text_ExplainExpShare {
-	"MR. STONE: A POKéMON holding that
+	"{SPEAKER NAME_MR_STONE}A POKéMON holding that
 	EXP. SHARE will be given some of the
 	EXP Points from battle.
 
@@ -192,7 +192,7 @@ text RustboroCity_DevonCorp_3F_Text_ExplainExpShare {
 }
 
 text RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends {
-	"MR. STONE: Since my youth, I've immersed
+	"{SPEAKER NAME_MR_STONE}Since my youth, I've immersed
 	myself in work.
 
 	Consequently, I'm not familiar with

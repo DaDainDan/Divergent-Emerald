@@ -190,7 +190,7 @@ text SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts {
 }
 
 text SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou {
-	"CAPT. STERN: Wh-what?
+	"{SPEAKER NAME_STERN}Wh-what?
 	Who are you people?"
 }
 
@@ -276,7 +276,7 @@ text SlateportCity_OceanicMuseum_2F_Text_ArchieWarning {
 }
 
 text SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs {
-	"CAPT. STERN: You're…
+	"{SPEAKER NAME_STERN}You're…
 	Ah, okay, you're {PLAYER}{KUN}…
 
 	Anyway, that was a tense situation!
@@ -287,7 +287,7 @@ text SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs {
 }
 
 text SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo {
-	"CAPT. STERN: Whoops!
+	"{SPEAKER NAME_STERN}Whoops!
 	There's no time to lose!
 
 	We have to set out on our ocean-floor

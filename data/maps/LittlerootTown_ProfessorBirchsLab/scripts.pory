@@ -528,7 +528,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon {
-	"PROF. BIRCH: So, {PLAYER}{KUN}.
+	"{SPEAKER NAME_BIRCH}So, {PLAYER}{KUN}.
 
 	I've heard so much about you from
 	your father.
@@ -550,12 +550,12 @@ text LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon {
-	"PROF. BIRCH: While you're at it, why not
+	"{SPEAKER NAME_BIRCH}While you're at it, why not
 	give a nickname to that {STR_VAR_1}?"
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival {
-	"PROF. BIRCH: If you work at POKéMON
+	"{SPEAKER NAME_BIRCH}If you work at POKéMON
 	and gain experience, I think you'll make
 	an extremely good TRAINER.
 
@@ -567,7 +567,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou {
-	"PROF. BIRCH: Great!
+	"{SPEAKER NAME_BIRCH}Great!
 	{RIVAL} should be happy, too.
 
 	Get {RIVAL} to teach you what it
@@ -575,12 +575,12 @@ text LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay {
-	"PROF. BIRCH: Oh, don't be that way.
+	"{SPEAKER NAME_BIRCH}Oh, don't be that way.
 	You should go meet my kid."
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome {
-	"PROF. BIRCH: {RIVAL}?
+	"{SPEAKER NAME_BIRCH}{RIVAL}?
 	Gone home, I think.
 
 	Or maybe that kid's scrabbling around
@@ -591,7 +591,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex {
-	"PROF. BIRCH: Oh, hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BIRCH}Oh, hi, {PLAYER}{KUN}!
 
 	I heard you beat {RIVAL} on
 	your first try. That's excellent!
@@ -612,7 +612,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex {
-	"PROF. BIRCH: The POKéDEX is a high-tech
+	"{SPEAKER NAME_BIRCH}The POKéDEX is a high-tech
 	tool that automatically makes a record
 	of any POKéMON you meet or catch.
 
@@ -626,7 +626,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait {
-	"PROF. BIRCH: Countless POKéMON
+	"{SPEAKER NAME_BIRCH}Countless POKéMON
 	await you!
 
 	Argh, I'm getting the itch to get out
@@ -634,7 +634,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese {
-	"MAY: Oh, wow, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Oh, wow, {PLAYER}{KUN}!
 	You got a POKéDEX, too!
 
 	That's great! Just like me!
@@ -642,7 +642,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls {
-	"MAY: It's fun if you can get a lot of
+	"{SPEAKER NAME_MAY}It's fun if you can get a lot of
 	POKéMON!
 
 	I'm going to look all over the place
@@ -657,12 +657,12 @@ text LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext {
-	"MAY: I wonder where I should go look
+	"{SPEAKER NAME_MAY}I wonder where I should go look
 	for POKéMON next?"
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese {
-	"BRENDAN: Huh…
+	"{SPEAKER NAME_BRENDAN}Huh…
 	So you got a POKéDEX, too.
 
 	Well then, here.
@@ -670,7 +670,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls {
-	"BRENDAN: You know it's more fun to
+	"{SPEAKER NAME_BRENDAN}You know it's more fun to
 	have a whole bunch of POKéMON.
 
 	I'm going to explore all over the place
@@ -685,7 +685,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext {
-	"BRENDAN: Where should I look for
+	"{SPEAKER NAME_BRENDAN}Where should I look for
 	POKéMON next…"
 }
 
@@ -708,7 +708,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_OtherRegionsUpgradeToNational {
-	"PROF. BIRCH: Now…
+	"{SPEAKER NAME_BIRCH}Now…
 
 	{PLAYER}{KUN} and {RIVAL}, I've had the two
 	of you help me study POKéMON.
@@ -732,7 +732,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_OtherRegionsUpgradeToNational {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_MayUpgradeSoCool {
-	"MAY: Eheheh!
+	"{SPEAKER NAME_MAY}Eheheh!
 
 	It's so cool that even my POKéDEX
 	is getting updated!
@@ -742,7 +742,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_MayUpgradeSoCool {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_BrendanYouCanThankMe {
-	"BRENDAN: I went out all over HOENN
+	"{SPEAKER NAME_BRENDAN}I went out all over HOENN
 	and checked out POKéMON.
 
 	You can thank me for getting
@@ -752,7 +752,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_BrendanYouCanThankMe {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_OkayAllDone {
-	"PROF. BIRCH: Okay, all done!"
+	"{SPEAKER NAME_BIRCH}Okay, all done!"
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_PokedexUpgradedToNational {
@@ -761,7 +761,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_PokedexUpgradedToNational {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2 {
-	"PROF. BIRCH: But listen.
+	"{SPEAKER NAME_BIRCH}But listen.
 	You've become the CHAMPION,
 	but your POKéMON journey isn't over.
 
@@ -773,7 +773,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2 {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork {
-	"MAY: I think I'll take a short break
+	"{SPEAKER NAME_MAY}I think I'll take a short break
 	from fieldwork.
 
 	I think I'll help the PROF here for
@@ -781,7 +781,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork {
-	"BRENDAN: For the time being,
+	"{SPEAKER NAME_BRENDAN}For the time being,
 	I'm taking a break from fieldwork.
 
 	I'll be helping out the PROF here
@@ -789,7 +789,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemon {
-	"PROF. BIRCH: Oh, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BIRCH}Oh, {PLAYER}{KUN}!
 	Let's have a look at your POKéDEX.
 
 	… … … … … …
@@ -815,7 +815,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemon {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon {
-	"PROF. BIRCH: These are rare POKéMON
+	"{SPEAKER NAME_BIRCH}These are rare POKéMON
 	only found in another region!
 
 	You can have any one of these
@@ -823,7 +823,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil {
-	"PROF. BIRCH: The FIRE POKéMON
+	"{SPEAKER NAME_BIRCH}The FIRE POKéMON
 	CYNDAQUIL caught your eye!
 
 	You're as sharp as ever!
@@ -832,7 +832,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile {
-	"PROF. BIRCH: The WATER POKéMON
+	"{SPEAKER NAME_BIRCH}The WATER POKéMON
 	TOTODILE is your choice!
 
 	You know how to pick a good one.
@@ -841,7 +841,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita {
-	"PROF. BIRCH: The GRASS POKéMON
+	"{SPEAKER NAME_BIRCH}The GRASS POKéMON
 	CHIKORITA is your choice!
 
 	You sure know what you're doing.
@@ -850,14 +850,14 @@ text LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_TakeYourTimeAllInvaluable {
-	"PROF. BIRCH: Take your time before
+	"{SPEAKER NAME_BIRCH}Take your time before
 	you decide.
 
 	They're all invaluable POKéMON."
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_PickedFinePokemon {
-	"PROF. BIRCH: I see!
+	"{SPEAKER NAME_BIRCH}I see!
 	You picked a fine POKéMON!"
 }
 
@@ -872,7 +872,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_NicknameJohtoStarter {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting {
-	"PROF. BIRCH: Listen, {PLAYER}{KUN}.
+	"{SPEAKER NAME_BIRCH}Listen, {PLAYER}{KUN}.
 	You've completed the HOENN POKéDEX,
 	but your POKéMON journey isn't over.
 
@@ -894,7 +894,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_DontHaveAnyRoomForPokemon {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere {
-	"MAY: {PLAYER}{KUN}, after this…
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}, after this…
 	What are you going to do?
 
 	Are you going to keep battling
@@ -907,19 +907,19 @@ text LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly {
-	"BRENDAN: Rather than collecting
+	"{SPEAKER NAME_BRENDAN}Rather than collecting
 	POKéMON, I prefer slowly and 
 	steadily raising the one I chose."
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier {
-	"MAY: Oh, hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Oh, hi, {PLAYER}{KUN}!
 	Have you gone to that place,
 	the BATTLE FRONTIER?"
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier {
-	"BRENDAN: Hey, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Hey, {PLAYER}!
 	Have you gone out to that place,
 	the BATTLE FRONTIER?"
 }
@@ -928,7 +928,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall {
 	"… … … … … …
 	… … … … … Beep!
 
-	SCOTT: Hi, hi, {PLAYER}!
+	{SPEAKER NAME_SCOTT}Hi, hi, {PLAYER}!
 	It's me, SCOTT.
 
 	I'm aboard the S.S. TIDAL now.

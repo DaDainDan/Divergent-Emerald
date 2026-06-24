@@ -142,7 +142,7 @@ GraniteCave_StevensRoom_Text_ImStevenLetterForMe::
 
 GraniteCave_StevensRoom_Text_ThankYouTakeThis::
 # 49 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "STEVEN: Okay, thank you.\p"
+	.string "{SPEAKER NAME_STEVEN}Okay, thank you.\p"
 	.string "You went through all this trouble to\n"
 	.string "deliver that. I need to thank you.\p"
 	.string "Let me see…\n"
@@ -152,7 +152,7 @@ GraniteCave_StevensRoom_Text_ThankYouTakeThis::
 
 GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister::
 # 62 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "STEVEN: Your POKéMON appear quite\n"
+	.string "{SPEAKER NAME_STEVEN}Your POKéMON appear quite\n"
 	.string "capable.\p"
 	.string "If you keep training, you could even\n"
 	.string "become the CHAMPION of the POKéMON\l"

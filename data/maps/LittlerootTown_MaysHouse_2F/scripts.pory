@@ -165,7 +165,7 @@ script LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC {
 }
 
 text RivalsHouse_2F_Text_MayWhoAreYou {
-	"Huh?
+	"{SPEAKER NAME_UNKNOWN}Huh?
 	Who… Who are you?
 
 	… … … … … … … …
@@ -177,7 +177,7 @@ text RivalsHouse_2F_Text_MayWhoAreYou {
 	Um… I'm MAY.
 	Glad to meet you!
 
-	I…
+	{SPEAKER NAME_MAY}I…
 	I have this dream of becoming friends
 	with POKéMON all over the world.
 
@@ -248,7 +248,7 @@ text RivalsHouse_2F_Text_ItsRivalsPokeBall {
 }
 
 text RivalsHouse_2F_Text_MayJustCheckingMyPokedex {
-	"MAY: {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}!
 
 	I was just checking my POKéDEX.
 
@@ -263,7 +263,7 @@ text RivalsHouse_2F_Text_MayJustCheckingMyPokedex {
 }
 
 text RivalsHouse_2F_Text_MayWhereShouldIGoNext {
-	"MAY: I wonder where I should go catch
+	"{SPEAKER NAME_MAY}I wonder where I should go catch
 	some POKéMON next?
 
 	Wouldn't it be funny if we ran into each
@@ -271,7 +271,7 @@ text RivalsHouse_2F_Text_MayWhereShouldIGoNext {
 }
 
 text RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex {
-	"BRENDAN: Hey, it's {PLAYER}.
+	"{SPEAKER NAME_BRENDAN}Hey, it's {PLAYER}.
 
 	I was just checking out my POKéDEX.
 
@@ -284,7 +284,7 @@ text RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex {
 }
 
 text RivalsHouse_2F_Text_BrendanWhereShouldIGoNext {
-	"BRENDAN: I'm having a hard time deciding
+	"{SPEAKER NAME_BRENDAN}I'm having a hard time deciding
 	where I should catch POKéMON next.
 
 	Hey, {PLAYER}, if I see you while I'm out

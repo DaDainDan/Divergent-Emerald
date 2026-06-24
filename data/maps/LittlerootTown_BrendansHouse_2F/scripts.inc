@@ -473,7 +473,7 @@ PlayersHouse_2F_Text_ClockIsStopped::
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom::
 # 148 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "MOM: {PLAYER}, how do you like your\n"
+	.string "{SPEAKER NAME_MOM}{PLAYER}, how do you like your\n"
 	.string "new room?\p"
 	.string "Good! Everything's put away neatly!\p"
 	.string "They finished moving everything in\n"

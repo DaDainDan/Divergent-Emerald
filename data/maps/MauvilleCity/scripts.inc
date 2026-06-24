@@ -750,7 +750,7 @@ MauvilleCity_Text_UncleHesTooPeppy::
 
 MauvilleCity_Text_WallyWantToChallengeGym::
 # 248 "data/maps/MauvilleCity/scripts.pory"
-	.string "WALLY: Aww, UNCLE, please?\p"
+	.string "{SPEAKER NAME_WALLY}Aww, UNCLE, please?\p"
 	.string "I want to challenge this GYM and see\n"
 	.string "how much better I've become.\p"
 	.string "Please? May I, please?$"
@@ -765,13 +765,13 @@ MauvilleCity_Text_UncleYourePushingIt::
 
 MauvilleCity_Text_WallyWeCanBeatAnyone::
 # 267 "data/maps/MauvilleCity/scripts.pory"
-	.string "WALLY: I'm not pushing it.\p"
+	.string "{SPEAKER NAME_WALLY}I'm not pushing it.\p"
 	.string "If I combine forces with RALTS,\n"
 	.string "we can beat anyone!$"
 
 MauvilleCity_Text_WallyWillYouBattleMe::
 # 274 "data/maps/MauvilleCity/scripts.pory"
-	.string "WALLY: Oh! Hi, {PLAYER}!\p"
+	.string "{SPEAKER NAME_WALLY}Oh! Hi, {PLAYER}!\p"
 	.string "I've gotten a lot stronger since\n"
 	.string "we met.\p"
 	.string "{PLAYER}, I want you and my UNCLE to\n"
@@ -781,7 +781,7 @@ MauvilleCity_Text_WallyWillYouBattleMe::
 
 MauvilleCity_Text_WallyMyUncleWontKnowImStrong::
 # 287 "data/maps/MauvilleCity/scripts.pory"
-	.string "WALLY: Oh… If you won't battle me,\n"
+	.string "{SPEAKER NAME_WALLY}Oh… If you won't battle me,\n"
 	.string "{PLAYER}, my UNCLE won't know that I've\l"
 	.string "become really strong.$"
 
@@ -795,23 +795,23 @@ MauvilleCity_Text_UncleCanYouBattleWally::
 
 MauvilleCity_Text_WallyPleaseBattleMe::
 # 302 "data/maps/MauvilleCity/scripts.pory"
-	.string "WALLY: {PLAYER}, please!\n"
+	.string "{SPEAKER NAME_WALLY}{PLAYER}, please!\n"
 	.string "Battle with me, please.$"
 
 MauvilleCity_Text_WallyHereICome::
 # 307 "data/maps/MauvilleCity/scripts.pory"
-	.string "WALLY: {PLAYER}, thank you.\p"
+	.string "{SPEAKER NAME_WALLY}{PLAYER}, thank you.\p"
 	.string "Okay… Here I come!$"
 
 MauvilleCity_Text_WallyDefeat::
 # 313 "data/maps/MauvilleCity/scripts.pory"
-	.string "WALLY: … … … … … … …\p"
+	.string "{SPEAKER NAME_WALLY}… … … … … … …\p"
 	.string "… … … … … … … …\p"
 	.string "I lost…$"
 
 MauvilleCity_Text_WallyIllGoBackToVerdanturf::
 # 321 "data/maps/MauvilleCity/scripts.pory"
-	.string "WALLY: UNCLE…\n"
+	.string "{SPEAKER NAME_WALLY}UNCLE…\n"
 	.string "I'll go back to VERDANTURF…$"
 
 MauvilleCity_Text_ThankYouNotEnoughToBattle::
@@ -845,12 +845,12 @@ MauvilleCity_Text_WallyPokenavCall::
 # 357 "data/maps/MauvilleCity/scripts.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "WALLY: Oh, hello, {PLAYER}!\p"
+	.string "{SPEAKER NAME_WALLY}Oh, hello, {PLAYER}!\p"
 	.string "I just wanted to tell you that\n"
 	.string "my uncle bought me a POKéNAV!\p"
 	.string "Now I can get in touch with you\n"
 	.string "anytime, {PLAYER}!\p"
-	.string "… … … … … …\n"
+	.string "{SPEAKER NAME_NONE}… … … … … …\n"
 	.string "… … … … … Click!$"
 
 MauvilleCity_Text_RegisteredWally::
@@ -860,7 +860,7 @@ MauvilleCity_Text_RegisteredWally::
 
 MauvilleCity_Text_ScottYouDidntHoldBack::
 # 378 "data/maps/MauvilleCity/scripts.pory"
-	.string "SCOTT: Hehe…\n"
+	.string "{SPEAKER NAME_SCOTT}Hehe…\n"
 	.string "I was watching that match!\p"
 	.string "You're friends with that boy WALLY,\n"
 	.string "aren't you?\p"
@@ -874,7 +874,7 @@ MauvilleCity_Text_ScottYouDidntHoldBack::
 
 MauvilleCity_Text_WattsonNeedFavorTakeKey::
 # 397 "data/maps/MauvilleCity/scripts.pory"
-	.string "WATTSON: Oh, {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_WATSON}Oh, {PLAYER}{KUN}!\n"
 	.string "You look like you have a lot of zip!\l"
 	.string "That's a good thing, wahahahaha!\p"
 	.string "Fine! I've decided!\n"
@@ -890,7 +890,7 @@ MauvilleCity_Text_WattsonNeedFavorTakeKey::
 
 MauvilleCity_Text_WattsonWontBeChallenge::
 # 418 "data/maps/MauvilleCity/scripts.pory"
-	.string "WATTSON: Don't you worry about it.\n"
+	.string "{SPEAKER NAME_WATSON}Don't you worry about it.\n"
 	.string "It won't be a challenge to you.\p"
 	.string "The entrance to NEW MAUVILLE is just\n"
 	.string "a short SURF away from ROUTE 110.\p"
@@ -899,7 +899,7 @@ MauvilleCity_Text_WattsonWontBeChallenge::
 
 MauvilleCity_Text_WattsonThanksTakeTM::
 # 429 "data/maps/MauvilleCity/scripts.pory"
-	.string "WATTSON: Wahahahaha!\p"
+	.string "{SPEAKER NAME_WATSON}Wahahahaha!\p"
 	.string "I knew it, {PLAYER}{KUN}! I knew I'd made\n"
 	.string "the right choice asking you!\p"
 	.string "This is my thanks--a TM containing\n"
@@ -908,7 +908,7 @@ MauvilleCity_Text_WattsonThanksTakeTM::
 
 MauvilleCity_Text_WattsonYoungTakeCharge::
 # 441 "data/maps/MauvilleCity/scripts.pory"
-	.string "WATTSON: Wahahahaha!\p"
+	.string "{SPEAKER NAME_WATSON}Wahahahaha!\p"
 	.string "It pleases me to no end to see\n"
 	.string "the young step up and take charge!$"
 

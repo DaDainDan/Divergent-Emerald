@@ -1,5 +1,5 @@
 text gBirchDexRatingText_AreYouCurious {
-	"PROF. BIRCH: Ah, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BIRCH}Ah, {PLAYER}{KUN}!
 
 	Are you curious about how your
 	POKéDEX is coming along?"

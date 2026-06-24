@@ -321,7 +321,7 @@ text RustboroCity_Gym_Text_RoxanneRegisterCall {
 	"… … … … … …
 	… … … … … Beep!
 
-	ROXANNE: Oh, hello, {PLAYER}?
+	{SPEAKER NAME_ROXANNE}Oh, hello, {PLAYER}?
 	This is ROXANNE of RUSTBORO CITY.
 
 	I heard from BRAWLY that you're
@@ -347,7 +347,7 @@ text RustboroCity_Gym_Text_RegisteredRoxanne {
 }
 
 text RustboroCity_Gym_Text_RoxannePreRematch {
-	"ROXANNE: I'm so glad to see you again.
+	"{SPEAKER NAME_ROXANNE}I'm so glad to see you again.
 	I'm ROXANNE, the GYM LEADER here.
 
 	I'm sure we've both experienced many
@@ -363,7 +363,7 @@ text RustboroCity_Gym_Text_RoxanneRematchDefeat {
 }
 
 text RustboroCity_Gym_Text_RoxannePostRematch {
-	"ROXANNE: I still have much to learn
+	"{SPEAKER NAME_ROXANNE}I still have much to learn
 	when it comes to battling POKéMON.
 
 	That awareness makes me love battling
@@ -371,7 +371,7 @@ text RustboroCity_Gym_Text_RoxannePostRematch {
 }
 
 text RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons {
-	"ROXANNE: I'm so glad to see you again.
+	"{SPEAKER NAME_ROXANNE}I'm so glad to see you again.
 	I'm ROXANNE, the GYM LEADER here.
 
 	I'm sure we've both experienced many

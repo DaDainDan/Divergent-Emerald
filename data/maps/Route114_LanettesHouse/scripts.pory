@@ -41,7 +41,7 @@ script Route114_LanettesHouse_EventScript_PC {
 }
 
 text Route114_LanettesHouse_Text_EverythingClutteredKeepThis {
-	"LANETTE: Oh! {PLAYER}{KUN}!
+	"{SPEAKER NAME_LANETTE}Oh! {PLAYER}{KUN}!
 
 	I'm sorry everything is so cluttered…
 	When I get engrossed in research,

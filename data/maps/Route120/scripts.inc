@@ -540,7 +540,7 @@ Route120_EventScript_Steven_Movement_0:
 
 Route120_Text_StevenGreeting::
 # 277 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: Hm? {PLAYER}{KUN}, hi.\n"
+	.string "{SPEAKER NAME_STEVEN}Hm? {PLAYER}{KUN}, hi.\n"
 	.string "It's been a while.\p"
 	.string "There's something here that you can't\n"
 	.string "see, right?\p"
@@ -554,17 +554,17 @@ Route120_Text_StevenGreeting::
 
 Route120_Text_StevenIllWaitHere::
 # 295 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: No?\p"
+	.string "{SPEAKER NAME_STEVEN}No?\p"
 	.string "I'll wait here, so you can get ready.$"
 
 Route120_Text_StevenReadyForBattle::
 # 301 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}, are your POKéMON\n"
+	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}, are your POKéMON\n"
 	.string "ready for battle?$"
 
 Route120_Text_StevenShowMeYourPower::
 # 306 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}, show me your true\n"
+	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}, show me your true\n"
 	.string "power as a TRAINER!$"
 
 Route120_Text_StevenUsedDevonScope::
@@ -576,7 +576,7 @@ Route120_Text_StevenUsedDevonScope::
 
 Route120_Text_StevenGiveDevonScope::
 # 320 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: I see…\n"
+	.string "{SPEAKER NAME_STEVEN}I see…\n"
 	.string "Your battle style is intriguing.\p"
 	.string "Your POKéMON have obviously grown\n"
 	.string "since I first met you in DEWFORD.\p"
@@ -587,7 +587,7 @@ Route120_Text_StevenGiveDevonScope::
 
 Route120_Text_StevenGoodbye::
 # 334 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}.\p"
+	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}.\p"
 	.string "I enjoy seeing POKéMON and TRAINERS\n"
 	.string "who strive together.\p"
 	.string "I think you're doing great.\p"

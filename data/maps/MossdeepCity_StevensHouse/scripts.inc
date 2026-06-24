@@ -240,7 +240,7 @@ MossdeepCity_StevensHouse_EventScript_StevenGivesDive_Movement_1:
 
 MossdeepCity_StevensHouse_Text_YouveEarnedHMDive::
 # 110 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}…\p"
+	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}…\p"
 	.string "As you can see, there's not much here,\n"
 	.string "but this is my home.\p"
 	.string "Thank you for all that you've done.\p"
@@ -251,7 +251,7 @@ MossdeepCity_StevensHouse_Text_YouveEarnedHMDive::
 
 MossdeepCity_StevensHouse_Text_ExplainDive::
 # 125 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	.string "STEVEN: While you're using SURF, you\n"
+	.string "{SPEAKER NAME_STEVEN}While you're using SURF, you\n"
 	.string "should notice dark patches of water.\p"
 	.string "Use DIVE if you come to deep water\n"
 	.string "like it. You'll drop to the seafloor.\p"
@@ -262,7 +262,7 @@ MossdeepCity_StevensHouse_Text_ExplainDive::
 
 MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis::
 # 139 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	.string "STEVEN: Apparently, there's an\n"
+	.string "{SPEAKER NAME_STEVEN}Apparently, there's an\n"
 	.string "underwater cavern between\l"
 	.string "MOSSDEEP and SOOTOPOLIS.\p"
 	.string "You know, the one that CAPT. STERN\n"

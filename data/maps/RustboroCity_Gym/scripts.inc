@@ -379,7 +379,7 @@ RustboroCity_Gym_Text_RoxanneRegisterCall::
 # 320 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "ROXANNE: Oh, hello, {PLAYER}?\n"
+	.string "{SPEAKER NAME_ROXANNE}Oh, hello, {PLAYER}?\n"
 	.string "This is ROXANNE of RUSTBORO CITY.\p"
 	.string "I heard from BRAWLY that you're\n"
 	.string "moving up through the ranks of\l"
@@ -400,7 +400,7 @@ RustboroCity_Gym_Text_RegisteredRoxanne::
 
 RustboroCity_Gym_Text_RoxannePreRematch::
 # 349 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROXANNE: I'm so glad to see you again.\n"
+	.string "{SPEAKER NAME_ROXANNE}I'm so glad to see you again.\n"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 	.string "I'm sure we've both experienced many\n"
 	.string "battles since we last met.\p"
@@ -414,14 +414,14 @@ RustboroCity_Gym_Text_RoxanneRematchDefeat::
 
 RustboroCity_Gym_Text_RoxannePostRematch::
 # 365 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROXANNE: I still have much to learn\n"
+	.string "{SPEAKER NAME_ROXANNE}I still have much to learn\n"
 	.string "when it comes to battling POKéMON.\p"
 	.string "That awareness makes me love battling\n"
 	.string "all that much more!$"
 
 RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons::
 # 373 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROXANNE: I'm so glad to see you again.\n"
+	.string "{SPEAKER NAME_ROXANNE}I'm so glad to see you again.\n"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 	.string "I'm sure we've both experienced many\n"
 	.string "battles since we last met.\p"

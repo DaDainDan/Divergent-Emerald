@@ -807,7 +807,7 @@ Route119_EventScript_RivalExitScottArrive_Movement_6:
 
 Route119_Text_MayIntro::
 # 346 "data/maps/Route119/scripts.pory"
-	.string "MAY: {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_MAY}{PLAYER}{KUN}!\n"
 	.string "Where were you? I was looking for you!\p"
 	.string "How much stronger have you gotten?\n"
 	.string "Let me check for you!\p"
@@ -823,13 +823,13 @@ Route119_Text_MayDefeat::
 
 Route119_Text_MayPresentForYou::
 # 365 "data/maps/Route119/scripts.pory"
-	.string "MAY: But I had absolutely nothing to\n"
+	.string "{SPEAKER NAME_MAY}But I had absolutely nothing to\n"
 	.string "worry about! Keep it up!\p"
 	.string "And, here! I have a present for you.$"
 
 Route119_Text_MayExplainFly::
 # 372 "data/maps/Route119/scripts.pory"
-	.string "MAY: Use FLY, and your POKéMON will\n"
+	.string "{SPEAKER NAME_MAY}Use FLY, and your POKéMON will\n"
 	.string "instantly carry you to any town you've\l"
 	.string "already visited.\p"
 	.string "But, to use FLY, you have to get\n"
@@ -843,7 +843,7 @@ Route119_Text_MayExplainFly::
 
 Route119_Text_BrendanIntro::
 # 390 "data/maps/Route119/scripts.pory"
-	.string "BRENDAN: {PLAYER}! So this is where\n"
+	.string "{SPEAKER NAME_BRENDAN}{PLAYER}! So this is where\n"
 	.string "you've been looking for POKéMON?\p"
 	.string "Let me see how good you got.\n"
 	.string "I'll test you!\p"
@@ -857,14 +857,14 @@ Route119_Text_BrendanDefeat::
 
 Route119_Text_BrendanIllGiveYouThis::
 # 406 "data/maps/Route119/scripts.pory"
-	.string "BRENDAN: I'd say you're good enough\n"
+	.string "{SPEAKER NAME_BRENDAN}I'd say you're good enough\n"
 	.string "to search for POKéMON anywhere.\p"
 	.string "Here, I'll give you this.\n"
 	.string "Try it out.$"
 
 Route119_Text_BrendanExplainFly::
 # 414 "data/maps/Route119/scripts.pory"
-	.string "BRENDAN: Use FLY, and your POKéMON\n"
+	.string "{SPEAKER NAME_BRENDAN}Use FLY, and your POKéMON\n"
 	.string "instantly carries you to any town\l"
 	.string "you've already visited.\p"
 	.string "But you need the FORTREE GYM BADGE \n"
@@ -873,7 +873,7 @@ Route119_Text_BrendanExplainFly::
 
 Route119_Text_ScottWayToGoBeSeeingYou::
 # 425 "data/maps/Route119/scripts.pory"
-	.string "SCOTT: Hahahah!\n"
+	.string "{SPEAKER NAME_SCOTT}Hahahah!\n"
 	.string "Way to go, {PLAYER}{KUN}!\p"
 	.string "I just passed by a TRAINER riding\n"
 	.string "a BIKE.\p"
@@ -890,7 +890,7 @@ Route119_Text_ScottYouWonAtFortreeGym::
 # 445 "data/maps/Route119/scripts.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "SCOTT: Hiya, {PLAYER}{KUN}, it's me!\p"
+	.string "{SPEAKER NAME_SCOTT}Hiya, {PLAYER}{KUN}, it's me!\p"
 	.string "Just as I thought, you won at\n"
 	.string "the FORTREE GYM.\p"
 	.string "Your strength…\n"

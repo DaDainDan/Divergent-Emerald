@@ -914,7 +914,7 @@ script PetalburgCity_Gym_EventScript_GymStatue {
 }
 
 text PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon {
-	"DAD: Hm?
+	"{SPEAKER NAME_DAD}Hm?
 
 	Well, if it isn't {PLAYER}!
 	So you're all finished moving in?
@@ -938,12 +938,12 @@ text PetalburgCity_Gym_Text_WallyIdLikeAPokemon {
 }
 
 text PetalburgCity_Gym_Text_DadOhYoureWallyRight {
-	"DAD: Hm? You're… Uh… Oh, right.
+	"{SPEAKER NAME_DAD}Hm? You're… Uh… Oh, right.
 	You're WALLY, right?"
 }
 
 text PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon {
-	"WALLY: I'm going to go stay with my
+	"{SPEAKER NAME_WALLY}I'm going to go stay with my
 	relatives in VERDANTURF TOWN.
 
 	I thought I would be lonely by myself,
@@ -954,11 +954,11 @@ text PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon {
 }
 
 text PetalburgCity_Gym_Text_DadHmISee {
-	"DAD: Hm. I see."
+	"{SPEAKER NAME_DAD}Hm. I see."
 }
 
 text PetalburgCity_Gym_Text_DadPlayerGoWithWally {
-	"DAD: {PLAYER}, you heard that,
+	"{SPEAKER NAME_DAD}{PLAYER}, you heard that,
 	right?
 
 	Go with WALLY and make sure that he
@@ -972,17 +972,17 @@ text PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon {
 }
 
 text PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall {
-	"WALLY: Oh, wow!
+	"{SPEAKER NAME_WALLY}Oh, wow!
 	A POKéMON!
 
-	DAD: Hm. I'll give you a POKé BALL, too.
+	{SPEAKER NAME_DAD}Hm. I'll give you a POKé BALL, too.
 	Go for it!
 
-	WALLY received a POKé BALL!"
+	{SPEAKER NAME_NONE}WALLY received a POKé BALL!"
 }
 
 text PetalburgCity_Gym_Text_WallyOhWowThankYou {
-	"WALLY: Oh, wow!
+	"{SPEAKER NAME_WALLY}Oh, wow!
 	Thank you!"
 }
 
@@ -992,11 +992,11 @@ text PetalburgCity_Gym_Text_WouldYouReallyComeWithMe {
 }
 
 text PetalburgCity_Gym_Text_DadSoDidItWorkOut {
-	"DAD: So, did it work out?"
+	"{SPEAKER NAME_DAD}So, did it work out?"
 }
 
 text PetalburgCity_Gym_Text_WallyThankYouBye {
-	"WALLY: Thank you, yes, it did.
+	"{SPEAKER NAME_WALLY}Thank you, yes, it did.
 	Here's your POKéMON back.
 
 	{PLAYER}, thank you for coming along
@@ -1015,7 +1015,7 @@ text PetalburgCity_Gym_Text_WallyThankYouBye {
 }
 
 text PetalburgCity_Gym_Text_DadGoCollectBadges {
-	"DAD: Now…
+	"{SPEAKER NAME_NORMAN}Now…
 
 	{PLAYER}, if you want to become a
 	strong TRAINER, here's my advice.
@@ -1040,7 +1040,7 @@ text PetalburgCity_Gym_Text_DadGoCollectBadges {
 }
 
 text PetalburgCity_Gym_Text_NormanGoToRustboro {
-	"DAD: Hm? Aren't you going to the
+	"{SPEAKER NAME_NORMAN}Hm? Aren't you going to the
 	POKéMON GYM in RUSTBORO CITY?
 
 	There's no challenge for me to
@@ -1054,7 +1054,7 @@ text PetalburgCity_Gym_Text_NormanGoToRustboro {
 }
 
 text PetalburgCity_Gym_Text_NormanGoToDewford {
-	"DAD: I see… So, you've beaten
+	"{SPEAKER NAME_NORMAN}I see… So, you've beaten
 	the GYM LEADER in RUSTBORO CITY.
 
 	But there are many more TRAINERS
@@ -1067,7 +1067,7 @@ text PetalburgCity_Gym_Text_NormanGoToDewford {
 }
 
 text PetalburgCity_Gym_Text_YouHaveGottenStronger {
-	"DAD: Hm… {PLAYER}, you have gotten
+	"{SPEAKER NAME_NORMAN}Hm… {PLAYER}, you have gotten
 	stronger.
 
 	I can tell by the number of BADGES
@@ -1075,7 +1075,7 @@ text PetalburgCity_Gym_Text_YouHaveGottenStronger {
 }
 
 text PetalburgCity_Gym_Text_NormanIntro {
-	"DAD: Hm…
+	"{SPEAKER NAME_NORMAN}Hm…
 	So, you did get four GYM BADGES.
 
 	Fine, as I promised, we will have
@@ -1114,7 +1114,7 @@ text PetalburgCity_Gym_Text_ReceivedBalanceBadge {
 }
 
 text PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis {
-	"DAD: With that BADGE, the DEFENSE
+	"{SPEAKER NAME_NORMAN}With that BADGE, the DEFENSE
 	of all your POKéMON will increase.
 
 	POKéMON that know the HM move SURF
@@ -1125,7 +1125,7 @@ text PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis {
 }
 
 text PetalburgCity_Gym_Text_ExplainFacade {
-	"DAD: TM42 contains FACADE.
+	"{SPEAKER NAME_NORMAN}TM42 contains FACADE.
 
 	It doubles the power of moves if
 	the POKéMON is poisoned, paralyzed,
@@ -1136,7 +1136,7 @@ text PetalburgCity_Gym_Text_ExplainFacade {
 }
 
 text PetalburgCity_Gym_Text_DadHappyAndSad {
-	"DAD: As the GYM LEADER, I can't
+	"{SPEAKER NAME_NORMAN}As the GYM LEADER, I can't
 	express how upset I am…
 
 	But as a father, it makes me both
@@ -1158,7 +1158,7 @@ text PetalburgCity_Gym_Text_LetMeBorrowPlayer {
 }
 
 text PetalburgCity_Gym_Text_DadGoingToKeepTraining {
-	"DAD: {PLAYER}, you should go visit
+	"{SPEAKER NAME_DAD}{PLAYER}, you should go visit
 	your mother every so often.
 
 	I'm going to stay here and redouble
@@ -1169,7 +1169,7 @@ text PetalburgCity_Gym_Text_DadGoingToKeepTraining {
 }
 
 text PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough {
-	"DAD: {PLAYER}, how are things going?
+	"{SPEAKER NAME_NORMAN}{PLAYER}, how are things going?
 
 	The world of POKéMON is deep.
 
@@ -1489,7 +1489,7 @@ text PetalburgCity_Gym_Text_GymStatueCertified {
 }
 
 text PetalburgCity_Gym_Text_NormanPreRematch {
-	"DAD: {PLAYER}…
+	"{SPEAKER NAME_NORMAN}{PLAYER}…
 	I had a feeling that you would come.
 
 	I would never refuse to accept
@@ -1511,7 +1511,7 @@ text PetalburgCity_Gym_Text_NormanRematchDefeat {
 }
 
 text PetalburgCity_Gym_Text_NormanPostRematch {
-	"DAD: {PLAYER}…
+	"{SPEAKER NAME_DAD}{PLAYER}…
 	What is your dream?
 
 	My dream…
@@ -1520,7 +1520,7 @@ text PetalburgCity_Gym_Text_NormanPostRematch {
 }
 
 text PetalburgCity_Gym_Text_NormanRematchNeedTwoMons {
-	"DAD: {PLAYER}…
+	"{SPEAKER NAME_NORMAN}{PLAYER}…
 	I had a feeling that you would come.
 
 	I would never refuse to accept

@@ -949,7 +949,7 @@ MtChimney_Text_MeteoriteWillActivateVolcano::
 
 MtChimney_Text_MaxieIntro::
 # 416 "data/maps/MtChimney/scripts.pory"
-	.string "MAXIE: Hm?\n"
+	.string "{SPEAKER NAME_MAXIE}Hm?\n"
 	.string "Who are you?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
@@ -983,7 +983,7 @@ MtChimney_Text_MaxieDefeat::
 
 MtChimney_Text_MaxieYouHaventSeenLastOfMagma::
 # 462 "data/maps/MtChimney/scripts.pory"
-	.string "MAXIE: But, enough.\n"
+	.string "{SPEAKER NAME_MAXIE}But, enough.\n"
 	.string "I will back off this time.\p"
 	.string "But don't think that this is the last\n"
 	.string "you've seen of TEAM MAGMA.\p"
@@ -1083,7 +1083,7 @@ MtChimney_Text_Bufoh::
 
 MtChimney_Text_ArchieGoStopTeamMagma::
 # 576 "data/maps/MtChimney/scripts.pory"
-	.string "ARCHIE: Grr, {PLAYER}!\n"
+	.string "{SPEAKER NAME_ARCHIE}Grr, {PLAYER}!\n"
 	.string "I should've guessed you'd show up!\p"
 	.string "See for yourself what the fanatics\n"
 	.string "of TEAM MAGMA are up to!\p"
@@ -1094,7 +1094,7 @@ MtChimney_Text_ArchieGoStopTeamMagma::
 
 MtChimney_Text_ArchieIHaveMyHandsFull::
 # 590 "data/maps/MtChimney/scripts.pory"
-	.string "ARCHIE: Grrr…\p"
+	.string "{SPEAKER NAME_ARCHIE}Grrr…\p"
 	.string "I want to stop that MAXIE,\n"
 	.string "but I can't!\p"
 	.string "Not when I have my hands full battling\n"
@@ -1102,7 +1102,7 @@ MtChimney_Text_ArchieIHaveMyHandsFull::
 
 MtChimney_Text_ArchieThankYou::
 # 600 "data/maps/MtChimney/scripts.pory"
-	.string "ARCHIE: {PLAYER}!\n"
+	.string "{SPEAKER NAME_ARCHIE}{PLAYER}!\n"
 	.string "Thank you!\p"
 	.string "With your help, we thwarted TEAM\n"
 	.string "MAGMA's destructive plan!\p"

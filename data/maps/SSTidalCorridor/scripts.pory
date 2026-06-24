@@ -181,7 +181,7 @@ script SSTidalCorridor_EventScript_Sailor {
 }
 
 text SSTidalCorridor_Text_ScottBattleFrontierInvite {
-	"SCOTT: Well, hi, hi!
+	"{SPEAKER NAME_SCOTT}Well, hi, hi!
 	{PLAYER}{KUN}, {PLAYER}{KUN}!
 
 	Something's come up, so I have to

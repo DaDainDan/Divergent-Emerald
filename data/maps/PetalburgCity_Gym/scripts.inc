@@ -2118,7 +2118,7 @@ PetalburgCity_Gym_EventScript_WallysDadArrives_Movement_5:
 
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon::
 # 916 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm?\p"
+	.string "{SPEAKER NAME_DAD}Hm?\p"
 	.string "Well, if it isn't {PLAYER}!\n"
 	.string "So you're all finished moving in?\p"
 	.string "I'm surprised that you managed to\n"
@@ -2137,12 +2137,12 @@ PetalburgCity_Gym_Text_WallyIdLikeAPokemon::
 
 PetalburgCity_Gym_Text_DadOhYoureWallyRight::
 # 940 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm? You're… Uh… Oh, right.\n"
+	.string "{SPEAKER NAME_DAD}Hm? You're… Uh… Oh, right.\n"
 	.string "You're WALLY, right?$"
 
 PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon::
 # 945 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "WALLY: I'm going to go stay with my\n"
+	.string "{SPEAKER NAME_WALLY}I'm going to go stay with my\n"
 	.string "relatives in VERDANTURF TOWN.\p"
 	.string "I thought I would be lonely by myself,\n"
 	.string "so I wanted to take a POKéMON along.\p"
@@ -2151,11 +2151,11 @@ PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon::
 
 PetalburgCity_Gym_Text_DadHmISee::
 # 956 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm. I see.$"
+	.string "{SPEAKER NAME_DAD}Hm. I see.$"
 
 PetalburgCity_Gym_Text_DadPlayerGoWithWally::
 # 960 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}, you heard that,\n"
+	.string "{SPEAKER NAME_DAD}{PLAYER}, you heard that,\n"
 	.string "right?\p"
 	.string "Go with WALLY and make sure that he\n"
 	.string "safely catches a POKéMON.$"
@@ -2167,15 +2167,15 @@ PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon::
 
 PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall::
 # 974 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "WALLY: Oh, wow!\n"
+	.string "{SPEAKER NAME_WALLY}Oh, wow!\n"
 	.string "A POKéMON!\p"
-	.string "DAD: Hm. I'll give you a POKé BALL, too.\n"
+	.string "{SPEAKER NAME_DAD}Hm. I'll give you a POKé BALL, too.\n"
 	.string "Go for it!\p"
-	.string "WALLY received a POKé BALL!$"
+	.string "{SPEAKER NAME_NONE}WALLY received a POKé BALL!$"
 
 PetalburgCity_Gym_Text_WallyOhWowThankYou::
 # 984 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "WALLY: Oh, wow!\n"
+	.string "{SPEAKER NAME_WALLY}Oh, wow!\n"
 	.string "Thank you!$"
 
 PetalburgCity_Gym_Text_WouldYouReallyComeWithMe::
@@ -2185,11 +2185,11 @@ PetalburgCity_Gym_Text_WouldYouReallyComeWithMe::
 
 PetalburgCity_Gym_Text_DadSoDidItWorkOut::
 # 994 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: So, did it work out?$"
+	.string "{SPEAKER NAME_DAD}So, did it work out?$"
 
 PetalburgCity_Gym_Text_WallyThankYouBye::
 # 998 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "WALLY: Thank you, yes, it did.\n"
+	.string "{SPEAKER NAME_WALLY}Thank you, yes, it did.\n"
 	.string "Here's your POKéMON back.\p"
 	.string "{PLAYER}, thank you for coming along\n"
 	.string "with me.\p"
@@ -2203,7 +2203,7 @@ PetalburgCity_Gym_Text_WallyThankYouBye::
 
 PetalburgCity_Gym_Text_DadGoCollectBadges::
 # 1017 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Now…\p"
+	.string "{SPEAKER NAME_NORMAN}Now…\p"
 	.string "{PLAYER}, if you want to become a\n"
 	.string "strong TRAINER, here's my advice.\p"
 	.string "Head for RUSTBORO CITY beyond this\n"
@@ -2221,7 +2221,7 @@ PetalburgCity_Gym_Text_DadGoCollectBadges::
 
 PetalburgCity_Gym_Text_NormanGoToRustboro::
 # 1042 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm? Aren't you going to the\n"
+	.string "{SPEAKER NAME_NORMAN}Hm? Aren't you going to the\n"
 	.string "POKéMON GYM in RUSTBORO CITY?\p"
 	.string "There's no challenge for me to\n"
 	.string "battle a greenhorn TRAINER.\p"
@@ -2232,7 +2232,7 @@ PetalburgCity_Gym_Text_NormanGoToRustboro::
 
 PetalburgCity_Gym_Text_NormanGoToDewford::
 # 1056 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: I see… So, you've beaten\n"
+	.string "{SPEAKER NAME_NORMAN}I see… So, you've beaten\n"
 	.string "the GYM LEADER in RUSTBORO CITY.\p"
 	.string "But there are many more TRAINERS\n"
 	.string "who are stronger than you, {PLAYER}.\p"
@@ -2242,14 +2242,14 @@ PetalburgCity_Gym_Text_NormanGoToDewford::
 
 PetalburgCity_Gym_Text_YouHaveGottenStronger::
 # 1069 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm… {PLAYER}, you have gotten\n"
+	.string "{SPEAKER NAME_NORMAN}Hm… {PLAYER}, you have gotten\n"
 	.string "stronger.\p"
 	.string "I can tell by the number of BADGES\n"
 	.string "that you've earned.$"
 
 PetalburgCity_Gym_Text_NormanIntro::
 # 1077 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm…\n"
+	.string "{SPEAKER NAME_NORMAN}Hm…\n"
 	.string "So, you did get four GYM BADGES.\p"
 	.string "Fine, as I promised, we will have\n"
 	.string "a POKéMON battle.\p"
@@ -2278,7 +2278,7 @@ PetalburgCity_Gym_Text_ReceivedBalanceBadge::
 
 PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis::
 # 1116 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: With that BADGE, the DEFENSE\n"
+	.string "{SPEAKER NAME_NORMAN}With that BADGE, the DEFENSE\n"
 	.string "of all your POKéMON will increase.\p"
 	.string "POKéMON that know the HM move SURF\n"
 	.string "will be able to travel over water.\p"
@@ -2287,7 +2287,7 @@ PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis::
 
 PetalburgCity_Gym_Text_ExplainFacade::
 # 1127 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: TM42 contains FACADE.\p"
+	.string "{SPEAKER NAME_NORMAN}TM42 contains FACADE.\p"
 	.string "It doubles the power of moves if\n"
 	.string "the POKéMON is poisoned, paralyzed,\l"
 	.string "or burned.\p"
@@ -2296,7 +2296,7 @@ PetalburgCity_Gym_Text_ExplainFacade::
 
 PetalburgCity_Gym_Text_DadHappyAndSad::
 # 1138 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: As the GYM LEADER, I can't\n"
+	.string "{SPEAKER NAME_NORMAN}As the GYM LEADER, I can't\n"
 	.string "express how upset I am…\p"
 	.string "But as a father, it makes me both\n"
 	.string "happy and a little sad. It's odd…$"
@@ -2315,7 +2315,7 @@ PetalburgCity_Gym_Text_LetMeBorrowPlayer::
 
 PetalburgCity_Gym_Text_DadGoingToKeepTraining::
 # 1160 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}, you should go visit\n"
+	.string "{SPEAKER NAME_DAD}{PLAYER}, you should go visit\n"
 	.string "your mother every so often.\p"
 	.string "I'm going to stay here and redouble\n"
 	.string "my training.\p"
@@ -2324,7 +2324,7 @@ PetalburgCity_Gym_Text_DadGoingToKeepTraining::
 
 PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough::
 # 1171 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}, how are things going?\p"
+	.string "{SPEAKER NAME_NORMAN}{PLAYER}, how are things going?\p"
 	.string "The world of POKéMON is deep.\p"
 	.string "I honestly think that no amount of\n"
 	.string "training would ever be enough.$"
@@ -2600,7 +2600,7 @@ PetalburgCity_Gym_Text_GymStatueCertified::
 
 PetalburgCity_Gym_Text_NormanPreRematch::
 # 1491 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}…\n"
+	.string "{SPEAKER NAME_NORMAN}{PLAYER}…\n"
 	.string "I had a feeling that you would come.\p"
 	.string "I would never refuse to accept\n"
 	.string "a challenge from you.\p"
@@ -2618,7 +2618,7 @@ PetalburgCity_Gym_Text_NormanRematchDefeat::
 
 PetalburgCity_Gym_Text_NormanPostRematch::
 # 1513 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}…\n"
+	.string "{SPEAKER NAME_DAD}{PLAYER}…\n"
 	.string "What is your dream?\p"
 	.string "My dream…\n"
 	.string "Hahaha…\l"
@@ -2626,7 +2626,7 @@ PetalburgCity_Gym_Text_NormanPostRematch::
 
 PetalburgCity_Gym_Text_NormanRematchNeedTwoMons::
 # 1522 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}…\n"
+	.string "{SPEAKER NAME_NORMAN}{PLAYER}…\n"
 	.string "I had a feeling that you would come.\p"
 	.string "I would never refuse to accept\n"
 	.string "a challenge from you.\p"

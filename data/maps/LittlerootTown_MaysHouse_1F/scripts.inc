@@ -101,7 +101,7 @@ LittlerootTown_MaysHouse_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_2:
 # 41 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	setvar VAR_0x8005, LOCALID_PLAYERS_HOUSE_1F_MOM
 # 42 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto PlayersHouse_1F_EventScript_PetalburgGymReportFemale
+	goto PlayersHouse_1F_EventScript_PetalburgGymReport
 	end
 
 
@@ -561,7 +561,7 @@ RivalsHouse_1F_Text_ShouldGoHomeEverySoOften::
 
 RivalsHouse_1F_Text_MayWhoAreYou::
 # 252 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Huh?\n"
+	.string "{SPEAKER NAME_UNKNOWN}Huh?\n"
 	.string "Who… Who are you?\p"
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
@@ -569,7 +569,7 @@ RivalsHouse_1F_Text_MayWhoAreYou::
 	.string "So your move was today.\p"
 	.string "Um… I'm MAY.\n"
 	.string "Glad to meet you!\p"
-	.string "I…\n"
+	.string "{SPEAKER NAME_MAY}I…\n"
 	.string "I have this dream of becoming friends\l"
 	.string "with POKéMON all over the world.\p"
 	.string "I… I heard about you, {PLAYER}{KUN}, from\n"
@@ -586,7 +586,7 @@ RivalsHouse_1F_Text_MayWhoAreYou::
 
 RivalsHouse_1F_Text_BrendanWhoAreYou::
 # 288 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Hey!\n"
+	.string "{SPEAKER NAME_UNKNOWN}Hey!\n"
 	.string "You…\p"
 	.string "Who are you?\p"
 	.string "Oh, you're {PLAYER}, aren't you?\n"
@@ -597,7 +597,7 @@ RivalsHouse_1F_Text_BrendanWhoAreYou::
 	.string "kid, so I assumed you'd be a guy.\p"
 	.string "My name's BRENDAN.\n"
 	.string "So, hi, neighbor!\p"
-	.string "Huh? Hey, {PLAYER}, don't you have\n"
+	.string "{SPEAKER NAME_BRENDAN}Huh? Hey, {PLAYER}, don't you have\n"
 	.string "a POKéMON?\p"
 	.string "Do you want me to go catch you one?\p"
 	.string "Aw, darn, I forgot…\p"

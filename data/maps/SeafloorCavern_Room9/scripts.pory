@@ -143,16 +143,16 @@ movement SeafloorCavern_Room9_Movement_Unused2 {
 }
 
 text SeafloorCavern_Room9_Text_ArchieHoldItRightThere {
-	"ARCHIE: Hold it right there."
+	"{SPEAKER NAME_ARCHIE}Hold it right there."
 }
 
 text SeafloorCavern_Room9_Text_ArchieSoItWasYou {
-	"ARCHIE: Fufufu…
+	"{SPEAKER NAME_ARCHIE}Fufufu…
 	So it was you, after all."
 }
 
 text SeafloorCavern_Room9_Text_ArchieBeholdKyogre {
-	"ARCHIE: Behold!
+	"{SPEAKER NAME_ARCHIE}Behold!
 
 	See how beautiful it is, the sleeping
 	form of the ancient POKéMON KYOGRE!
@@ -162,7 +162,7 @@ text SeafloorCavern_Room9_Text_ArchieBeholdKyogre {
 }
 
 text SeafloorCavern_Room9_Text_ArchieYouMustDisappear {
-	"ARCHIE: It surprises me, how you've
+	"{SPEAKER NAME_ARCHIE}It surprises me, how you've
 	managed to chase me here.
 
 	But that's all over now.
@@ -177,7 +177,7 @@ text SeafloorCavern_Room9_Text_ArchieDefeat {
 }
 
 text SeafloorCavern_Room9_Text_ArchieWithThisRedOrb {
-	"ARCHIE: Fufufu…
+	"{SPEAKER NAME_ARCHIE}Fufufu…
 
 	I commend you. I must recognize that
 	you are truly gifted.
@@ -194,7 +194,7 @@ text SeafloorCavern_Room9_Text_RedOrbShinesByItself {
 }
 
 text SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo {
-	"ARCHIE: What?!
+	"{SPEAKER NAME_ARCHIE}What?!
 
 	I didn't do anything.
 	Why did the RED ORB…
@@ -203,12 +203,12 @@ text SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo {
 }
 
 text SeafloorCavern_Room9_Text_ArchieAMessageFromOutside {
-	"ARCHIE: Hm? It's a message from our
+	"{SPEAKER NAME_ARCHIE}Hm? It's a message from our
 	members outside…"
 }
 
 text SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard {
-	"ARCHIE: Yes, what is it?
+	"{SPEAKER NAME_ARCHIE}Yes, what is it?
 
 	Hm…
 	It's raining heavily?
@@ -231,7 +231,7 @@ text SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard {
 }
 
 text SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear {
-	"ARCHIE: There's something wrong…
+	"{SPEAKER NAME_ARCHIE}There's something wrong…
 
 	The RED ORB is supposed to awaken
 	and control KYOGRE…
@@ -243,7 +243,7 @@ text SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear {
 }
 
 text SeafloorCavern_Room9_Text_MaxieWhatHaveYouWrought {
-	"MAXIE: What have you wrought?
+	"{SPEAKER NAME_MAXIE}What have you wrought?
 
 	ARCHIE… You've finally awoken KYOGRE,
 	haven't you?
@@ -256,7 +256,7 @@ text SeafloorCavern_Room9_Text_MaxieWhatHaveYouWrought {
 }
 
 text SeafloorCavern_Room9_Text_ArchieDontGetAllHighAndMighty {
-	"ARCHIE: W-what?!
+	"{SPEAKER NAME_ARCHIE}W-what?!
 	Don't get all high and mighty with me!
 
 	Wasn't it you, TEAM MAGMA, that
@@ -269,7 +269,7 @@ text SeafloorCavern_Room9_Text_ArchieDontGetAllHighAndMighty {
 }
 
 text SeafloorCavern_Room9_Text_MaxieWeDontHaveTimeToArgue {
-	"MAXIE: We don't have the time to
+	"{SPEAKER NAME_MAXIE}We don't have the time to
 	argue about it here!
 
 	Get outside and see for yourself!
@@ -279,6 +279,6 @@ text SeafloorCavern_Room9_Text_MaxieWeDontHaveTimeToArgue {
 }
 
 text SeafloorCavern_Room9_Text_MaxieComeOnPlayer {
-	"MAXIE: {PLAYER}, come on, you have
+	"{SPEAKER NAME_MAXIE}{PLAYER}, come on, you have
 	to get out of here, too!"
 }

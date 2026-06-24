@@ -414,7 +414,7 @@ text MtChimney_Text_MeteoriteWillActivateVolcano {
 }
 
 text MtChimney_Text_MaxieIntro {
-	"MAXIE: Hm?
+	"{SPEAKER NAME_MAXIE}Hm?
 	Who are you?
 
 	… … … … … …
@@ -460,7 +460,7 @@ text MtChimney_Text_MaxieDefeat {
 }
 
 text MtChimney_Text_MaxieYouHaventSeenLastOfMagma {
-	"MAXIE: But, enough.
+	"{SPEAKER NAME_MAXIE}But, enough.
 	I will back off this time.
 
 	But don't think that this is the last
@@ -574,7 +574,7 @@ text MtChimney_Text_Bufoh {
 }
 
 text MtChimney_Text_ArchieGoStopTeamMagma {
-	"ARCHIE: Grr, {PLAYER}!
+	"{SPEAKER NAME_ARCHIE}Grr, {PLAYER}!
 	I should've guessed you'd show up!
 
 	See for yourself what the fanatics
@@ -588,7 +588,7 @@ text MtChimney_Text_ArchieGoStopTeamMagma {
 }
 
 text MtChimney_Text_ArchieIHaveMyHandsFull {
-	"ARCHIE: Grrr…
+	"{SPEAKER NAME_ARCHIE}Grrr…
 
 	I want to stop that MAXIE,
 	but I can't!
@@ -598,7 +598,7 @@ text MtChimney_Text_ArchieIHaveMyHandsFull {
 }
 
 text MtChimney_Text_ArchieThankYou {
-	"ARCHIE: {PLAYER}!
+	"{SPEAKER NAME_ARCHIE}{PLAYER}!
 	Thank you!
 
 	With your help, we thwarted TEAM

@@ -709,7 +709,7 @@ MtPyre_Summit_Text_Grunt4PostBattle::
 
 MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo::
 # 310 "data/maps/MtPyre_Summit/scripts.pory"
-	.string "ARCHIE: TEAM MAGMA's MAXIE got ahead\n"
+	.string "{SPEAKER NAME_ARCHIE}TEAM MAGMA's MAXIE got ahead\n"
 	.string "of us, but we also got what we wanted.\p"
 	.string "The RED ORB preserved at MT. PYRE…\n"
 	.string "I, ARCHIE, now have it in my possession!\p"
@@ -820,7 +820,7 @@ MtPyre_Summit_Text_WellThatTooIsFine::
 
 MtPyre_Summit_Text_MaxieSilence::
 # 454 "data/maps/MtPyre_Summit/scripts.pory"
-	.string "MAXIE: {PLAYER}…\p"
+	.string "{SPEAKER NAME_MAXIE}{PLAYER}…\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …$"
 

@@ -1269,7 +1269,7 @@ BattleFrontier_BattlePikeRoomNormal_Text_HopeYouDidntUseUpLuck::
 
 BattleFrontier_BattlePikeRoomNormal_Text_LucyShowMeFrontierPass::
 # 641 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "LUCY: … … … … … …\n"
+	.string "{SPEAKER NAME_LUCY}… … … … … …\n"
 	.string "Show me your FRONTIER PASS…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ReceivedLuckSymbol::
@@ -1284,7 +1284,7 @@ BattleFrontier_BattlePikeRoomNormal_Text_AllThereIsDisappear::
 
 BattleFrontier_BattlePikeRoomNormal_Text_LucyYouAgain::
 # 656 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "LUCY: …You again…\p"
+	.string "{SPEAKER NAME_LUCY}…You again…\p"
 	.string "… … … … … …\p"
 	.string "…I've trampled flowers and braved\n"
 	.string "storms to get to where I am…\p"
@@ -1300,7 +1300,7 @@ BattleFrontier_BattlePikeRoomNormal_Text_NowComeOn::
 
 BattleFrontier_BattlePikeRoomNormal_Text_LucyFrontierPass::
 # 676 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "LUCY: … … … … … …\p"
+	.string "{SPEAKER NAME_LUCY}… … … … … …\p"
 	.string "…FRONTIER PASS…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_LuckSymbolTookGoldenShine::

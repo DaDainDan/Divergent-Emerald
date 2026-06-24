@@ -272,7 +272,7 @@ text BattleFrontier_BattlePyramidTop_Text_BringCourageToOurBattle {
 }
 
 text BattleFrontier_BattlePyramidTop_Text_BrandonFrontierPassPlease {
-	"BRANDON: Hahahah! Grand it was!
+	"{SPEAKER NAME_BRANDON}Hahahah! Grand it was!
 	Grand, yes, indeed!
 
 	Well done! You've earned recognition!
@@ -290,7 +290,7 @@ text BattleFrontier_BattlePyramidTop_Text_LookForwardToNextMeeting {
 }
 
 text BattleFrontier_BattlePyramidTop_Text_BrandonYouveReturned {
-	"BRANDON: …You've finally returned,
+	"{SPEAKER NAME_BRANDON}…You've finally returned,
 	young explorer…
 
 	Your love of adventure seems to come
@@ -324,7 +324,7 @@ text BattleFrontier_BattlePyramidTop_Text_EverythingYouHave {
 }
 
 text BattleFrontier_BattlePyramidTop_Text_BrandonRemarkableHaveThis {
-	"BRANDON: Hahahah!
+	"{SPEAKER NAME_BRANDON}Hahahah!
 	Remarkable!
 	Yes, it's grand, indeed!
 

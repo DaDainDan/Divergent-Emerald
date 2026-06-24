@@ -536,7 +536,7 @@ BattleFrontier_BattleFactoryBattleRoom_Text_ShakeOutKnowledgeBringItOn::
 
 BattleFrontier_BattleFactoryBattleRoom_Text_NolandLetsSeeFrontierPass::
 # 270 "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.pory"
-	.string "NOLAND: Smart going!\n"
+	.string "{SPEAKER NAME_NOLAND}Smart going!\n"
 	.string "Let's see your FRONTIER PASS.$"
 
 BattleFrontier_BattleFactoryBattleRoom_Text_ReceivedKnowledgeSymbol::
@@ -554,7 +554,7 @@ BattleFrontier_BattleFactoryBattleRoom_Text_NextTimeNoHoldsBarred::
 
 BattleFrontier_BattleFactoryBattleRoom_Text_HarderLookThanLastTime::
 # 290 "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.pory"
-	.string "NOLAND: Hey, hey! How's it going?\n"
+	.string "{SPEAKER NAME_NOLAND}Hey, hey! How's it going?\n"
 	.string "You keeping up with your studies?\p"
 	.string "…Oh?\p"
 	.string "You've taken on a harder look than\n"
@@ -569,7 +569,7 @@ BattleFrontier_BattleFactoryBattleRoom_Text_AllRightBringItOn::
 
 BattleFrontier_BattleFactoryBattleRoom_Text_OutOfMyLeagueLetsSeePass::
 # 308 "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.pory"
-	.string "NOLAND: What the…\n"
+	.string "{SPEAKER NAME_NOLAND}What the…\n"
 	.string "You're getting out of my league!\p"
 	.string "Sheesh!\n"
 	.string "Let's see that FRONTIER PASS!$"

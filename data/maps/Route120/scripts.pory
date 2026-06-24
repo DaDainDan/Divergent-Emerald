@@ -275,7 +275,7 @@ script Route120_EventScript_Callie {
 }
 
 text Route120_Text_StevenGreeting {
-	"STEVEN: Hm? {PLAYER}{KUN}, hi.
+	"{SPEAKER NAME_STEVEN}Hm? {PLAYER}{KUN}, hi.
 	It's been a while.
 
 	There's something here that you can't
@@ -293,18 +293,18 @@ text Route120_Text_StevenGreeting {
 }
 
 text Route120_Text_StevenIllWaitHere {
-	"STEVEN: No?
+	"{SPEAKER NAME_STEVEN}No?
 
 	I'll wait here, so you can get ready."
 }
 
 text Route120_Text_StevenReadyForBattle {
-	"STEVEN: {PLAYER}{KUN}, are your POKéMON
+	"{SPEAKER NAME_STEVEN}{PLAYER}{KUN}, are your POKéMON
 	ready for battle?"
 }
 
 text Route120_Text_StevenShowMeYourPower {
-	"STEVEN: {PLAYER}{KUN}, show me your true
+	"{SPEAKER NAME_STEVEN}{PLAYER}{KUN}, show me your true
 	power as a TRAINER!"
 }
 
@@ -318,7 +318,7 @@ text Route120_Text_StevenUsedDevonScope {
 }
 
 text Route120_Text_StevenGiveDevonScope {
-	"STEVEN: I see…
+	"{SPEAKER NAME_STEVEN}I see…
 	Your battle style is intriguing.
 
 	Your POKéMON have obviously grown
@@ -332,7 +332,7 @@ text Route120_Text_StevenGiveDevonScope {
 }
 
 text Route120_Text_StevenGoodbye {
-	"STEVEN: {PLAYER}{KUN}.
+	"{SPEAKER NAME_STEVEN}{PLAYER}{KUN}.
 
 	I enjoy seeing POKéMON and TRAINERS
 	who strive together.

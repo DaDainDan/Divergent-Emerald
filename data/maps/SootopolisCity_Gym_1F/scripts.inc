@@ -377,7 +377,7 @@ SootopolisCity_Gym_1F_Text_GymStatueCertified::
 
 SootopolisCity_Gym_1F_Text_JuanPreRematch::
 # 286 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "JUAN: Ah, this GYM had returned to its\n"
+	.string "{SPEAKER NAME_JUAN}Ah, this GYM had returned to its\n"
 	.string "usual state of serenity…\p"
 	.string "But our young typhoon has returned\n"
 	.string "to put us to the test again!\p"
@@ -392,7 +392,7 @@ SootopolisCity_Gym_1F_Text_JuanRematchDefeat::
 
 SootopolisCity_Gym_1F_Text_JuanPostRematch::
 # 304 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "JUAN: If I told you to become my\n"
+	.string "{SPEAKER NAME_JUAN}If I told you to become my\n"
 	.string "apprentice, you will refuse, I am sure.\p"
 	.string "I would like to make a gift of my coat\n"
 	.string "to you.\p"
@@ -403,7 +403,7 @@ SootopolisCity_Gym_1F_Text_JuanPostRematch::
 
 SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons::
 # 318 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "JUAN: Ah, this GYM had returned to its\n"
+	.string "{SPEAKER NAME_JUAN}Ah, this GYM had returned to its\n"
 	.string "usual state of serenity…\p"
 	.string "But our young typhoon has returned\n"
 	.string "to put us to the test again!\p"

@@ -168,7 +168,7 @@ script Route128_EventScript_Carlee {
 }
 
 text Route128_Text_ArchieWhatHappened {
-	"ARCHIE: What happened…
+	"{SPEAKER NAME_ARCHIE}What happened…
 	What is this wretched scene…
 
 	Did I…make a horrible mistake?"
@@ -180,7 +180,7 @@ text Route128_Text_ArchieIOnlyWanted {
 }
 
 text Route128_Text_MaxieDoYouUnderstandNow {
-	"MAXIE: Do you understand now,
+	"{SPEAKER NAME_MAXIE}Do you understand now,
 	ARCHIE?
 
 	Do you finally see how disastrous
@@ -192,7 +192,7 @@ text Route128_Text_MaxieDoYouUnderstandNow {
 }
 
 text Route128_Text_MaxieResposibilityFallsToArchieAndMe {
-	"MAXIE: {PLAYER}, don't say anything.
+	"{SPEAKER NAME_MAXIE}{PLAYER}, don't say anything.
 
 	I know that I have no right to be
 	critical of ARCHIE…
@@ -209,7 +209,7 @@ text Route128_Text_MaxieResposibilityFallsToArchieAndMe {
 }
 
 text Route128_Text_MaxieThisDefiesBelief {
-	"MAXIE: This defies belief…
+	"{SPEAKER NAME_MAXIE}This defies belief…
 
 	Those super-ancient POKéMON…
 
@@ -218,7 +218,7 @@ text Route128_Text_MaxieThisDefiesBelief {
 }
 
 text Route128_Text_StevenWhatIsHappening {
-	"STEVEN: {PLAYER}{KUN}!
+	"{SPEAKER NAME_STEVEN}{PLAYER}{KUN}!
 	What is happening?"
 }
 

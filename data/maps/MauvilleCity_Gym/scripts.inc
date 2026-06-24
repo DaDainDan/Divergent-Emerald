@@ -613,7 +613,7 @@ MauvilleCity_Gym_Text_GymStatueCertified::
 
 MauvilleCity_Gym_Text_WattsonPreRematch::
 # 412 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON: Ah-ha! Here at last!\n"
+	.string "{SPEAKER NAME_WATSON}Ah-ha! Here at last!\n"
 	.string "I know what you want.\l"
 	.string "You want to battle my POKéMON!\p"
 	.string "Wahahahaha!\p"
@@ -627,7 +627,7 @@ MauvilleCity_Gym_Text_WattsonRematchDefeat::
 
 MauvilleCity_Gym_Text_WattsonPostRematch::
 # 428 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON: We'll have to recharge our\n"
+	.string "{SPEAKER NAME_WATSON}We'll have to recharge our\n"
 	.string "batteries again.\p"
 	.string "When we're fully charged up, we'll\n"
 	.string "gladly accept your challenge.\p"
@@ -636,7 +636,7 @@ MauvilleCity_Gym_Text_WattsonPostRematch::
 
 MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons::
 # 439 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON: Ah-ha! Here at last!\n"
+	.string "{SPEAKER NAME_WATSON}Ah-ha! Here at last!\n"
 	.string "I know what you want.\l"
 	.string "You want to battle my POKéMON!\p"
 	.string "Wahahahaha!\p"

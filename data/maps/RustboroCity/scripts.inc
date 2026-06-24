@@ -1668,7 +1668,7 @@ RustboroCity_Text_PleaseComeWithMe::
 
 RustboroCity_Text_MayHiLetsRegister::
 # 861 "data/maps/RustboroCity/scripts.pory"
-	.string "MAY: Oh, hi, {PLAYER}{KUN}!\p"
+	.string "{SPEAKER NAME_MAY}Oh, hi, {PLAYER}{KUN}!\p"
 	.string "You had a MATCH CALL feature put\n"
 	.string "on your POKéNAV!\p"
 	.string "Let's register each other so we can\n"
@@ -1682,7 +1682,7 @@ RustboroCity_Text_RegisteredMay::
 
 RustboroCity_Text_MayPassedBrineyWantToBattle::
 # 878 "data/maps/RustboroCity/scripts.pory"
-	.string "MAY: Oh, by the way, I passed\n"
+	.string "{SPEAKER NAME_MAY}Oh, by the way, I passed\n"
 	.string "MR. BRINEY in PETALBURG WOODS.\p"
 	.string "I guess he's on his way home to his\n"
 	.string "cottage by the sea.\p"
@@ -1693,19 +1693,19 @@ RustboroCity_Text_MayPassedBrineyWantToBattle::
 
 RustboroCity_Text_MayOhHaventRaisedPokemonEnough::
 # 892 "data/maps/RustboroCity/scripts.pory"
-	.string "MAY: Oh, what's the matter?\p"
+	.string "{SPEAKER NAME_MAY}Oh, what's the matter?\p"
 	.string "Haven't you caught or raised your\n"
 	.string "POKéMON very much?\p"
 	.string "That's not very good for a TRAINER!$"
 
 RustboroCity_Text_MayWantToBattle::
 # 901 "data/maps/RustboroCity/scripts.pory"
-	.string "MAY: So, what do you think?\n"
+	.string "{SPEAKER NAME_MAY}So, what do you think?\n"
 	.string "How about a little battle here?$"
 
 RustboroCity_Text_MayImNotGoingToLose::
 # 906 "data/maps/RustboroCity/scripts.pory"
-	.string "MAY: You just became a TRAINER,\n"
+	.string "{SPEAKER NAME_MAY}You just became a TRAINER,\n"
 	.string "{PLAYER}{KUN}. I'm not going to lose!$"
 
 RustboroCity_Text_MayDefeat::
@@ -1715,7 +1715,7 @@ RustboroCity_Text_MayDefeat::
 
 RustboroCity_Text_MayMrBrineyHint::
 # 916 "data/maps/RustboroCity/scripts.pory"
-	.string "MAY: Oh, by the way, MR. BRINEY, who\n"
+	.string "{SPEAKER NAME_MAY}Oh, by the way, MR. BRINEY, who\n"
 	.string "I just passed…\p"
 	.string "{PLAYER}{KUN}, you just moved here so you\n"
 	.string "might not know this, but MR. BRINEY\l"
@@ -1723,7 +1723,7 @@ RustboroCity_Text_MayMrBrineyHint::
 
 RustboroCity_Text_BrendanHiLetsRegister::
 # 925 "data/maps/RustboroCity/scripts.pory"
-	.string "BRENDAN: Oh, hey, {PLAYER}!\p"
+	.string "{SPEAKER NAME_BRENDAN}Oh, hey, {PLAYER}!\p"
 	.string "You had a MATCH CALL feature put\n"
 	.string "on your POKéNAV! Cool!\p"
 	.string "Let's register each other so we can\n"
@@ -1737,7 +1737,7 @@ RustboroCity_Text_RegisteredBrendan::
 
 RustboroCity_Text_BrendanPassedBrineyWantToBattle::
 # 942 "data/maps/RustboroCity/scripts.pory"
-	.string "BRENDAN: By the way, {PLAYER}, I walked\n"
+	.string "{SPEAKER NAME_BRENDAN}By the way, {PLAYER}, I walked\n"
 	.string "by MR. BRINEY in PETALBURG WOODS.\p"
 	.string "I bet he was on his way home to his\n"
 	.string "cottage by the sea.\p"
@@ -1749,17 +1749,17 @@ RustboroCity_Text_BrendanPassedBrineyWantToBattle::
 
 RustboroCity_Text_BrendanNoConfidenceInPokemon::
 # 958 "data/maps/RustboroCity/scripts.pory"
-	.string "BRENDAN: What's the matter? Don't have\n"
+	.string "{SPEAKER NAME_BRENDAN}What's the matter? Don't have\n"
 	.string "any confidence in your POKéMON?$"
 
 RustboroCity_Text_BrendanWantToBattle::
 # 963 "data/maps/RustboroCity/scripts.pory"
-	.string "BRENDAN: What's up?\n"
+	.string "{SPEAKER NAME_BRENDAN}What's up?\n"
 	.string "Want to have a battle with me?$"
 
 RustboroCity_Text_BrendanIWontGoEasy::
 # 968 "data/maps/RustboroCity/scripts.pory"
-	.string "BRENDAN: I know you just became\n"
+	.string "{SPEAKER NAME_BRENDAN}I know you just became\n"
 	.string "a TRAINER, but I won't go easy!$"
 
 RustboroCity_Text_BrendanDefeat::
@@ -1769,7 +1769,7 @@ RustboroCity_Text_BrendanDefeat::
 
 RustboroCity_Text_BrendanMrBrineyHint::
 # 978 "data/maps/RustboroCity/scripts.pory"
-	.string "BRENDAN: By the way, you know\n"
+	.string "{SPEAKER NAME_BRENDAN}By the way, you know\n"
 	.string "MR. BRINEY? The guy I just passed?\p"
 	.string "I bet you didn't know this, since you\n"
 	.string "just moved here, {PLAYER}, but\l"

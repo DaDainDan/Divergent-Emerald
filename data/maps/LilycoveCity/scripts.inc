@@ -622,7 +622,7 @@ LilycoveCity_EventScript_SchoolKidM_2:
 
 LilycoveCity_Text_MayShoppingLetsBattle::
 # 362 "data/maps/LilycoveCity/scripts.pory"
-	.string "MAY: Oh, hey?\n"
+	.string "{SPEAKER NAME_MAY}Oh, hey?\n"
 	.string "{PLAYER}{KUN}, are you shopping, too?\p"
 	.string "I bought a whole bunch of DOLLS and\n"
 	.string "POSTERS.\p"
@@ -636,19 +636,19 @@ LilycoveCity_Text_MayShoppingLetsBattle::
 
 LilycoveCity_Text_MayNotRaisingPokemon::
 # 380 "data/maps/LilycoveCity/scripts.pory"
-	.string "MAY: Oh, why? {PLAYER}{KUN}, haven't you\n"
+	.string "{SPEAKER NAME_MAY}Oh, why? {PLAYER}{KUN}, haven't you\n"
 	.string "been raising your POKéMON?\p"
 	.string "That's not a very good showing as a\n"
 	.string "TRAINER…$"
 
 LilycoveCity_Text_MayBattleMe::
 # 388 "data/maps/LilycoveCity/scripts.pory"
-	.string "MAY: Come on, battle with me, so I can\n"
+	.string "{SPEAKER NAME_MAY}Come on, battle with me, so I can\n"
 	.string "check out your POKéMON!$"
 
 LilycoveCity_Text_MayWontBeBeaten::
 # 393 "data/maps/LilycoveCity/scripts.pory"
-	.string "MAY: The POKéMON I raised won't be\n"
+	.string "{SPEAKER NAME_MAY}The POKéMON I raised won't be\n"
 	.string "beaten by your POKéMON, {PLAYER}{KUN}!$"
 
 LilycoveCity_Text_MayDefeat::
@@ -661,7 +661,7 @@ LilycoveCity_Text_MayDefeat::
 
 LilycoveCity_Text_MayGoingBackToLittleroot::
 # 408 "data/maps/LilycoveCity/scripts.pory"
-	.string "MAY: I'm thinking of going back to\n"
+	.string "{SPEAKER NAME_MAY}I'm thinking of going back to\n"
 	.string "LITTLEROOT soon.\p"
 	.string "I've caught a decent group of POKéMON,\n"
 	.string "and my POKéDEX is coming along, so\l"
@@ -701,7 +701,7 @@ LilycoveCity_Text_MayYouGoingToBattleFrontier::
 
 LilycoveCity_Text_BrendanShoppingLetsBattle::
 # 460 "data/maps/LilycoveCity/scripts.pory"
-	.string "BRENDAN: Oh, hey, it's {PLAYER}.\p"
+	.string "{SPEAKER NAME_BRENDAN}Oh, hey, it's {PLAYER}.\p"
 	.string "I'm running an errand for my dad.\n"
 	.string "No, I'm not buying any DOLLS.\p"
 	.string "Anyways, it's been a while.\p"
@@ -710,17 +710,17 @@ LilycoveCity_Text_BrendanShoppingLetsBattle::
 
 LilycoveCity_Text_BrendanNoConfidence::
 # 472 "data/maps/LilycoveCity/scripts.pory"
-	.string "BRENDAN: Oh, what's the matter?\n"
+	.string "{SPEAKER NAME_BRENDAN}Oh, what's the matter?\n"
 	.string "Don't have the confidence?$"
 
 LilycoveCity_Text_BrendanBattleMe::
 # 477 "data/maps/LilycoveCity/scripts.pory"
-	.string "BRENDAN: Want to battle to see who's\n"
+	.string "{SPEAKER NAME_BRENDAN}Want to battle to see who's\n"
 	.string "been raising POKéMON better?$"
 
 LilycoveCity_Text_BrendanWontBeBeaten::
 # 482 "data/maps/LilycoveCity/scripts.pory"
-	.string "BRENDAN: Aww, but you know I'm not\n"
+	.string "{SPEAKER NAME_BRENDAN}Aww, but you know I'm not\n"
 	.string "going to lose to no {PLAYER}.$"
 
 LilycoveCity_Text_BrendanDefeat::
@@ -732,7 +732,7 @@ LilycoveCity_Text_BrendanDefeat::
 
 LilycoveCity_Text_BrendanGoingBackToLittleroot::
 # 495 "data/maps/LilycoveCity/scripts.pory"
-	.string "BRENDAN: I…\n"
+	.string "{SPEAKER NAME_BRENDAN}I…\n"
 	.string "I plan on going home to LITTLEROOT.\p"
 	.string "You know I'm helping out my dad on his\n"
 	.string "POKéDEX. It's coming together pretty\l"

@@ -1024,7 +1024,7 @@ text SootopolisCity_Text_YouBroughtFlyingMon {
 }
 
 text SootopolisCity_Text_GroudonPleaseStop {
-	"MAXIE: G… GROUDON…
+	"{SPEAKER NAME_MAXIE}G… GROUDON…
 	Please! Stop what you're doing!
 
 	I know the extent of your power now!
@@ -1034,7 +1034,7 @@ text SootopolisCity_Text_GroudonPleaseStop {
 }
 
 text SootopolisCity_Text_AfterAllOurScheming {
-	"MAXIE: So the super-ancient POKéMON
+	"{SPEAKER NAME_MAXIE}So the super-ancient POKéMON
 	weren't only GROUDON and KYOGRE…
 
 	After all our fruitless scheming and
@@ -1047,7 +1047,7 @@ text SootopolisCity_Text_AfterAllOurScheming {
 }
 
 text SootopolisCity_Text_KyogreCalmDown {
-	"ARCHIE: KYOGRE! What's wrong?!
+	"{SPEAKER NAME_ARCHIE}KYOGRE! What's wrong?!
 	Look over here! It's the RED ORB!
 	Calm down! KYOGRE!
 
@@ -1059,7 +1059,7 @@ text SootopolisCity_Text_KyogreCalmDown {
 }
 
 text SootopolisCity_Text_TryingMeaninglessToPokemon {
-	"ARCHIE: KYOGRE and GROUDON both
+	"{SPEAKER NAME_ARCHIE}KYOGRE and GROUDON both
 	flew off to who knows where.
 
 	The weather in HOENN has returned
@@ -1074,7 +1074,7 @@ text SootopolisCity_Text_TryingMeaninglessToPokemon {
 }
 
 text SootopolisCity_Text_InvolvedWithCrisisComeWithMe {
-	"STEVEN: Those POKéMON fighting…
+	"{SPEAKER NAME_STEVEN}Those POKéMON fighting…
 	GROUDON… And KYOGRE…
 
 	The two super-ancient POKéMON
@@ -1096,7 +1096,7 @@ text SootopolisCity_Text_InvolvedWithCrisisComeWithMe {
 }
 
 text SootopolisCity_Text_DoesThisMakeYourFearPokemon {
-	"STEVEN: Listen, {PLAYER}{KUN}.
+	"{SPEAKER NAME_STEVEN}Listen, {PLAYER}{KUN}.
 
 	Does seeing GROUDON and KYOGRE make
 	you think POKéMON are to be feared?
@@ -1109,7 +1109,7 @@ text SootopolisCity_Text_DoesThisMakeYourFearPokemon {
 }
 
 text SootopolisCity_Text_HereWereAreHelpWallace {
-	"STEVEN: Okay, here we are!
+	"{SPEAKER NAME_STEVEN}Okay, here we are!
 
 	Inside here you'll find someone named
 	WALLACE.
@@ -1119,26 +1119,26 @@ text SootopolisCity_Text_HereWereAreHelpWallace {
 }
 
 text SootopolisCity_Text_KnowWhatsNeededToHelpHim {
-	"STEVEN: I think you have what's
+	"{SPEAKER NAME_STEVEN}I think you have what's
 	needed to help him…"
 }
 
 text SootopolisCity_Text_NeverBeenToSkyPillar {
-	"STEVEN: The SKY PILLAR…
+	"{SPEAKER NAME_STEVEN}The SKY PILLAR…
 
 	I've never been there.
 	I wonder where it could be?"
 }
 
 text SootopolisCity_Text_SoThatsRayquaza {
-	"STEVEN: So that's RAYQUAZA…
+	"{SPEAKER NAME_STEVEN}So that's RAYQUAZA…
 
 	It's incredible how the two rampaging
 	POKéMON would flee from it in fear…"
 }
 
 text SootopolisCity_Text_MaxieArchieLeft {
-	"STEVEN: It looks like both MAXIE and
+	"{SPEAKER NAME_STEVEN}It looks like both MAXIE and
 	ARCHIE have gone away somewhere.
 
 	Perhaps they've gone to MT. PYRE to
@@ -1146,7 +1146,7 @@ text SootopolisCity_Text_MaxieArchieLeft {
 }
 
 text SootopolisCity_Text_HaventYouScaledSkyPillar {
-	"WALLACE: Oh?
+	"{SPEAKER NAME_WALLACE}Oh?
 	{PLAYER}{KUN}?
 
 	Haven't you scaled the SKY PILLAR
@@ -1157,7 +1157,7 @@ text SootopolisCity_Text_HaventYouScaledSkyPillar {
 }
 
 text SootopolisCity_Text_AquaMagmaDidntMeanHarm {
-	"WALLACE: {PLAYER}{KUN}…
+	"{SPEAKER NAME_WALLACE}{PLAYER}{KUN}…
 
 	The leaders of TEAM MAGMA and AQUA,
 	I don't think they meant harm.
@@ -1167,7 +1167,7 @@ text SootopolisCity_Text_AquaMagmaDidntMeanHarm {
 }
 
 text SootopolisCity_Text_ThankYouForHelpAcceptThis {
-	"WALLACE: {PLAYER}{KUN}…
+	"{SPEAKER NAME_WALLACE}{PLAYER}{KUN}…
 	My eyes didn't deceive me.
 
 	Thanks to your help, SOOTOPOLIS…
@@ -1198,7 +1198,7 @@ text SootopolisCity_Text_ExplainWaterfallGoToGym {
 }
 
 text SootopolisCity_Text_DazzledByMentor {
-	"WALLACE: I'm sure that you will be
+	"{SPEAKER NAME_WALLACE}I'm sure that you will be
 	dazzled by my mentor's breathtakingly
 	elegant battle style."
 }

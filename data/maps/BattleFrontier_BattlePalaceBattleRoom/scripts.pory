@@ -427,7 +427,7 @@ text BattleFrontier_BattlePalaceBattleRoom_Text_AnnounceArrivalOfSpenser {
 }
 
 text BattleFrontier_BattlePalaceBattleRoom_Text_SpenserFirstIntro {
-	"SPENSER: My physical being is with
+	"{SPEAKER NAME_SPENSER}My physical being is with
 	POKéMON always!
 
 	My heart beats as one with
@@ -449,7 +449,7 @@ text BattleFrontier_BattlePalaceBattleRoom_Text_ProveYourBondWithMons {
 }
 
 text BattleFrontier_BattlePalaceBattleRoom_Text_SpenserPostSilverBattle {
-	"SPENSER: Gwahahah!
+	"{SPEAKER NAME_SPENSER}Gwahahah!
 
 	Hah, you never fell for my bluster!
 	Sorry for trying that stunt!
@@ -472,7 +472,7 @@ text BattleFrontier_BattlePalaceBattleRoom_Text_ReceivedSpiritsSymbol {
 }
 
 text BattleFrontier_BattlePalaceBattleRoom_Text_SpenserAwaitNextTime {
-	"SPENSER: Your POKéMON's eyes are 
+	"{SPEAKER NAME_SPENSER}Your POKéMON's eyes are 
 	truly clear and unclouded.
 
 	I will eagerly await the next
@@ -480,7 +480,7 @@ text BattleFrontier_BattlePalaceBattleRoom_Text_SpenserAwaitNextTime {
 }
 
 text BattleFrontier_BattlePalaceBattleRoom_Text_SpenserThisTimeWontHoldBack {
-	"SPENSER: Gwahahah!
+	"{SPEAKER NAME_SPENSER}Gwahahah!
 	You've battled your way up again?
 
 	You must have developed a truly
@@ -500,7 +500,7 @@ text BattleFrontier_BattlePalaceBattleRoom_Text_Kaaah {
 }
 
 text BattleFrontier_BattlePalaceBattleRoom_Text_SpenserYourTeamIsAdmirable {
-	"SPENSER: Well, that was some display!
+	"{SPEAKER NAME_SPENSER}Well, that was some display!
 	Even fully unleashed, my brethren
 	could not overpower you.
 
@@ -524,7 +524,7 @@ text BattleFrontier_BattlePalaceBattleRoom_Text_SpiritsSymbolTookGoldenShine {
 }
 
 text BattleFrontier_BattlePalaceBattleRoom_Text_SpenserComeSeeMeAgain {
-	"SPENSER: Gwahahah!
+	"{SPEAKER NAME_SPENSER}Gwahahah!
 
 	Come see me time and again!
 	My brethren and I will be waiting!"

@@ -656,7 +656,7 @@ text Route104_Text_TrainerTipsDoubleBattles {
 }
 
 text Route104_Text_MayWeShouldRegister {
-	"MAY: Oh, hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Oh, hi, {PLAYER}{KUN}!
 
 	DEVON upgraded your POKéNAV with
 	the MATCH CALL system, huh?
@@ -671,7 +671,7 @@ text Route104_Text_RegisteredMay {
 }
 
 text Route104_Text_MayHowsYourPokedex {
-	"MAY: Oh, by the way, {PLAYER}{KUN},
+	"{SPEAKER NAME_MAY}Oh, by the way, {PLAYER}{KUN},
 	how's your POKéDEX coming along?"
 }
 
@@ -682,7 +682,7 @@ text Route104_Text_MayMinesDecentLetsBattle {
 }
 
 text Route104_Text_MayHaventRaisedPokemon {
-	"MAY: Oh, what's the matter?
+	"{SPEAKER NAME_MAY}Oh, what's the matter?
 
 	Haven't you caught or raised your
 	POKéMON very much?
@@ -691,12 +691,12 @@ text Route104_Text_MayHaventRaisedPokemon {
 }
 
 text Route104_Text_MayLetsBattle {
-	"MAY: So, what do you think?
+	"{SPEAKER NAME_MAY}So, what do you think?
 	How about a little battle here?"
 }
 
 text Route104_Text_MayIntro {
-	"MAY: You just became a TRAINER,
+	"{SPEAKER NAME_MAY}You just became a TRAINER,
 	{PLAYER}{KUN}. I'm not going to lose!"
 }
 
@@ -706,7 +706,7 @@ text Route104_Text_MayDefeat {
 }
 
 text Route104_Text_MayPostBattle {
-	"MAY: I can tell you've gotten pretty
+	"{SPEAKER NAME_MAY}I can tell you've gotten pretty
 	good with the way you handle POKéMON.
 
 	But instead of only making them
@@ -717,7 +717,7 @@ text Route104_Text_MayPostBattle {
 }
 
 text Route104_Text_BrendanWeShouldRegister {
-	"BRENDAN: Oh, hey, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Oh, hey, {PLAYER}!
 
 	Cool, you had DEVON install the MATCH
 	CALL system on your POKéNAV!
@@ -732,7 +732,7 @@ text Route104_Text_RegisteredBrendan {
 }
 
 text Route104_Text_BrendanHowsYourPokedex {
-	"BRENDAN: {PLAYER}, how's your POKéDEX?
+	"{SPEAKER NAME_BRENDAN}{PLAYER}, how's your POKéDEX?
 	Have you filled in any pages yet?"
 }
 
@@ -744,17 +744,17 @@ text Route104_Text_BrendanDoingGreatLetsBattle {
 }
 
 text Route104_Text_BrendanNoConfidence {
-	"BRENDAN: What's the matter? Don't have
+	"{SPEAKER NAME_BRENDAN}What's the matter? Don't have
 	any confidence in your POKéMON?"
 }
 
 text Route104_Text_BrendanLetsBattle {
-	"BRENDAN: What's up?
+	"{SPEAKER NAME_BRENDAN}What's up?
 	Want to have a battle with me?"
 }
 
 text Route104_Text_BrendanIntro {
-	"BRENDAN: I know you just became
+	"{SPEAKER NAME_BRENDAN}I know you just became
 	a TRAINER, but I won't go easy!"
 }
 
@@ -764,7 +764,7 @@ text Route104_Text_BrendanDefeat {
 }
 
 text Route104_Text_BrendanPostBattle {
-	"BRENDAN: You've gotten pretty decent
+	"{SPEAKER NAME_BRENDAN}You've gotten pretty decent
 	at handling POKéMON.
 
 	But, you know, you shouldn't just be

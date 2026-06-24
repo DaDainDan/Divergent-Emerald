@@ -181,11 +181,11 @@ script Route101_EventScript_RouteSign {
 }
 
 text Route101_Text_HelpMe {
-	"H-help me!"
+	"{SPEAKER NAME_UNKNOWN}H-help me!"
 }
 
 text Route101_Text_PleaseHelp {
-	"Hello! You over there!
+	"{SPEAKER NAME_UNKNOWN}Hello! You over there!
 	Please! Help!
 
 	In my BAG!
@@ -193,12 +193,12 @@ text Route101_Text_PleaseHelp {
 }
 
 text Route101_Text_DontLeaveMe {
-	"Wh-Where are you going?!
+	"{SPEAKER NAME_UNKNOWN}Wh-Where are you going?!
 	Don't leave me like this!"
 }
 
 text Route101_Text_YouSavedMe {
-	"PROF. BIRCH: Whew…
+	"{SPEAKER NAME_UNKNOWN}Whew…
 
 	I was in the tall grass studying wild
 	POKéMON when I was jumped.
@@ -209,6 +209,7 @@ text Route101_Text_YouSavedMe {
 	Oh?
 
 	Hi, you're {PLAYER}{KUN}!
+    I'm PROF. BIRCH.
 
 	This is not the place to chat, so come
 	by my POKéMON LAB later, okay?"

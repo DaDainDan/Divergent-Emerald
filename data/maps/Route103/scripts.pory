@@ -192,7 +192,7 @@ script Route103_EventScript_Isabelle {
 }
 
 text Route103_Text_MayRoute103Pokemon {
-	"MAY: Let's see… The POKéMON found
+	"{SPEAKER NAME_MAY}Let's see… The POKéMON found
 	on ROUTE 103 include…"
 }
 
@@ -215,7 +215,7 @@ text Route103_Text_MayDefeated {
 }
 
 text Route103_Text_MayTimeToHeadBack {
-	"MAY: I think I know why my dad has
+	"{SPEAKER NAME_MAY}I think I know why my dad has
 	an eye out for you now.
 
 	I mean, you just got that POKéMON,
@@ -229,7 +229,7 @@ text Route103_Text_MayTimeToHeadBack {
 }
 
 text Route103_Text_BrendanRoute103Pokemon {
-	"BRENDAN: Okay, so it's this one and
+	"{SPEAKER NAME_BRENDAN}Okay, so it's this one and
 	that one that live on ROUTE 103…"
 }
 
@@ -250,7 +250,7 @@ text Route103_Text_BrendanDefeated {
 }
 
 text Route103_Text_BrendanTimeToHeadBack {
-	"BRENDAN: I think I get it.
+	"{SPEAKER NAME_BRENDAN}I think I get it.
 	I think I know why my dad has his eye
 	out for you now.
 

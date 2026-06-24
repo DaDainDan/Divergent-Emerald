@@ -510,7 +510,7 @@ BattleFrontier_BattlePyramidTop_Text_BringCourageToOurBattle::
 
 BattleFrontier_BattlePyramidTop_Text_BrandonFrontierPassPlease::
 # 274 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
-	.string "BRANDON: Hahahah! Grand it was!\n"
+	.string "{SPEAKER NAME_BRANDON}Hahahah! Grand it was!\n"
 	.string "Grand, yes, indeed!\p"
 	.string "Well done! You've earned recognition!\n"
 	.string "Your FRONTIER PASS, please!$"
@@ -527,7 +527,7 @@ BattleFrontier_BattlePyramidTop_Text_LookForwardToNextMeeting::
 
 BattleFrontier_BattlePyramidTop_Text_BrandonYouveReturned::
 # 292 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
-	.string "BRANDON: …You've finally returned,\n"
+	.string "{SPEAKER NAME_BRANDON}…You've finally returned,\n"
 	.string "young explorer…\p"
 	.string "Your love of adventure seems to come\n"
 	.string "deep from within your heart…\p"
@@ -553,7 +553,7 @@ BattleFrontier_BattlePyramidTop_Text_EverythingYouHave::
 
 BattleFrontier_BattlePyramidTop_Text_BrandonRemarkableHaveThis::
 # 326 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
-	.string "BRANDON: Hahahah!\n"
+	.string "{SPEAKER NAME_BRANDON}Hahahah!\n"
 	.string "Remarkable!\l"
 	.string "Yes, it's grand, indeed!\p"
 	.string "Young explorer!\p"

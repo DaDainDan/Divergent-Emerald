@@ -101,7 +101,7 @@ LittlerootTown_BrendansHouse_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_2:
 # 42 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setvar VAR_0x8005, LOCALID_PLAYERS_HOUSE_1F_MOM
 # 43 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	goto PlayersHouse_1F_EventScript_PetalburgGymReportMale
+	goto PlayersHouse_1F_EventScript_PetalburgGymReport
 	end
 
 
@@ -474,7 +474,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MeetRival_Movement_7:
 
 PlayersHouse_1F_Text_IsntItNiceInHere::
 # 173 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: See, {PLAYER}?\n"
+	.string "{SPEAKER NAME_MOM}See, {PLAYER}?\n"
 	.string "Isn't it nice in here, too?$"
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock::
@@ -490,28 +490,28 @@ PlayersHouse_1F_Text_MoversPokemonGoSetClock::
 
 PlayersHouse_1F_Text_ArentYouInterestedInRoom::
 # 191 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: Well, {PLAYER}?\p"
+	.string "{SPEAKER NAME_MOM}Well, {PLAYER}?\p"
 	.string "Aren't you interested in seeing your\n"
 	.string "very own room?$"
 
 PlayersHouse_1F_Text_GoSetTheClock::
 # 198 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: {PLAYER}.\p"
+	.string "{SPEAKER NAME_MOM}{PLAYER}.\p"
 	.string "Go set the clock in your room, honey.$"
 
 PlayersHouse_1F_Text_OhComeQuickly::
 # 204 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: Oh! {PLAYER}, {PLAYER}!\n"
+	.string "{SPEAKER NAME_MOM}Oh! {PLAYER}, {PLAYER}!\n"
 	.string "Quick! Come quickly!$"
 
 PlayersHouse_1F_Text_MaybeDadWillBeOn::
 # 209 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: Look! It's PETALBURG GYM!\n"
+	.string "{SPEAKER NAME_MOM}Look! It's PETALBURG GYM!\n"
 	.string "Maybe DAD will be on!$"
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim::
 # 214 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: Oh… It's over.\p"
+	.string "{SPEAKER NAME_MOM}Oh… It's over.\p"
 	.string "I think DAD was on, but we missed him.\n"
 	.string "Too bad.$"
 
@@ -525,37 +525,37 @@ PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor::
 
 PlayersHouse_1F_Text_SeeYouHoney::
 # 231 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: See you, honey!$"
+	.string "{SPEAKER NAME_MOM}See you, honey!$"
 
 PlayersHouse_1F_Text_DidYouMeetProfBirch::
 # 235 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: Did you introduce yourself to\n"
+	.string "{SPEAKER NAME_MOM}Did you introduce yourself to\n"
 	.string "PROF. BIRCH?$"
 
 PlayersHouse_1F_Text_YouShouldRestABit::
 # 240 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: How are you doing, {PLAYER}?\n"
+	.string "{SPEAKER NAME_MOM}How are you doing, {PLAYER}?\n"
 	.string "You look a little tired.\p"
 	.string "I think you should rest a bit.$"
 
 PlayersHouse_1F_Text_TakeCareHoney::
 # 247 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: Take care, honey!$"
+	.string "{SPEAKER NAME_MOM}Take care, honey!$"
 
 PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom::
 # 251 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: Oh? Did DAD give you that BADGE?\p"
+	.string "{SPEAKER NAME_MOM}Oh? Did DAD give you that BADGE?\p"
 	.string "Then here's something from your MOM!$"
 
 PlayersHouse_1F_Text_DontPushYourselfTooHard::
 # 257 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "Don't push yourself too hard, dear.\n"
+	.string "{SPEAKER NAME_MOM}Don't push yourself too hard, dear.\n"
 	.string "You can always come home.\p"
 	.string "Go for it, honey!$"
 
 PlayersHouse_1F_Text_IsThatAPokenav::
 # 264 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: What is that, honey? A POKéNAV?\n"
+	.string "{SPEAKER NAME_MOM}What is that, honey? A POKéNAV?\n"
 	.string "Someone from DEVON gave it to you?\p"
 	.string "Well, honey, how about registering\n"
 	.string "your mom?\p"
@@ -576,7 +576,7 @@ PlayersHouse_1F_Text_Vigoroth2::
 
 PlayersHouse_1F_Text_ReportFromPetalburgGym::
 # 287 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "INTERVIEWER: …We brought you this\n"
+	.string "{SPEAKER NAME_INTERVIEWER}…We brought you this\n"
 	.string "report from in front of PETALBURG GYM.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV::
@@ -597,7 +597,7 @@ PlayersHouse_1F_Text_RunningShoesManual::
 
 PlayersHouse_1F_Text_TicketFromBrineyCameForYou::
 # 312 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "DAD: Hm?\p"
+	.string "{SPEAKER NAME_DAD}Hm?\p"
 	.string "Hey, it's {PLAYER}!\p"
 	.string "It's been a while since I saw you,\n"
 	.string "but you look…stronger, somehow.\p"
@@ -609,26 +609,26 @@ PlayersHouse_1F_Text_TicketFromBrineyCameForYou::
 
 PlayersHouse_1F_Text_PortsInSlateportLilycove::
 # 328 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "DAD: Hm, a TICKET for a ferry?\p"
+	.string "{SPEAKER NAME_DAD}Hm, a TICKET for a ferry?\p"
 	.string "If I recall, there are ferry ports in\n"
 	.string "SLATEPORT and LILYCOVE.$"
 
 PlayersHouse_1F_Text_BetterGetBackToGym::
 # 335 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "I'd better get back to PETALBURG GYM.\p"
+	.string "{SPEAKER NAME_DAD}I'd better get back to PETALBURG GYM.\p"
 	.string "MOM, thanks for looking after the house\n"
 	.string "while I'm away.$"
 
 PlayersHouse_1F_Text_DadShouldStayLonger::
 # 342 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: That DAD of yours…\p"
+	.string "{SPEAKER NAME_MOM}That DAD of yours…\p"
 	.string "He comes home for the first time in a\n"
 	.string "while, but all he talks about is POKéMON.\p"
 	.string "He should relax and stay a little longer.$"
 
 PlayersHouse_1F_Text_IsThatABreakingStory::
 # 351 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: Is that a breaking news story?$"
+	.string "{SPEAKER NAME_MOM}Is that a breaking news story?$"
 
 PlayersHouse_1F_Text_LatiEmergencyNewsFlash::
 # 355 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -644,11 +644,11 @@ PlayersHouse_1F_Text_LatiEmergencyNewsFlash::
 
 PlayersHouse_1F_Text_WhatColorDidTheySay::
 # 370 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: {PLAYER}, did you catch that?\p"
+	.string "{SPEAKER NAME_MOM}{PLAYER}, did you catch that?\p"
 	.string "What color did the announcer say\n"
 	.string "that POKéMON was?$"
 
 PlayersHouse_1F_Text_StillUnknownPokemon::
 # 377 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "MOM: Well, isn't that something!\n"
+	.string "{SPEAKER NAME_MOM}Well, isn't that something!\n"
 	.string "There are still unknown POKéMON.$"

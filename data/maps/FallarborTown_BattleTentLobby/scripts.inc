@@ -552,7 +552,7 @@ FallarborTown_BattleTentLobby_Text_CameToCampOut::
 
 FallarborTown_BattleTentLobby_Text_ScottLookingForSomeone::
 # 288 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	.string "SCOTT: Hi, {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_SCOTT}Hi, {PLAYER}{KUN}!\n"
 	.string "So you came out to this BATTLE TENT!\p"
 	.string "The people in these parts tend to be\n"
 	.string "easygoing and laid-back.\p"
@@ -568,6 +568,6 @@ FallarborTown_BattleTentLobby_Text_ScottLookingForSomeone::
 
 FallarborTown_BattleTentLobby_Text_ScottMakeChallenge::
 # 310 "data/maps/FallarborTown_BattleTentLobby/scripts.pory"
-	.string "SCOTT: Instead of wasting your\n"
+	.string "{SPEAKER NAME_SCOTT}Instead of wasting your\n"
 	.string "time with the likes of me, why not\l"
 	.string "make a challenge?$"

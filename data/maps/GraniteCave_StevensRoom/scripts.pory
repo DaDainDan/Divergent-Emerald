@@ -47,7 +47,7 @@ text GraniteCave_StevensRoom_Text_ImStevenLetterForMe {
 }
 
 text GraniteCave_StevensRoom_Text_ThankYouTakeThis {
-	"STEVEN: Okay, thank you.
+	"{SPEAKER NAME_STEVEN}Okay, thank you.
 
 	You went through all this trouble to
 	deliver that. I need to thank you.
@@ -60,7 +60,7 @@ text GraniteCave_StevensRoom_Text_ThankYouTakeThis {
 }
 
 text GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister {
-	"STEVEN: Your POKéMON appear quite
+	"{SPEAKER NAME_STEVEN}Your POKéMON appear quite
 	capable.
 
 	If you keep training, you could even

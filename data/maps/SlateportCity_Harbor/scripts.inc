@@ -759,13 +759,13 @@ SlateportCity_Harbor_Text_SubTooSmallForMe::
 
 SlateportCity_Harbor_Text_SameThugsTriedToRobAtMuseum::
 # 393 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: Those thugs…\p"
+	.string "{SPEAKER NAME_STERN}Those thugs…\p"
 	.string "They're the same lot who tried to rob\n"
 	.string "the DEVON GOODS at the MUSEUM.$"
 
 SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove::
 # 400 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "ARCHIE: Oh?\n"
+	.string "{SPEAKER NAME_ARCHIE}Oh?\n"
 	.string "Not you again…\p"
 	.string "You are tenacious to track us here,\n"
 	.string "that much I will give you.\p"
@@ -777,7 +777,7 @@ SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove::
 
 SlateportCity_Harbor_Text_CaptSternWhyStealMySubmarine::
 # 416 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: Why…\p"
+	.string "{SPEAKER NAME_STERN}Why…\p"
 	.string "Why would TEAM AQUA steal my\n"
 	.string "SUBMARINE EXPLORER 1?\p"
 	.string "They can't be after the slumbering\n"
@@ -787,7 +787,7 @@ SlateportCity_Harbor_Text_CaptSternWhyStealMySubmarine::
 
 SlateportCity_Harbor_Text_TeamAquaLeftNeedDive::
 # 429 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: Oh, {PLAYER}{KUN}…\p"
+	.string "{SPEAKER NAME_STERN}Oh, {PLAYER}{KUN}…\p"
 	.string "Okay… So TEAM AQUA left before you\n"
 	.string "could stop them…\p"
 	.string "Oh, no, don't blame yourself.\n"
@@ -803,7 +803,7 @@ SlateportCity_Harbor_Text_TeamAquaLeftNeedDive::
 
 SlateportCity_Harbor_Text_NeedDiveToCatchSub::
 # 451 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: Trying to catch a\n"
+	.string "{SPEAKER NAME_STERN}Trying to catch a\n"
 	.string "submarine… It's impossible.\p"
 	.string "You would need a POKéMON that knows\n"
 	.string "how to DIVE…\p"
@@ -814,14 +814,14 @@ SlateportCity_Harbor_Text_NeedDiveToCatchSub::
 
 SlateportCity_Harbor_Text_WontBeLongBeforeWeFinishFerry::
 # 465 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: Oh, yes.\n"
+	.string "{SPEAKER NAME_STERN}Oh, yes.\n"
 	.string "MR. BRINEY came to our SHIPYARD.\p"
 	.string "It won't be long now before we finish\n"
 	.string "making the ferry!$"
 
 SlateportCity_Harbor_Text_FinishedMakingFerry::
 # 473 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: {PLAYER}{KUN}!\p"
+	.string "{SPEAKER NAME_STERN}{PLAYER}{KUN}!\p"
 	.string "We finally finished making the ferry\n"
 	.string "S.S. TIDAL!\p"
 	.string "We couldn't have done it without\n"
@@ -830,7 +830,7 @@ SlateportCity_Harbor_Text_FinishedMakingFerry::
 
 SlateportCity_Harbor_Text_WouldYouTradeScanner::
 # 485 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: Oh?\n"
+	.string "{SPEAKER NAME_STERN}Oh?\n"
 	.string "{PLAYER}{KUN}, that item you have…\p"
 	.string "That's a SCANNER! That would sure\n"
 	.string "help us on our explorations.\p"
@@ -841,24 +841,24 @@ SlateportCity_Harbor_Text_WouldYouTradeScanner::
 
 SlateportCity_Harbor_Text_IfYouWantToTradeLetMeKnow::
 # 499 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: Are you certain?\n"
+	.string "{SPEAKER NAME_STERN}Are you certain?\n"
 	.string "It's useless to you, {PLAYER}{KUN}…\p"
 	.string "Well, okay, then. If you want to trade\n"
 	.string "your SCANNER, let me know.$"
 
 SlateportCity_Harbor_Text_TradeForDeepSeaTooth::
 # 507 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: So you'll trade it for\n"
+	.string "{SPEAKER NAME_STERN}So you'll trade it for\n"
 	.string "my DEEPSEATOOTH?$"
 
 SlateportCity_Harbor_Text_TradeForDeepSeaScale::
 # 512 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: So you'll trade it for\n"
+	.string "{SPEAKER NAME_STERN}So you'll trade it for\n"
 	.string "my DEEPSEASCALE?$"
 
 SlateportCity_Harbor_Text_WhichOneDoYouWant::
 # 517 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: Which one do you want?$"
+	.string "{SPEAKER NAME_STERN}Which one do you want?$"
 
 SlateportCity_Harbor_Text_HandedScannerToStern::
 # 521 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -867,5 +867,5 @@ SlateportCity_Harbor_Text_HandedScannerToStern::
 
 SlateportCity_Harbor_Text_ThisWillHelpResearch::
 # 526 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "CAPT. STERN: Thanks, {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_STERN}Thanks, {PLAYER}{KUN}!\n"
 	.string "This will help our research a lot!$"

@@ -124,7 +124,7 @@ movement EverGrandeCity_ChampionsRoom_Movement_RivalLookBackAndForth {
 }
 
 text EverGrandeCity_ChampionsRoom_Text_IntroSpeech {
-	"WALLACE: Welcome, {PLAYER}{KUN}.
+	"{SPEAKER NAME_WALLACE}Welcome, {PLAYER}{KUN}.
 
 	That incident in SOOTOPOLIS CITY…
 	That was superb work, putting an end
@@ -171,7 +171,7 @@ text EverGrandeCity_ChampionsRoom_Text_Defeat {
 }
 
 text EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech {
-	"WALLACE: The POKéMON you sent into
+	"{SPEAKER NAME_WALLACE}The POKéMON you sent into
 	battle…
 
 	At times they danced like a spring
@@ -192,14 +192,14 @@ text EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech {
 }
 
 text EverGrandeCity_ChampionsRoom_Text_MayAdvice {
-	"MAY: {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}{PLAYER}{KUN}!
 
 	Here's some advice before you challenge
 	the CHAMPION…"
 }
 
 text EverGrandeCity_ChampionsRoom_Text_MayItsAlreadyOver {
-	"MAY: Huh?
+	"{SPEAKER NAME_MAY}Huh?
 	What, what, what?
 
 	{PLAYER}{KUN}…
@@ -208,21 +208,21 @@ text EverGrandeCity_ChampionsRoom_Text_MayItsAlreadyOver {
 }
 
 text EverGrandeCity_ChampionsRoom_Text_BrendanAdvice {
-	"BRENDAN: {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}{PLAYER}!
 
 	How would you like some advice before
 	you challenge the CHAMPION?…"
 }
 
 text EverGrandeCity_ChampionsRoom_Text_BrendanYouveWon {
-	"BRENDAN: {PLAYER}…
+	"{SPEAKER NAME_BRENDAN}{PLAYER}…
 
 	Are you trying to tell me…
 	You've beaten the CHAMPION?"
 }
 
 text EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex {
-	"PROF. BIRCH: See?
+	"{SPEAKER NAME_BIRCH}See?
 	What did I tell you, {RIVAL}?
 
 	Didn't I tell you that you don't need
@@ -245,14 +245,14 @@ text EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex {
 }
 
 text EverGrandeCity_ChampionsRoom_Text_BirchCongratulations {
-	"PROF. BIRCH: Anyways,
+	"{SPEAKER NAME_BIRCH}Anyways,
 	congratulations!
 
 	Now, go proudly into the final room!"
 }
 
 text EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe {
-	"WALLACE: {PLAYER}{KUN}…
+	"{SPEAKER NAME_WALLACE}{PLAYER}{KUN}…
 
 	No, let me rephrase that properly.
 
@@ -262,7 +262,7 @@ text EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe {
 }
 
 text EverGrandeCity_ChampionsRoom_Text_WallaceWaitOutside {
-	"WALLACE: I'm sorry, but…
+	"{SPEAKER NAME_WALLACE}I'm sorry, but…
 
 	From here on, only those TRAINERS who
 	have become CHAMPIONS may enter.
@@ -272,7 +272,7 @@ text EverGrandeCity_ChampionsRoom_Text_WallaceWaitOutside {
 }
 
 text EverGrandeCity_ChampionsRoom_Text_MayCongratulations {
-	"MAY: Groan…
+	"{SPEAKER NAME_MAY}Groan…
 
 	… … … … … … … …
 	… … … … … … … …
@@ -285,7 +285,7 @@ text EverGrandeCity_ChampionsRoom_Text_MayCongratulations {
 }
 
 text EverGrandeCity_ChampionsRoom_Text_BrendanCongratulations {
-	"BRENDAN: Whaaaat?! … … … … …
+	"{SPEAKER NAME_BRENDAN}Whaaaat?! … … … … …
 	… … … … … … … …
 
 	It can't be helped if that's the rule.

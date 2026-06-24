@@ -593,7 +593,7 @@ DewfordTown_Gym_Text_GymStatueCertified::
 
 DewfordTown_Gym_Text_BrawlyPreRematch::
 # 397 "data/maps/DewfordTown_Gym/scripts.pory"
-	.string "BRAWLY: A wave may draw back, but it\n"
+	.string "{SPEAKER NAME_BRAWLY}A wave may draw back, but it\n"
 	.string "always returns to the shore.\p"
 	.string "A giant wave of a talent like you…\n"
 	.string "I knew you would return!\p"
@@ -607,13 +607,13 @@ DewfordTown_Gym_Text_BrawlyRematchDefeat::
 
 DewfordTown_Gym_Text_BrawlyPostRematch::
 # 413 "data/maps/DewfordTown_Gym/scripts.pory"
-	.string "BRAWLY: Battling is vast and it's deep.\n"
+	.string "{SPEAKER NAME_BRAWLY}Battling is vast and it's deep.\n"
 	.string "You can't see the bottom.\l"
 	.string "It's just like the sea of HOENN!$"
 
 DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons::
 # 419 "data/maps/DewfordTown_Gym/scripts.pory"
-	.string "BRAWLY: A wave may draw back, but it\n"
+	.string "{SPEAKER NAME_BRAWLY}A wave may draw back, but it\n"
 	.string "always returns to the shore.\p"
 	.string "A giant wave of a talent like you…\n"
 	.string "I knew you would return!\p"

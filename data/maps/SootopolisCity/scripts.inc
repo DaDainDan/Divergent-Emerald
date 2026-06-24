@@ -2490,7 +2490,7 @@ SootopolisCity_Text_YouBroughtFlyingMon::
 
 SootopolisCity_Text_GroudonPleaseStop::
 # 1026 "data/maps/SootopolisCity/scripts.pory"
-	.string "MAXIE: G… GROUDON…\n"
+	.string "{SPEAKER NAME_MAXIE}G… GROUDON…\n"
 	.string "Please! Stop what you're doing!\p"
 	.string "I know the extent of your power now!\p"
 	.string "If you keep going, all HOENN, not just\n"
@@ -2498,7 +2498,7 @@ SootopolisCity_Text_GroudonPleaseStop::
 
 SootopolisCity_Text_AfterAllOurScheming::
 # 1036 "data/maps/SootopolisCity/scripts.pory"
-	.string "MAXIE: So the super-ancient POKéMON\n"
+	.string "{SPEAKER NAME_MAXIE}So the super-ancient POKéMON\n"
 	.string "weren't only GROUDON and KYOGRE…\p"
 	.string "After all our fruitless scheming and\n"
 	.string "frantic efforts, that one POKéMON's\l"
@@ -2509,7 +2509,7 @@ SootopolisCity_Text_AfterAllOurScheming::
 
 SootopolisCity_Text_KyogreCalmDown::
 # 1049 "data/maps/SootopolisCity/scripts.pory"
-	.string "ARCHIE: KYOGRE! What's wrong?!\n"
+	.string "{SPEAKER NAME_ARCHIE}KYOGRE! What's wrong?!\n"
 	.string "Look over here! It's the RED ORB!\l"
 	.string "Calm down! KYOGRE!\p"
 	.string "… … … … … …\n"
@@ -2519,7 +2519,7 @@ SootopolisCity_Text_KyogreCalmDown::
 
 SootopolisCity_Text_TryingMeaninglessToPokemon::
 # 1061 "data/maps/SootopolisCity/scripts.pory"
-	.string "ARCHIE: KYOGRE and GROUDON both\n"
+	.string "{SPEAKER NAME_ARCHIE}KYOGRE and GROUDON both\n"
 	.string "flew off to who knows where.\p"
 	.string "The weather in HOENN has returned\n"
 	.string "to its normal state…\p"
@@ -2531,7 +2531,7 @@ SootopolisCity_Text_TryingMeaninglessToPokemon::
 
 SootopolisCity_Text_InvolvedWithCrisisComeWithMe::
 # 1076 "data/maps/SootopolisCity/scripts.pory"
-	.string "STEVEN: Those POKéMON fighting…\n"
+	.string "{SPEAKER NAME_STEVEN}Those POKéMON fighting…\n"
 	.string "GROUDON… And KYOGRE…\p"
 	.string "The two super-ancient POKéMON\n"
 	.string "were awakened from a long sleep…\p"
@@ -2547,7 +2547,7 @@ SootopolisCity_Text_InvolvedWithCrisisComeWithMe::
 
 SootopolisCity_Text_DoesThisMakeYourFearPokemon::
 # 1098 "data/maps/SootopolisCity/scripts.pory"
-	.string "STEVEN: Listen, {PLAYER}{KUN}.\p"
+	.string "{SPEAKER NAME_STEVEN}Listen, {PLAYER}{KUN}.\p"
 	.string "Does seeing GROUDON and KYOGRE make\n"
 	.string "you think POKéMON are to be feared?\p"
 	.string "But that's not true.\n"
@@ -2557,7 +2557,7 @@ SootopolisCity_Text_DoesThisMakeYourFearPokemon::
 
 SootopolisCity_Text_HereWereAreHelpWallace::
 # 1111 "data/maps/SootopolisCity/scripts.pory"
-	.string "STEVEN: Okay, here we are!\p"
+	.string "{SPEAKER NAME_STEVEN}Okay, here we are!\p"
 	.string "Inside here you'll find someone named\n"
 	.string "WALLACE.\p"
 	.string "I think you have what's needed to\n"
@@ -2565,31 +2565,31 @@ SootopolisCity_Text_HereWereAreHelpWallace::
 
 SootopolisCity_Text_KnowWhatsNeededToHelpHim::
 # 1121 "data/maps/SootopolisCity/scripts.pory"
-	.string "STEVEN: I think you have what's\n"
+	.string "{SPEAKER NAME_STEVEN}I think you have what's\n"
 	.string "needed to help him…$"
 
 SootopolisCity_Text_NeverBeenToSkyPillar::
 # 1126 "data/maps/SootopolisCity/scripts.pory"
-	.string "STEVEN: The SKY PILLAR…\p"
+	.string "{SPEAKER NAME_STEVEN}The SKY PILLAR…\p"
 	.string "I've never been there.\n"
 	.string "I wonder where it could be?$"
 
 SootopolisCity_Text_SoThatsRayquaza::
 # 1133 "data/maps/SootopolisCity/scripts.pory"
-	.string "STEVEN: So that's RAYQUAZA…\p"
+	.string "{SPEAKER NAME_STEVEN}So that's RAYQUAZA…\p"
 	.string "It's incredible how the two rampaging\n"
 	.string "POKéMON would flee from it in fear…$"
 
 SootopolisCity_Text_MaxieArchieLeft::
 # 1140 "data/maps/SootopolisCity/scripts.pory"
-	.string "STEVEN: It looks like both MAXIE and\n"
+	.string "{SPEAKER NAME_STEVEN}It looks like both MAXIE and\n"
 	.string "ARCHIE have gone away somewhere.\p"
 	.string "Perhaps they've gone to MT. PYRE to\n"
 	.string "return those ORBS…$"
 
 SootopolisCity_Text_HaventYouScaledSkyPillar::
 # 1148 "data/maps/SootopolisCity/scripts.pory"
-	.string "WALLACE: Oh?\n"
+	.string "{SPEAKER NAME_WALLACE}Oh?\n"
 	.string "{PLAYER}{KUN}?\p"
 	.string "Haven't you scaled the SKY PILLAR\n"
 	.string "yet?\p"
@@ -2598,7 +2598,7 @@ SootopolisCity_Text_HaventYouScaledSkyPillar::
 
 SootopolisCity_Text_AquaMagmaDidntMeanHarm::
 # 1159 "data/maps/SootopolisCity/scripts.pory"
-	.string "WALLACE: {PLAYER}{KUN}…\p"
+	.string "{SPEAKER NAME_WALLACE}{PLAYER}{KUN}…\p"
 	.string "The leaders of TEAM MAGMA and AQUA,\n"
 	.string "I don't think they meant harm.\p"
 	.string "It wouldn't hurt to hear what they\n"
@@ -2606,7 +2606,7 @@ SootopolisCity_Text_AquaMagmaDidntMeanHarm::
 
 SootopolisCity_Text_ThankYouForHelpAcceptThis::
 # 1169 "data/maps/SootopolisCity/scripts.pory"
-	.string "WALLACE: {PLAYER}{KUN}…\n"
+	.string "{SPEAKER NAME_WALLACE}{PLAYER}{KUN}…\n"
 	.string "My eyes didn't deceive me.\p"
 	.string "Thanks to your help, SOOTOPOLIS…\n"
 	.string "No, all of HOENN was saved.\p"
@@ -2630,6 +2630,6 @@ SootopolisCity_Text_ExplainWaterfallGoToGym::
 
 SootopolisCity_Text_DazzledByMentor::
 # 1200 "data/maps/SootopolisCity/scripts.pory"
-	.string "WALLACE: I'm sure that you will be\n"
+	.string "{SPEAKER NAME_WALLACE}I'm sure that you will be\n"
 	.string "dazzled by my mentor's breathtakingly\l"
 	.string "elegant battle style.$"

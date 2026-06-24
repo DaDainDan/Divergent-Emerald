@@ -93,7 +93,7 @@ text SkyPillar_Outside_Text_DoorIsClosed {
 }
 
 text SkyPillar_Outside_Text_OpenedDoorToSkyPillar {
-	"WALLACE: Oh, my, I'm terribly sorry!
+	"{SPEAKER NAME_WALLACE}Oh, my, I'm terribly sorry!
 
 	In my haste, I didn't notice that
 	I'd left you behind!
@@ -105,19 +105,19 @@ text SkyPillar_Outside_Text_OpenedDoorToSkyPillar {
 }
 
 text SkyPillar_Outside_Text_EarthquakeNotMomentToWaste {
-	"WALLACE: It's an earthquake!
+	"{SPEAKER NAME_WALLACE}It's an earthquake!
 
 	There's not a moment to waste!
 	We've got to hurry!"
 }
 
 text SkyPillar_Outside_Text_SituationGettingWorse {
-	"WALLACE: Hmm…
+	"{SPEAKER NAME_WALLACE}Hmm…
 	The situation is getting worse…"
 }
 
 text SkyPillar_Outside_Text_GotToGoBackForSootopolis {
-	"WALLACE: This isn't good…
+	"{SPEAKER NAME_WALLACE}This isn't good…
 
 	The weather distortion is spreading
 	even here…

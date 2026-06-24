@@ -198,7 +198,7 @@ text BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay {
 }
 
 text BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere {
-	"SCOTT: It's great to see you here,
+	"{SPEAKER NAME_SCOTT}It's great to see you here,
 	it really is!
 
 	I hope you'll take your time and

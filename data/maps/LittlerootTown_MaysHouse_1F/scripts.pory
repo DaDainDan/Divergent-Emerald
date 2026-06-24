@@ -39,7 +39,7 @@ mapscripts LittlerootTown_MaysHouse_1F_MapScripts {
 			lockall
 			setvar(VAR_0x8004, FEMALE)
 			setvar(VAR_0x8005, LOCALID_PLAYERS_HOUSE_1F_MOM)
-			goto(PlayersHouse_1F_EventScript_PetalburgGymReportFemale)
+			goto(PlayersHouse_1F_EventScript_PetalburgGymReport)
 			end
 		}
     	VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1: LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor
@@ -250,7 +250,7 @@ text RivalsHouse_1F_Text_ShouldGoHomeEverySoOften {
 }
 
 text RivalsHouse_1F_Text_MayWhoAreYou {
-	"Huh?
+	"{SPEAKER NAME_UNKNOWN}Huh?
 	Who… Who are you?
 
 	… … … … … … … …
@@ -262,7 +262,7 @@ text RivalsHouse_1F_Text_MayWhoAreYou {
 	Um… I'm MAY.
 	Glad to meet you!
 
-	I…
+	{SPEAKER NAME_MAY}I…
 	I have this dream of becoming friends
 	with POKéMON all over the world.
 
@@ -286,7 +286,7 @@ text RivalsHouse_1F_Text_MayWhoAreYou {
 }
 
 text RivalsHouse_1F_Text_BrendanWhoAreYou {
-	"Hey!
+	"{SPEAKER NAME_UNKNOWN}Hey!
 	You…
 
 	Who are you?
@@ -303,7 +303,7 @@ text RivalsHouse_1F_Text_BrendanWhoAreYou {
 	My name's BRENDAN.
 	So, hi, neighbor!
 
-	Huh? Hey, {PLAYER}, don't you have
+	{SPEAKER NAME_BRENDAN}Huh? Hey, {PLAYER}, don't you have
 	a POKéMON?
 
 	Do you want me to go catch you one?

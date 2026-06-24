@@ -421,7 +421,7 @@ MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua::
 
 MeteorFalls_1F_1R_Text_ArchieSeenYouBefore::
 # 151 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "ARCHIE: Didn't I see you before?\n"
+	.string "{SPEAKER NAME_ARCHIE}Didn't I see you before?\n"
 	.string "At SLATEPORT's MUSEUM?\p"
 	.string "Ah, so your name is {PLAYER}.\p"
 	.string "At the time, I thought you were one\n"
@@ -442,14 +442,14 @@ MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma::
 
 MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo::
 # 178 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "ARCHIE: Yes, yes, we must!\n"
+	.string "{SPEAKER NAME_ARCHIE}Yes, yes, we must!\n"
 	.string "We've got to hurry.\p"
 	.string "There's no telling what TEAM MAGMA\n"
 	.string "will do at MT. CHIMNEY!$"
 
 MeteorFalls_1F_1R_Text_ArchieFarewell::
 # 186 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "ARCHIE: {PLAYER}, you should keep\n"
+	.string "{SPEAKER NAME_ARCHIE}{PLAYER}, you should keep\n"
 	.string "an eye out for TEAM MAGMA, too.\p"
 	.string "Farewell!$"
 
@@ -471,6 +471,6 @@ MeteorFalls_1F_1R_Text_MeetProfCozmo::
 
 MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney::
 # 215 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "PROF. COZMO: But that TEAM MAGMA…\p"
+	.string "{SPEAKER NAME_COZMO}But that TEAM MAGMA…\p"
 	.string "What are they going to do with that\n"
 	.string "METEORITE at MT. CHIMNEY?$"

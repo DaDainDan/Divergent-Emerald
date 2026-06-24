@@ -735,7 +735,7 @@ RusturfTunnel_Text_WandaReunion::
 # 304 "data/maps/RusturfTunnel/scripts.pory"
 	.string "WANDA!\n"
 	.string "Now I can see you anytime!\p"
-	.string "WANDA: That's…wonderful.\p"
+	.string "{SPEAKER NAME_WANDA}That's…wonderful.\p"
 	.string "Please, take some rest at my home.$"
 
 RusturfTunnel_Text_BoyfriendOnOtherSideOfRock::

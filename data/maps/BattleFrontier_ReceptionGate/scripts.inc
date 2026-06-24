@@ -475,7 +475,7 @@ BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay::
 
 BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere::
 # 200 "data/maps/BattleFrontier_ReceptionGate/scripts.pory"
-	.string "SCOTT: It's great to see you here,\n"
+	.string "{SPEAKER NAME_SCOTT}It's great to see you here,\n"
 	.string "it really is!\p"
 	.string "I hope you'll take your time and\n"
 	.string "explore everywhere.\p"

@@ -391,14 +391,14 @@ text SlateportCity_Harbor_Text_SubTooSmallForMe {
 }
 
 text SlateportCity_Harbor_Text_SameThugsTriedToRobAtMuseum {
-	"CAPT. STERN: Those thugs…
+	"{SPEAKER NAME_STERN}Those thugs…
 
 	They're the same lot who tried to rob
 	the DEVON GOODS at the MUSEUM."
 }
 
 text SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove {
-	"ARCHIE: Oh?
+	"{SPEAKER NAME_ARCHIE}Oh?
 	Not you again…
 
 	You are tenacious to track us here,
@@ -414,7 +414,7 @@ text SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove {
 }
 
 text SlateportCity_Harbor_Text_CaptSternWhyStealMySubmarine {
-	"CAPT. STERN: Why…
+	"{SPEAKER NAME_STERN}Why…
 
 	Why would TEAM AQUA steal my
 	SUBMARINE EXPLORER 1?
@@ -427,7 +427,7 @@ text SlateportCity_Harbor_Text_CaptSternWhyStealMySubmarine {
 }
 
 text SlateportCity_Harbor_Text_TeamAquaLeftNeedDive {
-	"CAPT. STERN: Oh, {PLAYER}{KUN}…
+	"{SPEAKER NAME_STERN}Oh, {PLAYER}{KUN}…
 
 	Okay… So TEAM AQUA left before you
 	could stop them…
@@ -449,7 +449,7 @@ text SlateportCity_Harbor_Text_TeamAquaLeftNeedDive {
 }
 
 text SlateportCity_Harbor_Text_NeedDiveToCatchSub {
-	"CAPT. STERN: Trying to catch a
+	"{SPEAKER NAME_STERN}Trying to catch a
 	submarine… It's impossible.
 
 	You would need a POKéMON that knows
@@ -463,7 +463,7 @@ text SlateportCity_Harbor_Text_NeedDiveToCatchSub {
 }
 
 text SlateportCity_Harbor_Text_WontBeLongBeforeWeFinishFerry {
-	"CAPT. STERN: Oh, yes.
+	"{SPEAKER NAME_STERN}Oh, yes.
 	MR. BRINEY came to our SHIPYARD.
 
 	It won't be long now before we finish
@@ -471,7 +471,7 @@ text SlateportCity_Harbor_Text_WontBeLongBeforeWeFinishFerry {
 }
 
 text SlateportCity_Harbor_Text_FinishedMakingFerry {
-	"CAPT. STERN: {PLAYER}{KUN}!
+	"{SPEAKER NAME_STERN}{PLAYER}{KUN}!
 
 	We finally finished making the ferry
 	S.S. TIDAL!
@@ -483,7 +483,7 @@ text SlateportCity_Harbor_Text_FinishedMakingFerry {
 }
 
 text SlateportCity_Harbor_Text_WouldYouTradeScanner {
-	"CAPT. STERN: Oh?
+	"{SPEAKER NAME_STERN}Oh?
 	{PLAYER}{KUN}, that item you have…
 
 	That's a SCANNER! That would sure
@@ -497,7 +497,7 @@ text SlateportCity_Harbor_Text_WouldYouTradeScanner {
 }
 
 text SlateportCity_Harbor_Text_IfYouWantToTradeLetMeKnow {
-	"CAPT. STERN: Are you certain?
+	"{SPEAKER NAME_STERN}Are you certain?
 	It's useless to you, {PLAYER}{KUN}…
 
 	Well, okay, then. If you want to trade
@@ -505,17 +505,17 @@ text SlateportCity_Harbor_Text_IfYouWantToTradeLetMeKnow {
 }
 
 text SlateportCity_Harbor_Text_TradeForDeepSeaTooth {
-	"CAPT. STERN: So you'll trade it for
+	"{SPEAKER NAME_STERN}So you'll trade it for
 	my DEEPSEATOOTH?"
 }
 
 text SlateportCity_Harbor_Text_TradeForDeepSeaScale {
-	"CAPT. STERN: So you'll trade it for
+	"{SPEAKER NAME_STERN}So you'll trade it for
 	my DEEPSEASCALE?"
 }
 
 text SlateportCity_Harbor_Text_WhichOneDoYouWant {
-	"CAPT. STERN: Which one do you want?"
+	"{SPEAKER NAME_STERN}Which one do you want?"
 }
 
 text SlateportCity_Harbor_Text_HandedScannerToStern {
@@ -524,6 +524,6 @@ text SlateportCity_Harbor_Text_HandedScannerToStern {
 }
 
 text SlateportCity_Harbor_Text_ThisWillHelpResearch {
-	"CAPT. STERN: Thanks, {PLAYER}{KUN}!
+	"{SPEAKER NAME_STERN}Thanks, {PLAYER}{KUN}!
 	This will help our research a lot!"
 }

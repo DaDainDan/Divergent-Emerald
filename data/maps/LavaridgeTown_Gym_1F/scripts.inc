@@ -551,7 +551,7 @@ LavaridgeTown_Gym_1F_Text_GymStatueCertified::
 
 LavaridgeTown_Gym_1F_Text_FlanneryPreRematch::
 # 427 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "FLANNERY: Losing a battle isn't going\n"
+	.string "{SPEAKER NAME_FLANNERY}Losing a battle isn't going\n"
 	.string "to deflate me.\p"
 	.string "I love POKéMON.\n"
 	.string "I love to battle.\l"
@@ -566,7 +566,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat::
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostRematch::
 # 444 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "FLANNERY: I lost the match,\n"
+	.string "{SPEAKER NAME_FLANNERY}I lost the match,\n"
 	.string "but I'm completely satisfied.\p"
 	.string "It's not often I get to enjoy a battle\n"
 	.string "this heated.\p"
@@ -575,7 +575,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryPostRematch::
 
 LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons::
 # 455 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "FLANNERY: Losing a battle isn't going\n"
+	.string "{SPEAKER NAME_FLANNERY}Losing a battle isn't going\n"
 	.string "to deflate me.\p"
 	.string "I love POKéMON.\n"
 	.string "I love to battle.\l"

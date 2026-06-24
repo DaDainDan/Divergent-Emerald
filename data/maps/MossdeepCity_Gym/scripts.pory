@@ -575,32 +575,37 @@ text MossdeepCity_Gym_Text_NicholasPostBattle {
 }
 
 text MossdeepCity_Gym_Text_TateAndLizaIntro {
-	"TATE: Hehehe… Were you surprised?
+	"{SPEAKER NAME_TATE}Hehehe… Were you surprised?
 
-	LIZA: Fufufu… Were you surprised?
+	{SPEAKER NAME_LIZA}Fufufu… Were you surprised?
 
-	TATE: That there are two GYM LEADERS?
-	LIZA: That there are two GYM LEADERS?
+	{SPEAKER NAME_TATE_AND_LIZA}That there are two GYM LEADERS?
+	That there are two GYM LEADERS?
 
-	TATE: We're twins!
-	LIZA: We're twins!
+	{SPEAKER NAME_TATE_AND_LIZA}We're twins!
+	We're twins!
 
-	TATE: We don't need to talk because…
-	LIZA: We can each determine what…
+	{SPEAKER NAME_TATE}We don't need to talk because…
+	
+	{SPEAKER NAME_LIZA}We can each determine what…
 
-	TATE: The other is thinking…
-	LIZA: All in our minds!
+	{SPEAKER NAME_TATE}The other is thinking…
 
-	TATE: This combination of ours…
-	LIZA: Can you beat it?"
+	{SPEAKER NAME_LIZA}All in our minds!
+
+	{SPEAKER NAME_TATE}This combination of ours…
+
+	{SPEAKER NAME_LIZA}Can you beat it?"
 }
 
 text MossdeepCity_Gym_Text_TateAndLizaDefeat {
-	"TATE: What?! Our combination…
-	LIZA: Was shattered!
+	"{SPEAKER NAME_TATE}What?! Our combination…
 
-	TATE: It can't be helped. You've won…
-	LIZA: So, in recognition, take this."
+	{SPEAKER NAME_LIZA}Was shattered!
+
+	{SPEAKER NAME_TATE}It can't be helped. You've won…
+
+	{SPEAKER NAME_LIZA}So, in recognition, take this."
 }
 
 text MossdeepCity_Gym_Text_ReceivedMindBadge {
@@ -609,24 +614,27 @@ text MossdeepCity_Gym_Text_ReceivedMindBadge {
 }
 
 text MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis {
-	"TATE: The MIND BADGE enhances the
+	"{SPEAKER NAME_TATE}The MIND BADGE enhances the
 	SP. ATK and SP. DEF of POKéMON.
 
-	LIZA: It also lets you use the HM move
+	{SPEAKER NAME_LIZA}It also lets you use the HM move
 	DIVE outside of battle.
 
-	TATE: You should also take this, too."
+	{SPEAKER NAME_TATE}You should also take this, too."
 }
 
 text MossdeepCity_Gym_Text_ExplainCalmMind {
-	"TATE: That TM04 contains…
-	LIZA: CALM MIND!
+	"{SPEAKER NAME_TATE}That TM04 contains…
 
-	TATE: It raises SP. ATK and…
-	LIZA: It raises SP. DEF!
+	{SPEAKER NAME_LIZA}CALM MIND!
 
-	TATE: It's a move that's perfect…
-	LIZA: For PSYCHIC POKéMON!
+	{SPEAKER NAME_TATE}It raises SP. ATK and…
+
+	{SPEAKER NAME_LIZA}It raises SP. DEF!
+
+	{SPEAKER NAME_TATE}It's a move that's perfect…
+
+	{SPEAKER NAME_LIZA}For PSYCHIC POKéMON!
 
 	… … … … … …"
 }
@@ -637,25 +645,26 @@ text MossdeepCity_Gym_Text_RegisteredTateAndLiza {
 }
 
 text MossdeepCity_Gym_Text_TateAndLizaPostBattle {
-	"TATE: Looks like the bond between you
+	"{SPEAKER NAME_TATE}Looks like the bond between you
 	and your POKéMON is far stronger than
 	the bond that we share as twins.
 
-	LIZA: You will become even stronger!
+	{SPEAKER NAME_LIZA}You will become even stronger!
 	We've battled you, so we know."
 }
 
 text MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons {
-	"TATE: Hehehe… Were you surprised?
+	"{SPEAKER NAME_TATE}Hehehe… Were you surprised?
 
-	LIZA: That there are two GYM LEADERS?
+	{SPEAKER NAME_LIZA}That there are two GYM LEADERS?
 
-	TATE: Oops, you have only one…
-	LIZA: POKéMON that can battle.
+	{SPEAKER NAME_TATE}Oops, you have only one…
 
-	TATE: We can't battle that way!
+	{SPEAKER NAME_LIZA}POKéMON that can battle.
 
-	LIZA: If you want to challenge us,
+	{SPEAKER NAME_TATE}We can't battle that way!
+
+	{SPEAKER NAME_LIZA}If you want to challenge us,
 	bring some more POKéMON."
 }
 
@@ -671,48 +680,54 @@ text MossdeepCity_Gym_Text_GymStatueCertified {
 }
 
 text MossdeepCity_Gym_Text_TateAndLizaPreRematch {
-	"TATE: POKéMON…
-	LIZA: POKéMON…
+	"{SPEAKER NAME_TATE_AND_LIZA}POKéMON…
+	POKéMON…
 
-	TATE: By changing the party's mix…
-	LIZA: The battle style changes.
+	{SPEAKER NAME_TATE}By changing the party's mix…
 
-	TATE: But me…
-	LIZA: But me…
+	{SPEAKER NAME_LIZA}The battle style changes.
 
-	TATE: I'll always be with LIZA!
-	LIZA: I'll always be with TATE!
+	{SPEAKER NAME_TATE_AND_LIZA}But me…
+	But me…
 
-	TATE: Our combination…
-	LIZA: We'll show you again and again!"
+	{SPEAKER NAME_TATE}I'll always be with LIZA!
+
+	{SPEAKER NAME_LIZA}I'll always be with TATE!
+
+	{SPEAKER NAME_TATE}Our combination…
+
+	{SPEAKER NAME_LIZA}We'll show you again and again!"
 }
 
 text MossdeepCity_Gym_Text_TateAndLizaRematchDefeat {
-	"TATE: You and your POKéMON…
-	LIZA: It's as if you were siblings!"
+	"{SPEAKER NAME_TATE}You and your POKéMON…
+
+	{SPEAKER NAME_LIZA}It's as if you were siblings!"
 }
 
 text MossdeepCity_Gym_Text_TateAndLizaPostRematch {
-	"TATE: You can knock us down,
+	"{SPEAKER NAME_TATE}You can knock us down,
 	but we'll never stay down!
 
-	LIZA: Because the two of us,
+	{SPEAKER NAME_LIZA}Because the two of us,
 	we always support each other!"
 }
 
 text MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons {
-	"TATE: You're back again…
-	LIZA: You're back again…
+	"{SPEAKER NAME_TATE_AND_LIZA}You're back again…
+	You're back again…
 
-	TATE: To give us a rematch.
-	LIZA: To give us a rematch.
+	{SPEAKER NAME_TATE_AND_LIZA}To give us a rematch.
+	To give us a rematch.
 
-	TATE: But…
-	LIZA: For our match…
+	{SPEAKER NAME_TATE}But…
 
-	TATE: You brought just one POKéMON!
-	LIZA: You brought just one POKéMON!
+	{SPEAKER NAME_LIZA}For our match…
 
-	TATE: We need you to bring at least…
-	LIZA: Two POKéMON when you come back."
+	{SPEAKER NAME_TATE_AND_LIZA}You brought just one POKéMON!
+	You brought just one POKéMON!
+
+	{SPEAKER NAME_TATE}We need you to bring at least…
+
+	{SPEAKER NAME_LIZA}Two POKéMON when you come back."
 }

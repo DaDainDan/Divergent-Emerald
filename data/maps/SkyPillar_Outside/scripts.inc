@@ -258,7 +258,7 @@ SkyPillar_Outside_Text_DoorIsClosed::
 
 SkyPillar_Outside_Text_OpenedDoorToSkyPillar::
 # 95 "data/maps/SkyPillar_Outside/scripts.pory"
-	.string "WALLACE: Oh, my, I'm terribly sorry!\p"
+	.string "{SPEAKER NAME_WALLACE}Oh, my, I'm terribly sorry!\p"
 	.string "In my haste, I didn't notice that\n"
 	.string "I'd left you behind!\p"
 	.string "I've opened the locked door of\n"
@@ -267,18 +267,18 @@ SkyPillar_Outside_Text_OpenedDoorToSkyPillar::
 
 SkyPillar_Outside_Text_EarthquakeNotMomentToWaste::
 # 107 "data/maps/SkyPillar_Outside/scripts.pory"
-	.string "WALLACE: It's an earthquake!\p"
+	.string "{SPEAKER NAME_WALLACE}It's an earthquake!\p"
 	.string "There's not a moment to waste!\n"
 	.string "We've got to hurry!$"
 
 SkyPillar_Outside_Text_SituationGettingWorse::
 # 114 "data/maps/SkyPillar_Outside/scripts.pory"
-	.string "WALLACE: Hmm…\n"
+	.string "{SPEAKER NAME_WALLACE}Hmm…\n"
 	.string "The situation is getting worse…$"
 
 SkyPillar_Outside_Text_GotToGoBackForSootopolis::
 # 119 "data/maps/SkyPillar_Outside/scripts.pory"
-	.string "WALLACE: This isn't good…\p"
+	.string "{SPEAKER NAME_WALLACE}This isn't good…\p"
 	.string "The weather distortion is spreading\n"
 	.string "even here…\p"
 	.string "{PLAYER}{KUN}.\p"

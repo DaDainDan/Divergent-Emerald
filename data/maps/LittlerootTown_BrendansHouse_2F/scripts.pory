@@ -146,7 +146,7 @@ text PlayersHouse_2F_Text_ClockIsStopped {
 }
 
 text PlayersHouse_2F_Text_HowDoYouLikeYourRoom {
-	"MOM: {PLAYER}, how do you like your
+	"{SPEAKER NAME_MOM}{PLAYER}, how do you like your
 	new room?
 
 	Good! Everything's put away neatly!

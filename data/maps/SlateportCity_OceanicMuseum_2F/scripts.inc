@@ -467,7 +467,7 @@ SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts::
 
 SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou::
 # 192 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "CAPT. STERN: Wh-what?\n"
+	.string "{SPEAKER NAME_STERN}Wh-what?\n"
 	.string "Who are you people?$"
 
 SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua::
@@ -539,7 +539,7 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning::
 
 SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs::
 # 278 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "CAPT. STERN: You're…\n"
+	.string "{SPEAKER NAME_STERN}You're…\n"
 	.string "Ah, okay, you're {PLAYER}{KUN}…\p"
 	.string "Anyway, that was a tense situation!\n"
 	.string "Thank you for saving us!\p"
@@ -548,7 +548,7 @@ SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs::
 
 SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo::
 # 289 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "CAPT. STERN: Whoops!\n"
+	.string "{SPEAKER NAME_STERN}Whoops!\n"
 	.string "There's no time to lose!\p"
 	.string "We have to set out on our ocean-floor\n"
 	.string "expedition really soon.\p"

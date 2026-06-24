@@ -502,7 +502,7 @@ script LittlerootTown_EventScript_Mom {
 }
 
 text LittlerootTown_Text_OurNewHomeLetsGoInside {
-	"MOM: {PLAYER}, we're here, honey!
+	"{SPEAKER NAME_MOM}{PLAYER}, we're here, honey!
 
 	It must be tiring riding with our things
 	in the moving truck.
@@ -520,11 +520,11 @@ text LittlerootTown_Text_OurNewHomeLetsGoInside {
 }
 
 text LittlerootTown_Text_WaitPlayer {
-	"MOM: Wait, {PLAYER}!"
+	"{SPEAKER NAME_MOM}Wait, {PLAYER}!"
 }
 
 text LittlerootTown_Text_WearTheseRunningShoes {
-	"MOM: {PLAYER}! {PLAYER}! Did you
+	"{SPEAKER NAME_MOM}{PLAYER}! {PLAYER}! Did you
 	introduce yourself to PROF. BIRCH?
 
 	Oh! What an adorable POKéMON!
@@ -545,7 +545,7 @@ text LittlerootTown_Text_SwitchShoesWithRunningShoes {
 }
 
 text LittlerootTown_Text_ExplainRunningShoes {
-	"MOM: {PLAYER}, those shoes came with
+	"{SPEAKER NAME_MOM}{PLAYER}, those shoes came with
 	instructions.
 
 	“Press the B Button while wearing these
@@ -638,7 +638,7 @@ text LittlerootTown_Text_ProfBirchsHouse {
 }
 
 text LittlerootTown_Text_BirchSomethingToShowYouAtLab {
-	"PROF. BIRCH: Well, well, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BIRCH}Well, well, {PLAYER}{KUN}!
 	That was good work out there!
 
 	I knew there was something special

@@ -1064,7 +1064,7 @@ Route110_Text_AquaActionsBringSmiles::
 
 Route110_Text_MayLetsBattle::
 # 514 "data/maps/Route110/scripts.pory"
-	.string "MAY: Hi, {PLAYER}{KUN}, long time no see!\p"
+	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}, long time no see!\p"
 	.string "While I was searching for other\n"
 	.string "POKéMON, my POKéMON grew stronger.\p"
 	.string "So…\n"
@@ -1077,14 +1077,14 @@ Route110_Text_MayDefeated::
 
 Route110_Text_MayTakeThis::
 # 529 "data/maps/Route110/scripts.pory"
-	.string "MAY: {PLAYER}{KUN}, you've been busy\n"
+	.string "{SPEAKER NAME_MAY}{PLAYER}{KUN}, you've been busy\n"
 	.string "training, too, haven't you?\p"
 	.string "I think you deserve a reward!\n"
 	.string "This is from me!$"
 
 Route110_Text_MayExplainItemfinder::
 # 537 "data/maps/Route110/scripts.pory"
-	.string "MAY: That's an ITEMFINDER.\p"
+	.string "{SPEAKER NAME_MAY}That's an ITEMFINDER.\p"
 	.string "Try it out. If there is an item that's\n"
 	.string "not visible, it emits a sound.\p"
 	.string "Okay, {PLAYER}{KUN}, let's meet again!\p"
@@ -1094,7 +1094,7 @@ Route110_Text_MayExplainItemfinder::
 
 Route110_Text_BrendanLetsBattle::
 # 550 "data/maps/Route110/scripts.pory"
-	.string "BRENDAN: Hey, {PLAYER}.\n"
+	.string "{SPEAKER NAME_BRENDAN}Hey, {PLAYER}.\n"
 	.string "So this is where you were.\l"
 	.string "How's it going?\p"
 	.string "Have you been raising your POKéMON?\n"
@@ -1107,14 +1107,14 @@ Route110_Text_BrendanDefeated::
 
 Route110_Text_BrendanTakeThis::
 # 564 "data/maps/Route110/scripts.pory"
-	.string "BRENDAN: {PLAYER}, you've trained\n"
+	.string "{SPEAKER NAME_BRENDAN}{PLAYER}, you've trained\n"
 	.string "without me noticing…\p"
 	.string "Good enough!\n"
 	.string "Here, take this.$"
 
 Route110_Text_BrendanExplainItemfinder::
 # 572 "data/maps/Route110/scripts.pory"
-	.string "BRENDAN: That's an ITEMFINDER.\p"
+	.string "{SPEAKER NAME_BRENDAN}That's an ITEMFINDER.\p"
 	.string "Use it to root around for items that\n"
 	.string "aren't visible.\p"
 	.string "If it senses something, it emits\n"
@@ -1304,7 +1304,7 @@ Route110_Text_ThereIsNoRecord::
 
 Route110_Text_ImagineSeeingYouHere::
 # 793 "data/maps/Route110/scripts.pory"
-	.string "PROF. BIRCH: Oh, {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_BIRCH}Oh, {PLAYER}{KUN}!\n"
 	.string "Imagine seeing you here!\p"
 	.string "And where might my {RIVAL} be?$"
 
@@ -1328,7 +1328,7 @@ Route110_Text_RegisteredBirchInPokenav::
 
 Route110_Text_KeepAnEyeOutForRival::
 # 822 "data/maps/Route110/scripts.pory"
-	.string "PROF. BIRCH: {PLAYER}{KUN}…\p"
+	.string "{SPEAKER NAME_BIRCH}{PLAYER}{KUN}…\p"
 	.string "Please keep an eye out for my {RIVAL}.\n"
 	.string "… … … … … …\p"
 	.string "Well, I had better get going.\n"

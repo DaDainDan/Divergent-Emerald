@@ -328,7 +328,7 @@ text VerdanturfTown_BattleTentLobby_Text_TaughtWhatKindsOfMoves {
 }
 
 text VerdanturfTown_BattleTentLobby_Text_ScottCanMeetToughTrainers {
-	"SCOTT: Hey there, {PLAYER}{KUN}!
+	"{SPEAKER NAME_SCOTT}Hey there, {PLAYER}{KUN}!
 	I thought I might see you here.
 
 	A BATTLE TENT's a place where
@@ -342,7 +342,7 @@ text VerdanturfTown_BattleTentLobby_Text_ScottCanMeetToughTrainers {
 }
 
 text VerdanturfTown_BattleTentLobby_Text_ScottVisitRegularly {
-	"SCOTT: I visit here regularly in hopes
+	"{SPEAKER NAME_SCOTT}I visit here regularly in hopes
 	of seeing tough TRAINERS in action
 	in whatever the situation."
 }

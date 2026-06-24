@@ -374,19 +374,19 @@ text MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou {
 }
 
 text MossdeepCity_SpaceCenter_2F_Text_MaxieDontInterfere {
-	"MAXIE: Clear out of the way!
+	"{SPEAKER NAME_MAXIE}Clear out of the way!
 	Don't you dare interfere!"
 }
 
 text MossdeepCity_SpaceCenter_2F_Text_StevenWhyStealRocketFuel {
-	"STEVEN: TEAM MAGMA…
+	"{SPEAKER NAME_STEVEN}TEAM MAGMA…
 
 	What's the point of stealing rocket
 	fuel?"
 }
 
 text MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano {
-	"MAXIE: Fufufu… Since you're so
+	"{SPEAKER NAME_MAXIE}Fufufu… Since you're so
 	curious, you deserve an explanation.
 
 	We're going to jettison the entire
@@ -402,7 +402,7 @@ text MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano {
 }
 
 text MossdeepCity_SpaceCenter_2F_Text_StevenAreYouReadyToBattle {
-	"STEVEN: {PLAYER}{KUN}!
+	"{SPEAKER NAME_STEVEN}{PLAYER}{KUN}!
 	You're going to help me?
 
 	Let's go into battle together!
@@ -410,7 +410,7 @@ text MossdeepCity_SpaceCenter_2F_Text_StevenAreYouReadyToBattle {
 }
 
 text MossdeepCity_SpaceCenter_2F_Text_StevenHurryGetReadyQuickly {
-	"STEVEN: Then, hurry!
+	"{SPEAKER NAME_STEVEN}Then, hurry!
 	Get ready quickly!"
 }
 
@@ -424,7 +424,7 @@ text MossdeepCity_SpaceCenter_Text_TabithaDefeat {
 }
 
 text MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided {
-	"MAXIE: We failed to make the volcano
+	"{SPEAKER NAME_MAXIE}We failed to make the volcano
 	erupt…
 
 	We failed to control GROUDON after
@@ -445,7 +445,7 @@ text MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided {
 }
 
 text MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp {
-	"MAXIE: All right…
+	"{SPEAKER NAME_MAXIE}All right…
 	We will give up on the fuel…
 
 	There appear to be more important
@@ -453,7 +453,7 @@ text MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp {
 }
 
 text MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome {
-	"STEVEN: Whew, that was too tense.
+	"{SPEAKER NAME_STEVEN}Whew, that was too tense.
 	{PLAYER}{KUN}, thank you.
 
 	I have something to give you as

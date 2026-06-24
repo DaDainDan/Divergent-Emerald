@@ -406,7 +406,7 @@ Route118_EventScript_StevenTrigger_Movement_4:
 
 Route118_Text_StevenQuestions::
 # 180 "data/maps/Route118/scripts.pory"
-	.string "STEVEN: Hi, {PLAYER}{KUN}!\p"
+	.string "{SPEAKER NAME_STEVEN}Hi, {PLAYER}{KUN}!\p"
 	.string "It's me, STEVEN!\n"
 	.string "We met in the cave near DEWFORD.\p"
 	.string "Have you met many kinds of POKéMON\n"

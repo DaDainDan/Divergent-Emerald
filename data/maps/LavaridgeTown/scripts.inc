@@ -408,7 +408,7 @@ LavaridgeTown_EventScript_RivalGiveGoGoggles_Movement_4:
 
 LavaridgeTown_Text_MayNiceBadgesTakeThis::
 # 179 "data/maps/LavaridgeTown/scripts.pory"
-	.string "MAY: {PLAYER}{KUN}! Long time no see!\p"
+	.string "{SPEAKER NAME_MAY}{PLAYER}{KUN}! Long time no see!\p"
 	.string "Oh? While I visited the hot springs,\n"
 	.string "you got the LAVARIDGE GYM BADGE.\p"
 	.string "You must have collected\n"
@@ -419,7 +419,7 @@ LavaridgeTown_Text_MayNiceBadgesTakeThis::
 
 LavaridgeTown_Text_MayExplainGoGogglesChallengeDad::
 # 193 "data/maps/LavaridgeTown/scripts.pory"
-	.string "MAY: With those GO-GOGGLES, you'll\n"
+	.string "{SPEAKER NAME_MAY}With those GO-GOGGLES, you'll\n"
 	.string "have no trouble getting through the\l"
 	.string "desert near ROUTE 111.\p"
 	.string "But, wow, {PLAYER}{KUN}…\n"
@@ -432,7 +432,7 @@ LavaridgeTown_Text_MayExplainGoGogglesChallengeDad::
 
 LavaridgeTown_Text_BrendanNiceBadgesTakeThis::
 # 210 "data/maps/LavaridgeTown/scripts.pory"
-	.string "BRENDAN: {PLAYER}, hey, it's been a while.\n"
+	.string "{SPEAKER NAME_BRENDAN}{PLAYER}, hey, it's been a while.\n"
 	.string "How's it going?\p"
 	.string "Hmm…\n"
 	.string "That's a decent collection of BADGES.\p"
@@ -441,7 +441,7 @@ LavaridgeTown_Text_BrendanNiceBadgesTakeThis::
 
 LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad::
 # 221 "data/maps/LavaridgeTown/scripts.pory"
-	.string "BRENDAN: Keep those with you if you're\n"
+	.string "{SPEAKER NAME_BRENDAN}Keep those with you if you're\n"
 	.string "planning on going into that desert near\l"
 	.string "ROUTE 111.\p"
 	.string "There should be some POKéMON that\n"

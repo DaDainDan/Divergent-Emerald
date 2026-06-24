@@ -326,7 +326,7 @@ text FortreeCity_Gym_Text_GymStatueCertified {
 }
 
 text FortreeCity_Gym_Text_WinonaPreRematch {
-	"WINONA: We humans can never escape
+	"{SPEAKER NAME_WINONA}We humans can never escape
 	gravity's pull on the ground.
 
 	But by striving for excellence,
@@ -344,7 +344,7 @@ text FortreeCity_Gym_Text_WinonaRematchDefeat {
 }
 
 text FortreeCity_Gym_Text_WinonaPostRematch {
-	"WINONA: Even though I have lost,
+	"{SPEAKER NAME_WINONA}Even though I have lost,
 	the wings of my heart remain unbroken.
 
 	I can rise and soar again and
@@ -354,7 +354,7 @@ text FortreeCity_Gym_Text_WinonaPostRematch {
 }
 
 text FortreeCity_Gym_Text_WinonaRematchNeedTwoMons {
-	"WINONA: We humans can never escape
+	"{SPEAKER NAME_WINONA}We humans can never escape
 	gravity's pull on the ground.
 
 	But by striving for excellence,

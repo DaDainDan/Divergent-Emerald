@@ -64,7 +64,7 @@ text EverGrandeCity_PokemonCenter_1F_Text_BelieveInYourPokemon {
 }
 
 text EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou {
-	"SCOTT: {PLAYER}{KUN}, you've clawed your
+	"{SPEAKER NAME_SCOTT}{PLAYER}{KUN}, you've clawed your
 	way up to face the POKéMON LEAGUE!
 
 	I'm happy for you!

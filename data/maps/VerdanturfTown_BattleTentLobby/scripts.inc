@@ -617,7 +617,7 @@ VerdanturfTown_BattleTentLobby_Text_TaughtWhatKindsOfMoves::
 
 VerdanturfTown_BattleTentLobby_Text_ScottCanMeetToughTrainers::
 # 330 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
-	.string "SCOTT: Hey there, {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_SCOTT}Hey there, {PLAYER}{KUN}!\n"
 	.string "I thought I might see you here.\p"
 	.string "A BATTLE TENT's a place where\n"
 	.string "you can meet tough TRAINERS.\p"
@@ -628,6 +628,6 @@ VerdanturfTown_BattleTentLobby_Text_ScottCanMeetToughTrainers::
 
 VerdanturfTown_BattleTentLobby_Text_ScottVisitRegularly::
 # 344 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
-	.string "SCOTT: I visit here regularly in hopes\n"
+	.string "{SPEAKER NAME_SCOTT}I visit here regularly in hopes\n"
 	.string "of seeing tough TRAINERS in action\l"
 	.string "in whatever the situation.$"

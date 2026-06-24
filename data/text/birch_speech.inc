@@ -37,20 +37,18 @@ gText_Birch_AndYouAre::
 
 gText_Birch_BoyOrGirl::
 # 48 "data/text/birch_speech.pory"
-	.string "Are you a boy?\n"
-	.string "Or are you a girl?$"
+	.string "Please select a gender.$"
 
 gText_Birch_WhatsYourName::
-# 53 "data/text/birch_speech.pory"
-	.string "All right.\n"
-	.string "What's your name?$"
+# 52 "data/text/birch_speech.pory"
+	.string "Now, enter your name.$"
 
 gText_Birch_SoItsPlayer::
-# 58 "data/text/birch_speech.pory"
-	.string "So it's {PLAYER}{KUN}?$"
+# 56 "data/text/birch_speech.pory"
+	.string "Your name is {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-# 62 "data/text/birch_speech.pory"
+# 60 "data/text/birch_speech.pory"
 	.string "Ah, okay!\p"
 	.string "You're {PLAYER}{KUN} who's moving to my\n"
 	.string "hometown of LITTLEROOT.\l"
@@ -58,7 +56,7 @@ gText_Birch_YourePlayer::
 	.string "$"
 
 gText_Birch_AreYouReady::
-# 72 "data/text/birch_speech.pory"
+# 70 "data/text/birch_speech.pory"
 	.string "All right, are you ready?\p"
 	.string "Your very own adventure is about\n"
 	.string "to unfold.\p"

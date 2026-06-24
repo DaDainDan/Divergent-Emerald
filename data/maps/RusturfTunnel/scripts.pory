@@ -305,7 +305,7 @@ text RusturfTunnel_Text_WandaReunion {
 	"WANDA!
 	Now I can see you anytime!
 
-	WANDA: That's…wonderful.
+	{SPEAKER NAME_WANDA}That's…wonderful.
 
 	Please, take some rest at my home."
 }

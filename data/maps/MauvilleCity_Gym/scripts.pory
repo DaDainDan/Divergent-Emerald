@@ -410,7 +410,7 @@ text MauvilleCity_Gym_Text_GymStatueCertified {
 }
 
 text MauvilleCity_Gym_Text_WattsonPreRematch {
-	"WATTSON: Ah-ha! Here at last!
+	"{SPEAKER NAME_WATSON}Ah-ha! Here at last!
 	I know what you want.
 	You want to battle my POKéMON!
 
@@ -426,7 +426,7 @@ text MauvilleCity_Gym_Text_WattsonRematchDefeat {
 }
 
 text MauvilleCity_Gym_Text_WattsonPostRematch {
-	"WATTSON: We'll have to recharge our
+	"{SPEAKER NAME_WATSON}We'll have to recharge our
 	batteries again.
 
 	When we're fully charged up, we'll
@@ -437,7 +437,7 @@ text MauvilleCity_Gym_Text_WattsonPostRematch {
 }
 
 text MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons {
-	"WATTSON: Ah-ha! Here at last!
+	"{SPEAKER NAME_WATSON}Ah-ha! Here at last!
 	I know what you want.
 	You want to battle my POKéMON!
 

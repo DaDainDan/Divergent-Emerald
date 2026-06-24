@@ -1018,7 +1018,7 @@ BattleFrontier_BattleTowerBattleRoom_Text_LetMeSeeYourTalent::
 
 BattleFrontier_BattleTowerBattleRoom_Text_AnabelTalentShallBeRecognized::
 # 443 "data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.pory"
-	.string "ANABEL: Fufufu, nicely done…\p"
+	.string "{SPEAKER NAME_ANABEL}Fufufu, nicely done…\p"
 	.string "Your FRONTIER PASS, please…\n"
 	.string "Your talent shall be recognized.$"
 
@@ -1039,7 +1039,7 @@ BattleFrontier_BattleTowerBattleRoom_Text_UntilNextTime::
 
 BattleFrontier_BattleTowerBattleRoom_Text_AnabelYouCameBack::
 # 468 "data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.pory"
-	.string "ANABEL: You really did come back to\n"
+	.string "{SPEAKER NAME_ANABEL}You really did come back to\n"
 	.string "see me…\p"
 	.string "… … … … … …\p"
 	.string "You've won straight matches to see me…\n"
@@ -1054,7 +1054,7 @@ BattleFrontier_BattleTowerBattleRoom_Text_LetsBeginShallWe::
 
 BattleFrontier_BattleTowerBattleRoom_Text_AnabelCongratsYourPassPlease::
 # 487 "data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.pory"
-	.string "ANABEL: Fufu, congratulations…\n"
+	.string "{SPEAKER NAME_ANABEL}Fufu, congratulations…\n"
 	.string "Your FRONTIER PASS, please…$"
 
 BattleFrontier_BattleTowerBattleRoom_Text_AbilitySymbolTookGoldenShine::

@@ -319,7 +319,7 @@ text MossdeepCity_Text_SpaceCenterSign {
 }
 
 text MossdeepCity_Text_ScottSomethingWrongWithTown {
-	"SCOTT: {PLAYER}{KUN}, feeling good?
+	"{SPEAKER NAME_SCOTT}{PLAYER}{KUN}, feeling good?
 	I'm doing great!
 
 	I'd heard MOSSDEEP's GYM LEADER is

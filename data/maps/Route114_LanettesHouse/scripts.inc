@@ -75,7 +75,7 @@ Route114_LanettesHouse_EventScript_PC::
 
 Route114_LanettesHouse_Text_EverythingClutteredKeepThis::
 # 43 "data/maps/Route114_LanettesHouse/scripts.pory"
-	.string "LANETTE: Oh! {PLAYER}{KUN}!\p"
+	.string "{SPEAKER NAME_LANETTE}Oh! {PLAYER}{KUN}!\p"
 	.string "I'm sorry everything is so cluttered…\n"
 	.string "When I get engrossed in research,\l"
 	.string "things end up this way…\p"

@@ -1186,7 +1186,7 @@ SmartShopper_Text_Intro::
 # 1429 "data/text/tv.pory"
 	.string "Hello!\p"
 	.string "It's time for TODAY'S SMART SHOPPER.\p"
-	.string "INTERVIEWER: How are you, viewers?\p"
+	.string "{SPEAKER NAME_INTERVIEWER}How are you, viewers?\p"
 	.string "Today we're visiting a shop\n"
 	.string "in {STR_VAR_2}.\p"
 	.string "Let's check on what the hot sellers\n"
@@ -1205,7 +1205,7 @@ SmartShopper_Text_ClerkNormal::
 
 SmartShopper_Text_RandomComment1::
 # 1458 "data/text/tv.pory"
-	.string "INTERVIEWER: The TRAINER bought\n"
+	.string "{SPEAKER NAME_INTERVIEWER}The TRAINER bought\n"
 	.string "{STR_VAR_3} {STR_VAR_2}S? That's a haul!\p"
 	.string "If I may say so, {STR_VAR_1} must have\n"
 	.string "been stocking up for a long journey\l"
@@ -1215,14 +1215,14 @@ SmartShopper_Text_RandomComment1::
 
 SmartShopper_Text_RandomComment2::
 # 1470 "data/text/tv.pory"
-	.string "INTERVIEWER: Speaking of the item\n"
+	.string "{SPEAKER NAME_INTERVIEWER}Speaking of the item\n"
 	.string "{STR_VAR_2}, I just bought {STR_VAR_3} of\l"
 	.string "them recently.\p"
 	.string "After all, {STR_VAR_2}'s a great item!$"
 
 SmartShopper_Text_RandomComment3::
 # 1478 "data/text/tv.pory"
-	.string "INTERVIEWER: {STR_VAR_2}?!\n"
+	.string "{SPEAKER NAME_INTERVIEWER}{STR_VAR_2}?!\n"
 	.string "But {STR_VAR_3} of them?!\p"
 	.string "I didn't think there would be anyone\n"
 	.string "buying that many.\p"
@@ -1231,7 +1231,7 @@ SmartShopper_Text_RandomComment3::
 
 SmartShopper_Text_RandomComment4::
 # 1489 "data/text/tv.pory"
-	.string "INTERVIEWER: One time, I bought\n"
+	.string "{SPEAKER NAME_INTERVIEWER}One time, I bought\n"
 	.string "a whole lot of the item {STR_VAR_2}.\p"
 	.string "But it turned out to be too many.\n"
 	.string "I ended up regretting it…\p"
@@ -1244,7 +1244,7 @@ SmartShopper_Text_SecondItem::
 # 1504 "data/text/tv.pory"
 	.string "CLERK: {STR_VAR_1} also bought the item\n"
 	.string "{STR_VAR_2} in bulk, taking {STR_VAR_3}.\p"
-	.string "INTERVIEWER: Oh, that's smart.\n"
+	.string "{SPEAKER NAME_INTERVIEWER}Oh, that's smart.\n"
 	.string "{STR_VAR_2}'s a very good item, too.$"
 
 SmartShopper_Text_ThirdItem::
@@ -1259,7 +1259,7 @@ SmartShopper_Text_DuringSale::
 
 SmartShopper_Text_OutroNormal::
 # 1522 "data/text/tv.pory"
-	.string "INTERVIEWER: Hmm… {STR_VAR_1} sounds like\n"
+	.string "{SPEAKER NAME_INTERVIEWER}Hmm… {STR_VAR_1} sounds like\n"
 	.string "quite the shrewd bargain hunter!\p"
 	.string "In total, {STR_VAR_1}'s purchases came to…\p"
 	.string "¥{STR_VAR_2}?!\n"
@@ -1286,17 +1286,17 @@ SmartShopper_Text_ClerkMax::
 	.string "I never dreamt that any customer\n"
 	.string "would ever need so many {STR_VAR_2}S.\l"
 	.string "It's just unheard of!\p"
-	.string "INTERVIEWER: So that would be like 100\n"
+	.string "{SPEAKER NAME_INTERVIEWER}So that would be like 100\n"
 	.string "or 200 sold?\p"
 	.string "CLERK: Oh, no, much more than that!\p"
-	.string "INTERVIEWER: Oh, my goodness!\n"
+	.string "{SPEAKER NAME_INTERVIEWER}Oh, my goodness!\n"
 	.string "{STR_VAR_1} must be a special shopper!\p"
 	.string "CLERK: {STR_VAR_1} is a VIP customer,\n"
 	.string "no doubt about it.$"
 
 SmartShopper_Text_OutroMax::
 # 1571 "data/text/tv.pory"
-	.string "INTERVIEWER: Hmm…\n"
+	.string "{SPEAKER NAME_INTERVIEWER}Hmm…\n"
 	.string "That is amazing.\p"
 	.string "But why would the TRAINER need to buy\n"
 	.string "so many?\p"

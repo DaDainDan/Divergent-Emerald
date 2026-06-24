@@ -859,7 +859,7 @@ text RustboroCity_Text_PleaseComeWithMe {
 }
 
 text RustboroCity_Text_MayHiLetsRegister {
-	"MAY: Oh, hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_MAY}Oh, hi, {PLAYER}{KUN}!
 
 	You had a MATCH CALL feature put
 	on your POKéNAV!
@@ -876,7 +876,7 @@ text RustboroCity_Text_RegisteredMay {
 }
 
 text RustboroCity_Text_MayPassedBrineyWantToBattle {
-	"MAY: Oh, by the way, I passed
+	"{SPEAKER NAME_MAY}Oh, by the way, I passed
 	MR. BRINEY in PETALBURG WOODS.
 
 	I guess he's on his way home to his
@@ -890,7 +890,7 @@ text RustboroCity_Text_MayPassedBrineyWantToBattle {
 }
 
 text RustboroCity_Text_MayOhHaventRaisedPokemonEnough {
-	"MAY: Oh, what's the matter?
+	"{SPEAKER NAME_MAY}Oh, what's the matter?
 
 	Haven't you caught or raised your
 	POKéMON very much?
@@ -899,12 +899,12 @@ text RustboroCity_Text_MayOhHaventRaisedPokemonEnough {
 }
 
 text RustboroCity_Text_MayWantToBattle {
-	"MAY: So, what do you think?
+	"{SPEAKER NAME_MAY}So, what do you think?
 	How about a little battle here?"
 }
 
 text RustboroCity_Text_MayImNotGoingToLose {
-	"MAY: You just became a TRAINER,
+	"{SPEAKER NAME_MAY}You just became a TRAINER,
 	{PLAYER}{KUN}. I'm not going to lose!"
 }
 
@@ -914,7 +914,7 @@ text RustboroCity_Text_MayDefeat {
 }
 
 text RustboroCity_Text_MayMrBrineyHint {
-	"MAY: Oh, by the way, MR. BRINEY, who
+	"{SPEAKER NAME_MAY}Oh, by the way, MR. BRINEY, who
 	I just passed…
 
 	{PLAYER}{KUN}, you just moved here so you
@@ -923,7 +923,7 @@ text RustboroCity_Text_MayMrBrineyHint {
 }
 
 text RustboroCity_Text_BrendanHiLetsRegister {
-	"BRENDAN: Oh, hey, {PLAYER}!
+	"{SPEAKER NAME_BRENDAN}Oh, hey, {PLAYER}!
 
 	You had a MATCH CALL feature put
 	on your POKéNAV! Cool!
@@ -940,7 +940,7 @@ text RustboroCity_Text_RegisteredBrendan {
 }
 
 text RustboroCity_Text_BrendanPassedBrineyWantToBattle {
-	"BRENDAN: By the way, {PLAYER}, I walked
+	"{SPEAKER NAME_BRENDAN}By the way, {PLAYER}, I walked
 	by MR. BRINEY in PETALBURG WOODS.
 
 	I bet he was on his way home to his
@@ -956,17 +956,17 @@ text RustboroCity_Text_BrendanPassedBrineyWantToBattle {
 }
 
 text RustboroCity_Text_BrendanNoConfidenceInPokemon {
-	"BRENDAN: What's the matter? Don't have
+	"{SPEAKER NAME_BRENDAN}What's the matter? Don't have
 	any confidence in your POKéMON?"
 }
 
 text RustboroCity_Text_BrendanWantToBattle {
-	"BRENDAN: What's up?
+	"{SPEAKER NAME_BRENDAN}What's up?
 	Want to have a battle with me?"
 }
 
 text RustboroCity_Text_BrendanIWontGoEasy {
-	"BRENDAN: I know you just became
+	"{SPEAKER NAME_BRENDAN}I know you just became
 	a TRAINER, but I won't go easy!"
 }
 
@@ -976,7 +976,7 @@ text RustboroCity_Text_BrendanDefeat {
 }
 
 text RustboroCity_Text_BrendanMrBrineyHint {
-	"BRENDAN: By the way, you know
+	"{SPEAKER NAME_BRENDAN}By the way, you know
 	MR. BRINEY? The guy I just passed?
 
 	I bet you didn't know this, since you

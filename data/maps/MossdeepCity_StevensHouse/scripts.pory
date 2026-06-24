@@ -108,7 +108,7 @@ script MossdeepCity_StevensHouse_EventScript_DiveItemBall {
 }
 
 text MossdeepCity_StevensHouse_Text_YouveEarnedHMDive {
-	"STEVEN: {PLAYER}{KUN}…
+	"{SPEAKER NAME_STEVEN}{PLAYER}{KUN}…
 
 	As you can see, there's not much here,
 	but this is my home.
@@ -123,7 +123,7 @@ text MossdeepCity_StevensHouse_Text_YouveEarnedHMDive {
 }
 
 text MossdeepCity_StevensHouse_Text_ExplainDive {
-	"STEVEN: While you're using SURF, you
+	"{SPEAKER NAME_STEVEN}While you're using SURF, you
 	should notice dark patches of water.
 
 	Use DIVE if you come to deep water
@@ -137,7 +137,7 @@ text MossdeepCity_StevensHouse_Text_ExplainDive {
 }
 
 text MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis {
-	"STEVEN: Apparently, there's an
+	"{SPEAKER NAME_STEVEN}Apparently, there's an
 	underwater cavern between
 	MOSSDEEP and SOOTOPOLIS.
 

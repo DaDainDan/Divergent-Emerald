@@ -268,7 +268,7 @@ text BattleFrontier_BattleFactoryBattleRoom_Text_ShakeOutKnowledgeBringItOn {
 }
 
 text BattleFrontier_BattleFactoryBattleRoom_Text_NolandLetsSeeFrontierPass {
-	"NOLAND: Smart going!
+	"{SPEAKER NAME_NOLAND}Smart going!
 	Let's see your FRONTIER PASS."
 }
 
@@ -288,7 +288,7 @@ text BattleFrontier_BattleFactoryBattleRoom_Text_NextTimeNoHoldsBarred {
 }
 
 text BattleFrontier_BattleFactoryBattleRoom_Text_HarderLookThanLastTime {
-	"NOLAND: Hey, hey! How's it going?
+	"{SPEAKER NAME_NOLAND}Hey, hey! How's it going?
 	You keeping up with your studies?
 
 	…Oh?
@@ -306,7 +306,7 @@ text BattleFrontier_BattleFactoryBattleRoom_Text_AllRightBringItOn {
 }
 
 text BattleFrontier_BattleFactoryBattleRoom_Text_OutOfMyLeagueLetsSeePass {
-	"NOLAND: What the…
+	"{SPEAKER NAME_NOLAND}What the…
 	You're getting out of my league!
 
 	Sheesh!

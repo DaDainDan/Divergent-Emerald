@@ -45,7 +45,7 @@ MeteorFalls_StevensCave_EventScript_Steven_2:
 
 MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst::
 # 26 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "STEVEN: Oh, wow, {PLAYER}{KUN}.\n"
+	.string "{SPEAKER NAME_STEVEN}Oh, wow, {PLAYER}{KUN}.\n"
 	.string "I'm amazed you knew where to find me.\p"
 	.string "Do you, uh…maybe think of me as\n"
 	.string "just a rock maniac?\p"
@@ -64,7 +64,7 @@ MeteorFalls_StevensCave_Text_StevenDefeat::
 
 MeteorFalls_StevensCave_Text_MyPredictionCameTrue::
 # 50 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "STEVEN: Come to think of it, ever since\n"
+	.string "{SPEAKER NAME_STEVEN}Come to think of it, ever since\n"
 	.string "our paths first crossed in GRANITE\l"
 	.string "CAVE in DEWFORD, I had this feeling.\p"
 	.string "I thought that you would eventually\n"

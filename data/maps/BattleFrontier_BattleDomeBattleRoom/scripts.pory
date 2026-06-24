@@ -924,7 +924,7 @@ text BattleFrontier_BattleDomeBattleRoom_Text_SpectatorTuckerChant {
 }
 
 text BattleFrontier_BattleDomeBattleRoom_Text_TuckerSilverIntro {
-	"TUCKER: Ahahah!
+	"{SPEAKER NAME_TUCKER}Ahahah!
 
 	Do you hear it? This crowd!
 	They're all itching to see our match!
@@ -959,7 +959,7 @@ text BattleFrontier_BattleDomeBattleRoom_Text_WinnerIsTucker {
 }
 
 text BattleFrontier_BattleDomeBattleRoom_Text_SeeYourFrontierPass {
-	"TUCKER: Rules are rules!
+	"{SPEAKER NAME_TUCKER}Rules are rules!
 	Let me see your FRONTIER PASS."
 }
 
@@ -993,7 +993,7 @@ text BattleFrontier_BattleDomeBattleRoom_Text_LegendHasReturnedDomeAceTucker {
 }
 
 text BattleFrontier_BattleDomeBattleRoom_Text_TuckerGoldIntro {
-	"TUCKER: Ah…
+	"{SPEAKER NAME_TUCKER}Ah…
 	The pummeling roar of the crowd…
 	Their furnace-like heat of excitement…
 	This is a wonderful place…
@@ -1013,7 +1013,7 @@ text BattleFrontier_BattleDomeBattleRoom_Text_UnleashAllPowerIPossess {
 }
 
 text BattleFrontier_BattleDomeBattleRoom_Text_NeverLostWhenPowerUnleashed {
-	"TUCKER: You're genuinely fantastic!
+	"{SPEAKER NAME_TUCKER}You're genuinely fantastic!
 
 	Never before! I haven't ever lost in the
 	times I've had to unleash my power.

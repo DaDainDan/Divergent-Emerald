@@ -341,7 +341,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor::
 
 RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis::
 # 129 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "MR. STONE: Now, you should know that\n"
+	.string "{SPEAKER NAME_MR_STONE}Now, you should know that\n"
 	.string "I am a great PRESIDENT.\p"
 	.string "So, I'd never be so cheap as to ask\n"
 	.string "a favor for nothing in return.\p"
@@ -353,7 +353,7 @@ RustboroCity_DevonCorp_3F_Text_ReceivedPokenav::
 
 RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp::
 # 143 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "MR. STONE: That device…\p"
+	.string "{SPEAKER NAME_MR_STONE}That device…\p"
 	.string "It's a POKéMON NAVIGATOR, or POKéNAV\n"
 	.string "for short.\p"
 	.string "It's an indispensable tool for any\n"
@@ -369,23 +369,23 @@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp::
 
 RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare::
 # 165 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "MR. STONE: Well, then, {PLAYER}{KUN},\n"
+	.string "{SPEAKER NAME_MR_STONE}Well, then, {PLAYER}{KUN},\n"
 	.string "go with caution and care!$"
 
 RustboroCity_DevonCorp_3F_Text_CountingOnYou::
 # 170 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "MR. STONE: I'm counting on you!$"
+	.string "{SPEAKER NAME_MR_STONE}I'm counting on you!$"
 
 RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter::
 # 174 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "MR. STONE: You delivered my LETTER?\n"
+	.string "{SPEAKER NAME_MR_STONE}You delivered my LETTER?\n"
 	.string "Thank you kindly!\p"
 	.string "This is my way of thanking you.\n"
 	.string "It should help you, a TRAINER.$"
 
 RustboroCity_DevonCorp_3F_Text_ExplainExpShare::
 # 182 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "MR. STONE: A POKéMON holding that\n"
+	.string "{SPEAKER NAME_MR_STONE}A POKéMON holding that\n"
 	.string "EXP. SHARE will be given some of the\l"
 	.string "EXP Points from battle.\p"
 	.string "It will get EXP Points even if it didn't\n"
@@ -395,7 +395,7 @@ RustboroCity_DevonCorp_3F_Text_ExplainExpShare::
 
 RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends::
 # 194 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "MR. STONE: Since my youth, I've immersed\n"
+	.string "{SPEAKER NAME_MR_STONE}Since my youth, I've immersed\n"
 	.string "myself in work.\p"
 	.string "Consequently, I'm not familiar with\n"
 	.string "trends and that sort of thing.\p"

@@ -178,7 +178,7 @@ script Route118_EventScript_Deandre {
 }
 
 text Route118_Text_StevenQuestions {
-	"STEVEN: Hi, {PLAYER}{KUN}!
+	"{SPEAKER NAME_STEVEN}Hi, {PLAYER}{KUN}!
 
 	It's me, STEVEN!
 	We met in the cave near DEWFORD.

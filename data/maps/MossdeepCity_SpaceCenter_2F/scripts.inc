@@ -660,18 +660,18 @@ MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou::
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieDontInterfere::
 # 376 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "MAXIE: Clear out of the way!\n"
+	.string "{SPEAKER NAME_MAXIE}Clear out of the way!\n"
 	.string "Don't you dare interfere!$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenWhyStealRocketFuel::
 # 381 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "STEVEN: TEAM MAGMA…\p"
+	.string "{SPEAKER NAME_STEVEN}TEAM MAGMA…\p"
 	.string "What's the point of stealing rocket\n"
 	.string "fuel?$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano::
 # 388 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "MAXIE: Fufufu… Since you're so\n"
+	.string "{SPEAKER NAME_MAXIE}Fufufu… Since you're so\n"
 	.string "curious, you deserve an explanation.\p"
 	.string "We're going to jettison the entire\n"
 	.string "load into MT. CHIMNEY!\p"
@@ -683,14 +683,14 @@ MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano::
 
 MossdeepCity_SpaceCenter_2F_Text_StevenAreYouReadyToBattle::
 # 404 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}!\n"
 	.string "You're going to help me?\p"
 	.string "Let's go into battle together!\n"
 	.string "Are you ready?$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenHurryGetReadyQuickly::
 # 412 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "STEVEN: Then, hurry!\n"
+	.string "{SPEAKER NAME_STEVEN}Then, hurry!\n"
 	.string "Get ready quickly!$"
 
 MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand::
@@ -704,7 +704,7 @@ MossdeepCity_SpaceCenter_Text_TabithaDefeat::
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided::
 # 426 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "MAXIE: We failed to make the volcano\n"
+	.string "{SPEAKER NAME_MAXIE}We failed to make the volcano\n"
 	.string "erupt…\p"
 	.string "We failed to control GROUDON after\n"
 	.string "we had awoken it…\p"
@@ -720,14 +720,14 @@ MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided::
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp::
 # 447 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "MAXIE: All right…\n"
+	.string "{SPEAKER NAME_MAXIE}All right…\n"
 	.string "We will give up on the fuel…\p"
 	.string "There appear to be more important\n"
 	.string "matters that I must examine…$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome::
 # 455 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "STEVEN: Whew, that was too tense.\n"
+	.string "{SPEAKER NAME_STEVEN}Whew, that was too tense.\n"
 	.string "{PLAYER}{KUN}, thank you.\p"
 	.string "I have something to give you as\n"
 	.string "thanks for your support.\p"
