@@ -564,7 +564,7 @@ static void CB2_InitBattleInternal(void)
     gBattle_BG3_X = 0;
     gBattle_BG3_Y = 0;
 
-    if (!DEBUG_OVERWORLD_MENU || (DEBUG_OVERWORLD_MENU && !gIsDebugBattle))
+    if (!(DEBUG_OVERWORLD_MENU || gSaveBlock2Ptr->optionsDebugMenu) || ((DEBUG_OVERWORLD_MENU || gSaveBlock2Ptr->optionsDebugMenu) && !gIsDebugBattle))
         gBattleEnvironment = BattleSetup_GetEnvironmentId();
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         gBattleEnvironment = BATTLE_ENVIRONMENT_BUILDING;
@@ -590,7 +590,7 @@ static void CB2_InitBattleInternal(void)
     else
         SetMainCallback2(CB2_HandleStartBattle);
 
-    if (!DEBUG_OVERWORLD_MENU || (DEBUG_OVERWORLD_MENU && !gIsDebugBattle))
+    if (!(DEBUG_OVERWORLD_MENU || gSaveBlock2Ptr->optionsDebugMenu) || ((DEBUG_OVERWORLD_MENU || gSaveBlock2Ptr->optionsDebugMenu) && !gIsDebugBattle))
     {
         if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)))
         {
@@ -2985,10 +2985,7 @@ static void ClearSetBScriptingStruct(void)
     memset(&gBattleScripting, 0, sizeof(gBattleScripting));
 
     gBattleScripting.windowsType = temp;
-    gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
-    #if TESTING
     gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
-    #endif
     gBattleScripting.expOnCatch = (GetConfig(B_EXP_CATCH) >= GEN_6);
     gBattleScripting.specialTrainerBattleType = specialBattleType;
 }

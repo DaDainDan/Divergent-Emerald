@@ -148,7 +148,7 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
     else if (heldKeys & DPAD_RIGHT)
         input->dpadDirection = DIR_EAST;
 
-    if (DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
+    if ((DEBUG_OVERWORLD_MENU || gSaveBlock2Ptr->optionsDebugMenu) && !DEBUG_OVERWORLD_IN_MENU)
     {
         if ((heldKeys & DEBUG_OVERWORLD_HELD_KEYS) && input->DEBUG_OVERWORLD_TRIGGER_EVENT)
         {
@@ -240,7 +240,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->pressedRButton && TryStartDexNavSearch())
         return TRUE;
 
-    if (input->input_field_1_2 && DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
+    if (input->input_field_1_2 && (DEBUG_OVERWORLD_MENU || gSaveBlock2Ptr->optionsDebugMenu) && !DEBUG_OVERWORLD_IN_MENU)
     {
         PlaySE(SE_WIN_OPEN);
         FreezeObjectEvents();
