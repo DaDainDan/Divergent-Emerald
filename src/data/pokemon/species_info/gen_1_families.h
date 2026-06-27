@@ -4675,7 +4675,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_Nidoqueen,
         .shinyPalette = gMonShinyPalette_Nidoqueen,
         .iconSprite = gMonIcon_Nidoqueen,
-        .iconPalIndex = 2,
+        .iconPalIndex = 3,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(1, 9, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Nidoqueen)
@@ -16551,7 +16551,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_Smoochum,
         .shinyPalette = gMonShinyPalette_Smoochum,
         .iconSprite = gMonIcon_Smoochum,
-        .iconPalIndex = 1,
+        .iconPalIndex = 4,
         .pokemonJumpType = PKMN_JUMP_TYPE_SLOW,
         SHADOW(-1, 0, SHADOW_SIZE_S)
         FOOTPRINT(Smoochum)
@@ -16627,7 +16627,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_Jynx,
         .shinyPalette = gMonShinyPalette_Jynx,
         .iconSprite = gMonIcon_Jynx,
-        .iconPalIndex = 2,
+        .iconPalIndex = 4,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 3, SHADOW_SIZE_L)
         FOOTPRINT(Jynx)

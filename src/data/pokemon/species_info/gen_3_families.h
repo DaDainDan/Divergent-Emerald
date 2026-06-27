@@ -8071,7 +8071,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .palette = gMonPalette_Seviper,
         .shinyPalette = gMonShinyPalette_Seviper,
         .iconSprite = gMonIcon_Seviper,
-        .iconPalIndex = 2,
+        .iconPalIndex = 5,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-3, 7, SHADOW_SIZE_L)
         FOOTPRINT(Seviper)
@@ -12799,7 +12799,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .palette = gMonPalette_Kyogre,
         .shinyPalette = gMonShinyPalette_Kyogre,
         .iconSprite = gMonIcon_Kyogre,
-        .iconPalIndex = 2,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Kyogre)
