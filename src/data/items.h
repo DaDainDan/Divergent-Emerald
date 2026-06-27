@@ -1666,7 +1666,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_LONELY,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_RedMint,
+        .iconPalette = gItemIconPalette_LightBlueMint,
     },
 
     [ITEM_ADAMANT_MINT] =
@@ -1702,7 +1702,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_NAUGHTY,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_RedMint,
+        .iconPalette = gItemIconPalette_LightBlueMint,
     },
 
     [ITEM_BRAVE_MINT] =
@@ -1725,7 +1725,7 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_BOLD_MINT] =
     {
-        .name = ITEM_NAME("Bold Mint"),
+        .name = ITEM_NAME("Scrappy Mint"),
         .price = (I_PRICE >= GEN_9) ? 20000 : 20,
         .description = COMPOUND_STRING(
             "Can be smelled. It\n"
@@ -1743,7 +1743,7 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_IMPISH_MINT] =
     {
-        .name = ITEM_NAME("Impish Mint"),
+        .name = ITEM_NAME("Grouchy Mint"),
         .price = (I_PRICE >= GEN_9) ? 20000 : 20,
         .description = COMPOUND_STRING(
             "Can be smelled. It\n"
@@ -1756,12 +1756,12 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_IMPISH,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_BlueMint,
+        .iconPalette = gItemIconPalette_RedMint,
     },
 
     [ITEM_LAX_MINT] =
     {
-        .name = ITEM_NAME("Lax Mint"),
+        .name = ITEM_NAME("Shrewd Mint"),
         .price = (I_PRICE >= GEN_9) ? 20000 : 20,
         .description = COMPOUND_STRING(
             "Can be smelled. It\n"
@@ -1774,12 +1774,12 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_LAX,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_BlueMint,
+        .iconPalette = gItemIconPalette_GreenMint,
     },
 
     [ITEM_RELAXED_MINT] =
     {
-        .name = ITEM_NAME("Relaxed Mint"),
+        .name = ITEM_NAME("Curious Mint"),
         .price = (I_PRICE >= GEN_9) ? 20000 : 20,
         .description = COMPOUND_STRING(
             "Can be smelled. It\n"
@@ -1792,12 +1792,12 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_RELAXED,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_BlueMint,
+        .iconPalette = gItemIconPalette_PinkMint,
     },
 
     [ITEM_MODEST_MINT] =
     {
-        .name = ITEM_NAME("Modest Mint"),
+        .name = ITEM_NAME("Selfish Mint"),
         .price = (I_PRICE >= GEN_9) ? 20000 : 20,
         .description = COMPOUND_STRING(
             "Can be smelled. It\n"
@@ -1815,7 +1815,7 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_MILD_MINT] =
     {
-        .name = ITEM_NAME("Mild Mint"),
+        .name = ITEM_NAME("Noble Mint"),
         .price = (I_PRICE >= GEN_9) ? 20000 : 20,
         .description = COMPOUND_STRING(
             "Can be smelled. It\n"
@@ -1828,7 +1828,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_MILD,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_LightBlueMint,
+        .iconPalette = gItemIconPalette_PinkMint,
     },
 
     [ITEM_RASH_MINT] =
@@ -1846,7 +1846,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_RASH,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_LightBlueMint,
+        .iconPalette = gItemIconPalette_GreenMint,
     },
 
     [ITEM_QUIET_MINT] =
@@ -1882,7 +1882,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_CALM,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_PinkMint,
+        .iconPalette = gItemIconPalette_LightBlueMint,
     },
 
     [ITEM_GENTLE_MINT] =
@@ -1918,7 +1918,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_CAREFUL,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_PinkMint,
+        .iconPalette = gItemIconPalette_BlueMint,
     },
 
     [ITEM_SASSY_MINT] =
@@ -1936,7 +1936,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_SASSY,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_PinkMint,
+        .iconPalette = gItemIconPalette_RedMint,
     },
 
     [ITEM_TIMID_MINT] =
@@ -1954,12 +1954,12 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_TIMID,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_GreenMint,
+        .iconPalette = gItemIconPalette_PinkMint,
     },
 
     [ITEM_HASTY_MINT] =
     {
-        .name = ITEM_NAME("Hasty Mint"),
+        .name = ITEM_NAME("Wild Mint"),
         .price = (I_PRICE >= GEN_9) ? 20000 : 20,
         .description = COMPOUND_STRING(
             "Can be smelled. It\n"
@@ -1995,7 +1995,7 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_NAIVE_MINT] =
     {
-        .name = ITEM_NAME("Naive Mint"),
+        .name = ITEM_NAME("Affable Mint"),
         .price = (I_PRICE >= GEN_9) ? 20000 : 20,
         .description = COMPOUND_STRING(
             "Can be smelled. It\n"
@@ -2026,7 +2026,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = NATURE_SERIOUS,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
-        .iconPalette = gItemIconPalette_YellowMint,
+        .iconPalette = gItemIconPalette_RedMint,
     },
 
 // Candy

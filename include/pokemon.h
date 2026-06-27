@@ -598,8 +598,8 @@ enum {
 struct NatureInfo
 {
     const u8 *name;
-    enum Stat statUp;
-    enum Stat statDown;
+    enum Stat statUp1;
+    enum Stat statUp2;
     u8 backAnim;
     u8 pokeBlockAnim[2];
     u8 battlePalacePercents[4];
