@@ -46,6 +46,14 @@ Debug_CheatStart::
 	setflag FLAG_BADGE06_GET
 	setflag FLAG_BADGE07_GET
 	setflag FLAG_BADGE08_GET
+	additem ITEM_HM_CUT
+	additem ITEM_HM_FLY
+	additem ITEM_HM_SURF
+	additem ITEM_HM_STRENGTH
+	additem ITEM_HM_FLASH
+	additem ITEM_HM_ROCK_SMASH
+	additem ITEM_HM_WATERFALL
+	additem ITEM_HM_DIVE
 	setflag FLAG_VISITED_LITTLEROOT_TOWN
 	setflag FLAG_VISITED_OLDALE_TOWN
 	setflag FLAG_VISITED_DEWFORD_TOWN

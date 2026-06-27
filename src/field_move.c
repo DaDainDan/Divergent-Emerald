@@ -7,13 +7,15 @@
 #include "constants/field_move.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
+#include "item.h"
+#include "constants/items.h"
 
 static bool32 IsFieldMoveUnlocked_Cut(void)
 {
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE02_GET);
 
-    return FlagGet(FLAG_BADGE01_GET);
+    return (FlagGet(FLAG_BADGE01_GET) && CheckBagHasItem(ITEM_HM_CUT, 1));
 }
 
 static bool32 IsFieldMoveUnlocked_Flash(void)
@@ -21,7 +23,7 @@ static bool32 IsFieldMoveUnlocked_Flash(void)
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE01_GET);
 
-    return FlagGet(FLAG_BADGE02_GET);
+    return (FlagGet(FLAG_BADGE02_GET) && CheckBagHasItem(ITEM_HM_FLASH, 1));
 }
 
 static bool32 IsFieldMoveUnlocked_RockSmash(void)
@@ -29,17 +31,17 @@ static bool32 IsFieldMoveUnlocked_RockSmash(void)
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE06_GET);
 
-    return FlagGet(FLAG_BADGE03_GET);
+    return (FlagGet(FLAG_BADGE03_GET) && CheckBagHasItem(ITEM_HM_ROCK_SMASH, 1));
 }
 
 static bool32 IsFieldMoveUnlocked_Strength(void)
 {
-    return FlagGet(FLAG_BADGE04_GET);
+    return (FlagGet(FLAG_BADGE05_GET) && CheckBagHasItem(ITEM_HM_STRENGTH, 1));
 }
 
 static bool32 IsFieldMoveUnlocked_Surf(void)
 {
-    return FlagGet(FLAG_BADGE05_GET);
+    return (FlagGet(FLAG_BADGE04_GET) && CheckBagHasItem(ITEM_HM_SURF, 1));
 }
 
 static bool32 IsFieldMoveUnlocked_Fly(void)
@@ -47,12 +49,12 @@ static bool32 IsFieldMoveUnlocked_Fly(void)
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE03_GET);
 
-    return FlagGet(FLAG_BADGE06_GET);
+    return (FlagGet(FLAG_BADGE06_GET) && CheckBagHasItem(ITEM_HM_FLY, 1));
 }
 
 static bool32 IsFieldMoveUnlocked_Dive(void)
 {
-    return FlagGet(FLAG_BADGE07_GET);
+    return (FlagGet(FLAG_BADGE07_GET) && CheckBagHasItem(ITEM_HM_DIVE, 1));
 }
 
 static bool32 IsFieldMoveUnlocked_Waterfall(void)
@@ -60,7 +62,7 @@ static bool32 IsFieldMoveUnlocked_Waterfall(void)
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE07_GET);
 
-    return FlagGet(FLAG_BADGE08_GET);
+    return (FlagGet(FLAG_BADGE08_GET) && CheckBagHasItem(ITEM_HM_WATERFALL, 1));
 }
 
 static bool32 IsFieldMoveUnlocked_RockClimb(void)

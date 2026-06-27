@@ -2321,7 +2321,7 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
         enum Species species = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES);
         if (!species)
             break;
-        if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG) && MonKnowsMove(&gParties[B_TRAINER_PLAYER][i], move) == TRUE)
+        if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG) && CanTeachMove(&gParties[B_TRAINER_PLAYER][i], move) != CANNOT_LEARN_MOVE)
         {
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;
