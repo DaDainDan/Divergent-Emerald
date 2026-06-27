@@ -1768,22 +1768,27 @@ static void MoveSelectionDisplayMoveDescription(enum BattlerId battler)
     enum Move move = moveInfo->moves[gMoveSelectionCursor[battler]];
     u16 pwr = GetMovePower(move);
     u16 acc = GetMoveAccuracy(move);
+    s8 prio = GetMovePriority(move);
     enum DamageCategory cat = GetBattleMoveCategory(move);
+    
 
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX || IsGimmickSelected(battler, GIMMICK_DYNAMAX))
     {
         pwr = GetMaxMovePower(move);
         move = GetMaxMove(battler, move);
         acc = 0;
+        prio = 0;
     }
 
-    u8 pwr_num[3], acc_num[3];
+    u8 pwr_num[3], acc_num[3], prio_num[4];
     u8 cat_desc[7] = _("CAT: ");
     u8 pwr_desc[7] = _("PWR: ");
     u8 acc_desc[7] = _("ACC: ");
+    u8 prio_desc[7] = _("PRIO: ");
     u8 cat_start[] = _("{CLEAR_TO 3}");
-    u8 pwr_start[] = _("{CLEAR_TO 56}");
-    u8 acc_start[] = _("{CLEAR_TO 108}");
+    u8 pwr_start[] = _("{CLEAR_TO 50}");
+    u8 acc_start[] = _("{CLEAR_TO 97}");
+    u8 prio_start[] = _("{CLEAR_TO 145}");
     LoadMessageBoxAndBorderGfx();
     DrawStdWindowFrame(B_WIN_MOVE_DESCRIPTION, FALSE);
     if (pwr < 2)
@@ -1794,6 +1799,15 @@ static void MoveSelectionDisplayMoveDescription(enum BattlerId battler)
         StringCopy(acc_num, gText_BattleSwitchWhich5);
     else
         ConvertIntToDecimalStringN(acc_num, acc, STR_CONV_MODE_LEFT_ALIGN, 3);
+    if (prio == 0)
+        StringCopy(prio_num, gText_BattleSwitchWhich5);
+    else if (prio < 0)
+    {
+        prio_num[0] = CHAR_HYPHEN;
+        ConvertIntToDecimalStringN(prio_num + 1, -prio, STR_CONV_MODE_LEFT_ALIGN, 2);
+    }
+    else
+        ConvertIntToDecimalStringN(prio_num, prio, STR_CONV_MODE_LEFT_ALIGN, 2);
     StringCopy(gDisplayedStringBattle, cat_start);
     StringAppend(gDisplayedStringBattle, cat_desc);
     StringAppend(gDisplayedStringBattle, pwr_start);
@@ -1802,6 +1816,9 @@ static void MoveSelectionDisplayMoveDescription(enum BattlerId battler)
     StringAppend(gDisplayedStringBattle, acc_start);
     StringAppend(gDisplayedStringBattle, acc_desc);
     StringAppend(gDisplayedStringBattle, acc_num);
+    StringAppend(gDisplayedStringBattle, prio_start);
+    StringAppend(gDisplayedStringBattle, prio_desc);
+    StringAppend(gDisplayedStringBattle, prio_num);
     StringAppend(gDisplayedStringBattle, gText_NewLine);
     StringAppend(gDisplayedStringBattle, GetMoveDescription(move));
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_DESCRIPTION);
