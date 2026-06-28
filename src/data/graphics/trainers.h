@@ -214,7 +214,11 @@ const u16 gTrainerPalette_Sailor[] = INCGFX_U16("graphics/trainers/front_pics/sa
 const u32 gTrainerFrontPic_MagmaAdmin[] = INCGFX_U32("graphics/trainers/front_pics/magma_admin.png", ".4bpp.smol");
 const u16 gTrainerPalette_MagmaAdmin[] = INCGFX_U16("graphics/trainers/front_pics/magma_admin.png", ".gbapal");
 
+const u32 gTrainerFrontPic_MagmaAdminF[] = INCGFX_U32("graphics/trainers/front_pics/magma_admin_f.png", ".4bpp.smol");
+const u16 gTrainerPalette_MagmaAdminF[] = INCGFX_U16("graphics/trainers/front_pics/magma_admin_f.png", ".gbapal");
+
 const u32 gTrainerFrontPic_Wally[] = INCGFX_U32("graphics/trainers/front_pics/wally.png", ".4bpp.smol");
+const u32 gTrainerFrontPic_Wally_Drive[] = INCGFX_U32("graphics/trainers/front_pics/wally_drive.png", ".4bpp.smol");
 const u16 gTrainerPalette_Wally[] = INCGFX_U16("graphics/trainers/palettes/wally.pal", ".gbapal");
 
 const u32 gTrainerFrontPic_Brendan[] = INCGFX_U32("graphics/trainers/front_pics/brendan.png", ".4bpp.smol");
@@ -625,6 +629,10 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Wally, gTrainerPalette_Wally),
         .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Wally, gTrainerPalette_Wally, sBackAnims_Hoenn),
     },
+    [TRAINER_PIC_WALLY_DRIVE] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Wally_Drive, gTrainerPalette_Wally),
+    },
     [TRAINER_PIC_STEVEN] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Steven, gTrainerPalette_Steven, 0, 7, 0x188),
@@ -917,6 +925,10 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_MAGMA_ADMIN] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_MagmaAdmin, gTrainerPalette_MagmaAdmin),
+    },
+    [TRAINER_PIC_MAGMA_ADMIN_F] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_MagmaAdminF, gTrainerPalette_MagmaAdminF),
     },
     [TRAINER_PIC_BUG_CATCHER] =
     {
