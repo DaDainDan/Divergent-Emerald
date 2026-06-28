@@ -152,15 +152,15 @@
 #define FLAG_NO_TRAINER_SEE      0x0AF
 #define FLAG_NO_COLLISION        0x0B0
 #define FLAG_DISABLE_ENCOUNTERS  0x0B1
-#define FLAG_0x0B2               0x0B2
-#define FLAG_0x0B3               0x0B3
-#define FLAG_0x0B4               0x0B4
-#define FLAG_0x0B5               0x0B5
-#define FLAG_0x0B6               0x0B6
-#define FLAG_0x0B7               0x0B7
-#define FLAG_0x0B8               0x0B8
-#define FLAG_0x0B9               0x0B9
-#define FLAG_0x0BA               0x0BA
+#define FLAG_NO_CATCHING         0x0B2
+#define FLAG_NO_RUNNING          0x0B3
+#define FLAG_NO_WHITEOUT         0x0B4
+#define FLAG_INVERSE_BATTLE      0x0B5
+#define FLAG_FORCE_DOUBLE_WILD   0x0B6
+#define FLAG_SMART_WILD_MON      0x0B7
+#define FLAG_ACTIVATE_SEEKER     0x0B8
+#define FLAG_FORCED_SHINY        0x0B9
+#define FLAG_MOVE_RELEARNER      0x0BA
 #define FLAG_0x0BB               0x0BB
 #define FLAG_0x0BC               0x0BC
 #define FLAG_0x0BD               0x0BD
@@ -1572,6 +1572,8 @@
 #define FLAG_RETURNED_DEVON_GOODS            0
 #define FLAG_CAUGHT_LUGIA                    0
 #define FLAG_CAUGHT_HO_OH                    0
+#define FLAG_DEFEATED_MIRAGE_TOWER_COFAGRIGUS 0
+#define FLAG_DEFEATED_NEW_MAUVILLE_B1F_ROTOM  0
 #define FLAG_MR_BRINEY_SAILING_INTRO         0
 #define FLAG_DOCK_REJECTED_DEVON_GOODS       0
 #define FLAG_DELIVERED_DEVON_GOODS           0
@@ -1583,6 +1585,8 @@
 #define FLAG_FORTREE_NPC_TRADE_COMPLETED     0
 #define FLAG_BATTLE_FRONTIER_TRADE_DONE      0
 #define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0
+#define FLAG_CHOSE_HELIX_FOSSIL              0
+#define FLAG_CHOSE_DOME_FOSSIL               0
 #define FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE   0
 #define FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN 0
 #define FLAG_COOL_PAINTING_MADE              0
@@ -2007,6 +2011,9 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                0
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 0
 
+#define FLAG_RARE_CANDY_GIRL  0
+#define FLAG_RARE_CANDY_GIRL2  0
+#define FLAG_RARE_CANDY_GIRL3  0
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0
@@ -2261,8 +2268,8 @@
 #define FLAG_HIDE_ROUTE_111_SECRET_POWER_MAN                        0
 #define FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION                       0
 #define FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN      0
-#define FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL                          0
-#define FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL                          0
+#define FLAG_HIDE_MIRAGE_TOWER_HELIX_FOSSIL                         0
+#define FLAG_HIDE_MIRAGE_TOWER_DOME_FOSSIL                          0
 #define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_FAMILIAR_AQUA_GRUNT 0
 #define FLAG_HIDE_ROUTE_118_STEVEN                                  0
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN                0
@@ -2471,6 +2478,10 @@
 #define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0
+#define FLAG_HIDE_MIRAGE_TOWER_COFAGRIGUS                           0
+#define FLAG_HIDE_NEW_MAUVILLE_B1F_ROTOM                            0
+#define FLAG_ITEM_NEW_MAUVILLE_B1F_DUBIOUS_DISC                     0
+#define FLAG_ITEM_NEW_MAUVILLE_B1F_LIGHT_BALL                       0
 
 #define FLAG_DEFEATED_RUSTBORO_GYM                                  0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0

@@ -3,6 +3,7 @@
   "name": "ScorchedSlab_B1F",
   "layout": "LAYOUT_SCORCHED_SLAB_B1F",
   "music": "MUS_SEALED_CHAMBER",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_SCORCHED_SLAB",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

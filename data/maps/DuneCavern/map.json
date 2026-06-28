@@ -3,6 +3,7 @@
   "name": "DuneCavern",
   "layout": "LAYOUT_DUNE_CAVERN",
   "music": "MUS_MT_PYRE_EXTERIOR",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_DUNE_CAVERN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
