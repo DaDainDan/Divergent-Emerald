@@ -268,355 +268,361 @@ PetalburgCity_EventScript_CitySign::
 	end
 
 
-PetalburgCity_EventScript_Gentleman::
+PetalburgCity_EventScript_NormansLodgeSign::
 # 113 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgCity_Text_NormansLodgeSign, MSGBOX_SIGN
+	end
+
+
+PetalburgCity_EventScript_Gentleman::
+# 118 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgCity_Text_FullPartyExplanation, MSGBOX_NPC
 	end
 
 
 PetalburgCity_EventScript_WallyHouseSign::
-# 118 "data/maps/PetalburgCity/scripts.pory"
+# 123 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgCity_Text_WallyHouseSign, MSGBOX_SIGN
 	end
 
 
 PetalburgCity_EventScript_ShowGymToPlayer0::
-# 123 "data/maps/PetalburgCity/scripts.pory"
+# 128 "data/maps/PetalburgCity/scripts.pory"
 	lockall
-# 124 "data/maps/PetalburgCity/scripts.pory"
+# 129 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8008, 0
-# 125 "data/maps/PetalburgCity/scripts.pory"
+# 130 "data/maps/PetalburgCity/scripts.pory"
 	goto PetalburgCity_EventScript_ShowGymToPlayer
 	end
 
 
 PetalburgCity_EventScript_ShowGymToPlayer1::
-# 130 "data/maps/PetalburgCity/scripts.pory"
+# 135 "data/maps/PetalburgCity/scripts.pory"
 	lockall
-# 131 "data/maps/PetalburgCity/scripts.pory"
+# 136 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8008, 1
-# 132 "data/maps/PetalburgCity/scripts.pory"
+# 137 "data/maps/PetalburgCity/scripts.pory"
 	goto PetalburgCity_EventScript_ShowGymToPlayer
 	end
 
 
 PetalburgCity_EventScript_ShowGymToPlayer2::
-# 137 "data/maps/PetalburgCity/scripts.pory"
+# 142 "data/maps/PetalburgCity/scripts.pory"
 	lockall
-# 138 "data/maps/PetalburgCity/scripts.pory"
+# 143 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8008, 2
-# 139 "data/maps/PetalburgCity/scripts.pory"
+# 144 "data/maps/PetalburgCity/scripts.pory"
 	goto PetalburgCity_EventScript_ShowGymToPlayer
 	end
 
 
 PetalburgCity_EventScript_ShowGymToPlayer3::
-# 144 "data/maps/PetalburgCity/scripts.pory"
+# 149 "data/maps/PetalburgCity/scripts.pory"
 	lockall
-# 145 "data/maps/PetalburgCity/scripts.pory"
+# 150 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8008, 3
-# 146 "data/maps/PetalburgCity/scripts.pory"
+# 151 "data/maps/PetalburgCity/scripts.pory"
 	goto PetalburgCity_EventScript_ShowGymToPlayer
 	end
 
 
 PetalburgCity_EventScript_ShowGymToPlayer::
-# 151 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_GYM_BOY, Common_Movement_FacePlayer
-# 152 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 0
-# 153 "data/maps/PetalburgCity/scripts.pory"
-	playbgm MUS_FOLLOW_ME, FALSE
-# 154 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_PIN
-# 155 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_GYM_BOY, Common_Movement_ExclamationMark
 # 156 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_GYM_BOY, Common_Movement_FacePlayer
 # 157 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_GYM_BOY, Common_Movement_Delay48
-# 158 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
+# 158 "data/maps/PetalburgCity/scripts.pory"
+	playbgm MUS_FOLLOW_ME, FALSE
 # 159 "data/maps/PetalburgCity/scripts.pory"
-	switch VAR_0x8008
+	playse SE_PIN
 # 160 "data/maps/PetalburgCity/scripts.pory"
-	case 0, PetalburgCity_EventScript_ShowGymToPlayer_3
+	applymovement LOCALID_GYM_BOY, Common_Movement_ExclamationMark
+# 161 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 0
+# 162 "data/maps/PetalburgCity/scripts.pory"
+	applymovement LOCALID_GYM_BOY, Common_Movement_Delay48
+# 163 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 0
 # 164 "data/maps/PetalburgCity/scripts.pory"
+	switch VAR_0x8008
+# 165 "data/maps/PetalburgCity/scripts.pory"
+	case 0, PetalburgCity_EventScript_ShowGymToPlayer_3
+# 169 "data/maps/PetalburgCity/scripts.pory"
 	case 1, PetalburgCity_EventScript_ShowGymToPlayer_4
-# 166 "data/maps/PetalburgCity/scripts.pory"
+# 171 "data/maps/PetalburgCity/scripts.pory"
 	case 2, PetalburgCity_EventScript_ShowGymToPlayer_5
-# 170 "data/maps/PetalburgCity/scripts.pory"
+# 175 "data/maps/PetalburgCity/scripts.pory"
 	case 3, PetalburgCity_EventScript_ShowGymToPlayer_6
 PetalburgCity_EventScript_ShowGymToPlayer_1:
-# 175 "data/maps/PetalburgCity/scripts.pory"
+# 180 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
-# 176 "data/maps/PetalburgCity/scripts.pory"
+# 181 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_DEFAULT
-# 177 "data/maps/PetalburgCity/scripts.pory"
-	closemessage
-# 178 "data/maps/PetalburgCity/scripts.pory"
-	switch VAR_0x8008
-# 179 "data/maps/PetalburgCity/scripts.pory"
-	case 0, PetalburgCity_EventScript_ShowGymToPlayer_9
 # 182 "data/maps/PetalburgCity/scripts.pory"
+	closemessage
+# 183 "data/maps/PetalburgCity/scripts.pory"
+	switch VAR_0x8008
+# 184 "data/maps/PetalburgCity/scripts.pory"
+	case 0, PetalburgCity_EventScript_ShowGymToPlayer_9
+# 187 "data/maps/PetalburgCity/scripts.pory"
 	case 1, PetalburgCity_EventScript_ShowGymToPlayer_10
-# 185 "data/maps/PetalburgCity/scripts.pory"
+# 190 "data/maps/PetalburgCity/scripts.pory"
 	case 2, PetalburgCity_EventScript_ShowGymToPlayer_11
-# 188 "data/maps/PetalburgCity/scripts.pory"
+# 193 "data/maps/PetalburgCity/scripts.pory"
 	case 3, PetalburgCity_EventScript_ShowGymToPlayer_12
 PetalburgCity_EventScript_ShowGymToPlayer_7:
-# 192 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 0
-# 193 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgCity_Text_ThisIsPetalburgGym, MSGBOX_DEFAULT
-# 194 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_GYM_BOY, Common_Movement_StepFasterLeft
-# 195 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
-# 196 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 0
 # 197 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgCity_Text_ThisIsGymSign, MSGBOX_DEFAULT
-# 198 "data/maps/PetalburgCity/scripts.pory"
-	closemessage
-# 199 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_GYM_BOY, PetalburgCity_EventScript_ShowGymToPlayer_Movement_11
-# 200 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
+# 198 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgCity_Text_ThisIsPetalburgGym, MSGBOX_DEFAULT
+# 199 "data/maps/PetalburgCity/scripts.pory"
+	applymovement LOCALID_GYM_BOY, Common_Movement_StepFasterLeft
+# 200 "data/maps/PetalburgCity/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterLeft
 # 201 "data/maps/PetalburgCity/scripts.pory"
-	fadedefaultbgm
+	waitmovement 0
 # 202 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgCity_Text_ThisIsGymSign, MSGBOX_DEFAULT
+# 203 "data/maps/PetalburgCity/scripts.pory"
+	closemessage
+# 204 "data/maps/PetalburgCity/scripts.pory"
+	applymovement LOCALID_GYM_BOY, PetalburgCity_EventScript_ShowGymToPlayer_Movement_11
+# 205 "data/maps/PetalburgCity/scripts.pory"
+	waitmovement 0
+# 206 "data/maps/PetalburgCity/scripts.pory"
+	fadedefaultbgm
+# 207 "data/maps/PetalburgCity/scripts.pory"
 	releaseall
 	end
 
 PetalburgCity_EventScript_ShowGymToPlayer_3:
-# 161 "data/maps/PetalburgCity/scripts.pory"
+# 166 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_GYM_BOY, PetalburgCity_EventScript_ShowGymToPlayer_Movement_0
-# 162 "data/maps/PetalburgCity/scripts.pory"
+# 167 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
-# 163 "data/maps/PetalburgCity/scripts.pory"
+# 168 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_StepFasterDown
 	goto PetalburgCity_EventScript_ShowGymToPlayer_1
 
 PetalburgCity_EventScript_ShowGymToPlayer_4:
-# 165 "data/maps/PetalburgCity/scripts.pory"
+# 170 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_GYM_BOY, PetalburgCity_EventScript_ShowGymToPlayer_Movement_1
 	goto PetalburgCity_EventScript_ShowGymToPlayer_1
 
 PetalburgCity_EventScript_ShowGymToPlayer_5:
-# 167 "data/maps/PetalburgCity/scripts.pory"
+# 172 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_GYM_BOY, PetalburgCity_EventScript_ShowGymToPlayer_Movement_2
-# 168 "data/maps/PetalburgCity/scripts.pory"
+# 173 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
-# 169 "data/maps/PetalburgCity/scripts.pory"
+# 174 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
 	goto PetalburgCity_EventScript_ShowGymToPlayer_1
 
 PetalburgCity_EventScript_ShowGymToPlayer_6:
-# 171 "data/maps/PetalburgCity/scripts.pory"
+# 176 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_GYM_BOY, PetalburgCity_EventScript_ShowGymToPlayer_Movement_3
-# 172 "data/maps/PetalburgCity/scripts.pory"
+# 177 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
-# 173 "data/maps/PetalburgCity/scripts.pory"
+# 178 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_StepFasterUp
 	goto PetalburgCity_EventScript_ShowGymToPlayer_1
 
 PetalburgCity_EventScript_ShowGymToPlayer_9:
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_GYM_BOY, PetalburgCity_EventScript_ShowGymToPlayer_Movement_4
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, PetalburgCity_EventScript_ShowGymToPlayer_Movement_5
 	goto PetalburgCity_EventScript_ShowGymToPlayer_7
 
 PetalburgCity_EventScript_ShowGymToPlayer_10:
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_GYM_BOY, PetalburgCity_EventScript_ShowGymToPlayer_Movement_6
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, PetalburgCity_EventScript_ShowGymToPlayer_Movement_7
 	goto PetalburgCity_EventScript_ShowGymToPlayer_7
 
 PetalburgCity_EventScript_ShowGymToPlayer_11:
-# 186 "data/maps/PetalburgCity/scripts.pory"
+# 191 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_GYM_BOY, PetalburgCity_EventScript_ShowGymToPlayer_Movement_4
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, PetalburgCity_EventScript_ShowGymToPlayer_Movement_8
 	goto PetalburgCity_EventScript_ShowGymToPlayer_7
 
 PetalburgCity_EventScript_ShowGymToPlayer_12:
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_GYM_BOY, PetalburgCity_EventScript_ShowGymToPlayer_Movement_9
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, PetalburgCity_EventScript_ShowGymToPlayer_Movement_10
 	goto PetalburgCity_EventScript_ShowGymToPlayer_7
 
 
-# 207 "data/maps/PetalburgCity/scripts.pory"
+# 212 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_Movement_Delay48:
-# 208 "data/maps/PetalburgCity/scripts.pory"
+# 213 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 208 "data/maps/PetalburgCity/scripts.pory"
+# 213 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 208 "data/maps/PetalburgCity/scripts.pory"
+# 213 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
 	step_end
 
 PetalburgCity_EventScript_Scott0::
-# 212 "data/maps/PetalburgCity/scripts.pory"
+# 217 "data/maps/PetalburgCity/scripts.pory"
 	lockall
-# 213 "data/maps/PetalburgCity/scripts.pory"
+# 218 "data/maps/PetalburgCity/scripts.pory"
 	addobject LOCALID_PETALBURG_SCOTT
-# 214 "data/maps/PetalburgCity/scripts.pory"
+# 219 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8008, 0
-# 215 "data/maps/PetalburgCity/scripts.pory"
+# 220 "data/maps/PetalburgCity/scripts.pory"
 	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 14
-# 216 "data/maps/PetalburgCity/scripts.pory"
+# 221 "data/maps/PetalburgCity/scripts.pory"
 	goto PetalburgCity_EventScript_Scott
 	end
 
 
 PetalburgCity_EventScript_Scott1::
-# 221 "data/maps/PetalburgCity/scripts.pory"
+# 226 "data/maps/PetalburgCity/scripts.pory"
 	lockall
-# 222 "data/maps/PetalburgCity/scripts.pory"
+# 227 "data/maps/PetalburgCity/scripts.pory"
 	addobject LOCALID_PETALBURG_SCOTT
-# 223 "data/maps/PetalburgCity/scripts.pory"
+# 228 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8008, 1
-# 224 "data/maps/PetalburgCity/scripts.pory"
+# 229 "data/maps/PetalburgCity/scripts.pory"
 	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 15
-# 225 "data/maps/PetalburgCity/scripts.pory"
+# 230 "data/maps/PetalburgCity/scripts.pory"
 	goto PetalburgCity_EventScript_Scott
 	end
 
 
 PetalburgCity_EventScript_Scott2::
-# 230 "data/maps/PetalburgCity/scripts.pory"
+# 235 "data/maps/PetalburgCity/scripts.pory"
 	lockall
-# 231 "data/maps/PetalburgCity/scripts.pory"
+# 236 "data/maps/PetalburgCity/scripts.pory"
 	addobject LOCALID_PETALBURG_SCOTT
-# 232 "data/maps/PetalburgCity/scripts.pory"
+# 237 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8008, 2
-# 233 "data/maps/PetalburgCity/scripts.pory"
+# 238 "data/maps/PetalburgCity/scripts.pory"
 	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 16
-# 234 "data/maps/PetalburgCity/scripts.pory"
+# 239 "data/maps/PetalburgCity/scripts.pory"
 	goto PetalburgCity_EventScript_Scott
 	end
 
 
 PetalburgCity_EventScript_Scott3::
-# 239 "data/maps/PetalburgCity/scripts.pory"
+# 244 "data/maps/PetalburgCity/scripts.pory"
 	lockall
-# 240 "data/maps/PetalburgCity/scripts.pory"
+# 245 "data/maps/PetalburgCity/scripts.pory"
 	addobject LOCALID_PETALBURG_SCOTT
-# 241 "data/maps/PetalburgCity/scripts.pory"
+# 246 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_0x8008, 3
-# 242 "data/maps/PetalburgCity/scripts.pory"
+# 247 "data/maps/PetalburgCity/scripts.pory"
 	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 17
-# 243 "data/maps/PetalburgCity/scripts.pory"
+# 248 "data/maps/PetalburgCity/scripts.pory"
 	goto PetalburgCity_EventScript_Scott
 	end
 
 
 PetalburgCity_EventScript_Scott::
-# 248 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_EventScript_Scott_Movement_0
-# 249 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 0
-# 250 "data/maps/PetalburgCity/scripts.pory"
-	playse SE_PIN
-# 251 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_ExclamationMark
-# 252 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 0
 # 253 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_Delay48
+	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_EventScript_Scott_Movement_0
 # 254 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
 # 255 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_EventScript_Scott_Movement_0
+	playse SE_PIN
 # 256 "data/maps/PetalburgCity/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_ExclamationMark
 # 257 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
-# 258 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
+# 258 "data/maps/PetalburgCity/scripts.pory"
+	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_Delay48
 # 259 "data/maps/PetalburgCity/scripts.pory"
-	setvar VAR_SCOTT_STATE, 1
+	waitmovement 0
 # 260 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgCity_Text_AreYouATrainer, MSGBOX_DEFAULT
+	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_EventScript_Scott_Movement_0
 # 261 "data/maps/PetalburgCity/scripts.pory"
-	closemessage
+	waitmovement 0
 # 262 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_StepFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_StepFasterRight
 # 263 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
 # 264 "data/maps/PetalburgCity/scripts.pory"
-	delay 30
+	setvar VAR_SCOTT_STATE, 1
 # 265 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgCity_Text_WellMaybeNot, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Text_AreYouATrainer, MSGBOX_DEFAULT
 # 266 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
 # 267 "data/maps/PetalburgCity/scripts.pory"
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_StepFasterLeft
+	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_StepFasterRight
 # 268 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
 # 269 "data/maps/PetalburgCity/scripts.pory"
 	delay 30
 # 270 "data/maps/PetalburgCity/scripts.pory"
-	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Text_WellMaybeNot, MSGBOX_DEFAULT
 # 271 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
 # 272 "data/maps/PetalburgCity/scripts.pory"
-	switch VAR_0x8008
+	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_StepFasterLeft
 # 273 "data/maps/PetalburgCity/scripts.pory"
-	case 0, PetalburgCity_EventScript_Scott_3
+	waitmovement 0
+# 274 "data/maps/PetalburgCity/scripts.pory"
+	delay 30
+# 275 "data/maps/PetalburgCity/scripts.pory"
+	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
 # 276 "data/maps/PetalburgCity/scripts.pory"
+	closemessage
+# 277 "data/maps/PetalburgCity/scripts.pory"
+	switch VAR_0x8008
+# 278 "data/maps/PetalburgCity/scripts.pory"
+	case 0, PetalburgCity_EventScript_Scott_3
+# 281 "data/maps/PetalburgCity/scripts.pory"
 	case 1, PetalburgCity_EventScript_Scott_4
-# 279 "data/maps/PetalburgCity/scripts.pory"
+# 284 "data/maps/PetalburgCity/scripts.pory"
 	case 2, PetalburgCity_EventScript_Scott_5
-# 282 "data/maps/PetalburgCity/scripts.pory"
+# 287 "data/maps/PetalburgCity/scripts.pory"
 	case 3, PetalburgCity_EventScript_Scott_6
 PetalburgCity_EventScript_Scott_1:
-# 286 "data/maps/PetalburgCity/scripts.pory"
+# 291 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
-# 287 "data/maps/PetalburgCity/scripts.pory"
+# 292 "data/maps/PetalburgCity/scripts.pory"
 	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
-# 288 "data/maps/PetalburgCity/scripts.pory"
+# 293 "data/maps/PetalburgCity/scripts.pory"
 	removeobject LOCALID_PETALBURG_SCOTT
-# 289 "data/maps/PetalburgCity/scripts.pory"
+# 294 "data/maps/PetalburgCity/scripts.pory"
 	releaseall
 	end
 
 PetalburgCity_EventScript_Scott_3:
-# 274 "data/maps/PetalburgCity/scripts.pory"
+# 279 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, PetalburgCity_EventScript_Scott_Movement_1
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_EventScript_Scott_Movement_2
 	goto PetalburgCity_EventScript_Scott_1
 
 PetalburgCity_EventScript_Scott_4:
-# 277 "data/maps/PetalburgCity/scripts.pory"
+# 282 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, PetalburgCity_EventScript_Scott_Movement_3
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_EventScript_Scott_Movement_4
 	goto PetalburgCity_EventScript_Scott_1
 
 PetalburgCity_EventScript_Scott_5:
-# 280 "data/maps/PetalburgCity/scripts.pory"
+# 285 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, PetalburgCity_EventScript_Scott_Movement_3
-# 281 "data/maps/PetalburgCity/scripts.pory"
+# 286 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_EventScript_Scott_Movement_4
 	goto PetalburgCity_EventScript_Scott_1
 
 PetalburgCity_EventScript_Scott_6:
-# 283 "data/maps/PetalburgCity/scripts.pory"
+# 288 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PLAYER, PetalburgCity_EventScript_Scott_Movement_5
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_EventScript_Scott_Movement_6
 	goto PetalburgCity_EventScript_Scott_1
 
 
 PetalburgCity_EventScript_GymBoy::
-# 294 "data/maps/PetalburgCity/scripts.pory"
+# 299 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_NPC
 	end
 
@@ -829,498 +835,498 @@ PetalburgCity_EventScript_WalkToWallyHouse_Movement_3:
 	walk_up
 	step_end
 
-# 161 "data/maps/PetalburgCity/scripts.pory"
+# 166 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_0:
-# 161 "data/maps/PetalburgCity/scripts.pory"
+# 166 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 161 "data/maps/PetalburgCity/scripts.pory"
+# 166 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 161 "data/maps/PetalburgCity/scripts.pory"
+# 166 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 161 "data/maps/PetalburgCity/scripts.pory"
+# 166 "data/maps/PetalburgCity/scripts.pory"
 	step_faster_up
 	step_end
 
-# 165 "data/maps/PetalburgCity/scripts.pory"
+# 170 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_1:
-# 165 "data/maps/PetalburgCity/scripts.pory"
+# 170 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 165 "data/maps/PetalburgCity/scripts.pory"
+# 170 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
 	step_end
 
-# 167 "data/maps/PetalburgCity/scripts.pory"
+# 172 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_2:
-# 167 "data/maps/PetalburgCity/scripts.pory"
+# 172 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 167 "data/maps/PetalburgCity/scripts.pory"
+# 172 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 167 "data/maps/PetalburgCity/scripts.pory"
+# 172 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 167 "data/maps/PetalburgCity/scripts.pory"
+# 172 "data/maps/PetalburgCity/scripts.pory"
 	step_faster_down
 	step_end
 
-# 171 "data/maps/PetalburgCity/scripts.pory"
+# 176 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_3:
-# 171 "data/maps/PetalburgCity/scripts.pory"
+# 176 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 171 "data/maps/PetalburgCity/scripts.pory"
+# 176 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 171 "data/maps/PetalburgCity/scripts.pory"
+# 176 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 171 "data/maps/PetalburgCity/scripts.pory"
+# 176 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 171 "data/maps/PetalburgCity/scripts.pory"
+# 176 "data/maps/PetalburgCity/scripts.pory"
 	step_faster_down
 	step_end
 
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_4:
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 180 "data/maps/PetalburgCity/scripts.pory"
+# 185 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
 	step_end
 
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_5:
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 181 "data/maps/PetalburgCity/scripts.pory"
+# 186 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
 	step_end
 
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_6:
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 183 "data/maps/PetalburgCity/scripts.pory"
+# 188 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
 	step_end
 
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_7:
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 184 "data/maps/PetalburgCity/scripts.pory"
+# 189 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
 	step_end
 
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_8:
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 187 "data/maps/PetalburgCity/scripts.pory"
+# 192 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
 	step_end
 
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_9:
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 189 "data/maps/PetalburgCity/scripts.pory"
+# 194 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
 	step_end
 
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_10:
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_right
-# 190 "data/maps/PetalburgCity/scripts.pory"
+# 195 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
 	step_end
 
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_ShowGymToPlayer_Movement_11:
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	sprint_left
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	sprint_left
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	sprint_left
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	sprint_left
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	sprint_left
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	sprint_left
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	sprint_left
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	sprint_left
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	sprint_left
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	sprint_left
-# 199 "data/maps/PetalburgCity/scripts.pory"
+# 204 "data/maps/PetalburgCity/scripts.pory"
 	step_faster_down
 	step_end
 
-# 248 "data/maps/PetalburgCity/scripts.pory"
+# 253 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_Scott_Movement_0:
-# 248 "data/maps/PetalburgCity/scripts.pory"
+# 253 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 248 "data/maps/PetalburgCity/scripts.pory"
+# 253 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 248 "data/maps/PetalburgCity/scripts.pory"
+# 253 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 248 "data/maps/PetalburgCity/scripts.pory"
+# 253 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
 	step_end
 
-# 274 "data/maps/PetalburgCity/scripts.pory"
+# 279 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_Scott_Movement_1:
-# 274 "data/maps/PetalburgCity/scripts.pory"
+# 279 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 274 "data/maps/PetalburgCity/scripts.pory"
+# 279 "data/maps/PetalburgCity/scripts.pory"
 	step_faster_down
-# 274 "data/maps/PetalburgCity/scripts.pory"
+# 279 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 274 "data/maps/PetalburgCity/scripts.pory"
+# 279 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 274 "data/maps/PetalburgCity/scripts.pory"
+# 279 "data/maps/PetalburgCity/scripts.pory"
 	delay_8
-# 274 "data/maps/PetalburgCity/scripts.pory"
+# 279 "data/maps/PetalburgCity/scripts.pory"
 	step_faster_left
 	step_end
 
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_Scott_Movement_2:
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 275 "data/maps/PetalburgCity/scripts.pory"
+# 280 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
 	step_end
 
-# 277 "data/maps/PetalburgCity/scripts.pory"
+# 282 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_Scott_Movement_3:
-# 277 "data/maps/PetalburgCity/scripts.pory"
+# 282 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 277 "data/maps/PetalburgCity/scripts.pory"
+# 282 "data/maps/PetalburgCity/scripts.pory"
 	step_faster_down
-# 277 "data/maps/PetalburgCity/scripts.pory"
+# 282 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 277 "data/maps/PetalburgCity/scripts.pory"
+# 282 "data/maps/PetalburgCity/scripts.pory"
 	delay_8
-# 277 "data/maps/PetalburgCity/scripts.pory"
+# 282 "data/maps/PetalburgCity/scripts.pory"
 	step_faster_left
 	step_end
 
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_Scott_Movement_4:
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_down
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 278 "data/maps/PetalburgCity/scripts.pory"
+# 283 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
 	step_end
 
-# 283 "data/maps/PetalburgCity/scripts.pory"
+# 288 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_Scott_Movement_5:
-# 283 "data/maps/PetalburgCity/scripts.pory"
+# 288 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 283 "data/maps/PetalburgCity/scripts.pory"
+# 288 "data/maps/PetalburgCity/scripts.pory"
 	step_faster_up
-# 283 "data/maps/PetalburgCity/scripts.pory"
+# 288 "data/maps/PetalburgCity/scripts.pory"
 	delay_16
-# 283 "data/maps/PetalburgCity/scripts.pory"
+# 288 "data/maps/PetalburgCity/scripts.pory"
 	delay_8
-# 283 "data/maps/PetalburgCity/scripts.pory"
+# 288 "data/maps/PetalburgCity/scripts.pory"
 	step_faster_left
 	step_end
 
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_Scott_Movement_6:
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_up
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
-# 284 "data/maps/PetalburgCity/scripts.pory"
+# 289 "data/maps/PetalburgCity/scripts.pory"
 	walk_left
 	step_end
 
 PetalburgCity_Text_WhereIsWally::
-# 298 "data/maps/PetalburgCity/scripts.pory"
+# 303 "data/maps/PetalburgCity/scripts.pory"
 	.string "Where has our WALLY gone?\p"
 	.string "We have to leave for VERDANTURF TOWN\n"
 	.string "very soon…$"
 
 PetalburgCity_Text_AreYouRookieTrainer::
-# 305 "data/maps/PetalburgCity/scripts.pory"
+# 310 "data/maps/PetalburgCity/scripts.pory"
 	.string "Hiya! Are you maybe…\n"
 	.string "A rookie TRAINER?\p"
 	.string "Do you know what POKéMON TRAINERS\n"
@@ -1329,16 +1335,16 @@ PetalburgCity_Text_AreYouRookieTrainer::
 	.string "is in the town.$"
 
 PetalburgCity_Text_ThisIsPetalburgGym::
-# 316 "data/maps/PetalburgCity/scripts.pory"
+# 321 "data/maps/PetalburgCity/scripts.pory"
 	.string "See? This is PETALBURG CITY's GYM.$"
 
 PetalburgCity_Text_ThisIsGymSign::
-# 320 "data/maps/PetalburgCity/scripts.pory"
+# 325 "data/maps/PetalburgCity/scripts.pory"
 	.string "This is the GYM's sign. Look for it\n"
 	.string "whenever you're looking for a GYM.$"
 
 PetalburgCity_Text_WaterReflection::
-# 325 "data/maps/PetalburgCity/scripts.pory"
+# 330 "data/maps/PetalburgCity/scripts.pory"
 	.string "My face is reflected in the water.\p"
 	.string "It's a shining grin full of hope…\p"
 	.string "Or it could be a look of somber silence\n"
@@ -1346,35 +1352,39 @@ PetalburgCity_Text_WaterReflection::
 	.string "What do you see reflected in your face?$"
 
 PetalburgCity_Text_FullPartyExplanation::
-# 336 "data/maps/PetalburgCity/scripts.pory"
+# 341 "data/maps/PetalburgCity/scripts.pory"
 	.string "Let's say you have six POKéMON.\n"
 	.string "If you catch another one…\p"
 	.string "It is automatically sent to a STORAGE\n"
 	.string "BOX over a PC connection.$"
 
 PetalburgCity_Text_GymSign::
-# 344 "data/maps/PetalburgCity/scripts.pory"
+# 349 "data/maps/PetalburgCity/scripts.pory"
 	.string "PETALBURG CITY POKéMON GYM\n"
 	.string "LEADER: NORMAN\l"
 	.string "“A man in pursuit of power!”$"
 
 PetalburgCity_Text_CitySign::
-# 350 "data/maps/PetalburgCity/scripts.pory"
+# 355 "data/maps/PetalburgCity/scripts.pory"
 	.string "PETALBURG CITY\n"
 	.string "“Where people mingle with nature.”$"
 
+PetalburgCity_Text_NormansLodgeSign::
+# 360 "data/maps/PetalburgCity/scripts.pory"
+	.string "NORMAN'S LODGE$"
+
 PetalburgCity_Text_WallyHouseSign::
-# 355 "data/maps/PetalburgCity/scripts.pory"
+# 364 "data/maps/PetalburgCity/scripts.pory"
 	.string "WALLY'S HOUSE$"
 
 PetalburgCity_Text_AreYouATrainer::
-# 359 "data/maps/PetalburgCity/scripts.pory"
+# 368 "data/maps/PetalburgCity/scripts.pory"
 	.string "Excuse me!\p"
 	.string "Let me guess, from the way you're\n"
 	.string "dressed, are you a POKéMON TRAINER?$"
 
 PetalburgCity_Text_WellMaybeNot::
-# 366 "data/maps/PetalburgCity/scripts.pory"
+# 375 "data/maps/PetalburgCity/scripts.pory"
 	.string "… … … … … …\p"
 	.string "Well, maybe not.\n"
 	.string "Your clothes aren't all that dirty.\p"
@@ -1382,7 +1392,7 @@ PetalburgCity_Text_WellMaybeNot::
 	.string "or maybe you're just an ordinary kid.$"
 
 PetalburgCity_Text_ImLookingForTalentedTrainers::
-# 376 "data/maps/PetalburgCity/scripts.pory"
+# 385 "data/maps/PetalburgCity/scripts.pory"
 	.string "I'm roaming the land in search of\n"
 	.string "talented TRAINERS.\p"
 	.string "I'm sorry to have taken your time.$"

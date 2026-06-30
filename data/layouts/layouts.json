@@ -5018,6 +5018,17 @@
       "layout_version": "emerald"
     },
     {
+      "id": "LAYOUT_PETALBURG_CITY_NORMANS_LODGE",
+      "name": "PetalburgCity_NormansLodge_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PetalburgCity_NormansLodge/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCity_NormansLodge/map.bin",
+      "layout_version": "emerald"
+    },
+    {
       "id": "LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_1F_FRLG",
       "name": "PalletTown_PlayersHouse_1F_Layout",
       "width": 13,

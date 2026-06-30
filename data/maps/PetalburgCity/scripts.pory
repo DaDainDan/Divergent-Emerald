@@ -109,6 +109,11 @@ script PetalburgCity_EventScript_CitySign {
     end
 }
 
+script PetalburgCity_EventScript_NormansLodgeSign {
+    msgbox(PetalburgCity_Text_NormansLodgeSign, MSGBOX_SIGN)
+    end
+}
+
 script PetalburgCity_EventScript_Gentleman {
     msgbox(PetalburgCity_Text_FullPartyExplanation, MSGBOX_NPC)
     end
@@ -350,6 +355,10 @@ text PetalburgCity_Text_GymSign {
 text PetalburgCity_Text_CitySign {
 	"PETALBURG CITY
 	“Where people mingle with nature.”"
+}
+
+text PetalburgCity_Text_NormansLodgeSign {
+    "NORMAN'S LODGE"
 }
 
 text PetalburgCity_Text_WallyHouseSign {

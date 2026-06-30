@@ -1774,3 +1774,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/DuneCavernB2F/scripts.inc"
 
 	.include "data/maps/NewMauville_B1F/scripts.inc"
+
+	.include "data/maps/PetalburgCity_NormansLodge/scripts.inc"
