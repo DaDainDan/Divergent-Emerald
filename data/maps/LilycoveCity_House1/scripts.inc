@@ -31,4 +31,4 @@ LilycoveCity_House1_Text_PokemonPartnersNotTools::
 
 LilycoveCity_House1_Text_Kecleon::
 # 25 "data/maps/LilycoveCity_House1/scripts.pory"
-	.string "KECLEON: Ruroro?$"
+	.string "Ruroro?$"

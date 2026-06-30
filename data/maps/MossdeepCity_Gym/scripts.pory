@@ -580,10 +580,8 @@ text MossdeepCity_Gym_Text_TateAndLizaIntro {
 	{SPEAKER NAME_LIZA}Fufufu… Were you surprised?
 
 	{SPEAKER NAME_TATE_AND_LIZA}That there are two GYM LEADERS?
-	That there are two GYM LEADERS?
 
 	{SPEAKER NAME_TATE_AND_LIZA}We're twins!
-	We're twins!
 
 	{SPEAKER NAME_TATE}We don't need to talk because…
 	
@@ -681,14 +679,12 @@ text MossdeepCity_Gym_Text_GymStatueCertified {
 
 text MossdeepCity_Gym_Text_TateAndLizaPreRematch {
 	"{SPEAKER NAME_TATE_AND_LIZA}POKéMON…
-	POKéMON…
 
 	{SPEAKER NAME_TATE}By changing the party's mix…
 
 	{SPEAKER NAME_LIZA}The battle style changes.
 
 	{SPEAKER NAME_TATE_AND_LIZA}But me…
-	But me…
 
 	{SPEAKER NAME_TATE}I'll always be with LIZA!
 
@@ -715,17 +711,14 @@ text MossdeepCity_Gym_Text_TateAndLizaPostRematch {
 
 text MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons {
 	"{SPEAKER NAME_TATE_AND_LIZA}You're back again…
-	You're back again…
 
 	{SPEAKER NAME_TATE_AND_LIZA}To give us a rematch.
-	To give us a rematch.
 
 	{SPEAKER NAME_TATE}But…
 
 	{SPEAKER NAME_LIZA}For our match…
 
 	{SPEAKER NAME_TATE_AND_LIZA}You brought just one POKéMON!
-	You brought just one POKéMON!
 
 	{SPEAKER NAME_TATE}We need you to bring at least…
 

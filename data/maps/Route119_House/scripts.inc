@@ -32,4 +32,4 @@ Route119_House_Text_RumorAboutCaveOfOrigin::
 
 Route119_House_Text_Wingull::
 # 26 "data/maps/Route119_House/scripts.pory"
-	.string "WINGULL: Pihyoh!$"
+	.string "Pihyoh!$"

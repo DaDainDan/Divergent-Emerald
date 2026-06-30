@@ -77,7 +77,7 @@ text MtPyre_2F_Text_MarkPostBattle {
 }
 
 text MtPyre_2F_Text_LukeIntro {
-	"LUKE: We're here on a dare.
+	"{SPEAKER NAME_LUKE}We're here on a dare.
 
 	Heheh, if I show her how cool I am,
 	she'll fall for me. I know it!
@@ -87,17 +87,17 @@ text MtPyre_2F_Text_LukeIntro {
 }
 
 text MtPyre_2F_Text_LukeDefeat {
-	"LUKE: Whoopsie!"
+	"{SPEAKER NAME_LUKE}Whoopsie!"
 }
 
 text MtPyre_2F_Text_LukePostBattle {
-	"LUKE: Well, we lost but that's okay!
+	"{SPEAKER NAME_LUKE}Well, we lost but that's okay!
 	I'm right here by your side.
 	We'll make it through this dare!"
 }
 
 text MtPyre_2F_Text_LukeNotEnoughMons {
-	"LUKE: If you want to take me on,
+	"{SPEAKER NAME_LUKE}If you want to take me on,
 	bring some more POKéMON.
 
 	If you don't, I won't be able to show
@@ -105,7 +105,7 @@ text MtPyre_2F_Text_LukeNotEnoughMons {
 }
 
 text MtPyre_2F_Text_DezIntro {
-	"DEZ: I came here on a dare with my
+	"{SPEAKER NAME_DEZ}I came here on a dare with my
 	boyfriend.
 
 	It's really scary, but I'm with my
@@ -116,16 +116,16 @@ text MtPyre_2F_Text_DezIntro {
 }
 
 text MtPyre_2F_Text_DezDefeat {
-	"DEZ: Waaaah! I'm scared!"
+	"{SPEAKER NAME_DEZ}Waaaah! I'm scared!"
 }
 
 text MtPyre_2F_Text_DezPostBattle {
-	"DEZ: We're lovey-dovey, so we don't
+	"{SPEAKER NAME_DEZ}We're lovey-dovey, so we don't
 	care if we lose!"
 }
 
 text MtPyre_2F_Text_DezNotEnoughMons {
-	"DEZ: If you want to challenge us, you
+	"{SPEAKER NAME_DEZ}If you want to challenge us, you
 	should bring at least two POKéMON.
 
 	My boyfriend's strong.

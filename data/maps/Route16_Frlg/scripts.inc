@@ -214,42 +214,42 @@ Route16_Text_RouteSign::
 
 Route16_Text_JedIntro::
 # 162 "data/maps/Route16_Frlg/scripts.pory"
-	.string "JED: Our love knows no bounds.\n"
+	.string "{SPEAKER NAME_JED}Our love knows no bounds.\n"
 	.string "We're in love and we show it!$"
 
 Route16_Text_JedDefeat::
 # 167 "data/maps/Route16_Frlg/scripts.pory"
-	.string "JED: Oh, no!\n"
+	.string "{SPEAKER NAME_JED}Oh, no!\n"
 	.string "My love has seen me as a loser!$"
 
 Route16_Text_JedPostBattle::
 # 172 "data/maps/Route16_Frlg/scripts.pory"
-	.string "JED: Listen, LEA.\n"
+	.string "{SPEAKER NAME_JED}Listen, LEA.\n"
 	.string "You need to focus less on me.$"
 
 Route16_Text_JedNotEnoughMons::
 # 177 "data/maps/Route16_Frlg/scripts.pory"
-	.string "JED: You have just one POKéMON?\n"
+	.string "{SPEAKER NAME_JED}You have just one POKéMON?\n"
 	.string "Is there no love in your heart?$"
 
 Route16_Text_LeaIntro::
 # 182 "data/maps/Route16_Frlg/scripts.pory"
-	.string "LEA: Sometimes, the intensity of\n"
+	.string "{SPEAKER NAME_LEA}Sometimes, the intensity of\n"
 	.string "our love scares me.$"
 
 Route16_Text_LeaDefeat::
 # 187 "data/maps/Route16_Frlg/scripts.pory"
-	.string "LEA: Ohh! But JED looks cool\n"
+	.string "{SPEAKER NAME_LEA}Ohh! But JED looks cool\n"
 	.string "even in a loss!$"
 
 Route16_Text_LeaPostBattle::
 # 192 "data/maps/Route16_Frlg/scripts.pory"
-	.string "LEA: Ehehe, I'm sorry.\n"
+	.string "{SPEAKER NAME_LEA}Ehehe, I'm sorry.\n"
 	.string "JED is so cool.$"
 
 Route16_Text_LeaNotEnoughMons::
 # 197 "data/maps/Route16_Frlg/scripts.pory"
-	.string "LEA: Oh, you don't have two\n"
+	.string "{SPEAKER NAME_LEA}Oh, you don't have two\n"
 	.string "POKéMON with you?\p"
 	.string "Doesn't it feel lonely for you or\n"
 	.string "your POKéMON?$"

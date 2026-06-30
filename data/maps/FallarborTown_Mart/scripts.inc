@@ -83,7 +83,7 @@ FallarborTown_Mart_Text_DecidingSkittyEvolve::
 
 FallarborTown_Mart_Text_Skitty::
 # 59 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "SKITTY: Miyao?$"
+	.string "Miyao?$"
 
 FallarborTown_Mart_Text_SellNuggetIFound::
 # 63 "data/maps/FallarborTown_Mart/scripts.pory"

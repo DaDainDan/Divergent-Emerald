@@ -41,54 +41,54 @@ script AbandonedShip_Rooms2_1F_EventScript_Garrison {
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanIntro {
-	"DAN: While searching for treasures,
+	"{SPEAKER NAME_DAN}While searching for treasures,
 	we discovered a TRAINER!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanDefeat {
-	"DAN: We couldn't win even though
+	"{SPEAKER NAME_DAN}We couldn't win even though
 	we worked together…"
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanPostBattle {
-	"DAN: We can't find any treasures…
+	"{SPEAKER NAME_DAN}We can't find any treasures…
 	I wonder if someone got them already?"
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanNotEnoughMons {
-	"DAN: You don't even have two POKéMON.
+	"{SPEAKER NAME_DAN}You don't even have two POKéMON.
 	You can't expect to beat us like that."
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraIntro {
-	"KIRA: Oh?
+	"{SPEAKER NAME_KIRA}Oh?
 	We were searching for treasures.
 	But we discovered a TRAINER instead!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraDefeat {
-	"KIRA: Ooh, so strong!"
+	"{SPEAKER NAME_KIRA}Ooh, so strong!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraPostBattle {
-	"KIRA: Where could the treasures be?
+	"{SPEAKER NAME_KIRA}Where could the treasures be?
 
 	I've already decided what I'm buying
 	when we find the treasures!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraNotEnoughMons {
-	"KIRA: Oh, you don't have two POKéMON?
+	"{SPEAKER NAME_KIRA}Oh, you don't have two POKéMON?
 	We'll have to battle some other time!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraRegister {
-	"KIRA: Oh, you make me so angry!
+	"{SPEAKER NAME_KIRA}Oh, you make me so angry!
 	I'm going to register you for that!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanRematchIntro {
-	"DAN: We've been searching for
+	"{SPEAKER NAME_DAN}We've been searching for
 	treasures all this time.
 
 	Our POKéMON have grown stronger, too.
@@ -96,11 +96,11 @@ text AbandonedShip_Rooms2_1F_Text_DanRematchIntro {
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanRematchDefeat {
-	"DAN: You're strong, as usual!"
+	"{SPEAKER NAME_DAN}You're strong, as usual!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanPostRematch {
-	"DAN: We can't find any treasures,
+	"{SPEAKER NAME_DAN}We can't find any treasures,
 	we lose at POKéMON…
 
 	I want to go home… But if I say that,
@@ -108,12 +108,12 @@ text AbandonedShip_Rooms2_1F_Text_DanPostRematch {
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanRematchNotEnoughMons {
-	"DAN: You don't even have two POKéMON.
+	"{SPEAKER NAME_DAN}You don't even have two POKéMON.
 	You can't expect to beat us like that."
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraRematchIntro {
-	"KIRA: Oh? We meet again!
+	"{SPEAKER NAME_KIRA}Oh? We meet again!
 
 	Just like us, you still haven't given up
 	searching for treasures, have you?
@@ -123,17 +123,17 @@ text AbandonedShip_Rooms2_1F_Text_KiraRematchIntro {
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraRematchDefeat {
-	"KIRA: Oh, we lost again…"
+	"{SPEAKER NAME_KIRA}Oh, we lost again…"
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraPostRematch {
-	"KIRA: We're not leaving until we raise
+	"{SPEAKER NAME_KIRA}We're not leaving until we raise
 	our POKéMON some more and we find
 	the treasures here!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraRematchNotEnoughMons {
-	"KIRA: Oh, you don't have two POKéMON?
+	"{SPEAKER NAME_KIRA}Oh, you don't have two POKéMON?
 	We'll have to battle some other time!"
 }
 

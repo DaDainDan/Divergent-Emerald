@@ -122,7 +122,7 @@ VerdanturfTown_WandasHouse_Text_StrongerSpeechShort::
 
 VerdanturfTown_WandasHouse_Text_WallysNextDoor::
 # 84 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "UNCLE: Oh! {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_WADE}Oh! {PLAYER}{KUN}!\n"
 	.string "WALLY's next door.\p"
 	.string "But, boy, there's something I have to\n"
 	.string "tell you.\p"
@@ -139,7 +139,7 @@ VerdanturfTown_WandasHouse_Text_WallySlippedOff::
 
 VerdanturfTown_WandasHouse_Text_WallyGoneThatFar::
 # 104 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "UNCLE: Is that right?\n"
+	.string "{SPEAKER NAME_WADE}Is that right?\n"
 	.string "WALLY's gone away that far all by\l"
 	.string "himself…\p"
 	.string "Well, I have to give him credit--he is\n"

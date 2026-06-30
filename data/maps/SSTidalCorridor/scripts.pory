@@ -263,7 +263,7 @@ text SSTidalCorridor_Text_HorizonSpreadsBeyondPorthole {
 }
 
 text SSTidalCorridor_Text_BrineyWelcomeAboard {
-	"MR. BRINEY: Welcome aboard, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BRINEY}Welcome aboard, {PLAYER}{KUN}!
 
 	They made me honorary captain of
 	the S.S. TIDAL!
@@ -278,7 +278,7 @@ text SSTidalCorridor_Text_BrineyWelcomeAboard {
 }
 
 text SSTidalCorridor_Text_Peeko {
-	"PEEKO: Pihyo pihyohyo…"
+	"{SPEAKER NAME_PEEKO}Pihyo pihyohyo…"
 }
 
 text SSTidalCorridor_Text_Cabin1 {

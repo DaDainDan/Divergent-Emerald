@@ -84,7 +84,7 @@ script Route104_MrBrineysHouse_EventScript_Peeko {
 }
 
 text Route104_MrBrineysHouse_Text_WaitUpPeeko {
-	"MR. BRINEY: Hold on, lass!
+	"{SPEAKER NAME_BRINEY}Hold on, lass!
 	Wait up, PEEKO!"
 }
 
@@ -111,14 +111,14 @@ text Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford {
 }
 
 text Route104_MrBrineysHouse_Text_SetSailForDewford {
-	"MR. BRINEY: DEWFORD it is, then!
+	"{SPEAKER NAME_BRINEY}DEWFORD it is, then!
 
 	Anchors aweigh!
 	PEEKO, we're setting sail, my darling!"
 }
 
 text Route104_MrBrineysHouse_Text_DeclineDeliverySail {
-	"MR. BRINEY: Is that so?
+	"{SPEAKER NAME_BRINEY}Is that so?
 	Your deliveries can wait?
 
 	You just go on and tell me whenever
@@ -126,7 +126,7 @@ text Route104_MrBrineysHouse_Text_DeclineDeliverySail {
 }
 
 text Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford {
-	"MR. BRINEY: Ahoy!
+	"{SPEAKER NAME_BRINEY}Ahoy!
 	I know exactly what you want to say!
 
 	You're to deliver a LETTER to DEWFORD
@@ -139,7 +139,7 @@ text Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford {
 }
 
 text Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford {
-	"MR. BRINEY: Ahoy!
+	"{SPEAKER NAME_BRINEY}Ahoy!
 	I know exactly what you want to say!
 
 	You're to deliver a package to
@@ -152,14 +152,14 @@ text Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford {
 }
 
 text Route104_MrBrineysHouse_Text_WhereAreWeBound {
-	"MR. BRINEY: Ahoy!
+	"{SPEAKER NAME_BRINEY}Ahoy!
 	For you, I'll go out to sea anytime!
 
 	Now, my friend, where are we bound?"
 }
 
 text Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail {
-	"MR. BRINEY: Is that so?
+	"{SPEAKER NAME_BRINEY}Is that so?
 	Well, PEEKO owes her life to you.
 
 	You just go on and tell me whenever
@@ -167,5 +167,5 @@ text Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail {
 }
 
 text Route104_MrBrineysHouse_Text_Peeko {
-	"PEEKO: Pii piihyoro!"
+	"{SPEAKER NAME_PEEKO}Pii piihyoro!"
 }

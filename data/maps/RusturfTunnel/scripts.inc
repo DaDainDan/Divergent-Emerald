@@ -649,7 +649,7 @@ RusturfTunnel_Text_ComeAndGetSome::
 
 RusturfTunnel_Text_Peeko::
 # 201 "data/maps/RusturfTunnel/scripts.pory"
-	.string "PEEKO: Pii pihyoh!$"
+	.string "{SPEAKER NAME_PEEKO}Pii pihyoh!$"
 
 RusturfTunnel_Text_GruntIntro::
 # 205 "data/maps/RusturfTunnel/scripts.pory"
@@ -696,7 +696,7 @@ RusturfTunnel_Text_ThankYouLetsGoHomePeeko::
 	.string "by the sea near PETALBURG WOODS.\p"
 	.string "Come, PEEKO, we should make our way\n"
 	.string "home.\p"
-	.string "PEEKO: Pihyoh!$"
+	.string "{SPEAKER NAME_PEEKO}Pihyoh!$"
 
 RusturfTunnel_Text_WhyCantTheyKeepDigging::
 # 265 "data/maps/RusturfTunnel/scripts.pory"

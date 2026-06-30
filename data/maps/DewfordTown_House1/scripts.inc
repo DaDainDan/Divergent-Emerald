@@ -44,4 +44,4 @@ DewfordTown_House1_Text_LifeGoesSlowlyOnIsland::
 
 DewfordTown_House1_Text_Zigzagoon::
 # 37 "data/maps/DewfordTown_House1/scripts.pory"
-	.string "ZIGZAGOON: Guguuh!$"
+	.string "Guguuh!$"

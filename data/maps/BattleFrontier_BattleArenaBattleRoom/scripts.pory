@@ -438,26 +438,26 @@ movement BattleFrontier_BattleArenaBattleRoom_Movement_GretaLookAroundPlayer {
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_PlayerStepForward {
-	"REFEREE: TRAINER {PLAYER}!
+	"{SPEAKER NAME_REFEREE}TRAINER {PLAYER}!
 	Step forward, please!"
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_OpponentStepForward {
-	"REFEREE: TRAINER {STR_VAR_1}!
+	"{SPEAKER NAME_REFEREE}TRAINER {STR_VAR_1}!
 	Step forward, please!"
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_SetKOTourneyBegin {
-	"REFEREE: Set KO Tourney!
+	"{SPEAKER NAME_REFEREE}Set KO Tourney!
 	Begin!"
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_WinnerIsPlayer {
-	"REFEREE: The winner is {PLAYER}!"
+	"{SPEAKER NAME_REFEREE}The winner is {PLAYER}!"
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_WinnerIsOpponent {
-	"REFEREE: The winner is {STR_VAR_1}!"
+	"{SPEAKER NAME_REFEREE}The winner is {STR_VAR_1}!"
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_MonsWillBeRestored {
@@ -530,7 +530,7 @@ text BattleFrontier_BattleArenaBattleRoom_Text_PreparedForTycoon {
 }
 
 text BattleFrontier_BattleArenaBattleRoom_Text_MakeWayForGreta {
-	"REFEREE: The ARENA TYCOON!
+	"{SPEAKER NAME_REFEREE}The ARENA TYCOON!
 	Make way for GRETA!"
 }
 

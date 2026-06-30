@@ -118,42 +118,42 @@ text SSTidalRooms_Text_ThomasPostBattle {
 }
 
 text SSTidalRooms_Text_JedIntro {
-	"JED: I feel a little shy about this, but…
+	"{SPEAKER NAME_JED}I feel a little shy about this, but…
 	We'll show you our lovey-dovey power!"
 }
 
 text SSTidalRooms_Text_JedDefeat {
-	"JED: Sigh…"
+	"{SPEAKER NAME_JED}Sigh…"
 }
 
 text SSTidalRooms_Text_JedPostBattle {
-	"JED: It's the first time that our lovey-
+	"{SPEAKER NAME_JED}It's the first time that our lovey-
 	dovey power couldn't prevail!
 	You must be an awesome TRAINER!"
 }
 
 text SSTidalRooms_Text_JedNotEnoughMons {
-	"JED: You only have one POKéMON?
+	"{SPEAKER NAME_JED}You only have one POKéMON?
 	Isn't that just too lonesome?"
 }
 
 text SSTidalRooms_Text_LeaIntro {
-	"LEA: I feel a little silly, but…
+	"{SPEAKER NAME_LEA}I feel a little silly, but…
 	We'll show you our lovey-dovey power!"
 }
 
 text SSTidalRooms_Text_LeaDefeat {
-	"LEA: Oh, boo!"
+	"{SPEAKER NAME_LEA}Oh, boo!"
 }
 
 text SSTidalRooms_Text_LeaPostBattle {
-	"LEA: I can't believe it!
+	"{SPEAKER NAME_LEA}I can't believe it!
 	Our lovey-dovey power failed…
 	You must be an awesome TRAINER!"
 }
 
 text SSTidalRooms_Text_LeaNotEnoughMons {
-	"LEA: I wanted to battle…
+	"{SPEAKER NAME_LEA}I wanted to battle…
 	But you don't even have two POKéMON…"
 }
 

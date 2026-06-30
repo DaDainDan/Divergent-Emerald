@@ -96,7 +96,7 @@ MtPyre_2F_Text_MarkPostBattle::
 
 MtPyre_2F_Text_LukeIntro::
 # 79 "data/maps/MtPyre_2F/scripts.pory"
-	.string "LUKE: We're here on a dare.\p"
+	.string "{SPEAKER NAME_LUKE}We're here on a dare.\p"
 	.string "Heheh, if I show her how cool I am,\n"
 	.string "she'll fall for me. I know it!\p"
 	.string "I know! I'll cream you and show her\n"
@@ -104,24 +104,24 @@ MtPyre_2F_Text_LukeIntro::
 
 MtPyre_2F_Text_LukeDefeat::
 # 89 "data/maps/MtPyre_2F/scripts.pory"
-	.string "LUKE: Whoopsie!$"
+	.string "{SPEAKER NAME_LUKE}Whoopsie!$"
 
 MtPyre_2F_Text_LukePostBattle::
 # 93 "data/maps/MtPyre_2F/scripts.pory"
-	.string "LUKE: Well, we lost but that's okay!\n"
+	.string "{SPEAKER NAME_LUKE}Well, we lost but that's okay!\n"
 	.string "I'm right here by your side.\l"
 	.string "We'll make it through this dare!$"
 
 MtPyre_2F_Text_LukeNotEnoughMons::
 # 99 "data/maps/MtPyre_2F/scripts.pory"
-	.string "LUKE: If you want to take me on,\n"
+	.string "{SPEAKER NAME_LUKE}If you want to take me on,\n"
 	.string "bring some more POKéMON.\p"
 	.string "If you don't, I won't be able to show\n"
 	.string "off to my girl how cool I am!$"
 
 MtPyre_2F_Text_DezIntro::
 # 107 "data/maps/MtPyre_2F/scripts.pory"
-	.string "DEZ: I came here on a dare with my\n"
+	.string "{SPEAKER NAME_DEZ}I came here on a dare with my\n"
 	.string "boyfriend.\p"
 	.string "It's really scary, but I'm with my\n"
 	.string "boyfriend. It's okay.\p"
@@ -130,16 +130,16 @@ MtPyre_2F_Text_DezIntro::
 
 MtPyre_2F_Text_DezDefeat::
 # 118 "data/maps/MtPyre_2F/scripts.pory"
-	.string "DEZ: Waaaah! I'm scared!$"
+	.string "{SPEAKER NAME_DEZ}Waaaah! I'm scared!$"
 
 MtPyre_2F_Text_DezPostBattle::
 # 122 "data/maps/MtPyre_2F/scripts.pory"
-	.string "DEZ: We're lovey-dovey, so we don't\n"
+	.string "{SPEAKER NAME_DEZ}We're lovey-dovey, so we don't\n"
 	.string "care if we lose!$"
 
 MtPyre_2F_Text_DezNotEnoughMons::
 # 127 "data/maps/MtPyre_2F/scripts.pory"
-	.string "DEZ: If you want to challenge us, you\n"
+	.string "{SPEAKER NAME_DEZ}If you want to challenge us, you\n"
 	.string "should bring at least two POKéMON.\p"
 	.string "My boyfriend's strong.\n"
 	.string "Just one POKéMON won't do at all.$"

@@ -94,21 +94,21 @@ Route21_North_Text_LilNotEnoughMons::
 
 Route21_North_Text_IanIntro::
 # 93 "data/maps/Route21_South_Frlg/scripts.pory"
-	.string "IAN: My sis doesn't get enough\n"
+	.string "{SPEAKER NAME_IAN}My sis doesn't get enough\n"
 	.string "exercise, so I made her come.$"
 
 Route21_North_Text_IanDefeat::
 # 98 "data/maps/Route21_South_Frlg/scripts.pory"
-	.string "IAN: Awww, Sis!\n"
+	.string "{SPEAKER NAME_IAN}Awww, Sis!\n"
 	.string "Get it together!$"
 
 Route21_North_Text_IanPostBattle::
 # 103 "data/maps/Route21_South_Frlg/scripts.pory"
-	.string "IAN: Come on, Sis!\p"
+	.string "{SPEAKER NAME_IAN}Come on, Sis!\p"
 	.string "You're not going to lose weight\n"
 	.string "like this!$"
 
 Route21_North_Text_IanNotEnoughMons::
 # 110 "data/maps/Route21_South_Frlg/scripts.pory"
-	.string "IAN: We want a two-on-two battle.\n"
+	.string "{SPEAKER NAME_IAN}We want a two-on-two battle.\n"
 	.string "So can you bring two POKéMON?$"

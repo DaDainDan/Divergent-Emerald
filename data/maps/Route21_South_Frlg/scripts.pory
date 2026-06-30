@@ -91,23 +91,23 @@ text Route21_North_Text_LilNotEnoughMons {
 }
 
 text Route21_North_Text_IanIntro {
-	"IAN: My sis doesn't get enough
+	"{SPEAKER NAME_IAN}My sis doesn't get enough
 	exercise, so I made her come."
 }
 
 text Route21_North_Text_IanDefeat {
-	"IAN: Awww, Sis!
+	"{SPEAKER NAME_IAN}Awww, Sis!
 	Get it together!"
 }
 
 text Route21_North_Text_IanPostBattle {
-	"IAN: Come on, Sis!
+	"{SPEAKER NAME_IAN}Come on, Sis!
 
 	You're not going to lose weight
 	like this!"
 }
 
 text Route21_North_Text_IanNotEnoughMons {
-	"IAN: We want a two-on-two battle.
+	"{SPEAKER NAME_IAN}We want a two-on-two battle.
 	So can you bring two POKéMON?"
 }

@@ -182,41 +182,41 @@ VictoryRoad_3F_Text_ColbyPostBattle::
 
 VictoryRoad_3F_Text_RayIntro::
 # 150 "data/maps/VictoryRoad_3F_Frlg/scripts.pory"
-	.string "RAY: Together, the two of us are\n"
+	.string "{SPEAKER NAME_RAY}Together, the two of us are\n"
 	.string "destined for greatness!$"
 
 VictoryRoad_3F_Text_RayDefeat::
 # 155 "data/maps/VictoryRoad_3F_Frlg/scripts.pory"
-	.string "RAY: Ludicrous!\n"
+	.string "{SPEAKER NAME_RAY}Ludicrous!\n"
 	.string "This can't be!$"
 
 VictoryRoad_3F_Text_RayPostBattle::
 # 160 "data/maps/VictoryRoad_3F_Frlg/scripts.pory"
-	.string "RAY: You've beaten us.\n"
+	.string "{SPEAKER NAME_RAY}You've beaten us.\n"
 	.string "Greatness remains elusive…$"
 
 VictoryRoad_3F_Text_RayNotEnoughMons::
 # 165 "data/maps/VictoryRoad_3F_Frlg/scripts.pory"
-	.string "RAY: Together, the two of us are\n"
+	.string "{SPEAKER NAME_RAY}Together, the two of us are\n"
 	.string "striving for the pinnacle.\p"
 	.string "We need you to bring two POKéMON\n"
 	.string "into battle with us.$"
 
 VictoryRoad_3F_Text_TyraIntro::
 # 173 "data/maps/VictoryRoad_3F_Frlg/scripts.pory"
-	.string "TYRA: We're trying to become\n"
+	.string "{SPEAKER NAME_TYRA}We're trying to become\n"
 	.string "champions together.$"
 
 VictoryRoad_3F_Text_TyraDefeat::
 # 178 "data/maps/VictoryRoad_3F_Frlg/scripts.pory"
-	.string "TYRA: Oh, but…$"
+	.string "{SPEAKER NAME_TYRA}Oh, but…$"
 
 VictoryRoad_3F_Text_TyraPostBattle::
 # 182 "data/maps/VictoryRoad_3F_Frlg/scripts.pory"
-	.string "TYRA: You've taught me that power\n"
+	.string "{SPEAKER NAME_TYRA}You've taught me that power\n"
 	.string "can be infinite in shape and form.$"
 
 VictoryRoad_3F_Text_TyraNotEnoughMons::
 # 187 "data/maps/VictoryRoad_3F_Frlg/scripts.pory"
-	.string "TYRA: You can't battle with us if\n"
+	.string "{SPEAKER NAME_TYRA}You can't battle with us if\n"
 	.string "you have only one POKéMON.$"

@@ -1634,12 +1634,12 @@ SlateportCity_Text_CaptainsACelebrity::
 
 SlateportCity_Text_BigSmileForCamera::
 # 929 "data/maps/SlateportCity/scripts.pory"
-	.string "TY: Okay, CAPT. STERN, a big smile\n"
+	.string "{SPEAKER NAME_TY}Okay, CAPT. STERN, a big smile\n"
 	.string "for the camera!$"
 
 SlateportCity_Text_MostInvaluableExperience::
 # 934 "data/maps/SlateportCity/scripts.pory"
-	.string "GABBY: I see, I see. You've had a most\n"
+	.string "{SPEAKER NAME_GABBY}I see, I see. You've had a most\n"
 	.string "invaluable experience…$"
 
 SlateportCity_Text_SternMoveAheadWithExploration::
@@ -1649,7 +1649,7 @@ SlateportCity_Text_SternMoveAheadWithExploration::
 
 SlateportCity_Text_GabbyWonderfulThanksForInterview::
 # 944 "data/maps/SlateportCity/scripts.pory"
-	.string "GABBY: That's wonderful, CAPT. STERN!\n"
+	.string "{SPEAKER NAME_GABBY}That's wonderful, CAPT. STERN!\n"
 	.string "Thank you for taking the time from\l"
 	.string "your busy schedule to talk to us.\p"
 	.string "We hope we can interview you again\n"

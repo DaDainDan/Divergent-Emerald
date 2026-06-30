@@ -87,43 +87,43 @@ text ThreeIsland_BondBridge_Text_TishaPostBattle {
 }
 
 text ThreeIsland_BondBridge_Text_JoyIntro {
-	"JOY: We'll teach you what our
+	"{SPEAKER NAME_JOY}We'll teach you what our
 	favorite POKéMON is!"
 }
 
 text ThreeIsland_BondBridge_Text_JoyDefeat {
-	"JOY: Ohh…
+	"{SPEAKER NAME_JOY}Ohh…
 	MEG!"
 }
 
 text ThreeIsland_BondBridge_Text_JoyPostBattle {
-	"JOY: Wasn't that fun?
+	"{SPEAKER NAME_JOY}Wasn't that fun?
 	I hope we can battle again!"
 }
 
 text ThreeIsland_BondBridge_Text_JoyNotEnoughMons {
-	"JOY: I really want to battle with
+	"{SPEAKER NAME_JOY}I really want to battle with
 	MEG.
 
 	One POKéMON isn't enough."
 }
 
 text ThreeIsland_BondBridge_Text_MegIntro {
-	"MEG: We'll show you our favorite
+	"{SPEAKER NAME_MEG}We'll show you our favorite
 	POKéMON."
 }
 
 text ThreeIsland_BondBridge_Text_MegDefeat {
-	"MEG: Ohh…
+	"{SPEAKER NAME_MEG}Ohh…
 	JOY!"
 }
 
 text ThreeIsland_BondBridge_Text_MegPostBattle {
-	"MEG: JOY, wasn't that fun?"
+	"{SPEAKER NAME_MEG}JOY, wasn't that fun?"
 }
 
 text ThreeIsland_BondBridge_Text_MegNotEnoughMons {
-	"MEG: I want to battle together
+	"{SPEAKER NAME_MEG}I want to battle together
 	with JOY.
 
 	One POKéMON isn't enough."

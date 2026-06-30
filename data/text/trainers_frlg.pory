@@ -551,12 +551,12 @@ text Route16_Text_RubenRematchIntro {
 }
 
 text Route16_Text_JedRematchIntro {
-	"JED: Are you here to see our
+	"{SPEAKER NAME_JED}Are you here to see our
 	love, which knows no bounds?"
 }
 
 text Route16_Text_LeaRematchIntro {
-	"LEA: Sometimes, the intensity of
+	"{SPEAKER NAME_LEA}Sometimes, the intensity of
 	our love scares me."
 }
 
@@ -799,7 +799,7 @@ text Route21_North_Text_LilRematchIntro {
 }
 
 text Route21_North_Text_IanRematchIntro {
-	"IAN: My sis is still a slob.
+	"{SPEAKER NAME_IAN}My sis is still a slob.
 	Help me get her into shape!"
 }
 
@@ -987,12 +987,12 @@ text ThreeIsland_BondBridge_Text_TishaRematchIntro {
 }
 
 text ThreeIsland_BondBridge_Text_JoyRematchIntro {
-	"JOY: We've gotten stronger!
+	"{SPEAKER NAME_JOY}We've gotten stronger!
 	Lots and lots!"
 }
 
 text ThreeIsland_BondBridge_Text_MegRematchIntro {
-	"MEG: You can't beat us today!"
+	"{SPEAKER NAME_MEG}You can't beat us today!"
 }
 
 text FiveIsland_WaterLabyrinth_Text_AlizeRematchIntro {
@@ -1127,12 +1127,12 @@ text SixIsland_WaterPath_Text_EarlRematchIntro {
 }
 
 text SixIsland_WaterPath_Text_MiuRematchIntro {
-	"MIU: Hello, POKéMON!
+	"{SPEAKER NAME_MIU}Hello, POKéMON!
 	It's time to play again!"
 }
 
 text SixIsland_WaterPath_Text_MiaRematchIntro {
-	"MIA: Hello, POKéMON!
+	"{SPEAKER NAME_MIA}Hello, POKéMON!
 	It's time to battle again!"
 }
 

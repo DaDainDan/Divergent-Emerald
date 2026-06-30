@@ -243,7 +243,7 @@ text DewfordTown_Text_HallSign {
 }
 
 text Route104_Text_LandedInDewfordDeliverLetter {
-	"MR. BRINEY: Ahoy!
+	"{SPEAKER NAME_BRINEY}Ahoy!
 	We've hit land in DEWFORD.
 
 	I suppose you're off to deliver that
@@ -251,7 +251,7 @@ text Route104_Text_LandedInDewfordDeliverLetter {
 }
 
 text DewfordTown_Text_SetSailBackToPetalburg {
-	"MR. BRINEY: Have you delivered your
+	"{SPEAKER NAME_BRINEY}Have you delivered your
 	LETTER?
 
 	Or were you meaning to sail back to
@@ -259,19 +259,19 @@ text DewfordTown_Text_SetSailBackToPetalburg {
 }
 
 text DewfordTown_Text_PetalburgWereSettingSail2 {
-	"MR. BRINEY: PETALBURG it is, then!
+	"{SPEAKER NAME_BRINEY}PETALBURG it is, then!
 
 	Anchors aweigh!
 	PEEKO, we're setting sail, my darling!"
 }
 
 text DewfordTown_Text_GoDeliverIllBeWaiting {
-	"MR. BRINEY: Then you go on and deliver
+	"{SPEAKER NAME_BRINEY}Then you go on and deliver
 	the LETTER. I'll be waiting."
 }
 
 text DewfordTown_Text_BrineyLandedInDewford {
-	"MR. BRINEY: Ahoy!
+	"{SPEAKER NAME_BRINEY}Ahoy!
 	We've hit land in DEWFORD!
 
 	You just go on and tell me whenever
@@ -279,28 +279,28 @@ text DewfordTown_Text_BrineyLandedInDewford {
 }
 
 text DewfordTown_Text_WhereAreWeBound {
-	"MR. BRINEY: Ahoy!
+	"{SPEAKER NAME_BRINEY}Ahoy!
 	For you, I'll go out to sea anytime!
 
 	Now, my friend, where are we bound?"
 }
 
 text DewfordTown_Text_PetalburgWereSettingSail {
-	"MR. BRINEY: PETALBURG, is it?
+	"{SPEAKER NAME_BRINEY}PETALBURG, is it?
 
 	Anchors aweigh!
 	PEEKO, we're setting sail, my darling!"
 }
 
 text DewfordTown_Text_SlateportWereSettingSail {
-	"MR. BRINEY: SLATEPORT, is it?
+	"{SPEAKER NAME_BRINEY}SLATEPORT, is it?
 
 	Anchors aweigh!
 	PEEKO, we're setting sail, my darling!"
 }
 
 text DewfordTown_Text_JustTellMeWhenYouNeedToSetSail {
-	"MR. BRINEY: You just tell me whenever
+	"{SPEAKER NAME_BRINEY}You just tell me whenever
 	you need to set sail again!"
 }
 

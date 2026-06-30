@@ -57,7 +57,7 @@ text FallarborTown_Mart_Text_DecidingSkittyEvolve {
 }
 
 text FallarborTown_Mart_Text_Skitty {
-	"SKITTY: Miyao?"
+	"Miyao?"
 }
 
 text FallarborTown_Mart_Text_SellNuggetIFound {

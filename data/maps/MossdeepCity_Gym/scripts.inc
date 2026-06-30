@@ -799,10 +799,8 @@ MossdeepCity_Gym_Text_TateAndLizaIntro::
 # 577 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "{SPEAKER NAME_TATE}Hehehe… Were you surprised?\p"
 	.string "{SPEAKER NAME_LIZA}Fufufu… Were you surprised?\p"
-	.string "{SPEAKER NAME_TATE_AND_LIZA}That there are two GYM LEADERS?\n"
-	.string "That there are two GYM LEADERS?\p"
-	.string "{SPEAKER NAME_TATE_AND_LIZA}We're twins!\n"
-	.string "We're twins!\p"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}That there are two GYM LEADERS?\p"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}We're twins!\p"
 	.string "{SPEAKER NAME_TATE}We don't need to talk because…\p"
 	.string "{SPEAKER NAME_LIZA}We can each determine what…\p"
 	.string "{SPEAKER NAME_TATE}The other is thinking…\p"
@@ -811,19 +809,19 @@ MossdeepCity_Gym_Text_TateAndLizaIntro::
 	.string "{SPEAKER NAME_LIZA}Can you beat it?$"
 
 MossdeepCity_Gym_Text_TateAndLizaDefeat::
-# 601 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 599 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "{SPEAKER NAME_TATE}What?! Our combination…\p"
 	.string "{SPEAKER NAME_LIZA}Was shattered!\p"
 	.string "{SPEAKER NAME_TATE}It can't be helped. You've won…\p"
 	.string "{SPEAKER NAME_LIZA}So, in recognition, take this.$"
 
 MossdeepCity_Gym_Text_ReceivedMindBadge::
-# 611 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 609 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "{PLAYER} received the MIND BADGE\n"
 	.string "from TATE and LIZA.$"
 
 MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis::
-# 616 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 614 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "{SPEAKER NAME_TATE}The MIND BADGE enhances the\n"
 	.string "SP. ATK and SP. DEF of POKéMON.\p"
 	.string "{SPEAKER NAME_LIZA}It also lets you use the HM move\n"
@@ -831,7 +829,7 @@ MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis::
 	.string "{SPEAKER NAME_TATE}You should also take this, too.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind::
-# 626 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 624 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "{SPEAKER NAME_TATE}That TM04 contains…\p"
 	.string "{SPEAKER NAME_LIZA}CALM MIND!\p"
 	.string "{SPEAKER NAME_TATE}It raises SP. ATK and…\p"
@@ -841,12 +839,12 @@ MossdeepCity_Gym_Text_ExplainCalmMind::
 	.string "… … … … … …$"
 
 MossdeepCity_Gym_Text_RegisteredTateAndLiza::
-# 642 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 640 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "Registered GYM LEADERS TATE & LIZA\n"
 	.string "in the POKéNAV.$"
 
 MossdeepCity_Gym_Text_TateAndLizaPostBattle::
-# 647 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 645 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "{SPEAKER NAME_TATE}Looks like the bond between you\n"
 	.string "and your POKéMON is far stronger than\l"
 	.string "the bond that we share as twins.\p"
@@ -854,7 +852,7 @@ MossdeepCity_Gym_Text_TateAndLizaPostBattle::
 	.string "We've battled you, so we know.$"
 
 MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons::
-# 656 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 654 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "{SPEAKER NAME_TATE}Hehehe… Were you surprised?\p"
 	.string "{SPEAKER NAME_LIZA}That there are two GYM LEADERS?\p"
 	.string "{SPEAKER NAME_TATE}Oops, you have only one…\p"
@@ -864,49 +862,44 @@ MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons::
 	.string "bring some more POKéMON.$"
 
 MossdeepCity_Gym_Text_GymStatue::
-# 671 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 669 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "MOSSDEEP CITY POKéMON GYM$"
 
 MossdeepCity_Gym_Text_GymStatueCertified::
-# 675 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 673 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "MOSSDEEP CITY POKéMON GYM\p"
 	.string "LIZA AND TATE'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
 MossdeepCity_Gym_Text_TateAndLizaPreRematch::
-# 682 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "{SPEAKER NAME_TATE_AND_LIZA}POKéMON…\n"
-	.string "POKéMON…\p"
+# 680 "data/maps/MossdeepCity_Gym/scripts.pory"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}POKéMON…\p"
 	.string "{SPEAKER NAME_TATE}By changing the party's mix…\p"
 	.string "{SPEAKER NAME_LIZA}The battle style changes.\p"
-	.string "{SPEAKER NAME_TATE_AND_LIZA}But me…\n"
-	.string "But me…\p"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}But me…\p"
 	.string "{SPEAKER NAME_TATE}I'll always be with LIZA!\p"
 	.string "{SPEAKER NAME_LIZA}I'll always be with TATE!\p"
 	.string "{SPEAKER NAME_TATE}Our combination…\p"
 	.string "{SPEAKER NAME_LIZA}We'll show you again and again!$"
 
 MossdeepCity_Gym_Text_TateAndLizaRematchDefeat::
-# 702 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 698 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "{SPEAKER NAME_TATE}You and your POKéMON…\p"
 	.string "{SPEAKER NAME_LIZA}It's as if you were siblings!$"
 
 MossdeepCity_Gym_Text_TateAndLizaPostRematch::
-# 708 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 704 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "{SPEAKER NAME_TATE}You can knock us down,\n"
 	.string "but we'll never stay down!\p"
 	.string "{SPEAKER NAME_LIZA}Because the two of us,\n"
 	.string "we always support each other!$"
 
 MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons::
-# 716 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "{SPEAKER NAME_TATE_AND_LIZA}You're back again…\n"
-	.string "You're back again…\p"
-	.string "{SPEAKER NAME_TATE_AND_LIZA}To give us a rematch.\n"
-	.string "To give us a rematch.\p"
+# 712 "data/maps/MossdeepCity_Gym/scripts.pory"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}You're back again…\p"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}To give us a rematch.\p"
 	.string "{SPEAKER NAME_TATE}But…\p"
 	.string "{SPEAKER NAME_LIZA}For our match…\p"
-	.string "{SPEAKER NAME_TATE_AND_LIZA}You brought just one POKéMON!\n"
-	.string "You brought just one POKéMON!\p"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}You brought just one POKéMON!\p"
 	.string "{SPEAKER NAME_TATE}We need you to bring at least…\p"
 	.string "{SPEAKER NAME_LIZA}Two POKéMON when you come back.$"

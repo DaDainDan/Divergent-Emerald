@@ -2419,44 +2419,40 @@ MatchCall_Text_Winona_PostRematch::
 
 MatchCall_Text_TateLiza_Preparing::
 # 3053 "data/text/match_call.pory"
-	.string "TATE: Oh! You're…\n"
-	.string "LIZA: {PLAYER}!\p"
-	.string "TATE: We're in training again…\n"
-	.string "LIZA: So we can reopen our GYM!\p"
-	.string "TATE: When our GYM is ready…\n"
-	.string "LIZA: When our GYM is ready…\p"
-	.string "TATE: A mark'll appear by our name…\n"
-	.string "LIZA: On the MATCH CALL list.$"
+	.string "{SPEAKER NAME_TATE}Oh! You're…\p"
+	.string "{SPEAKER NAME_LIZA}{PLAYER}!\p"
+	.string "{SPEAKER NAME_TATE}We're in training again…\p"
+	.string "{SPEAKER NAME_LIZA}So we can reopen our GYM!\p"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}When our GYM is ready…\p"
+	.string "{SPEAKER NAME_TATE}A mark'll appear by our name…\p"
+	.string "{SPEAKER NAME_LIZA}On the MATCH CALL list.$"
 
 MatchCall_Text_TateLiza_PreparingPostGame::
-# 3067 "data/text/match_call.pory"
-	.string "TATE: {PLAYER}, congratulations!\n"
-	.string "LIZA: {PLAYER}, congratulations!\p"
-	.string "TATE: The two of us are…\n"
-	.string "LIZA: Still in training!\p"
-	.string "TATE: We need some more time, but…\n"
-	.string "LIZA: When our GYM is ready…\p"
-	.string "TATE: A mark'll appear by our name…\n"
-	.string "LIZA: On the MATCH CALL list.$"
+# 3069 "data/text/match_call.pory"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}{PLAYER}, congratulations!\p"
+	.string "{SPEAKER NAME_TATE}The two of us are…\p"
+	.string "{SPEAKER NAME_LIZA}Still in training!\p"
+	.string "{SPEAKER NAME_TATE}We need some more time, but…\p"
+	.string "{SPEAKER NAME_LIZA}When our GYM is ready…\p"
+	.string "{SPEAKER NAME_TATE}A mark'll appear by our name…\p"
+	.string "{SPEAKER NAME_LIZA}On the MATCH CALL list.$"
 
 MatchCall_Text_TateLiza_RematchReady::
-# 3081 "data/text/match_call.pory"
-	.string "TATE: {PLAYER}!\n"
-	.string "LIZA: {PLAYER}!\p"
-	.string "TATE: Our GYM is ready!\n"
-	.string "LIZA: Our GYM is ready!\p"
-	.string "TATE: Please come visit…\n"
-	.string "LIZA: MOSSDEEP anytime!$"
+# 3085 "data/text/match_call.pory"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}{PLAYER}!\p"
+	.string "{SPEAKER NAME_TATE_AND_LIZA}Our GYM is ready!\p"
+	.string "{SPEAKER NAME_TATE}Please come visit…\p"
+	.string "{SPEAKER NAME_LIZA}MOSSDEEP anytime!$"
 
 MatchCall_Text_TateLiza_PostRematch::
-# 3092 "data/text/match_call.pory"
-	.string "TATE: {PLAYER}, the battle we had…\n"
-	.string "LIZA: Is an invaluable experience.\p"
-	.string "TATE: It would be nice if…\n"
-	.string "LIZA: We could all battle again!$"
+# 3095 "data/text/match_call.pory"
+	.string "{SPEAKER NAME_TATE}{PLAYER}, the battle we had…\p"
+	.string "{SPEAKER NAME_LIZA}Is an invaluable experience.\p"
+	.string "{SPEAKER NAME_TATE}It would be nice if…\p"
+	.string "{SPEAKER NAME_LIZA}We could all battle again!$"
 
 MatchCall_Text_Juan_Preparing::
-# 3100 "data/text/match_call.pory"
+# 3105 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_JUAN}Hmm…\n"
 	.string "{PLAYER}{KUN}… Was it?\p"
 	.string "Our battle together--it brought\n"
@@ -2466,7 +2462,7 @@ MatchCall_Text_Juan_Preparing::
 	.string "yet surpass WALLACE!$"
 
 MatchCall_Text_Juan_PreparingPostGame::
-# 3112 "data/text/match_call.pory"
+# 3117 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_JUAN}Fufu… {PLAYER}{KUN}…\n"
 	.string "You've finally achieved your goal.\p"
 	.string "My eye for appraising talent wasn't\n"
@@ -2476,7 +2472,7 @@ MatchCall_Text_Juan_PreparingPostGame::
 	.string "of power and prestige.$"
 
 MatchCall_Text_Juan_RematchReady::
-# 3124 "data/text/match_call.pory"
+# 3129 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_JUAN}Hoho… {PLAYER}{KUN}…\p"
 	.string "Our SOOTOPOLIS GYM has finally\n"
 	.string "reopened.\p"
@@ -2484,7 +2480,7 @@ MatchCall_Text_Juan_RematchReady::
 	.string "welcome to visit anytime.$"
 
 MatchCall_Text_Juan_PostRematch::
-# 3134 "data/text/match_call.pory"
+# 3139 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_JUAN}{PLAYER}{KUN}…\p"
 	.string "Like the finest music, the battles\n"
 	.string "we wage together strike chords\l"
@@ -2493,7 +2489,7 @@ MatchCall_Text_Juan_PostRematch::
 	.string "of you soaring with the melody…$"
 
 MatchCall_Text_Sidney::
-# 3145 "data/text/match_call.pory"
+# 3150 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_SIDNEY}Yo, {PLAYER}!\p"
 	.string "If you want to battle with me\n"
 	.string "again, you come on back whenever\l"
@@ -2502,7 +2498,7 @@ MatchCall_Text_Sidney::
 	.string "I'll be waiting!$"
 
 MatchCall_Text_Phoebe::
-# 3156 "data/text/match_call.pory"
+# 3161 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_PHOEBE}Hi, {PLAYER}!\p"
 	.string "How about coming back here again\n"
 	.string "sometime?\p"
@@ -2511,7 +2507,7 @@ MatchCall_Text_Phoebe::
 	.string "POKéMON.$"
 
 MatchCall_Text_Glacia::
-# 3167 "data/text/match_call.pory"
+# 3172 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_GLACIA}Hello, {PLAYER}.\p"
 	.string "I trust you haven't become\n"
 	.string "complacent with your power?\p"
@@ -2520,7 +2516,7 @@ MatchCall_Text_Glacia::
 	.string "to the POKéMON LEAGUE…$"
 
 MatchCall_Text_Drake::
-# 3178 "data/text/match_call.pory"
+# 3183 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_DRAKE}That voice… {PLAYER}, is it?\n"
 	.string "You sound well…\p"
 	.string "I understand that there is now\n"
@@ -2533,7 +2529,7 @@ MatchCall_Text_Drake::
 	.string "Don't you agree, {PLAYER}?$"
 
 MatchCall_Text_Wallace::
-# 3194 "data/text/match_call.pory"
+# 3199 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_WALLACE}Hello, {PLAYER}{KUN}.\n"
 	.string "Have you met STEVEN?\p"
 	.string "He is…\n"
@@ -2548,7 +2544,7 @@ MatchCall_Text_Wallace::
 	.string "All I can think of is a METEORITE…$"
 
 MatchCall_Text_MayRayquazaCall:
-# 3214 "data/text/match_call.pory"
+# 3219 "data/text/match_call.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
 	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!\p"
@@ -2564,7 +2560,7 @@ MatchCall_Text_MayRayquazaCall:
 	.string "… … … … … Click!$"
 
 MatchCall_Text_BrendanRayquazaCall:
-# 3236 "data/text/match_call.pory"
+# 3241 "data/text/match_call.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
 	.string "{SPEAKER NAME_BRENDAN}Hey, {PLAYER}!\n"
@@ -2579,7 +2575,7 @@ MatchCall_Text_BrendanRayquazaCall:
 	.string "… … … … … Click!$"
 
 MatchCall_Text_May1::
-# 3256 "data/text/match_call.pory"
+# 3261 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!\p"
 	.string "MR. BRINEY retired as a SAILOR,\n"
 	.string "but I still see him out on the sea\l"
@@ -2587,7 +2583,7 @@ MatchCall_Text_May1::
 	.string "He must love the sea still.$"
 
 MatchCall_Text_May2::
-# 3266 "data/text/match_call.pory"
+# 3271 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!\p"
 	.string "You know how little towns like\n"
 	.string "PETALBURG and DEWFORD have GYMS?\p"
@@ -2597,7 +2593,7 @@ MatchCall_Text_May2::
 	.string "I should apply to be the LEADER.$"
 
 MatchCall_Text_May3::
-# 3279 "data/text/match_call.pory"
+# 3284 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!\p"
 	.string "Do you remember a man named\n"
 	.string "the CUTTER in RUSTBORO?\l"
@@ -2610,14 +2606,14 @@ MatchCall_Text_May3::
 	.string "The ROCK SMASH GUY!$"
 
 MatchCall_Text_May4::
-# 3297 "data/text/match_call.pory"
+# 3302 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}{PLAYER}{KUN}?\p"
 	.string "RUSTURF TUNNEL…\n"
 	.string "They named it that because it\l"
 	.string "joins RUSTBORO and VERDANTURF.$"
 
 MatchCall_Text_May5::
-# 3305 "data/text/match_call.pory"
+# 3310 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}{PLAYER}{KUN}, how are you?\p"
 	.string "I'm out on ROUTE 111 now.\p"
 	.string "I'm going to get a rest at an old\n"
@@ -2626,7 +2622,7 @@ MatchCall_Text_May5::
 	.string "the desert.$"
 
 MatchCall_Text_May6::
-# 3317 "data/text/match_call.pory"
+# 3322 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!\p"
 	.string "Did you know about the MIRAGE\n"
 	.string "TOWER in the desert?\p"
@@ -2635,7 +2631,7 @@ MatchCall_Text_May6::
 	.string "I wish I could see it.$"
 
 MatchCall_Text_May7::
-# 3329 "data/text/match_call.pory"
+# 3334 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}{PLAYER}{KUN}, yahoo!\n"
 	.string "I'm on ROUTE 119 now.\p"
 	.string "There's a big river here, and\n"
@@ -2643,7 +2639,7 @@ MatchCall_Text_May7::
 	.string "I got soaked!$"
 
 MatchCall_Text_May8::
-# 3339 "data/text/match_call.pory"
+# 3344 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}{PLAYER}{KUN}, hi.\p"
 	.string "MT. PYRE is a memorial to POKéMON\n"
 	.string "whose lives have ended.\p"
@@ -2651,7 +2647,7 @@ MatchCall_Text_May8::
 	.string "with many GHOST-type POKéMON!$"
 
 MatchCall_Text_May9::
-# 3349 "data/text/match_call.pory"
+# 3354 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!\p"
 	.string "I was thinking of going to the hot\n"
 	.string "spring in LAVARIDGE.\p"
@@ -2660,7 +2656,7 @@ MatchCall_Text_May9::
 	.string "characters. The mood was ugly!$"
 
 MatchCall_Text_May10::
-# 3360 "data/text/match_call.pory"
+# 3365 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!\n"
 	.string "Did you see the news?\p"
 	.string "They say CAPT. STERN discovered\n"
@@ -2668,7 +2664,7 @@ MatchCall_Text_May10::
 	.string "submarine expedition.$"
 
 MatchCall_Text_May11::
-# 3369 "data/text/match_call.pory"
+# 3374 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!\n"
 	.string "Don't you think it's neat?\p"
 	.string "Even if you don't have a boat,\n"
@@ -2679,7 +2675,7 @@ MatchCall_Text_May11::
 	.string "you go to the bottom of the sea.$"
 
 MatchCall_Text_May12::
-# 3383 "data/text/match_call.pory"
+# 3388 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!\n"
 	.string "Hope things are okay!\p"
 	.string "Have you been on the sea and\n"
@@ -2691,7 +2687,7 @@ MatchCall_Text_May12::
 	.string "come up to the surface. Easy!$"
 
 MatchCall_Text_May13::
-# 3398 "data/text/match_call.pory"
+# 3403 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}Hi, {PLAYER}{KUN}!\p"
 	.string "How's it going?\n"
 	.string "Are you filling your POKéDEX?\p"
@@ -2701,7 +2697,7 @@ MatchCall_Text_May13::
 	.string "I would love to see even one…$"
 
 MatchCall_Text_May14::
-# 3411 "data/text/match_call.pory"
+# 3416 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}{PLAYER}{KUN}!\n"
 	.string "I heard the rumors!\p"
 	.string "You beat the SOOTOPOLIS GYM\n"
@@ -2710,7 +2706,7 @@ MatchCall_Text_May14::
 	.string "to go, do you?$"
 
 MatchCall_Text_May15::
-# 3422 "data/text/match_call.pory"
+# 3427 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MAY}There isn't a single TRAINER\n"
 	.string "left in HOENN who doesn't know who\l"
 	.string "you are, {PLAYER}{KUN}!\p"
@@ -2719,7 +2715,7 @@ MatchCall_Text_May15::
 	.string "surprised!$"
 
 MatchCall_Text_Brendan1::
-# 3432 "data/text/match_call.pory"
+# 3437 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}Hey, {PLAYER}!\p"
 	.string "MR. BRINEY retired as a SAILOR,\n"
 	.string "but I still see him out on the sea\l"
@@ -2728,7 +2724,7 @@ MatchCall_Text_Brendan1::
 	.string "the sea still.$"
 
 MatchCall_Text_Brendan2::
-# 3443 "data/text/match_call.pory"
+# 3448 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}Hey, {PLAYER}!\p"
 	.string "I don't get how little towns like\n"
 	.string "PETALBURG and DEWFORD have GYMS.\p"
@@ -2738,7 +2734,7 @@ MatchCall_Text_Brendan2::
 	.string "I should apply to be the LEADER.$"
 
 MatchCall_Text_Brendan3::
-# 3456 "data/text/match_call.pory"
+# 3461 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}Yo, {PLAYER}!\p"
 	.string "Do you remember a guy named\n"
 	.string "the CUTTER in RUSTBORO?\l"
@@ -2751,7 +2747,7 @@ MatchCall_Text_Brendan3::
 	.string "The ROCK SMASH GUY!$"
 
 MatchCall_Text_Brendan4::
-# 3474 "data/text/match_call.pory"
+# 3479 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}This voice… {PLAYER}?\p"
 	.string "They gave RUSTURF TUNNEL its name\n"
 	.string "because it joins RUSTBORO and\l"
@@ -2759,7 +2755,7 @@ MatchCall_Text_Brendan4::
 	.string "Did you know that?$"
 
 MatchCall_Text_Brendan5::
-# 3484 "data/text/match_call.pory"
+# 3489 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}{PLAYER}, what's up?\p"
 	.string "Hey, I'm out on ROUTE 111 now.\p"
 	.string "I'm going to rest up at an old\n"
@@ -2768,7 +2764,7 @@ MatchCall_Text_Brendan5::
 	.string "visit her, too.$"
 
 MatchCall_Text_Brendan6::
-# 3496 "data/text/match_call.pory"
+# 3501 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}Hey, {PLAYER}!\p"
 	.string "Did you know about the MIRAGE\n"
 	.string "TOWER in the desert?\p"
@@ -2777,7 +2773,7 @@ MatchCall_Text_Brendan6::
 	.string "I'd like to see that!$"
 
 MatchCall_Text_Brendan7::
-# 3508 "data/text/match_call.pory"
+# 3513 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}Who's this? Oh, {PLAYER}?\n"
 	.string "Guess what? I'm on ROUTE 119 now.\p"
 	.string "There's a big river here, and\n"
@@ -2785,7 +2781,7 @@ MatchCall_Text_Brendan7::
 	.string "I got soaked to the bone!$"
 
 MatchCall_Text_Brendan8::
-# 3518 "data/text/match_call.pory"
+# 3523 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}{PLAYER}!\p"
 	.string "MT. PYRE is a memorial to POKéMON\n"
 	.string "whose lives have ended.\p"
@@ -2793,7 +2789,7 @@ MatchCall_Text_Brendan8::
 	.string "with many GHOST-type POKéMON!$"
 
 MatchCall_Text_Brendan9::
-# 3528 "data/text/match_call.pory"
+# 3533 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}Hey there, {PLAYER}.\p"
 	.string "I was on my way back to the hot\n"
 	.string "spring in LAVARIDGE.\p"
@@ -2803,7 +2799,7 @@ MatchCall_Text_Brendan9::
 	.string "I think they were TEAM MAGMA.$"
 
 MatchCall_Text_Brendan10::
-# 3541 "data/text/match_call.pory"
+# 3546 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}Hi, {PLAYER}!\n"
 	.string "Did you catch the news?\p"
 	.string "They say CAPT. STERN discovered\n"
@@ -2811,7 +2807,7 @@ MatchCall_Text_Brendan10::
 	.string "submarine expedition.$"
 
 MatchCall_Text_Brendan11::
-# 3550 "data/text/match_call.pory"
+# 3555 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}Hey there, {PLAYER}!\n"
 	.string "Don't you think it's awesome?\p"
 	.string "Even if you don't have a boat,\n"
@@ -2822,7 +2818,7 @@ MatchCall_Text_Brendan11::
 	.string "Man, POKéMON can do anything!$"
 
 MatchCall_Text_Brendan12::
-# 3564 "data/text/match_call.pory"
+# 3569 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}Howdy, {PLAYER}!\n"
 	.string "How are you holding up?\p"
 	.string "Ever found your way to the other\n"
@@ -2833,7 +2829,7 @@ MatchCall_Text_Brendan12::
 	.string "come up to the surface. Simple!$"
 
 MatchCall_Text_Brendan13::
-# 3578 "data/text/match_call.pory"
+# 3583 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}Hey there, {PLAYER}!\p"
 	.string "How's it going? Filling up your\n"
 	.string "POKéDEX successfully?\p"
@@ -2843,7 +2839,7 @@ MatchCall_Text_Brendan13::
 	.string "I'd love to catch even one…$"
 
 MatchCall_Text_Brendan14::
-# 3591 "data/text/match_call.pory"
+# 3596 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}{PLAYER}!\n"
 	.string "I heard the rumors!\p"
 	.string "You beat the SOOTOPOLIS GYM\n"
@@ -2851,7 +2847,7 @@ MatchCall_Text_Brendan14::
 	.string "You're getting awful close now!$"
 
 MatchCall_Text_Brendan15::
-# 3601 "data/text/match_call.pory"
+# 3606 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BRENDAN}There isn't a TRAINER in\n"
 	.string "all of HOENN who doesn't know who\l"
 	.string "you are, {PLAYER}!\p"
@@ -2860,7 +2856,7 @@ MatchCall_Text_Brendan15::
 	.string "envious!$"
 
 MatchCall_Text_Wally1::
-# 3611 "data/text/match_call.pory"
+# 3616 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_WALLY}Oh, {PLAYER}!\p"
 	.string "I've been getting healthier and\n"
 	.string "more physically fit.\p"
@@ -2868,13 +2864,13 @@ MatchCall_Text_Wally1::
 	.string "you soon, {PLAYER}!$"
 
 MatchCall_Text_Wally2::
-# 3621 "data/text/match_call.pory"
+# 3626 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_WALLY}{PLAYER}, hello!\p"
 	.string "After RUSTURF TUNNEL went\n"
 	.string "through, WANDA's been very happy!$"
 
 MatchCall_Text_Wally3::
-# 3628 "data/text/match_call.pory"
+# 3633 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_WALLY}Oh, {PLAYER}!\p"
 	.string "I… I left my uncle's place in\n"
 	.string "VERDANTURF without telling anyone.\p"
@@ -2883,7 +2879,7 @@ MatchCall_Text_Wally3::
 	.string "I feel, don't you?$"
 
 MatchCall_Text_Wally4::
-# 3640 "data/text/match_call.pory"
+# 3645 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_WALLY}{PLAYER}?\n"
 	.string "It's me, WALLY!\p"
 	.string "The world of TRAINERS is amazing!\p"
@@ -2893,7 +2889,7 @@ MatchCall_Text_Wally4::
 	.string "connected through POKéMON!$"
 
 MatchCall_Text_Wally5::
-# 3653 "data/text/match_call.pory"
+# 3658 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_WALLY}{PLAYER}? It's awesome!\n"
 	.string "That RALTS we caught together?\l"
 	.string "It evolved, {PLAYER}!\p"
@@ -2904,14 +2900,14 @@ MatchCall_Text_Wally5::
 	.string "should be praised!$"
 
 MatchCall_Text_Wally6::
-# 3667 "data/text/match_call.pory"
+# 3672 "data/text/match_call.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "WALLY appears to be out of\n"
 	.string "the POKéNAV's service area…$"
 
 MatchCall_Text_Wally7::
-# 3675 "data/text/match_call.pory"
+# 3680 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_WALLY}Oh, {PLAYER}!\p"
 	.string "Before I met you, I hardly ever\n"
 	.string "left my house…\p"
@@ -2921,7 +2917,7 @@ MatchCall_Text_Wally7::
 	.string "Thank you…$"
 
 MatchCall_Text_Scott1::
-# 3688 "data/text/match_call.pory"
+# 3693 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_SCOTT}Howdy, {PLAYER}{KUN}!\p"
 	.string "You know how POKéMON can be found\n"
 	.string "everywhere?\p"
@@ -2933,7 +2929,7 @@ MatchCall_Text_Scott1::
 	.string "everywhere, too. Busy, busy!$"
 
 MatchCall_Text_Scott2::
-# 3704 "data/text/match_call.pory"
+# 3709 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_SCOTT}I'm on ROUTE 119 right now.\n"
 	.string "It's teeming with TRAINERS!\p"
 	.string "It's also overgrown with tall grass\n"
@@ -2942,7 +2938,7 @@ MatchCall_Text_Scott2::
 	.string "makes me all ticklish!$"
 
 MatchCall_Text_Scott3::
-# 3715 "data/text/match_call.pory"
+# 3720 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_SCOTT}Hi, hi, {PLAYER}{KUN}!\p"
 	.string "Have you had the chance to climb\n"
 	.string "MT. PYRE?\p"
@@ -2952,7 +2948,7 @@ MatchCall_Text_Scott3::
 	.string "should climb to the top of once.$"
 
 MatchCall_Text_Scott4::
-# 3728 "data/text/match_call.pory"
+# 3733 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_SCOTT}Hi, {PLAYER}{KUN}!\p"
 	.string "I've been hearing about these odd\n"
 	.string "gangs being a nuisance.\p"
@@ -2963,7 +2959,7 @@ MatchCall_Text_Scott4::
 	.string "…But if they're thugs…$"
 
 MatchCall_Text_Scott5::
-# 3743 "data/text/match_call.pory"
+# 3748 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_SCOTT}Oh, hi, {PLAYER}{KUN}.\p"
 	.string "Might there be tough TRAINERS\n"
 	.string "at the bottom of the sea?\p"
@@ -2972,7 +2968,7 @@ MatchCall_Text_Scott5::
 	.string "And I don't raise POKéMON…$"
 
 MatchCall_Text_Scott6::
-# 3754 "data/text/match_call.pory"
+# 3759 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_SCOTT}Hi, hi, {PLAYER}{KUN}!\p"
 	.string "You know that you can challenge\n"
 	.string "the POKéMON LEAGUE when you've\l"
@@ -2990,14 +2986,14 @@ MatchCall_Text_Scott6::
 	.string "OF FAME!$"
 
 MatchCall_Text_Scott7::
-# 3778 "data/text/match_call.pory"
+# 3783 "data/text/match_call.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "SCOTT appears to be out of\n"
 	.string "the POKéNAV's service area…$"
 
 MatchCall_Text_Norman1::
-# 3786 "data/text/match_call.pory"
+# 3791 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_NORMAN}In RUSTBORO, there's a man\n"
 	.string "that goes by the odd name of\l"
 	.string "the CUTTER.\p"
@@ -3005,7 +3001,7 @@ MatchCall_Text_Norman1::
 	.string "pay him a visit.$"
 
 MatchCall_Text_Norman2::
-# 3795 "data/text/match_call.pory"
+# 3800 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_NORMAN}Hm… Little by little, but also\n"
 	.string "very surely, you're getting\l"
 	.string "tougher, {PLAYER}.\p"
@@ -3015,7 +3011,7 @@ MatchCall_Text_Norman2::
 	.string "This feeling is hard to explain.$"
 
 MatchCall_Text_Norman3::
-# 3807 "data/text/match_call.pory"
+# 3812 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_NORMAN}I see…\n"
 	.string "You've collected four GYM BADGES…\p"
 	.string "There's no avoiding it now.\n"
@@ -3024,7 +3020,7 @@ MatchCall_Text_Norman3::
 	.string "We'll all be waiting for you!$"
 
 MatchCall_Text_Norman4::
-# 3818 "data/text/match_call.pory"
+# 3823 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_DAD}{PLAYER}! You'd better go visit\n"
 	.string "Mother every so often.\p"
 	.string "I'm going to remain here and\n"
@@ -3033,7 +3029,7 @@ MatchCall_Text_Norman4::
 	.string "and unforgiving!$"
 
 MatchCall_Text_Norman5::
-# 3829 "data/text/match_call.pory"
+# 3834 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_NORMAN}Oh, hi, {PLAYER}!\p"
 	.string "What's that? MAGMA EMBLEM?\n"
 	.string "I don't know what that's about.\p"
@@ -3041,14 +3037,14 @@ MatchCall_Text_Norman5::
 	.string "be somehow linked to a volcano!$"
 
 MatchCall_Text_Norman_Preparing::
-# 3839 "data/text/match_call.pory"
+# 3844 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_NORMAN}Hiyah! Haah! Dwah!\p"
 	.string "…Oh? {PLAYER}!\p"
 	.string "You caught me right in the middle\n"
 	.string "of a POKéMON training session!$"
 
 MatchCall_Text_Norman_PreparingPostGame::
-# 3848 "data/text/match_call.pory"
+# 3853 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_NORMAN}{PLAYER}!\p"
 	.string "Who would've thought you'd become\n"
 	.string "the POKéMON LEAGUE CHAMPION…\p"
@@ -3056,7 +3052,7 @@ MatchCall_Text_Norman_PreparingPostGame::
 	.string "I won't be left behind!$"
 
 MatchCall_Text_Norman_RematchReady::
-# 3858 "data/text/match_call.pory"
+# 3863 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_NORMAN}Hm? {PLAYER}?\n"
 	.string "What good timing!\p"
 	.string "This time, I'm going to challenge\n"
@@ -3065,12 +3061,12 @@ MatchCall_Text_Norman_RematchReady::
 	.string "Accept my challenge anytime!$"
 
 MatchCall_Text_Norman_PostRematch::
-# 3869 "data/text/match_call.pory"
+# 3874 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_NORMAN}…You amaze me, {PLAYER}.\n"
 	.string "How much higher will you soar?$"
 
 MatchCall_Text_Steven1::
-# 3874 "data/text/match_call.pory"
+# 3879 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_STEVEN}Hi, {PLAYER}{KUN}!\p"
 	.string "Have you been to MAUVILLE\n"
 	.string "already?\p"
@@ -3082,7 +3078,7 @@ MatchCall_Text_Steven1::
 	.string "there.$"
 
 MatchCall_Text_Steven2::
-# 3890 "data/text/match_call.pory"
+# 3895 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_STEVEN}Hi, {PLAYER}{KUN}!\p"
 	.string "I've met a lot of different\n"
 	.string "TRAINERS so far.\p"
@@ -3090,7 +3086,7 @@ MatchCall_Text_Steven2::
 	.string "You're not like anyone else.$"
 
 MatchCall_Text_Steven3::
-# 3900 "data/text/match_call.pory"
+# 3905 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_STEVEN}Hi, {PLAYER}{KUN}!\p"
 	.string "When you're on an adventure with\n"
 	.string "your POKéMON, what do you think?\p"
@@ -3102,7 +3098,7 @@ MatchCall_Text_Steven3::
 	.string "adventure's significance changes.$"
 
 MatchCall_Text_Steven4::
-# 3916 "data/text/match_call.pory"
+# 3921 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_STEVEN}Hello?\n"
 	.string "{PLAYER}{KUN}?\p"
 	.string "I'm involved in a spot of trouble\n"
@@ -3111,7 +3107,7 @@ MatchCall_Text_Steven4::
 	.string "Bye!$"
 
 MatchCall_Text_Steven5::
-# 3927 "data/text/match_call.pory"
+# 3932 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_STEVEN}Oh!\n"
 	.string "{PLAYER}{KUN}!\p"
 	.string "There's no need to talk.\n"
@@ -3120,13 +3116,13 @@ MatchCall_Text_Steven5::
 	.string "and do what's right.$"
 
 MatchCall_Text_Steven6::
-# 3938 "data/text/match_call.pory"
+# 3943 "data/text/match_call.pory"
 	.string "… … … … … …\p"
 	.string "STEVEN appears not to be getting\n"
 	.string "the call…$"
 
 MatchCall_Text_Steven7::
-# 3945 "data/text/match_call.pory"
+# 3950 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}… Congratulations\n"
 	.string "for entering the HALL OF FAME.\p"
 	.string "… … … … … …\n"
@@ -3135,7 +3131,7 @@ MatchCall_Text_Steven7::
 	.string "somewhere!$"
 
 MatchCall_Text_BirchRegisterCall:
-# 3956 "data/text/match_call.pory"
+# 3961 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BIRCH}Oh, {PLAYER}{KUN}!\n"
 	.string "I've already heard about you!\p"
 	.string "It seems your POKéNAV's been\n"
@@ -3147,18 +3143,18 @@ MatchCall_Text_BirchRegisterCall:
 	.string "… … … … … …$"
 
 MatchCall_Text_RegisteredBirch:
-# 3972 "data/text/match_call.pory"
+# 3977 "data/text/match_call.pory"
 	.string "Registered PROF. BIRCH\n"
 	.string "in the POKéNAV.$"
 
 MatchCall_Text_UnusedProfBirch:
-# 3977 "data/text/match_call.pory"
+# 3982 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_BIRCH}When one has both\n"
 	.string "the POKéDEX and POKéNAV, studying\l"
 	.string "POKéMON becomes more fun, eh?$"
 
 MatchCall_Text_MrStone1::
-# 3983 "data/text/match_call.pory"
+# 3988 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}Oh? {PLAYER}{KUN}!\p"
 	.string "Since you called me, the POKéNAV\n"
 	.string "must be working properly!\p"
@@ -3174,7 +3170,7 @@ MatchCall_Text_MrStone1::
 	.string "See you again!$"
 
 MatchCall_Text_MrStone2::
-# 4005 "data/text/match_call.pory"
+# 4010 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}Oh? {PLAYER}{KUN}!\p"
 	.string "What's wrong? Have you forgotten\n"
 	.string "about that little errand of mine?\p"
@@ -3187,7 +3183,7 @@ MatchCall_Text_MrStone2::
 	.string "I have to go! Bye-bye!$"
 
 MatchCall_Text_MrStone3::
-# 4023 "data/text/match_call.pory"
+# 4028 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}Oh! {PLAYER}{KUN}!\p"
 	.string "Ah, so you've met STEVEN!\n"
 	.string "I'd better reward you, then!\p"
@@ -3196,7 +3192,7 @@ MatchCall_Text_MrStone3::
 	.string "I'll be waiting for you!$"
 
 MatchCall_Text_MrStone4::
-# 4035 "data/text/match_call.pory"
+# 4040 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}Oh! {PLAYER}{KUN}!\p"
 	.string "Did you know that DEVON was\n"
 	.string "digging the RUSTURF TUNNEL?\p"
@@ -3208,7 +3204,7 @@ MatchCall_Text_MrStone4::
 	.string "own convenience.$"
 
 MatchCall_Text_MrStone5::
-# 4051 "data/text/match_call.pory"
+# 4056 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}Hello, hello, {PLAYER}{KUN}!\p"
 	.string "I heard from someone in PETALBURG\n"
 	.string "that you're NORMAN's child!\p"
@@ -3216,7 +3212,7 @@ MatchCall_Text_MrStone5::
 	.string "being!$"
 
 MatchCall_Text_MrStone6::
-# 4061 "data/text/match_call.pory"
+# 4066 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}What's that?\p"
 	.string "You battled your own father and\n"
 	.string "defeated him?\p"
@@ -3225,7 +3221,7 @@ MatchCall_Text_MrStone6::
 	.string "someone so special! Wahaha!$"
 
 MatchCall_Text_MrStone7::
-# 4073 "data/text/match_call.pory"
+# 4078 "data/text/match_call.pory"
 	.string "Hello!\n"
 	.string "This is DEVON CORPORATI…\l"
 	.string "Oh, hello, {PLAYER}!\p"
@@ -3235,7 +3231,7 @@ MatchCall_Text_MrStone7::
 	.string "seem to be just as busy, {PLAYER}.$"
 
 MatchCall_Text_MrStone8::
-# 4085 "data/text/match_call.pory"
+# 4090 "data/text/match_call.pory"
 	.string "…Huh? …What's that?\p"
 	.string "GROU… Yes? …DON?\p"
 	.string "You're breaking up…\n"
@@ -3243,7 +3239,7 @@ MatchCall_Text_MrStone8::
 	.string "BZZZZ…$"
 
 MatchCall_Text_MrStone9::
-# 4096 "data/text/match_call.pory"
+# 4101 "data/text/match_call.pory"
 	.string "…Huh? …What's that?\p"
 	.string "Seaflo… Yes? …Caver…?\p"
 	.string "You're breaking up…\n"
@@ -3251,7 +3247,7 @@ MatchCall_Text_MrStone9::
 	.string "BZZZZ…$"
 
 MatchCall_Text_MrStone10::
-# 4107 "data/text/match_call.pory"
+# 4112 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}{PLAYER}{KUN}! It's me!\p"
 	.string "You were apparently involved in all\n"
 	.string "sorts of things, but I, being busy,\l"
@@ -3262,7 +3258,7 @@ MatchCall_Text_MrStone10::
 	.string "Take care!$"
 
 MatchCall_Text_MrStone11::
-# 4121 "data/text/match_call.pory"
+# 4126 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}… … … … … …\n"
 	.string "Is this maybe {PLAYER}{KUN}?\p"
 	.string "Your voice is so full of confidence,\n"

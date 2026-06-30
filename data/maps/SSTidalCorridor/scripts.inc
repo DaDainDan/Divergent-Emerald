@@ -531,7 +531,7 @@ SSTidalCorridor_Text_HorizonSpreadsBeyondPorthole::
 
 SSTidalCorridor_Text_BrineyWelcomeAboard::
 # 265 "data/maps/SSTidalCorridor/scripts.pory"
-	.string "MR. BRINEY: Welcome aboard, {PLAYER}{KUN}!\p"
+	.string "{SPEAKER NAME_BRINEY}Welcome aboard, {PLAYER}{KUN}!\p"
 	.string "They made me honorary captain of\n"
 	.string "the S.S. TIDAL!\p"
 	.string "You can call me CAPTAIN BRINEY now!\p"
@@ -542,7 +542,7 @@ SSTidalCorridor_Text_BrineyWelcomeAboard::
 
 SSTidalCorridor_Text_Peeko::
 # 280 "data/maps/SSTidalCorridor/scripts.pory"
-	.string "PEEKO: Pihyo pihyohyo…$"
+	.string "{SPEAKER NAME_PEEKO}Pihyo pihyohyo…$"
 
 SSTidalCorridor_Text_Cabin1::
 # 284 "data/maps/SSTidalCorridor/scripts.pory"

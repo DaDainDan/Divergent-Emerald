@@ -74,4 +74,4 @@ MossdeepCity_House4_Text_MakeSecretBase::
 
 MossdeepCity_House4_Text_Skitty::
 # 55 "data/maps/MossdeepCity_House4/scripts.pory"
-	.string "SKITTY: Miyaan?$"
+	.string "Miyaan?$"

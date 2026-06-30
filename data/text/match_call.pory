@@ -3051,50 +3051,55 @@ text MatchCall_Text_Winona_PostRematch {
 }
 
 text MatchCall_Text_TateLiza_Preparing {
-	"TATE: Oh! You're…
-	LIZA: {PLAYER}!
+	"{SPEAKER NAME_TATE}Oh! You're…
 
-	TATE: We're in training again…
-	LIZA: So we can reopen our GYM!
+	{SPEAKER NAME_LIZA}{PLAYER}!
 
-	TATE: When our GYM is ready…
-	LIZA: When our GYM is ready…
+	{SPEAKER NAME_TATE}We're in training again…
 
-	TATE: A mark'll appear by our name…
-	LIZA: On the MATCH CALL list."
+	{SPEAKER NAME_LIZA}So we can reopen our GYM!
+
+	{SPEAKER NAME_TATE_AND_LIZA}When our GYM is ready…
+
+	{SPEAKER NAME_TATE}A mark'll appear by our name…
+
+	{SPEAKER NAME_LIZA}On the MATCH CALL list."
 }
 
 text MatchCall_Text_TateLiza_PreparingPostGame {
-	"TATE: {PLAYER}, congratulations!
-	LIZA: {PLAYER}, congratulations!
+	"{SPEAKER NAME_TATE_AND_LIZA}{PLAYER}, congratulations!
 
-	TATE: The two of us are…
-	LIZA: Still in training!
+	{SPEAKER NAME_TATE}The two of us are…
 
-	TATE: We need some more time, but…
-	LIZA: When our GYM is ready…
+	{SPEAKER NAME_LIZA}Still in training!
 
-	TATE: A mark'll appear by our name…
-	LIZA: On the MATCH CALL list."
+	{SPEAKER NAME_TATE}We need some more time, but…
+
+	{SPEAKER NAME_LIZA}When our GYM is ready…
+
+	{SPEAKER NAME_TATE}A mark'll appear by our name…
+
+	{SPEAKER NAME_LIZA}On the MATCH CALL list."
 }
 
 text MatchCall_Text_TateLiza_RematchReady {
-	"TATE: {PLAYER}!
-	LIZA: {PLAYER}!
+	"{SPEAKER NAME_TATE_AND_LIZA}{PLAYER}!
 
-	TATE: Our GYM is ready!
-	LIZA: Our GYM is ready!
+	{SPEAKER NAME_TATE_AND_LIZA}Our GYM is ready!
 
-	TATE: Please come visit…
-	LIZA: MOSSDEEP anytime!"
+	{SPEAKER NAME_TATE}Please come visit…
+
+	{SPEAKER NAME_LIZA}MOSSDEEP anytime!"
 }
 
 text MatchCall_Text_TateLiza_PostRematch {
-	"TATE: {PLAYER}, the battle we had…
-	LIZA: Is an invaluable experience.
+	"{SPEAKER NAME_TATE}{PLAYER}, the battle we had…
 
-	TATE: It would be nice if…
-	LIZA: We could all battle again!"
+	{SPEAKER NAME_LIZA}Is an invaluable experience.
+
+	{SPEAKER NAME_TATE}It would be nice if…
+	
+	{SPEAKER NAME_LIZA}We could all battle again!"
 }
 
 text MatchCall_Text_Juan_Preparing {

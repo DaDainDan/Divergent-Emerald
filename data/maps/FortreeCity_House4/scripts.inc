@@ -140,4 +140,4 @@ FortreeCity_House4_Text_FriendsFarAwayThanksToWingull::
 
 FortreeCity_House4_Text_Wingull::
 # 85 "data/maps/FortreeCity_House4/scripts.pory"
-	.string "WINGULL: Pihyoh!$"
+	.string "Pihyoh!$"

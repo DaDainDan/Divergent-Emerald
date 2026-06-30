@@ -116,7 +116,7 @@ text PacifidlogTown_House2_Text_GetGoodTMInXDays {
 }
 
 text PacifidlogTown_House2_Text_Rurii {
-	"AZURILL: Rurii."
+	"Rurii."
 }
 
 text PacifidlogTown_House2_Text_VeryFriendlyWithTrainer {
@@ -125,7 +125,7 @@ text PacifidlogTown_House2_Text_VeryFriendlyWithTrainer {
 }
 
 text PacifidlogTown_House2_Text_Rururi {
-	"AZURILL: Rururi!"
+	"Rururi!"
 }
 
 text PacifidlogTown_House2_Text_DoesntLikeTrainerVeryMuch {

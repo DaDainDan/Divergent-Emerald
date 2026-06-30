@@ -919,7 +919,7 @@ text BattleFrontier_BattleDomeBattleRoom_Text_MakeWayForDomeAceTucker {
 }
 
 text BattleFrontier_BattleDomeBattleRoom_Text_SpectatorTuckerChant {
-	"Spectators: TUCKER! TUCKER!
+	"{SPEAKER NAME_SPECTATORS}TUCKER! TUCKER!
 	TUCKER! TUCKER! TUCKER!"
 }
 

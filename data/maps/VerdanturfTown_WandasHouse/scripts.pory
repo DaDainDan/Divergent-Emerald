@@ -82,7 +82,7 @@ text VerdanturfTown_WandasHouse_Text_StrongerSpeechShort {
 }
 
 text VerdanturfTown_WandasHouse_Text_WallysNextDoor {
-	"UNCLE: Oh! {PLAYER}{KUN}!
+	"{SPEAKER NAME_WADE}Oh! {PLAYER}{KUN}!
 	WALLY's next door.
 
 	But, boy, there's something I have to
@@ -102,7 +102,7 @@ text VerdanturfTown_WandasHouse_Text_WallySlippedOff {
 }
 
 text VerdanturfTown_WandasHouse_Text_WallyGoneThatFar {
-	"UNCLE: Is that right?
+	"{SPEAKER NAME_WADE}Is that right?
 	WALLY's gone away that far all by
 	himself…
 

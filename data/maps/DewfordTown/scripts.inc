@@ -1096,57 +1096,57 @@ DewfordTown_Text_HallSign::
 
 Route104_Text_LandedInDewfordDeliverLetter::
 # 245 "data/maps/DewfordTown/scripts.pory"
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "{SPEAKER NAME_BRINEY}Ahoy!\n"
 	.string "We've hit land in DEWFORD.\p"
 	.string "I suppose you're off to deliver that\n"
 	.string "LETTER to, who was it now, STEVEN!$"
 
 DewfordTown_Text_SetSailBackToPetalburg::
 # 253 "data/maps/DewfordTown/scripts.pory"
-	.string "MR. BRINEY: Have you delivered your\n"
+	.string "{SPEAKER NAME_BRINEY}Have you delivered your\n"
 	.string "LETTER?\p"
 	.string "Or were you meaning to sail back to\n"
 	.string "PETALBURG?$"
 
 DewfordTown_Text_PetalburgWereSettingSail2::
 # 261 "data/maps/DewfordTown/scripts.pory"
-	.string "MR. BRINEY: PETALBURG it is, then!\p"
+	.string "{SPEAKER NAME_BRINEY}PETALBURG it is, then!\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
 DewfordTown_Text_GoDeliverIllBeWaiting::
 # 268 "data/maps/DewfordTown/scripts.pory"
-	.string "MR. BRINEY: Then you go on and deliver\n"
+	.string "{SPEAKER NAME_BRINEY}Then you go on and deliver\n"
 	.string "the LETTER. I'll be waiting.$"
 
 DewfordTown_Text_BrineyLandedInDewford::
 # 273 "data/maps/DewfordTown/scripts.pory"
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "{SPEAKER NAME_BRINEY}Ahoy!\n"
 	.string "We've hit land in DEWFORD!\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail again!$"
 
 DewfordTown_Text_WhereAreWeBound::
 # 281 "data/maps/DewfordTown/scripts.pory"
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "{SPEAKER NAME_BRINEY}Ahoy!\n"
 	.string "For you, I'll go out to sea anytime!\p"
 	.string "Now, my friend, where are we bound?$"
 
 DewfordTown_Text_PetalburgWereSettingSail::
 # 288 "data/maps/DewfordTown/scripts.pory"
-	.string "MR. BRINEY: PETALBURG, is it?\p"
+	.string "{SPEAKER NAME_BRINEY}PETALBURG, is it?\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
 DewfordTown_Text_SlateportWereSettingSail::
 # 295 "data/maps/DewfordTown/scripts.pory"
-	.string "MR. BRINEY: SLATEPORT, is it?\p"
+	.string "{SPEAKER NAME_BRINEY}SLATEPORT, is it?\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
 DewfordTown_Text_JustTellMeWhenYouNeedToSetSail::
 # 302 "data/maps/DewfordTown/scripts.pory"
-	.string "MR. BRINEY: You just tell me whenever\n"
+	.string "{SPEAKER NAME_BRINEY}You just tell me whenever\n"
 	.string "you need to set sail again!$"
 
 DewfordTown_Text_GettingItchToFish::

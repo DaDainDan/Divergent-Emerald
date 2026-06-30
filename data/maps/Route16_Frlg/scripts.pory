@@ -160,42 +160,42 @@ text Route16_Text_RouteSign {
 }
 
 text Route16_Text_JedIntro {
-	"JED: Our love knows no bounds.
+	"{SPEAKER NAME_JED}Our love knows no bounds.
 	We're in love and we show it!"
 }
 
 text Route16_Text_JedDefeat {
-	"JED: Oh, no!
+	"{SPEAKER NAME_JED}Oh, no!
 	My love has seen me as a loser!"
 }
 
 text Route16_Text_JedPostBattle {
-	"JED: Listen, LEA.
+	"{SPEAKER NAME_JED}Listen, LEA.
 	You need to focus less on me."
 }
 
 text Route16_Text_JedNotEnoughMons {
-	"JED: You have just one POKéMON?
+	"{SPEAKER NAME_JED}You have just one POKéMON?
 	Is there no love in your heart?"
 }
 
 text Route16_Text_LeaIntro {
-	"LEA: Sometimes, the intensity of
+	"{SPEAKER NAME_LEA}Sometimes, the intensity of
 	our love scares me."
 }
 
 text Route16_Text_LeaDefeat {
-	"LEA: Ohh! But JED looks cool
+	"{SPEAKER NAME_LEA}Ohh! But JED looks cool
 	even in a loss!"
 }
 
 text Route16_Text_LeaPostBattle {
-	"LEA: Ehehe, I'm sorry.
+	"{SPEAKER NAME_LEA}Ehehe, I'm sorry.
 	JED is so cool."
 }
 
 text Route16_Text_LeaNotEnoughMons {
-	"LEA: Oh, you don't have two
+	"{SPEAKER NAME_LEA}Oh, you don't have two
 	POKéMON with you?
 
 	Doesn't it feel lonely for you or

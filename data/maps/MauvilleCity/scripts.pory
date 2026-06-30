@@ -240,7 +240,7 @@ script MauvilleCity_EventScript_RegisterWallyCall {
 }
 
 text MauvilleCity_Text_UncleHesTooPeppy {
-	"UNCLE: It's because of POKéMON that
+	"{SPEAKER NAME_UNKNOWN}It's because of POKéMON that
 	this boy's got more pep, I suppose…
 	But he's become a bit too peppy…"
 }
@@ -255,7 +255,7 @@ text MauvilleCity_Text_WallyWantToChallengeGym {
 }
 
 text MauvilleCity_Text_UncleYourePushingIt {
-	"UNCLE: Now hold on, WALLY.
+	"{SPEAKER NAME_UNKNOWN}Now hold on, WALLY.
 
 	Since you started living with POKéMON,
 	you have grown quite a lot stronger.
@@ -291,7 +291,7 @@ text MauvilleCity_Text_WallyMyUncleWontKnowImStrong {
 }
 
 text MauvilleCity_Text_UncleCanYouBattleWally {
-	"UNCLE: {PLAYER}{KUN}, was it?
+	"{SPEAKER NAME_WADE}{PLAYER}{KUN}, was it?
 	On WALLY's behalf, can I ask you to
 	battle with him just this once?
 
@@ -333,7 +333,7 @@ text MauvilleCity_Text_ThankYouNotEnoughToBattle {
 }
 
 text MauvilleCity_Text_UncleNoNeedToBeDown {
-	"UNCLE: WALLY, there's no need to be so
+	"{SPEAKER NAME_WADE}WALLY, there's no need to be so
 	down on yourself.
 
 	Why, what's keeping you from becoming
@@ -344,7 +344,7 @@ text MauvilleCity_Text_UncleNoNeedToBeDown {
 }
 
 text MauvilleCity_Text_UncleVisitUsSometime {
-	"UNCLE: {PLAYER}{KUN}, it just dawned on me
+	"{SPEAKER NAME_WADE}{PLAYER}{KUN}, it just dawned on me
 	that you must be the TRAINER who kept
 	an eye out for WALLY when he caught
 	his POKéMON.

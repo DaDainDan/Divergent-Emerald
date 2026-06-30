@@ -350,7 +350,7 @@ SlateportCity_ContestHall_Text_ExplainTorment::
 
 SlateportCity_ContestHall_Text_MCStepUpTakePartInContest::
 # 175 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
-	.string "MC: Oh, my, my!\n"
+	.string "{SPEAKER NAME_MC}Oh, my, my!\n"
 	.string "Now isn't that a dandy of a POKéMON?\p"
 	.string "Please! Do step right up and take\n"
 	.string "part in our splendid CONTESTS!\p"
@@ -359,7 +359,7 @@ SlateportCity_ContestHall_Text_MCStepUpTakePartInContest::
 
 SlateportCity_ContestHall_Text_JudgeWouldntDoToMissContest::
 # 186 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
-	.string "JUDGE: Well, hello there!\n"
+	.string "{SPEAKER NAME_JUDGE}Well, hello there!\n"
 	.string "I see that you're a TRAINER!\p"
 	.string "Then, it just wouldn't do for you\n"
 	.string "to miss a POKéMON CONTEST!\p"

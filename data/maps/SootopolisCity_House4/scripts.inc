@@ -47,4 +47,4 @@ SootopolisCity_House4_Text_StrollUnderwaterWithPokemon::
 
 SootopolisCity_House4_Text_Azumarill::
 # 42 "data/maps/SootopolisCity_House4/scripts.pory"
-	.string "AZUMARILL: Marurii.$"
+	.string "Marurii.$"

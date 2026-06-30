@@ -173,7 +173,7 @@ text SlateportCity_ContestHall_Text_ExplainTorment {
 }
 
 text SlateportCity_ContestHall_Text_MCStepUpTakePartInContest {
-	"MC: Oh, my, my!
+	"{SPEAKER NAME_MC}Oh, my, my!
 	Now isn't that a dandy of a POKéMON?
 
 	Please! Do step right up and take
@@ -184,7 +184,7 @@ text SlateportCity_ContestHall_Text_MCStepUpTakePartInContest {
 }
 
 text SlateportCity_ContestHall_Text_JudgeWouldntDoToMissContest {
-	"JUDGE: Well, hello there!
+	"{SPEAKER NAME_JUDGE}Well, hello there!
 	I see that you're a TRAINER!
 
 	Then, it just wouldn't do for you

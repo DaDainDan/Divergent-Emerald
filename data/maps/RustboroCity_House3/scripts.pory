@@ -37,5 +37,5 @@ text RustboroCity_House3_Text_NamingPikachuPekachu {
 }
 
 text RustboroCity_House3_Text_Pekachu {
-	"PEKACHU: Peka!"
+	"{SPEAKER NAME_PEKACHU}Peka!"
 }

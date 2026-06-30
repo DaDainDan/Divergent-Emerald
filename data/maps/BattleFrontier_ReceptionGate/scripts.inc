@@ -470,7 +470,7 @@ BattleFrontier_ReceptionGate_Text_IfItIsntPlayerYouCame::
 
 BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay::
 # 195 "data/maps/BattleFrontier_ReceptionGate/scripts.pory"
-	.string "GUIDE: Oh! MR. SCOTT, sir!\n"
+	.string "{SPEAKER NAME_GUIDE}Oh! MR. SCOTT, sir!\n"
 	.string "Good day to you, sir!$"
 
 BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere::

@@ -94,18 +94,18 @@ text MeteorFalls_1F_2R_Text_NicolasPostRematch {
 }
 
 text MeteorFalls_1F_2R_Text_JohnIntro {
-	"JOHN: We've always battled POKéMON
+	"{SPEAKER NAME_JOHN}We've always battled POKéMON
 	together as a twosome.
 	We've confidence in ourselves."
 }
 
 text MeteorFalls_1F_2R_Text_JohnDefeat {
-	"JOHN: Oh, my.
+	"{SPEAKER NAME_JOHN}Oh, my.
 	We've lost, dear wife."
 }
 
 text MeteorFalls_1F_2R_Text_JohnPostBattle {
-	"JOHN: We've been married for
+	"{SPEAKER NAME_JOHN}We've been married for
 	fifty years.
 
 	Come to think of it, I've yet to beat
@@ -113,19 +113,19 @@ text MeteorFalls_1F_2R_Text_JohnPostBattle {
 }
 
 text MeteorFalls_1F_2R_Text_JohnNotEnoughMons {
-	"JOHN: Well, well, what a young TRAINER!
+	"{SPEAKER NAME_JOHN}Well, well, what a young TRAINER!
 
 	Will you battle with us? If so, you'll
 	have to return with more POKéMON."
 }
 
 text MeteorFalls_1F_2R_Text_JohnRegister {
-	"JOHN: Young TRAINER, if the chance
+	"{SPEAKER NAME_JOHN}Young TRAINER, if the chance
 	arises, will you battle with us again?"
 }
 
 text MeteorFalls_1F_2R_Text_JayIntro {
-	"JAY: We've been married for
+	"{SPEAKER NAME_JAY}We've been married for
 	fifty years.
 
 	The bond we share as a couple could
@@ -133,19 +133,19 @@ text MeteorFalls_1F_2R_Text_JayIntro {
 }
 
 text MeteorFalls_1F_2R_Text_JayDefeat {
-	"JAY: Oh, dear.
+	"{SPEAKER NAME_JAY}Oh, dear.
 	We've lost, my dear husband."
 }
 
 text MeteorFalls_1F_2R_Text_JayPostBattle {
-	"JAY: Fifty years of marriage…
+	"{SPEAKER NAME_JAY}Fifty years of marriage…
 
 	If we ever argued, we always settled
 	it with a POKéMON battle…"
 }
 
 text MeteorFalls_1F_2R_Text_JayNotEnoughMons {
-	"JAY: Well, well, aren't you a young
+	"{SPEAKER NAME_JAY}Well, well, aren't you a young
 	TRAINER?
 
 	If you'd care to battle with us, you'll
@@ -153,32 +153,32 @@ text MeteorFalls_1F_2R_Text_JayNotEnoughMons {
 }
 
 text MeteorFalls_1F_2R_Text_JohnRematchIntro {
-	"JOHN: We've always battled POKéMON
+	"{SPEAKER NAME_JOHN}We've always battled POKéMON
 	together as a twosome.
 	We've confidence in ourselves."
 }
 
 text MeteorFalls_1F_2R_Text_JohnRematchDefeat {
-	"JOHN: Oh, my.
+	"{SPEAKER NAME_JOHN}Oh, my.
 	We've lost, dear wife."
 }
 
 text MeteorFalls_1F_2R_Text_JohnPostRematch {
-	"JOHN: Married for fifty years…
+	"{SPEAKER NAME_JOHN}Married for fifty years…
 
 	On reflection, the dear wife and I,
 	we battled day in and day out…"
 }
 
 text MeteorFalls_1F_2R_Text_JohnRematchNotEnoughMons {
-	"JOHN: Well, well, what a young TRAINER!
+	"{SPEAKER NAME_JOHN}Well, well, what a young TRAINER!
 
 	Will you battle with us? If so, you'll
 	have to return with more POKéMON."
 }
 
 text MeteorFalls_1F_2R_Text_JayRematchIntro {
-	"JAY: We've been married for
+	"{SPEAKER NAME_JAY}We've been married for
 	fifty years.
 
 	We've supported each other all that
@@ -186,12 +186,12 @@ text MeteorFalls_1F_2R_Text_JayRematchIntro {
 }
 
 text MeteorFalls_1F_2R_Text_JayRematchDefeat {
-	"JAY: Oh, dear.
+	"{SPEAKER NAME_JAY}Oh, dear.
 	We've lost, my dear husband."
 }
 
 text MeteorFalls_1F_2R_Text_JayPostRematch {
-	"JAY: Fifty years of marriage…
+	"{SPEAKER NAME_JAY}Fifty years of marriage…
 	Many things have happened.
 
 	I hope that we will continue to make
@@ -199,7 +199,7 @@ text MeteorFalls_1F_2R_Text_JayPostRematch {
 }
 
 text MeteorFalls_1F_2R_Text_JayRematchNotEnoughMons {
-	"JAY: Well, well, aren't you a young
+	"{SPEAKER NAME_JAY}Well, well, aren't you a young
 	TRAINER?
 
 	If you'd care to battle with us, you'll

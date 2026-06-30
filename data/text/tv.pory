@@ -802,7 +802,7 @@ text gTVMassOutbreakText00 {
 }
 
 text gTV3CheersForPokeblocksText00 {
-	"MC: We hope you're in good cheer,
+	"{SPEAKER NAME_MC}We hope you're in good cheer,
 	“3 CHEERS FOR {POKEBLOCK}S” is here!
 
 	Today, we examine the {POKEBLOCK} blended
@@ -816,9 +816,9 @@ text gTV3CheersForPokeblocksText00 {
 }
 
 text gTV3CheersForPokeblocksText01 {
-	"GULPIN: Gubi! Gubii!
+	"{SPEAKER NAME_GULPIN}Gubi! Gubii!
 
-	MC: And the verdict is very {STR_VAR_1}!
+	{SPEAKER NAME_MC}And the verdict is very {STR_VAR_1}!
 	GULPIN says it tastes “{STR_VAR_2}!”
 
 	Thank you so much, {STR_VAR_3}!"
@@ -833,9 +833,9 @@ text gTV3CheersForPokeblocksText02 {
 }
 
 text gTV3CheersForPokeblocksText03 {
-	"GULPIN: Gubi! Gubii!
+	"{SPEAKER NAME_GULPIN}Gubi! Gubii!
 
-	MC: Hmm… It's too {STR_VAR_1}.
+	{SPEAKER NAME_MC}Hmm… It's too {STR_VAR_1}.
 	GULPIN says it tastes “{STR_VAR_2}!”
 
 	It looks like {STR_VAR_3}'s errors
@@ -1446,7 +1446,7 @@ text SmartShopper_Text_ClerkNormal {
 
 	Hi, how's your business?
 
-	CLERK: Oh, we're doing excellent.
+	{SPEAKER NAME_CLERK}Oh, we're doing excellent.
 
 	Recently, {STR_VAR_2} has been
 	selling especially strongly.
@@ -1502,7 +1502,7 @@ text SmartShopper_Text_RandomComment4 {
 }
 
 text SmartShopper_Text_SecondItem {
-	"CLERK: {STR_VAR_1} also bought the item
+	"{SPEAKER NAME_CLERK}{STR_VAR_1} also bought the item
 	{STR_VAR_2} in bulk, taking {STR_VAR_3}.
 
 	{SPEAKER NAME_INTERVIEWER}Oh, that's smart.
@@ -1510,12 +1510,12 @@ text SmartShopper_Text_SecondItem {
 }
 
 text SmartShopper_Text_ThirdItem {
-	"CLERK: And, the TRAINER also bought
+	"{SPEAKER NAME_CLERK}And, the TRAINER also bought
 	{STR_VAR_3} of the item {STR_VAR_2}."
 }
 
 text SmartShopper_Text_DuringSale {
-	"CLERK: Plus, it was during a big sale.
+	"{SPEAKER NAME_CLERK}Plus, it was during a big sale.
 	That's smart shopping."
 }
 
@@ -1533,7 +1533,7 @@ text SmartShopper_Text_OutroNormal {
 }
 
 text SmartShopper_Text_IsVIP {
-	"CLERK: {STR_VAR_1} is a VIP customer,
+	"{SPEAKER NAME_CLERK}{STR_VAR_1} is a VIP customer,
 	no doubt about it."
 }
 
@@ -1543,7 +1543,7 @@ text SmartShopper_Text_ClerkMax {
 
 	Hi, how's your business?
 
-	CLERK: Oh, we're doing unbelievable
+	{SPEAKER NAME_CLERK}Oh, we're doing unbelievable
 	business. It's almost overwhelming.
 
 	Recently, a TRAINER named {STR_VAR_1}
@@ -1559,12 +1559,12 @@ text SmartShopper_Text_ClerkMax {
 	{SPEAKER NAME_INTERVIEWER}So that would be like 100
 	or 200 sold?
 
-	CLERK: Oh, no, much more than that!
+	{SPEAKER NAME_CLERK}Oh, no, much more than that!
 
 	{SPEAKER NAME_INTERVIEWER}Oh, my goodness!
 	{STR_VAR_1} must be a special shopper!
 
-	CLERK: {STR_VAR_1} is a VIP customer,
+	{SPEAKER NAME_CLERK}{STR_VAR_1} is a VIP customer,
 	no doubt about it."
 }
 
@@ -1711,7 +1711,7 @@ text gTVTodaysRivalTrainerText06 {
 text TrendWatcher_Text_Intro {
 	"DEWFORD TREND-WATCHER NETWORK!
 
-	MC: Wassup?
+	{SPEAKER NAME_MC}Wassup?
 	We'll keep it real with the latest on
 	what's hip and happening in DEWFORD.
 
@@ -1721,14 +1721,14 @@ text TrendWatcher_Text_Intro {
 
 	Old man: Glad to be here.
 
-	MC: Let's cut to the chase, right on.
+	{SPEAKER NAME_MC}Let's cut to the chase, right on.
 
 	What's your word on what's groovin'
 	the good folks of DEWFORD?
 
 	Old man: {STR_VAR_1} {STR_VAR_2}.
 
-	MC: {STR_VAR_1} {STR_VAR_2},
+	{SPEAKER NAME_MC}{STR_VAR_1} {STR_VAR_2},
 	you say?
 
 	Old man: No.
@@ -1738,7 +1738,7 @@ text TrendWatcher_Text_Intro {
 
 	Would you like to hear about it?
 
-	MC: Uh, no. What we want to know is
+	{SPEAKER NAME_MC}Uh, no. What we want to know is
 	what's the in thing of the moment…"
 }
 
@@ -1767,7 +1767,7 @@ text TrendWatcher_Text_PhraseWasHopeless {
 	Perhaps the {STR_VAR_1} part just
 	wasn't right…
 
-	MC: Uh, excuse me, compadre, I need
+	{SPEAKER NAME_MC}Uh, excuse me, compadre, I need
 	to hear about what's in now…"
 }
 
@@ -1784,7 +1784,7 @@ text TrendWatcher_Text_FemaleTellMeBigger {
 }
 
 text TrendWatcher_Text_Outro {
-	"MC: …Uh… So, there you have it,
+	"{SPEAKER NAME_MC}…Uh… So, there you have it,
 	all you trendy, hep cats out there!
 
 	{STR_VAR_1} {STR_VAR_2}…uh…
@@ -2298,91 +2298,91 @@ text gTVTrainerFanClubText00 {
 	"All together now!
 	TRAINER FAN CLUB!
 
-	MC: How's everyone groovin'?
+	{SPEAKER NAME_MC}How's everyone groovin'?
 	Today, we've rounded up the fans of
 	the hyper-popular TRAINER {STR_VAR_1}!
 
-	FANS: Wrooooooaaaaah!
+	{SPEAKER NAME_FANS}Wrooooooaaaaah!
 
-	FANS: {STR_VAR_1}!
+	{SPEAKER NAME_FANS}{STR_VAR_1}!
 
-	MC: Everyone!
+	{SPEAKER NAME_MC}Everyone!
 	How do you like {STR_VAR_1}?!
 
-	FANS: We love {STR_VAR_1}!
+	{SPEAKER NAME_FANS}We love {STR_VAR_1}!
 
-	MC: What do you love about
+	{SPEAKER NAME_MC}What do you love about
 	{STR_VAR_1}?!"
 }
 
 text gTVTrainerFanClubText01 {
-	"FANS: Their cool way of throwing
+	"{SPEAKER NAME_FANS}Their cool way of throwing
 	POKé BALLS!"
 }
 
 text gTVTrainerFanClubText02 {
-	"FANS: Their adorable way of running!"
+	"{SPEAKER NAME_FANS}Their adorable way of running!"
 }
 
 text gTVTrainerFanClubText03 {
-	"FANS: How the TRAINER turns tough
+	"{SPEAKER NAME_FANS}How the TRAINER turns tough
 	when the going gets tough!"
 }
 
 text gTVTrainerFanClubText04 {
-	"FANS: The TRAINER's knowledge of
+	"{SPEAKER NAME_FANS}The TRAINER's knowledge of
 	POKéMON!"
 }
 
 text gTVTrainerFanClubText05 {
-	"FANS: The TRAINER's kindness toward
+	"{SPEAKER NAME_FANS}The TRAINER's kindness toward
 	all POKéMON!"
 }
 
 text gTVTrainerFanClubText06 {
-	"FANS: The TRAINER's amazing
+	"{SPEAKER NAME_FANS}The TRAINER's amazing
 	BIKE-riding techniques!"
 }
 
 text gTVTrainerFanClubText07 {
-	"FANS: The TRAINER's impressive
+	"{SPEAKER NAME_FANS}The TRAINER's impressive
 	item-buying style!"
 }
 
 text gTVTrainerFanClubText08 {
-	"FANS: The TRAINER's charming way
+	"{SPEAKER NAME_FANS}The TRAINER's charming way
 	of nicknaming POKéMON!"
 }
 
 text gTVTrainerFanClubText09 {
-	"FANS: The TRAINER's nifty style of
+	"{SPEAKER NAME_FANS}The TRAINER's nifty style of
 	decorating a SECRET BASE!"
 }
 
 text gTVTrainerFanClubText10 {
-	"FANS: The TRAINER's bold ways of
+	"{SPEAKER NAME_FANS}The TRAINER's bold ways of
 	using TMs!"
 }
 
 text gTVTrainerFanClubText11 {
-	"MC: As you've just seen, {STR_VAR_1}
+	"{SPEAKER NAME_MC}As you've just seen, {STR_VAR_1}
 	is hot! Like, too hot to touch, yow!
 
 	Among {STR_VAR_1}'s FANS
 	there's a special slogan!
 
-	MC: When I say {STR_VAR_1},
+	{SPEAKER NAME_MC}When I say {STR_VAR_1},
 	you say…
 
-	FANS: {STR_VAR_2}!
+	{SPEAKER NAME_FANS}{STR_VAR_2}!
 
-	FANS: {STR_VAR_3}!
+	{SPEAKER NAME_FANS}{STR_VAR_3}!
 
-	FANS: {STR_VAR_2}!
+	{SPEAKER NAME_FANS}{STR_VAR_2}!
 
-	FANS: {STR_VAR_3}!
+	{SPEAKER NAME_FANS}{STR_VAR_3}!
 
-	MC: That's right, when someone says,
+	{SPEAKER NAME_MC}That's right, when someone says,
 	“{STR_VAR_1}”…
 
 	Come back with, “{STR_VAR_2}
@@ -2395,27 +2395,27 @@ text gTVTrainerFanClubText11 {
 	Okay, you, in front of the TV, join us!
 	All together now!
 
-	MC: When I say {STR_VAR_1},
+	{SPEAKER NAME_MC}When I say {STR_VAR_1},
 	you say…
 
-	FANS: {STR_VAR_2}!
+	{SPEAKER NAME_FANS}{STR_VAR_2}!
 
-	FANS: {STR_VAR_3}!
+	{SPEAKER NAME_FANS}{STR_VAR_3}!
 
-	FANS: {STR_VAR_2}!
+	{SPEAKER NAME_FANS}{STR_VAR_2}!
 
-	FANS: {STR_VAR_3}!
+	{SPEAKER NAME_FANS}{STR_VAR_3}!
 
-	MC: Thanks for joining us, all you
+	{SPEAKER NAME_MC}Thanks for joining us, all you
 	wild FANS of {STR_VAR_1}!
 	That's the show! See you again!
 
-	MC: When I say {STR_VAR_1},
+	{SPEAKER NAME_MC}When I say {STR_VAR_1},
 	you say…
 
-	FANS: {STR_VAR_2}!
+	{SPEAKER NAME_FANS}{STR_VAR_2}!
 
-	FANS: {STR_VAR_3}!"
+	{SPEAKER NAME_FANS}{STR_VAR_3}!"
 }
 
 text TVSpotTheCuties_Text_Intro {
@@ -3293,7 +3293,7 @@ text TVSecretBaseSecrets_Text_UsedJumpMat {
 text gTVSafariFanClubText00 {
 	"SAFARI FAN CLUB!
 
-	REPORTER: All right, mates!
+	{SPEAKER NAME_REPORTER}All right, mates!
 	Tossing them SAFARI BALLS, are you?
 
 	You can bet I am here in the SAFARI
@@ -3307,7 +3307,7 @@ text gTVSafariFanClubText00 {
 }
 
 text gTVSafariFanClubText01 {
-	"GUIDE: Everyone seems to be going
+	"{SPEAKER NAME_GUIDE}Everyone seems to be going
 	hard at it.
 
 	{STR_VAR_1} is doing especially well.
@@ -3329,17 +3329,17 @@ text gTVSafariFanClubText03 {
 }
 
 text gTVSafariFanClubText04 {
-	"REPORTER: Is that right, then?
+	"{SPEAKER NAME_REPORTER}Is that right, then?
 
 	Sounds like our mate {STR_VAR_1}
 	is a stout SAFARI master!
 
-	GUIDE: I hope the TRAINER comes back
+	{SPEAKER NAME_GUIDE}I hope the TRAINER comes back
 	and shows us that great technique."
 }
 
 text gTVSafariFanClubText05 {
-	"GUIDE: No one seems to be doing
+	"{SPEAKER NAME_GUIDE}No one seems to be doing
 	very well.
 
 	{STR_VAR_1} had it especially bad.
@@ -3349,7 +3349,7 @@ text gTVSafariFanClubText05 {
 }
 
 text gTVSafariFanClubText06 {
-	"GUIDE: No one seems to be doing
+	"{SPEAKER NAME_GUIDE}No one seems to be doing
 	very well.
 
 	{STR_VAR_1} had it especially bad.
@@ -3373,17 +3373,17 @@ text gTVSafariFanClubText08 {
 }
 
 text gTVSafariFanClubText09 {
-	"REPORTER: Is that right, then?
+	"{SPEAKER NAME_REPORTER}Is that right, then?
 
 	Sounds like our mate {STR_VAR_1}
 	needs more SAFARI seasoning.
 
-	GUIDE: I hope the TRAINER visits
+	{SPEAKER NAME_GUIDE}I hope the TRAINER visits
 	over and over to get the hang of it."
 }
 
 text gTVSafariFanClubText10 {
-	"REPORTER: Quite right, it is!
+	"{SPEAKER NAME_REPORTER}Quite right, it is!
 	Facing up to challenges is important!
 
 	Viewers, come on down to the SAFARI
@@ -3395,7 +3395,7 @@ text gTVSafariFanClubText10 {
 text ContestLiveUpdates_Text_Intro {
 	"“POKéMON CONTEST LIVE UPDATES!”
 
-	MC: Thanks for joining us!
+	{SPEAKER NAME_MC}Thanks for joining us!
 
 	We're live from the just-ended
 	{STR_VAR_1} site.
@@ -3403,33 +3403,33 @@ text ContestLiveUpdates_Text_Intro {
 	The hall is still filled with
 	an audience unwilling to leave.
 
-	Spectator: {STR_VAR_2}!
+	{SPEAKER NAME_SPECTATOR}{STR_VAR_2}!
 
-	Spectator: {STR_VAR_3}!
+	{SPEAKER NAME_SPECTATOR}{STR_VAR_3}!
 
-	MC: As you've just heard, the CONTEST
+	{SPEAKER NAME_MC}As you've just heard, the CONTEST
 	was won by the POKéMON {STR_VAR_2}
 	of {STR_VAR_3}.
 
-	Spectator: {STR_VAR_2}!
+	{SPEAKER NAME_SPECTATOR}{STR_VAR_2}!
 	You're the best!
 
-	Spectator: {STR_VAR_3}!
+	{SPEAKER NAME_SPECTATOR}{STR_VAR_3}!
 	Way to go!
 
-	MC: Let's hear what the fans have
+	{SPEAKER NAME_MC}Let's hear what the fans have
 	to say about this CONTEST."
 }
 
 text ContestLiveUpdates_Text_WonBothRounds {
-	"Spectator: The {STR_VAR_2} was tops in
+	"{SPEAKER NAME_SPECTATOR}The {STR_VAR_2} was tops in
 	both primary and secondary judging!
 
 	That {STR_VAR_2} will keep winning!"
 }
 
 text ContestLiveUpdates_Text_BetterRound2 {
-	"Spectator: The {STR_VAR_2} didn't do
+	"{SPEAKER NAME_SPECTATOR}The {STR_VAR_2} didn't do
 	well in the primary judging, but it
 	cleaned up in the secondary judging!
 
@@ -3438,7 +3438,7 @@ text ContestLiveUpdates_Text_BetterRound2 {
 }
 
 text ContestLiveUpdates_Text_EqualRounds {
-	"Spectator: The {STR_VAR_2} remained
+	"{SPEAKER NAME_SPECTATOR}The {STR_VAR_2} remained
 	consistent throughout both primary
 	and secondary judging.
 
@@ -3447,7 +3447,7 @@ text ContestLiveUpdates_Text_EqualRounds {
 }
 
 text ContestLiveUpdates_Text_BetterRound1 {
-	"Spectator: In terms of being {STR_VAR_1},
+	"{SPEAKER NAME_SPECTATOR}In terms of being {STR_VAR_1},
 	that {STR_VAR_2} was outstanding.
 
 	I hope it makes better appeals
@@ -3455,7 +3455,7 @@ text ContestLiveUpdates_Text_BetterRound1 {
 }
 
 text ContestLiveUpdates_Text_GotNervous {
-	"Spectator: When the {STR_VAR_2} got
+	"{SPEAKER NAME_SPECTATOR}When the {STR_VAR_2} got
 	nervous, I couldn't stop myself from
 	shouting encouragement.
 
@@ -3464,21 +3464,21 @@ text ContestLiveUpdates_Text_GotNervous {
 }
 
 text ContestLiveUpdates_Text_StartledFoes {
-	"Spectator: That {STR_VAR_2}'s appeal
+	"{SPEAKER NAME_SPECTATOR}That {STR_VAR_2}'s appeal
 	startled even me!
 
 	{STR_VAR_2}, you were awesome!"
 }
 
 text ContestLiveUpdates_Text_UsedCombo {
-	"Spectator: That {STR_VAR_2}'s combo
+	"{SPEAKER NAME_SPECTATOR}That {STR_VAR_2}'s combo
 	appeal was stunning!
 
 	It's shaken me to the core!"
 }
 
 text ContestLiveUpdates_Text_ExcitingAppeal {
-	"Spectator: The winning {STR_VAR_2}'s
+	"{SPEAKER NAME_SPECTATOR}The winning {STR_VAR_2}'s
 	appeal got my heart pounding!"
 }
 
@@ -3508,7 +3508,7 @@ text ContestLiveUpdates_Text_WasTough {
 }
 
 text ContestLiveUpdates_Text_VeryExcitingAppeal {
-	"Spectator: The winning {STR_VAR_2}'s
+	"{SPEAKER NAME_SPECTATOR}The winning {STR_VAR_2}'s
 	appeal still has my heart pounding!"
 }
 
@@ -3538,7 +3538,7 @@ text ContestLiveUpdates_Text_VeryTough {
 }
 
 text ContestLiveUpdates_Text_TookBreak {
-	"Spectator: Even when the {STR_VAR_2}
+	"{SPEAKER NAME_SPECTATOR}Even when the {STR_VAR_2}
 	took a break from making appeals,
 	I couldn't take my eyes off it.
 
@@ -3546,7 +3546,7 @@ text ContestLiveUpdates_Text_TookBreak {
 }
 
 text ContestLiveUpdates_Text_GotStartled {
-	"Spectator: When the {STR_VAR_2} was
+	"{SPEAKER NAME_SPECTATOR}When the {STR_VAR_2} was
 	startled by another POKéMON's appeal,
 	I was close to tears.
 
@@ -3555,7 +3555,7 @@ text ContestLiveUpdates_Text_GotStartled {
 }
 
 text ContestLiveUpdates_Text_MoveWonderful {
-	"Spectator: Oh…
+	"{SPEAKER NAME_SPECTATOR}Oh…
 	That {STR_VAR_2}'s {STR_VAR_3}!
 	{STR_VAR_2}'s {STR_VAR_3}!
 	{STR_VAR_2}'s {STR_VAR_3}!
@@ -3563,7 +3563,7 @@ text ContestLiveUpdates_Text_MoveWonderful {
 }
 
 text ContestLiveUpdates_Text_TalkAboutAnotherMon {
-	"MC: Well, there you have it. This place
+	"{SPEAKER NAME_MC}Well, there you have it. This place
 	is full of the {STR_VAR_1}'s fans!
 
 	I should also mention that another
@@ -3660,7 +3660,7 @@ text ContestLiveUpdates_Text_Outro {
 	This time, it's {STR_VAR_1} and
 	the {STR_VAR_2}!
 
-	MC: Is everyone ready?
+	{SPEAKER NAME_MC}Is everyone ready?
 	All together now!
 
 	Audience: {STR_VAR_1}! {STR_VAR_2}!
@@ -3735,7 +3735,7 @@ text gTVPokemonBattleUpdateText07 {
 }
 
 text GabbyAndTy_Text_GabbyPreFirstBattle {
-	"GABBY: Oh! We've just spotted a tough-
+	"{SPEAKER NAME_GABBY}Oh! We've just spotted a tough-
 	looking TRAINER here of all places!
 
 	Okay, roll camera!
@@ -3743,7 +3743,7 @@ text GabbyAndTy_Text_GabbyPreFirstBattle {
 }
 
 text GabbyAndTy_Text_GabbyIntro {
-	"GABBY: Oh! You're {PLAYER}! Hi!
+	"{SPEAKER NAME_GABBY}Oh! You're {PLAYER}! Hi!
 	Do you remember us from last time?
 
 	Can you show us how much stronger
@@ -3751,12 +3751,12 @@ text GabbyAndTy_Text_GabbyIntro {
 }
 
 text GabbyAndTy_Text_GabbyDefeatFirstTime {
-	"GABBY: My eyes didn't lie!
+	"{SPEAKER NAME_GABBY}My eyes didn't lie!
 	I did discover an astonishing TRAINER!"
 }
 
 text GabbyAndTy_Text_WhoAreYouInterview {
-	"GABBY: Awesome! Awesome!
+	"{SPEAKER NAME_GABBY}Awesome! Awesome!
 	Who are you?!
 
 	I knew we were onto something wild
@@ -3771,7 +3771,7 @@ text GabbyAndTy_Text_WhoAreYouInterview {
 }
 
 text GabbyAndTy_Text_QuoteFromLastInterview {
-	"GABBY: “{STR_VAR_1}!”
+	"{SPEAKER NAME_GABBY}“{STR_VAR_1}!”
 
 	Remember? That's the quote you gave
 	us as the battle clincher last time.
@@ -3829,7 +3829,7 @@ text GabbyAndTy_Text_DescribeYourFeelings {
 }
 
 text GabbyAndTy_Text_PerfectWellBeSeeingYou {
-	"GABBY: Mmm, yeah!
+	"{SPEAKER NAME_GABBY}Mmm, yeah!
 	That's the perfect clincher!
 
 	I get the feeling that this will make
@@ -3843,24 +3843,24 @@ text GabbyAndTy_Text_PerfectWellBeSeeingYou {
 }
 
 text GabbyAndTy_Text_DontGiveUpKeepingEyeOut {
-	"GABBY: Oh…
+	"{SPEAKER NAME_GABBY}Oh…
 
 	Okay, but don't give up!
 	We'll be keeping an eye out for you!"
 }
 
 text GabbyAndTy_Text_KeepingAnEyeOutForYou {
-	"GABBY: We'll be keeping an eye out
+	"{SPEAKER NAME_GABBY}We'll be keeping an eye out
 	for you!"
 }
 
 text GabbyAndTy_Text_GabbyNotEnoughMons {
-	"GABBY: Is there a strong TRAINER
+	"{SPEAKER NAME_GABBY}Is there a strong TRAINER
 	anywhere with a lot of POKéMON?"
 }
 
 text GabbyAndTy_Text_GiveUsAnInterviewThisTime {
-	"GABBY: Wow, you are something!
+	"{SPEAKER NAME_GABBY}Wow, you are something!
 
 	You've gotten a lot stronger--a lot--
 	since we last battled.
@@ -3874,18 +3874,18 @@ text GabbyAndTy_Text_GiveUsAnInterviewThisTime {
 }
 
 text GabbyAndTy_Text_GabbyDefeat {
-	"GABBY: That was an intense battle!
+	"{SPEAKER NAME_GABBY}That was an intense battle!
 	Did you get all that on camera?"
 }
 
 text GabbyAndTy_Text_TyPreFirstBattle {
-	"TY: Hey, lookie here! A tough-looking
+	"{SPEAKER NAME_TY}Hey, lookie here! A tough-looking
 	TRAINER here, of all places!
 	Camera's rolling!"
 }
 
 text GabbyAndTy_Text_TyIntro {
-	"TY: Hey, lookie here!
+	"{SPEAKER NAME_TY}Hey, lookie here!
 	I remember you!
 
 	I'll get this battle all on this
@@ -3893,12 +3893,12 @@ text GabbyAndTy_Text_TyIntro {
 }
 
 text GabbyAndTy_Text_TyPostBattle {
-	"TY: You're a natural!
+	"{SPEAKER NAME_TY}You're a natural!
 	Got me some prime footage right here!"
 }
 
 text GabbyAndTy_Text_TyNotEnoughMons {
-	"TY: Do you only have the one POKéMON
+	"{SPEAKER NAME_TY}Do you only have the one POKéMON
 	and that's it?
 
 	If you had more POKéMON, it'd make for
@@ -3906,19 +3906,19 @@ text GabbyAndTy_Text_TyNotEnoughMons {
 }
 
 text GabbyAndTy_Text_TyDefeatFirstTime {
-	"TY: Yep, we sure spotted a hot TRAINER.
+	"{SPEAKER NAME_TY}Yep, we sure spotted a hot TRAINER.
 	This is a huge scoop for us!"
 }
 
 text GabbyAndTy_Text_TyDefeat {
-	"TY: Yep, I got it all.
+	"{SPEAKER NAME_TY}Yep, I got it all.
 	That whole battle's on camera."
 }
 
 text gTVInSearchOfTrainersText00 {
 	"IN SEARCH OF TRAINERS…
 
-	GABBY: Hi! Today I'm visiting an area
+	{SPEAKER NAME_GABBY}Hi! Today I'm visiting an area
 	near {STR_VAR_1}.
 
 	We're trying to spot some up-and-
@@ -4049,27 +4049,27 @@ text gTVInSearchOfTrainersText08 {
 text ContestLadyShow_Text_Intro {
 	"“POKéMON CONTEST LIVE UPDATES!”
 
-	MC: Sorry to interrupt the regular
+	{SPEAKER NAME_MC}Sorry to interrupt the regular
 	programming, and thanks for joining us!
 
 	We bring you this live from
 	the scene of a just-completed
 	{STR_VAR_1}!
 
-	Spectators: ?!!!!
+	{SPEAKER NAME_SPECTATORS}?!!!!
 
-	MC: Oh! It looks like the CONTEST
+	{SPEAKER NAME_MC}Oh! It looks like the CONTEST
 	participants are headed this way!
 
 	I'll try to get an impromptu interview
 	for you folks at home!
 
-	Spectators: ?!!!!
+	{SPEAKER NAME_SPECTATORS}?!!!!
 	?!!!!"
 }
 
 text ContestLadyShow_Text_Won {
-	"MC: Excuse me!
+	"{SPEAKER NAME_MC}Excuse me!
 	Thanks for joining us on live TV!
 
 	May I congratulate you on your win?
@@ -4077,18 +4077,18 @@ text ContestLadyShow_Text_Won {
 	What was the key factor in today's
 	stunning victory?
 
-	BEAUTY: We gave it our best effort
+	{SPEAKER NAME_BEAUTY}We gave it our best effort
 	today, my {STR_VAR_2} and I!
 
 	But I'm sure we wouldn't have made it
 	if it weren't for all the help we
 	received leading up to the CONTEST!
 
-	MC: Do you have a special someone
+	{SPEAKER NAME_MC}Do you have a special someone
 	with whom you'd like to share your joy?
 	Let's hear it live!
 
-	BEAUTY: Hey, out there!
+	{SPEAKER NAME_BEAUTY}Hey, out there!
 
 	{STR_VAR_3}! Are you watching?
 	We did it!
@@ -4096,54 +4096,54 @@ text ContestLadyShow_Text_Won {
 }
 
 text ContestLadyShow_Text_Lost {
-	"MC: Excuse me!
+	"{SPEAKER NAME_MC}Excuse me!
 	Thanks for joining us on live TV!
 
 	You must be disappointed by that turn
 	of events. Do you have any comments?
 
-	BEAUTY: It's heartbreaking…
+	{SPEAKER NAME_BEAUTY}It's heartbreaking…
 	My {STR_VAR_2} and I, we did our best…
 
 	But I feel like I've let down everyone
 	who has supported us through this.
 
-	MC: I hate to say it, but the POKéMON's
+	{SPEAKER NAME_MC}I hate to say it, but the POKéMON's
 	coloration is a little wanting.
 
-	BEAUTY: {STR_VAR_3}, I'm so sorry…
+	{SPEAKER NAME_BEAUTY}{STR_VAR_3}, I'm so sorry…
 	I'll do better next time, I swear…
 	…Sniff… Waaaaah!
 
-	Spectators: See that?
+	{SPEAKER NAME_SPECTATORS}See that?
 	The poor girl!
 
-	MC: Uh… Uh-oh…
+	{SPEAKER NAME_MC}Uh… Uh-oh…
 
 	Uh… That's all the time we have today!
 	Thanks for tuning in!"
 }
 
 text ContestLadyShow_Text_LostBadly {
-	"MC: Excuse me!
+	"{SPEAKER NAME_MC}Excuse me!
 	Thanks for joining us on live TV!
 
 	How did your CONTEST appearance go?
 
-	BEAUTY: Nothing went right…
+	{SPEAKER NAME_BEAUTY}Nothing went right…
 	For some reason, my {STR_VAR_2}
 	couldn't attract any popularity.
 
-	MC: I hate to say it, but the POKéMON's
+	{SPEAKER NAME_MC}I hate to say it, but the POKéMON's
 	coloration is a little wanting.
 
-	BEAUTY: … … … … … …
+	{SPEAKER NAME_BEAUTY}… … … … … …
 	…Sniff… Waaaaah!
 
-	Spectators: See that?
+	{SPEAKER NAME_SPECTATORS}See that?
 	The poor girl!
 
-	MC: Uh… Uh-oh…
+	{SPEAKER NAME_MC}Uh… Uh-oh…
 
 	Uh… That's all the time we have today!
 	Thanks for tuning in!"

@@ -366,14 +366,14 @@ LilycoveCity_ContestHall_Text_IsntThisPlaceHumongous::
 
 LilycoveCity_ContestHall_Text_GiveItBestSmartAppeal::
 # 253 "data/maps/LilycoveCity_ContestHall/scripts.pory"
-	.string "MC: Okay, SMART POKéMON and their\n"
+	.string "{SPEAKER NAME_MC}Okay, SMART POKéMON and their\n"
 	.string "TRAINERS, are you ready?!\p"
 	.string "Give it your best showing!\n"
 	.string "Let's appeal!$"
 
 LilycoveCity_ContestHall_Text_AreYouEnjoyingThisContest::
 # 261 "data/maps/LilycoveCity_ContestHall/scripts.pory"
-	.string "JUDGE: Are you enjoying this CONTEST?\p"
+	.string "{SPEAKER NAME_JUDGE}Are you enjoying this CONTEST?\p"
 	.string "Come back with three friends, and\n"
 	.string "all of you may enter a CONTEST!$"
 
@@ -435,12 +435,12 @@ LilycoveCity_ContestHall_Text_StillLoveSmartnessContests::
 
 LilycoveCity_ContestHall_Text_AreYouEnteringBeautyContest::
 # 333 "data/maps/LilycoveCity_ContestHall/scripts.pory"
-	.string "MC: Are you entering the BEAUTY\n"
+	.string "{SPEAKER NAME_MC}Are you entering the BEAUTY\n"
 	.string "CONTEST, too? Good luck!$"
 
 LilycoveCity_ContestHall_Text_EveryPokemonPristineBeauty::
 # 338 "data/maps/LilycoveCity_ContestHall/scripts.pory"
-	.string "JUDGE: Ah, every POKéMON here is\n"
+	.string "{SPEAKER NAME_JUDGE}Ah, every POKéMON here is\n"
 	.string "a model of pristine beauty!\p"
 	.string "Why, I almost forgot to score them!$"
 
@@ -497,14 +497,14 @@ LilycoveCity_ContestHall_Text_CantWinOnBeautyAlone::
 
 LilycoveCity_ContestHall_Text_InTheMiddleOfContest::
 # 405 "data/maps/LilycoveCity_ContestHall/scripts.pory"
-	.string "MC: Uh-oh! Hello!\n"
+	.string "{SPEAKER NAME_MC}Uh-oh! Hello!\n"
 	.string "We're in the middle of a CONTEST!\p"
 	.string "Please enter at our registration\n"
 	.string "counter and come out, okay?$"
 
 LilycoveCity_ContestHall_Text_SuchCharmingCuteAppeals::
 # 413 "data/maps/LilycoveCity_ContestHall/scripts.pory"
-	.string "JUDGE: Oh, such charming and cute\n"
+	.string "{SPEAKER NAME_JUDGE}Oh, such charming and cute\n"
 	.string "appeals!\p"
 	.string "Oh, my goodness! What a perfectly\n"
 	.string "adorable WATER SPORT appeal!$"

@@ -1486,25 +1486,25 @@ LilycoveCity_ContestLobby_Text_ComeBackForPrizeLater:
 	.string "later on.$"
 
 ContestHall_Text_GettingStartedParticipantsAsFollows:
-	.string "MC: Hello! We're just getting started\n"
+	.string "{SPEAKER NAME_MC}Hello! We're just getting started\n"
 	.string "with a {STR_VAR_3} Rank POKéMON\l"
 	.string "{STR_VAR_2}!\p"
 	.string "The participating TRAINERS and their\n"
 	.string "POKéMON are as follows:$"
 
 ContestHall_Text_GettingStartedParticipantsAsFollowsLink:
-	.string "MC: Hello! We're just getting started\n"
+	.string "{SPEAKER NAME_MC}Hello! We're just getting started\n"
 	.string "with a 4-player linked POKéMON\l"
 	.string "{STR_VAR_2}!\p"
 	.string "The participating TRAINERS and their\n"
 	.string "POKéMON are as follows:$"
 
 ContestHall_Text_EntryXTrainersMon:
-	.string "MC: Entry No. {STR_VAR_2}!\n"
+	.string "{SPEAKER NAME_MC}Entry No. {STR_VAR_2}!\n"
 	.string "{STR_VAR_1}'s {STR_VAR_3}!$"
 
 ContestHall_Text_SeenContestantsAudienceWillVote:
-	.string "MC: We've just seen the four POKéMON\n"
+	.string "{SPEAKER NAME_MC}We've just seen the four POKéMON\n"
 	.string "contestants.\p"
 	.string "Now it's time for primary judging!\p"
 	.string "The audience will vote on their\n"
@@ -1527,7 +1527,7 @@ ContestHall_Text_VotingCompleteLetsAppeal:
 	.string "Let's appeal!$"
 
 ContestHall_Text_ThatsItForJudging:
-	.string "MC: That's it for judging!$"
+	.string "{SPEAKER NAME_MC}That's it for judging!$"
 
 ContestHall_Text_ThankYouForAppeals:
 	.string "Thank you all for a most wonderful\n"
@@ -1542,19 +1542,19 @@ ContestHall_Text_JudgeLooksReady:
 	.string "the announcement!$"
 
 ContestHall_Text_WeWillNowDeclareWinner:
-	.string "JUDGE: We will now declare the winner!$"
+	.string "{SPEAKER NAME_JUDGE}We will now declare the winner!$"
 
 ContestHall_Text_CongratsTrainerXandMon:
-	.string "MC: Entry No. {STR_VAR_2}!\p"
+	.string "{SPEAKER NAME_MC}Entry No. {STR_VAR_2}!\p"
 	.string "{STR_VAR_3} and {STR_VAR_1},\n"
 	.string "congratulations!$"
 
 ContestHall_Text_CongratsPleaseCompeteAgain:
-	.string "MC: Congratulations!\n"
+	.string "{SPEAKER NAME_MC}Congratulations!\n"
 	.string "Please do compete again!$"
 
 ContestHall_Text_AcceptYourPrize:
-	.string "MC: Here you are!\n"
+	.string "{SPEAKER NAME_MC}Here you are!\n"
 	.string "Please accept your prize!$"
 
 ContestHall_Text_ConferRibbonAsPrize:
@@ -1748,7 +1748,7 @@ LilycoveCity_ContestLobby_Text_WhichContestMode:
 	.string "to enter?$"
 
 ContestHall_Text_GettingStartedWireless:
-	.string "MC: Hello! We're just getting started\n"
+	.string "{SPEAKER NAME_MC}Hello! We're just getting started\n"
 	.string "with a 4-player linked POKéMON\l"
 	.string "{STR_VAR_2}!$"
 
@@ -1757,7 +1757,7 @@ ContestHall_Text_ParticipantsAsFollows:
 	.string "POKéMON are as follows:$"
 
 ContestHall_Text_WeveSeenContestants:
-	.string "MC: We've just seen the four POKéMON\n"
+	.string "{SPEAKER NAME_MC}We've just seen the four POKéMON\n"
 	.string "contestants.\p"
 	.string "Now it's time for primary judging!$"
 

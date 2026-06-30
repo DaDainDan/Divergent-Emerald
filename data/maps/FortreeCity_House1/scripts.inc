@@ -94,4 +94,4 @@ FortreeCity_House1_Text_TradingMemoriesWithOthers::
 
 FortreeCity_House1_Text_Zigzagoon::
 # 83 "data/maps/FortreeCity_House1/scripts.pory"
-	.string "ZIGZAGOON: Gumomoh?$"
+	.string "Gumomoh?$"

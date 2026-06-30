@@ -66,76 +66,76 @@ AbandonedShip_Rooms2_1F_EventScript_Garrison::
 
 AbandonedShip_Rooms2_1F_Text_DanIntro::
 # 43 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: While searching for treasures,\n"
+	.string "{SPEAKER NAME_DAN}While searching for treasures,\n"
 	.string "we discovered a TRAINER!$"
 
 AbandonedShip_Rooms2_1F_Text_DanDefeat::
 # 48 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: We couldn't win even though\n"
+	.string "{SPEAKER NAME_DAN}We couldn't win even though\n"
 	.string "we worked together…$"
 
 AbandonedShip_Rooms2_1F_Text_DanPostBattle::
 # 53 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: We can't find any treasures…\n"
+	.string "{SPEAKER NAME_DAN}We can't find any treasures…\n"
 	.string "I wonder if someone got them already?$"
 
 AbandonedShip_Rooms2_1F_Text_DanNotEnoughMons::
 # 58 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: You don't even have two POKéMON.\n"
+	.string "{SPEAKER NAME_DAN}You don't even have two POKéMON.\n"
 	.string "You can't expect to beat us like that.$"
 
 AbandonedShip_Rooms2_1F_Text_KiraIntro::
 # 63 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh?\n"
+	.string "{SPEAKER NAME_KIRA}Oh?\n"
 	.string "We were searching for treasures.\l"
 	.string "But we discovered a TRAINER instead!$"
 
 AbandonedShip_Rooms2_1F_Text_KiraDefeat::
 # 69 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Ooh, so strong!$"
+	.string "{SPEAKER NAME_KIRA}Ooh, so strong!$"
 
 AbandonedShip_Rooms2_1F_Text_KiraPostBattle::
 # 73 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Where could the treasures be?\p"
+	.string "{SPEAKER NAME_KIRA}Where could the treasures be?\p"
 	.string "I've already decided what I'm buying\n"
 	.string "when we find the treasures!$"
 
 AbandonedShip_Rooms2_1F_Text_KiraNotEnoughMons::
 # 80 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh, you don't have two POKéMON?\n"
+	.string "{SPEAKER NAME_KIRA}Oh, you don't have two POKéMON?\n"
 	.string "We'll have to battle some other time!$"
 
 AbandonedShip_Rooms2_1F_Text_KiraRegister::
 # 85 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh, you make me so angry!\n"
+	.string "{SPEAKER NAME_KIRA}Oh, you make me so angry!\n"
 	.string "I'm going to register you for that!$"
 
 AbandonedShip_Rooms2_1F_Text_DanRematchIntro::
 # 90 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: We've been searching for\n"
+	.string "{SPEAKER NAME_DAN}We've been searching for\n"
 	.string "treasures all this time.\p"
 	.string "Our POKéMON have grown stronger, too.\n"
 	.string "Let us show you, okay?$"
 
 AbandonedShip_Rooms2_1F_Text_DanRematchDefeat::
 # 98 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: You're strong, as usual!$"
+	.string "{SPEAKER NAME_DAN}You're strong, as usual!$"
 
 AbandonedShip_Rooms2_1F_Text_DanPostRematch::
 # 102 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: We can't find any treasures,\n"
+	.string "{SPEAKER NAME_DAN}We can't find any treasures,\n"
 	.string "we lose at POKéMON…\p"
 	.string "I want to go home… But if I say that,\n"
 	.string "she gets all angry with me…$"
 
 AbandonedShip_Rooms2_1F_Text_DanRematchNotEnoughMons::
 # 110 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: You don't even have two POKéMON.\n"
+	.string "{SPEAKER NAME_DAN}You don't even have two POKéMON.\n"
 	.string "You can't expect to beat us like that.$"
 
 AbandonedShip_Rooms2_1F_Text_KiraRematchIntro::
 # 115 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh? We meet again!\p"
+	.string "{SPEAKER NAME_KIRA}Oh? We meet again!\p"
 	.string "Just like us, you still haven't given up\n"
 	.string "searching for treasures, have you?\p"
 	.string "Want to make it so the loser has\n"
@@ -143,17 +143,17 @@ AbandonedShip_Rooms2_1F_Text_KiraRematchIntro::
 
 AbandonedShip_Rooms2_1F_Text_KiraRematchDefeat::
 # 125 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh, we lost again…$"
+	.string "{SPEAKER NAME_KIRA}Oh, we lost again…$"
 
 AbandonedShip_Rooms2_1F_Text_KiraPostRematch::
 # 129 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: We're not leaving until we raise\n"
+	.string "{SPEAKER NAME_KIRA}We're not leaving until we raise\n"
 	.string "our POKéMON some more and we find\l"
 	.string "the treasures here!$"
 
 AbandonedShip_Rooms2_1F_Text_KiraRematchNotEnoughMons::
 # 135 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh, you don't have two POKéMON?\n"
+	.string "{SPEAKER NAME_KIRA}Oh, you don't have two POKéMON?\n"
 	.string "We'll have to battle some other time!$"
 
 AbandonedShip_Rooms2_1F_Text_JaniIntro::

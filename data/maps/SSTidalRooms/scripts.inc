@@ -154,42 +154,42 @@ SSTidalRooms_Text_ThomasPostBattle::
 
 SSTidalRooms_Text_JedIntro::
 # 120 "data/maps/SSTidalRooms/scripts.pory"
-	.string "JED: I feel a little shy about this, but…\n"
+	.string "{SPEAKER NAME_JED}I feel a little shy about this, but…\n"
 	.string "We'll show you our lovey-dovey power!$"
 
 SSTidalRooms_Text_JedDefeat::
 # 125 "data/maps/SSTidalRooms/scripts.pory"
-	.string "JED: Sigh…$"
+	.string "{SPEAKER NAME_JED}Sigh…$"
 
 SSTidalRooms_Text_JedPostBattle::
 # 129 "data/maps/SSTidalRooms/scripts.pory"
-	.string "JED: It's the first time that our lovey-\n"
+	.string "{SPEAKER NAME_JED}It's the first time that our lovey-\n"
 	.string "dovey power couldn't prevail!\l"
 	.string "You must be an awesome TRAINER!$"
 
 SSTidalRooms_Text_JedNotEnoughMons::
 # 135 "data/maps/SSTidalRooms/scripts.pory"
-	.string "JED: You only have one POKéMON?\n"
+	.string "{SPEAKER NAME_JED}You only have one POKéMON?\n"
 	.string "Isn't that just too lonesome?$"
 
 SSTidalRooms_Text_LeaIntro::
 # 140 "data/maps/SSTidalRooms/scripts.pory"
-	.string "LEA: I feel a little silly, but…\n"
+	.string "{SPEAKER NAME_LEA}I feel a little silly, but…\n"
 	.string "We'll show you our lovey-dovey power!$"
 
 SSTidalRooms_Text_LeaDefeat::
 # 145 "data/maps/SSTidalRooms/scripts.pory"
-	.string "LEA: Oh, boo!$"
+	.string "{SPEAKER NAME_LEA}Oh, boo!$"
 
 SSTidalRooms_Text_LeaPostBattle::
 # 149 "data/maps/SSTidalRooms/scripts.pory"
-	.string "LEA: I can't believe it!\n"
+	.string "{SPEAKER NAME_LEA}I can't believe it!\n"
 	.string "Our lovey-dovey power failed…\l"
 	.string "You must be an awesome TRAINER!$"
 
 SSTidalRooms_Text_LeaNotEnoughMons::
 # 155 "data/maps/SSTidalRooms/scripts.pory"
-	.string "LEA: I wanted to battle…\n"
+	.string "{SPEAKER NAME_LEA}I wanted to battle…\n"
 	.string "But you don't even have two POKéMON…$"
 
 SSTidalRooms_Text_GarretIntro::

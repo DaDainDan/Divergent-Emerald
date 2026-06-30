@@ -58,4 +58,4 @@ SootopolisCity_House1_Text_ExplainBrickBreak::
 
 SootopolisCity_House1_Text_Kecleon::
 # 38 "data/maps/SootopolisCity_House1/scripts.pory"
-	.string "KECLEON: Puu puhyaah.$"
+	.string "Puu puhyaah.$"

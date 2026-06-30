@@ -232,7 +232,7 @@ LilycoveCity_DepartmentStore_1F_Text_BuyingSomethingForAzumarill::
 
 LilycoveCity_DepartmentStore_1F_Text_Azumarill::
 # 126 "data/maps/LilycoveCity_DepartmentStore_1F/scripts.pory"
-	.string "AZUMARILL: Maririroo!$"
+	.string "Maririroo!$"
 
 LilycoveCity_DepartmentStore_1F_Text_FloorNamesSign::
 # 130 "data/maps/LilycoveCity_DepartmentStore_1F/scripts.pory"

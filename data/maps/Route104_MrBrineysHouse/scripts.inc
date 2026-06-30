@@ -157,7 +157,7 @@ Route104_MrBrineysHouse_EventScript_Peeko::
 
 Route104_MrBrineysHouse_Text_WaitUpPeeko::
 # 86 "data/maps/Route104_MrBrineysHouse/scripts.pory"
-	.string "MR. BRINEY: Hold on, lass!\n"
+	.string "{SPEAKER NAME_BRINEY}Hold on, lass!\n"
 	.string "Wait up, PEEKO!$"
 
 Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford::
@@ -178,20 +178,20 @@ Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford::
 
 Route104_MrBrineysHouse_Text_SetSailForDewford::
 # 113 "data/maps/Route104_MrBrineysHouse/scripts.pory"
-	.string "MR. BRINEY: DEWFORD it is, then!\p"
+	.string "{SPEAKER NAME_BRINEY}DEWFORD it is, then!\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
 Route104_MrBrineysHouse_Text_DeclineDeliverySail::
 # 120 "data/maps/Route104_MrBrineysHouse/scripts.pory"
-	.string "MR. BRINEY: Is that so?\n"
+	.string "{SPEAKER NAME_BRINEY}Is that so?\n"
 	.string "Your deliveries can wait?\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail!$"
 
 Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford::
 # 128 "data/maps/Route104_MrBrineysHouse/scripts.pory"
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "{SPEAKER NAME_BRINEY}Ahoy!\n"
 	.string "I know exactly what you want to say!\p"
 	.string "You're to deliver a LETTER to DEWFORD\n"
 	.string "and a package to SLATEPORT.\p"
@@ -201,7 +201,7 @@ Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford::
 
 Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford::
 # 141 "data/maps/Route104_MrBrineysHouse/scripts.pory"
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "{SPEAKER NAME_BRINEY}Ahoy!\n"
 	.string "I know exactly what you want to say!\p"
 	.string "You're to deliver a package to\n"
 	.string "CAPT. STERN in SLATEPORT.\p"
@@ -211,17 +211,17 @@ Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford::
 
 Route104_MrBrineysHouse_Text_WhereAreWeBound::
 # 154 "data/maps/Route104_MrBrineysHouse/scripts.pory"
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "{SPEAKER NAME_BRINEY}Ahoy!\n"
 	.string "For you, I'll go out to sea anytime!\p"
 	.string "Now, my friend, where are we bound?$"
 
 Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail::
 # 161 "data/maps/Route104_MrBrineysHouse/scripts.pory"
-	.string "MR. BRINEY: Is that so?\n"
+	.string "{SPEAKER NAME_BRINEY}Is that so?\n"
 	.string "Well, PEEKO owes her life to you.\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail!$"
 
 Route104_MrBrineysHouse_Text_Peeko::
 # 169 "data/maps/Route104_MrBrineysHouse/scripts.pory"
-	.string "PEEKO: Pii piihyoro!$"
+	.string "{SPEAKER NAME_PEEKO}Pii piihyoro!$"

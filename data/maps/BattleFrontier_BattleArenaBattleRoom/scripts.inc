@@ -1057,26 +1057,26 @@ BattleFrontier_BattleArenaBattleRoom_EventScript_DefeatedGretaSilver_Movement_0:
 
 BattleFrontier_BattleArenaBattleRoom_Text_PlayerStepForward::
 # 440 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "REFEREE: TRAINER {PLAYER}!\n"
+	.string "{SPEAKER NAME_REFEREE}TRAINER {PLAYER}!\n"
 	.string "Step forward, please!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_OpponentStepForward::
 # 445 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "REFEREE: TRAINER {STR_VAR_1}!\n"
+	.string "{SPEAKER NAME_REFEREE}TRAINER {STR_VAR_1}!\n"
 	.string "Step forward, please!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_SetKOTourneyBegin::
 # 450 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "REFEREE: Set KO Tourney!\n"
+	.string "{SPEAKER NAME_REFEREE}Set KO Tourney!\n"
 	.string "Begin!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_WinnerIsPlayer::
 # 455 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "REFEREE: The winner is {PLAYER}!$"
+	.string "{SPEAKER NAME_REFEREE}The winner is {PLAYER}!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_WinnerIsOpponent::
 # 459 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "REFEREE: The winner is {STR_VAR_1}!$"
+	.string "{SPEAKER NAME_REFEREE}The winner is {STR_VAR_1}!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_MonsWillBeRestored::
 # 463 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
@@ -1147,7 +1147,7 @@ BattleFrontier_BattleArenaBattleRoom_Text_PreparedForTycoon::
 
 BattleFrontier_BattleArenaBattleRoom_Text_MakeWayForGreta::
 # 532 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "REFEREE: The ARENA TYCOON!\n"
+	.string "{SPEAKER NAME_REFEREE}The ARENA TYCOON!\n"
 	.string "Make way for GRETA!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_GretaYoureChallenger::

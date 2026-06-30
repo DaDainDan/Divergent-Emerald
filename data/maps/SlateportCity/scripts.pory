@@ -927,12 +927,12 @@ text SlateportCity_Text_CaptainsACelebrity {
 }
 
 text SlateportCity_Text_BigSmileForCamera {
-	"TY: Okay, CAPT. STERN, a big smile
+	"{SPEAKER NAME_TY}Okay, CAPT. STERN, a big smile
 	for the camera!"
 }
 
 text SlateportCity_Text_MostInvaluableExperience {
-	"GABBY: I see, I see. You've had a most
+	"{SPEAKER NAME_GABBY}I see, I see. You've had a most
 	invaluable experience…"
 }
 
@@ -942,7 +942,7 @@ text SlateportCity_Text_SternMoveAheadWithExploration {
 }
 
 text SlateportCity_Text_GabbyWonderfulThanksForInterview {
-	"GABBY: That's wonderful, CAPT. STERN!
+	"{SPEAKER NAME_GABBY}That's wonderful, CAPT. STERN!
 	Thank you for taking the time from
 	your busy schedule to talk to us.
 

@@ -199,7 +199,7 @@ text RusturfTunnel_Text_ComeAndGetSome {
 }
 
 text RusturfTunnel_Text_Peeko {
-	"PEEKO: Pii pihyoh!"
+	"{SPEAKER NAME_PEEKO}Pii pihyoh!"
 }
 
 text RusturfTunnel_Text_GruntIntro {
@@ -259,7 +259,7 @@ text RusturfTunnel_Text_ThankYouLetsGoHomePeeko {
 	Come, PEEKO, we should make our way
 	home.
 
-	PEEKO: Pihyoh!"
+	{SPEAKER NAME_PEEKO}Pihyoh!"
 }
 
 text RusturfTunnel_Text_WhyCantTheyKeepDigging {

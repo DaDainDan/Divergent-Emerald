@@ -744,7 +744,7 @@ MauvilleCity_EventScript_DefeatedWally_Movement_4:
 
 MauvilleCity_Text_UncleHesTooPeppy::
 # 242 "data/maps/MauvilleCity/scripts.pory"
-	.string "UNCLE: It's because of POKéMON that\n"
+	.string "{SPEAKER NAME_UNKNOWN}It's because of POKéMON that\n"
 	.string "this boy's got more pep, I suppose…\l"
 	.string "But he's become a bit too peppy…$"
 
@@ -757,7 +757,7 @@ MauvilleCity_Text_WallyWantToChallengeGym::
 
 MauvilleCity_Text_UncleYourePushingIt::
 # 257 "data/maps/MauvilleCity/scripts.pory"
-	.string "UNCLE: Now hold on, WALLY.\p"
+	.string "{SPEAKER NAME_UNKNOWN}Now hold on, WALLY.\p"
 	.string "Since you started living with POKéMON,\n"
 	.string "you have grown quite a lot stronger.\p"
 	.string "But don't you think you're pushing it\n"
@@ -787,7 +787,7 @@ MauvilleCity_Text_WallyMyUncleWontKnowImStrong::
 
 MauvilleCity_Text_UncleCanYouBattleWally::
 # 293 "data/maps/MauvilleCity/scripts.pory"
-	.string "UNCLE: {PLAYER}{KUN}, was it?\n"
+	.string "{SPEAKER NAME_WADE}{PLAYER}{KUN}, was it?\n"
 	.string "On WALLY's behalf, can I ask you to\l"
 	.string "battle with him just this once?\p"
 	.string "I don't think he's going to listen to\n"
@@ -824,7 +824,7 @@ MauvilleCity_Text_ThankYouNotEnoughToBattle::
 
 MauvilleCity_Text_UncleNoNeedToBeDown::
 # 335 "data/maps/MauvilleCity/scripts.pory"
-	.string "UNCLE: WALLY, there's no need to be so\n"
+	.string "{SPEAKER NAME_WADE}WALLY, there's no need to be so\n"
 	.string "down on yourself.\p"
 	.string "Why, what's keeping you from becoming\n"
 	.string "stronger and stronger?\p"
@@ -833,7 +833,7 @@ MauvilleCity_Text_UncleNoNeedToBeDown::
 
 MauvilleCity_Text_UncleVisitUsSometime::
 # 346 "data/maps/MauvilleCity/scripts.pory"
-	.string "UNCLE: {PLAYER}{KUN}, it just dawned on me\n"
+	.string "{SPEAKER NAME_WADE}{PLAYER}{KUN}, it just dawned on me\n"
 	.string "that you must be the TRAINER who kept\l"
 	.string "an eye out for WALLY when he caught\l"
 	.string "his POKéMON.\p"

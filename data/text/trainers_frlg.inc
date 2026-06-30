@@ -533,12 +533,12 @@ Route16_Text_RubenRematchIntro::
 
 Route16_Text_JedRematchIntro::
 # 553 "data/text/trainers_frlg.pory"
-	.string "JED: Are you here to see our\n"
+	.string "{SPEAKER NAME_JED}Are you here to see our\n"
 	.string "love, which knows no bounds?$"
 
 Route16_Text_LeaRematchIntro::
 # 558 "data/text/trainers_frlg.pory"
-	.string "LEA: Sometimes, the intensity of\n"
+	.string "{SPEAKER NAME_LEA}Sometimes, the intensity of\n"
 	.string "our love scares me.$"
 
 Route17_Text_RaulRematchIntro::
@@ -773,7 +773,7 @@ Route21_North_Text_LilRematchIntro::
 
 Route21_North_Text_IanRematchIntro::
 # 801 "data/text/trainers_frlg.pory"
-	.string "IAN: My sis is still a slob.\n"
+	.string "{SPEAKER NAME_IAN}My sis is still a slob.\n"
 	.string "Help me get her into shape!$"
 
 Route25_Text_JoeyRematchIntro::
@@ -955,12 +955,12 @@ ThreeIsland_BondBridge_Text_TishaRematchIntro::
 
 ThreeIsland_BondBridge_Text_JoyRematchIntro::
 # 989 "data/text/trainers_frlg.pory"
-	.string "JOY: We've gotten stronger!\n"
+	.string "{SPEAKER NAME_JOY}We've gotten stronger!\n"
 	.string "Lots and lots!$"
 
 ThreeIsland_BondBridge_Text_MegRematchIntro::
 # 994 "data/text/trainers_frlg.pory"
-	.string "MEG: You can't beat us today!$"
+	.string "{SPEAKER NAME_MEG}You can't beat us today!$"
 
 FiveIsland_WaterLabyrinth_Text_AlizeRematchIntro::
 # 998 "data/text/trainers_frlg.pory"
@@ -1087,12 +1087,12 @@ SixIsland_WaterPath_Text_EarlRematchIntro::
 
 SixIsland_WaterPath_Text_MiuRematchIntro::
 # 1129 "data/text/trainers_frlg.pory"
-	.string "MIU: Hello, POKéMON!\n"
+	.string "{SPEAKER NAME_MIU}Hello, POKéMON!\n"
 	.string "It's time to play again!$"
 
 SixIsland_WaterPath_Text_MiaRematchIntro::
 # 1134 "data/text/trainers_frlg.pory"
-	.string "MIA: Hello, POKéMON!\n"
+	.string "{SPEAKER NAME_MIA}Hello, POKéMON!\n"
 	.string "It's time to battle again!$"
 
 SixIsland_RuinValley_Text_StanlyRematchIntro::

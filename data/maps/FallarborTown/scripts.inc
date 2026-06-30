@@ -94,7 +94,7 @@ FallarborTown_Text_MyPreciousAzurill::
 
 FallarborTown_Text_Azurill::
 # 77 "data/maps/FallarborTown/scripts.pory"
-	.string "AZURILL: Rooreelooo.$"
+	.string "Rooreelooo.$"
 
 FallarborTown_Text_HaveYouChallengedFlannery::
 # 81 "data/maps/FallarborTown/scripts.pory"

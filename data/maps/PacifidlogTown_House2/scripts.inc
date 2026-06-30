@@ -170,7 +170,7 @@ PacifidlogTown_House2_Text_GetGoodTMInXDays::
 
 PacifidlogTown_House2_Text_Rurii::
 # 118 "data/maps/PacifidlogTown_House2/scripts.pory"
-	.string "AZURILL: Rurii.$"
+	.string "Rurii.$"
 
 PacifidlogTown_House2_Text_VeryFriendlyWithTrainer::
 # 122 "data/maps/PacifidlogTown_House2/scripts.pory"
@@ -179,7 +179,7 @@ PacifidlogTown_House2_Text_VeryFriendlyWithTrainer::
 
 PacifidlogTown_House2_Text_Rururi::
 # 127 "data/maps/PacifidlogTown_House2/scripts.pory"
-	.string "AZURILL: Rururi!$"
+	.string "Rururi!$"
 
 PacifidlogTown_House2_Text_DoesntLikeTrainerVeryMuch::
 # 131 "data/maps/PacifidlogTown_House2/scripts.pory"

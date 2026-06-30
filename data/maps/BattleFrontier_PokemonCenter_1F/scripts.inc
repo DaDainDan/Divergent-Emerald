@@ -77,4 +77,4 @@ BattleFrontier_PokemonCenter_1F_Text_GoingThroughEveryChallenge::
 
 BattleFrontier_PokemonCenter_1F_Text_Skitty::
 # 63 "data/maps/BattleFrontier_PokemonCenter_1F/scripts.pory"
-	.string "SKITTY: Mya myaaah!$"
+	.string "Mya myaaah!$"

@@ -647,12 +647,12 @@ SlateportCity_PokemonFanClub_Text_MonEnjoyedProtein::
 
 SlateportCity_PokemonFanClub_Text_Skitty::
 # 403 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	.string "SKITTY: Fffnyaaaah…$"
+	.string "Fffnyaaaah…$"
 
 SlateportCity_PokemonFanClub_Text_Zigzagoon::
 # 407 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	.string "ZIGZAGOON: Kyuuu…$"
+	.string "Kyuuu…$"
 
 SlateportCity_PokemonFanClub_Text_Azumarill::
 # 411 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	.string "AZUMARILL: Marimari?$"
+	.string "Marimari?$"

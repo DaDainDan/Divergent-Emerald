@@ -44,4 +44,4 @@ RustboroCity_House3_Text_NamingPikachuPekachu::
 
 RustboroCity_House3_Text_Pekachu::
 # 39 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "PEKACHU: Peka!$"
+	.string "{SPEAKER NAME_PEKACHU}Peka!$"

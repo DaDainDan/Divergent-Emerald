@@ -1892,7 +1892,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_MakeWayForDomeAceTucker::
 
 BattleFrontier_BattleDomeBattleRoom_Text_SpectatorTuckerChant::
 # 921 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	.string "Spectators: TUCKER! TUCKER!\n"
+	.string "{SPEAKER NAME_SPECTATORS}TUCKER! TUCKER!\n"
 	.string "TUCKER! TUCKER! TUCKER!$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_TuckerSilverIntro::

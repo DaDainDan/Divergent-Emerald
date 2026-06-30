@@ -43,4 +43,4 @@ FortreeCity_House5_Text_AdaptedToNature::
 
 FortreeCity_House5_Text_Zigzagoon::
 # 37 "data/maps/FortreeCity_House5/scripts.pory"
-	.string "ZIGZAGOON: Bufuu!$"
+	.string "Bufuu!$"

@@ -92,42 +92,42 @@ SixIsland_WaterPath_Text_EarlPostBattle::
 
 SixIsland_WaterPath_Text_MiuIntro::
 # 91 "data/maps/SixIsland_WaterPath_Frlg/scripts.pory"
-	.string "MIU: Hello, POKéMON!\n"
+	.string "{SPEAKER NAME_MIU}Hello, POKéMON!\n"
 	.string "It's time to play!$"
 
 SixIsland_WaterPath_Text_MiuDefeat::
 # 96 "data/maps/SixIsland_WaterPath_Frlg/scripts.pory"
-	.string "MIU: Oh, no!\n"
+	.string "{SPEAKER NAME_MIU}Oh, no!\n"
 	.string "Mommy!$"
 
 SixIsland_WaterPath_Text_MiuPostBattle::
 # 101 "data/maps/SixIsland_WaterPath_Frlg/scripts.pory"
-	.string "MIU: It makes me all sad inside\n"
+	.string "{SPEAKER NAME_MIU}It makes me all sad inside\n"
 	.string "when we lose…$"
 
 SixIsland_WaterPath_Text_MiuNotEnoughMons::
 # 106 "data/maps/SixIsland_WaterPath_Frlg/scripts.pory"
-	.string "MIU: MIA and I are TWINS.\n"
+	.string "{SPEAKER NAME_MIU}MIA and I are TWINS.\n"
 	.string "We want to battle together.$"
 
 SixIsland_WaterPath_Text_MiaIntro::
 # 111 "data/maps/SixIsland_WaterPath_Frlg/scripts.pory"
-	.string "MIA: Hello, POKéMON!\n"
+	.string "{SPEAKER NAME_MIA}Hello, POKéMON!\n"
 	.string "It's time to battle!$"
 
 SixIsland_WaterPath_Text_MiaDefeat::
 # 116 "data/maps/SixIsland_WaterPath_Frlg/scripts.pory"
-	.string "MIA: You're mean!\n"
+	.string "{SPEAKER NAME_MIA}You're mean!\n"
 	.string "You're bad for winning!$"
 
 SixIsland_WaterPath_Text_MiaPostBattle::
 # 121 "data/maps/SixIsland_WaterPath_Frlg/scripts.pory"
-	.string "MIA: Ohh…\n"
+	.string "{SPEAKER NAME_MIA}Ohh…\n"
 	.string "I'm sorry, my POKéMON…$"
 
 SixIsland_WaterPath_Text_MiaNotEnoughMons::
 # 126 "data/maps/SixIsland_WaterPath_Frlg/scripts.pory"
-	.string "MIA: Oh, you only have one\n"
+	.string "{SPEAKER NAME_MIA}Oh, you only have one\n"
 	.string "POKéMON?\p"
 	.string "Don't you feel lonesome?$"
 

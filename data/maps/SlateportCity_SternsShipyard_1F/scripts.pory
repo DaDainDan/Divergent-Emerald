@@ -52,7 +52,7 @@ script SlateportCity_SternsShipyard_1F_EventScript_Briney {
 }
 
 text SlateportCity_SternsShipyard_1F_Text_CantMakeHeadsOrTails {
-	"Umm… If this goes here, and that
+	"{SPEAKER NAME_UNKNOWN}Umm… If this goes here, and that
 	goes over there…
 
 	Then where does this thing go?
@@ -63,7 +63,7 @@ text SlateportCity_SternsShipyard_1F_Text_CantMakeHeadsOrTails {
 }
 
 text SlateportCity_SternsShipyard_1F_Text_MeetDockDeliverToStern {
-	"Hm?
+	"{SPEAKER NAME_UNKNOWN}Hm?
 	Hi, I'm DOCK.
 
 	CAPT. STERN commissioned me to
@@ -83,7 +83,7 @@ text SlateportCity_SternsShipyard_1F_Text_MeetDockDeliverToStern {
 }
 
 text SlateportCity_SternsShipyard_1F_Text_CouldYouFindStern {
-	"DOCK: Where could CAPT. STERN have
+	"{SPEAKER NAME_DOCK}Where could CAPT. STERN have
 	gone off to?
 
 	Could you go find CAPT. STERN and
@@ -91,7 +91,7 @@ text SlateportCity_SternsShipyard_1F_Text_CouldYouFindStern {
 }
 
 text SlateportCity_SternsShipyard_1F_Text_CouldUseAdviceFromVeteran {
-	"DOCK: Shipbuilding is an art.
+	"{SPEAKER NAME_DOCK}Shipbuilding is an art.
 
 	A lot of things can't be figured out
 	just by calculating.
@@ -101,7 +101,7 @@ text SlateportCity_SternsShipyard_1F_Text_CouldUseAdviceFromVeteran {
 }
 
 text SlateportCity_SternsShipyard_1F_Text_BrineyJoinedUs {
-	"DOCK: Hi! MR. BRINEY's joined us to
+	"{SPEAKER NAME_DOCK}Hi! MR. BRINEY's joined us to
 	lend us his help.
 
 	Thanks to the veteran sailor, the
@@ -109,7 +109,7 @@ text SlateportCity_SternsShipyard_1F_Text_BrineyJoinedUs {
 }
 
 text SlateportCity_SternsShipyard_1F_Text_FerryIsReady {
-	"DOCK: The ferry is finally ready!
+	"{SPEAKER NAME_DOCK}The ferry is finally ready!
 
 	The new S.S. TIDAL is truly a marvel
 	of technology!
@@ -122,7 +122,7 @@ text SlateportCity_SternsShipyard_1F_Text_FerryIsReady {
 }
 
 text SlateportCity_SternsShipyard_1F_Text_DecidedToHelpDock {
-	"MR. BRINEY: Ah, {PLAYER}{KUN}!
+	"{SPEAKER NAME_BRINEY}Ah, {PLAYER}{KUN}!
 	It's been too long!
 
 	Aye, since I met you, this old sea dog's

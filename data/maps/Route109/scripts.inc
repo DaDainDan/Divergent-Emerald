@@ -807,45 +807,45 @@ Route109_EventScript_DoSailToDewford_Movement_1:
 
 DewfordTown_Text_BrineyLandedInSlateportDeliverGoods::
 # 266 "data/maps/Route109/scripts.pory"
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "{SPEAKER NAME_BRINEY}Ahoy!\n"
 	.string "We've made land in SLATEPORT!\p"
 	.string "I suppose you're going to visit CAPT.\n"
 	.string "STERN and deliver the DEVON GOODS?$"
 
 Route109_Text_BrineySailToDewfordQuestion::
 # 274 "data/maps/Route109/scripts.pory"
-	.string "MR. BRINEY: I thought you're supposed\n"
+	.string "{SPEAKER NAME_BRINEY}I thought you're supposed\n"
 	.string "to deliver the DEVON GOODS.\p"
 	.string "Would you like to sail back to\n"
 	.string "DEWFORD, then?$"
 
 Route109_Text_BrineyDewfordItIs::
 # 282 "data/maps/Route109/scripts.pory"
-	.string "MR. BRINEY: DEWFORD it is, then!\p"
+	.string "{SPEAKER NAME_BRINEY}DEWFORD it is, then!\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
 Route109_Text_BrineyDeliverDevonGoods::
 # 289 "data/maps/Route109/scripts.pory"
-	.string "MR. BRINEY: Then you go on and deliver\n"
+	.string "{SPEAKER NAME_BRINEY}Then you go on and deliver\n"
 	.string "the DEVON GOODS. I'll be waiting.$"
 
 DewfordTown_Text_BrineyLandedInSlateport::
 # 294 "data/maps/Route109/scripts.pory"
-	.string "MR. BRINEY: Ahoy! We've made land in\n"
+	.string "{SPEAKER NAME_BRINEY}Ahoy! We've made land in\n"
 	.string "SLATEPORT!\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail again!$"
 
 Route109_Text_BrineyWhereAreWeBound::
 # 302 "data/maps/Route109/scripts.pory"
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "{SPEAKER NAME_BRINEY}Ahoy!\n"
 	.string "For you, I'll go out to sea anytime!\p"
 	.string "Now, my friend, where are we bound?$"
 
 Route109_Text_BrineyTellMeWhenYouNeedToSail::
 # 309 "data/maps/Route109/scripts.pory"
-	.string "MR. BRINEY: You just tell me whenever\n"
+	.string "{SPEAKER NAME_BRINEY}You just tell me whenever\n"
 	.string "you need to set sail again!$"
 
 Route109_Text_ChillAtMyPapasSpot::
@@ -892,7 +892,7 @@ Route109_Text_ZigzagoonPicksUpLitter::
 
 Route109_Text_ZigzagoonCry::
 # 363 "data/maps/Route109/scripts.pory"
-	.string "ZIGZAGOON: Guguu?$"
+	.string "Guguu?$"
 
 Route109_Text_SeashoreHouseSign::
 # 367 "data/maps/Route109/scripts.pory"

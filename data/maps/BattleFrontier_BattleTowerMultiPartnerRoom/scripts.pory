@@ -2190,3 +2190,165 @@ text BattleFrontier_BattleTowerMultiPartnerRoom_Text_SwimmerMReject {
 	"If we meet again, you have to team up
 	with me. You'll do that, right?"
 }
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_BikerIntro {
+	"Hi, there! Hello!
+	I'm {STR_VAR_1}, and I'm a SWIMMER!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_BikerMon1 {
+	"Check out what I've been raising!
+	One {STR_VAR_2} with {STR_VAR_1} and"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_BikerMon2Ask {
+	"one {STR_VAR_2} with {STR_VAR_1}!
+
+	Sweet, huh?
+	It'd be sweet to form a team, too!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_BikerAccept {
+	"Much obliged!
+	I'll get this registration thing done!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_BikerReject {
+	"If we meet again, you have to team up
+	with me. You'll do that, right?"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_GamerIntro {
+	"Hi, there! Hello!
+	I'm {STR_VAR_1}, and I'm a SWIMMER!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_GamerMon1 {
+	"Check out what I've been raising!
+	One {STR_VAR_2} with {STR_VAR_1} and"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_GamerMon2Ask {
+	"one {STR_VAR_2} with {STR_VAR_1}!
+
+	Sweet, huh?
+	It'd be sweet to form a team, too!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_GamerAccept {
+	"Much obliged!
+	I'll get this registration thing done!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_GamerReject {
+	"If we meet again, you have to team up
+	with me. You'll do that, right?"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_BurglarIntro {
+	"Hi, there! Hello!
+	I'm {STR_VAR_1}, and I'm a SWIMMER!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_BurglarMon1 {
+	"Check out what I've been raising!
+	One {STR_VAR_2} with {STR_VAR_1} and"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_BurglarMon2Ask {
+	"one {STR_VAR_2} with {STR_VAR_1}!
+
+	Sweet, huh?
+	It'd be sweet to form a team, too!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_BurglarAccept {
+	"Much obliged!
+	I'll get this registration thing done!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_BurglarReject {
+	"If we meet again, you have to team up
+	with me. You'll do that, right?"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_ScientistIntro {
+	"Hi, there! Hello!
+	I'm {STR_VAR_1}, and I'm a SWIMMER!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_ScientistMon1 {
+	"Check out what I've been raising!
+	One {STR_VAR_2} with {STR_VAR_1} and"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_ScientistMon2Ask {
+	"one {STR_VAR_2} with {STR_VAR_1}!
+
+	Sweet, huh?
+	It'd be sweet to form a team, too!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_ScientistAccept {
+	"Much obliged!
+	I'll get this registration thing done!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_ScientistReject {
+	"If we meet again, you have to team up
+	with me. You'll do that, right?"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_JugglerIntro {
+	"Hi, there! Hello!
+	I'm {STR_VAR_1}, and I'm a SWIMMER!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_JugglerMon1 {
+	"Check out what I've been raising!
+	One {STR_VAR_2} with {STR_VAR_1} and"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_JugglerMon2Ask {
+	"one {STR_VAR_2} with {STR_VAR_1}!
+
+	Sweet, huh?
+	It'd be sweet to form a team, too!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_JugglerAccept {
+	"Much obliged!
+	I'll get this registration thing done!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_JugglerReject {
+	"If we meet again, you have to team up
+	with me. You'll do that, right?"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_EngineerIntro {
+	"Hi, there! Hello!
+	I'm {STR_VAR_1}, and I'm a SWIMMER!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_EngineerMon1 {
+	"Check out what I've been raising!
+	One {STR_VAR_2} with {STR_VAR_1} and"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_EngineerMon2Ask {
+	"one {STR_VAR_2} with {STR_VAR_1}!
+
+	Sweet, huh?
+	It'd be sweet to form a team, too!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_EngineerAccept {
+	"Much obliged!
+	I'll get this registration thing done!"
+}
+
+text BattleFrontier_BattleTowerMultiPartnerRoom_Text_EngineerReject {
+	"If we meet again, you have to team up
+	with me. You'll do that, right?"
+}

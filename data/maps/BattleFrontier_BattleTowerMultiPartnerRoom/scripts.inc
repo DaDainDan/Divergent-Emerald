@@ -2306,3 +2306,159 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_SwimmerMReject::
 # 2189 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
 	.string "If we meet again, you have to team up\n"
 	.string "with me. You'll do that, right?$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_BikerIntro::
+# 2194 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Hi, there! Hello!\n"
+	.string "I'm {STR_VAR_1}, and I'm a SWIMMER!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_BikerMon1::
+# 2199 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Check out what I've been raising!\n"
+	.string "One {STR_VAR_2} with {STR_VAR_1} and$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_BikerMon2Ask::
+# 2204 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "one {STR_VAR_2} with {STR_VAR_1}!\p"
+	.string "Sweet, huh?\n"
+	.string "It'd be sweet to form a team, too!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_BikerAccept::
+# 2211 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Much obliged!\n"
+	.string "I'll get this registration thing done!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_BikerReject::
+# 2216 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "If we meet again, you have to team up\n"
+	.string "with me. You'll do that, right?$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_GamerIntro::
+# 2221 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Hi, there! Hello!\n"
+	.string "I'm {STR_VAR_1}, and I'm a SWIMMER!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_GamerMon1::
+# 2226 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Check out what I've been raising!\n"
+	.string "One {STR_VAR_2} with {STR_VAR_1} and$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_GamerMon2Ask::
+# 2231 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "one {STR_VAR_2} with {STR_VAR_1}!\p"
+	.string "Sweet, huh?\n"
+	.string "It'd be sweet to form a team, too!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_GamerAccept::
+# 2238 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Much obliged!\n"
+	.string "I'll get this registration thing done!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_GamerReject::
+# 2243 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "If we meet again, you have to team up\n"
+	.string "with me. You'll do that, right?$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_BurglarIntro::
+# 2248 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Hi, there! Hello!\n"
+	.string "I'm {STR_VAR_1}, and I'm a SWIMMER!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_BurglarMon1::
+# 2253 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Check out what I've been raising!\n"
+	.string "One {STR_VAR_2} with {STR_VAR_1} and$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_BurglarMon2Ask::
+# 2258 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "one {STR_VAR_2} with {STR_VAR_1}!\p"
+	.string "Sweet, huh?\n"
+	.string "It'd be sweet to form a team, too!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_BurglarAccept::
+# 2265 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Much obliged!\n"
+	.string "I'll get this registration thing done!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_BurglarReject::
+# 2270 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "If we meet again, you have to team up\n"
+	.string "with me. You'll do that, right?$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_ScientistIntro::
+# 2275 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Hi, there! Hello!\n"
+	.string "I'm {STR_VAR_1}, and I'm a SWIMMER!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_ScientistMon1::
+# 2280 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Check out what I've been raising!\n"
+	.string "One {STR_VAR_2} with {STR_VAR_1} and$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_ScientistMon2Ask::
+# 2285 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "one {STR_VAR_2} with {STR_VAR_1}!\p"
+	.string "Sweet, huh?\n"
+	.string "It'd be sweet to form a team, too!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_ScientistAccept::
+# 2292 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Much obliged!\n"
+	.string "I'll get this registration thing done!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_ScientistReject::
+# 2297 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "If we meet again, you have to team up\n"
+	.string "with me. You'll do that, right?$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_JugglerIntro::
+# 2302 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Hi, there! Hello!\n"
+	.string "I'm {STR_VAR_1}, and I'm a SWIMMER!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_JugglerMon1::
+# 2307 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Check out what I've been raising!\n"
+	.string "One {STR_VAR_2} with {STR_VAR_1} and$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_JugglerMon2Ask::
+# 2312 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "one {STR_VAR_2} with {STR_VAR_1}!\p"
+	.string "Sweet, huh?\n"
+	.string "It'd be sweet to form a team, too!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_JugglerAccept::
+# 2319 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Much obliged!\n"
+	.string "I'll get this registration thing done!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_JugglerReject::
+# 2324 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "If we meet again, you have to team up\n"
+	.string "with me. You'll do that, right?$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_EngineerIntro::
+# 2329 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Hi, there! Hello!\n"
+	.string "I'm {STR_VAR_1}, and I'm a SWIMMER!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_EngineerMon1::
+# 2334 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Check out what I've been raising!\n"
+	.string "One {STR_VAR_2} with {STR_VAR_1} and$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_EngineerMon2Ask::
+# 2339 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "one {STR_VAR_2} with {STR_VAR_1}!\p"
+	.string "Sweet, huh?\n"
+	.string "It'd be sweet to form a team, too!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_EngineerAccept::
+# 2346 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "Much obliged!\n"
+	.string "I'll get this registration thing done!$"
+
+BattleFrontier_BattleTowerMultiPartnerRoom_Text_EngineerReject::
+# 2351 "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.pory"
+	.string "If we meet again, you have to team up\n"
+	.string "with me. You'll do that, right?$"

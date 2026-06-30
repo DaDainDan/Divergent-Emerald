@@ -99,4 +99,4 @@ MossdeepCity_House2_Text_PokemonCarriesMailBackAndForth::
 
 MossdeepCity_House2_Text_Wingull::
 # 47 "data/maps/MossdeepCity_House2/scripts.pory"
-	.string "WINGULL: Pihyoh!$"
+	.string "Pihyoh!$"

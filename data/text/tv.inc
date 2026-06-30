@@ -669,7 +669,7 @@ gTVMassOutbreakText00::
 
 gTV3CheersForPokeblocksText00::
 # 804 "data/text/tv.pory"
-	.string "MC: We hope you're in good cheer,\n"
+	.string "{SPEAKER NAME_MC}We hope you're in good cheer,\n"
 	.string "“3 CHEERS FOR {POKEBLOCK}S” is here!\p"
 	.string "Today, we examine the {POKEBLOCK} blended\n"
 	.string "by {STR_VAR_1} and associates.\p"
@@ -680,8 +680,8 @@ gTV3CheersForPokeblocksText00::
 
 gTV3CheersForPokeblocksText01::
 # 818 "data/text/tv.pory"
-	.string "GULPIN: Gubi! Gubii!\p"
-	.string "MC: And the verdict is very {STR_VAR_1}!\n"
+	.string "{SPEAKER NAME_GULPIN}Gubi! Gubii!\p"
+	.string "{SPEAKER NAME_MC}And the verdict is very {STR_VAR_1}!\n"
 	.string "GULPIN says it tastes “{STR_VAR_2}!”\p"
 	.string "Thank you so much, {STR_VAR_3}!$"
 
@@ -694,8 +694,8 @@ gTV3CheersForPokeblocksText02::
 
 gTV3CheersForPokeblocksText03::
 # 835 "data/text/tv.pory"
-	.string "GULPIN: Gubi! Gubii!\p"
-	.string "MC: Hmm… It's too {STR_VAR_1}.\n"
+	.string "{SPEAKER NAME_GULPIN}Gubi! Gubii!\p"
+	.string "{SPEAKER NAME_MC}Hmm… It's too {STR_VAR_1}.\n"
 	.string "GULPIN says it tastes “{STR_VAR_2}!”\p"
 	.string "It looks like {STR_VAR_3}'s errors\n"
 	.string "hurt the blending quality…$"
@@ -1197,7 +1197,7 @@ SmartShopper_Text_ClerkNormal::
 	.string "Let's interview the clerk to get the\n"
 	.string "lowdown.\p"
 	.string "Hi, how's your business?\p"
-	.string "CLERK: Oh, we're doing excellent.\p"
+	.string "{SPEAKER NAME_CLERK}Oh, we're doing excellent.\p"
 	.string "Recently, {STR_VAR_2} has been\n"
 	.string "selling especially strongly.\p"
 	.string "Why, just the other day a TRAINER\n"
@@ -1242,19 +1242,19 @@ SmartShopper_Text_RandomComment4::
 
 SmartShopper_Text_SecondItem::
 # 1504 "data/text/tv.pory"
-	.string "CLERK: {STR_VAR_1} also bought the item\n"
+	.string "{SPEAKER NAME_CLERK}{STR_VAR_1} also bought the item\n"
 	.string "{STR_VAR_2} in bulk, taking {STR_VAR_3}.\p"
 	.string "{SPEAKER NAME_INTERVIEWER}Oh, that's smart.\n"
 	.string "{STR_VAR_2}'s a very good item, too.$"
 
 SmartShopper_Text_ThirdItem::
 # 1512 "data/text/tv.pory"
-	.string "CLERK: And, the TRAINER also bought\n"
+	.string "{SPEAKER NAME_CLERK}And, the TRAINER also bought\n"
 	.string "{STR_VAR_3} of the item {STR_VAR_2}.$"
 
 SmartShopper_Text_DuringSale::
 # 1517 "data/text/tv.pory"
-	.string "CLERK: Plus, it was during a big sale.\n"
+	.string "{SPEAKER NAME_CLERK}Plus, it was during a big sale.\n"
 	.string "That's smart shopping.$"
 
 SmartShopper_Text_OutroNormal::
@@ -1269,7 +1269,7 @@ SmartShopper_Text_OutroNormal::
 
 SmartShopper_Text_IsVIP::
 # 1535 "data/text/tv.pory"
-	.string "CLERK: {STR_VAR_1} is a VIP customer,\n"
+	.string "{SPEAKER NAME_CLERK}{STR_VAR_1} is a VIP customer,\n"
 	.string "no doubt about it.$"
 
 SmartShopper_Text_ClerkMax::
@@ -1277,7 +1277,7 @@ SmartShopper_Text_ClerkMax::
 	.string "Let's interview the clerk to get the\n"
 	.string "lowdown.\p"
 	.string "Hi, how's your business?\p"
-	.string "CLERK: Oh, we're doing unbelievable\n"
+	.string "{SPEAKER NAME_CLERK}Oh, we're doing unbelievable\n"
 	.string "business. It's almost overwhelming.\p"
 	.string "Recently, a TRAINER named {STR_VAR_1}\n"
 	.string "bought the item {STR_VAR_2} in bulk.\p"
@@ -1288,10 +1288,10 @@ SmartShopper_Text_ClerkMax::
 	.string "It's just unheard of!\p"
 	.string "{SPEAKER NAME_INTERVIEWER}So that would be like 100\n"
 	.string "or 200 sold?\p"
-	.string "CLERK: Oh, no, much more than that!\p"
+	.string "{SPEAKER NAME_CLERK}Oh, no, much more than that!\p"
 	.string "{SPEAKER NAME_INTERVIEWER}Oh, my goodness!\n"
 	.string "{STR_VAR_1} must be a special shopper!\p"
-	.string "CLERK: {STR_VAR_1} is a VIP customer,\n"
+	.string "{SPEAKER NAME_CLERK}{STR_VAR_1} is a VIP customer,\n"
 	.string "no doubt about it.$"
 
 SmartShopper_Text_OutroMax::
@@ -1405,24 +1405,24 @@ gTVTodaysRivalTrainerText06::
 TrendWatcher_Text_Intro::
 # 1711 "data/text/tv.pory"
 	.string "DEWFORD TREND-WATCHER NETWORK!\p"
-	.string "MC: Wassup?\n"
+	.string "{SPEAKER NAME_MC}Wassup?\n"
 	.string "We'll keep it real with the latest on\l"
 	.string "what's hip and happening in DEWFORD.\p"
 	.string "Our guest today is this old cat whose\n"
 	.string "claim to fame is being the authority\l"
 	.string "on all things in DEWFORD.\p"
 	.string "Old man: Glad to be here.\p"
-	.string "MC: Let's cut to the chase, right on.\p"
+	.string "{SPEAKER NAME_MC}Let's cut to the chase, right on.\p"
 	.string "What's your word on what's groovin'\n"
 	.string "the good folks of DEWFORD?\p"
 	.string "Old man: {STR_VAR_1} {STR_VAR_2}.\p"
-	.string "MC: {STR_VAR_1} {STR_VAR_2},\n"
+	.string "{SPEAKER NAME_MC}{STR_VAR_1} {STR_VAR_2},\n"
 	.string "you say?\p"
 	.string "Old man: No.\p"
 	.string "{STR_VAR_1} {STR_VAR_2} never\n"
 	.string "did get popular at all.\p"
 	.string "Would you like to hear about it?\p"
-	.string "MC: Uh, no. What we want to know is\n"
+	.string "{SPEAKER NAME_MC}Uh, no. What we want to know is\n"
 	.string "what's the in thing of the moment…$"
 
 TrendWatcher_Text_MaleTaughtMePhrase::
@@ -1446,7 +1446,7 @@ TrendWatcher_Text_PhraseWasHopeless::
 	.string "I could, but…\p"
 	.string "Perhaps the {STR_VAR_1} part just\n"
 	.string "wasn't right…\p"
-	.string "MC: Uh, excuse me, compadre, I need\n"
+	.string "{SPEAKER NAME_MC}Uh, excuse me, compadre, I need\n"
 	.string "to hear about what's in now…$"
 
 TrendWatcher_Text_MaleTellMeBigger::
@@ -1463,7 +1463,7 @@ TrendWatcher_Text_FemaleTellMeBigger::
 
 TrendWatcher_Text_Outro::
 # 1786 "data/text/tv.pory"
-	.string "MC: …Uh… So, there you have it,\n"
+	.string "{SPEAKER NAME_MC}…Uh… So, there you have it,\n"
 	.string "all you trendy, hep cats out there!\p"
 	.string "{STR_VAR_1} {STR_VAR_2}…uh…\n"
 	.string "Didn't get hip or happening in DEWFORD!\p"
@@ -1875,79 +1875,79 @@ gTVTrainerFanClubText00::
 # 2297 "data/text/tv.pory"
 	.string "All together now!\n"
 	.string "TRAINER FAN CLUB!\p"
-	.string "MC: How's everyone groovin'?\n"
+	.string "{SPEAKER NAME_MC}How's everyone groovin'?\n"
 	.string "Today, we've rounded up the fans of\l"
 	.string "the hyper-popular TRAINER {STR_VAR_1}!\p"
-	.string "FANS: Wrooooooaaaaah!\p"
-	.string "FANS: {STR_VAR_1}!\p"
-	.string "MC: Everyone!\n"
+	.string "{SPEAKER NAME_FANS}Wrooooooaaaaah!\p"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_1}!\p"
+	.string "{SPEAKER NAME_MC}Everyone!\n"
 	.string "How do you like {STR_VAR_1}?!\p"
-	.string "FANS: We love {STR_VAR_1}!\p"
-	.string "MC: What do you love about\n"
+	.string "{SPEAKER NAME_FANS}We love {STR_VAR_1}!\p"
+	.string "{SPEAKER NAME_MC}What do you love about\n"
 	.string "{STR_VAR_1}?!$"
 
 gTVTrainerFanClubText01::
 # 2318 "data/text/tv.pory"
-	.string "FANS: Their cool way of throwing\n"
+	.string "{SPEAKER NAME_FANS}Their cool way of throwing\n"
 	.string "POKé BALLS!$"
 
 gTVTrainerFanClubText02::
 # 2323 "data/text/tv.pory"
-	.string "FANS: Their adorable way of running!$"
+	.string "{SPEAKER NAME_FANS}Their adorable way of running!$"
 
 gTVTrainerFanClubText03::
 # 2327 "data/text/tv.pory"
-	.string "FANS: How the TRAINER turns tough\n"
+	.string "{SPEAKER NAME_FANS}How the TRAINER turns tough\n"
 	.string "when the going gets tough!$"
 
 gTVTrainerFanClubText04::
 # 2332 "data/text/tv.pory"
-	.string "FANS: The TRAINER's knowledge of\n"
+	.string "{SPEAKER NAME_FANS}The TRAINER's knowledge of\n"
 	.string "POKéMON!$"
 
 gTVTrainerFanClubText05::
 # 2337 "data/text/tv.pory"
-	.string "FANS: The TRAINER's kindness toward\n"
+	.string "{SPEAKER NAME_FANS}The TRAINER's kindness toward\n"
 	.string "all POKéMON!$"
 
 gTVTrainerFanClubText06::
 # 2342 "data/text/tv.pory"
-	.string "FANS: The TRAINER's amazing\n"
+	.string "{SPEAKER NAME_FANS}The TRAINER's amazing\n"
 	.string "BIKE-riding techniques!$"
 
 gTVTrainerFanClubText07::
 # 2347 "data/text/tv.pory"
-	.string "FANS: The TRAINER's impressive\n"
+	.string "{SPEAKER NAME_FANS}The TRAINER's impressive\n"
 	.string "item-buying style!$"
 
 gTVTrainerFanClubText08::
 # 2352 "data/text/tv.pory"
-	.string "FANS: The TRAINER's charming way\n"
+	.string "{SPEAKER NAME_FANS}The TRAINER's charming way\n"
 	.string "of nicknaming POKéMON!$"
 
 gTVTrainerFanClubText09::
 # 2357 "data/text/tv.pory"
-	.string "FANS: The TRAINER's nifty style of\n"
+	.string "{SPEAKER NAME_FANS}The TRAINER's nifty style of\n"
 	.string "decorating a SECRET BASE!$"
 
 gTVTrainerFanClubText10::
 # 2362 "data/text/tv.pory"
-	.string "FANS: The TRAINER's bold ways of\n"
+	.string "{SPEAKER NAME_FANS}The TRAINER's bold ways of\n"
 	.string "using TMs!$"
 
 gTVTrainerFanClubText11::
 # 2367 "data/text/tv.pory"
-	.string "MC: As you've just seen, {STR_VAR_1}\n"
+	.string "{SPEAKER NAME_MC}As you've just seen, {STR_VAR_1}\n"
 	.string "is hot! Like, too hot to touch, yow!\p"
 	.string "Among {STR_VAR_1}'s FANS\n"
 	.string "there's a special slogan!\p"
-	.string "MC: When I say {STR_VAR_1},\n"
+	.string "{SPEAKER NAME_MC}When I say {STR_VAR_1},\n"
 	.string "you say…\p"
-	.string "FANS: {STR_VAR_2}!\p"
-	.string "FANS: {STR_VAR_3}!\p"
-	.string "FANS: {STR_VAR_2}!\p"
-	.string "FANS: {STR_VAR_3}!\p"
-	.string "MC: That's right, when someone says,\n"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_2}!\p"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_3}!\p"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_2}!\p"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_3}!\p"
+	.string "{SPEAKER NAME_MC}That's right, when someone says,\n"
 	.string "“{STR_VAR_1}”…\p"
 	.string "Come back with, “{STR_VAR_2}\n"
 	.string "{STR_VAR_3}!”\p"
@@ -1956,19 +1956,19 @@ gTVTrainerFanClubText11::
 	.string "of {STR_VAR_1}!\p"
 	.string "Okay, you, in front of the TV, join us!\n"
 	.string "All together now!\p"
-	.string "MC: When I say {STR_VAR_1},\n"
+	.string "{SPEAKER NAME_MC}When I say {STR_VAR_1},\n"
 	.string "you say…\p"
-	.string "FANS: {STR_VAR_2}!\p"
-	.string "FANS: {STR_VAR_3}!\p"
-	.string "FANS: {STR_VAR_2}!\p"
-	.string "FANS: {STR_VAR_3}!\p"
-	.string "MC: Thanks for joining us, all you\n"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_2}!\p"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_3}!\p"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_2}!\p"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_3}!\p"
+	.string "{SPEAKER NAME_MC}Thanks for joining us, all you\n"
 	.string "wild FANS of {STR_VAR_1}!\l"
 	.string "That's the show! See you again!\p"
-	.string "MC: When I say {STR_VAR_1},\n"
+	.string "{SPEAKER NAME_MC}When I say {STR_VAR_1},\n"
 	.string "you say…\p"
-	.string "FANS: {STR_VAR_2}!\p"
-	.string "FANS: {STR_VAR_3}!$"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_2}!\p"
+	.string "{SPEAKER NAME_FANS}{STR_VAR_3}!$"
 
 TVSpotTheCuties_Text_Intro::
 # 2421 "data/text/tv.pory"
@@ -2687,7 +2687,7 @@ TVSecretBaseSecrets_Text_UsedJumpMat::
 gTVSafariFanClubText00::
 # 3293 "data/text/tv.pory"
 	.string "SAFARI FAN CLUB!\p"
-	.string "REPORTER: All right, mates!\n"
+	.string "{SPEAKER NAME_REPORTER}All right, mates!\n"
 	.string "Tossing them SAFARI BALLS, are you?\p"
 	.string "You can bet I am here in the SAFARI\n"
 	.string "ZONE chock-full of amazing POKéMON!\p"
@@ -2698,7 +2698,7 @@ gTVSafariFanClubText00::
 
 gTVSafariFanClubText01::
 # 3309 "data/text/tv.pory"
-	.string "GUIDE: Everyone seems to be going\n"
+	.string "{SPEAKER NAME_GUIDE}Everyone seems to be going\n"
 	.string "hard at it.\p"
 	.string "{STR_VAR_1} is doing especially well.\p"
 	.string "Why, before, {STR_VAR_1} caught\n"
@@ -2717,15 +2717,15 @@ gTVSafariFanClubText03::
 
 gTVSafariFanClubText04::
 # 3331 "data/text/tv.pory"
-	.string "REPORTER: Is that right, then?\p"
+	.string "{SPEAKER NAME_REPORTER}Is that right, then?\p"
 	.string "Sounds like our mate {STR_VAR_1}\n"
 	.string "is a stout SAFARI master!\p"
-	.string "GUIDE: I hope the TRAINER comes back\n"
+	.string "{SPEAKER NAME_GUIDE}I hope the TRAINER comes back\n"
 	.string "and shows us that great technique.$"
 
 gTVSafariFanClubText05::
 # 3341 "data/text/tv.pory"
-	.string "GUIDE: No one seems to be doing\n"
+	.string "{SPEAKER NAME_GUIDE}No one seems to be doing\n"
 	.string "very well.\p"
 	.string "{STR_VAR_1} had it especially bad.\p"
 	.string "Why, before, the TRAINER only\n"
@@ -2733,7 +2733,7 @@ gTVSafariFanClubText05::
 
 gTVSafariFanClubText06::
 # 3351 "data/text/tv.pory"
-	.string "GUIDE: No one seems to be doing\n"
+	.string "{SPEAKER NAME_GUIDE}No one seems to be doing\n"
 	.string "very well.\p"
 	.string "{STR_VAR_1} had it especially bad.\p"
 	.string "Why, before, the TRAINER didn't\n"
@@ -2754,15 +2754,15 @@ gTVSafariFanClubText08::
 
 gTVSafariFanClubText09::
 # 3375 "data/text/tv.pory"
-	.string "REPORTER: Is that right, then?\p"
+	.string "{SPEAKER NAME_REPORTER}Is that right, then?\p"
 	.string "Sounds like our mate {STR_VAR_1}\n"
 	.string "needs more SAFARI seasoning.\p"
-	.string "GUIDE: I hope the TRAINER visits\n"
+	.string "{SPEAKER NAME_GUIDE}I hope the TRAINER visits\n"
 	.string "over and over to get the hang of it.$"
 
 gTVSafariFanClubText10::
 # 3385 "data/text/tv.pory"
-	.string "REPORTER: Quite right, it is!\n"
+	.string "{SPEAKER NAME_REPORTER}Quite right, it is!\n"
 	.string "Facing up to challenges is important!\p"
 	.string "Viewers, come on down to the SAFARI\n"
 	.string "and make the challenge yourself!\p"
@@ -2771,32 +2771,32 @@ gTVSafariFanClubText10::
 ContestLiveUpdates_Text_Intro::
 # 3395 "data/text/tv.pory"
 	.string "“POKéMON CONTEST LIVE UPDATES!”\p"
-	.string "MC: Thanks for joining us!\p"
+	.string "{SPEAKER NAME_MC}Thanks for joining us!\p"
 	.string "We're live from the just-ended\n"
 	.string "{STR_VAR_1} site.\p"
 	.string "The hall is still filled with\n"
 	.string "an audience unwilling to leave.\p"
-	.string "Spectator: {STR_VAR_2}!\p"
-	.string "Spectator: {STR_VAR_3}!\p"
-	.string "MC: As you've just heard, the CONTEST\n"
+	.string "{SPEAKER NAME_SPECTATOR}{STR_VAR_2}!\p"
+	.string "{SPEAKER NAME_SPECTATOR}{STR_VAR_3}!\p"
+	.string "{SPEAKER NAME_MC}As you've just heard, the CONTEST\n"
 	.string "was won by the POKéMON {STR_VAR_2}\l"
 	.string "of {STR_VAR_3}.\p"
-	.string "Spectator: {STR_VAR_2}!\n"
+	.string "{SPEAKER NAME_SPECTATOR}{STR_VAR_2}!\n"
 	.string "You're the best!\p"
-	.string "Spectator: {STR_VAR_3}!\n"
+	.string "{SPEAKER NAME_SPECTATOR}{STR_VAR_3}!\n"
 	.string "Way to go!\p"
-	.string "MC: Let's hear what the fans have\n"
+	.string "{SPEAKER NAME_MC}Let's hear what the fans have\n"
 	.string "to say about this CONTEST.$"
 
 ContestLiveUpdates_Text_WonBothRounds::
 # 3424 "data/text/tv.pory"
-	.string "Spectator: The {STR_VAR_2} was tops in\n"
+	.string "{SPEAKER NAME_SPECTATOR}The {STR_VAR_2} was tops in\n"
 	.string "both primary and secondary judging!\p"
 	.string "That {STR_VAR_2} will keep winning!$"
 
 ContestLiveUpdates_Text_BetterRound2::
 # 3431 "data/text/tv.pory"
-	.string "Spectator: The {STR_VAR_2} didn't do\n"
+	.string "{SPEAKER NAME_SPECTATOR}The {STR_VAR_2} didn't do\n"
 	.string "well in the primary judging, but it\l"
 	.string "cleaned up in the secondary judging!\p"
 	.string "It was a miraculous comeback\n"
@@ -2804,7 +2804,7 @@ ContestLiveUpdates_Text_BetterRound2::
 
 ContestLiveUpdates_Text_EqualRounds::
 # 3440 "data/text/tv.pory"
-	.string "Spectator: The {STR_VAR_2} remained\n"
+	.string "{SPEAKER NAME_SPECTATOR}The {STR_VAR_2} remained\n"
 	.string "consistent throughout both primary\l"
 	.string "and secondary judging.\p"
 	.string "{STR_VAR_3} and the {STR_VAR_2},\n"
@@ -2812,14 +2812,14 @@ ContestLiveUpdates_Text_EqualRounds::
 
 ContestLiveUpdates_Text_BetterRound1::
 # 3449 "data/text/tv.pory"
-	.string "Spectator: In terms of being {STR_VAR_1},\n"
+	.string "{SPEAKER NAME_SPECTATOR}In terms of being {STR_VAR_1},\n"
 	.string "that {STR_VAR_2} was outstanding.\p"
 	.string "I hope it makes better appeals\n"
 	.string "next time, though.$"
 
 ContestLiveUpdates_Text_GotNervous::
 # 3457 "data/text/tv.pory"
-	.string "Spectator: When the {STR_VAR_2} got\n"
+	.string "{SPEAKER NAME_SPECTATOR}When the {STR_VAR_2} got\n"
 	.string "nervous, I couldn't stop myself from\l"
 	.string "shouting encouragement.\p"
 	.string "I'd like to say this to that\n"
@@ -2827,19 +2827,19 @@ ContestLiveUpdates_Text_GotNervous::
 
 ContestLiveUpdates_Text_StartledFoes::
 # 3466 "data/text/tv.pory"
-	.string "Spectator: That {STR_VAR_2}'s appeal\n"
+	.string "{SPEAKER NAME_SPECTATOR}That {STR_VAR_2}'s appeal\n"
 	.string "startled even me!\p"
 	.string "{STR_VAR_2}, you were awesome!$"
 
 ContestLiveUpdates_Text_UsedCombo::
 # 3473 "data/text/tv.pory"
-	.string "Spectator: That {STR_VAR_2}'s combo\n"
+	.string "{SPEAKER NAME_SPECTATOR}That {STR_VAR_2}'s combo\n"
 	.string "appeal was stunning!\p"
 	.string "It's shaken me to the core!$"
 
 ContestLiveUpdates_Text_ExcitingAppeal::
 # 3480 "data/text/tv.pory"
-	.string "Spectator: The winning {STR_VAR_2}'s\n"
+	.string "{SPEAKER NAME_SPECTATOR}The winning {STR_VAR_2}'s\n"
 	.string "appeal got my heart pounding!$"
 
 ContestLiveUpdates_Text_WasCool::
@@ -2869,7 +2869,7 @@ ContestLiveUpdates_Text_WasTough::
 
 ContestLiveUpdates_Text_VeryExcitingAppeal::
 # 3510 "data/text/tv.pory"
-	.string "Spectator: The winning {STR_VAR_2}'s\n"
+	.string "{SPEAKER NAME_SPECTATOR}The winning {STR_VAR_2}'s\n"
 	.string "appeal still has my heart pounding!$"
 
 ContestLiveUpdates_Text_VeryCool::
@@ -2899,14 +2899,14 @@ ContestLiveUpdates_Text_VeryTough::
 
 ContestLiveUpdates_Text_TookBreak::
 # 3540 "data/text/tv.pory"
-	.string "Spectator: Even when the {STR_VAR_2}\n"
+	.string "{SPEAKER NAME_SPECTATOR}Even when the {STR_VAR_2}\n"
 	.string "took a break from making appeals,\l"
 	.string "I couldn't take my eyes off it.\p"
 	.string "I'm captivated by that {STR_VAR_2}.$"
 
 ContestLiveUpdates_Text_GotStartled::
 # 3548 "data/text/tv.pory"
-	.string "Spectator: When the {STR_VAR_2} was\n"
+	.string "{SPEAKER NAME_SPECTATOR}When the {STR_VAR_2} was\n"
 	.string "startled by another POKéMON's appeal,\l"
 	.string "I was close to tears.\p"
 	.string "{STR_VAR_2}, you were resilient!\n"
@@ -2914,7 +2914,7 @@ ContestLiveUpdates_Text_GotStartled::
 
 ContestLiveUpdates_Text_MoveWonderful::
 # 3557 "data/text/tv.pory"
-	.string "Spectator: Oh…\n"
+	.string "{SPEAKER NAME_SPECTATOR}Oh…\n"
 	.string "That {STR_VAR_2}'s {STR_VAR_3}!\l"
 	.string "{STR_VAR_2}'s {STR_VAR_3}!\l"
 	.string "{STR_VAR_2}'s {STR_VAR_3}!\l"
@@ -2922,7 +2922,7 @@ ContestLiveUpdates_Text_MoveWonderful::
 
 ContestLiveUpdates_Text_TalkAboutAnotherMon::
 # 3565 "data/text/tv.pory"
-	.string "MC: Well, there you have it. This place\n"
+	.string "{SPEAKER NAME_MC}Well, there you have it. This place\n"
 	.string "is full of the {STR_VAR_1}'s fans!\p"
 	.string "I should also mention that another\n"
 	.string "POKéMON, {STR_VAR_2}'s {STR_VAR_3}, \l"
@@ -3003,7 +3003,7 @@ ContestLiveUpdates_Text_Outro::
 	.string "usual farewell to the winners.\p"
 	.string "This time, it's {STR_VAR_1} and\n"
 	.string "the {STR_VAR_2}!\p"
-	.string "MC: Is everyone ready?\n"
+	.string "{SPEAKER NAME_MC}Is everyone ready?\n"
 	.string "All together now!\p"
 	.string "Audience: {STR_VAR_1}! {STR_VAR_2}!\n"
 	.string "Congratulations!\l"
@@ -3069,26 +3069,26 @@ gTVPokemonBattleUpdateText07::
 
 GabbyAndTy_Text_GabbyPreFirstBattle::
 # 3737 "data/text/tv.pory"
-	.string "GABBY: Oh! We've just spotted a tough-\n"
+	.string "{SPEAKER NAME_GABBY}Oh! We've just spotted a tough-\n"
 	.string "looking TRAINER here of all places!\p"
 	.string "Okay, roll camera!\n"
 	.string "Let's get this interview.$"
 
 GabbyAndTy_Text_GabbyIntro::
 # 3745 "data/text/tv.pory"
-	.string "GABBY: Oh! You're {PLAYER}! Hi!\n"
+	.string "{SPEAKER NAME_GABBY}Oh! You're {PLAYER}! Hi!\n"
 	.string "Do you remember us from last time?\p"
 	.string "Can you show us how much stronger\n"
 	.string "you've become? Okay, cue interview!$"
 
 GabbyAndTy_Text_GabbyDefeatFirstTime::
 # 3753 "data/text/tv.pory"
-	.string "GABBY: My eyes didn't lie!\n"
+	.string "{SPEAKER NAME_GABBY}My eyes didn't lie!\n"
 	.string "I did discover an astonishing TRAINER!$"
 
 GabbyAndTy_Text_WhoAreYouInterview::
 # 3758 "data/text/tv.pory"
-	.string "GABBY: Awesome! Awesome!\n"
+	.string "{SPEAKER NAME_GABBY}Awesome! Awesome!\n"
 	.string "Who are you?!\p"
 	.string "I knew we were onto something wild\n"
 	.string "when we spotted you!\p"
@@ -3100,7 +3100,7 @@ GabbyAndTy_Text_WhoAreYouInterview::
 
 GabbyAndTy_Text_QuoteFromLastInterview::
 # 3773 "data/text/tv.pory"
-	.string "GABBY: “{STR_VAR_1}!”\p"
+	.string "{SPEAKER NAME_GABBY}“{STR_VAR_1}!”\p"
 	.string "Remember? That's the quote you gave\n"
 	.string "us as the battle clincher last time.\p"
 	.string "I never, ever forget stuff like that!$"
@@ -3150,7 +3150,7 @@ GabbyAndTy_Text_DescribeYourFeelings::
 
 GabbyAndTy_Text_PerfectWellBeSeeingYou::
 # 3831 "data/text/tv.pory"
-	.string "GABBY: Mmm, yeah!\n"
+	.string "{SPEAKER NAME_GABBY}Mmm, yeah!\n"
 	.string "That's the perfect clincher!\p"
 	.string "I get the feeling that this will make\n"
 	.string "a great TV show.\p"
@@ -3161,23 +3161,23 @@ GabbyAndTy_Text_PerfectWellBeSeeingYou::
 
 GabbyAndTy_Text_DontGiveUpKeepingEyeOut::
 # 3845 "data/text/tv.pory"
-	.string "GABBY: Oh…\p"
+	.string "{SPEAKER NAME_GABBY}Oh…\p"
 	.string "Okay, but don't give up!\n"
 	.string "We'll be keeping an eye out for you!$"
 
 GabbyAndTy_Text_KeepingAnEyeOutForYou::
 # 3852 "data/text/tv.pory"
-	.string "GABBY: We'll be keeping an eye out\n"
+	.string "{SPEAKER NAME_GABBY}We'll be keeping an eye out\n"
 	.string "for you!$"
 
 GabbyAndTy_Text_GabbyNotEnoughMons::
 # 3857 "data/text/tv.pory"
-	.string "GABBY: Is there a strong TRAINER\n"
+	.string "{SPEAKER NAME_GABBY}Is there a strong TRAINER\n"
 	.string "anywhere with a lot of POKéMON?$"
 
 GabbyAndTy_Text_GiveUsAnInterviewThisTime::
 # 3862 "data/text/tv.pory"
-	.string "GABBY: Wow, you are something!\p"
+	.string "{SPEAKER NAME_GABBY}Wow, you are something!\p"
 	.string "You've gotten a lot stronger--a lot--\n"
 	.string "since we last battled.\p"
 	.string "We were right about you when we\n"
@@ -3188,48 +3188,48 @@ GabbyAndTy_Text_GiveUsAnInterviewThisTime::
 
 GabbyAndTy_Text_GabbyDefeat::
 # 3876 "data/text/tv.pory"
-	.string "GABBY: That was an intense battle!\n"
+	.string "{SPEAKER NAME_GABBY}That was an intense battle!\n"
 	.string "Did you get all that on camera?$"
 
 GabbyAndTy_Text_TyPreFirstBattle::
 # 3881 "data/text/tv.pory"
-	.string "TY: Hey, lookie here! A tough-looking\n"
+	.string "{SPEAKER NAME_TY}Hey, lookie here! A tough-looking\n"
 	.string "TRAINER here, of all places!\l"
 	.string "Camera's rolling!$"
 
 GabbyAndTy_Text_TyIntro::
 # 3887 "data/text/tv.pory"
-	.string "TY: Hey, lookie here!\n"
+	.string "{SPEAKER NAME_TY}Hey, lookie here!\n"
 	.string "I remember you!\p"
 	.string "I'll get this battle all on this\n"
 	.string "here camera!$"
 
 GabbyAndTy_Text_TyPostBattle::
 # 3895 "data/text/tv.pory"
-	.string "TY: You're a natural!\n"
+	.string "{SPEAKER NAME_TY}You're a natural!\n"
 	.string "Got me some prime footage right here!$"
 
 GabbyAndTy_Text_TyNotEnoughMons::
 # 3900 "data/text/tv.pory"
-	.string "TY: Do you only have the one POKéMON\n"
+	.string "{SPEAKER NAME_TY}Do you only have the one POKéMON\n"
 	.string "and that's it?\p"
 	.string "If you had more POKéMON, it'd make for\n"
 	.string "better footage, but…$"
 
 GabbyAndTy_Text_TyDefeatFirstTime::
 # 3908 "data/text/tv.pory"
-	.string "TY: Yep, we sure spotted a hot TRAINER.\n"
+	.string "{SPEAKER NAME_TY}Yep, we sure spotted a hot TRAINER.\n"
 	.string "This is a huge scoop for us!$"
 
 GabbyAndTy_Text_TyDefeat::
 # 3913 "data/text/tv.pory"
-	.string "TY: Yep, I got it all.\n"
+	.string "{SPEAKER NAME_TY}Yep, I got it all.\n"
 	.string "That whole battle's on camera.$"
 
 gTVInSearchOfTrainersText00::
 # 3918 "data/text/tv.pory"
 	.string "IN SEARCH OF TRAINERS…\p"
-	.string "GABBY: Hi! Today I'm visiting an area\n"
+	.string "{SPEAKER NAME_GABBY}Hi! Today I'm visiting an area\n"
 	.string "near {STR_VAR_1}.\p"
 	.string "We're trying to spot some up-and-\n"
 	.string "coming new talent in the field.\p"
@@ -3331,74 +3331,74 @@ gTVInSearchOfTrainersText08::
 ContestLadyShow_Text_Intro::
 # 4049 "data/text/tv.pory"
 	.string "“POKéMON CONTEST LIVE UPDATES!”\p"
-	.string "MC: Sorry to interrupt the regular\n"
+	.string "{SPEAKER NAME_MC}Sorry to interrupt the regular\n"
 	.string "programming, and thanks for joining us!\p"
 	.string "We bring you this live from\n"
 	.string "the scene of a just-completed\l"
 	.string "{STR_VAR_1}!\p"
-	.string "Spectators: ?!!!!\p"
-	.string "MC: Oh! It looks like the CONTEST\n"
+	.string "{SPEAKER NAME_SPECTATORS}?!!!!\p"
+	.string "{SPEAKER NAME_MC}Oh! It looks like the CONTEST\n"
 	.string "participants are headed this way!\p"
 	.string "I'll try to get an impromptu interview\n"
 	.string "for you folks at home!\p"
-	.string "Spectators: ?!!!!\n"
+	.string "{SPEAKER NAME_SPECTATORS}?!!!!\n"
 	.string "?!!!!$"
 
 ContestLadyShow_Text_Won::
 # 4071 "data/text/tv.pory"
-	.string "MC: Excuse me!\n"
+	.string "{SPEAKER NAME_MC}Excuse me!\n"
 	.string "Thanks for joining us on live TV!\p"
 	.string "May I congratulate you on your win?\p"
 	.string "What was the key factor in today's\n"
 	.string "stunning victory?\p"
-	.string "BEAUTY: We gave it our best effort\n"
+	.string "{SPEAKER NAME_BEAUTY}We gave it our best effort\n"
 	.string "today, my {STR_VAR_2} and I!\p"
 	.string "But I'm sure we wouldn't have made it\n"
 	.string "if it weren't for all the help we\l"
 	.string "received leading up to the CONTEST!\p"
-	.string "MC: Do you have a special someone\n"
+	.string "{SPEAKER NAME_MC}Do you have a special someone\n"
 	.string "with whom you'd like to share your joy?\l"
 	.string "Let's hear it live!\p"
-	.string "BEAUTY: Hey, out there!\p"
+	.string "{SPEAKER NAME_BEAUTY}Hey, out there!\p"
 	.string "{STR_VAR_3}! Are you watching?\n"
 	.string "We did it!\l"
 	.string "Thank you!$"
 
 ContestLadyShow_Text_Lost::
 # 4098 "data/text/tv.pory"
-	.string "MC: Excuse me!\n"
+	.string "{SPEAKER NAME_MC}Excuse me!\n"
 	.string "Thanks for joining us on live TV!\p"
 	.string "You must be disappointed by that turn\n"
 	.string "of events. Do you have any comments?\p"
-	.string "BEAUTY: It's heartbreaking…\n"
+	.string "{SPEAKER NAME_BEAUTY}It's heartbreaking…\n"
 	.string "My {STR_VAR_2} and I, we did our best…\p"
 	.string "But I feel like I've let down everyone\n"
 	.string "who has supported us through this.\p"
-	.string "MC: I hate to say it, but the POKéMON's\n"
+	.string "{SPEAKER NAME_MC}I hate to say it, but the POKéMON's\n"
 	.string "coloration is a little wanting.\p"
-	.string "BEAUTY: {STR_VAR_3}, I'm so sorry…\n"
+	.string "{SPEAKER NAME_BEAUTY}{STR_VAR_3}, I'm so sorry…\n"
 	.string "I'll do better next time, I swear…\l"
 	.string "…Sniff… Waaaaah!\p"
-	.string "Spectators: See that?\n"
+	.string "{SPEAKER NAME_SPECTATORS}See that?\n"
 	.string "The poor girl!\p"
-	.string "MC: Uh… Uh-oh…\p"
+	.string "{SPEAKER NAME_MC}Uh… Uh-oh…\p"
 	.string "Uh… That's all the time we have today!\n"
 	.string "Thanks for tuning in!$"
 
 ContestLadyShow_Text_LostBadly::
 # 4127 "data/text/tv.pory"
-	.string "MC: Excuse me!\n"
+	.string "{SPEAKER NAME_MC}Excuse me!\n"
 	.string "Thanks for joining us on live TV!\p"
 	.string "How did your CONTEST appearance go?\p"
-	.string "BEAUTY: Nothing went right…\n"
+	.string "{SPEAKER NAME_BEAUTY}Nothing went right…\n"
 	.string "For some reason, my {STR_VAR_2}\l"
 	.string "couldn't attract any popularity.\p"
-	.string "MC: I hate to say it, but the POKéMON's\n"
+	.string "{SPEAKER NAME_MC}I hate to say it, but the POKéMON's\n"
 	.string "coloration is a little wanting.\p"
-	.string "BEAUTY: … … … … … …\n"
+	.string "{SPEAKER NAME_BEAUTY}… … … … … …\n"
 	.string "…Sniff… Waaaaah!\p"
-	.string "Spectators: See that?\n"
+	.string "{SPEAKER NAME_SPECTATORS}See that?\n"
 	.string "The poor girl!\p"
-	.string "MC: Uh… Uh-oh…\p"
+	.string "{SPEAKER NAME_MC}Uh… Uh-oh…\p"
 	.string "Uh… That's all the time we have today!\n"
 	.string "Thanks for tuning in!$"

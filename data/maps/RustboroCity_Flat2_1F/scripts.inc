@@ -29,4 +29,4 @@ RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere::
 
 RustboroCity_Flat2_1F_Text_Skitty::
 # 22 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
-	.string "SKITTY: Gyaaaah!$"
+	.string "Gyaaaah!$"

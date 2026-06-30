@@ -91,42 +91,42 @@ ThreeIsland_BondBridge_Text_TishaPostBattle::
 
 ThreeIsland_BondBridge_Text_JoyIntro::
 # 89 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "JOY: We'll teach you what our\n"
+	.string "{SPEAKER NAME_JOY}We'll teach you what our\n"
 	.string "favorite POKéMON is!$"
 
 ThreeIsland_BondBridge_Text_JoyDefeat::
 # 94 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "JOY: Ohh…\n"
+	.string "{SPEAKER NAME_JOY}Ohh…\n"
 	.string "MEG!$"
 
 ThreeIsland_BondBridge_Text_JoyPostBattle::
 # 99 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "JOY: Wasn't that fun?\n"
+	.string "{SPEAKER NAME_JOY}Wasn't that fun?\n"
 	.string "I hope we can battle again!$"
 
 ThreeIsland_BondBridge_Text_JoyNotEnoughMons::
 # 104 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "JOY: I really want to battle with\n"
+	.string "{SPEAKER NAME_JOY}I really want to battle with\n"
 	.string "MEG.\p"
 	.string "One POKéMON isn't enough.$"
 
 ThreeIsland_BondBridge_Text_MegIntro::
 # 111 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "MEG: We'll show you our favorite\n"
+	.string "{SPEAKER NAME_MEG}We'll show you our favorite\n"
 	.string "POKéMON.$"
 
 ThreeIsland_BondBridge_Text_MegDefeat::
 # 116 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "MEG: Ohh…\n"
+	.string "{SPEAKER NAME_MEG}Ohh…\n"
 	.string "JOY!$"
 
 ThreeIsland_BondBridge_Text_MegPostBattle::
 # 121 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "MEG: JOY, wasn't that fun?$"
+	.string "{SPEAKER NAME_MEG}JOY, wasn't that fun?$"
 
 ThreeIsland_BondBridge_Text_MegNotEnoughMons::
 # 125 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "MEG: I want to battle together\n"
+	.string "{SPEAKER NAME_MEG}I want to battle together\n"
 	.string "with JOY.\p"
 	.string "One POKéMON isn't enough.$"
 

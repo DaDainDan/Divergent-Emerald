@@ -148,22 +148,22 @@ text VictoryRoad_3F_Text_ColbyPostBattle {
 }
 
 text VictoryRoad_3F_Text_RayIntro {
-	"RAY: Together, the two of us are
+	"{SPEAKER NAME_RAY}Together, the two of us are
 	destined for greatness!"
 }
 
 text VictoryRoad_3F_Text_RayDefeat {
-	"RAY: Ludicrous!
+	"{SPEAKER NAME_RAY}Ludicrous!
 	This can't be!"
 }
 
 text VictoryRoad_3F_Text_RayPostBattle {
-	"RAY: You've beaten us.
+	"{SPEAKER NAME_RAY}You've beaten us.
 	Greatness remains elusive…"
 }
 
 text VictoryRoad_3F_Text_RayNotEnoughMons {
-	"RAY: Together, the two of us are
+	"{SPEAKER NAME_RAY}Together, the two of us are
 	striving for the pinnacle.
 
 	We need you to bring two POKéMON
@@ -171,20 +171,20 @@ text VictoryRoad_3F_Text_RayNotEnoughMons {
 }
 
 text VictoryRoad_3F_Text_TyraIntro {
-	"TYRA: We're trying to become
+	"{SPEAKER NAME_TYRA}We're trying to become
 	champions together."
 }
 
 text VictoryRoad_3F_Text_TyraDefeat {
-	"TYRA: Oh, but…"
+	"{SPEAKER NAME_TYRA}Oh, but…"
 }
 
 text VictoryRoad_3F_Text_TyraPostBattle {
-	"TYRA: You've taught me that power
+	"{SPEAKER NAME_TYRA}You've taught me that power
 	can be infinite in shape and form."
 }
 
 text VictoryRoad_3F_Text_TyraNotEnoughMons {
-	"TYRA: You can't battle with us if
+	"{SPEAKER NAME_TYRA}You can't battle with us if
 	you have only one POKéMON."
 }

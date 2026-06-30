@@ -193,7 +193,7 @@ text BattleFrontier_ReceptionGate_Text_IfItIsntPlayerYouCame {
 }
 
 text BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay {
-	"GUIDE: Oh! MR. SCOTT, sir!
+	"{SPEAKER NAME_GUIDE}Oh! MR. SCOTT, sir!
 	Good day to you, sir!"
 }
 
