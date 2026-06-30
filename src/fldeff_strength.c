@@ -9,6 +9,7 @@
 #include "task.h"
 #include "constants/event_objects.h"
 #include "constants/field_effects.h"
+#include "braille_puzzles.h"
 
 // static functions
 static void FieldCallback_Strength(void);
@@ -25,6 +26,14 @@ bool32 SetUpFieldMove_Strength(void)
         gPostMenuFieldCallback = FieldCallback_Strength;
         return TRUE;
     }
+    else if (ShouldDoBrailleScorchedSlabRegisteelEffect() && GetFieldMoveMonSpecies() == SPECIES_REGISTEEL)
+    {
+        gSpecialVar_Result = GetCursorSelectionMonId();
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = SetUpPuzzleEffectScorchedSlabRegisteel;
+        return TRUE;
+    }
+    
     return FALSE;
 }
 

@@ -130,16 +130,21 @@ bool32 SetUpFieldMove_RockSmash(void)
         gPostMenuFieldCallback = SetUpPuzzleEffectRegirock;
         return TRUE;
     }
+    else if (ShouldDoBrailleScorchedSlabRegirockEffect() && GetFieldMoveMonSpecies() == SPECIES_REGIROCK)
+    {
+        gSpecialVar_Result = GetCursorSelectionMonId();
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = SetUpPuzzleEffectScorchedSlabRegirock;
+        return TRUE;
+    }
     else if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_BREAKABLE_ROCK) == TRUE)
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_RockSmash;
         return TRUE;
     }
-    else
-    {
-        return FALSE;
-    }
+    
+    return FALSE;
 }
 
 static void FieldCallback_RockSmash(void)

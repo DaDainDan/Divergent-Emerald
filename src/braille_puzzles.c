@@ -12,8 +12,18 @@
 #include "fieldmap.h"
 #include "party_menu.h"
 #include "fldeff.h"
+#include "field_screen_effect.h"
+#include "overworld.h"
 
-EWRAM_DATA static bool8 sIsRegisteelPuzzle = 0;
+enum RegiPuzzleType {
+    REGI_PUZZLE_REGIROCK,
+    REGI_PUZZLE_REGISTEEL,
+    REGI_PUZZLE_REGIGIGAS_REGICE,
+    REGI_PUZZLE_REGIGIGAS_REGIROCK,
+    REGI_PUZZLE_REGIGIGAS_REGISTEEL,
+};
+
+EWRAM_DATA static u8 sCurrentRegiPuzzle = 0;
 
 static const u8 sRegicePathCoords[][2] =
 {
@@ -58,6 +68,9 @@ static const u8 sRegicePathCoords[][2] =
 static void Task_SealedChamberShakingEffect(u8);
 static void DoBrailleRegirockEffect(void);
 static void DoBrailleRegisteelEffect(void);
+static void DoBrailleScorchedSlabRegiceEffect(void);
+static void DoBrailleScorchedSlabRegirockEffect(void);
+static void DoBrailleScorchedSlabRegisteelEffect(void);
 
 bool8 ShouldDoBrailleDigEffect(void)
 {
@@ -172,17 +185,17 @@ bool8 ShouldDoBrailleRegirockEffect(void)
     {
         if (gSaveBlock1Ptr->pos.x == 6 && gSaveBlock1Ptr->pos.y == 23)
         {
-            sIsRegisteelPuzzle = FALSE;
+            sCurrentRegiPuzzle = REGI_PUZZLE_REGIROCK;
             return TRUE;
         }
         else if (gSaveBlock1Ptr->pos.x == 5 && gSaveBlock1Ptr->pos.y == 23)
         {
-            sIsRegisteelPuzzle = FALSE;
+            sCurrentRegiPuzzle = REGI_PUZZLE_REGIROCK;
             return TRUE;
         }
         else if (gSaveBlock1Ptr->pos.x == 7 && gSaveBlock1Ptr->pos.y == 23)
         {
-            sIsRegisteelPuzzle = FALSE;
+            sCurrentRegiPuzzle = REGI_PUZZLE_REGIROCK;
             return TRUE;
         }
     }
@@ -223,7 +236,7 @@ bool8 ShouldDoBrailleRegisteelEffect(void)
     {
         if (gSaveBlock1Ptr->pos.x == 8 && gSaveBlock1Ptr->pos.y == 25)
         {
-            sIsRegisteelPuzzle = TRUE;
+            sCurrentRegiPuzzle = REGI_PUZZLE_REGISTEEL;
             return TRUE;
         }
     }
@@ -257,6 +270,129 @@ static void DoBrailleRegisteelEffect(void)
     UnfreezeObjectEvents();
 }
 
+bool8 ShouldDoBrailleScorchedSlabRegiceEffect(void)
+{
+    if (!FlagGet(FLAG_SYS_REGIGIGAS_PUZZLE_COMPLETED) && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SCORCHED_SLAB_B1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SCORCHED_SLAB_B1F)))
+    {
+        if (gSaveBlock1Ptr->pos.x == 12 && gSaveBlock1Ptr->pos.y == 38)
+        {
+            sCurrentRegiPuzzle = REGI_PUZZLE_REGIGIGAS_REGICE;
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+void SetUpPuzzleEffectScorchedSlabRegice(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    FieldEffectStart(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+}
+
+void UseScorchedSlabRegiceHm_Callback(void)
+{
+    FieldEffectActiveListRemove(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+    DoBrailleScorchedSlabRegiceEffect();
+}
+
+static void DoBrailleScorchedSlabRegiceEffect(void)
+{
+    PlaySE(SE_M_REFLECT);
+    FlagSet(FLAG_SYS_USE_FLASH);
+    AnimateFlash(0);
+    SetFlashLevel(0);
+    FlagSet(FLAG_TEMP_REGICE_REGIGIGAS_COMPLETE);
+    UnlockPlayerFieldControls();
+    UnfreezeObjectEvents();
+}
+
+bool8 ShouldDoBrailleScorchedSlabRegirockEffect(void)
+{
+    if (!FlagGet(FLAG_SYS_REGIGIGAS_PUZZLE_COMPLETED) && FlagGet(FLAG_TEMP_REGICE_REGIGIGAS_COMPLETE) && !FlagGet(FLAG_TEMP_REGIROCK_REGIGIGAS_COMPLETE)
+     && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SCORCHED_SLAB_B1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SCORCHED_SLAB_B1F)))
+    {
+        if (gSaveBlock1Ptr->pos.x == 7 && gSaveBlock1Ptr->pos.y == 32)
+        {
+            sCurrentRegiPuzzle = REGI_PUZZLE_REGIGIGAS_REGIROCK;
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+void SetUpPuzzleEffectScorchedSlabRegirock(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    FieldEffectStart(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+}
+
+void UseScorchedSlabRegirockHm_Callback(void)
+{
+    FieldEffectActiveListRemove(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+    DoBrailleScorchedSlabRegirockEffect();
+}
+
+static void DoBrailleScorchedSlabRegirockEffect(void)
+{
+    MapGridSetMetatileIdAt(10 + MAP_OFFSET, 28 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(11 + MAP_OFFSET, 28 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(11 + MAP_OFFSET, 29 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(11 + MAP_OFFSET, 30 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(12 + MAP_OFFSET, 27 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(12 + MAP_OFFSET, 28 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(12 + MAP_OFFSET, 29 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(12 + MAP_OFFSET, 30 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(12 + MAP_OFFSET, 31 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(13 + MAP_OFFSET, 28 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(13 + MAP_OFFSET, 29 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(13 + MAP_OFFSET, 30 + MAP_OFFSET, 0x201);
+    MapGridSetMetatileIdAt(14 + MAP_OFFSET, 28 + MAP_OFFSET, 0x201);
+    DrawWholeMapView();
+    PlaySE(SE_M_ROCK_THROW);
+    FlagSet(FLAG_TEMP_REGIROCK_REGIGIGAS_COMPLETE);
+    UnlockPlayerFieldControls();
+    UnfreezeObjectEvents();
+}
+
+bool8 ShouldDoBrailleScorchedSlabRegisteelEffect(void)
+{
+    if (!FlagGet(FLAG_SYS_REGIGIGAS_PUZZLE_COMPLETED) && FlagGet(FLAG_TEMP_REGICE_REGIGIGAS_COMPLETE) && !FlagGet(FLAG_TEMP_REGISTEEL_REGIGIGAS_COMPLETE)
+     && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SCORCHED_SLAB_B1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SCORCHED_SLAB_B1F)))
+    {
+        if (gSaveBlock1Ptr->pos.x == 17 && gSaveBlock1Ptr->pos.y == 32)
+        {
+            sCurrentRegiPuzzle = REGI_PUZZLE_REGIGIGAS_REGISTEEL;
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+void SetUpPuzzleEffectScorchedSlabRegisteel(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    FieldEffectStart(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+}
+
+void UseScorchedSlabRegisteelHm_Callback(void)
+{
+    FieldEffectActiveListRemove(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+    DoBrailleScorchedSlabRegisteelEffect();
+}
+
+static void DoBrailleScorchedSlabRegisteelEffect(void)
+{
+    MapGridSetMetatileIdAt(12 + MAP_OFFSET, 24 + MAP_OFFSET, 0x204);
+    MapGridSetMetatileIdAt(12 + MAP_OFFSET, 25 + MAP_OFFSET, 0x204);
+    MapGridSetMetatileIdAt(12 + MAP_OFFSET, 26 + MAP_OFFSET, 0x204);
+    DrawWholeMapView();
+    PlaySE(SE_ESCALATOR);
+    PlaySE(SE_ESCALATOR);
+    FlagSet(FLAG_TEMP_REGISTEEL_REGIGIGAS_COMPLETE);
+    UnlockPlayerFieldControls();
+    UnfreezeObjectEvents();
+}
+
 // theory: another commented out DoBrailleWait and Task_BrailleWait.
 static void UNUSED DoBrailleWait(void)
 {
@@ -266,17 +402,30 @@ static void UNUSED DoBrailleWait(void)
 bool8 FldEff_UsePuzzleEffect(void)
 {
     u8 taskId = CreateFieldMoveTask();
+    void (*callback)(void);
 
-    if (sIsRegisteelPuzzle == TRUE)
+    switch (sCurrentRegiPuzzle)
     {
-        gTasks[taskId].data[8] = (u32)UseRegisteelHm_Callback >> 16;
-        gTasks[taskId].data[9] = (u32)UseRegisteelHm_Callback;
+    case REGI_PUZZLE_REGIGIGAS_REGICE:
+        callback = UseScorchedSlabRegiceHm_Callback;
+        break;
+    case REGI_PUZZLE_REGIGIGAS_REGIROCK:
+        callback = UseScorchedSlabRegirockHm_Callback;
+        break;
+    case REGI_PUZZLE_REGIGIGAS_REGISTEEL:
+        callback = UseScorchedSlabRegisteelHm_Callback;
+        break;
+    case REGI_PUZZLE_REGISTEEL:
+        callback = UseRegisteelHm_Callback;
+        break;
+    case REGI_PUZZLE_REGIROCK:
+    default:
+        callback = UseRegirockHm_Callback;
+        break;
     }
-    else
-    {
-        gTasks[taskId].data[8] = (u32)UseRegirockHm_Callback >> 16;
-        gTasks[taskId].data[9] = (u32)UseRegirockHm_Callback;
-    }
+
+    gTasks[taskId].data[8] = (u32)callback >> 16;
+    gTasks[taskId].data[9] = (u32)callback;
     return FALSE;
 }
 

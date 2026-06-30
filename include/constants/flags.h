@@ -527,7 +527,7 @@
 
 #define FLAG_DEFEATED_MIRAGE_TOWER_COFAGRIGUS 0x1DE // Unused Flag
 #define FLAG_DEFEATED_NEW_MAUVILLE_B1F_ROTOM  0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
+#define FLAG_DEFEATED_REGIGIGAS               0x1E0 // Unused Flag
 #define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
@@ -1229,7 +1229,7 @@
 // Free Block 3
 #define FLAG_HIDE_MIRAGE_TOWER_COFAGRIGUS                           0x493 // Unused Flag
 #define FLAG_HIDE_NEW_MAUVILLE_B1F_ROTOM                            0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
+#define FLAG_HIDE_REGIGIGAS                                         0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
@@ -1563,8 +1563,8 @@
 #define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
 #define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
 #define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
-#define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag
-#define FLAG_UNUSED_0x918                           (SYSTEM_FLAGS + 0xB8) // Unused Flag
+#define FLAG_START_REGIGIGAS_PUZZLE                 (SYSTEM_FLAGS + 0xB7) // Unused Flag
+#define FLAG_SYS_REGIGIGAS_PUZZLE_COMPLETED         (SYSTEM_FLAGS + 0xB8) // Unused Flag
 #define FLAG_UNUSED_0x919                           (SYSTEM_FLAGS + 0xB9) // Unused Flag
 #define FLAG_UNUSED_0x91A                           (SYSTEM_FLAGS + 0xBA) // Unused Flag
 #define FLAG_UNUSED_0x91B                           (SYSTEM_FLAGS + 0xBB) // Unused Flag
@@ -1666,6 +1666,10 @@
 #define FLAG_TEMP_REGICE_PUZZLE_FAILED          FLAG_TEMP_3
 #define FLAG_TEMP_HIDE_FOLLOWER                 FLAG_TEMP_E
 #define FLAG_TEMP_HIDE_MIRAGE_ISLAND_BERRY_TREE FLAG_TEMP_11
+
+#define FLAG_TEMP_REGICE_REGIGIGAS_COMPLETE     FLAG_TEMP_2
+#define FLAG_TEMP_REGIROCK_REGIGIGAS_COMPLETE   FLAG_TEMP_3
+#define FLAG_TEMP_REGISTEEL_REGIGIGAS_COMPLETE  FLAG_TEMP_4
 
 // FRLG flags
 

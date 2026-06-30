@@ -369,7 +369,6 @@ static void DisplayCantUseSurfMessage(void);
 static void Task_FieldMoveExitAreaYesNo(u8);
 static void Task_HandleFieldMoveExitAreaYesNoInput(u8);
 static void Task_FieldMoveWaitForFade(u8);
-static enum Species GetFieldMoveMonSpecies(void);
 static void UpdatePartyMonHPBar(u8, struct Pokemon *);
 static void SpriteCB_UpdatePartyMonIcon(struct Sprite *);
 static void SpriteCB_BouncePartyMonIcon(struct Sprite *);
@@ -2964,7 +2963,8 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
             {
                 // If Mon already knows Cut, Fly, Flash, or Rock Smash prevent it from being added to action list here
-                if (FieldMove_GetMoveId(j) != MOVE_CUT && FieldMove_GetMoveId(j) != MOVE_FLY && FieldMove_GetMoveId(j) != MOVE_FLASH && FieldMove_GetMoveId(j) != MOVE_ROCK_SMASH) {
+                if (FieldMove_GetMoveId(j) != MOVE_CUT && FieldMove_GetMoveId(j) != MOVE_FLY && FieldMove_GetMoveId(j) != MOVE_FLASH && 
+                    FieldMove_GetMoveId(j) != MOVE_ROCK_SMASH && FieldMove_GetMoveId(j) != MOVE_STRENGTH) {
                     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 }
                 break;
@@ -2972,17 +2972,20 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         }
     }
 
-    if (FlagGet(FLAG_BADGE06_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLY) != CANNOT_LEARN_MOVE) && CheckBagHasItem(ITEM_HM02, 1)) 
+    if (FlagGet(FLAG_BADGE06_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLY) != CANNOT_LEARN_MOVE) && CheckBagHasItem(ITEM_HM_FLY, 1)) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
 
-    if (FlagGet(FLAG_BADGE03_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_ROCK_SMASH) != CANNOT_LEARN_MOVE) && CheckBagHasItem(ITEM_HM06, 1)) 
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 2 + MENU_FIELD_MOVES);
-
-    if (FlagGet(FLAG_BADGE02_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLASH) != CANNOT_LEARN_MOVE) && CheckBagHasItem(ITEM_HM05, 1)) 
+    if (FlagGet(FLAG_BADGE02_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLASH) != CANNOT_LEARN_MOVE) && CheckBagHasItem(ITEM_HM_FLASH, 1)) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
 
-    if (FlagGet(FLAG_BADGE01_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_CUT) != CANNOT_LEARN_MOVE) && CheckBagHasItem(ITEM_HM01, 1)) 
+    if (FlagGet(FLAG_BADGE01_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_CUT) != CANNOT_LEARN_MOVE) && CheckBagHasItem(ITEM_HM_CUT, 1)) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES);
+
+    if (FlagGet(FLAG_BADGE05_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_STRENGTH) != CANNOT_LEARN_MOVE) && CheckBagHasItem(ITEM_HM_STRENGTH, 1)) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 3 + MENU_FIELD_MOVES);
+
+    if (FlagGet(FLAG_BADGE03_GET) && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_ROCK_SMASH) != CANNOT_LEARN_MOVE) && CheckBagHasItem(ITEM_HM_ROCK_SMASH, 1)) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 2 + MENU_FIELD_MOVES);
 
     if (!InBattlePike())
     {
@@ -4274,7 +4277,7 @@ static void Task_FieldMoveWaitForFade(u8 taskId)
     }
 }
 
-static enum Species GetFieldMoveMonSpecies(void)
+enum Species GetFieldMoveMonSpecies(void)
 {
     return GetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_SPECIES);
 }

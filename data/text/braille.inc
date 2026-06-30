@@ -116,6 +116,39 @@ AncientTomb_Braille_ShineInTheMiddle:
 	.braille "WILL, SHINE\n"
 	.braille "IN THE MIDDLE.$"
 
+ScorchedSlab_B1F_Braille_PowerOfThree:
+	brailleformat 3, 0, 25, 19, 6, 3
+	.braille "THREE SLABS,\n"
+	.braille "THREE SOULS,\n"
+	.braille "ONE GOD.$"
+
+ScorchedSlab_B1F_Braille_GodAndCreator:
+	brailleformat 3, 0, 25, 19, 6, 3
+	.braille "ONE CREATOR,\n"
+	.braille "ONE BUILDER,\n"
+	.braille "ONE WORLD.$"
+
+ScorchedSlab_B1F_Braille_PaveTheWay:
+	brailleformat 3, 0, 25, 19, 6, 3
+	.braille "ONLY THOSE\n"
+	.braille "WITH POWER\n"
+	.braille "CAN PAVE THE\n"
+	.braille "WAY FORWARD.$"
+
+ScorchedSlab_B1F_Braille_RevealSecrets:
+	brailleformat 3, 0, 25, 19, 6, 3
+	.braille "NO SECRET\n"
+	.braille "CAN EVER BE\n"
+	.braille "REVEALED IN\n"
+	.braille "DARKNESS.$"
+
+ScorchedSlab_B1F_Braille_CrushTheDebris:
+	brailleformat 3, 0, 25, 19, 6, 3
+	.braille "OBSTRUCTION\n"
+	.braille "MUST BE MET\n"
+	.braille "WITH UTTER\n"
+	.braille "DESTRUCTION.$"
+
 @ FRLG
 Braille_Text_Up::
 	brailleformat 3, 0, 25, 19, 6, 3

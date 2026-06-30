@@ -1574,6 +1574,7 @@
 #define FLAG_CAUGHT_HO_OH                    0
 #define FLAG_DEFEATED_MIRAGE_TOWER_COFAGRIGUS 0
 #define FLAG_DEFEATED_NEW_MAUVILLE_B1F_ROTOM  0
+#define FLAG_DEFEATED_REGIGIGAS               0
 #define FLAG_MR_BRINEY_SAILING_INTRO         0
 #define FLAG_DOCK_REJECTED_DEVON_GOODS       0
 #define FLAG_DELIVERED_DEVON_GOODS           0
@@ -2480,6 +2481,7 @@
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0
 #define FLAG_HIDE_MIRAGE_TOWER_COFAGRIGUS                           0
 #define FLAG_HIDE_NEW_MAUVILLE_B1F_ROTOM                            0
+#define FLAG_HIDE_REGIGIGAS                                         0
 #define FLAG_ITEM_NEW_MAUVILLE_B1F_DUBIOUS_DISC                     0
 #define FLAG_ITEM_NEW_MAUVILLE_B1F_LIGHT_BALL                       0
 
@@ -2651,8 +2653,8 @@
 #define FLAG_UNUSED_0x914                           0
 #define FLAG_UNUSED_0x915                           0
 #define FLAG_UNUSED_0x916                           0
-#define FLAG_UNUSED_0x917                           0
-#define FLAG_UNUSED_0x918                           0
+#define FLAG_START_REGIGIGAS_PUZZLE                 0
+#define FLAG_SYS_REGIGIGAS_PUZZLE_COMPLETED         0
 #define FLAG_UNUSED_0x919                           0
 #define FLAG_UNUSED_0x91A                           0
 #define FLAG_UNUSED_0x91B                           0
@@ -2706,5 +2708,8 @@
 #define FLAG_TEMP_HIDE_FOLLOWER                 FLAG_TEMP_E
 #define FLAG_TEMP_HIDE_MIRAGE_ISLAND_BERRY_TREE FLAG_TEMP_11
 
+#define FLAG_TEMP_REGICE_REGIGIGAS_COMPLETE     FLAG_TEMP_2
+#define FLAG_TEMP_REGIROCK_REGIGIGAS_COMPLETE   FLAG_TEMP_3
+#define FLAG_TEMP_REGISTEEL_REGIGIGAS_COMPLETE  FLAG_TEMP_4
 
 #endif // GUARD_CONSTANTS_FLAGS_H
