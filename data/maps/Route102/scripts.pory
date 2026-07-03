@@ -21,7 +21,12 @@ script Route102_EventScript_Boy {
 }
 
 script Route102_EventScript_Rick {
-    trainerbattle_single(TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated)
+	trainerbattle_single(TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated)
+	// if (!flag(FLAG_SYS_GAME_CLEAR)) {
+	// 	trainerbattle_single(TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated)
+	// } else {
+	// 	trainerbattle_single(TRAINER_ROXANNE_1, Route102_Text_RickIntro, Route102_Text_RickDefeated)
+	// }
     msgbox(Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE)
     end
 }

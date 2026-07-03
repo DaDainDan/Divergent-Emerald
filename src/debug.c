@@ -1833,6 +1833,13 @@ static void ParseObjectEventScript(const u8 *script)
         ctx->scriptPtr = script + 5;
         sDebugMenuListData->data[0] = ScriptPeekHalfword(ctx);
     }
+    else if (script[0] == SCR_OP_CHECKFLAG && script[3] == SCR_OP_GOTO_IF)
+    {
+        ctx->scriptPtr = script + 5;
+        const u8 *branchDest = (const u8 *)ScriptReadWord(ctx);
+        if (branchDest[0] == SCR_OP_TRAINERBATTLE)
+            TrainerBattleLoadArgs(branchDest + 1);
+    }
     else if (Script_MatchesSpecial(script, SavePlayerParty) && Script_MatchesCallNative(script + 3, SetMultiTrainerBattle, FALSE))
     {
         ctx->scriptPtr = script + 8;

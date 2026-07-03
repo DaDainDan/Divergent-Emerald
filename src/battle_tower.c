@@ -104,6 +104,12 @@ const struct FacilityClass gTowerMaleFacilityClasses[FACILITY_CLASSES_MALE] =
     {FACILITY_CLASS_PKMN_RANGER_M, OBJ_EVENT_GFX_CAMPER},
     {FACILITY_CLASS_BUG_CATCHER, OBJ_EVENT_GFX_BUG_CATCHER},
     {FACILITY_CLASS_HIKER, OBJ_EVENT_GFX_HIKER},
+    {FACILITY_CLASS_BIKER_FRLG, OBJ_EVENT_GFX_BIKER},
+    {FACILITY_CLASS_SCIENTIST_FRLG, OBJ_EVENT_GFX_SCIENTIST_1},
+    {FACILITY_CLASS_GAMER_FRLG, OBJ_EVENT_GFX_EXPERT_M},
+    {FACILITY_CLASS_JUGGLER_FRLG, OBJ_EVENT_GFX_MAN_5},
+    {FACILITY_CLASS_BURGLAR_FRLG, OBJ_EVENT_GFX_MANIAC},
+    {FACILITY_CLASS_ENGINEER_FRLG, OBJ_EVENT_GFX_POKEFAN_M},
 };
 
 const struct FacilityClass gTowerFemaleFacilityClasses[FACILITY_CLASSES_FEMALE] =
@@ -547,6 +553,36 @@ static const u8 *const sPartnerTextsSwimmerM[] =
     PARTNER_TEXTS(SwimmerM)
 };
 
+static const u8 *const sPartnerTextsBiker[] =
+{
+    PARTNER_TEXTS(Biker)
+};
+
+static const u8 *const sPartnerTextsGamer[] =
+{
+    PARTNER_TEXTS(Gamer)
+};
+
+static const u8 *const sPartnerTextsBurglar[] =
+{
+    PARTNER_TEXTS(Burglar)
+};
+
+static const u8 *const sPartnerTextsScientist[] =
+{
+    PARTNER_TEXTS(Scientist)
+};
+
+static const u8 *const sPartnerTextsJuggler[] =
+{
+    PARTNER_TEXTS(Juggler)
+};
+
+static const u8 *const sPartnerTextsEngineer[] =
+{
+    PARTNER_TEXTS(Engineer)
+};
+
 struct
 {
     u32 facilityClass;
@@ -602,7 +638,13 @@ struct
     {FACILITY_CLASS_SWIMMER_F,             sPartnerTextsSwimmerF},
     {FACILITY_CLASS_SWIMMING_TRIATHLETE_M, sPartnerTextsSwimmingTriathleteM},
     {FACILITY_CLASS_SWIMMING_TRIATHLETE_F, sPartnerTextsSwimmingTriathleteF},
-    {FACILITY_CLASS_SWIMMER_M,             sPartnerTextsSwimmerM}
+    {FACILITY_CLASS_SWIMMER_M,             sPartnerTextsSwimmerM},
+    {FACILITY_CLASS_BIKER_FRLG,            sPartnerTextsBiker},
+    {FACILITY_CLASS_SCIENTIST_FRLG,        sPartnerTextsScientist},
+    {FACILITY_CLASS_GAMER_FRLG,            sPartnerTextsGamer},
+    {FACILITY_CLASS_JUGGLER_FRLG,          sPartnerTextsJuggler},
+    {FACILITY_CLASS_BURGLAR_FRLG,          sPartnerTextsBurglar},
+    {FACILITY_CLASS_ENGINEER_FRLG,         sPartnerTextsEngineer}
 };
 
 static const u8 *const *const sPartnerApprenticeTextTables[NUM_APPRENTICES] =

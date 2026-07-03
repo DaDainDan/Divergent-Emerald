@@ -220,21 +220,157 @@ void BattleAI_SetupItems(void)
     }
 }
 
+static u64 GetStandardTrainerClassAi(u16 trainerId)
+{
+    enum TrainerClassID trainerClass = GetTrainerClassFromId(trainerId);
+    u64 flags = 0;
+
+    switch (trainerClass) 
+    {
+    case TRAINER_CLASS_SALON_MAIDEN:
+    case TRAINER_CLASS_DOME_ACE:
+    case TRAINER_CLASS_PALACE_MAVEN:
+    case TRAINER_CLASS_ARENA_TYCOON:
+    case TRAINER_CLASS_FACTORY_HEAD:
+    case TRAINER_CLASS_PIKE_QUEEN:
+    case TRAINER_CLASS_PYRAMID_KING:
+    case TRAINER_CLASS_CHAMPION:
+    case TRAINER_CLASS_ELITE_FOUR:
+    case TRAINER_CLASS_AQUA_LEADER:
+    case TRAINER_CLASS_MAGMA_LEADER:
+    case TRAINER_CLASS_LEADER:
+    case TRAINER_CLASS_PSYCHIC:
+        flags = AI_FLAG_ELITE_TRAINER;
+        break;
+    case TRAINER_CLASS_HEX_MANIAC:
+        flags = AI_FLAG_ELITE_TRAINER | AI_FLAG_WILL_SUICIDE;
+        break;
+    
+    case TRAINER_CLASS_AQUA_ADMIN:
+    case TRAINER_CLASS_MAGMA_ADMIN:
+    case TRAINER_CLASS_RIVAL:
+    case TRAINER_CLASS_RS_PROTAG:
+    case TRAINER_CLASS_SCIENTIST_FRLG:
+    case TRAINER_CLASS_BIRD_KEEPER:
+    case TRAINER_CLASS_DRAGON_TAMER:
+    case TRAINER_CLASS_PKMN_RANGER:
+    case TRAINER_CLASS_COOLTRAINER:
+    case TRAINER_CLASS_COOLTRAINER_2: // Used for only one trainer.
+        flags = AI_FLAG_SMART_TRAINER;
+        break;
+    case TRAINER_CLASS_EXPERT:
+    case TRAINER_CLASS_OLD_COUPLE:
+        flags = AI_FLAG_SMART_TRAINER | AI_FLAG_CONSERVATIVE;
+        break;
+    case TRAINER_CLASS_BLACK_BELT:
+        flags = AI_FLAG_SMART_TRAINER | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE;
+        break;
+    case TRAINER_CLASS_NINJA_BOY:
+    case TRAINER_CLASS_GAMER_FRLG:
+        flags = AI_FLAG_SMART_TRAINER | AI_FLAG_KAMIKAZE;
+        break;
+    
+    case TRAINER_CLASS_PKMN_BREEDER:
+    case TRAINER_CLASS_AROMA_LADY:
+    case TRAINER_CLASS_SWIMMER_M:
+    case TRAINER_CLASS_SWIMMER_F:
+    case TRAINER_CLASS_ENGINEER_FRLG:
+    case TRAINER_CLASS_INTERVIEWER:
+    case TRAINER_CLASS_LADY:
+    case TRAINER_CLASS_PARASOL_LADY:
+    case TRAINER_CLASS_SIS_AND_BRO:
+    case TRAINER_CLASS_SR_AND_JR:
+    case TRAINER_CLASS_YOUNG_COUPLE:
+        flags = AI_FLAG_BASIC_TRAINER;
+        break;
+
+    case TRAINER_CLASS_HIKER:
+    case TRAINER_CLASS_BEAUTY:
+    case TRAINER_CLASS_CAMPER:
+    case TRAINER_CLASS_PICNICKER:
+    case TRAINER_CLASS_LASS:
+    case TRAINER_CLASS_RUIN_MANIAC:
+    case TRAINER_CLASS_FISHERMAN:
+    case TRAINER_CLASS_TRIATHLETE:
+        flags = AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_MON_CHOICES;
+        break;
+    case TRAINER_CLASS_JUGGLER_FRLG:
+        flags = AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_SWITCHING;
+        break;
+    case TRAINER_CLASS_GENTLEMAN:
+        flags = AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_SWITCHING | AI_FLAG_CONSERVATIVE;
+        break;
+    case TRAINER_CLASS_BATTLE_GIRL:
+    case TRAINER_CLASS_SAILOR:
+        flags = AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE;
+        break;
+
+    case TRAINER_CLASS_BURGLAR_FRLG:
+    case TRAINER_CLASS_COLLECTOR:
+    case TRAINER_CLASS_GUITARIST:
+    case TRAINER_CLASS_KINDLER:
+    case TRAINER_CLASS_RICH_BOY:
+        flags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY;
+        break;
+
+    case TRAINER_CLASS_CUE_BALL_FRLG:
+    case TRAINER_CLASS_BIKER_FRLG:
+    case TRAINER_CLASS_POKEMANIAC:
+        flags = AI_FLAG_BASIC_TRAINER | AI_FLAG_KAMIKAZE;
+        break;
+    
+    case TRAINER_CLASS_TEAM_AQUA:
+    case TRAINER_CLASS_TEAM_MAGMA:
+    case TRAINER_CLASS_BUG_MANIAC:
+        flags = AI_FLAG_BASIC_TRAINER | AI_FLAG_KAMIKAZE | AI_FLAG_SMART_SWITCHING;
+        break;
+    
+    case TRAINER_CLASS_BUG_CATCHER:
+    case TRAINER_CLASS_POKEFAN:
+    case TRAINER_CLASS_TUBER_F:
+    case TRAINER_CLASS_TUBER_M:
+    case TRAINER_CLASS_TWINS:
+        flags = AI_FLAG_TRY_TO_FAINT | AI_FLAG_NEGATE_UNAWARE;
+        break;
+    case TRAINER_CLASS_SCHOOL_KID:
+        flags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_HP_AWARE | AI_FLAG_PP_STALL_PREVENTION;
+        break;
+    case TRAINER_CLASS_YOUNGSTER:
+        flags = AI_FLAG_TRY_TO_2HKO | AI_FLAG_NEGATE_UNAWARE | AI_FLAG_KAMIKAZE;
+        break;
+    
+    default:
+        flags = AI_FLAG_BASIC_TRAINER;
+        break;
+    }
+
+    return flags;
+}
+
 static u64 GetWildAiFlags(void)
 {
     u32 avgLevel = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_LEVEL);
+    enum Species species = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES);
     u64 flags = 0;
 
     if (IsDoubleBattle())
         avgLevel = (GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_LEVEL) + GetMonData(&gParties[B_TRAINER_OPPONENT_A][1], MON_DATA_LEVEL)) / 2;
 
-    flags |= AI_FLAG_CHECK_BAD_MOVE;
-    if (avgLevel >= 20)
-        flags |= AI_FLAG_CHECK_VIABILITY;
-    if (avgLevel >= 60)
+    if (avgLevel <= 14)
+        flags |= AI_FLAG_NEGATE_UNAWARE;
+    if (avgLevel > 14)
         flags |= AI_FLAG_TRY_TO_2HKO;
-    if (avgLevel >= 80)
+    if (avgLevel > 20)
+        flags |= AI_FLAG_CHECK_BAD_MOVE;
+    if (avgLevel > 29)
+        flags |= AI_FLAG_PP_STALL_PREVENTION;
+    if (avgLevel > 38)
         flags |= AI_FLAG_HP_AWARE;
+    if (avgLevel > 46)
+        flags |= AI_FLAG_CHECK_VIABILITY;
+
+    if (gSpeciesInfo[species].isRestrictedLegendary)
+        flags |= (AI_FLAG_OMNISCIENT | AI_FLAG_PREDICTION);
 
     if (B_VAR_WILD_AI_FLAGS != 0 && VarGet(B_VAR_WILD_AI_FLAGS) != 0)
         flags |= VarGet(B_VAR_WILD_AI_FLAGS);
@@ -277,7 +413,13 @@ static u64 GetAiFlags(u16 trainerId, enum BattlerId battler)
         else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SECRET_BASE))
             flags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT;
         else
+        {
             flags = GetTrainerAIFlagsFromId(trainerId);
+            if (flags == 0)
+            {
+                flags = GetStandardTrainerClassAi(trainerId);
+            }
+        }
     }
 
     if (IsDoubleBattle() && flags != 0)
@@ -306,7 +448,7 @@ void BattleAI_SetupFlags(void)
     else
         gAiThinkingStruct->aiFlags[B_BATTLER_0] = 0; // player has no AI
 
-    if (DEBUG_OVERWORLD_MENU && gIsDebugBattle)
+    if ((DEBUG_OVERWORLD_MENU || gSaveBlock2Ptr->optionsDebugMenu) && gIsDebugBattle)
     {
         gAiThinkingStruct->aiFlags[B_BATTLER_1] = gDebugAIFlags;
         gAiThinkingStruct->aiFlags[B_BATTLER_3] = gDebugAIFlags;

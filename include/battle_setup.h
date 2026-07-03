@@ -4,7 +4,8 @@
 #include "battle_transition.h"
 #include "gym_leader_rematch.h"
 
-#define REMATCHES_COUNT 5
+#define REMATCHES_COUNT 6
+#define SKIP 0xFFFF  // Rematch slot placeholder: no new team at this progress tier
 
 struct RematchTrainer
 {

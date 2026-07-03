@@ -21,7 +21,7 @@ struct FacilityClass {
     u16 gfxId;
 };
 
-#define FACILITY_CLASSES_MALE   30
+#define FACILITY_CLASSES_MALE   36
 #define FACILITY_CLASSES_FEMALE 20
 
 extern const struct FacilityClass gTowerMaleFacilityClasses[FACILITY_CLASSES_MALE];

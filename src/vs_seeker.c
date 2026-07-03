@@ -547,10 +547,11 @@ void ClearRematchMovementByTrainerId(void)
 static u32 GetGameProgressFlags()
 {
     const u32 gameProgressFlags[] = {
-        FLAG_VISITED_LAVARIDGE_TOWN,
-        FLAG_VISITED_FORTREE_CITY,
-        FLAG_SYS_GAME_CLEAR,
-        FLAG_DEFEATED_METEOR_FALLS_STEVEN
+        FLAG_RECEIVED_VS_SEEKER,
+        FLAG_BADGE04_GET,
+        FLAG_BADGE05_GET,
+        FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN,
+        FLAG_SYS_GAME_CLEAR
     };
     u32 i = 0, numGameProgressFlags = 0;
     u32 maxGameProgressFlags = ARRAY_COUNT(gameProgressFlags);
@@ -568,6 +569,7 @@ u16 GetRematchTrainerIdVSSeeker(u16 trainerId)
 {
     u32 tableId = FirstBattleTrainerIdToRematchTableId(gRematchTable, trainerId);
     u32 rematchTrainerIdx = GetGameProgressFlags();
+    s32 prevIdx;
 
     if (!I_VS_SEEKER_CHARGING)
         return 0;
@@ -578,13 +580,24 @@ u16 GetRematchTrainerIdVSSeeker(u16 trainerId)
     if (tableId >= REMATCH_SPECIAL_TRAINER_START)
         return GetCurrentGymLeaderRematchLevel();
 
-    while (!HasTrainerBeenFought(gRematchTable[tableId].trainerIds[rematchTrainerIdx-1]))
+    while (rematchTrainerIdx > 0)
     {
-        if (rematchTrainerIdx== 0)
+        prevIdx = (s32)rematchTrainerIdx - 1;
+        while (prevIdx > 0 && gRematchTable[tableId].trainerIds[prevIdx] == SKIP)
+            prevIdx--;
+
+        // all preceding slots are SKIP
+        if (gRematchTable[tableId].trainerIds[prevIdx] == SKIP)
             break;
 
-        rematchTrainerIdx--;
+        if (!HasTrainerBeenFought(gRematchTable[tableId].trainerIds[prevIdx]))
+            rematchTrainerIdx--;
+        else
+            break;
     }
+
+    while (rematchTrainerIdx > 0 && gRematchTable[tableId].trainerIds[rematchTrainerIdx] == SKIP)
+        rematchTrainerIdx--;
 
     return gRematchTable[tableId].trainerIds[rematchTrainerIdx];
 }

@@ -1338,7 +1338,7 @@
 
 #define FLAG_SYS_POKEMON_GET                                        (SYS_FLAGS + 0x28)
 #define FLAG_SYS_POKEDEX_GET                                        (SYS_FLAGS + 0x29)
-#define FLAG_0x82A                                                  (SYS_FLAGS + 0x2A)
+#define FLAG_RECEIVED_VS_SEEKER                                     (SYS_FLAGS + 0x2A)
 #define FLAG_0x82B                                                  (SYS_FLAGS + 0x2B)
 #define FLAG_SYS_GAME_CLEAR                                         (SYS_FLAGS + 0x2C)
 #define FLAG_SYS_SET_TRAINER_CARD_PROFILE                           (SYS_FLAGS + 0x2D)
@@ -2687,6 +2687,14 @@
 #define FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY        0
 #define FLAG_UNUSED_0x933                           0
 #define FLAG_DAILY_APPRENTICE_LEAVES                0
+#define FLAG_BEAT_ROXANNE_REMATCH                   0
+#define FLAG_BEAT_WATTSON_REMATCH                   0
+#define FLAG_BEAT_FLANNERY_REMATCH                  0
+#define FLAG_BEAT_WINONA_REMATCH                    0
+#define FLAG_BEAT_NORMAN_REMATCH                    0
+#define FLAG_BEAT_BRAWLY_REMATCH                    0
+#define FLAG_BEAT_TATE_LIZA_REMATCH                 0
+#define FLAG_BEAT_JUAN_REMATCH                      0
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000

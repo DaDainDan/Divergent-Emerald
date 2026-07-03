@@ -1355,7 +1355,7 @@
 #define FLAG_SYS_POKEMON_GET                         (SYSTEM_FLAGS + 0x0) // FLAG_0x860
 #define FLAG_SYS_POKEDEX_GET                         (SYSTEM_FLAGS + 0x1)
 #define FLAG_SYS_POKENAV_GET                         (SYSTEM_FLAGS + 0x2)
-#define FLAG_UNUSED_0x863                            (SYSTEM_FLAGS + 0x3) // Unused Flag
+#define FLAG_RECEIVED_VS_SEEKER                      (SYSTEM_FLAGS + 0x3)
 #define FLAG_SYS_GAME_CLEAR                          (SYSTEM_FLAGS + 0x4)
 #define FLAG_SYS_CHAT_USED                           (SYSTEM_FLAGS + 0x5)
 #define FLAG_UNLOCKED_TRENDY_SAYINGS                 (SYSTEM_FLAGS + 0x6)
@@ -1599,14 +1599,14 @@
 #define FLAG_UNUSED_0x933                           (DAILY_FLAGS_START + 0x13) // Unused Flag
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 
-#define FLAG_UNUSED_0x935                           (DAILY_FLAGS_START + 0x15) // Unused Flag
-#define FLAG_UNUSED_0x936                           (DAILY_FLAGS_START + 0x16) // Unused Flag
-#define FLAG_UNUSED_0x937                           (DAILY_FLAGS_START + 0x17) // Unused Flag
-#define FLAG_UNUSED_0x938                           (DAILY_FLAGS_START + 0x18) // Unused Flag
-#define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
-#define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
-#define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
-#define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
+#define FLAG_BEAT_ROXANNE_REMATCH                   (DAILY_FLAGS_START + 0x15) // Unused Flag
+#define FLAG_BEAT_WATTSON_REMATCH                   (DAILY_FLAGS_START + 0x16) // Unused Flag
+#define FLAG_BEAT_FLANNERY_REMATCH                  (DAILY_FLAGS_START + 0x17) // Unused Flag
+#define FLAG_BEAT_WINONA_REMATCH                    (DAILY_FLAGS_START + 0x18) // Unused Flag
+#define FLAG_BEAT_NORMAN_REMATCH                    (DAILY_FLAGS_START + 0x19) // Unused Flag
+#define FLAG_BEAT_BRAWLY_REMATCH                    (DAILY_FLAGS_START + 0x1A) // Unused Flag
+#define FLAG_BEAT_TATE_LIZA_REMATCH                 (DAILY_FLAGS_START + 0x1B) // Unused Flag
+#define FLAG_BEAT_JUAN_REMATCH                      (DAILY_FLAGS_START + 0x1C) // Unused Flag
 #define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag
 #define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag
 #define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
