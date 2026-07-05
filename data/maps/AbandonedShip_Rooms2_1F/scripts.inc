@@ -66,12 +66,12 @@ AbandonedShip_Rooms2_1F_EventScript_Garrison::
 
 AbandonedShip_Rooms2_1F_Text_DanIntro::
 # 43 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "{SPEAKER NAME_DAN}While searching for treasures,\n"
+	.string "{SPEAKER NAME_UNKNOWN}While searching for treasures,\n"
 	.string "we discovered a TRAINER!$"
 
 AbandonedShip_Rooms2_1F_Text_DanDefeat::
 # 48 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "{SPEAKER NAME_DAN}We couldn't win even though\n"
+	.string "DAN: We couldn't win even though\n"
 	.string "we worked together…$"
 
 AbandonedShip_Rooms2_1F_Text_DanPostBattle::
@@ -86,13 +86,13 @@ AbandonedShip_Rooms2_1F_Text_DanNotEnoughMons::
 
 AbandonedShip_Rooms2_1F_Text_KiraIntro::
 # 63 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "{SPEAKER NAME_KIRA}Oh?\n"
+	.string "{SPEAKER NAME_UNKNOWN}Oh?\n"
 	.string "We were searching for treasures.\l"
 	.string "But we discovered a TRAINER instead!$"
 
 AbandonedShip_Rooms2_1F_Text_KiraDefeat::
 # 69 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "{SPEAKER NAME_KIRA}Ooh, so strong!$"
+	.string "KIRA: Ooh, so strong!$"
 
 AbandonedShip_Rooms2_1F_Text_KiraPostBattle::
 # 73 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -119,7 +119,7 @@ AbandonedShip_Rooms2_1F_Text_DanRematchIntro::
 
 AbandonedShip_Rooms2_1F_Text_DanRematchDefeat::
 # 98 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "{SPEAKER NAME_DAN}You're strong, as usual!$"
+	.string "DAN: You're strong, as usual!$"
 
 AbandonedShip_Rooms2_1F_Text_DanPostRematch::
 # 102 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -143,7 +143,7 @@ AbandonedShip_Rooms2_1F_Text_KiraRematchIntro::
 
 AbandonedShip_Rooms2_1F_Text_KiraRematchDefeat::
 # 125 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "{SPEAKER NAME_KIRA}Oh, we lost again…$"
+	.string "KIRA: Oh, we lost again…$"
 
 AbandonedShip_Rooms2_1F_Text_KiraPostRematch::
 # 129 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"

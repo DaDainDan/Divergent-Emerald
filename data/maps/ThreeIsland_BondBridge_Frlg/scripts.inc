@@ -91,12 +91,12 @@ ThreeIsland_BondBridge_Text_TishaPostBattle::
 
 ThreeIsland_BondBridge_Text_JoyIntro::
 # 89 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "{SPEAKER NAME_JOY}We'll teach you what our\n"
+	.string "{SPEAKER NAME_UNKNOWN}We'll teach you what our\n"
 	.string "favorite POKéMON is!$"
 
 ThreeIsland_BondBridge_Text_JoyDefeat::
 # 94 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "{SPEAKER NAME_JOY}Ohh…\n"
+	.string "JOY: Ohh…\n"
 	.string "MEG!$"
 
 ThreeIsland_BondBridge_Text_JoyPostBattle::
@@ -112,12 +112,12 @@ ThreeIsland_BondBridge_Text_JoyNotEnoughMons::
 
 ThreeIsland_BondBridge_Text_MegIntro::
 # 111 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "{SPEAKER NAME_MEG}We'll show you our favorite\n"
+	.string "{SPEAKER NAME_UNKNOWN}We'll show you our favorite\n"
 	.string "POKéMON.$"
 
 ThreeIsland_BondBridge_Text_MegDefeat::
 # 116 "data/maps/ThreeIsland_BondBridge_Frlg/scripts.pory"
-	.string "{SPEAKER NAME_MEG}Ohh…\n"
+	.string "MEG: Ohh…\n"
 	.string "JOY!$"
 
 ThreeIsland_BondBridge_Text_MegPostBattle::

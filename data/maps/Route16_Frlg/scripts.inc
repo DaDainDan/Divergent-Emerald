@@ -214,12 +214,12 @@ Route16_Text_RouteSign::
 
 Route16_Text_JedIntro::
 # 162 "data/maps/Route16_Frlg/scripts.pory"
-	.string "{SPEAKER NAME_JED}Our love knows no bounds.\n"
+	.string "{SPEAKER NAME_UNKNOWN}Our love knows no bounds.\n"
 	.string "We're in love and we show it!$"
 
 Route16_Text_JedDefeat::
 # 167 "data/maps/Route16_Frlg/scripts.pory"
-	.string "{SPEAKER NAME_JED}Oh, no!\n"
+	.string "JED: Oh, no!\n"
 	.string "My love has seen me as a loser!$"
 
 Route16_Text_JedPostBattle::
@@ -234,12 +234,12 @@ Route16_Text_JedNotEnoughMons::
 
 Route16_Text_LeaIntro::
 # 182 "data/maps/Route16_Frlg/scripts.pory"
-	.string "{SPEAKER NAME_LEA}Sometimes, the intensity of\n"
+	.string "{SPEAKER NAME_UNKNOWN}Sometimes, the intensity of\n"
 	.string "our love scares me.$"
 
 Route16_Text_LeaDefeat::
 # 187 "data/maps/Route16_Frlg/scripts.pory"
-	.string "{SPEAKER NAME_LEA}Ohh! But JED looks cool\n"
+	.string "LEA: Ohh! But JED looks cool\n"
 	.string "even in a loss!$"
 
 Route16_Text_LeaPostBattle::

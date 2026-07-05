@@ -77,7 +77,7 @@ text MtPyre_2F_Text_MarkPostBattle {
 }
 
 text MtPyre_2F_Text_LukeIntro {
-	"{SPEAKER NAME_LUKE}We're here on a dare.
+	"{SPEAKER NAME_UNKNOWN}We're here on a dare.
 
 	Heheh, if I show her how cool I am,
 	she'll fall for me. I know it!
@@ -87,7 +87,7 @@ text MtPyre_2F_Text_LukeIntro {
 }
 
 text MtPyre_2F_Text_LukeDefeat {
-	"{SPEAKER NAME_LUKE}Whoopsie!"
+	"LUKE: Whoopsie!"
 }
 
 text MtPyre_2F_Text_LukePostBattle {
@@ -105,7 +105,7 @@ text MtPyre_2F_Text_LukeNotEnoughMons {
 }
 
 text MtPyre_2F_Text_DezIntro {
-	"{SPEAKER NAME_DEZ}I came here on a dare with my
+	"{SPEAKER NAME_UNKNOWN}I came here on a dare with my
 	boyfriend.
 
 	It's really scary, but I'm with my
@@ -116,7 +116,7 @@ text MtPyre_2F_Text_DezIntro {
 }
 
 text MtPyre_2F_Text_DezDefeat {
-	"{SPEAKER NAME_DEZ}Waaaah! I'm scared!"
+	"DEZ: Waaaah! I'm scared!"
 }
 
 text MtPyre_2F_Text_DezPostBattle {

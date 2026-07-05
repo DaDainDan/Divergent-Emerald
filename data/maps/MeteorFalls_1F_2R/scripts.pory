@@ -94,13 +94,13 @@ text MeteorFalls_1F_2R_Text_NicolasPostRematch {
 }
 
 text MeteorFalls_1F_2R_Text_JohnIntro {
-	"{SPEAKER NAME_JOHN}We've always battled POKéMON
+	"{SPEAKER NAME_UNKNOWN}We've always battled POKéMON
 	together as a twosome.
 	We've confidence in ourselves."
 }
 
 text MeteorFalls_1F_2R_Text_JohnDefeat {
-	"{SPEAKER NAME_JOHN}Oh, my.
+	"JOHN: Oh, my.
 	We've lost, dear wife."
 }
 
@@ -125,7 +125,7 @@ text MeteorFalls_1F_2R_Text_JohnRegister {
 }
 
 text MeteorFalls_1F_2R_Text_JayIntro {
-	"{SPEAKER NAME_JAY}We've been married for
+	"{SPEAKER NAME_UNKNOWN}We've been married for
 	fifty years.
 
 	The bond we share as a couple could
@@ -133,7 +133,7 @@ text MeteorFalls_1F_2R_Text_JayIntro {
 }
 
 text MeteorFalls_1F_2R_Text_JayDefeat {
-	"{SPEAKER NAME_JAY}Oh, dear.
+	"JAY: Oh, dear.
 	We've lost, my dear husband."
 }
 
@@ -159,7 +159,7 @@ text MeteorFalls_1F_2R_Text_JohnRematchIntro {
 }
 
 text MeteorFalls_1F_2R_Text_JohnRematchDefeat {
-	"{SPEAKER NAME_JOHN}Oh, my.
+	"JOHN: Oh, my.
 	We've lost, dear wife."
 }
 
@@ -186,7 +186,7 @@ text MeteorFalls_1F_2R_Text_JayRematchIntro {
 }
 
 text MeteorFalls_1F_2R_Text_JayRematchDefeat {
-	"{SPEAKER NAME_JAY}Oh, dear.
+	"JAY: Oh, dear.
 	We've lost, my dear husband."
 }
 

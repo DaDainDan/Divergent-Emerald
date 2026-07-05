@@ -102,13 +102,13 @@ Route103_Text_DaisyPostBattle:
 
 Route103_Text_AmyIntro:
 # 105 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_AMY}I'm AMY.\n"
+	.string "{SPEAKER NAME_UNKNOWN}I'm AMY.\n"
 	.string "And this is my little sister LIV.\l"
 	.string "We battle together!$"
 
 Route103_Text_AmyDefeated:
 # 111 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_AMY}Uh-oh, we lost.$"
+	.string "AMY: Uh-oh, we lost.$"
 
 Route103_Text_AmyPostBattle:
 # 115 "data/text/trainers.pory"
@@ -124,12 +124,12 @@ Route103_Text_AmyNotEnoughPokemon:
 
 Route103_Text_LivIntro:
 # 127 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_LIV}We battle together as one\n"
+	.string "{SPEAKER NAME_UNKNOWN}We battle together as one\n"
 	.string "team.$"
 
 Route103_Text_LivDefeated:
 # 132 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_LIV}Oh, we lost, big sister…$"
+	.string "LIV: Oh, we lost, big sister…$"
 
 Route103_Text_LivPostBattle:
 # 136 "data/text/trainers.pory"
@@ -156,7 +156,7 @@ Route103_Text_AmyRematchIntro:
 
 Route103_Text_AmyRematchDefeated:
 # 160 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_AMY}Aww, boo!\n"
+	.string "AMY: Aww, boo!\n"
 	.string "We couldn't win again…$"
 
 Route103_Text_AmyRematchPostBattle:
@@ -178,7 +178,7 @@ Route103_Text_LivRematchIntro:
 
 Route103_Text_LivRematchDefeated:
 # 182 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_LIV}Awww, we lost again…\n"
+	.string "LIV: Awww, we lost again…\n"
 	.string "Big sister…$"
 
 Route103_Text_LivRematchPostBattle:
@@ -306,12 +306,12 @@ Route103_Text_MarcosPostBattle:
 
 Route104_Text_GinaIntro:
 # 313 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_GINA}Okay, let's battle with our\n"
+	.string "{SPEAKER NAME_UNKNOWN}Okay, let's battle with our\n"
 	.string "POKéMON!$"
 
 Route104_Text_GinaDefeat:
 # 318 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_GINA}Losing upsets me!$"
+	.string "GINA: Losing upsets me!$"
 
 Route104_Text_GinaPostBattle:
 # 322 "data/text/trainers.pory"
@@ -327,12 +327,12 @@ Route104_Text_GinaNotEnoughMons:
 
 Route104_Text_MiaIntro:
 # 335 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_MIA}We are twins, so we battle\n"
+	.string "{SPEAKER NAME_UNKNOWN}We are twins, so we battle\n"
 	.string "POKéMON together.$"
 
 Route104_Text_MiaDefeat:
 # 340 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_MIA}We battled together, but we\n"
+	.string "MIA: We battled together, but we\n"
 	.string "both lost…$"
 
 Route104_Text_MiaPostBattle:
@@ -825,12 +825,12 @@ Route107_Text_BethPostBattle:
 
 Route107_Text_LisaIntro:
 # 855 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_LISA}We challenge you as a sister\n"
+	.string "{SPEAKER NAME_UNKNOWN}We challenge you as a sister\n"
 	.string "and brother!$"
 
 Route107_Text_LisaDefeated:
 # 860 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_LISA}Awesome.\n"
+	.string "LISA: Awesome.\n"
 	.string "You're in a different class of tough.$"
 
 Route107_Text_LisaPostBattle:
@@ -845,14 +845,14 @@ Route107_Text_LisaNotEnoughPokemon:
 
 Route107_Text_RayIntro:
 # 875 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_RAY}We always battle POKéMON,\n"
+	.string "{SPEAKER NAME_UNKNOWN}We always battle POKéMON,\n"
 	.string "me and my sister.\p"
 	.string "I always lose, but we can beat you\n"
 	.string "2-on-2!$"
 
 Route107_Text_RayDefeated:
 # 883 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_RAY}Wowee, you're at a higher level\n"
+	.string "RAY: Wowee, you're at a higher level\n"
 	.string "than us!$"
 
 Route107_Text_RayPostBattle:
@@ -1159,13 +1159,13 @@ Route109_Text_CarterPostBattle:
 
 Route109_Text_PaulIntro:
 # 1193 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_PAUL}Well, this is a mood-breaker.\p"
+	.string "{SPEAKER NAME_UNKNOWN}Well, this is a mood-breaker.\p"
 	.string "I wish you wouldn't disturb our\n"
 	.string "precious time together.$"
 
 Route109_Text_PaulDefeated:
 # 1200 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_PAUL}Well, I give up.$"
+	.string "PAUL: Well, I give up.$"
 
 Route109_Text_PaulPostBattle:
 # 1204 "data/text/trainers.pory"
@@ -1181,12 +1181,12 @@ Route109_Text_PaulNotEnoughPokemon:
 
 Route109_Text_MelIntro:
 # 1216 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_MEL}We're, like, totally in love.\n"
+	.string "{SPEAKER NAME_UNKNOWN}We're, like, totally in love.\n"
 	.string "Our romance is heating up all of HOENN!$"
 
 Route109_Text_MelDefeated:
 # 1221 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_MEL}We lost, and it's my fault!\n"
+	.string "MEL: We lost, and it's my fault!\n"
 	.string "PAUL will hate me!$"
 
 Route109_Text_MelPostBattle:
@@ -2115,12 +2115,12 @@ Route113_Text_LungPostBattle:
 
 Route113_Text_ToriIntro:
 # 2180 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_TORI}Both of us, we collect ashes.\n"
+	.string "{SPEAKER NAME_UNKNOWN}Both of us, we collect ashes.\n"
 	.string "We battle POKéMON, too.$"
 
 Route113_Text_ToriDefeat:
 # 2185 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_TORI}We lost… It's boring, so I'm going\n"
+	.string "TORI: We lost… It's boring, so I'm going\n"
 	.string "to get some more ashes.$"
 
 Route113_Text_ToriPostBattle:
@@ -2135,12 +2135,12 @@ Route113_Text_ToriNotEnoughMons:
 
 Route113_Text_TiaIntro:
 # 2200 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_TIA}Both of us, we collect ashes.\n"
+	.string "{SPEAKER NAME_UNKNOWN}Both of us, we collect ashes.\n"
 	.string "We battle POKéMON, too.$"
 
 Route113_Text_TiaDefeat:
 # 2205 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_TIA}We couldn't win… It's boring,\n"
+	.string "TIA: We couldn't win… It's boring,\n"
 	.string "so I'm getting some more ashes.$"
 
 Route113_Text_TiaPostBattle:
@@ -2388,13 +2388,13 @@ Route114_Text_NolanPostBattle:
 
 Route114_Text_TyraIntro:
 # 2464 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_TYRA}Well, sure.\n"
+	.string "{SPEAKER NAME_UNKNOWN}Well, sure.\n"
 	.string "I'm in the mood for it.\l"
 	.string "I'll teach you a little about POKéMON.$"
 
 Route114_Text_TyraDefeat:
 # 2470 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_TYRA}What an amazing battle style!$"
+	.string "TYRA: What an amazing battle style!$"
 
 Route114_Text_TyraPostBattle:
 # 2474 "data/text/trainers.pory"
@@ -2409,11 +2409,11 @@ Route114_Text_TyraNotEnoughMons:
 
 Route114_Text_IvyIntro:
 # 2485 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_IVY}Who taught you about POKéMON?$"
+	.string "{SPEAKER NAME_UNKNOWN}Who taught you about POKéMON?$"
 
 Route114_Text_IvyDefeat:
 # 2489 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_IVY}What an amazing battle style!$"
+	.string "IVY: What an amazing battle style!$"
 
 Route114_Text_IvyPostBattle:
 # 2493 "data/text/trainers.pory"
@@ -3062,12 +3062,12 @@ Route117_Text_DerekPostBattle:
 
 Route117_Text_AnnaIntro:
 # 3156 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_ANNA}I'm with my pretty junior student\n"
+	.string "{SPEAKER NAME_UNKNOWN}I'm with my pretty junior student\n"
 	.string "partner. I have to do good!$"
 
 Route117_Text_AnnaDefeat:
 # 3161 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_ANNA}I'm with my pretty junior student\n"
+	.string "ANNA: I'm with my pretty junior student\n"
 	.string "partner! Let me win!$"
 
 Route117_Text_AnnaPostBattle:
@@ -3088,12 +3088,12 @@ Route117_Text_AnnaNotEnoughMons:
 
 Route117_Text_MegIntro:
 # 3183 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_MEG}I'm going to tag up with my super\n"
+	.string "{SPEAKER NAME_UNKNOWN}I'm going to tag up with my super\n"
 	.string "senior student partner and beat you!$"
 
 Route117_Text_MegDefeat:
 # 3188 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_MEG}Oh, no!\n"
+	.string "MEG: Oh, no!\n"
 	.string "I'm sorry, ANNA! I let you down…$"
 
 Route117_Text_MegPostBattle:
@@ -3114,7 +3114,7 @@ Route117_Text_AnnaRematchIntro:
 
 Route117_Text_AnnaRematchDefeat:
 # 3210 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_ANNA}I couldn't get into the groove.$"
+	.string "ANNA: I couldn't get into the groove.$"
 
 Route117_Text_AnnaPostRematch:
 # 3214 "data/text/trainers.pory"
@@ -3134,7 +3134,7 @@ Route117_Text_MegRematchIntro:
 
 Route117_Text_MegRematchDefeat:
 # 3231 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_MEG}Too strong!$"
+	.string "MEG: Too strong!$"
 
 Route117_Text_MegPostRematch:
 # 3235 "data/text/trainers.pory"
@@ -3959,12 +3959,12 @@ Route121_Text_TammyPostBattle:
 
 Route121_Text_KateIntro:
 # 4088 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_KATE}Together, we're fearless!\n"
+	.string "{SPEAKER NAME_UNKNOWN}Together, we're fearless!\n"
 	.string "We'll demonstrate how tough we are!$"
 
 Route121_Text_KateDefeat:
 # 4093 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_KATE}I blew it in front of my junior\n"
+	.string "KATE: I blew it in front of my junior\n"
 	.string "student partner…$"
 
 Route121_Text_KatePostBattle:
@@ -3981,12 +3981,12 @@ Route121_Text_KateNotEnoughMons:
 
 Route121_Text_JoyIntro:
 # 4111 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_JOY}Together, we're fearless!\n"
+	.string "{SPEAKER NAME_UNKNOWN}Together, we're fearless!\n"
 	.string "We'll demonstrate how tough we are!$"
 
 Route121_Text_JoyDefeat:
 # 4116 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_JOY}Please forgive me, KATE!$"
+	.string "JOY: Please forgive me, KATE!$"
 
 Route121_Text_JoyPostBattle:
 # 4120 "data/text/trainers.pory"
@@ -4253,12 +4253,12 @@ Route123_Text_JackiPostRematch:
 
 Route123_Text_MiuIntro:
 # 4389 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_MIU}Hello, TRAINER. I hope your\n"
+	.string "{SPEAKER NAME_UNKNOWN}Hello, TRAINER. I hope your\n"
 	.string "POKéMON won't cry when they lose.$"
 
 Route123_Text_MiuDefeat:
 # 4394 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_MIU}Uh-oh, we lost.$"
+	.string "MIU: Uh-oh, we lost.$"
 
 Route123_Text_MiuPostBattle:
 # 4398 "data/text/trainers.pory"
@@ -4272,12 +4272,12 @@ Route123_Text_MiuNotEnoughMons:
 
 Route123_Text_YukiIntro:
 # 4408 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_YUKI}Okay!\n"
+	.string "{SPEAKER NAME_UNKNOWN}Okay!\n"
 	.string "We're beating the TRAINER's POKéMON!$"
 
 Route123_Text_YukiDefeat:
 # 4413 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_YUKI}Uh-oh, we lost.$"
+	.string "YUKI: Uh-oh, we lost.$"
 
 Route123_Text_YukiPostBattle:
 # 4417 "data/text/trainers.pory"
@@ -4555,7 +4555,7 @@ Route124_Text_ChadPostBattle:
 
 Route124_Text_LilaIntro:
 # 4701 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_LILA}Sigh…\p"
+	.string "{SPEAKER NAME_UNKNOWN}Sigh…\p"
 	.string "Here I am in the sea, but who's with me?\n"
 	.string "My little brother!\p"
 	.string "Let's battle so I won't have to dwell\n"
@@ -4563,7 +4563,7 @@ Route124_Text_LilaIntro:
 
 Route124_Text_LilaDefeat:
 # 4711 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_LILA}ROY! It's your fault we lost!\n"
+	.string "LILA: ROY! It's your fault we lost!\n"
 	.string "You're in for it later!$"
 
 Route124_Text_LilaPostBattle:
@@ -4579,7 +4579,7 @@ Route124_Text_LilaNotEnoughMons:
 
 Route124_Text_RoyIntro:
 # 4728 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_ROY}My big sister is tough at POKéMON!\p"
+	.string "{SPEAKER NAME_UNKNOWN}My big sister is tough at POKéMON!\p"
 	.string "Don't cry when you lose!$"
 
 Route124_Text_RoyDefeat:
@@ -4614,7 +4614,7 @@ Route124_Text_LilaRematchIntro:
 
 Route124_Text_LilaRematchDefeat:
 # 4767 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_LILA}ROY!\n"
+	.string "LILA: ROY!\n"
 	.string "It's your fault we lost again!\p"
 	.string "We're having a training session later!$"
 
@@ -4636,7 +4636,7 @@ Route124_Text_RoyRematchIntro:
 
 Route124_Text_RoyRematchDefeat:
 # 4791 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_ROY}Uh-oh…\n"
+	.string "ROY: Uh-oh…\n"
 	.string "My big sister will chew me out again.$"
 
 Route124_Text_RoyPostRematch:
@@ -4782,13 +4782,13 @@ Route125_Text_ErnestRematchPostBattle:
 
 Route125_Text_KimIntro:
 # 4942 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_KIM}A funny old man lives in the\n"
+	.string "{SPEAKER NAME_UNKNOWN}A funny old man lives in the\n"
 	.string "SHOAL CAVE. Someone told me.\l"
 	.string "Are you going to see him, too?$"
 
 Route125_Text_KimDefeat:
 # 4948 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_KIM}I thought we would win.$"
+	.string "KIM: I thought we would win.$"
 
 Route125_Text_KimPostBattle:
 # 4952 "data/text/trainers.pory"
@@ -4803,12 +4803,12 @@ Route125_Text_KimNotEnoughMons:
 
 Route125_Text_IrisIntro:
 # 4964 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_IRIS}KIM, can you tell me what we're\n"
+	.string "{SPEAKER NAME_UNKNOWN}KIM, can you tell me what we're\n"
 	.string "looking for out here?$"
 
 Route125_Text_IrisDefeat:
 # 4969 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_IRIS}Oh, we came sort of close.$"
+	.string "IRIS: Oh, we came sort of close.$"
 
 Route125_Text_IrisPostBattle:
 # 4973 "data/text/trainers.pory"
@@ -5480,12 +5480,12 @@ Route131_Text_KaraPostBattle:
 
 Route131_Text_ReliIntro:
 # 5660 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_RELI}We'll work together as siblings\n"
+	.string "{SPEAKER NAME_UNKNOWN}We'll work together as siblings\n"
 	.string "to take you on!$"
 
 Route131_Text_ReliDefeat:
 # 5665 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_RELI}We couldn't win even though we\n"
+	.string "RELI: We couldn't win even though we\n"
 	.string "worked together…$"
 
 Route131_Text_ReliPostBattle:
@@ -5501,12 +5501,12 @@ Route131_Text_ReliNotEnoughMons:
 
 Route131_Text_IanIntro:
 # 5681 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_IAN}I'm doing my best together with\n"
+	.string "{SPEAKER NAME_UNKNOWN}I'm doing my best together with\n"
 	.string "my sis!$"
 
 Route131_Text_IanDefeat:
 # 5686 "data/text/trainers.pory"
-	.string "{SPEAKER NAME_IAN}I did my best with my sis,\n"
+	.string "IAN: I did my best with my sis,\n"
 	.string "but we still couldn't win…$"
 
 Route131_Text_IanPostBattle:

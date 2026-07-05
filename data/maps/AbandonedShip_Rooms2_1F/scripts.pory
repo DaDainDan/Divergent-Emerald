@@ -41,12 +41,12 @@ script AbandonedShip_Rooms2_1F_EventScript_Garrison {
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanIntro {
-	"{SPEAKER NAME_DAN}While searching for treasures,
+	"{SPEAKER NAME_UNKNOWN}While searching for treasures,
 	we discovered a TRAINER!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanDefeat {
-	"{SPEAKER NAME_DAN}We couldn't win even though
+	"DAN: We couldn't win even though
 	we worked together…"
 }
 
@@ -61,13 +61,13 @@ text AbandonedShip_Rooms2_1F_Text_DanNotEnoughMons {
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraIntro {
-	"{SPEAKER NAME_KIRA}Oh?
+	"{SPEAKER NAME_UNKNOWN}Oh?
 	We were searching for treasures.
 	But we discovered a TRAINER instead!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraDefeat {
-	"{SPEAKER NAME_KIRA}Ooh, so strong!"
+	"KIRA: Ooh, so strong!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraPostBattle {
@@ -96,7 +96,7 @@ text AbandonedShip_Rooms2_1F_Text_DanRematchIntro {
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanRematchDefeat {
-	"{SPEAKER NAME_DAN}You're strong, as usual!"
+	"DAN: You're strong, as usual!"
 }
 
 text AbandonedShip_Rooms2_1F_Text_DanPostRematch {
@@ -123,7 +123,7 @@ text AbandonedShip_Rooms2_1F_Text_KiraRematchIntro {
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraRematchDefeat {
-	"{SPEAKER NAME_KIRA}Oh, we lost again…"
+	"KIRA: Oh, we lost again…"
 }
 
 text AbandonedShip_Rooms2_1F_Text_KiraPostRematch {

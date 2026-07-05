@@ -118,12 +118,12 @@ text SSTidalRooms_Text_ThomasPostBattle {
 }
 
 text SSTidalRooms_Text_JedIntro {
-	"{SPEAKER NAME_JED}I feel a little shy about this, but…
+	"{SPEAKER NAME_UNKNOWN}I feel a little shy about this, but…
 	We'll show you our lovey-dovey power!"
 }
 
 text SSTidalRooms_Text_JedDefeat {
-	"{SPEAKER NAME_JED}Sigh…"
+	"JED: Sigh…"
 }
 
 text SSTidalRooms_Text_JedPostBattle {
@@ -138,12 +138,12 @@ text SSTidalRooms_Text_JedNotEnoughMons {
 }
 
 text SSTidalRooms_Text_LeaIntro {
-	"{SPEAKER NAME_LEA}I feel a little silly, but…
+	"{SPEAKER NAME_UNKNOWN}I feel a little silly, but…
 	We'll show you our lovey-dovey power!"
 }
 
 text SSTidalRooms_Text_LeaDefeat {
-	"{SPEAKER NAME_LEA}Oh, boo!"
+	"LEA: Oh, boo!"
 }
 
 text SSTidalRooms_Text_LeaPostBattle {

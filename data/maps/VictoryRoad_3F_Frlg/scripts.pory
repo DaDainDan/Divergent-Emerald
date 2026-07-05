@@ -148,12 +148,12 @@ text VictoryRoad_3F_Text_ColbyPostBattle {
 }
 
 text VictoryRoad_3F_Text_RayIntro {
-	"{SPEAKER NAME_RAY}Together, the two of us are
+	"{SPEAKER NAME_UNKNOWN}Together, the two of us are
 	destined for greatness!"
 }
 
 text VictoryRoad_3F_Text_RayDefeat {
-	"{SPEAKER NAME_RAY}Ludicrous!
+	"RAY: Ludicrous!
 	This can't be!"
 }
 
@@ -171,12 +171,12 @@ text VictoryRoad_3F_Text_RayNotEnoughMons {
 }
 
 text VictoryRoad_3F_Text_TyraIntro {
-	"{SPEAKER NAME_TYRA}We're trying to become
+	"{SPEAKER NAME_UNKNOWN}We're trying to become
 	champions together."
 }
 
 text VictoryRoad_3F_Text_TyraDefeat {
-	"{SPEAKER NAME_TYRA}Oh, but…"
+	"TYRA: Oh, but…"
 }
 
 text VictoryRoad_3F_Text_TyraPostBattle {

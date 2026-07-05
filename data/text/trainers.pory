@@ -103,13 +103,13 @@ text(local) Route103_Text_DaisyPostBattle {
 }
 
 text(local) Route103_Text_AmyIntro {
-	"{SPEAKER NAME_AMY}I'm AMY.
+	"{SPEAKER NAME_UNKNOWN}I'm AMY.
 	And this is my little sister LIV.
 	We battle together!"
 }
 
 text(local) Route103_Text_AmyDefeated {
-	"{SPEAKER NAME_AMY}Uh-oh, we lost."
+	"AMY: Uh-oh, we lost."
 }
 
 text(local) Route103_Text_AmyPostBattle {
@@ -125,12 +125,12 @@ text(local) Route103_Text_AmyNotEnoughPokemon {
 }
 
 text(local) Route103_Text_LivIntro {
-	"{SPEAKER NAME_LIV}We battle together as one
+	"{SPEAKER NAME_UNKNOWN}We battle together as one
 	team."
 }
 
 text(local) Route103_Text_LivDefeated {
-	"{SPEAKER NAME_LIV}Oh, we lost, big sister…"
+	"LIV: Oh, we lost, big sister…"
 }
 
 text(local) Route103_Text_LivPostBattle {
@@ -158,7 +158,7 @@ text(local) Route103_Text_AmyRematchIntro {
 }
 
 text(local) Route103_Text_AmyRematchDefeated {
-	"{SPEAKER NAME_AMY}Aww, boo!
+	"AMY: Aww, boo!
 	We couldn't win again…"
 }
 
@@ -180,7 +180,7 @@ text(local) Route103_Text_LivRematchIntro {
 }
 
 text(local) Route103_Text_LivRematchDefeated {
-	"{SPEAKER NAME_LIV}Awww, we lost again…
+	"LIV: Awww, we lost again…
 	Big sister…"
 }
 
@@ -311,12 +311,12 @@ text(local) Route103_Text_MarcosPostBattle {
 }
 
 text(local) Route104_Text_GinaIntro {
-	"{SPEAKER NAME_GINA}Okay, let's battle with our
+	"{SPEAKER NAME_UNKNOWN}Okay, let's battle with our
 	POKéMON!"
 }
 
 text(local) Route104_Text_GinaDefeat {
-	"{SPEAKER NAME_GINA}Losing upsets me!"
+	"GINA: Losing upsets me!"
 }
 
 text(local) Route104_Text_GinaPostBattle {
@@ -333,12 +333,12 @@ text(local) Route104_Text_GinaNotEnoughMons {
 }
 
 text(local) Route104_Text_MiaIntro {
-	"{SPEAKER NAME_MIA}We are twins, so we battle
+	"{SPEAKER NAME_UNKNOWN}We are twins, so we battle
 	POKéMON together."
 }
 
 text(local) Route104_Text_MiaDefeat {
-	"{SPEAKER NAME_MIA}We battled together, but we
+	"MIA: We battled together, but we
 	both lost…"
 }
 
@@ -853,12 +853,12 @@ text(local) Route107_Text_BethPostBattle {
 }
 
 text(local) Route107_Text_LisaIntro {
-	"{SPEAKER NAME_LISA}We challenge you as a sister
+	"{SPEAKER NAME_UNKNOWN}We challenge you as a sister
 	and brother!"
 }
 
 text(local) Route107_Text_LisaDefeated {
-	"{SPEAKER NAME_LISA}Awesome.
+	"LISA: Awesome.
 	You're in a different class of tough."
 }
 
@@ -873,7 +873,7 @@ text(local) Route107_Text_LisaNotEnoughPokemon {
 }
 
 text(local) Route107_Text_RayIntro {
-	"{SPEAKER NAME_RAY}We always battle POKéMON,
+	"{SPEAKER NAME_UNKNOWN}We always battle POKéMON,
 	me and my sister.
 
 	I always lose, but we can beat you
@@ -881,7 +881,7 @@ text(local) Route107_Text_RayIntro {
 }
 
 text(local) Route107_Text_RayDefeated {
-	"{SPEAKER NAME_RAY}Wowee, you're at a higher level
+	"RAY: Wowee, you're at a higher level
 	than us!"
 }
 
@@ -1191,14 +1191,14 @@ text(local) Route109_Text_CarterPostBattle {
 }
 
 text(local) Route109_Text_PaulIntro {
-	"{SPEAKER NAME_PAUL}Well, this is a mood-breaker.
+	"{SPEAKER NAME_UNKNOWN}Well, this is a mood-breaker.
 
 	I wish you wouldn't disturb our
 	precious time together."
 }
 
 text(local) Route109_Text_PaulDefeated {
-	"{SPEAKER NAME_PAUL}Well, I give up."
+	"PAUL: Well, I give up."
 }
 
 text(local) Route109_Text_PaulPostBattle {
@@ -1214,12 +1214,12 @@ text(local) Route109_Text_PaulNotEnoughPokemon {
 }
 
 text(local) Route109_Text_MelIntro {
-	"{SPEAKER NAME_MEL}We're, like, totally in love.
+	"{SPEAKER NAME_UNKNOWN}We're, like, totally in love.
 	Our romance is heating up all of HOENN!"
 }
 
 text(local) Route109_Text_MelDefeated {
-	"{SPEAKER NAME_MEL}We lost, and it's my fault!
+	"MEL: We lost, and it's my fault!
 	PAUL will hate me!"
 }
 
@@ -2178,12 +2178,12 @@ text(local) Route113_Text_LungPostBattle {
 }
 
 text(local) Route113_Text_ToriIntro {
-	"{SPEAKER NAME_TORI}Both of us, we collect ashes.
+	"{SPEAKER NAME_UNKNOWN}Both of us, we collect ashes.
 	We battle POKéMON, too."
 }
 
 text(local) Route113_Text_ToriDefeat {
-	"{SPEAKER NAME_TORI}We lost… It's boring, so I'm going
+	"TORI: We lost… It's boring, so I'm going
 	to get some more ashes."
 }
 
@@ -2198,12 +2198,12 @@ text(local) Route113_Text_ToriNotEnoughMons {
 }
 
 text(local) Route113_Text_TiaIntro {
-	"{SPEAKER NAME_TIA}Both of us, we collect ashes.
+	"{SPEAKER NAME_UNKNOWN}Both of us, we collect ashes.
 	We battle POKéMON, too."
 }
 
 text(local) Route113_Text_TiaDefeat {
-	"{SPEAKER NAME_TIA}We couldn't win… It's boring,
+	"TIA: We couldn't win… It's boring,
 	so I'm getting some more ashes."
 }
 
@@ -2462,13 +2462,13 @@ text(local) Route114_Text_NolanPostBattle {
 }
 
 text(local) Route114_Text_TyraIntro {
-	"{SPEAKER NAME_TYRA}Well, sure.
+	"{SPEAKER NAME_UNKNOWN}Well, sure.
 	I'm in the mood for it.
 	I'll teach you a little about POKéMON."
 }
 
 text(local) Route114_Text_TyraDefeat {
-	"{SPEAKER NAME_TYRA}What an amazing battle style!"
+	"TYRA: What an amazing battle style!"
 }
 
 text(local) Route114_Text_TyraPostBattle {
@@ -2483,11 +2483,11 @@ text(local) Route114_Text_TyraNotEnoughMons {
 }
 
 text(local) Route114_Text_IvyIntro {
-	"{SPEAKER NAME_IVY}Who taught you about POKéMON?"
+	"{SPEAKER NAME_UNKNOWN}Who taught you about POKéMON?"
 }
 
 text(local) Route114_Text_IvyDefeat {
-	"{SPEAKER NAME_IVY}What an amazing battle style!"
+	"IVY: What an amazing battle style!"
 }
 
 text(local) Route114_Text_IvyPostBattle {
@@ -3154,12 +3154,12 @@ text(local) Route117_Text_DerekPostBattle {
 }
 
 text(local) Route117_Text_AnnaIntro {
-	"{SPEAKER NAME_ANNA}I'm with my pretty junior student
+	"{SPEAKER NAME_UNKNOWN}I'm with my pretty junior student
 	partner. I have to do good!"
 }
 
 text(local) Route117_Text_AnnaDefeat {
-	"{SPEAKER NAME_ANNA}I'm with my pretty junior student
+	"ANNA: I'm with my pretty junior student
 	partner! Let me win!"
 }
 
@@ -3181,12 +3181,12 @@ text(local) Route117_Text_AnnaNotEnoughMons {
 }
 
 text(local) Route117_Text_MegIntro {
-	"{SPEAKER NAME_MEG}I'm going to tag up with my super
+	"{SPEAKER NAME_UNKNOWN}I'm going to tag up with my super
 	senior student partner and beat you!"
 }
 
 text(local) Route117_Text_MegDefeat {
-	"{SPEAKER NAME_MEG}Oh, no!
+	"MEG: Oh, no!
 	I'm sorry, ANNA! I let you down…"
 }
 
@@ -3208,7 +3208,7 @@ text(local) Route117_Text_AnnaRematchIntro {
 }
 
 text(local) Route117_Text_AnnaRematchDefeat {
-	"{SPEAKER NAME_ANNA}I couldn't get into the groove."
+	"ANNA: I couldn't get into the groove."
 }
 
 text(local) Route117_Text_AnnaPostRematch {
@@ -3229,7 +3229,7 @@ text(local) Route117_Text_MegRematchIntro {
 }
 
 text(local) Route117_Text_MegRematchDefeat {
-	"{SPEAKER NAME_MEG}Too strong!"
+	"MEG: Too strong!"
 }
 
 text(local) Route117_Text_MegPostRematch {
@@ -4086,12 +4086,12 @@ text(local) Route121_Text_TammyPostBattle {
 }
 
 text(local) Route121_Text_KateIntro {
-	"{SPEAKER NAME_KATE}Together, we're fearless!
+	"{SPEAKER NAME_UNKNOWN}Together, we're fearless!
 	We'll demonstrate how tough we are!"
 }
 
 text(local) Route121_Text_KateDefeat {
-	"{SPEAKER NAME_KATE}I blew it in front of my junior
+	"KATE: I blew it in front of my junior
 	student partner…"
 }
 
@@ -4109,12 +4109,12 @@ text(local) Route121_Text_KateNotEnoughMons {
 }
 
 text(local) Route121_Text_JoyIntro {
-	"{SPEAKER NAME_JOY}Together, we're fearless!
+	"{SPEAKER NAME_UNKNOWN}Together, we're fearless!
 	We'll demonstrate how tough we are!"
 }
 
 text(local) Route121_Text_JoyDefeat {
-	"{SPEAKER NAME_JOY}Please forgive me, KATE!"
+	"JOY: Please forgive me, KATE!"
 }
 
 text(local) Route121_Text_JoyPostBattle {
@@ -4387,12 +4387,12 @@ text(local) Route123_Text_JackiPostRematch {
 }
 
 text(local) Route123_Text_MiuIntro {
-	"{SPEAKER NAME_MIU}Hello, TRAINER. I hope your
+	"{SPEAKER NAME_UNKNOWN}Hello, TRAINER. I hope your
 	POKéMON won't cry when they lose."
 }
 
 text(local) Route123_Text_MiuDefeat {
-	"{SPEAKER NAME_MIU}Uh-oh, we lost."
+	"MIU: Uh-oh, we lost."
 }
 
 text(local) Route123_Text_MiuPostBattle {
@@ -4406,12 +4406,12 @@ text(local) Route123_Text_MiuNotEnoughMons {
 }
 
 text(local) Route123_Text_YukiIntro {
-	"{SPEAKER NAME_YUKI}Okay!
+	"{SPEAKER NAME_UNKNOWN}Okay!
 	We're beating the TRAINER's POKéMON!"
 }
 
 text(local) Route123_Text_YukiDefeat {
-	"{SPEAKER NAME_YUKI}Uh-oh, we lost."
+	"YUKI: Uh-oh, we lost."
 }
 
 text(local) Route123_Text_YukiPostBattle {
@@ -4699,7 +4699,7 @@ text(local) Route124_Text_ChadPostBattle {
 }
 
 text(local) Route124_Text_LilaIntro {
-	"{SPEAKER NAME_LILA}Sigh…
+	"{SPEAKER NAME_UNKNOWN}Sigh…
 
 	Here I am in the sea, but who's with me?
 	My little brother!
@@ -4709,7 +4709,7 @@ text(local) Route124_Text_LilaIntro {
 }
 
 text(local) Route124_Text_LilaDefeat {
-	"{SPEAKER NAME_LILA}ROY! It's your fault we lost!
+	"LILA: ROY! It's your fault we lost!
 	You're in for it later!"
 }
 
@@ -4726,7 +4726,7 @@ text(local) Route124_Text_LilaNotEnoughMons {
 }
 
 text(local) Route124_Text_RoyIntro {
-	"{SPEAKER NAME_ROY}My big sister is tough at POKéMON!
+	"{SPEAKER NAME_UNKNOWN}My big sister is tough at POKéMON!
 
 	Don't cry when you lose!"
 }
@@ -4765,7 +4765,7 @@ text(local) Route124_Text_LilaRematchIntro {
 }
 
 text(local) Route124_Text_LilaRematchDefeat {
-	"{SPEAKER NAME_LILA}ROY!
+	"LILA: ROY!
 	It's your fault we lost again!
 
 	We're having a training session later!"
@@ -4789,7 +4789,7 @@ text(local) Route124_Text_RoyRematchIntro {
 }
 
 text(local) Route124_Text_RoyRematchDefeat {
-	"{SPEAKER NAME_ROY}Uh-oh…
+	"ROY: Uh-oh…
 	My big sister will chew me out again."
 }
 
@@ -4940,13 +4940,13 @@ text(local) Route125_Text_ErnestRematchPostBattle {
 }
 
 text(local) Route125_Text_KimIntro {
-	"{SPEAKER NAME_KIM}A funny old man lives in the
+	"{SPEAKER NAME_UNKNOWN}A funny old man lives in the
 	SHOAL CAVE. Someone told me.
 	Are you going to see him, too?"
 }
 
 text(local) Route125_Text_KimDefeat {
-	"{SPEAKER NAME_KIM}I thought we would win."
+	"KIM: I thought we would win."
 }
 
 text(local) Route125_Text_KimPostBattle {
@@ -4962,12 +4962,12 @@ text(local) Route125_Text_KimNotEnoughMons {
 }
 
 text(local) Route125_Text_IrisIntro {
-	"{SPEAKER NAME_IRIS}KIM, can you tell me what we're
+	"{SPEAKER NAME_UNKNOWN}KIM, can you tell me what we're
 	looking for out here?"
 }
 
 text(local) Route125_Text_IrisDefeat {
-	"{SPEAKER NAME_IRIS}Oh, we came sort of close."
+	"IRIS: Oh, we came sort of close."
 }
 
 text(local) Route125_Text_IrisPostBattle {
@@ -5658,12 +5658,12 @@ text(local) Route131_Text_KaraPostBattle {
 }
 
 text(local) Route131_Text_ReliIntro {
-	"{SPEAKER NAME_RELI}We'll work together as siblings
+	"{SPEAKER NAME_UNKNOWN}We'll work together as siblings
 	to take you on!"
 }
 
 text(local) Route131_Text_ReliDefeat {
-	"{SPEAKER NAME_RELI}We couldn't win even though we
+	"RELI: We couldn't win even though we
 	worked together…"
 }
 
@@ -5679,12 +5679,12 @@ text(local) Route131_Text_ReliNotEnoughMons {
 }
 
 text(local) Route131_Text_IanIntro {
-	"{SPEAKER NAME_IAN}I'm doing my best together with
+	"{SPEAKER NAME_UNKNOWN}I'm doing my best together with
 	my sis!"
 }
 
 text(local) Route131_Text_IanDefeat {
-	"{SPEAKER NAME_IAN}I did my best with my sis,
+	"IAN: I did my best with my sis,
 	but we still couldn't win…"
 }
 

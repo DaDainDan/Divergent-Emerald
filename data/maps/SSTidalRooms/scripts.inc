@@ -154,12 +154,12 @@ SSTidalRooms_Text_ThomasPostBattle::
 
 SSTidalRooms_Text_JedIntro::
 # 120 "data/maps/SSTidalRooms/scripts.pory"
-	.string "{SPEAKER NAME_JED}I feel a little shy about this, but…\n"
+	.string "{SPEAKER NAME_UNKNOWN}I feel a little shy about this, but…\n"
 	.string "We'll show you our lovey-dovey power!$"
 
 SSTidalRooms_Text_JedDefeat::
 # 125 "data/maps/SSTidalRooms/scripts.pory"
-	.string "{SPEAKER NAME_JED}Sigh…$"
+	.string "JED: Sigh…$"
 
 SSTidalRooms_Text_JedPostBattle::
 # 129 "data/maps/SSTidalRooms/scripts.pory"
@@ -174,12 +174,12 @@ SSTidalRooms_Text_JedNotEnoughMons::
 
 SSTidalRooms_Text_LeaIntro::
 # 140 "data/maps/SSTidalRooms/scripts.pory"
-	.string "{SPEAKER NAME_LEA}I feel a little silly, but…\n"
+	.string "{SPEAKER NAME_UNKNOWN}I feel a little silly, but…\n"
 	.string "We'll show you our lovey-dovey power!$"
 
 SSTidalRooms_Text_LeaDefeat::
 # 145 "data/maps/SSTidalRooms/scripts.pory"
-	.string "{SPEAKER NAME_LEA}Oh, boo!$"
+	.string "LEA: Oh, boo!$"
 
 SSTidalRooms_Text_LeaPostBattle::
 # 149 "data/maps/SSTidalRooms/scripts.pory"

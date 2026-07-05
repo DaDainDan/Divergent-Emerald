@@ -123,13 +123,13 @@ MeteorFalls_1F_2R_Text_NicolasPostRematch::
 
 MeteorFalls_1F_2R_Text_JohnIntro::
 # 96 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "{SPEAKER NAME_JOHN}We've always battled POKéMON\n"
+	.string "{SPEAKER NAME_UNKNOWN}We've always battled POKéMON\n"
 	.string "together as a twosome.\l"
 	.string "We've confidence in ourselves.$"
 
 MeteorFalls_1F_2R_Text_JohnDefeat::
 # 102 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "{SPEAKER NAME_JOHN}Oh, my.\n"
+	.string "JOHN: Oh, my.\n"
 	.string "We've lost, dear wife.$"
 
 MeteorFalls_1F_2R_Text_JohnPostBattle::
@@ -152,14 +152,14 @@ MeteorFalls_1F_2R_Text_JohnRegister::
 
 MeteorFalls_1F_2R_Text_JayIntro::
 # 127 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "{SPEAKER NAME_JAY}We've been married for\n"
+	.string "{SPEAKER NAME_UNKNOWN}We've been married for\n"
 	.string "fifty years.\p"
 	.string "The bond we share as a couple could\n"
 	.string "never be broken.$"
 
 MeteorFalls_1F_2R_Text_JayDefeat::
 # 135 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "{SPEAKER NAME_JAY}Oh, dear.\n"
+	.string "JAY: Oh, dear.\n"
 	.string "We've lost, my dear husband.$"
 
 MeteorFalls_1F_2R_Text_JayPostBattle::
@@ -183,7 +183,7 @@ MeteorFalls_1F_2R_Text_JohnRematchIntro::
 
 MeteorFalls_1F_2R_Text_JohnRematchDefeat::
 # 161 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "{SPEAKER NAME_JOHN}Oh, my.\n"
+	.string "JOHN: Oh, my.\n"
 	.string "We've lost, dear wife.$"
 
 MeteorFalls_1F_2R_Text_JohnPostRematch::
@@ -207,7 +207,7 @@ MeteorFalls_1F_2R_Text_JayRematchIntro::
 
 MeteorFalls_1F_2R_Text_JayRematchDefeat::
 # 188 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "{SPEAKER NAME_JAY}Oh, dear.\n"
+	.string "JAY: Oh, dear.\n"
 	.string "We've lost, my dear husband.$"
 
 MeteorFalls_1F_2R_Text_JayPostRematch::

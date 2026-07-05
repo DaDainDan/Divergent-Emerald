@@ -160,12 +160,12 @@ text Route16_Text_RouteSign {
 }
 
 text Route16_Text_JedIntro {
-	"{SPEAKER NAME_JED}Our love knows no bounds.
+	"{SPEAKER NAME_UNKNOWN}Our love knows no bounds.
 	We're in love and we show it!"
 }
 
 text Route16_Text_JedDefeat {
-	"{SPEAKER NAME_JED}Oh, no!
+	"JED: Oh, no!
 	My love has seen me as a loser!"
 }
 
@@ -180,12 +180,12 @@ text Route16_Text_JedNotEnoughMons {
 }
 
 text Route16_Text_LeaIntro {
-	"{SPEAKER NAME_LEA}Sometimes, the intensity of
+	"{SPEAKER NAME_UNKNOWN}Sometimes, the intensity of
 	our love scares me."
 }
 
 text Route16_Text_LeaDefeat {
-	"{SPEAKER NAME_LEA}Ohh! But JED looks cool
+	"LEA: Ohh! But JED looks cool
 	even in a loss!"
 }
 

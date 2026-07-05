@@ -96,7 +96,7 @@ MtPyre_2F_Text_MarkPostBattle::
 
 MtPyre_2F_Text_LukeIntro::
 # 79 "data/maps/MtPyre_2F/scripts.pory"
-	.string "{SPEAKER NAME_LUKE}We're here on a dare.\p"
+	.string "{SPEAKER NAME_UNKNOWN}We're here on a dare.\p"
 	.string "Heheh, if I show her how cool I am,\n"
 	.string "she'll fall for me. I know it!\p"
 	.string "I know! I'll cream you and show her\n"
@@ -104,7 +104,7 @@ MtPyre_2F_Text_LukeIntro::
 
 MtPyre_2F_Text_LukeDefeat::
 # 89 "data/maps/MtPyre_2F/scripts.pory"
-	.string "{SPEAKER NAME_LUKE}Whoopsie!$"
+	.string "LUKE: Whoopsie!$"
 
 MtPyre_2F_Text_LukePostBattle::
 # 93 "data/maps/MtPyre_2F/scripts.pory"
@@ -121,7 +121,7 @@ MtPyre_2F_Text_LukeNotEnoughMons::
 
 MtPyre_2F_Text_DezIntro::
 # 107 "data/maps/MtPyre_2F/scripts.pory"
-	.string "{SPEAKER NAME_DEZ}I came here on a dare with my\n"
+	.string "{SPEAKER NAME_UNKNOWN}I came here on a dare with my\n"
 	.string "boyfriend.\p"
 	.string "It's really scary, but I'm with my\n"
 	.string "boyfriend. It's okay.\p"
@@ -130,7 +130,7 @@ MtPyre_2F_Text_DezIntro::
 
 MtPyre_2F_Text_DezDefeat::
 # 118 "data/maps/MtPyre_2F/scripts.pory"
-	.string "{SPEAKER NAME_DEZ}Waaaah! I'm scared!$"
+	.string "DEZ: Waaaah! I'm scared!$"
 
 MtPyre_2F_Text_DezPostBattle::
 # 122 "data/maps/MtPyre_2F/scripts.pory"

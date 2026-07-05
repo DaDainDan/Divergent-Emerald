@@ -87,12 +87,12 @@ text ThreeIsland_BondBridge_Text_TishaPostBattle {
 }
 
 text ThreeIsland_BondBridge_Text_JoyIntro {
-	"{SPEAKER NAME_JOY}We'll teach you what our
+	"{SPEAKER NAME_UNKNOWN}We'll teach you what our
 	favorite POKéMON is!"
 }
 
 text ThreeIsland_BondBridge_Text_JoyDefeat {
-	"{SPEAKER NAME_JOY}Ohh…
+	"JOY: Ohh…
 	MEG!"
 }
 
@@ -109,12 +109,12 @@ text ThreeIsland_BondBridge_Text_JoyNotEnoughMons {
 }
 
 text ThreeIsland_BondBridge_Text_MegIntro {
-	"{SPEAKER NAME_MEG}We'll show you our favorite
+	"{SPEAKER NAME_UNKNOWN}We'll show you our favorite
 	POKéMON."
 }
 
 text ThreeIsland_BondBridge_Text_MegDefeat {
-	"{SPEAKER NAME_MEG}Ohh…
+	"MEG: Ohh…
 	JOY!"
 }
 

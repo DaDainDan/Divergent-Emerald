@@ -94,12 +94,12 @@ Route21_North_Text_LilNotEnoughMons::
 
 Route21_North_Text_IanIntro::
 # 93 "data/maps/Route21_South_Frlg/scripts.pory"
-	.string "{SPEAKER NAME_IAN}My sis doesn't get enough\n"
+	.string "{SPEAKER NAME_UNKNOWN}My sis doesn't get enough\n"
 	.string "exercise, so I made her come.$"
 
 Route21_North_Text_IanDefeat::
 # 98 "data/maps/Route21_South_Frlg/scripts.pory"
-	.string "{SPEAKER NAME_IAN}Awww, Sis!\n"
+	.string "IAN: Awww, Sis!\n"
 	.string "Get it together!$"
 
 Route21_North_Text_IanPostBattle::

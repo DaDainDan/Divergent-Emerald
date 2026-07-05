@@ -91,12 +91,12 @@ text Route21_North_Text_LilNotEnoughMons {
 }
 
 text Route21_North_Text_IanIntro {
-	"{SPEAKER NAME_IAN}My sis doesn't get enough
+	"{SPEAKER NAME_UNKNOWN}My sis doesn't get enough
 	exercise, so I made her come."
 }
 
 text Route21_North_Text_IanDefeat {
-	"{SPEAKER NAME_IAN}Awww, Sis!
+	"IAN: Awww, Sis!
 	Get it together!"
 }
 
