@@ -15,7 +15,7 @@ SINGLE_BATTLE_TEST("Purifying Salt halves damage from Ghost-type moves", s16 dam
     } SCENE {
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(0.5), results[1].damage);
+        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(0.625), results[1].damage);
     }
 }
 
@@ -33,7 +33,7 @@ SINGLE_BATTLE_TEST("Purifying Salt halves damage from dynamic Ghost-type moves",
     } SCENE {
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(0.5), results[1].damage);
+        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(0.625), results[1].damage);
     }
 }
 

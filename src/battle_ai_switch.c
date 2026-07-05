@@ -552,7 +552,7 @@ static bool32 ShouldSwitchIfWonderGuard(struct SwitchAiContext *switchContext)
     if (RandomPercentage(RNG_AI_SWITCH_WONDER_GUARD, GetSwitchChance(SHOULD_SWITCH_WONDER_GUARD)))
     {
         if (gAiLogicData->mostSuitableMonId[switchContext->battler] == PARTY_SIZE) // No good candidate mons, find any one that can deal damage
-            return FindMonWithMoveOfEffectiveness(switchContext, UQ_4_12(2.0));
+            return FindMonWithMoveOfEffectiveness(switchContext, UQ_4_12(1.6));
         else // Good candidate mon, send that in
             return SetSwitchinAndSwitch(switchContext->battler, PARTY_SIZE);
     }
@@ -1091,7 +1091,7 @@ static bool32 CanUseSuperEffectiveMoveAgainstOpponent(enum BattlerId battler, en
         if (move == MOVE_NONE || AI_DoesChoiceEffectBlockMove(battler, move))
             continue;
 
-        if (gAiLogicData->effectiveness[battler][opposingBattler][moveIndex] >= UQ_4_12(2.0))
+        if (gAiLogicData->effectiveness[battler][opposingBattler][moveIndex] >= UQ_4_12(1.6))
             return TRUE;
     }
     return FALSE;
@@ -1157,7 +1157,7 @@ static bool32 ShouldSwitchIfEncored(struct SwitchAiContext *switchContext)
         return SetSwitchinAndSwitch(switchContext->battler, PARTY_SIZE);
 
     // Stay in if effective move
-    else if (gAiLogicData->effectiveness[switchContext->battler][switchContext->opposingBattler][GetMoveIndex(switchContext->battler, encoredMove)] >= UQ_4_12(2.0))
+    else if (gAiLogicData->effectiveness[switchContext->battler][switchContext->opposingBattler][GetMoveIndex(switchContext->battler, encoredMove)] >= UQ_4_12(1.6))
         return FALSE;
 
     // Switch out 50% of the time otherwise
@@ -1356,7 +1356,7 @@ void GetShouldSwitchMoveData(struct SwitchAiContext *switchContext)
             if (!IsBattleMoveStatus(aiMove) && !AI_DoesChoiceEffectBlockMove(switchContext->battler, aiMove))
             {
                 // Check if mon has a super effective move
-                if (gAiLogicData->effectiveness[switchContext->battler][switchContext->opposingBattler][moveIndex] >= UQ_4_12(2.0))
+                if (gAiLogicData->effectiveness[switchContext->battler][switchContext->opposingBattler][moveIndex] >= UQ_4_12(1.6))
                     switchContext->hasEffectiveMove = TRUE;
 
                 // Check if can win 1v1
@@ -2313,7 +2313,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int lastId, enum BattlerI
             {
                 if (typeMatchup < AI_TYPE_MATCHUP_THRESHOLD)
                 {
-                    if (gAiLogicData->effectiveness[battler][opposingBattler][moveIndex] >= UQ_4_12(2.0))
+                    if (gAiLogicData->effectiveness[battler][opposingBattler][moveIndex] >= UQ_4_12(1.6))
                     {
                         if (canSwitchinWin1v1)
                         {
@@ -2514,7 +2514,7 @@ static u32 GetBestMonVanilla(struct Pokemon *party, int lastId, enum BattlerId b
             }
 
             // Type Matchup
-            if (typeMatchup < bestResist && gAiLogicData->effectiveness[battler][opposingBattler][moveIndex] >= UQ_4_12(2.0))
+            if (typeMatchup < bestResist && gAiLogicData->effectiveness[battler][opposingBattler][moveIndex] >= UQ_4_12(1.6))
             {
                 bestResist = typeMatchup;
                 typeMatchupIds |= (1u << monIndex);
@@ -2683,7 +2683,7 @@ u32 AI_SelectRevivalBlessingMon(enum BattlerId battler)
         // Prefer mons that don't face a terrible defensive matchup on entry
         if (typeMatchup < UQ_4_12(1.0))
             score += gBattleMons[battler].maxHP / 4;
-        else if (typeMatchup > UQ_4_12(4.0))
+        else if (typeMatchup > UQ_4_12(3.2))
             score -= gBattleMons[battler].maxHP / 4;
 
         if (score > bestScore)

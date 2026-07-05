@@ -1276,7 +1276,7 @@ static inline bool32 TryStrongWindsWeakenAttack(enum BattlerId battlerDef, enum 
     {
         if (GetMoveCategory(gCurrentMove) != DAMAGE_CATEGORY_STATUS
          && IS_BATTLER_OF_TYPE(battlerDef, TYPE_FLYING)
-         && gTypeEffectivenessTable[moveType][TYPE_FLYING] >= UQ_4_12(2.0)
+         && gTypeEffectivenessTable[moveType][TYPE_FLYING] >= UQ_4_12(1.6)
          && !gBattleStruct->printedStrongWindsWeakenedAttack)
         {
             gBattleStruct->printedStrongWindsWeakenedAttack = TRUE;
@@ -8058,7 +8058,8 @@ static void Cmd_settypetorandomresistance(void)
             switch (GetTypeModifier(typeToCheck, i))
             {
             case UQ_4_12(0):
-            case UQ_4_12(0.5):
+            case UQ_4_12(0.390625):
+            case UQ_4_12(0.625):
                 resistTypes |= 1u << i;
                 break;
             }

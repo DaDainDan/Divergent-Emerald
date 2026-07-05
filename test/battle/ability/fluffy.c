@@ -24,7 +24,7 @@ SINGLE_BATTLE_TEST("Fluffy halves damage taken from moves that make direct conta
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(0.5), results[1].damage);
+        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(0.625), results[1].damage);
     }
 }
 
@@ -42,7 +42,7 @@ SINGLE_BATTLE_TEST("Fluffy doubles damage taken from fire type moves", s16 damag
         ANIMATION(ANIM_TYPE_MOVE, MOVE_EMBER, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(2.0), results[1].damage);
+        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(1.6), results[1].damage);
     }
 }
 
@@ -79,7 +79,7 @@ SINGLE_BATTLE_TEST("Fluffy halves damage taken from moves that make direct conta
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(0.5), results[1].damage);
+        EXPECT_MUL_EQ(results[0].damage, UQ_4_12(0.625), results[1].damage);
     }
 }
 
