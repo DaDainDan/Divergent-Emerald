@@ -133,6 +133,9 @@ struct Trainer
     enum BattleType battle_type;
     int battle_type_line;
 
+    bool gym_trainer;
+    int gym_trainer_line;
+
     struct Pokemon pokemon[PARTY_SIZE];
     int pokemon_n;
 
@@ -1173,6 +1176,223 @@ static const struct {
     { NULL, NULL, NULL }
 };
 
+// Default IVs (applied uniformly to all 6 stats) for a trainer's Pokemon
+// when 'IVs' is left unset in trainers.party, keyed by 'Class'. 'gym_iv' is
+// used when the trainer is also marked 'Gym Trainer: Yes'. 
+// Classes not listed here (e.g. Leader, Elite Four, Champion, Rival, Frontier Brains)
+// always fall back to MAX IVS
+static const struct {
+    const char *class;
+    int normal_iv;
+    int gym_iv;
+} class_default_ivs[] = {
+    { "Aroma Lady", 8, 11 },
+    { "Battle Girl", 9, 12 },
+    { "Beauty", 11, 13 },
+    { "Bird Keeper", 12, 13 },
+    { "Black Belt", 11, 13 },
+    { "Bug Catcher", 7, 10 },
+    { "Bug Maniac", 12, 13 },
+    { "Camper", 8, 11 },
+    { "Collector", 10, 12 },
+    { "Cooltrainer", 14, 14 },
+    { "Cooltrainer 2", 14, 14 },
+    { "Dragon Tamer", 12, 13 },
+    { "Expert", 13, 14 },
+    { "Fisherman", 7, 10 },
+    { "Gentleman", 13, 14 },
+    { "Guitarist", 9, 12 },
+    { "Hex Maniac", 11, 13 },
+    { "Hiker", 9, 12 },
+    { "Interviewer", 8, 11 },
+    { "Kindler", 9, 12 },
+    { "Lady", 11, 13 },
+    { "Lass", 8, 11 },
+    { "Ninja Boy", 10, 12 },
+    { "Old Couple", 13, 14 },
+    { "Parasol Lady", 8, 11 },
+    { "Picnicker", 8, 11 },
+    { "Pkmn Breeder", 15, 15 },
+    { "Pkmn Ranger", 12, 13 },
+    { "Pokefan", 7, 10 },
+    { "Pokemaniac", 8, 11 },
+    { "Psychic", 11, 13 },
+    { "Rich Boy", 11, 13 },
+    { "Ruin Maniac", 10, 12 },
+    { "Sailor", 9, 12 },
+    { "School Kid", 8, 11 },
+    { "Sis And Bro", 8, 11 },
+    { "Sr And Jr", 8, 11 },
+    { "Swimmer F", 8, 11 },
+    { "Swimmer M", 8, 11 },
+    { "Team Aqua", 12, 12 },
+    { "Team Magma", 12, 12 },
+    { "Triathlete", 10, 12 },
+    { "Tuber F", 6, 10 },
+    { "Tuber M", 6, 10 },
+    { "Twins", 6, 10 },
+    { "Young Couple", 7, 10 },
+    { "Youngster", 6, 10 },
+    { "Biker Frlg", 9, 12 },
+    { "Burglar Frlg", 8, 11 },
+    { "Engineer Frlg", 9, 12 },
+    { "Gamer Frlg", 11, 13 },
+    { "Juggler Frlg", 9, 12 },
+    { "Scientist Frlg", 11, 13 },
+    { NULL, 0, 0 }
+};
+
+static bool get_class_default_ivs(struct String class, bool gym_trainer, struct Stats *ivs)
+{
+    for (int i = 0; class_default_ivs[i].class; i++)
+    {
+        if (is_literal_string(class, class_default_ivs[i].class))
+        {
+            int value = gym_trainer ? class_default_ivs[i].gym_iv : class_default_ivs[i].normal_iv;
+            *ivs = (struct Stats) { value, value, value, value, value, value };
+            return true;
+        }
+    }
+    return false;
+}
+
+// Default 'Gender' derived from Trainer 'Pic' when 'Gender' is left unset in
+// trainers.party.
+static const struct {
+    const char *pic;
+    const char *gender;
+} pic_default_genders[] = {
+    { "Aqua Admin F", "Female" },
+    { "Aqua Admin M", "Male" },
+    { "Aqua Grunt F", "Female" },
+    { "Aqua Grunt M", "Male" },
+    { "Aqua Leader Archie", "Male" },
+    { "Arena Tycoon Greta", "Female" },
+    { "Aroma Lady", "Female" },
+    { "Battle Girl", "Female" },
+    { "Beauty", "Female" },
+    { "Bird Keeper", "Male" },
+    { "Black Belt", "Male" },
+    { "Brendan", "Male" },
+    { "Bug Catcher", "Male" },
+    { "Bug Maniac", "Male" },
+    { "Camper", "Male" },
+    { "Champion Wallace", "Male" },
+    { "Collector", "Male" },
+    { "Cooltrainer F", "Female" },
+    { "Cooltrainer M", "Male" },
+    { "Cycling Triathlete F", "Female" },
+    { "Cycling Triathlete M", "Male" },
+    { "Dome Ace Tucker", "Male" },
+    { "Dragon Tamer", "Male" },
+    { "Elite Four Drake", "Male" },
+    { "Elite Four Glacia", "Female" },
+    { "Elite Four Phoebe", "Female" },
+    { "Elite Four Sidney", "Male" },
+    { "Expert F", "Female" },
+    { "Expert M", "Male" },
+    { "Factory Head Noland", "Male" },
+    { "Fisherman", "Male" },
+    { "Gentleman", "Male" },
+    { "Guitarist", "Male" },
+    { "Hex Maniac", "Female" },
+    { "Hiker", "Male" },
+    { "Interviewer", "Both Genders" },
+    { "Kindler", "Male" },
+    { "Lady", "Female" },
+    { "Lass", "Female" },
+    { "Leader Brawly", "Male" },
+    { "Leader Flannery", "Female" },
+    { "Leader Juan", "Male" },
+    { "Leader Norman", "Male" },
+    { "Leader Roxanne", "Female" },
+    { "Leader Tate And Liza", "Both Genders" },
+    { "Leader Wattson", "Male" },
+    { "Leader Winona", "Female" },
+    { "Leaf", "Female" },
+    { "Magma Admin", "Male" },
+    { "Magma Admin F", "Female" },
+    { "Magma Grunt F", "Female" },
+    { "Magma Grunt M", "Male" },
+    { "Magma Leader Maxie", "Male" },
+    { "May", "Female" },
+    { "Ninja Boy", "Male" },
+    { "Old Couple", "Both Genders" },
+    { "Palace Maven Spenser", "Male" },
+    { "Parasol Lady", "Female" },
+    { "Picnicker", "Female" },
+    { "Pike Queen Lucy", "Female" },
+    { "Pokefan F", "Female" },
+    { "Pokefan M", "Male" },
+    { "Pokemaniac", "Male" },
+    { "Pokemon Breeder F", "Female" },
+    { "Pokemon Breeder M", "Male" },
+    { "Pokemon Ranger F", "Female" },
+    { "Pokemon Ranger M", "Male" },
+    { "Psychic F", "Female" },
+    { "Psychic M", "Male" },
+    { "Pyramid King Brandon", "Male" },
+    { "RS Brendan", "Male" },
+    { "RS May", "Female" },
+    { "Red", "Male" },
+    { "Rich Boy", "Male" },
+    { "Ruin Maniac", "Male" },
+    { "Running Triathlete F", "Female" },
+    { "Running Triathlete M", "Male" },
+    { "Sailor", "Male" },
+    { "Salon Maiden Anabel", "Female" },
+    { "School Kid F", "Female" },
+    { "School Kid M", "Male" },
+    { "Sis And Bro", "Both Genders" },
+    { "Sr And Jr", "Female" },
+    { "Steven", "Male" },
+    { "Swimmer F", "Female" },
+    { "Swimmer M", "Male" },
+    { "Swimming Triathlete F", "Female" },
+    { "Swimming Triathlete M", "Male" },
+    { "Tuber F", "Female" },
+    { "Tuber M", "Male" },
+    { "Twins", "Female" },
+    { "Wally", "Male" },
+    { "Wally Drive", "Male" },
+    { "Young Couple", "Both Genders" },
+    { "Youngster", "Male" },
+    { "Biker Frlg", "Male" },
+    { "Burglar Frlg", "Male" },
+    { "Engineer Frlg", "Male" },
+    { "Gamer Frlg", "Male" },
+    { "Juggler Frlg", "Male" },
+    { "Scientist Frlg", "Male" },
+    { NULL, NULL }
+};
+
+static bool get_pic_default_gender(struct String pic, struct String *gender)
+{
+    for (int i = 0; pic_default_genders[i].pic; i++)
+    {
+        if (is_literal_string(pic, pic_default_genders[i].pic))
+        {
+            *gender = literal_string(pic_default_genders[i].gender);
+            return true;
+        }
+    }
+    return false;
+}
+
+// Default 'Happiness' when left unset in trainers.party, scaled by the
+// Pokemon's level: STANDARD_FRIENDSHIP at level 1, linearly up to
+// MAX_FRIENDSHIP by level 50
+static int get_default_friendship(int level)
+{
+    const int standardFriendship = 50;
+    const int maxFriendship = 255;
+    const int maxLevel = 50;
+
+    if (level >= maxLevel)
+        return maxFriendship;
+    return standardFriendship + (maxFriendship - standardFriendship) * (level - 1) / (maxLevel - 1);
+}
+
 static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct Trainer *trainer)
 {
     bool any_error = false;
@@ -1264,6 +1484,14 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
             if (!token_battle_type(p, &value, &trainer->battle_type))
                 any_error = !show_parse_error(p);
         }
+        else if (is_literal_token(&key, "Gym Trainer"))
+        {
+            if (trainer->gym_trainer_line)
+                any_error = !set_show_parse_error(p, key.location, "duplicate 'Gym Trainer'");
+            trainer->gym_trainer_line = value.location.line;
+            if (!token_bool(p, &value, &trainer->gym_trainer))
+                any_error = !show_parse_error(p);
+        }
         else if (is_literal_token(&key, "Mugshot"))
         {
             if (trainer->mugshot_line)
@@ -1339,13 +1567,20 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
         }
         else
         {
-            any_error = !set_show_parse_error(p, key.location, "expected one of 'Name', 'Class', 'Pic', 'Back Pic', 'Gender', 'Music', 'Items', 'Battle Type', 'Difficulty', 'Party Size', 'Multi Party', 'Pool Rules', 'Pool Pick Functions', 'Pool Prune' or 'AI'");
+            any_error = !set_show_parse_error(p, key.location, "expected one of 'Name', 'Class', 'Pic', 'Back Pic', 'Gender', 'Music', 'Items', 'Battle Type', 'Gym Trainer', 'Difficulty', 'Party Size', 'Multi Party', 'Pool Rules', 'Pool Pick Functions', 'Pool Prune' or 'AI'");
         }
     }
     if (!trainer->pic_line && !trainer->macro_line)
         any_error = !set_show_parse_error(p, p->location, "expected 'Pic' before Pokemon");
     if (!trainer->name_line && !trainer->macro_line)
         any_error = !set_show_parse_error(p, p->location, "expected 'Name' before Pokemon");
+    if (!trainer->gender_line && !trainer->macro_line)
+    {
+        if (get_pic_default_gender(trainer->pic, &trainer->gender))
+            trainer->gender_line = trainer->pic_line;
+        else
+            any_error = !set_show_parse_error(p, p->location, "expected 'Gender' before Pokemon (no default for this Pic)");
+    }
     if (!match_empty_line(p))
     {
         set_show_parse_error(p, p->location, "expected empty line");
@@ -1439,7 +1674,8 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
                 if (pokemon->ivs_line)
                     any_error = !set_show_parse_error(p, key.location, "duplicate 'IVs'");
                 pokemon->ivs_line = value.location.line;
-                pokemon->ivs = parsed->default_ivs;
+                if (!get_class_default_ivs(trainer->class, trainer->gym_trainer, &pokemon->ivs))
+                    pokemon->ivs = parsed->default_ivs;
                 if (!token_stats(p, &value, &pokemon->ivs, parsed->default_ivs_off))
                     any_error = !show_parse_error(p);
             }
@@ -1539,7 +1775,11 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
         }
         if (!pokemon->ivs_line)
         {
-            if (!parsed->default_ivs_off)
+            if (get_class_default_ivs(trainer->class, trainer->gym_trainer, &pokemon->ivs))
+            {
+                pokemon->ivs_line = p->location.line;
+            }
+            else if (!parsed->default_ivs_off)
             {
                 pokemon->ivs = parsed->default_ivs;
                 pokemon->ivs_line = p->location.line;
@@ -1548,6 +1788,11 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
             {
                 any_error = !set_show_parse_error(p, p->location, "expected 'IVs' before moves");
             }
+        }
+        if (!pokemon->friendship_line)
+        {
+            pokemon->friendship = get_default_friendship(pokemon->level);
+            pokemon->friendship_line = p->location.line;
         }
 
         // Parse moves.

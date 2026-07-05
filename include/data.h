@@ -133,11 +133,11 @@ struct Trainer
     u8 trainerClass;
     u16 encounterMusic:4;
     u16 multiTeamSize:1;
-    u16 gender:1;
+    u16 gender:2;
     u16 battleType:2;
     u16 mugshotColor:3;
     u16 partySize:3;
-    u16 padding:2;
+    u16 padding:1;
     enum TrainerPicID trainerPic;
     u8 trainerName[TRAINER_NAME_LENGTH + 1];
     u8 poolSize;
