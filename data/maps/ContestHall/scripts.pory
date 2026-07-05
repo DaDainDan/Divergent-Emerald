@@ -106,7 +106,7 @@ script ContestHall_EventScript_GetRandomAudienceGfxId {
         case 26: setvar(VAR_TEMP_1, OBJ_EVENT_GFX_YOUNGSTER)
         case 27: setvar(VAR_TEMP_1, OBJ_EVENT_GFX_BUG_CATCHER)
         case 28: setvar(VAR_TEMP_1, OBJ_EVENT_GFX_PSYCHIC_M)
-        case 29: setvar(VAR_TEMP_1, OBJ_EVENT_GFX_SCHOOL_KID_M)
+        case 29: setvar(VAR_TEMP_1, OBJ_EVENT_GFX_LITTLE_BOY_3)
         case 30: setvar(VAR_TEMP_1, OBJ_EVENT_GFX_BLACK_BELT)
         case 31: setvar(VAR_TEMP_1, OBJ_EVENT_GFX_BEAUTY)
         case 32: setvar(VAR_TEMP_1, OBJ_EVENT_GFX_SCIENTIST_1)
@@ -167,7 +167,7 @@ script ContestHall_EventScript_CreateHyperContestAudience {
     createvobject(OBJ_EVENT_GFX_YOUNGSTER, 26, 4, 9, 3, DIR_NORTH)
     createvobject(OBJ_EVENT_GFX_FAT_MAN, 27, 5, 9, 3, DIR_NORTH)
     createvobject(OBJ_EVENT_GFX_HEX_MANIAC, 28, 9, 9, 3, DIR_NORTH)
-    createvobject(OBJ_EVENT_GFX_SCHOOL_KID_M, 29, 10, 9, 3, DIR_NORTH)
+    createvobject(OBJ_EVENT_GFX_LITTLE_BOY_3, 29, 10, 9, 3, DIR_NORTH)
     createvobject(OBJ_EVENT_GFX_MART_EMPLOYEE, 30, 11, 9, 3, DIR_NORTH)
     return
 }
@@ -198,7 +198,7 @@ script ContestHall_EventScript_CreateMasterContestAudience {
     createvobject(OBJ_EVENT_GFX_YOUNGSTER, 26, 4, 9, 3, DIR_NORTH)
     createvobject(OBJ_EVENT_GFX_GENTLEMAN, 27, 5, 9, 3, DIR_NORTH)
     createvobject(OBJ_EVENT_GFX_HEX_MANIAC, 28, 9, 9, 3, DIR_NORTH)
-    createvobject(OBJ_EVENT_GFX_SCHOOL_KID_M, 29, 10, 9, 3, DIR_NORTH)
+    createvobject(OBJ_EVENT_GFX_LITTLE_BOY_3, 29, 10, 9, 3, DIR_NORTH)
     createvobject(OBJ_EVENT_GFX_MART_EMPLOYEE, 30, 11, 9, 3, DIR_NORTH)
     return
 }

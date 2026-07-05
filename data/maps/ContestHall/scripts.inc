@@ -422,7 +422,7 @@ ContestHall_EventScript_GetRandomAudienceGfxId_30:
 
 ContestHall_EventScript_GetRandomAudienceGfxId_31:
 # 109 "data/maps/ContestHall/scripts.pory"
-	setvar VAR_TEMP_1, OBJ_EVENT_GFX_SCHOOL_KID_M
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_LITTLE_BOY_3
 	goto ContestHall_EventScript_GetRandomAudienceGfxId_1
 
 ContestHall_EventScript_GetRandomAudienceGfxId_32:
@@ -557,7 +557,7 @@ ContestHall_EventScript_CreateHyperContestAudience::
 # 169 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_HEX_MANIAC, 28, 9, 9, 3, DIR_NORTH
 # 170 "data/maps/ContestHall/scripts.pory"
-	createvobject OBJ_EVENT_GFX_SCHOOL_KID_M, 29, 10, 9, 3, DIR_NORTH
+	createvobject OBJ_EVENT_GFX_LITTLE_BOY_3, 29, 10, 9, 3, DIR_NORTH
 # 171 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_MART_EMPLOYEE, 30, 11, 9, 3, DIR_NORTH
 	return
@@ -615,7 +615,7 @@ ContestHall_EventScript_CreateMasterContestAudience::
 # 200 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_HEX_MANIAC, 28, 9, 9, 3, DIR_NORTH
 # 201 "data/maps/ContestHall/scripts.pory"
-	createvobject OBJ_EVENT_GFX_SCHOOL_KID_M, 29, 10, 9, 3, DIR_NORTH
+	createvobject OBJ_EVENT_GFX_LITTLE_BOY_3, 29, 10, 9, 3, DIR_NORTH
 # 202 "data/maps/ContestHall/scripts.pory"
 	createvobject OBJ_EVENT_GFX_MART_EMPLOYEE, 30, 11, 9, 3, DIR_NORTH
 	return

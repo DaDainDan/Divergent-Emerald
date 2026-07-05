@@ -176,7 +176,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddRound2Audience::
 # 95 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_YOUNGSTER, 26, 2, 2
 # 96 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	createvobject OBJ_EVENT_GFX_SCHOOL_KID_M, 29, 5, 1
+	createvobject OBJ_EVENT_GFX_LITTLE_BOY_3, 29, 5, 1
 	return
 
 
@@ -218,7 +218,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddSemifinalAudience::
 # 118 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_HEX_MANIAC, 28, 5, 2
 # 119 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	createvobject OBJ_EVENT_GFX_SCHOOL_KID_M, 29, 5, 1
+	createvobject OBJ_EVENT_GFX_LITTLE_BOY_3, 29, 5, 1
 # 120 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_MART_EMPLOYEE, 30, 6, 2
 # 121 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
@@ -286,7 +286,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_AddFinalAudience::
 # 154 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_HEX_MANIAC, 28, 5, 2
 # 155 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	createvobject OBJ_EVENT_GFX_SCHOOL_KID_M, 29, 5, 1
+	createvobject OBJ_EVENT_GFX_LITTLE_BOY_3, 29, 5, 1
 # 156 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	createvobject OBJ_EVENT_GFX_MART_EMPLOYEE, 30, 6, 2
 # 157 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"

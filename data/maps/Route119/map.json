@@ -201,7 +201,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 10,
       "y": 50,
       "elevation": 4,
@@ -214,7 +214,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 8,
       "y": 63,
       "elevation": 3,
@@ -528,7 +528,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 16,
       "y": 52,
       "elevation": 3,
