@@ -38,7 +38,7 @@
     #define BUILDING_SECRET_POWER_ANIMATION gBattleAnimMove_Strength
 #endif
 #define BUILDING_SECRET_POWER_EFFECT MOVE_EFFECT_PARALYSIS
-#define BUILDING_CAMOUFLAGE_TYPE     TYPE_NORMAL
+#define BUILDING_CAMOUFLAGE_TYPE     TYPE_STEEL
 #define BUILDING_CAMOUFLAGE_BLEND    RGB_WHITE
 #define BUILDING_BATTLE_INTRO_SLIDE  BattleIntroSlide3
 
@@ -113,7 +113,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = B_NATURE_POWER_MOVES >= GEN_6 ? MOVE_EARTH_POWER : MOVE_EARTHQUAKE,
         .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_MudSlap : gBattleAnimMove_MudShot,
         .secretPowerEffect = SECRET_POWER_ACC_MINUS_1,
-        .camouflageType = TYPE_GROUND,
+        .camouflageType = TYPE_SAND,
         .camouflageBlend = RGB(30, 24, 11),
         .entry = ENVIRONMENT_ENTRY(Sand),
         .background = ENVIRONMENT_BACKGROUND(Sand),
@@ -127,7 +127,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_HYDRO_PUMP,
         .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_6 ? gBattleAnimMove_WaterPulse : gBattleAnimMove_Waterfall,
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_6 ? SECRET_POWER_ATK_MINUS_1 : SECRET_POWER_DEF_MINUS_1,
-        .camouflageType = TYPE_WATER,
+        .camouflageType = TYPE_OCEAN,
         .camouflageBlend = RGB(0, 0, 18),
         .entry = ENVIRONMENT_ENTRY(Underwater),
         .background = ENVIRONMENT_BACKGROUND(Underwater),
@@ -419,7 +419,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_AIR_SLASH,
         .secretPowerAnimation = gBattleAnimMove_Gust,
         .secretPowerEffect = SECRET_POWER_SPD_MINUS_1,
-        .camouflageType = TYPE_FLYING,
+        .camouflageType = TYPE_DRAGON,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
     },
 
@@ -429,7 +429,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_SHADOW_BALL,
         .secretPowerAnimation = gBattleAnimMove_ShadowSneak,
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
-        .camouflageType = TYPE_GHOST,
+        .camouflageType = TYPE_UNDEAD,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
     },
 
@@ -439,7 +439,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_MUD_BOMB,
         .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_5 ? gBattleAnimMove_MudShot : gBattleAnimMove_MudSlap,
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_5 ? SECRET_POWER_SPD_MINUS_1 : SECRET_POWER_ACC_MINUS_1,
-        .camouflageType = TYPE_GROUND,
+        .camouflageType = TYPE_MUD,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
     },
 
@@ -449,7 +449,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_MUD_BOMB,
         .secretPowerAnimation = gBattleAnimMove_MudShot,
         .secretPowerEffect = SECRET_POWER_SPD_MINUS_1,
-        .camouflageType = TYPE_GROUND,
+        .camouflageType = TYPE_MUD,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
     },
 
@@ -459,7 +459,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_MUD_BOMB,
         .secretPowerAnimation = gBattleAnimMove_MudShot,
         .secretPowerEffect = SECRET_POWER_SPD_MINUS_1,
-        .camouflageType = TYPE_GROUND,
+        .camouflageType = TYPE_MUD,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
     },
 
@@ -475,7 +475,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     #endif
         .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_7 ? gBattleAnimMove_IceShard : gBattleAnimMove_Avalanche,
         .secretPowerEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
-        .camouflageType = TYPE_ICE,
+        .camouflageType = TYPE_FROST,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
     },
 
@@ -505,7 +505,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_TRI_ATTACK,
         .secretPowerAnimation = gBattleAnimMove_Pound,
         .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
-        .camouflageType = TYPE_NORMAL,
+        .camouflageType = TYPE_GHOST,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
     },
 
@@ -515,7 +515,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_DRACO_METEOR,
         .secretPowerAnimation = gBattleAnimMove_Swift,
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
-        .camouflageType = TYPE_DRAGON,
+        .camouflageType = TYPE_PSYCHIC,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
     },
 

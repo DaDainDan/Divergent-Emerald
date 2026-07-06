@@ -7506,7 +7506,7 @@ static void Cmd_tryconversiontypechange(void)
 
             if (moveType == TYPE_MYSTERY)
             {
-                if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
+                if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST, TYPE_UNDEAD))
                     moveType = TYPE_GHOST;
                 else
                     moveType = TYPE_NORMAL;
@@ -7533,7 +7533,7 @@ static void Cmd_tryconversiontypechange(void)
 
                 if (moveType == TYPE_MYSTERY)
                 {
-                    if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
+                    if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST, TYPE_UNDEAD))
                         moveType = TYPE_GHOST;
                     else
                         moveType = TYPE_NORMAL;
@@ -8360,7 +8360,7 @@ static void Cmd_cursetarget(void)
 {
     CMD_ARGS(const u8 *failInstr);
 
-    if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
+    if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST, TYPE_UNDEAD))
     {
         gBattleScripting.animTurn = 1; // for move anim
         gBattlescriptCurrInstr = cmd->failInstr;
@@ -9743,7 +9743,7 @@ static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallDa
         ball->guaranteedCapture = TRUE;
         break;
     case BALL_NET:
-        if (IS_BATTLER_ANY_TYPE(wildMonBattler, TYPE_WATER, TYPE_BUG))
+        if (IS_BATTLER_ANY_TYPE(wildMonBattler, TYPE_OCEAN, TYPE_BUG))
             ball->multiplier = B_NET_BALL_MODIFIER >= GEN_7 ? 350 : 300;
         break;
     case BALL_NEST:

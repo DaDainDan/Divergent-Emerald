@@ -207,26 +207,37 @@ script BattleFrontier_BattleFactoryPreBattleRoom_EventScript_SwapMons {
 script BattleFrontier_BattleFactoryPreBattleRoom_EventScript_CommentOnOpponentType {
     msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_InvestigatedUpcomingOpponent, MSGBOX_DEFAULT)
 	switch (var(VAR_0x8005)) {
-		case TYPE_NORMAL: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInNormalType, MSGBOX_DEFAULT)
-		case TYPE_FIGHTING: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInFightingType, MSGBOX_DEFAULT)
-		case TYPE_FLYING: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInFlyingType, MSGBOX_DEFAULT)
-		case TYPE_POISON: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInPoisonType, MSGBOX_DEFAULT)
-		case TYPE_GROUND: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInGroundType, MSGBOX_DEFAULT)
-		case TYPE_ROCK: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInRockType, MSGBOX_DEFAULT)
-		case TYPE_BUG: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInBugType, MSGBOX_DEFAULT)
-		case TYPE_GHOST: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInGhostType, MSGBOX_DEFAULT)
-		case TYPE_STEEL: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInSteelType, MSGBOX_DEFAULT)
-		case TYPE_FIRE: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInFireType, MSGBOX_DEFAULT)
-		case TYPE_WATER: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInWaterType, MSGBOX_DEFAULT)
-		case TYPE_GRASS: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInGrassType, MSGBOX_DEFAULT)
-		case TYPE_ELECTRIC: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInElectricType, MSGBOX_DEFAULT)
-		case TYPE_PSYCHIC: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInPsychicType, MSGBOX_DEFAULT)
-		case TYPE_ICE: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInIceType, MSGBOX_DEFAULT)
-		case TYPE_DRAGON: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInDragonType, MSGBOX_DEFAULT)
-		case TYPE_DARK: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInDarkType, MSGBOX_DEFAULT)
-		case TYPE_FAIRY: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInFairyType, MSGBOX_DEFAULT)
-		case NUMBER_OF_MON_TYPES: msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerHasNoClearFavorite, MSGBOX_DEFAULT)
+		case TYPE_NORMAL: bufferstring(STR_VAR_2, gText_TypeNormal)
+		case TYPE_FIGHTING: bufferstring(STR_VAR_2, gText_TypeFighting)
+		case TYPE_FLYING: bufferstring(STR_VAR_2, gText_TypeFlying)
+		case TYPE_WIND: bufferstring(STR_VAR_2, gText_TypeWind)
+		case TYPE_POISON: bufferstring(STR_VAR_2, gText_TypePoison)
+		case TYPE_GROUND: bufferstring(STR_VAR_2, gText_TypeGround)
+		case TYPE_TERRA: bufferstring(STR_VAR_2, gText_TypeTerra)
+		case TYPE_MUD: bufferstring(STR_VAR_2, gText_TypeMud)
+		case TYPE_SAND: bufferstring(STR_VAR_2, gText_TypeSand)
+		case TYPE_ROCK: bufferstring(STR_VAR_2, gText_TypeRock)
+		case TYPE_BUG: bufferstring(STR_VAR_2, gText_TypeBug)
+		case TYPE_GHOST: bufferstring(STR_VAR_2, gText_TypeGhost)
+		case TYPE_UNDEAD: bufferstring(STR_VAR_2, gText_TypeUndead)
+		case TYPE_STEEL: bufferstring(STR_VAR_2, gText_TypeSteel)
+		case TYPE_FIRE: bufferstring(STR_VAR_2, gText_TypeFire)
+		case TYPE_FLAME: bufferstring(STR_VAR_2, gText_TypeFlame)
+		case TYPE_WATER: bufferstring(STR_VAR_2, gText_TypeWater)
+		case TYPE_OCEAN: bufferstring(STR_VAR_2, gText_TypeOcean)
+		case TYPE_GRASS: bufferstring(STR_VAR_2, gText_TypeGrass)
+		case TYPE_ELECTRIC: bufferstring(STR_VAR_2, gText_TypeElectric)
+		case TYPE_PSYCHIC: bufferstring(STR_VAR_2, gText_TypePsychic)
+		case TYPE_ICE: bufferstring(STR_VAR_2, gText_TypeIce)
+		case TYPE_FROST: bufferstring(STR_VAR_2, gText_TypeFrost)
+		case TYPE_DRAGON: bufferstring(STR_VAR_2, gText_TypeDragon)
+		case TYPE_DARK: bufferstring(STR_VAR_2, gText_TypeDark)
+		case TYPE_FAIRY: bufferstring(STR_VAR_2, gText_TypeFairy)
+		case NUMBER_OF_MON_TYPES: 
+			msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerHasNoClearFavorite, MSGBOX_DEFAULT)
+			return
 	}
+	msgbox(BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInType, MSGBOX_DEFAULT)
     return
 }
 
@@ -342,94 +353,9 @@ text BattleFrontier_BattleFactoryPreBattleRoom_Text_InvestigatedUpcomingOpponent
 	about your upcoming opponent."
 }
 
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInNormalType {
+text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInType {
 	"The TRAINER is apparently skilled
-	in the handling of the NORMAL type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInFireType {
-	"The TRAINER is apparently skilled
-	in the handling of the FIRE type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInWaterType {
-	"The TRAINER is apparently skilled
-	in the handling of the WATER type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInElectricType {
-	"The TRAINER is apparently skilled
-	in the handling of the ELECTRIC type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInGrassType {
-	"The TRAINER is apparently skilled
-	in the handling of the GRASS type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInIceType {
-	"The TRAINER is apparently skilled
-	in the handling of the ICE type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInFightingType {
-	"The TRAINER is apparently skilled
-	in the handling of the FIGHTING type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInPoisonType {
-	"The TRAINER is apparently skilled
-	in the handling of the POISON type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInGroundType {
-	"The TRAINER is apparently skilled
-	in the handling of the GROUND type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInFlyingType {
-	"The TRAINER is apparently skilled
-	in the handling of the FLYING type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInPsychicType {
-	"The TRAINER is apparently skilled
-	in the handling of the PSYCHIC type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInBugType {
-	"The TRAINER is apparently skilled
-	in the handling of the BUG type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInRockType {
-	"The TRAINER is apparently skilled
-	in the handling of the ROCK type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInGhostType {
-	"The TRAINER is apparently skilled
-	in the handling of the GHOST type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInDragonType {
-	"The TRAINER is apparently skilled
-	in the handling of the DRAGON type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInDarkType {
-	"The TRAINER is apparently skilled
-	in the handling of the DARK type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInFairyType {
-	"The TRAINER is apparently skilled
-	in the handling of the FAIRY type."
-}
-
-text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInSteelType {
-	"The TRAINER is apparently skilled
-	in the handling of the STEEL type."
+	in the handling of the {STR_VAR_2} type."
 }
 
 text BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerHasNoClearFavorite {
@@ -535,4 +461,108 @@ text BattleFrontier_BattleFactoryPreBattleRoom_Text_PreparedToFaceHead {
 text BattleFrontier_BattleFactoryPreBattleRoom_Text_CantTellAnythingAboutHead {
 	"I'm terribly sorry, but I can't tell you
 	anything about the FACTORY HEAD."
+}
+
+text gText_TypeNormal {
+	"NORMAL"
+}
+
+text gText_TypeFighting {
+	"FIGHTING"
+}
+
+text gText_TypeFlying {
+	"FLYING"
+}
+
+text gText_TypeWind {
+	"WIND"
+}
+
+text gText_TypePoison {
+	"POISON"
+}
+
+text gText_TypeGround {
+	"GROUND"
+}
+
+text gText_TypeTerra {
+	"TERRA"
+}
+
+text gText_TypeMud {
+	"MUD"
+}
+
+text gText_TypeSand {
+	"SAND"
+}
+
+text gText_TypeRock {
+	"ROCK"
+}
+
+text gText_TypeBug {
+	"BUG"
+}
+
+text gText_TypeGhost {
+	"GHOST"
+}
+
+text gText_TypeUndead {
+	"UNDEAD"
+}
+
+text gText_TypeSteel {
+	"STEEL"
+}
+
+text gText_TypeFire {
+	"FIRE"
+}
+
+text gText_TypeFlame {
+	"FLAME"
+}
+
+text gText_TypeWater {
+	"WATER"
+}
+
+text gText_TypeOcean {
+	"OCEAN"
+}
+
+text gText_TypeGrass {
+	"GRASS"
+}
+
+text gText_TypeElectric {
+	"ELECTRIC"
+}
+
+text gText_TypePsychic {
+	"PSYCHIC"
+}
+
+text gText_TypeIce {
+	"ICE"
+}
+
+text gText_TypeFrost {
+	"FROST"
+}
+
+text gText_TypeDragon {
+	"DRAGON"
+}
+
+text gText_TypeDark {
+	"DARK"
+}
+
+text gText_TypeFairy {
+	"FAIRY"
 }

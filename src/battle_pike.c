@@ -866,7 +866,9 @@ static bool8 DoesTypePreventStatus(enum Species species, u32 status)
             ret = TRUE;
         break;
     case STATUS1_BURN:
-        if (GetSpeciesType(species, 0) == TYPE_FIRE || GetSpeciesType(species, 1) == TYPE_FIRE)
+        if (GetSpeciesType(species, 0) == TYPE_FIRE || GetSpeciesType(species, 1) == TYPE_FIRE 
+         || GetSpeciesType(species, 0) == TYPE_FLAME || GetSpeciesType(species, 1) == TYPE_FLAME
+         || GetSpeciesType(species, 0) == TYPE_OCEAN || GetSpeciesType(species, 1) == TYPE_OCEAN)
             ret = TRUE;
         break;
     case STATUS1_SLEEP:

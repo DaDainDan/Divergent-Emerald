@@ -1686,7 +1686,7 @@ static s32 GetSwitchinWeatherImpact(enum BattlerId battler)
                 weatherImpact = 1;
         }
         else if ((weather  & B_WEATHER_SANDSTORM)
-            && !IS_BATTLER_ANY_TYPE(battler, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
+            && !IS_BATTLER_ANY_TYPE(battler, TYPE_ROCK, TYPE_GROUND, TYPE_TERRA, TYPE_SAND, TYPE_STEEL)
             && ability != ABILITY_SAND_VEIL && ability != ABILITY_SAND_RUSH && ability != ABILITY_SAND_FORCE)
         {
             weatherImpact = maxHP / 16;

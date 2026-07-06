@@ -5289,7 +5289,7 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         {
             battleScript = BattleScript_AlreadyBurned;
         }
-        else if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_FIRE))
+        else if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_FIRE, TYPE_FLAME, TYPE_OCEAN))
         {
             battleScript = BattleScript_NotAffected;
         }
@@ -5778,7 +5778,7 @@ bool32 IsBattlerProtected(struct BattleCalcValues *cv)
      && gProtectStructs[BATTLE_PARTNER(cv->battlerDef)].protected == PROTECT_NONE)
         return FALSE;
 
-    if (GetMoveEffect(cv->move) == EFFECT_CURSE && !IS_BATTLER_OF_TYPE(cv->battlerAtk, TYPE_GHOST))
+    if (GetMoveEffect(cv->move) == EFFECT_CURSE && !IS_BATTLER_OF_TYPE(cv->battlerAtk, TYPE_GHOST, TYPE_UNDEAD))
         return FALSE;
 
     if (gProtectStructs[cv->battlerDef].protected != PROTECT_MAX_GUARD && !MoveIgnoresProtect(cv->move))
@@ -6541,7 +6541,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
             modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(B_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
     case ABILITY_AERILATE:
-        if (moveType == TYPE_FLYING && gBattleStruct->battlerState[battlerAtk].ateBoost)
+        if (moveType == TYPE_WIND && gBattleStruct->battlerState[battlerAtk].ateBoost)
             modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(B_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
     case ABILITY_DRAGONIZE:
@@ -6659,7 +6659,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         break;
     case HOLD_EFFECT_TYPE_POWER:
     case HOLD_EFFECT_PLATE:
-        if (moveType == GetItemSecondaryId(gBattleMons[battlerAtk].item))
+        if (moveType == GetItemSecondaryId(gBattleMons[battlerAtk].item) 
+            || (GetItemSecondaryId(gBattleMons[battlerAtk].item) == TYPE_GROUND && (moveType == TYPE_SAND || moveType == TYPE_MUD || moveType == TYPE_TERRA))
+            || (GetItemSecondaryId(gBattleMons[battlerAtk].item) == TYPE_FLYING && moveType == TYPE_WIND)
+            || (GetItemSecondaryId(gBattleMons[battlerAtk].item) == TYPE_WATER && moveType == TYPE_MUD))
             modifier = uq4_12_multiply(modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_PUNCHING_GLOVE:
@@ -7244,6 +7247,16 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageContext *ctx)
     
     if (ctx->moveType == TYPE_MYSTERY)
         return UQ_4_12(1.0);
+     else if ((IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_FLYING) && ctx->moveType == TYPE_WIND) 
+            || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_FLAME) && ctx->moveType == TYPE_FIRE)
+            || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_UNDEAD) && ctx->moveType == TYPE_GHOST)
+            || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_OCEAN) && ctx->moveType == TYPE_WATER)
+            || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_FROST) && ctx->moveType == TYPE_ICE)
+            || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_GROUND) && (ctx->moveType == TYPE_TERRA || ctx->moveType == TYPE_SAND || ctx->moveType == TYPE_MUD))
+            || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_TERRA) && (ctx->moveType == TYPE_GROUND || ctx->moveType == TYPE_SAND || ctx->moveType == TYPE_MUD))
+            || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_MUD) && (ctx->moveType == TYPE_TERRA || ctx->moveType == TYPE_SAND || ctx->moveType == TYPE_GROUND))
+            || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_SAND) && (ctx->moveType == TYPE_TERRA || ctx->moveType == TYPE_GROUND || ctx->moveType == TYPE_MUD)))
+        return (ctx->abilities[ctx->battlerAtk] == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
     else if (gBattleStruct->pledgeState == PLEDGE_COMBO_ATTACK && IS_BATTLER_OF_TYPE(BATTLE_PARTNER(ctx->battlerAtk), ctx->moveType))
         return (ctx->abilities[ctx->battlerAtk] == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
     else if (!IS_BATTLER_OF_TYPE(ctx->battlerAtk, ctx->moveType) || ctx->move == MOVE_STRUGGLE || ctx->move == MOVE_NONE)
@@ -7516,7 +7529,11 @@ static inline uq4_12_t GetDefenderItemsModifier(struct DamageContext *ctx)
     case HOLD_EFFECT_RESIST_BERRY:
         if (IsUnnerveBlocked(ctx->battlerDef, gBattleMons[ctx->battlerDef].item))
             return UQ_4_12(1.0);
-        if (ctx->moveType == GetBattlerHoldEffectParam(ctx->battlerDef) && (ctx->moveType == TYPE_NORMAL || ctx->typeEffectivenessModifier >= UQ_4_12(1.6)))
+        if ((ctx->moveType == GetBattlerHoldEffectParam(ctx->battlerDef) 
+            || (GetBattlerHoldEffectParam(ctx->battlerDef) == TYPE_GROUND && (ctx->moveType == TYPE_SAND || ctx->moveType == TYPE_MUD || ctx->moveType == TYPE_TERRA))
+            || (GetBattlerHoldEffectParam(ctx->battlerDef) == TYPE_FLYING && ctx->moveType == TYPE_WIND)
+            || (GetBattlerHoldEffectParam(ctx->battlerDef) == TYPE_WATER && ctx->moveType == TYPE_MUD))
+            && (ctx->moveType == TYPE_NORMAL || ctx->typeEffectivenessModifier >= UQ_4_12(1.6)))
         {
             if (ctx->updateFlags)
                 gSpecialStatuses[ctx->battlerDef].berryReduced = TRUE;
@@ -9306,7 +9323,7 @@ static u32 CanBattlerHitBothFoesInTerrain(enum BattlerId battler, enum Move move
 enum MoveTarget GetBattlerMoveTargetType(enum BattlerId battler, enum Move move)
 {
     enum BattleMoveEffects effect = GetMoveEffect(move);
-    if (effect == EFFECT_CURSE && !IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
+    if (effect == EFFECT_CURSE && !IS_BATTLER_OF_TYPE(battler, TYPE_GHOST, TYPE_UNDEAD))
         return TARGET_USER;
     if (CanBattlerHitBothFoesInTerrain(battler, move, effect))
         return TARGET_BOTH;

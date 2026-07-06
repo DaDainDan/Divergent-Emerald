@@ -177,6 +177,14 @@ const union AnimCmd *const sSpriteAnimTable_TypeIcons[] =
     [TYPE_DARK] =       sSpriteAnim_TypeIcon_Dark,
     [TYPE_FAIRY] =      sSpriteAnim_TypeIcon_Fairy,
     [TYPE_STELLAR] =    sSpriteAnim_TypeIcon_Mystery,
+    [TYPE_TERRA]  =     sSpriteAnim_TypeIcon_Ground,
+    [TYPE_FROST]  =     sSpriteAnim_TypeIcon_Ice,
+    [TYPE_OCEAN] =      sSpriteAnim_TypeIcon_Water,
+    [TYPE_FLAME] =      sSpriteAnim_TypeIcon_Fire,
+    [TYPE_UNDEAD] =     sSpriteAnim_TypeIcon_Ghost,
+    [TYPE_WIND] =       sSpriteAnim_TypeIcon_Flying,
+    [TYPE_MUD] =        sSpriteAnim_TypeIcon_Ground,
+    [TYPE_SAND] =       sSpriteAnim_TypeIcon_Ground,
 };
 
 const struct SpritePalette sTypeIconPal1 =

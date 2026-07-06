@@ -4755,7 +4755,7 @@ s32 GetBattleMovePriority(enum BattlerId battler, enum Ability ability, enum Mov
     }
     else if (ability == ABILITY_GALE_WINGS
           && (GetConfig(B_GALE_WINGS) < GEN_7 || IsBattlerAtMaxHp(battler))
-          && GetMoveType(move) == TYPE_FLYING)
+          && (GetMoveType(move) == TYPE_FLYING || GetMoveType(move) == TYPE_WIND))
     {
         priority++;
     }
@@ -5759,7 +5759,7 @@ enum Type TrySetAteType(enum Move move, enum BattlerId battlerAtk, enum Ability 
         ateType = TYPE_ICE;
         break;
     case ABILITY_AERILATE:
-        ateType = TYPE_FLYING;
+        ateType = TYPE_WIND;
         break;
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
@@ -6056,7 +6056,10 @@ void SetTypeBeforeUsingMove(enum Move move, enum BattlerId battler)
     // Check if a gem should activate.
     u32 effect = GetMoveEffect(move);
     if (holdEffect == HOLD_EFFECT_GEMS
-        && GetBattleMoveType(move) == GetItemSecondaryId(heldItem)
+        && (GetBattleMoveType(move) == GetItemSecondaryId(heldItem) 
+        || (GetItemSecondaryId(heldItem) == TYPE_GROUND && (GetBattleMoveType(move) == TYPE_TERRA || GetBattleMoveType(move) == TYPE_SAND || GetBattleMoveType(move) == TYPE_MUD))
+        || (GetItemSecondaryId(heldItem) == TYPE_FLYING && GetBattleMoveType(move) == TYPE_WIND)
+        || (GetItemSecondaryId(heldItem) == TYPE_WATER && GetBattleMoveType(move) == TYPE_MUD))
         && effect != EFFECT_PLEDGE
         && effect != EFFECT_OHKO)
     {
