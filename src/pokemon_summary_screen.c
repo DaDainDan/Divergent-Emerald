@@ -3921,15 +3921,15 @@ static const u8 *GetLetterGrade(u32 stat)
     static const u8 gText_GradeA[] = _("A");
     static const u8 gText_GradeS[] = _("S");
 
-    if (stat <= 0)
+    if (stat <= 2)
         return gText_GradeF;
-    else if (stat <= 15)
+    else if (stat <= 5)
         return gText_GradeD;
-    else if (stat <= 25)
+    else if (stat <= 8)
         return gText_GradeC;
-    else if (stat <= 29)
+    else if (stat <= 11)
         return gText_GradeB;
-    else if (stat <= 30)
+    else if (stat <= 14)
         return gText_GradeA;
     else
         return gText_GradeS;

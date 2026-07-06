@@ -9,15 +9,15 @@ u32 GetCurrentLevelCap(void)
 {
     static const u32 sLevelCapFlagMap[][2] =
     {
-        {FLAG_BADGE01_GET, 15},
-        {FLAG_BADGE02_GET, 19},
-        {FLAG_BADGE03_GET, 24},
+        {FLAG_BADGE01_GET, 12},
+        {FLAG_BADGE03_GET, 20},
         {FLAG_BADGE04_GET, 29},
-        {FLAG_BADGE05_GET, 31},
-        {FLAG_BADGE06_GET, 33},
-        {FLAG_BADGE07_GET, 42},
-        {FLAG_BADGE08_GET, 46},
-        {FLAG_IS_CHAMPION, 58},
+        {FLAG_BADGE06_GET, 38},
+        {FLAG_BADGE05_GET, 46},
+        {FLAG_BADGE02_GET, 57},
+        {FLAG_BADGE07_GET, 69},
+        {FLAG_BADGE08_GET, 79},
+        {FLAG_DEFEATED_WALLY_VICTORY_ROAD, 90},
     };
 
     u32 i;
@@ -40,8 +40,8 @@ u32 GetCurrentLevelCap(void)
 
 u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)
 {
-    static const u32 sExpScalingDown[5] = { 4, 8, 16, 32, 64 };
-    static const u32 sExpScalingUp[5]   = { 16, 8, 4, 2, 1 };
+    static const u32 sExpScalingDown[8] = { 4, 4, 8, 8, 16, 16, 32, 32 };
+    static const u32 sExpScalingUp[8]   = { 16, 16, 8, 8, 4, 4, 2, 2 };
 
     u32 levelDifference;
     u32 currentLevelCap = GetCurrentLevelCap();
@@ -86,15 +86,16 @@ u32 GetCurrentEVCap(void)
 {
     static const u16 sEvCapFlagMap[][2] = {
         // Define EV caps for each milestone
-        {FLAG_BADGE01_GET, MAX_TOTAL_EVS *  1 / 17},
-        {FLAG_BADGE02_GET, MAX_TOTAL_EVS *  3 / 17},
-        {FLAG_BADGE03_GET, MAX_TOTAL_EVS *  5 / 17},
-        {FLAG_BADGE04_GET, MAX_TOTAL_EVS *  7 / 17},
-        {FLAG_BADGE05_GET, MAX_TOTAL_EVS *  9 / 17},
-        {FLAG_BADGE06_GET, MAX_TOTAL_EVS * 11 / 17},
-        {FLAG_BADGE07_GET, MAX_TOTAL_EVS * 13 / 17},
-        {FLAG_BADGE08_GET, MAX_TOTAL_EVS * 15 / 17},
-        {FLAG_IS_CHAMPION, MAX_TOTAL_EVS},
+        {FLAG_BADGE01_GET, 20},
+        {FLAG_BADGE03_GET, 60},
+        {FLAG_BADGE04_GET, 100},
+        {FLAG_BADGE06_GET, 140},
+        {FLAG_BADGE05_GET, 180},
+        {FLAG_BADGE02_GET, 240},
+        {FLAG_BADGE07_GET, 300},
+        {FLAG_BADGE08_GET, 360},
+        {FLAG_DEFEATED_WALLY_VICTORY_ROAD, 400},
+        {FLAG_IS_CHAMPION, 440},
     };
 
     if (B_EV_CAP_TYPE == EV_CAP_FLAG_LIST)
