@@ -99,6 +99,7 @@ enum FlagsVarsDebugMenu
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL,
+    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_WALLY_VR,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLLISION,
@@ -323,6 +324,7 @@ static void DebugAction_FlagsVars_SwitchPokeNav(u8 taskId);
 static void DebugAction_FlagsVars_SwitchMatchCall(u8 taskId);
 static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId);
 static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId);
+static void DebugAction_FlagsVars_ToggleWallyVR(u8 taskId);
 static void DebugAction_FlagsVars_ToggleGameClear(u8 taskId);
 static void DebugAction_FlagsVars_ToggleFrontierPass(u8 taskId);
 static void DebugAction_FlagsVars_CollisionOnOff(u8 taskId);
@@ -719,6 +721,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Flags[] =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES]     = { COMPOUND_STRING("Toggle {STR_VAR_1}Running Shoes"),   DebugAction_ToggleFlag, DebugAction_FlagsVars_RunningShoes },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS]     = { COMPOUND_STRING("Toggle {STR_VAR_1}Fly Flags"),       DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleFlyFlags },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL]    = { COMPOUND_STRING("Toggle {STR_VAR_1}All badges"),      DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleBadgeFlags },
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_WALLY_VR]      = { COMPOUND_STRING("Toggle {STR_VAR_1}Wally VR"),        DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleWallyVR },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR]    = { COMPOUND_STRING("Toggle {STR_VAR_1}Game clear"),      DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleGameClear },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS] = { COMPOUND_STRING("Toggle {STR_VAR_1}Frontier Pass"),   DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleFrontierPass },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLLISION]     = { COMPOUND_STRING("Toggle {STR_VAR_1}Collision OFF"),   DebugAction_ToggleFlag, DebugAction_FlagsVars_CollisionOnOff },
@@ -1242,6 +1245,9 @@ static u32 Debug_CheckToggleFlags(u8 id)
                 break;
             }
         }
+        break;
+    case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_WALLY_VR:
+        result = FlagGet(FLAG_DEFEATED_WALLY_VICTORY_ROAD);
         break;
     case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR:
         result = FlagGet(FLAG_SYS_GAME_CLEAR);
@@ -2533,6 +2539,16 @@ static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
         for (u32 i = 0; i < ARRAY_COUNT(gBadgeFlags); i++)
             FlagSet(gBadgeFlags[i]);
     }
+}
+
+static void DebugAction_FlagsVars_ToggleWallyVR(u8 taskId)
+{
+    // Sound effect
+    if (FlagGet(FLAG_DEFEATED_WALLY_VICTORY_ROAD))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_DEFEATED_WALLY_VICTORY_ROAD);
 }
 
 static void DebugAction_FlagsVars_ToggleGameClear(u8 taskId)

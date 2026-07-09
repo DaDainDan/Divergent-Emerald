@@ -1959,7 +1959,7 @@ Name: VICTOR
 Class: Winstrate
 Pic: Pokefan M
 Music: Twins
-AI: Check Bad Move
+AI: Try To Faint / Negate Unaware
 
 Taillow @ Oran Berry
 Level: 16
@@ -1972,7 +1972,7 @@ Name: VICTORIA
 Class: Winstrate
 Pic: Pokefan F
 Music: Twins
-AI: Check Bad Move / Try To Faint
+AI: Try To Faint / Negate Unaware
 
 Roselia @ Oran Berry
 Level: 17
@@ -1982,7 +1982,7 @@ Name: VIVI
 Class: Winstrate
 Pic: Lass
 Music: Female
-AI: Basic Trainer
+AI: Basic Trainer / Smart Mon Choices
 
 Marill
 Level: 15
@@ -1997,8 +1997,8 @@ Level: 15
 Name: VICKY
 Class: Winstrate
 Pic: Expert F
-Music: Intense
-AI: Basic Trainer
+Music: Rich
+AI: Smart Trainer / Conservative
 
 Meditite
 Level: 18
@@ -11771,8 +11771,17 @@ Name: RED
 Class: Rival
 Pic: Red
 
-Charmander
-Level: 5
+Blissey
+Level: 100
+
+Blissey
+Level: 100
+
+Blissey
+Level: 100
+
+Blissey
+Level: 100
 
 === TRAINER_LEAF ===
 Name: LEAF
