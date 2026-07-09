@@ -2392,7 +2392,7 @@ static int GetTypeEffectivenessPoints(enum Move move, int targetSpecies, int mod
     defAbility = GetSpeciesAbility(targetSpecies, 0);
     moveType = GetMoveType(move);
 
-    if (defAbility == ABILITY_LEVITATE && moveType == TYPE_GROUND)
+    if ((defAbility == ABILITY_LEVITATE || IsSpeciesAirborne(targetSpecies)) && moveType == TYPE_GROUND)
     {
         // They likely meant to return here, as 8 is the number of points normally used in this mode for moves with no effect.
         // Because there's no return the value instead gets interpreted by the switch, and the number of points becomes 0.
@@ -2406,15 +2406,26 @@ static int GetTypeEffectivenessPoints(enum Move move, int targetSpecies, int mod
     }
     else
     {
-        u32 typeEffectiveness1 = UQ_4_12_TO_INT(GetTypeModifier(moveType, defType1) * 2) * 5;
-        u32 typeEffectiveness2 = UQ_4_12_TO_INT(GetTypeModifier(moveType, defType2) * 2) * 5;
-
-        typePower = (typeEffectiveness1 * typePower) / 10;
+        uq4_12_t modifier = GetTypeModifier(moveType, defType1);
         if (defType2 != defType1)
-            typePower = (typeEffectiveness2 * typePower) / 10;
+            modifier = uq4_12_multiply(modifier, GetTypeModifier(moveType, defType2));
+        if (IsSpeciesAirborne(targetSpecies) && moveType == TYPE_ELECTRIC)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.6));
 
-        if (defAbility == ABILITY_WONDER_GUARD && typeEffectiveness1 != TYPE_x1 && typeEffectiveness2 != TYPE_x1)
-            typePower = 0;
+        if (modifier == 0)
+            typePower = TYPE_x0;
+        else if (defAbility == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0))
+            typePower = TYPE_x0;
+        else if (modifier < UQ_4_12(0.625))
+            typePower = TYPE_x0_25;
+        else if (modifier < UQ_4_12(1.0))
+            typePower = TYPE_x0_50;
+        else if (modifier == UQ_4_12(1.0))
+            typePower = TYPE_x1;
+        else if (modifier <= UQ_4_12(1.6))
+            typePower = TYPE_x2;
+        else
+            typePower = TYPE_x4;
     }
 
     switch (mode)

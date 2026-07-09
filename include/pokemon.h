@@ -407,7 +407,8 @@ struct SpeciesInfo /*0xC4*/
     u16 evYield_Speed:2;
     u16 evYield_SpAttack:2;
     u16 evYield_SpDefense:2;
-    u16 padding2:4;
+    bool16 airborne:1;
+    u16 padding2:3;
     enum Item itemCommon;
     enum Item itemRare;
     u8 genderRatio;
@@ -833,6 +834,7 @@ const u8 *GetSpeciesPokedexDescription(enum Species species);
 u32 GetSpeciesHeight(enum Species species);
 u32 GetSpeciesWeight(enum Species species);
 enum Type GetSpeciesType(enum Species species, u8 slot);
+bool32 IsSpeciesAirborne(enum Species species);
 enum Ability GetSpeciesAbility(enum Species species, u8 slot);
 u32 GetSpeciesBaseHP(enum Species species);
 u32 GetSpeciesBaseAttack(enum Species species);

@@ -2790,7 +2790,7 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
         break;
     case EFFECT_GRAVITY:
         if ((gFieldStatuses & STATUS_FIELD_GRAVITY
-          && !IS_BATTLER_OF_TYPE(battlerAtk, TYPE_FLYING)
+          && IsSpeciesAirborne(gBattleMons[battlerDef].species)
           && aiData->holdEffects[battlerAtk] != HOLD_EFFECT_AIR_BALLOON) // Should revert Gravity in this case
           || PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
             ADJUST_SCORE(-10);
@@ -3009,7 +3009,7 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
     //case EFFECT_BEAK_BLAST:
         //break;
     case EFFECT_SKY_DROP:
-        if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_FLYING))
+        if (IsSpeciesAirborne(gBattleMons[battlerDef].species))
             ADJUST_SCORE(-10);
         if (BattlerWillFaintFromWeather(battlerAtk, aiData->abilities[battlerAtk])
         ||  DoesSubstituteBlockMove(battlerAtk, battlerDef, move)

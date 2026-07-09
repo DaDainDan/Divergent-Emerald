@@ -3426,6 +3426,11 @@ enum Type GetSpeciesType(enum Species species, u8 slot)
     return gSpeciesInfo[SanitizeSpeciesId(species)].types[slot];
 }
 
+bool32 IsSpeciesAirborne(enum Species species)
+{
+    return gSpeciesInfo[SanitizeSpeciesId(species)].airborne;
+}
+
 enum Ability GetSpeciesAbility(enum Species species, u8 slot)
 {
     return gSpeciesInfo[SanitizeSpeciesId(species)].abilities[slot];

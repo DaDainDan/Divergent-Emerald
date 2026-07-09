@@ -2033,7 +2033,7 @@ static enum CancelerResult CancelerTargetFailure(struct BattleCalcValues *cv)
         }
         else if (cv->moveEffect == EFFECT_SKY_DROP
               && !gProtectStructs[cv->battlerAtk].chargingTurn
-              && IS_BATTLER_OF_TYPE(cv->battlerDef, TYPE_FLYING))
+              && IsSpeciesAirborne(gBattleMons[cv->battlerDef].species))
         {
             gBattleStruct->moveResultFlags[cv->battlerDef] = MOVE_RESULT_NO_EFFECT;
             BattleScriptCall(BattleScript_SkyDropFlyingType);
