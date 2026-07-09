@@ -3303,7 +3303,7 @@ static void PrintGenderSymbol(struct Pokemon *mon, enum Species species)
         switch (GetMonGender(mon))
         {
         case MON_MALE:
-            PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_SPECIES, gText_MaleSymbol, 57, 17, 0, 3);
+            PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_SPECIES, gText_MaleSymbol, 57, 17, 0, 5);
             break;
         case MON_FEMALE:
             PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_SPECIES, gText_FemaleSymbol, 57, 17, 0, 4);
@@ -3568,7 +3568,7 @@ static void PrintMonOTName(void)
         if (sMonSummaryScreen->summary.OTGender == 0)
             PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, x, 1, 0, 5);
         else
-            PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, x, 1, 0, 6);
+            PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, x, 1, 0, 4);
     }
 }
 
@@ -3887,19 +3887,35 @@ static void PrintRibbonCount(void)
 
 static void BufferStat(u8 *dst, enum Stat statIndex, u32 stat, u32 strId, u32 n)
 {
-    static const u8 sTextNatureUp1[] = _("{COLOR}{15}");
-    static const u8 sTextNatureUp2[] = _("{COLOR}{11}");
+    enum Stat stat1 = gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp1;
+    enum Stat stat2 = gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp2;
+    u8 specialNature = gNaturesInfo[sMonSummaryScreen->summary.mintNature].specialNature;
+    
+    static const u8 sTextNatureTwoStatsUp[] = _("{COLOR}{15}");
+    static const u8 sTextNatureOneStatUp[] = _("{COLOR}{7}");
+    static const u8 sTextNatureAllStatsUp[] = _("{COLOR}{8}");
     static const u8 sTextNatureNeutral[] = _("{COLOR}{01}");
     u8 *txtPtr;
 
-    if (statIndex == 0 || !P_SUMMARY_SCREEN_NATURE_COLORS)
+    if (!P_SUMMARY_SCREEN_NATURE_COLORS || specialNature == NO_STATS || specialNature == NO_STATS_BREAK_CAPS
+       || specialNature == CRIT_AND_ACC || (specialNature == ALL_STATS_MINUS_HP && statIndex == STAT_HP))
         txtPtr = StringCopy(dst, sTextNatureNeutral);
-    else if (gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp1 == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp2
-             && statIndex == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp1)
-        txtPtr = StringCopy(dst, sTextNatureUp2);
-    else if (statIndex == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp1 
-             || statIndex == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp2)
-        txtPtr = StringCopy(dst, sTextNatureUp1);
+    else if (specialNature == ALL_STATS || (specialNature == ALL_STATS_MINUS_HP && statIndex != STAT_HP))
+        txtPtr = StringCopy(dst, sTextNatureAllStatsUp);
+    else if (stat1 == stat2 && statIndex == stat1)
+    {
+        if (specialNature == HALVE_BONUS)
+            txtPtr = StringCopy(dst, sTextNatureTwoStatsUp);
+        else
+            txtPtr = StringCopy(dst, sTextNatureOneStatUp);
+    }
+    else if (statIndex == stat1 || statIndex == stat2)
+    {
+        if (specialNature == DOUBLE_BONUS)
+            txtPtr = StringCopy(dst, sTextNatureOneStatUp);
+        else
+            txtPtr = StringCopy(dst, sTextNatureTwoStatsUp);
+    }
     else
         txtPtr = StringCopy(dst, sTextNatureNeutral);
 

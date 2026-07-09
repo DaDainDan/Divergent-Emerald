@@ -289,7 +289,7 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
         .backAnim = 1,
         .pokeBlockAnim = {ANIM_BOLD, AFFINE_NONE},
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlSupportHighDefenseLow,
-        .battlePalacePercents = PALACE_STYLE(90, 5, 90, 5), //5%, 5%
+        .battlePalacePercents = PALACE_STYLE(80, 15, 90, 5), //5%, 5%
         .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
         .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
     },
@@ -519,6 +519,97 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
         .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighAttackLow,
         .battlePalacePercents = PALACE_STYLE(30, 35, 40, 25), //35%, 35%
         .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
+        .battlePalaceSmokescreen = PALACE_TARGET_RANDOM,
+    },
+    [NATURE_SMOOTH] =
+    {
+        .name = COMPOUND_STRING("Smooth"),
+        .statUp1 = STAT_ATK,
+        .statUp2 = STAT_SPDEF,
+        .specialNature = ALL_STATS_MINUS_HP,
+        .backAnim = 1,
+        .pokeBlockAnim = {ANIM_LAX, AFFINE_NONE},
+        .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlDefenseHighAttackLow,
+        .battlePalacePercents = PALACE_STYLE(25, 40, 25, 50), //35%, 25%
+        .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
+        .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
+    },
+    [NATURE_SHARP] =
+    {
+        .name = COMPOUND_STRING("Sharp"),
+        .statUp1 = STAT_ATK,
+        .statUp2 = STAT_SPEED,
+        .specialNature = CRIT_AND_ACC,
+        .backAnim = 1,
+        .pokeBlockAnim = {ANIM_SERIOUS, AFFINE_TURN_DOWN},
+        .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighDefenseLow,
+        .battlePalacePercents = PALACE_STYLE(75, 10, 50, 20), //15%, 30%
+        .battlePalaceFlavorText = B_MSG_GETTING_IN_POS,
+        .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
+    },
+    [NATURE_LAZY] =
+    {
+        .name = COMPOUND_STRING("Lazy"),
+        .statUp1 = STAT_HP,
+        .statUp2 = STAT_HP,
+        .specialNature = HALVE_BONUS,
+        .backAnim = 1,
+        .pokeBlockAnim = {ANIM_DOCILE, AFFINE_NONE},
+        .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlDefenseHighSupportLow,
+        .battlePalacePercents = PALACE_STYLE(10, 60, 50, 25), //30%, 25%
+        .battlePalaceFlavorText = B_MSG_EAGER_FOR_MORE,
+        .battlePalaceSmokescreen = PALACE_TARGET_WEAKER,
+    },
+    [NATURE_BALKY] =
+    {
+        .name = COMPOUND_STRING("Balky"),
+        .statUp1 = STAT_ATK,
+        .statUp2 = STAT_SPEED,
+        .specialNature = NO_STATS,
+        .backAnim = 1,
+        .pokeBlockAnim = {ANIM_SASSY, AFFINE_TURN_UP_HIGH},
+        .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighSupportLow,
+        .battlePalacePercents = PALACE_STYLE(50, 35, 75, 20), //15%, 5%
+        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
+        .battlePalaceSmokescreen = PALACE_TARGET_RANDOM,
+    },
+    [NATURE_PUSHY] =
+    {
+        .name = COMPOUND_STRING("Pushy"),
+        .statUp1 = STAT_SPATK,
+        .statUp2 = STAT_ATK,
+        .specialNature = NO_STATS_BREAK_CAPS,
+        .backAnim = 2,
+        .pokeBlockAnim = {ANIM_MODEST, AFFINE_TURN_DOWN_SLOW},
+        .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighSupportLow,
+        .battlePalacePercents = PALACE_STYLE(65, 20, 80, 15), //15%, 5%
+        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
+        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
+    },
+    [NATURE_LOYAL] =
+    {
+        .name = COMPOUND_STRING("Loyal"),
+        .statUp1 = STAT_SPDEF,
+        .statUp2 = STAT_ATK,
+        .specialNature = ALL_STATS,
+        .backAnim = 2,
+        .pokeBlockAnim = {ANIM_MILD, AFFINE_NONE},
+        .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlDefenseHighAttackLow,
+        .battlePalacePercents = PALACE_STYLE(35, 35, 25, 40), //30%, 35%
+        .battlePalaceFlavorText = B_MSG_GLINT_IN_EYE,
+        .battlePalaceSmokescreen = PALACE_TARGET_STRONGER,
+    },
+    [NATURE_VIOLENT] =
+    {
+        .name = COMPOUND_STRING("Violent"),
+        .statUp1 = STAT_ATK,
+        .statUp2 = STAT_SPATK,
+        .specialNature = DOUBLE_BONUS,
+        .backAnim = 0,
+        .pokeBlockAnim = {ANIM_IMPISH, AFFINE_NONE},
+        .natureGirlMessage = BattleFrontier_Lounge5_Text_NatureGirlAttackHighDefenseLow,
+        .battlePalacePercents = PALACE_STYLE(90, 5, 90, 5), //10%, 10%
+        .battlePalaceFlavorText = B_MSG_GROWL_DEEPLY,
         .battlePalaceSmokescreen = PALACE_TARGET_RANDOM,
     },
 };
@@ -912,7 +1003,8 @@ void CreateRandomMon(struct Pokemon *mon, enum Species species, u8 level)
 
 void CreateRandomMonWithIVs(struct Pokemon *mon, enum Species species, u8 level, u8 fixedIv)
 {
-    CreateMonWithIVs(mon, species, level, Random32(), OTID_STRUCT_PLAYER_ID, fixedIv);
+    u32 personality = GetMonPersonality(species, MON_GENDER_RANDOM, NATURE_RANDOM, RANDOM_UNOWN_LETTER);
+    CreateMonWithIVs(mon, species, level, personality, OTID_STRUCT_PLAYER_ID, fixedIv);
     GiveMonInitialMoveset(mon);
 }
 
@@ -1142,6 +1234,7 @@ u32 GetMonPersonality(enum Species species, u8 gender, u8 nature, u8 unownLetter
         actualLetter = GET_UNOWN_LETTER(personality);
     }
     while ((nature != GetNatureFromPersonality(personality) && nature != NATURE_RANDOM)
+            || (nature == NATURE_RANDOM && GetNatureFromPersonality(personality) >= NUM_RECEIVEABLE_NATURES)
             || (gender != MON_GENDER_RANDOM && gender != GetGenderFromSpeciesAndPersonality(species, personality))
             || ((actualLetter != unownLetter - 1) && unownLetter > 0));
     return personality;
@@ -1450,6 +1543,26 @@ void CalculateMonStats(struct Pokemon *mon)
 
     u8 nature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
 
+    if (gNaturesInfo[nature].specialNature == NO_STATS && level >= 50)
+    {
+        u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+        u32 targetNature = (friendship >= FRIENDSHIP_EVO_THRESHOLD) ? NATURE_LOYAL : NATURE_VIOLENT;
+        ModifyPersonalityForNature(&personality, targetNature);
+        UpdateMonPersonality(&mon->box, personality);
+        SetMonData(mon, MON_DATA_HIDDEN_NATURE, &targetNature);
+        nature = targetNature;
+    }
+    else if (gNaturesInfo[nature].specialNature == NO_STATS_BREAK_CAPS
+        && ((GetCurrentLevelCap() == MAX_LEVEL && level >= 50) || level >= 95))
+    {
+        u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+        u32 targetNature = Random() % NUM_PUSHY_REROLL_NATURES;
+        ModifyPersonalityForNature(&personality, targetNature);
+        UpdateMonPersonality(&mon->box, personality);
+        SetMonData(mon, MON_DATA_HIDDEN_NATURE, &targetNature);
+        nature = targetNature;
+    }
+
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
     bool32 hyperTrained[NUM_STATS]; //In a battle test, hyper training flag indicates a fixed stat
@@ -1494,6 +1607,7 @@ void CalculateMonStats(struct Pokemon *mon)
     {
         s32 n = 2 * GetSpeciesBaseHP(species) + iv[STAT_HP];
         newMaxHP = (((n + ev[STAT_HP] / 4) * level) / 100) + level + 10;
+        newMaxHP = ModifyStatByNature(nature, newMaxHP, STAT_HP);
     }
 
     gBattleScripting.levelUpHP = newMaxHP - oldMaxHP;
@@ -4498,6 +4612,9 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             case NATURE_BASHFUL:
             case NATURE_MILD:
             case NATURE_SASSY:
+            case NATURE_SHARP:
+            case NATURE_BALKY:
+            case NATURE_VIOLENT:
                 currentCondition = TRUE;
                 break;
             }
@@ -4517,6 +4634,10 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             case NATURE_GENTLE:
             case NATURE_CAREFUL:
             case NATURE_QUIRKY:
+            case NATURE_SMOOTH:
+            case NATURE_LAZY:
+            case NATURE_PUSHY:
+            case NATURE_LOYAL:
                 currentCondition = TRUE;
                 break;
             }
@@ -5023,6 +5144,31 @@ u8 GetTrainerEncounterMusicId(u16 trainerOpponentId)
 
 u16 ModifyStatByNature(u8 nature, u16 stat, enum Stat statIndex)
 {
+#if TESTING
+    // Fixes tests failing due to HARDY no longer being a neutral nature
+    if (nature == NATURE_HARDY)
+        return stat;
+#endif
+    switch (gNaturesInfo[nature].specialNature)
+    {
+    case NO_STATS:
+    case NO_STATS_BREAK_CAPS:
+    case CRIT_AND_ACC:
+        return stat;
+    case ALL_STATS:
+        return stat * 102 / 100;
+    case ALL_STATS_MINUS_HP:
+        return (statIndex == STAT_HP) ? stat : stat * 102 / 100;
+    case HALVE_BONUS:
+        if (statIndex == gNaturesInfo[nature].statUp1 && statIndex == gNaturesInfo[nature].statUp2)
+            return stat * 105 / 100;
+        return stat;
+    case DOUBLE_BONUS:
+        if (statIndex == gNaturesInfo[nature].statUp1 || statIndex == gNaturesInfo[nature].statUp2)
+            return stat * 110 / 100;
+        return stat;
+    }
+
     // Don't modify HP, Accuracy, or Evasion by nature
     if (statIndex <= STAT_HP || statIndex > NUM_NATURE_STATS)
         return stat;

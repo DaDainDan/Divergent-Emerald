@@ -595,11 +595,22 @@ enum {
 #define PALACE_TARGET_WEAKER   1
 #define PALACE_TARGET_RANDOM   2
 
+// specialNature values
+#define NORMAL_NATURE          0
+#define NO_STATS               1
+#define NO_STATS_BREAK_CAPS    2
+#define ALL_STATS              3
+#define ALL_STATS_MINUS_HP     4
+#define HALVE_BONUS            5
+#define DOUBLE_BONUS           6
+#define CRIT_AND_ACC           7
+
 struct NatureInfo
 {
     const u8 *name;
     enum Stat statUp1;
     enum Stat statUp2;
+    u8 specialNature;
     u8 backAnim;
     u8 pokeBlockAnim[2];
     u8 battlePalacePercents[4];

@@ -112,11 +112,15 @@ UNUSED bool32 DoesPartyMemberHaveAbilityEffect(const enum Ability *abilityArray)
 
 u32 GetSynchronizedNature(enum GeneratedMonOrigin origin, enum Species species)
 {
+    u32 nature;
     if (!DoesLeadingMonHaveAbilityEffect(sForceNatureAbilities))
         return NATURE_RANDOM;
     if (!(sSynchronizeModes[origin](species)))
         return NATURE_RANDOM;
-    return GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_PERSONALITY) % NUM_NATURES;
+    nature = GetNature(&gParties[B_TRAINER_PLAYER][0]);
+    if (nature >= NUM_RECEIVEABLE_NATURES)
+        return NATURE_RANDOM;
+    return nature;
 }
 
 u32 GetSynchronizedGender(enum GeneratedMonOrigin origin, enum Species species)

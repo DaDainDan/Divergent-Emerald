@@ -477,17 +477,17 @@ static u8 PickWildMonNature(enum Species species)
 {
     u8 i;
     struct Pokeblock *safariPokeblock;
-    u8 natures[NUM_NATURES];
+    u8 natures[NUM_RECEIVEABLE_NATURES];
 
     if (GetSafariZoneFlag() == TRUE && Random() % 100 < 80)
     {
         safariPokeblock = SafariZoneGetActivePokeblock();
         if (safariPokeblock != NULL)
         {
-            for (i = 0; i < NUM_NATURES; i++)
+            for (i = 0; i < NUM_RECEIVEABLE_NATURES; i++)
                 natures[i] = i;
-            Shuffle(natures, NUM_NATURES, sizeof(natures[0]));
-            for (i = 0; i < NUM_NATURES; i++)
+            Shuffle(natures, NUM_RECEIVEABLE_NATURES, sizeof(natures[0]));
+            for (i = 0; i < NUM_RECEIVEABLE_NATURES; i++)
             {
                 if (PokeblockGetGain(natures[i], safariPokeblock) > 0)
                     return natures[i];

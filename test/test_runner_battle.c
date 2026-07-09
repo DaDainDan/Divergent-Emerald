@@ -2338,25 +2338,45 @@ void OpenPokemon(u32 sourceLine, enum BattleTrainer trainer, enum Species specie
     CalculateMonStats(DATA.currentMon);
 }
 
-// (sNaturePersonalities[i] % NUM_NATURES) == i
-// (sNaturePersonalities[i] & 0xFF) == 0
-// NOTE: Using 25 << 8 rather than 0 << 8 to prevent shiny females.
-static const u16 sNaturePersonalities[NUM_NATURES] =
+// Changed GenerateNature to work with the new 32 nature total
+static u32 GenerateNaturePersonality(u32 sourceLine, enum Species species, u8 nature, u8 genderByte)
 {
-    25 << 8, 21 << 8, 17 << 8, 13 << 8,  9 << 8,
-     5 << 8,  1 << 8, 22 << 8, 18 << 8, 14 << 8,
-    10 << 8,  6 << 8,  2 << 8, 23 << 8, 19 << 8,
-    15 << 8, 11 << 8,  7 << 8,  3 << 8, 24 << 8,
-    20 << 8, 16 << 8, 12 << 8,  8 << 8,  4 << 8,
-};
+    u32 genderRatio = gSpeciesInfo[species].genderRatio;
+    u32 byte = nature;
+    bool32 found = TRUE;
 
-static u32 GenerateNature(u32 nature, u32 offset)
-{
-    if (offset <= nature)
-        nature -= offset;
-    else
-        nature = nature + NUM_NATURES - offset;
-    return sNaturePersonalities[nature];
+    if (genderRatio != MON_MALE && genderRatio != MON_FEMALE && genderRatio != MON_GENDERLESS)
+    {
+        s32 k;
+        found = FALSE;
+        if (genderByte == 0xFF) // Male wanted: byte must be >= genderRatio
+        {
+            for (k = 7; k >= 0; k--)
+            {
+                byte = nature + 32 * k;
+                if (byte >= genderRatio)
+                {
+                    found = TRUE;
+                    break;
+                }
+            }
+        }
+        else // Female wanted: byte must be < genderRatio
+        {
+            for (k = 0; k <= 7; k++)
+            {
+                byte = nature + 32 * k;
+                if (byte < genderRatio)
+                {
+                    found = TRUE;
+                    break;
+                }
+            }
+        }
+    }
+
+    INVALID_IF(!found, "Nature %d cannot be combined with the requested gender for this species", nature);
+    return byte;
 }
 
 void ClosePokemon(u32 sourceLine)
@@ -2372,7 +2392,7 @@ void ClosePokemon(u32 sourceLine)
             INVALID_IF(GetMonData(DATA.currentMon, MON_DATA_HP) == 0, "Battlers cannot be fainted");
         }
     }
-    UpdateMonPersonality(&DATA.currentMon->box, GenerateNature(DATA.nature, DATA.gender % NUM_NATURES) | DATA.gender);
+    UpdateMonPersonality(&DATA.currentMon->box, GenerateNaturePersonality(sourceLine, GetMonData(DATA.currentMon, MON_DATA_SPECIES), DATA.nature, DATA.gender));
     data = DATA.isShiny;
     SetMonData(DATA.currentMon, MON_DATA_IS_SHINY, &data);
     DATA.currentMon = NULL;
@@ -2415,6 +2435,11 @@ void Nature_(u32 sourceLine, u32 nature)
     INVALID_IF(!DATA.currentMon, "Nature outside of PLAYER/OPPONENT");
     INVALID_IF(nature >= NUM_NATURES, "Illegal nature: %d", nature);
     DATA.nature = nature;
+    // Resync Nature for UpdateMonPersonality in ClosePokemon
+    // For the sake of Dynamic Natures Balky and Pushy
+    SetMonData(DATA.currentMon, MON_DATA_HIDDEN_NATURE, &nature);
+    CalculateMonStats(DATA.currentMon);
+    DATA.nature = GetMonData(DATA.currentMon, MON_DATA_HIDDEN_NATURE);
 }
 
 void Ability_(u32 sourceLine, enum Ability ability)

@@ -1058,13 +1058,17 @@ static void CalculatePokeblockEffectiveness(struct Pokeblock *pokeblock, struct 
     {
         s16 amount = sInfo->pokeblockStatBoosts[i];
         s8 boost = amount / 10;
+        s8 sign, magnitude;
 
         if (amount % 10 >= 5) // round to the nearest
             boost++;
 
         flavor = GetMonFlavorRelation(mon, sConditionToFlavor[i]);
-        if (flavor == direction)
-            sInfo->pokeblockStatBoosts[i] += boost * flavor;
+        sign = (flavor > 0) - (flavor < 0);
+        magnitude = (flavor < 0) ? -flavor : flavor;
+
+        if (sign != 0 && sign == direction)
+            sInfo->pokeblockStatBoosts[i] += ((boost * magnitude + 1) / 2) * sign;
     }
 }
 

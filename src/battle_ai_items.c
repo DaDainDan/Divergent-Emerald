@@ -159,6 +159,7 @@ bool32 ShouldUseItem(enum BattlerId battler)
                 if (gAiLogicData->abilities[battler] == ABILITY_SUPER_LUCK
                  || gAiLogicData->abilities[battler] == ABILITY_SNIPER
                  || gAiLogicData->holdEffects[battler] == HOLD_EFFECT_SCOPE_LENS
+                 || gNaturesInfo[GetNature(GetBattlerMon(battler))].specialNature == CRIT_AND_ACC
                  || HasMoveWithFlag(battler, GetMoveCriticalHitStage))
                     shouldUse = TRUE;
             }

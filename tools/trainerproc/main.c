@@ -2338,7 +2338,7 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
             }
             else
             {
-                fprintf(f, "            .nature = NATURE_HARDY,\n");
+                fprintf(f, "            .nature = NATURE_PUSHY,\n");
             }
 
             if (pokemon->shiny_line)

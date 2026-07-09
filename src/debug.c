@@ -221,7 +221,7 @@ struct DebugMonData
     enum Species species;
     u8 level;
     bool8 isShiny:1;
-    u8 nature:5;
+    u8 nature:6;
     u8 abilityNum:2;
     u8 monIVs[NUM_STATS];
     u16 monMoves[MAX_MON_MOVES];
@@ -3746,8 +3746,9 @@ static void DebugAction_PCBag_Fill_PCBoxes_Fast(u8 taskId) //Credit: Sierraffini
     struct BoxPokemon boxMon;
     enum Species species = GetNextSpecies(SPECIES_NONE);
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
+    u32 personality = GetMonPersonality(species, MON_GENDER_RANDOM, NATURE_RANDOM, RANDOM_UNOWN_LETTER);
 
-    CreateBoxMon(&boxMon, species, 100, Random32(), OTID_STRUCT_PLAYER_ID);
+    CreateBoxMon(&boxMon, species, 100, personality, OTID_STRUCT_PLAYER_ID);
     //mons are created with 0 IVs
 
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
@@ -3785,9 +3786,10 @@ static void DebugAction_PCBag_Fill_PCBoxes_Slow(u8 taskId)
         {
             if (!GetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], MON_DATA_SANITY_HAS_SPECIES))
             {
+                u32 personality = GetMonPersonality(species, MON_GENDER_RANDOM, NATURE_RANDOM, RANDOM_UNOWN_LETTER);
                 if (!spaceAvailable)
                     PlayBGM(MUS_RG_MYSTERY_GIFT);
-                CreateBoxMon(&boxMon, species, 100, Random32(), OTID_STRUCT_PLAYER_ID);
+                CreateBoxMon(&boxMon, species, 100, personality, OTID_STRUCT_PLAYER_ID);
                 SetBoxMonIVs(&boxMon, USE_RANDOM_IVS);
                 GiveBoxMonInitialMoveset(&boxMon);
                 gPokemonStoragePtr->boxes[boxId][boxPosition] = boxMon;

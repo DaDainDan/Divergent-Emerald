@@ -624,8 +624,8 @@ TEST("BoxPokemon encryption works")
         EXPECT_EQ(actualNickname[charIndex], nickname[charIndex]);
         charIndex++;
     }
-    EXPECT_EQ(GetNature(&mon), NATURE_HARDY);
-    EXPECT_EQ(GetMonData(&mon, MON_DATA_HIDDEN_NATURE), NATURE_ADAMANT);
+    EXPECT_EQ(GetNature(&mon), NATURE_CAREFUL);
+    EXPECT_EQ(GetMonData(&mon, MON_DATA_HIDDEN_NATURE), NATURE_CALM);
     EXPECT_EQ(GetMonData(&mon, MON_DATA_HP_LOST), 10);
     EXPECT_EQ(GetMonData(&mon, MON_DATA_HELD_ITEM), ITEM_ORAN_BERRY);
     EXPECT_EQ(GetMonData(&mon, MON_DATA_MOVE1), MOVE_TACKLE);

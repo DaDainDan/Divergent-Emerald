@@ -4633,6 +4633,7 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
         if (aiData->abilities[battlerAtk] == ABILITY_SUPER_LUCK
          || aiData->abilities[battlerAtk] == ABILITY_SNIPER
          || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_SCOPE_LENS
+         || gNaturesInfo[GetNature(GetBattlerMon(battlerAtk))].specialNature == CRIT_AND_ACC
          || HasMoveWithFlag(battlerAtk, GetMoveCriticalHitStage))
             ADJUST_SCORE(GOOD_EFFECT);
         break;

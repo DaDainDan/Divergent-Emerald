@@ -7862,6 +7862,7 @@ s32 CalcCritChanceStage(struct DamageContext *ctx)
                     + GetHoldEffectCritChanceIncrease(ctx->battlerAtk, ctx->holdEffects[ctx->battlerAtk])
                     + ((B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(ctx->battlerAtk) == AFFECTION_FIVE_HEARTS) ? 2 : 0)
                     + (ctx->abilities[ctx->battlerAtk] == ABILITY_SUPER_LUCK ? 1 : 0)
+                    + (gNaturesInfo[GetNature(GetBattlerMon(ctx->battlerAtk))].specialNature == CRIT_AND_ACC ? 1 : 0)
                     + gBattleMons[ctx->battlerAtk].volatiles.bonusCritStages;
 
         if (critChance >= ARRAY_COUNT(sCriticalHitOdds))
@@ -10307,6 +10308,9 @@ u32 GetTotalAccuracy(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum 
     default:
         break;
     }
+
+    if (gNaturesInfo[GetNature(GetBattlerMon(battlerAtk))].specialNature == CRIT_AND_ACC)
+        calc = (calc * 105) / 100; // Sharp: +5% accuracy
 
     // Target's ability
     switch (defAbility)

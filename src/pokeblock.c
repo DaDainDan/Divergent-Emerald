@@ -141,31 +141,38 @@ EWRAM_DATA static struct PokeblockMenuStruct *sPokeblockMenu = NULL;
 const s8 gPokeblockFlavorCompatibilityTable[NUM_NATURES * FLAVOR_COUNT] =
 {
      // Spicy,  Dry, Sweet, Bitter, Sour
-          0,      0,    0,     0,     0, // Hardy
-          1,      0,    0,     0,    -1, // Lonely
-          1,      0,   -1,     0,     0, // Brave
-          1,     -1,    0,     0,     0, // Adamant
-          1,      0,    0,    -1,     0, // Naughty
-         -1,      0,    0,     0,     1, // Bold
-          0,      0,    0,     0,     0, // Docile
-          0,      0,   -1,     0,     1, // Relaxed
-          0,     -1,    0,     0,     1, // Impish
-          0,      0,    0,    -1,     1, // Lax
-         -1,      0,    1,     0,     0, // Timid
-          0,      0,    1,     0,    -1, // Hasty
-          0,      0,    0,     0,     0, // Serious
-          0,     -1,    1,     0,     0, // Jolly
-          0,      0,    1,    -1,     0, // Naive
-         -1,      1,    0,     0,     0, // Modest
-          0,      1,    0,     0,    -1, // Mild
-          0,      1,   -1,     0,     0, // Quiet
-          0,      0,    0,     0,     0, // Bashful
-          0,      1,    0,    -1,     0, // Rash
-         -1,      0,    0,     1,     0, // Calm
-          0,      0,    0,     1,    -1, // Gentle
-          0,      0,   -1,     1,     0, // Sassy
-          0,     -1,    0,     1,     0, // Careful
-          0,      0,    0,     0,     0  // Quirky
+          0,      0,    0,     0,     4, // Hardy
+          0,      2,    0,     0,     2, // Lonely
+          2,      0,    0,     0,     2, // Brave
+          4,      0,    0,     0,     0, // Adamant
+          0,      2,    2,     0,     0, // Naughty
+          2,      0,    0,     0,     2, // Bold
+          0,      0,    0,     2,     2, // Docile
+          0,      2,    0,     2,     0, // Relaxed
+          2,      2,    0,     0,     0, // Impish
+          0,      0,    2,     0,     2, // Lax
+          0,      0,    2,     2,     0, // Timid
+          2,      0,    2,     0,     0, // Hasty
+          2,      0,    0,     2,     0, // Serious
+          0,      2,    2,     0,     0, // Jolly
+          0,      0,    2,     2,     0, // Naive
+          2,      2,    0,     0,     0, // Modest
+          2,      0,    0,     2,     0, // Mild
+          0,      4,    0,     0,     0, // Quiet
+          0,      0,    2,     0,     2, // Bashful
+          0,      0,    4,     0,     0, // Rash
+          0,      2,    0,     2,     0, // Calm
+          0,      0,    0,     2,     2, // Gentle
+          2,      0,    2,     0,     0, // Sassy
+          0,      2,    0,     0,     2, // Careful
+          0,      0,    0,     4,     0, // Quirky
+          1,      1,    1,     1,     1, // Smooth
+          2,      0,    1,     0,     1, // Sharp
+          0,      0,    0,     2,     2, // Lazy
+          0,      0,    0,     0,     0, // Balky
+          0,      0,    0,     0,     0, // Pushy
+          1,      1,    1,     1,     1,  // Loyal
+          3,      3,    0,     0,     0  // Violent
 };
 
 static const struct BgTemplate sBgTemplatesForPokeblockMenu[] =
