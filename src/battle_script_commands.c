@@ -310,6 +310,10 @@ static const s32 sExperienceScalingFactors[] =
     155990,
     157872,
     159767,
+    161676,
+    163598,
+    165534,
+    167484,
 };
 
 static const u16 sWhiteOutBadgeMoney[10] = { 2, 10, 25, 50, 75, 100, 150, 250, 400, 500 };
@@ -3970,7 +3974,7 @@ static void Cmd_getexp(void)
                 gBattleStruct->battlerExpReward = 0;
             }
             else if ((gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && *expMonId >= 3)
-                  || GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_LEVEL) == MAX_LEVEL)
+                  || GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_LEVEL) >= GetMaxLevelForMon(&gParties[B_TRAINER_PLAYER][*expMonId]))
             {
                 gBattleScripting.getexpState = 5;
                 gBattleStruct->battlerExpReward = 0;
@@ -3994,14 +3998,14 @@ static void Cmd_getexp(void)
                 if (IsValidForBattle(&gParties[B_TRAINER_PLAYER][*expMonId]))
                 {
                     if (wasSentOut)
-                        gBattleStruct->battlerExpReward = GetSoftLevelCapExpValue(gParties[B_TRAINER_PLAYER][*expMonId].level, gBattleStruct->expValue);
+                        gBattleStruct->battlerExpReward = GetSoftLevelCapExpValue(&gParties[B_TRAINER_PLAYER][*expMonId], gBattleStruct->expValue);
                     else
                         gBattleStruct->battlerExpReward = 0;
 
                     if ((holdEffect == HOLD_EFFECT_EXP_SHARE || IsGen6ExpShareEnabled())
                         && (B_SPLIT_EXP < GEN_6 || gBattleStruct->battlerExpReward == 0)) // only give exp share bonus in later gens if the mon wasn't sent out
                     {
-                        gBattleStruct->battlerExpReward += GetSoftLevelCapExpValue(gParties[B_TRAINER_PLAYER][*expMonId].level, gBattleStruct->expShareExpValue);
+                        gBattleStruct->battlerExpReward += GetSoftLevelCapExpValue(&gParties[B_TRAINER_PLAYER][*expMonId], gBattleStruct->expShareExpValue);
                     }
 
                     ApplyExperienceMultipliers(&gBattleStruct->battlerExpReward, *expMonId, gBattlerFainted);
@@ -4073,7 +4077,7 @@ static void Cmd_getexp(void)
         {
             gBattleResources->bufferB[gBattleStruct->expGetterBattlerId][0] = 0;
             currLvl = GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_LEVEL);
-            if (GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_HP) && currLvl != MAX_LEVEL)
+            if (GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_HP) && currLvl != GetMaxLevelForMon(&gParties[B_TRAINER_PLAYER][*expMonId]))
             {
                 gBattleResources->beforeLvlUp->stats[STAT_HP]    = GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_MAX_HP);
                 gBattleResources->beforeLvlUp->stats[STAT_ATK]   = GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_ATK);

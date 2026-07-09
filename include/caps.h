@@ -20,7 +20,8 @@
 
 u32 GetCurrentLevelCap(void);
 u32 GetCurrentLevelCapForMon(struct Pokemon *mon);
-u32 GetSoftLevelCapExpValue(u32 level, u32 expValue);
+u32 GetMaxLevelForMon(struct Pokemon *mon);
+u32 GetSoftLevelCapExpValue(struct Pokemon *mon, u32 expValue);
 u32 GetCurrentEVCap(void);
 
 #endif /* GUARD_CAPS_H */

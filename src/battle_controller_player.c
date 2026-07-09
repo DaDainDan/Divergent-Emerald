@@ -2224,7 +2224,7 @@ void PlayerHandleExpUpdate(enum BattlerId battler)
     u8 monId = gBattleResources->bufferA[battler][1];
     s32 taskId, expPointsToGive;
 
-    if (GetMonData(&gParties[B_TRAINER_PLAYER][monId], MON_DATA_LEVEL) >= MAX_LEVEL)
+    if (GetMonData(&gParties[B_TRAINER_PLAYER][monId], MON_DATA_LEVEL) >= GetMaxLevelForMon(&gParties[B_TRAINER_PLAYER][monId]))
     {
         BtlController_Complete(battler);
     }

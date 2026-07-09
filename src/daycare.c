@@ -319,7 +319,7 @@ static void ApplyDaycareExperience(struct Pokemon *mon)
     bool8 firstMove;
     u16 learnedMove;
 
-    for (i = 0; i < MAX_LEVEL; i++)
+    for (i = 0; i < MAX_LEVEL_PUSHY; i++)
     {
         // Add the mon's gained daycare experience level by level until it can't level up anymore.
         if (TryIncrementMonLevel(mon))
@@ -345,7 +345,7 @@ static void ApplyDaycareExperience(struct Pokemon *mon)
 
 static u32 GetExpAtLevelCap(struct Pokemon *mon)
 {
-    return gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].growthRate][GetCurrentLevelCap()];
+    return gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].growthRate][GetCurrentLevelCapForMon(mon)];
 }
 
 static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
@@ -358,7 +358,7 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 
     TryFormChange(&pokemon, FORM_CHANGE_WITHDRAW, B_TRAINER_PLAYER);
 
-    if (GetMonData(&pokemon, MON_DATA_LEVEL) < GetCurrentLevelCap())
+    if (GetMonData(&pokemon, MON_DATA_LEVEL) < GetCurrentLevelCapForMon(&pokemon))
     {
         experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
         u32 maxExp = GetExpAtLevelCap(&pokemon);
@@ -407,11 +407,16 @@ static u8 GetNumLevelsGainedFromSteps(struct DaycareMon *daycareMon)
 {
     u8 levelBefore;
     u8 levelAfter;
+    struct Pokemon mon;
+    u32 levelCap;
+
+    BoxMonToMon(&daycareMon->mon, &mon);
+    levelCap = GetCurrentLevelCapForMon(&mon);
 
     levelBefore = GetLevelFromBoxMonExp(&daycareMon->mon);
     levelAfter = GetLevelAfterDaycareSteps(&daycareMon->mon, daycareMon->steps);
-    if (levelAfter > GetCurrentLevelCap())
-        levelAfter = GetCurrentLevelCap();
+    if (levelAfter > levelCap)
+        levelAfter = levelCap;
     return levelAfter - levelBefore;
 }
 

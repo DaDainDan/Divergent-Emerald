@@ -86,13 +86,12 @@ enum __attribute__((packed)) Type
 #define NATURE_SHARP    26 //  +1 Crit Stage and Acc in Battle
 #define NATURE_LAZY     27 //  +HP
 #define NATURE_BALKY    28 //  No Stats, Become Loyal or Violent at Level 50 based on Friendship
-#define NATURE_PUSHY    29 //  No Stats, Can break level caps, become random nature
+#define NATURE_PUSHY    29 //  No Stats, can break level caps up to MAX_LEVEL_PUSHY
 #define NATURE_LOYAL    30 // .4 AllStats
 #define NATURE_VIOLENT  31 // +2Atk +2SpAtk
 #define NUM_NATURES     32
 
 #define NUM_RECEIVEABLE_NATURES   NUM_NATURES - 2
-#define NUM_PUSHY_REROLL_NATURES  NATURE_BALKY 
 #define NATURE_RANDOM             NUM_NATURES
 #define NATURE_MAY_SYNCHRONIZE    NUM_NATURES + 1
 
@@ -181,6 +180,7 @@ enum __attribute__((packed)) Stat
 
 #define MIN_LEVEL 1
 #define MAX_LEVEL 100
+#define MAX_LEVEL_PUSHY 102
 
 #define MAX_DYNAMAX_LEVEL 10
 

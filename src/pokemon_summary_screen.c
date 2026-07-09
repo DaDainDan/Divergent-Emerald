@@ -7,6 +7,7 @@
 #include "battle_tent.h"
 #include "battle_factory.h"
 #include "bg.h"
+#include "caps.h"
 #include "contest.h"
 #include "contest_effect.h"
 #include "data.h"
@@ -3112,14 +3113,14 @@ static void SetMonPicBackgroundPalette(bool8 isMonShiny)
     ScheduleBgCopyTilemapToVram(3);
 }
 
-static void DrawExperienceProgressBar(struct Pokemon *unused)
+static void DrawExperienceProgressBar(struct Pokemon *mon)
 {
     s64 numExpProgressBarTicks;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     u16 *dst;
     u8 i;
 
-    if (summary->level < MAX_LEVEL)
+    if (summary->level < GetMaxLevelForMon(mon))
     {
         u32 expBetweenLevels = gExperienceTables[gSpeciesInfo[summary->species].growthRate][summary->level + 1] - gExperienceTables[gSpeciesInfo[summary->species].growthRate][summary->level];
         u32 expSinceLastLevel = summary->exp - gExperienceTables[gSpeciesInfo[summary->species].growthRate][summary->level];
@@ -4038,7 +4039,7 @@ static void PrintExpPointsNextLevel(void)
     x = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar1, 42) + 2;
     PrintTextOnWindow(windowId, gStringVar1, x, 1, 0, 0);
 
-    if (sum->level < MAX_LEVEL)
+    if (sum->level < GetMaxLevelForMon(&sMonSummaryScreen->currentMon))
         expToNextLevel = gExperienceTables[gSpeciesInfo[sum->species].growthRate][sum->level + 1] - sum->exp;
     else
         expToNextLevel = 0;

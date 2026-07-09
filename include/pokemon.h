@@ -734,7 +734,7 @@ extern u8 gTriedEvolving;
 extern const u16 gFacilityClassToPicIndex[];
 extern const enum TrainerClassID gFacilityClassToTrainerClass[];
 extern const struct SpeciesInfo gSpeciesInfo[];
-extern const u32 gExperienceTables[][MAX_LEVEL + 1];
+extern const u32 gExperienceTables[][MAX_LEVEL_PUSHY + 1];
 extern const u8 gPPUpGetMask[];
 extern const u8 gPPUpClearMask[];
 extern const u8 gPPUpAddValues[];

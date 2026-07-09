@@ -925,7 +925,7 @@ UNUSED static const struct BoxPokemon sBoxPokemonConstantsFit =
     },
 };
 
-STATIC_ASSERT(MAX_LEVEL <= 100, PokemonSubstruct0_experience_PotentiallyTooSmall); // Maximum of ~2 million exp.
+STATIC_ASSERT(MAX_LEVEL_PUSHY <= 102, PokemonSubstruct0_experience_PotentiallyTooSmall); // Maximum of ~2 million exp.
 
 static u32 CompressStatus(u32 status)
 {
@@ -1552,16 +1552,6 @@ void CalculateMonStats(struct Pokemon *mon)
         SetMonData(mon, MON_DATA_HIDDEN_NATURE, &targetNature);
         nature = targetNature;
     }
-    else if (gNaturesInfo[nature].specialNature == NO_STATS_BREAK_CAPS
-        && ((GetCurrentLevelCap() == MAX_LEVEL && level >= 50) || level >= 95))
-    {
-        u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
-        u32 targetNature = Random() % NUM_PUSHY_REROLL_NATURES;
-        ModifyPersonalityForNature(&personality, targetNature);
-        UpdateMonPersonality(&mon->box, personality);
-        SetMonData(mon, MON_DATA_HIDDEN_NATURE, &targetNature);
-        nature = targetNature;
-    }
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
@@ -1653,7 +1643,7 @@ u8 GetLevelFromMonExp(struct Pokemon *mon)
     u32 exp = GetMonData(mon, MON_DATA_EXP);
     s32 level = 1;
 
-    while (level <= MAX_LEVEL && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
+    while (level <= MAX_LEVEL_PUSHY && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
         level++;
 
     return level - 1;
@@ -1665,7 +1655,7 @@ u8 GetLevelFromBoxMonExp(struct BoxPokemon *boxMon)
     u32 exp = GetBoxMonData(boxMon, MON_DATA_EXP);
     s32 level = 1;
 
-    while (level <= MAX_LEVEL && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
+    while (level <= MAX_LEVEL_PUSHY && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
         level++;
 
     return level - 1;
@@ -3736,30 +3726,25 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
         case 3:
             // Rare Candy / EXP Candy
             if ((itemEffect[i] & ITEM3_LEVEL_UP)
-             && GetMonData(mon, MON_DATA_LEVEL) != MAX_LEVEL)
+             && GetMonData(mon, MON_DATA_LEVEL) != GetMaxLevelForMon(mon))
             {
                 u8 param = GetItemHoldEffectParam(item);
                 dataUnsigned = 0;
 
+                enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+                u32 currentLevelCap = GetCurrentLevelCapForMon(mon);
+
                 if (param == 0) // Rare Candy
                 {
-                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].growthRate][GetMonData(mon, MON_DATA_LEVEL) + 1];
+                    currentLevelCap = currentLevelCap + (B_RARE_CANDY_CAP ? 0 : 2);
+                    if (GetMonData(mon, MON_DATA_LEVEL) < currentLevelCap)
+                        dataUnsigned = gExperienceTables[gSpeciesInfo[species].growthRate][GetMonData(mon, MON_DATA_LEVEL) + 1];
                 }
                 else if (param - 1 < ARRAY_COUNT(sExpCandyExperienceTable)) // EXP Candies
                 {
-                    enum Species species = GetMonData(mon, MON_DATA_SPECIES);
                     dataUnsigned = sExpCandyExperienceTable[param - 1] + GetMonData(mon, MON_DATA_EXP);
-
-                    if (B_RARE_CANDY_CAP && B_EXP_CAP_TYPE == EXP_CAP_HARD)
-                    {
-                        u32 currentLevelCap = GetCurrentLevelCap();
-                        if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][currentLevelCap])
-                            dataUnsigned = gExperienceTables[gSpeciesInfo[species].growthRate][currentLevelCap];
-                    }
-                    else if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL])
-                    {
-                        dataUnsigned = gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL];
-                    }
+                    if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][currentLevelCap])
+                        dataUnsigned = gExperienceTables[gSpeciesInfo[species].growthRate][currentLevelCap];
                 }
 
                 if (dataUnsigned != 0) // Failsafe
@@ -5408,12 +5393,12 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
     enum Species species = GetMonData(mon, MON_DATA_SPECIES, 0);
     u8 nextLevel = GetMonData(mon, MON_DATA_LEVEL, 0) + 1;
     u32 expPoints = GetMonData(mon, MON_DATA_EXP, 0);
-    if (expPoints > gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL])
+    if (expPoints > gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL_PUSHY])
     {
-        expPoints = gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL];
+        expPoints = gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL_PUSHY];
         SetMonData(mon, MON_DATA_EXP, &expPoints);
     }
-    if (nextLevel > GetCurrentLevelCap() || expPoints < gExperienceTables[gSpeciesInfo[species].growthRate][nextLevel])
+    if (nextLevel > GetCurrentLevelCapForMon(mon) || expPoints < gExperienceTables[gSpeciesInfo[species].growthRate][nextLevel])
     {
         return FALSE;
     }

@@ -43,18 +43,26 @@ u32 GetCurrentLevelCapForMon(struct Pokemon *mon)
     u32 cap = GetCurrentLevelCap();
     if (gNaturesInfo[GetNature(mon)].specialNature == NO_STATS_BREAK_CAPS) // Pushy
         cap += 2;
-    if (cap > MAX_LEVEL)
-        cap = MAX_LEVEL;
+    if (cap > MAX_LEVEL_PUSHY)
+        cap = MAX_LEVEL_PUSHY;
     return cap;
 }
 
-u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)
+u32 GetMaxLevelForMon(struct Pokemon *mon)
+{
+    if (gNaturesInfo[GetNature(mon)].specialNature == NO_STATS_BREAK_CAPS)
+        return MAX_LEVEL_PUSHY;
+    return MAX_LEVEL;
+}
+
+u32 GetSoftLevelCapExpValue(struct Pokemon *mon, u32 expValue)
 {
     static const u32 sExpScalingDown[8] = { 4, 4, 8, 8, 16, 16, 32, 32 };
     static const u32 sExpScalingUp[8]   = { 16, 16, 8, 8, 4, 4, 2, 2 };
 
     u32 levelDifference;
-    u32 currentLevelCap = GetCurrentLevelCap();
+    u32 level = GetMonData(mon, MON_DATA_LEVEL);
+    u32 currentLevelCap = GetCurrentLevelCapForMon(mon);
 
     if (B_EXP_CAP_TYPE == EXP_CAP_NONE)
         return expValue;
