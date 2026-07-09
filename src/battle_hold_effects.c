@@ -1009,12 +1009,12 @@ static enum ItemEffect RandomStatRaiseBerry(enum BattlerId battler, enum Item it
         if (ability == ABILITY_RIPEN)
         {
             BattleScriptCall(BattleScript_ConsumableBerryStatRaiseRipen);
-            SetStatChange(battler, stat, 4);
+            SetStatChange(battler, stat, MAX_STAT_STAGE);
         }
         else
         {
             BattleScriptCall(BattleScript_ConsumableBerryStatRaise);
-            SetStatChange(battler, stat, 2);
+            SetStatChange(battler, stat, 3);
         }
         effect = ITEM_STATS_CHANGE;
     }

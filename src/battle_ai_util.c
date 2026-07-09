@@ -2358,8 +2358,8 @@ enum AIScore IncreaseStatDownScore(enum BattlerId battlerAtk, enum BattlerId bat
 {
     enum AIScore tempScore = NO_INCREASE;
 
-    // Don't increase score if target is already -3 stat stage
-    if (stat != STAT_SPEED && gBattleMons[battlerDef].statStages[stat] <= DEFAULT_STAT_STAGE - 3)
+    // Don't increase score if target is already -2 stat stage
+    if (stat != STAT_SPEED && gBattleMons[battlerDef].statStages[stat] <= DEFAULT_STAT_STAGE - 2)
         return NO_INCREASE;
 
     // Don't decrease stat if target will die to residual damage
@@ -4649,8 +4649,8 @@ static enum AIScore IncreaseStatUpScoreInternal(enum BattlerId battlerAtk, enum 
     if (aiIsFaster && HasMoveThatChangesKOThreshold(battlerDef, noOfHitsToFaint))
         return NO_INCREASE;
 
-    // Don't increase stat if AI is at +4
-    if (gBattleMons[battlerAtk].statStages[statId] >= MAX_STAT_STAGE - 2)
+    // Don't increase stat if AI is at +2
+    if (gBattleMons[battlerAtk].statStages[statId] >= MAX_STAT_STAGE - 1)
         return NO_INCREASE;
 
     // Stat stages are effectively doubled under Simple.
@@ -4740,7 +4740,7 @@ static enum AIScore IncreaseStatUpScoreInternal(enum BattlerId battlerAtk, enum 
         break;
     }
     case STAT_ACC:
-        if (gBattleMons[battlerAtk].statStages[statId] <= DEFAULT_STAT_STAGE - 3) // Increase only if necessary
+        if (gBattleMons[battlerAtk].statStages[statId] <= DEFAULT_STAT_STAGE - 2) // Increase only if necessary
             tempScore += DECENT_EFFECT;
         break;
     case STAT_EVASION:
@@ -6244,7 +6244,7 @@ s32 AI_GetAdjustedStatStage(enum BattlerId battler, enum Move move, s32 stage)
         stage = 2;
 
     if (stage == STAT_CHANGE_FORCE_MAX)
-        stage = 12;
+        stage = MAX_STAT_STAGE;
 
     switch (gAiLogicData->abilities[battler])
     {

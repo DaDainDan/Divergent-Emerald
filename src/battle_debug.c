@@ -1515,7 +1515,7 @@ static void PrintSecondaryEntries(struct BattleDebugMenu *data)
             else
             {
                 txtPtr[1] = CHAR_HYPHEN;
-                txtPtr[2] = CHAR_6 - (gBattleMons[data->battlerId].statStages[STAT_ATK + i]);
+                txtPtr[2] = CHAR_6 - (gBattleMons[data->battlerId].statStages[STAT_ATK + i] + DEFAULT_STAT_STAGE);
             }
             txtPtr[3] = EOS;
 
@@ -1954,8 +1954,8 @@ static void SetUpModifyArrows(struct BattleDebugMenu *data)
         break;
     case LIST_ITEM_STAT_STAGES:
         data->modifyArrows.minValue = 0;
-        data->modifyArrows.maxValue = 12;
-        data->modifyArrows.maxDigits = 2;
+        data->modifyArrows.maxValue = 6;
+        data->modifyArrows.maxDigits = 1;
         if (data->currentSecondaryListItemId == NUM_BATTLE_STATS - 1) // Change all stats
         {
             data->modifyArrows.modifiedValPtr = &gBattleMons[data->battlerId].statStages[STAT_ATK];

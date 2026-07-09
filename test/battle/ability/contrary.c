@@ -29,7 +29,7 @@ SINGLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a single battle",
     } THEN {
         EXPECT_EQ(opponent->statStages[STAT_ATK], (ability == ABILITY_CONTRARY) ? DEFAULT_STAT_STAGE + 1 : DEFAULT_STAT_STAGE - 1);
     } FINALLY {
-        EXPECT_MUL_EQ(results[1].damage, Q_4_12(2.25), results[0].damage);
+        EXPECT_MUL_EQ(results[1].damage, Q_4_12(1.77778), results[0].damage);
     }
 }
 
@@ -71,8 +71,8 @@ DOUBLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a double battle",
         EXPECT_EQ(opponentLeft->statStages[STAT_ATK],  (abilityLeft == ABILITY_CONTRARY)  ? DEFAULT_STAT_STAGE+1 : DEFAULT_STAT_STAGE-1);
         EXPECT_EQ(opponentRight->statStages[STAT_ATK], (abilityRight == ABILITY_CONTRARY) ? DEFAULT_STAT_STAGE+1 : DEFAULT_STAT_STAGE-1);
     } FINALLY {
-        EXPECT_MUL_EQ(results[1].damageLeft, Q_4_12(2.25), results[0].damageLeft);
-        EXPECT_MUL_EQ(results[1].damageRight, Q_4_12(2.25), results[0].damageRight);
+        EXPECT_MUL_EQ(results[1].damageLeft, Q_4_12(1.84211), results[0].damageLeft);
+        EXPECT_MUL_EQ(results[1].damageRight, Q_4_12(1.84211), results[0].damageRight);
     }
 }
 
@@ -107,16 +107,16 @@ SINGLE_BATTLE_TEST("Contrary raises stats after using a move which would normall
         if (ability == ABILITY_CONTRARY) {
             // ABILITY_POPUP(opponent, ABILITY_CONTRARY);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
-            MESSAGE("The opposing Spinda's Sp. Atk rose sharply!");
+            MESSAGE("The opposing Spinda's Sp. Atk rose!");
         }
         else {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
-            MESSAGE("The opposing Spinda's Sp. Atk harshly fell!");
+            MESSAGE("The opposing Spinda's Sp. Atk fell!");
         }
     }
     FINALLY {
-        EXPECT_MUL_EQ(results[0].damageBefore, Q_4_12(2.0), results[0].damageAfter);
-        EXPECT_MUL_EQ(results[1].damageBefore,  Q_4_12(0.5), results[1].damageAfter);
+        EXPECT_MUL_EQ(results[0].damageBefore, Q_4_12(1.66667), results[0].damageAfter);
+        EXPECT_MUL_EQ(results[1].damageBefore,  Q_4_12(0.6), results[1].damageAfter);
     }
 }
 
@@ -152,8 +152,8 @@ SINGLE_BATTLE_TEST("Contrary lowers a stat after using a move which would normal
         HP_BAR(player, captureDamage: &results[i].damageAfter);
     }
     FINALLY {
-        EXPECT_MUL_EQ(results[0].damageBefore, Q_4_12(0.5), results[0].damageAfter);
-        EXPECT_MUL_EQ(results[1].damageBefore,  Q_4_12(2.0), results[1].damageAfter);
+        EXPECT_MUL_EQ(results[0].damageBefore, Q_4_12(0.6), results[0].damageAfter);
+        EXPECT_MUL_EQ(results[1].damageBefore,  Q_4_12(1.66667), results[1].damageAfter);
     }
 }
 
@@ -184,7 +184,7 @@ SINGLE_BATTLE_TEST("Contrary raises a stat after using a move which would normal
         HP_BAR(player, captureDamage: &results[i].damage);
     }
     FINALLY {
-        EXPECT_MUL_EQ(results[1].damage, Q_4_12(2.125), results[0].damage);
+        EXPECT_MUL_EQ(results[1].damage, Q_4_12(1.84211), results[0].damage);
     }
 }
 
@@ -217,8 +217,8 @@ SINGLE_BATTLE_TEST("Contrary lowers a stat after using a move which would normal
         HP_BAR(player, captureDamage: &results[i].damageAfter);
     }
     FINALLY {
-        EXPECT_MUL_EQ(results[0].damageBefore, UQ_4_12(0.25), results[0].damageAfter);
-        EXPECT_MUL_EQ(results[1].damageBefore, UQ_4_12(4.0), results[1].damageAfter);
+        EXPECT_MUL_EQ(results[0].damageBefore, UQ_4_12(0.53846), results[0].damageAfter);
+        EXPECT_MUL_EQ(results[1].damageBefore, UQ_4_12(2.0), results[1].damageAfter);
     }
 }
 

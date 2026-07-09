@@ -3916,7 +3916,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
              && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
             {
                 gEffectBattler = gBattlerAbility = battler;
-                SetStatChange(battler, STAT_ATK, 12);
+                SetStatChange(battler, STAT_ATK, MAX_STAT_STAGE);
                 BattleScriptCall(BattleScript_AbilityStatChange);
                 effect++;
             }

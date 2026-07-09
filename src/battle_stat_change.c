@@ -332,7 +332,7 @@ static enum StatChangeResult DecreaseStat(struct BattleCalcValues *cv, struct St
 
     if (currStage == (MIN_STAT_STAGE + 1))
         st->stage = -1;
-    else if (currStage == 2 && st->stage < -2)
+    else if (currStage == (MIN_STAT_STAGE + 2) && st->stage < -2)
         st->stage = -2;
 
     if (st->stage == -2)
@@ -387,7 +387,7 @@ static enum StatChangeResult DecreaseStat(struct BattleCalcValues *cv, struct St
 static enum StatChangeResult IncreaseStat(struct BattleCalcValues *cv, struct StatChange *st)
 {
     u32 currStage = gBattleMons[cv->battlerDef].statStages[st->stat];
-    bool32 isMaxStage = st->stage >= 12;
+    bool32 isMaxStage = st->stage >= MAX_STAT_STAGE;
 
     PREPARE_STAT_BUFFER(gBattleTextBuff1, st->stat);
 
@@ -801,7 +801,7 @@ static void AdjustStatStage(struct BattleCalcValues *cv, struct StatChange *st)
         st->stage = 2;
 
     if (st->stage == STAT_CHANGE_FORCE_MAX)
-        st->stage = 12;
+        st->stage = MAX_STAT_STAGE;
 
     switch (cv->abilities[cv->battlerDef])
     {

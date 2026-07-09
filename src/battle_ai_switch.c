@@ -759,7 +759,7 @@ static bool32 ShouldSwitchIfBadlyStatused(struct SwitchAiContext *switchContext)
                 switchMon = FALSE;
 
             // Check if Active Pokemon evasion boosted and might be able to dodge until awake
-            if (gBattleMons[switchContext->battler].statStages[STAT_EVASION] > (DEFAULT_STAT_STAGE + 3)
+            if (gBattleMons[switchContext->battler].statStages[STAT_EVASION] > (DEFAULT_STAT_STAGE + 2)
                 && gAiLogicData->abilities[switchContext->opposingBattler] != ABILITY_UNAWARE
                 && gAiLogicData->abilities[switchContext->opposingBattler] != ABILITY_KEEN_EYE
                 && gAiLogicData->abilities[switchContext->opposingBattler] != ABILITY_MINDS_EYE
@@ -1234,8 +1234,8 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(struct SwitchAiContext *switch
             if (gAiLogicData->mostSuitableMonId[switchContext->battler] != PARTY_SIZE && (RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO)) || gAiLogicData->aiPredictionInProgress))
                 return SetSwitchinAndSwitch(switchContext->battler, PARTY_SIZE);
         }
-        // If at -3 or worse, switch out regardless
-        else if ((attackingStage < DEFAULT_STAT_STAGE - 2) && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS)))
+        // If at -3, switch out regardless
+        else if ((attackingStage == MIN_STAT_STAGE) && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS)))
             return SetSwitchinAndSwitch(switchContext->battler, PARTY_SIZE);
     }
 
@@ -1251,8 +1251,8 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(struct SwitchAiContext *switch
             if (gAiLogicData->mostSuitableMonId[switchContext->battler] != PARTY_SIZE && (RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO)) || gAiLogicData->aiPredictionInProgress))
                 return SetSwitchinAndSwitch(switchContext->battler, PARTY_SIZE);
         }
-        // If at -3 or worse, switch out regardless
-        else if ((spAttackingStage < DEFAULT_STAT_STAGE - 2) && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS)))
+        // If at -3, switch out regardless
+        else if ((spAttackingStage == MIN_STAT_STAGE) && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, GetSwitchChance(SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS)))
             return SetSwitchinAndSwitch(switchContext->battler, PARTY_SIZE);
     }
     return FALSE;

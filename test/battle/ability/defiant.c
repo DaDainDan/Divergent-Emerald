@@ -315,7 +315,7 @@ DOUBLE_BATTLE_TEST("Defiant activates when opposing Octolock lowers stats at end
     } THEN {
         EXPECT_EQ(playerLeft->statStages[STAT_DEF], DEFAULT_STAT_STAGE - 1);
         EXPECT_EQ(playerLeft->statStages[STAT_SPDEF], DEFAULT_STAT_STAGE - 1);
-        EXPECT_EQ(playerLeft->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 4);
+        EXPECT_EQ(playerLeft->statStages[STAT_ATK], MAX_STAT_STAGE);
     }
 }
 

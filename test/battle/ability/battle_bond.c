@@ -174,9 +174,6 @@ SINGLE_BATTLE_TEST("Battle Bond increases a Stat even if only one can be increas
         TURN { MOVE(player, MOVE_DRAGON_DANCE); }
         TURN { MOVE(player, MOVE_DRAGON_DANCE); }
         TURN { MOVE(player, MOVE_DRAGON_DANCE); }
-        TURN { MOVE(player, MOVE_DRAGON_DANCE); }
-        TURN { MOVE(player, MOVE_DRAGON_DANCE); }
-        TURN { MOVE(player, MOVE_DRAGON_DANCE); }
         TURN { MOVE(player, MOVE_WATER_GUN); SEND_OUT(opponent, 1); }
     } SCENE {
         HP_BAR(opponent);
@@ -184,8 +181,8 @@ SINGLE_BATTLE_TEST("Battle Bond increases a Stat even if only one can be increas
         ABILITY_POPUP(player, ABILITY_BATTLE_BOND);
     } THEN {
         EXPECT(player->species != SPECIES_GRENINJA_ASH);
-        EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 6);
+        EXPECT_EQ(player->statStages[STAT_ATK], MAX_STAT_STAGE);
         EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 1);
-        EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 6);
+        EXPECT_EQ(player->statStages[STAT_SPEED], MAX_STAT_STAGE);
     }
 }

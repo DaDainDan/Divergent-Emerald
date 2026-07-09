@@ -42,18 +42,18 @@ DOUBLE_BATTLE_TEST("Competitive sharply raises player's Sp. Atk after Intimidate
         if (abilityLeft == ABILITY_COMPETITIVE) {
             ABILITY_POPUP(playerLeft, ABILITY_COMPETITIVE);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerLeft);
-            MESSAGE("Igglybuff's Sp. Atk rose sharply!");
+            MESSAGE("Igglybuff's Sp. Atk rose!");
         }
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerRight);
         MESSAGE("Jigglypuff's Attack fell!");
         if (abilityRight == ABILITY_COMPETITIVE) {
             ABILITY_POPUP(playerRight, ABILITY_COMPETITIVE);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerRight);
-            MESSAGE("Jigglypuff's Sp. Atk rose sharply!");
+            MESSAGE("Jigglypuff's Sp. Atk rose!");
         }
     } THEN {
-        EXPECT_EQ(playerLeft->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + (abilityLeft == ABILITY_COMPETITIVE ? 4 : 0));
-        EXPECT_EQ(playerRight->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + (abilityRight == ABILITY_COMPETITIVE ? 4 : 0));
+        EXPECT_EQ(playerLeft->statStages[STAT_SPATK], (abilityLeft == ABILITY_COMPETITIVE ? MAX_STAT_STAGE : DEFAULT_STAT_STAGE));
+        EXPECT_EQ(playerRight->statStages[STAT_SPATK], (abilityRight == ABILITY_COMPETITIVE ? MAX_STAT_STAGE : DEFAULT_STAT_STAGE));
     }
 }
 
@@ -99,18 +99,18 @@ DOUBLE_BATTLE_TEST("Competitive sharply raises opponent's Sp. Atk after Intimida
         if (abilityLeft == ABILITY_COMPETITIVE) {
             ABILITY_POPUP(opponentLeft, ABILITY_COMPETITIVE);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentLeft);
-            MESSAGE("The opposing Igglybuff's Sp. Atk rose sharply!");
+            MESSAGE("The opposing Igglybuff's Sp. Atk rose!");
         }
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
         MESSAGE("The opposing Jigglypuff's Attack fell!");
         if (abilityRight == ABILITY_COMPETITIVE) {
             ABILITY_POPUP(opponentRight, ABILITY_COMPETITIVE);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
-            MESSAGE("The opposing Jigglypuff's Sp. Atk rose sharply!");
+            MESSAGE("The opposing Jigglypuff's Sp. Atk rose!");
         }
     } THEN {
-        EXPECT_EQ(opponentLeft->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + (abilityLeft == ABILITY_COMPETITIVE ? 4 : 0));
-        EXPECT_EQ(opponentRight->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + (abilityRight == ABILITY_COMPETITIVE ? 4 : 0));
+        EXPECT_EQ(opponentLeft->statStages[STAT_SPATK], (abilityLeft == ABILITY_COMPETITIVE ? MAX_STAT_STAGE : DEFAULT_STAT_STAGE));
+        EXPECT_EQ(opponentRight->statStages[STAT_SPATK], (abilityRight == ABILITY_COMPETITIVE ? MAX_STAT_STAGE : DEFAULT_STAT_STAGE));
     }
 }
 
@@ -305,7 +305,7 @@ DOUBLE_BATTLE_TEST("Competitive activates when opposing Octolock lowers stats at
     } THEN {
         EXPECT_EQ(playerLeft->statStages[STAT_DEF], DEFAULT_STAT_STAGE - 1);
         EXPECT_EQ(playerLeft->statStages[STAT_SPDEF], DEFAULT_STAT_STAGE - 1);
-        EXPECT_EQ(playerLeft->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 4);
+        EXPECT_EQ(playerLeft->statStages[STAT_SPATK], MAX_STAT_STAGE);
     }
 }
 
@@ -392,10 +392,10 @@ SINGLE_BATTLE_TEST("Competitive activates for each stat that is lowered")
         MESSAGE("Igglybuff's Defense fell!");
         ABILITY_POPUP(player, ABILITY_COMPETITIVE);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
-        MESSAGE("Igglybuff's Sp. Atk rose sharply!");
+        MESSAGE("Igglybuff's Sp. Atk rose!");
 
     } THEN {
-        EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 4);
+        EXPECT_EQ(player->statStages[STAT_SPATK], MAX_STAT_STAGE);
     }
 }
 
