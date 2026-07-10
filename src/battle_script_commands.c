@@ -9739,19 +9739,28 @@ static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallDa
     case BALL_ULTRA:
         ball->multiplier = 200;
         break;
+    case BALL_PREMIER:
+        ball->multiplier = 150;
+        break;
+    case BALL_LUXURY:
+        ball->multiplier = 150;
+        break;
     case BALL_MASTER:
-        ball->guaranteedCapture = TRUE;
+        if (IsSpeciesLegendaryAny(battleMon->species))
+            ball->multiplier = 2000;
+        else
+            ball->guaranteedCapture = TRUE;
         break;
     case BALL_NET:
         if (IS_BATTLER_ANY_TYPE(wildMonBattler, TYPE_OCEAN, TYPE_BUG))
-            ball->multiplier = B_NET_BALL_MODIFIER >= GEN_7 ? 350 : 300;
+            ball->multiplier = 400;
         break;
     case BALL_NEST:
         ball->multiplier = 100;
         if ((B_NEST_BALL_MODIFIER == GEN_5 && battleMon->level < 31)
             || (B_NEST_BALL_MODIFIER >= GEN_6 && battleMon->level < 30))
         {
-            ball->multiplier = (41 - battleMon->level) * 4096 / 10;
+            ball->multiplier = (150 - (5 * battleMon->level)) * 2048 / 10;
             ball->divider = 4096;
         }
         else if (battleMon->level < 30)
@@ -9763,13 +9772,13 @@ static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallDa
         if (GetCurrentMapType() == MAP_TYPE_UNDERWATER
             || (B_DIVE_BALL_MODIFIER >= GEN_4 && (gIsFishingEncounter || gIsSurfingEncounter)))
         {
-            ball->multiplier = 350;
+            ball->multiplier = 400;
         }
         break;
-    case BALL_DUSK:
+    case BALL_MOON:
         i = GetTimeOfDay();
         if (i == TIME_EVENING || i == TIME_NIGHT || gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
-            ball->multiplier = (B_DUSK_BALL_MODIFIER >= GEN_7 ? 300 : 350);
+            ball->multiplier = 400;
         break;
     case BALL_TIMER:
         if (B_TIMER_BALL_MODIFIER >= GEN_5)
@@ -9790,18 +9799,13 @@ static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallDa
         break;
     case BALL_REPEAT:
         if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(battleMon->species), FLAG_GET_CAUGHT))
-            ball->multiplier = (B_REPEAT_BALL_MODIFIER >= GEN_7 ? 350 : 300);
+            ball->multiplier = 800;
         break;
     case BALL_LEVEL:
-        if (gBattleMons[playerBattler].level >= 4 * battleMon->level)
-            ball->multiplier = 800;
-        else if (gBattleMons[playerBattler].level > 2 * battleMon->level)
-            ball->multiplier = 400;
-        else if (gBattleMons[playerBattler].level > battleMon->level)
-            ball->multiplier = 200;
+        ball->multiplier = 100 + ((400 * battleMon->level) / 100);
         break;
     case BALL_LURE:
-        if (gIsFishingEncounter)
+        if (IS_BATTLER_ANY_TYPE(wildMonBattler, TYPE_DRAGON))
         {
             if (B_LURE_BALL_MODIFIER >= GEN_8)
                 ball->multiplier = 400;
@@ -9811,45 +9815,26 @@ static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallDa
                 ball->multiplier = 300;
         }
         break;
-    case BALL_MOON:
-    {
-        const struct Evolution *evolutions = GetSpeciesEvolutions(battleMon->species);
-        if (evolutions == NULL)
-            break;
-        for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
-        {
-            if (evolutions[i].method == EVO_ITEM
-                && evolutions[i].param == ITEM_MOON_STONE)
-                ball->multiplier = 400;
-        }
-        break;
-    }
-    case BALL_LOVE:
-        if (battleMon->species == gBattleMons[playerBattler].species)
-        {
-            u8 gender1 = GetMonGender(GetBattlerMon(wildMonBattler));
-            u8 gender2 = GetMonGender(GetBattlerMon(playerBattler));
-
-            if (gender1 != gender2 && gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS)
-                ball->multiplier = 800;
-        }
-        break;
-    case BALL_FAST:
-        if (GetSpeciesBaseSpeed(battleMon->species) >= 100)
+    case BALL_DUSK:
+        if (IS_BATTLER_ANY_TYPE(wildMonBattler, TYPE_GHOST, TYPE_UNDEAD, TYPE_DARK))
             ball->multiplier = 400;
+        break;
+    case BALL_LOVE:
+        u8 gender1 = GetMonGender(GetBattlerMon(wildMonBattler));
+        u8 gender2 = GetMonGender(GetBattlerMon(playerBattler));
+        if (gender1 != gender2 && gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS)
+            ball->multiplier = 500;
         break;
     case BALL_HEAVY:
         i = GetSpeciesWeight(battleMon->species);
         if (B_HEAVY_BALL_MODIFIER >= GEN_7)
         {
             if (i < 1000)
-                ball->flatBonus = -20;
-            else if (i < 2000)
-                ball->flatBonus = 0;
-            else if (i < 3000)
-                ball->flatBonus = 20;
+                ball->multiplier = 100;
+            else if (i <= 5000)
+                ball->multiplier = i / 10;
             else
-                ball->flatBonus = 30;
+                ball->multiplier = 500;
         }
         else if (B_HEAVY_BALL_MODIFIER >= GEN_4)
         {
@@ -9877,7 +9862,8 @@ static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallDa
         }
         break;
     case BALL_DREAM:
-        if (B_DREAM_BALL_MODIFIER >= GEN_8 && (battleMon->status1 & STATUS1_SLEEP || (GetBattlerAbilityIgnoreMoldBreaker(wildMonBattler) == ABILITY_COMATOSE)))
+        if (B_DREAM_BALL_MODIFIER >= GEN_8 && 
+           (IS_BATTLER_ANY_TYPE(wildMonBattler, TYPE_FAIRY) || battleMon->status1 & STATUS1_SLEEP || (GetBattlerAbilityIgnoreMoldBreaker(wildMonBattler) == ABILITY_COMATOSE)))
             ball->multiplier = 400;
         break;
     case BALL_SAFARI:
@@ -10003,6 +9989,9 @@ static bool32 CriticalCapture(u32 odds)
 
     odds /= 6;
     if (RandomUniform(RNG_BALLTHROW_CRITICAL, 0, MAX_u8) < odds)
+        return TRUE;
+
+    if (ItemIdToBallId(gLastUsedItem) == BALL_FAST)
         return TRUE;
 
     return FALSE;

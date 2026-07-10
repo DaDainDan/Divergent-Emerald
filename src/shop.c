@@ -1213,7 +1213,17 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
 
     if (JOY_NEW(A_BUTTON | B_BUTTON))
     {
-        u16 premierBallsToAdd = tItemCount / 10;
+        u16 premierBallsToAdd = 0;
+
+        if (GetItemPrice(tItemId) <= 500)
+            premierBallsToAdd = tItemCount / 10;
+        else if (GetItemPrice(tItemId) <= 1600)
+            premierBallsToAdd = tItemCount / 7;
+        else if ((GetItemPrice(tItemId) <= 2500))
+            premierBallsToAdd = tItemCount / 4;
+        else if (tItemId == ITEM_MASTER_BALL)
+            premierBallsToAdd = tItemCount * 5;
+        
         if (premierBallsToAdd >= 1
          && ((I_PREMIER_BALL_BONUS <= GEN_7 && tItemId == ITEM_POKE_BALL)
           || (I_PREMIER_BALL_BONUS >= GEN_8 && (GetItemPocket(tItemId) == POCKET_POKE_BALLS))))
