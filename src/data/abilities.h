@@ -2478,4 +2478,594 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Spicy Spray"),
         .description = COMPOUND_STRING("Burns the foe when damaged."),
     },
+
+    [ABILITY_AVENGER] =
+    {
+        .name = _("Avenger"),
+        .description = COMPOUND_STRING("Inherits fallen's strength."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_AQUATIC] =
+    {
+        .name = _("Aquatic"),
+        .description = COMPOUND_STRING("Adds the Ocean type."),
+        .aiRating = 8,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_BLACK_FUMES] =
+    {
+        .name = _("Black Fumes"),
+        .description = COMPOUND_STRING("Covers foes in a black haze."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_COLD_HEART] =
+    {
+        .name = _("Cold Heart"),
+        .description = COMPOUND_STRING("Adds the Frost type."),
+        .aiRating = 9,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_COMBUSTION] =
+    {
+        .name = _("Combustion"),
+        .description = COMPOUND_STRING("Fire hits up SpAtk greatly."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_CONDUCTOR] =
+    {
+        .name = _("Conductor"),
+        .description = COMPOUND_STRING("Ups Electric-type moves."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_COSMIC] =
+    {
+        .name = _("Cosmic"),
+        .description = COMPOUND_STRING("Nullifies innate immunities."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_CRAFTY] =
+    {
+        .name = _("Crafty"),
+        .description = COMPOUND_STRING("Ups Acc and effect chances."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_CULTIVATOR] =
+    {
+        .name = _("Cultivator"),
+        .description = COMPOUND_STRING("Empowers allied Grass-types."),
+        .aiRating = 1,
+    },
+
+    [ABILITY_DOOM_DESIRE] =
+    {
+        .name = _("Doom Desire"),
+        .description = COMPOUND_STRING("Foe faints in 3 turns if hit."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_DRACONIC] =
+    {
+        .name = _("Draconic"),
+        .description = COMPOUND_STRING("Adds Dragon-type."),
+        .aiRating = 9,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_ELECTROLIGHT] =
+    {
+        .name = _("Electrolight"),
+        .description = COMPOUND_STRING("Electric moves go first."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_FORBIDDEN] =
+    {
+        .name = _("Forbidden"),
+        .description = COMPOUND_STRING("Disables foes' first move."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_FROST_ARMOR] =
+    {
+        .name = _("Frost Armor"),
+        .description = COMPOUND_STRING("Halves damage at full HP."),
+        .aiRating = 8,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_GRAPPLER] =
+    {
+        .name = _("Grappler"),
+        .description = COMPOUND_STRING("Powers up grab moves."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_GUNK_MUNCHER] =
+    {
+        .name = _("Gunk Muncher"),
+        .description = COMPOUND_STRING("Turns Poison into HP."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_HEAT_TREATMENT] =
+    {
+        .name = _("Heat Treatment"),
+        .description = COMPOUND_STRING("Fire raises Defense."),
+        .aiRating = 5,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_HYPER_FOCUS] =
+    {
+        .name = _("Hyper Focus"),
+        .description = COMPOUND_STRING("Ups crit, no Sp. Atk drops."),
+        .aiRating = 4,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_ICE_ABSORB] =
+    {
+        .name = _("Ice Absorb"),
+        .description = COMPOUND_STRING("Turn Ice into HP."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_INFLATE] =
+    {
+        .name = _("Inflate"),
+        .description = COMPOUND_STRING("Boosts maximum HP."),
+        .aiRating = 5,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_IRRITABILITY] =
+    {
+        .name = _("Irritability"),
+        .description = COMPOUND_STRING("Boosts Attack when hit."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_JET_LEG] =
+    {
+        .name = _("Jet Leg"),
+        .description = COMPOUND_STRING("Boosts kicking moves."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_KUSANAGI] =
+    {
+        .name = _("Kusanagi"),
+        .description = COMPOUND_STRING("Can harness the wind."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_MAJESTY] =
+    {
+        .name = _("Majesty"),
+        .description = COMPOUND_STRING("Always moves first."),
+        .aiRating = 10,
+    },
+
+    [ABILITY_MALICE] =
+    {
+        .name = _("Malice"),
+        .description = COMPOUND_STRING("Maximizes damage, ups crit."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_METALLIC] =
+    {
+        .name = _("Metallic"),
+        .description = COMPOUND_STRING("Adds Steel-type."),
+        .aiRating = 9,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_MINSTREL] =
+    {
+        .name = _("Minstrel"),
+        .description = COMPOUND_STRING("Sound moves have priority."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_MIRACLE_EYE] =
+    {
+        .name = _("Miracle Eye"),
+        .description = COMPOUND_STRING("Moves bypass accuracy."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_MOON_PRESENCE] =
+    {
+        .name = _("Moon Presence"),
+        .description = COMPOUND_STRING("The moon grants power."),
+        .aiRating = 3,
+    },
+
+    [ABILITY_NULL] =
+    {
+        .name = _("Null"),
+        .description = COMPOUND_STRING("Prevents stat changes."),
+        .aiRating = 4,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_PACIFIER] =
+    {
+        .name = _("Pacifier"),
+        .description = COMPOUND_STRING("All hits deal minimum damage."),
+        .aiRating = 0,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_POTENCY] =
+    {
+        .name = _("Potency"),
+        .description = COMPOUND_STRING("Stronger status inflictions."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_PROVOCATEUR] =
+    {
+        .name = _("Provocateur"),
+        .description = COMPOUND_STRING("Taunts foe on entry."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_PURITY] =
+    {
+        .name = _("Purity"),
+        .description = COMPOUND_STRING("Adds Fairy-type."),
+        .aiRating = 9,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_REBOUND] =
+    {
+        .name = _("Rebound"),
+        .description = COMPOUND_STRING("Ups Def, reflects contact."),
+        .aiRating = 9,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_RESILIENCE] =
+    {
+        .name = _("Resilience"),
+        .description = COMPOUND_STRING("Takes minimum damage."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_SCATTERBRAIN] =
+    {
+        .name = _("Scatterbrain"),
+        .description = COMPOUND_STRING("Boosts SpAtk but confuses."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_SILK_SPEW] =
+    {
+        .name = _("Silk Spew"),
+        .description = COMPOUND_STRING("Lowers the foe's Speed"),
+        .aiRating = 9,
+    },
+
+    [ABILITY_STONEMASON] =
+    {
+        .name = _("Stonemason"),
+        .description = COMPOUND_STRING("Powers up Rock moves."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_TECTONIC] =
+    {
+        .name = _("Tectonic"),
+        .description = COMPOUND_STRING("Adds Ground-type."),
+        .aiRating = 9,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_TOXIC_BODY] =
+    {
+        .name = _("Toxic Body"),
+        .description = COMPOUND_STRING("Poisons foe on contact."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_VENGEFUL] =
+    {
+        .name = _("Vengeful"),
+        .description = COMPOUND_STRING("Curses foe when attacked."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_VENOMOUS] =
+    {
+        .name = _("Venomous"),
+        .description = COMPOUND_STRING("Adds Poison-type."),
+        .aiRating = 8,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_WICKED] =
+    {
+        .name = _("Wicked"),
+        .description = COMPOUND_STRING("Adds Dark-type."),
+        .aiRating = 8,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+    },
+
+    [ABILITY_BUGGY_SURGE] =
+    {
+        .name = _("Buggy Surge"),
+        .description = COMPOUND_STRING("Field becomes lucky."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_FAULTY_SURGE] =
+    {
+        .name = _("Faulty Surge"),
+        .description = COMPOUND_STRING("Field becomes unstable."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_SPOOKY_SURGE] =
+    {
+        .name = _("Spooky Surge"),
+        .description = COMPOUND_STRING("Field becomes frightening."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_SUPERIOR] =
+    {
+        .name = _("Superior"),
+        .description = COMPOUND_STRING("Magic Guard + Unnerve."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_SEA_GUARDIAN] =
+    {
+        .name = _("Sea Guardian"),
+        .description = COMPOUND_STRING("Delta Stream + Multiscale."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_GOD_PHOENIX] =
+    {
+        .name = _("God Phoenix"),
+        .description = COMPOUND_STRING("Serence Grace + Regenerator."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_ORIGIN_OF_LAND] =
+    {
+        .name = _("Origin of Land"),
+        .description = COMPOUND_STRING("Adapatability + Drought."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_ORIGIN_OF_SEA] =
+    {
+        .name = _("Origin of Sea"),
+        .description = COMPOUND_STRING("Drizzle + Lightning Rod."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_ORIGIN_OF_SKY] =
+    {
+        .name = _("Origin of Sky"),
+        .description = COMPOUND_STRING("Air Lock + Kusanagi."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_SPACE_WARP] =
+    {
+        .name = _("Space Warp"),
+        .description = COMPOUND_STRING("Ups gravity while on field."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_TIME_ALTER] =
+    {
+        .name = _("Time Alter"),
+        .description = COMPOUND_STRING("Swaps order while on field."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_REVOCATION] =
+    {
+        .name = _("Revocation"),
+        .description = COMPOUND_STRING("All Abilities are nullified."),
+        .aiRating = 5,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+        .failsOnImposter = TRUE,
+    },
+
+    [ABILITY_ETERNAL] =
+    {
+        .name = _("Eternal"),
+        .description = COMPOUND_STRING("Ups attacks of other types."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_PERMAFROST] =
+    {
+        .name = _("Permafrost"),
+        .description = COMPOUND_STRING("Null + Mold Breaker."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_FROZEN_VALOR] =
+    {
+        .name = _("Frozen Valor"),
+        .description = COMPOUND_STRING("Permafrost + Electric-type."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_BITTER_LOGIC] =
+    {
+        .name = _("Bitter Logic"),
+        .description = COMPOUND_STRING("Permafrost + Fire-type."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_TREE_OF_LIFE] =
+    {
+        .name = _("Tree of Life"),
+        .description = COMPOUND_STRING("Unfinished."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_DEATHWING] =
+    {
+        .name = _("Deathwing"),
+        .description = COMPOUND_STRING("Unfinished."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_RADIANT_SUN] =
+    {
+        .name = _("Radiant Sun"),
+        .description = COMPOUND_STRING("Clear Body + Flash Fire."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_DARK_MOON] =
+    {
+        .name = _("Dark Moon"),
+        .description = COMPOUND_STRING("Moon Presence + Frost Armor."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_STOLEN_SUNLIGHT] =
+    {
+        .name = _("Stolen Sunlight"),
+        .description = COMPOUND_STRING("Radiant Sun + Prism Armor."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_STOLEN_MOONLIGHT] =
+    {
+        .name = _("Stolen Moonlight"),
+        .description = COMPOUND_STRING("Dark Moon + Prism Armor."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_MAX_LUMINOUS] =
+    {
+        .name = _("Max Luminous"),
+        .description = COMPOUND_STRING("Null + Wonder Skin."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
+
+    [ABILITY_ENERGY_SINK] =
+    {
+        .name = _("Max Luminous"),
+        .description = COMPOUND_STRING("Special hits boosts Sp. Atk."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+    },
 };
