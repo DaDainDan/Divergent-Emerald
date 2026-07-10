@@ -369,8 +369,10 @@ static u64 GetWildAiFlags(void)
     if (avgLevel > 46)
         flags |= AI_FLAG_CHECK_VIABILITY;
 
-    if (gSpeciesInfo[species].isRestrictedLegendary)
+    if (IsSpeciesGodlikeLegendary(species))
         flags |= (AI_FLAG_OMNISCIENT | AI_FLAG_PREDICTION);
+    else if (IsSpeciesLegendaryAny(species))
+        flags |= AI_FLAG_ASSUMPTIONS;
 
     if (B_VAR_WILD_AI_FLAGS != 0 && VarGet(B_VAR_WILD_AI_FLAGS) != 0)
         flags |= VarGet(B_VAR_WILD_AI_FLAGS);

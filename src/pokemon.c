@@ -3431,6 +3431,21 @@ bool32 IsSpeciesAirborne(enum Species species)
     return gSpeciesInfo[SanitizeSpeciesId(species)].airborne;
 }
 
+bool32 IsSpeciesGodlikeLegendary(enum Species species)
+{
+    return (gSpeciesInfo[SanitizeSpeciesId(species)].isDivine
+         || gSpeciesInfo[SanitizeSpeciesId(species)].isRestrictedLegendary);
+}
+
+bool32 IsSpeciesLegendaryAny(enum Species species)
+{
+    return (gSpeciesInfo[SanitizeSpeciesId(species)].isDivine
+         || gSpeciesInfo[SanitizeSpeciesId(species)].isRestrictedLegendary
+         || gSpeciesInfo[SanitizeSpeciesId(species)].isMythical
+         || gSpeciesInfo[SanitizeSpeciesId(species)].isSubLegendary
+         || gSpeciesInfo[SanitizeSpeciesId(species)].isUltraBeast);
+}
+
 enum Ability GetSpeciesAbility(enum Species species, u8 slot)
 {
     return gSpeciesInfo[SanitizeSpeciesId(species)].abilities[slot];
