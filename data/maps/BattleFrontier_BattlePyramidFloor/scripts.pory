@@ -103,7 +103,7 @@ script BattlePyramid_WarpToNextFloor {
     end
 }
 
-// TRAINER_PHILLIP is used as a placeholder
+// TRAINER_COLBY is used as a placeholder
 script BattlePyramid_TrainerBattle {
     facilitytrainerbattle(FACILITY_BATTLE_PYRAMID)
     pyramid_showhint

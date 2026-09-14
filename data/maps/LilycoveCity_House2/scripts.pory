@@ -2,15 +2,15 @@ mapscripts LilycoveCity_House2_MapScripts {}
 
 script LilycoveCity_House2_EventScript_FatMan {
     lock_faceplayer
-    if (flag(FLAG_RECEIVED_TM_REST)) {
+    if (flag(FLAG_RECEIVED_TM_HYPNOSIS)) {
         msgbox(LilycoveCity_House2_Text_SleepIsEssential, MSGBOX_DEFAULT)
     	release_end
     }
     msgbox(LilycoveCity_House2_Text_NotAwakeYetHaveThis, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_TM_REST) == FALSE) {
+    if (giveitem(ITEM_TM_HYPNOSIS) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
-    setflag(FLAG_RECEIVED_TM_REST)
+    setflag(FLAG_RECEIVED_TM_HYPNOSIS)
     msgbox(LilycoveCity_House2_Text_SleepIsEssential, MSGBOX_DEFAULT)
     release_end
 }

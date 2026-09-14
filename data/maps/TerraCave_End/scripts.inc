@@ -59,7 +59,7 @@ TerraCave_End_EventScript_Groudon::
 # 27 "data/maps/TerraCave_End/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_TERRA_CAVE_GROUDON
 # 28 "data/maps/TerraCave_End/scripts.pory"
-	setwildbattle SPECIES_GROUDON, 70
+	setwildbattle SPECIES_GROUDON, 100
 # 29 "data/maps/TerraCave_End/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 30 "data/maps/TerraCave_End/scripts.pory"

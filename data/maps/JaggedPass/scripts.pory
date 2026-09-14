@@ -88,6 +88,9 @@ script JaggedPass_EventScript_Diana {
     trainerbattle_single(TRAINER_DIANA_1, JaggedPass_Text_DianaIntro, JaggedPass_Text_DianaDefeat, JaggedPass_EventScript_RegisterDiana)
     if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
 		trainerbattle_rematch(TRAINER_DIANA_1, JaggedPass_Text_DianaRematchIntro, JaggedPass_Text_DianaRematchDefeat)
+		if (!flag(FLAG_RECEIVED_TM_INCINERATE)) {
+			goto(JaggedPass_EventScript_Diana_GiveIncinerate)
+		}
 		msgbox(JaggedPass_Text_DianaPostRematch, MSGBOX_AUTOCLOSE)
 		end
 	}
@@ -99,6 +102,14 @@ script JaggedPass_EventScript_RegisterDiana {
     special(PlayerFaceTrainerAfterBattle)
     msgbox(JaggedPass_Text_DianaRegister, MSGBOX_DEFAULT)
     register_matchcall(TRAINER_DIANA_1)
+    goto(JaggedPass_EventScript_Diana_GiveIncinerate)
+	end
+}
+
+script JaggedPass_EventScript_Diana_GiveIncinerate {
+    msgbox(JaggedPass_Text_RightFire, MSGBOX_DEFAULT)
+    giveitem(ITEM_TM_INCINERATE)
+    setflag(FLAG_RECEIVED_TM_INCINERATE)
     release_end
 }
 
@@ -173,6 +184,14 @@ text JaggedPass_Text_DianaPostBattle {
 text JaggedPass_Text_DianaRegister {
 	"Will you ever be back in this area?
 	If you do return, I'd like a rematch."
+}
+
+text JaggedPass_Text_RightFire {
+	"With the right kind of fire you can burn
+	almost anything.
+
+	Using this TM, you can even burn your
+	opponent's items to a crisp."
 }
 
 text JaggedPass_Text_DianaRematchIntro {

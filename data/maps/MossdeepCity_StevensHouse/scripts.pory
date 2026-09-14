@@ -5,16 +5,16 @@ mapscripts MossdeepCity_StevensHouse_MapScripts {
 		}
 		end
     }
-    MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_STEVENS_HOUSE_STATE) == 2) {
-			setobjectxyperm(LOCALID_STEVENS_HOUSE_STEVEN, 6, 5)
-			setobjectmovementtype(LOCALID_STEVENS_HOUSE_STEVEN, MOVEMENT_TYPE_FACE_UP)
-		}
-		end
-    }
-    MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_STEVENS_HOUSE_STATE, 1: MossdeepCity_StevensHouse_EventScript_StevenGivesDive
-    ]
+    // MAP_SCRIPT_ON_TRANSITION {
+    //     if (var(VAR_STEVENS_HOUSE_STATE) == 2) {
+	// 		setobjectxyperm(LOCALID_STEVENS_HOUSE_STEVEN, 6, 5)
+	// 		setobjectmovementtype(LOCALID_STEVENS_HOUSE_STEVEN, MOVEMENT_TYPE_FACE_UP)
+	// 	}
+	// 	end
+    // }
+    // // MAP_SCRIPT_ON_FRAME_TABLE [
+	// // 	VAR_STEVENS_HOUSE_STATE, 1: MossdeepCity_StevensHouse_EventScript_StevenGivesDive
+    // // ]
 }
 
 script MossdeepCity_StevensHouse_EventScript_StevenGivesDive {

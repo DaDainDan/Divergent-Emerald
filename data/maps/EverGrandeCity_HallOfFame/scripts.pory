@@ -20,6 +20,7 @@ script EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame {
     waitmovement(0)
     msgbox(EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions, MSGBOX_DEFAULT)
     closemessage
+    giveitem(ITEM_CATCHING_CHARM)
     applymovement(LOCALID_HALL_OF_FAME_WALLACE, moves(walk_up * 5))
     applymovement(LOCALID_PLAYER, moves(walk_up * 5))
     waitmovement(0)

@@ -11,17 +11,33 @@ script MauvilleCity_Mart_EventScript_Clerk {
 
 mart MauvilleCity_Mart_Pokemart {
     ITEM_POKE_BALL
-    ITEM_GREAT_BALL
-    ITEM_SUPER_POTION
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_AWAKENING
-    ITEM_X_SPEED
-    ITEM_X_ATTACK
-    ITEM_X_DEFENSE
-    ITEM_GUARD_SPEC
-    ITEM_DIRE_HIT
-    ITEM_X_ACCURACY
+    ITEM_FRIEND_BALL
+    ITEM_POTION
+    ITEM_REVIVE
+    ITEM_FULL_HEAL
+    ITEM_MAX_ETHER
+    ITEM_REPEL
+    ITEM_LURE
+}
+
+script MauvilleCity_Mart_EventScript_EnhancementClerk {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(MauvilleCity_Mart_Pokemart_Enhancement)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
+
+mart MauvilleCity_Mart_Pokemart_Enhancement {
+    ITEM_EXP_CANDY_S
+    ITEM_HP_UP
+    ITEM_PROTEIN
+    ITEM_IRON
+    ITEM_CARBOS
+    ITEM_CALCIUM
+    ITEM_ZINC
+    ITEM_PP_UP
 }
 
 script MauvilleCity_Mart_EventScript_ExpertM {

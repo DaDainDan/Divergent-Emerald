@@ -154,7 +154,7 @@ script MossdeepCity_EventScript_KingsRockBoy {
     	release_end
     }
     msgbox(MossdeepCity_Text_YouCanKeepIt, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_KINGS_ROCK) == FALSE) {
+    if (giveitem(ITEM_EJECT_BUTTON) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     setflag(FLAG_RECEIVED_KINGS_ROCK)
@@ -181,12 +181,26 @@ script MossdeepCity_EventScript_Scott {
     release_end
 }
 
-text MossdeepCity_Text_WantKingsRockStevenGaveMe {
-	"I got this from STEVEN, but I don't
-	know what it's good for.
+script MossdeepCity_EventScript_FatMan {
+    lock_faceplayer
+    if (flag(FLAG_RECEIVED_TM_TOXIC)) {
+        msgbox(MossdeepCity_Text_BeCareful, MSGBOX_DEFAULT)
+        release_end
+    }
+    msgbox(MossdeepCity_Text_ToxicWasteManagement, MSGBOX_DEFAULT)
+    if (giveitem(ITEM_TM_TOXIC) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    setflag(FLAG_RECEIVED_TM_TOXIC)
+    release_end
+}
 
-	I think it's called KING'S ROCK.
-	Do you want it?"
+text MossdeepCity_Text_WantKingsRockStevenGaveMe {
+	"My dad made this gizmo up at the SPACE
+	CENTER, but I don't know what it does.
+
+	How about you take it off my hands
+	before he finds out I took it."
 }
 
 text MossdeepCity_Text_YouCanKeepIt {
@@ -198,12 +212,13 @@ text MossdeepCity_Text_YouCanKeepIt {
 }
 
 text MossdeepCity_Text_StevensHouseOverThere {
-	"STEVEN's house is right over there!"
+	"Just please don't tell my dad, alright?"
 }
 
 text MossdeepCity_Text_WhatToDoWithWeirdRock {
-	"Yeah, you think so, too! What are you
-	supposed to do with some weird rock?"
+	"He's really gonna kill me if he finds out.
+	So please come back if you ever change
+	your mind."
 }
 
 text MossdeepCity_Text_WailmerWatching {
@@ -348,4 +363,19 @@ text MossdeepCity_Text_SootopolisNewGymLeader {
 
 	People tell me the new LEADER once
 	mentored WALLACE."
+}
+
+text MossdeepCity_Text_BeCareful {
+	"You oughta practice using that TM.
+	It could be deadly if used improperly."
+}
+
+text MossdeepCity_Text_ToxicWasteManagement {
+	"I'm responsible for transporting the
+	waste from the rocket launches.
+
+	When you get a bit older, what would you
+	say about coming to work for me?
+
+	Here's a little incentive for you."
 }

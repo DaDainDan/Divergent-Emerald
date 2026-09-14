@@ -2,11 +2,11 @@ mapscripts MauvilleCity_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_VISITED_MAUVILLE_CITY)
 		clearflag(FLAG_FORCE_MIRAGE_TOWER_VISIBLE)
-		clearflag(FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION)
 		setflag(FLAG_SYS_TV_START)
 		clearflag(FLAG_MAUVILLE_GYM_BARRIERS_STATE)
 		setvar(VAR_MAUVILLE_GYM_STATE, 0)
-		if (flag(FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON)) {
+		if ((flag(FLAG_RECEIVED_BIKE_VOUCHER) && !flag(FLAG_HIDE_ROUTE_110_TEAM_AQUA)) 
+		  || flag(FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON)) {
 			clearflag(FLAG_HIDE_MAUVILLE_GYM_WATTSON)
 			setflag(FLAG_HIDE_MAUVILLE_CITY_WATTSON)
 			setflag(FLAG_WATTSON_REMATCH_AVAILABLE)
@@ -86,8 +86,6 @@ script MauvilleCity_EventScript_Wally {
 		goto(MauvilleCity_EventScript_BattleWallyPrompt)
 		end
     }
-    applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_StepFasterRight)
-    waitmovement(0)
     msgbox(MauvilleCity_Text_WallyWantToChallengeGym, MSGBOX_DEFAULT)
     msgbox(MauvilleCity_Text_UncleYourePushingIt, MSGBOX_DEFAULT)
     msgbox(MauvilleCity_Text_WallyWeCanBeatAnyone, MSGBOX_DEFAULT)
@@ -107,13 +105,13 @@ script MauvilleCity_EventScript_BattleWallyPrompt {
     if (var(VAR_RESULT) == YES) {
         msgbox(MauvilleCity_Text_WallyHereICome, MSGBOX_DEFAULT)
 		trainerbattle_no_intro(TRAINER_WALLY_MAUVILLE, MauvilleCity_Text_WallyDefeat)
-		applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_StepFasterRight)
+		applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_StepFasterLeft)
 		waitmovement(0)
 		msgbox(MauvilleCity_Text_WallyIllGoBackToVerdanturf, MSGBOX_DEFAULT)
 		applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_FacePlayer)
 		waitmovement(0)
 		msgbox(MauvilleCity_Text_ThankYouNotEnoughToBattle, MSGBOX_DEFAULT)
-		applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_StepFasterRight)
+		applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_StepFasterLeft)
 		waitmovement(0)
 		msgbox(MauvilleCity_Text_UncleNoNeedToBeDown, MSGBOX_DEFAULT)
     } else {
@@ -125,61 +123,73 @@ script MauvilleCity_EventScript_BattleWallyPrompt {
     switch (var(VAR_FACING)) {
         case DIR_NORTH:
 			applymovement(LOCALID_PLAYER, moves(delay_16,  step_faster_left))
-			applymovement(LOCALID_MAUVILLE_WALLY, moves(walk_left * 2,  walk_down * 2,  walk_left))
-			applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, moves(walk_left * 3,  walk_down * 2))
+			applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, moves(walk_left * 2,  walk_down * 2,  walk_left))
+			applymovement(LOCALID_MAUVILLE_WALLY, moves(walk_left * 3,  walk_down * 2))
 			waitmovement(0)
-			applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_StepFasterRight)
+			applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_StepFasterRight)
 			waitmovement(0)
 			delay(30)
 			applymovement(LOCALID_PLAYER, moves(delay_16,  delay_8,  delay_4,  step_faster_down))
-			applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, moves(walk_right * 2,  step_faster_up))
+			applymovement(LOCALID_MAUVILLE_WALLY, moves(walk_right * 3,  step_faster_up))
 			waitmovement(0)
-			msgbox(MauvilleCity_Text_UncleVisitUsSometime, MSGBOX_DEFAULT)
-			closemessage
+			call(MauvilleCity_EventScript_WallyBondOrDrive)
 			applymovement(LOCALID_PLAYER, moves(delay_16,  delay_8,  step_faster_left))
-			applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, moves(walk_left * 8))
+			applymovement(LOCALID_MAUVILLE_WALLY, moves(walk_left * 8))
         case DIR_EAST:
 			applymovement(LOCALID_PLAYER, moves(delay_16,  step_faster_down))
-			applymovement(LOCALID_MAUVILLE_WALLY, moves(walk_down * 2,  walk_left * 3))
-			applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, moves(walk_left,  walk_down * 2,  walk_left * 2))
+			applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, moves(walk_down * 2,  walk_left * 3))
+			applymovement(LOCALID_MAUVILLE_WALLY, moves(walk_left,  walk_down * 2,  walk_left * 2))
 			waitmovement(0)
-			applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_StepFasterRight)
+			applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_StepFasterRight)
 			waitmovement(0)
 			delay(30)
-			applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, moves(walk_right,  walk_up))
+			applymovement(LOCALID_MAUVILLE_WALLY, moves(walk_right,  walk_up))
 			waitmovement(0)
-			msgbox(MauvilleCity_Text_UncleVisitUsSometime, MSGBOX_DEFAULT)
-			closemessage
+			call(MauvilleCity_EventScript_WallyBondOrDrive)
 			applymovement(LOCALID_PLAYER, moves(delay_16 * 3,  step_faster_left))
-			applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, moves(walk_down,  walk_left * 8))
+			applymovement(LOCALID_MAUVILLE_WALLY, moves(walk_down,  walk_left * 8))
     }
-    applymovement(LOCALID_MAUVILLE_WALLY, moves(delay_16 * 2,  walk_left * 8,  delay_8))
+    applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, moves(delay_16 * 2,  walk_left * 8,  delay_8))
     waitmovement(0)
-    goto(MauvilleCity_EventScript_DefeatedWally)
+    goto(MauvilleCity_EventScript_ScottEncounter)
     end
 }
 
-script MauvilleCity_EventScript_DefeatedWally {
+script MauvilleCity_EventScript_WallyBondOrDrive {
+	msgbox(MauvilleCity_Text_WallyWhatIsYourSecret, MSGBOX_DEFAULT)
+	dynmultipush("BONDS WITH POK\eMON", 0)
+	dynmultipush("DRIVE TO BE THE BEST", 1)
+	dynmultistack(0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	if (var(VAR_RESULT) == 1) {
+		setflag(FLAG_WALLY_DRIVE)
+	}
+	msgbox(MauvilleCity_Text_WallyIUnderstand, MSGBOX_DEFAULT)
+	closemessage
+	return
+}
+
+script MauvilleCity_EventScript_ScottEncounter {
     removeobject(LOCALID_MAUVILLE_WALLY)
     removeobject(LOCALID_MAUVILLE_WALLYS_UNCLE)
     clearflag(FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY)
     clearflag(FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLYS_UNCLE)
     setflag(FLAG_DEFEATED_WALLY_MAUVILLE)
-    setvar(VAR_WALLY_CALL_STEP_COUNTER, 0)
-    setflag(FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL)
 	switch (var(VAR_FACING)) {
 		case DIR_NORTH:
 			addobject(LOCALID_MAUVILLE_SCOTT)
-    		applymovement(LOCALID_MAUVILLE_SCOTT, moves(walk_up * 6,  walk_left * 4,  step_faster_up))
+    		applymovement(LOCALID_MAUVILLE_SCOTT, moves(walk_up * 6,  walk_left * 3,  step_faster_up))
 		case DIR_EAST:
 			setobjectxyperm(LOCALID_MAUVILLE_SCOTT, 12, 13)
 			addobject(LOCALID_MAUVILLE_SCOTT)
-			applymovement(LOCALID_MAUVILLE_SCOTT, moves(walk_up * 5,  walk_left * 5,  walk_up))
+			applymovement(LOCALID_MAUVILLE_SCOTT, moves(walk_up * 5,  walk_left * 4,  walk_up))
 	}
 	waitmovement(0)
     applymovement(LOCALID_PLAYER, Common_Movement_StepFasterDown)
     waitmovement(0)
     msgbox(MauvilleCity_Text_ScottYouDidntHoldBack, MSGBOX_DEFAULT)
+	closemessage
+	giveitem(ITEM_BLACK_GLASSES)
+	msgbox("I'll be rooting for you, kid!", MSGBOX_DEFAULT)
     closemessage
     addvar(VAR_SCOTT_STATE, 1)
 	switch (var(VAR_FACING)) {
@@ -199,19 +209,30 @@ script MauvilleCity_EventScript_DefeatedWally {
 script MauvilleCity_EventScript_Wattson {
     lock_faceplayer
     if (flag(FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON)) {
-        msgbox(MauvilleCity_Text_WattsonYoungTakeCharge, MSGBOX_DEFAULT)
-    }
-    elif (var(VAR_NEW_MAUVILLE_STATE) == 2) {
-        msgbox(MauvilleCity_Text_WattsonThanksTakeTM, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_TM_THUNDERBOLT) == FALSE) {
+		msgbox(MauvilleCity_Text_WattsonYoungTakeCharge, MSGBOX_DEFAULT)
+	}
+	elif (var(VAR_NEW_MAUVILLE_STATE) == 4) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		if (giveitem(ITEM_TM_THUNDER_WAVE) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		setflag(FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON)
 		msgbox(MauvilleCity_Text_WattsonYoungTakeCharge, MSGBOX_DEFAULT)
-    }
-    elif (flag(FLAG_GOT_BASEMENT_KEY_FROM_WATTSON)) {
-        msgbox(MauvilleCity_Text_WattsonWontBeChallenge, MSGBOX_DEFAULT)
-    }
+	}
+	elif (flag(FLAG_RECEIVED_BIKE_VOUCHER)) {
+		msgbox("\.", MSGBOX_DEFAULT)
+	}
+	elif (var(VAR_NEW_MAUVILLE_STATE) == 2) {
+		msgbox(MauvilleCity_Text_WattsonThanksTakeTM, MSGBOX_DEFAULT)
+		if (giveitem(ITEM_BIKE_VOUCHER) == FALSE) {
+			goto(Common_EventScript_ShowBagIsFull)
+		}
+		setflag(FLAG_RECEIVED_BIKE_VOUCHER)
+		msgbox("\.", MSGBOX_DEFAULT)
+	}
+	elif (flag(FLAG_GOT_BASEMENT_KEY_FROM_WATTSON)) {
+		msgbox(MauvilleCity_Text_WattsonWontBeChallenge, MSGBOX_DEFAULT)
+	}
 	else {
 		msgbox(MauvilleCity_Text_WattsonNeedFavorTakeKey, MSGBOX_DEFAULT)
 		if (giveitem(ITEM_BASEMENT_KEY) == FALSE) {
@@ -220,7 +241,7 @@ script MauvilleCity_EventScript_Wattson {
 		setflag(FLAG_GOT_BASEMENT_KEY_FROM_WATTSON)
 		msgbox(MauvilleCity_Text_WattsonWontBeChallenge, MSGBOX_DEFAULT)
 	}
-    release_end
+	release_end
 }
 
 script MauvilleCity_EventScript_RegisterWallyCall {
@@ -311,7 +332,7 @@ text MauvilleCity_Text_WallyHereICome {
 }
 
 text MauvilleCity_Text_WallyDefeat {
-	"{SPEAKER NAME_WALLY}… … … … … … …
+	"… … … … … … …
 
 	… … … … … … … …
 
@@ -321,6 +342,23 @@ text MauvilleCity_Text_WallyDefeat {
 text MauvilleCity_Text_WallyIllGoBackToVerdanturf {
 	"{SPEAKER NAME_WALLY}UNCLE…
 	I'll go back to VERDANTURF…"
+}
+
+text MauvilleCity_Text_WallyWhatIsYourSecret {
+	"{PLAYER}\.
+	What's your secret?
+			
+	What makes you such a great TRAINER?
+	Can you tell me?"
+}
+
+text MauvilleCity_Text_WallyIUnderstand {
+	"I see\.
+	
+	I think\.
+	I think I understand\.
+			
+	Thank you."
 }
 
 text MauvilleCity_Text_ThankYouNotEnoughToBattle {
@@ -388,10 +426,10 @@ text MauvilleCity_Text_ScottYouDidntHoldBack {
 	Yeah! That's what a real POKéMON
 	battle is all about!
 
-	I idolize TRAINERS like that!
+	I idolize cool TRAINERS like that!
 
-	… … … … … …
-	I'll be cheering for you!"
+	And any cool TRAINER needs a cool
+	pair of sunglasses like mine."
 }
 
 text MauvilleCity_Text_WattsonNeedFavorTakeKey {

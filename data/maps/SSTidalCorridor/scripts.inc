@@ -317,7 +317,7 @@ SSTidalCorridor_EventScript_Sailor::
 # 168 "data/maps/SSTidalCorridor/scripts.pory"
 	goto_if_set FLAG_DEFEATED_SS_TIDAL_TRAINERS, SSTidalCorridor_EventScript_Sailor_2
 # 171 "data/maps/SSTidalCorridor/scripts.pory"
-	checktrainerflag TRAINER_PHILLIP
+	checktrainerflag TRAINER_COLBY
 	goto_if 1, SSTidalCorridor_EventScript_Sailor_6
 SSTidalCorridor_EventScript_Sailor_4:
 # 178 "data/maps/SSTidalCorridor/scripts.pory"

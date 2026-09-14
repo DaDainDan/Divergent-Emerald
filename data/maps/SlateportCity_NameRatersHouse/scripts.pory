@@ -63,6 +63,126 @@ script SlateportCity_NameRatersHouse_EventScript_ChangeNickname {
     release_end
 }
 
+script SlateportCity_NameRatersHouse_EventScript_MoveTutor {
+	lock_faceplayer
+	if (!flag(FLAG_MET_SLATEPORT_SWAP_TUTOR)) {
+		msgbox(SlateportCity_NameRatersHouse_Text_SwapMasterIntro, MSGBOX_DEFAULT)
+		setflag(FLAG_MET_SLATEPORT_SWAP_TUTOR)
+	}
+	msgbox(SlateportCity_NameRatersHouse_Text_ReadyToLearn, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_C, SCROLL_MULTI_SWAP_MOVE_TUTOR)
+	setvar(VAR_0x8006, 0)
+	goto(SlateportCity_NameRatersHouse_EventScript_ChooseSwapMove)
+	end
+}
+
+script SlateportCity_NameRatersHouse_EventScript_ChooseSwapMove {
+	setvar(VAR_0x8004, SCROLL_MULTI_SWAP_MOVE_TUTOR)
+	special(ShowScrollableMultichoice)
+	copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0: setvar(VAR_0x8005, MOVE_SKILL_SWAP)
+		case 1: setvar(VAR_0x8005, MOVE_POWER_SWAP)
+		case 2: setvar(VAR_0x8005, MOVE_GUARD_SWAP)
+		case 3: setvar(VAR_0x8005, MOVE_SPEED_SWAP)
+		case 4: setvar(VAR_0x8005, MOVE_POWER_TRICK)
+		case 5:
+		case MULTI_B_PRESSED:
+			goto(SlateportCity_NameRatersHouse_EventScript_ExitTutorMoveSelect)
+	}
+	goto(SlateportCity_NameRatersHouse_EventScript_ConfirmMoveSelection)
+	end
+}
+
+script SlateportCity_NameRatersHouse_EventScript_ExitTutorMoveSelect {
+	special(CloseBattleFrontierTutorWindow) 
+	msgbox(SlateportCity_NameRatersHouse_Text_DeclineTutor, MSGBOX_DEFAULT)
+	release_end
+}
+
+script SlateportCity_NameRatersHouse_EventScript_ConfirmMoveSelection {
+	special(BufferBattleFrontierTutorMoveName)
+	msgbox(SlateportCity_NameRatersHouse_Text_MustHaveScales, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		message("Take another gander.
+			 I promise I won't pander.")
+        waitmessage
+        setvar(VAR_0x8006, 1)
+        goto(SlateportCity_NameRatersHouse_EventScript_ChooseSwapMove)
+	}
+	if (checkitem(ITEM_HEART_SCALE) == TRUE) {
+		msgbox("Pick one of six, then.
+			Which one will it be?", MSGBOX_DEFAULT)
+        fadescreen(FADE_TO_BLACK)
+        special(CloseBattleFrontierTutorWindow)
+        chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+        if (var(VAR_RESULT) == FALSE) {
+            msgbox(SlateportCity_NameRatersHouse_Text_DeclineTutor, MSGBOX_DEFAULT)
+            release_end
+        }
+        msgbox("Your HEART is now mine.
+                Bring me more, unless you're a bore.", MSGBOX_DEFAULT)
+        removeitem(ITEM_HEART_SCALE, 1)
+        release_end
+	}
+	msgbox(SlateportCity_NameRatersHouse_Text_AreYouHeartless, MSGBOX_DEFAULT)
+	goto(SlateportCity_NameRatersHouse_EventScript_ExitTutorMoveSelect)
+	end
+}
+
+text SlateportCity_NameRatersHouse_Text_SwapMasterIntro {
+    "Oh! Who are you?
+
+	Are you even a \qoyou\qc?
+	Or are you a \qothey\qc?
+
+	How about a \qome\qc?
+
+	I'm fine, thanks.
+	Or maybe I'm not.
+
+	If I open my mind, I can be anything
+	and everything, you see.
+			
+	If you give me your HEART,
+	I can make YOU just like ME!"
+}
+
+text SlateportCity_NameRatersHouse_Text_ReadyToLearn {
+    "Ready to learn my shapeshifting ways?
+				
+	I'm ready when thou art.
+
+	Which power would you like me to impart,
+	in part?"
+}
+
+text SlateportCity_NameRatersHouse_Text_MustHaveScales {
+    "To be a shapeshifter, you must have
+	SCALES like a lizard.
+			
+	Remember when I asked you to open your
+	HEART, miss-ter?
+			
+	Well, do you have the supply, small fry?"
+}
+
+text SlateportCity_NameRatersHouse_Text_AreYouHeartless {
+    "Are truly HEARTless or maybe you 
+	just hate me?
+	
+	Perhaps it's because you\. 
+	ain't\. me."
+}
+
+text SlateportCity_NameRatersHouse_Text_DeclineTutor {
+	"Is there no desire to be different
+	in \qothere\qc?
+
+	Please care. 
+	Your lack of humanity gives me a scare."
+}
+
 text SlateportCity_NameRatersHouse_Text_PleasedToRateMonNickname {
 	"Hi, hi! I'm the NAME RATER!
 	I'm the fortune-teller of names!
@@ -125,4 +245,34 @@ text SlateportCity_NameRatersHouse_Text_MagnificentName {
 text SlateportCity_NameRatersHouse_Text_ThatIsMerelyAnEgg {
 	"Now, now.
 	That is merely an EGG!"
+}
+
+text SlateportCity_NameRatersHouse_Text_SkillSwapDesc {
+	"A technique that\n"
+	"swaps abilities\n"
+	"with the target."
+}
+
+text SlateportCity_NameRatersHouse_Text_PowerSwapDesc {
+	"A technique that\n"
+	"swaps Atk stats\n"
+	"with the target."
+}
+
+text SlateportCity_NameRatersHouse_Text_GuardSwapDesc {
+	"A technique that\n"
+	"swaps Def stats\n"
+	"with the target."
+}
+
+text SlateportCity_NameRatersHouse_Text_SpeedSwapDesc {
+	"A technique that\n"
+	"swaps Speed stats\n"
+	"with the target."
+}
+
+text SlateportCity_NameRatersHouse_Text_PowerTrickDesc {
+	"A technique that\n"
+	"swaps the user's\n"
+	"Atks and Defs."
 }

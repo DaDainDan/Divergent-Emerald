@@ -1,0 +1,107 @@
+mapscripts PetalburgCity_Dojo_1F_Right_MapScripts {}
+
+script PetalburgCity_Dojo_1F_Right_EventScript_MoveTutor {
+	lock_faceplayer
+	if (!flag(FLAG_MET_DOJO_FIGHTING_TUTOR)) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		setflag(FLAG_MET_DOJO_FIGHTING_TUTOR)
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_C, SCROLL_MULTI_PUNCH_KICK_MOVE_TUTOR)
+	setvar(VAR_0x8006, 0)
+	goto(PetalburgCity_Dojo_1F_Right_EventScript_ChoosePunchKickMove)
+	end
+}
+
+script PetalburgCity_Dojo_1F_Right_EventScript_ChoosePunchKickMove {
+	setvar(VAR_0x8004, SCROLL_MULTI_PUNCH_KICK_MOVE_TUTOR)
+	special(ShowScrollableMultichoice)
+	copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0: setvar(VAR_0x8005, MOVE_FIRE_PUNCH)
+		case 1: setvar(VAR_0x8005, MOVE_ICE_PUNCH)
+		case 2: setvar(VAR_0x8005, MOVE_THUNDER_PUNCH)
+		case 3: setvar(VAR_0x8005, MOVE_SHADOW_PUNCH)
+		case 4: setvar(VAR_0x8005, MOVE_BLAZE_KICK)
+		case 5: setvar(VAR_0x8005, MOVE_CIRCUIT_KICKS)
+		case 6:
+		case MULTI_B_PRESSED:
+			goto(PetalburgCity_Dojo_1F_Right_EventScript_ExitTutorMoveSelect)
+	}
+	goto(PetalburgCity_Dojo_1F_Right_EventScript_ConfirmMoveSelection)
+	end
+}
+
+script PetalburgCity_Dojo_1F_Right_EventScript_ExitTutorMoveSelect {
+	special(CloseBattleFrontierTutorWindow) 
+	msgbox(PetalburgCity_Dojo_1F_Right_Text_DeclineTutor, MSGBOX_DEFAULT)
+	release_end
+}
+
+script PetalburgCity_Dojo_1F_Right_EventScript_ConfirmMoveSelection {
+	special(BufferBattleFrontierTutorMoveName)
+	msgbox("\.", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		message("\.")
+		waitmessage
+		setvar(VAR_0x8006, 1)
+		goto(PetalburgCity_Dojo_1F_Right_EventScript_ChoosePunchKickMove)
+	}
+	if (checkitem(ITEM_YELLOW_SHARD) == TRUE) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		fadescreen(FADE_TO_BLACK)
+		special(CloseBattleFrontierTutorWindow)
+		chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+		waitstate
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(PetalburgCity_Dojo_1F_Right_Text_DeclineTutor, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox("\.", MSGBOX_DEFAULT)
+		removeitem(ITEM_YELLOW_SHARD, 1)
+		release_end
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	goto(PetalburgCity_Dojo_1F_Right_EventScript_ExitTutorMoveSelect)
+	end
+}
+
+text PetalburgCity_Dojo_1F_Right_Text_DeclineTutor {
+	"\."
+}
+
+text PetalburgCity_Dojo_1F_Right_Text_FirePunchDesc {
+	"A punch with a\n"
+	"chance to burn\n"
+	"the foe."
+}
+
+text PetalburgCity_Dojo_1F_Right_Text_IcePunchDesc {
+	"A punch that can\n"
+	"can inflict\n"
+	"frostbite."
+}
+
+text PetalburgCity_Dojo_1F_Right_Text_ThunderPunchDesc {
+	"A punch that can\n"
+	"can inflict\n"
+	"paralysis."
+}
+
+text PetalburgCity_Dojo_1F_Right_Text_ShadowPunchDesc {
+	"A shadowy punch\n"
+	"that cannot be\n"
+	"avoided."
+}
+
+text PetalburgCity_Dojo_1F_Right_Text_BlazeKickDesc {
+	"A kick with a\n"
+	"chance to burn\n"
+	"the foe."
+}
+
+text PetalburgCity_Dojo_1F_Right_Text_CircuitKicksDesc {
+	"A kick that can\n"
+	"can inflict\n"
+	"paralysis."
+}

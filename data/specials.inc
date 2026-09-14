@@ -356,6 +356,7 @@ gSpecials::
 	def_special SetPacifidlogTMReceivedDay
 	def_special GetDaysUntilPacifidlogTMAvailable
 	def_special HasAllHoennMons
+	def_special HasAllMons
 	def_special MonOTNameNotPlayer
 	def_special BufferLottoTicketNumber
 	def_special TryHideBattleTowerReporter
@@ -639,3 +640,9 @@ gSpecials::
 	def_special UpdateTrainerCardPhotoIcons
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
+	@ def_special TryUpdateFirstGymLeaderRematch
+	def_special GetHatchedEggCount
+	def_special GetChampionRematch
+	def_special GetEliteFourRematch
+	def_special IsShelmetOrKarrablastInParty
+	def_special DoesPlayerHaveFossil

@@ -25,16 +25,16 @@ script BattleFrontier_Lounge7_EventScript_LeftTutorMoveSelection {
 	special(ShowScrollableMultichoice)
     copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
     switch (var(VAR_RESULT)) {
-        case 0: setmoveandprice(MOVE_SOFT_BOILED, 16)
-        case 1: setmoveandprice(MOVE_SEISMIC_TOSS, 24)
-        case 2: setmoveandprice(MOVE_DREAM_EATER, 24)
-        case 3: setmoveandprice(MOVE_MEGA_PUNCH, 24)
-		case 4: setmoveandprice(MOVE_MEGA_KICK, 48)
-		case 5: setmoveandprice(MOVE_BODY_SLAM, 48)
-		case 6: setmoveandprice(MOVE_ROCK_SLIDE, 48)
-		case 7: setmoveandprice(MOVE_COUNTER, 48)
-		case 8: setmoveandprice(MOVE_THUNDER_WAVE, 48)
-		case 9: setmoveandprice(MOVE_SWORDS_DANCE, 48)
+		case 0: setmoveandprice(MOVE_DOUBLE_EDGE, 36)
+		case 1: setmoveandprice(MOVE_FLARE_BLITZ, 36)
+		case 2: setmoveandprice(MOVE_WILD_CHARGE, 36)
+		case 3: setmoveandprice(MOVE_WAVE_CRASH, 36)
+		case 4: setmoveandprice(MOVE_FROST_CHARGE, 36)
+		case 5: setmoveandprice(MOVE_BRAVE_BIRD, 36)
+		case 6: setmoveandprice(MOVE_HEADLONG_RUSH, 36)
+		case 7: setmoveandprice(MOVE_BOULDER_RUSH, 36)
+		case 8: setmoveandprice(MOVE_DRAGON_RUSH, 36)
+		case 9: setmoveandprice(MOVE_ADAMANT_ASSAULT, 36)
         case 10:
         case MULTI_B_PRESSED:
 			goto(BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect)
@@ -64,17 +64,21 @@ script BattleFrontier_Lounge7_EventScript_RightTutorMoveSelection {
 	special(ShowScrollableMultichoice)
     copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
     switch (var(VAR_RESULT)) {
-        case 0: setmoveandprice(MOVE_DEFENSE_CURL, 16)
-        case 1: setmoveandprice(MOVE_SNORE, 24)
-        case 2: setmoveandprice(MOVE_MUD_SLAP, 24)
-        case 3: setmoveandprice(MOVE_SWIFT, 24)
-        case 4: setmoveandprice(MOVE_ICY_WIND, 24)
-        case 5: setmoveandprice(MOVE_ENDURE, 48)
-        case 6: setmoveandprice(MOVE_PSYCH_UP, 48)
-        case 7: setmoveandprice(MOVE_ICE_PUNCH, 48)
-        case 8: setmoveandprice(MOVE_THUNDER_PUNCH, 48)
-        case 9: setmoveandprice(MOVE_FIRE_PUNCH, 48)
-        case 10:
+		case 0: setmoveandprice(MOVE_OVERHEAT, 36)
+		case 1: setmoveandprice(MOVE_OVERLOAD, 36)
+		case 2: setmoveandprice(MOVE_LEAF_STORM, 36)
+		case 3: setmoveandprice(MOVE_BLIZZARD, 36)
+		case 4: setmoveandprice(MOVE_FOCUS_BLAST, 36)
+		case 5: setmoveandprice(MOVE_GUNK_SHOT, 36)
+		case 6: setmoveandprice(MOVE_EARTHQUAKE, 36)
+		case 7: setmoveandprice(MOVE_HURRICANE, 36)
+		case 8: setmoveandprice(MOVE_FORCE_OF_WILL, 36)
+		case 9: setmoveandprice(MOVE_METEOR_SHOWER, 36)
+		case 10: setmoveandprice(MOVE_DRACO_METEOR, 36)
+		case 11: setmoveandprice(MOVE_BLOOD_MOON, 36)
+		case 12: setmoveandprice(MOVE_LUSTER_PURGE, 36)
+		case 13: setmoveandprice(MOVE_FLEUR_CANNON, 36)
+        case 14:
         case MULTI_B_PRESSED: 
 			goto(BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect)
 			end
@@ -103,41 +107,32 @@ script BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection {
     buffernumberstring(STR_VAR_2, VAR_EXCHANGE_PRICE)
     msgbox(BattleFrontier_Lounge7_Text_MoveWillBeXBattlePoints, MSGBOX_YESNO)
     if (var(VAR_RESULT) == NO) {
-        goto(BattleFrontier_Lounge7_EventScript_ChooseNewMove)
+        message(BattleFrontier_Lounge7_Text_TeachWhichMove)
+		waitmessage
+		setvar(VAR_0x8006, 1)
+		if (var(VAR_TEMP_FRONTIER_TUTOR_ID) == 0) {
+			goto(BattleFrontier_Lounge7_EventScript_LeftTutorMoveSelection)
+		}
+		goto(BattleFrontier_Lounge7_EventScript_RightTutorMoveSelection)
     }
     if (specialvar(VAR_TEMP_1, GetFrontierBattlePoints) >= VAR_EXCHANGE_PRICE) {
-		goto(BattleFrontier_Lounge7_EventScript_TeachTutorMove)
+		msgbox(BattleFrontier_Lounge7_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT)
+		fadescreen(FADE_TO_BLACK)
+		special(CloseBattlePointsWindow)
+		special(CloseBattleFrontierTutorWindow)
+		chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+		waitstate
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(BattleFrontier_Lounge7_Text_YouDontWantTo, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox(BattleFrontier_Lounge7_Text_IllTakeBattlePoints, MSGBOX_DEFAULT)
+		copyvar(VAR_0x8004, VAR_EXCHANGE_PRICE)
+		special(TakeFrontierBattlePoints)
+		release_end
 	}
     msgbox(BattleFrontier_Lounge7_Text_HaventGotEnoughPoints, MSGBOX_DEFAULT)
-    goto(BattleFrontier_Lounge7_EventScript_ChooseNewMove)
-    end
-}
-
-script BattleFrontier_Lounge7_EventScript_TeachTutorMove {
-    msgbox(BattleFrontier_Lounge7_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT)
-    fadescreen(FADE_TO_BLACK)
-    special(CloseBattlePointsWindow)
-    special(CloseBattleFrontierTutorWindow)
-    chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
-    waitstate
-    if (var(VAR_RESULT) == FALSE) {
-        msgbox(BattleFrontier_Lounge7_Text_YouDontWantTo, MSGBOX_DEFAULT)
-    	release_end
-    }
-    msgbox(BattleFrontier_Lounge7_Text_IllTakeBattlePoints, MSGBOX_DEFAULT)
-    copyvar(VAR_0x8004, VAR_EXCHANGE_PRICE)
-    special(TakeFrontierBattlePoints)
-    release_end
-}
-
-script BattleFrontier_Lounge7_EventScript_ChooseNewMove {
-    message(BattleFrontier_Lounge7_Text_TeachWhichMove)
-	waitmessage
-	setvar(VAR_0x8006, 1)
-	if (var(VAR_TEMP_FRONTIER_TUTOR_ID) == 0) {
-		goto(BattleFrontier_Lounge7_EventScript_LeftTutorMoveSelection)
-    }
-    goto(BattleFrontier_Lounge7_EventScript_RightTutorMoveSelection)
+    goto(BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect)
     end
 }
 
@@ -277,122 +272,147 @@ text BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful {
 	Time is so cruel…"
 }
 
-text BattleFrontier_Lounge7_Text_SoftboiledDesc {
-	"Recovers up to\n"
-	"half the user's\n"
-	"maximum HP."
+text BattleFrontier_Lounge7_Text_DoubleEdgeDesc {
+	"A Normal-type\n"
+	"move with high\n"
+	"power and recoil."
 }
 
-text BattleFrontier_Lounge7_Text_SeismicTossDesc {
-	"Inflicts damage\n"
-	"identical to the\n"
-	"user's level."
+text BattleFrontier_Lounge7_Text_FlareBlitzDesc {
+	"A Fire-type move\n"
+	"with high power\n"
+	"and high recoil."
 }
 
-text BattleFrontier_Lounge7_Text_DreamEaterDesc {
-	"Recovers half the\n"
-	"damage inflicted\n"
-	"on a sleeping foe."
+text BattleFrontier_Lounge7_Text_WildChargeDesc {
+	"An Electric move\n"
+	"with high power\n"
+	"but high recoil."
 }
 
-text BattleFrontier_Lounge7_Text_MegaPunchDesc {
-	"A strong punch\n"
-	"thrown with\n"
-	"incredible power."
+text BattleFrontier_Lounge7_Text_WaveCrashDesc {
+	"A Water-type\n"
+	"move with high\n"
+	"power and recoil."
 }
 
-text BattleFrontier_Lounge7_Text_MegaKickDesc {
-	"An extremely\n"
-	"powerful kick with\n"
-	"intense force."
+text BattleFrontier_Lounge7_Text_FrostChargeDesc {
+	"A Ice-type move\n"
+	"with high power\n"
+	"and high recoil."
 }
 
-text BattleFrontier_Lounge7_Text_BodySlamDesc {
-	"A full-body slam\n"
-	"that may cause\n"
-	"paralysis."
+text BattleFrontier_Lounge7_Text_BraveBirdDesc {
+	"A Flying move\n"
+	"with high power\n"
+	"but high recoil."
 }
 
-text BattleFrontier_Lounge7_Text_RockSlideDesc {
-	"Large boulders\n"
-	"are hurled. May\n"
-	"cause flinching."
+text BattleFrontier_Lounge7_Text_HeadRamDesc {
+	"A Ground move\n"
+	"with high power\n"
+	"but high recoil."
 }
 
-text BattleFrontier_Lounge7_Text_CounterDesc {
-	"Retaliates any\n"
-	"physical hit with\n"
-	"double the power."
+text BattleFrontier_Lounge7_Text_BoulderRushDesc {
+	"A Rock-type\n"
+	"move with high\n"
+	"power and recoil."
 }
 
-text BattleFrontier_Lounge7_Text_ThunderWaveDesc {
-	"A weak jolt of\n"
-	"electricity that\n"
-	"paralyzes the foe."
+text BattleFrontier_Lounge7_Text_DragonRushDesc {
+	"A Dragon move\n"
+	"with high power\n"
+	"but high recoil."
 }
 
-text BattleFrontier_Lounge7_Text_SwordsDanceDesc {
-	"A fighting dance\n"
-	"that sharply\n"
-	"raises ATTACK."
+text BattleFrontier_Lounge7_Text_AdamantAssaultDesc {
+	"A Steel-type\n"
+	"move with high\n"
+	"power and recoil."
 }
 
-text BattleFrontier_Lounge7_Text_DefenseCurlDesc {
-	"Curls up to con-\n"
-	"ceal weak spots\n"
-	"and raise DEFENSE."
+text BattleFrontier_Lounge7_Text_OverheatDesc {
+	"A Fire-type move\n"
+	"with great power.\n"
+	"Weakens user."
 }
 
-text BattleFrontier_Lounge7_Text_SnoreDesc {
-	"A loud attack\n"
-	"that can be used\n"
-	"only while asleep."
+text BattleFrontier_Lounge7_Text_OverloadDesc {
+	"An Electric move\n"
+	"with great power.\n"
+	"Weakens user."
 }
 
-text BattleFrontier_Lounge7_Text_MudSlapDesc {
-	"Hurls mud in the\n"
-	"foe's face to re-\n"
-	"duce its accuracy."
+text BattleFrontier_Lounge7_Text_LeafStormDesc {
+	"A Grass-type move\n"
+	"with great power.\n"
+	"Weakens user."
 }
 
-text BattleFrontier_Lounge7_Text_SwiftDesc {
-	"Sprays star-\n"
-	"shaped rays\n"
-	"that never miss."
+text BattleFrontier_Lounge7_Text_BlizzardDesc {
+	"An Ice-type move\n"
+	"with great power.\n"
+	"Weakens user."
 }
 
-text BattleFrontier_Lounge7_Text_IcyWindDesc {
-	"A chilling attack\n"
-	"that lowers the\n"
-	"foe's SPEED."
+text BattleFrontier_Lounge7_Text_FocusBlastDesc {
+	"A Fighting move\n"
+	"with high power.\n"
+	"Weakens user."
 }
 
-text BattleFrontier_Lounge7_Text_EndureDesc {
-	"Endures any at-\n"
-	"tack for 1 turn,\n"
-	"leaving 1HP."
+text BattleFrontier_Lounge7_Text_GunkShotDesc {
+	"A Poison move\n"
+	"with high power.\n"
+	"Weakens user."
 }
 
-text BattleFrontier_Lounge7_Text_PsychUpDesc {
-	"Copies the foe's\n"
-	"effect(s) and\n"
-	"gives to the user."
+text BattleFrontier_Lounge7_Text_EarthquakeDesc {
+	"A Ground move\n"
+	"with great power.\n"
+	"Weakens user."
 }
 
-text BattleFrontier_Lounge7_Text_IcePunchDesc {
-	"An icy punch\n"
-	"that may\n"
-	"freeze the foe."
+text BattleFrontier_Lounge7_Text_HurricaneDesc {
+	"A Wind move\n"
+	"with great power.\n"
+	"Weakens user."
 }
 
-text BattleFrontier_Lounge7_Text_ThunderPunchDesc {
-	"An electrified\n"
-	"punch that may\n"
-	"paralyze the foe."
+text BattleFrontier_Lounge7_Text_BloodMoonDesc {
+	"A Dark move\n"
+	"with great power.\n"
+	"Weakens user."
 }
 
-text BattleFrontier_Lounge7_Text_FirePunchDesc {
-	"A fiery punch\n"
-	"that may burn\n"
-	"the foe."
+text BattleFrontier_Lounge7_Text_ForceofWillDesc {
+	"A Psychic move\n"
+	"with great power.\n"
+	"Weakens user."
 }
+
+text BattleFrontier_Lounge7_Text_DracoMeteorDesc {
+	"A Dragon move\n"
+	"with great power.\n"
+	"Weakens user."
+}
+
+text BattleFrontier_Lounge7_Text_MeteorShowerDesc {
+	"A Rock-type move\n"
+	"with great power.\n"
+	"Weakens user."
+}
+
+text BattleFrontier_Lounge7_Text_LusterPurgeDesc {
+	"A Steel move\n"
+	"that hits all.\n"
+	"Weakens user."
+}
+
+text BattleFrontier_Lounge7_Text_FleurCannonDesc {
+	"A Fairy move\n"
+	"with great power.\n"
+	"Weakens user."
+}
+

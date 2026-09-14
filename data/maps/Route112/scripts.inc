@@ -132,11 +132,11 @@ Route112_EventScript_Hiker::
 	end
 
 
-Route112_EventScript_Brice::
+Route112_EventScript_Bryce::
 # 84 "data/maps/Route112/scripts.pory"
-	trainerbattle_single TRAINER_BRICE, Route112_Text_BriceIntro, Route112_Text_BriceDefeat
+	trainerbattle_single TRAINER_BRYCE, Route112_Text_BryceIntro, Route112_Text_BryceDefeat
 # 85 "data/maps/Route112/scripts.pory"
-	msgbox Route112_Text_BricePostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route112_Text_BrycePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -187,11 +187,11 @@ Route112_EventScript_Carol::
 	end
 
 
-Route112_EventScript_Bryant::
+Route112_EventScript_Carlos::
 # 121 "data/maps/Route112/scripts.pory"
-	trainerbattle_single TRAINER_BRYANT, Route112_Text_BryantIntro, Route112_Text_BryantDefeat
+	trainerbattle_single TRAINER_CARLOS, Route112_Text_CarlosIntro, Route112_Text_CarlosDefeat
 # 122 "data/maps/Route112/scripts.pory"
-	msgbox Route112_Text_BryantPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route112_Text_CarlosPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 

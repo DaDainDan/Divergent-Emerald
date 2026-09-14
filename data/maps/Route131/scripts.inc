@@ -5,7 +5,7 @@ Route131_MapScripts::
 
 Route131_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/Route131/scripts.pory"
-	compare VAR_SOOTOPOLIS_CITY_STATE, 4
+	compare VAR_SOOTOPOLIS_CITY_STATE, 5
 	goto_if_ge Route131_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
 Route131_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 6 "data/maps/Route131/scripts.pory"

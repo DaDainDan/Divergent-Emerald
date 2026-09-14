@@ -423,7 +423,7 @@ text BattleFrontier_BattlePalaceBattleRoom_Text_ReadyForPalaceMaven {
 
 text BattleFrontier_BattlePalaceBattleRoom_Text_AnnounceArrivalOfSpenser {
 	"Let great fanfare announce the arrival
-	of the PALACE MAVEN, SPENSER!"
+	of the PALACE MAVEN, IBRAHIM!"
 }
 
 text BattleFrontier_BattlePalaceBattleRoom_Text_SpenserFirstIntro {

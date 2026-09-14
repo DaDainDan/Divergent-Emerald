@@ -2,31 +2,41 @@ MauvilleCity_House1_MapScripts::
 	.byte 0
 
 
-MauvilleCity_House1_EventScript_RockSmashDude::
+MauvilleCity_House1_EventScript_ReceivedRockSmash::
 # 4 "data/maps/MauvilleCity_House1/scripts.pory"
-	lock_faceplayer
-# 5 "data/maps/MauvilleCity_House1/scripts.pory"
-	goto_if_set FLAG_RECEIVED_HM_ROCK_SMASH, MauvilleCity_House1_EventScript_RockSmashDude_2
-# 9 "data/maps/MauvilleCity_House1/scripts.pory"
-	msgbox MauvilleCity_House1_Text_ImRockSmashDudeTakeThis, MSGBOX_DEFAULT
-# 10 "data/maps/MauvilleCity_House1/scripts.pory"
-	giveitem ITEM_HM_ROCK_SMASH
-# 11 "data/maps/MauvilleCity_House1/scripts.pory"
-	setflag FLAG_RECEIVED_HM_ROCK_SMASH
-# 12 "data/maps/MauvilleCity_House1/scripts.pory"
-	setflag FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY
-# 13 "data/maps/MauvilleCity_House1/scripts.pory"
-	msgbox MauvilleCity_House1_Text_ExplainRockSmash, MSGBOX_DEFAULT
-	release_end
-
-MauvilleCity_House1_EventScript_RockSmashDude_2:
-# 6 "data/maps/MauvilleCity_House1/scripts.pory"
 	msgbox MauvilleCity_House1_Text_MonCanFlyOutOfSmashedRock, MSGBOX_DEFAULT
 	release_end
 
 
-MauvilleCity_House1_Text_ImRockSmashDudeTakeThis::
+MauvilleCity_House1_EventScript_ProtectDude::
+# 9 "data/maps/MauvilleCity_House1/scripts.pory"
+	lock_faceplayer
+# 10 "data/maps/MauvilleCity_House1/scripts.pory"
+	message gText_HowMayIServeYou
+# 11 "data/maps/MauvilleCity_House1/scripts.pory"
+	waitmessage
+# 12 "data/maps/MauvilleCity_House1/scripts.pory"
+	pokemart MauvilleCity_House1_ProtectTMs
+# 13 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release_end
+
+
+	.align 2
 # 17 "data/maps/MauvilleCity_House1/scripts.pory"
+MauvilleCity_House1_ProtectTMs:
+# 18 "data/maps/MauvilleCity_House1/scripts.pory"
+	.2byte ITEM_TM_ENDURE
+# 19 "data/maps/MauvilleCity_House1/scripts.pory"
+	.2byte ITEM_TM_BLOCK_NEW
+# 20 "data/maps/MauvilleCity_House1/scripts.pory"
+	.2byte ITEM_TM_PROTECT
+# 21 "data/maps/MauvilleCity_House1/scripts.pory"
+	.2byte ITEM_TM_FEINT
+	.2byte ITEM_NONE
+
+MauvilleCity_House1_Text_ImRockSmashDudeTakeThis::
+# 24 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "Woohoo!\p"
 	.string "I hear people call me the ROCK SMASH\n"
 	.string "GUY, but I find that sort of degrading.\p"
@@ -39,7 +49,7 @@ MauvilleCity_House1_Text_ImRockSmashDudeTakeThis::
 	.string "Here, take this HIDDEN MACHINE!$"
 
 MauvilleCity_House1_Text_ExplainRockSmash::
-# 35 "data/maps/MauvilleCity_House1/scripts.pory"
+# 42 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "That HM contains ROCK SMASH.\p"
 	.string "If you come across large boulders\n"
 	.string "that block your path…\p"
@@ -49,7 +59,7 @@ MauvilleCity_House1_Text_ExplainRockSmash::
 	.string "Woohoo!$"
 
 MauvilleCity_House1_Text_MonCanFlyOutOfSmashedRock::
-# 48 "data/maps/MauvilleCity_House1/scripts.pory"
+# 55 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "Oh, yes, if you smash a rock, a POKéMON\n"
 	.string "could come flying out of hiding.\p"
 	.string "Woohoo!$"

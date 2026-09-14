@@ -57,7 +57,7 @@ FortreeCity_House4_EventScript_Boy_9:
 FortreeCity_House4_EventScript_Boy_10:
 # 17 "data/maps/FortreeCity_House4/scripts.pory"
 	msgbox FortreeCity_House4_Text_WelcomeWingullTakeMentalHerb, MSGBOX_DEFAULT
-	giveitem ITEM_MENTAL_HERB
+	giveitem ITEM_STRANGE_SOUVENIR
 # 0 "data/maps/FortreeCity_House4/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq FortreeCity_House4_EventScript_Boy_16

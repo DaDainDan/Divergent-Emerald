@@ -4,9 +4,12 @@ mapscripts PetalburgCity_MapScripts {
 		switch(var(VAR_PETALBURG_CITY_STATE)) {
 			case 0: setobjectxyperm(LOCALID_GYM_BOY, 5, 15)
 			case 2:
-			case 4:
+			case 6:
 				setflag(FLAG_HIDE_MAP_NAME_POPUP)
 				savebgm(MUS_FOLLOW_ME)
+            case 4:
+				setobjectxyperm(LOCALID_PETALBURG_WALLY, 17, 6)
+				setobjectmovementtype(LOCALID_PETALBURG_WALLY, MOVEMENT_TYPE_FACE_DOWN)
 		}
 		if (var(VAR_PETALBURG_GYM_STATE) == 8) {
 			setvar(VAR_PETALBURG_GYM_STATE, 7)
@@ -15,7 +18,7 @@ mapscripts PetalburgCity_MapScripts {
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_PETALBURG_CITY_STATE, 2: PetalburgCity_EventScript_WallyTutorial
-    	VAR_PETALBURG_CITY_STATE, 4: PetalburgCity_EventScript_WalkToWallyHouse
+    	VAR_PETALBURG_CITY_STATE, 6: PetalburgCity_EventScript_WalkToWallyHouse
     ]
 }
 
@@ -38,6 +41,7 @@ script PetalburgCity_EventScript_WallyTutorial {
     fadedefaultbgm
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     special(LoadPlayerParty)
+    setvar(VAR_BRINEY_HOUSE_STATE, 1)
     setvar(VAR_PETALBURG_GYM_STATE, 1)
     warp(MAP_PETALBURG_CITY_GYM, 4, 108)
     waitstate
@@ -182,16 +186,16 @@ script PetalburgCity_EventScript_ShowGymToPlayer {
     closemessage
 	switch (var(VAR_0x8008)) {
 		case 0:
-			applymovement(LOCALID_GYM_BOY, moves(walk_right * 7,  walk_up,  walk_up * 6))
+			applymovement(LOCALID_GYM_BOY, moves(walk_right * 7,  walk_up * 7))
     		applymovement(LOCALID_PLAYER, moves(walk_down,  walk_right * 7,  walk_up * 6,  walk_right,  walk_up))
 		case 1:
 			applymovement(LOCALID_GYM_BOY, moves(walk_down,  walk_right * 7,  walk_up * 6,  walk_right,  walk_up * 2))
 			applymovement(LOCALID_PLAYER, moves(delay_16 * 2,  walk_down,  walk_right * 6,  walk_up * 6,  walk_right,  walk_up,  walk_right,  walk_up))
 		case 2:
-			applymovement(LOCALID_GYM_BOY, moves(walk_right * 7,  walk_up,  walk_up * 6))
+			applymovement(LOCALID_GYM_BOY, moves(walk_right * 7,  walk_up * 7))
 			applymovement(LOCALID_PLAYER, moves(walk_up,  walk_right * 7,  walk_up * 6,  walk_right,  walk_up))
 		case 3:
-			applymovement(LOCALID_GYM_BOY, moves(walk_right * 7,  walk_up * 2,  walk_up * 6))
+			applymovement(LOCALID_GYM_BOY, moves(walk_right * 7,  walk_up * 8))
 			applymovement(LOCALID_PLAYER, moves(walk_up,  walk_right * 7,  walk_up * 7,  walk_right,  walk_up))
 	}
 	waitmovement(0)
@@ -298,6 +302,117 @@ script PetalburgCity_EventScript_Scott {
 script PetalburgCity_EventScript_GymBoy {
     msgbox(PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_NPC)
     end
+}
+
+script PetalburgCity_EventScript_WallyBattle1 {
+	lockall
+	setvar(VAR_0x8008, 1)
+	goto(PetalburgCity_EventScript_WallyBattle)
+	end
+}
+
+script PetalburgCity_EventScript_WallyBattle2 {
+	lockall
+	setvar(VAR_0x8008, 2)
+	goto(PetalburgCity_EventScript_WallyBattle)
+	end
+}
+
+script PetalburgCity_EventScript_WallyBattle3 {
+	lockall
+	setvar(VAR_0x8008, 3)
+	goto(PetalburgCity_EventScript_WallyBattle)
+	end
+}
+
+script PetalburgCity_EventScript_WallyBattle {
+	lockall
+	opendoor(17, 6)
+	waitdooranim
+	addobject(LOCALID_PETALBURG_WALLY)
+	applymovement(LOCALID_PETALBURG_WALLY, Common_Movement_WalkDown)
+	waitmovement(0)
+	closedoor(12, 15)
+	waitdooranim
+	if (var(VAR_0x8008) == 1) {
+		applymovement(LOCALID_PETALBURG_WALLY, Common_Movement_StepFasterLeft)
+		waitmovement(0)
+	}
+	elif (var(VAR_0x8008) == 3) {
+		applymovement(LOCALID_PETALBURG_WALLY, Common_Movement_StepFasterRight)
+		waitmovement(0)
+	}
+	playse(SE_PIN)
+	applymovement(LOCALID_PETALBURG_WALLY, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement(LOCALID_PETALBURG_WALLY, Common_Movement_Delay48)
+	waitmovement(0)
+	switch (var(VAR_0x8008)) {
+		case 1: applymovement(LOCALID_PLAYER, Common_Movement_StepFasterRight)
+		case 2: applymovement(LOCALID_PLAYER, Common_Movement_StepFasterUp)
+		case 3: applymovement(LOCALID_PLAYER, Common_Movement_StepFasterLeft)
+	}
+	waitmovement(0)
+	if (flag(FLAG_WALLY_DRIVE)) {
+		msgbox("!!!", MSGBOX_DEFAULT)
+	}
+	else {
+		msgbox("\.", MSGBOX_DEFAULT)
+	}
+	closemessage
+	switch (var(VAR_0x8008)) {
+		case 1: applymovement(LOCALID_PLAYER, moves(walk_left,  walk_down * 2,  walk_left, walk_down, step_faster_right))
+		case 2: applymovement(LOCALID_PLAYER, moves(walk_left,  walk_down,  walk_left * 2, walk_down, step_faster_right))
+		case 3: applymovement(LOCALID_PLAYER, moves(walk_down * 4,  walk_left * 4,  walk_up,  step_faster_right))
+	}
+	applymovement(LOCALID_PETALBURG_WALLY, moves(walk_down * 3,  step_faster_left))
+	waitmovement(0)
+	if (flag(FLAG_WALLY_DRIVE)) {
+		msgbox("!!!", MSGBOX_DEFAULT)
+	}
+	else {
+		msgbox("\.", MSGBOX_DEFAULT)
+	}
+	closemessage
+	applymovement(LOCALID_PETALBURG_WALLY, moves(walk_left))
+	applymovement(LOCALID_PLAYER, moves(walk_right))
+	waitmovement(0)
+	if (flag(FLAG_WALLY_DRIVE)) {
+		trainerbattle_no_intro(TRAINER_WALLY_PETALBURG_DRIVE, "No way, I lost.")
+		msgbox("!!!", MSGBOX_DEFAULT)
+	}
+	else {
+		trainerbattle_no_intro(TRAINER_WALLY_PETALBURG_BOND, "Just as strong as always.")
+		msgbox("\.", MSGBOX_DEFAULT)
+	}
+	setvar(VAR_WALLY_CALL_STEP_COUNTER, 0)
+	setflag(FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL)
+	releaseall
+	end
+}
+
+script PetalburgCity_EventScript_GuardSpirit {
+	lock_faceplayer
+	msgbox("You are approaching the entrance to
+			Petalburg Dojo's Path of Spirit.
+			
+			I'm afraid you are not strong enough
+			to attempt this challenge.
+			
+			Come back with more experience.", MSGBOX_DEFAULT)
+	release_end
+}
+
+script PetalburgCity_EventScript_GuardStrength {
+	lock_faceplayer
+	msgbox("You are approaching the entrance to
+			Petalburg Dojo's Path of Power.
+			
+			I'm afraid you are not strong enough
+			to attempt this challenge.
+			
+			Come back with more experience.", MSGBOX_DEFAULT)
+	release_end
 }
 
 text PetalburgCity_Text_WhereIsWally {

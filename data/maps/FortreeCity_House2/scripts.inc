@@ -36,7 +36,7 @@ FortreeCity_House2_EventScript_HiddenPowerGiver_10:
 FortreeCity_House2_EventScript_HiddenPowerGiver_13:
 # 28 "data/maps/FortreeCity_House2/scripts.pory"
 	msgbox FortreeCity_House2_Text_YourHiddenPowerHasAwoken, MSGBOX_DEFAULT
-	giveitem ITEM_TM_HIDDEN_POWER
+	giveitem ITEM_TM_TRICK
 # 0 "data/maps/FortreeCity_House2/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq FortreeCity_House2_EventScript_HiddenPowerGiver_17

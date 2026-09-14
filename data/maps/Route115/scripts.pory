@@ -33,7 +33,22 @@ script Route115_WildSet1Trigger {
 }
 
 script Route115_EventScript_Woman {
-    msgbox(Route115_Text_NeverKnowWhenCavePokemonWillAppear, MSGBOX_NPC)
+    lock_faceplayer
+    if (flag(FLAG_RECEIVED_TM_REJUVENATE)) {
+        msgbox(Route115_Text_NeverKnowWhenCavePokemonWillAppear, MSGBOX_NPC)
+        release_end
+    }
+    msgbox(Route115_Text_KeepYourPokemonHealthy, MSGBOX_NPC)
+    if (giveitem(ITEM_TM_REFRESH) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    setflag(FLAG_RECEIVED_TM_REJUVENATE)
+    release_end
+}
+
+script Route115_EventScript_Raymond {
+    trainerbattle_single(TRAINER_RAYMOND, Route115_Text_RaymondIntro, Route115_Text_RaymondDefeat)
+    msgbox(Route115_Text_RaymondPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -72,22 +87,22 @@ script Route115_EventScript_Koichi {
     end
 }
 
-script Route115_EventScript_Nob {
-    trainerbattle_single(TRAINER_NOB_1, Route115_Text_NobIntro, Route115_Text_NobDefeat, Route115_EventScript_RegisterNob)
+script Route115_EventScript_Oscar {
+    trainerbattle_single(TRAINER_OSCAR_1, Route115_Text_OscarIntro, Route115_Text_OscarDefeat, Route115_EventScript_RegisterOscar)
     if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
-        trainerbattle_rematch(TRAINER_NOB_1, Route115_Text_NobRematchIntro, Route115_Text_NobRematchDefeat)
-		msgbox(Route115_Text_NobPostRematch, MSGBOX_AUTOCLOSE)
+        trainerbattle_rematch(TRAINER_OSCAR_1, Route115_Text_OscarRematchIntro, Route115_Text_OscarRematchDefeat)
+		msgbox(Route115_Text_OscarPostRematch, MSGBOX_AUTOCLOSE)
 		end
     }
-    msgbox(Route115_Text_NobPostBattle, MSGBOX_DEFAULT)
+    msgbox(Route115_Text_OscarPostBattle, MSGBOX_DEFAULT)
     release_end
 }
 
-script Route115_EventScript_RegisterNob {
+script Route115_EventScript_RegisterOscar {
     special(PlayerFaceTrainerAfterBattle)
     waitmovement(0)
-    msgbox(Route115_Text_NobRegister, MSGBOX_DEFAULT)
-    register_matchcall(TRAINER_NOB_1)
+    msgbox(Route115_Text_OscarRegister, MSGBOX_DEFAULT)
+    register_matchcall(TRAINER_OSCAR_1)
     release_end
 }
 
@@ -128,9 +143,9 @@ script Route115_EventScript_Jaiden {
     end
 }
 
-script Route115_EventScript_Alix {
-    trainerbattle_single(TRAINER_ALIX, Route115_Text_AlixIntro, Route115_Text_AlixDefeat)
-    msgbox(Route115_Text_AlixPostBattle, MSGBOX_AUTOCLOSE)
+script Route115_EventScript_Amber {
+    trainerbattle_single(TRAINER_AMBER, Route115_Text_AmberIntro, Route115_Text_AmberDefeat)
+    msgbox(Route115_Text_AmberPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -140,18 +155,11 @@ script Route115_EventScript_Helene {
     end
 }
 
-script Route115_EventScript_Marlene {
-    trainerbattle_single(TRAINER_MARLENE, Route115_Text_MarleneIntro, Route115_Text_MarleneDefeat)
-    msgbox(Route115_Text_MarlenePostBattle, MSGBOX_AUTOCLOSE)
-    end
-}
-
 text Route115_Text_NeverKnowWhenCavePokemonWillAppear {
-	"Exploring a cave isn't like walking
-	on a road.
+	"Be sure to use that TM a lot!
 
-	You never know when wild POKéMON will
-	appear. It's full of suspense."
+	Staying hydrated is important for
+	people and POKéMON!"
 }
 
 text Route115_Text_RouteSignRustboro {
@@ -162,4 +170,14 @@ text Route115_Text_RouteSignRustboro {
 text Route115_Text_MeteorFallsSign {
 	"METEOR FALLS
 	FALLARBOR TOWN THROUGH HERE"
+}
+
+text Route115_Text_KeepYourPokemonHealthy {
+	"Water is the source of life.
+
+	Certain POKéMON can use it to restore
+	their health and fortitude.
+
+	You can teach them how with this
+	technical machine."
 }

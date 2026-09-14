@@ -55,11 +55,11 @@ Route126_EventScript_Leonardo::
 	end
 
 
-Route126_EventScript_Isobel::
+Route126_EventScript_Eva::
 # 41 "data/maps/Route126/scripts.pory"
-	trainerbattle_single TRAINER_ISOBEL, Route126_Text_IsobelIntro, Route126_Text_IsobelDefeat
+	trainerbattle_single TRAINER_EVA, Route126_Text_EvaIntro, Route126_Text_EvaDefeat
 # 42 "data/maps/Route126/scripts.pory"
-	msgbox Route126_Text_IsobelPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route126_Text_EvaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 

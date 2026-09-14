@@ -1,6 +1,6 @@
 mapscripts Route130_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 4 && flag(FLAG_SYS_WEATHER_CTRL)) {
+        if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 5 && flag(FLAG_SYS_WEATHER_CTRL)) {
 			call(Common_EventScript_SetAbnormalWeather)
 		}
 		if (specialvar(VAR_RESULT, IsMirageIslandPresent) == TRUE) {
@@ -28,8 +28,20 @@ mapscripts Route130_MapScripts {
     }
 }
 
-script(local) Route130_OnTransition {
-    
+script Route130_EventScript_MeadowLady {
+	lock_faceplayer
+	if (!(flag(FLAG_RECEIVED_TM_PETAL_DANCE))) {
+		msgbox("Greetings.", MSGBOX_DEFAULT)
+		if (giveitem(ITEM_TM_PETAL_DANCE) == FALSE) {
+        	call(Common_EventScript_ShowBagIsFull)
+        } else {
+			setflag(FLAG_RECEIVED_TM_PETAL_DANCE)
+			msgbox("You are gay.", MSGBOX_DEFAULT)
+		}
+	} else {
+		msgbox("I love you!", MSGBOX_DEFAULT)
+	}
+	release_end
 }
 
 script Route130_EventScript_Rodney {

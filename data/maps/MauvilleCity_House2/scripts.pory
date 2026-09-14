@@ -7,59 +7,54 @@ script MauvilleCity_House2_EventScript_Woman {
     	release_end
     }
     msgbox(MauvilleCity_House2_Text_BuyHarborMailAtSlateport, MSGBOX_DEFAULT)
-    if (checkitem(ITEM_HARBOR_MAIL) == TRUE) {
-		goto(MauvilleCity_House2_EventScript_AskToTradeForHarborMail)
+    if (checkmoney(1200) == TRUE) {
+		msgbox(MauvilleCity_House2_Text_TradeHarborMailForCoinCase, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			msgbox(MauvilleCity_House2_Text_IllTradeYouCoinCase, MSGBOX_DEFAULT)
+			if (giveitem(ITEM_COIN_CASE) == FALSE) {
+				goto(Common_EventScript_ShowBagIsFull)
+			}
+			removemoney(1200)
+			setflag(FLAG_RECEIVED_COIN_CASE)
+			msgbox(MauvilleCity_House2_Text_UseCoinCaseAtGameCorner, MSGBOX_DEFAULT)
+		} else {
+			msgbox(MauvilleCity_House2_Text_ThatsDisappointing, MSGBOX_DEFAULT)
+		}
 	}
     release_end
 }
 
-script MauvilleCity_House2_EventScript_AskToTradeForHarborMail {
-    playse(SE_PIN)
-    applymovement(VAR_LAST_TALKED, Common_Movement_ExclamationMark)
-    waitmovement(0)
-    applymovement(VAR_LAST_TALKED, Common_Movement_Delay48)
-    waitmovement(0)
-    msgbox(MauvilleCity_House2_Text_TradeHarborMailForCoinCase, MSGBOX_YESNO)
-    if (var(VAR_RESULT) == YES) {
-        msgbox(MauvilleCity_House2_Text_IllTradeYouCoinCase, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_COIN_CASE) == FALSE) {
-			goto(Common_EventScript_ShowBagIsFull)
-		}
-		removeitem(ITEM_HARBOR_MAIL)
-		setflag(FLAG_RECEIVED_COIN_CASE)
-		msgbox(MauvilleCity_House2_Text_UseCoinCaseAtGameCorner, MSGBOX_DEFAULT)
-    } else {
-        msgbox(MauvilleCity_House2_Text_ThatsDisappointing, MSGBOX_DEFAULT)
-    }
-    release_end
-}
-
 text MauvilleCity_House2_Text_BuyHarborMailAtSlateport {
-	"If I had a BIKE, it'd be easy to cycle to
-	SLATEPORT for some shopping.
+	"My husband has a huge gambling problem.
 
-	I'd be able to buy HARBOR MAIL at the
-	POKéMON MART in SLATEPORT…"
+	I'd be willing to sell you his COIN CASE
+	at a massive discount if you wanted."
 }
 
 text MauvilleCity_House2_Text_TradeHarborMailForCoinCase {
-	"Oh! You have HARBOR MAIL?
-	Will you trade it for a COIN CASE?"
+	"Okay, so you're interested?
+	That'd really be a lifesaver!
+
+	What would you say to ¥1200?"
 }
 
 text MauvilleCity_House2_Text_IllTradeYouCoinCase {
-	"Oh, I'm so happy!
-	Okay, I'll trade you a COIN CASE!"
+	"Wonderful!
+	Okay, here's the COIN CASE!"
 }
 
 text MauvilleCity_House2_Text_UseCoinCaseAtGameCorner {
-	"That COIN CASE can be used
-	at the GAME CORNER."
+	"You can use that COIN CASE at the GAME
+	CORNER, but I'd be careful if I were you.
+
+	It's really easy to get addicted and
+	throw away a bunch of time and money."
 }
 
 text MauvilleCity_House2_Text_ThatsDisappointing {
 	"Oh, that's disappointing.
+	I really thought that was a steal.
 
-	A COIN CASE is needed for the
-	GAME CORNER."
+	Would you at least put the word out
+	that I'm trying to sell this thing?"
 }

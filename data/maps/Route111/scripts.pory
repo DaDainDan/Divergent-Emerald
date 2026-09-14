@@ -122,7 +122,7 @@ script Route111_EventScript_Girl {
     	release_end
     }
     msgbox(Route111_Text_WateredPlantsEveryDayTakeBerry, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_RAZZ_BERRY) == FALSE) {
+    if (giveitem(ITEM_LUM_BERRY) == FALSE) {
 		goto(Common_EventScript_ShowBagIsFull)
 	}
     setflag(FLAG_DAILY_ROUTE_111_RECEIVED_BERRY)
@@ -362,6 +362,20 @@ script Route111_EventScript_RockSmashTipFatMan {
     end
 }
 
+script Route111_EventScript_GogglesHiker {
+    lock_faceplayer
+    if (flag(FLAG_RECEIVED_SAFETY_GOGGLES)) {
+        msgbox(Route111_Text_ShouldBeGood, MSGBOX_DEFAULT)
+        release_end
+    }
+    msgbox(Route111_Text_ProtectFromAsh, MSGBOX_DEFAULT)
+    if (giveitem(ITEM_SAFETY_GOGGLES) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    setflag(FLAG_RECEIVED_SAFETY_GOGGLES)
+    release_end
+}
+
 script Route111_EventScript_Drew {
     trainerbattle_single(TRAINER_DREW, Route111_Text_DrewIntro, Route111_Text_DrewDefeat)
     msgbox(Route111_Text_DrewPostBattle, MSGBOX_AUTOCLOSE)
@@ -375,8 +389,18 @@ script Route111_EventScript_Heidi {
 }
 
 script Route111_EventScript_Beau {
-    trainerbattle_single(TRAINER_BEAU, Route111_Text_BeauIntro, Route111_Text_BeauDefeat)
+    trainerbattle_single(TRAINER_BEAU, Route111_Text_BeauIntro, Route111_Text_BeauDefeat, Route111_EventScript_Beau_GiveHyperVoice)
+    if (!flag(FLAG_RECEIVED_TM_HYPER_VOICE)) {
+        goto(Route111_EventScript_Beau_GiveHyperVoice)
+    }
     msgbox(Route111_Text_BeauPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route111_EventScript_Beau_GiveHyperVoice {
+    msgbox(Route111_Text_TeachYodelling, MSGBOX_DEFAULT)
+    giveitem(ITEM_TM_HYPER_VOICE)
+    setflag(FLAG_RECEIVED_TM_HYPER_VOICE)
     end
 }
 
@@ -418,8 +442,18 @@ script Route111_EventScript_Irene {
 }
 
 script Route111_EventScript_Daisuke {
-    trainerbattle_single(TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat)
+    trainerbattle_single(TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat, Route111_EventScript_Daisuke_GiveBlackBelt)
+    if (!flag(FLAG_RECEIVED_BLACK_BELT)) {
+        goto(Route111_EventScript_Daisuke_GiveBlackBelt)
+    }
     msgbox(Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route111_EventScript_Daisuke_GiveBlackBelt {
+    msgbox(Route111_Text_TalentedFighter, MSGBOX_DEFAULT)
+    giveitem(ITEM_BLACK_BELT)
+    setflag(FLAG_RECEIVED_BLACK_BELT)
     end
 }
 
@@ -462,8 +496,18 @@ script Route111_EventScript_RegisterBrooke {
 }
 
 script Route111_EventScript_Hayden {
-    trainerbattle_single(TRAINER_HAYDEN, Route111_Text_HaydenIntro, Route111_Text_HaydenDefeat)
+    trainerbattle_single(TRAINER_HAYDEN, Route111_Text_HaydenIntro, Route111_Text_HaydenDefeat, Route111_EventScript_Hayden_GiveTaunt)
+    if (!flag(FLAG_RECEIVED_TM_TAUNT)) {
+        goto(Route111_EventScript_Hayden_GiveTaunt)
+    }
     msgbox(Route111_Text_HaydenPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route111_EventScript_Hayden_GiveTaunt {
+    msgbox(Route111_Text_TauntAdvice, MSGBOX_DEFAULT)
+    giveitem(ITEM_TM_TAUNT)
+    setflag(FLAG_RECEIVED_TM_TAUNT)
     end
 }
 
@@ -497,9 +541,9 @@ script Route111_EventScript_Bryan {
     end
 }
 
-script Route111_EventScript_Branden {
-    trainerbattle_single(TRAINER_BRANDEN, Route111_Text_BrandenIntro, Route111_Text_BrandenDefeat)
-    msgbox(Route111_Text_BrandenPostBattle, MSGBOX_AUTOCLOSE)
+script Route111_EventScript_Brayden {
+    trainerbattle_single(TRAINER_BRAYDEN, Route111_Text_BraydenIntro, Route111_Text_BraydenDefeat)
+    msgbox(Route111_Text_BraydenPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -710,4 +754,42 @@ text Route111_Text_TrainerHillSign {
 
 	“Scale the heights, you hot-blooded
 	TRAINERS!”"
+}
+
+text Route111_Text_TeachYodelling {
+	"You've got some spunk.
+	I think you could be a proper yodeler.
+
+	You could learn how with this TM."
+}
+
+text Route111_Text_TauntAdvice {
+	"My taunts rolled off you pretty good,
+	but not everyone is that level-headed.
+
+	If you use this TM correctly, you can
+	completely throw an enemy off-guard."
+}
+
+text Route111_Text_TalentedFighter {
+	"You are clearly a talented fighter...
+
+	I've lost the right to wear this,
+	so you should have it."
+}
+
+text Route111_Text_ProtectFromAsh {
+	"Watch out going ahead to ROUTE 113.
+
+	The ashes from Mt. Chimney can get in
+	your eyes without proper protection.
+
+	You should put these on before you go."
+}
+
+text Route111_Text_ShouldBeGood {
+	"You can keep those googles if you want.
+
+	It's no skin off my back, really.
+	I travel with plenty of backups."
 }

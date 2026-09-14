@@ -7,7 +7,7 @@ script DewfordTown_House2_EventScript_Man {
     	release_end
     }
     msgbox(DewfordTown_House2_Text_WantYouToHaveSilkScarf, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_SILK_SCARF) == FALSE) {
+    if (giveitem(ITEM_PUNCHING_GLOVE) == FALSE) {
         msgbox(DewfordTown_House2_Text_NoRoom, MSGBOX_DEFAULT)
     } else {
 		setflag(FLAG_RECEIVED_SILK_SCARF)

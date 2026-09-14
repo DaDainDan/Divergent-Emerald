@@ -3,6 +3,9 @@ mapscripts Route116_MapScripts {
         if (flag(FLAG_RECOVERED_DEVON_GOODS)) {
 			setobjectxyperm(LOCALID_ROUTE116_WANDAS_BF, 38, 10)
 		}
+		if (var(VAR_ROUTE116_STATE) == 1) {
+			clearflag(FLAG_HIDE_ROUTE_116_MAGMA_GRUNT)
+		}
 		if (var(VAR_SHOULD_END_ABNORMAL_WEATHER) == 1) {
 			call(AbnormalWeather_EventScript_HideMapNamePopup)
 		}
@@ -53,11 +56,10 @@ script Route116_EventScript_DevonEmployee {
 
 script Route116_EventScript_GiveRepeatBall {
     setflag(FLAG_MET_DEVON_EMPLOYEE)
-    giveitem(ITEM_REPEAT_BALL)
-    if (var(VAR_RESULT) == FALSE) {
-        msgbox(Route116_Text_BagIsJamPacked, MSGBOX_DEFAULT)
+    if (giveitem(ITEM_AMULET_COIN) == FALSE) {
+		msgbox(Route116_Text_BagIsJamPacked, MSGBOX_DEFAULT)
     	release_end
-    }
+	}
     msgbox(Route116_Text_NewBallAvailableAtMart, MSGBOX_DEFAULT)
     closemessage
 	if (var(VAR_FACING) == DIR_EAST) {
@@ -104,7 +106,7 @@ script Route116_EventScript_Briney {
     release_end
 }
 
-script Route116_EventScript_BrineyTrigger {
+script Route116_EventScript_BrineyTriggerOld {
     lockall
     applymovement(LOCALID_ROUTE116_BRINEY, Common_Movement_StepFasterRight)
     applymovement(LOCALID_PLAYER, Common_Movement_StepFasterLeft)
@@ -115,9 +117,28 @@ script Route116_EventScript_BrineyTrigger {
     end
 }
 
+script Route116_EventScript_BrineyTrigger {
+	lockall
+	special(SpawnCameraObject)
+	applymovement(LOCALID_CAMERA, moves(walk_right * 3))
+	waitmovement(0)
+	msgbox(Route116_Text_IveGotYouNow, MSGBOX_DEFAULT)
+	closemessage
+	applymovement(LOCALID_ROUTE116_MAGMA, moves(walk_up * 3,  delay_8))
+	waitmovement(0)
+	playse(SE_EXIT)
+	removeobject(LOCALID_ROUTE116_MAGMA)
+	applymovement(LOCALID_CAMERA, moves(walk_left * 3))
+	waitmovement(0)
+	special(RemoveCameraObject)
+	setvar(VAR_ROUTE116_STATE, 2)
+	releaseall
+	end
+}
+
 script Route116_EventScript_GlassesMan {
     lock_faceplayer
-    if (checkitem(ITEM_BLACK_GLASSES) == TRUE) {
+    if (checkitem(ITEM_WISE_GLASSES) == TRUE) {
         msgbox(Route116_Text_CanYouHelpMeFindGlasses, MSGBOX_DEFAULT)
 		msgbox(Route116_Text_MayISeeThoseGlasses, MSGBOX_DEFAULT)
 		if (specialvar(VAR_RESULT, FoundBlackGlasses) == TRUE) {
@@ -146,6 +167,7 @@ script Route116_EventScript_GlassesManExit {
 	} else {
 		applymovement(VAR_LAST_TALKED, moves(walk_left * 9))
 	}
+	waitmovement(0)
     removeobject(VAR_LAST_TALKED)
     release_end
 }
@@ -162,31 +184,39 @@ script Route116_EventScript_Jose {
     end
 }
 
-script Route116_EventScript_Jerry {
-    trainerbattle_single(TRAINER_JERRY_1, Route116_Text_JerryIntro, Route116_Text_JerryDefeat, Route116_EventScript_TryRegisterJerryAfterBattle)
+script Route116_EventScript_Nicole {
+    trainerbattle_single(TRAINER_NICOLE_1, Route116_Text_NicoleIntro, Route116_Text_NicoleDefeat, Route116_EventScript_TryRegisterNicoleAfterBattle)
     if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
-        trainerbattle_rematch(TRAINER_JERRY_1, Route116_Text_JerryRematchIntro, Route116_Text_JerryRematchDefeat)
-		msgbox(Route116_Text_JerryPostRematch, MSGBOX_AUTOCLOSE)
+        trainerbattle_rematch(TRAINER_NICOLE_1, Route116_Text_NicoleRematchIntro, Route116_Text_NicoleRematchDefeat)
+		msgbox(Route116_Text_NicolePostRematch, MSGBOX_AUTOCLOSE)
 		end
     }
-    setvar(VAR_0x8004, TRAINER_JERRY_1)
+    setvar(VAR_0x8004, TRAINER_NICOLE_1)
     if (flag(FLAG_HAS_MATCH_CALL) && specialvar(VAR_RESULT, IsTrainerRegistered) == FALSE) {
-		msgbox(Route116_Text_JerryRegister1, MSGBOX_DEFAULT)
-		register_matchcall(TRAINER_JERRY_1)
+		msgbox(Route116_Text_NicoleRegister1, MSGBOX_DEFAULT)
+		register_matchcall(TRAINER_NICOLE_1)
 		release_end
     }
-    msgbox(Route116_Text_JerryPostBattle, MSGBOX_DEFAULT)
+    msgbox(Route116_Text_NicolePostBattle, MSGBOX_DEFAULT)
     release_end
 }
 
-script Route116_EventScript_TryRegisterJerryAfterBattle {
+script Route116_EventScript_TryRegisterNicoleAfterBattle {
     if (flag(FLAG_HAS_MATCH_CALL)) {
         special(PlayerFaceTrainerAfterBattle)
 		waitmovement(0)
-		msgbox(Route116_Text_JerryRegister2, MSGBOX_DEFAULT)
-		register_matchcall(TRAINER_JERRY_1)
+		msgbox(Route116_Text_NicoleRegister2, MSGBOX_DEFAULT)
+		register_matchcall(TRAINER_NICOLE_1)
     }
     release_end
+}
+
+// Unused
+script Route116_EventScript_Nicole_GiveFakeTears {
+	msgbox(Route116_Text_FeminineAdvantage, MSGBOX_DEFAULT)
+	giveitem(ITEM_TM_FAKE_TEARS)
+	setflag(FLAG_RECEIVED_TM_FAKE_TEARS)
+	release_end
 }
 
 script Route116_EventScript_Clark {
@@ -262,6 +292,11 @@ text Route116_Text_ScoundrelMadeOffWithPeeko {
 	darling PEEKO!
 
 	Wrrrooooooaaaar! PEEKO!"
+}
+
+text Route116_Text_IveGotYouNow {
+	"So predictable\.
+	Like taking candy from a baby."
 }
 
 text Route116_Text_WantToDigTunnel {
@@ -412,4 +447,14 @@ text Route116_Text_TrainerTipsBagHasPockets {
 
 	No TRAINER can afford to be without
 	a BAG of their own."
+}
+
+text Route116_Text_FeminineAdvantage {
+	"It takes quite the spine to be unfazed
+	by my fake crying routine.
+
+	A woman's tears can be an excellent
+	tool when wield properly.
+
+	Here is a TM to teach you how."
 }

@@ -21,7 +21,7 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesigner_1:
 LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesigner_2:
 # 6 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
 	msgbox LilycoveCity_CoveLilyMotel_2F_Text_ShowMeCompletedDex, MSGBOX_DEFAULT
-	specialvar VAR_RESULT, HasAllHoennMons
+	specialvar VAR_RESULT, HasAllMons
 # 0 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesigner_4

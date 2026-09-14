@@ -168,7 +168,7 @@ script SSTidalCorridor_EventScript_Sailor {
     if (flag(FLAG_DEFEATED_SS_TIDAL_TRAINERS)) {
         msgbox(SSTidalCorridor_Text_EnjoyYourCruise, MSGBOX_DEFAULT)
     }
-    elif (defeated(TRAINER_PHILLIP) && defeated(TRAINER_LEONARD) && defeated(TRAINER_COLTON) 
+    elif (defeated(TRAINER_COLBY) && defeated(TRAINER_LEONARD) && defeated(TRAINER_COLTON) 
 	 && defeated(TRAINER_MICAH) && defeated(TRAINER_THOMAS) && defeated(TRAINER_LEA_AND_JED) 
 	 && defeated(TRAINER_GARRET) && defeated(TRAINER_NAOMI)) {
         setflag(FLAG_DEFEATED_SS_TIDAL_TRAINERS)

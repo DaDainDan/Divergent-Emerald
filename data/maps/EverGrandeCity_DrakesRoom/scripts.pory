@@ -27,6 +27,21 @@ mapscripts EverGrandeCity_DrakesRoom_MapScripts {
 
 script EverGrandeCity_DrakesRoom_EventScript_Drake {
     lock_faceplayer
+	if (flag(FLAG_SYS_GAME_CLEAR)) {
+		if (!flag(FLAG_DEFEATED_ELITE_4_DRAKE)) {
+			playbgm(MUS_ENCOUNTER_ELITE_FOUR, FALSE)
+			msgbox(EverGrandeCity_DrakesRoom_Text_IntroSpeechRematch, MSGBOX_DEFAULT)
+			specialvar(VAR_RESULT, GetEliteFourRematch)
+			switch (var(VAR_RESULT)) {
+				case 0: trainerbattle_no_intro(TRAINER_DRAKE_3, EverGrandeCity_DrakesRoom_Text_DefeatRematch)
+				case 1: trainerbattle_no_intro(TRAINER_DRAKE_2, EverGrandeCity_DrakesRoom_Text_DefeatRematch)
+			}
+			setflag(FLAG_DEFEATED_ELITE_4_DRAKE)
+			call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles)
+		}
+		msgbox(EverGrandeCity_DrakesRoom_Text_PostRematchSpeech, MSGBOX_DEFAULT)
+		release_end
+    }
     if (!flag(FLAG_DEFEATED_ELITE_4_DRAKE)) {
         playbgm(MUS_ENCOUNTER_ELITE_FOUR, FALSE)
 		msgbox(EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT)
@@ -64,6 +79,48 @@ text EverGrandeCity_DrakesRoom_Text_Defeat {
 }
 
 text EverGrandeCity_DrakesRoom_Text_PostBattleSpeech {
+	"You deserve every credit for coming
+	this far as a TRAINER of POKéMON.
+
+	You do seem to know what is needed.
+
+	Yes, what a TRAINER needs is a
+	virtuous heart.
+
+	POKéMON touch the good hearts of
+	TRAINERS and learn good from wrong.
+
+	They touch the good hearts of
+	TRAINERS and grow strong.
+
+	Go! Go onwards!
+	The CHAMPION is waiting!"
+}
+
+text EverGrandeCity_DrakesRoom_Text_IntroSpeechRematch {
+	"I am the last of the POKéMON LEAGUE
+	ELITE FOUR, DRAKE the DRAGON master!
+
+	In their natural state, POKéMON are
+	wild living things. They are free.
+
+	At times, they hinder us.
+	At times, they help us.
+
+	For us to battle with POKéMON as
+	partners, do you know what it takes?
+
+	Do you know what is needed?
+
+	If you don't, then you will never
+	prevail over me!"
+}
+
+text EverGrandeCity_DrakesRoom_Text_DefeatRematch {
+	"Superb, it should be said."
+}
+
+text EverGrandeCity_DrakesRoom_Text_PostRematchSpeech {
 	"You deserve every credit for coming
 	this far as a TRAINER of POKéMON.
 

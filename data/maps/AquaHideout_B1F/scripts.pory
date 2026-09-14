@@ -19,7 +19,7 @@ mapscripts AquaHideout_B1F_MapScripts {
 }
 
 script AquaHideout_B1F_EventScript_ElectrodeBattle {
-	setwildbattle(SPECIES_ELECTRODE, 30)
+	setwildbattle(SPECIES_ELECTRODE, 80)
     waitse
     playmoncry(SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER)
     delay(40)

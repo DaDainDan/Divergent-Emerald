@@ -46,6 +46,76 @@ script LilycoveCity_CoveLilyMotel_1F_EventScript_BlockingTV {
     release_end
 }
 
+script LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor {
+	lock_faceplayer
+	if (!flag(FLAG_MET_LILYCOVE_GRAB_TUTOR)) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		setflag(FLAG_MET_LILYCOVE_GRAB_TUTOR)
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_C, SCROLL_MULTI_GRAB_MOVE_TUTOR)
+	setvar(VAR_0x8006, 0)
+	goto(LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove)
+	end
+}
+
+script LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove {
+	setvar(VAR_0x8004, SCROLL_MULTI_GRAB_MOVE_TUTOR)
+	special(ShowScrollableMultichoice)
+	copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0: setvar(VAR_0x8005, MOVE_CRUSH_GRIP)
+		case 1: setvar(VAR_0x8005, MOVE_BURNING_GRASP)
+		case 2: setvar(VAR_0x8005, MOVE_LIGHTNING_GRASP)
+		case 3: setvar(VAR_0x8005, MOVE_GLACIAL_GRASP)
+		case 4: setvar(VAR_0x8005, MOVE_PUTRID_GRASP)
+		case 5: setvar(VAR_0x8005, MOVE_DARK_GRASP)
+		case 6:
+		case MULTI_B_PRESSED:
+			goto(LilycoveCity_CoveLilyMotel_1F_EventScript_ExitTutorMoveSelect)
+	}
+	goto(LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection)
+	end
+}
+
+script LilycoveCity_CoveLilyMotel_1F_EventScript_ExitTutorMoveSelect {
+	special(CloseBattleFrontierTutorWindow) 
+	msgbox(LilycoveCity_CoveLilyMotel_1F_Text_DeclineTutor, MSGBOX_DEFAULT)
+	release_end
+}
+
+script LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection {
+	special(BufferBattleFrontierTutorMoveName)
+	msgbox("\.", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		message("\.")
+		waitmessage
+		setvar(VAR_0x8006, 1)
+		goto(LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove)
+	}
+	if (checkitem(ITEM_BLUE_SHARD) == TRUE) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		fadescreen(FADE_TO_BLACK)
+		special(CloseBattleFrontierTutorWindow)
+		chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+		waitstate
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(LilycoveCity_CoveLilyMotel_1F_Text_DeclineTutor, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox("\.", MSGBOX_DEFAULT)
+		removeitem(ITEM_BLUE_SHARD, 1)
+		release_end
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	goto(LilycoveCity_CoveLilyMotel_1F_EventScript_ExitTutorMoveSelect)
+	end
+}
+
+text LilycoveCity_CoveLilyMotel_1F_Text_DeclineTutor {
+	"\."
+}
+
 text LilycoveCity_CoveLilyMotel_1F_Text_GuestsDoubledByMascot {
 	"Hm, so they doubled the guests by
 	using POKéMON as attractions?
@@ -119,3 +189,40 @@ text LilycoveCity_CoveLilyMotel_1F_Text_BetterGetWorkingOnGuestsDinner {
 	Uh-oh, I'd better get working on
 	their dinner!"
 }
+
+text LilycoveCity_CoveLilyMotel_1F_Text_CrushGripDesc {
+	"A powerful grab\n"
+	"that can lower the\n"
+	"foe's Defense."
+}
+
+text LilycoveCity_CoveLilyMotel_1F_Text_BurningGraspDesc {
+	"A grab with fiery\n"
+	"hands that can\n"
+	"cause burn."
+}
+
+text LilycoveCity_CoveLilyMotel_1F_Text_LightningGraspDesc {
+	"A grab with hands\n"
+	"of electricity.\n"
+	"Can paralyze."
+}
+
+text LilycoveCity_CoveLilyMotel_1F_Text_GlacialGraspDesc {
+	"A grab with icy\n"
+	"hands that can\n"
+	"cause frost."
+}
+
+text LilycoveCity_CoveLilyMotel_1F_Text_PutridGraspDesc {
+	"A grab with toxic\n"
+	"hands that can\n"
+	"cause poison."
+}
+
+text LilycoveCity_CoveLilyMotel_1F_Text_DarkGraspDesc {
+	"A grab with evil\n"
+	"hands that can\n"
+	"lower Sp. Def."
+}
+

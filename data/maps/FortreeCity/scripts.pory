@@ -1,9 +1,15 @@
 mapscripts FortreeCity_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_VISITED_FORTREE_CITY)
+		if (!flag(FLAG_KECLEON_FLED_FORTREE)) {
+			clearflag(FLAG_HIDE_FORTREE_CITY_KECLEON)
+		}
     	end
     }
     MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_SYS_CTRL_OBJ_DELETE) && specialvar(VAR_RESULT, GetBattleOutcome) == B_OUTCOME_CAUGHT) {
+			removeobject(VAR_LAST_TALKED)
+		}
         setstepcallback(STEP_CB_FORTREE_BRIDGE)
     	end
     }
@@ -56,26 +62,117 @@ script FortreeCity_EventScript_GymSign {
 
 script FortreeCity_EventScript_Kecleon {
     lock_faceplayer
-    if (checkitem(ITEM_DEVON_SCOPE) == TRUE) {
-        msgbox(FortreeCity_Text_UnseeableUseDevonScope, MSGBOX_YESNO)
-		if (var(VAR_RESULT) == YES) {
-			msgbox(FortreeCity_Text_UsedDevonScopePokemonFled, MSGBOX_DEFAULT)
-			closemessage
-			applymovement(VAR_LAST_TALKED, Movement_KecleonAppears)
-			waitmovement(0)
-			waitse
-			playmoncry(SPECIES_KECLEON, CRY_MODE_ENCOUNTER)
-			delay(40)
-			waitmoncry
-			applymovement(VAR_LAST_TALKED, Common_Movement_WalkRight)
-			waitmovement(0)
-			removeobject(VAR_LAST_TALKED)
-			setflag(FLAG_KECLEON_FLED_FORTREE)
+    msgbox(FortreeCity_Text_UnseeableUseDevonScope, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		msgbox(FortreeCity_Text_UsedDevonScopePokemonFled, MSGBOX_DEFAULT)
+		closemessage
+		applymovement(VAR_LAST_TALKED, Movement_KecleonAppears)
+		waitmovement(0)
+		waitse
+		playmoncry(SPECIES_KECLEON, CRY_MODE_ENCOUNTER)
+		delay(40)
+		waitmoncry
+		setwildbattle(SPECIES_KECLEON, 40, ITEM_SITRUS_BERRY, SPECIES_KECLEON, 40, ITEM_WIKI_BERRY)
+		setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+		dowildbattle
+		clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+		setflag(FLAG_KECLEON_FLED_FORTREE)
+		specialvar(VAR_RESULT, GetBattleOutcome)
+		if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_RAN 
+		|| var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED) {
+			goto(Common_EventScript_RemoveStaticPokemon)
 		}
-    } else {
-		msgbox(FortreeCity_Text_SomethingUnseeable, MSGBOX_DEFAULT)
 	}
     release_end
+}
+
+script FortreeCity_EventScript_NinjaBoyMerchant {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(FortreeCity_NinjaTMs)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
+
+mart FortreeCity_NinjaTMs {
+    ITEM_TM_PURSUIT
+    ITEM_TM_KNOCK_OFF
+    ITEM_TM_ACID_SPRAY
+    ITEM_TM_AGILITY
+}
+
+script FortreeCity_EventScript_MoveTutor {
+	lock_faceplayer
+	if (!flag(FLAG_MET_FORTREE_NINJA_TUTOR)) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		setflag(FLAG_MET_FORTREE_NINJA_TUTOR)
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_C, SCROLL_MULTI_SIDE_STATUS_MOVE_TUTOR)
+	setvar(VAR_0x8006, 0)
+	goto(FortreeCity_EventScript_ChooseSideStatusMove)
+	end
+}
+
+script FortreeCity_EventScript_ChooseSideStatusMove {
+	setvar(VAR_0x8004, SCROLL_MULTI_SIDE_STATUS_MOVE_TUTOR)
+	special(ShowScrollableMultichoice)
+	copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0: setvar(VAR_0x8005, MOVE_STEALTH_ROCK)
+		case 1: setvar(VAR_0x8005, MOVE_SPIKES)
+		case 2: setvar(VAR_0x8005, MOVE_TOXIC_SPIKES)
+		case 3: setvar(VAR_0x8005, MOVE_ICE_SHARDS)
+		case 4: setvar(VAR_0x8005, MOVE_BOOBY_TRAP)
+		case 5: setvar(VAR_0x8005, MOVE_BARRIER)
+		case 6: setvar(VAR_0x8005, MOVE_LIGHT_SCREEN)
+		case 7: setvar(VAR_0x8005, MOVE_REFLECT)
+		case 8: setvar(VAR_0x8005, MOVE_AURORA_VEIL)
+		case 9:
+		case MULTI_B_PRESSED:
+			goto(FortreeCity_EventScript_ExitTutorMoveSelect)
+	}
+	goto(FortreeCity_EventScript_ConfirmMoveSelection)
+	end
+}
+
+script FortreeCity_EventScript_ExitTutorMoveSelect {
+	special(CloseBattleFrontierTutorWindow) 
+	msgbox(FortreeCity_Text_DeclineTutor, MSGBOX_DEFAULT)
+	release_end
+}
+
+script FortreeCity_EventScript_ConfirmMoveSelection {
+	special(BufferBattleFrontierTutorMoveName)
+	msgbox("\.", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		message("\.")
+		waitmessage
+		setvar(VAR_0x8006, 1)
+		goto(FortreeCity_EventScript_ChooseSideStatusMove)
+	}
+	if (checkitem(ITEM_GREEN_SHARD) == TRUE) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		fadescreen(FADE_TO_BLACK)
+		special(CloseBattleFrontierTutorWindow)
+		chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+		waitstate
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(FortreeCity_Text_DeclineTutor, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox("\.", MSGBOX_DEFAULT)
+		removeitem(ITEM_GREEN_SHARD, 1)
+		release_end
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	goto(FortreeCity_EventScript_ExitTutorMoveSelect)
+	end
+}
+
+text FortreeCity_Text_DeclineTutor {
+	"\."
 }
 
 text FortreeCity_Text_SawGiganticPokemonInSky {
@@ -143,16 +240,17 @@ text FortreeCity_Text_SomethingUnseeable {
 text FortreeCity_Text_UnseeableUseDevonScope {
 	"Something unseeable is in the way.
 
-	Want to use the DEVON SCOPE?"
+	Are you sure you want to disturb it?"
 }
 
 text FortreeCity_Text_UsedDevonScopePokemonFled {
-	"{PLAYER} used the DEVON SCOPE.
+	"{PLAYER} prodded the invisible 
+	obstacle.
 
-	An invisible POKéMON became completely
-	visible!
+	Two invisible POKéMON revealed
+	themselves.
 
-	The startled POKéMON fled!"
+	The startled POKéMON attacked!"
 }
 
 text FortreeCity_Text_CitySign {
@@ -167,4 +265,58 @@ text FortreeCity_Text_GymSign {
 
 	“The bird user taking flight into
 	the world.”"
+}
+
+text FortreeCity_Text_StealthRockDesc {
+	"Sets sharp stones\n"
+	"on the foe's field.\n"
+	"Damages on entry."
+}
+
+text FortreeCity_Text_SpikesDesc {
+	"Sets caltrops on\n"
+	"the foe's field.\n"
+	"Damages on entry."
+}
+
+text FortreeCity_Text_ToxicSpikesDesc {
+	"Sets toxic spikes\n"
+	"on the foe's field.\n"
+	"Poisons on entry."
+}
+
+text FortreeCity_Text_IceShardsDesc {
+	"Sets ice spikes\n"
+	"on the foe's field.\n"
+	"Damages on entry."
+}
+
+text FortreeCity_Text_BoobyTrapDesc {
+	"Sets a trap on\n"
+	"the foe's field.\n"
+	"Snares next foe."
+}
+
+text FortreeCity_Text_BarrierDesc {
+	"Sets up a magic\n"
+	"barrier to lower\n"
+	"damage to allies."
+}
+
+text FortreeCity_Text_LightScreenDesc {
+	"Sets up a barrier\n"
+	"to greatly lower\n"
+	"special damage."
+}
+
+text FortreeCity_Text_ReflectDesc {
+	"Sets up a barrier\n"
+	"to greatly lower\n"
+	"physical damage."
+}
+
+text FortreeCity_Text_AuroraVeilDesc {
+	"Sets up a barrier\n"
+	"to greatly lower\n"
+	"damage in snow."
 }

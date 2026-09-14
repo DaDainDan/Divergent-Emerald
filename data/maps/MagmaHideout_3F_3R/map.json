@@ -3,7 +3,6 @@
   "name": "MagmaHideout_3F_3R",
   "layout": "LAYOUT_MAGMA_HIDEOUT_3F_3R",
   "music": "MUS_RG_POKE_MANSION",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_MAGMA_HIDEOUT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -26,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_ESCAPE_ROPE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MAGMA_HIDEOUT_3F_3R_ECAPE_ROPE"
+      "flag": "FLAG_ITEM_MAGMA_HIDEOUT_3F_3R_ESCAPE_ROPE"
     }
   ],
   "warp_events": [
@@ -46,5 +45,6 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "region": "REGION_HOENN"
 }

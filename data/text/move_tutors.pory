@@ -4,77 +4,72 @@ text MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce {
 }
 
 text MoveTutor_Text_SwaggerTeach {
-	"Heh! My POKéMON totally rules!
-	It's cooler than any POKéMON!
+	"As a POKéfan, I really don't like hurting
+	POKéMON when I go to catch them.
 
-	I was lipping off with a swagger in
-	my step like that when the CHAIRMAN
-	chewed me out.
+	It is a necessity however, so I
+	developed a technique to inflict as 
+	little pain as possible.
 
-	That took the swagger out of my step.
-
-	If you'd like, I'll teach the move
-	SWAGGER to a POKéMON of yours."
+	Want me to teach your POKéMON how?"
 }
 
 text MoveTutor_Text_SwaggerDeclined {
-	"What, no? Can't you get into
-	the spirit of things?"
+	"What do you just like to hurt POKéMON
+	or something?
+
+	You should try being a better person."
 }
 
 text MoveTutor_Text_SwaggerWhichMon {
-	"All right, which POKéMON wants to
-	learn how to SWAGGER?"
+	"Wow, you're such a good person like me.
+	Which POKéMON should I do first?"
 }
 
 text MoveTutor_Text_SwaggerTaught {
-	"I'll just praise my POKéMON from now
-	on without the swagger."
+	"Good luck, catching more POKéMON and
+	battling other trainers with them!"
 }
 
 text MoveTutor_Text_RolloutTeach {
-	"Did you know that you can go from
-	here a long way in that direction
-	without changing direction?
+	"What are you looking at, huh?
 
-	I might even be able to roll
-	that way.
+	It's because I'm fat, is that it?
 
-	Do you think your POKéMON will
-	want to roll, too?
+	You know animals fatten up before
+	hibernating for a reason!
 
-	I can teach one the move ROLLOUT
-	if you'd like."
+	You know what, I can teach you and your
+	POKéMON a thing or two if you want?"
 }
 
 text MoveTutor_Text_RolloutDeclined {
-	"You don't need to be shy about it.
-	Let's roll!"
+	"That's just what I'd expect from a skin
+	and bones loser like you!"
 }
 
 text MoveTutor_Text_RolloutWhichMon {
-	"Ehehe, sure thing! It'd be great if
-	the POKéMON looked like me."
+	"Glad to see you're learning tolerance.
+	Which one should I teach, then?"
 }
 
 text MoveTutor_Text_RolloutTaught {
-	"Rolling around in the grass makes me
-	happy. Come on, let's roll!"
+	"That should help your POKéMON, but you
+	should put on some pounds yourself."
 }
 
 text MoveTutor_Text_FuryCutterTeach {
-	"There's a move that gets stronger
-	when you keep using it in a row.
+	"I taught my CHIMCHAR to throw berries
+	at my sister.
 
-	It's a BUG-type move, and it is
-	wickedly cool.
+	It's really funny!
 
-	It's called FURY CUTTER.
-	Want me to teach it to a POKéMON?"
+	If you want, I can teach your POKéMON
+	how to do it too!"
 }
 
 text MoveTutor_Text_FuryCutterDeclined {
-	"We're not on the same wavelength."
+	"You have a lowsy sense of humor..."
 }
 
 text MoveTutor_Text_FuryCutterWhichMon {
@@ -83,72 +78,69 @@ text MoveTutor_Text_FuryCutterWhichMon {
 }
 
 text MoveTutor_Text_FuryCutterTaught {
-	"I get a thrill watching to see if
-	the move keeps hitting in succession!"
+	"Picking the right berry is the first key
+	to success!"
 }
 
-text MoveTutor_Text_MimicTeach {
-	"Ah, young one!
+text MoveTutor_MimicTeach {
+	"Isn't it cool that I can swallow an
+	entire hot dog in a single bite?
 
-	I am also a young one, but I mimic
-	the styles and speech of the elderly
-	folks of this town.
+	I could teach you if you want.
 
-	What do you say, young one?
-	Would you agree to it if I were to
-	offer to teach the move MIMIC?"
+	No, huh?
+	Well, how about I teach one of your
+	POKéMON instead, then?"
 }
 
-text MoveTutor_Text_MimicDeclined {
-	"Oh, boo! I wanted to teach MIMIC
-	to your POKéMON!"
+text MoveTutor_MimicDeclined {
+	"Come on, man. I'm just trying to share
+	my amazing talents with the world..."
 }
 
 text MoveTutor_Text_MimicWhichMon {
-	"Fwofwo! And so I shall!
-	Let me see the POKéMON
-	you wish me to teach."
+	"Nice!
+	Which one are we doing, then?"
 }
 
 text MoveTutor_Text_MimicTaught {
-	"MIMIC is a move of great depth.
+	"Yeah, your POKéMON is already a master!
 
-	Could you execute it to perfection
-	as well as me…?"
+	You could show it off in battle if you
+	had some food stashed."
 }
 
 text MoveTutor_Text_MetronomeTeach {
-	"I want all sorts of things!
-	But I used up my allowance…
+	"What do you want?
+	I'm try to buy some food, here.
 
-	Wouldn't it be nice if there were
-	a spell that made money appear when
-	you waggle a finger?
+	What's that?
+	You're here to buy food as well?
+
+	You're thinking right, kid.
+	The more you eat, the more energy your
+	body can EXPEND.
 
 	If you want, I can teach your POKéMON
-	the move METRONOME.
-
-	Money won't appear, but your POKéMON
-	will waggle a finger. Yes?"
+	how to best EXPEND their energy."
 }
 
 text MoveTutor_Text_MetronomeDeclined {
-	"Okay. I'll be here if you change
-	your mind."
+	"That's a shame.
+	I thought we were on the same page."
 }
 
 text MoveTutor_Text_MetronomeWhichMon {
-	"Okay! I'll teach it!
-	Which POKéMON should I teach?"
+	"Good man!
+	Which POKéMON, then?"
 }
 
 text MoveTutor_Text_MetronomeTaught {
-	"When a POKéMON waggles its finger
-	like a METRONOME, all sorts of nice
-	things happen.
+	"There you go, then.
 
-	Wouldn't it be nice if we could
-	use it, too?"
+	You know, using your POKéMON's energy
+	effectively could be the difference
+	between winning or losing a battle."
 }
 
 text MoveTutor_Text_SleepTalkTeach {

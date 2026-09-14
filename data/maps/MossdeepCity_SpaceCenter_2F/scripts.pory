@@ -37,19 +37,19 @@ script MossdeepCity_SpaceCenter_2F_EventScript_ThreeMagmaGrunts {
 		waitstate
     } else {
 		msgbox(MossdeepCity_SpaceCenter_2F_Text_Grunt5Intro, MSGBOX_DEFAULT)
-		trainerbattle_no_intro(TRAINER_GRUNT_SPACE_CENTER_5, MossdeepCity_SpaceCenter_2F_Text_Grunt5Defeat)
+		trainerbattle_no_intro(TRAINER_GRUNT_SPACE_CENTER_3, MossdeepCity_SpaceCenter_2F_Text_Grunt5Defeat)
 		applymovement(LOCALID_SPACE_CENTER_GRUNT_5, moves(lock_look,  walk_down,  unlock_look))
 		waitmovement(0)
 		applymovement(LOCALID_PLAYER, Common_Movement_StepFasterLeft)
 		waitmovement(0)
 		msgbox(MossdeepCity_SpaceCenter_2F_Text_Grunt6Intro, MSGBOX_DEFAULT)
-		trainerbattle_no_intro(TRAINER_GRUNT_SPACE_CENTER_6, MossdeepCity_SpaceCenter_2F_Text_Grunt6Defeat)
+		trainerbattle_no_intro(TRAINER_GRUNT_SPACE_CENTER_4, MossdeepCity_SpaceCenter_2F_Text_Grunt6Defeat)
 		applymovement(LOCALID_SPACE_CENTER_GRUNT_6, moves(lock_look,  walk_left,  unlock_look))
 		waitmovement(0)
 		applymovement(LOCALID_PLAYER, Common_Movement_StepFasterRight)
 		waitmovement(0)
 		msgbox(MossdeepCity_SpaceCenter_2F_Text_Grunt7Intro, MSGBOX_DEFAULT)
-		trainerbattle_no_intro(TRAINER_GRUNT_SPACE_CENTER_7, MossdeepCity_SpaceCenter_2F_Text_Grunt7Defeat)
+		trainerbattle_no_intro(TRAINER_GRUNT_SPACE_CENTER_5, MossdeepCity_SpaceCenter_2F_Text_Grunt7Defeat)
 		applymovement(LOCALID_SPACE_CENTER_GRUNT_7, moves(lock_look,  walk_right,  unlock_look))
 		waitmovement(0)
 		setvar(VAR_MOSSDEEP_SPACE_CENTER_STATE, 2)
@@ -203,6 +203,7 @@ script MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha {
     delay(20)
     msgbox(MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp, MSGBOX_DEFAULT)
     closemessage
+	giveitem(ITEM_MAGMA_EMBLEM)
     setvar(VAR_MOSSDEEP_CITY_STATE, 3)
     fadedefaultbgm
     fadescreen(FADE_TO_BLACK)

@@ -54,7 +54,7 @@ ShoalCave_LowTideLowerRoom_EventScript_BlackBelt::
 	goto_if_set FLAG_RECEIVED_FOCUS_BAND, ShoalCave_LowTideLowerRoom_EventScript_BlackBelt_2
 # 32 "data/maps/ShoalCave_LowTideLowerRoom/scripts.pory"
 	msgbox ShoalCave_LowTideLowerRoom_Text_CanOvercomeColdWithFocus, MSGBOX_DEFAULT
-	giveitem ITEM_FOCUS_BAND
+	giveitem ITEM_ABILITY_SHIELD
 # 0 "data/maps/ShoalCave_LowTideLowerRoom/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq ShoalCave_LowTideLowerRoom_EventScript_BlackBelt_5

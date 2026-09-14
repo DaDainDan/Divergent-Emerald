@@ -1,17 +1,24 @@
 mapscripts MauvilleCity_House1_MapScripts {}
 
-script MauvilleCity_House1_EventScript_RockSmashDude {
-    lock_faceplayer
-    if (flag(FLAG_RECEIVED_HM_ROCK_SMASH)) {
-        msgbox(MauvilleCity_House1_Text_MonCanFlyOutOfSmashedRock, MSGBOX_DEFAULT)
-    	release_end
-    }
-    msgbox(MauvilleCity_House1_Text_ImRockSmashDudeTakeThis, MSGBOX_DEFAULT)
-    giveitem(ITEM_HM_ROCK_SMASH)
-    setflag(FLAG_RECEIVED_HM_ROCK_SMASH)
-    setflag(FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY)
-    msgbox(MauvilleCity_House1_Text_ExplainRockSmash, MSGBOX_DEFAULT)
+script MauvilleCity_House1_EventScript_ReceivedRockSmash {
+    msgbox(MauvilleCity_House1_Text_MonCanFlyOutOfSmashedRock, MSGBOX_DEFAULT)
     release_end
+}
+
+script MauvilleCity_House1_EventScript_ProtectDude {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(MauvilleCity_House1_ProtectTMs)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
+
+mart MauvilleCity_House1_ProtectTMs {
+    ITEM_TM_ENDURE
+    ITEM_TM_BLOCK_NEW
+    ITEM_TM_PROTECT
+    ITEM_TM_FEINT
 }
 
 text MauvilleCity_House1_Text_ImRockSmashDudeTakeThis {

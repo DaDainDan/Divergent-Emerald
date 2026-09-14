@@ -30,7 +30,7 @@ script ShoalCave_LowTideLowerRoom_EventScript_BlackBelt {
     	release_end
     }
     msgbox(ShoalCave_LowTideLowerRoom_Text_CanOvercomeColdWithFocus, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_FOCUS_BAND) == FALSE) {
+    if (giveitem(ITEM_ABILITY_SHIELD) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     setflag(FLAG_RECEIVED_FOCUS_BAND)

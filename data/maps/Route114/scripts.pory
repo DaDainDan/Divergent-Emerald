@@ -30,7 +30,7 @@ script Route114_EventScript_Man {
     	release_end
     }
     msgbox(Route114_Text_LoveUsingBerryCrushShareBerry, MSGBOX_DEFAULT)
-    giverandomberry(BERRY_ID_RAZZ, BERRY_ID_PINAP)
+    giverandomberry(BERRY_ID_RAZZ, BERRY_ID_TAMATO)
     if (var(VAR_RESULT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
@@ -146,9 +146,9 @@ script Route114_EventScript_Claude {
     end
 }
 
-script Route114_EventScript_Nolan {
-    trainerbattle_single(TRAINER_NOLAN, Route114_Text_NolanIntro, Route114_Text_NolanDefeat)
-    msgbox(Route114_Text_NolanPostBattle, MSGBOX_AUTOCLOSE)
+script Route114_EventScript_Joel {
+    trainerbattle_single(TRAINER_JOEL, Route114_Text_JoelIntro, Route114_Text_JoelDefeat)
+    msgbox(Route114_Text_JoelPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -182,6 +182,80 @@ script Route114_EventScript_Kai {
     end
 }
 
+script Route114_EventScript_MoveTutor {
+	lock_faceplayer
+	if (!flag(FLAG_MET_ROUTE_114_BIDEPAL_TUTOR)) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		setflag(FLAG_MET_ROUTE_114_BIDEPAL_TUTOR)
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_C, SCROLL_MULTI_BIPEDAL_MOVE_TUTOR)
+	setvar(VAR_0x8006, 0)
+	goto(Route114_EventScript_ChooseBipedMove)
+	end
+}
+
+script Route114_EventScript_ChooseBipedMove {
+	setvar(VAR_0x8004, SCROLL_MULTI_BIPEDAL_MOVE_TUTOR)
+	special(ShowScrollableMultichoice)
+	copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0: setvar(VAR_0x8005, MOVE_HEADBUTT)
+		case 1: setvar(VAR_0x8005, MOVE_IRON_HEAD)
+		case 2: setvar(VAR_0x8005, MOVE_RIME_HEAD)
+		case 3: setvar(VAR_0x8005, MOVE_ZEN_HEADBUTT)
+		case 4: setvar(VAR_0x8005, MOVE_AQUA_TAIL)
+		case 5: setvar(VAR_0x8005, MOVE_DRAGON_TAIL)
+		case 6: setvar(VAR_0x8005, MOVE_POISON_TAIL)
+		case 7: setvar(VAR_0x8005, MOVE_IRON_TAIL)
+		case 8: setvar(VAR_0x8005, MOVE_LIGHTNING_TAIL)
+		case 9: setvar(VAR_0x8005, MOVE_TORCH_TAIL)
+		case 10:
+		case MULTI_B_PRESSED:
+			goto(Route114_EventScript_ExitTutorMoveSelect)
+	}
+	goto(Route114_EventScript_ConfirmMoveSelection)
+	end
+}
+
+script Route114_EventScript_ConfirmMoveSelection {
+	special(BufferBattleFrontierTutorMoveName)
+	msgbox("\.", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		message("\.")
+        waitmessage
+        setvar(VAR_0x8006, 1)
+        goto(Route114_EventScript_ChooseBipedMove)
+	}
+	if (checkitem(ITEM_BIG_MUSHROOM) == TRUE) {
+		msgbox("\.", MSGBOX_DEFAULT)
+        fadescreen(FADE_TO_BLACK)
+        special(CloseBattleFrontierTutorWindow)
+        chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+        waitstate
+        if (var(VAR_RESULT) == FALSE) {
+            msgbox(Route114_Text_DeclineTutor, MSGBOX_DEFAULT)
+            release_end
+        }
+        msgbox("\.", MSGBOX_DEFAULT)
+        removeitem(ITEM_BIG_MUSHROOM, 1)
+        release_end
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	goto(Route114_EventScript_ExitTutorMoveSelect)
+	end
+}
+
+script Route114_EventScript_ExitTutorMoveSelect {
+	special(CloseBattleFrontierTutorWindow) 
+	msgbox(Route114_Text_DeclineTutor, MSGBOX_DEFAULT)
+	release_end
+}
+
+text Route114_Text_DeclineTutor {
+	"\."
+}
+
 text Route114_Text_AllMyMonDoesIsRoarTakeThis {
 	"All my POKéMON does is ROAR…
 	No one dares to come near me…
@@ -211,4 +285,64 @@ text Route114_Text_FossilManiacsHouseSign {
 
 text Route114_Text_LanettesHouse {
 	"LANETTE'S HOUSE"
+}
+
+text Route114_Text_HeadbuttDesc {
+	"A slam with one's\n"
+	"head which is\n"
+	"likely to flinch."
+}
+
+text Route114_Text_IronHeadDesc {
+	"A slam with a head\n"
+	"hard as steel.\n"
+	"Likely to flinch."
+}
+
+text Route114_Text_RimeHeadDesc {
+	"A slam with a head\n"
+	"made of ice.\n"
+	"Likely to flinch."
+}
+
+text Route114_Text_ZenHeadbuttDesc {
+	"Charges mind power\n"
+	"to raise Sp. Def.\n"
+	"and headbutt foe."
+}
+
+text Route114_Text_AquaTailDesc {
+	"Slaps the foe with\n"
+	"a tail of water.\n"
+	"Can lower Speed."
+}
+
+text Route114_Text_DragonTailDesc {
+	"Slams the foe with\n"
+	"a draconic tail.\n"
+	"Likely lowers Def."
+}
+
+text Route114_Text_PoisonTailDesc {
+	"Slaps the foe with\n"
+	"a poisonous tail.\n"
+	"Can cause poison."
+}
+
+text Route114_Text_IronTailDesc {
+	"Slams the foe with\n"
+	"a metallic tail.\n"
+	"Can lower Def."
+}
+
+text Route114_Text_LightningTailDesc {
+	"Slaps the foe with\n"
+	"an electrified tail\n"
+	"that can paralyze."
+}
+
+text Route114_Text_TorchTailDesc {
+	"Slaps the foe with\n"
+	"a fiery tail.\n"
+	"Can cause burn."
 }

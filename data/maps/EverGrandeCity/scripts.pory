@@ -3,6 +3,9 @@ mapscripts EverGrandeCity_MapScripts {
         if (flag(FLAG_SYS_WEATHER_CTRL)) {
 			call(Common_EventScript_SetAbnormalWeather)
 		}
+        if (flag(FLAG_HIDE_MIRAGE_ISLAND_MEADOW_LADY)) {
+            clearflag(FLAG_HIDE_EVERGRANDE_CITY_MEADOW_LADY)
+        }
 		end
     }
 }
@@ -26,6 +29,22 @@ script EverGrandeCity_EventScript_SetVisitedEverGrande {
     setflag(FLAG_VISITED_EVER_GRANDE_CITY)
     setvar(VAR_TEMP_1, 1)
     end
+}
+
+script EverGrandeCity_EventScript_MeadowLady {
+	lock_faceplayer
+	if (!(flag(FLAG_RECEIVED_TM_REVIVAL_BLESSING))) {
+		msgbox("Greetings.", MSGBOX_DEFAULT)
+		if (giveitem(ITEM_TM_REVIVAL_BLESSING) == FALSE) {
+        	goto(Common_EventScript_ShowBagIsFull)
+        }
+		setflag(FLAG_RECEIVED_TM_REVIVAL_BLESSING)
+		msgbox("You are gay.", MSGBOX_DEFAULT)
+	}
+	else {
+		msgbox("I love you!", MSGBOX_DEFAULT)
+	}
+	release_end
 }
 
 text EverGrandeCity_Text_EnteringVictoryRoad {

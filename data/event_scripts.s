@@ -1182,8 +1182,10 @@ Common_ShowEasyChatScreen::
 	return
 
 Common_EventScript_ReadyPetalburgGymForBattle::
-	clearflag FLAG_HIDE_PETALBURG_GYM_GREETER
+	clearflag FLAG_HIDE_PETALBURG_POKEMART_CLERK
 	setflag FLAG_PETALBURG_MART_EXPANDED_ITEMS
+	setvar VAR_PETALBURG_CITY_STATE, 4
+	clearflag FLAG_HIDE_PETALBURG_CITY_WALLY
 	return
 
 Common_EventScript_BufferTrendyPhrase::
@@ -1776,3 +1778,19 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/NewMauville_B1F/scripts.inc"
 
 	.include "data/maps/PetalburgCity_NormansLodge/scripts.inc"
+
+	.include "data/maps/PetalburgCity_Dojo_1F_Left/scripts.inc"
+
+	.include "data/maps/Route122_House/scripts.inc"
+
+	.include "data/maps/PetalburgCity_Dojo_1F_Right/scripts.inc"
+
+	.include "data/maps/PetalburgCity_Dojo_3F_Right/scripts.inc"
+
+	.include "data/maps/PetalburgCity_Dojo_3F_Left/scripts.inc"
+
+	.include "data/maps/PetalburgCity_Dojo_2F_Right/scripts.inc"
+
+	.include "data/maps/PetalburgCity_Dojo_2F_Left/scripts.inc"
+
+	.include "data/maps/Underwater_LilycoveCity/scripts.inc"

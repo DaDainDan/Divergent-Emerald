@@ -6,9 +6,9 @@ script SootopolisCity_Gym_B1F_EventScript_Andrea {
     end
 }
 
-script SootopolisCity_Gym_B1F_EventScript_Crissy {
-    trainerbattle_single(TRAINER_CRISSY, SootopolisCity_Gym_B1F_Text_CrissyIntro, SootopolisCity_Gym_B1F_Text_CrissyDefeat)
-    msgbox(SootopolisCity_Gym_B1F_Text_CrissyPostBattle, MSGBOX_AUTOCLOSE)
+script SootopolisCity_Gym_B1F_EventScript_Cesar {
+    trainerbattle_single(TRAINER_CESAR, SootopolisCity_Gym_B1F_Text_CesarIntro, SootopolisCity_Gym_B1F_Text_CesarDefeat)
+    msgbox(SootopolisCity_Gym_B1F_Text_CesarPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -42,9 +42,9 @@ script SootopolisCity_Gym_B1F_EventScript_Tiffany {
     end
 }
 
-script SootopolisCity_Gym_B1F_EventScript_Bethany {
-    trainerbattle_single(TRAINER_BETHANY, SootopolisCity_Gym_B1F_Text_BethanyIntro, SootopolisCity_Gym_B1F_Text_BethanyDefeat)
-    msgbox(SootopolisCity_Gym_B1F_Text_BethanyPostBattle, MSGBOX_AUTOCLOSE)
+script SootopolisCity_Gym_B1F_EventScript_Bradley {
+    trainerbattle_single(TRAINER_BRADLEY, SootopolisCity_Gym_B1F_Text_BradleyIntro, SootopolisCity_Gym_B1F_Text_BradleyDefeat)
+    msgbox(SootopolisCity_Gym_B1F_Text_BradleyPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -74,19 +74,19 @@ text SootopolisCity_Gym_B1F_Text_AndreaPostBattle {
 	the floor tiles."
 }
 
-text SootopolisCity_Gym_B1F_Text_CrissyIntro {
+text SootopolisCity_Gym_B1F_Text_CesarIntro {
 	"You came all the way here, but you won't
 	get to see JUAN.
 
 	Not if you lose to me, you won't!"
 }
 
-text SootopolisCity_Gym_B1F_Text_CrissyDefeat {
+text SootopolisCity_Gym_B1F_Text_CesarDefeat {
 	"You're strong!
 	I was fooled by your cute looks!"
 }
 
-text SootopolisCity_Gym_B1F_Text_CrissyPostBattle {
+text SootopolisCity_Gym_B1F_Text_CesarPostBattle {
 	"You might be good enough to avoid
 	being wiped out in one hit by JUAN."
 }
@@ -181,16 +181,16 @@ text SootopolisCity_Gym_B1F_Text_TiffanyPostBattle {
 	with how young or old you are."
 }
 
-text SootopolisCity_Gym_B1F_Text_BethanyIntro {
+text SootopolisCity_Gym_B1F_Text_BradleyIntro {
 	"When I'm with my POKéMON, the time
 	flies by before you can say, “Oops!”"
 }
 
-text SootopolisCity_Gym_B1F_Text_BethanyDefeat {
+text SootopolisCity_Gym_B1F_Text_BradleyDefeat {
 	"Oops!"
 }
 
-text SootopolisCity_Gym_B1F_Text_BethanyPostBattle {
+text SootopolisCity_Gym_B1F_Text_BradleyPostBattle {
 	"I wish I could forget about lost causes
 	before I can manage an “Oops!”"
 }

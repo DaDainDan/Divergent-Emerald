@@ -3,7 +3,6 @@
   "name": "LilycoveCity",
   "layout": "LAYOUT_LILYCOVE_CITY",
   "music": "MUS_RG_SS_ANNE",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_LILYCOVE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -23,6 +22,11 @@
       "map": "MAP_ROUTE124",
       "offset": -10,
       "direction": "right"
+    },
+    {
+      "map": "MAP_UNDERWATER_LILYCOVE_CITY",
+      "offset": 0,
+      "direction": "dive"
     }
   ],
   "object_events": [
@@ -66,7 +70,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
       "x": 21,
       "y": 15,
       "elevation": 3,
@@ -165,7 +169,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REPEL",
+      "trainer_sight_or_berry_tree_id": "ITEM_STAR_PIECE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL"
     },
@@ -536,7 +540,7 @@
       "x": 61,
       "y": 7,
       "elevation": 0,
-      "item": "ITEM_PP_UP",
+      "item": "ITEM_CALCIUM",
       "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PP_UP"
     },
     {
@@ -544,8 +548,9 @@
       "x": 64,
       "y": 31,
       "elevation": 0,
-      "item": "ITEM_POKE_BALL",
+      "item": "ITEM_WAVE_INCENSE",
       "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

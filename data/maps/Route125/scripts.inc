@@ -66,11 +66,11 @@ Route125_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	.2byte 0
 
 
-Route125_EventScript_Nolen::
+Route125_EventScript_Gabriel::
 # 29 "data/maps/Route125/scripts.pory"
-	trainerbattle_single TRAINER_NOLEN, Route125_Text_NolenIntro, Route125_Text_NolenDefeat
+	trainerbattle_single TRAINER_GABRIEL, Route125_Text_GabrielIntro, Route125_Text_GabrielDefeat
 # 30 "data/maps/Route125/scripts.pory"
-	msgbox Route125_Text_NolenPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route125_Text_GabrielPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -131,7 +131,7 @@ Route125_EventScript_RegisterErnest::
 
 Route125_EventScript_Kim::
 # 72 "data/maps/Route125/scripts.pory"
-	trainerbattle_double TRAINER_KIM_AND_IRIS, Route125_Text_KimIntro, Route125_Text_KimDefeat, Route125_Text_KimNotEnoughMons
+	trainerbattle_double TRAINER_KIM, Route125_Text_KimIntro, Route125_Text_KimDefeat, Route125_Text_KimNotEnoughMons
 # 73 "data/maps/Route125/scripts.pory"
 	msgbox Route125_Text_KimPostBattle, MSGBOX_AUTOCLOSE
 	end
@@ -139,7 +139,7 @@ Route125_EventScript_Kim::
 
 Route125_EventScript_Iris::
 # 78 "data/maps/Route125/scripts.pory"
-	trainerbattle_double TRAINER_KIM_AND_IRIS, Route125_Text_IrisIntro, Route125_Text_IrisDefeat, Route125_Text_IrisNotEnoughMons
+	trainerbattle_double TRAINER_IRIS, Route125_Text_IrisIntro, Route125_Text_IrisDefeat, Route125_Text_IrisNotEnoughMons
 # 79 "data/maps/Route125/scripts.pory"
 	msgbox Route125_Text_IrisPostBattle, MSGBOX_AUTOCLOSE
 	end

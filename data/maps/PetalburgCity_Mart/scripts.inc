@@ -61,73 +61,75 @@ PetalburgCity_Mart_Pokemart_Expanded:
 # 35 "data/maps/PetalburgCity_Mart/scripts.pory"
 	.2byte ITEM_GREAT_BALL
 # 36 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_QUICK_BALL
 # 37 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_HYPER_POTION
 # 38 "data/maps/PetalburgCity_Mart/scripts.pory"
 	.2byte ITEM_REVIVE
 # 39 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_MAX_ELIXIR
+	.2byte ITEM_FULL_HEAL
 # 40 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_MAX_ELIXIR
 # 41 "data/maps/PetalburgCity_Mart/scripts.pory"
+	.2byte ITEM_SUPER_REPEL
+# 42 "data/maps/PetalburgCity_Mart/scripts.pory"
 	.2byte ITEM_SUPER_LURE
 	.2byte ITEM_NONE
 
 	.align 2
-# 44 "data/maps/PetalburgCity_Mart/scripts.pory"
-PetalburgCity_Mart_Pokemart_Enhancement:
 # 45 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_EXP_CANDY_M
+PetalburgCity_Mart_Pokemart_Enhancement:
 # 46 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_HP_UP
+	.2byte ITEM_EXP_CANDY_M
 # 47 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_PROTEIN
+	.2byte ITEM_HP_UP
 # 48 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_IRON
+	.2byte ITEM_PROTEIN
 # 49 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_CARBOS
+	.2byte ITEM_IRON
 # 50 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_CALCIUM
+	.2byte ITEM_CARBOS
 # 51 "data/maps/PetalburgCity_Mart/scripts.pory"
-	.2byte ITEM_ZINC
+	.2byte ITEM_CALCIUM
 # 52 "data/maps/PetalburgCity_Mart/scripts.pory"
+	.2byte ITEM_ZINC
+# 53 "data/maps/PetalburgCity_Mart/scripts.pory"
 	.2byte ITEM_PP_UP
 	.2byte ITEM_NONE
 
 PetalburgCity_Mart_EventScript_Woman::
-# 56 "data/maps/PetalburgCity_Mart/scripts.pory"
+# 57 "data/maps/PetalburgCity_Mart/scripts.pory"
 	msgbox PetalburgCity_Mart_Text_WeakWillGrowStronger, MSGBOX_NPC
 	end
 
 
 PetalburgCity_Mart_EventScript_Boy::
-# 61 "data/maps/PetalburgCity_Mart/scripts.pory"
+# 62 "data/maps/PetalburgCity_Mart/scripts.pory"
 	msgbox PetalburgCity_Mart_Text_RepelIsUseful, MSGBOX_NPC
 	end
 
 
 PetalburgCity_Mart_EventScript_Man::
-# 66 "data/maps/PetalburgCity_Mart/scripts.pory"
+# 67 "data/maps/PetalburgCity_Mart/scripts.pory"
 	msgbox PetalburgCity_Mart_Text_TakeSomeAntidotesWithYou, MSGBOX_NPC
 	end
 
 
 PetalburgCity_Mart_Text_WeakWillGrowStronger::
-# 70 "data/maps/PetalburgCity_Mart/scripts.pory"
+# 71 "data/maps/PetalburgCity_Mart/scripts.pory"
 	.string "Even if a POKéMON is weak now,\n"
 	.string "it will grow stronger.\p"
 	.string "The most important thing is love!\n"
 	.string "Love for your POKéMON!$"
 
 PetalburgCity_Mart_Text_RepelIsUseful::
-# 78 "data/maps/PetalburgCity_Mart/scripts.pory"
+# 79 "data/maps/PetalburgCity_Mart/scripts.pory"
 	.string "Do you use REPEL?\n"
 	.string "It keeps POKéMON away, so it's\l"
 	.string "useful when you're in a hurry.$"
 
 PetalburgCity_Mart_Text_TakeSomeAntidotesWithYou::
-# 84 "data/maps/PetalburgCity_Mart/scripts.pory"
+# 85 "data/maps/PetalburgCity_Mart/scripts.pory"
 	.string "Do you have any ANTIDOTES with\n"
 	.string "you?\p"
 	.string "If you walk around with a poisoned\n"

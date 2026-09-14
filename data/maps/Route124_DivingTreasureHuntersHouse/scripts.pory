@@ -18,18 +18,14 @@ script Route124_DivingTreasureHuntersHouse_EventScript_TreasureHunter {
 }
 
 script Route124_DivingTreasureHuntersHouse_EventScript_CheckPlayerHasShard {
-    if (checkitem(ITEM_RED_SHARD) == TRUE || checkitem(ITEM_YELLOW_SHARD) == TRUE || checkitem(ITEM_BLUE_SHARD) == TRUE || checkitem(ITEM_GREEN_SHARD) == TRUE) {
+    if (checkitem(ITEM_RED_SHARD) == TRUE || checkitem(ITEM_YELLOW_SHARD) == TRUE || checkitem(ITEM_BLUE_SHARD) == TRUE 
+	 || checkitem(ITEM_GREEN_SHARD) == TRUE || checkitem(ITEM_PEARL) == TRUE || checkitem(ITEM_BIG_PEARL) == TRUE) {
 		msgbox(Route124_DivingTreasureHuntersHouse_Text_ThatsAShardIllTradeYou, MSGBOX_DEFAULT)
     	goto(Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions)
 	} else {
         msgbox(Route124_DivingTreasureHuntersHouse_Text_YouHaventGotAnyShards, MSGBOX_DEFAULT)
     }
     release_end
-}
-
-script Route124_DivingTreasureHuntersHouse_EventScript_GetPlayersShards {
-    
-    return
 }
 
 script Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions {
@@ -47,6 +43,12 @@ script Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions {
     if (checkitem(ITEM_GREEN_SHARD) == TRUE) {
 		dynmultipush("GREEN SHARD", ITEM_GREEN_SHARD)
     }
+	if (checkitem(ITEM_PEARL) == TRUE) {
+		dynmultipush("PEARL", ITEM_PEARL)
+    }
+	if (checkitem(ITEM_BIG_PEARL) == TRUE) {
+		dynmultipush("BIG PEARL", ITEM_BIG_PEARL)
+    }
 	dynmultipush("EXIT", 0)
     dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
 	switch (var(VAR_RESULT)) {
@@ -54,6 +56,8 @@ script Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions {
 		case ITEM_YELLOW_SHARD: settradeitems(ITEM_YELLOW_SHARD, ITEM_THUNDER_STONE)
 		case ITEM_BLUE_SHARD: settradeitems(ITEM_BLUE_SHARD, ITEM_WATER_STONE)
 		case ITEM_GREEN_SHARD: settradeitems(ITEM_GREEN_SHARD, ITEM_LEAF_STONE)
+		case ITEM_PEARL: settradeitems(ITEM_PEARL, ITEM_NUGGET)
+		case ITEM_BIG_PEARL: settradeitems(ITEM_BIG_PEARL, ITEM_BIG_NUGGET)
 		case 0:
 		case MULTI_B_PRESSED: 
 			goto(Route124_DivingTreasureHuntersHouse_EventScript_DeclineTrade)
@@ -73,7 +77,8 @@ script Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard {
         removeitem(VAR_EXCHANGE_ITEM)
 		giveitem(VAR_GIFT_ITEM)
 		msgbox(Route124_DivingTreasureHuntersHouse_Text_ItsADeal, MSGBOX_DEFAULT)
-		if (checkitem(ITEM_RED_SHARD) == TRUE || checkitem(ITEM_YELLOW_SHARD) == TRUE || checkitem(ITEM_BLUE_SHARD) == TRUE || checkitem(ITEM_GREEN_SHARD) == TRUE) {
+		if (checkitem(ITEM_RED_SHARD) == TRUE || checkitem(ITEM_YELLOW_SHARD) == TRUE || checkitem(ITEM_BLUE_SHARD) == TRUE 
+		 || checkitem(ITEM_GREEN_SHARD) == TRUE || checkitem(ITEM_PEARL) == TRUE || checkitem(ITEM_BIG_PEARL) == TRUE) {
 			msgbox(Route124_DivingTreasureHuntersHouse_Text_TradeSomethingElse, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				goto(Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions)
@@ -163,5 +168,11 @@ text Route124_DivingTreasureHuntersHouse_Text_ShardTradeBoard {
 	{CLEAR_TO 12}BLUE SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 121}WATER STONE{CLEAR_TO 200}
 
 	{CLEAR_TO 10}Wanted item{CLEAR_TO 124}Trade item
-	{CLEAR_TO 8}GREEN SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 123}LEAF STONE"
+	{CLEAR_TO 8}GREEN SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 123}LEAF STONE{CLEAR_TO 200}
+
+	{CLEAR_TO 10}Wanted item{CLEAR_TO 124}Trade item
+	{CLEAR_TO 15}PEARL{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 127}NUGGET{CLEAR_TO 200}
+
+	{CLEAR_TO 10}Wanted item{CLEAR_TO 124}Trade item
+	{CLEAR_TO 12}BIG PEARL{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 123}BIG NUGGET"
 }

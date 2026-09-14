@@ -180,13 +180,13 @@ script PlayersHouse_1F_EventScript_Mom {
 
 script PlayersHouse_1F_EventScript_TryRegisterMom {
     if (flag(FLAG_ENABLE_MOM_MATCH_CALL)) {
-        if (flag(FLAG_BADGE05_GET) && !flag(FLAG_RECEIVED_AMULET_COIN)) {
+        if (flag(FLAG_BADGE05_GET) && !flag(FLAG_RECEIVED_EVIOLITE)) {
             msgbox(PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom, MSGBOX_DEFAULT)
-            if (giveitem(ITEM_AMULET_COIN) == FALSE) {
+            if (giveitem(ITEM_EVIOLITE) == FALSE) {
                 goto(Common_EventScript_ShowBagIsFull)
             }
             msgbox(PlayersHouse_1F_Text_DontPushYourselfTooHard, MSGBOX_DEFAULT)
-            setflag(FLAG_RECEIVED_AMULET_COIN)
+            setflag(FLAG_RECEIVED_EVIOLITE)
             release_end
         }
         goto(PlayersHouse_1F_EventScript_MomHealsParty)

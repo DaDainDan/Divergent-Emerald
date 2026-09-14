@@ -1,12 +1,22 @@
 mapscripts RustboroCity_Gym_MapScripts {}
 
 script RustboroCity_Gym_EventScript_Roxanne {
-    trainerbattle_single(TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC)
-    if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
-        trainerbattle_rematch_double(TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons)
+    if (flag(FLAG_SYS_GAME_CLEAR)) {
+        if (flag(FLAG_DEFEATED_ROXANNE_FINAL)) {
+			msgbox(RustboroCity_Gym_Text_RoxannePostFinal, MSGBOX_AUTOCLOSE)
+    		end
+		}
+		msgbox(RustboroCity_Gym_Text_RoxanneFinalIntro, MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_ROXANNE_3, RustboroCity_Gym_Text_RoxanneFinalDefeat)
+		msgbox(RustboroCity_Gym_Text_RoxannePostFinal, MSGBOX_AUTOCLOSE)
+		end
+    }
+    if (flag(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE)) {
+        trainerbattle_double(TRAINER_ROXANNE_2, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons)
 		msgbox(RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE)
 		end
     }
+    trainerbattle_single(TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC)
     if (!flag(FLAG_RECEIVED_HM_CUT)) {
         call(RustboroCity_Gym_EventScript_GiveCut)
 		release_end
@@ -20,9 +30,10 @@ script RustboroCity_Gym_EventScript_RoxanneDefeated {
     waitmessage
     call(Common_EventScript_PlayGymBadgeFanfare)
     msgbox(RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT)
-	call(RustboroCity_Gym_EventScript_GiveCut)
+    call(RustboroCity_Gym_EventScript_GiveCut)
     setflag(FLAG_DEFEATED_RUSTBORO_GYM)
     setflag(FLAG_BADGE01_GET)
+    setflag(FLAG_HIDE_RUSTBORO_MAGMA_GRUNT)
     setvar(VAR_RUSTBORO_CITY_STATE, 1)
     addvar(VAR_PETALBURG_GYM_STATE, 1)
     setvar(VAR_0x8008, 1)
@@ -48,6 +59,12 @@ script RustboroCity_Gym_EventScript_Trinity {
     end
 }
 
+script RustboroCity_Gym_EventScript_Sadie {
+    trainerbattle_single(TRAINER_SADIE, RustboroCity_Gym_Text_SadieIntro, RustboroCity_Gym_Text_SadieDefeat)
+    msgbox(RustboroCity_Gym_Text_SadiePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
 script RustboroCity_Gym_EventScript_Tommy {
     trainerbattle_single(TRAINER_TOMMY, RustboroCity_Gym_Text_TommyIntro, RustboroCity_Gym_Text_TommyDefeat)
     msgbox(RustboroCity_Gym_Text_TommyPostBattle, MSGBOX_AUTOCLOSE)
@@ -67,7 +84,7 @@ script RustboroCity_Gym_EventScript_GymGuide {
 	}
     elif (flag(FLAG_DEFEATED_RUSTBORO_GYM)) {
         msgbox(RustboroCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
-    	if (giveitem(ITEM_TM_ROCK_TOMB) == FALSE) {
+    	if (giveitem(ITEM_TM_ROCK_THROW) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		setflag(FLAG_RECEIVED_TM_ROCK_TOMB)
@@ -164,7 +181,7 @@ text RustboroCity_Gym_Text_GymGuideNextGym {
 	Mauville City.
 
 	There, you will be able to challenge
-	Watson, the Gregarious Engineer."
+	WATTSON, the Gregarious Engineer."
 }
 
 text RustboroCity_Gym_Text_TrinityIntro {
@@ -173,10 +190,29 @@ text RustboroCity_Gym_Text_TrinityIntro {
 }
 
 text RustboroCity_Gym_Text_TrinityDefeat {
-	"Hmph... not bad for a newbie."
+	"Hmph\. not bad for a newbie."
 }
 
 text RustboroCity_Gym_Text_TrinityPostBattle {
+	"I have a lot in common with Roxanne.
+	I'm top of my class in Trainer's School,
+	and my Phanpy fights just like one of
+	her POKéMON.
+
+	I know I'll be a Gym Leader too
+	one day!"
+}
+
+text RustboroCity_Gym_Text_SadieIntro {
+	"You don't look like much!
+	You won't even make it to Roxanne!"
+}
+
+text RustboroCity_Gym_Text_SadieDefeat {
+	"Hmph... not bad for a newbie."
+}
+
+text RustboroCity_Gym_Text_SadiePostBattle {
 	"I have a lot in common with Roxanne.
 	I'm top of my class in Trainer's School,
 	and my Phanpy fights just like one of
@@ -275,7 +311,7 @@ text RustboroCity_Gym_Text_ExplainCut {
 	have to be taught in order for a
 	POKéMON to use them.
 
-	In this case, HM01:CUT allows you to
+	In this case, HM01 allows you to
 	chop down small trees that are blocking
 	your path.
 
@@ -363,6 +399,30 @@ text RustboroCity_Gym_Text_RoxanneRematchDefeat {
 }
 
 text RustboroCity_Gym_Text_RoxannePostRematch {
+	"{SPEAKER NAME_ROXANNE}I still have much to learn
+	when it comes to battling POKéMON.
+
+	That awareness makes me love battling
+	all that much more!"
+}
+
+text RustboroCity_Gym_Text_RoxanneFinalIntro {
+	"{SPEAKER NAME_ROXANNE}I'm so glad to see you again.
+	I'm ROXANNE, the GYM LEADER here.
+
+	I'm sure we've both experienced many
+	battles since we last met.
+
+	I would like to see how much better
+	we've become. Let us battle!"
+}
+
+text RustboroCity_Gym_Text_RoxanneFinalDefeat {
+	"Grr…
+	Again, I have lost…"
+}
+
+text RustboroCity_Gym_Text_RoxannePostFinal {
 	"{SPEAKER NAME_ROXANNE}I still have much to learn
 	when it comes to battling POKéMON.
 

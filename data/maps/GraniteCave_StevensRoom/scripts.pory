@@ -7,7 +7,7 @@ script GraniteCave_StevensRoom_EventScript_Steven {
     call(Common_EventScript_PlayerHandedOverTheItem)
     setflag(FLAG_DELIVERED_STEVEN_LETTER)
     msgbox(GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_TM_STEEL_WING) == FALSE) {
+    if (giveitem(ITEM_TM_FLASH_CANNON) == FALSE) {
         msgbox(GraniteCave_StevensRoom_Text_OhBagIsFull, MSGBOX_DEFAULT)
     }
     msgbox(GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT)

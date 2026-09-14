@@ -1,0 +1,3 @@
+PetalburgCity_Dojo_1F_Left_MapScripts::
+	.byte 0
+

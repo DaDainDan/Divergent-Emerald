@@ -3,7 +3,6 @@
   "name": "Underwater_Route124",
   "layout": "LAYOUT_UNDERWATER_ROUTE124",
   "music": "MUS_UNDERWATER",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_UNDERWATER_124",
   "requires_flash": false,
   "weather": "WEATHER_UNDERWATER_BUBBLES",
@@ -25,16 +24,31 @@
       "direction": "emerge"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_ROUTE_124_FOSSIL",
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL_BLUE",
+      "x": 42,
+      "y": 51,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Underwater_Route124_EventScript_Fossil",
+      "flag": "FLAG_HIDE_ROUTE_124_FOSSIL"
+    }
+  ],
   "warp_events": [],
   "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 42,
-      "y": 51,
+      "x": 56,
+      "y": 59,
       "elevation": 0,
-      "item": "ITEM_CARBOS",
+      "item": "ITEM_PRISM_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS"
     },
     {
@@ -82,8 +96,9 @@
       "x": 45,
       "y": 36,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
+      "item": "ITEM_BLUE_SHARD",
       "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_2"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

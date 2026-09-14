@@ -1,1 +1,41 @@
 mapscripts RusturfTunnel_B1F_MapScripts {}
+
+script RusturfTunnel_B1F_EventScript_Malachi {
+	trainerbattle_single(TRAINER_MALACHI, RusturfTunnel_B1F_Text_MalachiIntro, RusturfTunnel_B1F_Text_MalachiDefeat, RusturfTunnel_B1F_EventScript_Malachi_GiveTwistedSpoon)
+	if (!flag(FLAG_RECEIVED_TWISTED_SPOON)) {
+		goto(RusturfTunnel_B1F_EventScript_Malachi_GiveTwistedSpoon)
+	}
+	msgbox(RusturfTunnel_B1F_Text_MalachiPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+script RusturfTunnel_B1F_EventScript_Malachi_GiveTwistedSpoon {
+	msgbox(RusturfTunnel_B1F_Text_DarkEnergy, MSGBOX_DEFAULT)
+	if (giveitem(ITEM_TWISTED_SPOON) == FALSE) {
+		goto(Common_EventScript_ShowBagIsFull)
+	}
+	setflag(FLAG_RECEIVED_TWISTED_SPOON)
+	end
+}
+
+text RusturfTunnel_B1F_Text_MalachiIntro {
+	"There are powers beyond our
+	understanding in the world…"
+}
+
+text RusturfTunnel_B1F_Text_MalachiDefeat {
+	"I have lost…"
+}
+
+text RusturfTunnel_B1F_Text_MalachiPostBattle {
+	"MT. PYRE…
+	There is a mysterious power
+	at work there…"
+}
+
+text RusturfTunnel_B1F_Text_DarkEnergy {
+	"There is clearly a twinge of dark energy
+	within your heart.
+
+	Perhaps, I should give you this."
+}

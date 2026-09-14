@@ -36,15 +36,15 @@ script MtPyre_2F_EventScript_Dez {
     end
 }
 
-script MtPyre_2F_EventScript_Leah {
-    trainerbattle_single(TRAINER_LEAH, MtPyre_2F_Text_LeahIntro, MtPyre_2F_Text_LeahDefeat)
-    msgbox(MtPyre_2F_Text_LeahPostBattle, MSGBOX_AUTOCLOSE)
+script MtPyre_2F_EventScript_Mariah {
+    trainerbattle_single(TRAINER_MARIAH, MtPyre_2F_Text_MariahIntro, MtPyre_2F_Text_MariahDefeat)
+    msgbox(MtPyre_2F_Text_MariahPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
-script MtPyre_2F_EventScript_Zander {
-    trainerbattle_single(TRAINER_ZANDER, MtPyre_2F_Text_ZanderIntro, MtPyre_2F_Text_ZanderDefeat)
-    msgbox(MtPyre_2F_Text_ZanderPostBattle, MSGBOX_AUTOCLOSE)
+script MtPyre_2F_EventScript_Xander {
+    trainerbattle_single(TRAINER_XANDER, MtPyre_2F_Text_XanderIntro, MtPyre_2F_Text_XanderDefeat)
+    msgbox(MtPyre_2F_Text_XanderPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -132,17 +132,17 @@ text MtPyre_2F_Text_DezNotEnoughMons {
 	Just one POKéMON won't do at all."
 }
 
-text MtPyre_2F_Text_LeahIntro {
+text MtPyre_2F_Text_MariahIntro {
 	"You are an unfamiliar sight…
 	Depart before anything befalls you!"
 }
 
-text MtPyre_2F_Text_LeahDefeat {
+text MtPyre_2F_Text_MariahDefeat {
 	"Hmm…
 	You're durable."
 }
 
-text MtPyre_2F_Text_LeahPostBattle {
+text MtPyre_2F_Text_MariahPostBattle {
 	"Our family has been TRAINERS here
 	since my great-grandmother's time…
 
@@ -150,17 +150,17 @@ text MtPyre_2F_Text_LeahPostBattle {
 	mountain…"
 }
 
-text MtPyre_2F_Text_ZanderIntro {
+text MtPyre_2F_Text_XanderIntro {
 	"Kiyaaaaah!
 	I'm terrified!"
 }
 
-text MtPyre_2F_Text_ZanderDefeat {
+text MtPyre_2F_Text_XanderDefeat {
 	"Nooooooo!
 	I lost my wits!"
 }
 
-text MtPyre_2F_Text_ZanderPostBattle {
+text MtPyre_2F_Text_XanderPostBattle {
 	"I get freaked out every time I see
 	anything move…
 

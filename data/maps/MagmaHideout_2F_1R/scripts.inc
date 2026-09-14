@@ -2,14 +2,6 @@ MagmaHideout_2F_1R_MapScripts::
 	.byte 0
 
 
-MagmaHideout_2F_1R_EventScript_Grunt14::
-# 4 "data/maps/MagmaHideout_2F_1R/scripts.pory"
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_14, MagmaHideout_2F_1R_Text_Grunt14Intro, MagmaHideout_2F_1R_Text_Grunt14Defeat
-# 5 "data/maps/MagmaHideout_2F_1R/scripts.pory"
-	msgbox MagmaHideout_2F_1R_Text_Grunt14PostBattle, MSGBOX_AUTOCLOSE
-	end
-
-
 MagmaHideout_2F_1R_EventScript_Grunt3::
 # 10 "data/maps/MagmaHideout_2F_1R/scripts.pory"
 	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_3, MagmaHideout_2F_1R_Text_Grunt3Intro, MagmaHideout_2F_1R_Text_Grunt3Defeat
@@ -23,14 +15,6 @@ MagmaHideout_2F_1R_EventScript_Grunt4::
 	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_4, MagmaHideout_2F_1R_Text_Grunt4Intro, MagmaHideout_2F_1R_Text_Grunt4Defeat
 # 17 "data/maps/MagmaHideout_2F_1R/scripts.pory"
 	msgbox MagmaHideout_2F_1R_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
-	end
-
-
-MagmaHideout_2F_1R_EventScript_Grunt5::
-# 22 "data/maps/MagmaHideout_2F_1R/scripts.pory"
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_5, MagmaHideout_2F_1R_Text_Grunt5Intro, MagmaHideout_2F_1R_Text_Grunt5Defeat
-# 23 "data/maps/MagmaHideout_2F_1R/scripts.pory"
-	msgbox MagmaHideout_2F_1R_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 

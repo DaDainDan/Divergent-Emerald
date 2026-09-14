@@ -40,18 +40,28 @@ script LavaridgeTown_Gym_1F_EventScript_SetTrainerTempVars {
 }
 
 script LavaridgeTown_Gym_1F_EventScript_Flannery {
-    trainerbattle_single(TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC)
-    if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
-		trainerbattle_rematch_double(TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons)
+    if (flag(FLAG_SYS_GAME_CLEAR)) {
+        if (flag(FLAG_DEFEATED_FLANNERY_FINAL)) {
+			msgbox(LavaridgeTown_Gym_1F_Text_FlanneryPostFinal, MSGBOX_AUTOCLOSE)
+    		end
+		}
+		msgbox(LavaridgeTown_Gym_1F_Text_FlanneryFinalIntro, MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_FLANNERY_3, LavaridgeTown_Gym_1F_Text_FlanneryFinalDefeat)
+		msgbox(LavaridgeTown_Gym_1F_Text_FlanneryPostFinal, MSGBOX_AUTOCLOSE)
+		end
+    }
+    if (defeated(TRAINER_WATTSON_2)) {
+        trainerbattle_single(TRAINER_FLANNERY_2, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons)
 		msgbox(LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE)
 		end
-	}
-    if (!flag(FLAG_RECEIVED_TM_OVERHEAT)) {
-        if (giveitem(ITEM_TM_OVERHEAT) == FALSE) {
+    }
+    trainerbattle_single(TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC)
+    if (!flag(FLAG_RECEIVED_HM_SURF)) {
+        if (giveitem(ITEM_HM_SURF) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		msgbox(LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT)
-		setflag(FLAG_RECEIVED_TM_OVERHEAT)
+		setflag(FLAG_RECEIVED_HM_SURF)
 		release_end
     }
     msgbox(LavaridgeTown_Gym_1F_Text_FlanneryPostBattle, MSGBOX_DEFAULT)
@@ -74,11 +84,13 @@ script LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated {
     call(Common_EventScript_SetGymTrainers)
     setflag(FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY)
     setvar(VAR_LAVARIDGE_TOWN_STATE, 1)
-    if (giveitem(ITEM_TM_OVERHEAT) == FALSE) {
-        call(Common_EventScript_BagIsFull)
+    setflag(FLAG_HIDE_MAUVILLE_GYM_WATTSON)
+    clearflag(FLAG_HIDE_MAUVILLE_CITY_WATTSON)
+    if (giveitem(ITEM_HM_SURF) == FALSE) {
+        goto(Common_EventScript_BagIsFull)
     }
     msgbox(LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT)
-    setflag(FLAG_RECEIVED_TM_OVERHEAT)
+    setflag(FLAG_RECEIVED_HM_SURF)
     closemessage
     delay(30)
     playfanfare(MUS_REGISTER_MATCH_CALL)
@@ -136,11 +148,11 @@ script LavaridgeTown_Gym_B1F_EventScript_Jace {
     end
 }
 
-script LavaridgeTown_Gym_B1F_EventScript_Jeff {
-    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_JEFF, TRAINER_JEFF, LavaridgeTown_Gym_B1F_Text_JeffIntro, LavaridgeTown_Gym_B1F_Text_JeffDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE)
-    msgbox(LavaridgeTown_Gym_B1F_Text_JeffPostBattle, MSGBOX_AUTOCLOSE)
-    end
-}
+// script LavaridgeTown_Gym_B1F_EventScript_Jeff {
+//     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_JEFF, TRAINER_JEFF, LavaridgeTown_Gym_B1F_Text_JeffIntro, LavaridgeTown_Gym_B1F_Text_JeffDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE)
+//     msgbox(LavaridgeTown_Gym_B1F_Text_JeffPostBattle, MSGBOX_AUTOCLOSE)
+//     end
+// }
 
 script LavaridgeTown_Gym_B1F_EventScript_Eli {
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_ELI, TRAINER_ELI, LavaridgeTown_Gym_B1F_Text_EliIntro, LavaridgeTown_Gym_B1F_Text_EliDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE)
@@ -148,13 +160,30 @@ script LavaridgeTown_Gym_B1F_EventScript_Eli {
     end
 }
 
+script LavaridgeTown_Gym_B1F_EventScript_Marlene {
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_MARLENE, TRAINER_MARLENE, LavaridgeTown_Gym_B1F_Text_MarleneIntro, LavaridgeTown_Gym_B1F_Text_MarleneDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE)
+    msgbox(LavaridgeTown_Gym_B1F_Text_MarlenePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
 script LavaridgeTown_Gym_1F_EventScript_GymGuide {
     lock_faceplayer
-    if (flag(FLAG_DEFEATED_LAVARIDGE_GYM)) {
+    if (flag(FLAG_RECEIVED_TM_OVERHEAT)) {
         msgbox(LavaridgeTown_Gym_1F_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
-    	release_end
     }
-    msgbox(LavaridgeTown_Gym_1F_Text_GymGuideAdvice, MSGBOX_DEFAULT)
+    elif (flag(FLAG_DEFEATED_LAVARIDGE_GYM)) {
+        msgbox(LavaridgeTown_Gym_1F_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
+		if (!flag(FLAG_RECEIVED_TM_OVERHEAT)) {
+			if (giveitem(ITEM_TM_MYSTICAL_FIRE) == FALSE) {
+				goto(Common_EventScript_ShowBagIsFull)
+			}
+			msgbox(LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT)
+			setflag(FLAG_RECEIVED_TM_OVERHEAT)
+		}
+    }
+	else {
+		msgbox(LavaridgeTown_Gym_1F_Text_GymGuideAdvice, MSGBOX_DEFAULT)
+	}
     release_end
 }
 
@@ -334,6 +363,20 @@ text LavaridgeTown_Gym_B1F_Text_EliPostBattle {
 	Hehehehe."
 }
 
+text LavaridgeTown_Gym_B1F_Text_MarleneIntro {
+	"You've disturbed my meditation…
+	You'll be punished for it."
+}
+
+text LavaridgeTown_Gym_B1F_Text_MarleneDefeat {
+	"You've broken my concentration!"
+}
+
+text LavaridgeTown_Gym_B1F_Text_MarlenePostBattle {
+	"I was meditating with my POKéMON.
+	But this place isn't very peaceful…"
+}
+
 text LavaridgeTown_Gym_1F_Text_FlanneryIntro {
 	"Welcome… No, wait.
 
@@ -443,6 +486,34 @@ text LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat {
 
 text LavaridgeTown_Gym_1F_Text_FlanneryPostRematch {
 	"{SPEAKER NAME_FLANNERY}I lost the match,
+	but I'm completely satisfied.
+
+	It's not often I get to enjoy a battle
+	this heated.
+
+	Let's have another one like this
+	again sometime!"
+}
+
+text LavaridgeTown_Gym_1F_Text_FlanneryFinalIntro {
+	"FLANNERY: Losing a battle isn't going
+	to deflate me.
+
+	I love POKéMON.
+	I love to battle.
+	And… I love this GYM!
+
+	Let's exchange superhot moves
+	in another battle!"
+}
+
+text LavaridgeTown_Gym_1F_Text_FlanneryFinalDefeat {
+	"Whew!
+	On the verge of eruption!"
+}
+
+text LavaridgeTown_Gym_1F_Text_FlanneryPostFinal {
+	"FLANNERY: I lost the match,
 	but I'm completely satisfied.
 
 	It's not often I get to enjoy a battle

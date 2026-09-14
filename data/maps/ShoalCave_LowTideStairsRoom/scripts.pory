@@ -22,3 +22,13 @@ script ShoalCave_LowTideStairsRoom_EventScript_ShoalSalt3 {
     releaseall
     end
 }
+
+script ShoalCave_LowTideStairsRoom_EventScript_Fossil {
+    lock_faceplayer
+    if (giveitem(ITEM_SAIL_FOSSIL) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    removeobject(LOCALID_SHOAL_CAVE_FOSSIL)
+    release_end
+}
+

@@ -48,11 +48,11 @@ AbandonedShip_Rooms2_1F_EventScript_Kira_2:
 	end
 
 
-AbandonedShip_Rooms2_1F_EventScript_Jani::
+AbandonedShip_Rooms2_1F_EventScript_Kylie::
 # 32 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	trainerbattle_single TRAINER_JANI, AbandonedShip_Rooms2_1F_Text_JaniIntro, AbandonedShip_Rooms2_1F_Text_JaniDefeat
+	trainerbattle_single TRAINER_KYLIE, AbandonedShip_Rooms2_1F_Text_KylieIntro, AbandonedShip_Rooms2_1F_Text_KylieDefeat
 # 33 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	msgbox AbandonedShip_Rooms2_1F_Text_JaniPostBattle, MSGBOX_AUTOCLOSE
+	msgbox AbandonedShip_Rooms2_1F_Text_KyliePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -156,17 +156,17 @@ AbandonedShip_Rooms2_1F_Text_KiraRematchNotEnoughMons::
 	.string "{SPEAKER NAME_KIRA}Oh, you don't have two POKéMON?\n"
 	.string "We'll have to battle some other time!$"
 
-AbandonedShip_Rooms2_1F_Text_JaniIntro::
+AbandonedShip_Rooms2_1F_Text_KylieIntro::
 # 140 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "I'm not good at swimming,\n"
 	.string "but I am good at battles!$"
 
-AbandonedShip_Rooms2_1F_Text_JaniDefeat::
+AbandonedShip_Rooms2_1F_Text_KylieDefeat::
 # 145 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "Oops.\n"
 	.string "That didn't go very well.$"
 
-AbandonedShip_Rooms2_1F_Text_JaniPostBattle::
+AbandonedShip_Rooms2_1F_Text_KyliePostBattle::
 # 150 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "Walking around barefoot in this ship\n"
 	.string "is kind of gross.$"

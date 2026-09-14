@@ -293,6 +293,7 @@ script BattleFrontier_BattleTowerBattleRoom_EventScript_BattleAnabelGold {
 			waitmessage
 			waitfanfare
 			frontier_givesymbol
+			giveitem(ITEM_BLANK_SLATE)
 			msgbox(BattleFrontier_BattleTowerBattleRoom_Text_WishICouldBattleYouAgain, MSGBOX_DEFAULT)
 		}
 		goto(BattleFrontier_BattleTowerBattleRoom_EventScript_WarpToLobbyWon)

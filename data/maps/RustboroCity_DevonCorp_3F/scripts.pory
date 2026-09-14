@@ -20,6 +20,9 @@ mapscripts RustboroCity_DevonCorp_3F_MapScripts {
 script RustboroCity_DevonCorp_3F_EventScript_MeetPresident {
     lockall
     msgbox(RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere, MSGBOX_DEFAULT)
+	closemessage
+	setvar(VAR_0x8004, ITEM_DEVON_PARTS)
+	call(Common_EventScript_PlayerHandedOverTheItem)
     closemessage
     applymovement(LOCALID_DEVON_CORP_3F_EMPLOYEE, moves(walk_right * 3,  walk_down,  walk_right * 4))
     waitmovement(0)
@@ -38,18 +41,22 @@ script RustboroCity_DevonCorp_3F_EventScript_MeetPresident {
     applymovement(LOCALID_DEVON_CORP_3F_EMPLOYEE, moves(delay_16,  step_faster_down))
     applymovement(LOCALID_PLAYER, moves(delay_16 * 2,  walk_down * 2,  step_faster_right))
     waitmovement(0)
-    msgbox(RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor, MSGBOX_DEFAULT)
-    giveitem(ITEM_LETTER)
-    msgbox(RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis, MSGBOX_DEFAULT)
+    msgbox(RustboroCity_DevonCorp_3F_Text_MrStoneIntro, MSGBOX_DEFAULT)
     playfanfare(MUS_OBTAIN_ITEM)
     message(RustboroCity_DevonCorp_3F_Text_ReceivedPokenav)
     waitfanfare
     setflag(FLAG_SYS_POKENAV_GET)
     setflag(FLAG_RECEIVED_POKENAV)
+	setflag(FLAG_ADDED_MATCH_CALL_TO_POKENAV)
+	setflag(FLAG_HAS_MATCH_CALL)
     setflag(FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT)
     msgbox(RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp, MSGBOX_DEFAULT)
     closemessage
-    call(Common_EventScript_OutOfCenterPartyHeal)
+    msgbox(RustboroCity_DevonCorp_3F_Text_VsSeeker, MSGBOX_DEFAULT)
+	giveitem(ITEM_VS_SEEKER)
+	setflag(FLAG_RECEIVED_VS_SEEKER)
+	msgbox(RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor, MSGBOX_DEFAULT)
+	giveitem(ITEM_LETTER)
     msgbox(RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare, MSGBOX_DEFAULT)
     setflag(FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND)
     clearflag(FLAG_HIDE_RUSTURF_TUNNEL_WANDAS_BOYFRIEND)
@@ -104,71 +111,75 @@ script RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay {
     end
 }
 
-text RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor {
-	"I'm MR. STONE, the PRESIDENT of
-	the DEVON CORPORATION.
+text RustboroCity_DevonCorp_3F_Text_MrStoneIntro {
+	"{SPEAKER NAME_UNKNOWN}I'm MR. STONE, 
+	PRESIDENT of the DEVON CORPORATION.
 
-	I'd just got word about you!
+	I just received word of you.
+	
+	It seems we owe you a significant debt 
+	for returning company property and
+	protecting one of our employees.
 
-	You saved our staff not just once,
-	but twice!
-
-	I have a favor to ask of an amazing
-	person like you.
-
-	I understand that you're delivering
-	a package to SLATEPORT's SHIPYARD.
-
-	Well, on the way, could you stop off in
-	DEWFORD TOWN?
-
-	I was hoping that you'd deliver a
-	LETTER to STEVEN in DEWFORD."
+	We'd like to award you with two pieces
+	of state-of-the-art DEVON technology.
+	
+	The first is our all-purpose TRAINER
+	tool, the POKéMON NAVIGATOR."
 }
 
 text RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis {
-	"{SPEAKER NAME_MR_STONE}Now, you should know that
-	I am a great PRESIDENT.
+	"{SPEAKER NAME_MR_STONE}The first is our all-purpose TRAINER
+	tool, the POKéMON NAVIGATOR."
+}
 
-	So, I'd never be so cheap as to ask
-	a favor for nothing in return.
+text RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp {
+	"{SPEAKER NAME_MR_STONE}It serves as a map, a communication 
+	tool, and a POKéMON monitor.
 
-	That's why I want you to have this!"
+	It's an indispensable tool for any 
+	adventurous TRAINER."
+}
+
+text RustboroCity_DevonCorp_3F_Text_VsSeeker {
+	"{SPEAKER NAME_MR_STONE}Our second gift is the VS. SEEKER.
+
+	It allows a TRAINER to connect with
+	nearby TRAINERS looking to battle.
+
+	This is most useful for linking up with
+	TRAINERS you've previously fought."
+}
+
+text RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor {
+	"{SPEAKER NAME_MR_STONE}I hope you enjoy our gifts, but I would
+	also like to ask a favor of you.
+
+	My son, STEVEN STONE, has been missing
+	for some time.
+
+	You may know him as the CHAMPION of
+	the POKéMON LEAGUE.
+
+	Please hold onto this LETTER for him."
+}
+
+text RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare {
+	"{SPEAKER NAME_MR_STONE}I've already sent out many like it, but 
+	perhaps, a gifted trainer like you would
+	be able to locate my son.
+
+	Good luck, child.
+	I wish you well on your journey."
 }
 
 text RustboroCity_DevonCorp_3F_Text_ReceivedPokenav {
 	"{PLAYER} received a POKéNAV."
 }
 
-text RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp {
-	"{SPEAKER NAME_MR_STONE}That device…
-
-	It's a POKéMON NAVIGATOR, or POKéNAV
-	for short.
-
-	It's an indispensable tool for any
-	TRAINER on an adventure.
-
-	It has a map of the HOENN region.
-
-	You can check the locations of
-	DEWFORD and SLATEPORT easily!
-
-	By the way, I've heard that sinister
-	criminals--MAGMA and AQUA, I believe--
-	have been making trouble far and wide.
-
-	I think it would be best if you rested
-	up before you go on your way."
-}
-
-text RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare {
-	"{SPEAKER NAME_MR_STONE}Well, then, {PLAYER}{KUN},
-	go with caution and care!"
-}
-
 text RustboroCity_DevonCorp_3F_Text_CountingOnYou {
-	"{SPEAKER NAME_MR_STONE}I'm counting on you!"
+	"{SPEAKER NAME_MR_STONE}Please inform me if you are
+	able to find my son."
 }
 
 text RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter {

@@ -9,11 +9,11 @@ SkyPillar_Outside_MapScripts::
 
 SkyPillar_Outside_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/SkyPillar_Outside/scripts.pory"
-	compare VAR_SOOTOPOLIS_CITY_STATE, 3
+	compare VAR_SOOTOPOLIS_CITY_STATE, 4
 	goto_if_eq SkyPillar_Outside_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 SkyPillar_Outside_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 6 "data/maps/SkyPillar_Outside/scripts.pory"
-	compare VAR_SOOTOPOLIS_CITY_STATE, 4
+	compare VAR_SOOTOPOLIS_CITY_STATE, 5
 	goto_if_ge SkyPillar_Outside_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
 SkyPillar_Outside_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 	end
@@ -48,7 +48,7 @@ SkyPillar_Outside_MapScripts_MAP_SCRIPT_ON_LOAD_2:
 
 SkyPillar_Outside_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 21 "data/maps/SkyPillar_Outside/scripts.pory"
-	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 3, SkyPillar_Outside_EventScript_WallaceScene
+	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 4, SkyPillar_Outside_EventScript_WallaceScene
 	.2byte 0
 
 
@@ -150,7 +150,7 @@ SkyPillar_Outside_EventScript_WallaceScene::
 # 73 "data/maps/SkyPillar_Outside/scripts.pory"
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 # 74 "data/maps/SkyPillar_Outside/scripts.pory"
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 4
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 5
 # 75 "data/maps/SkyPillar_Outside/scripts.pory"
 	removeobject LOCALID_SKY_PILLAR_WALLACE
 # 76 "data/maps/SkyPillar_Outside/scripts.pory"

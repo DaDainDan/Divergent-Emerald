@@ -173,7 +173,7 @@ script BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem {
         case 1: setitemandprice(ITEM_WHITE_HERB, 48)
         case 2: setitemandprice(ITEM_QUICK_CLAW, 48)
         case 3: setitemandprice(ITEM_MENTAL_HERB, 48)
-        case 4: setitemandprice(ITEM_BRIGHT_POWDER, 64)
+        case 4: setitemandprice(ITEM_FLOAT_STONE, 64)
         case 5: setitemandprice(ITEM_CHOICE_BAND, 64)
         case 6: setitemandprice(ITEM_KINGS_ROCK, 64)
         case 7: setitemandprice(ITEM_FOCUS_BAND, 64)
@@ -442,8 +442,8 @@ text BattleFrontier_ExchangeServiceCorner_Text_MentalHerbDesc {
 }
 
 text BattleFrontier_ExchangeServiceCorner_Text_BrightpowderDesc {
-	"A hold item that casts a glare to
-	reduce accuracy."
+	"An item that increases the SPEED
+	of the holder."
 }
 
 text BattleFrontier_ExchangeServiceCorner_Text_ChoiceBandDesc {

@@ -75,4 +75,15 @@ ProfBirch_EventScript_RatePokedex::
 	buffernumberstring STR_VAR_1, VAR_0x8008  @ Num National seen
 	buffernumberstring STR_VAR_2, VAR_0x8009  @ Num National caught
 	msgbox gBirchDexRatingText_OnANationwideBasis, MSGBOX_DEFAULT
+	goto_if_set FLAG_RECEIVED_SHINY_CHARM, Common_EventScript_NopReturn  
+	specialvar VAR_RESULT, HasAllMons
+	goto_if_eq VAR_RESULT, TRUE, ProfBirch_EventScript_GiveShinyCharm
 	return
+
+ProfBirch_EventScript_GiveShinyCharm::
+	msgbox gBirchDexRatingText_OnANationwideBasis, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_SHINY_CHARM
+	release
+	end

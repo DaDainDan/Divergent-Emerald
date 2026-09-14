@@ -70,8 +70,17 @@ script Route110_EventScript_OldWoman {
 }
 
 script Route110_EventScript_CyclingGuy2 {
-    msgbox(Route110_Text_BikeTechniques, MSGBOX_NPC)
-    end
+    lock_faceplayer
+    if (flag(FLAG_RECEIVED_TM_RAPID_SPIN)) {
+        msgbox(Route110_Text_GetRollin, MSGBOX_NPC)
+        end
+    }
+    msgbox(Route110_Text_BikeTechniques, MSGBOX_DEFAULT)
+    if (giveitem(ITEM_TM_RAPID_SPIN) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    setflag(FLAG_RECEIVED_TM_RAPID_SPIN)
+    release_end
 }
 
 script Route110_EventScript_Boy2 {
@@ -180,9 +189,9 @@ script Route110_EventScript_EdwinRegisterMatchCallAfterBattle {
     release_end
 }
 
-script Route110_EventScript_Dale {
-    trainerbattle_single(TRAINER_DALE, Route110_Text_DaleIntro, Route110_Text_DaleDefeated)
-    msgbox(Route110_Text_DalePostBattle, MSGBOX_AUTOCLOSE)
+script Route110_EventScript_Darian {
+    trainerbattle_single(TRAINER_DARIAN, Route110_Text_DarianIntro, Route110_Text_DarianDefeated)
+    msgbox(Route110_Text_DarianPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -242,27 +251,27 @@ script Route110_EventScript_AbigailRegisterMatchCallAfterBattle {
     release_end
 }
 
-script Route110_EventScript_Isabel {
-    trainerbattle_single(TRAINER_ISABEL_1, Route110_Text_IsabelIntro, Route110_Text_IsabelDefeated, Route110_EventScript_IsabelRegisterMatchCallAfterBattle)
+script Route110_EventScript_Kelly {
+    trainerbattle_single(TRAINER_KELLY_1, Route110_Text_KellyIntro, Route110_Text_KellyDefeated, Route110_EventScript_KellyRegisterMatchCallAfterBattle)
     if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
-        trainerbattle_rematch(TRAINER_ISABEL_1, Route110_Text_IsabelRematchIntro, Route110_Text_IsabelRematchDefeated)
-		msgbox(Route110_Text_IsabelRematchPostBattle, MSGBOX_AUTOCLOSE)
+        trainerbattle_rematch(TRAINER_KELLY_1, Route110_Text_KellyRematchIntro, Route110_Text_KellyRematchDefeated)
+		msgbox(Route110_Text_KellyRematchPostBattle, MSGBOX_AUTOCLOSE)
 		end
     }
-    msgbox(Route110_Text_IsabelPostBattle, MSGBOX_DEFAULT)
+    msgbox(Route110_Text_KellyPostBattle, MSGBOX_DEFAULT)
     release_end
 }
 
-script Route110_EventScript_IsabelRegisterMatchCallAfterBattle {
+script Route110_EventScript_KellyRegisterMatchCallAfterBattle {
     special(PlayerFaceTrainerAfterBattle)
     waitmovement(0)
-    msgbox(Route110_Text_IsabelRegister, MSGBOX_DEFAULT)
-    register_matchcall(TRAINER_ISABEL_1)
+    msgbox(Route110_Text_KellyRegister, MSGBOX_DEFAULT)
+    register_matchcall(TRAINER_KELLY_1)
     release_end
 }
 
-script Route110_EventScript_Timmy {
-    trainerbattle_single(TRAINER_TIMMY, Route110_Text_TimmyIntro, Route110_Text_TimmyDefeated)
+script Route110_EventScript_Tristan {
+    trainerbattle_single(TRAINER_TRISTAN, Route110_Text_TimmyIntro, Route110_Text_TimmyDefeated)
     msgbox(Route110_Text_TimmyPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -636,7 +645,15 @@ text Route110_Text_BikeTechniques {
 	riding even more fun.
 
 	There are some places that you can
-	reach only by using a BIKE technique."
+	reach only by using a BIKE technique.
+
+	Here's a TM that teaches a spinning
+	technique for you and your POKéMON."
+}
+
+text Route110_Text_GetRollin {
+	"Why are you talking to me when you
+	should be putting pedal to metal?"
 }
 
 text Route110_Text_WhichShouldIChoose {

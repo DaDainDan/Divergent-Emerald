@@ -4,7 +4,7 @@ MagmaHideout_3F_2R_MapScripts::
 
 MagmaHideout_3F_2R_EventScript_Grunt10::
 # 4 "data/maps/MagmaHideout_3F_2R/scripts.pory"
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_10, MagmaHideout_3F_2R_Text_Grunt10Intro, MagmaHideout_3F_2R_Text_Grunt10Defeat
+	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_8, MagmaHideout_3F_2R_Text_Grunt10Intro, MagmaHideout_3F_2R_Text_Grunt10Defeat
 # 5 "data/maps/MagmaHideout_3F_2R/scripts.pory"
 	msgbox MagmaHideout_3F_2R_Text_Grunt10PostBattle, MSGBOX_AUTOCLOSE
 	end

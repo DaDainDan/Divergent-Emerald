@@ -27,6 +27,21 @@ mapscripts EverGrandeCity_GlaciasRoom_MapScripts {
 
 script EverGrandeCity_GlaciasRoom_EventScript_Glacia {
     lock_faceplayer
+	if (flag(FLAG_SYS_GAME_CLEAR)) {
+		if (!flag(FLAG_DEFEATED_ELITE_4_GLACIA)) {
+			playbgm(MUS_ENCOUNTER_ELITE_FOUR, FALSE)
+			msgbox(EverGrandeCity_GlaciasRoom_Text_IntroSpeechRematch, MSGBOX_DEFAULT)
+			specialvar(VAR_RESULT, GetEliteFourRematch)
+			switch (var(VAR_RESULT)) {
+				case 0: trainerbattle_no_intro(TRAINER_GLACIA_2, EverGrandeCity_GlaciasRoom_Text_DefeatRematch)
+				case 1: trainerbattle_no_intro(TRAINER_GLACIA_3, EverGrandeCity_GlaciasRoom_Text_DefeatRematch)
+			}
+			setflag(FLAG_DEFEATED_ELITE_4_GLACIA)
+			call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles)
+		}
+		msgbox(EverGrandeCity_GlaciasRoom_Text_PostRematchSpeech, MSGBOX_DEFAULT)
+		release_end
+    }
     if (!flag(FLAG_DEFEATED_ELITE_4_GLACIA)) {
 		playbgm(MUS_ENCOUNTER_ELITE_FOUR, FALSE)
 		msgbox(EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT)
@@ -39,7 +54,7 @@ script EverGrandeCity_GlaciasRoom_EventScript_Glacia {
 }
 
 text EverGrandeCity_GlaciasRoom_Text_IntroSpeech {
-	"Welcome, my name is GLACIA
+	"Welcome, my name is ROSALYNN
 	of the ELITE FOUR.
 
 	I've traveled from afar to HOENN
@@ -65,6 +80,39 @@ text EverGrandeCity_GlaciasRoom_Text_Defeat {
 }
 
 text EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech {
+	"Advance to the next room.
+
+	And there, confirm the truly fearsome
+	side of the POKéMON LEAGUE."
+}
+
+text EverGrandeCity_GlaciasRoom_Text_IntroSpeechRematch {
+	"Welcome, my name is ROSALYNN
+	of the ELITE FOUR.
+
+	I've traveled from afar to HOENN
+	so that I may hone my ice skills.
+
+	But all I have seen are challenges by
+	weak TRAINERS and their POKéMON.
+
+	What about you?
+
+	It would please me to no end if I could
+	go all out against you!"
+}
+
+text EverGrandeCity_GlaciasRoom_Text_DefeatRematch {
+	"You and your POKéMON…
+	How hot your spirits burn!
+
+	The all-consuming heat overwhelms.
+
+	It's no surprise that my icy skills
+	failed to harm you."
+}
+
+text EverGrandeCity_GlaciasRoom_Text_PostRematchSpeech {
 	"Advance to the next room.
 
 	And there, confirm the truly fearsome

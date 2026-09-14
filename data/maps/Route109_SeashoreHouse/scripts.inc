@@ -43,7 +43,7 @@ Route109_SeashoreHouse_EventScript_Owner_9:
 Route109_SeashoreHouse_EventScript_Owner_3:
 # 20 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles, MSGBOX_DEFAULT
-	giveitem ITEM_SODA_POP, 6
+	giveitem ITEM_BOTTLE_CAP, 6
 # 0 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route109_SeashoreHouse_EventScript_Owner_13
@@ -68,7 +68,7 @@ Route109_SeashoreHouse_EventScript_Owner_13:
 
 
 Route109_SeashoreHouse_EventScript_BuySodaPop::
-	checkmoney 300
+	checkmoney 500
 # 0 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route109_SeashoreHouse_EventScript_BuySodaPop_2
@@ -79,7 +79,7 @@ Route109_SeashoreHouse_EventScript_BuySodaPop::
 # 48 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox Route109_SeashoreHouse_Text_HereYouGo, MSGBOX_DEFAULT
 # 49 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	removemoney 300
+	removemoney 500
 # 50 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	updatemoneybox
 # 51 "data/maps/Route109_SeashoreHouse/scripts.pory"

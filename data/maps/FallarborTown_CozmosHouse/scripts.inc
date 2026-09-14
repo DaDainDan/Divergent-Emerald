@@ -53,7 +53,7 @@ FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite_2:
 FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite_6:
 # 24 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
 	msgbox FallarborTown_CozmosHouse_Text_PleaseUseThisTM, MSGBOX_DEFAULT
-	giveitem ITEM_TM_RETURN
+	giveitem ITEM_TM_COSMIC_POWER
 # 0 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite_10

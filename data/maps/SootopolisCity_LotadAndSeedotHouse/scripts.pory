@@ -22,7 +22,7 @@ script SootopolisCity_LotadAndSeedotHouse_EventScript_SeedotBrother {
 
 script SootopolisCity_LotadAndSeedotHouse_EventScript_GiveElixir {
 	msgbox(SootopolisCity_LotadAndSeedotHouse_Text_GoshMightBeBiggerThanLotad, MSGBOX_DEFAULT)
-	if (giveitem(ITEM_ELIXIR) == FALSE) {
+	if (giveitem(ITEM_BIG_NUGGET) == FALSE) {
 		msgbox(SootopolisCity_LotadAndSeedotHouse_Text_BagCrammedFull1, MSGBOX_DEFAULT)
 		release_end
 	}

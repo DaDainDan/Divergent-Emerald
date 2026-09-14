@@ -36,6 +36,7 @@ script NewMauville_Entrance_EventScript_Door {
 		setmetatile(5, 1, METATILE_Facility_NewMauvilleDoor_Open_Tile5, TRUE)
 		special(DrawWholeMapView)
 		playse(SE_BANG)
+		removeitem(ITEM_BASEMENT_KEY)
 		setvar(VAR_NEW_MAUVILLE_STATE, 1)
     }
     releaseall

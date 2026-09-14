@@ -35,7 +35,7 @@ script Route119_WeatherInstitute_2F_EventScript_Grunt3 {
 }
 
 script Route119_WeatherInstitute_2F_EventScript_Shelly {
-    trainerbattle_single(TRAINER_SHELLY_WEATHER_INSTITUTE, Route119_WeatherInstitute_2F_Text_ShellyIntro, Route119_WeatherInstitute_2F_Text_ShellyDefeat, Route119_WeatherInstitute_2F_EventScript_ShellyDefeated)
+    trainerbattle_single(TRAINER_SHELLY, Route119_WeatherInstitute_2F_Text_ShellyIntro, Route119_WeatherInstitute_2F_Text_ShellyDefeat, Route119_WeatherInstitute_2F_EventScript_ShellyDefeated)
     msgbox(Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -73,6 +73,12 @@ script Route119_WeatherInstitute_2F_EventScript_ShellyDefeated {
     applymovement(LOCALID_WEATHER_INSTITUTE_2F_SCIENTIST, moves(walk_right * 3))
     waitmovement(0)
     copyobjectxytoperm(LOCALID_WEATHER_INSTITUTE_2F_SCIENTIST)
+	fadescreen(FADE_TO_BLACK)
+	playfanfare(MUS_HEAL)
+	waitfanfare
+	special(HealPlayerParty)
+	callnative(UpdateFollowingPokemon)
+	clearflag(FLAG_NO_WHITEOUT)
     goto(Route119_WeatherInstitute_2F_EventScript_ReceiveCastform)
     end
 }

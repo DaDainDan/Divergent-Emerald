@@ -1,10 +1,6 @@
 MossdeepCity_StevensHouse_MapScripts::
 # 2 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_LOAD
-# 8 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION
-# 15 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_LOAD:
@@ -17,25 +13,6 @@ MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_LOAD_2:
 # 4 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	setmetatile 6, 4, METATILE_GenericBuilding_TableEdge, TRUE
 	goto MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_LOAD_1
-
-MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-# 9 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	compare VAR_STEVENS_HOUSE_STATE, 2
-	goto_if_eq MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
-MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	end
-
-MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
-# 10 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	setobjectxyperm LOCALID_STEVENS_HOUSE_STEVEN, 6, 5
-# 11 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	setobjectmovementtype LOCALID_STEVENS_HOUSE_STEVEN, MOVEMENT_TYPE_FACE_UP
-	goto MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-
-MossdeepCity_StevensHouse_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-# 16 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	map_script_2 VAR_STEVENS_HOUSE_STATE, 1, MossdeepCity_StevensHouse_EventScript_StevenGivesDive
-	.2byte 0
 
 
 MossdeepCity_StevensHouse_EventScript_StevenGivesDive::

@@ -11,14 +11,33 @@ script SootopolisCity_Mart_EventScript_Clerk {
 
 mart SootopolisCity_Mart_Pokemart {
     ITEM_ULTRA_BALL
-    ITEM_HYPER_POTION
+    ITEM_LURE_BALL
     ITEM_MAX_POTION
+    ITEM_MAX_REVIVE
     ITEM_FULL_HEAL
-    ITEM_REVIVE
+    ITEM_MAX_ELIXIR
     ITEM_MAX_REPEL
-    ITEM_X_ATTACK
-    ITEM_X_DEFENSE
-    ITEM_SHADOW_MAIL
+    ITEM_MAX_LURE
+}
+
+script SootopolisCity_Mart_EventScript_EnhancementClerk {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(SootopolisCity_Mart_Pokemart_Enhancement)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
+
+mart SootopolisCity_Mart_Pokemart_Enhancement {
+    ITEM_EXP_CANDY_L
+    ITEM_HP_UP
+    ITEM_PROTEIN
+    ITEM_IRON
+    ITEM_CARBOS
+    ITEM_CALCIUM
+    ITEM_ZINC
+    ITEM_PP_UP
 }
 
 script SootopolisCity_Mart_EventScript_FatMan {

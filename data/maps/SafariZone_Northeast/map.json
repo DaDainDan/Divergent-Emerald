@@ -3,7 +3,6 @@
   "name": "SafariZone_Northeast",
   "layout": "LAYOUT_SAFARI_ZONE_NORTHEAST",
   "music": "MUS_SAFARI_ZONE",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_SAFARI_ZONE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -131,7 +130,7 @@
       "flag": "FLAG_TEMP_12"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
       "x": 8,
       "y": 17,
       "elevation": 3,
@@ -139,7 +138,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_NUGGET",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_DIAMOND_DUST",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET"
     }
@@ -178,8 +177,8 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 31,
-      "y": 36,
+      "x": 5,
+      "y": 22,
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_RARE_CANDY"
@@ -192,5 +191,6 @@
       "item": "ITEM_ZINC",
       "flag": "FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_ZINC"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

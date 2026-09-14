@@ -25,17 +25,12 @@ script LilycoveCity_DepartmentStore_2F_EventScript_ClerkLeft {
 }
 
 mart LilycoveCity_DepartmentStore_2F_Pokemart1 {
-    ITEM_POKE_BALL
-    ITEM_GREAT_BALL
     ITEM_ULTRA_BALL
-    ITEM_ESCAPE_ROPE
-    ITEM_FULL_HEAL
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_BURN_HEAL
-    ITEM_ICE_HEAL
-    ITEM_AWAKENING
-    ITEM_FLUFFY_TAIL
+    ITEM_LUXURY_BALL
+    ITEM_LOVE_BALL
+    ITEM_DUSK_BALL
+    ITEM_HEAVY_BALL
+    ITEM_LEVEL_BALL
 }
 
 script LilycoveCity_DepartmentStore_2F_EventScript_ClerkRight {
@@ -48,16 +43,13 @@ script LilycoveCity_DepartmentStore_2F_EventScript_ClerkRight {
 }
 
 mart LilycoveCity_DepartmentStore_2F_Pokemart2 {
-    ITEM_POTION
-    ITEM_SUPER_POTION
-    ITEM_HYPER_POTION
     ITEM_MAX_POTION
-    ITEM_REVIVE
-    ITEM_REPEL
-    ITEM_SUPER_REPEL
+    ITEM_MAX_REVIVE
+    ITEM_FULL_HEAL
+    ITEM_MAX_ELIXIR
     ITEM_MAX_REPEL
-    ITEM_WAVE_MAIL
-    ITEM_MECH_MAIL
+    ITEM_MAX_LURE
+    ITEM_POKE_DOLL
 }
 
 text LilycoveCity_DepartmentStore_2F_Text_LearnToUseItemsProperly {

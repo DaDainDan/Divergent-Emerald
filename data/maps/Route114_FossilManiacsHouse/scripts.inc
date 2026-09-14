@@ -16,7 +16,7 @@ Route114_FossilManiacsHouse_EventScript_FossilManiacsBrother::
 	goto_if_set FLAG_RECEIVED_TM_DIG, Route114_FossilManiacsHouse_EventScript_FossilManiacsBrother_2
 # 14 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 	msgbox Route114_FossilManiacsHouse_Text_HaveThisToDigLikeMyBrother, MSGBOX_DEFAULT
-	giveitem ITEM_TM_DIG
+	giveitem ITEM_TM_BULLDOZE
 # 0 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route114_FossilManiacsHouse_EventScript_FossilManiacsBrother_5

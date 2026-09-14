@@ -3,7 +3,7 @@ mapscripts Route129_MapScripts {
         if (var(VAR_SHOULD_END_ABNORMAL_WEATHER) == 1) {
 			call(AbnormalWeather_EventScript_HideMapNamePopup)
 		}
-		if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 4 && flag(FLAG_SYS_WEATHER_CTRL)) {
+		if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 5 && flag(FLAG_SYS_WEATHER_CTRL)) {
 			call(Common_EventScript_SetAbnormalWeather)
 		}
 		if (var(VAR_ABNORMAL_WEATHER_LOCATION) == ABNORMAL_WEATHER_ROUTE_129_WEST || var(VAR_ABNORMAL_WEATHER_LOCATION) == ABNORMAL_WEATHER_ROUTE_129_EAST) {

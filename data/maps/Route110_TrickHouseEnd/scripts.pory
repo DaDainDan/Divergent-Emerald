@@ -36,25 +36,26 @@ script Route110_TrickHouseEnd_EventScript_TrickMaster {
     switch (var(VAR_TRICK_HOUSE_LEVEL)) {
         case 0: 
 			msgbox(Route110_TrickHouseEnd_Text_AllNightToPlantTrees, MSGBOX_DEFAULT)
-			setvar(VAR_GIFT_ITEM, ITEM_RARE_CANDY)
+			setvar(VAR_GIFT_ITEM, ITEM_LEEK)
         case 1:
 			msgbox(Route110_TrickHouseEnd_Text_AllNightToMakeMaze, MSGBOX_DEFAULT)
-			setvar(VAR_GIFT_ITEM, ITEM_TIMER_BALL)
+			setvar(VAR_GIFT_ITEM, ITEM_TM_DISABLE)
         case 2: 
 			msgbox(Route110_TrickHouseEnd_Text_AllNightToPreparePanels, MSGBOX_DEFAULT)
-			setvar(VAR_GIFT_ITEM, ITEM_HARD_STONE)
+			clearflag(FLAG_HIDE_TRICK_HOUSE_TUTOR)
+			setvar(VAR_GIFT_ITEM, ITEM_SMOKE_BALL)
         case 3: 
 			msgbox(Route110_TrickHouseEnd_Text_AllNightToShoveBoulders, MSGBOX_DEFAULT)
-			setvar(VAR_GIFT_ITEM, ITEM_SMOKE_BALL)
+			setvar(VAR_GIFT_ITEM, ITEM_IRON_BALL)
         case 4: 
 			msgbox(Route110_TrickHouseEnd_Text_AllNightToMakeMechadolls, MSGBOX_DEFAULT)
-			setvar(VAR_GIFT_ITEM, ITEM_TM_TAUNT)
+			setvar(VAR_GIFT_ITEM, ITEM_TM_SIGNAL_BEAM)
         case 5: 
 			msgbox(Route110_TrickHouseEnd_Text_AllNightToInstallDoors, MSGBOX_DEFAULT)
-			setvar(VAR_GIFT_ITEM, ITEM_MAGNET)
+			setvar(VAR_GIFT_ITEM, ITEM_LUCKY_PUNCH)
         case 6: 
 			msgbox(Route110_TrickHouseEnd_Text_AllNightSettingUpArrows, MSGBOX_DEFAULT)
-			setvar(VAR_GIFT_ITEM, ITEM_PP_MAX)
+			setvar(VAR_GIFT_ITEM, ITEM_LUCKY_EGG)
         case 7: 
 			goto(Route110_TrickHouseEnd_EventScript_CompletedPuzzle8)
     }

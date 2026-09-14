@@ -522,7 +522,7 @@ SlateportCity_Harbor_EventScript_DeepSeaTooth::
 	compare VAR_RESULT, NO
 	goto_if_eq SlateportCity_Harbor_EventScript_DeepSeaTooth_2
 SlateportCity_Harbor_EventScript_DeepSeaTooth_1:
-	giveitem ITEM_DEEP_SEA_TOOTH
+	giveitem ITEM_PRISM_SCALE
 # 0 "data/maps/SlateportCity_Harbor/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq SlateportCity_Harbor_EventScript_DeepSeaTooth_5
@@ -549,7 +549,7 @@ SlateportCity_Harbor_EventScript_DeepSeaScale::
 	compare VAR_RESULT, NO
 	goto_if_eq SlateportCity_Harbor_EventScript_DeepSeaScale_2
 SlateportCity_Harbor_EventScript_DeepSeaScale_1:
-	giveitem ITEM_DEEP_SEA_SCALE
+	giveitem ITEM_DRAGON_SCALE
 # 0 "data/maps/SlateportCity_Harbor/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq SlateportCity_Harbor_EventScript_DeepSeaScale_5
@@ -849,12 +849,12 @@ SlateportCity_Harbor_Text_IfYouWantToTradeLetMeKnow::
 SlateportCity_Harbor_Text_TradeForDeepSeaTooth::
 # 507 "data/maps/SlateportCity_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_STERN}So you'll trade it for\n"
-	.string "my DEEPSEATOOTH?$"
+	.string "my PRISM SCALE?$"
 
 SlateportCity_Harbor_Text_TradeForDeepSeaScale::
 # 512 "data/maps/SlateportCity_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_STERN}So you'll trade it for\n"
-	.string "my DEEPSEASCALE?$"
+	.string "my DRAGON SCALE?$"
 
 SlateportCity_Harbor_Text_WhichOneDoYouWant::
 # 517 "data/maps/SlateportCity_Harbor/scripts.pory"

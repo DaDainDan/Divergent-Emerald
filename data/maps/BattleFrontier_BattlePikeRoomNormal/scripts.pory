@@ -300,6 +300,7 @@ script BattleFrontier_BattlePikeRoomNormal_EventScript_KirliaAttack {
 		case PIKE_STATUS_PARALYSIS: message(BattleFrontier_BattlePikeRoomNormal_Text_KirliaUsedThunderWave)
 		case PIKE_STATUS_SLEEP: message(BattleFrontier_BattlePikeRoomNormal_Text_KirliaUsedHypnosis)
 	}
+    waitmessage
 	setvar(VAR_0x8003, SPECIES_KIRLIA)
     return
 }
@@ -314,7 +315,9 @@ script BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack {
 	switch (var(VAR_RESULT)) {
 		case PIKE_STATUS_FREEZE: message(BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedIceBeam)
 		case PIKE_STATUS_BURN: message(BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedWillOWisp)
+        case PIKE_STATUS_CURSE: message(BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedCurse)
 	}
+    waitmessage
 	setvar(VAR_0x8003, SPECIES_DUSCLOPS)
     return
 }
@@ -565,7 +568,11 @@ text BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedWillOWisp {
 }
 
 text BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedIceBeam {
-	"DUSCLOPS used ICE BEAM!"
+	"DUSCLOPS used BITTER COLD!"
+}
+
+text BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedCurse {
+	"DUSCLOPS used CURSE!"
 }
 
 text BattleFrontier_BattlePikeRoomNormal_Text_ThatsEnough {

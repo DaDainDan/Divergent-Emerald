@@ -1,31 +1,12 @@
-mapscripts RustboroCity_DevonCorp_2F_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_FOSSIL_RESURRECTION_STATE) == 1) {
-			call(RustboroCity_DevonCorp_2F_EventScript_SetFossilReady)
-		}
-		end
-    }
-}
-
-script RustboroCity_DevonCorp_2F_EventScript_SetFossilReady {
-    setvar(VAR_FOSSIL_RESURRECTION_STATE, 2)
-    return
-}
+mapscripts RustboroCity_DevonCorp_2F_MapScripts {}
 
 script RustboroCity_DevonCorp_2F_EventScript_TalkToPokemonScientist {
-    lock_faceplayer
-    if (var(VAR_FOSSIL_RESURRECTION_STATE) == 1) {
-        call(RustboroCity_DevonCorp_2F_EventScript_SetFossilReady)
-    }
-    msgbox(RustboroCity_DevonCorp_2F_Text_DeviceForTalkingToPokemon, MSGBOX_DEFAULT)
-    release_end
+    msgbox(RustboroCity_DevonCorp_2F_Text_DeviceForTalkingToPokemon, MSGBOX_NPC)
+    end
 }
 
 script RustboroCity_DevonCorp_2F_EventScript_BallScientist {
     lock_faceplayer
-    if (var(VAR_FOSSIL_RESURRECTION_STATE) == 1) {
-        call(RustboroCity_DevonCorp_2F_EventScript_SetFossilReady)
-    }
     if (flag(FLAG_MET_DEVON_EMPLOYEE)) {
         msgbox(RustboroCity_DevonCorp_2F_Text_WeFinallyMadeNewBalls, MSGBOX_DEFAULT)
     	release_end
@@ -36,9 +17,6 @@ script RustboroCity_DevonCorp_2F_EventScript_BallScientist {
 
 script RustboroCity_DevonCorp_2F_EventScript_PokenavScientist {
     lock_faceplayer
-    if (var(VAR_FOSSIL_RESURRECTION_STATE) == 1) {
-        call(RustboroCity_DevonCorp_2F_EventScript_SetFossilReady)
-    }
     if (flag(FLAG_RECEIVED_POKENAV)) {
         msgbox(RustboroCity_DevonCorp_2F_Text_WowThatsAPokenav, MSGBOX_DEFAULT)
     	release_end
@@ -48,102 +26,123 @@ script RustboroCity_DevonCorp_2F_EventScript_PokenavScientist {
 }
 
 script RustboroCity_DevonCorp_2F_EventScript_PokemonDreamsScientist {
-    lock_faceplayer
-    if (var(VAR_FOSSIL_RESURRECTION_STATE) == 1) {
-        call(RustboroCity_DevonCorp_2F_EventScript_SetFossilReady)
-    }
-    msgbox(RustboroCity_DevonCorp_2F_Text_DeviceToVisualizePokemonDreams, MSGBOX_DEFAULT)
-    release_end
+    msgbox(RustboroCity_DevonCorp_2F_Text_DeviceToVisualizePokemonDreams, MSGBOX_NPC)
+    end
 }
 
 script RustboroCity_DevonCorp_2F_EventScript_FossilScientist {
     lock_faceplayer
-    if (var(VAR_FOSSIL_RESURRECTION_STATE) == 2) {
-		switch(var(VAR_WHICH_FOSSIL_REVIVED)) {
-            case 1: setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LILEEP)
-            case 2: setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ANORITH)
-        }
-        bufferspeciesname(STR_VAR_2, VAR_TEMP_TRANSFERRED_SPECIES)
-        msgbox(RustboroCity_DevonCorp_2F_Text_FossilizedMonBroughtBackToLife, MSGBOX_DEFAULT)
-        goto(RustboroCity_DevonCorp_2F_EventScript_ReceiveFossil)
-        end
-    }
     if (var(VAR_FOSSIL_RESURRECTION_STATE) == 1) {
-        msgbox(RustboroCity_DevonCorp_2F_Text_FossilRegeneratorTakesTime, MSGBOX_DEFAULT)
-    	release_end
-    }
-    msgbox(RustboroCity_DevonCorp_2F_Text_DevelopDeviceToResurrectFossils, MSGBOX_DEFAULT)
-    if (checkitem(ITEM_ROOT_FOSSIL) == TRUE || checkitem(ITEM_CLAW_FOSSIL) == TRUE) {
-        goto(RustboroCity_DevonCorp_2F_EventScript_NoticeFossil)
-    }
-    release_end
-}
-
-script RustboroCity_DevonCorp_2F_EventScript_NoticeFossil {
-	closemessage
-    playse(SE_PIN)
-    applymovement(LOCALID_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark)
-    waitmovement(0)
-    applymovement(LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48)
-    waitmovement(0)
-    msgbox(RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife, MSGBOX_YESNO)
-    if (var(VAR_RESULT) == NO) {
-        msgbox(RustboroCity_DevonCorp_2F_Text_OhIsThatSo, MSGBOX_DEFAULT)
-    	release_end
-    }
-	if (checkitem(ITEM_CLAW_FOSSIL) == TRUE && checkitem(ITEM_ROOT_FOSSIL) == TRUE) {
         goto(RustboroCity_DevonCorp_2F_EventScript_ChooseFossil)
     }
-	elif (checkitem(ITEM_CLAW_FOSSIL) == TRUE) {
-		setvar(VAR_EXCHANGE_ITEM, ITEM_CLAW_FOSSIL)
-		setvar(VAR_WHICH_FOSSIL_REVIVED, 2)
-	}
-	else {
-		setvar(VAR_EXCHANGE_ITEM, ITEM_ROOT_FOSSIL)
-		setvar(VAR_WHICH_FOSSIL_REVIVED, 1)
-	}
-    goto(RustboroCity_DevonCorp_2F_EventScript_GiveFossil)
-    end
+    msgbox(RustboroCity_DevonCorp_2F_Text_DevelopDeviceToResurrectFossils, MSGBOX_DEFAULT)
+    if (specialvar(VAR_RESULT, DoesPlayerHaveFossil) == TRUE) {
+        closemessage
+        playse(SE_PIN)
+        applymovement(LOCALID_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        applymovement(LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            msgbox(RustboroCity_DevonCorp_2F_Text_OhIsThatSo, MSGBOX_DEFAULT)
+            release_end
+        }
+        goto(RustboroCity_DevonCorp_2F_EventScript_ChooseFossil)
+    }
+    release_end
 }
 
 script RustboroCity_DevonCorp_2F_EventScript_ChooseFossil {
-    message(RustboroCity_DevonCorp_2F_Text_TwoFossilsPickOne)
-    waitmessage
-    multichoice(17, 6, MULTI_FOSSIL, FALSE)
+    msgbox(format("Do you have a fossil that you would like to revive?"), MSGBOX_DEFAULT)
+	if (checkitem(ITEM_HELIX_FOSSIL)) {
+		dynmultipush("HELIX FOSSIL", 1)
+	}
+	if (checkitem(ITEM_DOME_FOSSIL)) {
+		dynmultipush("DOME FOSSIL", 2)
+	}
+	if (checkitem(ITEM_ROOT_FOSSIL)) {
+		dynmultipush("ROOT FOSSIL", 3)
+	}
+	if (checkitem(ITEM_CLAW_FOSSIL)) {
+		dynmultipush("CLAW_FOSSIL", 4)
+	}
+	if (checkitem(ITEM_SKULL_FOSSIL)) {
+		dynmultipush("SKULL FOSSIL", 5)
+	}
+	if (checkitem(ITEM_ARMOR_FOSSIL)) {
+		dynmultipush("ARMOR FOSSIL", 6)
+	}
+	if (checkitem(ITEM_PLUME_FOSSIL)) {
+		dynmultipush("PLUME FOSSIL", 7)
+	}
+	if (checkitem(ITEM_OLD_AMBER)) {
+		dynmultipush("OLD AMBER", 8)
+	}
+	if (checkitem(ITEM_JAW_FOSSIL)) {
+		dynmultipush("JAW FOSSIL", 9)
+	}
+	if (checkitem(ITEM_SAIL_FOSSIL)) {
+		dynmultipush("SAIL FOSSIL", 10)
+	}
+    dynmultipush("EXIT", 0)
+	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
     switch (var(VAR_RESULT)) {
-        case 0: 
-			setvar(VAR_EXCHANGE_ITEM, ITEM_CLAW_FOSSIL)
-			setvar(VAR_WHICH_FOSSIL_REVIVED, 2)
-        case 1: 
-			setvar(VAR_EXCHANGE_ITEM, ITEM_ROOT_FOSSIL)
-			setvar(VAR_WHICH_FOSSIL_REVIVED, 1)
+		case 1:
+            setvar(VAR_EXCHANGE_ITEM, ITEM_HELIX_FOSSIL)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OMANYTE)
 		case 2:
-		case MULTI_B_PRESSED: 
+            setvar(VAR_EXCHANGE_ITEM, ITEM_DOME_FOSSIL)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KABUTO)
+		case 3:
+            setvar(VAR_EXCHANGE_ITEM, ITEM_ROOT_FOSSIL)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LILEEP)
+		case 4:
+            setvar(VAR_EXCHANGE_ITEM, ITEM_CLAW_FOSSIL)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ANORITH)
+		case 5:
+            setvar(VAR_EXCHANGE_ITEM, ITEM_SKULL_FOSSIL)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CRANIDOS)
+		case 6:
+            setvar(VAR_EXCHANGE_ITEM, ITEM_ARMOR_FOSSIL)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIELDON)
+		case 7:
+            setvar(VAR_EXCHANGE_ITEM, ITEM_PLUME_FOSSIL)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARCHEN)
+		case 8:
+            setvar(VAR_EXCHANGE_ITEM, ITEM_OLD_AMBER)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AERODACTYL)
+		case 9:
+            setvar(VAR_EXCHANGE_ITEM, ITEM_JAW_FOSSIL)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRUNT)
+		case 10:
+            setvar(VAR_EXCHANGE_ITEM, ITEM_SAIL_FOSSIL)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AMAURA)
+		case 0:
+		case MULTI_B_PRESSED:
+            msgbox(RustboroCity_DevonCorp_2F_Text_OhIsThatSo, MSGBOX_DEFAULT)
 			release_end
-    }
-    goto(RustboroCity_DevonCorp_2F_EventScript_GiveFossil)
+	}
+    bufferitemname(STR_VAR_2, VAR_EXCHANGE_ITEM)
+    bufferspeciesname(STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES)
+    msgbox(RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT)
+    removeitem(VAR_EXCHANGE_ITEM)
+    playfanfare(MUS_LEVEL_UP)
+    waitfanfare
+    msgbox(RustboroCity_DevonCorp_2F_Text_FossilizedMonBroughtBackToLife, MSGBOX_DEFAULT)
+    goto(RustboroCity_DevonCorp_2F_EventScript_ReceiveFossil)
     end
 }
 
-script RustboroCity_DevonCorp_2F_EventScript_GiveFossil {
-    bufferitemname(STR_VAR_1, VAR_EXCHANGE_ITEM)
-    msgbox(RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT)
-    removeitem(VAR_EXCHANGE_ITEM)
-    setvar(VAR_FOSSIL_RESURRECTION_STATE, 1)
-    release_end
-}
-
 script RustboroCity_DevonCorp_2F_EventScript_ReceiveFossil {
-    if (givemon(VAR_TEMP_TRANSFERRED_SPECIES, 20) == MON_CANT_GIVE) {
+    if (givemon(VAR_TEMP_TRANSFERRED_SPECIES, 1) == MON_CANT_GIVE) {
 		goto(Common_EventScript_NoMoreRoomForPokemon)
 	}
     copyvar(VAR_0x8007, VAR_RESULT)
-    bufferspeciesname(STR_VAR_2, VAR_TEMP_TRANSFERRED_SPECIES)
     playfanfare(MUS_OBTAIN_ITEM)
     message(RustboroCity_DevonCorp_2F_Text_ReceivedMonFromResearcher)
     waitmessage
     waitfanfare
-    bufferspeciesname(STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES)
     msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
     switch(var(VAR_0x8007)) {
         case MON_GIVEN_TO_PARTY:
@@ -157,16 +156,13 @@ script RustboroCity_DevonCorp_2F_EventScript_ReceiveFossil {
             }
             call(Common_EventScript_TransferredToPC)
     }
-    setvar(VAR_FOSSIL_RESURRECTION_STATE, 0)
-    setflag(FLAG_RECEIVED_REVIVED_FOSSIL_MON)
+    setvar(VAR_FOSSIL_RESURRECTION_STATE, 1)
+	setflag(FLAG_RECEIVED_REVIVED_FOSSIL_MON)
     release_end
 }
 
 script RustboroCity_DevonCorp_2F_EventScript_MatchCallScientist {
     lock_faceplayer
-    if (var(VAR_FOSSIL_RESURRECTION_STATE) == 1) {
-        call(RustboroCity_DevonCorp_2F_EventScript_SetFossilReady)
-    }
     if (var(VAR_RUSTBORO_CITY_STATE) >= 6) {
         msgbox(RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext, MSGBOX_DEFAULT)
     	release_end
@@ -275,7 +271,7 @@ text RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher {
 	"Excellent!
 	Let's do this right away.
 
-	{PLAYER} handed the {STR_VAR_1} to
+	{PLAYER} handed the {STR_VAR_2} to
 	the DEVON RESEARCHER."
 }
 
@@ -291,17 +287,15 @@ text RustboroCity_DevonCorp_2F_Text_FossilRegeneratorTakesTime {
 }
 
 text RustboroCity_DevonCorp_2F_Text_FossilizedMonBroughtBackToLife {
-	"Thanks for waiting!
-
-	Your fossilized POKéMON has been
+	"Your fossilized POKéMON has been
 	brought back to life!
 
 	The fossil was an ancient POKéMON.
-	{STR_VAR_2}, it was!"
+	{STR_VAR_1}, it was!"
 }
 
 text RustboroCity_DevonCorp_2F_Text_ReceivedMonFromResearcher {
-	"{PLAYER} received {STR_VAR_2} from
+	"{PLAYER} received {STR_VAR_1} from
 	the DEVON RESEARCHER."
 }
 

@@ -9,7 +9,7 @@ SSTidalRooms_EventScript_SnatchGiver::
 	goto_if_set FLAG_RECEIVED_TM_SNATCH, SSTidalRooms_EventScript_SnatchGiver_2
 # 9 "data/maps/SSTidalRooms/scripts.pory"
 	msgbox SSTidalRooms_Text_NotSuspiciousTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_SNATCH
+	giveitem ITEM_TM_REVIVAL_BLESSING
 # 0 "data/maps/SSTidalRooms/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq SSTidalRooms_EventScript_SnatchGiver_5

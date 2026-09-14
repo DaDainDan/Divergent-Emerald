@@ -2,11 +2,11 @@ Route107_MapScripts::
 	.byte 0
 
 
-Route107_EventScript_Darrin::
+Route107_EventScript_Diego::
 # 4 "data/maps/Route107/scripts.pory"
-	trainerbattle_single TRAINER_DARRIN, Route107_Text_DarrinIntro, Route107_Text_DarrinDefeated
+	trainerbattle_single TRAINER_DIEGO, Route107_Text_DiegoIntro, Route107_Text_DiegoDefeated
 # 5 "data/maps/Route107/scripts.pory"
-	msgbox Route107_Text_DarrinPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route107_Text_DiegoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 

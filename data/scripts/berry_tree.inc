@@ -166,6 +166,9 @@ BerryTree_EventScript_CheckBerryFullyGrown::
 .set BERRY_MUTATION_SPACE_IN_BAG, 3
 
 BerryTree_EventScript_PickBerry::
+.if OW_BERRY_PESTS == TRUE
+	call BerryTree_EventScript_CheckForPests
+.endif
 	special ObjectEventInteractionPickBerryTree
 	goto_if_eq VAR_0x8004, BERRY_NORMAL_BAG_FULL, BerryTree_EventScript_BerryPocketFull
 .if OW_BERRY_MUTATIONS == TRUE
@@ -458,8 +461,8 @@ BerryTree_EventScript_EncounterPests::
 	waitmessage
 	waitbuttonpress
 	dowildbattle
-	return
+	goto BerryTreeScript
 
 BerryTree_Text_APokemonAppeared:
-	.string "A Pokémon appeared!$"
+	.string "A wild Pokémon appeared!$"
 .endif

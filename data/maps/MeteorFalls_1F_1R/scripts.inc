@@ -163,47 +163,53 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 # 83 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	setflag FLAG_HIDE_ROUTE_112_TEAM_MAGMA
 # 84 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	setflag FLAG_MET_ARCHIE_METEOR_FALLS
+	setflag FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY
 # 85 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	setflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
+	setflag FLAG_HIDE_MT_CHIMNEY_TRAINERS
 # 86 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	setvar VAR_METEOR_FALLS_STATE, 1
+	clearflag FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA
 # 87 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	setflag FLAG_MET_ARCHIE_METEOR_FALLS
+# 88 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	setflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
+# 89 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	setvar VAR_METEOR_FALLS_STATE, 1
+# 90 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	releaseall
 	end
 
 
-# 91 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay:
-# 93 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	step_faster_down
 # 94 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	delay_4
-# 95 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	step_faster_right
+MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay:
 # 96 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	lock_look
+	step_faster_down
 # 97 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_left
+	delay_4
 # 98 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	unlock_look
+	step_faster_right
 # 99 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	lock_look
+# 100 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	walk_left
+# 101 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	unlock_look
+# 102 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	face_right
 	step_end
 
 MeteorFalls_1F_1R_EventScript_ProfCozmo::
-# 103 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 106 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	lock_faceplayer
-# 104 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 107 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	goto_if_set FLAG_MET_PROF_COZMO, MeteorFalls_1F_1R_EventScript_ProfCozmo_2
-# 108 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 111 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	setflag FLAG_MET_PROF_COZMO
-# 109 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 112 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_MeetProfCozmo, MSGBOX_DEFAULT
 	release_end
 
 MeteorFalls_1F_1R_EventScript_ProfCozmo_2:
-# 105 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 108 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney, MSGBOX_DEFAULT
 	release_end
 
@@ -389,26 +395,26 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_Movement_9:
 	step_end
 
 MeteorFalls_1F_1R_Text_WithThisMeteorite::
-# 113 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 116 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "Hehehe!\p"
 	.string "With this METEORITE, that thing in\n"
 	.string "MT. CHIMNEY will…$"
 
 MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma::
-# 120 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 123 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "Heh?\p"
 	.string "I don't know who you are, but if you get\n"
 	.string "in the way of TEAM MAGMA, don't\l"
 	.string "expect any mercy!$"
 
 MeteorFalls_1F_1R_Text_HoldItRightThereMagma::
-# 128 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 131 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "Hold it right there, TEAM MAGMA!\p"
 	.string "You're badly mistaken if you think you\n"
 	.string "can have your way with the world!$"
 
 MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua::
-# 135 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 138 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "Hehehe!\n"
 	.string "Even TEAM AQUA joins us!\p"
 	.string "But it's too much trouble to deal with\n"
@@ -420,7 +426,7 @@ MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua::
 	.string "AQUA dingbats!$"
 
 MeteorFalls_1F_1R_Text_ArchieSeenYouBefore::
-# 151 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 154 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "{SPEAKER NAME_ARCHIE}Didn't I see you before?\n"
 	.string "At SLATEPORT's MUSEUM?\p"
 	.string "Ah, so your name is {PLAYER}.\p"
@@ -436,25 +442,25 @@ MeteorFalls_1F_1R_Text_ArchieSeenYouBefore::
 	.string "the sea-loving TEAM AQUA!$"
 
 MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma::
-# 173 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 176 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "BOSS, we should give chase to\n"
 	.string "TEAM MAGMA…$"
 
 MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo::
-# 178 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 181 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "{SPEAKER NAME_ARCHIE}Yes, yes, we must!\n"
 	.string "We've got to hurry.\p"
 	.string "There's no telling what TEAM MAGMA\n"
 	.string "will do at MT. CHIMNEY!$"
 
 MeteorFalls_1F_1R_Text_ArchieFarewell::
-# 186 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 189 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "{SPEAKER NAME_ARCHIE}{PLAYER}, you should keep\n"
 	.string "an eye out for TEAM MAGMA, too.\p"
 	.string "Farewell!$"
 
 MeteorFalls_1F_1R_Text_MeetProfCozmo::
-# 193 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 196 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "I… I'm COZMO…\n"
 	.string "I'm a PROFESSOR…\p"
 	.string "TEAM MAGMA asked me to guide them\n"
@@ -470,7 +476,7 @@ MeteorFalls_1F_1R_Text_MeetProfCozmo::
 	.string "METEORITE at MT. CHIMNEY?$"
 
 MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney::
-# 215 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 218 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "{SPEAKER NAME_COZMO}But that TEAM MAGMA…\p"
 	.string "What are they going to do with that\n"
 	.string "METEORITE at MT. CHIMNEY?$"

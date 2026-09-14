@@ -8,14 +8,23 @@ mapscripts DesertUnderpass_MapScripts {
 script DesertUnderpass_EventScript_Fossil {
     lock_faceplayer
     if (flag(FLAG_CHOSE_HELIX_FOSSIL)) {
-        giveitem(ITEM_CLAW_FOSSIL)
+        giveitem(ITEM_DOME_FOSSIL)
     } else {
-        giveitem(ITEM_ROOT_FOSSIL)
+        giveitem(ITEM_HELIX_FOSSIL)
     }
 	if (var(VAR_RESULT) == FALSE) {
 		goto(Common_EventScript_ShowBagIsFull)
 	}
     removeobject(LOCALID_UNDERPASS_FOSSIL)
+    release_end
+}
+
+script DesertUnderpass_EventScript_Jaw_Fossil {
+    lock_faceplayer
+    if (giveitem(ITEM_JAW_FOSSIL) == FALSE) {
+		goto(Common_EventScript_ShowBagIsFull)
+	}
+    removeobject(LOCALID_UNDERPASS_JAW_FOSSIL)
     release_end
 }
 

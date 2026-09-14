@@ -225,7 +225,7 @@ script Route104_EventScript_ExpertF {
         release_end
     }
     msgbox(Route104_Text_PlantBerriesInSoilTakeThis, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_CHESTO_BERRY) == FALSE) {
+    if (giveitem(ITEM_LUM_BERRY) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     setflag(FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104)
@@ -299,7 +299,7 @@ script Route104_EventScript_Boy2 {
         release_end
     }
     msgbox(Route104_Text_LikeFillingMouthWithSeedsTakeThis, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_TM_BULLET_SEED) == FALSE) {
+    if (giveitem(ITEM_TM_NATURAL_GIFT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     setflag(FLAG_RECEIVED_TM_BULLET_SEED)
@@ -437,34 +437,34 @@ script Route104_EventScript_Ivan {
 }
 
 script Route104_EventScript_Billy {
-    trainerbattle_single(TRAINER_BILLY, Route104_Text_BillyIntro, Route104_Text_BillyDefeat)
+    trainerbattle_single(TRAINER_HAROLD, Route104_Text_BillyIntro, Route104_Text_BillyDefeat)
     msgbox(Route104_Text_BillyPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
-script Route104_EventScript_Haley {
-    trainerbattle_single(TRAINER_HALEY_1, Route104_Text_HaleyIntro, Route104_Text_HaleyDefeat, Route104_EventScript_TryRegisterHaleyAfterBattle)
+script Route104_EventScript_Giselle {
+    trainerbattle_single(TRAINER_GISELLE_1, Route104_Text_GiselleIntro, Route104_Text_GiselleDefeat, Route104_EventScript_TryRegisterGiselleAfterBattle)
     if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
-        trainerbattle_rematch(TRAINER_HALEY_1, Route104_Text_HaleyRematchIntro, Route104_Text_HaleyRematchDefeat)
-        msgbox(Route104_Text_HaleyPostRematch, MSGBOX_AUTOCLOSE)
+        trainerbattle_rematch(TRAINER_GISELLE_1, Route104_Text_GiselleRematchIntro, Route104_Text_GiselleRematchDefeat)
+        msgbox(Route104_Text_GisellePostRematch, MSGBOX_AUTOCLOSE)
         end
     }
-    setvar(VAR_0x8004, TRAINER_HALEY_1)
+    setvar(VAR_0x8004, TRAINER_GISELLE_1)
     if (flag(FLAG_HAS_MATCH_CALL) && specialvar(VAR_RESULT, IsTrainerRegistered) == FALSE) {
-        msgbox(Route104_Text_HaleyRegister1, MSGBOX_DEFAULT)
-        register_matchcall(TRAINER_HALEY_1)
+        msgbox(Route104_Text_GiselleRegister1, MSGBOX_DEFAULT)
+        register_matchcall(TRAINER_GISELLE_1)
         release_end
     }
-    msgbox(Route104_Text_HaleyPostBattle, MSGBOX_DEFAULT)
+    msgbox(Route104_Text_GisellePostBattle, MSGBOX_DEFAULT)
     release_end
 }
 
-script Route104_EventScript_TryRegisterHaleyAfterBattle {
+script Route104_EventScript_TryRegisterGiselleAfterBattle {
     special(PlayerFaceTrainerAfterBattle)
     waitmovement(0)
     if (flag(FLAG_HAS_MATCH_CALL)) {
-        msgbox(Route104_Text_HaleyRegister2, MSGBOX_DEFAULT)
-        register_matchcall(TRAINER_HALEY_1)
+        msgbox(Route104_Text_GiselleRegister2, MSGBOX_DEFAULT)
+        register_matchcall(TRAINER_GISELLE_1)
     }
     release_end
 }
@@ -537,9 +537,9 @@ script Route104_EventScript_Mia {
     release_end
 }
 
-script Route104_EventScript_Darian {
-    trainerbattle_single(TRAINER_DARIAN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat)
-    msgbox(Route104_Text_DarianPostBattle, MSGBOX_AUTOCLOSE)
+script Route104_EventScript_Dale {
+    trainerbattle_single(TRAINER_DALE, Route104_Text_DaleIntro, Route104_Text_DaleDefeat)
+    msgbox(Route104_Text_DalePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 

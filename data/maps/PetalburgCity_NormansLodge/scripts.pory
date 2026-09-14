@@ -1,1 +1,21 @@
-mapscripts PetalburgCity_NormansLodge_MapScripts {}
+mapscripts PetalburgCity_NormansLodge_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_PETALBURG_GYM_STATE) == 5) {
+			clearflag(FLAG_HIDE_LODGE_NORMAN)
+		}
+		end
+	}
+}
+
+script PetalburgCity_NormansLodge_EventScript_NormanThreeBadges {
+	msgbox(PetalburgCity_NormansLodge_Text_YouHaveGottenStronger, MSGBOX_DEFAULT)
+	release_end
+}
+
+text PetalburgCity_NormansLodge_Text_YouHaveGottenStronger {
+	"DAD: Hm… {PLAYER}, you have gotten
+	stronger.
+
+	I can tell by the number of BADGES
+	that you've earned."
+}

@@ -1,8 +1,8 @@
 mapscripts SSTidalLowerDeck_MapScripts {}
 
-script SSTidalLowerDeck_EventScript_Phillip {
-    trainerbattle_single(TRAINER_PHILLIP, SSTidalLowerDeck_Text_PhillipIntro, SSTidalLowerDeck_Text_PhillipDefeat)
-    msgbox(SSTidalLowerDeck_Text_PhillipPostBattle, MSGBOX_AUTOCLOSE)
+script SSTidalLowerDeck_EventScript_Colby {
+    trainerbattle_single(TRAINER_COLBY, SSTidalLowerDeck_Text_ColbyIntro, SSTidalLowerDeck_Text_ColbyDefeat)
+    msgbox(SSTidalLowerDeck_Text_ColbyPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -12,18 +12,18 @@ script SSTidalLowerDeck_EventScript_Leonard {
     end
 }
 
-text SSTidalLowerDeck_Text_PhillipIntro {
+text SSTidalLowerDeck_Text_ColbyIntro {
 	"Arrrgh! I'm fed up and dog-tired of
 	cleaning this huge place!
 
 	Let's have a quick battle!"
 }
 
-text SSTidalLowerDeck_Text_PhillipDefeat {
+text SSTidalLowerDeck_Text_ColbyDefeat {
 	"Little bro, I lost!"
 }
 
-text SSTidalLowerDeck_Text_PhillipPostBattle {
+text SSTidalLowerDeck_Text_ColbyPostBattle {
 	"We're the CLEANUP BROTHERS!
 
 	The old one dumps the detergent,

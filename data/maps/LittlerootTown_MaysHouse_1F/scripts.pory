@@ -82,6 +82,13 @@ script RivalsHouse_1F_EventScript_RivalMom {
     lock_faceplayer
     if (flag(FLAG_DEFEATED_RIVAL_ROUTE103)) {
         msgbox(RivalsHouse_1F_Text_ShouldGoHomeEverySoOften, MSGBOX_DEFAULT)
+		if (flag(FLAG_BADGE01_GET) && !flag(FLAG_RECEIVED_TM_REST)) {
+			msgbox("\.", MSGBOX_DEFAULT)
+			if (giveitem(ITEM_TM_REST) == FALSE) {
+				goto(Common_EventScript_ShowBagIsFull)
+			}
+			setflag(FLAG_RECEIVED_TM_REST)
+		}
     }
     elif (flag(FLAG_SYS_POKEMON_GET)) {
         msgbox(RivalsHouse_1F_Text_WentOutToRoute103, MSGBOX_DEFAULT)

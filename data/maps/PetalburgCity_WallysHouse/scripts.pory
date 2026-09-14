@@ -1,9 +1,9 @@
 mapscripts PetalburgCity_WallysHouse_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_PETALBURG_CITY_STATE, 4: PetalburgCity_WallysHouse_EventScript_GiveHMSurf
+		VAR_PETALBURG_CITY_STATE, 6: PetalburgCity_WallysHouse_EventScript_GiveHMSurf
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_PETALBURG_CITY_STATE, 4 {
+		VAR_PETALBURG_CITY_STATE, 6 {
 			turnobject(LOCALID_PLAYER, DIR_EAST)
 			turnobject(LOCALID_WALLYS_HOUSE_WALLYS_DAD, DIR_WEST)
 			end
@@ -14,10 +14,10 @@ mapscripts PetalburgCity_WallysHouse_MapScripts {
 script PetalburgCity_WallysHouse_EventScript_GiveHMSurf {
     lockall
     msgbox(PetalburgCity_WallysHouse_Text_PleaseExcuseUs, MSGBOX_DEFAULT)
-    giveitem(ITEM_HM_SURF)
-    setflag(FLAG_RECEIVED_HM_SURF)
+    giveitem(ITEM_LIFE_ORB)
+    setflag(FLAG_RECEIVED_LIFE_ORB)
     msgbox(PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT)
-    setvar(VAR_PETALBURG_CITY_STATE, 5)
+    setvar(VAR_PETALBURG_CITY_STATE, 7)
     releaseall
     end
 }
@@ -27,7 +27,7 @@ script PetalburgCity_WallysHouse_EventScript_WallysDad {
     if (flag(FLAG_DEFEATED_WALLY_VICTORY_ROAD)) {
         msgbox(PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity, MSGBOX_DEFAULT)
     }
-    elif (flag(FLAG_RECEIVED_HM_SURF)) {
+    elif (flag(FLAG_RECEIVED_LIFE_ORB)) {
         msgbox(PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon, MSGBOX_DEFAULT)
     }
     elif (flag(FLAG_THANKED_FOR_PLAYING_WITH_WALLY)) {
@@ -42,7 +42,7 @@ script PetalburgCity_WallysHouse_EventScript_WallysDad {
 
 script PetalburgCity_WallysHouse_EventScript_WallysMom {
     lock_faceplayer
-    if (flag(FLAG_RECEIVED_HM_SURF)) {
+    if (flag(FLAG_RECEIVED_LIFE_ORB)) {
         msgbox(PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling, MSGBOX_DEFAULT)
     	release_end
     }

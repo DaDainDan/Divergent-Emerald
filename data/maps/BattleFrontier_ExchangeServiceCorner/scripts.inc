@@ -483,7 +483,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem_6:
 
 BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem_7:
 # 176 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	setitemandprice ITEM_BRIGHT_POWDER, 64
+	setitemandprice ITEM_FLOAT_STONE, 64
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem_1
 
 BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem_8:
@@ -800,8 +800,8 @@ BattleFrontier_ExchangeServiceCorner_Text_MentalHerbDesc::
 
 BattleFrontier_ExchangeServiceCorner_Text_BrightpowderDesc::
 # 444 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	.string "A hold item that casts a glare to\n"
-	.string "reduce accuracy.$"
+	.string "An item that increases the SPEED\n"
+	.string "of the holder.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ChoiceBandDesc::
 # 449 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"

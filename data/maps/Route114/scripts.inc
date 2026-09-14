@@ -68,7 +68,7 @@ Route114_EventScript_Man::
 # 32 "data/maps/Route114/scripts.pory"
 	msgbox Route114_Text_LoveUsingBerryCrushShareBerry, MSGBOX_DEFAULT
 # 33 "data/maps/Route114/scripts.pory"
-	giverandomberry BERRY_ID_RAZZ, BERRY_ID_PINAP
+	giverandomberry BERRY_ID_RAZZ, BERRY_ID_TAMATO
 # 34 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route114_EventScript_Man_5
@@ -253,11 +253,11 @@ Route114_EventScript_Claude::
 	end
 
 
-Route114_EventScript_Nolan::
+Route114_EventScript_Joel::
 # 150 "data/maps/Route114/scripts.pory"
-	trainerbattle_single TRAINER_NOLAN, Route114_Text_NolanIntro, Route114_Text_NolanDefeat
+	trainerbattle_single TRAINER_JOEL, Route114_Text_JoelIntro, Route114_Text_JoelDefeat
 # 151 "data/maps/Route114/scripts.pory"
-	msgbox Route114_Text_NolanPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route114_Text_JoelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -301,32 +301,282 @@ Route114_EventScript_Kai::
 	end
 
 
+Route114_EventScript_MoveTutor::
+# 186 "data/maps/Route114/scripts.pory"
+	lock_faceplayer
+# 187 "data/maps/Route114/scripts.pory"
+	goto_if_unset FLAG_MET_ROUTE_114_BIDEPAL_TUTOR, Route114_EventScript_MoveTutor_2
+Route114_EventScript_MoveTutor_1:
+# 191 "data/maps/Route114/scripts.pory"
+	msgbox Route114_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 192 "data/maps/Route114/scripts.pory"
+	setvar VAR_TEMP_C, SCROLL_MULTI_BIPEDAL_MOVE_TUTOR
+# 193 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8006, 0
+# 194 "data/maps/Route114/scripts.pory"
+	goto Route114_EventScript_ChooseBipedMove
+	end
+
+Route114_EventScript_MoveTutor_2:
+# 188 "data/maps/Route114/scripts.pory"
+	msgbox Route114_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 189 "data/maps/Route114/scripts.pory"
+	setflag FLAG_MET_ROUTE_114_BIDEPAL_TUTOR
+	goto Route114_EventScript_MoveTutor_1
+
+
+Route114_EventScript_ChooseBipedMove::
+# 199 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8004, SCROLL_MULTI_BIPEDAL_MOVE_TUTOR
+# 200 "data/maps/Route114/scripts.pory"
+	special ShowScrollableMultichoice
+# 201 "data/maps/Route114/scripts.pory"
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+# 202 "data/maps/Route114/scripts.pory"
+	switch VAR_RESULT
+# 203 "data/maps/Route114/scripts.pory"
+	case 0, Route114_EventScript_ChooseBipedMove_3
+# 204 "data/maps/Route114/scripts.pory"
+	case 1, Route114_EventScript_ChooseBipedMove_4
+# 205 "data/maps/Route114/scripts.pory"
+	case 2, Route114_EventScript_ChooseBipedMove_5
+# 206 "data/maps/Route114/scripts.pory"
+	case 3, Route114_EventScript_ChooseBipedMove_6
+# 207 "data/maps/Route114/scripts.pory"
+	case 4, Route114_EventScript_ChooseBipedMove_7
+# 208 "data/maps/Route114/scripts.pory"
+	case 5, Route114_EventScript_ChooseBipedMove_8
+# 209 "data/maps/Route114/scripts.pory"
+	case 6, Route114_EventScript_ChooseBipedMove_9
+# 210 "data/maps/Route114/scripts.pory"
+	case 7, Route114_EventScript_ChooseBipedMove_10
+# 211 "data/maps/Route114/scripts.pory"
+	case 8, Route114_EventScript_ChooseBipedMove_11
+# 212 "data/maps/Route114/scripts.pory"
+	case 9, Route114_EventScript_ChooseBipedMove_12
+# 213 "data/maps/Route114/scripts.pory"
+	case 10, Route114_EventScript_ChooseBipedMove_13
+# 214 "data/maps/Route114/scripts.pory"
+	case MULTI_B_PRESSED, Route114_EventScript_ChooseBipedMove_13
+Route114_EventScript_ChooseBipedMove_1:
+# 217 "data/maps/Route114/scripts.pory"
+	goto Route114_EventScript_ConfirmMoveSelection
+	end
+
+Route114_EventScript_ChooseBipedMove_3:
+# 203 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8005, MOVE_HEADBUTT
+	goto Route114_EventScript_ChooseBipedMove_1
+
+Route114_EventScript_ChooseBipedMove_4:
+# 204 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8005, MOVE_IRON_HEAD
+	goto Route114_EventScript_ChooseBipedMove_1
+
+Route114_EventScript_ChooseBipedMove_5:
+# 205 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8005, MOVE_RIME_HEAD
+	goto Route114_EventScript_ChooseBipedMove_1
+
+Route114_EventScript_ChooseBipedMove_6:
+# 206 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8005, MOVE_ZEN_HEADBUTT
+	goto Route114_EventScript_ChooseBipedMove_1
+
+Route114_EventScript_ChooseBipedMove_7:
+# 207 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8005, MOVE_AQUA_TAIL
+	goto Route114_EventScript_ChooseBipedMove_1
+
+Route114_EventScript_ChooseBipedMove_8:
+# 208 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8005, MOVE_DRAGON_TAIL
+	goto Route114_EventScript_ChooseBipedMove_1
+
+Route114_EventScript_ChooseBipedMove_9:
+# 209 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8005, MOVE_POISON_TAIL
+	goto Route114_EventScript_ChooseBipedMove_1
+
+Route114_EventScript_ChooseBipedMove_10:
+# 210 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8005, MOVE_IRON_TAIL
+	goto Route114_EventScript_ChooseBipedMove_1
+
+Route114_EventScript_ChooseBipedMove_11:
+# 211 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8005, MOVE_LIGHTNING_TAIL
+	goto Route114_EventScript_ChooseBipedMove_1
+
+Route114_EventScript_ChooseBipedMove_12:
+# 212 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8005, MOVE_TORCH_TAIL
+	goto Route114_EventScript_ChooseBipedMove_1
+
+Route114_EventScript_ChooseBipedMove_13:
+# 215 "data/maps/Route114/scripts.pory"
+	goto Route114_EventScript_ExitTutorMoveSelect
+	goto Route114_EventScript_ChooseBipedMove_1
+
+
+Route114_EventScript_ConfirmMoveSelection::
+# 222 "data/maps/Route114/scripts.pory"
+	special BufferBattleFrontierTutorMoveName
+# 223 "data/maps/Route114/scripts.pory"
+	msgbox Route114_EventScript_MoveTutor_Text_0, MSGBOX_YESNO
+# 224 "data/maps/Route114/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Route114_EventScript_ConfirmMoveSelection_2
+Route114_EventScript_ConfirmMoveSelection_1:
+	checkitem ITEM_BIG_MUSHROOM
+# 0 "data/maps/Route114/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route114_EventScript_ConfirmMoveSelection_5
+# 244 "data/maps/Route114/scripts.pory"
+	msgbox Route114_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 245 "data/maps/Route114/scripts.pory"
+	goto Route114_EventScript_ExitTutorMoveSelect
+	end
+
+Route114_EventScript_ConfirmMoveSelection_2:
+# 225 "data/maps/Route114/scripts.pory"
+	message Route114_EventScript_MoveTutor_Text_0
+# 226 "data/maps/Route114/scripts.pory"
+	waitmessage
+# 227 "data/maps/Route114/scripts.pory"
+	setvar VAR_0x8006, 1
+# 228 "data/maps/Route114/scripts.pory"
+	goto Route114_EventScript_ChooseBipedMove
+	goto Route114_EventScript_ConfirmMoveSelection_1
+
+Route114_EventScript_ConfirmMoveSelection_5:
+# 231 "data/maps/Route114/scripts.pory"
+	msgbox Route114_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 232 "data/maps/Route114/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 233 "data/maps/Route114/scripts.pory"
+	special CloseBattleFrontierTutorWindow
+# 234 "data/maps/Route114/scripts.pory"
+	chooseboxmon SELECT_PC_MON_MOVE_TUTOR
+# 235 "data/maps/Route114/scripts.pory"
+	waitstate
+# 236 "data/maps/Route114/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route114_EventScript_ConfirmMoveSelection_8
+# 240 "data/maps/Route114/scripts.pory"
+	msgbox Route114_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 241 "data/maps/Route114/scripts.pory"
+	removeitem ITEM_BIG_MUSHROOM, 1
+	release_end
+
+Route114_EventScript_ConfirmMoveSelection_8:
+# 237 "data/maps/Route114/scripts.pory"
+	msgbox Route114_Text_DeclineTutor, MSGBOX_DEFAULT
+	release_end
+
+
+Route114_EventScript_ExitTutorMoveSelect::
+# 250 "data/maps/Route114/scripts.pory"
+	special CloseBattleFrontierTutorWindow
+# 251 "data/maps/Route114/scripts.pory"
+	msgbox Route114_Text_DeclineTutor, MSGBOX_DEFAULT
+	release_end
+
+
+Route114_EventScript_MoveTutor_Text_0:
+# 188 "data/maps/Route114/scripts.pory"
+	.string "…$"
+
+Route114_Text_DeclineTutor::
+# 255 "data/maps/Route114/scripts.pory"
+	.string "…$"
+
 Route114_Text_AllMyMonDoesIsRoarTakeThis::
-# 185 "data/maps/Route114/scripts.pory"
+# 259 "data/maps/Route114/scripts.pory"
 	.string "All my POKéMON does is ROAR…\n"
 	.string "No one dares to come near me…\p"
 	.string "Sigh… If you would, please take\n"
 	.string "this TM away…$"
 
 Route114_Text_ExplainRoar::
-# 193 "data/maps/Route114/scripts.pory"
+# 267 "data/maps/Route114/scripts.pory"
 	.string "TM05 contains ROAR.\n"
 	.string "A ROAR sends POKéMON scurrying.$"
 
 Route114_Text_Poochyena::
-# 198 "data/maps/Route114/scripts.pory"
+# 272 "data/maps/Route114/scripts.pory"
 	.string "Bow! Bowwow!$"
 
 Route114_Text_MeteorFallsSign::
-# 202 "data/maps/Route114/scripts.pory"
+# 276 "data/maps/Route114/scripts.pory"
 	.string "METEOR FALLS\n"
 	.string "RUSTBORO CITY THROUGH HERE$"
 
 Route114_Text_FossilManiacsHouseSign::
-# 207 "data/maps/Route114/scripts.pory"
+# 281 "data/maps/Route114/scripts.pory"
 	.string "FOSSIL MANIAC'S HOUSE\n"
 	.string "“Fossils gratefully accepted!”$"
 
 Route114_Text_LanettesHouse::
-# 212 "data/maps/Route114/scripts.pory"
+# 286 "data/maps/Route114/scripts.pory"
 	.string "LANETTE'S HOUSE$"
+
+Route114_Text_HeadbuttDesc::
+# 290 "data/maps/Route114/scripts.pory"
+	.string "A slam with one's\n"
+	.string "head which is\n"
+	.string "likely to flinch.$"
+
+Route114_Text_IronHeadDesc::
+# 296 "data/maps/Route114/scripts.pory"
+	.string "A slam with a head\n"
+	.string "hard as steel.\n"
+	.string "Likely to flinch.$"
+
+Route114_Text_RimeHeadDesc::
+# 302 "data/maps/Route114/scripts.pory"
+	.string "A slam with a head\n"
+	.string "made of ice.\n"
+	.string "Likely to flinch.$"
+
+Route114_Text_ZenHeadbuttDesc::
+# 308 "data/maps/Route114/scripts.pory"
+	.string "Charges mind power\n"
+	.string "to raise Sp. Def.\n"
+	.string "and headbutt foe.$"
+
+Route114_Text_AquaTailDesc::
+# 314 "data/maps/Route114/scripts.pory"
+	.string "Slaps the foe with\n"
+	.string "a tail of water.\n"
+	.string "Can lower Speed.$"
+
+Route114_Text_DragonTailDesc::
+# 320 "data/maps/Route114/scripts.pory"
+	.string "Slams the foe with\n"
+	.string "a draconic tail.\n"
+	.string "Likely lowers Def.$"
+
+Route114_Text_PoisonTailDesc::
+# 326 "data/maps/Route114/scripts.pory"
+	.string "Slaps the foe with\n"
+	.string "a poisonous tail.\n"
+	.string "Can cause poison.$"
+
+Route114_Text_IronTailDesc::
+# 332 "data/maps/Route114/scripts.pory"
+	.string "Slams the foe with\n"
+	.string "a metallic tail.\n"
+	.string "Can lower Def.$"
+
+Route114_Text_LightningTailDesc::
+# 338 "data/maps/Route114/scripts.pory"
+	.string "Slaps the foe with\n"
+	.string "an electrified tail\n"
+	.string "that can paralyze.$"
+
+Route114_Text_TorchTailDesc::
+# 344 "data/maps/Route114/scripts.pory"
+	.string "Slaps the foe with\n"
+	.string "a fiery tail.\n"
+	.string "Can cause burn.$"

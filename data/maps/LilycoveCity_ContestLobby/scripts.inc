@@ -635,137 +635,144 @@ LilycoveCity_ContestLobby_EventScript_BlackBelt::
 
 LilycoveCity_ContestLobby_EventScript_Girl::
 # 298 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	msgbox LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere, MSGBOX_NPC
-	end
+	lock_faceplayer
+# 299 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	goto_if_set FLAG_RECEIVED_TM_DAZZLING_GLEAM, LilycoveCity_ContestLobby_EventScript_Girl_2
+# 303 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	msgbox LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere, MSGBOX_DEFAULT
+	giveitem ITEM_TM_DAZZLING_GLEAM
+# 0 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq LilycoveCity_ContestLobby_EventScript_Girl_5
+LilycoveCity_ContestLobby_EventScript_Girl_4:
+# 307 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	setflag FLAG_RECEIVED_TM_DAZZLING_GLEAM
+	release_end
+
+LilycoveCity_ContestLobby_EventScript_Girl_2:
+# 300 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	msgbox LilycoveCity_ContestLobby_Text_TooBusy, MSGBOX_DEFAULT
+	release_end
+
+LilycoveCity_ContestLobby_EventScript_Girl_5:
+# 305 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	goto Common_EventScript_ShowBagIsFull
+	goto LilycoveCity_ContestLobby_EventScript_Girl_4
 
 
 LilycoveCity_ContestLobby_EventScript_Artist::
-# 303 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 312 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_ContestFeastForEyes, MSGBOX_NPC
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_FatMan::
-# 308 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 317 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_ToughContestIsExtreme, MSGBOX_NPC
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_Fisherman::
-# 313 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 322 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_LavishedCareOnMon, MSGBOX_NPC
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_NinjaBoy::
-# 318 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 327 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_MadePokeblocksWithFamily, MSGBOX_NPC
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_ContestWinner1::
-# 323 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 332 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lockall
-# 324 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 333 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 325 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 334 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	showcontestpainting CONTEST_WINNER_HALL_1
-# 326 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 335 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	releaseall
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_ContestWinner2::
-# 331 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 340 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lockall
-# 332 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 341 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 333 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 342 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	showcontestpainting CONTEST_WINNER_HALL_2
-# 334 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 343 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	releaseall
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_ContestWinner3::
-# 339 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 348 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lockall
-# 340 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 349 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 341 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 350 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	showcontestpainting CONTEST_WINNER_HALL_3
-# 342 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 351 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	releaseall
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_ContestWinner4::
-# 347 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 356 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lockall
-# 348 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 357 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 349 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 358 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	showcontestpainting CONTEST_WINNER_HALL_4
-# 350 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 359 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	releaseall
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_ContestWinner5::
-# 355 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 364 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lockall
-# 356 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 365 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 357 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 366 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	showcontestpainting CONTEST_WINNER_HALL_5
-# 358 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 367 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	releaseall
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_ContestWinner6::
-# 363 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 372 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lockall
-# 364 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 373 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 365 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 374 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	showcontestpainting CONTEST_WINNER_HALL_6
-# 366 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 375 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	releaseall
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_Blender3Boy::
-# 371 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 380 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox BerryBlender_Text_LetsGetBlendingAlready, MSGBOX_NPC
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_Blender3Girl::
-# 376 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 385 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox BerryBlender_Text_WhatKindOfPokeblockWillIGet, MSGBOX_NPC
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_BerryBlenderSpeedRecords::
-# 381 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	lockall
-# 382 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	special ShowBerryBlenderRecordWindow
-# 383 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	waitbuttonpress
-# 384 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	special RemoveRecordsWindow
-# 385 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	releaseall
-	end
-
-
-LilycoveCity_ContestLobby_EventScript_LinkContestResults::
 # 390 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lockall
 # 391 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	frontier_results FACILITY_LINK_CONTEST
+	special ShowBerryBlenderRecordWindow
 # 392 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	waitbuttonpress
 # 393 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
@@ -775,697 +782,711 @@ LilycoveCity_ContestLobby_EventScript_LinkContestResults::
 	end
 
 
-LilycoveCity_ContestLobby_EventScript_BlendMaster::
+LilycoveCity_ContestLobby_EventScript_LinkContestResults::
 # 399 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	lock_faceplayer
+	lockall
 # 400 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	msgbox BerryBlender_Text_BlendWithTheBlendMaster, MSGBOX_DEFAULT
+	frontier_results FACILITY_LINK_CONTEST
 # 401 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	waitbuttonpress
+# 402 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	special RemoveRecordsWindow
+# 403 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	releaseall
+	end
+
+
+LilycoveCity_ContestLobby_EventScript_BlendMaster::
+# 408 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	lock_faceplayer
+# 409 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	msgbox BerryBlender_Text_BlendWithTheBlendMaster, MSGBOX_DEFAULT
+# 410 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto Common_EventScript_FaceOriginalDirection
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_BlendMasterOnlooker1::
-# 406 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 415 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lock
-# 407 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 416 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox BerryBlender_Text_WhoaAwesome, MSGBOX_DEFAULT
 	release_end
 
 
 LilycoveCity_ContestLobby_EventScript_BlendMasterOnlooker2::
-# 412 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 421 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lock
-# 413 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 422 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox BerryBlender_Text_WickedlyFast, MSGBOX_DEFAULT
 	release_end
 
 
 LilycoveCity_ContestLobby_EventScript_BlendMasterOnlooker3::
-# 418 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 427 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lock
-# 419 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 428 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox BerryBlender_Text_WhatAnExpert, MSGBOX_DEFAULT
 	release_end
 
 
 LilycoveCity_ContestLobby_EventScript_BlendMasterOnlooker4::
-# 424 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 433 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lock_faceplayer
-# 425 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 434 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox BerryBlender_Text_MadeAmazingPokeblocksWithMaster, MSGBOX_DEFAULT
-# 426 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 435 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto Common_EventScript_FaceOriginalDirection
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_BlendMasterOnlooker5::
-# 431 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 440 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lock_faceplayer
-# 432 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 441 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox BerryBlender_Text_QualitiesOfBlendMaster, MSGBOX_DEFAULT
-# 433 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 442 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto Common_EventScript_FaceOriginalDirection
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_BlendMasterOnlooker6::
-# 438 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 447 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lock_faceplayer
-# 439 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 448 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox BerryBlender_Text_MasterWorksOnSkillsInMountains, MSGBOX_DEFAULT
-# 440 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 449 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto Common_EventScript_FaceOriginalDirection
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_LinkContestReceptionist::
-# 445 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 454 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	special ClearLinkContestFlags
-# 446 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 455 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lock_faceplayer
-# 447 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 456 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_LinkContestReception, MSGBOX_DEFAULT
-# 448 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 457 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest::
-# 453 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 462 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	message LilycoveCity_ContestLobby_Text_EnterContest3
-# 454 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 463 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	waitmessage
-# 455 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 464 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	multichoice 0, 0, MULTI_ENTERINFO, FALSE
-# 456 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 465 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	switch VAR_RESULT
-# 457 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 466 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 0, LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_3
-# 458 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 467 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 1, LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_4
-# 459 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 468 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 2, LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_5
-# 460 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 469 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case MULTI_B_PRESSED, LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_5
 LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_1:
 	end
 
 LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_3:
-# 457 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 466 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_1
 
 LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_4:
-# 458 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 467 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_LinkContestInfo
 	goto LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_1
 
 LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_5:
-# 461 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 470 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest_1
 
 
 LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest::
-# 467 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 476 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_ProgressWillBeSaved, MSGBOX_YESNO
-# 468 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 477 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_2
 LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_1:
-# 471 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 480 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	call Common_EventScript_SaveGame
-# 472 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 481 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_5
 LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_4:
-# 475 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 484 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	message LilycoveCity_ContestLobby_Text_WhichContestMode
-# 476 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 485 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	waitmessage
-# 477 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 486 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	specialvar VAR_TEMP_D, IsWirelessAdapterConnected
-# 478 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 487 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	multichoice 0, 0, MULTI_LINK_CONTEST_MODE, FALSE
-# 479 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 488 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	switch VAR_RESULT
-# 480 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	case 0, LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_9
-# 482 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	case 1, LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_10
 # 489 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	case 0, LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_9
+# 491 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	case 1, LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_10
+# 498 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 2, LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_11
-# 490 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 499 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case MULTI_B_PRESSED, LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_11
 LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_7:
-# 494 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 503 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_ChooseLinkContestType
 	end
 
 LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_2:
-# 469 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 478 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_1
 
 LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_5:
-# 473 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 482 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_4
 
 LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_9:
-# 481 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 490 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	setvar VAR_TEMP_C, 0
 	goto LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_7
 
 LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_10:
-# 483 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 492 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	setvar VAR_TEMP_C, 1
-# 484 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 493 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	compare VAR_TEMP_D, 1
 	goto_if_eq LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_12
 	goto LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_7
 
 LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_11:
-# 491 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 500 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	end
 
 LilycoveCity_ContestLobby_EventScript_TryEnterLinkContest_12:
-# 485 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 494 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	special CloseLink
-# 486 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 495 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_NoWirelessAdapterInGMode, MSGBOX_DEFAULT
 	release_end
 
 
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestType::
-# 499 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 508 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	message LilycoveCity_ContestLobby_Text_EnterWhichContest3
-# 500 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 509 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	waitmessage
-# 501 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 510 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	multichoice 0, 0, MULTI_CONTEST_TYPE, FALSE
-# 502 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 511 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	compare VAR_RESULT, CONTEST_CATEGORIES_COUNT
 	goto_if_eq LilycoveCity_ContestLobby_EventScript_ChooseLinkContestType_2
-# 502 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 511 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	compare VAR_RESULT, MULTI_B_PRESSED
 	goto_if_eq LilycoveCity_ContestLobby_EventScript_ChooseLinkContestType_2
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestType_1:
-# 505 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 514 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	copyvar VAR_CONTEST_CATEGORY, VAR_RESULT
-# 506 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 515 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon
 	end
 
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestType_2:
-# 503 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 512 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_ChooseLinkContestType_1
 
 
 LilycoveCity_ContestLobby_EventScript_LinkContestInfo::
-# 511 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 520 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	message LilycoveCity_ContestLobby_Text_WhichTopic2
-# 512 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 521 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	waitmessage
-# 513 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 522 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	multichoice 0, 0, MULTI_LINK_CONTEST_INFO, FALSE
-# 514 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 523 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	switch VAR_RESULT
-# 515 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 524 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 0, LilycoveCity_ContestLobby_EventScript_LinkContestInfo_3
-# 516 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 525 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 1, LilycoveCity_ContestLobby_EventScript_LinkContestInfo_4
-# 517 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 526 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 2, LilycoveCity_ContestLobby_EventScript_LinkContestInfo_5
-# 518 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 527 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 3, LilycoveCity_ContestLobby_EventScript_LinkContestInfo_6
-# 519 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 528 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case MULTI_B_PRESSED, LilycoveCity_ContestLobby_EventScript_LinkContestInfo_6
 LilycoveCity_ContestLobby_EventScript_LinkContestInfo_1:
-# 523 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 532 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_LinkContestInfo
 	end
 
 LilycoveCity_ContestLobby_EventScript_LinkContestInfo_3:
-# 515 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 524 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_ExplainLinkContest, MSGBOX_DEFAULT
 	goto LilycoveCity_ContestLobby_EventScript_LinkContestInfo_1
 
 LilycoveCity_ContestLobby_EventScript_LinkContestInfo_4:
-# 516 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 525 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_ExplainEMode, MSGBOX_DEFAULT
 	goto LilycoveCity_ContestLobby_EventScript_LinkContestInfo_1
 
 LilycoveCity_ContestLobby_EventScript_LinkContestInfo_5:
-# 517 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 526 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_ExplainGMode, MSGBOX_DEFAULT
 	goto LilycoveCity_ContestLobby_EventScript_LinkContestInfo_1
 
 LilycoveCity_ContestLobby_EventScript_LinkContestInfo_6:
-# 520 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 529 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_AskEnterLinkContest
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_CancelLinkContest::
-# 528 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 537 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	special CloseLink
-# 529 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 538 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_ParticipateAnotherTime, MSGBOX_DEFAULT
 	release_end
 
 
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon::
-# 534 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 543 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_EnterWhichPokemon3, MSGBOX_DEFAULT
-# 535 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 544 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	setvar VAR_CONTEST_RANK, 0
 	choosecontestmon
 # 0 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
 	goto_if_eq LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_2
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_1:
-# 539 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	special TryEnterContestMon
-# 540 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	switch VAR_RESULT
-# 541 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	case CAN_ENTER_CONTEST_EQUAL_RANK, LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_6
-# 542 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	case CAN_ENTER_CONTEST_HIGH_RANK, LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_6
-# 546 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	case CANT_ENTER_CONTEST, LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_7
-# 547 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	case CANT_ENTER_CONTEST_EGG, LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_8
 # 548 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	special TryEnterContestMon
+# 549 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	switch VAR_RESULT
+# 550 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	case CAN_ENTER_CONTEST_EQUAL_RANK, LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_6
+# 551 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	case CAN_ENTER_CONTEST_HIGH_RANK, LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_6
+# 555 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	case CANT_ENTER_CONTEST, LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_7
+# 556 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	case CANT_ENTER_CONTEST_EGG, LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_8
+# 557 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case CANT_ENTER_CONTEST_FAINTED, LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_9
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_4:
-# 550 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 559 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon
 	end
 
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_2:
-# 537 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 546 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_1
 
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_6:
-# 543 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 552 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	copyvar VAR_0x8008, VAR_0x8004
-# 544 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 553 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest
 	end
 
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_7:
-# 546 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 555 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_MonNotQualifiedForRank, MSGBOX_DEFAULT
 	goto LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_4
 
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_8:
-# 547 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 556 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_EggCannotTakePart2, MSGBOX_DEFAULT
 	goto LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_4
 
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_9:
-# 548 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 557 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_MonInNoCondition2, MSGBOX_DEFAULT
 	goto LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon_4
 
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest::
-# 555 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 564 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	compare VAR_TEMP_D, 1
 	goto_if_eq LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_2
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_1:
-# 558 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 567 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	compare VAR_TEMP_D, 2
 	goto_if_ge LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_5
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_4:
-# 561 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 570 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	message LilycoveCity_ContestLobby_Text_PleaseWaitBButtonCancel
-# 562 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 571 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	waitmessage
-# 563 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 572 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	copyvar VAR_0x8004, VAR_RESULT
-# 564 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 573 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	switch VAR_TEMP_C
-# 565 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 574 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 0, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_9
-# 566 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 575 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 1, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_10
-# 567 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 576 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_7:
-# 569 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 578 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	switch VAR_RESULT
-# 570 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	case LINKUP_FAILED, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_14
-# 571 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	case LINKUP_WRONG_NUM_PLAYERS, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_15
-# 572 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	case LINKUP_DIFF_SELECTIONS, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_15
-# 575 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	case LINKUP_CONNECTION_ERROR, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_16
 # 579 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	case LINKUP_FAILED, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_14
+# 580 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	case LINKUP_WRONG_NUM_PLAYERS, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_15
+# 581 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	case LINKUP_DIFF_SELECTIONS, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_15
+# 584 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	case LINKUP_CONNECTION_ERROR, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_16
+# 588 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case LINKUP_FAILED_CONTEST_GMODE, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_17
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_12:
-# 583 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 592 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	messageinstant LilycoveCity_ContestLobby_Text_Transmitting
-# 584 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 593 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	contestlinktransfer
-# 585 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 594 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	switch VAR_0x8004
-# 586 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 595 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 0, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_20
-# 587 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 596 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 1, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_21
-# 590 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 599 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 2, LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_22
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_18:
 	end
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_2:
-# 556 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 565 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_SetLinkGroupType
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_1
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_5:
-# 559 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 568 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_4
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_9:
-# 565 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 574 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	special TryContestEModeLinkup
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_7
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_10:
-# 566 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 575 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	special TryContestGModeLinkup
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_7
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_14:
-# 570 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 579 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_12
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_15:
-# 573 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 582 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_PlayersMadeDifferentChoice, MSGBOX_DEFAULT
-# 574 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 583 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_12
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_16:
-# 576 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 585 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	special CloseLink
-# 577 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 586 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox Text_LinkErrorPleaseReset, MSGBOX_DEFAULT
 	release_end
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_17:
-# 580 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 589 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_PlayerAt4PCounterUseGMode, MSGBOX_DEFAULT
-# 581 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 590 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_12
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_20:
-# 586 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 595 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_StartLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_18
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_21:
-# 588 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 597 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_PlayersChoseDifferentContest, MSGBOX_DEFAULT
-# 589 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 598 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_18
 
 LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_22:
-# 591 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 600 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_TransmissionError, MSGBOX_DEFAULT
-# 592 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 601 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_TrySetUpLinkContest_18
 
 
 LilycoveCity_ContestLobby_EventScript_StartLinkContest::
-# 598 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	special GetContestPlayerId
-# 599 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	addvar VAR_0x8004, 1
-# 600 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	buffernumberstring STR_VAR_2, VAR_0x8004
-# 601 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	messageautoscroll LilycoveCity_ContestLobby_Text_YourMonIsEntryNumX
-# 602 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	waitmessage
-# 603 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	subvar VAR_0x8004, 1
-# 604 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	call LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall
-# 605 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	setvar VAR_CONTEST_HALL_STATE, 1
-# 606 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	special SetLinkContestPlayerGfx
 # 607 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	setvar VAR_CONTEST_TYPE, CONTEST_TYPE_LINK
+	special GetContestPlayerId
 # 608 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	setvar VAR_CONTEST_RANK, CONTEST_RANK_MASTER
+	addvar VAR_0x8004, 1
 # 609 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	buffernumberstring STR_VAR_2, VAR_0x8004
+# 610 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	messageautoscroll LilycoveCity_ContestLobby_Text_YourMonIsEntryNumX
+# 611 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	waitmessage
+# 612 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	subvar VAR_0x8004, 1
+# 613 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	call LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall
+# 614 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	setvar VAR_CONTEST_HALL_STATE, 1
+# 615 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	special SetLinkContestPlayerGfx
+# 616 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	setvar VAR_CONTEST_TYPE, CONTEST_TYPE_LINK
+# 617 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	setvar VAR_CONTEST_RANK, CONTEST_RANK_MASTER
+# 618 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	call LilycoveCity_ContestLobby_EventScript_WarpToContestHall
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_SetLinkGroupType::
-# 614 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 623 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	switch VAR_CONTEST_CATEGORY
-# 615 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 624 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case CONTEST_CATEGORY_COOL, LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_3
-# 616 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 625 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case CONTEST_CATEGORY_BEAUTY, LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_4
-# 617 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 626 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case CONTEST_CATEGORY_CUTE, LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_5
-# 618 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 627 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case CONTEST_CATEGORY_SMART, LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_6
-# 619 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 628 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case CONTEST_CATEGORY_TOUGH, LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_7
 LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_1:
-# 621 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 630 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_DecideLinkLeader
 	end
 
 LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_3:
-# 615 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 624 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	setvar VAR_0x8004, LINK_GROUP_COOL_CONTEST
 	goto LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_1
 
 LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_4:
-# 616 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 625 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	setvar VAR_0x8004, LINK_GROUP_BEAUTY_CONTEST
 	goto LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_1
 
 LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_5:
-# 617 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 626 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	setvar VAR_0x8004, LINK_GROUP_CUTE_CONTEST
 	goto LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_1
 
 LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_6:
-# 618 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 627 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	setvar VAR_0x8004, LINK_GROUP_SMART_CONTEST
 	goto LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_1
 
 LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_7:
-# 619 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 628 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	setvar VAR_0x8004, LINK_GROUP_TOUGH_CONTEST
 	goto LilycoveCity_ContestLobby_EventScript_SetLinkGroupType_1
 
 
 LilycoveCity_ContestLobby_EventScript_DecideLinkLeader::
-# 626 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 635 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	message LilycoveCity_ContestLobby_Text_PleaseDecideLinkLeader
-# 627 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 636 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	waitmessage
-# 628 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 637 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	multichoice 16, 6, MULTI_LINK_LEADER, FALSE
-# 629 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 638 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	switch VAR_RESULT
-# 630 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 639 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 0, LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_3
-# 631 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 640 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 1, LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_4
-# 632 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 641 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case 2, LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_5
-# 633 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 642 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case MULTI_B_PRESSED, LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_5
 LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_1:
 	end
 
 LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_3:
-# 630 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 639 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_TryJoinGroup
 	goto LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_1
 
 LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_4:
-# 631 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 640 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_TryLeadGroup
 	goto LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_1
 
 LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_5:
-# 634 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 643 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	goto LilycoveCity_ContestLobby_EventScript_DecideLinkLeader_1
 
 
 LilycoveCity_ContestLobby_EventScript_TryLeadGroup::
-# 640 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 649 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	special TryBecomeLinkLeader
-# 641 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 650 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	switch VAR_RESULT
-# 642 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 651 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case LINKUP_SUCCESS, LilycoveCity_ContestLobby_EventScript_TryLeadGroup_3
-# 643 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 652 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case LINKUP_FAILED, LilycoveCity_ContestLobby_EventScript_TryLeadGroup_4
-# 644 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 653 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case LINKUP_RETRY_ROLE_ASSIGN, LilycoveCity_ContestLobby_EventScript_TryLeadGroup_5
 LilycoveCity_ContestLobby_EventScript_TryLeadGroup_1:
 	release_end
 
 LilycoveCity_ContestLobby_EventScript_TryLeadGroup_3:
-# 642 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 651 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_LinkLeaderDecided
 	goto LilycoveCity_ContestLobby_EventScript_TryLeadGroup_1
 
 LilycoveCity_ContestLobby_EventScript_TryLeadGroup_4:
-# 643 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 652 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_DecideLinkLeader
 	goto LilycoveCity_ContestLobby_EventScript_TryLeadGroup_1
 
 LilycoveCity_ContestLobby_EventScript_TryLeadGroup_5:
-# 644 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 653 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_TryLeadGroup
 	goto LilycoveCity_ContestLobby_EventScript_TryLeadGroup_1
 
 
 LilycoveCity_ContestLobby_EventScript_TryJoinGroup::
-# 650 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 659 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	special TryJoinLinkGroup
-# 651 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 660 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	switch VAR_RESULT
-# 652 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 661 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case LINKUP_SUCCESS, LilycoveCity_ContestLobby_EventScript_TryJoinGroup_3
-# 653 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 662 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case LINKUP_FAILED, LilycoveCity_ContestLobby_EventScript_TryJoinGroup_4
-# 654 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 663 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	case LINKUP_RETRY_ROLE_ASSIGN, LilycoveCity_ContestLobby_EventScript_TryJoinGroup_5
 LilycoveCity_ContestLobby_EventScript_TryJoinGroup_1:
 	release_end
 
 LilycoveCity_ContestLobby_EventScript_TryJoinGroup_3:
-# 652 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 661 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_LinkLeaderDecided
 	goto LilycoveCity_ContestLobby_EventScript_TryJoinGroup_1
 
 LilycoveCity_ContestLobby_EventScript_TryJoinGroup_4:
-# 653 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 662 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_DecideLinkLeader
 	goto LilycoveCity_ContestLobby_EventScript_TryJoinGroup_1
 
 LilycoveCity_ContestLobby_EventScript_TryJoinGroup_5:
-# 654 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 663 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_TryJoinGroup
 	goto LilycoveCity_ContestLobby_EventScript_TryJoinGroup_1
 
 
 LilycoveCity_ContestLobby_EventScript_LinkLeaderDecided::
-# 660 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 669 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	messageinstant LilycoveCity_ContestLobby_Text_Transmitting
-# 661 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 670 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	contestlinktransfer
-# 662 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 671 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto LilycoveCity_ContestLobby_EventScript_StartLinkContest
 	end
 
 
 LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall::
-# 667 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	messageautoscroll LilycoveCity_ContestLobby_Text_ContestBeginShortly
-# 668 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	waitmessage
-# 669 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	delay 20
-# 670 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	closemessage
-# 671 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	applymovement LOCALID_CONTEST_LOBBY_LINK_RECEPTIONIST, LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_0
-# 672 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	waitmovement 0
-# 673 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	playse SE_BRIDGE_WALK
-# 674 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	setmetatile 17, 2, METATILE_Contest_WallShadow, TRUE
-# 675 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	setmetatile 17, 3, METATILE_Contest_FloorShadow, TRUE
 # 676 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	special DrawWholeMapView
+	messageautoscroll LilycoveCity_ContestLobby_Text_ContestBeginShortly
 # 677 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	applymovement LOCALID_CONTEST_LOBBY_LINK_RECEPTIONIST, LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_1
+	waitmessage
 # 678 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	waitmovement 0
-# 679 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	playse SE_BRIDGE_WALK
-# 680 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	setmetatile 17, 2, METATILE_Contest_CounterFlap_Top, TRUE
-# 681 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	setmetatile 17, 3, METATILE_Contest_CounterFlap_Bottom, TRUE
-# 682 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	special DrawWholeMapView
-# 683 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	delay 20
-# 684 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	applymovement LOCALID_CONTEST_LOBBY_LINK_RECEPTIONIST, Common_Movement_StepFasterLeft
-# 685 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 679 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	closemessage
+# 680 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	applymovement LOCALID_CONTEST_LOBBY_LINK_RECEPTIONIST, LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_0
+# 681 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	waitmovement 0
+# 682 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	playse SE_BRIDGE_WALK
+# 683 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	setmetatile 17, 2, METATILE_Contest_WallShadow, TRUE
+# 684 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	setmetatile 17, 3, METATILE_Contest_FloorShadow, TRUE
+# 685 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	special DrawWholeMapView
 # 686 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+	applymovement LOCALID_CONTEST_LOBBY_LINK_RECEPTIONIST, LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_1
 # 687 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	waitmovement 0
 # 688 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	messageautoscroll LilycoveCity_ContestLobby_Text_ComeThroughHere
+	playse SE_BRIDGE_WALK
 # 689 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	waitmessage
+	setmetatile 17, 2, METATILE_Contest_CounterFlap_Top, TRUE
 # 690 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	delay 20
+	setmetatile 17, 3, METATILE_Contest_CounterFlap_Bottom, TRUE
 # 691 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	closemessage
+	special DrawWholeMapView
 # 692 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	call LilycoveCity_ContestLobby_EventScript_DelayIfContestWithRSPlayer
+	delay 20
 # 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	applymovement LOCALID_CONTEST_LOBBY_LINK_RECEPTIONIST, LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_2
+	applymovement LOCALID_CONTEST_LOBBY_LINK_RECEPTIONIST, Common_Movement_StepFasterLeft
 # 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	applymovement LOCALID_PLAYER, LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_3
-# 695 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	waitmovement 0
+# 695 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
 # 696 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	waitmovement 0
+# 697 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	messageautoscroll LilycoveCity_ContestLobby_Text_ComeThroughHere
+# 698 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	waitmessage
+# 699 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	delay 20
+# 700 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	closemessage
+# 701 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	call LilycoveCity_ContestLobby_EventScript_DelayIfContestWithRSPlayer
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	applymovement LOCALID_CONTEST_LOBBY_LINK_RECEPTIONIST, LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_2
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	applymovement LOCALID_PLAYER, LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_3
+# 704 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	waitmovement 0
+# 705 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	release
 	return
 
 
 LilycoveCity_ContestLobby_EventScript_LittleGirl::
-# 701 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 710 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	lock_faceplayer
-# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 711 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	goto_if_set FLAG_RECEIVED_POKEBLOCK_CASE, LilycoveCity_ContestLobby_EventScript_LittleGirl_2
-# 706 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 715 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_LadyGaveMePokeblockCase, MSGBOX_DEFAULT
 	release_end
 
 LilycoveCity_ContestLobby_EventScript_LittleGirl_2:
-# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 712 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	msgbox LilycoveCity_ContestLobby_Text_MakePokeblocksDifferentBerries, MSGBOX_DEFAULT
 	release_end
 
@@ -1648,84 +1669,84 @@ LilycoveCity_ContestLobby_EventScript_LeadToContestHall_Movement_4:
 	set_invisible
 	step_end
 
-# 671 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 680 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_0:
-# 671 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 680 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_right
-# 671 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 680 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	step_faster_down
 	step_end
 
-# 677 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 686 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_1:
-# 677 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 686 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_down
-# 677 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 686 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_down
-# 677 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 686 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	step_faster_down
 	step_end
 
-# 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_2:
-# 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_right
-# 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_right
-# 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_right
-# 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_right
-# 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_up
-# 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_up
-# 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_up
-# 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	delay_8
-# 693 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 702 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	set_invisible
 	step_end
 
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall_Movement_3:
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_right
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_right
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_right
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_right
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_right
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_up
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_up
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	walk_up
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	delay_8
-# 694 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 703 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	set_invisible
 	step_end
 
 LilycoveCity_ContestLobby_Text_LadyGaveMePokeblockCase::
-# 710 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 719 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "Yippee!\p"
 	.string "The lady at the reception counter\n"
 	.string "gave me a case for {POKEBLOCK}S!$"
 
 LilycoveCity_ContestLobby_Text_MakePokeblocksDifferentBerries::
-# 717 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 726 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "Make {POKEBLOCK}S and put them in there.\p"
 	.string "When you make a {POKEBLOCK}, everyone\n"
 	.string "has to put in a different BERRY.$"
 
 LilycoveCity_ContestLobby_Text_YourPokemonSpurredMeToPaint::
-# 724 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 733 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "Congratulations!\p"
 	.string "I did a painting of your POKéMON to\n"
 	.string "commemorate its victory…\p"
@@ -1735,7 +1756,7 @@ LilycoveCity_ContestLobby_Text_YourPokemonSpurredMeToPaint::
 	.string "Look, see?$"
 
 LilycoveCity_ContestLobby_Text_ShouldITakePaintingToMuseum::
-# 736 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 745 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "What do you think? I'm confident in\n"
 	.string "what I've done, but do you like it?\p"
 	.string "A work of this caliber, it wouldn't look\n"
@@ -1745,7 +1766,7 @@ LilycoveCity_ContestLobby_Text_ShouldITakePaintingToMuseum::
 	.string "Do you think I should take this there?$"
 
 LilycoveCity_ContestLobby_Text_IllTakePaintingToMuseum::
-# 749 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 758 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "What, really? Then, sure, I will take\n"
 	.string "this painting there right now.\p"
 	.string "I'll give it a proper title, too.\p"
@@ -1755,40 +1776,40 @@ LilycoveCity_ContestLobby_Text_IllTakePaintingToMuseum::
 	.string "Thank you!$"
 
 LilycoveCity_ContestLobby_Text_TakeMementoOfPainting::
-# 762 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 771 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "Oh, that's right!\p"
 	.string "As a memento of me painting your\n"
 	.string "POKéMON, please take this.$"
 
 LilycoveCity_ContestLobby_Text_ReceivedARibbon::
-# 769 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 778 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "{PLAYER} received a RIBBON.$"
 
 LilycoveCity_ContestLobby_Text_PutTheRibbonOnMon::
-# 773 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 782 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "{PLAYER} put the RIBBON on\n"
 	.string "{STR_VAR_1}.$"
 
 LilycoveCity_ContestLobby_Text_OkaySeeYou::
-# 778 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 787 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "Okay, see you!$"
 
 LilycoveCity_ContestLobby_Text_TakeHomeButIdLikeToTakeToMuseum::
-# 782 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 791 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "Oh… Then, I guess I'll just take\n"
 	.string "this home with me…\p"
 	.string "But, you know, I would like to take\n"
 	.string "this to the art museum… Okay?$"
 
 LilycoveCity_ContestLobby_Text_FineThatsTheWayItIs::
-# 790 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 799 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "Oh, fine, that's the way it is.\n"
 	.string "I will hang this in my own house.\p"
 	.string "I'll just have to try harder next time.\n"
 	.string "Well, be seeing you.$"
 
 LilycoveCity_ContestLobby_Text_MasterRankHereICome::
-# 798 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 807 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "Hoo, boy… Master Rank CONTESTS,\n"
 	.string "here I come.\p"
 	.string "The world will know that my dearest\n"
@@ -1797,35 +1818,40 @@ LilycoveCity_ContestLobby_Text_MasterRankHereICome::
 	.string "Uheheheh.$"
 
 LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere::
-# 808 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
-	.string "You can see a whole variety of\n"
-	.string "POKéMON here.\p"
-	.string "That's why I make this place a regular\n"
-	.string "part of my daily stroll.$"
+# 817 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	.string "I always make sure my CINCCINO is\n"
+	.string "sparkling and shiny during contests.\p"
+	.string "Wanna know my secret?\n"
+	.string "Try using this TM called Dazzling Gleam.$"
+
+LilycoveCity_ContestLobby_Text_TooBusy::
+# 825 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+	.string "Sorry, I don't have time for chit-chat.\n"
+	.string "We're about to be on in a few minutes.$"
 
 LilycoveCity_ContestLobby_Text_ContestFeastForEyes::
-# 816 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 830 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "Wow, coming out to a CONTEST is\n"
 	.string "a feast for these eyes!\p"
 	.string "Would you look at all the POKéMON\n"
 	.string "that just scream to be painted?$"
 
 LilycoveCity_ContestLobby_Text_ToughContestIsExtreme::
-# 824 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 838 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "The TOUGHNESS CONTEST is like\n"
 	.string "extreme, man!\p"
 	.string "Those muscular appeals…\n"
 	.string "Cascading sweat… I swoon!$"
 
 LilycoveCity_ContestLobby_Text_LavishedCareOnMon::
-# 832 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 846 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "Day in and day out, I lavished my care\n"
 	.string "on this POKéMON.\p"
 	.string "Its condition is peaking.\n"
 	.string "Today, victory is mine!$"
 
 LilycoveCity_ContestLobby_Text_MadePokeblocksWithFamily::
-# 840 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
+# 854 "data/maps/LilycoveCity_ContestLobby/scripts.pory"
 	.string "I made {POKEBLOCK}S with Mom, Dad, and\n"
 	.string "Big Sister. They turned out great!\p"
 	.string "I bet you can make smoother, better\n"

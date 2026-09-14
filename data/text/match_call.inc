@@ -3155,22 +3155,13 @@ MatchCall_Text_UnusedProfBirch:
 
 MatchCall_Text_MrStone1::
 # 3988 "data/text/match_call.pory"
-	.string "{SPEAKER NAME_MR_STONE}Oh? {PLAYER}{KUN}!\p"
+	.string "{SPEAKER NAME_MR_STONE}Oh? {PLAYER}{KUN}.\p"
 	.string "Since you called me, the POKéNAV\n"
-	.string "must be working properly!\p"
-	.string "Other people will be registered,\n"
-	.string "so try calling them up, too!\p"
-	.string "Good! Good!\n"
-	.string "You seem to be quite happy!\p"
-	.string "Hm…\n"
-	.string "How could I know that?\p"
-	.string "It's because I'm looking down at\n"
-	.string "you from my office window!\p"
-	.string "Wahahaha!\n"
-	.string "See you again!$"
+	.string "must be working properly.\p"
+	.string "Feel free to call me again, any time.$"
 
 MatchCall_Text_MrStone2::
-# 4010 "data/text/match_call.pory"
+# 3997 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}Oh? {PLAYER}{KUN}!\p"
 	.string "What's wrong? Have you forgotten\n"
 	.string "about that little errand of mine?\p"
@@ -3183,7 +3174,7 @@ MatchCall_Text_MrStone2::
 	.string "I have to go! Bye-bye!$"
 
 MatchCall_Text_MrStone3::
-# 4028 "data/text/match_call.pory"
+# 4015 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}Oh! {PLAYER}{KUN}!\p"
 	.string "Ah, so you've met STEVEN!\n"
 	.string "I'd better reward you, then!\p"
@@ -3192,7 +3183,7 @@ MatchCall_Text_MrStone3::
 	.string "I'll be waiting for you!$"
 
 MatchCall_Text_MrStone4::
-# 4040 "data/text/match_call.pory"
+# 4027 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}Oh! {PLAYER}{KUN}!\p"
 	.string "Did you know that DEVON was\n"
 	.string "digging the RUSTURF TUNNEL?\p"
@@ -3204,7 +3195,7 @@ MatchCall_Text_MrStone4::
 	.string "own convenience.$"
 
 MatchCall_Text_MrStone5::
-# 4056 "data/text/match_call.pory"
+# 4043 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}Hello, hello, {PLAYER}{KUN}!\p"
 	.string "I heard from someone in PETALBURG\n"
 	.string "that you're NORMAN's child!\p"
@@ -3212,7 +3203,7 @@ MatchCall_Text_MrStone5::
 	.string "being!$"
 
 MatchCall_Text_MrStone6::
-# 4066 "data/text/match_call.pory"
+# 4053 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}What's that?\p"
 	.string "You battled your own father and\n"
 	.string "defeated him?\p"
@@ -3221,7 +3212,7 @@ MatchCall_Text_MrStone6::
 	.string "someone so special! Wahaha!$"
 
 MatchCall_Text_MrStone7::
-# 4078 "data/text/match_call.pory"
+# 4065 "data/text/match_call.pory"
 	.string "Hello!\n"
 	.string "This is DEVON CORPORATI…\l"
 	.string "Oh, hello, {PLAYER}!\p"
@@ -3231,7 +3222,7 @@ MatchCall_Text_MrStone7::
 	.string "seem to be just as busy, {PLAYER}.$"
 
 MatchCall_Text_MrStone8::
-# 4090 "data/text/match_call.pory"
+# 4077 "data/text/match_call.pory"
 	.string "…Huh? …What's that?\p"
 	.string "GROU… Yes? …DON?\p"
 	.string "You're breaking up…\n"
@@ -3239,7 +3230,7 @@ MatchCall_Text_MrStone8::
 	.string "BZZZZ…$"
 
 MatchCall_Text_MrStone9::
-# 4101 "data/text/match_call.pory"
+# 4088 "data/text/match_call.pory"
 	.string "…Huh? …What's that?\p"
 	.string "Seaflo… Yes? …Caver…?\p"
 	.string "You're breaking up…\n"
@@ -3247,7 +3238,7 @@ MatchCall_Text_MrStone9::
 	.string "BZZZZ…$"
 
 MatchCall_Text_MrStone10::
-# 4112 "data/text/match_call.pory"
+# 4099 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}{PLAYER}{KUN}! It's me!\p"
 	.string "You were apparently involved in all\n"
 	.string "sorts of things, but I, being busy,\l"
@@ -3258,7 +3249,7 @@ MatchCall_Text_MrStone10::
 	.string "Take care!$"
 
 MatchCall_Text_MrStone11::
-# 4126 "data/text/match_call.pory"
+# 4113 "data/text/match_call.pory"
 	.string "{SPEAKER NAME_MR_STONE}… … … … … …\n"
 	.string "Is this maybe {PLAYER}{KUN}?\p"
 	.string "Your voice is so full of confidence,\n"

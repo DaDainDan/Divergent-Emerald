@@ -28,9 +28,9 @@ script AbandonedShip_Rooms2_1F_EventScript_Kira {
     release_end
 }
 
-script AbandonedShip_Rooms2_1F_EventScript_Jani {
-    trainerbattle_single(TRAINER_JANI, AbandonedShip_Rooms2_1F_Text_JaniIntro, AbandonedShip_Rooms2_1F_Text_JaniDefeat)
-    msgbox(AbandonedShip_Rooms2_1F_Text_JaniPostBattle, MSGBOX_AUTOCLOSE)
+script AbandonedShip_Rooms2_1F_EventScript_Kylie {
+    trainerbattle_single(TRAINER_KYLIE, AbandonedShip_Rooms2_1F_Text_KylieIntro, AbandonedShip_Rooms2_1F_Text_KylieDefeat)
+    msgbox(AbandonedShip_Rooms2_1F_Text_KyliePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -137,17 +137,17 @@ text AbandonedShip_Rooms2_1F_Text_KiraRematchNotEnoughMons {
 	We'll have to battle some other time!"
 }
 
-text AbandonedShip_Rooms2_1F_Text_JaniIntro {
+text AbandonedShip_Rooms2_1F_Text_KylieIntro {
 	"I'm not good at swimming,
 	but I am good at battles!"
 }
 
-text AbandonedShip_Rooms2_1F_Text_JaniDefeat {
+text AbandonedShip_Rooms2_1F_Text_KylieDefeat {
 	"Oops.
 	That didn't go very well."
 }
 
-text AbandonedShip_Rooms2_1F_Text_JaniPostBattle {
+text AbandonedShip_Rooms2_1F_Text_KyliePostBattle {
 	"Walking around barefoot in this ship
 	is kind of gross."
 }

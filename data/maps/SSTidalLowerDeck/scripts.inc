@@ -2,11 +2,11 @@ SSTidalLowerDeck_MapScripts::
 	.byte 0
 
 
-SSTidalLowerDeck_EventScript_Phillip::
+SSTidalLowerDeck_EventScript_Colby::
 # 4 "data/maps/SSTidalLowerDeck/scripts.pory"
-	trainerbattle_single TRAINER_PHILLIP, SSTidalLowerDeck_Text_PhillipIntro, SSTidalLowerDeck_Text_PhillipDefeat
+	trainerbattle_single TRAINER_COLBY, SSTidalLowerDeck_Text_ColbyIntro, SSTidalLowerDeck_Text_ColbyDefeat
 # 5 "data/maps/SSTidalLowerDeck/scripts.pory"
-	msgbox SSTidalLowerDeck_Text_PhillipPostBattle, MSGBOX_AUTOCLOSE
+	msgbox SSTidalLowerDeck_Text_ColbyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -18,17 +18,17 @@ SSTidalLowerDeck_EventScript_Leonard::
 	end
 
 
-SSTidalLowerDeck_Text_PhillipIntro::
+SSTidalLowerDeck_Text_ColbyIntro::
 # 15 "data/maps/SSTidalLowerDeck/scripts.pory"
 	.string "Arrrgh! I'm fed up and dog-tired of\n"
 	.string "cleaning this huge place!\p"
 	.string "Let's have a quick battle!$"
 
-SSTidalLowerDeck_Text_PhillipDefeat::
+SSTidalLowerDeck_Text_ColbyDefeat::
 # 22 "data/maps/SSTidalLowerDeck/scripts.pory"
 	.string "Little bro, I lost!$"
 
-SSTidalLowerDeck_Text_PhillipPostBattle::
+SSTidalLowerDeck_Text_ColbyPostBattle::
 # 26 "data/maps/SSTidalLowerDeck/scripts.pory"
 	.string "We're the CLEANUP BROTHERS!\p"
 	.string "The old one dumps the detergent,\n"

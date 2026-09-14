@@ -6,7 +6,7 @@ script PacifidlogTown_House3_EventScript_Trader {
         msgbox(PacifidlogTown_House3_Text_ReallyWantedToGetBagon, MSGBOX_DEFAULT)
     	release_end
     }
-    ingame_trade(INGAME_TRADE_HORSEA, PacifidlogTown_House3_Text_WillingToTradeIt, PacifidlogTown_House3_EventScript_DeclineTrade, PacifidlogTown_House3_EventScript_NotRequestedMon, PacifidlogTown_House3_Text_ItsSubtlyDifferentThankYou)
+    ingame_trade(INGAME_TRADE_CHATOT, PacifidlogTown_House3_Text_WillingToTradeIt, PacifidlogTown_House3_EventScript_DeclineTrade, PacifidlogTown_House3_EventScript_NotRequestedMon, PacifidlogTown_House3_Text_ItsSubtlyDifferentThankYou)
     setflag(FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED)
     release_end
 }
@@ -66,7 +66,7 @@ text PacifidlogTown_House3_Text_ReallyWantedToGetBagon {
 	"I know I could go looking for one
 	on my own, but…
 
-	But I really wanted to get a BAGON
+	But I really wanted to get a MR. MIME
 	that another TRAINER caught…"
 }
 

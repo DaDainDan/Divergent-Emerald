@@ -20,31 +20,31 @@ BattleFrontier_Mart_EventScript_Clerk::
 # 12 "data/maps/BattleFrontier_Mart/scripts.pory"
 BattleFrontier_Mart_Pokemart:
 # 13 "data/maps/BattleFrontier_Mart/scripts.pory"
-	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_MASTER_BALL
 # 14 "data/maps/BattleFrontier_Mart/scripts.pory"
-	.2byte ITEM_HYPER_POTION
-# 15 "data/maps/BattleFrontier_Mart/scripts.pory"
-	.2byte ITEM_MAX_POTION
-# 16 "data/maps/BattleFrontier_Mart/scripts.pory"
 	.2byte ITEM_FULL_RESTORE
-# 17 "data/maps/BattleFrontier_Mart/scripts.pory"
+# 15 "data/maps/BattleFrontier_Mart/scripts.pory"
+	.2byte ITEM_MAX_REVIVE
+# 16 "data/maps/BattleFrontier_Mart/scripts.pory"
 	.2byte ITEM_FULL_HEAL
+# 17 "data/maps/BattleFrontier_Mart/scripts.pory"
+	.2byte ITEM_MAX_ELIXIR
 # 18 "data/maps/BattleFrontier_Mart/scripts.pory"
-	.2byte ITEM_REVIVE
+	.2byte ITEM_EXP_CANDY_XL
 # 19 "data/maps/BattleFrontier_Mart/scripts.pory"
-	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_HP_UP
 # 20 "data/maps/BattleFrontier_Mart/scripts.pory"
 	.2byte ITEM_PROTEIN
 # 21 "data/maps/BattleFrontier_Mart/scripts.pory"
-	.2byte ITEM_CALCIUM
-# 22 "data/maps/BattleFrontier_Mart/scripts.pory"
 	.2byte ITEM_IRON
-# 23 "data/maps/BattleFrontier_Mart/scripts.pory"
-	.2byte ITEM_ZINC
-# 24 "data/maps/BattleFrontier_Mart/scripts.pory"
+# 22 "data/maps/BattleFrontier_Mart/scripts.pory"
 	.2byte ITEM_CARBOS
+# 23 "data/maps/BattleFrontier_Mart/scripts.pory"
+	.2byte ITEM_CALCIUM
+# 24 "data/maps/BattleFrontier_Mart/scripts.pory"
+	.2byte ITEM_ZINC
 # 25 "data/maps/BattleFrontier_Mart/scripts.pory"
-	.2byte ITEM_HP_UP
+	.2byte ITEM_PP_UP
 	.2byte ITEM_NONE
 
 BattleFrontier_Mart_EventScript_OldMan::

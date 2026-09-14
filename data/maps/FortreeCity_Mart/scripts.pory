@@ -11,15 +11,33 @@ script FortreeCity_Mart_EventScript_Clerk {
 
 mart FortreeCity_Mart_Pokemart {
     ITEM_GREAT_BALL
-    ITEM_ULTRA_BALL
+    ITEM_NEST_BALL
     ITEM_SUPER_POTION
-    ITEM_HYPER_POTION
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_AWAKENING
     ITEM_REVIVE
+    ITEM_FULL_HEAL
+    ITEM_MAX_ETHER
     ITEM_SUPER_REPEL
-    ITEM_WOOD_MAIL
+    ITEM_SUPER_LURE
+}
+
+script FortreeCity_Mart_EventScript_EnhancementClerk {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(FortreeCity_Mart_Pokemart_Enhancement)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
+
+mart FortreeCity_Mart_Pokemart_Enhancement {
+    ITEM_EXP_CANDY_M
+    ITEM_HP_UP
+    ITEM_PROTEIN
+    ITEM_IRON
+    ITEM_CARBOS
+    ITEM_CALCIUM
+    ITEM_ZINC
+    ITEM_PP_UP
 }
 
 script FortreeCity_Mart_EventScript_Woman {

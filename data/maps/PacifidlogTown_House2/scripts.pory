@@ -18,9 +18,9 @@ script PacifidlogTown_House2_EventScript_FanClubYoungerBrother {
     }
 	msgbox(PacifidlogTown_House2_Text_AhYourPokemon, MSGBOX_DEFAULT)
     setflag(FLAG_MET_FANCLUB_YOUNGER_BROTHER)
-    if (specialvar(VAR_RESULT, GetLeadMonFriendshipScore) >= FRIENDSHIP_150_TO_199) {
+    if (specialvar(VAR_RESULT, GetLeadMonFriendshipScore) >= FRIENDSHIP_MAX) {
         msgbox(PacifidlogTown_House2_Text_AdoringPokemonTakeThis, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_TM_RETURN) == FALSE) {
+		if (giveitem(ITEM_TM_WISH) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
     }
@@ -30,7 +30,7 @@ script PacifidlogTown_House2_EventScript_FanClubYoungerBrother {
     }
 	else {
 		msgbox(PacifidlogTown_House2_Text_ViciousPokemonTakeThis, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_TM_FRUSTRATION) == FALSE) {
+		if (giveitem(ITEM_TM_PERISH_SONG) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 	}

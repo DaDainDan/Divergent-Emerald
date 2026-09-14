@@ -210,7 +210,7 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 # 106 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	setvar VAR_ROUTE128_STATE, 1
 # 107 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 1
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 2
 # 108 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN
 # 109 "data/maps/SeafloorCavern_Room9/scripts.pory"
@@ -427,18 +427,18 @@ SeafloorCavern_Room9_Text_ArchieWithThisRedOrb::
 	.string "you are truly gifted.\p"
 	.string "But!\n"
 	.string "I have this in my possession!\p"
-	.string "With this RED ORB, I can make KYOGRE…$"
+	.string "With this BLUE ORB, I can make KYOGRE…$"
 
 SeafloorCavern_Room9_Text_RedOrbShinesByItself::
 # 191 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	.string "The RED ORB suddenly began shining\n"
+	.string "The BLUE ORB suddenly began shining\n"
 	.string "by itself!$"
 
 SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo::
 # 196 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	.string "{SPEAKER NAME_ARCHIE}What?!\p"
 	.string "I didn't do anything.\n"
-	.string "Why did the RED ORB…\p"
+	.string "Why did the BLUE ORB…\p"
 	.string "Where did KYOGRE go?$"
 
 SeafloorCavern_Room9_Text_ArchieAMessageFromOutside::
@@ -466,7 +466,7 @@ SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard::
 SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear::
 # 233 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	.string "{SPEAKER NAME_ARCHIE}There's something wrong…\p"
-	.string "The RED ORB is supposed to awaken\n"
+	.string "The BLUE ORB is supposed to awaken\n"
 	.string "and control KYOGRE…\p"
 	.string "But… Why?\n"
 	.string "Why did KYOGRE disappear?\p"
@@ -488,7 +488,7 @@ SeafloorCavern_Room9_Text_ArchieDontGetAllHighAndMighty::
 	.string "Don't get all high and mighty with me!\p"
 	.string "Wasn't it you, TEAM MAGMA, that\n"
 	.string "infuriated GROUDON?\p"
-	.string "So long as I have this RED ORB,\n"
+	.string "So long as I have this BLUE ORB,\n"
 	.string "I should be able to control KYOGRE…\p"
 	.string "I should be able to control it…$"
 

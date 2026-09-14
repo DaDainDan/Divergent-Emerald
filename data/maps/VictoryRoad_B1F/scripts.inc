@@ -34,11 +34,11 @@ VictoryRoad_B1F_EventScript_Mitchell::
 	end
 
 
-VictoryRoad_B1F_EventScript_Halle::
+VictoryRoad_B1F_EventScript_Erin::
 # 28 "data/maps/VictoryRoad_B1F/scripts.pory"
-	trainerbattle_single TRAINER_HALLE, VictoryRoad_B1F_Text_HalleIntro, VictoryRoad_B1F_Text_HalleDefeat
+	trainerbattle_single TRAINER_ERIN, VictoryRoad_B1F_Text_ErinIntro, VictoryRoad_B1F_Text_ErinDefeat
 # 29 "data/maps/VictoryRoad_B1F/scripts.pory"
-	msgbox VictoryRoad_B1F_Text_HallePostBattle, MSGBOX_AUTOCLOSE
+	msgbox VictoryRoad_B1F_Text_ErinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -102,17 +102,17 @@ VictoryRoad_B1F_Text_MitchellPostBattle::
 	.string "incredible power emanating from you\l"
 	.string "and your POKéMON.$"
 
-VictoryRoad_B1F_Text_HalleIntro::
+VictoryRoad_B1F_Text_ErinIntro::
 # 94 "data/maps/VictoryRoad_B1F/scripts.pory"
 	.string "Okay, no need to get your back up!\n"
 	.string "Relax, let's take it easy!$"
 
-VictoryRoad_B1F_Text_HalleDefeat::
+VictoryRoad_B1F_Text_ErinDefeat::
 # 99 "data/maps/VictoryRoad_B1F/scripts.pory"
 	.string "Whoa!\n"
 	.string "Wonderful!$"
 
-VictoryRoad_B1F_Text_HallePostBattle::
+VictoryRoad_B1F_Text_ErinPostBattle::
 # 104 "data/maps/VictoryRoad_B1F/scripts.pory"
 	.string "Sure, this is VICTORY ROAD.\p"
 	.string "But it's not all that different from\n"

@@ -460,7 +460,7 @@ Route104_EventScript_ExpertF::
 	goto_if_set FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104, Route104_EventScript_ExpertF_2
 # 227 "data/maps/Route104/scripts.pory"
 	msgbox Route104_Text_PlantBerriesInSoilTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_CHESTO_BERRY
+	giveitem ITEM_LUM_BERRY
 # 0 "data/maps/Route104/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route104_EventScript_ExpertF_5
@@ -570,7 +570,7 @@ Route104_EventScript_Boy2::
 	goto_if_set FLAG_RECEIVED_TM_BULLET_SEED, Route104_EventScript_Boy2_2
 # 301 "data/maps/Route104/scripts.pory"
 	msgbox Route104_Text_LikeFillingMouthWithSeedsTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_BULLET_SEED
+	giveitem ITEM_TM_NATURAL_GIFT
 # 0 "data/maps/Route104/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route104_EventScript_Boy2_5
@@ -1532,66 +1532,66 @@ Route104_EventScript_Ivan::
 
 Route104_EventScript_Billy::
 # 440 "data/maps/Route104/scripts.pory"
-	trainerbattle_single TRAINER_BILLY, Route104_Text_BillyIntro, Route104_Text_BillyDefeat
+	trainerbattle_single TRAINER_HAROLD, Route104_Text_BillyIntro, Route104_Text_BillyDefeat
 # 441 "data/maps/Route104/scripts.pory"
 	msgbox Route104_Text_BillyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
-Route104_EventScript_Haley::
+Route104_EventScript_Giselle::
 # 446 "data/maps/Route104/scripts.pory"
-	trainerbattle_single TRAINER_HALEY_1, Route104_Text_HaleyIntro, Route104_Text_HaleyDefeat, Route104_EventScript_TryRegisterHaleyAfterBattle
+	trainerbattle_single TRAINER_GISELLE_1, Route104_Text_GiselleIntro, Route104_Text_GiselleDefeat, Route104_EventScript_TryRegisterGiselleAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 0 "data/maps/Route104/scripts.pory"
 	compare VAR_RESULT, TRUE
-	goto_if_eq Route104_EventScript_Haley_2
+	goto_if_eq Route104_EventScript_Giselle_2
 # 452 "data/maps/Route104/scripts.pory"
-	setvar VAR_0x8004, TRAINER_HALEY_1
+	setvar VAR_0x8004, TRAINER_GISELLE_1
 # 453 "data/maps/Route104/scripts.pory"
-	goto_if_set FLAG_HAS_MATCH_CALL, Route104_EventScript_Haley_6
-Route104_EventScript_Haley_4:
+	goto_if_set FLAG_HAS_MATCH_CALL, Route104_EventScript_Giselle_6
+Route104_EventScript_Giselle_4:
 # 458 "data/maps/Route104/scripts.pory"
-	msgbox Route104_Text_HaleyPostBattle, MSGBOX_DEFAULT
+	msgbox Route104_Text_GisellePostBattle, MSGBOX_DEFAULT
 	release_end
 
-Route104_EventScript_Haley_2:
+Route104_EventScript_Giselle_2:
 # 448 "data/maps/Route104/scripts.pory"
-	trainerbattle_rematch TRAINER_HALEY_1, Route104_Text_HaleyRematchIntro, Route104_Text_HaleyRematchDefeat
+	trainerbattle_rematch TRAINER_GISELLE_1, Route104_Text_GiselleRematchIntro, Route104_Text_GiselleRematchDefeat
 # 449 "data/maps/Route104/scripts.pory"
-	msgbox Route104_Text_HaleyPostRematch, MSGBOX_AUTOCLOSE
+	msgbox Route104_Text_GisellePostRematch, MSGBOX_AUTOCLOSE
 	end
 
-Route104_EventScript_Haley_5:
+Route104_EventScript_Giselle_5:
 # 454 "data/maps/Route104/scripts.pory"
-	msgbox Route104_Text_HaleyRegister1, MSGBOX_DEFAULT
+	msgbox Route104_Text_GiselleRegister1, MSGBOX_DEFAULT
 # 455 "data/maps/Route104/scripts.pory"
-	register_matchcall TRAINER_HALEY_1
+	register_matchcall TRAINER_GISELLE_1
 	release_end
 
-Route104_EventScript_Haley_6:
+Route104_EventScript_Giselle_6:
 	specialvar VAR_RESULT, IsTrainerRegistered
 # 0 "data/maps/Route104/scripts.pory"
 	compare VAR_RESULT, FALSE
-	goto_if_eq Route104_EventScript_Haley_5
-	goto Route104_EventScript_Haley_4
+	goto_if_eq Route104_EventScript_Giselle_5
+	goto Route104_EventScript_Giselle_4
 
 
-Route104_EventScript_TryRegisterHaleyAfterBattle::
+Route104_EventScript_TryRegisterGiselleAfterBattle::
 # 463 "data/maps/Route104/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
 # 464 "data/maps/Route104/scripts.pory"
 	waitmovement 0
 # 465 "data/maps/Route104/scripts.pory"
-	goto_if_set FLAG_HAS_MATCH_CALL, Route104_EventScript_TryRegisterHaleyAfterBattle_2
-Route104_EventScript_TryRegisterHaleyAfterBattle_1:
+	goto_if_set FLAG_HAS_MATCH_CALL, Route104_EventScript_TryRegisterGiselleAfterBattle_2
+Route104_EventScript_TryRegisterGiselleAfterBattle_1:
 	release_end
 
-Route104_EventScript_TryRegisterHaleyAfterBattle_2:
+Route104_EventScript_TryRegisterGiselleAfterBattle_2:
 # 466 "data/maps/Route104/scripts.pory"
-	msgbox Route104_Text_HaleyRegister2, MSGBOX_DEFAULT
+	msgbox Route104_Text_GiselleRegister2, MSGBOX_DEFAULT
 # 467 "data/maps/Route104/scripts.pory"
-	register_matchcall TRAINER_HALEY_1
-	goto Route104_EventScript_TryRegisterHaleyAfterBattle_1
+	register_matchcall TRAINER_GISELLE_1
+	goto Route104_EventScript_TryRegisterGiselleAfterBattle_1
 
 
 Route104_EventScript_Winston::
@@ -1726,11 +1726,11 @@ Route104_EventScript_Mia::
 	release_end
 
 
-Route104_EventScript_Darian::
+Route104_EventScript_Dale::
 # 541 "data/maps/Route104/scripts.pory"
-	trainerbattle_single TRAINER_DARIAN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat
+	trainerbattle_single TRAINER_DALE, Route104_Text_DaleIntro, Route104_Text_DaleDefeat
 # 542 "data/maps/Route104/scripts.pory"
-	msgbox Route104_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route104_Text_DalePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 

@@ -37,9 +37,9 @@ script Route126_EventScript_Leonardo {
     end
 }
 
-script Route126_EventScript_Isobel {
-    trainerbattle_single(TRAINER_ISOBEL, Route126_Text_IsobelIntro, Route126_Text_IsobelDefeat)
-    msgbox(Route126_Text_IsobelPostBattle, MSGBOX_AUTOCLOSE)
+script Route126_EventScript_Eva {
+    trainerbattle_single(TRAINER_EVA, Route126_Text_EvaIntro, Route126_Text_EvaDefeat)
+    msgbox(Route126_Text_EvaPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 

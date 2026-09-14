@@ -4,7 +4,7 @@ script LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesigner {
     lock_faceplayer
     if (!flag(FLAG_TEMP_2)) {
         msgbox(LilycoveCity_CoveLilyMotel_2F_Text_ShowMeCompletedDex, MSGBOX_DEFAULT)
-		if (specialvar(VAR_RESULT, HasAllHoennMons) == TRUE) {
+		if (specialvar(VAR_RESULT, HasAllMons) == TRUE) {
 			setflag(FLAG_TEMP_2)
 			playfanfare(MUS_OBTAIN_ITEM)
 			waitfanfare

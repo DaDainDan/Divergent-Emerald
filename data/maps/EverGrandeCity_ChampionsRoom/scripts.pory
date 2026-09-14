@@ -27,6 +27,9 @@ mapscripts EverGrandeCity_ChampionsRoom_MapScripts {
 
 script EverGrandeCity_ChampionsRoom_EventScript_Wallace {
     playbgm(MUS_ENCOUNTER_CHAMPION, FALSE)
+	if (flag(FLAG_SYS_GAME_CLEAR)) {
+		goto(EverGrandeCity_ChampionsRoom_EventScript_ChampionBattlePostGame)
+	}
     msgbox(EverGrandeCity_ChampionsRoom_Text_IntroSpeech, MSGBOX_DEFAULT)
     trainerbattle_no_intro(TRAINER_WALLACE, EverGrandeCity_ChampionsRoom_Text_Defeat)
     playse(SE_DOOR)
@@ -121,6 +124,41 @@ movement EverGrandeCity_ChampionsRoom_Movement_RivalLookBackAndForth {
     delay_8
     step_faster_right
     delay_16
+}
+
+// TODO
+script EverGrandeCity_ChampionsRoom_EventScript_ChampionBattlePostGame {
+	specialvar(VAR_RESULT, GetChampionRematch)
+	switch (var(VAR_RESULT)) {
+		case 0: // Wallace Singles
+			msgbox(WallaceRematchIntro, MSGBOX_DEFAULT)
+			trainerbattle_no_intro(TRAINER_WALLACE, EverGrandeCity_ChampionsRoom_Text_Defeat)
+		case 1: // Wallace Doubles
+			msgbox(WallaceRematchIntro, MSGBOX_DEFAULT)
+			trainerbattle_no_intro(TRAINER_WALLACE, EverGrandeCity_ChampionsRoom_Text_Defeat)
+		case 2: // Wally Doubles
+			msgbox(WallaceRematchIntro, MSGBOX_DEFAULT)
+			trainerbattle_no_intro(TRAINER_WALLACE, EverGrandeCity_ChampionsRoom_Text_Defeat)
+		case 3: // Wally Singles
+			msgbox(WallaceRematchIntro, MSGBOX_DEFAULT)
+			trainerbattle_no_intro(TRAINER_WALLACE, EverGrandeCity_ChampionsRoom_Text_Defeat)
+		case 4: // Wally and Wallace
+			msgbox(WallaceRematchIntro, MSGBOX_DEFAULT)
+			trainerbattle_no_intro(TRAINER_WALLACE, EverGrandeCity_ChampionsRoom_Text_Defeat)
+	}
+	msgbox(EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe, MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+	applymovement(LOCALID_CHAMPIONS_ROOM_WALLACE, moves(walk_up * 2,  step_faster_down))
+    applymovement(LOCALID_PLAYER, moves(walk_up * 2))
+	msgbox("\.", MSGBOX_DEFAULT)
+	applymovement(LOCALID_CHAMPIONS_ROOM_WALLACE, moves(walk_up,  delay_8,  set_invisible))
+    applymovement(LOCALID_PLAYER, moves(walk_up,  delay_16,  walk_up,  delay_8,  set_invisible))
+    waitmovement(0)
+    warp(MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16)
+	waitstate
+    releaseall
+    end
 }
 
 text EverGrandeCity_ChampionsRoom_Text_IntroSpeech {
@@ -292,4 +330,28 @@ text EverGrandeCity_ChampionsRoom_Text_BrendanCongratulations {
 
 	{PLAYER}, way to go!
 	Congratulations!"
+}
+
+text WallaceRematchIntro {
+	"{SPEAKER NAME_WALLACE}…"
+}
+
+text WallaceRematchDefeat {
+	"{SPEAKER NAME_WALLACE}…"
+}
+
+text WallyRematchIntroDrive {
+	"{SPEAKER NAME_WALLACE}…"
+}
+
+text WallyRematchDefeatDrive {
+	"{SPEAKER NAME_WALLY}…"
+}
+
+text WallyRematchIntroBond {
+	"{SPEAKER NAME_WALLY}…"
+}
+
+text WallyRematchDefeatBond {
+	"{SPEAKER NAME_WALLY}…"
 }

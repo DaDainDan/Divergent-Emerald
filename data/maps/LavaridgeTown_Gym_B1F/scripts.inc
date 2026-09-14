@@ -21,7 +21,7 @@ LavaridgeTown_Gym_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	goto_if 0, LavaridgeTown_Gym_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
 LavaridgeTown_Gym_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 # 16 "data/maps/LavaridgeTown_Gym_B1F/scripts.pory"
-	checktrainerflag TRAINER_JEFF
+	checktrainerflag TRAINER_MARLENE
 	goto_if 0, LavaridgeTown_Gym_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
 LavaridgeTown_Gym_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 # 20 "data/maps/LavaridgeTown_Gym_B1F/scripts.pory"
@@ -48,7 +48,7 @@ LavaridgeTown_Gym_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
 # 17 "data/maps/LavaridgeTown_Gym_B1F/scripts.pory"
 	setvar VAR_TEMP_9, 1
 # 18 "data/maps/LavaridgeTown_Gym_B1F/scripts.pory"
-	setobjectmovementtype LOCALID_JEFF, MOVEMENT_TYPE_BURIED
+	setobjectmovementtype LOCALID_MARLENE, MOVEMENT_TYPE_BURIED
 	goto LavaridgeTown_Gym_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 
 LavaridgeTown_Gym_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:

@@ -54,6 +54,19 @@ enum ScrollMulti
     SCROLL_MULTI_BATTLE_TENT_RULES,
     SCROLL_MULTI_BADGES,
     SCROLL_MULTI_SILPHCO_FLOORS,
+    SCROLL_MULTI_CUTTER_MOVE_TUTOR,
+    SCROLL_MULTI_WHIP_MOVE_TUTOR,
+    SCROLL_MULTI_PUNCH_KICK_MOVE_TUTOR,
+    SCROLL_MULTI_FERAL_MOVE_TUTOR,
+    SCROLL_MULTI_BIPEDAL_MOVE_TUTOR,
+    SCROLL_MULTI_WEATHER_MOVE_TUTOR,
+    SCROLL_MULTI_TERRAIN_MOVE_TUTOR,
+    SCROLL_MULTI_SIDE_STATUS_MOVE_TUTOR,
+    SCROLL_MULTI_SWAP_MOVE_TUTOR,
+    SCROLL_MULTI_ROOM_MOVE_TUTOR,
+    SCROLL_MULTI_EXPLOSION_MOVE_TUTOR,
+    SCROLL_MULTI_GRAB_MOVE_TUTOR,
+    SCROLL_MULTI_ULTIMATE_MOVE_TUTOR,
 };
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6
@@ -119,15 +132,38 @@ enum {
 };
 
 // Starter Pokemon
+enum StarterChoice
+{
+    PC_CHOSE_TREECKO,
+    PC_CHOSE_BULBASAUR = PC_CHOSE_TREECKO,
+    PC_CHOSE_TORCHIC,
+    PC_CHOSE_SQUIRTLE = PC_CHOSE_TORCHIC,
+    PC_CHOSE_MUDKIP,
+    PC_CHOSE_CHARMANDER = PC_CHOSE_MUDKIP,
+};
 
-// Emerald
-#define PC_CHOSE_TREECKO 0
-#define PC_CHOSE_TORCHIC 1
-#define PC_CHOSE_MUDKIP  2
-
-// FRLG
-#define PC_CHOSE_BULBASAUR  0
-#define PC_CHOSE_SQUIRTLE   1
-#define PC_CHOSE_CHARMANDER 2
+// Address constants for GetPlayerMaleFemaleString
+enum PlayerAddress
+{
+    ADDR_BIG_GUY,     // Big guy / Big girl
+    ADDR_SIR,         // Sir / Ma'am
+    ADDR_LAD,         // Lad / Lassie
+    ADDR_BOY,         // Boy / Girl
+    ADDR_FELLA,       // Fella / Gal
+    ADDR_SONNY,       // Sonny / Missy
+    ADDR_BRO,         // Bro / Sis
+    ADDR_MISTER,      // Mister / Miss
+    ADDR_BOYO,        // Boyo / Girlie
+    ADDR_CHAMP,       // Champ / Princess
+    ADDR_YOUNG_MAN,   // Young man / Young lady
+    ADDR_SPORT,       // Sport / Little lady
+    ADDR_LADDIE,      // Laddie / Dearie
+    ADDR_SON,         // Son / Missy
+    ADDR_MAN,         // Man / Girl
+    ADDR_MATE,        // Mate / Love
+    ADDR_BUDDY,       // Buddy / Pal
+    ADDR_CHIEF,       // Chief / Princess
+    ADDR_COUNT,
+};
 
 #endif // GUARD_CONSTANTS_FIELD_SPECIALS_H

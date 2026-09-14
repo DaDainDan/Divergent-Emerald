@@ -15,7 +15,7 @@ script Route111_WinstrateFamilysHouse_EventScript_Victoria {
         msgbox(Route111_WinstrateFamilysHouse_Text_PassionateAboutBattles, MSGBOX_DEFAULT)
     } else {
 		msgbox(Route111_WinstrateFamilysHouse_Text_LikeYouToHaveMachoBrace, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_MACHO_BRACE) == FALSE) {
+		if (giveitem(ITEM_EXPERT_BELT) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		setflag(FLAG_RECEIVED_MACHO_BRACE)

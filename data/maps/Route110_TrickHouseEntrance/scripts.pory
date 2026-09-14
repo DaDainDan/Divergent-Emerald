@@ -223,13 +223,13 @@ script Route110_TrickHouseEntrance_EventScript_GiveReward {
     waitmovement(0)
     msgbox(Route110_TrickHouseEntrance_Text_YoureHereToAcceptReward, MSGBOX_DEFAULT)
 	switch (var(VAR_TRICK_HOUSE_LEVEL)) {
-		case 1: setvar(VAR_GIFT_ITEM, ITEM_RARE_CANDY)
-		case 2: setvar(VAR_GIFT_ITEM, ITEM_TIMER_BALL)
-		case 3: setvar(VAR_GIFT_ITEM, ITEM_HARD_STONE)
-		case 4: setvar(VAR_GIFT_ITEM, ITEM_SMOKE_BALL)
-		case 5: setvar(VAR_GIFT_ITEM, ITEM_TM_TAUNT)
-		case 6: setvar(VAR_GIFT_ITEM, ITEM_MAGNET)
-		case 7: setvar(VAR_GIFT_ITEM, ITEM_PP_MAX)
+		case 1: setvar(VAR_GIFT_ITEM, ITEM_LEEK)
+		case 2: setvar(VAR_GIFT_ITEM, ITEM_TM_DISABLE)
+		case 3: setvar(VAR_GIFT_ITEM, ITEM_SMOKE_BALL)
+		case 4: setvar(VAR_GIFT_ITEM, ITEM_IRON_BALL)
+		case 5: setvar(VAR_GIFT_ITEM, ITEM_TM_SIGNAL_BEAM)
+		case 6: setvar(VAR_GIFT_ITEM, ITEM_LUCKY_PUNCH)
+		case 7: setvar(VAR_GIFT_ITEM, ITEM_LUCKY_EGG)
 	}
 	goto(Route110_TrickHouseEntrance_EventScript_GivePuzzleReward)
     end
@@ -473,6 +473,76 @@ script Route110_TrickHouseEntrance_EventScript_TrickMasterHiding {
     end
 }
 
+script Route110_TrickHouseEntrance_EventScript_MoveTutor {
+	lock_faceplayer
+	if (!flag(FLAG_MET_TRICK_HOUSE_ROOM_TUTOR)) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		setflag(FLAG_MET_TRICK_HOUSE_ROOM_TUTOR)
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_C, SCROLL_MULTI_ROOM_MOVE_TUTOR)
+	setvar(VAR_0x8006, 0)
+	goto(Route110_TrickHouseEntrance_EventScript_ChooseRoomMove)
+	end
+}
+
+script Route110_TrickHouseEntrance_EventScript_ChooseRoomMove {
+	setvar(VAR_0x8004, SCROLL_MULTI_ROOM_MOVE_TUTOR)
+	special(ShowScrollableMultichoice)
+	copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0: setvar(VAR_0x8005, MOVE_TRICK_ROOM)
+		case 1: setvar(VAR_0x8005, MOVE_WONDER_ROOM)
+		case 2: setvar(VAR_0x8005, MOVE_ERROR_ROOM)
+		case 3: setvar(VAR_0x8005, MOVE_STATIC_ROOM)
+		case 4: setvar(VAR_0x8005, MOVE_REVERSE_ROOM)
+		case 5: setvar(VAR_0x8005, MOVE_GRIM_ROOM)
+		case 6:
+		case MULTI_B_PRESSED:
+			goto(Route110_TrickHouseEntrance_EventScript_ExitTutorMoveSelect)
+	}
+	goto(Route110_TrickHouseEntrance_EventScript_ConfirmMoveSelection)
+	end
+}
+
+script Route110_TrickHouseEntrance_EventScript_ConfirmMoveSelection {
+	special(BufferBattleFrontierTutorMoveName)
+	msgbox("\.", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		message("\.")
+		waitmessage
+		setvar(VAR_0x8006, 1)
+		goto(Route110_TrickHouseEntrance_EventScript_ChooseRoomMove)
+	}
+	if (checkitem(ITEM_BIG_PEARL) == TRUE) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		fadescreen(FADE_TO_BLACK)
+		special(CloseBattleFrontierTutorWindow)
+		chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+		waitstate
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(Route110_TrickHouseEntrance_Text_DeclineTutor, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox("\.", MSGBOX_DEFAULT)
+		removeitem(ITEM_BIG_PEARL, 1)
+		release_end
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	goto(Route110_TrickHouseEntrance_EventScript_ExitTutorMoveSelect)
+	end
+}
+
+script Route110_TrickHouseEntrance_EventScript_ExitTutorMoveSelect {
+	special(CloseBattleFrontierTutorWindow) 
+	msgbox(Route110_TrickHouseEntrance_Text_DeclineTutor, MSGBOX_DEFAULT)
+	release_end
+}
+
+text Route110_TrickHouseEntrance_Text_DeclineTutor {
+	"\."
+}
+
 text Route110_TrickHouseEntrance_Text_YoureBeingWatched {
 	"You're being watched…"
 }
@@ -647,4 +717,40 @@ text Route110_TrickHouseEntrance_Text_DoorLockedWriteSecretCodeHere {
 
 	…On closer inspection, this is written
 	on it: “Write the secret code here.”"
+}
+
+text Route110_TrickHouseEntrance_Text_TrickRoomDesc {
+	"Changes the field\n"
+	"to make slower\n"
+	"Pokémon faster."
+}
+
+text Route110_TrickHouseEntrance_Text_WonderRoomDesc {
+	"Changes the field\n"
+	"to swap Defense\n"
+	"and Sp. Def."
+}
+
+text Route110_TrickHouseEntrance_Text_ErrorRoomDesc {
+	"Changes the field\n"
+	"to prevent moves\n"
+	"from repeating."
+}
+
+text Route110_TrickHouseEntrance_Text_StaticRoomDesc {
+	"Changes the field\n"
+	"to prevent stats\n"
+	"from changing."
+}
+
+text Route110_TrickHouseEntrance_Text_ReverseRoomDesc {
+	"Changes the field\n"
+	"to invert all type\n"
+	"effectiveness."
+}
+
+text Route110_TrickHouseEntrance_Text_GrimRoomDesc {
+	"Changes the field\n"
+	"to cause healing\n"
+	"to deal damage."
 }

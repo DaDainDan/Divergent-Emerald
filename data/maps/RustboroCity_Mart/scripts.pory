@@ -15,30 +15,42 @@ script RustboroCity_Mart_EventScript_Clerk {
 
 mart RustboroCity_Mart_Pokemart_Basic {
     ITEM_POKE_BALL
+    ITEM_REPEAT_BALL
     ITEM_POTION
-    ITEM_SUPER_POTION
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_ESCAPE_ROPE
+    ITEM_REVIVE
+    ITEM_FULL_HEAL
     ITEM_REPEL
-    ITEM_X_SPEED
-    ITEM_X_ATTACK
-    ITEM_X_DEFENSE
+    ITEM_LURE
 }
 
 mart RustboroCity_Mart_Pokemart_Expanded {
     ITEM_POKE_BALL
-    ITEM_TIMER_BALL
     ITEM_REPEAT_BALL
     ITEM_POTION
-    ITEM_SUPER_POTION
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_ESCAPE_ROPE
+    ITEM_REVIVE
+    ITEM_FULL_HEAL
     ITEM_REPEL
-    ITEM_X_SPEED
-    ITEM_X_ATTACK
-    ITEM_X_DEFENSE
+    ITEM_LURE
+}
+
+script RustboroCity_Mart_EventScript_EnchancementClerk {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(RustboroCity_Mart_Pokemart_Enhancement)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
+
+mart RustboroCity_Mart_Pokemart_Enhancement {
+    ITEM_EXP_CANDY_XS
+    ITEM_HP_UP
+    ITEM_PROTEIN
+    ITEM_IRON
+    ITEM_CARBOS
+    ITEM_CALCIUM
+    ITEM_ZINC
+    ITEM_PP_UP
 }
 
 script RustboroCity_Mart_EventScript_PokefanF {

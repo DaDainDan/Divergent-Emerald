@@ -22,6 +22,274 @@ script MossdeepCity_GameCorner_1F_EventScript_OldMan {
     release_end
 }
 
+script MossdeepCity_GameCorner_1F_EventScript_IVSpecialist {
+    lock_faceplayer
+    if (!flag(FLAG_MET_HYPER_TRAINER)) {
+        setflag(FLAG_MET_HYPER_TRAINER)
+        msgbox(HyperTrainer_Text_Introduction, MSGBOX_DEFAULT)
+    }
+	if (checkitem(ITEM_BOTTLE_CAP) == FALSE && checkitem(ITEM_GOLD_BOTTLE_CAP) == FALSE) {
+        msgbox(HyperTrainer_Text_NeedABottleCap)
+        goto(MossdeepCity_GameCorner_1F_EventScript_ComeAgain)
+    }
+    msgbox(HyperTrainer_Text_WantHyperTraining, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        goto(MossdeepCity_GameCorner_1F_EventScript_ComeAgain)
+    }
+    goto(MossdeepCity_GameCorner_1F_EventScript_ChooseMon)
+	end
+}
+
+script MossdeepCity_GameCorner_1F_EventScript_ChooseMon {
+    msgbox(HyperTrainer_Text_WhichMon)
+    special(ChoosePartyMon)
+    if (var(VAR_0x8004) >= PARTY_SIZE) {
+        goto(MossdeepCity_GameCorner_1F_EventScript_ComeAgain)
+    }
+    if (specialvar(VAR_RESULT, ScriptGetPartyMonSpecies) == SPECIES_EGG) {
+        msgbox(HyperTrainer_Text_ThatsAnEgg)
+        goto(MossdeepCity_GameCorner_1F_EventScript_ChooseMon)
+    }
+    goto(MossdeepCity_GameCorner_1F_EventScript_ChooseTrainType)
+	end
+}
+
+script MossdeepCity_GameCorner_1F_EventScript_ChooseTrainType {
+    message(HyperTrainer_Text_WhichTrainType)
+    waitmessage
+    if (checkitem(ITEM_BOTTLE_CAP) == TRUE) {
+        dynmultipush("BOTTLE CAP", 0)
+    }
+    if (checkitem(ITEM_GOLD_BOTTLE_CAP) == TRUE) {
+        dynmultipush("GOLD BOTTLE CAP", 1)
+    }
+    dynmultipush("NOTHING", 2)
+    dynmultistack(30, 0, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    switch (var(VAR_RESULT)) {
+        case 0: goto(MossdeepCity_GameCorner_1F_EventScript_ChooseStat)
+        case 1: goto(MossdeepCity_GameCorner_1F_EventScript_TrainAllStats)
+        case 2: goto(MossdeepCity_GameCorner_1F_EventScript_ComeAgain)
+    }
+    end
+}
+
+script MossdeepCity_GameCorner_1F_EventScript_ChooseStat {
+    message(HyperTrainer_Text_WhichStat)
+    waitmessage
+    dynmultipush("HP", STAT_HP)
+    dynmultipush("ATTACK", STAT_ATK)
+    dynmultipush("DEFENSE", STAT_DEF)
+    dynmultipush("SPEED", STAT_SPEED)
+    dynmultipush("SP. ATK", STAT_SPATK)
+    dynmultipush("SP. DEF", STAT_SPDEF)
+    dynmultipush("CANCEL", NUM_STATS)
+    dynmultistack(30, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if (var(VAR_RESULT) == NUM_STATS) {
+        goto(MossdeepCity_GameCorner_1F_EventScript_ChooseTrainType)
+    }
+    copyvar(VAR_0x8005, VAR_RESULT)
+    switch (var(VAR_0x8005)) {
+        case STAT_HP: canhypertrain(STAT_HP, VAR_0x8004)
+        case STAT_ATK: canhypertrain(STAT_ATK, VAR_0x8004)
+        case STAT_DEF: canhypertrain(STAT_DEF, VAR_0x8004)
+        case STAT_SPEED: canhypertrain(STAT_SPEED, VAR_0x8004)
+        case STAT_SPATK: canhypertrain(STAT_SPATK, VAR_0x8004)
+        case STAT_SPDEF: canhypertrain(STAT_SPDEF, VAR_0x8004)
+    }
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(HyperTrainer_Text_CantTrainThatStat)
+        goto(MossdeepCity_GameCorner_1F_EventScript_ChooseStat)
+    }
+    msgbox(HyperTrainer_Text_ConfirmBottleCap, MSGBOX_YESNO)
+    if (var(VAR_RESULT) != YES) {
+        goto(MossdeepCity_GameCorner_1F_EventScript_ChooseStat)
+    }
+    if (checkitem(ITEM_BOTTLE_CAP) == FALSE) {
+        msgbox(HyperTrainer_Text_NoBottleCaps)
+        goto(MossdeepCity_GameCorner_1F_EventScript_ChooseTrainType)
+    }
+    removeitem(ITEM_BOTTLE_CAP)
+    switch (var(VAR_0x8005)) {
+        case STAT_HP: hypertrain(STAT_HP, VAR_0x8004)
+        case STAT_ATK: hypertrain(STAT_ATK, VAR_0x8004)
+        case STAT_DEF: hypertrain(STAT_DEF, VAR_0x8004)
+        case STAT_SPEED: hypertrain(STAT_SPEED, VAR_0x8004)
+        case STAT_SPATK: hypertrain(STAT_SPATK, VAR_0x8004)
+        case STAT_SPDEF: hypertrain(STAT_SPDEF, VAR_0x8004)
+    }
+	playfanfare(MUS_LEVEL_UP)
+	waitfanfare
+    msgbox(HyperTrainer_Text_Done, MSGBOX_DEFAULT)
+    goto(MossdeepCity_GameCorner_1F_EventScript_ChooseTrainType)
+	end
+}
+
+script MossdeepCity_GameCorner_1F_EventScript_TrainAllStats {
+    setvar(VAR_0x8006, FALSE)
+    canhypertrain(STAT_HP, VAR_0x8004)
+    if (var(VAR_RESULT) == TRUE) {
+        setvar(VAR_0x8006, TRUE)
+		setflag(FLAG_TEMP_1)
+    }
+    canhypertrain(STAT_ATK, VAR_0x8004)
+    if (var(VAR_RESULT) == TRUE) {
+        setvar(VAR_0x8006, TRUE)
+		setflag(FLAG_TEMP_2)
+    }
+    canhypertrain(STAT_DEF, VAR_0x8004)
+    if (var(VAR_RESULT) == TRUE) {
+        setvar(VAR_0x8006, TRUE)
+		setflag(FLAG_TEMP_3)
+    }
+    canhypertrain(STAT_SPEED, VAR_0x8004)
+    if (var(VAR_RESULT) == TRUE) {
+        setvar(VAR_0x8006, TRUE)
+		setflag(FLAG_TEMP_4)
+    }
+    canhypertrain(STAT_SPATK, VAR_0x8004)
+    if (var(VAR_RESULT) == TRUE) {
+        setvar(VAR_0x8006, TRUE)
+		setflag(FLAG_TEMP_5)
+    }
+    canhypertrain(STAT_SPDEF, VAR_0x8004)
+    if (var(VAR_RESULT) == TRUE) {
+        setvar(VAR_0x8006, TRUE)
+		setflag(FLAG_TEMP_6)
+    }
+    if (var(VAR_0x8006) == FALSE) {
+        msgbox(HyperTrainer_Text_AlreadyPerfect)
+        goto(MossdeepCity_GameCorner_1F_EventScript_ChooseTrainType)
+    }
+    msgbox(HyperTrainer_Text_ConfirmGoldBottleCap, MSGBOX_YESNO)
+    if (var(VAR_RESULT) != YES) {
+        goto(MossdeepCity_GameCorner_1F_EventScript_ChooseTrainType)
+    }
+    if (checkitem(ITEM_GOLD_BOTTLE_CAP) == FALSE) {
+        msgbox(HyperTrainer_Text_NoGoldBottleCap)
+        goto(MossdeepCity_GameCorner_1F_EventScript_ChooseTrainType)
+    }
+    removeitem(ITEM_GOLD_BOTTLE_CAP)
+	if (flag(FLAG_TEMP_1) == TRUE) {
+		hypertrain(STAT_HP, VAR_0x8004)
+	}
+	if (flag(FLAG_TEMP_2) == TRUE) {
+		hypertrain(STAT_ATK, VAR_0x8004)
+	}
+	if (flag(FLAG_TEMP_3) == TRUE) {
+		hypertrain(STAT_DEF, VAR_0x8004)
+	}
+	if (flag(FLAG_TEMP_4) == TRUE) {
+		hypertrain(STAT_SPEED, VAR_0x8004)
+	}
+	if (flag(FLAG_TEMP_5) == TRUE) {
+		hypertrain(STAT_SPATK, VAR_0x8004)
+	}
+	if (flag(FLAG_TEMP_6) == TRUE) {
+		hypertrain(STAT_SPDEF, VAR_0x8004)
+	}
+    msgbox(HyperTrainer_Text_MaxedOut, MSGBOX_DEFAULT)
+    goto(MossdeepCity_GameCorner_1F_EventScript_ChooseMon)
+	end
+}
+
+script MossdeepCity_GameCorner_1F_EventScript_ComeAgain {
+    msgbox(HyperTrainer_Text_ComeAgain)
+    release_end
+}
+
+text HyperTrainer_Text_Introduction {
+	"Ah, a fellow gamer.
+	This place is usually pretty dead.
+	
+	Say, do you have any BOTTLE CAPS?
+	I'm a big collector.
+	
+	If you bring me some, I'll enhance your 
+	POK\eMON's stats!
+	
+	How? Pyschic mumbo-jumbo, what do you
+	want me to say?"
+}
+
+text HyperTrainer_Text_WantHyperTraining {
+	"Nice! You've got some BOTTLE CAPS.
+	Are you interested in a trade?"
+}
+
+text HyperTrainer_Text_NeedABottleCap {
+	"Where are your CAPS, dude?
+	
+	Did you just want to team up on
+	POK\eMON JUMP?"
+}
+
+text HyperTrainer_Text_WhichMon {
+	"Which POKéMON were you thinking?"
+}
+
+text HyperTrainer_Text_ThatsAnEgg {
+	"I can't do crap with an EGG, man."
+}
+
+text HyperTrainer_Text_WhichTrainType {
+	"What CAP were you looking to trade?
+	
+	For regular CAPS, I'll enhance one stat.
+	For GOLD CAPS, I'll enhance them all."
+}
+
+text HyperTrainer_Text_WhichStat {
+	"Which stat should I enhance?"
+}
+
+text HyperTrainer_Text_CantTrainThatStat {
+	"That stat's already perfected.
+	You'll have to pick a different one."
+}
+
+text HyperTrainer_Text_ConfirmBottleCap {
+	"Alright just give me the BOTTLE CAP and 
+	we can get started. Okay?"
+}
+
+text HyperTrainer_Text_NoBottleCaps {
+	"Hold on, you're out of BOTTLE CAPS!"
+}
+
+text HyperTrainer_Text_ConfirmGoldBottleCap {
+	"That GOLD BOTTLE CAP is a beauty.
+	You ready to give it up?"
+}
+
+text HyperTrainer_Text_NoGoldBottleCap {
+	"Hold on, you're out of GOLD BOTTLE
+	CAPS!"
+}
+
+text HyperTrainer_Text_AlreadyPerfect {
+	"That's a wicked POK\eMON you've got.
+	
+	Even with my abilities, I don't think 
+	I can make it any stronger."
+}
+
+text HyperTrainer_Text_Done {
+	"Your POK\eMON's stat is now perfected."
+}
+
+text HyperTrainer_Text_MaxedOut {
+	"There you go. Absolute perfection.
+	Just like this GOLDEN CAP I'm adding to
+	my collection."
+}
+
+text HyperTrainer_Text_ComeAgain {
+	"Come back if you want to play or when
+	you've got some CAPS, man."
+}
+
 // Everything below is leftover from RS
 // The house that was here in RS was moved to Sootopolis and replaced by the Game Corner
 // The text below is unused and duplicated in its replacement in Sootopolis City

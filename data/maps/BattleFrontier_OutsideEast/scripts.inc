@@ -198,7 +198,7 @@ BattleFrontier_OutsideEast_EventScript_WaterSudowoodo::
 # 134 "data/maps/BattleFrontier_OutsideEast/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_FRONTIER_SUDOWOODO
 # 135 "data/maps/BattleFrontier_OutsideEast/scripts.pory"
-	setwildbattle SPECIES_SUDOWOODO, 40
+	setwildbattle SPECIES_SUDOWOODO, 50
 # 136 "data/maps/BattleFrontier_OutsideEast/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 137 "data/maps/BattleFrontier_OutsideEast/scripts.pory"

@@ -538,7 +538,7 @@ Route109_EventScript_SoftSandGirl::
 	goto_if_set FLAG_RECEIVED_SOFT_SAND, Route109_EventScript_SoftSandGirl_2
 # 115 "data/maps/Route109/scripts.pory"
 	msgbox Route109_Text_YouCanHaveThis, MSGBOX_DEFAULT
-	giveitem ITEM_SOFT_SAND
+	giveitem ITEM_SHED_SHELL
 # 0 "data/maps/Route109/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route109_EventScript_SoftSandGirl_6
@@ -619,11 +619,11 @@ Route109_EventScript_Alice::
 	end
 
 
-Route109_EventScript_Huey::
+Route109_EventScript_Gage::
 # 169 "data/maps/Route109/scripts.pory"
-	trainerbattle_single TRAINER_HUEY, Route109_Text_HueyIntro, Route109_Text_HueyDefeated
+	trainerbattle_single TRAINER_GAGE, Route109_Text_GageIntro, Route109_Text_GageDefeated
 # 170 "data/maps/Route109/scripts.pory"
-	msgbox Route109_Text_HueyPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route109_Text_GagePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 

@@ -99,7 +99,7 @@ BattleFrontier_ScottsHouse_EventScript_CheckSilverSymbols::
 BattleFrontier_ScottsHouse_EventScript_CheckSilverSymbols_1:
 # 45 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	msgbox BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols, MSGBOX_DEFAULT
-	giveitem ITEM_LANSAT_BERRY
+	giveitem ITEM_OVAL_CHARM
 # 0 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq BattleFrontier_ScottsHouse_EventScript_CheckSilverSymbols_17
@@ -139,7 +139,7 @@ BattleFrontier_ScottsHouse_EventScript_CheckGoldSymbols::
 BattleFrontier_ScottsHouse_EventScript_CheckGoldSymbols_1:
 # 59 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	msgbox BattleFrontier_ScottsHouse_Text_YouveCollectedAllGoldSymbols, MSGBOX_DEFAULT
-	giveitem ITEM_STARF_BERRY
+	giveitem ITEM_EXP_CHARM
 # 0 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq BattleFrontier_ScottsHouse_EventScript_CheckGoldSymbols_17

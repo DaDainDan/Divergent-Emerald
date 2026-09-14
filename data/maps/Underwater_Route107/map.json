@@ -3,7 +3,6 @@
   "name": "Underwater_Route107",
   "layout": "LAYOUT_UNDERWATER_ROUTE107",
   "music": "MUS_UNDERWATER",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_107",
   "requires_flash": false,
   "weather": "WEATHER_UNDERWATER_BUBBLES",
@@ -22,20 +21,22 @@
   ],
   "object_events": [
     {
+      "local_id": "LOCALID_ROUTE_107_FOSSIL",
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL_BLUE",
       "x": 42,
       "y": 27,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Underwater_Route107_EventScript_Fossil",
+      "flag": "FLAG_HIDE_ROUTE_107_FOSSIL"
     }
   ],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "region": "REGION_HOENN"
 }

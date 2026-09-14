@@ -167,7 +167,7 @@ script LittlerootTown_EventScript_BeginDexUpgradeScene {
     end
 }
 
-script LittlerootTown_EventScript_FatMan {
+script LittlerootTown_EventScript_FatManOld {
     msgbox(LittlerootTown_Text_CanUsePCToStoreItems, MSGBOX_NPC)
     end
 }
@@ -499,6 +499,44 @@ script LittlerootTown_EventScript_Mom {
     call(LittlerootTown_EventScript_MomEntersHouse)
     goto(LittlerootTown_EventScript_SetReceivedRunningShoes)
     end
+}
+
+script LittlerootTown_EventScript_FatMan {
+	lock
+	if (!flag(FLAG_BADGE01_GET)) {
+		msgbox(LittlerootTown_Text_IsSleeping, MSGBOX_DEFAULT)
+		release_end
+	}
+	faceplayer
+	if (!flag(FLAG_RECEIVED_TM_YAWN)) {
+		msgbox(LittlerootTown_Text_NotAwakeYetHaveThis, MSGBOX_DEFAULT)
+		if (giveitem(ITEM_TM_YAWN) == FALSE) {
+			goto(Common_EventScript_ShowBagIsFull)
+		}
+		setflag(FLAG_RECEIVED_TM_YAWN)
+	}
+	msgbox(LittlerootTown_Text_SleepIsEssential, MSGBOX_DEFAULT)
+	release_end
+}
+
+text LittlerootTown_Text_NotAwakeYetHaveThis {
+	"Huh? What? What's that?
+
+	I'm not quite awake yet…
+	You can have this…"
+}
+
+text LittlerootTown_Text_SleepIsEssential {
+	"Yawn…
+
+	Sleep is essential for good health…
+	Sleep and regain health…"
+}
+
+text LittlerootTown_Text_IsSleeping {
+	"\.{PAUSE 30}\.
+
+	The man appears to be sleeping."
 }
 
 text LittlerootTown_Text_OurNewHomeLetsGoInside {

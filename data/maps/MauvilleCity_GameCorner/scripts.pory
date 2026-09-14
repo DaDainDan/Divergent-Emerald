@@ -1,21 +1,34 @@
 mapscripts MauvilleCity_GameCorner_MapScripts {}
 
 // Game Corner prices
-const TM_DOUBLE_TEAM_COINS = 1500
-const TM_PSYCHIC_COINS = 3500
-const TM_FLAMETHROWER_COINS = 4000
-const TM_THUNDERBOLT_COINS = 4000
-const TM_ICE_BEAM_COINS = 4000
+const TM_COINS = 3000
+const CHEAP_DOLL_COINS = 500
 const DOLL_COINS = 1000
 
-const COINS_PRICE_50 = 1000
+const COINS_PRICE_100 = 2000
 const COINS_PRICE_500 = 10000
+const COINS_PRICE_2500 = 50000
 
 script MauvilleCity_GameCorner_EventScript_CoinsClerk {
     lock_faceplayer
-    msgbox(MauvilleCity_GameCorner_Text_ThisIsMauvilleGameCorner, MSGBOX_DEFAULT)
+    msgbox("Welcome to MAUVILLE GAME CORNER!
+			I'm the GAME CORNER's CASHIER!", MSGBOX_DEFAULT)
     if (checkitem(ITEM_COIN_CASE) == FALSE) {
-        msgbox(MauvilleCity_GameCorner_Text_NeedCoinCaseForCoins, MSGBOX_DEFAULT)
+        msgbox(MauvilleCity_GameCorner_Text_NeedCoinCaseForCoins, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            msgbox(MauvilleCity_GameCorner_Text_ReturnAnytime, MSGBOX_DEFAULT)
+            release_end
+        }
+        if (checkmoney(5000) == FALSE) {
+            msgbox(MauvilleCity_GameCorner_Text_DontHaveEnoughMoney, MSGBOX_DEFAULT)
+            release_end
+        }
+        removemoney(5000)
+        playse(SE_SHOP)
+        if (giveitem(ITEM_COIN_CASE) == FALSE) {
+            goto(Common_EventScript_ShowBagIsFull)
+        }
+        msgbox(MauvilleCity_GameCorner_Text_EnjoyGameCorner, MSGBOX_DEFAULT) 
         release_end
     }
     message(MauvilleCity_GameCorner_Text_WereYouLookingForCoins)
@@ -23,22 +36,21 @@ script MauvilleCity_GameCorner_EventScript_CoinsClerk {
     showmoneybox(0, 0)
     showcoinsbox(1, 6)
     goto(MauvilleCity_GameCorner_EventScript_ChooseCoinAmount)
+    end
 }
 
 script MauvilleCity_GameCorner_EventScript_ChooseCoinAmount {
     multichoicedefault(15, 0, MULTI_GAME_CORNER_COINS, 1, FALSE)
     switch (var(VAR_RESULT)) {
-        case 0: setcurrencyexchange(COINS_PRICE_50, 50, COIN_LIMIT_50)
-        case 1: setcurrencyexchange(COINS_PRICE_500, 500, COIN_LIMIT_500)
+        case 0: setcurrencyexchange(COINS_PRICE_100, 100, COIN_LIMIT(100))
+        case 1: setcurrencyexchange(COINS_PRICE_500, 500, COIN_LIMIT(500))
+        case 2: setcurrencyexchange(COINS_PRICE_2500, 2500, COIN_LIMIT(2500))
         default: 
             msgbox(MauvilleCity_GameCorner_Text_DontNeedCoinsThen, MSGBOX_DEFAULT)
-            goto(MauvilleCity_GameCorner_EventScript_BuyCoinsEnd)
+            hidemoneybox
+            hidecoinsbox(0, 5)
+            release_end
     }
-    goto(MauvilleCity_GameCorner_EventScript_BuyCoins)
-    end
-}
-
-script MauvilleCity_GameCorner_EventScript_BuyCoins {
     if (checkcoins(VAR_TEMP_1) >= VAR_0x8007) {
         msgbox(MauvilleCity_GameCorner_Text_CoinCaseIsFull, MSGBOX_DEFAULT)
     }
@@ -53,14 +65,10 @@ script MauvilleCity_GameCorner_EventScript_BuyCoins {
         playse(SE_SHOP)
         msgbox(MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT)
     }
-    goto(MauvilleCity_GameCorner_EventScript_BuyCoinsEnd)
+    message("Would you like any more COINS?")
+	waitmessage
+	goto(MauvilleCity_GameCorner_EventScript_ChooseCoinAmount)
     end
-}
-
-script MauvilleCity_GameCorner_EventScript_BuyCoinsEnd {
-    hidemoneybox
-    hidecoinsbox(0, 5)
-    release_end
 }
 
 script MauvilleCity_GameCorner_EventScript_PrizeCornerDolls {
@@ -78,9 +86,11 @@ script MauvilleCity_GameCorner_EventScript_PrizeCornerDolls {
 script MauvilleCity_GameCorner_EventScript_ChooseDollPrize {
     multichoice(12, 0, MULTI_GAME_CORNER_DOLLS, FALSE)
     switch (var(VAR_RESULT)) {
-        case 0: setvar(VAR_GIFT_ITEM, DECOR_TREECKO_DOLL)
-        case 1: setvar(VAR_GIFT_ITEM, DECOR_TORCHIC_DOLL)
-        case 2: setvar(VAR_GIFT_ITEM, DECOR_MUDKIP_DOLL)
+        case 0: setitemandprice(DECOR_SEEDOT_DOLL, CHEAP_DOLL_COINS)
+        case 1: setitemandprice(DECOR_LOTAD_DOLL, CHEAP_DOLL_COINS)
+        case 2: setitemandprice(DECOR_TREECKO_DOLL, DOLL_COINS)
+        case 3: setitemandprice(DECOR_TORCHIC_DOLL, DOLL_COINS)
+        case 4: setitemandprice(DECOR_MUDKIP_DOLL, DOLL_COINS)
         default: 
             goto(MauvilleCity_GameCorner_EventScript_CancelDollSelect)
     }
@@ -100,7 +110,7 @@ script MauvilleCity_GameCorner_EventScript_ConfirmDollPrize {
     if (var(VAR_RESULT) == NO) {
         goto(MauvilleCity_GameCorner_EventScript_CancelDollSelect)
     }
-    if (checkcoins(VAR_TEMP_2) < DOLL_COINS) {
+    if (checkcoins(VAR_TEMP_2) < VAR_EXCHANGE_PRICE) {
         msgbox(MauvilleCity_GameCorner_Text_NotEnoughCoins, MSGBOX_DEFAULT)
         goto(MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize)
     }
@@ -109,7 +119,7 @@ script MauvilleCity_GameCorner_EventScript_ConfirmDollPrize {
         call(Common_EventScript_NoRoomForDecor)
         goto(MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize)
     }
-    removecoins(DOLL_COINS)
+    removecoins(VAR_EXCHANGE_PRICE)
     adddecoration(VAR_GIFT_ITEM)
     updatecoinsbox(1, 1)
     playse(SE_SHOP)
@@ -139,11 +149,11 @@ script MauvilleCity_GameCorner_EventScript_PrizeCornerTMs {
 script MauvilleCity_GameCorner_EventScript_ChooseTMPrize {
     multichoice(12, 0, MULTI_GAME_CORNER_TMS, FALSE)
     switch (var(VAR_RESULT)) {
-        case 0: setitemandprice(ITEM_TM_DOUBLE_TEAM, TM_DOUBLE_TEAM_COINS)
-        case 1: setitemandprice(ITEM_TM_PSYCHIC, TM_PSYCHIC_COINS)
-        case 2: setitemandprice(ITEM_TM_FLAMETHROWER, TM_FLAMETHROWER_COINS)
-        case 3: setitemandprice(ITEM_TM_THUNDERBOLT, TM_THUNDERBOLT_COINS)
-        case 4: setitemandprice(ITEM_TM_ICE_BEAM, TM_ICE_BEAM_COINS)
+        case 0: setitemandprice(ITEM_TM_ENERGY_BALL, TM_COINS)
+        case 1: setitemandprice(ITEM_TM_AURA_SPHERE, TM_COINS)
+        case 2: setitemandprice(ITEM_TM_SLUDGE_BOMB, TM_COINS)
+        case 3: setitemandprice(ITEM_TM_POLLEN_PUFF, TM_COINS)
+        case 4: setitemandprice(ITEM_TM_SHADOW_BALL, TM_COINS)
         case 5: 
         default: goto(MauvilleCity_GameCorner_EventScript_CancelTMSelect)
     }
@@ -162,8 +172,8 @@ script MauvilleCity_GameCorner_EventScript_PurchaseTM {
     if (checkcoins(VAR_TEMP_2) < VAR_EXCHANGE_PRICE) {
         msgbox(MauvilleCity_GameCorner_Text_NotEnoughCoins, MSGBOX_DEFAULT)
     }
-    elif (checkitemspace(VAR_GIFT_ITEM) == FALSE) {
-        call(Common_EventScript_BagIsFull)
+    elif (checkitem(VAR_GIFT_ITEM) == TRUE) {
+        call(Common_EventScript_NoRoomForDecor)
     }
     else {
         removecoins(VAR_EXCHANGE_PRICE)
@@ -185,8 +195,25 @@ script MauvilleCity_GameCorner_EventScript_CancelTMSelect {
 }
 
 script MauvilleCity_GameCorner_EventScript_Woman2 {
-    msgbox(MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay, MSGBOX_NPC)
-    end
+    lock_faceplayer
+	msgbox(MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(MauvilleCity_GameCorner_Text_WhatABuzzkill, MSGBOX_DEFAULT)
+		release_end
+	}
+	if (checkcoins(VAR_TEMP_2) < 250) {
+		msgbox(MauvilleCity_GameCorner_Text_Brokie, MSGBOX_DEFAULT)
+		release_end
+	}
+	removecoins(250)
+	playse(SE_SHOP)
+	msgbox(MauvilleCity_GameCorner_Text_ThanksSweetums, MSGBOX_DEFAULT)
+	if (!flag(FLAG_RECEIVED_TM_CHARM)) {
+		msgbox(MauvilleCity_GameCorner_Text_GiftFromSweetCheeks, MSGBOX_DEFAULT)
+		giveitem(ITEM_TM_CHARM)
+		setflag(FLAG_RECEIVED_TM_CHARM)
+	}
+	release_end
 }
 
 script MauvilleCity_GameCorner_EventScript_Gentleman {
@@ -196,29 +223,27 @@ script MauvilleCity_GameCorner_EventScript_Gentleman {
 
 script MauvilleCity_GameCorner_EventScript_Girl {
     lock_faceplayer
-    if (flag(FLAG_RECEIVED_STARTER_DOLL)) {
-        msgbox(MauvilleCity_GameCorner_Text_CantWinJackpot, MSGBOX_DEFAULT)
-        release_end
+    if (!flag(FLAG_RECEIVED_STARTER_DOLL)) {
+        msgbox(MauvilleCity_GameCorner_Text_GotTwoOfSameDollWantOne, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            msgbox(MauvilleCity_GameCorner_Text_DontBeNegative, MSGBOX_DEFAULT)
+            release_end
+        }
+        switch (var(VAR_STARTER_MON)) {
+            case PC_CHOSE_TREECKO: setvar(VAR_GIFT_ITEM, DECOR_TREECKO_DOLL)
+            case PC_CHOSE_TORCHIC: setvar(VAR_GIFT_ITEM, DECOR_TORCHIC_DOLL)
+            case PC_CHOSE_MUDKIP: setvar(VAR_GIFT_ITEM, DECOR_MUDKIP_DOLL)
+        }
+        bufferdecorationname(STR_VAR_2, VAR_GIFT_ITEM)
+        if (checkdecorspace(VAR_GIFT_ITEM) == FALSE) {
+            call(Common_EventScript_NoRoomForDecor)
+            msgbox(MauvilleCity_GameCorner_Text_YouWantItButNotNow, MSGBOX_DEFAULT)
+            release_end
+        }
+        msgbox(MauvilleCity_GameCorner_Text_HereYouGo2, MSGBOX_DEFAULT)
+        givedecoration(VAR_GIFT_ITEM)
+        setflag(FLAG_RECEIVED_STARTER_DOLL)
     }
-    msgbox(MauvilleCity_GameCorner_Text_GotTwoOfSameDollWantOne, MSGBOX_YESNO)
-    if (var(VAR_RESULT) == NO) {
-        msgbox(MauvilleCity_GameCorner_Text_DontBeNegative, MSGBOX_DEFAULT)
-    	release_end
-    }
-    switch (var(VAR_STARTER_MON)) {
-        case PC_CHOSE_TREECKO: setvar(VAR_GIFT_ITEM, DECOR_TREECKO_DOLL)
-        case PC_CHOSE_TORCHIC: setvar(VAR_GIFT_ITEM, DECOR_TORCHIC_DOLL)
-        case PC_CHOSE_MUDKIP: setvar(VAR_GIFT_ITEM, DECOR_MUDKIP_DOLL)
-    }
-    bufferdecorationname(STR_VAR_2, VAR_GIFT_ITEM)
-    if (checkdecorspace(VAR_GIFT_ITEM) == FALSE) {
-        call(Common_EventScript_NoRoomForDecor)
-        msgbox(MauvilleCity_GameCorner_Text_YouWantItButNotNow, MSGBOX_DEFAULT)
-        release_end
-    }
-    msgbox(MauvilleCity_GameCorner_Text_HereYouGo2, MSGBOX_DEFAULT)
-    givedecoration(VAR_GIFT_ITEM)
-    setflag(FLAG_RECEIVED_STARTER_DOLL)
     msgbox(MauvilleCity_GameCorner_Text_CantWinJackpot, MSGBOX_DEFAULT)
     release_end
 }
@@ -226,14 +251,16 @@ script MauvilleCity_GameCorner_EventScript_Girl {
 script MauvilleCity_GameCorner_EventScript_PokefanM {
     lock_faceplayer
     if (checkitem(ITEM_COIN_CASE) == TRUE) {
-        if (!flag(FLAG_RECEIVED_20_COINS) && checkcoins(VAR_TEMP_1) == 0) {
-			setflag(FLAG_RECEIVED_20_COINS)
-			addcoins(20)
-			msgbox(MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins, MSGBOX_DEFAULT)
-			playse(SE_SHOP)
-		} else {
-			msgbox(MauvilleCity_GameCorner_Text_MauvilleSomethingForEveryone, MSGBOX_DEFAULT)
-		}
+        if (flag(FLAG_RECEIVED_LOADED_DICE) || checkcoins(VAR_TEMP_1) < 5000) {
+            msgbox(MauvilleCity_GameCorner_Text_MauvilleSomethingForEveryone, MSGBOX_DEFAULT)
+        }
+        else {
+            msgbox(MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins, MSGBOX_DEFAULT)
+            if (giveitem(ITEM_LOADED_DICE) == FALSE) {
+                goto(Common_EventScript_ShowBagIsFull)
+            } 
+            setflag(FLAG_RECEIVED_LOADED_DICE)
+        }
     } else {
 		msgbox(MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor, MSGBOX_DEFAULT)
 	}
@@ -472,18 +499,33 @@ text MauvilleCity_GameCorner_Text_ThisIsMauvilleGameCorner {
 }
 
 text MauvilleCity_GameCorner_Text_NeedCoinCaseForCoins {
-	"Okay, you wanted some COINS for
-	the games?
+	"I'm terribly sorry, but a COIN CASE
+	is required to be served here.
+			
+	We offer COIN CASES for ¥10000.
+			
+	Would you like to purchase one?"
+}
 
-	But you don't have a COIN CASE for
-	stowing the COINS."
+text MauvilleCity_GameCorner_Text_ReturnAnytime {
+    "I'm sorry to hear that.
+
+	Please come back anytime if you change
+	your mind."
+}
+
+text MauvilleCity_GameCorner_Text_EnjoyGameCorner {
+    "Now that you have a COIN CASE,
+	you may be served.
+	
+	Please enjoy your time at MAUVILLE
+	GAME CORNER!"
 }
 
 text MauvilleCity_GameCorner_Text_WereYouLookingForCoins {
-	"Were you looking for COINS?
+	"Were you looking to purchase COINS?
 
-	It's ¥1000 for 50 COINS.
-	Would you like some?"
+	The minimum is ¥2000 for 100 COINS."
 }
 
 text MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins {
@@ -492,8 +534,8 @@ text MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins {
 }
 
 text MauvilleCity_GameCorner_Text_DontHaveEnoughMoney {
-	"Um… You don't appear to have
-	enough money…"
+	"I'm sorry. 
+	You don't have the requisite funds."
 }
 
 text MauvilleCity_GameCorner_Text_CoinCaseIsFull {
@@ -588,12 +630,6 @@ text MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor {
 	had one. Go see her!"
 }
 
-text MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins {
-	"My luck can only last so long.
-	This is too much for me.
-	Here, take some COINS!"
-}
-
 text MauvilleCity_GameCorner_Text_MauvilleSomethingForEveryone {
 	"MAUVILLE has something for
 	everyone.
@@ -612,11 +648,6 @@ text MauvilleCity_GameCorner_Text_RouletteTablesDifferentRates {
 text MauvilleCity_GameCorner_Text_EasyToLoseTrackOfTime {
 	"It's easy to lose track of time in here. 
 	I should get back to work."
-}
-
-text MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay {
-	"COINS are needed to play here
-	in the GAME CORNER."
 }
 
 text MauvilleCity_GameCorner_Text_RouletteOnlyLuck {
@@ -659,4 +690,48 @@ text MauvilleCity_GameCorner_Text_HeresSomeSlotsInfo {
 text MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase {
 	"You can't play if you don't have
 	a COIN CASE."
+}
+
+text MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay {
+	"Hey, hon!!!
+
+	Could you spare 250 COINS for a super
+	cute girl like me?
+
+	Pretty please?
+	I think someone stole my purse."
+}
+
+text MauvilleCity_GameCorner_Text_Brokie {
+	"If you were a brokie, you should have
+	just said so, hon!
+
+	I'll pray that you stop being a loser!
+	Okay!?"
+}
+
+text MauvilleCity_GameCorner_Text_WhatABuzzkill {
+	"Geez, you're such a buzzkill.
+	Why couldn't you just help a girl out?"
+}
+
+text MauvilleCity_GameCorner_Text_ThanksSweetums {
+	"Oh my, thank you so much, sweetums.
+	I'll surely win big this time."
+}
+
+text MauvilleCity_GameCorner_Text_GiftFromSweetCheeks {
+	"You're so cute and sweet that I think
+	I'll give you a gift.
+
+	I think you might learn a lot from it."
+}
+
+text MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins {
+	"Wow, that's a lot of COINS you've got.
+	So, you're a high roller, are you?
+
+	Why don't you take these special dice.
+	Guys like us gotta look out for each
+	other, don't ya know?"
 }

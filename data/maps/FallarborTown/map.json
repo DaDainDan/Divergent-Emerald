@@ -3,7 +3,6 @@
   "name": "FallarborTown",
   "layout": "LAYOUT_FALLARBOR_TOWN",
   "music": "MUS_ROUTE113",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_FALLARBOR_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -116,6 +115,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
       "flag": "FLAG_TEMP_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TOXIC_ORB",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_FALLARBOR_TOXIC_ORB"
     }
   ],
   "warp_events": [
@@ -216,10 +228,11 @@
     {
       "type": "hidden_item",
       "x": 5,
-      "y": 5,
+      "y": 6,
       "elevation": 3,
       "item": "ITEM_NUGGET",
       "flag": "FLAG_HIDDEN_ITEM_FALLARBOR_TOWN_NUGGET"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

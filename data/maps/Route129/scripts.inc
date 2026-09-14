@@ -13,7 +13,7 @@ Route129_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	goto_if_eq Route129_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 Route129_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 6 "data/maps/Route129/scripts.pory"
-	compare VAR_SOOTOPOLIS_CITY_STATE, 4
+	compare VAR_SOOTOPOLIS_CITY_STATE, 5
 	goto_if_ge Route129_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
 Route129_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 # 9 "data/maps/Route129/scripts.pory"

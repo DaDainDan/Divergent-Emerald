@@ -5,11 +5,11 @@ LilycoveCity_DepartmentStore_5F_MapScripts::
 
 LilycoveCity_DepartmentStore_5F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 3 "data/maps/LilycoveCity_DepartmentStore_5F/scripts.pory"
-	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 1, LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
-# 4 "data/maps/LilycoveCity_DepartmentStore_5F/scripts.pory"
 	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 2, LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
-# 5 "data/maps/LilycoveCity_DepartmentStore_5F/scripts.pory"
+# 4 "data/maps/LilycoveCity_DepartmentStore_5F/scripts.pory"
 	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 3, LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
+# 5 "data/maps/LilycoveCity_DepartmentStore_5F/scripts.pory"
+	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 4, LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
 	.2byte 0
 
 
@@ -218,10 +218,10 @@ LilycoveCity_DepartmentStore_5F_EventScript_Woman::
 # 119 "data/maps/LilycoveCity_DepartmentStore_5F/scripts.pory"
 	waitmovement 0
 # 120 "data/maps/LilycoveCity_DepartmentStore_5F/scripts.pory"
-	compare VAR_SOOTOPOLIS_CITY_STATE, 0
-	goto_if_eq LilycoveCity_DepartmentStore_5F_EventScript_Woman_2
+	compare VAR_SOOTOPOLIS_CITY_STATE, 1
+	goto_if_le LilycoveCity_DepartmentStore_5F_EventScript_Woman_2
 # 120 "data/maps/LilycoveCity_DepartmentStore_5F/scripts.pory"
-	compare VAR_SOOTOPOLIS_CITY_STATE, 4
+	compare VAR_SOOTOPOLIS_CITY_STATE, 5
 	goto_if_ge LilycoveCity_DepartmentStore_5F_EventScript_Woman_2
 # 124 "data/maps/LilycoveCity_DepartmentStore_5F/scripts.pory"
 	msgbox LilycoveCity_DepartmentStore_5F_Text_ClosedRooftopForWeather, MSGBOX_DEFAULT

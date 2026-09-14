@@ -10,12 +10,13 @@ script LilycoveCity_DepartmentStore_3F_EventScript_ClerkLeft {
 }
 
 mart LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins {
+    ITEM_HP_UP
     ITEM_PROTEIN
     ITEM_CALCIUM
     ITEM_IRON
     ITEM_ZINC
     ITEM_CARBOS
-    ITEM_HP_UP
+    ITEM_PP_UP
 }
 
 script LilycoveCity_DepartmentStore_3F_EventScript_ClerkRight {
@@ -28,14 +29,13 @@ script LilycoveCity_DepartmentStore_3F_EventScript_ClerkRight {
 }
 
 mart LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters {
-    ITEM_X_SPEED
-    ITEM_X_SP_ATK
-    ITEM_X_ATTACK
-    ITEM_X_DEFENSE
-    ITEM_DIRE_HIT
-    ITEM_GUARD_SPEC
-    ITEM_X_ACCURACY
+    ITEM_EXP_CANDY_L
+    ITEM_ABILITY_CAPSULE
+    ITEM_ABILITY_PATCH
+    ITEM_BOTTLE_CAP
+    ITEM_GOLD_BOTTLE_CAP
 }
+
 
 script LilycoveCity_DepartmentStore_3F_EventScript_TriathleteM {
     msgbox(LilycoveCity_DepartmentStore_3F_Text_ItemsBestForTougheningPokemon, MSGBOX_NPC)

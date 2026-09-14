@@ -1,6 +1,6 @@
 mapscripts Route131_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 4 && flag(FLAG_SYS_WEATHER_CTRL)) {
+        if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 5 && flag(FLAG_SYS_WEATHER_CTRL)) {
 			call(Common_EventScript_SetAbnormalWeather)
 		}
 		setmaplayoutindex(LAYOUT_ROUTE131_SKY_PILLAR)

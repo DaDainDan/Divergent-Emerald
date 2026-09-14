@@ -6,75 +6,93 @@ Route114_LanettesHouse_MapScripts::
 Route114_LanettesHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/Route114_LanettesHouse/scripts.pory"
 	setflag FLAG_LANDMARK_LANETTES_HOUSE
+# 4 "data/maps/Route114_LanettesHouse/scripts.pory"
+	goto_if_set FLAG_ITEM_LANETTE_UPGRADE, Route114_LanettesHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+Route114_LanettesHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	end
+
+Route114_LanettesHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+# 5 "data/maps/Route114_LanettesHouse/scripts.pory"
+	setvar VAR_TEMP_5, 1
+	goto Route114_LanettesHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 
 Route114_LanettesHouse_EventScript_Lanette::
-# 9 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 12 "data/maps/Route114_LanettesHouse/scripts.pory"
 	lock_faceplayer
-# 10 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 13 "data/maps/Route114_LanettesHouse/scripts.pory"
 	goto_if_set FLAG_RECEIVED_DOLL_LANETTE, Route114_LanettesHouse_EventScript_Lanette_2
-# 14 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 16 "data/maps/Route114_LanettesHouse/scripts.pory"
 	setflag FLAG_SYS_PC_LANETTE
-# 15 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 17 "data/maps/Route114_LanettesHouse/scripts.pory"
 	msgbox Route114_LanettesHouse_Text_EverythingClutteredKeepThis, MSGBOX_DEFAULT
-	givedecoration DECOR_LOTAD_DOLL
+	giveitem ITEM_POKEMON_BOX_LINK
 # 0 "data/maps/Route114_LanettesHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
-	goto_if_eq Route114_LanettesHouse_EventScript_Lanette_5
-Route114_LanettesHouse_EventScript_Lanette_4:
-# 19 "data/maps/Route114_LanettesHouse/scripts.pory"
+	goto_if_eq Route114_LanettesHouse_EventScript_Lanette_9
+Route114_LanettesHouse_EventScript_Lanette_8:
+# 21 "data/maps/Route114_LanettesHouse/scripts.pory"
 	setflag FLAG_RECEIVED_DOLL_LANETTE
+Route114_LanettesHouse_EventScript_Lanette_1:
+# 23 "data/maps/Route114_LanettesHouse/scripts.pory"
+	compare VAR_TEMP_5, 1
+	goto_if_eq Route114_LanettesHouse_EventScript_Lanette_6
+Route114_LanettesHouse_EventScript_Lanette_5:
 	release_end
 
 Route114_LanettesHouse_EventScript_Lanette_2:
-# 11 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 14 "data/maps/Route114_LanettesHouse/scripts.pory"
 	msgbox Route114_LanettesHouse_Text_OrganizeYourBoxes, MSGBOX_DEFAULT
-	release_end
+	goto Route114_LanettesHouse_EventScript_Lanette_1
 
-Route114_LanettesHouse_EventScript_Lanette_5:
-# 17 "data/maps/Route114_LanettesHouse/scripts.pory"
-	goto Common_EventScript_ShowNoRoomForDecor
-	goto Route114_LanettesHouse_EventScript_Lanette_4
+Route114_LanettesHouse_EventScript_Lanette_6:
+# 24 "data/maps/Route114_LanettesHouse/scripts.pory"
+	msgbox Route114_LanettesHouse_Text_MissingDisc, MSGBOX_DEFAULT
+	goto Route114_LanettesHouse_EventScript_Lanette_5
+
+Route114_LanettesHouse_EventScript_Lanette_9:
+# 19 "data/maps/Route114_LanettesHouse/scripts.pory"
+	goto Common_EventScript_ShowBagIsFull
+	goto Route114_LanettesHouse_EventScript_Lanette_8
 
 
 Route114_LanettesHouse_EventScript_Notebook::
-# 24 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 30 "data/maps/Route114_LanettesHouse/scripts.pory"
 	lockall
-# 25 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 31 "data/maps/Route114_LanettesHouse/scripts.pory"
 	msgbox Route114_LanettesHouse_Text_ResearchNotesPage1, MSGBOX_YESNO
-# 26 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 32 "data/maps/Route114_LanettesHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_LanettesHouse_EventScript_Notebook_2
-# 32 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 38 "data/maps/Route114_LanettesHouse/scripts.pory"
 	msgbox Route114_LanettesHouse_Text_ClosedTheNotebook, MSGBOX_DEFAULT
 Route114_LanettesHouse_EventScript_Notebook_1:
-# 34 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 40 "data/maps/Route114_LanettesHouse/scripts.pory"
 	releaseall
 	end
 
 Route114_LanettesHouse_EventScript_Notebook_2:
-# 27 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 33 "data/maps/Route114_LanettesHouse/scripts.pory"
 	msgbox Route114_LanettesHouse_Text_ResearchNotesPage2, MSGBOX_YESNO
-# 28 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 34 "data/maps/Route114_LanettesHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_LanettesHouse_EventScript_Notebook_5
 	goto Route114_LanettesHouse_EventScript_Notebook_1
 
 Route114_LanettesHouse_EventScript_Notebook_5:
-# 29 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 35 "data/maps/Route114_LanettesHouse/scripts.pory"
 	msgbox Route114_LanettesHouse_Text_ResearchNotesPage3, MSGBOX_DEFAULT
 	goto Route114_LanettesHouse_EventScript_Notebook_1
 
 
 Route114_LanettesHouse_EventScript_PC::
-# 39 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 45 "data/maps/Route114_LanettesHouse/scripts.pory"
 	msgbox Route114_LanettesHouse_Text_EmailFromBill, MSGBOX_SIGN
 	end
 
 
 Route114_LanettesHouse_Text_EverythingClutteredKeepThis::
-# 43 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 49 "data/maps/Route114_LanettesHouse/scripts.pory"
 	.string "{SPEAKER NAME_LANETTE}Oh! {PLAYER}{KUN}!\p"
 	.string "I'm sorry everything is so cluttered…\n"
 	.string "When I get engrossed in research,\l"
@@ -83,14 +101,14 @@ Route114_LanettesHouse_Text_EverythingClutteredKeepThis::
 	.string "this a secret in exchange for this.$"
 
 Route114_LanettesHouse_Text_OrganizeYourBoxes::
-# 54 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 60 "data/maps/Route114_LanettesHouse/scripts.pory"
 	.string "May I offer advice about my POKéMON\n"
 	.string "Storage System?\p"
 	.string "You should organize your BOXES so you\n"
 	.string "can tell which POKéMON are in them.$"
 
 Route114_LanettesHouse_Text_ResearchNotesPage1::
-# 62 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 68 "data/maps/Route114_LanettesHouse/scripts.pory"
 	.string "It's LANETTE's research notes.\n"
 	.string "There's information about BOXES.\p"
 	.string "Design BOXES to hold 30 POKéMON each.\p"
@@ -99,7 +117,7 @@ Route114_LanettesHouse_Text_ResearchNotesPage1::
 	.string "Keep reading?$"
 
 Route114_LanettesHouse_Text_ResearchNotesPage2::
-# 74 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 80 "data/maps/Route114_LanettesHouse/scripts.pory"
 	.string "A marking system should be added to\n"
 	.string "make POKéMON easier to organize.\p"
 	.string "The name and wallpaper design of each\n"
@@ -108,7 +126,7 @@ Route114_LanettesHouse_Text_ResearchNotesPage2::
 	.string "Keep reading?$"
 
 Route114_LanettesHouse_Text_ResearchNotesPage3::
-# 85 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 91 "data/maps/Route114_LanettesHouse/scripts.pory"
 	.string "When storing a POKéMON, it should be\n"
 	.string "sent to the BOX inspected last.\p"
 	.string "If that BOX is full, the received\n"
@@ -118,11 +136,11 @@ Route114_LanettesHouse_Text_ResearchNotesPage3::
 	.string "to which POKéMON are sent.$"
 
 Route114_LanettesHouse_Text_ClosedTheNotebook::
-# 97 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 103 "data/maps/Route114_LanettesHouse/scripts.pory"
 	.string "{PLAYER} closed the notebook.$"
 
 Route114_LanettesHouse_Text_EmailFromBill::
-# 101 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 107 "data/maps/Route114_LanettesHouse/scripts.pory"
 	.string "There's an e-mail from someone on\n"
 	.string "the PC.\p"
 	.string "“… … … … … … …\p"
@@ -136,3 +154,11 @@ Route114_LanettesHouse_Text_EmailFromBill::
 	.string "research in Storage Systems.\p"
 	.string "“From BILL\n"
 	.string "… … … … … … … …”$"
+
+Route114_LanettesHouse_Text_MissingDisc::
+# 129 "data/maps/Route114_LanettesHouse/scripts.pory"
+	.string "Before you go, have you seen any discs\n"
+	.string "buried anywhere since you came in?\p"
+	.string "I had this new program I was writing\n"
+	.string "saved on one, but I can't seem to find\l"
+	.string "it for the life of me.$"

@@ -149,18 +149,18 @@
 #define FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS 0x0AE
 
 // Unused?
-#define FLAG_NO_TRAINER_SEE      0x0AF
-#define FLAG_NO_COLLISION        0x0B0
-#define FLAG_DISABLE_ENCOUNTERS  0x0B1
-#define FLAG_NO_CATCHING         0x0B2
-#define FLAG_NO_RUNNING          0x0B3
-#define FLAG_NO_WHITEOUT         0x0B4
-#define FLAG_INVERSE_BATTLE      0x0B5
-#define FLAG_FORCE_DOUBLE_WILD   0x0B6
-#define FLAG_SMART_WILD_MON      0x0B7
-#define FLAG_ACTIVATE_SEEKER     0x0B8
-#define FLAG_FORCED_SHINY        0x0B9
-#define FLAG_MOVE_RELEARNER      0x0BA
+#define FLAG_NO_TRAINER_SEE         0x0AF
+#define FLAG_NO_COLLISION           0x0B0
+#define FLAG_DISABLE_ENCOUNTERS     0x0B1
+#define FLAG_NO_CATCHING            0x0B2
+#define FLAG_NO_RUNNING             0x0B3
+#define FLAG_NO_WHITEOUT            0x0B4
+#define FLAG_INVERSE_BATTLE         0x0B5
+#define FLAG_FORCE_DOUBLE_WILD      0x0B6
+#define FLAG_SMART_WILD_MON         0x0B7
+#define FLAG_ACTIVATE_SEEKER        0x0B8
+#define FLAG_FORCED_SHINY           0x0B9
+#define FLAG_MOVE_RELEARNER_ACTIVE  0x0BA
 #define FLAG_0x0BB               0x0BB
 #define FLAG_0x0BC               0x0BC
 #define FLAG_0x0BD               0x0BD
@@ -1785,7 +1785,7 @@
 #define FLAG_REGISTERED_WINSTON              0
 #define FLAG_REGISTERED_STEVE                0
 #define FLAG_REGISTERED_TONY                 0
-#define FLAG_REGISTERED_NOB                  0
+#define FLAG_REGISTERED_OSCAR                0
 #define FLAG_REGISTERED_KOJI                 0
 #define FLAG_REGISTERED_FERNANDO             0
 #define FLAG_REGISTERED_DALTON               0
@@ -1797,9 +1797,9 @@
 #define FLAG_REGISTERED_JACKI                0
 #define FLAG_REGISTERED_WALTER               0
 #define FLAG_REGISTERED_KAREN                0
-#define FLAG_REGISTERED_JERRY                0
+#define FLAG_REGISTERED_NICOLE               0
 #define FLAG_REGISTERED_ANNA_AND_MEG         0
-#define FLAG_REGISTERED_ISABEL               0
+#define FLAG_REGISTERED_KELLY                0
 #define FLAG_REGISTERED_MIGUEL               0
 #define FLAG_REGISTERED_TIMOTHY              0
 #define FLAG_REGISTERED_SHELBY               0
@@ -1812,7 +1812,7 @@
 #define FLAG_REGISTERED_KATELYN              0
 #define FLAG_REGISTERED_BENJAMIN             0
 #define FLAG_REGISTERED_PABLO                0
-#define FLAG_REGISTERED_NICOLAS              0
+#define FLAG_REGISTERED_SERGIO               0
 #define FLAG_REGISTERED_ROBERT               0
 #define FLAG_REGISTERED_LAO                  0
 #define FLAG_REGISTERED_CYNDY                0
@@ -1828,7 +1828,7 @@
 #define FLAG_REGISTERED_GABRIELLE            0
 #define FLAG_REGISTERED_CATHERINE            0
 #define FLAG_REGISTERED_JACKSON              0
-#define FLAG_REGISTERED_HALEY                0
+#define FLAG_REGISTERED_GISELLE              0
 #define FLAG_REGISTERED_JAMES                0
 #define FLAG_REGISTERED_TRENT                0
 #define FLAG_REGISTERED_SAWYER               0

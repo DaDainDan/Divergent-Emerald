@@ -90,6 +90,9 @@ script Route123_EventScript_Cameron {
     trainerbattle_single(TRAINER_CAMERON_1, Route123_Text_CameronIntro, Route123_Text_CameronDefeat, Route123_EventScript_RegisterCameron)
     if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
         trainerbattle_rematch(TRAINER_CAMERON_1, Route123_Text_CameronRematchIntro, Route123_Text_CameronRematchDefeat)
+        if (!flag(FLAG_RECEIVED_TM_MOONBLAST)) {
+            goto(Route123_EventScript_Cameron_GiveMoonblast)
+        }
 		msgbox(Route123_Text_CameronPostRematch, MSGBOX_AUTOCLOSE)
 		end
     }
@@ -102,6 +105,14 @@ script Route123_EventScript_RegisterCameron {
     waitmovement(0)
     msgbox(Route123_Text_CameronRegister, MSGBOX_DEFAULT)
     register_matchcall(TRAINER_CAMERON_1)
+    goto(Route123_EventScript_Cameron_GiveMoonblast)
+    end
+}
+
+script Route123_EventScript_Cameron_GiveMoonblast {
+    msgbox(Route123_Text_TakeThis, MSGBOX_DEFAULT)
+    giveitem(ITEM_TM_MOONBLAST)
+    setflag(FLAG_RECEIVED_TM_MOONBLAST)
     release_end
 }
 
@@ -148,9 +159,9 @@ script Route123_EventScript_Frederick {
     end
 }
 
-script Route123_EventScript_Alberto {
-    trainerbattle_single(TRAINER_ALBERTO, Route123_Text_AlbertoIntro, Route123_Text_AlbertoDefeat)
-    msgbox(Route123_Text_AlbertoPostBattle, MSGBOX_AUTOCLOSE)
+script Route123_EventScript_Abraham {
+    trainerbattle_single(TRAINER_ABRAHAM, Route123_Text_AbrahamIntro, Route123_Text_AbrahamDefeat)
+    msgbox(Route123_Text_AbrahamPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -236,4 +247,8 @@ text Route123_Text_RouteSignMtPyre {
 
 text Route123_Text_BerryMastersHouse {
 	"BERRY MASTER'S HOUSE"
+}
+
+text Route123_Text_TakeThis {
+	"You should take this as well."
 }

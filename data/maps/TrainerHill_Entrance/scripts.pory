@@ -210,46 +210,42 @@ script TrainerHill_Entrance_EventScript_Clerk {
     message(gText_HowMayIServeYou)
     waitmessage
     if (flag(FLAG_SYS_GAME_CLEAR)) {
-        goto(TrainerHill_Entrance_EventScript_ExpandedPokemart)
-    }
-    pokemart(TrainerHill_Entrance_Pokemart_Basic)
+        pokemart(TrainerHill_Entrance_Pokemart_Expanded)
+    } else {
+		pokemart(TrainerHill_Entrance_Pokemart_Basic)
+	}
     msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
     release_end
 }
 
 mart TrainerHill_Entrance_Pokemart_Basic {
     ITEM_SUPER_POTION
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_AWAKENING
-    ITEM_X_SPEED
-    ITEM_X_SP_ATK
-    ITEM_X_ATTACK
-    ITEM_X_DEFENSE
-    ITEM_DIRE_HIT
-    ITEM_GUARD_SPEC
-    ITEM_X_ACCURACY
-}
-
-script TrainerHill_Entrance_EventScript_ExpandedPokemart {
-    pokemart(TrainerHill_Entrance_Pokemart_Expanded)
-    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
-    release_end
+    ITEM_REVIVE
+    ITEM_FULL_HEAL
+    ITEM_MAX_ETHER
+    ITEM_EXP_CANDY_S
+    ITEM_HP_UP
+    ITEM_PROTEIN
+    ITEM_IRON
+    ITEM_CARBOS
+    ITEM_CALCIUM
+    ITEM_ZINC
+    ITEM_PP_UP
 }
 
 mart TrainerHill_Entrance_Pokemart_Expanded {
-    ITEM_HYPER_POTION
-    ITEM_MAX_POTION
     ITEM_FULL_RESTORE
+    ITEM_MAX_REVIVE
     ITEM_FULL_HEAL
-    ITEM_REVIVE
-    ITEM_X_SPEED
-    ITEM_X_SP_ATK
-    ITEM_X_ATTACK
-    ITEM_X_DEFENSE
-    ITEM_DIRE_HIT
-    ITEM_GUARD_SPEC
-    ITEM_X_ACCURACY
+    ITEM_MAX_ELIXIR
+    ITEM_EXP_CANDY_XL
+    ITEM_HP_UP
+    ITEM_PROTEIN
+    ITEM_IRON
+    ITEM_CARBOS
+    ITEM_CALCIUM
+    ITEM_ZINC
+    ITEM_PP_UP
 }
 
 text TrainerHill_Entrance_Text_StillGettingReady {

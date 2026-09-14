@@ -15,6 +15,90 @@ script BattleFrontier_Lounge8_EventScript_NinjaBoy {
     end
 }
 
+script BattleFrontier_Lounge8_EventScript_MoveTutor {
+	lock_faceplayer
+	if (!flag(FLAG_MET_BATTLE_FRONTIER_EXPLOSION_TUTOR)) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		setflag(FLAG_MET_BATTLE_FRONTIER_EXPLOSION_TUTOR)
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_C, SCROLL_MULTI_EXPLOSION_MOVE_TUTOR)
+	setvar(VAR_0x8006, 0)
+	goto(BattleFrontier_Lounge8_EventScript_ChooseExplosionMove)
+	end
+}
+
+script BattleFrontier_Lounge8_EventScript_ChooseExplosionMove {
+	special(ShowBattlePointsWindow)
+	setvar(VAR_0x8004, SCROLL_MULTI_EXPLOSION_MOVE_TUTOR)
+	special(ShowScrollableMultichoice)
+	copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0: setmoveandprice(MOVE_SUPERNOVA, 48)
+		case 1: setmoveandprice(MOVE_OSMOTIC_BURST, 48)
+		case 2: setmoveandprice(MOVE_BRUMAL_BURST, 48)
+		case 3: setmoveandprice(MOVE_SAND_BURST, 48)
+		case 4: setmoveandprice(MOVE_CHLOROBLAST, 48)
+		case 5: setmoveandprice(MOVE_WITS_END, 48)
+		case 6: setmoveandprice(MOVE_MISTY_EXPLOSION, 48)
+		case 7: setmoveandprice(MOVE_ARC_BLAST, 48)
+		case 8: setmoveandprice(MOVE_RECKLESS_UPHEAVAL, 48)
+		case 9: setmoveandprice(MOVE_BUG_BURST, 48)
+		case 10: setmoveandprice(MOVE_SOUL_SHATTER, 48)
+		case 11: setmoveandprice(MOVE_ROCK_RUPTURE, 48)
+		case 12: setmoveandprice(MOVE_BLAST_SHELL, 48)
+		case 13: setmoveandprice(MOVE_NOXIOUS_BLOWOUT, 48)
+		case 14: setmoveandprice(MOVE_SHATTER, 48)
+		case 15:
+		case MULTI_B_PRESSED:
+			goto(BattleFrontier_Lounge8_EventScript_ExitTutorMoveSelect)
+	}
+	goto(BattleFrontier_Lounge8_EventScript_ConfirmMoveSelection)
+	end
+}
+
+script BattleFrontier_Lounge8_EventScript_ExitTutorMoveSelect {
+	special(CloseBattleFrontierTutorWindow)
+	special(CloseBattlePointsWindow) 
+	msgbox(BattleFrontier_Lounge8_Text_DeclineTutor, MSGBOX_DEFAULT)
+	release_end
+}
+
+script BattleFrontier_Lounge8_EventScript_ConfirmMoveSelection {
+	special(BufferBattleFrontierTutorMoveName)
+	buffernumberstring(STR_VAR_2, VAR_EXCHANGE_PRICE)
+	msgbox("\.", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		message("\.")
+		waitmessage
+		setvar(VAR_0x8006, 1)
+		goto(BattleFrontier_Lounge8_EventScript_ChooseExplosionMove)
+	}
+	if (specialvar(VAR_TEMP_1, GetFrontierBattlePoints) >= VAR_EXCHANGE_PRICE) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		fadescreen(FADE_TO_BLACK)
+		special(CloseBattlePointsWindow)
+		special(CloseBattleFrontierTutorWindow)
+		chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+		waitstate
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(BattleFrontier_Lounge8_Text_DeclineTutor, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox("\.", MSGBOX_DEFAULT)
+		copyvar(VAR_0x8004, VAR_EXCHANGE_PRICE)
+		special(TakeFrontierBattlePoints)
+		release_end
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	goto(BattleFrontier_Lounge8_EventScript_ExitTutorMoveSelect)
+	end
+}
+
+text BattleFrontier_Lounge8_Text_DeclineTutor {
+	"\."
+}
+
 text BattleFrontier_Lounge8_Text_WhatATrainerNeeds {
 	"What a TRAINER needs…
 
@@ -53,4 +137,94 @@ text BattleFrontier_Lounge8_Text_ToldMeIHaveTalentForBattling {
 
 	I guess having talent and liking
 	something aren't the same."
+}
+
+text BattleFrontier_Lounge8_Text_SupernovaDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets sunlight."
+}
+
+text BattleFrontier_Lounge8_Text_OsmoticBurstDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets heavy rain."
+}
+
+text BattleFrontier_Lounge8_Text_BrumalBurstDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets a snowstorm."
+}
+
+text BattleFrontier_Lounge8_Text_SandBurstDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets a sandstorm."
+}
+
+text BattleFrontier_Lounge8_Text_ChloroblastDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets Grassy field."
+}
+
+text BattleFrontier_Lounge8_Text_WitsEndDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets Psychic field."
+}
+
+text BattleFrontier_Lounge8_Text_RecklessUpheavalDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets Faulty field."
+}
+
+text BattleFrontier_Lounge8_Text_BugBurstDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets Buggy field."
+}
+
+text BattleFrontier_Lounge8_Text_SoulShatterDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets Spooky field."
+}
+
+text BattleFrontier_Lounge8_Text_KaBoomDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets Misty field."
+}
+
+text BattleFrontier_Lounge8_Text_ArcBlastDesc {
+	"Deals good damage\n"
+	"but user faints.\n"
+	"Sets electricity."
+}
+
+text BattleFrontier_Lounge8_Text_RockRuptureDesc {
+	"Deals high damage\n"
+	"but user faints.\n"
+	"Sets sharp stones."
+}
+
+text BattleFrontier_Lounge8_Text_BlastShellDesc {
+	"Deals high damage\n"
+	"but user faints.\n"
+	"Sets metal spikes."
+}
+
+text BattleFrontier_Lounge8_Text_NoxiousBlowoutDesc {
+	"Deals high damage\n"
+	"but user faints.\n"
+	"Sets toxic spikes."
+}
+
+text BattleFrontier_Lounge8_Text_ShatterDesc {
+	"Deals high damage\n"
+	"but user faints.\n"
+	"Sets ice shards."
 }

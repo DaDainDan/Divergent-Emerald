@@ -15,7 +15,7 @@ script FortreeCity_House4_EventScript_Boy {
 		}
 		elif (flag(FLAG_WINGULL_DELIVERED_MAIL)) {
 			msgbox(FortreeCity_House4_Text_WelcomeWingullTakeMentalHerb, MSGBOX_DEFAULT)
-			if (giveitem(ITEM_MENTAL_HERB) == FALSE) {
+			if (giveitem(ITEM_STRANGE_SOUVENIR) == FALSE) {
 				goto(Common_EventScript_ShowBagIsFull)
 			}
 			setflag(FLAG_RECEIVED_MENTAL_HERB)

@@ -20,14 +20,20 @@ script Route102_EventScript_Boy {
     end
 }
 
-script Route102_EventScript_Rick {
-	trainerbattle_single(TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated)
+script Route102_EventScript_Avery {
+    trainerbattle_single(TRAINER_AVERY, Route102_Text_AveryIntro, Route102_Text_AveryDefeated)
+    msgbox(Route102_Text_AveryPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route102_EventScript_Noah {
+	trainerbattle_single(TRAINER_NOAH, Route102_Text_NoahIntro, Route102_Text_NoahDefeated)
 	// if (!flag(FLAG_SYS_GAME_CLEAR)) {
-	// 	trainerbattle_single(TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated)
+	// 	trainerbattle_single(TRAINER_NOAH, Route102_Text_NoahIntro, Route102_Text_NoahDefeated)
 	// } else {
-	// 	trainerbattle_single(TRAINER_ROXANNE_1, Route102_Text_RickIntro, Route102_Text_RickDefeated)
+	// 	trainerbattle_single(TRAINER_ROXANNE_1, Route102_Text_NoahIntro, Route102_Text_NoahDefeated)
 	// }
-    msgbox(Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE)
+    msgbox(Route102_Text_NoahPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -37,11 +43,71 @@ script Route102_EventScript_Tiana {
     end
 }
 
-script Route102_EventScript_Allen {
-    trainerbattle_single(TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated)
-    msgbox(Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE)
-    end
-}
+// script Route102_EventScript_Tiana {
+// 	trainerbattle_single(TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated, Route102_EventScript_TianaRegisterMatchCallAfterBattle)
+// 	if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
+// 		trainerbattle_rematch(TRAINER_TIANA, Route102_Text_TianaRematchIntro, Route102_Text_TianaRematchDefeated)
+// 		msgbox(Route102_Text_TianaRematchPostBattle, MSGBOX_AUTOCLOSE)
+// 		end
+// 	}
+// 	setvar(VAR_0x8004, TRAINER_TIANA)
+// 	if (specialvar(VAR_RESULT, IsTrainerRegistered) == FALSE) {
+// 		if (flag(FLAG_HAS_MATCH_CALL)) {
+// 			goto(Route102_EventScript_TianaRegister)
+// 		}
+// 	}
+// 	msgbox(Route102_Text_TianaPostBattle, MSGBOX_DEFAULT)
+// 	release_end
+// }
+	
+
+// script Route102_EventScript_TianaRegisterMatchCallAfterBattle {
+// 	special(PlayerFaceTrainerAfterBattle)
+// 	waitmovement(0)
+// 	if (flag(FLAG_HAS_MATCH_CALL)) {
+// 		goto(Route102_EventScript_TianaRegister)
+// 	}
+// 	release_end
+// }
+
+// script Route102_EventScript_TianaRegister {
+// 	msgbox(Route102_Text_TianaRegister, MSGBOX_DEFAULT)
+// 	register_matchcall(TRAINER_TIANA)
+// 	release_end
+// }
+
+// script Route102_EventScript_Noah {
+// 	trainerbattle_single(TRAINER_NOAH, Route102_Text_NoahIntro, Route102_Text_NoahDefeated, Route102_EventScript_NoahRegisterMatchCallAfterBattle)
+// 	if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
+// 		trainerbattle_rematch(TRAINER_NOAH, Route102_Text_NoahRematchIntro, Route102_Text_NoahRematchDefeated)
+// 		msgbox(Route102_Text_NoahRematchPostBattle, MSGBOX_AUTOCLOSE)
+// 		end
+// 	}
+// 	setvar(VAR_0x8004, TRAINER_NOAH)
+// 	if (specialvar(VAR_RESULT, IsTrainerRegistered) == FALSE) {
+// 		if (flag(FLAG_HAS_MATCH_CALL)) {
+// 			goto(Route102_EventScript_NoahRegister)
+// 		}
+// 	}
+// 	msgbox(Route102_Text_NoahPostBattle, MSGBOX_DEFAULT)
+// 	release_end
+// }
+	
+
+// script Route102_EventScript_NoahRegisterMatchCallAfterBattle {
+// 	special(PlayerFaceTrainerAfterBattle)
+// 	waitmovement(0)
+// 	if (flag(FLAG_HAS_MATCH_CALL)) {
+// 		goto(Route102_EventScript_NoahRegister)
+// 	}
+// 	release_end
+// }
+
+// script Route102_EventScript_NoahRegister {
+// 	msgbox(Route102_Text_NoahRegister, MSGBOX_DEFAULT)
+// 	register_matchcall(TRAINER_NOAH)
+// 	release_end
+// }
 
 text Route102_Text_WatchMeCatchPokemon {
 	"{SPEAKER NAME_WALLY}{PLAYER}…

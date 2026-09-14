@@ -62,6 +62,76 @@ script Route119_WeatherInstitute_1F_EventScript_Grunt4 {
     end
 }
 
+script Route119_WeatherInstitute_1F_EventScript_MoveTutor {
+	lock_faceplayer
+	if (!flag(FLAG_MET_WEATHER_INSTITUTE_TUTOR)) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		setflag(FLAG_MET_WEATHER_INSTITUTE_TUTOR)
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_C, SCROLL_MULTI_WEATHER_MOVE_TUTOR)
+	setvar(VAR_0x8006, 0)
+	goto(Route119_WeatherInstitute_1F_EventScript_ChooseWeatherMove)
+	end
+}
+
+script Route119_WeatherInstitute_1F_EventScript_ChooseWeatherMove {
+	setvar(VAR_0x8004, SCROLL_MULTI_WEATHER_MOVE_TUTOR)
+	special(ShowScrollableMultichoice)
+	copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0: setvar(VAR_0x8005, MOVE_SUNNY_DAY)
+		case 1: setvar(VAR_0x8005, MOVE_RAIN_DANCE)
+		case 2: setvar(VAR_0x8005, MOVE_SANDSTORM)
+		case 3: setvar(VAR_0x8005, MOVE_SNOWSCAPE)
+		case 4: setvar(VAR_0x8005, MOVE_STORM_CALL)
+		case 5: setvar(VAR_0x8005, MOVE_WEATHER_BALL)
+		case 6:
+		case MULTI_B_PRESSED:
+			goto(Route119_WeatherInstitute_1F_EventScript_ExitTutorMoveSelect)
+	}
+	goto(Route119_WeatherInstitute_1F_EventScript_ConfirmMoveSelection)
+	end
+}
+
+script Route119_WeatherInstitute_1F_EventScript_ExitTutorMoveSelect {
+	special(CloseBattleFrontierTutorWindow) 
+	msgbox(Route119_WeatherInstitute_1F_Text_DeclineTutor, MSGBOX_DEFAULT)
+	release_end
+}
+
+script Route119_WeatherInstitute_1F_EventScript_ConfirmMoveSelection {
+	special(BufferBattleFrontierTutorMoveName)
+	msgbox("\.", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		message("\.")
+		waitmessage
+		setvar(VAR_0x8006, 1)
+		goto(Route119_WeatherInstitute_1F_EventScript_ChooseWeatherMove)
+	}
+	if (checkitem(ITEM_STARDUST) == TRUE) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		fadescreen(FADE_TO_BLACK)
+		special(CloseBattleFrontierTutorWindow)
+		chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+		waitstate
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(Route119_WeatherInstitute_1F_Text_DeclineTutor, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox("\.", MSGBOX_DEFAULT)
+		removeitem(ITEM_STARDUST, 1)
+		release_end
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	goto(Route119_WeatherInstitute_1F_EventScript_ExitTutorMoveSelect)
+	end
+}
+
+text Route119_WeatherInstitute_1F_Text_DeclineTutor {
+	"\."
+}
+
 text Route119_WeatherInstitute_1F_Text_Grunt1Intro {
 	"The BOSS got interested in
 	the research they have going here,
@@ -143,4 +213,40 @@ text Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo {
 text Route119_WeatherInstitute_1F_Text_TakeRestInBed {
 	"There's a bed…
 	Let's take a rest."
+}
+
+text Route119_WeatherInstitute_1F_Text_SunnyDayDesc {
+	"Turns the weather\n"
+	"to harsh sunlight.\n"
+	"Unique effects."
+}
+
+text Route119_WeatherInstitute_1F_Text_RainDanceDesc {
+	"Turns the weather\n"
+	"to heavy rain.\n"
+	"Unique effects."
+}
+
+text Route119_WeatherInstitute_1F_Text_SandstormDesc {
+	"Stirs up a storm\n"
+	"of sand that can\n"
+	"deal chip damage."
+}
+
+text Route119_WeatherInstitute_1F_Text_SnowscapeDesc {
+	"Turns the weather\n"
+	"to a snowstorm.\n"
+	"Unique effects."
+}
+
+text Route119_WeatherInstitute_1F_Text_StormCallDesc {
+	"Creates strong\n"
+	"winds that negate\n"
+	"weather for a bit."
+}
+
+text Route119_WeatherInstitute_1F_Text_WeatherBallDesc {
+	"A ball of energy\n"
+	"that changes type\n"
+	"based on weather."
 }

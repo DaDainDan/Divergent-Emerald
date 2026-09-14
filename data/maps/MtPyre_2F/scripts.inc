@@ -51,19 +51,19 @@ MtPyre_2F_EventScript_Dez::
 	end
 
 
-MtPyre_2F_EventScript_Leah::
+MtPyre_2F_EventScript_Mariah::
 # 40 "data/maps/MtPyre_2F/scripts.pory"
-	trainerbattle_single TRAINER_LEAH, MtPyre_2F_Text_LeahIntro, MtPyre_2F_Text_LeahDefeat
+	trainerbattle_single TRAINER_MARIAH, MtPyre_2F_Text_MariahIntro, MtPyre_2F_Text_MariahDefeat
 # 41 "data/maps/MtPyre_2F/scripts.pory"
-	msgbox MtPyre_2F_Text_LeahPostBattle, MSGBOX_AUTOCLOSE
+	msgbox MtPyre_2F_Text_MariahPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
-MtPyre_2F_EventScript_Zander::
+MtPyre_2F_EventScript_Xander::
 # 46 "data/maps/MtPyre_2F/scripts.pory"
-	trainerbattle_single TRAINER_ZANDER, MtPyre_2F_Text_ZanderIntro, MtPyre_2F_Text_ZanderDefeat
+	trainerbattle_single TRAINER_XANDER, MtPyre_2F_Text_XanderIntro, MtPyre_2F_Text_XanderDefeat
 # 47 "data/maps/MtPyre_2F/scripts.pory"
-	msgbox MtPyre_2F_Text_ZanderPostBattle, MSGBOX_AUTOCLOSE
+	msgbox MtPyre_2F_Text_XanderPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -144,34 +144,34 @@ MtPyre_2F_Text_DezNotEnoughMons::
 	.string "My boyfriend's strong.\n"
 	.string "Just one POKéMON won't do at all.$"
 
-MtPyre_2F_Text_LeahIntro::
+MtPyre_2F_Text_MariahIntro::
 # 135 "data/maps/MtPyre_2F/scripts.pory"
 	.string "You are an unfamiliar sight…\n"
 	.string "Depart before anything befalls you!$"
 
-MtPyre_2F_Text_LeahDefeat::
+MtPyre_2F_Text_MariahDefeat::
 # 140 "data/maps/MtPyre_2F/scripts.pory"
 	.string "Hmm…\n"
 	.string "You're durable.$"
 
-MtPyre_2F_Text_LeahPostBattle::
+MtPyre_2F_Text_MariahPostBattle::
 # 145 "data/maps/MtPyre_2F/scripts.pory"
 	.string "Our family has been TRAINERS here\n"
 	.string "since my great-grandmother's time…\p"
 	.string "It is my duty to protect this\n"
 	.string "mountain…$"
 
-MtPyre_2F_Text_ZanderIntro::
+MtPyre_2F_Text_XanderIntro::
 # 153 "data/maps/MtPyre_2F/scripts.pory"
 	.string "Kiyaaaaah!\n"
 	.string "I'm terrified!$"
 
-MtPyre_2F_Text_ZanderDefeat::
+MtPyre_2F_Text_XanderDefeat::
 # 158 "data/maps/MtPyre_2F/scripts.pory"
 	.string "Nooooooo!\n"
 	.string "I lost my wits!$"
 
-MtPyre_2F_Text_ZanderPostBattle::
+MtPyre_2F_Text_XanderPostBattle::
 # 163 "data/maps/MtPyre_2F/scripts.pory"
 	.string "I get freaked out every time I see\n"
 	.string "anything move…\p"

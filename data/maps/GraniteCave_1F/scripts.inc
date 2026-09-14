@@ -6,38 +6,22 @@ GraniteCave_1F_EventScript_Hiker::
 # 4 "data/maps/GraniteCave_1F/scripts.pory"
 	lock_faceplayer
 # 5 "data/maps/GraniteCave_1F/scripts.pory"
-	goto_if_set FLAG_RECEIVED_HM_FLASH, GraniteCave_1F_EventScript_Hiker_2
-# 9 "data/maps/GraniteCave_1F/scripts.pory"
 	msgbox GraniteCave_1F_Text_GetsDarkAheadHereYouGo, MSGBOX_DEFAULT
-# 10 "data/maps/GraniteCave_1F/scripts.pory"
-	giveitem ITEM_HM_FLASH
-# 11 "data/maps/GraniteCave_1F/scripts.pory"
-	setflag FLAG_RECEIVED_HM_FLASH
-# 12 "data/maps/GraniteCave_1F/scripts.pory"
-	msgbox GraniteCave_1F_Text_ExplainFlash, MSGBOX_DEFAULT
-	release_end
-
-GraniteCave_1F_EventScript_Hiker_2:
-# 6 "data/maps/GraniteCave_1F/scripts.pory"
-	msgbox GraniteCave_1F_Text_ExplainFlash, MSGBOX_DEFAULT
 	release_end
 
 
 GraniteCave_1F_Text_GetsDarkAheadHereYouGo::
-# 16 "data/maps/GraniteCave_1F/scripts.pory"
+# 9 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "Hey, you.\n"
 	.string "It gets awfully dark ahead.\l"
 	.string "It'll be tough trying to explore.\p"
 	.string "That guy who came by earlier…\n"
-	.string "STEVEN, I think it was.\p"
-	.string "He knew how to use FLASH, so he ought\n"
+	.string "He knew how to use FLASH, so he ought\l"
 	.string "to be all right, but…\p"
-	.string "Well, for us HIKERS, helping out those\n"
-	.string "that we meet is our motto.\p"
-	.string "Here you go, I'll pass this on to you.$"
+	.string "I would tread lightly, if I were you.$"
 
 GraniteCave_1F_Text_ExplainFlash::
-# 33 "data/maps/GraniteCave_1F/scripts.pory"
+# 21 "data/maps/GraniteCave_1F/scripts.pory"
 	.string "Teach that hidden move FLASH to\n"
 	.string "a POKéMON and use it.\p"
 	.string "It lights up even the inky darkness\n"

@@ -30,12 +30,33 @@ script EverGrandeCity_PokemonLeague_1F_EventScript_Clerk {
 
 mart EverGrandeCity_PokemonLeague_1F_Pokemart {
     ITEM_ULTRA_BALL
-    ITEM_HYPER_POTION
-    ITEM_MAX_POTION
+    ITEM_FAST_BALL
     ITEM_FULL_RESTORE
+    ITEM_MAX_REVIVE
     ITEM_FULL_HEAL
-    ITEM_REVIVE
+    ITEM_MAX_ELIXIR
     ITEM_MAX_REPEL
+    ITEM_MAX_LURE
+}
+
+script EverGrandeCity_PokemonLeague_1F_EventScript_EnhancementClerk {
+    lock_faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(EverGrandeCity_PokemonLeague_1F_Pokemart_Enhancement)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
+
+mart EverGrandeCity_PokemonLeague_1F_Pokemart_Enhancement {
+    ITEM_EXP_CANDY_XL
+    ITEM_HP_UP
+    ITEM_PROTEIN
+    ITEM_IRON
+    ITEM_CARBOS
+    ITEM_CALCIUM
+    ITEM_ZINC
+    ITEM_PP_UP
 }
 
 script EverGrandeCity_PokemonLeague_1F_EventScript_DoorGuard {

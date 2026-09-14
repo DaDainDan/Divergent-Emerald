@@ -27,20 +27,44 @@ mapscripts MossdeepCity_Gym_MapScripts {
     }
 }
 
+script MossdeepCity_Gym_EventScript_Tate {
+    if (!flag(FLAG_SYS_GAME_CLEAR) && defeated(TRAINER_BRAWLY_2)) {
+        trainerbattle_single(TRAINER_TATE, MossdeepCity_Gym_Text_TatePreRematch, MossdeepCity_Gym_Text_TateRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons)
+		msgbox(MossdeepCity_Gym_Text_TatePostRematch, MSGBOX_AUTOCLOSE)
+		end
+    }
+    goto(MossdeepCity_Gym_EventScript_TateAndLiza)
+    end
+}
+
+script MossdeepCity_Gym_EventScript_Liza {
+    if (!flag(FLAG_SYS_GAME_CLEAR) && defeated(TRAINER_BRAWLY_2)) {
+        trainerbattle_single(TRAINER_LIZA, MossdeepCity_Gym_Text_LizaPreRematch, MossdeepCity_Gym_Text_LizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons)
+		msgbox(MossdeepCity_Gym_Text_LizaPostRematch, MSGBOX_AUTOCLOSE)
+		end
+    }
+    goto(MossdeepCity_Gym_EventScript_TateAndLiza)
+    end
+}
+
 script MossdeepCity_Gym_EventScript_TateAndLiza {
     trainerbattle_double(TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC)
-    specialvar(VAR_RESULT, ShouldTryRematchBattle)
-    if (var(VAR_RESULT) == TRUE) {
-        trainerbattle_rematch_double(TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons)
+    if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
+        if (flag(FLAG_DEFEATED_TATE_LIZA_FINAL)) {
+			msgbox(MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE)
+			end
+		}
+		msgbox(MossdeepCity_Gym_Text_TateAndLizaPreRematch, MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_TATE_AND_LIZA_2, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat)
 		msgbox(MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE)
 		end
     }
-    if (!flag(FLAG_RECEIVED_TM_CALM_MIND)) {
-        if (giveitem(ITEM_TM_CALM_MIND) == FALSE) {
+    if (!flag(FLAG_RECEIVED_HM_DIVE)) {
+        if (giveitem(ITEM_HM_DIVE) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		msgbox(MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT)
-		setflag(FLAG_RECEIVED_TM_CALM_MIND)
+		setflag(FLAG_RECEIVED_HM_DIVE)
 		release_end
     }
     msgbox(MossdeepCity_Gym_Text_TateAndLizaPostBattle, MSGBOX_DEFAULT)
@@ -55,8 +79,8 @@ script MossdeepCity_Gym_EventScript_TateAndLizaDefeated {
     setflag(FLAG_DEFEATED_MOSSDEEP_GYM)
     setflag(FLAG_BADGE07_GET)
     setflag(FLAG_HIDE_AQUA_HIDEOUT_GRUNTS)
-	setflag(FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS)
-	clearflag(FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION)
+    setflag(FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS)
+    clearflag(FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION)
     clearflag(FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY)
     clearflag(FLAG_UNKNOWN_0x393)
     setvar(VAR_0x8008, 7)
@@ -69,11 +93,11 @@ script MossdeepCity_Gym_EventScript_TateAndLizaDefeated {
     setvar(VAR_MOSSDEEP_CITY_STATE, 1)
     setflag(FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN)
     setvar(VAR_MOSSDEEP_SPACE_CENTER_STATE, 1)
-    if (giveitem(ITEM_TM_CALM_MIND) == FALSE) {
+    if (giveitem(ITEM_HM_DIVE) == FALSE) {
         call(Common_EventScript_BagIsFull)
     }
     msgbox(MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT)
-    setflag(FLAG_RECEIVED_TM_CALM_MIND)
+    setflag(FLAG_RECEIVED_HM_DIVE)
     closemessage
     delay(30)
     playfanfare(MUS_REGISTER_MATCH_CALL)
@@ -251,11 +275,22 @@ script MossdeepCity_Gym_EventScript_Kathleen {
 
 script MossdeepCity_Gym_EventScript_GymGuide {
     lock_faceplayer
-    if (flag(FLAG_DEFEATED_MOSSDEEP_GYM)) {
+    if (flag(FLAG_RECEIVED_TM_ROCK_TOMB)) {
         msgbox(MossdeepCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
-    	release_end
     }
-    msgbox(MossdeepCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT)
+    elif (flag(FLAG_DEFEATED_MOSSDEEP_GYM)) {
+        msgbox(MossdeepCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
+		if (!flag(FLAG_RECEIVED_TM_CALM_MIND)) {
+			if (giveitem(ITEM_TM_CALM_MIND) == FALSE) {
+				goto(Common_EventScript_ShowBagIsFull)
+			}
+			msgbox(MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT)
+			setflag(FLAG_RECEIVED_TM_CALM_MIND)
+		}
+    }
+	else {
+		msgbox(MossdeepCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT)
+	}
     release_end
 }
 
@@ -706,6 +741,45 @@ text MossdeepCity_Gym_Text_TateAndLizaPostRematch {
 	but we'll never stay down!
 
 	{SPEAKER NAME_LIZA}Because the two of us,
+	we always support each other!"
+}
+
+text MossdeepCity_Gym_Text_TatePreRematch {
+	"{SPEAKER NAME_TATE}POKéMON…
+	{SPEAKER NAME_TATE}By changing the party's mix…
+	{SPEAKER NAME_TATE}But me…
+	{SPEAKER NAME_TATE}I'll always be with LIZA!
+	{SPEAKER NAME_TATE}Our combination…"
+}
+
+text MossdeepCity_Gym_Text_TateRematchDefeat {
+	"{SPEAKER NAME_TATE}You and your POKéMON…
+	{SPEAKER NAME_LIZA}It's as if you were siblings!"
+}
+
+text MossdeepCity_Gym_Text_TatePostRematch {
+	"{SPEAKER NAME_TATE}You can knock us down,
+	but we'll never stay down!"
+}
+
+text MossdeepCity_Gym_Text_LizaPreRematch {
+	"{SPEAKER NAME_LIZA}POKéMON…
+
+	{SPEAKER NAME_LIZA}The battle style changes.
+
+	{SPEAKER NAME_LIZA}But me…
+
+	{SPEAKER NAME_LIZA}I'll always be with TATE!
+
+	{SPEAKER NAME_LIZA}We'll show you again and again!"
+}
+
+text MossdeepCity_Gym_Text_LizaRematchDefeat {
+	"{SPEAKER NAME_LIZA}It's as if you were siblings!"
+}
+
+text MossdeepCity_Gym_Text_LizaPostRematch {
+	"{SPEAKER NAME_LIZA}Because the two of us,
 	we always support each other!"
 }
 

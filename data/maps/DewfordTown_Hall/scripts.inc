@@ -383,7 +383,7 @@ DewfordTown_Hall_EventScript_SludgeBombMan::
 	goto_if_set FLAG_RECEIVED_TM_SLUDGE_BOMB, DewfordTown_Hall_EventScript_SludgeBombMan_2
 # 196 "data/maps/DewfordTown_Hall/scripts.pory"
 	msgbox DewfordTown_Hall_Text_GiveYouSludgeBomb, MSGBOX_DEFAULT
-	giveitem ITEM_TM_SLUDGE_BOMB
+	giveitem ITEM_TM_NASTY_PLOT
 # 0 "data/maps/DewfordTown_Hall/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq DewfordTown_Hall_EventScript_SludgeBombMan_5

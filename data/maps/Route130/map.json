@@ -3,7 +3,6 @@
   "name": "Route130",
   "layout": "LAYOUT_ROUTE130",
   "music": "MUS_HALL_OF_FAME_ROOM",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_130",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -77,9 +76,36 @@
       "trainer_sight_or_berry_tree_id": "5",
       "script": "Route130_EventScript_Santiago",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 30,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_130_STARF",
+      "script": "BerryTreeScript",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 38,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route130_EventScript_MeadowLady",
+      "flag": "FLAG_HIDE_MIRAGE_ISLAND_MEADOW_LADY"
     }
   ],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "region": "REGION_HOENN"
 }

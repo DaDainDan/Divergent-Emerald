@@ -14,18 +14,19 @@ Debug_CheatStart::
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
 	setflag FLAG_ADVENTURE_STARTED
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
+	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
+	setflag FLAG_HIDE_ROUTE_101_ZIGZAGOON
 	setvar VAR_BIRCH_LAB_STATE, 2
-	setvar VAR_ROUTE101_STATE, 3
-	givemon SPECIES_TREECKO, 20, ITEM_NONE
-	givemon SPECIES_TORCHIC, 20, ITEM_NONE
-	givemon SPECIES_MUDKIP, 20, ITEM_NONE
+	givemon SPECIES_SERVINE, 20, ITEM_NONE
+	givemon SPECIES_BRAIXEN, 20, ITEM_NONE
+	givemon SPECIES_DEWOTT, 20, ITEM_NONE
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 2
-	setflag FLAG_SYS_NATIONAL_DEX
-	special EnableNationalPokedex
+	@ setflag FLAG_SYS_NATIONAL_DEX
+	@ special EnableNationalPokedex
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_SYS_B_DASH
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4 @ 4: Received Running Shoes
@@ -74,9 +75,8 @@ Debug_CheatStart::
 	setflag FLAG_LANDMARK_BATTLE_FRONTIER
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	setflag FLAG_MOVE_RELEARNER
-	release
-	end
+	setflag FLAG_MOVE_RELEARNER_ACTIVE
+	release_end
 
 Debug_CheatStartFrlg::
 	setflag FLAG_SYS_POKEMON_GET
@@ -98,8 +98,8 @@ Debug_CheatStartFrlg::
 	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1
 	setvar VAR_MAP_SCENE_ROUTE22, 1
 	setvar VAR_MAP_SCENE_POKEMON_CENTER_TEALA, 1 @ end
-	setflag FLAG_SYS_NATIONAL_DEX
-	special EnableNationalPokedex
+	@ setflag FLAG_SYS_NATIONAL_DEX
+	@ special EnableNationalPokedex
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_BADGE01_GET
 	setflag FLAG_BADGE02_GET
@@ -132,8 +132,7 @@ Debug_CheatStartFrlg::
 	setflag FLAG_WORLD_MAP_FIVE_ISLAND
 	setflag FLAG_WORLD_MAP_SIX_ISLAND
 	setflag FLAG_WORLD_MAP_SEVEN_ISLAND
-	release
-	end
+	release_end
 
 Debug_FlagsNotSetOverworldConfigMessage::
 	message Debug_FlagsNotSetOverworldConfigMessage_Text
@@ -210,36 +209,33 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
-	release
-	end
+	setvar VAR_ROUTE116_STATE, 1
+	setvar VAR_RUSTURF_TUNNEL_STATE, 2
+	clearflag FLAG_HIDE_RUSTURF_TUNNEL_AQUA_GRUNT
+	setflag FLAG_HIDE_ROUTE_116_MAGMA_GRUNT
+	setflag FLAG_HIDE_RUSTURF_TUNNEL_HOUNDOUR
+	release_end
 
 Debug_EventScript_Script_2::
-	release
-	end
+	release_end
 
 Debug_EventScript_Script_3::
-	release
-	end
+	release_end
 
 Debug_EventScript_Script_4::
-	release
-	end
+	release_end
 
 Debug_EventScript_Script_5::
-	release
-	end
+	release_end
 
 Debug_EventScript_Script_6::
-	release
-	end
+	release_end
 
 Debug_EventScript_Script_7::
-	release
-	end
+	release_end
 
 Debug_EventScript_Script_8::
-	release
-	end
+	release_end
 
 Debug_CheckSaveBlock::
 	callnative CheckSaveBlock1Size
@@ -250,8 +246,7 @@ Debug_CheckSaveBlock::
 	msgbox Debug_SaveBlock3Size, MSGBOX_DEFAULT
 	callnative CheckPokemonStorageSize
 	msgbox Debug_PokemonStorageSize, MSGBOX_DEFAULT
-	release
-	end
+	release_end
 
 Debug_SaveBlock1Size::
 	.string "SaveBlock1 size: {STR_VAR_1}b/{STR_VAR_2}b.\n"
@@ -272,8 +267,7 @@ Debug_PokemonStorageSize::
 Debug_CheckROMSpace::
 	callnative CheckROMSize
 	msgbox Debug_ROMSize, MSGBOX_DEFAULT
-	release
-	end
+	release_end
 
 Debug_ROMSize::
 	.string "ROM size: {STR_VAR_1}MB/32MB.\n"
@@ -288,6 +282,7 @@ Debug_HatchAnEgg::
 	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
 	goto_if_ne VAR_RESULT, SPECIES_EGG, DebugScript_HatchAnEgg_CantForceHatch
 	special EggHatch
+	incrementgamestat GAME_STAT_HATCHED_EGGS
 Debug_HatchAnEgg_End::
 	releaseall
 	end
@@ -335,16 +330,14 @@ DebugText_DaycarePokemonNotCompatible:
 Debug_ShowExpansionVersion::
 	callnative BufferExpansionVersion
 	msgbox Debug_ExpansionVersion, MSGBOX_DEFAULT
-	release
-	end
+	release_end
 
 Debug_ExpansionVersion:
 	.string "pokeemerald-expansion {STR_VAR_1}$"
 
 Debug_Follower_NPC_Not_Enabled::
 	msgbox Debug_Enable_To_Use_Follower_NPCs, MSGBOX_DEFAULT
-	release
-	end
+	release_end
 
 Debug_Enable_To_Use_Follower_NPCs:
 	.string "Feature unavailable.\nSet FNPC_ENABLE_NPC_FOLLOWERS to\lTRUE in 'include/config/follower_npc.h'.$"
@@ -361,21 +354,18 @@ Debug_Follower_NPC_Test_Message:
 
 Debug_EventScript_Steven_Multi::
 	call MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle
-	release
-	end
+	release_end
 
 Debug_EventScript_WallyTutorial::
 	special SavePlayerParty
 	special LoadWallyZigzagoon
 	special StartWallyTutorialBattle
 	special LoadPlayerParty
-	release
-	end
+	release_end
 
 Debug_BerryPestsDisabled::
 	msgbox DebugText_BerryPestsDisabled, MSGBOX_DEFAULT
-	release
-	end
+	release_end
 
 DebugText_BerryPestsDisabled:
 	.string "OW_BERRY_PESTS is disabled.\n"
@@ -383,8 +373,7 @@ DebugText_BerryPestsDisabled:
 
 Debug_BerryWeedsDisabled::
 	msgbox DebugText_BerryWeedsDisabled, MSGBOX_DEFAULT
-	release
-	end
+	release_end
 
 DebugText_BerryWeedsDisabled:
 	.string "OW_BERRY_WEEDS is disabled.\n"
@@ -417,7 +406,8 @@ Debug_EventScript_InflictStatus1_Single:
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Burn, 3
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Freeze, 4
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Frostbite, 5
-	dynmultipush Debug_EventScript_InflictStatus1_Text_Close, 6
+	dynmultipush Debug_EventScript_InflictStatus1_Text_Curse, 6
+	dynmultipush Debug_EventScript_InflictStatus1_Text_Close, 7
 	dynmultistack 0, 0, FALSE, 7, FALSE, 0, NULL
 	switch VAR_RESULT
 	case 0, Debug_EventScript_InflictStatus1_Single_Poison
@@ -426,7 +416,8 @@ Debug_EventScript_InflictStatus1_Single:
 	case 3, Debug_EventScript_InflictStatus1_Single_Burn
 	case 4, Debug_EventScript_InflictStatus1_Single_Freeze
 	case 5, Debug_EventScript_InflictStatus1_Single_Frostbite
-	case 6, Debug_EventScript_InflictStatus1_Close
+	case 6, Debug_EventScript_InflictStatus1_Single_Curse
+	case 7, Debug_EventScript_InflictStatus1_Close
 	case MULTI_B_PRESSED, Debug_EventScript_InflictStatus1_Close
 	releaseall
 	end
@@ -533,6 +524,11 @@ Debug_EventScript_InflictStatus1_Single_Frostbite:
 	releaseall
 	end
 
+Debug_EventScript_InflictStatus1_Single_Curse:
+	setstatus1 STATUS1_CURSE, VAR_0x8004
+	releaseall
+	end
+
 Debug_EventScript_InflictStatus1_Party:
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Poison, 0
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Paralysis, 1
@@ -540,7 +536,8 @@ Debug_EventScript_InflictStatus1_Party:
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Burn, 3
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Freeze, 4
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Frostbite, 5
-	dynmultipush Debug_EventScript_InflictStatus1_Text_Close, 6
+	dynmultipush Debug_EventScript_InflictStatus1_Text_Curse, 6
+	dynmultipush Debug_EventScript_InflictStatus1_Text_Close, 7
 	dynmultistack 0, 0, FALSE, 7, FALSE, 0, NULL
 	switch VAR_RESULT
 	case 0, Debug_EventScript_InflictStatus1_Party_Poison
@@ -549,7 +546,8 @@ Debug_EventScript_InflictStatus1_Party:
 	case 3, Debug_EventScript_InflictStatus1_Party_Burn
 	case 4, Debug_EventScript_InflictStatus1_Party_Freeze
 	case 5, Debug_EventScript_InflictStatus1_Party_Frostbite
-	case 6, Debug_EventScript_InflictStatus1_Close
+	case 6, Debug_EventScript_InflictStatus1_Party_Curse
+	case 7, Debug_EventScript_InflictStatus1_Close
 	case MULTI_B_PRESSED, Debug_EventScript_InflictStatus1_Close
 	releaseall
 	end
@@ -584,6 +582,11 @@ Debug_EventScript_InflictStatus1_Party_Frostbite:
 	releaseall
 	end
 
+Debug_EventScript_InflictStatus1_Party_Curse:
+	setstatus1 STATUS1_CURSE, PARTY_SIZE
+	releaseall
+	end
+
 Debug_EventScript_InflictStatus1_Text_Single:
 	.string "Single$"
 
@@ -610,6 +613,9 @@ Debug_EventScript_InflictStatus1_Text_Freeze:
 
 Debug_EventScript_InflictStatus1_Text_Frostbite:
 	.string "Frostbite$"
+
+Debug_EventScript_InflictStatus1_Text_Curse:
+	.string "Curse$"
 
 Debug_EventScript_InflictStatus1_Text_KO:
 	.string "KO$"
@@ -668,8 +674,7 @@ Debug_EventScript_ChangeNature_Text_Quirky:
 Debug_EventScript_EWRAMCounters::
 	callnative CheckEWRAMCounters
 	msgbox Debug_EventScript_EWRAMCounters_Text, MSGBOX_DEFAULT
-	release
-	end
+	release_end
 
 Debug_EventScript_EWRAMCounters_Text::
 	.string "Follower Steps: {STR_VAR_1}.\n"

@@ -168,64 +168,56 @@ Route113_EventScript_Tia::
 	end
 
 
-Route113_EventScript_Sophie::
-# 115 "data/maps/Route113/scripts.pory"
-	trainerbattle_single TRAINER_SOPHIE, Route113_Text_SophieIntro, Route113_Text_SophieDefeat
-# 116 "data/maps/Route113/scripts.pory"
-	msgbox Route113_Text_SophiePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-
 Route113_EventScript_Coby::
-# 121 "data/maps/Route113/scripts.pory"
+# 115 "data/maps/Route113/scripts.pory"
 	trainerbattle_single TRAINER_COBY, Route113_Text_CobyIntro, Route113_Text_CobyDefeat
-# 122 "data/maps/Route113/scripts.pory"
+# 116 "data/maps/Route113/scripts.pory"
 	msgbox Route113_Text_CobyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route113_EventScript_Lawrence::
-# 127 "data/maps/Route113/scripts.pory"
+# 121 "data/maps/Route113/scripts.pory"
 	trainerbattle_single TRAINER_LAWRENCE, Route113_Text_LawrenceIntro, Route113_Text_LawrenceDefeat
-# 128 "data/maps/Route113/scripts.pory"
+# 122 "data/maps/Route113/scripts.pory"
 	msgbox Route113_Text_LawrencePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route113_EventScript_Wyatt::
-# 133 "data/maps/Route113/scripts.pory"
+# 127 "data/maps/Route113/scripts.pory"
 	trainerbattle_single TRAINER_WYATT, Route113_Text_WyattIntro, Route113_Text_WyattDefeat
-# 134 "data/maps/Route113/scripts.pory"
+# 128 "data/maps/Route113/scripts.pory"
 	msgbox Route113_Text_WyattPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route113_Text_AshCanBeFashionedIntoGlass::
-# 138 "data/maps/Route113/scripts.pory"
+# 132 "data/maps/Route113/scripts.pory"
 	.string "Wahahaha! Today's technology is a\n"
 	.string "wondrous thing!\p"
 	.string "Take this volcanic ash here.\n"
 	.string "It can be fashioned into glass.$"
 
 Route113_Text_FunWalkingThroughAsh::
-# 146 "data/maps/Route113/scripts.pory"
+# 140 "data/maps/Route113/scripts.pory"
 	.string "It's fun walking through the volcano's\n"
 	.string "ashes on the ground and grass.\p"
 	.string "You can see where you walked--it's\n"
 	.string "really neat!$"
 
 Route113_Text_RouteSign111::
-# 154 "data/maps/Route113/scripts.pory"
+# 148 "data/maps/Route113/scripts.pory"
 	.string "ROUTE 113\n"
 	.string "{RIGHT_ARROW} ROUTE 111$"
 
 Route113_Text_RouteSignFallarbor::
-# 159 "data/maps/Route113/scripts.pory"
+# 153 "data/maps/Route113/scripts.pory"
 	.string "ROUTE 113\n"
 	.string "{LEFT_ARROW} FALLARBOR TOWN$"
 
 Route113_Text_TrainerTipsRegisterKeyItems::
-# 164 "data/maps/Route113/scripts.pory"
+# 158 "data/maps/Route113/scripts.pory"
 	.string "TRAINER TIPS\p"
 	.string "You may register one of the KEY ITEMS\n"
 	.string "in your BAG as SELECT.\p"
@@ -233,6 +225,6 @@ Route113_Text_TrainerTipsRegisterKeyItems::
 	.string "the registered item conveniently.$"
 
 Route113_Text_GlassWorkshopSign::
-# 174 "data/maps/Route113/scripts.pory"
+# 168 "data/maps/Route113/scripts.pory"
 	.string "GLASS WORKSHOP\n"
 	.string "“Turning Volcanic Ash into Glass Items”$"

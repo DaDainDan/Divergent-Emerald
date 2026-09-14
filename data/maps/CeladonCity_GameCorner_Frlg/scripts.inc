@@ -87,12 +87,12 @@ CeladonCity_GameCorner_EventScript_ChooseCoinPrice_2:
 
 CeladonCity_GameCorner_EventScript_ChooseCoinPrice_6:
 # 41 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
-	setcurrencyexchange 1000, 50, COIN_LIMIT_50
+	setcurrencyexchange 1000, 50, COIN_LIMIT ( 50 )
 	goto CeladonCity_GameCorner_EventScript_ChooseCoinPrice_4
 
 CeladonCity_GameCorner_EventScript_ChooseCoinPrice_7:
 # 42 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
-	setcurrencyexchange 10000, 500, COIN_LIMIT_500
+	setcurrencyexchange 10000, 500, COIN_LIMIT ( 500 )
 	goto CeladonCity_GameCorner_EventScript_ChooseCoinPrice_4
 
 
@@ -173,7 +173,7 @@ CeladonCity_GameCorner_EventScript_Fisher_1:
 	goto_if_unset FLAG_GOT_COIN_CASE, CeladonCity_GameCorner_EventScript_Fisher_5
 	checkcoins VAR_TEMP_1
 # 0 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
-	compare VAR_TEMP_1, COIN_LIMIT_10
+	compare_var_to_value VAR_TEMP_1, ( COIN_LIMIT ( 10 ) )
 	goto_if_ge CeladonCity_GameCorner_EventScript_Fisher_6
 # 101 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
 	addcoins 10
@@ -270,7 +270,7 @@ CeladonCity_GameCorner_EventScript_Scientist_1:
 	goto_if_unset FLAG_GOT_COIN_CASE, CeladonCity_GameCorner_EventScript_Scientist_5
 	checkcoins VAR_TEMP_1
 # 0 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
-	compare VAR_TEMP_1, COIN_LIMIT_20
+	compare_var_to_value VAR_TEMP_1, ( COIN_LIMIT ( 20 ) )
 	goto_if_ge CeladonCity_GameCorner_EventScript_Scientist_6
 # 158 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
 	addcoins 20
@@ -319,7 +319,7 @@ CeladonCity_GameCorner_EventScript_Gentleman_1:
 	goto_if_unset FLAG_GOT_COIN_CASE, CeladonCity_GameCorner_EventScript_Gentleman_5
 	checkcoins VAR_TEMP_1
 # 0 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
-	compare VAR_TEMP_1, COIN_LIMIT_20
+	compare_var_to_value VAR_TEMP_1, ( COIN_LIMIT ( 20 ) )
 	goto_if_ge CeladonCity_GameCorner_EventScript_Gentleman_6
 # 183 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
 	addcoins 20

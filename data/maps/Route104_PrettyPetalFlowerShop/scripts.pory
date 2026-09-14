@@ -29,6 +29,29 @@ script Route104_PrettyPetalFlowerShop_EventScript_ShopOwner {
     release_end
 }
 
+script Route104_PrettyPetalFlowerShop_EventScript_SellMisc {
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(Route104_PrettyPetalFlowerShop_Pokemart_Misc)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release_end
+}
+
+mart Route104_PrettyPetalFlowerShop_Pokemart_Misc {
+    ITEM_WAILMER_PAIL
+    ITEM_RICH_MULCH
+    ITEM_BERRY_JUICE
+    ITEM_SNACK
+    ITEM_GRASSY_SEED
+    ITEM_ELECTRIC_SEED
+    ITEM_MISTY_SEED
+    ITEM_PSYCHIC_SEED
+    ITEM_LUCKY_SEED
+    ITEM_MOUNTAIN_SEED
+    ITEM_SPOOKY_SEED
+}
+
+
 script Route104_PrettyPetalFlowerShop_EventScript_SellDecorations {
     message(gText_PlayerWhatCanIDoForYou)
     waitmessage
@@ -50,7 +73,7 @@ script Route104_PrettyPetalFlowerShop_EventScript_WailmerPailGirl {
     lock_faceplayer
     if (!flag(FLAG_RECEIVED_WAILMER_PAIL)) {
         msgbox(Route104_PrettyPetalFlowerShop_Text_YouCanHaveThis, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_WAILMER_PAIL) == FALSE) {
+		if (giveitem(ITEM_SITRUS_BERRY) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		setflag(FLAG_RECEIVED_WAILMER_PAIL)

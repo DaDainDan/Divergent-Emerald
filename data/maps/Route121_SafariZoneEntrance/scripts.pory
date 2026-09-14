@@ -88,3 +88,66 @@ script Route121_SafariZoneEntrance_EventScript_TrainerTipSign {
     msgbox(Route121_SafariZoneEntrance_Text_TrainerTip, MSGBOX_SIGN)
     end
 }
+
+script Route121_SafariZoneEntrance_EventScript_AlreadyReceivedMoomooMilk {
+    showmoneybox(0, 0)
+    msgbox(Route121_SafariZoneEntrance_Text_WantToBuyMoomooMilk, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        goto(Route121_SafariZoneEntrance_EventScript_BuyMoomooMilk)
+    }
+    msgbox(Route121_SafariZoneEntrance_Text_ThatsTooBad, MSGBOX_DEFAULT)
+    hidemoneybox
+    release_end
+}
+
+raw `
+Route121_SafariZoneEntrance_EventScript_BuyMoomooMilk::
+	checkmoney 1100
+	goto_if_eq VAR_RESULT, FALSE, Route121_SafariZoneEntrance_EventScript_NoMoneyForMilk
+	checkitemspace ITEM_MOOMOO_MILK
+	goto_if_eq VAR_RESULT, FALSE, Route121_SafariZoneEntrance_EventScript_NotEnoughSpace
+	msgbox Route121_SafariZoneEntrance_Text_HereYouGo, MSGBOX_DEFAULT
+	removemoney 1100
+	updatemoneybox
+.if OW_SHOW_ITEM_DESCRIPTIONS != OW_ITEM_DESCRIPTIONS_OFF
+	hidemoneybox
+	giveitem ITEM_MOOMOO_MILK
+.else
+	giveitem ITEM_MOOMOO_MILK
+	hidemoneybox
+.endif
+	release_end
+`
+
+script Route121_SafariZoneEntrance_EventScript_NoMoneyForMilk {
+    msgbox(Route121_SafariZoneEntrance_Text_NoMoneyForMilk, MSGBOX_DEFAULT)
+    hidemoneybox
+    release_end
+}
+
+script Route121_SafariZoneEntrance_EventScript_NotEnoughSpace {
+    msgbox(gText_TooBadBagIsFull, MSGBOX_DEFAULT)
+    hidemoneybox
+    release_end
+}
+
+text Route121_SafariZoneEntrance_Text_WantToBuyMoomooMilk {
+	"Want to buy some MOOMOO MILK?
+	POKéMON love it!
+
+	Just ¥1100 a bottle!
+	Buy some!"
+}
+
+text Route121_SafariZoneEntrance_Text_HereYouGo {
+	"Here you go!"
+}
+
+text Route121_SafariZoneEntrance_Text_NoMoneyForMilk {
+	"You don't have the money."
+}
+
+text Route121_SafariZoneEntrance_Text_ThatsTooBad {
+	"No?
+	That's too bad."
+}

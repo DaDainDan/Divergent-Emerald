@@ -4,31 +4,15 @@ MagmaHideout_2F_2R_MapScripts::
 
 MagmaHideout_2F_2R_EventScript_Grunt15::
 # 4 "data/maps/MagmaHideout_2F_2R/scripts.pory"
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_15, MagmaHideout_2F_2R_Text_Grunt15Intro, MagmaHideout_2F_2R_Text_Grunt15Defeat
+	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_5, MagmaHideout_2F_2R_Text_Grunt15Intro, MagmaHideout_2F_2R_Text_Grunt15Defeat
 # 5 "data/maps/MagmaHideout_2F_2R/scripts.pory"
 	msgbox MagmaHideout_2F_2R_Text_Grunt15PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
-MagmaHideout_2F_2R_EventScript_Grunt6::
-# 10 "data/maps/MagmaHideout_2F_2R/scripts.pory"
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_6, MagmaHideout_2F_2R_Text_Grunt6Intro, MagmaHideout_2F_2R_Text_Grunt6Defeat
-# 11 "data/maps/MagmaHideout_2F_2R/scripts.pory"
-	msgbox MagmaHideout_2F_2R_Text_Grunt6PostBattle, MSGBOX_AUTOCLOSE
-	end
-
-
-MagmaHideout_2F_2R_EventScript_Grunt7::
-# 16 "data/maps/MagmaHideout_2F_2R/scripts.pory"
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_7, MagmaHideout_2F_2R_Text_Grunt7Intro, MagmaHideout_2F_2R_Text_Grunt7Defeat
-# 17 "data/maps/MagmaHideout_2F_2R/scripts.pory"
-	msgbox MagmaHideout_2F_2R_Text_Grunt7PostBattle, MSGBOX_AUTOCLOSE
-	end
-
-
 MagmaHideout_2F_2R_EventScript_Grunt8::
 # 22 "data/maps/MagmaHideout_2F_2R/scripts.pory"
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_8, MagmaHideout_2F_2R_Text_Grunt8Intro, MagmaHideout_2F_2R_Text_Grunt8Defeat
+	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_6, MagmaHideout_2F_2R_Text_Grunt8Intro, MagmaHideout_2F_2R_Text_Grunt8Defeat
 # 23 "data/maps/MagmaHideout_2F_2R/scripts.pory"
 	msgbox MagmaHideout_2F_2R_Text_Grunt8PostBattle, MSGBOX_AUTOCLOSE
 	end
@@ -46,7 +30,7 @@ MagmaHideout_2F_2R_Text_Grunt15Defeat::
 MagmaHideout_2F_2R_Text_Grunt15PostBattle::
 # 36 "data/maps/MagmaHideout_2F_2R/scripts.pory"
 	.string "We dug up something beyond belief!\n"
-	.string "And, we got the BLUE ORB!\p"
+	.string "And, we got the RED ORB!\p"
 	.string "All that's left is for our leader to…\n"
 	.string "Fufufu… Fwahahaha!$"
 

@@ -26,49 +26,41 @@ Route108_EventScript_Tara::
 	end
 
 
-Route108_EventScript_Missy::
+Route108_EventScript_Christine::
 # 22 "data/maps/Route108/scripts.pory"
-	trainerbattle_single TRAINER_MISSY, Route108_Text_MissyIntro, Route108_Text_MissyDefeated
+	trainerbattle_single TRAINER_CHRISTINE, Route108_Text_ChristineIntro, Route108_Text_ChristineDefeated
 # 23 "data/maps/Route108/scripts.pory"
-	msgbox Route108_Text_MissyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-
-Route108_EventScript_Carolina::
-# 28 "data/maps/Route108/scripts.pory"
-	trainerbattle_single TRAINER_CAROLINA, Route108_Text_CarolinaIntro, Route108_Text_CarolinaDefeated
-# 29 "data/maps/Route108/scripts.pory"
-	msgbox Route108_Text_CarolinaPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route108_Text_ChristinePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route108_EventScript_Cory::
-# 34 "data/maps/Route108/scripts.pory"
+# 28 "data/maps/Route108/scripts.pory"
 	trainerbattle_single TRAINER_CORY_1, Route108_Text_CoryIntro, Route108_Text_CoryDefeated, Route108_EventScript_CoryRegisterMatchCallAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 0 "data/maps/Route108/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route108_EventScript_Cory_2
-# 40 "data/maps/Route108/scripts.pory"
+# 34 "data/maps/Route108/scripts.pory"
 	msgbox Route108_Text_CoryPostBattle, MSGBOX_DEFAULT
 	release_end
 
 Route108_EventScript_Cory_2:
-# 36 "data/maps/Route108/scripts.pory"
+# 30 "data/maps/Route108/scripts.pory"
 	trainerbattle_rematch TRAINER_CORY_1, Route108_Text_CoryRematchIntro, Route108_Text_CoryRematchDefeated
-# 37 "data/maps/Route108/scripts.pory"
+# 31 "data/maps/Route108/scripts.pory"
 	msgbox Route108_Text_CoryRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route108_EventScript_CoryRegisterMatchCallAfterBattle::
-# 45 "data/maps/Route108/scripts.pory"
+# 39 "data/maps/Route108/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
-# 46 "data/maps/Route108/scripts.pory"
+# 40 "data/maps/Route108/scripts.pory"
 	waitmovement 0
-# 47 "data/maps/Route108/scripts.pory"
+# 41 "data/maps/Route108/scripts.pory"
 	msgbox Route108_Text_CoryRegister, MSGBOX_DEFAULT
-# 48 "data/maps/Route108/scripts.pory"
+# 42 "data/maps/Route108/scripts.pory"
 	register_matchcall TRAINER_CORY_1
 	release_end
 

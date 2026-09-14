@@ -14,20 +14,21 @@ script OldaleTown_Mart_EventScript_Clerk {
 }
 
 mart OldaleTown_Mart_Pokemart_Basic {
-    ITEM_POTION
-    ITEM_FULL_HEAL
-	ITEM_MAX_ETHER
+	ITEM_POTION
+	ITEM_FULL_HEAL
 	ITEM_REPEL
 	ITEM_LURE
 }
 
 mart OldaleTown_Mart_Pokemart_Expanded {
-    ITEM_POKE_BALL
-    ITEM_POTION
-    ITEM_FULL_HEAL
+	ITEM_POKE_BALL
+	ITEM_HEAL_BALL
+	ITEM_POTION
+	ITEM_FULL_HEAL
 	ITEM_MAX_ETHER
 	ITEM_REPEL
 	ITEM_LURE
+	ITEM_HONEY
 }
 
 script OldaleTown_Mart_EventScript_Woman {

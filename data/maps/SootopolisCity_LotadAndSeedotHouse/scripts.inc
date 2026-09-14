@@ -55,7 +55,7 @@ SootopolisCity_LotadAndSeedotHouse_EventScript_SeedotBrother_8:
 SootopolisCity_LotadAndSeedotHouse_EventScript_GiveElixir::
 # 24 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	msgbox SootopolisCity_LotadAndSeedotHouse_Text_GoshMightBeBiggerThanLotad, MSGBOX_DEFAULT
-	giveitem ITEM_ELIXIR
+	giveitem ITEM_BIG_NUGGET
 # 0 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq SootopolisCity_LotadAndSeedotHouse_EventScript_GiveElixir_2

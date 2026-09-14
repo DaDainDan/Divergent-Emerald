@@ -11,17 +11,12 @@ script FallarborTown_Mart_EventScript_Clerk {
 
 mart FallarborTown_Mart_Pokemart {
     ITEM_GREAT_BALL
-    ITEM_SUPER_POTION
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
-    ITEM_ESCAPE_ROPE
-    ITEM_SUPER_REPEL
-    ITEM_X_SP_ATK
-    ITEM_X_SPEED
-    ITEM_X_ATTACK
-    ITEM_X_DEFENSE
-    ITEM_DIRE_HIT
-    ITEM_GUARD_SPEC
+	ITEM_TIMER_BALL
+	ITEM_HYPER_POTION
+	ITEM_FULL_HEAL
+	ITEM_MAX_ETHER
+	ITEM_SUPER_REPEL
+	ITEM_SUPER_LURE
 }
 
 script FallarborTown_Mart_EventScript_Woman {

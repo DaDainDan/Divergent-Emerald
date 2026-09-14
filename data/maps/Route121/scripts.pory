@@ -66,14 +66,14 @@ script Route121_EventScript_Tammy {
     end
 }
 
-script Route121_EventScript_Kate {
-    trainerbattle_double(TRAINER_KATE_AND_JOY, Route121_Text_KateIntro, Route121_Text_KateDefeat, Route121_Text_KateNotEnoughMons)
-    msgbox(Route121_Text_KatePostBattle, MSGBOX_AUTOCLOSE)
-    end
-}
+// script Route121_EventScript_Kate {
+//     trainerbattle_double(TRAINER_KATE_AND_JOY, Route121_Text_KateIntro, Route121_Text_KateDefeat, Route121_Text_KateNotEnoughMons)
+//     msgbox(Route121_Text_KatePostBattle, MSGBOX_AUTOCLOSE)
+//     end
+// }
 
 script Route121_EventScript_Joy {
-    trainerbattle_double(TRAINER_KATE_AND_JOY, Route121_Text_JoyIntro, Route121_Text_JoyDefeat, Route121_Text_JoyNotEnoughMons)
+    trainerbattle_single(TRAINER_JOY, Route121_Text_JoyIntro, Route121_Text_JoyDefeat, Route121_Text_JoyNotEnoughMons)
     msgbox(Route121_Text_JoyPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -125,6 +125,9 @@ script Route121_EventScript_Cristin {
     trainerbattle_single(TRAINER_CRISTIN_1, Route121_Text_CristinIntro, Route121_Text_CristinDefeat, Route121_EventScript_RegisterCristin)
     if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
         trainerbattle_rematch(TRAINER_CRISTIN_1, Route121_Text_CristinRematchIntro, Route121_Text_CristinRematchDefeat)
+        if (!flag(FLAG_RECEIVED_PROTECTIVE_PADS)) {
+            goto(Route121_EventScript_Cristin_GiveProtectivePads)
+        }
 		msgbox(Route121_Text_CristinPostRematch, MSGBOX_AUTOCLOSE)
 		end
     }
@@ -137,6 +140,14 @@ script Route121_EventScript_RegisterCristin {
     waitmovement(0)
     msgbox(Route121_Text_CristinRegister, MSGBOX_DEFAULT)
     register_matchcall(TRAINER_CRISTIN_1)
+    goto(Route121_EventScript_Cristin_GiveProtectivePads)
+    end
+}
+
+script Route121_EventScript_Cristin_GiveProtectivePads {
+    msgbox(Route121_Text_SpareAgain, MSGBOX_DEFAULT)
+    giveitem(ITEM_PROTECTIVE_PADS)
+    setflag(FLAG_RECEIVED_PROTECTIVE_PADS)
     release_end
 }
 
@@ -162,4 +173,9 @@ text Route121_Text_MtPyrePierSign {
 text Route121_Text_SafariZoneSign {
 	"“Filled with rare POKéMON!”
 	SAFARI ZONE"
+}
+
+text Route121_Text_SpareAgain {
+	"If we're going to spar again, you should
+	take these training pads."
 }

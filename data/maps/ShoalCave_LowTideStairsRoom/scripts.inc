@@ -46,3 +46,21 @@ ShoalCave_LowTideStairsRoom_EventScript_ShoalSalt3_6:
 	goto Common_EventScript_ShowBagIsFull
 	goto ShoalCave_LowTideStairsRoom_EventScript_ShoalSalt3_5
 
+
+ShoalCave_LowTideStairsRoom_EventScript_Fossil::
+# 27 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
+	lock_faceplayer
+	giveitem ITEM_SAIL_FOSSIL
+# 0 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq ShoalCave_LowTideStairsRoom_EventScript_Fossil_2
+ShoalCave_LowTideStairsRoom_EventScript_Fossil_1:
+# 31 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
+	removeobject LOCALID_SHOAL_CAVE_FOSSIL
+	release_end
+
+ShoalCave_LowTideStairsRoom_EventScript_Fossil_2:
+# 29 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
+	goto Common_EventScript_ShowBagIsFull
+	goto ShoalCave_LowTideStairsRoom_EventScript_Fossil_1
+

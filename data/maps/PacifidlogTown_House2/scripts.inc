@@ -19,7 +19,7 @@ PacifidlogTown_House2_EventScript_FanClubYoungerBrother_4:
 	setflag FLAG_MET_FANCLUB_YOUNGER_BROTHER
 	specialvar VAR_RESULT, GetLeadMonFriendshipScore
 # 0 "data/maps/PacifidlogTown_House2/scripts.pory"
-	compare VAR_RESULT, FRIENDSHIP_150_TO_199
+	compare VAR_RESULT, FRIENDSHIP_MAX
 	goto_if_ge PacifidlogTown_House2_EventScript_FanClubYoungerBrother_11
 	specialvar VAR_RESULT, GetLeadMonFriendshipScore
 # 0 "data/maps/PacifidlogTown_House2/scripts.pory"
@@ -27,7 +27,7 @@ PacifidlogTown_House2_EventScript_FanClubYoungerBrother_4:
 	goto_if_ge PacifidlogTown_House2_EventScript_FanClubYoungerBrother_12
 # 32 "data/maps/PacifidlogTown_House2/scripts.pory"
 	msgbox PacifidlogTown_House2_Text_ViciousPokemonTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_FRUSTRATION
+	giveitem ITEM_TM_PERISH_SONG
 # 0 "data/maps/PacifidlogTown_House2/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq PacifidlogTown_House2_EventScript_FanClubYoungerBrother_18
@@ -66,7 +66,7 @@ PacifidlogTown_House2_EventScript_FanClubYoungerBrother_7:
 PacifidlogTown_House2_EventScript_FanClubYoungerBrother_11:
 # 22 "data/maps/PacifidlogTown_House2/scripts.pory"
 	msgbox PacifidlogTown_House2_Text_AdoringPokemonTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_RETURN
+	giveitem ITEM_TM_WISH
 # 0 "data/maps/PacifidlogTown_House2/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq PacifidlogTown_House2_EventScript_FanClubYoungerBrother_16

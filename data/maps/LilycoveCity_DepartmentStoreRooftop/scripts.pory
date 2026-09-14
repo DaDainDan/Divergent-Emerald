@@ -74,8 +74,8 @@ script LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink {
     }
     switch (var(VAR_TEMP_0)) {
 		case ITEM_FRESH_WATER: checkmoney(200)
-		case ITEM_SODA_POP: checkmoney(300)
-		case ITEM_LEMONADE: checkmoney(350)
+		case ITEM_SODA_POP: checkmoney(500)
+		case ITEM_LEMONADE: checkmoney(800)
 	}
     if (var(VAR_RESULT) == FALSE) {
         msgbox(LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney, MSGBOX_DEFAULT)
@@ -86,8 +86,8 @@ script LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink {
     }
 	switch (var(VAR_TEMP_0)) {
 		case ITEM_FRESH_WATER: removemoney(200)
-		case ITEM_SODA_POP: removemoney(300)
-		case ITEM_LEMONADE: removemoney(350)
+		case ITEM_SODA_POP: removemoney(500)
+		case ITEM_LEMONADE: removemoney(800)
 	}
     updatemoneybox
     bufferitemname(STR_VAR_1, VAR_TEMP_0)

@@ -295,8 +295,17 @@ script LilycoveCity_ContestLobby_EventScript_BlackBelt {
 }
 
 script LilycoveCity_ContestLobby_EventScript_Girl {
-    msgbox(LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere, MSGBOX_NPC)
-    end
+    lock_faceplayer
+    if (flag(FLAG_RECEIVED_TM_DAZZLING_GLEAM)) {
+        msgbox(LilycoveCity_ContestLobby_Text_TooBusy, MSGBOX_DEFAULT)
+        release_end
+    }
+    msgbox(LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere, MSGBOX_DEFAULT)
+    if (giveitem(ITEM_TM_DAZZLING_GLEAM) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    setflag(FLAG_RECEIVED_TM_DAZZLING_GLEAM)
+    release_end
 }
 
 script LilycoveCity_ContestLobby_EventScript_Artist {
@@ -806,11 +815,16 @@ text LilycoveCity_ContestLobby_Text_MasterRankHereICome {
 }
 
 text LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere {
-	"You can see a whole variety of
-	POKéMON here.
+	"I always make sure my CINCCINO is
+	sparkling and shiny during contests.
 
-	That's why I make this place a regular
-	part of my daily stroll."
+	Wanna know my secret?
+	Try using this TM called Dazzling Gleam."
+}
+
+text LilycoveCity_ContestLobby_Text_TooBusy {
+	"Sorry, I don't have time for chit-chat.
+	We're about to be on in a few minutes."
 }
 
 text LilycoveCity_ContestLobby_Text_ContestFeastForEyes {

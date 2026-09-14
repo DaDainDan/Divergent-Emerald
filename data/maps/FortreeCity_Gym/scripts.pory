@@ -14,18 +14,28 @@ mapscripts FortreeCity_Gym_MapScripts {
 }
 
 script FortreeCity_Gym_EventScript_Winona {
-    trainerbattle_single(TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC)
-    if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
-        trainerbattle_rematch_double(TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons)
+    if (flag(FLAG_SYS_GAME_CLEAR)) {
+        if (flag(FLAG_DEFEATED_WINONA_FINAL)) {
+			msgbox(FortreeCity_Gym_Text_WinonaPostFinal, MSGBOX_AUTOCLOSE)
+    		end
+		}
+		msgbox(FortreeCity_Gym_Text_WinonaFinalIntro, MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_WINONA_3, FortreeCity_Gym_Text_WinonaFinalDefeat)
+		msgbox(FortreeCity_Gym_Text_WinonaPostFinal, MSGBOX_AUTOCLOSE)
+		end
+    }
+    if (defeated(TRAINER_FLANNERY_2)) {
+        trainerbattle_double(TRAINER_WINONA_2, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons)
 		msgbox(FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE)
 		end
     }
-    if (!flag(FLAG_RECEIVED_TM_AERIAL_ACE)) {
-        if (giveitem(ITEM_TM_AERIAL_ACE) == FALSE) {
+    trainerbattle_single(TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC)
+    if (!flag(FLAG_RECEIVED_HM_FLY)) {
+        if (giveitem(ITEM_HM_FLY) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		msgbox(FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT)
-		setflag(FLAG_RECEIVED_TM_AERIAL_ACE)
+		setflag(FLAG_RECEIVED_HM_FLY)
 		release_end
     }
     msgbox(FortreeCity_Gym_Text_WinonaPostBattle, MSGBOX_DEFAULT)
@@ -41,11 +51,11 @@ script FortreeCity_Gym_EventScript_WinonaDefeated {
     setflag(FLAG_BADGE06_GET)
     setvar(VAR_0x8008, 6)
     call(Common_EventScript_SetGymTrainers)
-    if (giveitem(ITEM_TM_AERIAL_ACE) == FALSE) {
-        call(Common_EventScript_BagIsFull)
+    if (giveitem(ITEM_HM_FLY) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
     }
     msgbox(FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT)
-    setflag(FLAG_RECEIVED_TM_AERIAL_ACE)
+    setflag(FLAG_RECEIVED_HM_FLY)
     closemessage
     delay(30)
     playfanfare(MUS_REGISTER_MATCH_CALL)
@@ -56,8 +66,14 @@ script FortreeCity_Gym_EventScript_WinonaDefeated {
     setflag(FLAG_ENABLE_WINONA_MATCH_CALL)
     setvar(VAR_SCOTT_FORTREE_CALL_STEP_COUNTER, 0)
     setflag(FLAG_SCOTT_CALL_FORTREE_GYM)
+    setflag(FLAG_RECEIVED_SECRET_POWER)
+    clearflag(FLAG_HIDE_ROUTE_112_TEAM_MAGMA)
+    if (!flag(FLAG_RECEIVED_DAYCARE_EGG)) {
+        clearflag(FLAG_HIDE_DAYCARE_GIRL)
+    }
     release_end
 }
+
 
 script FortreeCity_Gym_EventScript_Jared {
     trainerbattle_single(TRAINER_JARED, FortreeCity_Gym_Text_JaredIntro, FortreeCity_Gym_Text_JaredDefeat)
@@ -83,9 +99,9 @@ script FortreeCity_Gym_EventScript_Ashley {
     end
 }
 
-script FortreeCity_Gym_EventScript_Humberto {
-    trainerbattle_single(TRAINER_HUMBERTO, FortreeCity_Gym_Text_HumbertoIntro, FortreeCity_Gym_Text_HumbertoDefeat)
-    msgbox(FortreeCity_Gym_Text_HumbertoPostBattle, MSGBOX_AUTOCLOSE)
+script FortreeCity_Gym_EventScript_Jordan {
+    trainerbattle_single(TRAINER_JORDAN, FortreeCity_Gym_Text_JordanIntro, FortreeCity_Gym_Text_JordanDefeat)
+    msgbox(FortreeCity_Gym_Text_JordanPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -95,13 +111,36 @@ script FortreeCity_Gym_EventScript_Darius {
     end
 }
 
+script FortreeCity_Gym_EventScript_Sophie {
+    trainerbattle_single(TRAINER_SOPHIE, FortreeCity_Gym_Text_SophieIntro, FortreeCity_Gym_Text_SophieDefeat)
+    msgbox(FortreeCity_Gym_Text_SophiePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script FortreeCity_Gym_EventScript_Melanie {
+    trainerbattle_single(TRAINER_MELANIE, FortreeCity_Gym_Text_MelanieIntro, FortreeCity_Gym_Text_MelanieDefeated)
+    msgbox(FortreeCity_Gym_Text_MelaniePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
 script FortreeCity_Gym_EventScript_GymGuide {
     lock_faceplayer
-    if (flag(FLAG_DEFEATED_FORTREE_GYM)) {
+    if (flag(FLAG_RECEIVED_TM_AERIAL_ACE)) {
         msgbox(FortreeCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
-    	release_end
     }
-    msgbox(FortreeCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT)
+    elif (flag(FLAG_DEFEATED_FORTREE_GYM)) {
+        msgbox(FortreeCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
+		if (!flag(FLAG_RECEIVED_TM_AERIAL_ACE)) {
+			if (giveitem(ITEM_TM_U_TURN) == FALSE) {
+				goto(Common_EventScript_ShowBagIsFull)
+			}
+			msgbox(FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT)
+			setflag(FLAG_RECEIVED_TM_AERIAL_ACE)
+		}
+    }
+	else {
+		msgbox(FortreeCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT)
+	}
     release_end
 }
 
@@ -219,7 +258,7 @@ text FortreeCity_Gym_Text_AshleyPostBattle {
 	FORTREE can live without fear."
 }
 
-text FortreeCity_Gym_Text_HumbertoIntro {
+text FortreeCity_Gym_Text_JordanIntro {
 	"When WINONA takes to battle, her face
 	shines with beautiful determination…
 
@@ -227,12 +266,12 @@ text FortreeCity_Gym_Text_HumbertoIntro {
 	lovely sight!"
 }
 
-text FortreeCity_Gym_Text_HumbertoDefeat {
+text FortreeCity_Gym_Text_JordanDefeat {
 	"Urk!
 	I couldn't stop you."
 }
 
-text FortreeCity_Gym_Text_HumbertoPostBattle {
+text FortreeCity_Gym_Text_JordanPostBattle {
 	"You'd better watch it!
 	Don't get distracted staring at WINONA
 	or you'll go crashing down in a heap!"
@@ -253,6 +292,37 @@ text FortreeCity_Gym_Text_DariusPostBattle {
 	"Sure, you beat me all right.
 	But you'd better watch it! Our LEADER
 	WINONA's POKéMON are all business."
+}
+
+text FortreeCity_Gym_Text_SophieIntro {
+	"The warmth here is making me drowsy.
+	Battle with me so I can stay awake."
+}
+
+text FortreeCity_Gym_Text_SophieDefeat {
+	"This is a dream.
+	I'm sure of it…"
+}
+
+text FortreeCity_Gym_Text_SophiePostBattle {
+	"Losing burns me up…
+	I'm just going to sleep right here!
+	Zzz!"
+}
+
+text FortreeCity_Gym_Text_MelanieIntro {
+	"I love the sea!
+	I forget all my worries when I swim!"
+}
+
+text FortreeCity_Gym_Text_MelanieDefeated {
+	"When I lose a battle, I get all
+	stressed out!"
+}
+
+text FortreeCity_Gym_Text_MelaniePostBattle {
+	"Work off your stress by swimming!
+	It's so healthy!"
 }
 
 text FortreeCity_Gym_Text_WinonaIntro {
@@ -345,6 +415,34 @@ text FortreeCity_Gym_Text_WinonaRematchDefeat {
 
 text FortreeCity_Gym_Text_WinonaPostRematch {
 	"{SPEAKER NAME_WINONA}Even though I have lost,
+	the wings of my heart remain unbroken.
+
+	I can rise and soar again and
+	yet again.
+
+	I am convinced of it!"
+}
+
+text FortreeCity_Gym_Text_WinonaFinalIntro {
+	"WINONA: We humans can never escape
+	gravity's pull on the ground.
+
+	But by striving for excellence,
+	we have the power to soar!
+
+	You have scaled the pinnacle as
+	the reigning CHAMPION.
+
+	Please, allow me to see your power
+	at full flight!"
+}
+
+text FortreeCity_Gym_Text_WinonaFinalDefeat {
+	"I failed to reach your height again…"
+}
+
+text FortreeCity_Gym_Text_WinonaPostFinal {
+	"WINONA: Even though I have lost,
 	the wings of my heart remain unbroken.
 
 	I can rise and soar again and

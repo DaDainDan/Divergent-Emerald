@@ -50,25 +50,31 @@ script MauvilleCity_Gym_EventScript_UpdateBarriers {
 }
 
 script MauvilleCity_Gym_EventScript_Wattson {
-    trainerbattle_single(TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC)
-    if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
-		trainerbattle_rematch_double(TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons)
+    if (flag(FLAG_SYS_GAME_CLEAR)) {
+        if (flag(FLAG_DEFEATED_WATTSON_FINAL)) {
+			msgbox(MauvilleCity_Gym_Text_WattsonPostFinal, MSGBOX_AUTOCLOSE)
+			end
+		}
+		msgbox(MauvilleCity_Gym_Text_WattsonFinalIntro, MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_WATTSON_3, MauvilleCity_Gym_Text_WattsonFinalDefeat)
+		msgbox(MauvilleCity_Gym_Text_WattsonPostFinal, MSGBOX_AUTOCLOSE)
+		end
+    }
+    elif (defeated(TRAINER_ROXANNE_2)) {
+        trainerbattle_single(TRAINER_WATTSON_2, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons)
 		msgbox(MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE)
 		end
-	}
-    if (!flag(FLAG_RECEIVED_TM_SHOCK_WAVE)) {
-        if (giveitem(ITEM_TM_SHOCK_WAVE) == FALSE) {
-			goto(Common_EventScript_ShowBagIsFull)
-		}
-		msgbox(MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT)
-		setflag(FLAG_RECEIVED_TM_SHOCK_WAVE)
+    }
+    trainerbattle_double(TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC)
+    if (!flag(FLAG_RECEIVED_HM_ROCK_SMASH)) {
+        call(MauvilleCity_Gym_EventScript_GiveSmash)
+    	release_end
     }
     elif (var(VAR_NEW_MAUVILLE_STATE) == 2) {
         msgbox(MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor, MSGBOX_DEFAULT)
+    	release_end
     }
-	else {
-		msgbox(MauvilleCity_Gym_Text_WattsonPostBattle, MSGBOX_DEFAULT)
-	}
+    msgbox(MauvilleCity_Gym_Text_WattsonPostBattle, MSGBOX_DEFAULT)
     release_end
 }
 
@@ -90,11 +96,7 @@ script MauvilleCity_Gym_EventScript_WattsonDefeated {
     special(MauvilleGymDeactivatePuzzle)
     special(DrawWholeMapView)
     playse(SE_UNLOCK)
-    if (giveitem(ITEM_TM_SHOCK_WAVE) == FALSE) {
-		call(Common_EventScript_BagIsFull)
-	}
-    msgbox(MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT)
-    setflag(FLAG_RECEIVED_TM_SHOCK_WAVE)
+    call(MauvilleCity_Gym_EventScript_GiveSmash)
     closemessage
     delay(30)
     playfanfare(MUS_REGISTER_MATCH_CALL)
@@ -103,7 +105,17 @@ script MauvilleCity_Gym_EventScript_WattsonDefeated {
     closemessage
     delay(30)
     setflag(FLAG_ENABLE_WATTSON_MATCH_CALL)
+    setvar(VAR_ROXANNE_CALL_STEP_COUNTER, 0)
+    setflag(FLAG_ENABLE_ROXANNE_FIRST_CALL)
     release_end
+}
+
+script MauvilleCity_Gym_EventScript_GiveSmash {
+    giveitem(ITEM_HM_ROCK_SMASH)
+    setflag(FLAG_RECEIVED_HM_ROCK_SMASH)
+    setflag(FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY)
+    msgbox(MauvilleCity_Gym_Text_ExplainRockSmash, MSGBOX_DEFAULT)
+    return
 }
 
 script MauvilleCity_Gym_EventScript_Switch1 {
@@ -202,11 +214,22 @@ script MauvilleCity_Gym_EventScript_Angelo {
 
 script MauvilleCity_Gym_EventScript_GymGuide {
     lock_faceplayer
-    if (flag(FLAG_DEFEATED_MAUVILLE_GYM)) {
+    if (flag(FLAG_RECEIVED_TM_SHOCK_WAVE)) {
         msgbox(MauvilleCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
-    	release_end
     }
-    msgbox(MauvilleCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT)
+    elif (flag(FLAG_DEFEATED_MAUVILLE_GYM)) {
+        msgbox(MauvilleCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
+		if (!flag(FLAG_RECEIVED_TM_SHOCK_WAVE)) {
+			if (giveitem(ITEM_TM_CHARGE_BEAM) == FALSE) {
+				goto(Common_EventScript_ShowBagIsFull)
+			}
+			msgbox(MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT)
+			setflag(FLAG_RECEIVED_TM_SHOCK_WAVE)
+		}
+    }
+	else {
+		msgbox(MauvilleCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT)
+	}
     release_end
 }
 
@@ -374,6 +397,19 @@ text MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis {
 	You should take this, too!"
 }
 
+text MauvilleCity_Gym_Text_ExplainRockSmash {
+	"That HM contains ROCK SMASH.
+
+	If you come across large boulders
+	that block your path…
+
+	Well, use that HM move and smash
+	them right out of your way!
+
+	Yes, sir! Smash rocks aside, I say!
+	Woohoo!"
+}
+
 text MauvilleCity_Gym_Text_ExplainShockWave {
 	"That TM34 there contains SHOCK WAVE.
 
@@ -427,6 +463,33 @@ text MauvilleCity_Gym_Text_WattsonRematchDefeat {
 
 text MauvilleCity_Gym_Text_WattsonPostRematch {
 	"{SPEAKER NAME_WATSON}We'll have to recharge our
+	batteries again.
+
+	When we're fully charged up, we'll
+	gladly accept your challenge.
+
+	So, come back again sometime,
+	won't you?"
+}
+
+text MauvilleCity_Gym_Text_WattsonFinalIntro {
+	"WATTSON: Ah-ha! Here at last!
+	I know what you want.
+	You want to battle my POKéMON!
+
+	Wahahahaha!
+
+	I'll make sparks fly from you!
+	Don't say I didn't warn you!"
+}
+
+text MauvilleCity_Gym_Text_WattsonFinalDefeat {
+	"Oof…
+	Our batteries ran dry…"
+}
+
+text MauvilleCity_Gym_Text_WattsonPostFinal {
+	"WATTSON: We'll have to recharge our
 	batteries again.
 
 	When we're fully charged up, we'll

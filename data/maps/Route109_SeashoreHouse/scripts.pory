@@ -18,7 +18,7 @@ script Route109_SeashoreHouse_EventScript_Owner {
     }
     elif (flag(FLAG_DEFEATED_SEASHORE_HOUSE)) {
         msgbox(Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_SODA_POP, 6) == FALSE) {
+		if (giveitem(ITEM_BOTTLE_CAP, 6) == FALSE) {
 			msgbox(Route109_SeashoreHouse_Text_BagFull, MSGBOX_DEFAULT)
     		release_end
 		}
@@ -35,7 +35,7 @@ script Route109_SeashoreHouse_EventScript_Owner {
 }
 
 script Route109_SeashoreHouse_EventScript_BuySodaPop {
-	if (checkmoney(300) == FALSE) {
+	if (checkmoney(500) == FALSE) {
 		msgbox(Route109_SeashoreHouse_Text_NotEnoughMoney, MSGBOX_DEFAULT)
 		hidemoneybox
 		release_end
@@ -46,7 +46,7 @@ script Route109_SeashoreHouse_EventScript_BuySodaPop {
 		release_end
 	}
 	msgbox(Route109_SeashoreHouse_Text_HereYouGo, MSGBOX_DEFAULT)
-	removemoney(300)
+	removemoney(500)
 	updatemoneybox
 	goto(Route109_SeashoreHouse_EventScript_GiveSodaPop)
 	end

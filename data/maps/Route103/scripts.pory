@@ -108,6 +108,12 @@ script Route103_EventScript_RouteSign {
     end
 }
 
+script Route103_EventScript_Landon {
+	trainerbattle_single(TRAINER_LANDON, Route103_Text_LandonIntro, Route103_Text_LandonDefeated)
+	msgbox(Route103_Text_LandonPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
 script Route103_EventScript_Daisy {
     trainerbattle_single(TRAINER_DAISY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated)
     msgbox(Route103_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE)

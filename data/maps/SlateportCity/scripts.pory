@@ -84,12 +84,14 @@ script SlateportCity_EventScript_EnergyGuru {
 }
 
 mart SlateportCity_Pokemart_EnergyGuru {
-    ITEM_PROTEIN
-    ITEM_IRON
-    ITEM_CARBOS
-    ITEM_ZINC
-    ITEM_CALCIUM
-    ITEM_HP_UP
+    ITEM_PROTECTOR
+	ITEM_POWER_WEIGHT
+	ITEM_POWER_BRACER
+	ITEM_POWER_BELT
+	ITEM_POWER_LENS
+	ITEM_POWER_BAND
+	ITEM_POWER_ANKLET
+	ITEM_MACHO_BRACE
 }
 
 script SlateportCity_EventScript_EffortRibbonWoman {
@@ -114,13 +116,23 @@ script SlateportCity_EventScript_EffortRibbonWoman {
 }
 
 script SlateportCity_EventScript_Cook {
-    lock_faceplayer
-    if (var(VAR_SLATEPORT_CITY_STATE) == 1) {
-        msgbox(SlateportCity_Text_CaptainComeBackWithBigFish, MSGBOX_DEFAULT)
-    	release_end
-    }
-    msgbox(SlateportCity_Text_SeaweedFullOfLife, MSGBOX_DEFAULT)
-    release_end
+	lock_faceplayer
+	if (var(VAR_SLATEPORT_CITY_STATE) == 1) {
+		msgbox(SlateportCity_Text_CaptainComeBackWithBigFish, MSGBOX_DEFAULT)
+		release_end
+	}
+	message(gText_HowMayIServeYou)
+	waitmessage
+	pokemart(SlateportCity_Pokemart_Herbs)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release_end
+}
+
+mart SlateportCity_Pokemart_Herbs {
+	ITEM_POWER_HERB
+	ITEM_MENTAL_HERB
+	ITEM_WHITE_HERB
+	ITEM_MIRROR_HERB
 }
 
 script SlateportCity_EventScript_OldWoman {
@@ -373,19 +385,24 @@ script SlateportCity_EventScript_AquaGrunt11 {
 	end
 }
 
-script SlateportCity_EventScript_DollClerk {
-    lock_faceplayer
-    message(gText_HowMayIServeYou)
-    waitmessage
-    pokemartdecoration(SlateportCity_PokemartDecor_Dolls)
-    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
-    release_end
+script SlateportCity_EventScript_IncenseClerk {
+	lock_faceplayer
+	message(gText_HowMayIServeYou)
+	waitmessage
+	pokemart(SlateportCity_Pokemart_Incenses)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release_end
 }
 
-mart SlateportCity_PokemartDecor_Dolls {
-    DECOR_AZURILL_DOLL
-    DECOR_MARILL_DOLL
-    DECOR_SKITTY_DOLL
+mart SlateportCity_Pokemart_Incenses {
+    ITEM_SEA_INCENSE
+	ITEM_ROCK_INCENSE
+	ITEM_ODD_INCENSE
+	ITEM_WAVE_INCENSE
+	ITEM_FULL_INCENSE
+	ITEM_LAX_INCENSE
+	ITEM_PURE_INCENSE
+	ITEM_LUCK_INCENSE
 }
 
 script SlateportCity_EventScript_DecorClerk {
@@ -428,8 +445,29 @@ script SlateportCity_EventScript_PowerTMClerk {
 }
 
 mart SlateportCity_Pokemart_PowerTMs {
-    ITEM_TM_HIDDEN_POWER
-    ITEM_TM_SECRET_POWER
+    ITEM_TM_ICY_WIND
+	ITEM_TM_TAILWIND
+	ITEM_TM_SILVER_WIND
+	ITEM_TM_STORED_POWER
+}
+
+script SlateportCity_EventScript_InsuranceSalesman {
+	lock_faceplayer
+	message("Hello, kiddo! Could I interest you in 
+			some insurance POLICIES?")
+	waitmessage
+	pokemart(SlateportCity_Pokemart_Policies)
+	msgbox("Do come back!
+
+			Anything that can go wrong, 
+			will go wrong!", MSGBOX_DEFAULT)
+	release_end
+}
+
+mart SlateportCity_Pokemart_Policies {
+	ITEM_BLUNDER_POLICY
+	ITEM_HAPLESS_POLICY
+	ITEM_WEAKNESS_POLICY
 }
 
 script SlateportCity_EventScript_CaptStern {
@@ -555,17 +593,17 @@ script SlateportCity_EventScript_ChooseBerryPowderItem {
     setvar(VAR_0x8004, SCROLL_MULTI_BERRY_POWDER_VENDOR)
     special(ShowScrollableMultichoice)
     switch (var(VAR_RESULT)) {
-        case 0: setitemandprice(ITEM_ENERGY_POWDER, 50)
-        case 1: setitemandprice(ITEM_ENERGY_ROOT, 80)
-        case 2: setitemandprice(ITEM_HEAL_POWDER, 50)
-        case 3: setitemandprice(ITEM_REVIVAL_HERB, 300)
-        case 4: setitemandprice(ITEM_PROTEIN, 1000)
-        case 5: setitemandprice(ITEM_IRON, 1000)
-        case 6: setitemandprice(ITEM_CARBOS, 1000)
-        case 7: setitemandprice(ITEM_CALCIUM, 1000)
-        case 8: setitemandprice(ITEM_ZINC, 1000)
-        case 9: setitemandprice(ITEM_HP_UP, 1000)
-        case 10: setitemandprice(ITEM_PP_UP, 3000)
+        case 0: setitemandprice(ITEM_ENERGY_POWDER, 80)
+        case 1: setitemandprice(ITEM_ENERGY_ROOT, 120)
+        case 2: setitemandprice(ITEM_HEAL_POWDER, 20)
+        case 3: setitemandprice(ITEM_REVIVAL_HERB, 180)
+        case 4: setitemandprice(ITEM_PROTEIN, 150)
+        case 5: setitemandprice(ITEM_IRON, 150)
+        case 6: setitemandprice(ITEM_CARBOS, 150)
+        case 7: setitemandprice(ITEM_CALCIUM, 150)
+        case 8: setitemandprice(ITEM_ZINC, 150)
+        case 9: setitemandprice(ITEM_HP_UP, 150)
+        case 10: setitemandprice(ITEM_PP_UP, 150)
         case 11:
         case MULTI_B_PRESSED:
 			msgbox(SlateportCity_Text_ComeBackToTradeBerryPowder, MSGBOX_DEFAULT)
@@ -1077,8 +1115,8 @@ text SlateportCity_Text_HarborSign {
 }
 
 text SlateportCity_Text_NameRatersHouseSign {
-	"NAME RATER'S HOUSE
-	“POKéMON nicknames rated.”"
+	"SWAP MASTER'S HOUSE
+	“Up is down. Black is white.”"
 }
 
 text SlateportCity_Text_ExplainBerries {

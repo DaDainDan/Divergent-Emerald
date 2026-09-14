@@ -4,10 +4,12 @@
 #define MAX_COINS 9999
 #define MAX_COIN_DIGITS 4
 
-// #define COIN_LIMIT(n) (MAX_COINS - (n) + 1)
-#define COIN_LIMIT_10 (MAX_COINS - 9)
-#define COIN_LIMIT_20 (MAX_COINS - 19)
-#define COIN_LIMIT_50 (MAX_COINS - 49)
-#define COIN_LIMIT_500 (MAX_COINS - 499)
+#define COIN_LIMIT(n)   (MAX_COINS - (n) + 1)
+// #define COIN_LIMIT_10   (MAX_COINS - 9)
+// #define COIN_LIMIT_20   (MAX_COINS - 19)
+// #define COIN_LIMIT_50   (MAX_COINS - 49)
+// #define COIN_LIMIT_100  (MAX_COINS - 99)
+// #define COIN_LIMIT_500  (MAX_COINS - 499)
+// #define COIN_LIMIT_2500 (MAX_COINS - 2499)
 
 #endif // GUARD_CONSTANTS_COINS_H

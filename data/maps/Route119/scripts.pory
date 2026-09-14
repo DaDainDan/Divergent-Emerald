@@ -86,7 +86,9 @@ script Route119_EventScript_BattleMay {
         case PC_CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_MAY_ROUTE_119_TREECKO, Route119_Text_MayDefeat)
     }
 	msgbox(Route119_Text_MayPresentForYou, MSGBOX_DEFAULT)
-    giveitem(ITEM_HM_FLY)
+    if (giveitem(ITEM_UTILITY_UMBRELLA) == FALSE) {
+        goto(Common_EventScript_BagIsFull)
+    }
     setflag(FLAG_RECEIVED_HM_FLY)
     msgbox(Route119_Text_MayExplainFly, MSGBOX_DEFAULT)
     goto(Route119_EventScript_RivalExitScottArrive)
@@ -101,7 +103,9 @@ script Route119_EventScript_BattleBrendan {
         case PC_CHOSE_MUDKIP: trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_119_TREECKO, Route119_Text_BrendanDefeat)
     }
 	msgbox(Route119_Text_BrendanIllGiveYouThis, MSGBOX_DEFAULT)
-    giveitem(ITEM_HM_FLY)
+    if (giveitem(ITEM_UTILITY_UMBRELLA) == FALSE) {
+        goto(Common_EventScript_BagIsFull)
+    }
     setflag(FLAG_RECEIVED_HM_FLY)
     msgbox(Route119_Text_BrendanExplainFly, MSGBOX_DEFAULT)
     goto(Route119_EventScript_RivalExitScottArrive)
@@ -178,15 +182,87 @@ script Route119_EventScript_WeatherInstituteSign {
     end
 }
 
+script Route119_EventScript_MoveTutor {
+	lock_faceplayer
+	if (!flag(FLAG_MET_ROUTE_119_FERAL_TUTOR)) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		setflag(FLAG_MET_ROUTE_119_FERAL_TUTOR)
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_C, SCROLL_MULTI_FERAL_MOVE_TUTOR)
+	setvar(VAR_0x8006, 0)
+	goto(Route119_EventScript_ChooseFeralMove)
+	end
+}
+
+script Route119_EventScript_ChooseFeralMove {
+	setvar(VAR_0x8004, SCROLL_MULTI_FERAL_MOVE_TUTOR)
+	special(ShowScrollableMultichoice)
+	copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0: setvar(VAR_0x8005, MOVE_DRAGON_CLAW)
+		case 1: setvar(VAR_0x8005, MOVE_METAL_CLAW)
+		case 2: setvar(VAR_0x8005, MOVE_SHADOW_CLAW)
+		case 3: setvar(VAR_0x8005, MOVE_SICKLE_CLAW)
+		case 4: setvar(VAR_0x8005, MOVE_FIRE_FANG)
+		case 5: setvar(VAR_0x8005, MOVE_ICE_FANG)
+		case 6: setvar(VAR_0x8005, MOVE_POISON_FANG)
+		case 7: setvar(VAR_0x8005, MOVE_THUNDER_FANG)
+		case 8:
+		case MULTI_B_PRESSED:
+			goto(Route119_EventScript_ExitTutorMoveSelect)
+	}
+	goto(Route119_EventScript_ConfirmMoveSelection)
+	end
+}
+
+script Route119_EventScript_ConfirmMoveSelection {
+	special(BufferBattleFrontierTutorMoveName)
+	msgbox("\.", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		message("\.")
+        waitmessage
+        setvar(VAR_0x8006, 1)
+        goto(Route119_EventScript_ChooseFeralMove)
+	}
+	if (checkitem(ITEM_TINY_MUSHROOM) == TRUE) {
+		msgbox("\.", MSGBOX_DEFAULT)
+        fadescreen(FADE_TO_BLACK)
+        special(CloseBattleFrontierTutorWindow)
+        chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+        waitstate
+        if (var(VAR_RESULT) == FALSE) {
+            msgbox(Route119_Text_DeclineTutor, MSGBOX_DEFAULT)
+            release_end
+        }
+        msgbox("\.", MSGBOX_DEFAULT)
+        removeitem(ITEM_TINY_MUSHROOM, 1)
+        release_end
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	goto(Route119_EventScript_ExitTutorMoveSelect)
+	end
+}
+
+script Route119_EventScript_ExitTutorMoveSelect {
+	special(CloseBattleFrontierTutorWindow) 
+	msgbox(Route119_Text_DeclineTutor, MSGBOX_DEFAULT)
+	release_end
+}
+
+text Route119_Text_DeclineTutor {
+	"\."
+}
+
 script Route119_EventScript_Brent {
     trainerbattle_single(TRAINER_BRENT, Route119_Text_BrentIntro, Route119_Text_BrentDefeat)
     msgbox(Route119_Text_BrentPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
-script Route119_EventScript_Donald {
-    trainerbattle_single(TRAINER_DONALD, Route119_Text_DonaldIntro, Route119_Text_DonaldDefeat)
-    msgbox(Route119_Text_DonaldPostBattle, MSGBOX_AUTOCLOSE)
+script Route119_EventScript_Elias {
+    trainerbattle_single(TRAINER_ELIAS, Route119_Text_EliasIntro, Route119_Text_EliasDefeat)
+    msgbox(Route119_Text_EliasPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -196,9 +272,9 @@ script Route119_EventScript_Taylor {
     end
 }
 
-script Route119_EventScript_Doug {
-    trainerbattle_single(TRAINER_DOUG, Route119_Text_DougIntro, Route119_Text_DougDefeat)
-    msgbox(Route119_Text_DougPostBattle, MSGBOX_AUTOCLOSE)
+script Route119_EventScript_Jason {
+    trainerbattle_single(TRAINER_JASON, Route119_Text_JasonIntro, Route119_Text_JasonDefeat)
+    msgbox(Route119_Text_JasonPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -522,4 +598,52 @@ text Route119_Text_TrainerTipsDecoration {
 	Pick your favorite items and create
 	your very own SECRET BASE exactly the
 	way you want."
+}
+
+text Route119_Text_DragonClawDesc {
+	"A swipe of sharp\n"
+	"claws filled with\n"
+	"draconic fury."
+}
+
+text Route119_Text_MetalClawDesc {
+	"A swipe of sharp\n"
+	"steel-like claws.\n"
+	"Can lower Def."
+}
+
+text Route119_Text_ShadowClawDesc {
+	"A swipe of sharp\n"
+	"cursed claws that\n"
+	"can lower Sp. Def."
+}
+
+text Route119_Text_SickleClawDesc {
+	"A swipe of sharp\n"
+	"chilled claws that\n"
+	"can frostbite."
+}
+
+text Route119_Text_FireFangDesc {
+	"A bite with sharp\n"
+	"fangs that can\n"
+	"inflict burn."
+}
+
+text Route119_Text_IceFangDesc {
+	"A bite with sharp\n"
+	"fangs that can\n"
+	"inflict frost."
+}
+
+text Route119_Text_PoisonFangDesc {
+	"A bite with sharp\n"
+	"fangs that can\n"
+	"inflict poison."
+}
+
+text Route119_Text_ThunderFangDesc {
+	"A bite with sharp\n"
+	"fangs that can\n"
+	"cause paralysis."
 }

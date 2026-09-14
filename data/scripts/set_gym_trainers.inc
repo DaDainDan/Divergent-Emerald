@@ -25,16 +25,19 @@ Common_EventScript_SetGymTrainers_Frlg::
 RustboroCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_TRINITY
 	settrainerflag TRAINER_TOMMY
+	settrainerflag TRAINER_SADIE
 	settrainerflag TRAINER_MARC
 	return
 
 DewfordTown_Gym_SetGymTrainers::
 	settrainerflag TRAINER_TAKAO
 	settrainerflag TRAINER_JOCELYN
-	settrainerflag TRAINER_LAURA
-	settrainerflag TRAINER_BRENDEN
+	@ settrainerflag TRAINER_LAURA
+	settrainerflag TRAINER_BRYSON
 	settrainerflag TRAINER_CRISTIAN
 	settrainerflag TRAINER_LILITH
+	settrainerflag TRAINER_LEVI
+	settrainerflag TRAINER_TANNER
 	return
 
 MauvilleCity_Gym_SetGymTrainers::
@@ -43,6 +46,7 @@ MauvilleCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_BEN
 	settrainerflag TRAINER_VIVIAN
 	settrainerflag TRAINER_ANGELO
+	settrainerflag TRAINER_GEORGE
 	return
 
 LavaridgeTown_Gym_SetGymTrainers::
@@ -52,26 +56,27 @@ LavaridgeTown_Gym_SetGymTrainers::
 	settrainerflag TRAINER_GERALD
 	settrainerflag TRAINER_DANIELLE
 	settrainerflag TRAINER_JACE
-	settrainerflag TRAINER_JEFF
+	settrainerflag TRAINER_MARLENE
 	settrainerflag TRAINER_ELI
 	return
 
 PetalburgCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_RANDALL
 	settrainerflag TRAINER_PARKER
-	settrainerflag TRAINER_GEORGE
+	settrainerflag TRAINER_TERRY
 	settrainerflag TRAINER_BERKE
 	settrainerflag TRAINER_MARY
-	settrainerflag TRAINER_ALEXIA
+	@ settrainerflag TRAINER_AUBREY
 	settrainerflag TRAINER_JODY
+	settrainerflag TRAINER_KAZAMA
 	return
 
 FortreeCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_JARED
-	settrainerflag TRAINER_FLINT
+	settrainerflag TRAINER_SOPHIE
+	settrainerflag TRAINER_MELANIE
 	settrainerflag TRAINER_ASHLEY
 	settrainerflag TRAINER_EDWARDO
-	settrainerflag TRAINER_HUMBERTO
+	settrainerflag TRAINER_JORDAN
 	settrainerflag TRAINER_DARIUS
 	return
 
@@ -79,26 +84,28 @@ MossdeepCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_PRESTON
 	settrainerflag TRAINER_VIRGIL
 	settrainerflag TRAINER_BLAKE
-	settrainerflag TRAINER_HANNAH
+	@ settrainerflag TRAINER_HANNAH
 	settrainerflag TRAINER_SAMANTHA
 	settrainerflag TRAINER_MAURA
-	settrainerflag TRAINER_SYLVIA
+	@ settrainerflag TRAINER_SYLVIA
 	settrainerflag TRAINER_NATE
 	settrainerflag TRAINER_KATHLEEN
 	settrainerflag TRAINER_CLIFFORD
 	settrainerflag TRAINER_MACEY
 	settrainerflag TRAINER_NICHOLAS
+	settrainerflag TRAINER_FRANCISCO
+	settrainerflag TRAINER_KENSHIRO
 	return
 
 SootopolisCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_ANDREA
-	settrainerflag TRAINER_CRISSY
+	settrainerflag TRAINER_CESAR
 	settrainerflag TRAINER_BRIANNA
 	settrainerflag TRAINER_CONNIE
 	settrainerflag TRAINER_BRIDGET
 	settrainerflag TRAINER_OLIVIA
 	settrainerflag TRAINER_TIFFANY
-	settrainerflag TRAINER_BETHANY
+	settrainerflag TRAINER_BRADLEY
 	settrainerflag TRAINER_ANNIKA
 	settrainerflag TRAINER_DAPHNE
 	return

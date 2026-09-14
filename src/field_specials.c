@@ -174,8 +174,10 @@ static void Task_EndScreenShake(u8 taskId);
 
 static const u8 sText_BigGuy[] = _("Big guy");
 static const u8 sText_BigGirl[] = _("Big girl");
+
 static const u8 sText_Son[] = _("son");
 static const u8 sText_Daughter[] = _("daughter");
+
 static const u8 sText_99TimesPlus[] = _("99 times +");
 static const u8 sText_1MinutePlus[] = _("1 minute +");
 static const u8 sText_SpaceSeconds[] = _(" seconds");
@@ -185,8 +187,8 @@ static const u8 sText_Wallace[] = _("WALLACE");
 static const u8 sText_Steven[] = _("STEVEN");
 static const u8 sText_Brawly[] = _("BRAWLY");
 static const u8 sText_Winona[] = _("WINONA");
-static const u8 sText_Phoebe[] = _("PHOEBE");
-static const u8 sText_Glacia[] = _("GLACIA");
+static const u8 sText_Phoebe[] = _("LEILANI");
+static const u8 sText_Glacia[] = _("ROSALYNN");
 
 void Special_ShowDiploma(void)
 {
@@ -503,7 +505,7 @@ bool32 ShouldDoRoxanneCall(void)
 
 bool32 ShouldDoRivalRayquazaCall(void)
 {
-    if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
+    if (FlagGet(FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT))
     {
         switch (gMapHeader.mapType)
         {
@@ -974,6 +976,58 @@ void GetRivalSonDaughterString(void)
         StringCopy(gStringVar1, sText_Son);
 }
 
+void GetPlayerMaleFemaleString(void)
+{
+    static const u8 *const sPlayerAddressTerms[GENDER_COUNT][ADDR_COUNT][2] =
+    {
+        [MALE] =
+        {
+            [ADDR_BIG_GUY]   = {sText_BigGuy,                 COMPOUND_STRING("big guy")},
+            [ADDR_SIR]       = {COMPOUND_STRING("Sir"),       COMPOUND_STRING("sir")},
+            [ADDR_LAD]       = {COMPOUND_STRING("Lad"),       COMPOUND_STRING("lad")},
+            [ADDR_BOY]       = {COMPOUND_STRING("Boy"),       COMPOUND_STRING("boy")},
+            [ADDR_FELLA]     = {COMPOUND_STRING("Fella"),     COMPOUND_STRING("fella")},
+            [ADDR_SONNY]     = {COMPOUND_STRING("Sonny"),     COMPOUND_STRING("sonny")},
+            [ADDR_BRO]       = {COMPOUND_STRING("Bro"),       COMPOUND_STRING("bro")},
+            [ADDR_MISTER]    = {COMPOUND_STRING("Mister"),    COMPOUND_STRING("mister")},
+            [ADDR_BOYO]      = {COMPOUND_STRING("Boyo"),      COMPOUND_STRING("boyo")},
+            [ADDR_CHAMP]     = {COMPOUND_STRING("Champ"),     COMPOUND_STRING("champ")},
+            [ADDR_YOUNG_MAN] = {COMPOUND_STRING("Young man"), COMPOUND_STRING("young man")},
+            [ADDR_SPORT]     = {COMPOUND_STRING("Sport"),     COMPOUND_STRING("sport")},
+            [ADDR_LADDIE]    = {COMPOUND_STRING("Laddie"),    COMPOUND_STRING("laddie")},
+            [ADDR_SON]       = {COMPOUND_STRING("Son"),       COMPOUND_STRING("son")},
+            [ADDR_MAN]       = {COMPOUND_STRING("Man"),       COMPOUND_STRING("man")},
+            [ADDR_MATE]      = {COMPOUND_STRING("Mate"),      COMPOUND_STRING("mate")},
+            [ADDR_BUDDY]     = {COMPOUND_STRING("Buddy"),     COMPOUND_STRING("buddy")},
+            [ADDR_CHIEF]     = {COMPOUND_STRING("Chief"),     COMPOUND_STRING("chief")},
+        },
+        [FEMALE] =
+        {
+            [ADDR_BIG_GUY]   = {sText_BigGirl,                  COMPOUND_STRING("big girl")},
+            [ADDR_SIR]       = {COMPOUND_STRING("Ma'am"),       COMPOUND_STRING("ma'am")},
+            [ADDR_LAD]       = {COMPOUND_STRING("Lassie"),      COMPOUND_STRING("lassie")},
+            [ADDR_BOY]       = {COMPOUND_STRING("Girl"),        COMPOUND_STRING("girl")},
+            [ADDR_FELLA]     = {COMPOUND_STRING("Gal"),         COMPOUND_STRING("gal")},
+            [ADDR_SONNY]     = {COMPOUND_STRING("Missy"),       COMPOUND_STRING("missy")},
+            [ADDR_BRO]       = {COMPOUND_STRING("Sis"),         COMPOUND_STRING("sis")},
+            [ADDR_MISTER]    = {COMPOUND_STRING("Miss"),        COMPOUND_STRING("miss")},
+            [ADDR_BOYO]      = {COMPOUND_STRING("Girlie"),      COMPOUND_STRING("girlie")},
+            [ADDR_CHAMP]     = {COMPOUND_STRING("Princess"),    COMPOUND_STRING("princess")},
+            [ADDR_YOUNG_MAN] = {COMPOUND_STRING("Young lady"),  COMPOUND_STRING("young lady")},
+            [ADDR_SPORT]     = {COMPOUND_STRING("Little lady"), COMPOUND_STRING("little lady")},
+            [ADDR_LADDIE]    = {COMPOUND_STRING("Dearie"),      COMPOUND_STRING("dearie")},
+            [ADDR_SON]       = {COMPOUND_STRING("Missy"),       COMPOUND_STRING("missy")},
+            [ADDR_MAN]       = {COMPOUND_STRING("Girl"),        COMPOUND_STRING("girl")},
+            [ADDR_MATE]      = {COMPOUND_STRING("Love"),        COMPOUND_STRING("love")},
+            [ADDR_BUDDY]     = {COMPOUND_STRING("Pal"),         COMPOUND_STRING("pal")},
+            [ADDR_CHIEF]     = {COMPOUND_STRING("Princess"),    COMPOUND_STRING("princess")},
+        },
+    };
+    
+    bool8 lowerCase = (gSpecialVar_0x8007 != 1) ? TRUE : FALSE;
+    StringCopy(gStringVar1, sPlayerAddressTerms[gSaveBlock2Ptr->playerGender][gSpecialVar_0x8006][lowerCase]);
+}
+
 u8 GetBattleOutcome(void)
 {
     return gBattleOutcome;
@@ -1353,6 +1407,46 @@ void IsGrassTypeInParty(void)
     gSpecialVar_Result = FALSE;
 }
 
+void IsShelmetOrKarrablastInParty(void)
+{
+    u8 i;
+    enum Species species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (species == SPECIES_SHELMET || species == SPECIES_KARRABLAST)
+            {
+                if (species == SPECIES_SHELMET)
+                    gSpecialVar_0x8009 = SPECIES_KARRABLAST;
+                else
+                    gSpecialVar_0x8009 = SPECIES_SHELMET;
+                
+                gSpecialVar_Result = TRUE;
+                return;
+            }
+        }
+    }
+    gSpecialVar_Result = FALSE;
+}
+
+void DoesPlayerHaveFossil(void)
+{
+    u8 i;
+    for (i = ITEM_HELIX_FOSSIL; i <= ITEM_SAIL_FOSSIL; i++)
+    {
+        if(CheckBagHasItem(i, 1))
+        {
+            gSpecialVar_Result = TRUE;
+            return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+}
+
 void SpawnCameraObject(void)
 {
     u8 obj = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_BOY_1,
@@ -1384,6 +1478,21 @@ void GetSecretBaseNearbyMapName(void)
 u16 GetBattleTowerSinglesStreak(void)
 {
     return GetGameStat(GAME_STAT_BATTLE_TOWER_SINGLES_STREAK);
+}
+
+u16 GetHatchedEggCount(void)
+{
+    return GetGameStat(GAME_STAT_HATCHED_EGGS);
+}
+
+u16 GetChampionRematch(void)
+{
+    return (GetGameStat(GAME_STAT_ENTERED_HOF) % 5);
+}
+
+u16 GetEliteFourRematch(void)
+{
+    return (GetGameStat(GAME_STAT_ENTERED_HOF) % 2);
 }
 
 void BufferEReaderTrainerName(void)
@@ -2450,9 +2559,148 @@ void ShowScrollableMultichoice(void)
         task->tTaskId = taskId;
         break;
     case SCROLL_MULTI_BF_MOVE_TUTOR_1:
-    case SCROLL_MULTI_BF_MOVE_TUTOR_2:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 11;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BF_MOVE_TUTOR_2:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 15;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_CUTTER_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_WHIP_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 5;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_PUNCH_KICK_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_FERAL_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 9;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BIPEDAL_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 11;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_WEATHER_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_TERRAIN_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 9;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_SIDE_STATUS_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_SWAP_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 6;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_ROOM_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_EXPLOSION_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 16;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_GRAB_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_ULTIMATE_MOVE_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
         task->tLeft = 15;
         task->tTop = 1;
         task->tWidth = 14;
@@ -2617,30 +2865,192 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_MOVE_TUTOR_1] =
     {
-        COMPOUND_STRING("SOFTBOILED{CLEAR_TO 78}16BP"),
-        COMPOUND_STRING("SEISMIC TOSS{CLEAR_TO 78}24BP"),
-        COMPOUND_STRING("DREAM EATER{CLEAR_TO 78}24BP"),
-        COMPOUND_STRING("MEGA PUNCH{CLEAR_TO 78}24BP"),
-        COMPOUND_STRING("MEGA KICK{CLEAR_TO 78}48BP"),
-        COMPOUND_STRING("BODY SLAM{CLEAR_TO 78}48BP"),
-        COMPOUND_STRING("ROCK SLIDE{CLEAR_TO 78}48BP"),
-        COMPOUND_STRING("COUNTER{CLEAR_TO 78}48BP"),
-        COMPOUND_STRING("THUNDER WAVE{CLEAR_TO 78}48BP"),
-        COMPOUND_STRING("SWORDS DANCE{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("DOUBLE-EDGE{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("FLARE BLITZ{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("WILD CHARGE{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("WAVE CRASH{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("FROST CHARGE{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("BRAVE BIRD{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("HEAD RAM{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("BOULDER RUSH{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("DRAGON RUSH{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("ADAMANT ASS…{CLEAR_TO 78}36BP"),
         gText_Exit
     },
     [SCROLL_MULTI_BF_MOVE_TUTOR_2] =
     {
-        COMPOUND_STRING("DEFENSE CURL{CLEAR_TO 78}16BP"),
-        COMPOUND_STRING("SNORE{CLEAR_TO 78}24BP"),
-        COMPOUND_STRING("MUD-SLAP{CLEAR_TO 78}24BP"),
-        COMPOUND_STRING("SWIFT{CLEAR_TO 78}24BP"),
-        COMPOUND_STRING("ICY WIND{CLEAR_TO 78}24BP"),
-        COMPOUND_STRING("ENDURE{CLEAR_TO 78}48BP"),
-        COMPOUND_STRING("PSYCH UP{CLEAR_TO 78}48BP"),
-        COMPOUND_STRING("ICE PUNCH{CLEAR_TO 78}48BP"),
-        COMPOUND_STRING("THUNDERPUNCH{CLEAR_TO 78}48BP"),
-        COMPOUND_STRING("FIRE PUNCH{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("OVERHEAT{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("OVERLOAD{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("LEAF STORM{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("BLIZZARD{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("FOCUS BLAST{CLEAR_TO 78}36BP"),
+        // COMPOUND_STRING("SKY UPPERCUT{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("GUNK SHOT{CLEAR_TO 78}36BP"),
+        // COMPOUND_STRING("SLUDGE WAVE{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("EARTHQUAKE{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("HURRICANE{CLEAR_TO 78}36BP"),
+        // COMPOUND_STRING("SKY ATTACK{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("FORCE OF WILL{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("METEOR SHOWER{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("DRACO METEOR{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("BLOOD MOON{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("LUSTER PURGE{CLEAR_TO 78}36BP"),
+        COMPOUND_STRING("FLEUR CANNON{CLEAR_TO 78}36BP"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_CUTTER_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("SLASH"),
+        COMPOUND_STRING("NIGHT SLASH"),
+        COMPOUND_STRING("LEAF BLADE"),
+        COMPOUND_STRING("SWALLOW REVERSAL"),
+        COMPOUND_STRING("AIR SLASH"),
+        COMPOUND_STRING("PSYCHO CUT"),
+        COMPOUND_STRING("AQUA CUTTER"),
+        COMPOUND_STRING("SHINING SLASH"),
+        COMPOUND_STRING("HONE EDGE"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_WHIP_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("WATER WHIP"),
+        COMPOUND_STRING("FIRE LASH"),
+        COMPOUND_STRING("LASH OUT"),
+        COMPOUND_STRING("POWER WHIP"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_PUNCH_KICK_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("FIRE PUNCH"),
+        COMPOUND_STRING("ICE PUNCH"),
+        COMPOUND_STRING("THUNDER PUNCH"),
+        COMPOUND_STRING("SHADOW PUNCH"),
+        // COMPOUND_STRING("MEGA PUNCH"),
+        COMPOUND_STRING("BLAZE KICK"),
+        COMPOUND_STRING("CIRCUIT KICKS"),
+        // COMPOUND_STRING("MEGA KICK"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_FERAL_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("DRAGON CLAW"),
+        COMPOUND_STRING("METAL CLAW"),
+        COMPOUND_STRING("SHADOW CLAW"),
+        COMPOUND_STRING("SICKLE CLAW"),
+        COMPOUND_STRING("FIRE FANG"),
+        COMPOUND_STRING("ICE FANG"),
+        COMPOUND_STRING("POISON FANG"),
+        COMPOUND_STRING("THUNDER FANG"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_BIPEDAL_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("HEADBUTT"),
+        COMPOUND_STRING("IRON HEAD"),
+        COMPOUND_STRING("RIME HEAD"),
+        COMPOUND_STRING("ZEN HEADBUTT"),
+        COMPOUND_STRING("AQUA TAIL"),
+        COMPOUND_STRING("DRAGON TAIL"),
+        COMPOUND_STRING("POISON TAIL"),
+        COMPOUND_STRING("IRON TAIL"),
+        COMPOUND_STRING("LIGHTNING TAIL"),
+        COMPOUND_STRING("TORCH TAIL"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_WEATHER_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("SUNNY DAY"),
+        COMPOUND_STRING("RAIN DANCE"),
+        COMPOUND_STRING("SANDSTORM"),
+        COMPOUND_STRING("SNOWSCAPE"),
+        COMPOUND_STRING("STORM CALL"),
+        COMPOUND_STRING("WEATHER BALL"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_TERRAIN_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("GRASSY TERRAIN"),
+        COMPOUND_STRING("ELECTRIC TERRAIN"),
+        COMPOUND_STRING("PSYCHIC TERRAIN"),
+        COMPOUND_STRING("MISTY TERRAIN"),
+        COMPOUND_STRING("BUGGY TERRAIN"),
+        COMPOUND_STRING("FAULTY TERRAIN"),
+        COMPOUND_STRING("SPOOKY TERRAIN"),
+        COMPOUND_STRING("TERRAIN PULSE"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_SIDE_STATUS_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("STEALTH ROCK"),
+        COMPOUND_STRING("SPIKES"),
+        COMPOUND_STRING("TOXIC SPIKES"),
+        COMPOUND_STRING("ICE SHARDS"),
+        COMPOUND_STRING("BOOBY TRAP"),
+        COMPOUND_STRING("BARRIER"),
+        COMPOUND_STRING("LIGHT SCREEN"),
+        COMPOUND_STRING("REFLECT"),
+        COMPOUND_STRING("AURORA VEIL"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_SWAP_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("SKILL SWAP"),
+        COMPOUND_STRING("POWER SWAP"),
+        COMPOUND_STRING("GUARD SWAP"),
+        COMPOUND_STRING("SPEED SWAP"),
+        COMPOUND_STRING("POWER TRICK"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_ROOM_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("TRICK ROOM"),
+        COMPOUND_STRING("WONDER ROOM"),
+        COMPOUND_STRING("ERROR ROOM"),
+        COMPOUND_STRING("STATIC ROOM"),
+        COMPOUND_STRING("REVERSE ROOM"),
+        COMPOUND_STRING("GRIM ROOM"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_EXPLOSION_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("SUPERNOVA{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("OSMOTIC BURST{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("BRUMAL BURST{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("SAND BURST{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("CHLOROBLAST{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("WIT'S END{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("KA-BOOM!{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("ARC BLAST{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("UPHEAVAL{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("BUG BURST{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("SOUL SHATTER{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("ROCK RUPTURE{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("BLAST SHELL{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("NOX… BLOWOUT{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("SHATTER{CLEAR_TO 78}48BP"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_GRAB_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("CRUSH GRIP"),
+        COMPOUND_STRING("BURNING GRASP"),
+        COMPOUND_STRING("LIGHTNING GRASP"),
+        COMPOUND_STRING("GLACIAL GRASP"),
+        COMPOUND_STRING("PUTRID GRASP"),
+        COMPOUND_STRING("DARK GRASP"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_ULTIMATE_MOVE_TUTOR] =
+    {
+        COMPOUND_STRING("HYPER BEAM{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("FISSURE{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("PURGATORY{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("INFERNO{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("ZAP CANNON{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("SHEER COLD{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("SUPERPOWER{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("STEEL BEAM{CLEAR_TO 78}48BP"),
+        COMPOUND_STRING("METEOR BEAM{CLEAR_TO 78}48BP"),
         gText_Exit
     },
     [SCROLL_MULTI_SS_TIDAL_DESTINATION] =
@@ -3203,7 +3613,7 @@ static void ShowBattleFrontierTutorWindow(enum ScrollMulti menu, u16 selection)
         .baseBlock = 28,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || (menu >= SCROLL_MULTI_CUTTER_MOVE_TUTOR && menu <= SCROLL_MULTI_ULTIMATE_MOVE_TUTOR))
     {
         if (gSpecialVar_0x8006 == 0)
         {
@@ -3218,41 +3628,240 @@ static void ShowBattleFrontierTutorMoveDescription(enum ScrollMulti menu, u16 se
 {
     static const u8 *const sBattleFrontier_TutorMoveDescriptions1[] =
     {
-        BattleFrontier_Lounge7_Text_SoftboiledDesc,
-        BattleFrontier_Lounge7_Text_SeismicTossDesc,
-        BattleFrontier_Lounge7_Text_DreamEaterDesc,
-        BattleFrontier_Lounge7_Text_MegaPunchDesc,
-        BattleFrontier_Lounge7_Text_MegaKickDesc,
-        BattleFrontier_Lounge7_Text_BodySlamDesc,
-        BattleFrontier_Lounge7_Text_RockSlideDesc,
-        BattleFrontier_Lounge7_Text_CounterDesc,
-        BattleFrontier_Lounge7_Text_ThunderWaveDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_DoubleEdgeDesc,
+        BattleFrontier_Lounge7_Text_FlareBlitzDesc,
+        BattleFrontier_Lounge7_Text_WildChargeDesc,
+        BattleFrontier_Lounge7_Text_WaveCrashDesc,
+        BattleFrontier_Lounge7_Text_FrostChargeDesc,
+        BattleFrontier_Lounge7_Text_BraveBirdDesc,
+        BattleFrontier_Lounge7_Text_HeadRamDesc,
+        BattleFrontier_Lounge7_Text_BoulderRushDesc,
+        BattleFrontier_Lounge7_Text_DragonRushDesc,
+        BattleFrontier_Lounge7_Text_AdamantAssaultDesc,
         gText_Exit,
     };
 
     static const u8 *const sBattleFrontier_TutorMoveDescriptions2[] =
     {
-        BattleFrontier_Lounge7_Text_DefenseCurlDesc,
-        BattleFrontier_Lounge7_Text_SnoreDesc,
-        BattleFrontier_Lounge7_Text_MudSlapDesc,
-        BattleFrontier_Lounge7_Text_SwiftDesc,
-        BattleFrontier_Lounge7_Text_IcyWindDesc,
-        BattleFrontier_Lounge7_Text_EndureDesc,
-        BattleFrontier_Lounge7_Text_PsychUpDesc,
-        BattleFrontier_Lounge7_Text_IcePunchDesc,
-        BattleFrontier_Lounge7_Text_ThunderPunchDesc,
-        BattleFrontier_Lounge7_Text_FirePunchDesc,
+        BattleFrontier_Lounge7_Text_OverheatDesc,
+        BattleFrontier_Lounge7_Text_OverloadDesc,
+        BattleFrontier_Lounge7_Text_LeafStormDesc,
+        BattleFrontier_Lounge7_Text_BlizzardDesc,
+        BattleFrontier_Lounge7_Text_FocusBlastDesc,
+        // BattleFrontier_Lounge7_Text_SkyUppercutDesc,
+        BattleFrontier_Lounge7_Text_GunkShotDesc,
+        // BattleFrontier_Lounge7_Text_SludgeWaveDesc,
+        BattleFrontier_Lounge7_Text_EarthquakeDesc,
+        BattleFrontier_Lounge7_Text_HurricaneDesc,
+        // BattleFrontier_Lounge7_Text_SkyAttackDesc,
+        BattleFrontier_Lounge7_Text_ForceofWillDesc,
+        BattleFrontier_Lounge7_Text_MeteorShowerDesc,
+	    BattleFrontier_Lounge7_Text_DracoMeteorDesc,
+        BattleFrontier_Lounge7_Text_BloodMoonDesc,
+        BattleFrontier_Lounge7_Text_LusterPurgeDesc,
+        BattleFrontier_Lounge7_Text_FleurCannonDesc,
         gText_Exit,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    static const u8 *const sCuttersHouse_TutorMoveDescriptions[] =
+    {
+        RustboroCity_CuttersHouse_Text_SlashDesc,
+        RustboroCity_CuttersHouse_Text_NightSlashDesc,
+        RustboroCity_CuttersHouse_Text_LeafBladeDesc,
+        RustboroCity_CuttersHouse_Text_SwallowReversalDesc,
+        RustboroCity_CuttersHouse_Text_AirSlashDesc,
+        RustboroCity_CuttersHouse_Text_PsychoCutDesc,
+        RustboroCity_CuttersHouse_Text_AquaCutterDesc,
+        RustboroCity_CuttersHouse_Text_ShiningSlashDesc,
+        RustboroCity_CuttersHouse_Text_HoneEdgeDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sHerbShop_TutorMoveDescriptions[] =
+    {
+        LavaridgeTown_HerbShop_Text_WaterWhipDesc,
+        LavaridgeTown_HerbShop_Text_FireLashDesc,
+        LavaridgeTown_HerbShop_Text_LashOutDesc,
+        LavaridgeTown_HerbShop_Text_PowerWhipDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sKarateDojo_TutorMoveDescriptions[] =
+    {
+        PetalburgCity_Dojo_1F_Right_Text_FirePunchDesc,
+        PetalburgCity_Dojo_1F_Right_Text_IcePunchDesc,
+        PetalburgCity_Dojo_1F_Right_Text_ThunderPunchDesc,
+        PetalburgCity_Dojo_1F_Right_Text_ShadowPunchDesc,
+        PetalburgCity_Dojo_1F_Right_Text_BlazeKickDesc,
+        PetalburgCity_Dojo_1F_Right_Text_CircuitKicksDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sRoute119_TutorMoveDescriptions[] =
+    {
+        Route119_Text_DragonClawDesc,
+        Route119_Text_MetalClawDesc,
+        Route119_Text_ShadowClawDesc,
+        Route119_Text_SickleClawDesc,
+        Route119_Text_FireFangDesc,
+        Route119_Text_IceFangDesc,
+        Route119_Text_PoisonFangDesc,
+        Route119_Text_ThunderFangDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sRoute114_TutorMoveDescriptions[] =
+    {
+        Route114_Text_HeadbuttDesc,
+        Route114_Text_IronHeadDesc,
+        Route114_Text_RimeHeadDesc,
+        Route114_Text_ZenHeadbuttDesc,
+        Route114_Text_AquaTailDesc,
+        Route114_Text_DragonTailDesc,
+        Route114_Text_PoisonTailDesc,
+        Route114_Text_IronTailDesc,
+        Route114_Text_LightningTailDesc,
+        Route114_Text_TorchTailDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sWeatherInstitute_TutorMoveDescriptions[] =
+    {
+        Route119_WeatherInstitute_1F_Text_SunnyDayDesc,
+        Route119_WeatherInstitute_1F_Text_RainDanceDesc,
+        Route119_WeatherInstitute_1F_Text_SandstormDesc,
+        Route119_WeatherInstitute_1F_Text_SnowscapeDesc,
+        Route119_WeatherInstitute_1F_Text_StormCallDesc,
+        Route119_WeatherInstitute_1F_Text_WeatherBallDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sAlteringCave_TutorMoveDescriptions[] =
+    {
+        AlteringCave_B2F_Text_GrassyTerrainDesc,
+        AlteringCave_B2F_Text_ElectricTerrainDesc,
+        AlteringCave_B2F_Text_PsychicTerrainDesc,
+        AlteringCave_B2F_Text_MistyTerrainDesc,
+        AlteringCave_B2F_Text_BuggyTerrainDesc,
+        AlteringCave_B2F_Text_FaultyTerrainDesc,
+        AlteringCave_B2F_Text_SpookyTerrainDesc,    
+        AlteringCave_B2F_Text_TerrainPulseDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sFortreeCity_TutorMoveDescriptions[] =
+    {
+        FortreeCity_Text_StealthRockDesc,
+        FortreeCity_Text_SpikesDesc,
+        FortreeCity_Text_ToxicSpikesDesc,
+        FortreeCity_Text_IceShardsDesc,
+        FortreeCity_Text_BoobyTrapDesc,
+        FortreeCity_Text_BarrierDesc,
+        FortreeCity_Text_LightScreenDesc,
+        FortreeCity_Text_ReflectDesc,
+        FortreeCity_Text_AuroraVeilDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sSlateportCity_TutorMoveDescriptions[] =
+    {
+        SlateportCity_NameRatersHouse_Text_SkillSwapDesc,
+        SlateportCity_NameRatersHouse_Text_PowerSwapDesc,
+        SlateportCity_NameRatersHouse_Text_GuardSwapDesc,
+        SlateportCity_NameRatersHouse_Text_SpeedSwapDesc,
+        SlateportCity_NameRatersHouse_Text_PowerTrickDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sTrickHouse_TutorMoveDescriptions[] =
+    {
+        Route110_TrickHouseEntrance_Text_TrickRoomDesc,
+        Route110_TrickHouseEntrance_Text_WonderRoomDesc,
+        Route110_TrickHouseEntrance_Text_ErrorRoomDesc,
+        Route110_TrickHouseEntrance_Text_StaticRoomDesc,
+        Route110_TrickHouseEntrance_Text_ReverseRoomDesc,
+        Route110_TrickHouseEntrance_Text_GrimRoomDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sBattleFrontier_TutorMoveDescriptions3[] =
+    {
+        BattleFrontier_Lounge8_Text_SupernovaDesc,
+        BattleFrontier_Lounge8_Text_OsmoticBurstDesc,
+        BattleFrontier_Lounge8_Text_BrumalBurstDesc,
+        BattleFrontier_Lounge8_Text_SandBurstDesc,
+        BattleFrontier_Lounge8_Text_ChloroblastDesc,
+        BattleFrontier_Lounge8_Text_WitsEndDesc,
+        BattleFrontier_Lounge8_Text_KaBoomDesc,
+        BattleFrontier_Lounge8_Text_ArcBlastDesc,
+        BattleFrontier_Lounge8_Text_RecklessUpheavalDesc,
+        BattleFrontier_Lounge8_Text_BugBurstDesc,
+        BattleFrontier_Lounge8_Text_SoulShatterDesc,
+        BattleFrontier_Lounge8_Text_RockRuptureDesc,
+        BattleFrontier_Lounge8_Text_BlastShellDesc,
+        BattleFrontier_Lounge8_Text_NoxiousBlowoutDesc,
+        BattleFrontier_Lounge8_Text_ShatterDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sLilycoveMotel_TutorMoveDescriptions[] =
+    {
+        LilycoveCity_CoveLilyMotel_1F_Text_CrushGripDesc,
+        LilycoveCity_CoveLilyMotel_1F_Text_BurningGraspDesc,
+        LilycoveCity_CoveLilyMotel_1F_Text_LightningGraspDesc,
+        LilycoveCity_CoveLilyMotel_1F_Text_GlacialGraspDesc,
+        LilycoveCity_CoveLilyMotel_1F_Text_PutridGraspDesc,
+        LilycoveCity_CoveLilyMotel_1F_Text_DarkGraspDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sBattleFrontier_TutorMoveDescriptions4[] =
+    {
+        BattleFrontier_Lounge3_Text_HyperBeamDesc,
+        BattleFrontier_Lounge3_Text_FissureDesc,
+        BattleFrontier_Lounge3_Text_PurgatoryDesc,
+        BattleFrontier_Lounge3_Text_InfernoDesc,
+        BattleFrontier_Lounge3_Text_ZapCannonDesc,
+        BattleFrontier_Lounge3_Text_SheerColdDesc,
+        BattleFrontier_Lounge3_Text_SuperpowerDesc,
+        BattleFrontier_Lounge3_Text_SteelBeamDesc,
+        BattleFrontier_Lounge3_Text_MeteorBeamDesc,
+        gText_Exit,
+    };
+
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || (menu >= SCROLL_MULTI_CUTTER_MOVE_TUTOR && menu <= SCROLL_MULTI_ULTIMATE_MOVE_TUTOR))
     {
         FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
-        else
+        else if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_CUTTER_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sCuttersHouse_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_WHIP_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sHerbShop_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_PUNCH_KICK_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sKarateDojo_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_FERAL_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sRoute119_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_BIPEDAL_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sRoute114_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_WEATHER_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sWeatherInstitute_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_TERRAIN_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sAlteringCave_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_SIDE_STATUS_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sFortreeCity_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_SWAP_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sSlateportCity_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_ROOM_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sTrickHouse_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_EXPLOSION_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions3[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_GRAB_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sLilycoveMotel_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_ULTIMATE_MOVE_TUTOR)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions4[selection], 0, 1, 0, NULL);
     }
 }
 

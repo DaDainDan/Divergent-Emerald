@@ -6,7 +6,7 @@ script RustboroCity_House1_EventScript_Trader {
         msgbox(RustboroCity_House1_Text_AnyPokemonCanBeCute, MSGBOX_DEFAULT)
     	release_end
     }
-    ingame_trade(INGAME_TRADE_SEEDOT, RustboroCity_House1_Text_IllTradeIfYouWant, RustboroCity_House1_EventScript_DeclineTrade, RustboroCity_House1_EventScript_NotRequestedMon, RustboroCity_House1_Text_PleaseBeGoodToMyPokemon)
+    ingame_trade(INGAME_TRADE_CUBCHOO, RustboroCity_House1_Text_IllTradeIfYouWant, RustboroCity_House1_EventScript_DeclineTrade, RustboroCity_House1_EventScript_NotRequestedMon, RustboroCity_House1_Text_PleaseBeGoodToMyPokemon)
     setflag(FLAG_RUSTBORO_NPC_TRADE_COMPLETED)
     release_end
 }

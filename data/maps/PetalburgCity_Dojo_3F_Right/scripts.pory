@@ -1,0 +1,7 @@
+mapscripts PetalburgCity_Dojo_3F_Right_MapScripts {}
+
+script PetalburgCity_Dojo_3F_Right_EventScript_GiveFocusBand {
+    giveitem(ITEM_FOCUS_BAND)
+    setflag(FLAG_COMPLETED_DOJO_RIGHT)
+    end
+}

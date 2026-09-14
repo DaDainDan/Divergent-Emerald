@@ -1,1 +1,28 @@
 mapscripts DuneCavern_B1F_MapScripts {}
+
+script DuneCavern_B1F_EventScript_Fossil {
+    lock_faceplayer
+    if (giveitem(ITEM_SKULL_FOSSIL) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    removeobject(LOCALID_DUNE_CAVERN_FOSSIL)
+    release_end
+}
+
+script DuneCavern_B1F_EventScript_Jeremiah {
+    trainerbattle_single(TRAINER_JEREMIAH, DuneCavern_B1F_Text_JeremiahIntro, DuneCavern_B1F_Text_JeremiahDefeat)
+    msgbox(DuneCavern_B1F_Text_JeremiahPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text DuneCavern_B1F_Text_JeremiahIntro {
+	"\."
+}
+
+text DuneCavern_B1F_Text_JeremiahDefeat {
+	"\."
+}
+
+text DuneCavern_B1F_Text_JeremiahPostBattle {
+	"\."
+}

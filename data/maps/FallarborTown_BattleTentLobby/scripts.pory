@@ -210,8 +210,16 @@ script FallarborTown_BattleTentLobby_EventScript_LittleBoy {
 }
 
 script FallarborTown_BattleTentLobby_EventScript_Lass {
-    msgbox(FallarborTown_BattleTentLobby_Text_FallarborTentMyFavorite, MSGBOX_NPC)
-    end
+    lock_faceplayer
+    if (!flag(FLAG_RECEIVED_TM_FRUSTRATION)) {
+        msgbox(FallarborTown_BattleTentLobby_Text_YouLookSoft, MSGBOX_NPC)
+        if (giveitem(ITEM_TM_FRUSTRATION) == FALSE) {
+            goto(Common_EventScript_ShowBagIsFull)
+        }
+        setflag(FLAG_RECEIVED_TM_FRUSTRATION)
+    }
+    msgbox(FallarborTown_BattleTentLobby_Text_PowerOfHatred, MSGBOX_DEFAULT)
+    release_end
 }
 
 script FallarborTown_BattleTentLobby_EventScript_Scott {
@@ -262,16 +270,22 @@ text FallarborTown_BattleTentLobby_Text_MakeThinkImJustKid {
 	the title!"
 }
 
-text FallarborTown_BattleTentLobby_Text_FallarborTentMyFavorite {
-	"You know how BATTLE TENTS offer
-	different events in different towns?
+text FallarborTown_BattleTentLobby_Text_YouLookSoft {
+	"You look kind of soft, kid.
 
-	My favorite is definitely the BATTLE
-	TENT in FALLARBOR TOWN.
+	You should toughen up or some other
+	trainer's going to eat you alive.
 
-	I think it's fantastic how TRAINERS
-	try to win with all their faith in
-	their POKéMON."
+	Here's a TM to help you out."
+}
+
+text FallarborTown_BattleTentLobby_Text_PowerOfHatred {
+	"That TM is more powerful the angrier
+	your POKéMON becomes.
+
+	Being nice might make you feel better,
+	but a real trainer will ruthless in
+	winning, no matter the cost."
 }
 
 text FallarborTown_BattleTentLobby_Text_CameToCampOut {

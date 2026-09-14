@@ -45,7 +45,7 @@ AquaHideout_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 
 AquaHideout_B1F_EventScript_ElectrodeBattle::
 # 22 "data/maps/AquaHideout_B1F/scripts.pory"
-	setwildbattle SPECIES_ELECTRODE, 30
+	setwildbattle SPECIES_ELECTRODE, 80
 # 23 "data/maps/AquaHideout_B1F/scripts.pory"
 	waitse
 # 24 "data/maps/AquaHideout_B1F/scripts.pory"

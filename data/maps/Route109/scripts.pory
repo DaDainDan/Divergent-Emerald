@@ -113,7 +113,7 @@ script Route109_EventScript_SoftSandGirl {
         msgbox(Route109_Text_WereGoingToMakeBigCastle, MSGBOX_DEFAULT)
     } else {
 		msgbox(Route109_Text_YouCanHaveThis, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_SOFT_SAND) == FALSE) {
+		if (giveitem(ITEM_SHED_SHELL) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		closemessage
@@ -165,9 +165,9 @@ script Route109_EventScript_Alice {
     end
 }
 
-script Route109_EventScript_Huey {
-    trainerbattle_single(TRAINER_HUEY, Route109_Text_HueyIntro, Route109_Text_HueyDefeated)
-    msgbox(Route109_Text_HueyPostBattle, MSGBOX_AUTOCLOSE)
+script Route109_EventScript_Gage {
+    trainerbattle_single(TRAINER_GAGE, Route109_Text_GageIntro, Route109_Text_GageDefeated)
+    msgbox(Route109_Text_GagePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 

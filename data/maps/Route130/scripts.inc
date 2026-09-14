@@ -5,7 +5,7 @@ Route130_MapScripts::
 
 Route130_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/Route130/scripts.pory"
-	compare VAR_SOOTOPOLIS_CITY_STATE, 4
+	compare VAR_SOOTOPOLIS_CITY_STATE, 5
 	goto_if_ge Route130_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
 Route130_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	specialvar VAR_RESULT, IsMirageIslandPresent
@@ -62,30 +62,67 @@ Route130_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 	end
 
 
-Route130_OnTransition:
-	return
+Route130_EventScript_MeadowLady::
+# 32 "data/maps/Route130/scripts.pory"
+	lock_faceplayer
+# 33 "data/maps/Route130/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_TM_PETAL_DANCE, Route130_EventScript_MeadowLady_2
+# 42 "data/maps/Route130/scripts.pory"
+	msgbox Route130_EventScript_MeadowLady_Text_2, MSGBOX_DEFAULT
+Route130_EventScript_MeadowLady_1:
+	release_end
+
+Route130_EventScript_MeadowLady_2:
+# 34 "data/maps/Route130/scripts.pory"
+	msgbox Route130_EventScript_MeadowLady_Text_0, MSGBOX_DEFAULT
+	giveitem ITEM_TM_PETAL_DANCE
+# 0 "data/maps/Route130/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route130_EventScript_MeadowLady_5
+# 38 "data/maps/Route130/scripts.pory"
+	setflag FLAG_RECEIVED_TM_PETAL_DANCE
+# 39 "data/maps/Route130/scripts.pory"
+	msgbox Route130_EventScript_MeadowLady_Text_1, MSGBOX_DEFAULT
+	goto Route130_EventScript_MeadowLady_1
+
+Route130_EventScript_MeadowLady_5:
+# 36 "data/maps/Route130/scripts.pory"
+	call Common_EventScript_ShowBagIsFull
+	goto Route130_EventScript_MeadowLady_1
 
 
 Route130_EventScript_Rodney::
-# 36 "data/maps/Route130/scripts.pory"
+# 48 "data/maps/Route130/scripts.pory"
 	trainerbattle_single TRAINER_RODNEY, Route130_Text_RodneyIntro, Route130_Text_RodneyDefeat
-# 37 "data/maps/Route130/scripts.pory"
+# 49 "data/maps/Route130/scripts.pory"
 	msgbox Route130_Text_RodneyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route130_EventScript_Katie::
-# 42 "data/maps/Route130/scripts.pory"
+# 54 "data/maps/Route130/scripts.pory"
 	trainerbattle_single TRAINER_KATIE, Route130_Text_KatieIntro, Route130_Text_KatieDefeat
-# 43 "data/maps/Route130/scripts.pory"
+# 55 "data/maps/Route130/scripts.pory"
 	msgbox Route130_Text_KatiePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route130_EventScript_Santiago::
-# 48 "data/maps/Route130/scripts.pory"
+# 60 "data/maps/Route130/scripts.pory"
 	trainerbattle_single TRAINER_SANTIAGO, Route130_Text_SantiagoIntro, Route130_Text_SantiagoDefeat
-# 49 "data/maps/Route130/scripts.pory"
+# 61 "data/maps/Route130/scripts.pory"
 	msgbox Route130_Text_SantiagoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+
+Route130_EventScript_MeadowLady_Text_0:
+# 34 "data/maps/Route130/scripts.pory"
+	.string "Greetings.$"
+
+Route130_EventScript_MeadowLady_Text_1:
+# 39 "data/maps/Route130/scripts.pory"
+	.string "You are gay.$"
+
+Route130_EventScript_MeadowLady_Text_2:
+# 42 "data/maps/Route130/scripts.pory"
+	.string "I love you!$"

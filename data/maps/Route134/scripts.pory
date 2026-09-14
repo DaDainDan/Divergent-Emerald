@@ -11,9 +11,9 @@ script Route134_EventScript_Jack {
     end
 }
 
-script Route134_EventScript_Laurel {
-    trainerbattle_single(TRAINER_LAUREL, Route134_Text_LaurelIntro, Route134_Text_LaurelDefeat)
-    msgbox(Route134_Text_LaurelPostBattle, MSGBOX_AUTOCLOSE)
+script Route134_EventScript_Ellie {
+    trainerbattle_single(TRAINER_ELLIE, Route134_Text_EllieIntro, Route134_Text_EllieDefeat)
+    msgbox(Route134_Text_ElliePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -47,9 +47,9 @@ script Route134_EventScript_Reyna {
     end
 }
 
-script Route134_EventScript_Marley {
-    trainerbattle_single(TRAINER_MARLEY, Route134_Text_MarleyIntro, Route134_Text_MarleyDefeat)
-    msgbox(Route134_Text_MarleyPostBattle, MSGBOX_AUTOCLOSE)
+script Route134_EventScript_Natalie {
+    trainerbattle_single(TRAINER_NATALIE, Route134_Text_NatalieIntro, Route134_Text_NatalieDefeat)
+    msgbox(Route134_Text_NataliePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 

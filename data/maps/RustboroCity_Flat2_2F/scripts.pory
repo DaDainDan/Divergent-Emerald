@@ -12,7 +12,7 @@ script RustboroCity_Flat2_2F_EventScript_NinjaBoy {
     	release_end
     }
     msgbox(RustboroCity_Flat2_2F_Text_MyDaddyMadeThisYouCanHaveIt, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_PREMIER_BALL) == FALSE) {
+    if (giveitem(ITEM_QUICK_BALL) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     setflag(FLAG_RECEIVED_PREMIER_BALL_RUSTBORO)

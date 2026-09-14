@@ -39,7 +39,7 @@ AquaHideout_B2F_EventScript_MattNoticePlayer::
 
 AquaHideout_B2F_EventScript_Matt::
 # 24 "data/maps/AquaHideout_B2F/scripts.pory"
-	trainerbattle_single TRAINER_MATT, AquaHideout_B2F_Text_MattIntro, AquaHideout_B2F_Text_MattDefeat, AquaHideout_B2F_EventScript_SubmarineEscape
+	trainerbattle_single TRAINER_MATT_AQUA_HIDEOUT, AquaHideout_B2F_Text_MattIntro, AquaHideout_B2F_Text_MattDefeat, AquaHideout_B2F_EventScript_SubmarineEscape
 # 25 "data/maps/AquaHideout_B2F/scripts.pory"
 	msgbox AquaHideout_B2F_Text_MattPostBattle, MSGBOX_DEFAULT
 	release_end

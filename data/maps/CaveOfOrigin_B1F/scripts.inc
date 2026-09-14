@@ -91,7 +91,7 @@ CaveOfOrigin_B1F_EventScript_AtSkyPillar::
 # 44 "data/maps/CaveOfOrigin_B1F/scripts.pory"
 	setflag FLAG_WALLACE_GOES_TO_SKY_PILLAR
 # 45 "data/maps/CaveOfOrigin_B1F/scripts.pory"
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 3
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 4
 # 46 "data/maps/CaveOfOrigin_B1F/scripts.pory"
 	removeobject LOCALID_CAVE_OF_ORIGIN_WALLACE
 # 47 "data/maps/CaveOfOrigin_B1F/scripts.pory"

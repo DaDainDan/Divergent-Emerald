@@ -189,6 +189,134 @@ script BattleFrontier_Lounge3_EventScript_FatMan {
     end
 }
 
+script BattleFrontier_Lounge3_EventScript_MoveTutor {
+	lock_faceplayer
+	if (!flag(FLAG_MET_BATTLE_FRONTIER_ULTIMATE_TUTOR)) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		setflag(FLAG_MET_BATTLE_FRONTIER_ULTIMATE_TUTOR)
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_C, SCROLL_MULTI_ULTIMATE_MOVE_TUTOR)
+	setvar(VAR_0x8006, 0)
+	goto(BattleFrontier_Lounge3_EventScript_ChooseUltimateMove)
+	end
+}
+
+script BattleFrontier_Lounge3_EventScript_ChooseUltimateMove {
+	special(ShowBattlePointsWindow)
+	setvar(VAR_0x8004, SCROLL_MULTI_ULTIMATE_MOVE_TUTOR)
+	special(ShowScrollableMultichoice)
+	copyvar(VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0: setmoveandprice(MOVE_HYPER_BEAM, 48)
+		case 1: setmoveandprice(MOVE_FISSURE, 48)
+		case 2: setmoveandprice(MOVE_BITTER_MALICE, 48)
+		case 3: setmoveandprice(MOVE_INFERNO, 48)
+		case 4: setmoveandprice(MOVE_ZAP_CANNON, 48)
+		case 5: setmoveandprice(MOVE_SHEER_COLD, 48)
+		case 6: setmoveandprice(MOVE_SUPERPOWER, 48)
+		case 7: setmoveandprice(MOVE_STEEL_BEAM, 48)
+		case 8: setmoveandprice(MOVE_METEOR_BEAM, 48)
+		case 9:
+		case MULTI_B_PRESSED:
+			goto(BattleFrontier_Lounge3_EventScript_ExitTutorMoveSelect)
+	}
+	special(BufferBattleFrontierTutorMoveName)
+	buffernumberstring(STR_VAR_2, VAR_EXCHANGE_PRICE)
+	msgbox("\.", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == FALSE) {
+		message("\.")
+		waitmessage
+		setvar(VAR_0x8006, 1)
+		goto(BattleFrontier_Lounge3_EventScript_ChooseUltimateMove)
+	}
+	if (specialvar(VAR_TEMP_1, GetFrontierBattlePoints) >= VAR_EXCHANGE_PRICE) {
+		msgbox("\.", MSGBOX_DEFAULT)
+		fadescreen(FADE_TO_BLACK)
+		special(CloseBattlePointsWindow)
+		special(CloseBattleFrontierTutorWindow)
+		chooseboxmon(SELECT_PC_MON_MOVE_TUTOR)
+		waitstate
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(BattleFrontier_Lounge3_Text_DeclineTutor, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox("\.", MSGBOX_DEFAULT)
+		copyvar(VAR_0x8004, VAR_EXCHANGE_PRICE)
+		special(TakeFrontierBattlePoints)
+		release_end
+	}
+	msgbox("\.", MSGBOX_DEFAULT)
+	goto(BattleFrontier_Lounge3_EventScript_ExitTutorMoveSelect)
+	end
+}
+
+script BattleFrontier_Lounge3_EventScript_ExitTutorMoveSelect {
+	special(CloseBattleFrontierTutorWindow)
+	special(CloseBattlePointsWindow) 
+	msgbox(BattleFrontier_Lounge3_Text_DeclineTutor, MSGBOX_DEFAULT)
+	release_end
+}
+
+text BattleFrontier_Lounge3_Text_DeclineTutor {
+	"\."
+}
+
+text BattleFrontier_Lounge3_Text_HyperBeamDesc {
+	"A devasting beam\n"
+	"of Dragon energy.\n"
+	"One-time use."
+}
+
+text BattleFrontier_Lounge3_Text_FissureDesc {
+	"A devasting beam\n"
+	"of Dragon energy.\n"
+	"One-time use."
+}
+
+text BattleFrontier_Lounge3_Text_PurgatoryDesc {
+	"Ultimate ghost\n"
+	"move that curses.\n"
+	"One-time use."
+}
+
+text BattleFrontier_Lounge3_Text_InfernoDesc {
+	"Unleashes hellish\n"
+	"flames that burn.\n"
+	"One-time use."
+}
+
+text BattleFrontier_Lounge3_Text_ZapCannonDesc {
+	"Shot like a railgun\n"
+	"that paralyzes.\n"
+	"One-time use."
+}
+
+text BattleFrontier_Lounge3_Text_SheerColdDesc {
+	"Attack of max cold\n"
+	"that causes frost.\n"
+	"One-time use."
+}
+
+text BattleFrontier_Lounge3_Text_SuperpowerDesc {
+	"A devasting strike\n"
+	"of physical power.\n"
+	"One-time use."
+}
+
+text BattleFrontier_Lounge3_Text_SteelBeamDesc {
+	"A devasting beam\n"
+	"of Steel energy.\n"
+	"One-time use."
+}
+
+text BattleFrontier_Lounge3_Text_MeteorBeamDesc {
+	"A devasting beam\n"
+	"of Space energy.\n"
+	"One-time use."
+}
+
+
 text BattleFrontier_Lounge3_Text_CantYouSeeWereBusyHere {
 	"…What's that you want?
 

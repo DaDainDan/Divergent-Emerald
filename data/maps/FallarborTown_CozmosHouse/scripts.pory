@@ -22,7 +22,7 @@ script FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite {
     }
     if (var(VAR_RESULT) == YES) {
         msgbox(FallarborTown_CozmosHouse_Text_PleaseUseThisTM, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_TM_RETURN) == FALSE) {
+		if (giveitem(ITEM_TM_COSMIC_POWER) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		setvar(VAR_0x8004, ITEM_METEORITE)

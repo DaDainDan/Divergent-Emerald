@@ -1,10 +1,10 @@
 mapscripts MagmaHideout_2F_1R_MapScripts {}
 
-script MagmaHideout_2F_1R_EventScript_Grunt14 {
-    trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_14, MagmaHideout_2F_1R_Text_Grunt14Intro, MagmaHideout_2F_1R_Text_Grunt14Defeat)
-    msgbox(MagmaHideout_2F_1R_Text_Grunt14PostBattle, MSGBOX_AUTOCLOSE)
-    end
-}
+// script MagmaHideout_2F_1R_EventScript_Grunt14 {
+//     trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_14, MagmaHideout_2F_1R_Text_Grunt14Intro, MagmaHideout_2F_1R_Text_Grunt14Defeat)
+//     msgbox(MagmaHideout_2F_1R_Text_Grunt14PostBattle, MSGBOX_AUTOCLOSE)
+//     end
+// }
 
 script MagmaHideout_2F_1R_EventScript_Grunt3 {
     trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_3, MagmaHideout_2F_1R_Text_Grunt3Intro, MagmaHideout_2F_1R_Text_Grunt3Defeat)
@@ -18,11 +18,11 @@ script MagmaHideout_2F_1R_EventScript_Grunt4 {
     end
 }
 
-script MagmaHideout_2F_1R_EventScript_Grunt5 {
-    trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_5, MagmaHideout_2F_1R_Text_Grunt5Intro, MagmaHideout_2F_1R_Text_Grunt5Defeat)
-    msgbox(MagmaHideout_2F_1R_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE)
-    end
-}
+// script MagmaHideout_2F_1R_EventScript_Grunt5 {
+//     trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_5, MagmaHideout_2F_1R_Text_Grunt5Intro, MagmaHideout_2F_1R_Text_Grunt5Defeat)
+//     msgbox(MagmaHideout_2F_1R_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE)
+//     end
+// }
 
 text MagmaHideout_2F_1R_Text_Grunt14Intro {
 	"What, what, what?

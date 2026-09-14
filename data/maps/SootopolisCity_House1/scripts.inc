@@ -15,7 +15,7 @@ SootopolisCity_House1_EventScript_BrickBreakBlackBelt_1:
 SootopolisCity_House1_EventScript_BrickBreakBlackBelt_2:
 # 6 "data/maps/SootopolisCity_House1/scripts.pory"
 	msgbox SootopolisCity_House1_Text_DevelopedThisTM, MSGBOX_DEFAULT
-	giveitem ITEM_TM_BRICK_BREAK
+	giveitem ITEM_TM_KI_CHARGE
 # 0 "data/maps/SootopolisCity_House1/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq SootopolisCity_House1_EventScript_BrickBreakBlackBelt_5

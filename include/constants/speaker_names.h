@@ -100,6 +100,9 @@ enum SpeakerNames {
     SP_NAME_BEAUTY,
     SP_NAME_SPECTATOR,
     SP_NAME_SPECTATORS,
+    // Misc
+    SP_NAME_MAGMA_GRUNT,
+    SP_NAME_AQUA_GRUNT,
     SP_NAME_COUNT
 };
 

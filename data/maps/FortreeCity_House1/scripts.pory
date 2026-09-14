@@ -6,7 +6,7 @@ script FortreeCity_House1_EventScript_Trader {
         msgbox(FortreeCity_House1_Text_GoingToMakeVolbeatStrong, MSGBOX_DEFAULT)
     	release_end
     }
-    ingame_trade(INGAME_TRADE_PLUSLE, FortreeCity_House1_Text_YouWillTradeWontYou, FortreeCity_House1_EventScript_DeclineTrade, FortreeCity_House1_EventScript_NotRequestedMon, FortreeCity_House1_Text_MonYouTakeCare)
+    ingame_trade(INGAME_TRADE_FERROSEED, FortreeCity_House1_Text_YouWillTradeWontYou, FortreeCity_House1_EventScript_DeclineTrade, FortreeCity_House1_EventScript_NotRequestedMon, FortreeCity_House1_Text_MonYouTakeCare)
     setflag(FLAG_FORTREE_NPC_TRADE_COMPLETED)
     release_end
 }
@@ -67,10 +67,10 @@ text FortreeCity_House1_Text_YouWontTradeMe {
 }
 
 text FortreeCity_House1_Text_GoingToMakeVolbeatStrong {
-	"I'm going to make VOLBEAT super
+	"I'm going to make PINECO super
 	strong from this moment on!
 
-	I hope you do the same with PLUSLE!"
+	I hope you do the same with FERROSEED!"
 }
 
 text FortreeCity_House1_Text_TradingMemoriesWithOthers {

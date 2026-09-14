@@ -15,7 +15,7 @@ DesertUnderpass_EventScript_Fossil::
 # 10 "data/maps/DesertUnderpass/scripts.pory"
 	goto_if_set FLAG_CHOSE_HELIX_FOSSIL, DesertUnderpass_EventScript_Fossil_2
 # 13 "data/maps/DesertUnderpass/scripts.pory"
-	giveitem ITEM_ROOT_FOSSIL
+	giveitem ITEM_HELIX_FOSSIL
 DesertUnderpass_EventScript_Fossil_1:
 # 15 "data/maps/DesertUnderpass/scripts.pory"
 	compare VAR_RESULT, FALSE
@@ -27,7 +27,7 @@ DesertUnderpass_EventScript_Fossil_5:
 
 DesertUnderpass_EventScript_Fossil_2:
 # 11 "data/maps/DesertUnderpass/scripts.pory"
-	giveitem ITEM_CLAW_FOSSIL
+	giveitem ITEM_DOME_FOSSIL
 	goto DesertUnderpass_EventScript_Fossil_1
 
 DesertUnderpass_EventScript_Fossil_6:
@@ -36,10 +36,28 @@ DesertUnderpass_EventScript_Fossil_6:
 	goto DesertUnderpass_EventScript_Fossil_5
 
 
-DesertUnderpass_Text_FoundRootFossil::
+DesertUnderpass_EventScript_Jaw_Fossil::
 # 23 "data/maps/DesertUnderpass/scripts.pory"
+	lock_faceplayer
+	giveitem ITEM_JAW_FOSSIL
+# 0 "data/maps/DesertUnderpass/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq DesertUnderpass_EventScript_Jaw_Fossil_2
+DesertUnderpass_EventScript_Jaw_Fossil_1:
+# 27 "data/maps/DesertUnderpass/scripts.pory"
+	removeobject LOCALID_UNDERPASS_JAW_FOSSIL
+	release_end
+
+DesertUnderpass_EventScript_Jaw_Fossil_2:
+# 25 "data/maps/DesertUnderpass/scripts.pory"
+	goto Common_EventScript_ShowBagIsFull
+	goto DesertUnderpass_EventScript_Jaw_Fossil_1
+
+
+DesertUnderpass_Text_FoundRootFossil::
+# 32 "data/maps/DesertUnderpass/scripts.pory"
 	.string "{PLAYER} found the ROOT FOSSIL.$"
 
 DesertUnderpass_Text_FoundClawFossil::
-# 27 "data/maps/DesertUnderpass/scripts.pory"
+# 36 "data/maps/DesertUnderpass/scripts.pory"
 	.string "{PLAYER} found the CLAW FOSSIL.$"

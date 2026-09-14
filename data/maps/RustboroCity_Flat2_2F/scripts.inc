@@ -15,7 +15,7 @@ RustboroCity_Flat2_2F_EventScript_NinjaBoy::
 	goto_if_set FLAG_RECEIVED_PREMIER_BALL_RUSTBORO, RustboroCity_Flat2_2F_EventScript_NinjaBoy_2
 # 14 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
 	msgbox RustboroCity_Flat2_2F_Text_MyDaddyMadeThisYouCanHaveIt, MSGBOX_DEFAULT
-	giveitem ITEM_PREMIER_BALL
+	giveitem ITEM_QUICK_BALL
 # 0 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq RustboroCity_Flat2_2F_EventScript_NinjaBoy_5

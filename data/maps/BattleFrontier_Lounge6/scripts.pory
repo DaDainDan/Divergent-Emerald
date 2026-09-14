@@ -6,7 +6,7 @@ script BattleFrontier_Lounge6_EventScript_Trader {
         msgbox(BattleFrontier_Lounge6_Text_SkittySoMuchCuterThanImagined, MSGBOX_DEFAULT)
     	release_end
     }
-    ingame_trade(INGAME_TRADE_MEOWTH, BattleFrontier_Lounge6_Text_WouldYouLikeToTrade, BattleFrontier_Lounge6_EventScript_DeclineTrade, BattleFrontier_Lounge6_EventScript_NotRequestedMon, BattleFrontier_Lounge6_Text_PromiseIllBeGoodToIt)
+    ingame_trade(INGAME_TRADE_TYPE_NULL, BattleFrontier_Lounge6_Text_WouldYouLikeToTrade, BattleFrontier_Lounge6_EventScript_DeclineTrade, BattleFrontier_Lounge6_EventScript_NotRequestedMon, BattleFrontier_Lounge6_Text_PromiseIllBeGoodToIt)
     setflag(FLAG_BATTLE_FRONTIER_TRADE_DONE)
     release_end
 }
@@ -57,6 +57,6 @@ text BattleFrontier_Lounge6_Text_WellThatsFineToo {
 
 text BattleFrontier_Lounge6_Text_SkittySoMuchCuterThanImagined {
 	"Giggle!
-	A SKITTY is so much cuter than I had
+    ARCANINE is so much cuter than I had
 	imagined. I'm delighted!"
 }

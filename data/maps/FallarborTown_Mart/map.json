@@ -1,9 +1,8 @@
 {
   "id": "MAP_FALLARBOR_TOWN_MART",
   "name": "FallarborTown_Mart",
-  "layout": "LAYOUT_MART",
+  "layout": "LAYOUT_MART_LAYOUT_SINGLE",
   "music": "MUS_POKE_MART",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_FALLARBOR_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -57,8 +56,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SKITTY",
-      "x": 2,
-      "y": 5,
+      "x": 1,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -69,7 +68,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 7,
       "y": 2,
       "elevation": 3,
@@ -99,5 +98,6 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "region": "REGION_HOENN"
 }

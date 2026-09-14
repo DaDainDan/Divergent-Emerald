@@ -72,11 +72,16 @@ script MossdeepCity_SpaceCenter_1F_EventScript_SunStoneMan {
         goto(MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManMagma)
     }
     if (flag(FLAG_RECEIVED_SUN_STONE_MOSSDEEP)) {
-        msgbox(MossdeepCity_SpaceCenter_1F_Text_HoennFamousForMeteorShowers, MSGBOX_DEFAULT)
-    	release_end
+        msgbox(MossdeepCity_SpaceCenter_1F_Text_HaveYouSeenAnyShards, MSGBOX_DEFAULT)
+		if (checkitem(ITEM_STAR_PIECE) == FALSE) {
+			msgbox(MossdeepCity_SpaceCenter_1F_Text_YouHaventGotAnyShards, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox(MossdeepCity_SpaceCenter_1F_Text_ThatsAShardIllTradeYou, MSGBOX_DEFAULT)
+		goto(MossdeepCity_SpaceCenter_1F_EventScript_ShowTradeOptions)
     }
     msgbox(MossdeepCity_SpaceCenter_1F_Text_FoundThisYouCanHaveIt, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_SUN_STONE) == FALSE) {
+    if (giveitem(ITEM_METAL_COAT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     setflag(FLAG_RECEIVED_SUN_STONE_MOSSDEEP)
@@ -90,7 +95,7 @@ script MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManMagma {
 
     } else {
 		msgbox(MossdeepCity_SpaceCenter_1F_Text_MagmaCantStealFuelTakeThis, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_SUN_STONE) == FALSE) {
+		if (giveitem(ITEM_METAL_COAT) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		setflag(FLAG_RECEIVED_SUN_STONE_MOSSDEEP)
@@ -98,6 +103,46 @@ script MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManMagma {
 	}
     applymovement(VAR_LAST_TALKED, Common_Movement_StepFasterRight)
     waitmovement(0)
+    release_end
+}
+
+script MossdeepCity_SpaceCenter_1F_EventScript_ShowTradeOptions {
+    message(MossdeepCity_SpaceCenter_1F_Text_WhatDoYouWantToTrade)
+    waitmessage
+	dynmultipush("METAL COAT", ITEM_METAL_COAT)
+	dynmultipush("KING'S ROCK", ITEM_KINGS_ROCK)
+	dynmultipush("SUN STONE", ITEM_SUN_STONE)
+	dynmultipush("MOON STONE", ITEM_MOON_STONE)
+	dynmultipush("ICE STONE", ITEM_ICE_STONE)
+	dynmultipush("EXIT", 0)
+    dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
+	if (var(VAR_RESULT) == 0 || var(VAR_RESULT) == MULTI_B_PRESSED) {
+		goto(MossdeepCity_SpaceCenter_1F_EventScript_DeclineTrade)
+	}
+	copyvar(VAR_GIFT_ITEM, VAR_RESULT)
+    bufferitemname(STR_VAR_2, VAR_GIFT_ITEM)
+    msgbox(MossdeepCity_SpaceCenter_1F_Text_YoullTradeShardForStone, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        goto(MossdeepCity_SpaceCenter_1F_EventScript_DeclineTrade)
+    }
+    if (checkitemspace(VAR_GIFT_ITEM) == TRUE || checkitem(ITEM_STAR_PIECE, 2) == FALSE) {
+        removeitem(ITEM_STAR_PIECE)
+		giveitem(VAR_GIFT_ITEM)
+		msgbox(MossdeepCity_SpaceCenter_1F_Text_ItsADeal, MSGBOX_DEFAULT)
+		if (checkitem(ITEM_STAR_PIECE) == TRUE) {
+			msgbox(MossdeepCity_SpaceCenter_1F_Text_TradeSomethingElse, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				goto(MossdeepCity_SpaceCenter_1F_EventScript_ShowTradeOptions)
+			}
+			goto(MossdeepCity_SpaceCenter_1F_EventScript_DeclineTrade)
+		}
+    }
+    msgbox(MossdeepCity_SpaceCenter_1F_Text_BagFull, MSGBOX_DEFAULT)
+    release_end
+}
+
+script MossdeepCity_SpaceCenter_1F_EventScript_DeclineTrade {
+    msgbox(MossdeepCity_SpaceCenter_1F_Text_ComeBackIfYouChangeMind, MSGBOX_DEFAULT)
     release_end
 }
 
@@ -404,4 +449,53 @@ text MossdeepCity_SpaceCenter_1F_Text_MagmaIntentToStealNotice {
 
 	“Let there be more land!
 	                                          TEAM MAGMA”"
+}
+
+text MossdeepCity_SpaceCenter_1F_Text_HaveYouSeenAnyShards {
+	"Tell me, have you seen any STAR PIECES
+	that have fallen from the sky?"
+}
+
+text MossdeepCity_SpaceCenter_1F_Text_YouHaventGotAnyShards {
+	"You haven't got any STAR PIECES
+	for me…
+
+	If you come across any,
+	be sure to bring them here."
+}
+
+text MossdeepCity_SpaceCenter_1F_Text_ThatsAShardIllTradeYou {
+	"Oh, hey! That…
+	That's the kind of STAR PIECE I wanted!
+
+	Oh, man, you've got to trade that
+	with me! I'll give you something good!"
+}
+
+text MossdeepCity_SpaceCenter_1F_Text_WhatDoYouWantToTrade {
+	"What do you want to trade?"
+}
+
+text MossdeepCity_SpaceCenter_1F_Text_YoullTradeShardForStone {
+	"You'll trade your STAR PIECE for
+	my {STR_VAR_2}, then?"
+}
+
+text MossdeepCity_SpaceCenter_1F_Text_ItsADeal {
+	"It's a done deal!
+	Use that wisely!"
+}
+
+text MossdeepCity_SpaceCenter_1F_Text_TradeSomethingElse {
+	"Do you want to trade something else?"
+}
+
+text MossdeepCity_SpaceCenter_1F_Text_BagFull {
+	"Whoops, your BAG's full.
+	Get rid of some items, friend!"
+}
+
+text MossdeepCity_SpaceCenter_1F_Text_ComeBackIfYouChangeMind {
+	"No? That's a downer.
+	Well, if you change your mind, come back."
 }

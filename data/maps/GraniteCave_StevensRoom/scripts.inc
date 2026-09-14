@@ -15,7 +15,7 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	setflag FLAG_DELIVERED_STEVEN_LETTER
 # 9 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_STEEL_WING
+	giveitem ITEM_TM_FLASH_CANNON
 # 0 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq GraniteCave_StevensRoom_EventScript_Steven_2

@@ -980,7 +980,7 @@ BattleFrontier_BattlePalaceBattleRoom_Text_ReadyForPalaceMaven::
 BattleFrontier_BattlePalaceBattleRoom_Text_AnnounceArrivalOfSpenser::
 # 424 "data/maps/BattleFrontier_BattlePalaceBattleRoom/scripts.pory"
 	.string "Let great fanfare announce the arrival\n"
-	.string "of the PALACE MAVEN, SPENSER!$"
+	.string "of the PALACE MAVEN, IBRAHIM!$"
 
 BattleFrontier_BattlePalaceBattleRoom_Text_SpenserFirstIntro::
 # 429 "data/maps/BattleFrontier_BattlePalaceBattleRoom/scripts.pory"

@@ -104,7 +104,7 @@ script SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre {
     waitmovement(0)
     msgbox(SeafloorCavern_Room9_Text_MaxieComeOnPlayer, MSGBOX_DEFAULT)
     setvar(VAR_ROUTE128_STATE, 1)
-    setvar(VAR_SOOTOPOLIS_CITY_STATE, 1)
+    setvar(VAR_SOOTOPOLIS_CITY_STATE, 2)
     clearflag(FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN)
     clearflag(FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE)
     clearflag(FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE)
@@ -185,11 +185,11 @@ text SeafloorCavern_Room9_Text_ArchieWithThisRedOrb {
 	But!
 	I have this in my possession!
 
-	With this RED ORB, I can make KYOGRE…"
+	With this BLUE ORB, I can make KYOGRE…"
 }
 
 text SeafloorCavern_Room9_Text_RedOrbShinesByItself {
-	"The RED ORB suddenly began shining
+	"The BLUE ORB suddenly began shining
 	by itself!"
 }
 
@@ -197,7 +197,7 @@ text SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo {
 	"{SPEAKER NAME_ARCHIE}What?!
 
 	I didn't do anything.
-	Why did the RED ORB…
+	Why did the BLUE ORB…
 
 	Where did KYOGRE go?"
 }
@@ -233,7 +233,7 @@ text SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard {
 text SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear {
 	"{SPEAKER NAME_ARCHIE}There's something wrong…
 
-	The RED ORB is supposed to awaken
+	The BLUE ORB is supposed to awaken
 	and control KYOGRE…
 
 	But… Why?
@@ -262,7 +262,7 @@ text SeafloorCavern_Room9_Text_ArchieDontGetAllHighAndMighty {
 	Wasn't it you, TEAM MAGMA, that
 	infuriated GROUDON?
 
-	So long as I have this RED ORB,
+	So long as I have this BLUE ORB,
 	I should be able to control KYOGRE…
 
 	I should be able to control it…"

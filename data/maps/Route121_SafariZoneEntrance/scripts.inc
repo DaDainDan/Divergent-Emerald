@@ -176,6 +176,78 @@ Route121_SafariZoneEntrance_EventScript_TrainerTipSign::
 	end
 
 
+Route121_SafariZoneEntrance_EventScript_AlreadyReceivedMoomooMilk::
+# 93 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	showmoneybox 0, 0
+# 94 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	msgbox Route121_SafariZoneEntrance_Text_WantToBuyMoomooMilk, MSGBOX_YESNO
+# 95 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Route121_SafariZoneEntrance_EventScript_AlreadyReceivedMoomooMilk_2
+Route121_SafariZoneEntrance_EventScript_AlreadyReceivedMoomooMilk_1:
+# 98 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	msgbox Route121_SafariZoneEntrance_Text_ThatsTooBad, MSGBOX_DEFAULT
+# 99 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	hidemoneybox
+	release_end
+
+Route121_SafariZoneEntrance_EventScript_AlreadyReceivedMoomooMilk_2:
+# 96 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_BuyMoomooMilk
+	goto Route121_SafariZoneEntrance_EventScript_AlreadyReceivedMoomooMilk_1
+
+
+# 103 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+
+# 104 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+Route121_SafariZoneEntrance_EventScript_BuyMoomooMilk::
+# 105 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	checkmoney 1100
+# 106 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Route121_SafariZoneEntrance_EventScript_NoMoneyForMilk
+# 107 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	checkitemspace ITEM_MOOMOO_MILK
+# 108 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Route121_SafariZoneEntrance_EventScript_NotEnoughSpace
+# 109 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	msgbox Route121_SafariZoneEntrance_Text_HereYouGo, MSGBOX_DEFAULT
+# 110 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	removemoney 1100
+# 111 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	updatemoneybox
+# 112 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+.if OW_SHOW_ITEM_DESCRIPTIONS != OW_ITEM_DESCRIPTIONS_OFF
+# 113 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	hidemoneybox
+# 114 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	giveitem ITEM_MOOMOO_MILK
+# 115 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+.else
+# 116 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	giveitem ITEM_MOOMOO_MILK
+# 117 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	hidemoneybox
+# 118 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+.endif
+# 119 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release_end
+
+Route121_SafariZoneEntrance_EventScript_NoMoneyForMilk::
+# 123 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	msgbox Route121_SafariZoneEntrance_Text_NoMoneyForMilk, MSGBOX_DEFAULT
+# 124 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	hidemoneybox
+	release_end
+
+
+Route121_SafariZoneEntrance_EventScript_NotEnoughSpace::
+# 129 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
+# 130 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	hidemoneybox
+	release_end
+
+
 # 5 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 Route121_SafariZoneEntrance_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Movement_0:
 # 5 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
@@ -215,3 +287,23 @@ Route121_SafariZoneEntrance_EventScript_TryEnterSafariZone_Movement_0:
 # 68 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	delay_16
 	step_end
+
+Route121_SafariZoneEntrance_Text_WantToBuyMoomooMilk::
+# 134 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	.string "Want to buy some MOOMOO MILK?\n"
+	.string "POKéMON love it!\p"
+	.string "Just ¥1100 a bottle!\n"
+	.string "Buy some!$"
+
+Route121_SafariZoneEntrance_Text_HereYouGo::
+# 142 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	.string "Here you go!$"
+
+Route121_SafariZoneEntrance_Text_NoMoneyForMilk::
+# 146 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	.string "You don't have the money.$"
+
+Route121_SafariZoneEntrance_Text_ThatsTooBad::
+# 150 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	.string "No?\n"
+	.string "That's too bad.$"

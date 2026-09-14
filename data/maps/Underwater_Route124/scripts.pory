@@ -1,1 +1,10 @@
 mapscripts Underwater_Route124_MapScripts {}
+
+script Underwater_Route124_EventScript_Fossil {
+    lock_faceplayer
+    if (giveitem(ITEM_ROOT_FOSSIL) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    removeobject(LOCALID_ROUTE_124_FOSSIL)
+    release_end
+}

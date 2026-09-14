@@ -47,7 +47,7 @@ NewMauville_Entrance_EventScript_Door::
 	compare VAR_RESULT, TRUE
 	goto_if_eq NewMauville_Entrance_EventScript_Door_2
 NewMauville_Entrance_EventScript_Door_1:
-# 41 "data/maps/NewMauville_Entrance/scripts.pory"
+# 42 "data/maps/NewMauville_Entrance/scripts.pory"
 	releaseall
 	end
 
@@ -76,6 +76,8 @@ NewMauville_Entrance_EventScript_Door_2:
 # 38 "data/maps/NewMauville_Entrance/scripts.pory"
 	playse SE_BANG
 # 39 "data/maps/NewMauville_Entrance/scripts.pory"
+	removeitem ITEM_BASEMENT_KEY
+# 40 "data/maps/NewMauville_Entrance/scripts.pory"
 	setvar VAR_NEW_MAUVILLE_STATE, 1
 	goto NewMauville_Entrance_EventScript_Door_1
 
@@ -86,14 +88,14 @@ NewMauville_Entrance_EventScript_Door_5:
 
 
 NewMauville_Entrance_Text_DoorIsLocked::
-# 45 "data/maps/NewMauville_Entrance/scripts.pory"
+# 46 "data/maps/NewMauville_Entrance/scripts.pory"
 	.string "The door is locked.$"
 
 NewMauville_Entrance_Text_UseBasementKey::
-# 49 "data/maps/NewMauville_Entrance/scripts.pory"
+# 50 "data/maps/NewMauville_Entrance/scripts.pory"
 	.string "Use the BASEMENT KEY?$"
 
 NewMauville_Entrance_Text_UsedBasementKey::
-# 53 "data/maps/NewMauville_Entrance/scripts.pory"
+# 54 "data/maps/NewMauville_Entrance/scripts.pory"
 	.string "{PLAYER} used the BASEMENT KEY.\p"
 	.string "The door opened!$"

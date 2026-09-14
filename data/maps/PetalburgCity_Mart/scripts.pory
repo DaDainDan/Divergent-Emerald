@@ -33,9 +33,10 @@ mart PetalburgCity_Mart_Pokemart_Basic {
 
 mart PetalburgCity_Mart_Pokemart_Expanded {
     ITEM_GREAT_BALL
+    ITEM_QUICK_BALL
     ITEM_HYPER_POTION
-    ITEM_FULL_HEAL
     ITEM_REVIVE
+    ITEM_FULL_HEAL
     ITEM_MAX_ELIXIR
     ITEM_SUPER_REPEL
     ITEM_SUPER_LURE

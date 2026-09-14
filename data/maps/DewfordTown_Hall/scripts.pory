@@ -194,7 +194,7 @@ script DewfordTown_Hall_EventScript_SludgeBombMan {
     	release_end
     }
     msgbox(DewfordTown_Hall_Text_GiveYouSludgeBomb, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_TM_SLUDGE_BOMB) == FALSE) {
+    if (giveitem(ITEM_TM_NASTY_PLOT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     setflag(FLAG_RECEIVED_TM_SLUDGE_BOMB)

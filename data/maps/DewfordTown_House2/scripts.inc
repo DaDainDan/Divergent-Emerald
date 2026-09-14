@@ -9,7 +9,7 @@ DewfordTown_House2_EventScript_Man::
 	goto_if_set FLAG_RECEIVED_SILK_SCARF, DewfordTown_House2_EventScript_Man_2
 # 9 "data/maps/DewfordTown_House2/scripts.pory"
 	msgbox DewfordTown_House2_Text_WantYouToHaveSilkScarf, MSGBOX_DEFAULT
-	giveitem ITEM_SILK_SCARF
+	giveitem ITEM_PUNCHING_GLOVE
 # 0 "data/maps/DewfordTown_House2/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq DewfordTown_House2_EventScript_Man_5

@@ -38,34 +38,22 @@ script Route101_EventScript_StartBirchRescue {
     end
 }
 
-script Route101_EventScript_PreventExitSouth {
-    lockall
-    msgbox(Route101_Text_DontLeaveMe, MSGBOX_DEFAULT)
-    closemessage
-    applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
-    waitmovement(0)
-    releaseall
-    end
-}
-
-script Route101_EventScript_PreventExitWest {
-    lockall
-    msgbox(Route101_Text_DontLeaveMe, MSGBOX_DEFAULT)
-    closemessage
-    applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
-    waitmovement(0)
-    releaseall
-    end
-}
-
-script Route101_EventScript_PreventExitNorth {
-    lockall
-    msgbox(Route101_Text_DontLeaveMe, MSGBOX_DEFAULT)
-    closemessage
-    applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-    waitmovement(0)
-    releaseall
-    end
+script Route101_EventScript_PreventExit {
+	lockall
+	msgbox(Route101_Text_DontLeaveMe, MSGBOX_DEFAULT)
+	closemessage
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	switch (var(VAR_TEMP_0)) {
+		case 6:
+			applymovement(LOCALID_PLAYER, moves(walk_right))
+		case 7:
+			applymovement(LOCALID_PLAYER, moves(walk_down))
+		default:
+			applymovement(LOCALID_PLAYER, moves(walk_up))
+	}
+	waitmovement(0)
+	releaseall
+	end
 }
 
 movement Route101_Movement_ZigzagoonChaseInCircles {
@@ -181,38 +169,37 @@ script Route101_EventScript_RouteSign {
 }
 
 text Route101_Text_HelpMe {
-	"{SPEAKER NAME_UNKNOWN}H-help me!"
+	"{SPEAKER NAME_UNKNOWN}Hello?! You over there!
+    H-help me!"
 }
 
 text Route101_Text_PleaseHelp {
-	"{SPEAKER NAME_UNKNOWN}Hello! You over there!
-	Please! Help!
-
-	In my BAG!
-	There's a POKé BALL!"
+	"{SPEAKER NAME_UNKNOWN}In the BAG!
+	Grab one of my POKé BALLS!"
 }
 
 text Route101_Text_DontLeaveMe {
 	"{SPEAKER NAME_UNKNOWN}Wh-Where are you going?!
-	Don't leave me like this!"
+	Don't just leave me here!"
 }
 
 text Route101_Text_YouSavedMe {
 	"{SPEAKER NAME_UNKNOWN}Whew…
+    That was intense.
 
-	I was in the tall grass studying wild
-	POKéMON when I was jumped.
+	I owe you big-time.
 
-	You saved me.
-	Thanks a lot!
+	He could've done some serious
+	damage to me if you hadn't intervened.
 
-	Oh?
+	It's odd though, the POKéMON around
+	here are typically harmless.
 
-	Hi, you're {PLAYER}{KUN}!
-    I'm PROF. BIRCH.
+	I wonder if\.
 
-	This is not the place to chat, so come
-	by my POKéMON LAB later, okay?"
+	Oh! I'm sorry.
+	Let's go back to the lab to finish this
+	conservation, okay?"
 }
 
 text Route101_Text_TakeTiredPokemonToPokeCenter {

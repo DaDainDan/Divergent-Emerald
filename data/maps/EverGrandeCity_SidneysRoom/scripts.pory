@@ -32,6 +32,21 @@ mapscripts EverGrandeCity_SidneysRoom_MapScripts {
 
 script EverGrandeCity_SidneysRoom_EventScript_Sidney {
     lock_faceplayer
+	if (flag(FLAG_SYS_GAME_CLEAR)) {
+        if (!flag(FLAG_DEFEATED_ELITE_4_SIDNEY)) {
+			playbgm(MUS_ENCOUNTER_ELITE_FOUR, FALSE)
+			msgbox(EverGrandeCity_SidneysRoom_Text_IntroSpeechRematch, MSGBOX_DEFAULT)
+			specialvar(VAR_RESULT, GetEliteFourRematch)
+			switch (var(VAR_RESULT)) {
+				case 0: trainerbattle_no_intro(TRAINER_SIDNEY_2, EverGrandeCity_SidneysRoom_Text_DefeatRematch)
+				case 1: trainerbattle_no_intro(TRAINER_SIDNEY_3, EverGrandeCity_SidneysRoom_Text_DefeatRematch)
+			}
+			setflag(FLAG_DEFEATED_ELITE_4_SIDNEY)
+			call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles)
+		}
+		msgbox(EverGrandeCity_SidneysRoom_Text_PostRematchSpeech, MSGBOX_DEFAULT)
+		release_end
+    }
     if (!flag(FLAG_DEFEATED_ELITE_4_SIDNEY)) {
         playbgm(MUS_ENCOUNTER_ELITE_FOUR, FALSE)
 		msgbox(EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT)
@@ -62,6 +77,33 @@ text EverGrandeCity_SidneysRoom_Text_Defeat {
 }
 
 text EverGrandeCity_SidneysRoom_Text_PostBattleSpeech {
+	"Well, listen to what this loser has
+	to say.
+
+	You've got what it takes to go far.
+	Now, go on to the next room and enjoy
+	your next battle!"
+}
+
+text EverGrandeCity_SidneysRoom_Text_IntroSpeechRematch {
+	"Welcome, challenger!
+	I'm SIDNEY of the ELITE FOUR.
+
+	I like that look you're giving me.
+	I guess you'll give me a good match.
+	That's good! Looking real good!
+
+	All right! You and me, let's enjoy
+	a battle that can only be staged
+	here in the POKéMON LEAGUE!"
+}
+
+text EverGrandeCity_SidneysRoom_Text_DefeatRematch {
+	"Well, how do you like that? I lost!
+	Eh, it was fun, so it doesn't matter."
+}
+
+text EverGrandeCity_SidneysRoom_Text_PostRematchSpeech {
 	"Well, listen to what this loser has
 	to say.
 

@@ -43,7 +43,7 @@ script BattleFrontier_ScottsHouse_EventScript_CheckSilverSymbols {
 		goto(BattleFrontier_ScottsHouse_EventScript_CheckGiveShield)
 	 }
     msgbox(BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_LANSAT_BERRY) == FALSE) {
+    if (giveitem(ITEM_OVAL_CHARM) == FALSE) {
 		goto(BattleFrontier_ScottsHouse_EventScript_BerryPocketFull)
 	}
     setflag(FLAG_COLLECTED_ALL_SILVER_SYMBOLS)
@@ -57,7 +57,7 @@ script BattleFrontier_ScottsHouse_EventScript_CheckGoldSymbols {
 		goto(BattleFrontier_ScottsHouse_EventScript_CheckGiveShield)
 	 }
     msgbox(BattleFrontier_ScottsHouse_Text_YouveCollectedAllGoldSymbols, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_STARF_BERRY) == FALSE) {
+    if (giveitem(ITEM_EXP_CHARM) == FALSE) {
 		goto(BattleFrontier_ScottsHouse_EventScript_BerryPocketFull)
 	}
     setflag(FLAG_COLLECTED_ALL_GOLD_SYMBOLS)

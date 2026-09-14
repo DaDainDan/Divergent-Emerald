@@ -52,15 +52,11 @@ script MagmaHideout_4F_EventScript_Maxie {
     waitmovement(0)
     msgbox(MagmaHideout_4F_Text_MaxieOhItWasYou, MSGBOX_DEFAULT)
     closemessage
-    trainerbattle_no_intro(TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_MaxieDefeat)
+    // trainerbattle_no_intro(TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_MaxieDefeat)
     msgbox(MagmaHideout_4F_Text_MaxieImGoingAfterGroudon, MSGBOX_DEFAULT)
     closemessage
-    clearflag(FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN)
     clearflag(FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY)
-    setvar(VAR_SLATEPORT_CITY_STATE, 1)
     setflag(FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT)
-    setvar(VAR_FOSSIL_MANIAC_STATE, 1)
-    setvar(VAR_SLATEPORT_HARBOR_STATE, 1)
     fadescreen(FADE_TO_BLACK)
     removeobject(LOCALID_MAGMA_HIDEOUT_4F_MAXIE)
     removeobject(LOCALID_MAGMA_HIDEOUT_4F_GRUNT_1)
@@ -88,22 +84,22 @@ movement MagmaHideout_4F_Movement_MaxieLookAround {
 }
 
 script MagmaHideout_4F_EventScript_Grunt11 {
-    trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_11, MagmaHideout_4F_Text_Grunt11Intro, MagmaHideout_4F_Text_Grunt11Defeat)
+    trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_9, MagmaHideout_4F_Text_Grunt11Intro, MagmaHideout_4F_Text_Grunt11Defeat)
     msgbox(MagmaHideout_4F_Text_Grunt11PostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
 script MagmaHideout_4F_EventScript_Grunt12 {
-    trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_12, MagmaHideout_4F_Text_Grunt12Intro, MagmaHideout_4F_Text_Grunt12Defeat)
+    trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_10, MagmaHideout_4F_Text_Grunt12Intro, MagmaHideout_4F_Text_Grunt12Defeat)
     msgbox(MagmaHideout_4F_Text_Grunt12PostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
-script MagmaHideout_4F_EventScript_Grunt13 {
-    trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_13, MagmaHideout_4F_Text_Grunt13Intro, MagmaHideout_4F_Text_Grunt13Defeat)
-    msgbox(MagmaHideout_4F_Text_Grunt13PostBattle, MSGBOX_AUTOCLOSE)
-    end
-}
+// script MagmaHideout_4F_EventScript_Grunt13 {
+//     trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_13, MagmaHideout_4F_Text_Grunt13Intro, MagmaHideout_4F_Text_Grunt13Defeat)
+//     msgbox(MagmaHideout_4F_Text_Grunt13PostBattle, MSGBOX_AUTOCLOSE)
+//     end
+// }
 
 script MagmaHideout_4F_EventScript_Tabitha {
     trainerbattle_single(TRAINER_TABITHA_MAGMA_HIDEOUT, MagmaHideout_4F_Text_TabithaIntro, MagmaHideout_4F_Text_TabithaDefeat)
@@ -184,39 +180,32 @@ text MagmaHideout_4F_Text_TabithaPostBattle {
 }
 
 text MagmaHideout_4F_Text_MaxieAwakenGroudon {
-	"{SPEAKER NAME_MAXIE}GROUDON…
+	"{SPEAKER NAME_TABITHA}GROUDON…
 
-	Nothing could awaken you from your
-	sleep bathed in magma…
+	Awaken now from your eternal slumber,
+	and decimate this world.
 
-	This BLUE ORB is what you sought.
-	Wasn't it?
+	I command this of you, as the holder of
+	the RED ORB!
 
-	I have brought you the BLUE ORB.
-	Let its shine awaken you!
-
-	And show me…
-	Show me the full extent of your power!"
+	Split the grounds beneath you!
+	Bathe the foolish masses in your heat!
+	That is my greatest wish in this world!"
 }
 
 text MagmaHideout_4F_Text_MaxieGroudonWhatsWrong {
-	"{SPEAKER NAME_MAXIE}GROUDON!
-	What's wrong?
+	"{SPEAKER NAME_TABITHA}HAHAHAHAAHA!!
 
-	Wasn't the BLUE ORB the key?
-
-	GROUDON!
-	Where have you gone…"
+	What will you weaklings do now?
+	Defeating me in battle won't prevent
+	you from being crushed by GOD."
 }
 
 text MagmaHideout_4F_Text_MaxieOhItWasYou {
-	"{SPEAKER NAME_MAXIE}Oh, so it was you?
+	"{SPEAKER NAME_TABITHA}We will meet again, {PLAYER}.
 
-	I've seen you poking around uninvited
-	here and there…
-
-	I get it now!
-	You must have pulled a cheap stunt!"
+	And when we do, you will kneel before me,
+	alongside all the other worms."
 }
 
 text MagmaHideout_4F_Text_MaxieDefeat {

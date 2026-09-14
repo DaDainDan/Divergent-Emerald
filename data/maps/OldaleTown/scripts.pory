@@ -37,38 +37,17 @@ script OldaleTown_EventScript_MartEmployee {
     msgbox(OldaleTown_Text_IWorkAtPokemonMart, MSGBOX_DEFAULT)
     closemessage
     switch (var(VAR_FACING)) {
-        case DIR_SOUTH: goto(OldaleTown_EventScript_GoToMartSouth)
-        case DIR_NORTH: goto(OldaleTown_EventScript_GoToMartNorth)
-        case DIR_EAST: goto(OldaleTown_EventScript_GoToMartEast)
+        case DIR_SOUTH:
+            applymovement(LOCALID_OLDALE_MART_EMPLOYEE, moves(walk_left,  walk_up * 2,  walk_right,  walk_up * 5,  step_faster_down))
+            applymovement(LOCALID_PLAYER, moves(delay_16 * 4,  walk_up * 5))
+        case DIR_NORTH:
+            applymovement(LOCALID_OLDALE_MART_EMPLOYEE, moves(walk_up * 7,  step_faster_down))
+            applymovement(LOCALID_PLAYER, moves(walk_up * 7))
+        case DIR_EAST:
+            applymovement(LOCALID_PLAYER, moves(walk_right,  walk_up * 6))
+            applymovement(LOCALID_OLDALE_MART_EMPLOYEE, moves(walk_up * 7,  step_faster_down))
     }
-    end
-}
-
-script OldaleTown_EventScript_GoToMartSouth {
-    applymovement(LOCALID_OLDALE_MART_EMPLOYEE, moves(walk_left,  walk_up * 2,  walk_right,  walk_up * 5,  step_faster_down))
-    applymovement(LOCALID_PLAYER, moves(delay_16 * 4,  walk_up * 5))
     waitmovement(0)
-    goto(OldaleTown_EventScript_ExplainPokemonMart)
-    end
-}
-
-script OldaleTown_EventScript_GoToMartNorth {
-    applymovement(LOCALID_OLDALE_MART_EMPLOYEE, moves(walk_up * 7,  step_faster_down))
-    applymovement(LOCALID_PLAYER, moves(walk_up * 7))
-    waitmovement(0)
-    goto(OldaleTown_EventScript_ExplainPokemonMart)
-    end
-}
-
-script OldaleTown_EventScript_GoToMartEast {
-    applymovement(LOCALID_PLAYER, moves(walk_right,  walk_up * 6))
-    applymovement(LOCALID_OLDALE_MART_EMPLOYEE, moves(walk_up * 7,  step_faster_down))
-    waitmovement(0)
-    goto(OldaleTown_EventScript_ExplainPokemonMart)
-    end
-}
-
-script OldaleTown_EventScript_ExplainPokemonMart {
     msgbox(OldaleTown_Text_ThisIsAPokemonMart, MSGBOX_DEFAULT)
     if (giveitem(ITEM_POTION) == FALSE) {
         msgbox(gText_TooBadBagIsFull, MSGBOX_DEFAULT)

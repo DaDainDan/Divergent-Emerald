@@ -8,7 +8,7 @@ BattleFrontier_Lounge6_EventScript_Trader::
 # 5 "data/maps/BattleFrontier_Lounge6/scripts.pory"
 	goto_if_set FLAG_BATTLE_FRONTIER_TRADE_DONE, BattleFrontier_Lounge6_EventScript_Trader_2
 # 9 "data/maps/BattleFrontier_Lounge6/scripts.pory"
-	ingame_trade INGAME_TRADE_MEOWTH, BattleFrontier_Lounge6_Text_WouldYouLikeToTrade, BattleFrontier_Lounge6_EventScript_DeclineTrade, BattleFrontier_Lounge6_EventScript_NotRequestedMon, BattleFrontier_Lounge6_Text_PromiseIllBeGoodToIt
+	ingame_trade INGAME_TRADE_TYPE_NULL, BattleFrontier_Lounge6_Text_WouldYouLikeToTrade, BattleFrontier_Lounge6_EventScript_DeclineTrade, BattleFrontier_Lounge6_EventScript_NotRequestedMon, BattleFrontier_Lounge6_Text_PromiseIllBeGoodToIt
 # 10 "data/maps/BattleFrontier_Lounge6/scripts.pory"
 	setflag FLAG_BATTLE_FRONTIER_TRADE_DONE
 	release_end
@@ -66,5 +66,5 @@ BattleFrontier_Lounge6_Text_WellThatsFineToo::
 BattleFrontier_Lounge6_Text_SkittySoMuchCuterThanImagined::
 # 58 "data/maps/BattleFrontier_Lounge6/scripts.pory"
 	.string "Giggle!\n"
-	.string "A SKITTY is so much cuter than I had\l"
+	.string "ARCANINE is so much cuter than I had\l"
 	.string "imagined. I'm delighted!$"

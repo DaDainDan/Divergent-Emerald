@@ -1,0 +1,7 @@
+mapscripts PetalburgCity_Dojo_3F_Left_MapScripts {}
+
+script PetalburgCity_Dojo_3F_Right_EventScript_GiveFocusSash {
+    giveitem(ITEM_FOCUS_SASH)
+    setflag(FLAG_COMPLETED_DOJO_LEFT)
+    end
+}

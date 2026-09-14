@@ -1,17 +1,8 @@
 mapscripts MtPyre_1F_MapScripts {}
 
 script MtPyre_1F_EventScript_CleanseTagWoman {
-    lock_faceplayer
-    if (flag(FLAG_RECEIVED_CLEANSE_TAG)) {
-        msgbox(MtPyre_1F_Text_ExplainCleanseTag, MSGBOX_DEFAULT)
-    	release_end
-    }
-    msgbox(MtPyre_1F_Text_TakeThisForYourOwnGood, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_CLEANSE_TAG) == FALSE) {
-        goto(Common_EventScript_ShowBagIsFull)
-    }
-    setflag(FLAG_RECEIVED_CLEANSE_TAG)
-    release_end
+    msgbox(MtPyre_1F_Text_TakeThisForYourOwnGood, MSGBOX_NPC)
+    end
 }
 
 script MtPyre_1F_EventScript_PokefanF {
@@ -28,8 +19,7 @@ text MtPyre_1F_Text_TakeThisForYourOwnGood {
 	"All sorts of beings wander the slopes
 	of MT. PYRE…
 
-	There is no telling what may happen.
-	Take this. It's for your own good."
+	There is no telling what may happen."
 }
 
 text MtPyre_1F_Text_ExplainCleanseTag {

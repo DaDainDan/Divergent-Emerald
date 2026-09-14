@@ -1,0 +1,30 @@
+mapscripts Route122_House_MapScripts {}
+
+script Route122_House_EventScript_SpellTagWoman {
+    lock_faceplayer
+    if (flag(FLAG_RECEIVED_CLEANSE_TAG)) {
+        msgbox(Route122_House_Text_ExplainSpellTag, MSGBOX_DEFAULT)
+    	release_end
+    }
+    msgbox(Route122_House_Text_TakeThisForYourOwnGood, MSGBOX_DEFAULT)
+    if (giveitem(ITEM_SPELL_TAG) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    setflag(FLAG_RECEIVED_CLEANSE_TAG)
+    release_end
+}
+
+text Route122_House_Text_TakeThisForYourOwnGood {
+	"All sorts of beings wander the slopes
+	of MT. PYRE…
+
+	There is no telling what may happen.
+	Take this. It's for your own good."
+}
+
+text Route122_House_Text_ExplainSpellTag {
+	"Have a POKéMON hold that
+	SPELL TAG.
+
+	It will help ward off wild POKéMON."
+}

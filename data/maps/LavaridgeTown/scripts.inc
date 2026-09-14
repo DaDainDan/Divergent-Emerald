@@ -287,7 +287,7 @@ LavaridgeTown_EventScript_EggWoman::
 # 159 "data/maps/LavaridgeTown/scripts.pory"
 	waitfanfare
 # 160 "data/maps/LavaridgeTown/scripts.pory"
-	giveegg SPECIES_WYNAUT
+	giveegg SPECIES_CHARCADET
 	release_end
 
 LavaridgeTown_EventScript_EggWoman_2:

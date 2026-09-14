@@ -3986,25 +3986,12 @@ text(local) MatchCall_Text_UnusedProfBirch {
 }
 
 text MatchCall_Text_MrStone1 {
-	"{SPEAKER NAME_MR_STONE}Oh? {PLAYER}{KUN}!
+	"{SPEAKER NAME_MR_STONE}Oh? {PLAYER}{KUN}.
 
 	Since you called me, the POKéNAV
-	must be working properly!
+	must be working properly.
 
-	Other people will be registered,
-	so try calling them up, too!
-
-	Good! Good!
-	You seem to be quite happy!
-
-	Hm…
-	How could I know that?
-
-	It's because I'm looking down at
-	you from my office window!
-
-	Wahahaha!
-	See you again!"
+	Feel free to call me again, any time."
 }
 
 text MatchCall_Text_MrStone2 {

@@ -372,14 +372,255 @@ BattleFrontier_Lounge3_EventScript_FatMan::
 	end
 
 
+BattleFrontier_Lounge3_EventScript_MoveTutor::
+# 193 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	lock_faceplayer
+# 194 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	goto_if_unset FLAG_MET_BATTLE_FRONTIER_ULTIMATE_TUTOR, BattleFrontier_Lounge3_EventScript_MoveTutor_2
+BattleFrontier_Lounge3_EventScript_MoveTutor_1:
+# 198 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	msgbox BattleFrontier_Lounge3_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 199 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setvar VAR_TEMP_C, SCROLL_MULTI_ULTIMATE_MOVE_TUTOR
+# 200 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setvar VAR_0x8006, 0
+# 201 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove
+	end
+
+BattleFrontier_Lounge3_EventScript_MoveTutor_2:
+# 195 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	msgbox BattleFrontier_Lounge3_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 196 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setflag FLAG_MET_BATTLE_FRONTIER_ULTIMATE_TUTOR
+	goto BattleFrontier_Lounge3_EventScript_MoveTutor_1
+
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove::
+# 206 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	special ShowBattlePointsWindow
+# 207 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setvar VAR_0x8004, SCROLL_MULTI_ULTIMATE_MOVE_TUTOR
+# 208 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	special ShowScrollableMultichoice
+# 209 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+# 210 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	switch VAR_RESULT
+# 211 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case 0, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_3
+# 212 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case 1, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_4
+# 213 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case 2, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_5
+# 214 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case 3, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_6
+# 215 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case 4, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_7
+# 216 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case 5, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_8
+# 217 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case 6, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_9
+# 218 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case 7, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_10
+# 219 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case 8, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_11
+# 220 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case 9, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_12
+# 221 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	case MULTI_B_PRESSED, BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_12
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1:
+# 224 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	special BufferBattleFrontierTutorMoveName
+# 225 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	buffernumberstring STR_VAR_2, VAR_EXCHANGE_PRICE
+# 226 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	msgbox BattleFrontier_Lounge3_EventScript_MoveTutor_Text_0, MSGBOX_YESNO
+# 227 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_14
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_13:
+	specialvar VAR_TEMP_1, GetFrontierBattlePoints
+# 0 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	compare VAR_TEMP_1, VAR_EXCHANGE_PRICE
+	goto_if_ge BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_17
+# 249 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	msgbox BattleFrontier_Lounge3_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 250 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	goto BattleFrontier_Lounge3_EventScript_ExitTutorMoveSelect
+	end
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_3:
+# 211 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setmoveandprice MOVE_HYPER_BEAM, 48
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_4:
+# 212 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setmoveandprice MOVE_FISSURE, 48
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_5:
+# 213 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setmoveandprice MOVE_BITTER_MALICE, 48
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_6:
+# 214 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setmoveandprice MOVE_INFERNO, 48
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_7:
+# 215 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setmoveandprice MOVE_ZAP_CANNON, 48
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_8:
+# 216 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setmoveandprice MOVE_SHEER_COLD, 48
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_9:
+# 217 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setmoveandprice MOVE_SUPERPOWER, 48
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_10:
+# 218 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setmoveandprice MOVE_STEEL_BEAM, 48
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_11:
+# 219 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setmoveandprice MOVE_METEOR_BEAM, 48
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_12:
+# 222 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	goto BattleFrontier_Lounge3_EventScript_ExitTutorMoveSelect
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_1
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_14:
+# 228 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	message BattleFrontier_Lounge3_EventScript_MoveTutor_Text_0
+# 229 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	waitmessage
+# 230 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	setvar VAR_0x8006, 1
+# 231 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove
+	goto BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_13
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_17:
+# 234 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	msgbox BattleFrontier_Lounge3_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 235 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 236 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	special CloseBattlePointsWindow
+# 237 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	special CloseBattleFrontierTutorWindow
+# 238 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	chooseboxmon SELECT_PC_MON_MOVE_TUTOR
+# 239 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	waitstate
+# 240 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_20
+# 244 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	msgbox BattleFrontier_Lounge3_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 245 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	copyvar VAR_0x8004, VAR_EXCHANGE_PRICE
+# 246 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	special TakeFrontierBattlePoints
+	release_end
+
+BattleFrontier_Lounge3_EventScript_ChooseUltimateMove_20:
+# 241 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	msgbox BattleFrontier_Lounge3_Text_DeclineTutor, MSGBOX_DEFAULT
+	release_end
+
+
+BattleFrontier_Lounge3_EventScript_ExitTutorMoveSelect::
+# 255 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	special CloseBattleFrontierTutorWindow
+# 256 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	special CloseBattlePointsWindow
+# 257 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	msgbox BattleFrontier_Lounge3_Text_DeclineTutor, MSGBOX_DEFAULT
+	release_end
+
+
+BattleFrontier_Lounge3_EventScript_MoveTutor_Text_0:
+# 195 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "…$"
+
+BattleFrontier_Lounge3_Text_DeclineTutor::
+# 261 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "…$"
+
+BattleFrontier_Lounge3_Text_HyperBeamDesc::
+# 265 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "A devasting beam\n"
+	.string "of Dragon energy.\n"
+	.string "One-time use.$"
+
+BattleFrontier_Lounge3_Text_FissureDesc::
+# 271 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "A devasting beam\n"
+	.string "of Dragon energy.\n"
+	.string "One-time use.$"
+
+BattleFrontier_Lounge3_Text_PurgatoryDesc::
+# 277 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "Ultimate ghost\n"
+	.string "move that curses.\n"
+	.string "One-time use.$"
+
+BattleFrontier_Lounge3_Text_InfernoDesc::
+# 283 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "Unleashes hellish\n"
+	.string "flames that burn.\n"
+	.string "One-time use.$"
+
+BattleFrontier_Lounge3_Text_ZapCannonDesc::
+# 289 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "Shot like a railgun\n"
+	.string "that paralyzes.\n"
+	.string "One-time use.$"
+
+BattleFrontier_Lounge3_Text_SheerColdDesc::
+# 295 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "Attack of max cold\n"
+	.string "that causes frost.\n"
+	.string "One-time use.$"
+
+BattleFrontier_Lounge3_Text_SuperpowerDesc::
+# 301 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "A devasting strike\n"
+	.string "of physical power.\n"
+	.string "One-time use.$"
+
+BattleFrontier_Lounge3_Text_SteelBeamDesc::
+# 307 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "A devasting beam\n"
+	.string "of Steel energy.\n"
+	.string "One-time use.$"
+
+BattleFrontier_Lounge3_Text_MeteorBeamDesc::
+# 313 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+	.string "A devasting beam\n"
+	.string "of Space energy.\n"
+	.string "One-time use.$"
+
 BattleFrontier_Lounge3_Text_CantYouSeeWereBusyHere::
-# 192 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 320 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "…What's that you want?\p"
 	.string "Can't you see we're kind of busy here?\n"
 	.string "Can't your business wait till later?$"
 
 BattleFrontier_Lounge3_Text_YouLookToughExplainGambling::
-# 199 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 327 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "…Huh?\n"
 	.string "You look to me like a tough TRAINER.\p"
 	.string "Heheh…\n"
@@ -400,7 +641,7 @@ BattleFrontier_Lounge3_Text_YouLookToughExplainGambling::
 	.string "So, anyway…$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattleTowerSingle::
-# 227 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 355 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be challenging the BATTLE\l"
 	.string "TOWER's SINGLE BATTLE ROOMS.\p"
@@ -408,7 +649,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattleTowerSingle::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattleTowerDouble::
-# 236 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 364 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be challenging the BATTLE\l"
 	.string "TOWER's DOUBLE BATTLE ROOMS.\p"
@@ -416,7 +657,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattleTowerDouble::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattleTowerMulti::
-# 245 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 373 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be challenging the BATTLE\l"
 	.string "TOWER's MULTI BATTLE ROOMS.\p"
@@ -424,7 +665,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattleTowerMulti::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattleDomeSingle::
-# 254 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 382 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be entering the BATTLE\l"
 	.string "DOME's SINGLE BATTLE Tourney.\p"
@@ -432,7 +673,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattleDomeSingle::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattleDomeDouble::
-# 263 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 391 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be entering the BATTLE\l"
 	.string "DOME's DOUBLE BATTLE Tourney.\p"
@@ -440,7 +681,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattleDomeDouble::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattleFactorySingle::
-# 272 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 400 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be entering the BATTLE\l"
 	.string "FACTORY's Battle Swap Single Tourney.\p"
@@ -448,7 +689,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattleFactorySingle::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattleFactoryDouble::
-# 281 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 409 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be entering the BATTLE\l"
 	.string "FACTORY's Battle Swap Double Tourney.\p"
@@ -456,7 +697,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattleFactoryDouble::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattlePalaceSingle::
-# 290 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 418 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be challenging the BATTLE\l"
 	.string "PALACE's SINGLE BATTLE HALLS.\p"
@@ -464,7 +705,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattlePalaceSingle::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattlePalaceDouble::
-# 299 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 427 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be challenging the BATTLE\l"
 	.string "PALACE's DOUBLE BATTLE HALLS.\p"
@@ -472,7 +713,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattlePalaceDouble::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattleArena::
-# 308 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 436 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be entering the BATTLE\l"
 	.string "ARENA's Set KO Tourney.\p"
@@ -480,7 +721,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattleArena::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattlePike::
-# 317 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 445 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be entering the BATTLE PIKE's\l"
 	.string "Battle Choice.\p"
@@ -488,7 +729,7 @@ BattleFrontier_Lounge3_Text_ChallengeBattlePike::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattlePyramid::
-# 326 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 454 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "What I'm looking for is a TRAINER who's\n"
 	.string "going to be entering the BATTLE\l"
 	.string "PYRAMID's Battle Quest.\p"
@@ -496,13 +737,13 @@ BattleFrontier_Lounge3_Text_ChallengeBattlePyramid::
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_HowAboutEnteringEventForMe::
-# 335 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 463 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "I'll see to it that you benefit, too.\n"
 	.string "So how about it?\l"
 	.string "How about entering that event for me?$"
 
 BattleFrontier_Lounge3_Text_SpotMeSomeBattlePoints::
-# 341 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 469 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "All right, that's perfect.\n"
 	.string "So, uh… How about spotting me some\l"
 	.string "of your Battle Points?\p"
@@ -510,24 +751,24 @@ BattleFrontier_Lounge3_Text_SpotMeSomeBattlePoints::
 	.string "afterward.$"
 
 BattleFrontier_Lounge3_Text_HowMuchCanYouSpot::
-# 350 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 478 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Great, great!\n"
 	.string "So, how much can you spot me?$"
 
 BattleFrontier_Lounge3_Text_YouDontHaveEnoughPoints::
-# 355 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 483 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Oh, no, no, no!\n"
 	.string "You don't have enough Battle Points!\p"
 	.string "I wish you wouldn't monkey around and\n"
 	.string "waste everyone's time!$"
 
 BattleFrontier_Lounge3_Text_ThanksOffYouGo::
-# 363 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 491 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Heheh! Thanks much!\n"
 	.string "So, off you go!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleTowerSingle::
-# 368 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 496 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE TOWER's\n"
 	.string "SINGLE BATTLE ROOMS pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -535,7 +776,7 @@ BattleFrontier_Lounge3_Text_GetToBattleTowerSingle::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleTowerDouble::
-# 377 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 505 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE TOWER's\n"
 	.string "DOUBLE BATTLE ROOMS pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -543,7 +784,7 @@ BattleFrontier_Lounge3_Text_GetToBattleTowerDouble::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleTowerMulti::
-# 386 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 514 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE TOWER's\n"
 	.string "MULTI BATTLE ROOMS pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -551,7 +792,7 @@ BattleFrontier_Lounge3_Text_GetToBattleTowerMulti::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleDomeSingle::
-# 395 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 523 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE DOME's\n"
 	.string "SINGLE BATTLE Tourney pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -559,7 +800,7 @@ BattleFrontier_Lounge3_Text_GetToBattleDomeSingle::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleDomeDouble::
-# 404 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 532 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE DOME's\n"
 	.string "DOUBLE BATTLE Tourney pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -567,7 +808,7 @@ BattleFrontier_Lounge3_Text_GetToBattleDomeDouble::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleFactorySingle::
-# 413 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 541 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE FACTORY's\n"
 	.string "Battle Swap Single Tourney pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -575,7 +816,7 @@ BattleFrontier_Lounge3_Text_GetToBattleFactorySingle::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleFactoryDouble::
-# 422 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 550 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE FACTORY's\n"
 	.string "Battle Swap Double Tourney pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -583,7 +824,7 @@ BattleFrontier_Lounge3_Text_GetToBattleFactoryDouble::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattlePalaceSingle::
-# 431 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 559 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE PALACE's\n"
 	.string "SINGLE BATTLE HALLS pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -591,7 +832,7 @@ BattleFrontier_Lounge3_Text_GetToBattlePalaceSingle::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattlePalaceDouble::
-# 440 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 568 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE PALACE's\n"
 	.string "DOUBLE BATTLE HALLS pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -599,7 +840,7 @@ BattleFrontier_Lounge3_Text_GetToBattlePalaceDouble::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleArena::
-# 449 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 577 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE ARENA's\n"
 	.string "Set KO Tourney pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -607,7 +848,7 @@ BattleFrontier_Lounge3_Text_GetToBattleArena::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattlePike::
-# 458 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 586 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE PIKE's\n"
 	.string "Battle Choice pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -615,7 +856,7 @@ BattleFrontier_Lounge3_Text_GetToBattlePike::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattlePyramid::
-# 467 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 595 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Get to the BATTLE PYRAMID's\n"
 	.string "Battle Quest pronto!\p"
 	.string "It's a must-win situation!\n"
@@ -623,7 +864,7 @@ BattleFrontier_Lounge3_Text_GetToBattlePyramid::
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_NiceTryCantReturnPoints::
-# 476 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 604 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Oh, it's you…\n"
 	.string "Nice try…\p"
 	.string "I hate to break it to you, but I can't\n"
@@ -632,7 +873,7 @@ BattleFrontier_Lounge3_Text_NiceTryCantReturnPoints::
 	.string "us to try harder next time!$"
 
 BattleFrontier_Lounge3_Text_HelloChampHeresYourPoints::
-# 487 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 615 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Oh, yes!\n"
 	.string "Hello there, champ!\p"
 	.string "I knew you could!\n"
@@ -642,43 +883,43 @@ BattleFrontier_Lounge3_Text_HelloChampHeresYourPoints::
 	.string "of course, a little extra from me!$"
 
 BattleFrontier_Lounge3_Text_ObtainedBattlePoints::
-# 499 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 627 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "{PLAYER} obtained\n"
 	.string "{STR_VAR_1} Battle Points.$"
 
 BattleFrontier_Lounge3_Text_ThinkOfMeForAnotherChallenge::
-# 504 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 632 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "If you're up for another challenge,\n"
 	.string "please do think of me!$"
 
 BattleFrontier_Lounge3_Text_NotInterested::
-# 509 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 637 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Not interested?! You shouldn't be\n"
 	.string "so afraid to take a chance!$"
 
 BattleFrontier_Lounge3_Text_Oh::
-# 514 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 642 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Oh…$"
 
 BattleFrontier_Lounge3_Text_BackedWrongTrainer::
-# 518 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 646 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "I backed the wrong TRAINER again!\p"
 	.string "Maybe I should be battling normally\n"
 	.string "like everyone else…$"
 
 BattleFrontier_Lounge3_Text_TrainerGoodButRattled::
-# 525 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 653 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "That TRAINER…\p"
 	.string "He's good, but he gets rattled too\n"
 	.string "easily to survive the BATTLE DOME…$"
 
 BattleFrontier_Lounge3_Text_KnowWinnerWhenISeeOne::
-# 532 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 660 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Giggle!\n"
 	.string "I know a winner when I see one!$"
 
 BattleFrontier_Lounge3_Text_ShouldBeTakingChallenges::
-# 537 "data/maps/BattleFrontier_Lounge3/scripts.pory"
+# 665 "data/maps/BattleFrontier_Lounge3/scripts.pory"
 	.string "Those TRAINERS…\n"
 	.string "What are they doing?\l"
 	.string "They should be taking challenges.$"

@@ -10,11 +10,11 @@ SootopolisCity_Gym_B1F_EventScript_Andrea::
 	end
 
 
-SootopolisCity_Gym_B1F_EventScript_Crissy::
+SootopolisCity_Gym_B1F_EventScript_Cesar::
 # 10 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	trainerbattle_single TRAINER_CRISSY, SootopolisCity_Gym_B1F_Text_CrissyIntro, SootopolisCity_Gym_B1F_Text_CrissyDefeat
+	trainerbattle_single TRAINER_CESAR, SootopolisCity_Gym_B1F_Text_CesarIntro, SootopolisCity_Gym_B1F_Text_CesarDefeat
 # 11 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	msgbox SootopolisCity_Gym_B1F_Text_CrissyPostBattle, MSGBOX_AUTOCLOSE
+	msgbox SootopolisCity_Gym_B1F_Text_CesarPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -58,11 +58,11 @@ SootopolisCity_Gym_B1F_EventScript_Tiffany::
 	end
 
 
-SootopolisCity_Gym_B1F_EventScript_Bethany::
+SootopolisCity_Gym_B1F_EventScript_Bradley::
 # 46 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	trainerbattle_single TRAINER_BETHANY, SootopolisCity_Gym_B1F_Text_BethanyIntro, SootopolisCity_Gym_B1F_Text_BethanyDefeat
+	trainerbattle_single TRAINER_BRADLEY, SootopolisCity_Gym_B1F_Text_BradleyIntro, SootopolisCity_Gym_B1F_Text_BradleyDefeat
 # 47 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	msgbox SootopolisCity_Gym_B1F_Text_BethanyPostBattle, MSGBOX_AUTOCLOSE
+	msgbox SootopolisCity_Gym_B1F_Text_BradleyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -96,18 +96,18 @@ SootopolisCity_Gym_B1F_Text_AndreaPostBattle::
 	.string "Watch what happens if you crack all\n"
 	.string "the floor tiles.$"
 
-SootopolisCity_Gym_B1F_Text_CrissyIntro::
+SootopolisCity_Gym_B1F_Text_CesarIntro::
 # 77 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "You came all the way here, but you won't\n"
 	.string "get to see JUAN.\p"
 	.string "Not if you lose to me, you won't!$"
 
-SootopolisCity_Gym_B1F_Text_CrissyDefeat::
+SootopolisCity_Gym_B1F_Text_CesarDefeat::
 # 84 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "You're strong!\n"
 	.string "I was fooled by your cute looks!$"
 
-SootopolisCity_Gym_B1F_Text_CrissyPostBattle::
+SootopolisCity_Gym_B1F_Text_CesarPostBattle::
 # 89 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "You might be good enough to avoid\n"
 	.string "being wiped out in one hit by JUAN.$"
@@ -196,16 +196,16 @@ SootopolisCity_Gym_B1F_Text_TiffanyPostBattle::
 	.string "you are as a TRAINER has nothing to do\l"
 	.string "with how young or old you are.$"
 
-SootopolisCity_Gym_B1F_Text_BethanyIntro::
+SootopolisCity_Gym_B1F_Text_BradleyIntro::
 # 184 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "When I'm with my POKéMON, the time\n"
 	.string "flies by before you can say, “Oops!”$"
 
-SootopolisCity_Gym_B1F_Text_BethanyDefeat::
+SootopolisCity_Gym_B1F_Text_BradleyDefeat::
 # 189 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "Oops!$"
 
-SootopolisCity_Gym_B1F_Text_BethanyPostBattle::
+SootopolisCity_Gym_B1F_Text_BradleyPostBattle::
 # 193 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "I wish I could forget about lost causes\n"
 	.string "before I can manage an “Oops!”$"

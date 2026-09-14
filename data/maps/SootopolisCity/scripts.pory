@@ -1,6 +1,6 @@
 mapscripts SootopolisCity_MapScripts {
     MAP_SCRIPT_ON_LOAD {
-        if (!flag(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE)) {
+        if (!flag(FLAG_VISITED_PACIFIDLOG_TOWN)) {
 			setmetatile(31, 32, METATILE_Sootopolis_GymDoor_Closed, TRUE)
 		}
 		if (flag(FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN) && !flag(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE)) {
@@ -13,24 +13,28 @@ mapscripts SootopolisCity_MapScripts {
 			setmetatile(45, 6, METATILE_Sootopolis_Door_Closed, TRUE)
 			setmetatile(48, 25, METATILE_Sootopolis_Door_Closed, TRUE)
 			setmetatile(51, 36, METATILE_Sootopolis_Door_Closed, TRUE)
+            setmetatile(31, 32, METATILE_Sootopolis_GymDoor_Closed, TRUE)
 		}
 		end
     }
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_VISITED_SOOTOPOLIS_CITY)
-		if (var(VAR_SOOTOPOLIS_CITY_STATE) == 1 || var(VAR_SKY_PILLAR_STATE) == 1) {
+		if (var(VAR_SOOTOPOLIS_CITY_STATE) == 2 || var(VAR_SKY_PILLAR_STATE) == 1) {
 			setflag(FLAG_HIDE_MAP_NAME_POPUP)
 		}
-		if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 1 && var(VAR_SOOTOPOLIS_CITY_STATE) < 6) {
-			if (var(VAR_SOOTOPOLIS_CITY_STATE) == 1 || var(VAR_SKY_PILLAR_STATE) == 1) {
+		if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 2 && var(VAR_SOOTOPOLIS_CITY_STATE) < 7) {
+			if (var(VAR_SOOTOPOLIS_CITY_STATE) == 2 || var(VAR_SKY_PILLAR_STATE) == 1) {
 				setweather(WEATHER_DOWNPOUR)
 			}
 			elif (var(VAR_SKY_PILLAR_STATE) == 0) {
 				call(Common_EventScript_SetAbnormalWeather)
 			}
 		}
-		if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 1 && var(VAR_SOOTOPOLIS_CITY_STATE) < 6) {
-			if (var(VAR_SOOTOPOLIS_CITY_STATE) <= 4 || var(VAR_SKY_PILLAR_STATE) <= 1) {
+        if (var(VAR_SOOTOPOLIS_CITY_STATE) == 0) {
+			setobjectxyperm(LOCALID_SOOTOPOLIS_EXPERT, 31, 18)
+		}
+		if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 2 && var(VAR_SOOTOPOLIS_CITY_STATE) < 7) {
+			if (var(VAR_SOOTOPOLIS_CITY_STATE) <= 5 || var(VAR_SKY_PILLAR_STATE) <= 1) {
 				setmaplayoutindex(LAYOUT_SOOTOPOLIS_CITY_LEGENDS_BATTLE)
 			}
 			setobjectxyperm(LOCALID_KIRI, 13, 48)
@@ -42,16 +46,16 @@ mapscripts SootopolisCity_MapScripts {
 			setobjectmovementtype(LOCALID_SOOTOPOLIS_NINJA_BOY, MOVEMENT_TYPE_FACE_LEFT)
 			setobjectmovementtype(LOCALID_SOOTOPOLIS_WOMAN_1, MOVEMENT_TYPE_FACE_LEFT)
 		}
-		if ((var(VAR_SOOTOPOLIS_CITY_STATE) == 2 || var(VAR_SOOTOPOLIS_CITY_STATE) == 3) && flag(FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN)) {
+		if ((var(VAR_SOOTOPOLIS_CITY_STATE) == 3 || var(VAR_SOOTOPOLIS_CITY_STATE) == 4) && flag(FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN)) {
 			setobjectxyperm(LOCALID_SOOTOPOLIS_EXPERT, 30, 18)
 			setobjectxyperm(LOCALID_SOOTOPOLIS_STEVEN, 32, 18)
 		}
-		if (var(VAR_SOOTOPOLIS_CITY_STATE) == 4) {
+		if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
 			setobjectxyperm(LOCALID_SOOTOPOLIS_EXPERT, 30, 18)
 			setobjectxyperm(LOCALID_SOOTOPOLIS_WALLACE, 31, 18)
 			setobjectxyperm(LOCALID_SOOTOPOLIS_STEVEN, 32, 18)
 		}
-		if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+		if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
 			setobjectxyperm(LOCALID_SOOTOPOLIS_EXPERT, 31, 18)
 			setobjectxyperm(LOCALID_SOOTOPOLIS_STEVEN, 29, 33)
 			setobjectxyperm(LOCALID_SOOTOPOLIS_MAXIE, 33, 35)
@@ -63,9 +67,13 @@ mapscripts SootopolisCity_MapScripts {
 			}
 			setobjectmovementtype(LOCALID_SOOTOPOLIS_WALLACE, MOVEMENT_TYPE_FACE_DOWN)
 		}
-		if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
-			setobjectxyperm(LOCALID_SOOTOPOLIS_EXPERT, 31, 18)
-		}
+        if (var(VAR_SOOTOPOLIS_CITY_STATE) == 7) {
+            setflag(FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS)
+            setflag(FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN)
+            setflag(FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE)
+            clearflag(FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1)
+            setvar(VAR_SOOTOPOLIS_CITY_STATE, 8)
+        }
 		end
     }
     MAP_SCRIPT_ON_RESUME {
@@ -73,11 +81,11 @@ mapscripts SootopolisCity_MapScripts {
     	end
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_SOOTOPOLIS_CITY_STATE, 1: SootopolisCity_EventScript_StartKyogreGroudonScene
+		VAR_SOOTOPOLIS_CITY_STATE, 2: SootopolisCity_EventScript_StartKyogreGroudonScene
     	VAR_SKY_PILLAR_STATE, 1: SootopolisCity_EventScript_StartRayquazaScene
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_SOOTOPOLIS_CITY_STATE, 5 {
+		VAR_SOOTOPOLIS_CITY_STATE, 6 {
 			switch (var(VAR_SKY_PILLAR_STATE)) {
 				case 1: turnobject(LOCALID_PLAYER, DIR_NORTH)
 				case 2: 
@@ -176,7 +184,7 @@ script SootopolisCity_EventScript_KyogreGroudonScene {
 	}
     waitmovement(0)
     special(RemoveCameraObject)
-    setvar(VAR_SOOTOPOLIS_CITY_STATE, 2)
+    setvar(VAR_SOOTOPOLIS_CITY_STATE, 3)
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
     releaseall
     end
@@ -307,13 +315,13 @@ movement SootopolisCity_Movement_UnusedPanBack {
 
 script SootopolisCity_EventScript_CaveOfOriginExpert {
     lock_faceplayer
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 6) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 7) {
         msgbox(SootopolisCity_Text_CaveOfOriginSleepsToo, MSGBOX_DEFAULT)
     }
-    elif (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    elif (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_AwakenedPokemonClash, MSGBOX_DEFAULT)
     }
-    elif (var(VAR_SOOTOPOLIS_CITY_STATE) >= 2) {
+    elif (var(VAR_SOOTOPOLIS_CITY_STATE) >= 3) {
         msgbox(SootopolisCity_Text_LeadSuperiorTrainerToCave, MSGBOX_DEFAULT)
     }
 	else {
@@ -324,10 +332,10 @@ script SootopolisCity_EventScript_CaveOfOriginExpert {
 
 script SootopolisCity_EventScript_Kiri {
     lock_faceplayer
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) <= 1 || var(VAR_SOOTOPOLIS_CITY_STATE) >= 6) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) <= 2 || var(VAR_SOOTOPOLIS_CITY_STATE) >= 7) {
         goto(SootopolisCity_EventScript_KiriGiveBerry)
     }
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_PrettyMonCameFromSky, MSGBOX_DEFAULT)
 		closemessage
 		release_end
@@ -353,7 +361,7 @@ script SootopolisCity_EventScript_KiriGiveBerry {
 		release_end
     }
     msgbox(SootopolisCity_Text_NameIsKiriHaveOneOfThese, MSGBOX_DEFAULT)
-    giverandomberry(BERRY_ID_POMEG, BERRY_ID_NOMEL)
+    giverandomberry(BERRY_ID_CHILAN, BERRY_ID_ROSELI)
     if (var(VAR_RESULT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
@@ -375,7 +383,7 @@ script SootopolisCity_EventScript_Woman2 {
     lockall
     applymovement(LOCALID_SOOTOPOLIS_WOMAN_2, Common_Movement_FacePlayer)
     waitmovement(0)
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_YouBroughtFlyingMon, MSGBOX_DEFAULT)
     } else {
 		msgbox(SootopolisCity_Text_WeatherWentWild, MSGBOX_DEFAULT)
@@ -389,7 +397,7 @@ script SootopolisCity_EventScript_Woman2 {
 
 script SootopolisCity_EventScript_Man {
     lock_faceplayer
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 6) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 7) {
         msgbox(SootopolisCity_Text_CityRegainedCalm, MSGBOX_DEFAULT)
     	release_end
     }
@@ -399,13 +407,13 @@ script SootopolisCity_EventScript_Man {
 
 script SootopolisCity_EventScript_Woman1 {
     lock_faceplayer
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 6) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 7) {
         msgbox(SootopolisCity_Text_NightSkyFavoriteScenery, MSGBOX_DEFAULT)
     }
-    elif (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    elif (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_FearedWorstWhenPokemonFlewDown, MSGBOX_DEFAULT)
     }
-    elif (var(VAR_SOOTOPOLIS_CITY_STATE) >= 2) {
+    elif (var(VAR_SOOTOPOLIS_CITY_STATE) >= 3) {
         msgbox(SootopolisCity_Text_GiganticPokemonFight, MSGBOX_DEFAULT)
     	goto(Common_EventScript_FaceOriginalDirection)
     }
@@ -419,11 +427,11 @@ script SootopolisCity_EventScript_NinjaBoy {
     lockall
     applymovement(LOCALID_SOOTOPOLIS_NINJA_BOY, Common_Movement_FacePlayer)
     waitmovement(0)
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_ThatWasWicked, MSGBOX_DEFAULT)
     	release_end
     }
-    elif (var(VAR_SOOTOPOLIS_CITY_STATE) >= 6 || var(VAR_SOOTOPOLIS_CITY_STATE) <= 1) {
+    elif (var(VAR_SOOTOPOLIS_CITY_STATE) >= 7 || var(VAR_SOOTOPOLIS_CITY_STATE) <= 2) {
         msgbox(SootopolisCity_Text_WonderWhatWorldIsLike, MSGBOX_DEFAULT)
     	release_end
     }
@@ -436,13 +444,13 @@ script SootopolisCity_EventScript_Boy1 {
     lockall
     applymovement(LOCALID_SOOTOPOLIS_BOY_1, Common_Movement_FacePlayer)
     waitmovement(0)
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_WhatIsThatGreenPokemon, MSGBOX_DEFAULT)
     }
     if (flag(FLAG_SYS_GAME_CLEAR)) {
         msgbox(SootopolisCity_Text_WhereDidLegendariesGo, MSGBOX_DEFAULT)
     }
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 6 || var(VAR_SOOTOPOLIS_CITY_STATE) <= 1) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) >= 7 || var(VAR_SOOTOPOLIS_CITY_STATE) <= 2) {
         msgbox(SootopolisCity_Text_PhysicallyFitLivingHere, MSGBOX_DEFAULT)
     }
 	else {
@@ -474,10 +482,10 @@ script SootopolisCity_EventScript_Steven {
     if (!flag(FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN)) {
         goto(SootopolisCity_EventScript_StevenLeadPlayerCaveOfOrigin)
     }
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 2) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 3) {
         msgbox(SootopolisCity_Text_KnowWhatsNeededToHelpHim, MSGBOX_DEFAULT)
     }
-    elif (var(VAR_SOOTOPOLIS_CITY_STATE) == 3 || var(VAR_SOOTOPOLIS_CITY_STATE) == 4) {
+    elif (var(VAR_SOOTOPOLIS_CITY_STATE) == 4 || var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
         msgbox(SootopolisCity_Text_NeverBeenToSkyPillar, MSGBOX_DEFAULT)
     }
     elif (flag(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE)) {
@@ -607,7 +615,7 @@ script SootopolisCity_EventScript_Boy2 {
     lockall
     applymovement(LOCALID_SOOTOPOLIS_BOY_2, Common_Movement_FacePlayer)
     waitmovement(0)
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_FlyingMonStoppedRampage, MSGBOX_DEFAULT)
 		closemessage
     } else {
@@ -622,7 +630,7 @@ script SootopolisCity_EventScript_Boy2 {
 
 script SootopolisCity_EventScript_BlackBelt {
     lockall
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         applymovement(LOCALID_SOOTOPOLIS_BLACK_BELT, Common_Movement_FacePlayer)
 		waitmovement(0)
 		msgbox(SootopolisCity_Text_GreenOneSettlesThings, MSGBOX_DEFAULT)
@@ -644,7 +652,7 @@ script SootopolisCity_EventScript_Girl {
     lockall
     applymovement(LOCALID_SOOTOPOLIS_GIRL, Common_Movement_FacePlayer)
     waitmovement(0)
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_SootopolisDidntGetWrecked, MSGBOX_DEFAULT)
 		closemessage
     } else {
@@ -661,7 +669,7 @@ script SootopolisCity_EventScript_Maniac {
     lockall
     applymovement(LOCALID_SOOTOPOLIS_MANIAC, Common_Movement_FacePlayer)
     waitmovement(0)
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_SawLegendWithOwnEyes, MSGBOX_DEFAULT)
     } else {
 		msgbox(SootopolisCity_Text_SeeingLegendWithOwnEyes, MSGBOX_DEFAULT)
@@ -675,11 +683,11 @@ script SootopolisCity_EventScript_Maniac {
 
 script SootopolisCity_EventScript_Wallace {
     lock_faceplayer
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 4) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
         msgbox(SootopolisCity_Text_HaventYouScaledSkyPillar, MSGBOX_DEFAULT)
     	release_end
     }
-    if (flag(FLAG_RECEIVED_HM_WATERFALL)) {
+    if (flag(FLAG_RECEIVED_TM_TAKE_HEART)) {
         msgbox(SootopolisCity_Text_DazzledByMentor, MSGBOX_DEFAULT)
     	release_end
     }
@@ -692,10 +700,11 @@ script SootopolisCity_EventScript_Wallace {
 
 script SootopolisCity_EventScript_GiveWaterfall {
     msgbox(SootopolisCity_Text_ThankYouForHelpAcceptThis, MSGBOX_DEFAULT)
-    giveitem(ITEM_HM_WATERFALL)
-    setflag(FLAG_RECEIVED_HM_WATERFALL)
+    giveitem(ITEM_TM_TAKE_HEART)
+    setflag(FLAG_RECEIVED_TM_TAKE_HEART)
     msgbox(SootopolisCity_Text_ExplainWaterfallGoToGym, MSGBOX_DEFAULT)
     closemessage
+    setvar(VAR_SOOTOPOLIS_CITY_STATE, 7)
     if (var(VAR_FACING) == DIR_WEST) {
         applymovement(LOCALID_SOOTOPOLIS_WALLACE, moves(walk_left,  step_faster_down))
 		waitmovement(0)
@@ -712,7 +721,7 @@ script SootopolisCity_EventScript_GiveWaterfall {
 
 script SootopolisCity_EventScript_Maxie {
     lockall
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_AfterAllOurScheming, MSGBOX_DEFAULT)
 		setflag(FLAG_MET_MAXIE_SOOTOPOLIS)
 		if (flag(FLAG_MET_ARCHIE_SOOTOPOLIS)) {
@@ -728,7 +737,7 @@ script SootopolisCity_EventScript_Maxie {
 
 script SootopolisCity_EventScript_Archie {
     lockall
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 5) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 6) {
         msgbox(SootopolisCity_Text_TryingMeaninglessToPokemon, MSGBOX_DEFAULT)
 		setflag(FLAG_MET_ARCHIE_SOOTOPOLIS)
 		if (flag(FLAG_MET_MAXIE_SOOTOPOLIS)) {

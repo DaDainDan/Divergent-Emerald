@@ -23,7 +23,7 @@ Route111_WinstrateFamilysHouse_EventScript_Victoria::
 	goto_if_set FLAG_RECEIVED_MACHO_BRACE, Route111_WinstrateFamilysHouse_EventScript_Victoria_2
 # 17 "data/maps/Route111_WinstrateFamilysHouse/scripts.pory"
 	msgbox Route111_WinstrateFamilysHouse_Text_LikeYouToHaveMachoBrace, MSGBOX_DEFAULT
-	giveitem ITEM_MACHO_BRACE
+	giveitem ITEM_EXPERT_BELT
 # 0 "data/maps/Route111_WinstrateFamilysHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route111_WinstrateFamilysHouse_EventScript_Victoria_6

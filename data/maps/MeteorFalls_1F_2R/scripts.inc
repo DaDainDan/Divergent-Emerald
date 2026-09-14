@@ -2,34 +2,34 @@ MeteorFalls_1F_2R_MapScripts::
 	.byte 0
 
 
-MeteorFalls_1F_2R_EventScript_Nicolas::
+MeteorFalls_1F_2R_EventScript_Sergio::
 # 4 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	trainerbattle_single TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasIntro, MeteorFalls_1F_2R_Text_NicolasDefeat, MeteorFalls_1F_2R_EventScript_RegisterNicolas
+	trainerbattle_single TRAINER_SERGIO_1, MeteorFalls_1F_2R_Text_SergioIntro, MeteorFalls_1F_2R_Text_SergioDefeat, MeteorFalls_1F_2R_EventScript_RegisterSergio
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 0 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	compare VAR_RESULT, TRUE
-	goto_if_eq MeteorFalls_1F_2R_EventScript_Nicolas_2
+	goto_if_eq MeteorFalls_1F_2R_EventScript_Sergio_2
 # 10 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	msgbox MeteorFalls_1F_2R_Text_NicolasPostBattle, MSGBOX_DEFAULT
+	msgbox MeteorFalls_1F_2R_Text_SergioPostBattle, MSGBOX_DEFAULT
 	release_end
 
-MeteorFalls_1F_2R_EventScript_Nicolas_2:
+MeteorFalls_1F_2R_EventScript_Sergio_2:
 # 6 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	trainerbattle_rematch TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasRematchIntro, MeteorFalls_1F_2R_Text_NicolasRematchDefeat
+	trainerbattle_rematch TRAINER_SERGIO_1, MeteorFalls_1F_2R_Text_SergioRematchIntro, MeteorFalls_1F_2R_Text_SergioRematchDefeat
 # 7 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	msgbox MeteorFalls_1F_2R_Text_NicolasPostRematch, MSGBOX_AUTOCLOSE
+	msgbox MeteorFalls_1F_2R_Text_SergioPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 
-MeteorFalls_1F_2R_EventScript_RegisterNicolas::
+MeteorFalls_1F_2R_EventScript_RegisterSergio::
 # 15 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
 # 16 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	waitmovement 0
 # 17 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	msgbox MeteorFalls_1F_2R_Text_NicolasRegister, MSGBOX_DEFAULT
+	msgbox MeteorFalls_1F_2R_Text_SergioRegister, MSGBOX_DEFAULT
 # 18 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	register_matchcall TRAINER_NICOLAS_1
+	register_matchcall TRAINER_SERGIO_1
 	release_end
 
 
@@ -79,42 +79,42 @@ MeteorFalls_1F_2R_EventScript_Jay_2:
 	end
 
 
-MeteorFalls_1F_2R_Text_NicolasIntro::
+MeteorFalls_1F_2R_Text_SergioIntro::
 # 50 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	.string "This is where we DRAGON users do our\n"
 	.string "training.\p"
 	.string "The CHAMPION even visits.\n"
 	.string "Now do you see how special it is here?$"
 
-MeteorFalls_1F_2R_Text_NicolasDefeat::
+MeteorFalls_1F_2R_Text_SergioDefeat::
 # 58 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	.string "Urgh!\n"
 	.string "I didn't expect you to be so strong!$"
 
-MeteorFalls_1F_2R_Text_NicolasPostBattle::
+MeteorFalls_1F_2R_Text_SergioPostBattle::
 # 63 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	.string "The road ahead remains long and harsh.\p"
 	.string "When will my POKéMON and I become\n"
 	.string "the best?$"
 
-MeteorFalls_1F_2R_Text_NicolasRegister::
+MeteorFalls_1F_2R_Text_SergioRegister::
 # 70 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	.string "I want to know more about your power.\n"
 	.string "Let me register you in my POKéNAV.$"
 
-MeteorFalls_1F_2R_Text_NicolasRematchIntro::
+MeteorFalls_1F_2R_Text_SergioRematchIntro::
 # 75 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	.string "Since we met, we have trained hard\n"
 	.string "with our sights on number one.\p"
 	.string "Help us see how much stronger we've\n"
 	.string "become!$"
 
-MeteorFalls_1F_2R_Text_NicolasRematchDefeat::
+MeteorFalls_1F_2R_Text_SergioRematchDefeat::
 # 83 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	.string "Urgh!\n"
 	.string "I didn't expect you to be so strong!$"
 
-MeteorFalls_1F_2R_Text_NicolasPostRematch::
+MeteorFalls_1F_2R_Text_SergioPostRematch::
 # 88 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	.string "You've obviously kept up your\n"
 	.string "POKéMON training.\p"

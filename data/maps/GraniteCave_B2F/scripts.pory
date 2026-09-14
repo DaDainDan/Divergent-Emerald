@@ -1,1 +1,10 @@
 mapscripts GraniteCave_B2F_MapScripts {}
+
+script GraniteCave_B2F_Eventscript_Fossil {
+    lock_faceplayer
+    if (giveitem(ITEM_ARMOR_FOSSIL) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    removeobject(LOCALID_GRANITE_CAVE_FOSSIL)
+    release_end
+}

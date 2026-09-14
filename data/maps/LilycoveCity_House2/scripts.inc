@@ -6,16 +6,16 @@ LilycoveCity_House2_EventScript_FatMan::
 # 4 "data/maps/LilycoveCity_House2/scripts.pory"
 	lock_faceplayer
 # 5 "data/maps/LilycoveCity_House2/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TM_REST, LilycoveCity_House2_EventScript_FatMan_2
+	goto_if_set FLAG_RECEIVED_TM_HYPNOSIS, LilycoveCity_House2_EventScript_FatMan_2
 # 9 "data/maps/LilycoveCity_House2/scripts.pory"
 	msgbox LilycoveCity_House2_Text_NotAwakeYetHaveThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_REST
+	giveitem ITEM_TM_HYPNOSIS
 # 0 "data/maps/LilycoveCity_House2/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq LilycoveCity_House2_EventScript_FatMan_5
 LilycoveCity_House2_EventScript_FatMan_4:
 # 13 "data/maps/LilycoveCity_House2/scripts.pory"
-	setflag FLAG_RECEIVED_TM_REST
+	setflag FLAG_RECEIVED_TM_HYPNOSIS
 # 14 "data/maps/LilycoveCity_House2/scripts.pory"
 	msgbox LilycoveCity_House2_Text_SleepIsEssential, MSGBOX_DEFAULT
 	release_end

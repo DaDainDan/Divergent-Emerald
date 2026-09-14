@@ -16,6 +16,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_ELITE_FOUR_DRAKE",
       "graphics_id": "OBJ_EVENT_GFX_DRAKE",
       "x": 6,
       "y": 5,

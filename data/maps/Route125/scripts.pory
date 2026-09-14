@@ -25,9 +25,9 @@ mapscripts Route125_MapScripts {
     ]
 }
 
-script Route125_EventScript_Nolen {
-    trainerbattle_single(TRAINER_NOLEN, Route125_Text_NolenIntro, Route125_Text_NolenDefeat)
-    msgbox(Route125_Text_NolenPostBattle, MSGBOX_AUTOCLOSE)
+script Route125_EventScript_Gabriel {
+    trainerbattle_single(TRAINER_GABRIEL, Route125_Text_GabrielIntro, Route125_Text_GabrielDefeat)
+    msgbox(Route125_Text_GabrielPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -69,13 +69,13 @@ script Route125_EventScript_RegisterErnest {
 }
 
 script Route125_EventScript_Kim {
-    trainerbattle_double(TRAINER_KIM_AND_IRIS, Route125_Text_KimIntro, Route125_Text_KimDefeat, Route125_Text_KimNotEnoughMons)
+    trainerbattle_double(TRAINER_KIM, Route125_Text_KimIntro, Route125_Text_KimDefeat, Route125_Text_KimNotEnoughMons)
     msgbox(Route125_Text_KimPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
 script Route125_EventScript_Iris {
-    trainerbattle_double(TRAINER_KIM_AND_IRIS, Route125_Text_IrisIntro, Route125_Text_IrisDefeat, Route125_Text_IrisNotEnoughMons)
+    trainerbattle_double(TRAINER_IRIS, Route125_Text_IrisIntro, Route125_Text_IrisDefeat, Route125_Text_IrisNotEnoughMons)
     msgbox(Route125_Text_IrisPostBattle, MSGBOX_AUTOCLOSE)
     end
 }

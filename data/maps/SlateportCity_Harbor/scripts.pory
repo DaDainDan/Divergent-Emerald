@@ -267,7 +267,7 @@ script SlateportCity_Harbor_EventScript_DeepSeaTooth {
     if (var(VAR_RESULT) == NO) {
         goto(SlateportCity_Harbor_EventScript_ChooseDifferentTrade)
     }
-    if (giveitem(ITEM_DEEP_SEA_TOOTH) == FALSE) {
+    if (giveitem(ITEM_PRISM_SCALE) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     goto(SlateportCity_Harbor_EventScript_ScannerTradeFinish)
@@ -279,7 +279,7 @@ script SlateportCity_Harbor_EventScript_DeepSeaScale {
     if (var(VAR_RESULT) == NO) {
         goto(SlateportCity_Harbor_EventScript_ChooseDifferentTrade)
     }
-    if (giveitem(ITEM_DEEP_SEA_SCALE) == FALSE) {
+    if (giveitem(ITEM_DRAGON_SCALE) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     goto(SlateportCity_Harbor_EventScript_ScannerTradeFinish)
@@ -506,12 +506,12 @@ text SlateportCity_Harbor_Text_IfYouWantToTradeLetMeKnow {
 
 text SlateportCity_Harbor_Text_TradeForDeepSeaTooth {
 	"{SPEAKER NAME_STERN}So you'll trade it for
-	my DEEPSEATOOTH?"
+	my PRISM SCALE?"
 }
 
 text SlateportCity_Harbor_Text_TradeForDeepSeaScale {
 	"{SPEAKER NAME_STERN}So you'll trade it for
-	my DEEPSEASCALE?"
+	my DRAGON SCALE?"
 }
 
 text SlateportCity_Harbor_Text_WhichOneDoYouWant {

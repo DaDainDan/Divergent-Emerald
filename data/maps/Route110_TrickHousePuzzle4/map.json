@@ -3,7 +3,6 @@
   "name": "Route110_TrickHousePuzzle4",
   "layout": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE4",
   "music": "MUS_TRICK_HOUSE",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_110",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -63,7 +62,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_MECH_MAIL",
+      "trainer_sight_or_berry_tree_id": "ITEM_BIG_MUSHROOM",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_MECH_MAIL"
     },
@@ -196,6 +195,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
       "flag": "FLAG_TEMP_1A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 2,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POWER_HERB",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_POWER_HERB"
     }
   ],
   "warp_events": [
@@ -231,5 +243,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_TrickHousePuzzle4_EventScript_Scroll"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

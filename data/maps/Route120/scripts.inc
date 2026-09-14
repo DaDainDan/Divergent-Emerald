@@ -264,7 +264,7 @@ Route120_EventScript_Steven_8:
 # 118 "data/maps/Route120/scripts.pory"
 	waitmoncry
 # 119 "data/maps/Route120/scripts.pory"
-	setwildbattle SPECIES_KECLEON, 30
+	setwildbattle SPECIES_KECLEON, 60
 # 120 "data/maps/Route120/scripts.pory"
 	setvar VAR_0x8009, 0
 # 121 "data/maps/Route120/scripts.pory"
@@ -482,50 +482,68 @@ Route120_EventScript_Chip::
 	end
 
 
-Route120_EventScript_Clarissa::
+Route120_EventScript_Camilla::
 # 242 "data/maps/Route120/scripts.pory"
-	trainerbattle_single TRAINER_CLARISSA, Route120_Text_ClarissaIntro, Route120_Text_ClarissaDefeat
+	trainerbattle_single TRAINER_CAMILLA, Route120_Text_CamillaIntro, Route120_Text_CamillaDefeat
 # 243 "data/maps/Route120/scripts.pory"
-	msgbox Route120_Text_ClarissaPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route120_Text_CamillaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route120_EventScript_Angelica::
 # 248 "data/maps/Route120/scripts.pory"
-	trainerbattle_single TRAINER_ANGELICA, Route120_Text_AngelicaIntro, Route120_Text_AngelicaDefeat
+	trainerbattle_single TRAINER_ANGELICA, Route120_Text_AngelicaIntro, Route120_Text_AngelicaDefeat, Route120_EventScript_Angelica_GiveDefog
 # 249 "data/maps/Route120/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_TM_DEFOG, Route120_EventScript_Angelica_2
+Route120_EventScript_Angelica_1:
+# 252 "data/maps/Route120/scripts.pory"
 	msgbox Route120_Text_AngelicaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route120_EventScript_Angelica_2:
+# 250 "data/maps/Route120/scripts.pory"
+	goto Route120_EventScript_Angelica_GiveDefog
+	goto Route120_EventScript_Angelica_1
+
+
+Route120_EventScript_Angelica_GiveDefog::
+# 257 "data/maps/Route120/scripts.pory"
+	msgbox Route120_ClearStorms, MSGBOX_DEFAULT
+# 258 "data/maps/Route120/scripts.pory"
+	giveitem ITEM_TM_DEFOG
+# 259 "data/maps/Route120/scripts.pory"
+	setflag FLAG_RECEIVED_TM_DEFOG
 	end
 
 
 Route120_EventScript_Keigo::
-# 254 "data/maps/Route120/scripts.pory"
+# 264 "data/maps/Route120/scripts.pory"
 	trainerbattle_single TRAINER_KEIGO, Route120_Text_KeigoIntro, Route120_Text_KeigoDefeat
-# 255 "data/maps/Route120/scripts.pory"
+# 265 "data/maps/Route120/scripts.pory"
 	msgbox Route120_Text_KeigoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route120_EventScript_Riley::
-# 260 "data/maps/Route120/scripts.pory"
+# 270 "data/maps/Route120/scripts.pory"
 	trainerbattle_single TRAINER_RILEY, Route120_Text_RileyIntro, Route120_Text_RileyDefeat
-# 261 "data/maps/Route120/scripts.pory"
+# 271 "data/maps/Route120/scripts.pory"
 	msgbox Route120_Text_RileyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route120_EventScript_Leonel::
-# 266 "data/maps/Route120/scripts.pory"
+# 276 "data/maps/Route120/scripts.pory"
 	trainerbattle_single TRAINER_LEONEL, Route120_Text_LeonelIntro, Route120_Text_LeonelDefeat
-# 267 "data/maps/Route120/scripts.pory"
+# 277 "data/maps/Route120/scripts.pory"
 	msgbox Route120_Text_LeonelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route120_EventScript_Callie::
-# 272 "data/maps/Route120/scripts.pory"
+# 282 "data/maps/Route120/scripts.pory"
 	trainerbattle_single TRAINER_CALLIE, Route120_Text_CallieIntro, Route120_Text_CallieDefeat
-# 273 "data/maps/Route120/scripts.pory"
+# 283 "data/maps/Route120/scripts.pory"
 	msgbox Route120_Text_CalliePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -539,7 +557,7 @@ Route120_EventScript_Steven_Movement_0:
 	step_end
 
 Route120_Text_StevenGreeting::
-# 277 "data/maps/Route120/scripts.pory"
+# 287 "data/maps/Route120/scripts.pory"
 	.string "{SPEAKER NAME_STEVEN}Hm? {PLAYER}{KUN}, hi.\n"
 	.string "It's been a while.\p"
 	.string "There's something here that you can't\n"
@@ -553,29 +571,29 @@ Route120_Text_StevenGreeting::
 	.string "battle?$"
 
 Route120_Text_StevenIllWaitHere::
-# 295 "data/maps/Route120/scripts.pory"
+# 305 "data/maps/Route120/scripts.pory"
 	.string "{SPEAKER NAME_STEVEN}No?\p"
 	.string "I'll wait here, so you can get ready.$"
 
 Route120_Text_StevenReadyForBattle::
-# 301 "data/maps/Route120/scripts.pory"
+# 311 "data/maps/Route120/scripts.pory"
 	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}, are your POKéMON\n"
 	.string "ready for battle?$"
 
 Route120_Text_StevenShowMeYourPower::
-# 306 "data/maps/Route120/scripts.pory"
+# 316 "data/maps/Route120/scripts.pory"
 	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}, show me your true\n"
 	.string "power as a TRAINER!$"
 
 Route120_Text_StevenUsedDevonScope::
-# 311 "data/maps/Route120/scripts.pory"
+# 321 "data/maps/Route120/scripts.pory"
 	.string "STEVEN used the DEVON SCOPE.\p"
 	.string "An invisible POKéMON became completely\n"
 	.string "visible!\p"
 	.string "The startled POKéMON attacked!$"
 
 Route120_Text_StevenGiveDevonScope::
-# 320 "data/maps/Route120/scripts.pory"
+# 330 "data/maps/Route120/scripts.pory"
 	.string "{SPEAKER NAME_STEVEN}I see…\n"
 	.string "Your battle style is intriguing.\p"
 	.string "Your POKéMON have obviously grown\n"
@@ -586,7 +604,7 @@ Route120_Text_StevenGiveDevonScope::
 	.string "concealed POKéMON.$"
 
 Route120_Text_StevenGoodbye::
-# 334 "data/maps/Route120/scripts.pory"
+# 344 "data/maps/Route120/scripts.pory"
 	.string "{SPEAKER NAME_STEVEN}{PLAYER}{KUN}.\p"
 	.string "I enjoy seeing POKéMON and TRAINERS\n"
 	.string "who strive together.\p"
@@ -594,27 +612,35 @@ Route120_Text_StevenGoodbye::
 	.string "Well, let's meet again somewhere.$"
 
 Kecleon_Text_SomethingUnseeable::
-# 345 "data/maps/Route120/scripts.pory"
+# 355 "data/maps/Route120/scripts.pory"
 	.string "Something unseeable is in the way.$"
 
 Kecleon_Text_WantToUseDevonScope::
-# 349 "data/maps/Route120/scripts.pory"
+# 359 "data/maps/Route120/scripts.pory"
 	.string "Something unseeable is in the way.\p"
-	.string "Want to use the DEVON SCOPE?$"
+	.string "Are you sure you want to disturb it?$"
 
 Kecleon_Text_UseDevonScopeMonAttacked::
-# 355 "data/maps/Route120/scripts.pory"
-	.string "{PLAYER} used the DEVON SCOPE.\p"
-	.string "An invisible POKéMON became completely\n"
-	.string "visible!\p"
+# 365 "data/maps/Route120/scripts.pory"
+	.string "{PLAYER} prodded the invisible \n"
+	.string "obstacle.\p"
+	.string "An invisible POKéMON revealed\n"
+	.string "itself.\p"
 	.string "The startled POKéMON attacked!$"
 
 Route120_Text_RouteSignFortree::
-# 364 "data/maps/Route120/scripts.pory"
+# 375 "data/maps/Route120/scripts.pory"
 	.string "ROUTE 120\n"
 	.string "{LEFT_ARROW} FORTREE CITY$"
 
 Route120_Text_RouteSign121::
-# 369 "data/maps/Route120/scripts.pory"
+# 380 "data/maps/Route120/scripts.pory"
 	.string "{RIGHT_ARROW} ROUTE 121\n"
 	.string "{LEFT_ARROW} ROUTE 120$"
+
+Route120_ClearStorms::
+# 385 "data/maps/Route120/scripts.pory"
+	.string "Well done!\n"
+	.string "You're a really strong trainer!\p"
+	.string "I use this TM a lot to clear stormy\n"
+	.string "weather, but you might need it more.$"

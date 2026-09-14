@@ -16,6 +16,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_ELITE_FOUR_GLACIA",
       "graphics_id": "OBJ_EVENT_GFX_GLACIA",
       "x": 6,
       "y": 5,

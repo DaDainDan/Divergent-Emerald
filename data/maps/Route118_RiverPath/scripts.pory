@@ -1,1 +1,73 @@
 mapscripts Route118_RiverPath_MapScripts {}
+
+script Route118_RiverPath_EventScript_GoodRodFisherman {
+    lock_faceplayer
+    if (flag(FLAG_RECEIVED_GOOD_ROD)) {
+        msgbox(Route118_RiverPath_Text_TryCatchingMonWithGoodRod, MSGBOX_DEFAULT)
+        release_end
+    }
+    msgbox(Route118_RiverPath_Text_YouAgreeGoodRodIsGood, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(Route118_RiverPath_Text_IdenticalMindsTakeThis, MSGBOX_DEFAULT)
+        if (giveitem(ITEM_GOOD_ROD) == FALSE) {
+            goto(Common_EventScript_ShowBagIsFull)
+        }
+        setflag(FLAG_RECEIVED_GOOD_ROD)
+        msgbox(Route118_RiverPath_Text_TryYourLuckFishing, MSGBOX_DEFAULT)
+    } else {
+        msgbox(Route118_RiverPath_Text_DontYouLikeToFish, MSGBOX_DEFAULT)
+    }
+    release_end
+}
+
+script Route118_RiverPath_EventScript_Cheyenne {
+    trainerbattle_single(TRAINER_CHEYENNE, Route118_RiverPath_Text_CheyenneIntro, Route118_RiverPath_Text_CheyenneDefeat, Route118_RiverPath_EventScript_Cheyenne_GiveConfuseRay)
+    if (!flag(FLAG_RECEIVED_TM_CONFUSE_RAY)) {
+        goto(Route118_RiverPath_EventScript_Cheyenne_GiveConfuseRay)
+    }
+    msgbox(Route118_RiverPath_Text_CheyennePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route118_RiverPath_EventScript_Cheyenne_GiveConfuseRay {
+    msgbox(Route118_RiverPath_Text_DarkEnergy, MSGBOX_DEFAULT)
+    giveitem(ITEM_TM_CONFUSE_RAY)
+    setflag(FLAG_RECEIVED_TM_CONFUSE_RAY)
+    end
+}
+
+text Route118_RiverPath_Text_YouAgreeGoodRodIsGood {
+	"Hmm!
+	A GOOD ROD is really good!
+
+	Wouldn't you agree?"
+}
+
+text Route118_RiverPath_Text_IdenticalMindsTakeThis {
+	"Hmm!
+	We're of identical minds!
+
+	Hmm!
+	Take this GOOD ROD!"
+}
+
+text Route118_RiverPath_Text_TryYourLuckFishing {
+	"Wherever there's water, try your luck
+	at fishing."
+}
+
+text Route118_RiverPath_Text_DontYouLikeToFish {
+	"Don't you like to fish?"
+}
+
+text Route118_RiverPath_Text_TryCatchingMonWithGoodRod {
+	"Try catching all sorts of POKéMON
+	with your GOOD ROD."
+}
+
+text Route118_RiverPath_Text_DarkEnergy {
+	"There is clearly a twinge of dark energy
+	within your heart.
+
+	Perhaps, I should give you this."
+}

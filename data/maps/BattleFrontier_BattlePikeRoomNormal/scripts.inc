@@ -630,6 +630,8 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_KirliaAttack::
 	case PIKE_STATUS_SLEEP, BattleFrontier_BattlePikeRoomNormal_EventScript_KirliaAttack_6
 BattleFrontier_BattlePikeRoomNormal_EventScript_KirliaAttack_1:
 # 303 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	waitmessage
+# 304 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	setvar VAR_0x8003, SPECIES_KIRLIA
 	return
 
@@ -655,316 +657,325 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_KirliaAttack_6:
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack::
-# 308 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	msgbox BattleFrontier_BattlePikeRoomNormal_Text_DusclopsStop, MSGBOX_DEFAULT
 # 309 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	closemessage
+	msgbox BattleFrontier_BattlePikeRoomNormal_Text_DusclopsStop, MSGBOX_DEFAULT
 # 310 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitse
+	closemessage
 # 311 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playmoncry SPECIES_DUSCLOPS, CRY_MODE_NORMAL
+	waitse
 # 312 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_DUSCLOPS, CRY_MODE_NORMAL
 # 313 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	pike_getstatus
+	waitmoncry
 # 314 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	switch VAR_RESULT
+	pike_getstatus
 # 315 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	case PIKE_STATUS_FREEZE, BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_3
+	switch VAR_RESULT
 # 316 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	case PIKE_STATUS_FREEZE, BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_3
+# 317 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	case PIKE_STATUS_BURN, BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_4
-BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_1:
 # 318 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	case PIKE_STATUS_CURSE, BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_5
+BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_1:
+# 320 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	waitmessage
+# 321 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	setvar VAR_0x8003, SPECIES_DUSCLOPS
 	return
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_3:
-# 315 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 316 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	message BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedIceBeam
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_1
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_4:
-# 316 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 317 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	message BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedWillOWisp
+	goto BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_1
+
+BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_5:
+# 318 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	message BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedCurse
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack_1
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish::
-# 323 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitmessage
-# 324 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	pike_flashscreen
-# 325 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitstate
 # 326 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	applymovement LOCALID_PIKE_ROOM_NPC_1, Common_Movement_WalkDown
+	waitmessage
 # 327 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitmovement 0
+	pike_flashscreen
 # 328 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	applymovement LOCALID_PIKE_ROOM_NPC_2, Common_Movement_FaceUp
+	waitstate
 # 329 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PIKE_ROOM_NPC_1, Common_Movement_WalkDown
 # 330 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitse
-# 331 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playmoncry VAR_0x8003, CRY_MODE_NORMAL
-# 332 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitmoncry
-# 333 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	msgbox BattleFrontier_BattlePikeRoomNormal_Text_ThatsEnough, MSGBOX_DEFAULT
-# 334 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitse
-# 335 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playmoncry VAR_0x8003, CRY_MODE_NORMAL
-# 336 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitmoncry
-# 337 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	closemessage
-# 338 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	applymovement LOCALID_PIKE_ROOM_NPC_2, Common_Movement_WalkLeft
-# 339 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	applymovement LOCALID_PIKE_ROOM_NPC_1, BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_Movement_0
-# 340 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitmovement 0
+# 331 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	applymovement LOCALID_PIKE_ROOM_NPC_2, Common_Movement_FaceUp
+# 332 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	waitmovement 0
+# 333 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	waitse
+# 334 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	playmoncry VAR_0x8003, CRY_MODE_NORMAL
+# 335 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	waitmoncry
+# 336 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	msgbox BattleFrontier_BattlePikeRoomNormal_Text_ThatsEnough, MSGBOX_DEFAULT
+# 337 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	waitse
+# 338 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	playmoncry VAR_0x8003, CRY_MODE_NORMAL
+# 339 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	waitmoncry
+# 340 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	closemessage
 # 341 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	switch VAR_0x8003
+	applymovement LOCALID_PIKE_ROOM_NPC_2, Common_Movement_WalkLeft
 # 342 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	case SPECIES_KIRLIA, BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_3
+	applymovement LOCALID_PIKE_ROOM_NPC_1, BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_Movement_0
 # 343 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	waitmovement 0
+# 344 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	switch VAR_0x8003
+# 345 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	case SPECIES_KIRLIA, BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_3
+# 346 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	case SPECIES_DUSCLOPS, BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_4
 BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_1:
 	return
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_3:
-# 342 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 345 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_ApologizeForKirlia, MSGBOX_DEFAULT
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_1
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_4:
-# 343 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 346 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_ApologizeForDusclops, MSGBOX_DEFAULT
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_1
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_DoPikeQueenBattle::
-# 349 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	closemessage
-# 350 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	applymovement LOCALID_PLAYER, BattleFrontier_BattlePikeRoomNormal_EventScript_LucyEnter_Movement_0
-# 351 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitmovement 0
 # 352 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	dofacilitytrainerbattle FACILITY_BATTLE_PIKE_SINGLE
+	closemessage
 # 353 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	applymovement LOCALID_PLAYER, BattleFrontier_BattlePikeRoomNormal_EventScript_LucyEnter_Movement_0
+# 354 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	waitmovement 0
+# 355 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	dofacilitytrainerbattle FACILITY_BATTLE_PIKE_SINGLE
+# 356 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitstate
 	return
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_NPC::
-# 358 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	pike_getroomtype
-# 359 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	switch VAR_RESULT
-# 360 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	case PIKE_ROOM_NPC, BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_3
 # 361 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	case PIKE_ROOM_STATUS, BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_4
+	pike_getroomtype
 # 362 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	switch VAR_RESULT
+# 363 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	case PIKE_ROOM_NPC, BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_3
+# 364 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	case PIKE_ROOM_STATUS, BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_4
+# 365 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	case PIKE_ROOM_HEAL_PART, BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_5
 BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_1:
-# 364 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 367 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_NormalNPC
 	end
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_3:
-# 360 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 363 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_NormalNPC
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_1
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_4:
-# 361 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 364 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_StatusNPC
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_1
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_5:
-# 362 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 365 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_NPC_1
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_NormalNPC::
-# 369 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	lock_faceplayer
-# 370 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	pike_getnpcmsg
-# 371 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	msgbox gStringVar4, MSGBOX_DEFAULT
 # 372 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitmessage
+	lock_faceplayer
 # 373 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	pike_getnpcmsg
+# 374 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	msgbox gStringVar4, MSGBOX_DEFAULT
+# 375 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	waitmessage
+# 376 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	closemessage
 	release_end
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_StatusNPC::
-# 378 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 381 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	lock_faceplayer
-# 379 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 382 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_ApologizeHopeMonsAreFine, MSGBOX_DEFAULT
-# 380 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 383 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	closemessage
 	release_end
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC::
-# 385 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 388 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	pike_healonetwomons
-# 386 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 389 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_2
 BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_1:
-# 394 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playfanfare MUS_HEAL
-# 395 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	waitfanfare
-# 396 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	msgbox BattleFrontier_BattlePikeRoomNormal_Text_BestOfLuckFarewell, MSGBOX_DEFAULT
 # 397 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	closemessage
+	playfanfare MUS_HEAL
 # 398 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	release
+	waitfanfare
 # 399 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	applymovement LOCALID_PIKE_ROOM_NPC_1, BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_Movement_0
+	msgbox BattleFrontier_BattlePikeRoomNormal_Text_BestOfLuckFarewell, MSGBOX_DEFAULT
 # 400 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	closemessage
+# 401 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	release
+# 402 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	applymovement LOCALID_PIKE_ROOM_NPC_1, BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_Movement_0
+# 403 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitmovement 0
 	end
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_2:
-# 387 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	lock_faceplayer
-# 388 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	switch VAR_RESULT
-# 389 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	case 2, BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_6
 # 390 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	lock_faceplayer
+# 391 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	switch VAR_RESULT
+# 392 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	case 2, BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_6
+# 393 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	case 1, BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_7
 BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_4:
-# 392 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 395 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	closemessage
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_1
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_6:
-# 389 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 392 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreTwoMons, MSGBOX_DEFAULT
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_4
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_7:
-# 390 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 393 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreOneMon, MSGBOX_DEFAULT
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_4
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMon::
-# 406 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	lock_faceplayer
-# 407 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	msgbox BattleFrontier_BattlePikeRoomNormal_Text_Silence, MSGBOX_DEFAULT
-# 408 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	closemessage
 # 409 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	release
+	lock_faceplayer
 # 410 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	applymovement LOCALID_PIKE_ROOM_NPC_2, Common_Movement_FaceRight
+	msgbox BattleFrontier_BattlePikeRoomNormal_Text_Silence, MSGBOX_DEFAULT
 # 411 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	closemessage
+# 412 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	release
+# 413 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	applymovement LOCALID_PIKE_ROOM_NPC_2, Common_Movement_FaceRight
+# 414 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitmovement 0
 	end
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_SetCurtainTilesMostlyClosed::
-# 416 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 1, METATILE_BattlePike_Curtain_Stage1_Tile0, TRUE
-# 417 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 3, 2, METATILE_BattlePike_Curtain_Stage1_Tile1, TRUE
-# 418 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 2, METATILE_BattlePike_Curtain_Stage1_Tile2, TRUE
 # 419 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 5, 2, METATILE_BattlePike_Curtain_Stage1_Tile3, TRUE
+	setmetatile 4, 1, METATILE_BattlePike_Curtain_Stage1_Tile0, TRUE
 # 420 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 3, 3, METATILE_BattlePike_Curtain_Stage1_Tile4, TRUE
+	setmetatile 3, 2, METATILE_BattlePike_Curtain_Stage1_Tile1, TRUE
 # 421 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 3, METATILE_BattlePike_Curtain_Stage1_Tile5, FALSE
+	setmetatile 4, 2, METATILE_BattlePike_Curtain_Stage1_Tile2, TRUE
 # 422 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 5, 3, METATILE_BattlePike_Curtain_Stage1_Tile6, TRUE
+	setmetatile 5, 2, METATILE_BattlePike_Curtain_Stage1_Tile3, TRUE
 # 423 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 3, 3, METATILE_BattlePike_Curtain_Stage1_Tile4, TRUE
+# 424 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 4, 3, METATILE_BattlePike_Curtain_Stage1_Tile5, FALSE
+# 425 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 5, 3, METATILE_BattlePike_Curtain_Stage1_Tile6, TRUE
+# 426 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_SetCurtainTilesLittleClosed::
-# 428 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 1, METATILE_BattlePike_Curtain_Stage2_Tile0, TRUE
-# 429 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 3, 2, METATILE_BattlePike_Curtain_Stage2_Tile1, TRUE
-# 430 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 2, METATILE_BattlePike_Curtain_Stage2_Tile2, TRUE
 # 431 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 5, 2, METATILE_BattlePike_Curtain_Stage2_Tile3, TRUE
+	setmetatile 4, 1, METATILE_BattlePike_Curtain_Stage2_Tile0, TRUE
 # 432 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 3, 3, METATILE_BattlePike_Curtain_Stage2_Tile4, TRUE
+	setmetatile 3, 2, METATILE_BattlePike_Curtain_Stage2_Tile1, TRUE
 # 433 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 3, METATILE_BattlePike_Curtain_Stage2_Tile5, FALSE
+	setmetatile 4, 2, METATILE_BattlePike_Curtain_Stage2_Tile2, TRUE
 # 434 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 5, 3, METATILE_BattlePike_Curtain_Stage2_Tile6, TRUE
+	setmetatile 5, 2, METATILE_BattlePike_Curtain_Stage2_Tile3, TRUE
 # 435 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 3, 3, METATILE_BattlePike_Curtain_Stage2_Tile4, TRUE
+# 436 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 4, 3, METATILE_BattlePike_Curtain_Stage2_Tile5, FALSE
+# 437 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 5, 3, METATILE_BattlePike_Curtain_Stage2_Tile6, TRUE
+# 438 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_SetCurtainTilesOpen::
-# 440 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 1, METATILE_BattlePike_Curtain_Stage3_Tile0, TRUE
-# 441 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 3, 2, METATILE_BattlePike_Curtain_Stage3_Tile1, TRUE
-# 442 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 2, METATILE_BattlePike_Curtain_Stage3_Tile2, TRUE
 # 443 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 5, 2, METATILE_BattlePike_Curtain_Stage3_Tile3, TRUE
+	setmetatile 4, 1, METATILE_BattlePike_Curtain_Stage3_Tile0, TRUE
 # 444 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 3, 3, METATILE_BattlePike_Curtain_Stage3_Tile4, TRUE
+	setmetatile 3, 2, METATILE_BattlePike_Curtain_Stage3_Tile1, TRUE
 # 445 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 3, METATILE_BattlePike_Curtain_Stage3_Tile5, FALSE
+	setmetatile 4, 2, METATILE_BattlePike_Curtain_Stage3_Tile2, TRUE
 # 446 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 5, 3, METATILE_BattlePike_Curtain_Stage3_Tile6, TRUE
+	setmetatile 5, 2, METATILE_BattlePike_Curtain_Stage3_Tile3, TRUE
 # 447 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 3, 3, METATILE_BattlePike_Curtain_Stage3_Tile4, TRUE
+# 448 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 4, 3, METATILE_BattlePike_Curtain_Stage3_Tile5, FALSE
+# 449 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 5, 3, METATILE_BattlePike_Curtain_Stage3_Tile6, TRUE
+# 450 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_SetCurtainTilesClosed::
-# 452 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 1, METATILE_BattlePike_Curtain_Stage0_Tile0, TRUE
-# 453 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 3, 2, METATILE_BattlePike_Curtain_Stage0_Tile1, TRUE
-# 454 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 2, METATILE_BattlePike_Curtain_Stage0_Tile2, TRUE
 # 455 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 5, 2, METATILE_BattlePike_Curtain_Stage0_Tile3, TRUE
+	setmetatile 4, 1, METATILE_BattlePike_Curtain_Stage0_Tile0, TRUE
 # 456 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 3, 3, METATILE_BattlePike_Curtain_Stage0_Tile4, TRUE
+	setmetatile 3, 2, METATILE_BattlePike_Curtain_Stage0_Tile1, TRUE
 # 457 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 4, 3, METATILE_BattlePike_Curtain_Stage0_Tile5, FALSE
+	setmetatile 4, 2, METATILE_BattlePike_Curtain_Stage0_Tile2, TRUE
 # 458 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	setmetatile 5, 3, METATILE_BattlePike_Curtain_Stage0_Tile6, TRUE
+	setmetatile 5, 2, METATILE_BattlePike_Curtain_Stage0_Tile3, TRUE
 # 459 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 3, 3, METATILE_BattlePike_Curtain_Stage0_Tile4, TRUE
+# 460 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 4, 3, METATILE_BattlePike_Curtain_Stage0_Tile5, FALSE
+# 461 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	setmetatile 5, 3, METATILE_BattlePike_Curtain_Stage0_Tile6, TRUE
+# 462 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
-# 464 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 467 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 BattleFrontier_BattlePikeRoomNormal_Movement_CameraPanDown:
-# 466 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 469 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	walk_down
-# 466 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 469 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	walk_down
 	step_end
 
@@ -1090,170 +1101,174 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_EnterStatusRoom_Movement_0:
 	face_down
 	step_end
 
-# 339 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 342 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 BattleFrontier_BattlePikeRoomNormal_EventScript_StatusMonFinish_Movement_0:
-# 339 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 342 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	walk_down
-# 339 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 342 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	face_left
-# 339 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 342 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	delay_16
-# 339 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 342 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	delay_16
-# 339 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 342 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	face_down
 	step_end
 
-# 399 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 402 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC_Movement_0:
-# 399 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 402 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	walk_up
-# 399 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 402 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	set_invisible
-# 399 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 402 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	walk_up
 	step_end
 
 BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreToFullHealth::
-# 469 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 472 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Welcome…\n"
 	.string "You must be commended for your luck…\p"
 	.string "Your POKéMON shall be restored\n"
 	.string "to full health…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_EnjoyRestOfChallenge::
-# 477 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 480 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I urge you to enjoy the rest of your\n"
 	.string "Battle Choice challenge…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreOneMon::
-# 482 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 485 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Ah, you're a lucky one.\n"
 	.string "I'm in somewhat-good spirits now.\p"
 	.string "I will restore one of your POKéMON\n"
 	.string "to full health.$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_BestOfLuckFarewell::
-# 490 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 493 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "The best of luck to you.\n"
 	.string "Farewell.$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_CareForBattleWillRestoreMons::
-# 498 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 501 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Excuse me…\p"
 	.string "Would you care for a battle?\n"
 	.string "I'll restore your POKéMON if you win.$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_NowShallWe::
-# 506 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 509 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Very well…\n"
 	.string "Now, shall we?$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_HowUnsportingOfYou::
-# 512 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 515 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I see…\n"
 	.string "How unsporting of you…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreMonsAsPromised::
-# 518 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 521 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Magnificent…\p"
 	.string "As promised, I shall restore your\n"
 	.string "POKéMON to full health.$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_BestOfLuckFarewell2::
-# 526 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 529 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "The best of luck to you.\n"
 	.string "Farewell.$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_WatchOut::
-# 531 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 534 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Oh, my!\p"
 	.string "Watch out!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_KirliaStop::
-# 537 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 540 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Now, now!\n"
 	.string "KIRLIA, stop that!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_DusclopsStop::
-# 542 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 545 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Now, now!\n"
 	.string "DUSCLOPS, stop that!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_KirliaUsedToxic::
-# 547 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 550 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "KIRLIA used TOXIC!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_KirliaUsedHypnosis::
-# 551 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 554 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "KIRLIA used HYPNOSIS!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_KirliaUsedThunderWave::
-# 555 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 558 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "KIRLIA used THUNDER WAVE!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_KirliaUsedWillOWisp::
-# 559 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 562 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "KIRLIA used WILL-O-WISP!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedWillOWisp::
-# 563 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 566 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "DUSCLOPS used WILL-O-WISP!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedIceBeam::
-# 567 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	.string "DUSCLOPS used ICE BEAM!$"
+# 570 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "DUSCLOPS used BITTER COLD!$"
+
+BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedCurse::
+# 574 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+	.string "DUSCLOPS used CURSE!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ThatsEnough::
-# 571 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 578 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Look here!\n"
 	.string "That's quite enough!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ApologizeForKirlia::
-# 576 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 583 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I must apologize to you…\p"
 	.string "My KIRLIA has a TIMID nature…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ApologizeForDusclops::
-# 582 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 589 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I must apologize to you…\p"
 	.string "My DUSCLOPS has a TIMID nature…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_AttacksWhenStartled::
-# 588 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 595 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "It attacks without warning if it is\n"
 	.string "startled by another person…\p"
 	.string "Are you and your POKéMON all right?$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ApologizeHopeMonsAreFine::
-# 595 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 602 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I do apologize for what happened…\n"
 	.string "I do hope your POKéMON are fine.$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_Silence::
-# 600 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 607 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … …$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_BattleSomewhatToughTrainer::
-# 605 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 612 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Welcome…\p"
 	.string "Here, we will have you battle\n"
 	.string "a somewhat-tough TRAINER…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_RestoreToFullHealth::
-# 612 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 619 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "How wonderful…\p"
 	.string "To honor your victory, your POKéMON\n"
 	.string "shall be restored to full health…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_EnjoyRestOfChallenge2::
-# 619 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 626 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I urge you to enjoy the rest of your\n"
 	.string "Battle Choice challenge…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ImThePikeQueen::
-# 624 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 631 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I am LUCY…\n"
 	.string "I am the law here…\l"
 	.string "For I am the PIKE QUEEN…\p"
@@ -1263,27 +1278,27 @@ BattleFrontier_BattlePikeRoomNormal_Text_ImThePikeQueen::
 	.string "Hurry. Come on…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_HopeYouDidntUseUpLuck::
-# 636 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 643 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Your luck…\n"
 	.string "I hope you didn't use it all up here…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_LucyShowMeFrontierPass::
-# 641 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 648 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "{SPEAKER NAME_LUCY}… … … … … …\n"
 	.string "Show me your FRONTIER PASS…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ReceivedLuckSymbol::
-# 646 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 653 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "The Luck Symbol was embossed on\n"
 	.string "the FRONTIER PASS!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_AllThereIsDisappear::
-# 651 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 658 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "…That's all there is…\n"
 	.string "Disappear already…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_LucyYouAgain::
-# 656 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 663 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "{SPEAKER NAME_LUCY}…You again…\p"
 	.string "… … … … … …\p"
 	.string "…I've trampled flowers and braved\n"
@@ -1294,27 +1309,27 @@ BattleFrontier_BattlePikeRoomNormal_Text_LucyYouAgain::
 	.string "Fine… I'll do it…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_NowComeOn::
-# 671 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 678 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Now!\n"
 	.string "Come on!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_LucyFrontierPass::
-# 676 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 683 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "{SPEAKER NAME_LUCY}… … … … … …\p"
 	.string "…FRONTIER PASS…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_LuckSymbolTookGoldenShine::
-# 682 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 689 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "The Luck Symbol took on\n"
 	.string "a golden shine!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_IWontForget::
-# 687 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 694 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "…You, I won't forget…\n"
 	.string "…Ever…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomNoHeal::
-# 692 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 699 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I welcome you…\p"
 	.string "Giggle…\n"
 	.string "You seem to be bereft of luck…\p"
@@ -1322,19 +1337,19 @@ BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomNoHeal::
 	.string "your POKéMON could have been healed…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomHealOne::
-# 702 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 709 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I welcome you…\p"
 	.string "Since you have chosen this room, I will\n"
 	.string "restore one POKéMON to full health…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomHealTwo::
-# 709 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 716 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I welcome you…\p"
 	.string "Since you have chosen this room, I will\n"
 	.string "restore two POKéMON to full health…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreAllMons::
-# 717 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 724 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I welcome you…\p"
 	.string "Giggle…\n"
 	.string "You should thank your lucky stars…\p"
@@ -1342,11 +1357,11 @@ BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreAllMons::
 	.string "all your POKéMON will be restored…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ShallFetchOurMaster::
-# 727 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 734 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "I shall go fetch our master…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreTwoMons::
-# 731 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
+# 738 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	.string "Ah, you're a lucky one!\n"
 	.string "I'm in good spirits now.\p"
 	.string "I will restore two of your POKéMON\n"

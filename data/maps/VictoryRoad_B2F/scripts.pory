@@ -36,6 +36,16 @@ script VictoryRoad_B2F_EventScript_Dianne {
     end
 }
 
+script VictoryRoad_B2F_EventScript_Fossil {
+    lock_faceplayer
+    giveitem(ITEM_OLD_AMBER)
+    if (var(VAR_RESULT) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    removeobject(LOCALID_VICTORY_ROAD_FOSSIL)
+    release_end
+}
+
 text VictoryRoad_B2F_Text_VitoIntro {
 	"I trained together with my whole family,
 	every one of us!

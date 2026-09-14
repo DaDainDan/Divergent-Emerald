@@ -1,1 +1,19 @@
 mapscripts DuneCavernB2F_MapScripts {}
+
+script DuneCavern_B2F_EventScript_Liam {
+    trainerbattle_single(TRAINER_LIAM, DuneCavern_B2F_Text_LiamIntro, DuneCavern_B2F_Text_LiamDefeat)
+    msgbox(DuneCavern_B2F_Text_LiamPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text DuneCavern_B2F_Text_LiamIntro {
+	"\."
+}
+
+text DuneCavern_B2F_Text_LiamDefeat {
+	"\."
+}
+
+text DuneCavern_B2F_Text_LiamPostBattle {
+	"\."
+}

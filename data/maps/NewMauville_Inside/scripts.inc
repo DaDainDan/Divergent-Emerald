@@ -79,6 +79,10 @@ NewMauville_Inside_MapScripts_MAP_SCRIPT_ON_LOAD:
 	compare VAR_NEW_MAUVILLE_STATE, 2
 	goto_if_eq NewMauville_Inside_MapScripts_MAP_SCRIPT_ON_LOAD_2
 NewMauville_Inside_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+# 32 "data/maps/NewMauville_Inside/scripts.pory"
+	compare VAR_NEW_MAUVILLE_STATE, 3
+	goto_if_eq NewMauville_Inside_MapScripts_MAP_SCRIPT_ON_LOAD_5
+NewMauville_Inside_MapScripts_MAP_SCRIPT_ON_LOAD_4:
 	end
 
 NewMauville_Inside_MapScripts_MAP_SCRIPT_ON_LOAD_2:
@@ -86,360 +90,365 @@ NewMauville_Inside_MapScripts_MAP_SCRIPT_ON_LOAD_2:
 	call NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
 	goto NewMauville_Inside_MapScripts_MAP_SCRIPT_ON_LOAD_1
 
+NewMauville_Inside_MapScripts_MAP_SCRIPT_ON_LOAD_5:
+# 33 "data/maps/NewMauville_Inside/scripts.pory"
+	setmetatile 39, 5, 0x2C5, TRUE
+	goto NewMauville_Inside_MapScripts_MAP_SCRIPT_ON_LOAD_4
+
 
 NewMauville_Inside_EventScript_BlueButton::
-# 37 "data/maps/NewMauville_Inside/scripts.pory"
-	lockall
-# 38 "data/maps/NewMauville_Inside/scripts.pory"
-	setvar VAR_TEMP_1, 1
-# 39 "data/maps/NewMauville_Inside/scripts.pory"
-	setvar VAR_TEMP_2, 0
 # 40 "data/maps/NewMauville_Inside/scripts.pory"
-	playse SE_PIN
+	lockall
 # 41 "data/maps/NewMauville_Inside/scripts.pory"
-	call NewMauville_Inside_EventScript_SetBarrierStateBlueButton
+	setvar VAR_TEMP_1, 1
 # 42 "data/maps/NewMauville_Inside/scripts.pory"
-	special DrawWholeMapView
+	setvar VAR_TEMP_2, 0
 # 43 "data/maps/NewMauville_Inside/scripts.pory"
+	playse SE_PIN
+# 44 "data/maps/NewMauville_Inside/scripts.pory"
+	call NewMauville_Inside_EventScript_SetBarrierStateBlueButton
+# 45 "data/maps/NewMauville_Inside/scripts.pory"
+	special DrawWholeMapView
+# 46 "data/maps/NewMauville_Inside/scripts.pory"
 	releaseall
 	end
 
 
 NewMauville_Inside_EventScript_GreenButton::
-# 48 "data/maps/NewMauville_Inside/scripts.pory"
-	lockall
-# 49 "data/maps/NewMauville_Inside/scripts.pory"
-	setvar VAR_TEMP_1, 0
-# 50 "data/maps/NewMauville_Inside/scripts.pory"
-	setvar VAR_TEMP_2, 1
 # 51 "data/maps/NewMauville_Inside/scripts.pory"
-	playse SE_PIN
+	lockall
 # 52 "data/maps/NewMauville_Inside/scripts.pory"
-	call NewMauville_Inside_EventScript_SetBarrierStateGreenButton
+	setvar VAR_TEMP_1, 0
 # 53 "data/maps/NewMauville_Inside/scripts.pory"
-	special DrawWholeMapView
+	setvar VAR_TEMP_2, 1
 # 54 "data/maps/NewMauville_Inside/scripts.pory"
+	playse SE_PIN
+# 55 "data/maps/NewMauville_Inside/scripts.pory"
+	call NewMauville_Inside_EventScript_SetBarrierStateGreenButton
+# 56 "data/maps/NewMauville_Inside/scripts.pory"
+	special DrawWholeMapView
+# 57 "data/maps/NewMauville_Inside/scripts.pory"
 	releaseall
 	end
 
 
 NewMauville_Inside_EventScript_SetBarrierStateBlueButton::
-# 59 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 23, 34, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
-# 60 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 23, 35, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
-# 61 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 23, 36, METATILE_BikeShop_Floor_Shadow_Top, FALSE
 # 62 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 23, 37, METATILE_BikeShop_Wall_Edge_Top, FALSE
+	setmetatile 23, 34, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
 # 63 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 16, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
+	setmetatile 23, 35, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
 # 64 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 17, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
+	setmetatile 23, 36, METATILE_BikeShop_Floor_Shadow_Top, FALSE
 # 65 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 18, METATILE_BikeShop_Floor_Shadow_Top, FALSE
+	setmetatile 23, 37, METATILE_BikeShop_Wall_Edge_Top, FALSE
 # 66 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 19, METATILE_BikeShop_Wall_Edge_Top, FALSE
+	setmetatile 10, 16, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
 # 67 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 0, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
+	setmetatile 10, 17, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
 # 68 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 1, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
+	setmetatile 10, 18, METATILE_BikeShop_Floor_Shadow_Top, FALSE
 # 69 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 2, METATILE_BikeShop_Floor_Shadow_Top, FALSE
+	setmetatile 10, 19, METATILE_BikeShop_Wall_Edge_Top, FALSE
 # 70 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 3, METATILE_BikeShop_Wall_Edge_Top, FALSE
+	setmetatile 10, 0, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
 # 71 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 37, 33, METATILE_BikeShop_Barrier_Green_Top, TRUE
+	setmetatile 10, 1, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
 # 72 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 37, 34, METATILE_BikeShop_Barrier_Green_TopMid, TRUE
+	setmetatile 10, 2, METATILE_BikeShop_Floor_Shadow_Top, FALSE
 # 73 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 37, 35, METATILE_BikeShop_Barrier_Green_BottomMid, TRUE
+	setmetatile 10, 3, METATILE_BikeShop_Wall_Edge_Top, FALSE
 # 74 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 37, 36, METATILE_BikeShop_Barrier_Green_Bottom, TRUE
+	setmetatile 37, 33, METATILE_BikeShop_Barrier_Green_Top, TRUE
 # 75 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 28, 22, METATILE_BikeShop_Barrier_Green_Top, TRUE
+	setmetatile 37, 34, METATILE_BikeShop_Barrier_Green_TopMid, TRUE
 # 76 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 28, 23, METATILE_BikeShop_Barrier_Green_TopMid, TRUE
+	setmetatile 37, 35, METATILE_BikeShop_Barrier_Green_BottomMid, TRUE
 # 77 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 28, 24, METATILE_BikeShop_Barrier_Green_BottomMid, TRUE
+	setmetatile 37, 36, METATILE_BikeShop_Barrier_Green_Bottom, TRUE
 # 78 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 28, 25, METATILE_BikeShop_Barrier_Green_Bottom, TRUE
+	setmetatile 28, 22, METATILE_BikeShop_Barrier_Green_Top, TRUE
 # 79 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 24, METATILE_BikeShop_Barrier_Green_Top, TRUE
+	setmetatile 28, 23, METATILE_BikeShop_Barrier_Green_TopMid, TRUE
 # 80 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 25, METATILE_BikeShop_Barrier_Green_TopMid, TRUE
+	setmetatile 28, 24, METATILE_BikeShop_Barrier_Green_BottomMid, TRUE
 # 81 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 26, METATILE_BikeShop_Barrier_Green_BottomMid, TRUE
+	setmetatile 28, 25, METATILE_BikeShop_Barrier_Green_Bottom, TRUE
 # 82 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 27, METATILE_BikeShop_Barrier_Green_Bottom, TRUE
+	setmetatile 10, 24, METATILE_BikeShop_Barrier_Green_Top, TRUE
 # 83 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 21, 2, METATILE_BikeShop_Barrier_Green_Top, TRUE
+	setmetatile 10, 25, METATILE_BikeShop_Barrier_Green_TopMid, TRUE
 # 84 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 21, 3, METATILE_BikeShop_Barrier_Green_TopMid, TRUE
+	setmetatile 10, 26, METATILE_BikeShop_Barrier_Green_BottomMid, TRUE
 # 85 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 21, 4, METATILE_BikeShop_Barrier_Green_BottomMid, TRUE
+	setmetatile 10, 27, METATILE_BikeShop_Barrier_Green_Bottom, TRUE
 # 86 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 21, 5, METATILE_BikeShop_Barrier_Green_Bottom, TRUE
+	setmetatile 21, 2, METATILE_BikeShop_Barrier_Green_Top, TRUE
 # 87 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 6, 11, METATILE_BikeShop_Button_Pressed, FALSE
+	setmetatile 21, 3, METATILE_BikeShop_Barrier_Green_TopMid, TRUE
 # 88 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 13, 10, METATILE_BikeShop_Button_Pressed, FALSE
+	setmetatile 21, 4, METATILE_BikeShop_Barrier_Green_BottomMid, TRUE
 # 89 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 16, 22, METATILE_BikeShop_Button_Pressed, FALSE
+	setmetatile 21, 5, METATILE_BikeShop_Barrier_Green_Bottom, TRUE
 # 90 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 4, 26, METATILE_BikeShop_Button_Pressed, FALSE
+	setmetatile 6, 11, METATILE_BikeShop_Button_Pressed, FALSE
 # 91 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 30, 38, METATILE_BikeShop_Button_Pressed, FALSE
+	setmetatile 13, 10, METATILE_BikeShop_Button_Pressed, FALSE
 # 92 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 2, 11, METATILE_BikeShop_Button_Green, FALSE
+	setmetatile 16, 22, METATILE_BikeShop_Button_Pressed, FALSE
 # 93 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 17, 10, METATILE_BikeShop_Button_Green, FALSE
+	setmetatile 4, 26, METATILE_BikeShop_Button_Pressed, FALSE
 # 94 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 25, 18, METATILE_BikeShop_Button_Green, FALSE
+	setmetatile 30, 38, METATILE_BikeShop_Button_Pressed, FALSE
 # 95 "data/maps/NewMauville_Inside/scripts.pory"
+	setmetatile 2, 11, METATILE_BikeShop_Button_Green, FALSE
+# 96 "data/maps/NewMauville_Inside/scripts.pory"
+	setmetatile 17, 10, METATILE_BikeShop_Button_Green, FALSE
+# 97 "data/maps/NewMauville_Inside/scripts.pory"
+	setmetatile 25, 18, METATILE_BikeShop_Button_Green, FALSE
+# 98 "data/maps/NewMauville_Inside/scripts.pory"
 	setmetatile 18, 36, METATILE_BikeShop_Button_Green, FALSE
 	return
 
 
 NewMauville_Inside_EventScript_SetBarrierStateGreenButton::
-# 100 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 23, 34, METATILE_BikeShop_Barrier_Blue_Top, TRUE
-# 101 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 23, 35, METATILE_BikeShop_Barrier_Blue_TopMid, TRUE
-# 102 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 23, 36, METATILE_BikeShop_Barrier_Blue_BottomMid, TRUE
 # 103 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 23, 37, METATILE_BikeShop_Barrier_Blue_Bottom, TRUE
+	setmetatile 23, 34, METATILE_BikeShop_Barrier_Blue_Top, TRUE
 # 104 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 16, METATILE_BikeShop_Barrier_Blue_Top, TRUE
+	setmetatile 23, 35, METATILE_BikeShop_Barrier_Blue_TopMid, TRUE
 # 105 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 17, METATILE_BikeShop_Barrier_Blue_TopMid, TRUE
+	setmetatile 23, 36, METATILE_BikeShop_Barrier_Blue_BottomMid, TRUE
 # 106 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 18, METATILE_BikeShop_Barrier_Blue_BottomMid, TRUE
+	setmetatile 23, 37, METATILE_BikeShop_Barrier_Blue_Bottom, TRUE
 # 107 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 19, METATILE_BikeShop_Barrier_Blue_Bottom, TRUE
+	setmetatile 10, 16, METATILE_BikeShop_Barrier_Blue_Top, TRUE
 # 108 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 0, METATILE_BikeShop_Barrier_Blue_Top, TRUE
+	setmetatile 10, 17, METATILE_BikeShop_Barrier_Blue_TopMid, TRUE
 # 109 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 1, METATILE_BikeShop_Barrier_Blue_TopMid, TRUE
+	setmetatile 10, 18, METATILE_BikeShop_Barrier_Blue_BottomMid, TRUE
 # 110 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 2, METATILE_BikeShop_Barrier_Blue_BottomMid, TRUE
+	setmetatile 10, 19, METATILE_BikeShop_Barrier_Blue_Bottom, TRUE
 # 111 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 3, METATILE_BikeShop_Barrier_Blue_Bottom, TRUE
+	setmetatile 10, 0, METATILE_BikeShop_Barrier_Blue_Top, TRUE
 # 112 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 37, 33, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
+	setmetatile 10, 1, METATILE_BikeShop_Barrier_Blue_TopMid, TRUE
 # 113 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 37, 34, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
+	setmetatile 10, 2, METATILE_BikeShop_Barrier_Blue_BottomMid, TRUE
 # 114 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 37, 35, METATILE_BikeShop_Floor_Shadow_Top, FALSE
+	setmetatile 10, 3, METATILE_BikeShop_Barrier_Blue_Bottom, TRUE
 # 115 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 37, 36, METATILE_BikeShop_Wall_Edge_Top, FALSE
+	setmetatile 37, 33, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
 # 116 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 28, 22, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
+	setmetatile 37, 34, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
 # 117 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 28, 23, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
+	setmetatile 37, 35, METATILE_BikeShop_Floor_Shadow_Top, FALSE
 # 118 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 28, 24, METATILE_BikeShop_Floor_Shadow_Top, FALSE
+	setmetatile 37, 36, METATILE_BikeShop_Wall_Edge_Top, FALSE
 # 119 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 28, 25, METATILE_BikeShop_Wall_Edge_Top, FALSE
+	setmetatile 28, 22, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
 # 120 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 24, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
+	setmetatile 28, 23, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
 # 121 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 25, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
+	setmetatile 28, 24, METATILE_BikeShop_Floor_Shadow_Top, FALSE
 # 122 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 26, METATILE_BikeShop_Floor_Shadow_Top, FALSE
+	setmetatile 28, 25, METATILE_BikeShop_Wall_Edge_Top, FALSE
 # 123 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 10, 27, METATILE_BikeShop_Wall_Edge_Top, FALSE
+	setmetatile 10, 24, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
 # 124 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 21, 2, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
+	setmetatile 10, 25, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
 # 125 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 21, 3, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
+	setmetatile 10, 26, METATILE_BikeShop_Floor_Shadow_Top, FALSE
 # 126 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 21, 4, METATILE_BikeShop_Floor_Shadow_Top, FALSE
+	setmetatile 10, 27, METATILE_BikeShop_Wall_Edge_Top, FALSE
 # 127 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 21, 5, METATILE_BikeShop_Wall_Edge_Top, FALSE
+	setmetatile 21, 2, METATILE_BikeShop_Barrier_Hidden_Top, TRUE
 # 128 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 2, 11, METATILE_BikeShop_Button_Pressed, FALSE
+	setmetatile 21, 3, METATILE_BikeShop_Barrier_Hidden_Bottom, TRUE
 # 129 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 17, 10, METATILE_BikeShop_Button_Pressed, FALSE
+	setmetatile 21, 4, METATILE_BikeShop_Floor_Shadow_Top, FALSE
 # 130 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 25, 18, METATILE_BikeShop_Button_Pressed, FALSE
+	setmetatile 21, 5, METATILE_BikeShop_Wall_Edge_Top, FALSE
 # 131 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 18, 36, METATILE_BikeShop_Button_Pressed, FALSE
+	setmetatile 2, 11, METATILE_BikeShop_Button_Pressed, FALSE
 # 132 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 6, 11, METATILE_BikeShop_Button_Blue, FALSE
+	setmetatile 17, 10, METATILE_BikeShop_Button_Pressed, FALSE
 # 133 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 13, 10, METATILE_BikeShop_Button_Blue, FALSE
+	setmetatile 25, 18, METATILE_BikeShop_Button_Pressed, FALSE
 # 134 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 16, 22, METATILE_BikeShop_Button_Blue, FALSE
+	setmetatile 18, 36, METATILE_BikeShop_Button_Pressed, FALSE
 # 135 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 4, 26, METATILE_BikeShop_Button_Blue, FALSE
+	setmetatile 6, 11, METATILE_BikeShop_Button_Blue, FALSE
 # 136 "data/maps/NewMauville_Inside/scripts.pory"
+	setmetatile 13, 10, METATILE_BikeShop_Button_Blue, FALSE
+# 137 "data/maps/NewMauville_Inside/scripts.pory"
+	setmetatile 16, 22, METATILE_BikeShop_Button_Blue, FALSE
+# 138 "data/maps/NewMauville_Inside/scripts.pory"
+	setmetatile 4, 26, METATILE_BikeShop_Button_Blue, FALSE
+# 139 "data/maps/NewMauville_Inside/scripts.pory"
 	setmetatile 30, 38, METATILE_BikeShop_Button_Blue, FALSE
 	return
 
 
 NewMauville_Inside_EventScript_RedButton::
-# 141 "data/maps/NewMauville_Inside/scripts.pory"
-	lockall
-# 142 "data/maps/NewMauville_Inside/scripts.pory"
-	msgbox NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped, MSGBOX_DEFAULT
-# 143 "data/maps/NewMauville_Inside/scripts.pory"
-	call NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
 # 144 "data/maps/NewMauville_Inside/scripts.pory"
-	setvar VAR_NEW_MAUVILLE_STATE, 2
+	lockall
 # 145 "data/maps/NewMauville_Inside/scripts.pory"
+	msgbox NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped, MSGBOX_DEFAULT
+# 146 "data/maps/NewMauville_Inside/scripts.pory"
+	call NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
+# 147 "data/maps/NewMauville_Inside/scripts.pory"
+	setvar VAR_NEW_MAUVILLE_STATE, 2
+# 148 "data/maps/NewMauville_Inside/scripts.pory"
 	releaseall
 	end
 
 
 NewMauville_Inside_EventScript_SetGeneratorOffMetatiles::
-# 150 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 33, 6, METATILE_BikeShop_Button_Pressed, FALSE
-# 151 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 32, 2, METATILE_BikeShop_Generator_Off_Tile0, TRUE
-# 152 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 33, 2, METATILE_BikeShop_Generator_Off_Tile1, TRUE
 # 153 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 34, 2, METATILE_BikeShop_Generator_Off_Tile2, TRUE
+	setmetatile 33, 6, METATILE_BikeShop_Button_Pressed, FALSE
 # 154 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 35, 2, METATILE_BikeShop_Generator_Off_Tile3, TRUE
+	setmetatile 32, 2, METATILE_BikeShop_Generator_Off_Tile0, TRUE
 # 155 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 32, 3, METATILE_BikeShop_Generator_Off_Tile4, TRUE
+	setmetatile 33, 2, METATILE_BikeShop_Generator_Off_Tile1, TRUE
 # 156 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 33, 3, METATILE_BikeShop_Generator_Off_Tile5, TRUE
+	setmetatile 34, 2, METATILE_BikeShop_Generator_Off_Tile2, TRUE
 # 157 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 34, 3, METATILE_BikeShop_Generator_Off_Tile6, TRUE
+	setmetatile 35, 2, METATILE_BikeShop_Generator_Off_Tile3, TRUE
 # 158 "data/maps/NewMauville_Inside/scripts.pory"
-	setmetatile 35, 3, METATILE_BikeShop_Generator_Off_Tile7, TRUE
+	setmetatile 32, 3, METATILE_BikeShop_Generator_Off_Tile4, TRUE
 # 159 "data/maps/NewMauville_Inside/scripts.pory"
+	setmetatile 33, 3, METATILE_BikeShop_Generator_Off_Tile5, TRUE
+# 160 "data/maps/NewMauville_Inside/scripts.pory"
+	setmetatile 34, 3, METATILE_BikeShop_Generator_Off_Tile6, TRUE
+# 161 "data/maps/NewMauville_Inside/scripts.pory"
+	setmetatile 35, 3, METATILE_BikeShop_Generator_Off_Tile7, TRUE
+# 162 "data/maps/NewMauville_Inside/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 NewMauville_Inside_EventScript_Generator::
-# 164 "data/maps/NewMauville_Inside/scripts.pory"
+# 167 "data/maps/NewMauville_Inside/scripts.pory"
 	lockall
-# 165 "data/maps/NewMauville_Inside/scripts.pory"
+# 168 "data/maps/NewMauville_Inside/scripts.pory"
 	compare VAR_NEW_MAUVILLE_STATE, 2
 	goto_if_eq NewMauville_Inside_EventScript_Generator_2
-# 168 "data/maps/NewMauville_Inside/scripts.pory"
+# 171 "data/maps/NewMauville_Inside/scripts.pory"
 	msgbox NewMauville_Inside_Text_GeneratorRadiatingHeat, MSGBOX_DEFAULT
 NewMauville_Inside_EventScript_Generator_1:
-# 170 "data/maps/NewMauville_Inside/scripts.pory"
+# 173 "data/maps/NewMauville_Inside/scripts.pory"
 	releaseall
 	end
 
 NewMauville_Inside_EventScript_Generator_2:
-# 166 "data/maps/NewMauville_Inside/scripts.pory"
+# 169 "data/maps/NewMauville_Inside/scripts.pory"
 	msgbox NewMauville_Inside_Text_GeneratorQuietedDown, MSGBOX_DEFAULT
 	goto NewMauville_Inside_EventScript_Generator_1
 
 
 NewMauville_Inside_EventScript_Voltorb1::
-# 175 "data/maps/NewMauville_Inside/scripts.pory"
+# 178 "data/maps/NewMauville_Inside/scripts.pory"
 	lock_faceplayer
-# 176 "data/maps/NewMauville_Inside/scripts.pory"
+# 179 "data/maps/NewMauville_Inside/scripts.pory"
 	setvar VAR_0x8007, 1
-# 177 "data/maps/NewMauville_Inside/scripts.pory"
+# 180 "data/maps/NewMauville_Inside/scripts.pory"
 	goto NewMauville_Inside_EventScript_VoltorbBattle
 	end
 
 
 NewMauville_Inside_EventScript_Voltorb2::
-# 182 "data/maps/NewMauville_Inside/scripts.pory"
+# 185 "data/maps/NewMauville_Inside/scripts.pory"
 	lock_faceplayer
-# 183 "data/maps/NewMauville_Inside/scripts.pory"
+# 186 "data/maps/NewMauville_Inside/scripts.pory"
 	setvar VAR_0x8007, 2
-# 184 "data/maps/NewMauville_Inside/scripts.pory"
+# 187 "data/maps/NewMauville_Inside/scripts.pory"
 	goto NewMauville_Inside_EventScript_VoltorbBattle
 	end
 
 
 NewMauville_Inside_EventScript_Voltorb3::
-# 189 "data/maps/NewMauville_Inside/scripts.pory"
+# 192 "data/maps/NewMauville_Inside/scripts.pory"
 	lock_faceplayer
-# 190 "data/maps/NewMauville_Inside/scripts.pory"
+# 193 "data/maps/NewMauville_Inside/scripts.pory"
 	setvar VAR_0x8007, 3
-# 191 "data/maps/NewMauville_Inside/scripts.pory"
+# 194 "data/maps/NewMauville_Inside/scripts.pory"
 	goto NewMauville_Inside_EventScript_VoltorbBattle
 	end
 
 
 NewMauville_Inside_EventScript_VoltorbBattle::
-# 196 "data/maps/NewMauville_Inside/scripts.pory"
-	setwildbattle SPECIES_VOLTORB, 25
-# 197 "data/maps/NewMauville_Inside/scripts.pory"
-	waitse
-# 198 "data/maps/NewMauville_Inside/scripts.pory"
-	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
 # 199 "data/maps/NewMauville_Inside/scripts.pory"
-	delay 40
+	setwildbattle SPECIES_VOLTORB, 42
 # 200 "data/maps/NewMauville_Inside/scripts.pory"
-	waitmoncry
+	waitse
 # 201 "data/maps/NewMauville_Inside/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
 # 202 "data/maps/NewMauville_Inside/scripts.pory"
-	dowildbattle
+	delay 40
 # 203 "data/maps/NewMauville_Inside/scripts.pory"
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	waitmoncry
 # 204 "data/maps/NewMauville_Inside/scripts.pory"
-	switch VAR_0x8007
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 205 "data/maps/NewMauville_Inside/scripts.pory"
-	case 1, NewMauville_Inside_EventScript_VoltorbBattle_3
+	dowildbattle
 # 206 "data/maps/NewMauville_Inside/scripts.pory"
-	case 2, NewMauville_Inside_EventScript_VoltorbBattle_4
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 207 "data/maps/NewMauville_Inside/scripts.pory"
+	switch VAR_0x8007
+# 208 "data/maps/NewMauville_Inside/scripts.pory"
+	case 1, NewMauville_Inside_EventScript_VoltorbBattle_3
+# 209 "data/maps/NewMauville_Inside/scripts.pory"
+	case 2, NewMauville_Inside_EventScript_VoltorbBattle_4
+# 210 "data/maps/NewMauville_Inside/scripts.pory"
 	case 3, NewMauville_Inside_EventScript_VoltorbBattle_5
 NewMauville_Inside_EventScript_VoltorbBattle_1:
-# 209 "data/maps/NewMauville_Inside/scripts.pory"
+# 212 "data/maps/NewMauville_Inside/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 210 "data/maps/NewMauville_Inside/scripts.pory"
+# 213 "data/maps/NewMauville_Inside/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq NewMauville_Inside_EventScript_VoltorbBattle_7
-# 210 "data/maps/NewMauville_Inside/scripts.pory"
+# 213 "data/maps/NewMauville_Inside/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq NewMauville_Inside_EventScript_VoltorbBattle_7
-# 211 "data/maps/NewMauville_Inside/scripts.pory"
+# 214 "data/maps/NewMauville_Inside/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq NewMauville_Inside_EventScript_VoltorbBattle_7
 NewMauville_Inside_EventScript_VoltorbBattle_6:
 	release_end
 
 NewMauville_Inside_EventScript_VoltorbBattle_3:
-# 205 "data/maps/NewMauville_Inside/scripts.pory"
+# 208 "data/maps/NewMauville_Inside/scripts.pory"
 	setflag FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE
 	goto NewMauville_Inside_EventScript_VoltorbBattle_1
 
 NewMauville_Inside_EventScript_VoltorbBattle_4:
-# 206 "data/maps/NewMauville_Inside/scripts.pory"
+# 209 "data/maps/NewMauville_Inside/scripts.pory"
 	setflag FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE
 	goto NewMauville_Inside_EventScript_VoltorbBattle_1
 
 NewMauville_Inside_EventScript_VoltorbBattle_5:
-# 207 "data/maps/NewMauville_Inside/scripts.pory"
+# 210 "data/maps/NewMauville_Inside/scripts.pory"
 	setflag FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE
 	goto NewMauville_Inside_EventScript_VoltorbBattle_1
 
 NewMauville_Inside_EventScript_VoltorbBattle_7:
-# 212 "data/maps/NewMauville_Inside/scripts.pory"
+# 215 "data/maps/NewMauville_Inside/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 	goto NewMauville_Inside_EventScript_VoltorbBattle_6
 
 
 NewMauville_Inside_Text_GeneratorRadiatingHeat::
-# 217 "data/maps/NewMauville_Inside/scripts.pory"
+# 220 "data/maps/NewMauville_Inside/scripts.pory"
 	.string "The generator is radiating heat that\n"
 	.string "can be felt even at a distance.\p"
 	.string "It looks like it should be turned off\n"
 	.string "as soon as possible.$"
 
 NewMauville_Inside_Text_GeneratorQuietedDown::
-# 225 "data/maps/NewMauville_Inside/scripts.pory"
+# 228 "data/maps/NewMauville_Inside/scripts.pory"
 	.string "The generator quieted down.$"
 
 NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped::
-# 229 "data/maps/NewMauville_Inside/scripts.pory"
+# 232 "data/maps/NewMauville_Inside/scripts.pory"
 	.string "{PLAYER} stepped on the switch.\p"
 	.string "Click…\p"
 	.string "… … … … … … … …\n"

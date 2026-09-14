@@ -59,7 +59,7 @@ MarineCave_End_EventScript_Kyogre::
 # 27 "data/maps/MarineCave_End/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_MARINE_CAVE_KYOGRE
 # 28 "data/maps/MarineCave_End/scripts.pory"
-	setwildbattle SPECIES_KYOGRE, 70
+	setwildbattle SPECIES_KYOGRE, 100
 # 29 "data/maps/MarineCave_End/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 30 "data/maps/MarineCave_End/scripts.pory"

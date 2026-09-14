@@ -1,6 +1,23 @@
 mapscripts AlteringCave_MapScripts {
-	MAP_SCRIPT_ON_TRANSITION {
-		setflag(FLAG_LANDMARK_ALTERING_CAVE)
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_LANDMARK_ALTERING_CAVE)
+		if (flag(FLAG_BADGE05_GET) && !flag(FLAG_HIDE_HIKER_ALTERING_CAVE_B1F_1R)) {
+			setflag(FLAG_HIDE_HIKER_ALTERING_CAVE_B1F_1R)
+			clearflag(FLAG_HIDE_BALL_TERRAIN_EXTENDER)
+		}
+		if (flag(FLAG_BADGE02_GET) && !flag(FLAG_HIDE_HIKER_ALTERING_CAVE_B1F_2R)) {
+			setflag(FLAG_HIDE_HIKER_ALTERING_CAVE_B1F_2R)
+			clearflag(FLAG_HIDE_BALL_TERRAIN_EXTENDER)
+		}
 		end
-	}
+    }
+    MAP_SCRIPT_ON_LOAD {
+        if (flag(FLAG_BADGE06_GET)) {
+			setmetatile(6, 4, 0x23F, TRUE)
+		}
+		if (flag(FLAG_BADGE05_GET)) {
+			setmetatile(28, 10, 0x205, TRUE)
+		}
+		end
+    }
 }

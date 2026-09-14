@@ -10,7 +10,7 @@ mapscripts LilycoveCity_MapScripts {
 		end
     }
     MAP_SCRIPT_ON_LOAD {
-        if (!flag(FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE)) {
+        if (!flag(FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA)) {
 			setmetatile(76, 12, METATILE_Lilycove_Wailmer0, TRUE)
 			setmetatile(77, 12, METATILE_Lilycove_Wailmer1, TRUE)
 			setmetatile(76, 13, METATILE_Lilycove_Wailmer2, TRUE)
@@ -24,6 +24,12 @@ mapscripts LilycoveCity_MapScripts {
 			setmetatile(77, 17, METATILE_Lilycove_Wailmer2, TRUE)
 			setmetatile(78, 17, METATILE_Lilycove_Wailmer3, TRUE)
 		}
+		if (var(VAR_SLATEPORT_CITY_STATE) < 2) {
+			setmetatile(69, 33, 0x170, TRUE)
+			setmetatile(70, 33, 0x170, TRUE)
+			setmetatile(69, 34, 0x170, TRUE)
+			setmetatile(70, 34, 0x170, TRUE)
+		}
 		end
     }
 }
@@ -36,7 +42,7 @@ script LilycoveCity_EventScript_BerryGentleman {
     	release_end
     }
     msgbox(LilycoveCity_Text_BerrySuitsYou, MSGBOX_DEFAULT)
-    giverandomberry(BERRY_ID_CHERI, BERRY_ID_SITRUS)
+    giverandomberry(BERRY_ID_FIGY, BERRY_ID_IAPAPA)
     if (var(VAR_RESULT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
@@ -61,8 +67,17 @@ script LilycoveCity_EventScript_Girl {
 }
 
 script LilycoveCity_EventScript_RichBoy {
-    msgbox(LilycoveCity_Text_ImFromKanto, MSGBOX_NPC)
-    end
+    lock_faceplayer
+	if (flag(FLAG_RECEIVED_BINDING_BAND)) {
+		msgbox(LilycoveCity_Text_NewToys, MSGBOX_DEFAULT)
+		release_end
+	}
+	msgbox(LilycoveCity_Text_LameToy, MSGBOX_DEFAULT)
+	if (giveitem(ITEM_BINDING_BAND) == FALSE) {
+		goto(Common_EventScript_ShowBagIsFull)
+	}
+	setflag(FLAG_RECEIVED_BINDING_BAND)
+	release_end
 }
 
 script LilycoveCity_EventScript_Sailor2 {
@@ -284,8 +299,8 @@ script LilycoveCity_EventScript_Brendan {
 script LilycoveCity_EventScript_DefeatedMay {
     msgbox(LilycoveCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT)
     setvar(VAR_RESULT, FALSE)
-    if (flag(FLAG_BADGE06_GET)) {
-        call(LilycoveCity_EventScript_CheckFinalBadge)
+    if (flag(FLAG_BADGE08_GET)) {
+        setvar(VAR_RESULT, TRUE)
     }
     if (var(VAR_RESULT) == FALSE) {
         msgbox(LilycoveCity_Text_MayYouGoingToCollectBadges, MSGBOX_DEFAULT)
@@ -298,22 +313,15 @@ script LilycoveCity_EventScript_DefeatedMay {
     }
     clearflag(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM)
     clearflag(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL)
-    goto(LilycoveCity_EventScript_RivalFlyAway)
+    goto(LilycoveCity_EventScript_RivalGiveStarter)
     end
-}
-
-script LilycoveCity_EventScript_CheckFinalBadge {
-    if (flag(FLAG_BADGE08_GET)) {
-        setvar(VAR_RESULT, TRUE)
-    }
-    return
 }
 
 script LilycoveCity_EventScript_DefeatedBrendan {
     msgbox(LilycoveCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT)
     setvar(VAR_RESULT, FALSE)
-    if (flag(FLAG_BADGE06_GET)) {
-        call(LilycoveCity_EventScript_CheckFinalBadge)
+    if (flag(FLAG_BADGE08_GET)) {
+        setvar(VAR_RESULT, TRUE)
     }
     if (var(VAR_RESULT) == FALSE) {
         msgbox(LilycoveCity_Text_BrendanYouGoingToCollectBadges, MSGBOX_DEFAULT)
@@ -327,12 +335,64 @@ script LilycoveCity_EventScript_DefeatedBrendan {
     }
     clearflag(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM)
     clearflag(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL)
-    goto(LilycoveCity_EventScript_RivalFlyAway)
+    goto(LilycoveCity_EventScript_RivalGiveStarter)
     end
 }
 
-script LilycoveCity_EventScript_RivalFlyAway {
-    closemessage
+script LilycoveCity_EventScript_RivalGiveStarter {
+	switch (var(VAR_STARTER_MON)) {
+		case PC_CHOSE_TREECKO:
+			bufferspeciesname(STR_VAR_1, SPECIES_DELPHOX)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DELPHOX)
+			if (checkplayergender == MALE) {
+				givemon(SPECIES_DELPHOX, 63)
+			}
+			else {
+				givemon(SPECIES_DELPHOX, 63)
+			}
+		case PC_CHOSE_TORCHIC:
+			bufferspeciesname(STR_VAR_1, SPECIES_SAMUROTT)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SAMUROTT)
+			if (checkplayergender == MALE) {
+				givemon(SPECIES_SAMUROTT, 63)
+			}
+			else {
+				givemon(SPECIES_SAMUROTT, 63)
+			}
+		case PC_CHOSE_MUDKIP:
+			bufferspeciesname(STR_VAR_1, SPECIES_SERPERIOR)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SERPERIOR)
+			if (checkplayergender == MALE) {
+				givemon(SPECIES_SERPERIOR, 63)
+			}
+			else {
+				givemon(SPECIES_SERPERIOR, 63)
+			}
+	}
+	if (var(VAR_RESULT) == MON_CANT_GIVE) {
+		goto(Common_EventScript_NoMoreRoomForPokemon)
+	}
+	copyvar(VAR_0x8007, VAR_RESULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("\.")
+	waitmessage
+	waitfanfare
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	switch (var(VAR_RESULT)) {
+		case MON_GIVEN_TO_PARTY:
+			if (var(VAR_RESULT) == YES) {
+				call(Common_EventScript_GetGiftMonPartySlot)
+				call(Common_EventScript_NameReceivedPartyMon)
+			}
+		case MON_GIVEN_TO_PC:
+			if (var(VAR_RESULT) == YES) {
+				call(Common_EventScript_NameReceivedBoxMon)
+			}
+			call(Common_EventScript_TransferredToPC)
+	}
+	msgbox(LilycoveCity_Text_YouShouldHaveThem, MSGBOX_DEFAULT)
+	setflag(FLAG_RECEIVED_RIVAL_STARTER)
+	closemessage
     applymovement(VAR_LAST_TALKED, Common_Movement_StepFasterDown)
     waitmovement(0)
     delay(50)
@@ -596,7 +656,7 @@ text LilycoveCity_Text_GetLostMessingUpTraining {
 
 text LilycoveCity_Text_ContestHallInTown {
 	"There's a POKéMON CONTEST HALL
-	right in this here town. 
+	right in this here town.
 
 	That means well-raised POKéMON will
 	come from all over the country.
@@ -840,4 +900,27 @@ text LilycoveCity_Text_HoneymoonVowToSeeRarePokemon {
 	POKéMON as soon as we arrived.
 
 	I mean, we are totally happy!"
+}
+
+text LilycoveCity_Text_LameToy {
+	"My daddy gave me this to play with,
+	but I'm already bored.
+
+	Why don't you just take it?
+	I want something that's more fun."
+}
+
+text LilycoveCity_Text_NewToys {
+	"Do you have any cool toys?
+	No? So boring..."
+}
+
+text LilycoveCity_Text_PlayerReceivedRivalStarter {
+	"Do you have any cool toys?
+	No? So boring..."
+}
+
+text LilycoveCity_Text_YouShouldHaveThem {
+	"Do you have any cool toys?
+	No? So boring..."
 }

@@ -35,7 +35,7 @@ script MtChimney_EventScript_Maxie {
     applymovement(LOCALID_MT_CHIMNEY_MAXIE, Common_Movement_Delay48)
     waitmovement(0)
     msgbox(MtChimney_Text_MaxieIntro, MSGBOX_DEFAULT)
-    trainerbattle_no_intro(TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat)
+    // trainerbattle_no_intro(TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat)
     msgbox(MtChimney_Text_MaxieYouHaventSeenLastOfMagma, MSGBOX_DEFAULT)
     closemessage
     delay(30)
@@ -63,6 +63,12 @@ script MtChimney_EventScript_Maxie {
 	}
 	waitmovement(0)
     removeobject(LOCALID_MT_CHIMNEY_ARCHIE)
+    addvar(VAR_PETALBURG_GYM_STATE, 1)
+    if (var(VAR_PETALBURG_GYM_STATE) == 6) {
+        call(Common_EventScript_ReadyPetalburgGymForBattle)
+    }
+    clearflag(FLAG_HIDE_ROUTE_116_DEVON_EMPLOYEE)
+    setflag(FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE)
     setflag(FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA)
     setflag(FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY)
     clearflag(FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO)
@@ -70,6 +76,20 @@ script MtChimney_EventScript_Maxie {
     clearflag(FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY)
     releaseall
     end
+}
+
+script MtChimney_EventScript_Hiker {
+    lock_faceplayer
+    if (flag(FLAG_RECEIVED_HEAVY_DUTY_BOOTS)) {
+        msgbox(MtChimney_Text_GoodLuckJourney, MSGBOX_DEFAULT)
+    	release_end
+    }
+    msgbox(MtChimney_Text_DownJaggedPass, MSGBOX_DEFAULT)
+    if (giveitem(ITEM_HEAVY_DUTY_BOOTS) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    setflag(FLAG_RECEIVED_HEAVY_DUTY_BOOTS)
+    release_end
 }
 
 script MtChimney_EventScript_LavaCookieLady {
@@ -259,7 +279,7 @@ script MtChimney_EventScript_BusyAquaGrunt3 {
 }
 
 script MtChimney_EventScript_Tabitha {
-    trainerbattle_single(TRAINER_TABITHA_MT_CHIMNEY, MtChimney_Text_TabithaIntro, MtChimney_Text_TabithaDefeat)
+    // trainerbattle_single(TRAINER_TABITHA_MT_CHIMNEY, MtChimney_Text_TabithaIntro, MtChimney_Text_TabithaDefeat)
     msgbox(MtChimney_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -343,6 +363,9 @@ script MtChimney_EventScript_Shelby {
     trainerbattle_single(TRAINER_SHELBY_1, MtChimney_Text_ShelbyIntro, MtChimney_Text_ShelbyDefeat, MtChimney_EventScript_DefeatedShelby)
     if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
 		trainerbattle_rematch(TRAINER_SHELBY_1, MtChimney_Text_ShelbyRematchIntro, MtChimney_Text_ShelbyRematchDefeat)
+		if (!flag(FLAG_RECEIVED_TM_SAFEGUARD)) {
+			goto(MtChimney_EventScript_Shelby_GiveSafeguard)
+		}
 		msgbox(MtChimney_Text_ShelbyPostRematch, MSGBOX_AUTOCLOSE)
 		end
 	}
@@ -355,6 +378,14 @@ script MtChimney_EventScript_DefeatedShelby {
     waitmovement(0)
     msgbox(MtChimney_Text_ShelbyRegister, MSGBOX_DEFAULT)
     register_matchcall(TRAINER_SHELBY_1)
+    goto(MtChimney_EventScript_Shelby_GiveSafeguard)
+	end
+}
+
+script MtChimney_EventScript_Shelby_GiveSafeguard {
+    msgbox(MtChimney_Text_ProtectYourPokemon, MSGBOX_DEFAULT)
+    giveitem(ITEM_TM_SAFEGUARD)
+    setflag(FLAG_RECEIVED_TM_SAFEGUARD)
     release_end
 }
 
@@ -816,4 +847,29 @@ text MtChimney_Text_SawyerRematchDefeat {
 text MtChimney_Text_SawyerPostRematch {
 	"Actually, it really is hot here.
 	I'm overdressed for these parts."
+}
+
+text MtChimney_Text_DownJaggedPass {
+	"If you're about to head down the
+	JAGGED PASS, you oughta be prepared.
+
+	No, no. You're going to need durable
+	footwear for scaling the mountain.
+
+	Tell you what, I've got an extra pair
+	you can use."
+}
+
+text MtChimney_Text_GoodLuckJourney {
+	"You should do a fine job climbing down
+	the mountain if you're careful.
+
+	Best of luck on your journey!"
+}
+
+text MtChimney_Text_ProtectYourPokemon {
+	"The heat and toxic vapors from this
+	mountain can be fatal.
+
+	Use this TM to protect your POKéMON."
 }

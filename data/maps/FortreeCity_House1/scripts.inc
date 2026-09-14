@@ -8,7 +8,7 @@ FortreeCity_House1_EventScript_Trader::
 # 5 "data/maps/FortreeCity_House1/scripts.pory"
 	goto_if_set FLAG_FORTREE_NPC_TRADE_COMPLETED, FortreeCity_House1_EventScript_Trader_2
 # 9 "data/maps/FortreeCity_House1/scripts.pory"
-	ingame_trade INGAME_TRADE_PLUSLE, FortreeCity_House1_Text_YouWillTradeWontYou, FortreeCity_House1_EventScript_DeclineTrade, FortreeCity_House1_EventScript_NotRequestedMon, FortreeCity_House1_Text_MonYouTakeCare
+	ingame_trade INGAME_TRADE_FERROSEED, FortreeCity_House1_Text_YouWillTradeWontYou, FortreeCity_House1_EventScript_DeclineTrade, FortreeCity_House1_EventScript_NotRequestedMon, FortreeCity_House1_Text_MonYouTakeCare
 # 10 "data/maps/FortreeCity_House1/scripts.pory"
 	setflag FLAG_FORTREE_NPC_TRADE_COMPLETED
 	release_end
@@ -82,9 +82,9 @@ FortreeCity_House1_Text_YouWontTradeMe::
 
 FortreeCity_House1_Text_GoingToMakeVolbeatStrong::
 # 69 "data/maps/FortreeCity_House1/scripts.pory"
-	.string "I'm going to make VOLBEAT super\n"
+	.string "I'm going to make PINECO super\n"
 	.string "strong from this moment on!\p"
-	.string "I hope you do the same with PLUSLE!$"
+	.string "I hope you do the same with FERROSEED!$"
 
 FortreeCity_House1_Text_TradingMemoriesWithOthers::
 # 76 "data/maps/FortreeCity_House1/scripts.pory"

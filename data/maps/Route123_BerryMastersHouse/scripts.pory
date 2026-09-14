@@ -13,13 +13,13 @@ script Route123_BerryMastersHouse_EventScript_BerryMaster {
     	release_end
     }
     msgbox(Route123_BerryMastersHouse_Text_YoureDeservingOfBerry, MSGBOX_DEFAULT)
-    giverandomberry(BERRY_ID_POMEG, BERRY_ID_NOMEL)
+    giverandomberry(BERRY_ID_LIECHI, BERRY_ID_STARF)
     if (var(VAR_RESULT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     setflag(FLAG_DAILY_BERRY_MASTER_RECEIVED_BERRY)
     msgbox(Route123_BerryMastersHouse_Text_WhyBeStingyTakeAnother, MSGBOX_DEFAULT)
-    giverandomberry(BERRY_ID_POMEG, BERRY_ID_NOMEL)
+    giverandomberry(BERRY_ID_LIECHI, BERRY_ID_STARF)
     if (var(VAR_RESULT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
@@ -50,30 +50,35 @@ script Route123_BerryMastersHouse_EventScript_GavePhrase {
 	switch (var(VAR_0x8004)) {
 		case NOT_SPECIAL_PHRASE: goto(Route123_BerryMastersHouse_EventScript_GiveNormalBerry)
 		case PHRASE_GREAT_BATTLE: 
-			if (flag(FLAG_RECEIVED_SPELON_BERRY)) {
+			if (flag(FLAG_RECEIVED_KEE_BERRY)) {
 				goto(Route123_BerryMastersHouse_EventScript_GiveNormalBerry)
 			}
-			setvar(VAR_GIFT_ITEM, ITEM_SPELON_BERRY)
+			setvar(VAR_GIFT_ITEM, ITEM_KEE_BERRY)
 		case PHRASE_CHALLENGE_CONTEST: 
-			if (flag(FLAG_RECEIVED_PAMTRE_BERRY)) {
+			if (flag(FLAG_RECEIVED_MARANGA_BERRY)) {
 				goto(Route123_BerryMastersHouse_EventScript_GiveNormalBerry)
 			}
-			setvar(VAR_GIFT_ITEM, ITEM_PAMTRE_BERRY)
+			setvar(VAR_GIFT_ITEM, ITEM_MARANGA_BERRY)
 		case PHRASE_OVERWHELMING_LATIAS: 
-			if (flag(FLAG_RECEIVED_WATMEL_BERRY)) {
+			if (flag(FLAG_RECEIVED_STARF_BERRY)) {
 				goto(Route123_BerryMastersHouse_EventScript_GiveNormalBerry)
 			}
-			setvar(VAR_GIFT_ITEM, ITEM_WATMEL_BERRY)
+			setvar(VAR_GIFT_ITEM, ITEM_STARF_BERRY)
 		case PHRASE_COOL_LATIOS: 
-			if (flag(FLAG_RECEIVED_DURIN_BERRY)) {
+			if (flag(FLAG_RECEIVED_ENIGMA_BERRY)) {
 				goto(Route123_BerryMastersHouse_EventScript_GiveNormalBerry)
 			}
-			setvar(VAR_GIFT_ITEM, ITEM_DURIN_BERRY)
+			setvar(VAR_GIFT_ITEM, ITEM_ENIGMA_BERRY)
 		case PHRASE_SUPER_HUSTLE: 
-			if (flag(FLAG_RECEIVED_BELUE_BERRY)) {
+			if (flag(FLAG_RECEIVED_CUSTAP_BERRY)) {
 				goto(Route123_BerryMastersHouse_EventScript_GiveNormalBerry)
 			}
-			setvar(VAR_GIFT_ITEM, ITEM_BELUE_BERRY)
+			setvar(VAR_GIFT_ITEM, ITEM_CUSTAP_BERRY)
+        case PHRASE_LATER_AIM: 
+			if (flag(FLAG_RECEIVED_MICLE_BERRY)) {
+				goto(Route123_BerryMastersHouse_EventScript_GiveNormalBerry)
+			}
+			setvar(VAR_GIFT_ITEM, ITEM_MICLE_BERRY)
 	}
 	goto(Route123_BerryMastersHouse_EventScript_GiveSpecialBerry)
     end
@@ -96,11 +101,12 @@ script Route123_BerryMastersHouse_EventScript_GiveSpecialBerry {
 		goto(Common_EventScript_ShowBagIsFull)
 	}
 	switch (var(VAR_GIFT_ITEM)) {
-		case ITEM_SPELON_BERRY: setflag(FLAG_RECEIVED_SPELON_BERRY)
-		case ITEM_PAMTRE_BERRY: setflag(FLAG_RECEIVED_PAMTRE_BERRY)
-		case ITEM_WATMEL_BERRY: setflag(FLAG_RECEIVED_WATMEL_BERRY)
-		case ITEM_DURIN_BERRY: setflag(FLAG_RECEIVED_DURIN_BERRY)
-		case ITEM_BELUE_BERRY: setflag(FLAG_RECEIVED_BELUE_BERRY)
+		case ITEM_KEE_BERRY: setflag(FLAG_RECEIVED_KEE_BERRY)
+		case ITEM_MARANGA_BERRY: setflag(FLAG_RECEIVED_MARANGA_BERRY)
+		case ITEM_STARF_BERRY: setflag(FLAG_RECEIVED_STARF_BERRY)
+		case ITEM_ENIGMA_BERRY: setflag(FLAG_RECEIVED_ENIGMA_BERRY)
+		case ITEM_CUSTAP_BERRY: setflag(FLAG_RECEIVED_CUSTAP_BERRY)
+        case ITEM_MICLE_BERRY: setflag(FLAG_RECEIVED_MICLE_BERRY)
 	}
     setflag(FLAG_DAILY_BERRY_MASTERS_WIFE)
     msgbox(Route123_BerryMastersHouse_Text_JoyNeverGoesOutOfMyLife, MSGBOX_DEFAULT)

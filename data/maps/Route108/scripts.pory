@@ -18,15 +18,9 @@ script Route108_EventScript_Tara {
     end
 }
 
-script Route108_EventScript_Missy {
-    trainerbattle_single(TRAINER_MISSY, Route108_Text_MissyIntro, Route108_Text_MissyDefeated)
-    msgbox(Route108_Text_MissyPostBattle, MSGBOX_AUTOCLOSE)
-    end
-}
-
-script Route108_EventScript_Carolina {
-    trainerbattle_single(TRAINER_CAROLINA, Route108_Text_CarolinaIntro, Route108_Text_CarolinaDefeated)
-    msgbox(Route108_Text_CarolinaPostBattle, MSGBOX_AUTOCLOSE)
+script Route108_EventScript_Christine {
+    trainerbattle_single(TRAINER_CHRISTINE, Route108_Text_ChristineIntro, Route108_Text_ChristineDefeated)
+    msgbox(Route108_Text_ChristinePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 

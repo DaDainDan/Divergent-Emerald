@@ -13,7 +13,7 @@ mapscripts PetalburgCity_Gym_MapScripts {
 			if (defeated(TRAINER_PARKER)) {
 				call(PetalburgCity_Gym_EventScript_OpenConfusionRoomDoors)
 			}
-			if (defeated(TRAINER_ALEXIA)) {
+			if (defeated(TRAINER_AUBREY)) {
 				call(PetalburgCity_Gym_EventScript_OpenDefenseRoomDoors)
 			}
 			if (defeated(TRAINER_GEORGE)) {
@@ -39,15 +39,18 @@ mapscripts PetalburgCity_Gym_MapScripts {
 		if (var(VAR_PETALBURG_GYM_STATE) < 6) {
 			setobjectxyperm(LOCALID_PETALBURG_GYM_NORMAN, 4, 107)
 		}
-		if (flag(FLAG_SYS_GAME_CLEAR)) {
-			setorcopyvar(VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_NORMAN_1)
-			if (specialvar(VAR_RESULT, IsTrainerReadyForRematch) == TRUE) {
+        if (var(VAR_PETALBURG_GYM_STATE) == 5) {
+			setflag(FLAG_HIDE_PETALBURG_GYM_NORMAN)
+		}
+		if (defeated(TRAINER_WINONA_2)) {
+			if ((defeated(TRAINER_WINONA_2) && !defeated(TRAINER_NORMAN_2))
+			|| (flag(FLAG_SYS_GAME_CLEAR) && !flag(FLAG_DEFEATED_NORMAN_FINAL))) {
 				setvar(VAR_PETALBURG_GYM_STATE, 8)
-				end
+                end
 			}
-			if (var(VAR_PETALBURG_GYM_STATE) == 8) {
+			elif (var(VAR_PETALBURG_GYM_STATE) == 8) {
 				setvar(VAR_PETALBURG_GYM_STATE, 8)
-				end
+                end
 			}
 			setobjectxyperm(LOCALID_PETALBURG_GYM_NORMAN, 4, 107)
 		}
@@ -101,6 +104,7 @@ script PetalburgCity_Gym_EventScript_Norman {
     vsseeker_rematchid(TRAINER_NORMAN_1)
     lock_faceplayer
     switch (var(VAR_PETALBURG_GYM_STATE)) {
+        case 5: release_end
         case 2:
 			msgbox(PetalburgCity_Gym_Text_NormanGoToRustboro, MSGBOX_DEFAULT)
 			release_end
@@ -108,7 +112,6 @@ script PetalburgCity_Gym_EventScript_Norman {
 			msgbox(PetalburgCity_Gym_Text_NormanGoToDewford, MSGBOX_DEFAULT)
 			release_end
         case 4:
-        case 5:
 			msgbox(PetalburgCity_Gym_Text_YouHaveGottenStronger, MSGBOX_DEFAULT)
 			release_end
         case 6: goto(PetalburgCity_Gym_EventScript_NormanBattle)
@@ -258,14 +261,12 @@ script PetalburgCity_Gym_EventScript_NormanBattle {
     setflag(FLAG_BADGE05_GET)
     special(ResetHealLocationFromDewford)
     call(EventScript_HideMrBriney)
-    setflag(FLAG_HIDE_MAUVILLE_GYM_WATTSON)
-    clearflag(FLAG_HIDE_MAUVILLE_CITY_WATTSON)
+    setflag(FLAG_HIDE_PETALBURG_CITY_DOJO_GUARDS)
     setvar(VAR_0x8008, 5)
     call(Common_EventScript_SetGymTrainers)
-    clearflag(FLAG_HIDE_DEWFORD_HALL_SLUDGE_BOMB_MAN)
     call(PetalburgCity_Gym_EventScript_UnlockAllDoors)
     special(DrawWholeMapView)
-    call(PetalburgCity_Gym_EventScript_GiveFacade)
+    call(PetalburgCity_Gym_EventScript_GiveStrength)
     delay(30)
     msgbox(PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT)
     closemessage
@@ -282,13 +283,13 @@ script PetalburgCity_Gym_EventScript_NormanBattle {
     end
 }
 
-script PetalburgCity_Gym_EventScript_GiveFacade {
-    if (giveitem(ITEM_TM_FACADE) == FALSE) {
+script PetalburgCity_Gym_EventScript_GiveStrength {
+	if (giveitem(ITEM_HM_STRENGTH) == FALSE) {
 		goto(Common_EventScript_BagIsFull)
 	}
-    setflag(FLAG_RECEIVED_TM_FACADE)
-    msgbox(PetalburgCity_Gym_Text_ExplainFacade, MSGBOX_DEFAULT)
-    return
+	setflag(FLAG_RECEIVED_HM_STRENGTH)
+	msgbox(PetalburgCity_Gym_Text_ExplainFacade, MSGBOX_DEFAULT)
+	return
 }
 
 script PetalburgCity_Gym_EventScript_WallysDadArrives {
@@ -413,8 +414,8 @@ script PetalburgCity_Gym_EventScript_NormanPostBattle {
 		setvar(VAR_ENIGMA_BERRY_AVAILABLE, 0)
 		release_end
     }
-    if (!flag(FLAG_RECEIVED_TM_FACADE)) {
-        call(PetalburgCity_Gym_EventScript_GiveFacade)
+    if (!flag(FLAG_RECEIVED_HM_STRENGTH)) {
+        call(PetalburgCity_Gym_EventScript_GiveStrength)
     }
     elif (flag(FLAG_SYS_GAME_CLEAR)) {
         msgbox(PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough, MSGBOX_DEFAULT)
@@ -437,9 +438,21 @@ script PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry {
 }
 
 script PetalburgCity_Gym_EventScript_NormanRematch {
-    trainerbattle_rematch_double(TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons)
-    msgbox(PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE)
-    end
+	if (flag(FLAG_SYS_GAME_CLEAR)) {
+		if (!flag(FLAG_DEFEATED_NORMAN_FINAL)) {
+			msgbox(PetalburgCity_Gym_Text_NormanFinalIntro, MSGBOX_DEFAULT)
+		    trainerbattle_no_intro(TRAINER_NORMAN_3, PetalburgCity_Gym_Text_NormanFinalDefeat)
+		}
+		msgbox(PetalburgCity_Gym_Text_NormanPostFinal, MSGBOX_AUTOCLOSE)
+	}
+	elif (defeated(TRAINER_WINONA_2)) {
+		trainerbattle_double(TRAINER_NORMAN_2, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons)
+		msgbox(PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE)
+	}
+    else {
+        msgbox(PetalburgCity_Gym_Text_DadGoingToKeepTraining, MSGBOX_DEFAULT)
+    }
+	release_end
 }
 
 script PetalburgCity_Gym_EventScript_SpeedRoomDoor {
@@ -577,7 +590,7 @@ script PetalburgCity_Gym_EventScript_LeftStrengthRoomDoor {
 
 script PetalburgCity_Gym_EventScript_RightStrengthRoomDoor {
     lockall
-    if (!defeated(TRAINER_ALEXIA)) {
+    if (!defeated(TRAINER_AUBREY)) {
         goto(PetalburgCity_Gym_EventScript_DoorLocked)
     }
     setvar(VAR_0x8008, 7)
@@ -593,7 +606,7 @@ script PetalburgCity_Gym_EventScript_RightStrengthRoomDoor {
 
 script PetalburgCity_Gym_EventScript_LeftOHKORoomDoor {
     lockall
-    if (!defeated(TRAINER_ALEXIA)) {
+    if (!defeated(TRAINER_AUBREY)) {
         goto(PetalburgCity_Gym_EventScript_DoorLocked)
     }
     setvar(VAR_0x8008, 1)
@@ -740,13 +753,13 @@ script PetalburgCity_Gym_EventScript_SlideOpenAccuracyRoomDoors {
     release_end
 }
 
-script PetalburgCity_Gym_EventScript_Alexia {
-    trainerbattle_single(TRAINER_ALEXIA, PetalburgCity_Gym_Text_AlexiaIntro, PetalburgCity_Gym_Text_AlexiaDefeat, PetalburgCity_Gym_EventScript_SlideOpenDefenseRoomDoors)
+script PetalburgCity_Gym_EventScript_Aubrey {
+    trainerbattle_single(TRAINER_AUBREY, PetalburgCity_Gym_Text_AubreyIntro, PetalburgCity_Gym_Text_AubreyDefeat, PetalburgCity_Gym_EventScript_SlideOpenDefenseRoomDoors)
     if (flag(FLAG_DEFEATED_PETALBURG_GYM)) {
-        msgbox(PetalburgCity_Gym_Text_AlexiaPostBadge, MSGBOX_NPC)
+        msgbox(PetalburgCity_Gym_Text_AubreyPostBadge, MSGBOX_NPC)
     	end
     }
-    msgbox(PetalburgCity_Gym_Text_AlexiaPostBattle, MSGBOX_AUTOCLOSE)
+    msgbox(PetalburgCity_Gym_Text_AubreyPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
@@ -883,13 +896,24 @@ script PetalburgCity_Gym_EventScript_UnlockRoomDoors {
 }
 
 script PetalburgCity_Gym_EventScript_GymGuide {
-    lock_faceplayer
-    if (flag(FLAG_DEFEATED_PETALBURG_GYM)) {
-        msgbox(PetalburgCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
-    	release_end
+	lock_faceplayer
+	if (flag(FLAG_RECEIVED_TM_FACADE)) {
+		msgbox(PetalburgCity_Gym_Text_GymGuideNextGym, MSGBOX_DEFAULT)
+	}
+	elif (flag(FLAG_DEFEATED_PETALBURG_GYM)) {
+		msgbox(PetalburgCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT)
+		if (!flag(FLAG_RECEIVED_TM_FACADE)) {
+			if (giveitem(ITEM_TM_TAKE_DOWN) == FALSE) {
+				goto(Common_EventScript_ShowBagIsFull)
+			}
+			setflag(FLAG_RECEIVED_TM_FACADE)
+			msgbox(PetalburgCity_Gym_Text_ExplainFacade, MSGBOX_DEFAULT)
+		}
+	}
+    else {
+        msgbox(PetalburgCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT)
     }
-    msgbox(PetalburgCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT)
-    release_end
+	release_end
 }
 
 script PetalburgCity_Gym_EventScript_LeftGymStatue {
@@ -1211,6 +1235,14 @@ text PetalburgCity_Gym_Text_GymGuidePostVictory {
 	What a stunning turn of events!"
 }
 
+text PetalburgCity_Gym_Text_GymGuideNextGym {
+	"{PLAYER}! Whoa! You've overcome even
+	your own father!
+
+	Like, whoa!
+	What a stunning turn of events!"
+}
+
 text PetalburgCity_Gym_Text_RandallIntro {
 	"The ability to attack before the
 	opponent…
@@ -1359,16 +1391,16 @@ text PetalburgCity_Gym_Text_MaryPostBadge {
 	with our POKéMON."
 }
 
-text PetalburgCity_Gym_Text_AlexiaIntro {
+text PetalburgCity_Gym_Text_AubreyIntro {
 	"The higher the DEFENSE, the more
 	reckless I can be in attack."
 }
 
-text PetalburgCity_Gym_Text_AlexiaDefeat {
+text PetalburgCity_Gym_Text_AubreyDefeat {
 	"Our defenses weren't enough…"
 }
 
-text PetalburgCity_Gym_Text_AlexiaPostBattle {
+text PetalburgCity_Gym_Text_AubreyPostBattle {
 	"I think you've taught me a valuable
 	lesson here.
 
@@ -1382,7 +1414,7 @@ text PetalburgCity_Gym_Text_AlexiaPostBattle {
 	skilled at offense."
 }
 
-text PetalburgCity_Gym_Text_AlexiaPostBadge {
+text PetalburgCity_Gym_Text_AubreyPostBadge {
 	"Hi! Have you tried using SURF?"
 }
 
@@ -1511,7 +1543,38 @@ text PetalburgCity_Gym_Text_NormanRematchDefeat {
 }
 
 text PetalburgCity_Gym_Text_NormanPostRematch {
-	"{SPEAKER NAME_DAD}{PLAYER}…
+	"{SPEAKER NAME_NORMAN}{PLAYER}…
+	What is your dream?
+
+	My dream…
+	Hahaha…
+	It has already come true, actually."
+}
+
+text PetalburgCity_Gym_Text_NormanFinalIntro {
+	"{SPEAKER NAME_NORMAN}{PLAYER}…
+	I had a feeling that you would come.
+
+	I would never refuse to accept
+	a challenge from you.
+
+	You do understand, don't you?
+
+	Inside a GYM, it doesn't matter that
+	we are a parent and child.
+
+	…No, because we are parent and child,
+	we owe it to each other to do the best
+	we can. Isn't that right, {PLAYER}?"
+}
+
+text PetalburgCity_Gym_Text_NormanFinalDefeat {
+	"Uh… Haha…
+	Maybe that was going too hard…"
+}
+
+text PetalburgCity_Gym_Text_NormanPostFinal {
+	"{SPEAKER NAME_NORMAN}{PLAYER}…
 	What is your dream?
 
 	My dream…

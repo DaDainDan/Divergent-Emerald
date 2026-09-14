@@ -3,7 +3,6 @@
   "name": "Route110_TrickHousePuzzle2",
   "layout": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE2",
   "music": "MUS_TRICK_HOUSE",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_110",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -63,7 +62,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_WAVE_MAIL",
+      "trainer_sight_or_berry_tree_id": "ITEM_PEARL",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_WAVE_MAIL"
     },
@@ -76,7 +75,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_HARBOR_MAIL",
+      "trainer_sight_or_berry_tree_id": "ITEM_MENTAL_HERB",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_HARBOR_MAIL"
     }
@@ -151,5 +150,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_TrickHousePuzzle2_EventScript_Scroll"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

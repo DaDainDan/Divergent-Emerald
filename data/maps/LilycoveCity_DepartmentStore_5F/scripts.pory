@@ -1,8 +1,8 @@
 mapscripts LilycoveCity_DepartmentStore_5F_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_SOOTOPOLIS_CITY_STATE, 1: LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
-    	VAR_SOOTOPOLIS_CITY_STATE, 2: LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
+		VAR_SOOTOPOLIS_CITY_STATE, 2: LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
     	VAR_SOOTOPOLIS_CITY_STATE, 3: LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
+    	VAR_SOOTOPOLIS_CITY_STATE, 4: LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
     ]
 }
 
@@ -117,7 +117,7 @@ script LilycoveCity_DepartmentStore_5F_EventScript_Woman {
     lockall
     applymovement(LOCALID_DEPARTMENT_STORE_STAIRS_WOMAN, Common_Movement_FacePlayer)
     waitmovement(0)
-    if (var(VAR_SOOTOPOLIS_CITY_STATE) == 0 || var(VAR_SOOTOPOLIS_CITY_STATE) >= 4) {
+    if (var(VAR_SOOTOPOLIS_CITY_STATE) <= 1 || var(VAR_SOOTOPOLIS_CITY_STATE) >= 5) {
         msgbox(LilycoveCity_DepartmentStore_5F_Text_SellManyCuteMatsHere, MSGBOX_DEFAULT)
 		closemessage
     } else {

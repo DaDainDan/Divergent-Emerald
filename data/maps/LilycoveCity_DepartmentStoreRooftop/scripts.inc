@@ -190,12 +190,12 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_9:
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_10:
 # 77 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	checkmoney 300
+	checkmoney 500
 	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_7
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_11:
 # 78 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	checkmoney 350
+	checkmoney 800
 	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_7
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_13:
@@ -217,12 +217,12 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_20:
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_21:
 # 89 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	removemoney 300
+	removemoney 500
 	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_18
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_22:
 # 90 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	removemoney 350
+	removemoney 800
 	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink_18
 
 

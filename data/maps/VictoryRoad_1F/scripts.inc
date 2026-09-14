@@ -69,7 +69,7 @@ VictoryRoad_1F_EventScript_WallyEntranceBattle::
 # 38 "data/maps/VictoryRoad_1F/scripts.pory"
 	msgbox VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore, MSGBOX_DEFAULT
 # 39 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_no_intro TRAINER_WALLY_VR_1, VictoryRoad_1F_Text_WallyEntranceDefeat
+	trainerbattle_no_intro TRAINER_WALLY_VR_BOND, VictoryRoad_1F_Text_WallyEntranceDefeat
 # 40 "data/maps/VictoryRoad_1F/scripts.pory"
 	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_DEFAULT
 # 41 "data/maps/VictoryRoad_1F/scripts.pory"
@@ -93,7 +93,7 @@ VictoryRoad_1F_EventScript_EntranceWally::
 
 VictoryRoad_1F_EventScript_ExitWally::
 # 57 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_single TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
+	trainerbattle_single TRAINER_WALLY_CHAMPION_DRIVE, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 0 "data/maps/VictoryRoad_1F/scripts.pory"
 	compare VAR_RESULT, TRUE
@@ -104,7 +104,7 @@ VictoryRoad_1F_EventScript_ExitWally::
 
 VictoryRoad_1F_EventScript_ExitWally_2:
 # 59 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_rematch TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
+	trainerbattle_rematch TRAINER_WALLY_CHAMPION_DRIVE, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
 # 60 "data/maps/VictoryRoad_1F/scripts.pory"
 	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
 	end
@@ -142,11 +142,11 @@ VictoryRoad_1F_EventScript_Quincy::
 	end
 
 
-VictoryRoad_1F_EventScript_Katelynn::
+VictoryRoad_1F_EventScript_Kimberly::
 # 92 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_single TRAINER_KATELYNN, VictoryRoad_1F_Text_KatelynnIntro, VictoryRoad_1F_Text_KatelynnDefeat
+	trainerbattle_single TRAINER_KIMBERLY, VictoryRoad_1F_Text_KimberlyIntro, VictoryRoad_1F_Text_KimberlyDefeat
 # 93 "data/maps/VictoryRoad_1F/scripts.pory"
-	msgbox VictoryRoad_1F_Text_KatelynnPostBattle, MSGBOX_AUTOCLOSE
+	msgbox VictoryRoad_1F_Text_KimberlyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -306,16 +306,16 @@ VictoryRoad_1F_Text_QuincyPostBattle::
 	.string "That's why it's called the VICTORY\n"
 	.string "ROAD.$"
 
-VictoryRoad_1F_Text_KatelynnIntro::
+VictoryRoad_1F_Text_KimberlyIntro::
 # 214 "data/maps/VictoryRoad_1F/scripts.pory"
 	.string "I have nothing to say to anyone\n"
 	.string "that's come this far. Come on!$"
 
-VictoryRoad_1F_Text_KatelynnDefeat::
+VictoryRoad_1F_Text_KimberlyDefeat::
 # 219 "data/maps/VictoryRoad_1F/scripts.pory"
 	.string "This is a disgrace…$"
 
-VictoryRoad_1F_Text_KatelynnPostBattle::
+VictoryRoad_1F_Text_KimberlyPostBattle::
 # 223 "data/maps/VictoryRoad_1F/scripts.pory"
 	.string "Humph, go right on ahead.\n"
 	.string "See if I care.$"

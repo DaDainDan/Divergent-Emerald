@@ -8,7 +8,7 @@ RustboroCity_House1_EventScript_Trader::
 # 5 "data/maps/RustboroCity_House1/scripts.pory"
 	goto_if_set FLAG_RUSTBORO_NPC_TRADE_COMPLETED, RustboroCity_House1_EventScript_Trader_2
 # 9 "data/maps/RustboroCity_House1/scripts.pory"
-	ingame_trade INGAME_TRADE_SEEDOT, RustboroCity_House1_Text_IllTradeIfYouWant, RustboroCity_House1_EventScript_DeclineTrade, RustboroCity_House1_EventScript_NotRequestedMon, RustboroCity_House1_Text_PleaseBeGoodToMyPokemon
+	ingame_trade INGAME_TRADE_CUBCHOO, RustboroCity_House1_Text_IllTradeIfYouWant, RustboroCity_House1_EventScript_DeclineTrade, RustboroCity_House1_EventScript_NotRequestedMon, RustboroCity_House1_Text_PleaseBeGoodToMyPokemon
 # 10 "data/maps/RustboroCity_House1/scripts.pory"
 	setflag FLAG_RUSTBORO_NPC_TRADE_COMPLETED
 	release_end

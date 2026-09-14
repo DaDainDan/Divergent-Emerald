@@ -39,7 +39,7 @@ script RustboroCity_EventScript_ScientistAddMatchCall {
     waitmovement(0)
     msgbox(RustboroCity_Text_DevelopedNewPokenavFeature, MSGBOX_DEFAULT)
     closemessage
-    setflag(FLAG_HAS_MATCH_CALL)
+    // setflag(FLAG_HAS_MATCH_CALL)
     applymovement(LOCALID_RUSTBORO_SCIENTIST, Common_Movement_StepFasterLeft)
     waitmovement(0)
     playse(SE_CLICK)
@@ -59,7 +59,7 @@ script RustboroCity_EventScript_ScientistAddMatchCall {
 }
 
 script RustboroCity_EventScript_MatchCallTutorial {
-    setflag(FLAG_ADDED_MATCH_CALL_TO_POKENAV)
+    // setflag(FLAG_ADDED_MATCH_CALL_TO_POKENAV)
     special(ScriptMenu_CreateStartMenuForPokenavTutorial)
 	if (var(VAR_RESULT) != 3) {
 		msgbox(RustboroCity_Text_PleaseSelectPokenav, MSGBOX_DEFAULT)
@@ -262,11 +262,11 @@ script RustboroCity_EventScript_StolenGoodsScene {
     setvar(VAR_RUSTBORO_CITY_STATE, 2)
     setvar(VAR_RUSTURF_TUNNEL_STATE, 2)
     setvar(VAR_ROUTE116_STATE, 1)
-    clearflag(FLAG_HIDE_ROUTE_116_MR_BRINEY)
-    clearflag(FLAG_HIDE_RUSTURF_TUNNEL_PEEKO)
     clearflag(FLAG_HIDE_RUSTURF_TUNNEL_AQUA_GRUNT)
-    setflag(FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY)
-    setflag(FLAG_HIDE_BRINEYS_HOUSE_PEEKO)
+    // clearflag(FLAG_HIDE_ROUTE_116_MR_BRINEY)
+    // clearflag(FLAG_HIDE_RUSTURF_TUNNEL_PEEKO)
+    // setflag(FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY)
+    // setflag(FLAG_HIDE_BRINEYS_HOUSE_PEEKO)
     releaseall
     end
 }
@@ -452,7 +452,7 @@ script RustboroCity_EventScript_ReturnGoods {
 	}
 	waitmovement(0)
     msgbox(RustboroCity_Text_YouGotItThankYou, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_GREAT_BALL) == FALSE) {
+    if (giveitem(ITEM_TM_HELPING_HAND) == FALSE) {
         msgbox(RustboroCity_Text_YoureLoadedWithItems, MSGBOX_DEFAULT)
     }
     msgbox(RustboroCity_Text_PleaseComeWithMe, MSGBOX_DEFAULT)
@@ -703,6 +703,25 @@ script RustboroCity_EventScript_BrendanBrineyHint {
 script RustboroCity_EventScript_Boy1 {
     msgbox(RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC)
     end
+}
+
+script RustboroCity_EventScript_MagmaGrunt {
+    lock
+    msgbox("Any time now\.", MSGBOX_DEFAULT)
+    closemessage
+    playse(SE_PIN)
+    applymovement(LOCALID_RUSTBORO_MAGMA_GRUNT, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(LOCALID_RUSTBORO_MAGMA_GRUNT, moves(delay_16 * 3, delay_4, face_player, delay_16))
+    waitmovement(0)
+    msgbox(RustboroCity_Text_BuzzOff, MSGBOX_DEFAULT)
+    goto(Common_EventScript_FaceOriginalDirection)
+    end
+}
+
+text RustboroCity_Text_BuzzOff {
+    "Buzz off, brat.
+    Forget you even saw me."
 }
 
 text RustboroCity_Text_WeShortenItToDevon {
@@ -1033,30 +1052,23 @@ text RustboroCity_Text_CuttersHouse {
 }
 
 text RustboroCity_Text_DevelopedNewPokenavFeature {
-	"I've been developing an added feature
-	for the POKéNAV…
+	"Sorry, {PLAYER}. 
+	We almost forgot.
 
-	And it turned out great!
+	MR. STONE wanted to be added to your 
+	MATCH CALL before you left.
 
-	{PLAYER}, may I see that POKéNAV?
-	The one our PRESIDENT gave you?"
+	He wanted you to be able to contact him
+	easily for any updates about STEVEN."
 }
 
 text RustboroCity_Text_AddedMatchCallPleaseCallMrStone {
-	"There you go, {PLAYER}!
-
-	I added a new feature named
-	MATCH CALL to your POKéNAV.
-
-	Using the MATCH CALL feature,
-	you can chat with people who have
-	been registered in your POKéNAV.
-
-	{PLAYER}, our PRESIDENT STONE should
-	be registered in your POKéNAV.
-
-	Test it out.
-	Please give our PRESIDENT a call."
+	"There you go, {PLAYER}.
+	I've registered the PRESIDENT to your
+	POKéNAV's contacts list.
+	
+	Why don't you give him a call to make
+	sure everything is working correctly."
 }
 
 text RustboroCity_Text_PleaseSelectPokenav {

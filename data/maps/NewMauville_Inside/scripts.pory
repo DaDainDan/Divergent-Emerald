@@ -29,6 +29,9 @@ mapscripts NewMauville_Inside_MapScripts {
         if (var(VAR_NEW_MAUVILLE_STATE) == 2) {
 			call(NewMauville_Inside_EventScript_SetGeneratorOffMetatiles)
 		}
+        if (var(VAR_NEW_MAUVILLE_STATE) == 3) {
+            setmetatile(39, 5, 0x2C5, TRUE)
+        }
 		end
     }
 }
@@ -193,7 +196,7 @@ script NewMauville_Inside_EventScript_Voltorb3 {
 }
 
 script NewMauville_Inside_EventScript_VoltorbBattle {
-	setwildbattle(SPECIES_VOLTORB, 25)
+	setwildbattle(SPECIES_VOLTORB, 42)
     waitse
     playmoncry(SPECIES_VOLTORB, CRY_MODE_ENCOUNTER)
     delay(40)

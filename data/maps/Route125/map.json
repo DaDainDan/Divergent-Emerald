@@ -3,7 +3,6 @@
   "name": "Route125",
   "layout": "LAYOUT_ROUTE125",
   "music": "MUS_ROUTE120",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_125",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -32,24 +31,24 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
-      "x": 7,
-      "y": 31,
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "x": 51,
+      "y": 8,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
-      "movement_range_x": 0,
+      "movement_range_x": 4,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route125_EventScript_Nolen",
+      "script": "Route125_EventScript_Gabriel",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
-      "x": 45,
-      "y": 9,
+      "x": 49,
+      "y": 38,
       "elevation": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 2,
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -59,8 +58,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
-      "x": 38,
-      "y": 24,
+      "x": 7,
+      "y": 31,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
       "movement_range_x": 6,
@@ -97,9 +96,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 17,
-      "y": 19,
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 8,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -110,7 +109,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
       "x": 18,
       "y": 19,
       "elevation": 3,
@@ -157,7 +156,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_BIG_PEARL",
+      "trainer_sight_or_berry_tree_id": "ITEM_SUPPORT_VEST",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_125_BIG_PEARL"
     }
@@ -200,6 +199,15 @@
       "y": 32,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_YELLOW_CAVE4_2"
+    },
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 22,
+      "elevation": 0,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_125_BIG_PEARL"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

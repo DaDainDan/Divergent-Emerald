@@ -1,1 +1,19 @@
 mapscripts DuneCavern_MapScripts {}
+
+script DuneCavern_EventScript_Grant {
+    trainerbattle_single(TRAINER_GRANT, DuneCavern_Text_GrantIntro, DuneCavern_Text_GrantDefeat)
+    msgbox(DuneCavern_Text_GrantPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text DuneCavern_Text_GrantIntro {
+	"\."
+}
+
+text DuneCavern_Text_GrantDefeat {
+	"\."
+}
+
+text DuneCavern_Text_GrantPostBattle {
+	"\."
+}

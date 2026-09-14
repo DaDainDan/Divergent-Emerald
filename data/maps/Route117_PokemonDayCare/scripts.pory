@@ -4,3 +4,128 @@ mapscripts Route117_PokemonDayCare_MapScripts {
     	end
     }
 }
+
+script Route117_PokemonDayCare_EventScript_Girl {
+    lock_faceplayer
+    msgbox(Route117_PokemonDayCare_Text_MyGrandpa, MSGBOX_DEFAULT)
+    release_end
+}
+
+script Route117_PokemonDayCare_EventScript_Breeder {
+    lock_faceplayer
+    if (!flag(FLAG_RECEIVED_DAYCARE_DESTINY_KNOT) && specialvar(VAR_RESULT, GetHatchedEggCount) >= 10) {
+        msgbox(Route117_PokemonDayCare_Text_YouReallyLovePokemon, MSGBOX_DEFAULT)
+        if (giveitem(ITEM_DESTINY_KNOT) == FALSE) {
+            goto(Common_EventScript_ShowBagIsFull)
+        }
+        setflag(FLAG_RECEIVED_DAYCARE_DESTINY_KNOT)
+        release_end
+    }
+    msgbox(Route117_PokemonDayCare_Text_ILoveBreeding, MSGBOX_DEFAULT)
+    release_end
+}
+
+script Route117_PokemonDayCare_EventScript_OldMan {
+    lock_faceplayer
+    if (flag(FLAG_RECEIVED_DAYCARE_EGG)) {
+        msgbox(Route117_PokemonDayCare_Text_EverySoOftenEggFoundAtDayCare, MSGBOX_DEFAULT)
+        release_end
+    }
+    msgbox(Route117_PokemonDayCare_Text_HaveEggWillYouTakeIt, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        msgbox(Route117_PokemonDayCare_Text_AsYouWishThen, MSGBOX_DEFAULT)
+    }
+    elif (getpartysize == PARTY_SIZE) {
+        msgbox(Route117_PokemonDayCare_Text_NoRoomForThisEgg, MSGBOX_DEFAULT)
+    }
+    else {
+        msgbox(Route117_PokemonDayCare_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT)
+        setflag(FLAG_RECEIVED_DAYCARE_EGG)
+        playfanfare(MUS_OBTAIN_ITEM)
+        message(Route117_PokemonDayCare_Text_ReceivedTheEgg)
+        waitfanfare
+        giveegg(SPECIES_TOGEPI)
+    }
+    release_end
+}
+
+text Route117_PokemonDayCare_Text_HaveEggWillYouTakeIt {
+	"Hello, child.
+	You wouldn't happen to be a POKéMON
+	trainer, would you?
+
+	My grand-daughter gave me this egg
+	that holds a special POKéMON.
+
+	She gave it me in the hopes it would
+	grant me good health.
+
+	I was glad, but I couldn't help but feel
+	like it's wasted on one as old as me.
+
+	Would you take it as a gift from me?"
+}
+
+text Route117_PokemonDayCare_Text_HopeYoullWalkPlentyWithEgg {
+	"Oh, thank you, child!
+
+	My only wish is for you to be blessed by
+	this egg and the critter held within it."
+}
+
+text Route117_PokemonDayCare_Text_ReceivedTheEgg {
+	"{PLAYER} received the EGG."
+}
+
+text Route117_PokemonDayCare_Text_NoRoomForThisEgg {
+	"Oh, not enough room?
+
+	Not to worry, there is a PC right behind
+	me that'll allow you to make room."
+}
+
+text Route117_PokemonDayCare_Text_AsYouWishThen {
+	"That saddens me.
+
+	Something about you made me think you
+	were the right person to give it to.
+
+	But I won't force you to take something
+	you don't want."
+}
+
+text Route117_PokemonDayCare_Text_EverySoOftenEggFoundAtDayCare {
+	"Go on now, child.
+	Don't worry about me.
+
+	I just want you and that critter to go
+	out and do well for yourselves."
+}
+
+text Route117_PokemonDayCare_Text_MyGrandpa {
+	"My grand-father passed away recently.
+
+	I gave him a TOGEPI egg because I
+	hoped it would improve his poor health.
+
+	Sadly, it didn't work, but I'll think of
+	him every time I hold TOGEPI in my arms."
+}
+
+text Route117_PokemonDayCare_Text_YouReallyLovePokemon {
+	"I've seen you around here a lot lately.
+
+	It seems like you're really dedicating
+	yourself to raising POKéMON!
+
+	Here's something to make things even
+	easier for you!"
+}
+
+text Route117_PokemonDayCare_Text_ILoveBreeding {
+	"My passion is taking care of and
+	breeding POKéMON.
+
+	You should try it too!
+	It's really fulfilling!"
+}

@@ -156,7 +156,7 @@ Route123_EventScript_Cameron::
 # 0 "data/maps/Route123/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route123_EventScript_Cameron_2
-# 96 "data/maps/Route123/scripts.pory"
+# 99 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_CameronPostBattle, MSGBOX_DEFAULT
 	release_end
 
@@ -164,171 +164,191 @@ Route123_EventScript_Cameron_2:
 # 92 "data/maps/Route123/scripts.pory"
 	trainerbattle_rematch TRAINER_CAMERON_1, Route123_Text_CameronRematchIntro, Route123_Text_CameronRematchDefeat
 # 93 "data/maps/Route123/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_TM_MOONBLAST, Route123_EventScript_Cameron_5
+Route123_EventScript_Cameron_4:
+# 96 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_CameronPostRematch, MSGBOX_AUTOCLOSE
 	end
 
+Route123_EventScript_Cameron_5:
+# 94 "data/maps/Route123/scripts.pory"
+	goto Route123_EventScript_Cameron_GiveMoonblast
+	goto Route123_EventScript_Cameron_4
+
 
 Route123_EventScript_RegisterCameron::
-# 101 "data/maps/Route123/scripts.pory"
-	special PlayerFaceTrainerAfterBattle
-# 102 "data/maps/Route123/scripts.pory"
-	waitmovement 0
-# 103 "data/maps/Route123/scripts.pory"
-	msgbox Route123_Text_CameronRegister, MSGBOX_DEFAULT
 # 104 "data/maps/Route123/scripts.pory"
+	special PlayerFaceTrainerAfterBattle
+# 105 "data/maps/Route123/scripts.pory"
+	waitmovement 0
+# 106 "data/maps/Route123/scripts.pory"
+	msgbox Route123_Text_CameronRegister, MSGBOX_DEFAULT
+# 107 "data/maps/Route123/scripts.pory"
 	register_matchcall TRAINER_CAMERON_1
+# 108 "data/maps/Route123/scripts.pory"
+	goto Route123_EventScript_Cameron_GiveMoonblast
+	end
+
+
+Route123_EventScript_Cameron_GiveMoonblast::
+# 113 "data/maps/Route123/scripts.pory"
+	msgbox Route123_Text_TakeThis, MSGBOX_DEFAULT
+# 114 "data/maps/Route123/scripts.pory"
+	giveitem ITEM_TM_MOONBLAST
+# 115 "data/maps/Route123/scripts.pory"
+	setflag FLAG_RECEIVED_TM_MOONBLAST
 	release_end
 
 
 Route123_EventScript_Jacki::
-# 109 "data/maps/Route123/scripts.pory"
+# 120 "data/maps/Route123/scripts.pory"
 	trainerbattle_single TRAINER_JACKI_1, Route123_Text_JackiIntro, Route123_Text_JackiDefeat, Route123_EventScript_RegisterJacki
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 0 "data/maps/Route123/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route123_EventScript_Jacki_2
-# 115 "data/maps/Route123/scripts.pory"
+# 126 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_JackiPostBattle, MSGBOX_DEFAULT
 	release_end
 
 Route123_EventScript_Jacki_2:
-# 111 "data/maps/Route123/scripts.pory"
+# 122 "data/maps/Route123/scripts.pory"
 	trainerbattle_rematch TRAINER_JACKI_1, Route123_Text_JackiRematchIntro, Route123_Text_JackiRematchDefeat
-# 112 "data/maps/Route123/scripts.pory"
+# 123 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_JackiPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_RegisterJacki::
-# 120 "data/maps/Route123/scripts.pory"
+# 131 "data/maps/Route123/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
-# 121 "data/maps/Route123/scripts.pory"
+# 132 "data/maps/Route123/scripts.pory"
 	waitmovement 0
-# 122 "data/maps/Route123/scripts.pory"
+# 133 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_JackiRegister, MSGBOX_DEFAULT
-# 123 "data/maps/Route123/scripts.pory"
+# 134 "data/maps/Route123/scripts.pory"
 	register_matchcall TRAINER_JACKI_1
 	release_end
 
 
 Route123_EventScript_Miu::
-# 128 "data/maps/Route123/scripts.pory"
+# 139 "data/maps/Route123/scripts.pory"
 	trainerbattle_double TRAINER_MIU_AND_YUKI, Route123_Text_MiuIntro, Route123_Text_MiuDefeat, Route123_Text_MiuNotEnoughMons
-# 129 "data/maps/Route123/scripts.pory"
+# 140 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_MiuPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_Yuki::
-# 134 "data/maps/Route123/scripts.pory"
+# 145 "data/maps/Route123/scripts.pory"
 	trainerbattle_double TRAINER_MIU_AND_YUKI, Route123_Text_YukiIntro, Route123_Text_YukiDefeat, Route123_Text_YukiNotEnoughMons
-# 135 "data/maps/Route123/scripts.pory"
+# 146 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_YukiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_Kindra::
-# 140 "data/maps/Route123/scripts.pory"
+# 151 "data/maps/Route123/scripts.pory"
 	trainerbattle_single TRAINER_KINDRA, Route123_Text_KindraIntro, Route123_Text_KindraDefeat
-# 141 "data/maps/Route123/scripts.pory"
+# 152 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_KindraPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_Frederick::
-# 146 "data/maps/Route123/scripts.pory"
+# 157 "data/maps/Route123/scripts.pory"
 	trainerbattle_single TRAINER_FREDRICK, Route123_Text_FrederickIntro, Route123_Text_FrederickDefeat
-# 147 "data/maps/Route123/scripts.pory"
+# 158 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_FrederickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
-Route123_EventScript_Alberto::
-# 152 "data/maps/Route123/scripts.pory"
-	trainerbattle_single TRAINER_ALBERTO, Route123_Text_AlbertoIntro, Route123_Text_AlbertoDefeat
-# 153 "data/maps/Route123/scripts.pory"
-	msgbox Route123_Text_AlbertoPostBattle, MSGBOX_AUTOCLOSE
+Route123_EventScript_Abraham::
+# 163 "data/maps/Route123/scripts.pory"
+	trainerbattle_single TRAINER_ABRAHAM, Route123_Text_AbrahamIntro, Route123_Text_AbrahamDefeat
+# 164 "data/maps/Route123/scripts.pory"
+	msgbox Route123_Text_AbrahamPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_Ed::
-# 158 "data/maps/Route123/scripts.pory"
+# 169 "data/maps/Route123/scripts.pory"
 	trainerbattle_single TRAINER_ED, Route123_Text_EdIntro, Route123_Text_EdDefeat
-# 159 "data/maps/Route123/scripts.pory"
+# 170 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_EdPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_Kayley::
-# 164 "data/maps/Route123/scripts.pory"
+# 175 "data/maps/Route123/scripts.pory"
 	trainerbattle_single TRAINER_KAYLEY, Route123_Text_KayleyIntro, Route123_Text_KayleyDefeat
-# 165 "data/maps/Route123/scripts.pory"
+# 176 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_KayleyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_Jonas::
-# 170 "data/maps/Route123/scripts.pory"
+# 181 "data/maps/Route123/scripts.pory"
 	trainerbattle_single TRAINER_JONAS, Route123_Text_JonasIntro, Route123_Text_JonasDefeat
-# 171 "data/maps/Route123/scripts.pory"
+# 182 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_JonasPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_Jazmyn::
-# 176 "data/maps/Route123/scripts.pory"
+# 187 "data/maps/Route123/scripts.pory"
 	trainerbattle_single TRAINER_JAZMYN, Route123_Text_JazmynIntro, Route123_Text_JazmynDefeat
-# 177 "data/maps/Route123/scripts.pory"
+# 188 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_JazmynPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_Davis::
-# 182 "data/maps/Route123/scripts.pory"
+# 193 "data/maps/Route123/scripts.pory"
 	trainerbattle_single TRAINER_DAVIS, Route123_Text_DavisIntro, Route123_Text_DavisDefeat
-# 183 "data/maps/Route123/scripts.pory"
+# 194 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_DavisPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_Fernando::
-# 188 "data/maps/Route123/scripts.pory"
+# 199 "data/maps/Route123/scripts.pory"
 	trainerbattle_single TRAINER_FERNANDO_1, Route123_Text_FernandoIntro, Route123_Text_FernandoDefeat, Route123_EventScript_RegisterFernando
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 0 "data/maps/Route123/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route123_EventScript_Fernando_2
-# 194 "data/maps/Route123/scripts.pory"
+# 205 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_FernandoPostBattle, MSGBOX_DEFAULT
 	release_end
 
 Route123_EventScript_Fernando_2:
-# 190 "data/maps/Route123/scripts.pory"
+# 201 "data/maps/Route123/scripts.pory"
 	trainerbattle_rematch TRAINER_FERNANDO_1, Route123_Text_FernandoRematchIntro, Route123_Text_FernandoRematchDefeat
-# 191 "data/maps/Route123/scripts.pory"
+# 202 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_FernandoPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 
 Route123_EventScript_RegisterFernando::
-# 199 "data/maps/Route123/scripts.pory"
+# 210 "data/maps/Route123/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
-# 200 "data/maps/Route123/scripts.pory"
+# 211 "data/maps/Route123/scripts.pory"
 	waitmovement 0
-# 201 "data/maps/Route123/scripts.pory"
+# 212 "data/maps/Route123/scripts.pory"
 	msgbox Route123_Text_FernandoRegister, MSGBOX_DEFAULT
-# 202 "data/maps/Route123/scripts.pory"
+# 213 "data/maps/Route123/scripts.pory"
 	register_matchcall TRAINER_FERNANDO_1
 	release_end
 
 
 Route123_Text_LoveGrassMonsHaveAny::
-# 206 "data/maps/Route123/scripts.pory"
+# 217 "data/maps/Route123/scripts.pory"
 	.string "I love GRASS-type POKéMON!\p"
 	.string "Do you have any GRASS-type POKéMON?$"
 
 Route123_Text_YouLikeGrassMonsTooHaveThis::
-# 212 "data/maps/Route123/scripts.pory"
+# 223 "data/maps/Route123/scripts.pory"
 	.string "Oh?\p"
 	.string "You like GRASS-type POKéMON, too,\n"
 	.string "don't you?\p"
@@ -336,20 +356,24 @@ Route123_Text_YouLikeGrassMonsTooHaveThis::
 	.string "It's a token of our friendship.$"
 
 Route123_Text_CheckTreesWithMyGrassMon::
-# 222 "data/maps/Route123/scripts.pory"
+# 233 "data/maps/Route123/scripts.pory"
 	.string "I check trees with my GRASS-type\n"
 	.string "POKéMON. I'm like a tree doctor.$"
 
 Route123_Text_RouteSign::
-# 227 "data/maps/Route123/scripts.pory"
+# 238 "data/maps/Route123/scripts.pory"
 	.string "{RIGHT_ARROW} ROUTE 123\n"
 	.string "{LEFT_ARROW} ROUTE 118$"
 
 Route123_Text_RouteSignMtPyre::
-# 232 "data/maps/Route123/scripts.pory"
+# 243 "data/maps/Route123/scripts.pory"
 	.string "{UP_ARROW} MT. PYRE\n"
 	.string "“Forbidden to the faint of heart.”$"
 
 Route123_Text_BerryMastersHouse::
-# 237 "data/maps/Route123/scripts.pory"
+# 248 "data/maps/Route123/scripts.pory"
 	.string "BERRY MASTER'S HOUSE$"
+
+Route123_Text_TakeThis::
+# 252 "data/maps/Route123/scripts.pory"
+	.string "You should take this as well.$"

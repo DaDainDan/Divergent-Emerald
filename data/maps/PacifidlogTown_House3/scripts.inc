@@ -8,7 +8,7 @@ PacifidlogTown_House3_EventScript_Trader::
 # 5 "data/maps/PacifidlogTown_House3/scripts.pory"
 	goto_if_set FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED, PacifidlogTown_House3_EventScript_Trader_2
 # 9 "data/maps/PacifidlogTown_House3/scripts.pory"
-	ingame_trade INGAME_TRADE_HORSEA, PacifidlogTown_House3_Text_WillingToTradeIt, PacifidlogTown_House3_EventScript_DeclineTrade, PacifidlogTown_House3_EventScript_NotRequestedMon, PacifidlogTown_House3_Text_ItsSubtlyDifferentThankYou
+	ingame_trade INGAME_TRADE_CHATOT, PacifidlogTown_House3_Text_WillingToTradeIt, PacifidlogTown_House3_EventScript_DeclineTrade, PacifidlogTown_House3_EventScript_NotRequestedMon, PacifidlogTown_House3_Text_ItsSubtlyDifferentThankYou
 # 10 "data/maps/PacifidlogTown_House3/scripts.pory"
 	setflag FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED
 	release_end
@@ -72,7 +72,7 @@ PacifidlogTown_House3_Text_ReallyWantedToGetBagon::
 # 65 "data/maps/PacifidlogTown_House3/scripts.pory"
 	.string "I know I could go looking for one\n"
 	.string "on my own, but…\p"
-	.string "But I really wanted to get a BAGON\n"
+	.string "But I really wanted to get a MR. MIME\n"
 	.string "that another TRAINER caught…$"
 
 PacifidlogTown_House3_Text_IsThatAPokedex::

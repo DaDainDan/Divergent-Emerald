@@ -7,12 +7,12 @@ PetalburgCity_WallysHouse_MapScripts::
 
 PetalburgCity_WallysHouse_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 3 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_WallysHouse_EventScript_GiveHMSurf
+	map_script_2 VAR_PETALBURG_CITY_STATE, 6, PetalburgCity_WallysHouse_EventScript_GiveHMSurf
 	.2byte 0
 
 PetalburgCity_WallysHouse_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 6 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_WallysHouse_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
+	map_script_2 VAR_PETALBURG_CITY_STATE, 6, PetalburgCity_WallysHouse_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
 	.2byte 0
 
 PetalburgCity_WallysHouse_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
@@ -29,13 +29,13 @@ PetalburgCity_WallysHouse_EventScript_GiveHMSurf::
 # 16 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_PleaseExcuseUs, MSGBOX_DEFAULT
 # 17 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	giveitem ITEM_HM_SURF
+	giveitem ITEM_LIFE_ORB
 # 18 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	setflag FLAG_RECEIVED_HM_SURF
+	setflag FLAG_RECEIVED_LIFE_ORB
 # 19 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT
 # 20 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	setvar VAR_PETALBURG_CITY_STATE, 5
+	setvar VAR_PETALBURG_CITY_STATE, 7
 # 21 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	releaseall
 	end
@@ -47,7 +47,7 @@ PetalburgCity_WallysHouse_EventScript_WallysDad::
 # 27 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, PetalburgCity_WallysHouse_EventScript_WallysDad_2
 # 30 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	goto_if_set FLAG_RECEIVED_HM_SURF, PetalburgCity_WallysHouse_EventScript_WallysDad_3
+	goto_if_set FLAG_RECEIVED_LIFE_ORB, PetalburgCity_WallysHouse_EventScript_WallysDad_3
 # 33 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	goto_if_set FLAG_THANKED_FOR_PLAYING_WITH_WALLY, PetalburgCity_WallysHouse_EventScript_WallysDad_4
 # 37 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
@@ -77,7 +77,7 @@ PetalburgCity_WallysHouse_EventScript_WallysMom::
 # 44 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	lock_faceplayer
 # 45 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	goto_if_set FLAG_RECEIVED_HM_SURF, PetalburgCity_WallysHouse_EventScript_WallysMom_2
+	goto_if_set FLAG_RECEIVED_LIFE_ORB, PetalburgCity_WallysHouse_EventScript_WallysMom_2
 # 49 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_WallyWasReallyHappy, MSGBOX_DEFAULT
 	release_end

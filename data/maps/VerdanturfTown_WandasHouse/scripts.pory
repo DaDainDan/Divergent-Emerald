@@ -2,11 +2,19 @@ mapscripts VerdanturfTown_WandasHouse_MapScripts {}
 
 script VerdanturfTown_WandasHouse_EventScript_Wally {
     lock_faceplayer
-    if (flag(FLAG_WALLY_SPEECH)) {
-        msgbox(VerdanturfTown_WandasHouse_Text_StrongerSpeechShort, MSGBOX_DEFAULT)
-    	release_end
-    }
-    msgbox(VerdanturfTown_WandasHouse_Text_StrongerSpeech, MSGBOX_DEFAULT)
+    if (flag(FLAG_WALLY_DRIVE)) {
+		if (flag(FLAG_WALLY_SPEECH)) {
+			msgbox(VerdanturfTown_WandasHouse_Text_StrongerSpeechShort, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox(VerdanturfTown_WandasHouse_Text_StrongerSpeech, MSGBOX_DEFAULT)
+	} else {
+		if (flag(FLAG_WALLY_SPEECH)) {
+			msgbox(VerdanturfTown_WandasHouse_Text_BondsSpeechShort, MSGBOX_DEFAULT)
+			release_end
+		}
+		msgbox(VerdanturfTown_WandasHouse_Text_BondSpeech, MSGBOX_DEFAULT)
+	}
     setflag(FLAG_WALLY_SPEECH)
     release_end
 }
@@ -58,27 +66,59 @@ script VerdanturfTown_WandasHouse_EventScript_WallysAunt {
 }
 
 text VerdanturfTown_WandasHouse_Text_StrongerSpeech {
-	"{SPEAKER NAME_WALLY}I lost to you, {PLAYER}, but I'm
-	not feeling down anymore.
+	"{SPEAKER NAME_WALLY}You beat me, {PLAYER}, but I've
+	made my decision.
 
-	Because I have a new purpose in life.
-	Together with my RALTS, I'm going
-	to challenge POKéMON GYMS and become
-	a great TRAINER.
+	I'm going to win.
+	I'm going to be the best.
 
-	Please watch me, {PLAYER}.
+	Together with FAITH, I'm going
+	to complete the GYM CHALLENGE and
+	become the CHAMPION.
+
+	Just you wait, {PLAYER}.
 	I'm going to be stronger than you.
 
-	When I do, I'm going to challenge you
-	to another battle."
+	And when that day comes, I'll
+	challenge you again.
+	
+	And I will defeat you!"
 }
 
 text VerdanturfTown_WandasHouse_Text_StrongerSpeechShort {
-	"{SPEAKER NAME_WALLY}Please watch me, {PLAYER}.
-	I'm going to get stronger than you.
+	"{SPEAKER NAME_WALLY}Just you wait, {PLAYER}.
 
-	When I do, I'm going to challenge you
-	to another battle."
+	I will be the best, 
+	and I will defeat you!"
+}
+
+text VerdanturfTown_WandasHouse_Text_BondSpeech {
+	"{SPEAKER NAME_WALLY}{PLAYER}, even though I lost, 
+	I'm feeling much better than before.
+
+	Because know I know that so long as 
+	I have FAITH and my other POK\eMON,
+	everything will be okay!
+	
+	I will attempt the GYM Challenge,
+	and even if I fail, I'll still
+	learn and have fun!
+
+	Nothing can hurt me anymore.
+
+	Thank you, {PLAYER}.
+	You've really helped me.
+
+	I know we'll see each other again, and
+	when we do, maybe we could even have a
+	friendly rematch."
+}
+
+text VerdanturfTown_WandasHouse_Text_BondsSpeechShort {
+	"{SPEAKER NAME_WALLY}Thank you, {PLAYER}.
+	You've really helped me.
+
+	I hope I'll see you again."
 }
 
 text VerdanturfTown_WandasHouse_Text_WallysNextDoor {

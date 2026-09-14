@@ -32,18 +32,18 @@ OldaleTown_Mart_Pokemart_Basic:
 # 18 "data/maps/OldaleTown_Mart/scripts.pory"
 	.2byte ITEM_FULL_HEAL
 # 19 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_MAX_ETHER
-# 20 "data/maps/OldaleTown_Mart/scripts.pory"
 	.2byte ITEM_REPEL
-# 21 "data/maps/OldaleTown_Mart/scripts.pory"
+# 20 "data/maps/OldaleTown_Mart/scripts.pory"
 	.2byte ITEM_LURE
 	.2byte ITEM_NONE
 
 	.align 2
-# 24 "data/maps/OldaleTown_Mart/scripts.pory"
+# 23 "data/maps/OldaleTown_Mart/scripts.pory"
 OldaleTown_Mart_Pokemart_Expanded:
-# 25 "data/maps/OldaleTown_Mart/scripts.pory"
+# 24 "data/maps/OldaleTown_Mart/scripts.pory"
 	.2byte ITEM_POKE_BALL
+# 25 "data/maps/OldaleTown_Mart/scripts.pory"
+	.2byte ITEM_HEAL_BALL
 # 26 "data/maps/OldaleTown_Mart/scripts.pory"
 	.2byte ITEM_POTION
 # 27 "data/maps/OldaleTown_Mart/scripts.pory"
@@ -54,42 +54,44 @@ OldaleTown_Mart_Pokemart_Expanded:
 	.2byte ITEM_REPEL
 # 30 "data/maps/OldaleTown_Mart/scripts.pory"
 	.2byte ITEM_LURE
+# 31 "data/maps/OldaleTown_Mart/scripts.pory"
+	.2byte ITEM_HONEY
 	.2byte ITEM_NONE
 
 OldaleTown_Mart_EventScript_Woman::
-# 34 "data/maps/OldaleTown_Mart/scripts.pory"
-	lock_faceplayer
 # 35 "data/maps/OldaleTown_Mart/scripts.pory"
+	lock_faceplayer
+# 36 "data/maps/OldaleTown_Mart/scripts.pory"
 	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_Mart_EventScript_Woman_2
-# 38 "data/maps/OldaleTown_Mart/scripts.pory"
+# 39 "data/maps/OldaleTown_Mart/scripts.pory"
 	msgbox OldaleTown_Mart_Text_PokeBallsAreSoldOut, MSGBOX_DEFAULT
 OldaleTown_Mart_EventScript_Woman_1:
 	release_end
 
 OldaleTown_Mart_EventScript_Woman_2:
-# 36 "data/maps/OldaleTown_Mart/scripts.pory"
+# 37 "data/maps/OldaleTown_Mart/scripts.pory"
 	msgbox OldaleTown_Mart_Text_ImGoingToBuyPokeBalls, MSGBOX_DEFAULT
 	goto OldaleTown_Mart_EventScript_Woman_1
 
 
 OldaleTown_Mart_EventScript_Boy::
-# 44 "data/maps/OldaleTown_Mart/scripts.pory"
+# 45 "data/maps/OldaleTown_Mart/scripts.pory"
 	msgbox OldaleTown_Mart_Text_RestoreHPWithPotion, MSGBOX_NPC
 	end
 
 
 OldaleTown_Mart_Text_PokeBallsAreSoldOut::
-# 48 "data/maps/OldaleTown_Mart/scripts.pory"
+# 49 "data/maps/OldaleTown_Mart/scripts.pory"
 	.string "The clerk says they're all sold out, so\n"
 	.string "I can't stock up on POKé BALLS.$"
 
 OldaleTown_Mart_Text_ImGoingToBuyPokeBalls::
-# 53 "data/maps/OldaleTown_Mart/scripts.pory"
+# 54 "data/maps/OldaleTown_Mart/scripts.pory"
 	.string "I buy plenty of POKé BALLS so I won't\n"
 	.string "run out when I try to catch POKéMON!$"
 
 OldaleTown_Mart_Text_RestoreHPWithPotion::
-# 58 "data/maps/OldaleTown_Mart/scripts.pory"
+# 59 "data/maps/OldaleTown_Mart/scripts.pory"
 	.string "It's important to stock up on POTIONS\n"
 	.string "so you can keep your POKéMON healthy.\p"
 	.string "Don't be stingy about using them.\n"

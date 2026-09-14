@@ -75,7 +75,7 @@ SkyPillar_Top_EventScript_Rayquaza::
 # 31 "data/maps/SkyPillar_Top/scripts.pory"
 	waitmoncry
 # 32 "data/maps/SkyPillar_Top/scripts.pory"
-	setwildbattle SPECIES_RAYQUAZA, 70
+	setwildbattle SPECIES_RAYQUAZA, 100
 # 33 "data/maps/SkyPillar_Top/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 34 "data/maps/SkyPillar_Top/scripts.pory"
@@ -204,7 +204,7 @@ SkyPillar_Top_EventScript_AwakenRayquaza::
 # 96 "data/maps/SkyPillar_Top/scripts.pory"
 	special RemoveCameraObject
 # 97 "data/maps/SkyPillar_Top/scripts.pory"
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 5
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 6
 # 98 "data/maps/SkyPillar_Top/scripts.pory"
 	setvar VAR_SKY_PILLAR_STATE, 1
 # 99 "data/maps/SkyPillar_Top/scripts.pory"

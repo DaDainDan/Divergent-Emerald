@@ -1,21 +1,21 @@
 mapscripts MeteorFalls_1F_2R_MapScripts {}
 
-script MeteorFalls_1F_2R_EventScript_Nicolas {
-    trainerbattle_single(TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasIntro, MeteorFalls_1F_2R_Text_NicolasDefeat, MeteorFalls_1F_2R_EventScript_RegisterNicolas)
+script MeteorFalls_1F_2R_EventScript_Sergio {
+    trainerbattle_single(TRAINER_SERGIO_1, MeteorFalls_1F_2R_Text_SergioIntro, MeteorFalls_1F_2R_Text_SergioDefeat, MeteorFalls_1F_2R_EventScript_RegisterSergio)
     if (specialvar(VAR_RESULT, ShouldTryRematchBattle) == TRUE) {
-        trainerbattle_rematch(TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasRematchIntro, MeteorFalls_1F_2R_Text_NicolasRematchDefeat)
-		msgbox(MeteorFalls_1F_2R_Text_NicolasPostRematch, MSGBOX_AUTOCLOSE)
+        trainerbattle_rematch(TRAINER_SERGIO_1, MeteorFalls_1F_2R_Text_SergioRematchIntro, MeteorFalls_1F_2R_Text_SergioRematchDefeat)
+		msgbox(MeteorFalls_1F_2R_Text_SergioPostRematch, MSGBOX_AUTOCLOSE)
 		end
     }
-    msgbox(MeteorFalls_1F_2R_Text_NicolasPostBattle, MSGBOX_DEFAULT)
+    msgbox(MeteorFalls_1F_2R_Text_SergioPostBattle, MSGBOX_DEFAULT)
     release_end
 }
 
-script MeteorFalls_1F_2R_EventScript_RegisterNicolas {
+script MeteorFalls_1F_2R_EventScript_RegisterSergio {
     special(PlayerFaceTrainerAfterBattle)
     waitmovement(0)
-    msgbox(MeteorFalls_1F_2R_Text_NicolasRegister, MSGBOX_DEFAULT)
-    register_matchcall(TRAINER_NICOLAS_1)
+    msgbox(MeteorFalls_1F_2R_Text_SergioRegister, MSGBOX_DEFAULT)
+    register_matchcall(TRAINER_SERGIO_1)
     release_end
 }
 
@@ -47,7 +47,7 @@ script MeteorFalls_1F_2R_EventScript_Jay {
     release_end
 }
 
-text MeteorFalls_1F_2R_Text_NicolasIntro {
+text MeteorFalls_1F_2R_Text_SergioIntro {
 	"This is where we DRAGON users do our
 	training.
 
@@ -55,24 +55,24 @@ text MeteorFalls_1F_2R_Text_NicolasIntro {
 	Now do you see how special it is here?"
 }
 
-text MeteorFalls_1F_2R_Text_NicolasDefeat {
+text MeteorFalls_1F_2R_Text_SergioDefeat {
 	"Urgh!
 	I didn't expect you to be so strong!"
 }
 
-text MeteorFalls_1F_2R_Text_NicolasPostBattle {
+text MeteorFalls_1F_2R_Text_SergioPostBattle {
 	"The road ahead remains long and harsh.
 
 	When will my POKéMON and I become
 	the best?"
 }
 
-text MeteorFalls_1F_2R_Text_NicolasRegister {
+text MeteorFalls_1F_2R_Text_SergioRegister {
 	"I want to know more about your power.
 	Let me register you in my POKéNAV."
 }
 
-text MeteorFalls_1F_2R_Text_NicolasRematchIntro {
+text MeteorFalls_1F_2R_Text_SergioRematchIntro {
 	"Since we met, we have trained hard
 	with our sights on number one.
 
@@ -80,12 +80,12 @@ text MeteorFalls_1F_2R_Text_NicolasRematchIntro {
 	become!"
 }
 
-text MeteorFalls_1F_2R_Text_NicolasRematchDefeat {
+text MeteorFalls_1F_2R_Text_SergioRematchDefeat {
 	"Urgh!
 	I didn't expect you to be so strong!"
 }
 
-text MeteorFalls_1F_2R_Text_NicolasPostRematch {
+text MeteorFalls_1F_2R_Text_SergioPostRematch {
 	"You've obviously kept up your
 	POKéMON training.
 

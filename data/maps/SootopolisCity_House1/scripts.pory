@@ -4,7 +4,7 @@ script SootopolisCity_House1_EventScript_BrickBreakBlackBelt {
     lock_faceplayer
     if (!flag(FLAG_RECEIVED_TM_BRICK_BREAK)) {
         msgbox(SootopolisCity_House1_Text_DevelopedThisTM, MSGBOX_DEFAULT)
-		if (giveitem(ITEM_TM_BRICK_BREAK) == FALSE) {
+		if (giveitem(ITEM_TM_KI_CHARGE) == FALSE) {
 			goto(Common_EventScript_ShowBagIsFull)
 		}
 		setflag(FLAG_RECEIVED_TM_BRICK_BREAK)

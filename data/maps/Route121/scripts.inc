@@ -103,17 +103,9 @@ Route121_EventScript_Tammy::
 	end
 
 
-Route121_EventScript_Kate::
-# 70 "data/maps/Route121/scripts.pory"
-	trainerbattle_double TRAINER_KATE_AND_JOY, Route121_Text_KateIntro, Route121_Text_KateDefeat, Route121_Text_KateNotEnoughMons
-# 71 "data/maps/Route121/scripts.pory"
-	msgbox Route121_Text_KatePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-
 Route121_EventScript_Joy::
 # 76 "data/maps/Route121/scripts.pory"
-	trainerbattle_double TRAINER_KATE_AND_JOY, Route121_Text_JoyIntro, Route121_Text_JoyDefeat, Route121_Text_JoyNotEnoughMons
+	trainerbattle_single TRAINER_JOY, Route121_Text_JoyIntro, Route121_Text_JoyDefeat, Route121_Text_JoyNotEnoughMons
 # 77 "data/maps/Route121/scripts.pory"
 	msgbox Route121_Text_JoyPostBattle, MSGBOX_AUTOCLOSE
 	end
@@ -189,7 +181,7 @@ Route121_EventScript_Cristin::
 # 0 "data/maps/Route121/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route121_EventScript_Cristin_2
-# 131 "data/maps/Route121/scripts.pory"
+# 134 "data/maps/Route121/scripts.pory"
 	msgbox Route121_Text_CristinPostBattle, MSGBOX_DEFAULT
 	release_end
 
@@ -197,19 +189,39 @@ Route121_EventScript_Cristin_2:
 # 127 "data/maps/Route121/scripts.pory"
 	trainerbattle_rematch TRAINER_CRISTIN_1, Route121_Text_CristinRematchIntro, Route121_Text_CristinRematchDefeat
 # 128 "data/maps/Route121/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_PROTECTIVE_PADS, Route121_EventScript_Cristin_5
+Route121_EventScript_Cristin_4:
+# 131 "data/maps/Route121/scripts.pory"
 	msgbox Route121_Text_CristinPostRematch, MSGBOX_AUTOCLOSE
 	end
 
+Route121_EventScript_Cristin_5:
+# 129 "data/maps/Route121/scripts.pory"
+	goto Route121_EventScript_Cristin_GiveProtectivePads
+	goto Route121_EventScript_Cristin_4
+
 
 Route121_EventScript_RegisterCristin::
-# 136 "data/maps/Route121/scripts.pory"
-	special PlayerFaceTrainerAfterBattle
-# 137 "data/maps/Route121/scripts.pory"
-	waitmovement 0
-# 138 "data/maps/Route121/scripts.pory"
-	msgbox Route121_Text_CristinRegister, MSGBOX_DEFAULT
 # 139 "data/maps/Route121/scripts.pory"
+	special PlayerFaceTrainerAfterBattle
+# 140 "data/maps/Route121/scripts.pory"
+	waitmovement 0
+# 141 "data/maps/Route121/scripts.pory"
+	msgbox Route121_Text_CristinRegister, MSGBOX_DEFAULT
+# 142 "data/maps/Route121/scripts.pory"
 	register_matchcall TRAINER_CRISTIN_1
+# 143 "data/maps/Route121/scripts.pory"
+	goto Route121_EventScript_Cristin_GiveProtectivePads
+	end
+
+
+Route121_EventScript_Cristin_GiveProtectivePads::
+# 148 "data/maps/Route121/scripts.pory"
+	msgbox Route121_Text_SpareAgain, MSGBOX_DEFAULT
+# 149 "data/maps/Route121/scripts.pory"
+	giveitem ITEM_PROTECTIVE_PADS
+# 150 "data/maps/Route121/scripts.pory"
+	setflag FLAG_RECEIVED_PROTECTIVE_PADS
 	release_end
 
 
@@ -234,23 +246,28 @@ Route121_EventScript_AquaGruntsMoveOut_Movement_0:
 	step_end
 
 Route121_Text_OkayMoveOutToMtPyre::
-# 143 "data/maps/Route121/scripts.pory"
+# 154 "data/maps/Route121/scripts.pory"
 	.string "Okay!\n"
 	.string "We're to move out to MT. PYRE!$"
 
 Route121_Text_AheadLoomsMtPyre::
-# 148 "data/maps/Route121/scripts.pory"
+# 159 "data/maps/Route121/scripts.pory"
 	.string "Ahead looms MT. PYRE…\p"
 	.string "It is a natural monument to the spirits \n"
 	.string "of departed POKéMON…$"
 
 Route121_Text_MtPyrePierSign::
-# 155 "data/maps/Route121/scripts.pory"
+# 166 "data/maps/Route121/scripts.pory"
 	.string "MT. PYRE PIER\p"
 	.string "…The sign is old and worn out.\n"
 	.string "The words are barely legible…$"
 
 Route121_Text_SafariZoneSign::
-# 162 "data/maps/Route121/scripts.pory"
+# 173 "data/maps/Route121/scripts.pory"
 	.string "“Filled with rare POKéMON!”\n"
 	.string "SAFARI ZONE$"
+
+Route121_Text_SpareAgain::
+# 178 "data/maps/Route121/scripts.pory"
+	.string "If we're going to spar again, you should\n"
+	.string "take these training pads.$"

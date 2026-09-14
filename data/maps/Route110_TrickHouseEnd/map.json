@@ -63,7 +63,7 @@
       "x": 4,
       "y": 5,
       "elevation": 3,
-      "item": "ITEM_NUGGET",
+      "item": "ITEM_GOLD_BOTTLE_CAP",
       "flag": "FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET"
     }
   ]

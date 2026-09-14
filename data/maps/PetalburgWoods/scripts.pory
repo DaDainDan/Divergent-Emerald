@@ -20,8 +20,6 @@ script PetalburgWoods_WildSet2Trigger {
     return
 }
 
-
-
 script PetalburgWoods_EventScript_DevonResearcherLeft {
     lockall
     call(PetalburgWoods_EventScript_DevonResearcherIntro)
@@ -193,7 +191,7 @@ script PetalburgWoods_EventScript_James {
     }
     setvar(VAR_0x8004, TRAINER_JAMES_1)
     if (flag(FLAG_HAS_MATCH_CALL) && specialvar(VAR_RESULT, IsTrainerRegistered) == FALSE) {
-		msgbox(PetalburgWoods_Text_IWantRematch2, MSGBOX_DEFAULT)
+		msgbox(PetalburgWoods_Text_IWantRematch1, MSGBOX_DEFAULT)
     	register_matchcall(TRAINER_JAMES_1)
     	release_end
     }
@@ -213,90 +211,107 @@ script PetalburgWoods_EventScript_TryRegisterJames {
 
 text PetalburgWoods_Text_NotAOneToBeFound {
 	"Hmmm…
-	Not a one to be found…"
+	They're supposed to be around here…"
 }
 
 text PetalburgWoods_Text_HaveYouSeenShroomish {
-	"Hello, have you seen any POKéMON
-	called SHROOMISH around here?
+	"Hello, have you seen any SHROOMISH
+	around here?
 
-	I really love that POKéMON."
+	My daughter really loves that POKéMON,
+	so I thought I'd catch her one as a
+	birthday present."
 }
 
 text PetalburgWoods_Text_IWasGoingToAmbushYou {
-	"I was going to ambush you, but you
-	had to dawdle in PETALBURG WOODS
-	forever, didn't you?
+	"You know, you aren't very careful for a
+	guy delivering important cargo.
 
-	I got sick of waiting, so here I am!"
+	I was hoping this would be a bit more
+	difficult, so I could impress the BOSS."
 }
 
 text PetalburgWoods_Text_HandOverThosePapers {
-	"You! DEVON RESEARCHER!
+	"Now, Mushroom Man!
+	Hand over that briefcase!
 
-	Hand over those papers!"
+	And you best be quick about it unless
+	you want to get hurt!"
 }
 
 text PetalburgWoods_Text_YouHaveToHelpMe {
-	"Aiyeeeh!
+	"Um. Uhhhh.
+	Oh, no. Oh, jeez…
 
-	You're a POKéMON TRAINER, aren't you?
-	You've got to help me, please!"
+	You!
+	You're a POKéMON TRAINER, right?
+
+	You've got to help me, please!
+	I can't let anyone have my stuff!"
 }
 
 text PetalburgWoods_Text_NoOneCrossesTeamAqua {
-	"Hunh? What do you think you're doing?
-	What, you're going to protect him?
+	"Are you serious?
+	You're gonna use a kid as a meat shield?
 
-	No one who crosses TEAM AQUA
-	gets any mercy, not even a kid!
+	Kid,
+	Just get lost.
 
-	Come on and battle me!"
+	I don't wanna hurt you unless I have to.
+
+	You're really gonna stick up for a rich,
+	technocrat like this guy?
+
+	Don't say I didn't warn you.
+	You'll just have to learn the hard way.
+
+	Come on, kid.
+	Show me what you've got."
 }
 
 text PetalburgWoods_Text_YoureKiddingMe {
-	"You're kidding me! You're tough!"
+	"What the hell…
+	but you're just some brat…"
 }
 
 text PetalburgWoods_Text_YouveGotSomeNerve {
-	"Grrr… You've got some nerve
-	meddling with TEAM AQUA!
-	Come on and battle me again!
+	"Damn it, kid.
+	You've really done it now.
 
-	I wish I could say that, but I'm out of
-	POKéMON…
+	It ain't a good idea to go messing
+	around with TEAM AQUA.
 
-	And, hey, we of TEAM AQUA are also
-	after something in RUSTBORO.
+	We're trying to save the world, and
+	people who get in our way don't tend to
+	last very long.
 
-	I'll let you go today!"
+	If I were you, I'd think twice the next
+	time I saw a blue bandana."
 }
 
 text PetalburgWoods_Text_ThatWasAwfullyClose {
-	"Whew…
-	That was awfully close!
+	"Phew…
+	That was close.
 
-	Thanks to you, he didn't rob me of
-	these important papers.
+	Thanks to you, those thugs didn't get
+	their hands on company secrets, and
+	I'll get to keep my job.
 
-	I know, I'll give you a GREAT BALL as
-	my thanks!"
+	Take this as a “thank you” gift."
 }
 
 text PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro {
-	"Didn't that TEAM AQUA thug say
-	they were after something in
-	RUSTBORO, too?"
+	"Anyways, I'd best get going.
+	This stuff needs to go to HQ."
 }
 
 text PetalburgWoods_Text_ICantBeWastingTime {
-	"Uh-oh! It's a crisis!
-	I can't be wasting time!"
+	"Happy hunting!"
 }
 
 text PetalburgWoods_Text_YoureLoadedWithItems {
 	"You're loaded with items.
-	I can't give you this GREAT BALL."
+	You'll have to make room."
 }
 
 text PetalburgWoods_Text_GoBugPokemonTeam {
@@ -332,13 +347,6 @@ text PetalburgWoods_Text_PeopleRespectYou {
 
 text PetalburgWoods_Text_IWantRematch1 {
 	"I want a rematch when my BUG
-	POKéMON grow up!
-
-	I'm registering you in my POKéNAV!"
-}
-
-text PetalburgWoods_Text_IWantRematch2 {
-	"I want a rematch when my BUG 
 	POKéMON grow up!
 
 	I'm registering you in my POKéNAV!"

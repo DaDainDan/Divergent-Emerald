@@ -264,7 +264,7 @@ BerryBlender_EventScript_Blender1NoSpareBerries:
 
 BerryBlender_EventScript_Blender1GiveSpareBerry:
 	msgbox BerryBlender_Text_CanHaveOneOfMyBerries, MSGBOX_DEFAULT
-	giveitem ITEM_PECHA_BERRY
+	giveitem ITEM_SITRUS_BERRY
 	setflag FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY
 	goto BerryBlender_EventScript_UseBerryBlender1
 	end
@@ -524,7 +524,7 @@ BerryBlender_EventScript_ExpertMNoSpareBerries:
 
 BerryBlender_EventScript_ExpertMGiveBerry:
 	msgbox BerryBlender_Text_DontHaveAnyBerriesHaveOne, MSGBOX_DEFAULT
-	giveitem ITEM_PECHA_BERRY
+	giveitem ITEM_SITRUS_BERRY
 	setflag FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY
 	msgbox BerryBlender_Text_UseItToMakePokeblocksTogether, MSGBOX_DEFAULT
 	release

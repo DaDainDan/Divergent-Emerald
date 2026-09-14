@@ -7,7 +7,7 @@ script SSTidalRooms_EventScript_SnatchGiver {
     	release_end
     }
     msgbox(SSTidalRooms_Text_NotSuspiciousTakeThis, MSGBOX_DEFAULT)
-    if (giveitem(ITEM_TM_SNATCH) == FALSE) {
+    if (giveitem(ITEM_TM_REVIVAL_BLESSING) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
     setflag(FLAG_RECEIVED_TM_SNATCH)

@@ -343,7 +343,7 @@ SlateportCity_BattleTentLobby_EventScript_TormentGiver::
 	goto_if_set FLAG_RECEIVED_TM_TORMENT, SlateportCity_BattleTentLobby_EventScript_TormentGiver_2
 # 188 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 	msgbox SlateportCity_BattleTentLobby_Text_CouldntFindMonForMe, MSGBOX_DEFAULT
-	giveitem ITEM_TM_TORMENT
+	giveitem ITEM_TM_DARK_PULSE
 # 0 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq SlateportCity_BattleTentLobby_EventScript_TormentGiver_5

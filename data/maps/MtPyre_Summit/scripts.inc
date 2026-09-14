@@ -126,7 +126,7 @@ MtPyre_Summit_EventScript_TeamAquaExits_5:
 # 82 "data/maps/MtPyre_Summit/scripts.pory"
 	msgbox MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis, MSGBOX_DEFAULT
 # 83 "data/maps/MtPyre_Summit/scripts.pory"
-	giveitem ITEM_MAGMA_EMBLEM
+	giveitem ITEM_CALAMITY_CHARM
 # 84 "data/maps/MtPyre_Summit/scripts.pory"
 	setflag FLAG_RECEIVED_RED_OR_BLUE_ORB
 # 85 "data/maps/MtPyre_Summit/scripts.pory"

@@ -1,1 +1,10 @@
 mapscripts Underwater_Route107_MapScripts {}
+
+script Underwater_Route107_EventScript_Fossil {
+    lock_faceplayer
+    if (giveitem(ITEM_CLAW_FOSSIL) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    removeobject(LOCALID_ROUTE_107_FOSSIL)
+    release_end
+}

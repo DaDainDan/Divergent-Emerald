@@ -217,8 +217,8 @@ static const struct MenuAction MultichoiceList_Mechadoll5_Q3[] =
 static const struct MenuAction MultichoiceList_VendingMachine[] =
 {
     {COMPOUND_STRING("FRESH WATER{CLEAR_TO 72}¥200")},
-    {COMPOUND_STRING("SODA POP{CLEAR_TO 72}¥300")},
-    {COMPOUND_STRING("LEMONADE{CLEAR_TO 72}¥350")},
+    {COMPOUND_STRING("SODA POP{CLEAR_TO 72}¥500")},
+    {COMPOUND_STRING("LEMONADE{CLEAR_TO 72}¥800")},
     {gText_Exit},
 };
 
@@ -246,8 +246,8 @@ static const struct MenuAction MultichoiceList_Satisfaction[] =
 
 static const struct MenuAction MultichoiceList_SternDeepSea[] =
 {
-    {COMPOUND_STRING("DEEPSEATOOTH")},
-    {COMPOUND_STRING("DEEPSEASCALE")},
+    {COMPOUND_STRING("PRISM SCALE")},
+    {COMPOUND_STRING("DRAGON SCALE")},
     {gText_Exit},
 };
 
@@ -265,6 +265,8 @@ static const struct MenuAction MultichoiceList_UnusedAshVendor[] =
 
 static const struct MenuAction MultichoiceList_GameCornerDolls[] =
 {
+    {COMPOUND_STRING("SEEDOT DOLL  500 COINS")},
+    {COMPOUND_STRING("LOTAD DOLL   500 COINS")},
     {COMPOUND_STRING("TREECKO DOLL 1,000 COINS")},
     {COMPOUND_STRING("TORCHIC DOLL 1,000 COINS")},
     {COMPOUND_STRING("MUDKIP DOLL   1,000 COINS")},
@@ -273,11 +275,11 @@ static const struct MenuAction MultichoiceList_GameCornerDolls[] =
 
 static const struct MenuAction MultichoiceList_GameCornerTMs[] =
 {
-    {COMPOUND_STRING("TM32{CLEAR_TO 72}1,500 COINS")},
-    {COMPOUND_STRING("TM29{CLEAR_TO 72}3,500 COINS")},
-    {COMPOUND_STRING("TM35{CLEAR_TO 72}4,000 COINS")},
-    {COMPOUND_STRING("TM24{CLEAR_TO 72}4,000 COINS")},
-    {COMPOUND_STRING("TM13{CLEAR_TO 72}4,000 COINS")},
+    {COMPOUND_STRING("TM67{CLEAR_TO 0x48}3,000 COINS")},
+    {COMPOUND_STRING("TM69{CLEAR_TO 0x48}3,000 COINS")},
+    {COMPOUND_STRING("TM70{CLEAR_TO 0x48}3,000 COINS")},
+    {COMPOUND_STRING("TM73{CLEAR_TO 0x48}3,000 COINS")},
+    {COMPOUND_STRING("TM74{CLEAR_TO 0x48}3,000 COINS")},
     {gText_Exit},
 };
 
@@ -293,8 +295,9 @@ static const struct MenuAction MultichoiceList_GameCornerMons[] =
 
 static const struct MenuAction MultichoiceList_GameCornerCoins[] =
 {
-    {COMPOUND_STRING("  50 COINS    ¥1,000")},
-    {COMPOUND_STRING("500 COINS  ¥10,000")},
+    {COMPOUND_STRING("100 COINS    ¥2,000")},
+    {COMPOUND_STRING("500 COINS   ¥10,000")},
+    {COMPOUND_STRING("2500 COINS ¥50,000")},
     {gText_Exit},
 };
 

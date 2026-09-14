@@ -1,6 +1,9 @@
 mapscripts Route114_LanettesHouse_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_LANDMARK_LANETTES_HOUSE)
+		if (flag(FLAG_ITEM_LANETTE_UPGRADE)) {
+			setvar(VAR_TEMP_5, 1)
+		}
     	end
     }
 }
@@ -9,14 +12,17 @@ script Route114_LanettesHouse_EventScript_Lanette {
     lock_faceplayer
     if (flag(FLAG_RECEIVED_DOLL_LANETTE)) {
         msgbox(Route114_LanettesHouse_Text_OrganizeYourBoxes, MSGBOX_DEFAULT)
-    	release_end
+    } else {
+		setflag(FLAG_SYS_PC_LANETTE)
+		msgbox(Route114_LanettesHouse_Text_EverythingClutteredKeepThis, MSGBOX_DEFAULT)
+		if (giveitem(ITEM_POKEMON_BOX_LINK) == FALSE) {
+			goto(Common_EventScript_ShowBagIsFull)
+		}
+		setflag(FLAG_RECEIVED_DOLL_LANETTE)
+	}
+	if (var(VAR_TEMP_5) == 1) {
+        msgbox(Route114_LanettesHouse_Text_MissingDisc, MSGBOX_DEFAULT)
     }
-    setflag(FLAG_SYS_PC_LANETTE)
-    msgbox(Route114_LanettesHouse_Text_EverythingClutteredKeepThis, MSGBOX_DEFAULT)
-    if (givedecoration(DECOR_LOTAD_DOLL) == FALSE) {
-        goto(Common_EventScript_ShowNoRoomForDecor)
-    }
-    setflag(FLAG_RECEIVED_DOLL_LANETTE)
     release_end
 }
 
@@ -118,4 +124,13 @@ text Route114_LanettesHouse_Text_EmailFromBill {
 
 	“From BILL
 	… … … … … … … …”"
+}
+
+text Route114_LanettesHouse_Text_MissingDisc {
+	"Before you go, have you seen any discs
+	buried anywhere since you came in?
+
+	I had this new program I was writing
+	saved on one, but I can't seem to find
+	it for the life of me."
 }

@@ -5,139 +5,131 @@ MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce::
 
 MoveTutor_Text_SwaggerTeach::
 # 6 "data/text/move_tutors.pory"
-	.string "Heh! My POKéMON totally rules!\n"
-	.string "It's cooler than any POKéMON!\p"
-	.string "I was lipping off with a swagger in\n"
-	.string "my step like that when the CHAIRMAN\l"
-	.string "chewed me out.\p"
-	.string "That took the swagger out of my step.\p"
-	.string "If you'd like, I'll teach the move\n"
-	.string "SWAGGER to a POKéMON of yours.$"
+	.string "As a POKéfan, I really don't like hurting\n"
+	.string "POKéMON when I go to catch them.\p"
+	.string "It is a necessity however, so I\n"
+	.string "developed a technique to inflict as \l"
+	.string "little pain as possible.\p"
+	.string "Want me to teach your POKéMON how?$"
 
 MoveTutor_Text_SwaggerDeclined::
-# 20 "data/text/move_tutors.pory"
-	.string "What, no? Can't you get into\n"
-	.string "the spirit of things?$"
+# 17 "data/text/move_tutors.pory"
+	.string "What do you just like to hurt POKéMON\n"
+	.string "or something?\p"
+	.string "You should try being a better person.$"
 
 MoveTutor_Text_SwaggerWhichMon::
-# 25 "data/text/move_tutors.pory"
-	.string "All right, which POKéMON wants to\n"
-	.string "learn how to SWAGGER?$"
+# 24 "data/text/move_tutors.pory"
+	.string "Wow, you're such a good person like me.\n"
+	.string "Which POKéMON should I do first?$"
 
 MoveTutor_Text_SwaggerTaught::
-# 30 "data/text/move_tutors.pory"
-	.string "I'll just praise my POKéMON from now\n"
-	.string "on without the swagger.$"
+# 29 "data/text/move_tutors.pory"
+	.string "Good luck, catching more POKéMON and\n"
+	.string "battling other trainers with them!$"
 
 MoveTutor_Text_RolloutTeach::
-# 35 "data/text/move_tutors.pory"
-	.string "Did you know that you can go from\n"
-	.string "here a long way in that direction\l"
-	.string "without changing direction?\p"
-	.string "I might even be able to roll\n"
-	.string "that way.\p"
-	.string "Do you think your POKéMON will\n"
-	.string "want to roll, too?\p"
-	.string "I can teach one the move ROLLOUT\n"
-	.string "if you'd like.$"
+# 34 "data/text/move_tutors.pory"
+	.string "What are you looking at, huh?\p"
+	.string "It's because I'm fat, is that it?\p"
+	.string "You know animals fatten up before\n"
+	.string "hibernating for a reason!\p"
+	.string "You know what, I can teach you and your\n"
+	.string "POKéMON a thing or two if you want?$"
 
 MoveTutor_Text_RolloutDeclined::
-# 50 "data/text/move_tutors.pory"
-	.string "You don't need to be shy about it.\n"
-	.string "Let's roll!$"
+# 46 "data/text/move_tutors.pory"
+	.string "That's just what I'd expect from a skin\n"
+	.string "and bones loser like you!$"
 
 MoveTutor_Text_RolloutWhichMon::
-# 55 "data/text/move_tutors.pory"
-	.string "Ehehe, sure thing! It'd be great if\n"
-	.string "the POKéMON looked like me.$"
+# 51 "data/text/move_tutors.pory"
+	.string "Glad to see you're learning tolerance.\n"
+	.string "Which one should I teach, then?$"
 
 MoveTutor_Text_RolloutTaught::
-# 60 "data/text/move_tutors.pory"
-	.string "Rolling around in the grass makes me\n"
-	.string "happy. Come on, let's roll!$"
+# 56 "data/text/move_tutors.pory"
+	.string "That should help your POKéMON, but you\n"
+	.string "should put on some pounds yourself.$"
 
 MoveTutor_Text_FuryCutterTeach::
-# 65 "data/text/move_tutors.pory"
-	.string "There's a move that gets stronger\n"
-	.string "when you keep using it in a row.\p"
-	.string "It's a BUG-type move, and it is\n"
-	.string "wickedly cool.\p"
-	.string "It's called FURY CUTTER.\n"
-	.string "Want me to teach it to a POKéMON?$"
+# 61 "data/text/move_tutors.pory"
+	.string "I taught my CHIMCHAR to throw berries\n"
+	.string "at my sister.\p"
+	.string "It's really funny!\p"
+	.string "If you want, I can teach your POKéMON\n"
+	.string "how to do it too!$"
 
 MoveTutor_Text_FuryCutterDeclined::
-# 76 "data/text/move_tutors.pory"
-	.string "We're not on the same wavelength.$"
+# 71 "data/text/move_tutors.pory"
+	.string "You have a lowsy sense of humor...$"
 
 MoveTutor_Text_FuryCutterWhichMon::
-# 80 "data/text/move_tutors.pory"
+# 75 "data/text/move_tutors.pory"
 	.string "Yay!\n"
 	.string "Show me which POKéMON I should teach.$"
 
 MoveTutor_Text_FuryCutterTaught::
+# 80 "data/text/move_tutors.pory"
+	.string "Picking the right berry is the first key\n"
+	.string "to success!$"
+
+MoveTutor_MimicTeach::
 # 85 "data/text/move_tutors.pory"
-	.string "I get a thrill watching to see if\n"
-	.string "the move keeps hitting in succession!$"
+	.string "Isn't it cool that I can swallow an\n"
+	.string "entire hot dog in a single bite?\p"
+	.string "I could teach you if you want.\p"
+	.string "No, huh?\n"
+	.string "Well, how about I teach one of your\l"
+	.string "POKéMON instead, then?$"
 
-MoveTutor_Text_MimicTeach::
-# 90 "data/text/move_tutors.pory"
-	.string "Ah, young one!\p"
-	.string "I am also a young one, but I mimic\n"
-	.string "the styles and speech of the elderly\l"
-	.string "folks of this town.\p"
-	.string "What do you say, young one?\n"
-	.string "Would you agree to it if I were to\l"
-	.string "offer to teach the move MIMIC?$"
-
-MoveTutor_Text_MimicDeclined::
-# 102 "data/text/move_tutors.pory"
-	.string "Oh, boo! I wanted to teach MIMIC\n"
-	.string "to your POKéMON!$"
+MoveTutor_MimicDeclined::
+# 96 "data/text/move_tutors.pory"
+	.string "Come on, man. I'm just trying to share\n"
+	.string "my amazing talents with the world...$"
 
 MoveTutor_Text_MimicWhichMon::
-# 107 "data/text/move_tutors.pory"
-	.string "Fwofwo! And so I shall!\n"
-	.string "Let me see the POKéMON\l"
-	.string "you wish me to teach.$"
+# 101 "data/text/move_tutors.pory"
+	.string "Nice!\n"
+	.string "Which one are we doing, then?$"
 
 MoveTutor_Text_MimicTaught::
-# 113 "data/text/move_tutors.pory"
-	.string "MIMIC is a move of great depth.\p"
-	.string "Could you execute it to perfection\n"
-	.string "as well as me…?$"
+# 106 "data/text/move_tutors.pory"
+	.string "Yeah, your POKéMON is already a master!\p"
+	.string "You could show it off in battle if you\n"
+	.string "had some food stashed.$"
 
 MoveTutor_Text_MetronomeTeach::
-# 120 "data/text/move_tutors.pory"
-	.string "I want all sorts of things!\n"
-	.string "But I used up my allowance…\p"
-	.string "Wouldn't it be nice if there were\n"
-	.string "a spell that made money appear when\l"
-	.string "you waggle a finger?\p"
+# 113 "data/text/move_tutors.pory"
+	.string "What do you want?\n"
+	.string "I'm try to buy some food, here.\p"
+	.string "What's that?\n"
+	.string "You're here to buy food as well?\p"
+	.string "You're thinking right, kid.\n"
+	.string "The more you eat, the more energy your\l"
+	.string "body can EXPEND.\p"
 	.string "If you want, I can teach your POKéMON\n"
-	.string "the move METRONOME.\p"
-	.string "Money won't appear, but your POKéMON\n"
-	.string "will waggle a finger. Yes?$"
+	.string "how to best EXPEND their energy.$"
 
 MoveTutor_Text_MetronomeDeclined::
-# 135 "data/text/move_tutors.pory"
-	.string "Okay. I'll be here if you change\n"
-	.string "your mind.$"
+# 128 "data/text/move_tutors.pory"
+	.string "That's a shame.\n"
+	.string "I thought we were on the same page.$"
 
 MoveTutor_Text_MetronomeWhichMon::
-# 140 "data/text/move_tutors.pory"
-	.string "Okay! I'll teach it!\n"
-	.string "Which POKéMON should I teach?$"
+# 133 "data/text/move_tutors.pory"
+	.string "Good man!\n"
+	.string "Which POKéMON, then?$"
 
 MoveTutor_Text_MetronomeTaught::
-# 145 "data/text/move_tutors.pory"
-	.string "When a POKéMON waggles its finger\n"
-	.string "like a METRONOME, all sorts of nice\l"
-	.string "things happen.\p"
-	.string "Wouldn't it be nice if we could\n"
-	.string "use it, too?$"
+# 138 "data/text/move_tutors.pory"
+	.string "There you go, then.\p"
+	.string "You know, using your POKéMON's energy\n"
+	.string "effectively could be the difference\l"
+	.string "between winning or losing a battle.$"
 
 MoveTutor_Text_SleepTalkTeach::
-# 154 "data/text/move_tutors.pory"
+# 146 "data/text/move_tutors.pory"
 	.string "Humph! My wife relies on HIDDEN\n"
 	.string "POWER to stay awake.\p"
 	.string "She should just take a nap like I do,\n"
@@ -146,24 +138,24 @@ MoveTutor_Text_SleepTalkTeach::
 	.string "SLEEP TALK instead. Interested?$"
 
 MoveTutor_Text_SleepTalkDeclined::
-# 165 "data/text/move_tutors.pory"
+# 157 "data/text/move_tutors.pory"
 	.string "Oh, fine, fine. You want to stay awake\n"
 	.string "with HIDDEN POWER, too…$"
 
 MoveTutor_Text_SleepTalkWhichMon::
-# 170 "data/text/move_tutors.pory"
+# 162 "data/text/move_tutors.pory"
 	.string "Ah, an appreciative child!\n"
 	.string "Which POKéMON should I teach?$"
 
 MoveTutor_Text_SleepTalkTaught::
-# 175 "data/text/move_tutors.pory"
+# 167 "data/text/move_tutors.pory"
 	.string "I've never once gotten my wife's\n"
 	.string "coin trick right.\p"
 	.string "I would be happy if I got it right\n"
 	.string "even as I SLEEP TALK…$"
 
 MoveTutor_Text_SubstituteTeach::
-# 183 "data/text/move_tutors.pory"
+# 175 "data/text/move_tutors.pory"
 	.string "When I see the wide world from up\n"
 	.string "here on the roof…\p"
 	.string "I think about how nice it would be\n"
@@ -175,25 +167,25 @@ MoveTutor_Text_SubstituteTeach::
 	.string "having a POKéMON learn SUBSTITUTE?$"
 
 MoveTutor_Text_SubstituteDeclined::
-# 198 "data/text/move_tutors.pory"
+# 190 "data/text/move_tutors.pory"
 	.string "Oh, no?\p"
 	.string "A POKéMON can make a copy of\n"
 	.string "itself using it, you know.$"
 
 MoveTutor_Text_SubstituteWhichMon::
-# 205 "data/text/move_tutors.pory"
+# 197 "data/text/move_tutors.pory"
 	.string "Giggle…\n"
 	.string "Which POKéMON do you want me to\l"
 	.string "teach SUBSTITUTE?$"
 
 MoveTutor_Text_SubstituteTaught::
-# 211 "data/text/move_tutors.pory"
+# 203 "data/text/move_tutors.pory"
 	.string "We human beings should enjoy our\n"
 	.string "own lives to the utmost!\p"
 	.string "I hope you'll get that way, too!$"
 
 MoveTutor_Text_DynamicPunchTeach::
-# 218 "data/text/move_tutors.pory"
+# 210 "data/text/move_tutors.pory"
 	.string "I can't do this anymore!\p"
 	.string "It's utterly hopeless!\p"
 	.string "I'm a FIGHTING-type TRAINER,\n"
@@ -207,22 +199,22 @@ MoveTutor_Text_DynamicPunchTeach::
 	.string "POKéMON DYNAMICPUNCH?$"
 
 MoveTutor_Text_DynamicPunchDeclined::
-# 237 "data/text/move_tutors.pory"
+# 229 "data/text/move_tutors.pory"
 	.string "Darn! You're even making fun of me?\n"
 	.string "Punch! Punch! Punch!$"
 
 MoveTutor_Text_DynamicPunchWhichMon::
-# 242 "data/text/move_tutors.pory"
+# 234 "data/text/move_tutors.pory"
 	.string "What? You do? You're a good person!\n"
 	.string "Which POKéMON should I teach?$"
 
 MoveTutor_Text_DynamicPunchTaught::
-# 247 "data/text/move_tutors.pory"
+# 239 "data/text/move_tutors.pory"
 	.string "I want you to win at the MOSSDEEP GYM\n"
 	.string "using that DYNAMICPUNCH!$"
 
 MoveTutor_Text_DoubleEdgeTeach::
-# 252 "data/text/move_tutors.pory"
+# 244 "data/text/move_tutors.pory"
 	.string "Sigh…\p"
 	.string "SOOTOPOLIS's GYM LEADER is really\n"
 	.string "lovably admirable.\p"
@@ -234,22 +226,22 @@ MoveTutor_Text_DoubleEdgeTeach::
 	.string "the move DOUBLE-EDGE!$"
 
 MoveTutor_Text_DoubleEdgeDeclined::
-# 268 "data/text/move_tutors.pory"
+# 260 "data/text/move_tutors.pory"
 	.string "Oh…\n"
 	.string "Even you rejected me…$"
 
 MoveTutor_Text_DoubleEdgeWhichMon::
-# 273 "data/text/move_tutors.pory"
+# 265 "data/text/move_tutors.pory"
 	.string "Okay, which POKéMON should I teach\n"
 	.string "DOUBLE-EDGE?$"
 
 MoveTutor_Text_DoubleEdgeTaught::
-# 278 "data/text/move_tutors.pory"
+# 270 "data/text/move_tutors.pory"
 	.string "I won't live for love anymore!\n"
 	.string "I'll become tough!$"
 
 MoveTutor_Text_ExplosionTeach::
-# 283 "data/text/move_tutors.pory"
+# 275 "data/text/move_tutors.pory"
 	.string "I don't intend to be going nowhere\n"
 	.string "fast in the sticks like this forever.\p"
 	.string "You watch me, I'll get out to the city\n"
@@ -260,17 +252,17 @@ MoveTutor_Text_ExplosionTeach::
 	.string "teach EXPLOSION to your POKéMON!$"
 
 MoveTutor_Text_ExplosionDeclined::
-# 297 "data/text/move_tutors.pory"
+# 289 "data/text/move_tutors.pory"
 	.string "Gaah! You're turning me down because\n"
 	.string "I live in the country?$"
 
 MoveTutor_Text_ExplosionWhichMon::
-# 302 "data/text/move_tutors.pory"
+# 294 "data/text/move_tutors.pory"
 	.string "Fine! An EXPLOSION it is!\n"
 	.string "Which POKéMON wants to blow up?$"
 
 MoveTutor_Text_ExplosionTaught::
-# 307 "data/text/move_tutors.pory"
+# 299 "data/text/move_tutors.pory"
 	.string "For a long time, I've taught POKéMON\n"
 	.string "how to use EXPLOSION, but I've yet\l"
 	.string "to ignite my own EXPLOSION…\p"

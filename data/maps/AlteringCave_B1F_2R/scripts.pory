@@ -1,1 +1,8 @@
-mapscripts AlteringCave_B1F_2R_MapScripts {}
+mapscripts AlteringCave_B1F_2R_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        if (flag(FLAG_BADGE02_GET)) {
+            setmetatile(3, 3, 0x23F, TRUE)
+        }
+        end
+    }
+}

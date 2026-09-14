@@ -440,7 +440,7 @@ PlayersHouse_1F_EventScript_TryRegisterMom_4:
 PlayersHouse_1F_EventScript_TryRegisterMom_5:
 # 184 "data/scripts/players_house.pory"
 	msgbox PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom, MSGBOX_DEFAULT
-	giveitem ITEM_AMULET_COIN
+	giveitem ITEM_EVIOLITE
 # 0 "data/scripts/players_house.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq PlayersHouse_1F_EventScript_TryRegisterMom_10
@@ -448,12 +448,12 @@ PlayersHouse_1F_EventScript_TryRegisterMom_9:
 # 188 "data/scripts/players_house.pory"
 	msgbox PlayersHouse_1F_Text_DontPushYourselfTooHard, MSGBOX_DEFAULT
 # 189 "data/scripts/players_house.pory"
-	setflag FLAG_RECEIVED_AMULET_COIN
+	setflag FLAG_RECEIVED_EVIOLITE
 	release_end
 
 PlayersHouse_1F_EventScript_TryRegisterMom_6:
 # 183 "data/scripts/players_house.pory"
-	goto_if_unset FLAG_RECEIVED_AMULET_COIN, PlayersHouse_1F_EventScript_TryRegisterMom_5
+	goto_if_unset FLAG_RECEIVED_EVIOLITE, PlayersHouse_1F_EventScript_TryRegisterMom_5
 	goto PlayersHouse_1F_EventScript_TryRegisterMom_4
 
 PlayersHouse_1F_EventScript_TryRegisterMom_10:

@@ -1,10 +1,4 @@
 const BLUE_FLUTE_PRICE = 250
-const YELLOW_FLUTE_PRICE = 500
-const RED_FLUTE_PRICE = 500
-const WHITE_FLUTE_PRICE = 1000
-const BLACK_FLUTE_PRICE = 1000
-const PRETTY_CHAIR_PRICE = 6000
-const PRETTY_DESK_PRICE = 8000
 const LOWEST_ASH_PRICE = BLUE_FLUTE_PRICE
 
 mapscripts Route113_GlassWorkshop_MapScripts {
@@ -59,20 +53,37 @@ script Route113_GlassWorkshop_EventScript_CheckCollectedAsh {
 
 script Route113_GlassWorkshop_EventScript_ChooseGlassItem {
     setvar(VAR_0x8007, 0)
-    setvar(VAR_0x8004, SCROLL_MULTI_GLASS_WORKSHOP_VENDOR)
-    special(ShowScrollableMultichoice)
-	if (var(VAR_RESULT) > 4 && var(VAR_RESULT) < 7) {
+    dynmultipush("WHITE FLUTE", 1)
+	dynmultipush("BLACK FLUTE", 2)
+	dynmultipush("PRETTY CHAIR", 3)
+	dynmultipush("PRETTY DESK", 4)
+	if (flag(FLAG_BADGE05_GET)) {
+		dynmultipush("WIDE LENS", 5)
+	}
+	if (flag(FLAG_BADGE06_GET)) {
+		dynmultipush("ZOOM LENS", 6)
+	}
+	if (flag(FLAG_BADGE07_GET)) {
+		dynmultipush("SCOPE LENS", 7)
+	}
+	if (flag(FLAG_BADGE08_GET)) {
+		dynmultipush("FINE LENS", 8)
+	}
+	dynmultipush("EXIT", 0)
+	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
+	if (var(VAR_RESULT) > 2 && var(VAR_RESULT) < 5) {
 		setvar(VAR_0x8007, 1)
 	}
     switch (var(VAR_RESULT)) {
-        case 0: setitemandprice(ITEM_BLUE_FLUTE, BLUE_FLUTE_PRICE)
-        case 1: setitemandprice(ITEM_YELLOW_FLUTE, YELLOW_FLUTE_PRICE)
-        case 2: setitemandprice(ITEM_RED_FLUTE, RED_FLUTE_PRICE)
-        case 3: setitemandprice(ITEM_WHITE_FLUTE, WHITE_FLUTE_PRICE)
-        case 4: setitemandprice(ITEM_BLACK_FLUTE, BLACK_FLUTE_PRICE)
-        case 5: setitemandprice(DECOR_PRETTY_CHAIR, PRETTY_CHAIR_PRICE)
-        case 6: setitemandprice(DECOR_PRETTY_DESK, PRETTY_DESK_PRICE)
-        case 7:
+        case 1: setitemandprice(ITEM_WHITE_FLUTE, 500)
+        case 2: setitemandprice(ITEM_BLACK_FLUTE, 500)
+        case 3: setitemandprice(DECOR_PRETTY_CHAIR, 750)
+        case 4: setitemandprice(DECOR_PRETTY_DESK, 1000)
+        case 5: setitemandprice(ITEM_WIDE_LENS, 750)
+        case 6: setitemandprice(ITEM_ZOOM_LENS, 750)
+        case 7: setitemandprice(ITEM_SCOPE_LENS, 1000)
+		case 8: setitemandprice(ITEM_FINE_LENS, 1250)
+        case 0:
         case MULTI_B_PRESSED:
 			msgbox(Route113_GlassWorkshop_Text_AllThatAshButDontWantAnything, MSGBOX_DEFAULT)
     		release_end
@@ -101,13 +112,14 @@ script Route113_GlassWorkshop_EventScript_PurchaseGlassItem {
 		goto(Route113_GlassWorkshop_EventScript_ChooseGlassItem)
     }
 	switch (var(VAR_GIFT_ITEM)) {
-		case ITEM_BLUE_FLUTE: setvar(VAR_GLASS_WORKSHOP_STATE, 10)
-		case ITEM_YELLOW_FLUTE: setvar(VAR_GLASS_WORKSHOP_STATE, 11)
-		case ITEM_RED_FLUTE: setvar(VAR_GLASS_WORKSHOP_STATE, 12)
-		case ITEM_WHITE_FLUTE: setvar(VAR_GLASS_WORKSHOP_STATE, 13)
-		case ITEM_BLACK_FLUTE: setvar(VAR_GLASS_WORKSHOP_STATE, 14)
-		case DECOR_PRETTY_CHAIR: setvar(VAR_GLASS_WORKSHOP_STATE, 15)
-		case DECOR_PRETTY_DESK: setvar(VAR_GLASS_WORKSHOP_STATE, 16)
+		case ITEM_WHITE_FLUTE: setvar(VAR_GLASS_WORKSHOP_STATE, 10)
+		case ITEM_BLACK_FLUTE: setvar(VAR_GLASS_WORKSHOP_STATE, 11)
+		case DECOR_PRETTY_CHAIR: setvar(VAR_GLASS_WORKSHOP_STATE, 12)
+		case DECOR_PRETTY_DESK: setvar(VAR_GLASS_WORKSHOP_STATE, 13)
+		case ITEM_WIDE_LENS: setvar(VAR_GLASS_WORKSHOP_STATE, 14)
+		case ITEM_ZOOM_LENS: setvar(VAR_GLASS_WORKSHOP_STATE, 15)
+		case ITEM_SCOPE_LENS: setvar(VAR_GLASS_WORKSHOP_STATE, 16)
+		case ITEM_FINE_LENS: setvar(VAR_GLASS_WORKSHOP_STATE, 17)
 	}
     subvar(VAR_ASH_GATHER_COUNT, VAR_EXCHANGE_PRICE)
     msgbox(Route113_GlassWorkshop_Text_IllMakeItemForYou, MSGBOX_DEFAULT)
@@ -146,13 +158,14 @@ script Route113_GlassWorkshop_EventScript_GiveItemAfterNoRoom {
 		setvar(VAR_0x8007, 0)
 	}
     switch (var(VAR_GLASS_WORKSHOP_STATE)) {
-        case 10: setvar(VAR_GIFT_ITEM, ITEM_BLUE_FLUTE)
-        case 11: setvar(VAR_GIFT_ITEM, ITEM_YELLOW_FLUTE)
-        case 12: setvar(VAR_GIFT_ITEM, ITEM_RED_FLUTE)
-        case 13: setvar(VAR_GIFT_ITEM, ITEM_WHITE_FLUTE)
-        case 14: setvar(VAR_GIFT_ITEM, ITEM_BLACK_FLUTE)
-        case 15: setvar(VAR_GIFT_ITEM, DECOR_PRETTY_CHAIR)
-        case 16: setvar(VAR_GIFT_ITEM, DECOR_PRETTY_DESK)
+        case 10: setvar(VAR_GIFT_ITEM, ITEM_WHITE_FLUTE)
+        case 11: setvar(VAR_GIFT_ITEM, ITEM_BLACK_FLUTE)
+        case 12: setvar(VAR_GIFT_ITEM, DECOR_PRETTY_CHAIR)
+        case 13: setvar(VAR_GIFT_ITEM, DECOR_PRETTY_DESK)
+        case 14: setvar(VAR_GIFT_ITEM, ITEM_WIDE_LENS)
+        case 15: setvar(VAR_GIFT_ITEM, ITEM_ZOOM_LENS)
+        case 16: setvar(VAR_GIFT_ITEM, ITEM_SCOPE_LENS)
+		case 17: setvar(VAR_GIFT_ITEM, ITEM_FINE_LENS)
     }
 	if (var(VAR_0x8007) == 1) {
 		bufferdecorationname(STR_VAR_1, VAR_GIFT_ITEM)

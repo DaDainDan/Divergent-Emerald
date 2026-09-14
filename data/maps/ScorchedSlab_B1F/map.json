@@ -3,7 +3,6 @@
   "name": "ScorchedSlab_B1F",
   "layout": "LAYOUT_SCORCHED_SLAB_B1F",
   "music": "MUS_SEALED_CHAMBER",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_SCORCHED_SLAB",
   "requires_flash": true,
   "weather": "WEATHER_NONE",
@@ -169,5 +168,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ScorchedSlab_B1F_EventScript_RegiceTablet"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

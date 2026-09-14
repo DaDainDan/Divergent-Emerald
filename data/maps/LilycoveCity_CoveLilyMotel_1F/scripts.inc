@@ -85,6 +85,160 @@ LilycoveCity_CoveLilyMotel_1F_EventScript_BlockingTV::
 	release_end
 
 
+LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor::
+# 50 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	lock_faceplayer
+# 51 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	goto_if_unset FLAG_MET_LILYCOVE_GRAB_TUTOR, LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_2
+LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_1:
+# 55 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	msgbox LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 56 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setvar VAR_TEMP_C, SCROLL_MULTI_GRAB_MOVE_TUTOR
+# 57 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setvar VAR_0x8006, 0
+# 58 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove
+	end
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_2:
+# 52 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	msgbox LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 53 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setflag FLAG_MET_LILYCOVE_GRAB_TUTOR
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_1
+
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove::
+# 63 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setvar VAR_0x8004, SCROLL_MULTI_GRAB_MOVE_TUTOR
+# 64 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	special ShowScrollableMultichoice
+# 65 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+# 66 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	switch VAR_RESULT
+# 67 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	case 0, LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_3
+# 68 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	case 1, LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_4
+# 69 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	case 2, LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_5
+# 70 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	case 3, LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_6
+# 71 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	case 4, LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_7
+# 72 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	case 5, LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_8
+# 73 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	case 6, LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_9
+# 74 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	case MULTI_B_PRESSED, LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_9
+LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_1:
+# 77 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_3:
+# 67 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setvar VAR_0x8005, MOVE_CRUSH_GRIP
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_1
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_4:
+# 68 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setvar VAR_0x8005, MOVE_BURNING_GRASP
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_1
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_5:
+# 69 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setvar VAR_0x8005, MOVE_LIGHTNING_GRASP
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_1
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_6:
+# 70 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setvar VAR_0x8005, MOVE_GLACIAL_GRASP
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_1
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_7:
+# 71 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setvar VAR_0x8005, MOVE_PUTRID_GRASP
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_1
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_8:
+# 72 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setvar VAR_0x8005, MOVE_DARK_GRASP
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_1
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_9:
+# 75 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ExitTutorMoveSelect
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove_1
+
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ExitTutorMoveSelect::
+# 82 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	special CloseBattleFrontierTutorWindow
+# 83 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_DeclineTutor, MSGBOX_DEFAULT
+	release_end
+
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection::
+# 88 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	special BufferBattleFrontierTutorMoveName
+# 89 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	msgbox LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_Text_0, MSGBOX_YESNO
+# 90 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection_2
+LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection_1:
+	checkitem ITEM_BLUE_SHARD
+# 0 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection_5
+# 110 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	msgbox LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 111 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ExitTutorMoveSelect
+	end
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection_2:
+# 91 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	message LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_Text_0
+# 92 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	waitmessage
+# 93 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	setvar VAR_0x8006, 1
+# 94 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ChooseGrabMove
+	goto LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection_1
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection_5:
+# 97 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	msgbox LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 98 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 99 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	special CloseBattleFrontierTutorWindow
+# 100 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	chooseboxmon SELECT_PC_MON_MOVE_TUTOR
+# 101 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	waitstate
+# 102 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection_8
+# 106 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	msgbox LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_Text_0, MSGBOX_DEFAULT
+# 107 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	removeitem ITEM_BLUE_SHARD, 1
+	release_end
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_ConfirmMoveSelection_8:
+# 103 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_DeclineTutor, MSGBOX_DEFAULT
+	release_end
+
+
 # 41 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
 LilycoveCity_CoveLilyMotel_1F_EventScript_BlockingTV_Movement_0:
 # 41 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
@@ -107,8 +261,16 @@ LilycoveCity_CoveLilyMotel_1F_EventScript_BlockingTV_Movement_1:
 	face_up
 	step_end
 
+LilycoveCity_CoveLilyMotel_1F_EventScript_MoveTutor_Text_0:
+# 52 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	.string "…$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_DeclineTutor::
+# 115 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	.string "…$"
+
 LilycoveCity_CoveLilyMotel_1F_Text_GuestsDoubledByMascot::
-# 49 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+# 119 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
 	.string "Hm, so they doubled the guests by\n"
 	.string "using POKéMON as attractions?\p"
 	.string "Hm, well, maybe I should make a cute\n"
@@ -117,19 +279,19 @@ LilycoveCity_CoveLilyMotel_1F_Text_GuestsDoubledByMascot::
 	.string "guests to stay with us?$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_NoGuestsWithTeamAqua::
-# 60 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+# 130 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
 	.string "Oh, sorry, sorry!\n"
 	.string "I was too involved in watching TV!\p"
 	.string "Since that TEAM AQUA came to town,\n"
 	.string "the tourists have been staying away.$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_CantSeeTheTV::
-# 68 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+# 138 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
 	.string "Hey, down in front!\n"
 	.string "I can't see the TV!$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_MonFoundLostItem::
-# 73 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+# 143 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
 	.string "Amazing! You're telling me a POKéMON\n"
 	.string "found someone's lost item?\p"
 	.string "That's something. If we had some smart\n"
@@ -138,7 +300,7 @@ LilycoveCity_CoveLilyMotel_1F_Text_MonFoundLostItem::
 	.string "guests mislaid…$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_HeardAquaHideoutBusted::
-# 84 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+# 154 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
 	.string "Oh, sorry, sorry!\n"
 	.string "I was too involved in watching TV!\p"
 	.string "I heard that someone busted\n"
@@ -149,7 +311,7 @@ LilycoveCity_CoveLilyMotel_1F_Text_HeardAquaHideoutBusted::
 	.string "GAME something…$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_HouseSittingMonCaughtBurglar::
-# 98 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+# 168 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
 	.string "Amazing! A house-sitting POKéMON\n"
 	.string "caught a burglar?\p"
 	.string "That's something. If we had a tough\n"
@@ -158,7 +320,7 @@ LilycoveCity_CoveLilyMotel_1F_Text_HouseSittingMonCaughtBurglar::
 	.string "with greater safety.$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_BetterGetWorkingOnGuestsDinner::
-# 109 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+# 179 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
 	.string "Oh, sorry, sorry!\n"
 	.string "I was too involved in watching TV.\p"
 	.string "Oh, yes. A big group of guests arrived\n"
@@ -167,3 +329,39 @@ LilycoveCity_CoveLilyMotel_1F_Text_BetterGetWorkingOnGuestsDinner::
 	.string "so I guess they must make games.\p"
 	.string "Uh-oh, I'd better get working on\n"
 	.string "their dinner!$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_CrushGripDesc::
+# 193 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	.string "A powerful grab\n"
+	.string "that can lower the\n"
+	.string "foe's Defense.$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_BurningGraspDesc::
+# 199 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	.string "A grab with fiery\n"
+	.string "hands that can\n"
+	.string "cause burn.$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_LightningGraspDesc::
+# 205 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	.string "A grab with hands\n"
+	.string "of electricity.\n"
+	.string "Can paralyze.$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_GlacialGraspDesc::
+# 211 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	.string "A grab with icy\n"
+	.string "hands that can\n"
+	.string "cause frost.$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_PutridGraspDesc::
+# 217 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	.string "A grab with toxic\n"
+	.string "hands that can\n"
+	.string "cause poison.$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_DarkGraspDesc::
+# 223 "data/maps/LilycoveCity_CoveLilyMotel_1F/scripts.pory"
+	.string "A grab with evil\n"
+	.string "hands that can\n"
+	.string "lower Sp. Def.$"

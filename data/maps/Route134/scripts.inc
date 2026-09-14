@@ -17,11 +17,11 @@ Route134_EventScript_Jack::
 	end
 
 
-Route134_EventScript_Laurel::
+Route134_EventScript_Ellie::
 # 15 "data/maps/Route134/scripts.pory"
-	trainerbattle_single TRAINER_LAUREL, Route134_Text_LaurelIntro, Route134_Text_LaurelDefeat
+	trainerbattle_single TRAINER_ELLIE, Route134_Text_EllieIntro, Route134_Text_EllieDefeat
 # 16 "data/maps/Route134/scripts.pory"
-	msgbox Route134_Text_LaurelPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route134_Text_ElliePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -65,11 +65,11 @@ Route134_EventScript_Reyna::
 	end
 
 
-Route134_EventScript_Marley::
+Route134_EventScript_Natalie::
 # 51 "data/maps/Route134/scripts.pory"
-	trainerbattle_single TRAINER_MARLEY, Route134_Text_MarleyIntro, Route134_Text_MarleyDefeat
+	trainerbattle_single TRAINER_NATALIE, Route134_Text_NatalieIntro, Route134_Text_NatalieDefeat
 # 52 "data/maps/Route134/scripts.pory"
-	msgbox Route134_Text_MarleyPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route134_Text_NataliePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
