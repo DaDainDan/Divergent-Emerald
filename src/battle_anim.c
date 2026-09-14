@@ -200,6 +200,8 @@ static const u8* const sBattleAnims_StatusConditions[NUM_B_ANIMS_STATUS] =
     [B_ANIM_STATUS_CURSED]      = gBattleAnimStatus_Curse,
     [B_ANIM_STATUS_NIGHTMARE]   = gBattleAnimStatus_Nightmare,
     [B_ANIM_STATUS_FRB]         = gBattleAnimStatus_Frostbite,
+    [B_ANIM_STATUS_PLAGUE]      = gBattleAnimStatus_Plague,
+    [B_ANIM_STATUS_RAMPAGE]     = gBattleAnimStatus_Rampage,
 };
 
 static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
@@ -268,6 +270,10 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_ROCK_THROW]             = gBattleAnimGeneral_SafariRockThrow,
     [B_ANIM_SAFARI_REACTION]        = gBattleAnimGeneral_SafariReaction,
     [B_ANIM_HELD_ITEM_BERRY]        = gBattleAnimGeneral_HeldItemBerry,
+    [B_ANIM_REVERSE_ROOM]           = gBattleAnimGeneral_ReverseRoom,
+    [B_ANIM_ERROR_ROOM]             = gBattleAnimGeneral_ErrorRoom,
+    [B_ANIM_GRIM_ROOM]              = gBattleAnimGeneral_GrimRoom,
+    [B_ANIM_BOOBY_TRAP]             = gBattleAnimGeneral_BoobyTrap,
 };
 
 static const u8* const sBattleAnims_Special[NUM_B_ANIMS_SPECIAL] =

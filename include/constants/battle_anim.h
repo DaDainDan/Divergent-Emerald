@@ -425,7 +425,8 @@
 #define ANIM_TAG_TATSUGIRI_DROOPY           (ANIM_SPRITES_START + 410)
 #define ANIM_TAG_TATSUGIRI_STRETCHY         (ANIM_SPRITES_START + 411)
 #define ANIM_TAG_SAFARI_BAIT                (ANIM_SPRITES_START + 412)
-#define ANIM_TAG_COUNT                      GET_TRUE_SPRITE_INDEX(ANIM_TAG_SAFARI_BAIT + 1)
+#define ANIM_TAG_OLD_ROCKS                  (ANIM_SPRITES_START + 413)
+#define ANIM_TAG_COUNT                      GET_TRUE_SPRITE_INDEX(ANIM_TAG_OLD_ROCKS + 1)
 
 // battlers
 enum AnimBattler
@@ -541,7 +542,13 @@ enum AnimBattler
 #define BG_RAINBOW_PLAYER 81
 #define BG_RAINBOW_OPPONENT 82
 #define BG_SWAMP 83
-#define BG_COUNT 84
+#define BG_BUGGY_TERRAIN 84
+#define BG_FAULTY_TERRAIN 85
+#define BG_SPOOKY_TERRAIN 86
+#define BG_ERROR_ROOM 87
+#define BG_REVERSE_ROOM 88
+#define BG_GRIM_ROOM 89
+#define BG_COUNT 90
 
 // table ids for general animations (sBattleAnims_General)
 #define B_ANIM_STATS_CHANGE             0
@@ -608,7 +615,12 @@ enum AnimBattler
 #define B_ANIM_FORM_CHANGE_INSTANT      61
 #define B_ANIM_FORM_CHANGE_DISGUISE     62
 #define B_ANIM_HELD_ITEM_BERRY          63
-#define NUM_B_ANIMS_GENERAL             64
+#define B_ANIM_REVERSE_ROOM             64
+#define B_ANIM_ERROR_ROOM               65
+#define B_ANIM_GRIM_ROOM                66
+#define B_ANIM_BOOBY_TRAP               67
+
+#define NUM_B_ANIMS_GENERAL             68
 
 // special animations table (sBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
@@ -633,8 +645,10 @@ enum AnimBattler
 #define B_ANIM_STATUS_CURSED            7
 #define B_ANIM_STATUS_NIGHTMARE         8
 #define B_ANIM_STATUS_FRB               9
+#define B_ANIM_STATUS_PLAGUE            10
+#define B_ANIM_STATUS_RAMPAGE           11
 
-#define NUM_B_ANIMS_STATUS              10
+#define NUM_B_ANIMS_STATUS              12
 
 // Tasks with return values often assign them to gBattleAnimArgs[7].
 #define ARG_RET_ID 7
@@ -643,7 +657,7 @@ enum AnimBattler
 #define ANIMSPRITE_IS_TARGET (1 << 7)
 
 // Trapping Wrap-like moves end turn animation.
-#define TRAP_ANIM_BIND 0
+#define TRAP_ANIM_BIND 11
 #define TRAP_ANIM_WRAP 0
 #define TRAP_ANIM_FIRE_SPIN 1
 #define TRAP_ANIM_WHIRLPOOL 2
@@ -653,6 +667,9 @@ enum AnimBattler
 #define TRAP_ANIM_INFESTATION 6
 #define TRAP_ANIM_SNAP_TRAP 7
 #define TRAP_ANIM_THUNDER_CAGE 8
+#define TRAP_ANIM_ATTACK_ORDER 9
+#define TRAP_ANIM_TETHER_VINE 10
+#define TRAP_ANIM_ICE_CHAINS 12
 
 // Weather defines for battle animation scripts.
 #define ANIM_WEATHER_NONE 0
@@ -662,6 +679,7 @@ enum AnimBattler
 #define ANIM_WEATHER_HAIL 4
 #define ANIM_WEATHER_SNOW 5
 #define ANIM_WEATHER_FOG 6
+#define ANIM_WEATHER_STRONG_WINDS 7
 
 // horseshoe/fist frames
 #define ANIM_RIGHT_FIST  0
@@ -677,6 +695,7 @@ enum AnimBattler
 #define ANIM_SURF_PAL_SURF           0
 #define ANIM_SURF_PAL_MUDDY_WATER    1
 #define ANIM_SURF_PAL_SLUDGE_WAVE    2
+#define ANIM_SURF_PAL_SAND_TSUNAMI   3
 
 // Order Up palettes for Commander
 #define ANIM_ORDER_UP_NONE           0
@@ -713,6 +732,7 @@ enum SpeciesGfxChange
 #define F_PAL_ADJACENT            (F_PAL_DEF_SIDE | F_PAL_ATK_PARTNER)
 #define F_PAL_ALL_BUT_DEF         (F_PAL_ATK_SIDE | F_PAL_DEF_PARTNER)
 #define F_PAL_ALL_BUT_ATK_PARTNER (F_PAL_ATTACKER | F_PAL_DEF_SIDE)
+#define F_PAL_PARTNERS            (F_PAL_ATK_PARTNER | F_PAL_DEF_PARTNER)
 // The below are only used by AnimTask_BlendBattleAnimPal to get battler sprite palettes by position rather than by role.
 // It's redundant with F_PAL_BATTLERS, because they're only ever used together to refer to all the battlers at once.
 #define F_PAL_BATTLERS_2  (1 << 7 | 1 << 8 | 1 << 9 | 1 << 10)

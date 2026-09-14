@@ -79,6 +79,25 @@ const union AnimCmd *const gAnims_HandsAndFeet[] =
     sAnim_HandRight,
 };
 
+static const union AffineAnimCmd sAccupressureTurn[] =
+{
+    AFFINEANIMCMD_FRAME(0, 0, 1, 20),
+    AFFINEANIMCMD_FRAME(0, 0, -1, 40),
+    AFFINEANIMCMD_END,
+};
+
+static const union AffineAnimCmd sAccupressureStill[] =
+{
+    AFFINEANIMCMD_FRAME(256, 256, 0, 0),
+    AFFINEANIMCMD_END
+};
+
+static const union AffineAnimCmd * const sAccupressureAffineAnims[] =
+{
+    sAccupressureStill,
+    sAccupressureTurn
+};
+
 const struct SpriteTemplate gKarateChopSpriteTemplate =
 {
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
@@ -94,6 +113,15 @@ const struct SpriteTemplate gJumpKickSpriteTemplate =
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
     .anims = gAnims_HandsAndFeet,
+    .callback = AnimJumpKick,
+};
+
+const struct SpriteTemplate gPressurePointsForwardSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ACUPRESSURE,
+    .paletteTag = ANIM_TAG_ACUPRESSURE,
+    .oam = &gOamData_AffineDouble_ObjNormal_32x32,
+    .affineAnims = sAccupressureAffineAnims,
     .callback = AnimJumpKick,
 };
 
@@ -121,6 +149,15 @@ const struct SpriteTemplate gCrossChopHandSpriteTemplate =
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
     .anims = &gAnims_HandsAndFeet[3],
+    .callback = AnimCrossChopHand,
+};
+
+const struct SpriteTemplate gPressurePointDiagonalSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ACUPRESSURE,
+    .paletteTag = ANIM_TAG_ACUPRESSURE,
+    .oam = &gOamData_AffineDouble_ObjNormal_32x32,
+    .affineAnims = sAccupressureAffineAnims,
     .callback = AnimCrossChopHand,
 };
 
@@ -195,6 +232,14 @@ const struct SpriteTemplate gDizzyPunchDuckSpriteTemplate =
     .callback = AnimDizzyPunchDuck,
 };
 
+const struct SpriteTemplate gToughLoveHeartSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_PINK_HEART,
+    .paletteTag = ANIM_TAG_PINK_HEART,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .callback = AnimDizzyPunchDuck,
+};
+
 const struct SpriteTemplate gBrickBreakWallSpriteTemplate =
 {
     .tileTag = ANIM_TAG_BLUE_LIGHT_WALL,
@@ -229,6 +274,15 @@ const struct SpriteTemplate gSuperpowerOrbSpriteTemplate =
 {
     .tileTag = ANIM_TAG_CIRCLE_OF_LIGHT,
     .paletteTag = ANIM_TAG_CIRCLE_OF_LIGHT,
+    .oam = &gOamData_AffineDouble_ObjBlend_64x64,
+    .affineAnims = sAffineAnims_SuperpowerOrb,
+    .callback = AnimSuperpowerOrb,
+};
+
+const struct SpriteTemplate gFleurCannonSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_CIRCLE_OF_LIGHT,
+    .paletteTag = ANIM_TAG_MAGENTA_HEART,
     .oam = &gOamData_AffineDouble_ObjBlend_64x64,
     .affineAnims = sAffineAnims_SuperpowerOrb,
     .callback = AnimSuperpowerOrb,

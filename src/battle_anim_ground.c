@@ -70,6 +70,16 @@ const struct SpriteTemplate gSandAttackDirtSpriteTemplate =
     .callback = AnimDirtScatter,
 };
 
+const struct SpriteTemplate gAcidBlindSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_POISON_BUBBLE,
+    .paletteTag = ANIM_TAG_GREEN_POISON_BUBBLE,
+    .oam = &gOamData_AffineDouble_ObjNormal_16x16,
+    .anims = &gAnims_PoisonProjectile[1],
+    .affineAnims = gAffineAnims_Droplet,
+    .callback = AnimDirtScatter,
+};
+
 static const union AnimCmd sAnim_MudSlapMud[] =
 {
     ANIMCMD_FRAME(1, 1),
@@ -727,7 +737,7 @@ static void SetBattlersXOffsetForShake(struct Task *task)
 
 void AnimTask_IsPowerOver99(u8 taskId)
 {
-    gBattleAnimArgs[ARG_RET_ID] = gAnimMovePower > 99;
+    gBattleAnimArgs[ARG_RET_ID] = gAnimMovePower > 90; // 99
     DestroyAnimVisualTask(taskId);
 }
 
@@ -735,13 +745,26 @@ void AnimTask_PositionFissureBgOnBattler(u8 taskId)
 {
     struct Task *newTask;
     enum BattlerId battler = (gBattleAnimArgs[0] & ANIM_TARGET) ? gBattleAnimTarget : gBattleAnimAttacker;
+    s16 targetX = 0;
+    s16 targetY = 0;
 
     if (gBattleAnimArgs[0] > ANIM_TARGET)
         battler = BATTLE_PARTNER(battler);
 
+    if (IsDoubleBattle() && GetMoveTarget(gAnimMoveIndex) == TARGET_BOTH
+        && IsBattlerSpriteVisible(BATTLE_PARTNER(battler)))
+    {
+        SetAverageBattlerPositions(battler, TRUE, &targetX, &targetY);
+    }
+    else
+    {
+        targetX = GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2);
+        targetY = GetBattlerSpriteCoord(battler, BATTLER_COORD_Y_PIC_OFFSET);
+    }
+
     newTask = &gTasks[CreateTask(WaitForFissureCompletion, gBattleAnimArgs[1])];
-    newTask->data[1] = (32 - GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2)) & 0x1FF;
-    newTask->data[2] = (64 - GetBattlerSpriteCoord(battler, BATTLER_COORD_Y_PIC_OFFSET)) & 0xFF;
+    newTask->data[1] = (32 - targetX) & 0x1FF;
+    newTask->data[2] = (64 - targetY) & 0xFF;
     gBattle_BG3_X = newTask->data[1];
     gBattle_BG3_Y = newTask->data[2];
     newTask->data[3] = gBattleAnimArgs[2];

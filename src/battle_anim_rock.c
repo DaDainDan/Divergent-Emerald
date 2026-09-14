@@ -56,6 +56,15 @@ const struct SpriteTemplate gFallingRockSpriteTemplate =
     .callback = AnimFallingRock,
 };
 
+const struct SpriteTemplate gFallingDirtSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_OLD_ROCKS,
+    .paletteTag = ANIM_TAG_OLD_ROCKS,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gAnims_FlyingRock,
+    .callback = AnimFallingRock,
+};
+
 const struct SpriteTemplate gRockFragmentSpriteTemplate =
 {
     .tileTag = ANIM_TAG_ROCKS,
@@ -279,6 +288,23 @@ const struct SpriteTemplate gStealthRockSpriteTemplate =
     .callback = AnimStealthRock,
 };
 
+const struct SpriteTemplate gIceShardsSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ICICLE_SPEAR,
+    .paletteTag = ANIM_TAG_ICICLE_SPEAR,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .callback = AnimStealthRock,
+};
+
+const struct SpriteTemplate gBoobyTrapSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SHARP_TEETH,
+    .paletteTag = ANIM_TAG_AIR_WAVE_2,
+    .oam = &gOamData_AffineNormal_ObjBlend_64x64,
+    .affineAnims = gAffineAnims_Bite,
+    .callback = AnimStealthRock,
+};
+
 static const union AffineAnimCmd sSpriteAffineAnim_CrushGripHandEnemyAttack[] =
 {
     AFFINEANIMCMD_FRAME(0, 0, 96, 1), //180 degree turn
@@ -298,6 +324,56 @@ const struct SpriteTemplate gCrushGripHandTemplate =
 {
     .tileTag = ANIM_TAG_PURPLE_HAND_OUTLINE,
     .paletteTag = ANIM_TAG_ACUPRESSURE,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = sAnims_BasicRock,
+    .affineAnims = sSpriteAffineAnimTable_CrushGripHand,
+    .callback = AnimRockBlastRock
+};
+
+const struct SpriteTemplate gMindCrushHandTemplate =
+{
+    .tileTag = ANIM_TAG_PURPLE_HAND_OUTLINE,
+    .paletteTag = ANIM_TAG_PURPLE_HAND_OUTLINE,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = sAnims_BasicRock,
+    .affineAnims = sSpriteAffineAnimTable_CrushGripHand,
+    .callback = AnimRockBlastRock
+};
+
+const struct SpriteTemplate gBurningGraspHandTemplate =
+{
+    .tileTag = ANIM_TAG_PURPLE_HAND_OUTLINE,
+    .paletteTag = ANIM_TAG_SMALL_EMBER, // Make Orange/Red
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = sAnims_BasicRock,
+    .affineAnims = sSpriteAffineAnimTable_CrushGripHand,
+    .callback = AnimRockBlastRock
+};
+
+const struct SpriteTemplate gLightningGraspHandTemplate =
+{
+    .tileTag = ANIM_TAG_PURPLE_HAND_OUTLINE,
+    .paletteTag = ANIM_TAG_CIRCLE_OF_LIGHT, // Make Yellow
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = sAnims_BasicRock,
+    .affineAnims = sSpriteAffineAnimTable_CrushGripHand,
+    .callback = AnimRockBlastRock
+};
+
+const struct SpriteTemplate gGlacialGraspHandTemplate =
+{
+    .tileTag = ANIM_TAG_PURPLE_HAND_OUTLINE,
+    .paletteTag = ANIM_TAG_ICE_CRYSTALS, // Make Blue / Light Blue
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = sAnims_BasicRock,
+    .affineAnims = sSpriteAffineAnimTable_CrushGripHand,
+    .callback = AnimRockBlastRock
+};
+
+const struct SpriteTemplate gDarkGraspHandTemplate =
+{
+    .tileTag = ANIM_TAG_PURPLE_HAND_OUTLINE,
+    .paletteTag = ANIM_TAG_SHADOW_BALL, // Keep Purple or make Black or Dark Purple
     .oam = &gOamData_AffineNormal_ObjNormal_32x32,
     .anims = sAnims_BasicRock,
     .affineAnims = sSpriteAffineAnimTable_CrushGripHand,
@@ -343,6 +419,9 @@ static void AnimStealthRock(struct Sprite *sprite)
     sprite->data[2] = x + gBattleAnimArgs[2];
     sprite->data[4] = y + gBattleAnimArgs[3];
     sprite->data[5] = -50;
+
+    if (gAnimMoveIndex == MOVE_BOOBY_TRAP)
+        StartSpriteAffineAnim(sprite, gBattleAnimArgs[5]);
 
     InitAnimArcTranslation(sprite);
     sprite->callback = AnimStealthRockStep;

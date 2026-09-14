@@ -131,10 +131,38 @@ const struct SpriteTemplate gLargeFlameSpriteTemplate =
     .callback = AnimLargeFlame,
 };
 
+const struct SpriteTemplate gLargeFlameSacredFireSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_FIRE,
+    .paletteTag = ANIM_TAG_WISP_FIRE,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = sAnims_LargeFlame,
+    .affineAnims = sAffineAnims_LargeFlame,
+    .callback = AnimLargeFlame,
+};
+
 const struct SpriteTemplate gLargeFlameScatterSpriteTemplate =
 {
     .tileTag = ANIM_TAG_FIRE,
     .paletteTag = ANIM_TAG_FIRE,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_LargeFlame,
+    .callback = AnimLargeFlame,
+};
+
+const struct SpriteTemplate gLargeFlameScatterSacredFireSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_FIRE,
+    .paletteTag = ANIM_TAG_WISP_FIRE,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_LargeFlame,
+    .callback = AnimLargeFlame,
+};
+
+const struct SpriteTemplate gLargeFlameScatterMysticalFireSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_FIRE,
+    .paletteTag = ANIM_TAG_PINK_PETAL,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
     .anims = sAnims_LargeFlame,
     .callback = AnimLargeFlame,
@@ -230,6 +258,23 @@ const struct SpriteTemplate gEmberFlareSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SMALL_EMBER,
     .paletteTag = ANIM_TAG_SMALL_EMBER,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gAnims_BasicFire,
+    .callback = AnimEmberFlare,
+};
+
+const struct SpriteTemplate gSpellChainEmberSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SMALL_EMBER,
+    .paletteTag = ANIM_TAG_PINK_PETAL,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .callback = TranslateAnimSpriteToTargetMonLocation,
+};
+
+const struct SpriteTemplate gSpellChainFlareSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SMALL_EMBER,
+    .paletteTag = ANIM_TAG_PINK_PETAL,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
     .anims = gAnims_BasicFire,
     .callback = AnimEmberFlare,
@@ -404,6 +449,15 @@ const struct SpriteTemplate gWillOWispOrbSpriteTemplate =
     .callback = AnimWillOWispOrb,
 };
 
+const struct SpriteTemplate gSacFlameOrbSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_WISP_ORB,
+    .paletteTag = ANIM_TAG_METAL_BITS,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gAnims_WillOWispOrb,
+    .callback = AnimWillOWispOrb,
+};
+
 static const union AnimCmd sAnim_WillOWispFire[] =
 {
     ANIMCMD_FRAME(0, 5),
@@ -422,6 +476,15 @@ const struct SpriteTemplate gWillOWispFireSpriteTemplate =
 {
     .tileTag = ANIM_TAG_WISP_FIRE,
     .paletteTag = ANIM_TAG_WISP_FIRE,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_WillOWispFire,
+    .callback = AnimWillOWispFire,
+};
+
+const struct SpriteTemplate gSacFlameFireSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_WISP_FIRE,
+    .paletteTag = ANIM_TAG_METAL_BITS,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
     .anims = sAnims_WillOWispFire,
     .callback = AnimWillOWispFire,

@@ -1432,6 +1432,7 @@ const struct BattleAnimation gBattleAnimTable[ANIM_TAG_COUNT] =
     BATTLE_ANIMATION(ANIM_TAG_TATSUGIRI_CURLY, gBattleAnimSpriteGfx_TatsugiriCurly, 0x200, gBattleAnimSpritePal_TatsugiriCurly),
     BATTLE_ANIMATION(ANIM_TAG_TATSUGIRI_DROOPY, gBattleAnimSpriteGfx_TatsugiriDroopy, 0x200, gBattleAnimSpritePal_TatsugiriDroopy),
     BATTLE_ANIMATION(ANIM_TAG_TATSUGIRI_STRETCHY, gBattleAnimSpriteGfx_TatsugiriStretchy, 0x200, gBattleAnimSpritePal_TatsugiriStretchy),
+    BATTLE_ANIMATION(ANIM_TAG_OLD_ROCKS, gBattleAnimSpriteGfx_Rocks, 0x0C00, gBattleAnimSpritePal_Rocks),
 };
 
 const struct BattleAnimBackground gBattleAnimBackgroundTable[] =
@@ -1521,4 +1522,10 @@ const struct BattleAnimBackground gBattleAnimBackgroundTable[] =
     [BG_RAINBOW_PLAYER]            = {gBattleAnimBgImage_RainbowPlayer,           gBattleAnimBGPalette_Rainbow,                 gBattleAnimBgTilemap_RainbowPlayer},
     [BG_RAINBOW_OPPONENT]          = {gBattleAnimBgImage_RainbowOpponent,         gBattleAnimBGPalette_Rainbow,                 gBattleAnimBgTilemap_RainbowOpponent},
     [BG_SWAMP]                     = {gBattleAnimBgImage_Swamp,                   gBattleAnimBGPalette_Swamp,                   gBattleAnimBgTilemap_Swamp},
+    [BG_BUGGY_TERRAIN]             = {gBattleAnimBgImage_ElectricTerrain,         gBattleAnimBgPalette_BuggyTerrain,            gBattleAnimBgTilemap_ElectricTerrain}, // based on Electric
+    [BG_FAULTY_TERRAIN]            = {gBattleAnimBgImage_GrassyTerrain,           gBattleAnimBgPalette_FaultyTerrain,           gBattleAnimBgTilemap_GrassyTerrain}, // based on Grassy
+    [BG_SPOOKY_TERRAIN]            = {gBattleAnimBgImage_MistyTerrain,            gBattleAnimBgPalette_SpookyTerrain,           gBattleAnimBgTilemap_MistyTerrain}, // based on Misty
+    [BG_ERROR_ROOM]                = {gBattleAnimBgImage_TrickRoom,               gBattleAnimBgPalette_ErrorRoom,               gBattleAnimBgTilemap_TrickRoom},
+    [BG_REVERSE_ROOM]              = {gBattleAnimBgImage_TrickRoom,               gBattleAnimBgPalette_ReverseRoom,             gBattleAnimBgTilemap_TrickRoom},
+    [BG_GRIM_ROOM]                 = {gBattleAnimBgImage_TrickRoom,               gBattleAnimBgPalette_GrimRoom,                gBattleAnimBgTilemap_TrickRoom},
 };

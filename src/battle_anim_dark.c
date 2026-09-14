@@ -247,7 +247,7 @@ const struct SpriteTemplate gPunishmentImpactSpriteTemplate =
 // arg 0: duration step 1 (attacker -> center)
 // arg 1: duration step 2 (spin center)
 // arg 2: duration step 3 (center -> target)
-const struct SpriteTemplate gDarkPulseSpriteTemplate =
+const struct SpriteTemplate gDarkPulseOldSpriteTemplate =
 {
     .tileTag = ANIM_TAG_PURPLE_RING,
     .paletteTag = ANIM_TAG_PURPLE_RING,

@@ -211,6 +211,25 @@ const struct SpriteTemplate gIceBeamOuterCrystalSpriteTemplate =
     .callback = AnimIceBeamParticle,
 };
 
+const struct SpriteTemplate gMoonblastInnerCrystalSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ICE_CRYSTALS,
+    .paletteTag = ANIM_TAG_MAGENTA_HEART,
+    .oam = &gOamData_AffineNormal_ObjBlend_8x16,
+    .anims = gAnims_IceCrystalLarge,
+    .affineAnims = sAffineAnims_IceBeamInnerCrystal,
+    .callback = AnimIceBeamParticle,
+};
+
+const struct SpriteTemplate gMoonblastOuterCrystalSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ICE_CRYSTALS,
+    .paletteTag = ANIM_TAG_MAGENTA_HEART,
+    .oam = &gOamData_AffineOff_ObjBlend_8x8,
+    .anims = gAnims_IceCrystalSmall,
+    .callback = AnimIceBeamParticle,
+};
+
 static const union AffineAnimCmd sAffineAnim_IceCrystalHit[] =
 {
     AFFINEANIMCMD_FRAME(0xCE, 0xCE, 0, 0),
@@ -238,6 +257,26 @@ const struct SpriteTemplate gIceCrystalHitSmallSpriteTemplate =
 {
     .tileTag = ANIM_TAG_ICE_CRYSTALS,
     .paletteTag = ANIM_TAG_ICE_CRYSTALS,
+    .oam = &gOamData_AffineNormal_ObjBlend_8x8,
+    .anims = gAnims_IceCrystalSmall,
+    .affineAnims = gAffineAnims_IceCrystalHit,
+    .callback = AnimIceEffectParticle,
+};
+
+const struct SpriteTemplate gSaltCrystalHitLargeSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ICE_CRYSTALS,
+    .paletteTag = ANIM_TAG_AIR_WAVE_2,
+    .oam = &gOamData_AffineNormal_ObjBlend_8x16,
+    .anims = gAnims_IceCrystalLarge,
+    .affineAnims = gAffineAnims_IceCrystalHit,
+    .callback = AnimIceEffectParticle,
+};
+
+const struct SpriteTemplate gSaltCrystalHitSmallSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ICE_CRYSTALS,
+    .paletteTag = ANIM_TAG_AIR_WAVE_2,
     .oam = &gOamData_AffineNormal_ObjBlend_8x8,
     .anims = gAnims_IceCrystalSmall,
     .affineAnims = gAffineAnims_IceCrystalHit,
@@ -313,6 +352,15 @@ const struct SpriteTemplate gMistCloudSpriteTemplate =
 {
     .tileTag = ANIM_TAG_MIST_CLOUD,
     .paletteTag = ANIM_TAG_MIST_CLOUD,
+    .oam = &gOamData_AffineOff_ObjBlend_32x16,
+    .anims = sAnims_Cloud,
+    .callback = InitSwirlingFogAnim,
+};
+
+const struct SpriteTemplate gHazeCloudSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_MIST_CLOUD,
+    .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjBlend_32x16,
     .anims = sAnims_Cloud,
     .callback = InitSwirlingFogAnim,

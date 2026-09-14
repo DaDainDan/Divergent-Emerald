@@ -40,6 +40,15 @@ const struct SpriteTemplate gOutrageFlameSpriteTemplate =
     .callback = AnimOutrageFlame,
 };
 
+const struct SpriteTemplate gBlueOutrageFlameSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SMALL_EMBER,
+    .paletteTag = ANIM_TAG_METAL_BITS,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_OutrageOverheatFire,
+    .callback = AnimOutrageFlame,
+};
+
 static const union AnimCmd sAnim_DreepyMissileOpponent_0[] =
 {
     ANIMCMD_FRAME(0, 0, .hFlip = TRUE),
@@ -118,7 +127,7 @@ const union AffineAnimCmd *const gAffineAnims_DragonBreathFire[] =
 const struct SpriteTemplate gDragonBreathFireSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SMALL_EMBER,
-    .paletteTag = ANIM_TAG_SMALL_EMBER,
+    .paletteTag = ANIM_TAG_METAL_BITS, // ANIM_TAG_SMALL_EMBER
     .oam = &gOamData_AffineDouble_ObjNormal_32x32,
     .anims = gAnims_DragonBreathFire,
     .affineAnims = gAffineAnims_DragonBreathFire,
@@ -292,6 +301,16 @@ const struct SpriteTemplate gDragonRushSpriteTemplate =
     .callback = AnimDragonRush,
 };
 
+const struct SpriteTemplate gPowerWhipFinalHitSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SLAM_HIT_2,
+    .paletteTag = ANIM_TAG_LEAF,
+    .oam = &gOamData_AffineNormal_ObjNormal_64x64,
+    .anims = gDragonRushAnimTable,
+    .affineAnims = gDragonRushAffineAnimTable,
+    .callback = AnimDragonRush,
+};
+
 const struct SpriteTemplate gDracoMetorSpriteTemplate =
 {
     .tileTag = ANIM_TAG_IMPACT,
@@ -306,6 +325,14 @@ const struct SpriteTemplate gDragonPulseSpriteTemplate =
 {
     .tileTag = ANIM_TAG_DRAGON_PULSE,
     .paletteTag = ANIM_TAG_DRAGON_PULSE,
+    .oam = &gOamData_AffineOff_ObjNormal_16x32,
+    .callback = TranslateAnimSpriteToTargetMonLocation,
+};
+
+const struct SpriteTemplate gDarkPulseSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_DRAGON_PULSE,
+    .paletteTag = ANIM_TAG_BLOOD_MOON,
     .oam = &gOamData_AffineOff_ObjNormal_16x32,
     .callback = TranslateAnimSpriteToTargetMonLocation,
 };

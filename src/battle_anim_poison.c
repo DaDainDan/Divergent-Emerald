@@ -39,6 +39,15 @@ const struct SpriteTemplate gToxicBubbleSpriteTemplate =
     .callback = AnimSpriteOnMonPos,
 };
 
+const struct SpriteTemplate gNeuroToxinBubbleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_TOXIC_BUBBLE,
+    .paletteTag = ANIM_TAG_GREEN_POISON_BUBBLE,
+    .oam = &gOamData_AffineOff_ObjNormal_16x32,
+    .anims = sAnims_ToxicBubble,
+    .callback = AnimSpriteOnMonPos,
+};
+
 static const union AnimCmd sAnim_PoisonProjectile[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -98,6 +107,16 @@ const struct SpriteTemplate gSludgeProjectileSpriteTemplate =
     .callback = AnimSludgeProjectile,
 };
 
+const struct SpriteTemplate gPolluteProjectileSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_POISON_BUBBLE,
+    .paletteTag = ANIM_TAG_HANDS_AND_FEET,
+    .oam = &gOamData_AffineDouble_ObjNormal_16x16,
+    .anims = gAnims_PoisonProjectile,
+    .affineAnims = gAffineAnims_PoisonProjectile,
+    .callback = AnimSludgeProjectile,
+};
+
 const struct SpriteTemplate gAcidPoisonBubbleSpriteTemplate =
 {
     .tileTag = ANIM_TAG_POISON_BUBBLE,
@@ -112,6 +131,16 @@ const struct SpriteTemplate gSludgeBombHitParticleSpriteTemplate =
 {
     .tileTag = ANIM_TAG_POISON_BUBBLE,
     .paletteTag = ANIM_TAG_POISON_BUBBLE,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = &gAnims_PoisonProjectile[2],
+    .affineAnims = sAffineAnims_SludgeBombHit,
+    .callback = AnimSludgeBombHitParticle,
+};
+
+const struct SpriteTemplate gPolluteHitParticleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_POISON_BUBBLE,
+    .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineNormal_ObjNormal_16x16,
     .anims = &gAnims_PoisonProjectile[2],
     .affineAnims = sAffineAnims_SludgeBombHit,
@@ -156,6 +185,16 @@ const struct SpriteTemplate gPoisonBubbleSpriteTemplate =
 {
     .tileTag = ANIM_TAG_POISON_BUBBLE,
     .paletteTag = ANIM_TAG_POISON_BUBBLE,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = gAnims_PoisonProjectile,
+    .affineAnims = gAffineAnims_Bubble,
+    .callback = AnimBubbleEffect,
+};
+
+const struct SpriteTemplate gPolluteBubbleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_POISON_BUBBLE,
+    .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineNormal_ObjNormal_16x16,
     .anims = gAnims_PoisonProjectile,
     .affineAnims = gAffineAnims_Bubble,

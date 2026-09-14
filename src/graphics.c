@@ -1418,6 +1418,7 @@ const u32 gBattleAnimSpriteGfx_Protect[] = INCGFX_U32("graphics/battle_anims/spr
 const u16 gBattleAnimSpritePal_Protect[] = INCGFX_U16("graphics/battle_anims/sprites/protect.png", ".gbapal");
 
 const u16 gBattleAnimBackgroundImageMuddyWater_Pal[] = INCGFX_U16("graphics/battle_anims/backgrounds/water_muddy.pal", ".gbapal");
+const u16 gBattleAnimBackgroundImageSandTsunami_Pal[] = INCGFX_U16("graphics/battle_anims/backgrounds/water_sand.pal", ".gbapal");
 
 const u32 gEnemyMonShadow_Gfx[] = INCGFX_U32("graphics/battle_interface/enemy_mon_shadow.png", ".4bpp.smol");
 const u32 gEnemyMonShadowsSized_Gfx[] = INCGFX_U32("graphics/battle_interface/enemy_mon_shadows_sized.png", ".4bpp.smol");
@@ -1560,6 +1561,18 @@ const u16 gBattleAnimBgPalette_MistyTerrain[] = INCGFX_U16("graphics/battle_anim
 const u32 gBattleAnimBgTilemap_MistyTerrain[] = INCGFX_U32("graphics/battle_anims/backgrounds/misty_terrain.bin", ".smolTM");
 #endif
 
+// const u32 gBattleAnimBgImage_BuggyTerrain[] = INCGFX_U32("graphics/battle_anims/backgrounds/buggy_terrain.png", ".4bpp.smol");
+const u16 gBattleAnimBgPalette_BuggyTerrain[] = INCGFX_U16("graphics/battle_anims/backgrounds/buggy_terrain.pal", ".gbapal");
+// const u32 gBattleAnimBgTilemap_BuggyTerrain[] = INCGFX_U32("graphics/battle_anims/backgrounds/buggy_terrain.bin", ".smolTM");
+
+// const u32 gBattleAnimBgImage_FaultyTerrain[] = INCGFX_U32("graphics/battle_anims/backgrounds/faulty_terrain.png", ".4bpp.smol");
+const u16 gBattleAnimBgPalette_FaultyTerrain[] = INCGFX_U16("graphics/battle_anims/backgrounds/faulty_terrain.pal", ".gbapal");
+// const u32 gBattleAnimBgTilemap_FaultyTerrain[] = INCGFX_U32("graphics/battle_anims/backgrounds/faulty_terrain.bin", ".smolTM");
+
+// const u32 gBattleAnimBgImage_SpookyTerrain[] = INCGFX_U32("graphics/battle_anims/backgrounds/spooky_terrain.png", ".4bpp.smol");
+const u16 gBattleAnimBgPalette_SpookyTerrain[] = INCGFX_U16("graphics/battle_anims/backgrounds/spooky_terrain.pal", ".gbapal");
+// const u32 gBattleAnimBgTilemap_SpookyTerrain[] = INCGFX_U32("graphics/battle_anims/backgrounds/spooky_terrain.bin", ".smolTM");
+
 const u32 gBattleAnimBgImage_Nightmare[] = INCGFX_U32("graphics/battle_anims/backgrounds/nightmare.png", ".4bpp.smol");
 const u16 gBattleAnimBgPalette_Nightmare[] = INCGFX_U16("graphics/battle_anims/backgrounds/nightmare.pal", ".gbapal");
 const u32 gBattleAnimBgTilemap_Nightmare[] = INCGFX_U32("graphics/battle_anims/backgrounds/nightmare.bin", ".smolTM");
@@ -1594,9 +1607,11 @@ const u32 gBattleAnimBgImage_TrickRoom[] = INCGFX_U32("graphics/battle_anims/bac
 const u16 gBattleAnimBgPalette_TrickRoom[] = INCGFX_U16("graphics/battle_anims/backgrounds/trick_room.pal", ".gbapal");
 const u32 gBattleAnimBgTilemap_TrickRoom[] = INCGFX_U32("graphics/battle_anims/backgrounds/trick_room.bin", ".smolTM");
 
-const u16 gBattleAnimBgPalette_MagicRoom[] = INCGFX_U16("graphics/battle_anims/backgrounds/magic_room.pal", ".gbapal");
-
+const u16 gBattleAnimBgPalette_MagicRoom[] = INCGFX_U16("graphics/battle_anims/backgrounds/magic_room.pal", ".gbapal"); // Now Static Room
 const u16 gBattleAnimBgPalette_WonderRoom[] = INCGFX_U16("graphics/battle_anims/backgrounds/wonder_room.pal", ".gbapal");
+const u16 gBattleAnimBgPalette_ErrorRoom[] = INCGFX_U16("graphics/battle_anims/backgrounds/error_room.pal", ".gbapal");
+const u16 gBattleAnimBgPalette_ReverseRoom[] = INCGFX_U16("graphics/battle_anims/backgrounds/reverse_room.pal", ".gbapal");
+const u16 gBattleAnimBgPalette_GrimRoom[] = INCGFX_U16("graphics/battle_anims/backgrounds/grim_room.pal", ".gbapal");
 
 const u32 gBattleAnimBgImage_TwinkleTackle[] = INCGFX_U32("graphics/battle_anims/backgrounds/twinkle_tackle.png", ".4bpp.smol");
 const u16 gBattleAnimBgPalette_TwinkleTackle[] = INCGFX_U16("graphics/battle_anims/backgrounds/twinkle_tackle.pal", ".gbapal");

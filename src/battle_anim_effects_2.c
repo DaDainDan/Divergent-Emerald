@@ -920,6 +920,24 @@ const struct SpriteTemplate gPowerGemOrbScatterSpriteTemplate =
     .callback = AnimOrbitScatter,
 };
 
+const struct SpriteTemplate gFaultyTerrainOrbsSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_POWER_GEM,
+    .paletteTag = ANIM_TAG_PAW_PRINT,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .affineAnims = gHiddenPowerOrbAffineAnimTable,
+    .callback = AnimOrbitFast,
+};
+
+const struct SpriteTemplate gFaultyTerrainScatterSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_POWER_GEM,
+    .paletteTag = ANIM_TAG_PAW_PRINT,
+    .oam = &gOamData_AffineDouble_ObjNormal_16x16,
+    .affineAnims = gHiddenPowerOrbAffineAnimTable,
+    .callback = AnimOrbitScatter,
+};
+
 const union AffineAnimCmd gSpitUpOrbAffineAnimCmds[] =
 {
     AFFINEANIMCMD_FRAME(0x80, 0x80, 0, 0),
@@ -1617,7 +1635,7 @@ void AnimTask_AirCutterProjectile(u8 taskId)
 
     attackerX = gTasks[taskId].data[9] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X);
     attackerY = gTasks[taskId].data[10] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y);
-    if (IsDoubleBattle()
+    if (IsDoubleBattle() && GetMoveTarget(gAnimMoveIndex) == TARGET_BOTH
         && IsBattlerSpriteVisible(BATTLE_PARTNER(gBattleAnimTarget)))
     {
         SetAverageBattlerPositions(gBattleAnimTarget, FALSE, &targetX, &targetY);
@@ -3757,7 +3775,7 @@ static void AnimPerishSongMusicNote_Step2(struct Sprite *sprite)
 //  arg0: cover both battlers
 static void AnimGuardRing(struct Sprite *sprite)
 {
-    if (gBattleAnimArgs[0] && IsDoubleBattle() && IsBattlerSpriteVisible(BATTLE_PARTNER(gBattleAnimAttacker)))
+    if (gBattleAnimArgs[0] && IsDoubleBattle() && IsBattlerSpriteVisible(BATTLE_PARTNER(gBattleAnimAttacker)) && gAnimMoveIndex == MOVE_SAFEGUARD)
     {
         SetAverageBattlerPositions(gBattleAnimAttacker, FALSE, &sprite->x, &sprite->y);
         sprite->y += 40;

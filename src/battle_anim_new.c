@@ -314,6 +314,15 @@ const struct SpriteTemplate gElectroBallCannonBallTemplate =
     .callback = AnimShadowBall
 };
 
+const struct SpriteTemplate gMagicOrbSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_FLASH_CANNON_BALL,
+    .paletteTag = ANIM_TAG_MAGENTA_HEART,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .affineAnims = gAffineAnims_ShadowBall,
+    .callback = AnimShadowBall,
+};
+
 // Foul Play
 const struct SpriteTemplate gFoulPlayImpactTemplate =
 {
@@ -363,6 +372,15 @@ const struct SpriteTemplate gSimpleBeamPinkRingTemplate =
 {
     .tileTag = ANIM_TAG_THIN_RING,
     .paletteTag = ANIM_TAG_PINK_PETAL,
+    .oam = &gOamData_AffineDouble_ObjBlend_64x64,
+    .affineAnims = gThinRingExpandingAffineAnimTable,
+    .callback = AnimUproarRing
+};
+
+const struct SpriteTemplate gBugBuzzGreenRingTemplate =
+{
+    .tileTag = ANIM_TAG_THIN_RING,
+    .paletteTag = ANIM_TAG_RAZOR_LEAF,
     .oam = &gOamData_AffineDouble_ObjBlend_64x64,
     .affineAnims = gThinRingExpandingAffineAnimTable,
     .callback = AnimUproarRing
@@ -1184,6 +1202,27 @@ const struct SpriteTemplate gMistyTerrainStarTemplate =
     .callback = AnimOrbitScatter
 };
 
+//buggy terrain
+const struct SpriteTemplate gBuggyTerrainOrbsTemplate =
+{
+    .tileTag = ANIM_TAG_ORBS,
+    .paletteTag = ANIM_TAG_WHIP_HIT,
+    .oam = &gOamData_AffineNormal_ObjBlend_16x16,
+    .anims = gPowerAbsorptionOrbAnimTable,
+    .affineAnims = gPowerAbsorptionOrbAffineAnimTable,
+    .callback = AnimOrbitFast
+};
+
+const struct SpriteTemplate gBuggyTerrainStarTemplate =
+{
+    .tileTag = ANIM_TAG_GREEN_SPARKLE,
+    .paletteTag = ANIM_TAG_WHIP_HIT,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gMoonlightSparkleAnimTable,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimOrbitScatter
+};
+
 // Electrify
 const struct SpriteTemplate gElectrifyRingTemplate =
 {
@@ -1895,6 +1934,14 @@ const struct SpriteTemplate gIceHammerSmokesTemplate =
     .callback = AnimBlackSmoke
 };
 
+const struct SpriteTemplate gMudMashSmokesTemplate =
+{
+    .tileTag = ANIM_TAG_MUD_SAND,
+    .paletteTag = ANIM_TAG_MUD_SAND,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .callback = AnimBlackSmoke
+};
+
 // Floral Healing
 const struct SpriteTemplate gFloralHealingFlowerTemplate =
 {
@@ -1967,6 +2014,33 @@ const struct SpriteTemplate gStrengthSapAbsorbTemplate =
 {
     .tileTag = ANIM_TAG_ORBS,
     .paletteTag = ANIM_TAG_PINK_PETAL,
+    .oam = &gOamData_AffineNormal_ObjBlend_16x16,
+    .anims = gPowerAbsorptionOrbAnimTable,
+    .affineAnims = gAbsorptionOrbAffineAnimTable,
+    .callback = AnimAbsorptionOrb
+};
+
+const struct SpriteTemplate gSpiritSapSmokeTemplate =
+{
+    .tileTag = ANIM_TAG_GRAY_SMOKE,
+    .paletteTag = ANIM_TAG_POISON_BUBBLE,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gOctazookaAnimTable,
+    .callback = AnimSpriteOnMonPos
+};
+
+const struct SpriteTemplate gSpiritSapInwardTemplate =
+{
+    .tileTag = ANIM_TAG_TEAL_ALERT,
+    .paletteTag = ANIM_TAG_POISON_BUBBLE,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .callback = AnimTealAlert
+};
+
+const struct SpriteTemplate gSpiritSapAbsorbTemplate =
+{
+    .tileTag = ANIM_TAG_ORBS,
+    .paletteTag = ANIM_TAG_PURPLE_FLAME,
     .oam = &gOamData_AffineNormal_ObjBlend_16x16,
     .anims = gPowerAbsorptionOrbAnimTable,
     .affineAnims = gAbsorptionOrbAffineAnimTable,
@@ -2121,6 +2195,26 @@ const struct SpriteTemplate gPsychicTerrainStarTemplate =
 {
     .tileTag = ANIM_TAG_GREEN_SPARKLE,
     .paletteTag = ANIM_TAG_POISON_BUBBLE,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gMoonlightSparkleAnimTable,
+    .callback = AnimOrbitScatter
+};
+
+// Spooky Terrain
+const struct SpriteTemplate gSpookyTerrainOrbsTemplate =
+{
+    .tileTag = ANIM_TAG_ORBS,
+    .paletteTag = ANIM_TAG_SHADOW_BALL,
+    .oam = &gOamData_AffineNormal_ObjBlend_16x16,
+    .anims = gPowerAbsorptionOrbAnimTable,
+    .affineAnims = gPowerAbsorptionOrbAffineAnimTable,
+    .callback = AnimOrbitFast
+};
+
+const struct SpriteTemplate gSpookyTerrainStarTemplate =
+{
+    .tileTag = ANIM_TAG_GREEN_SPARKLE,
+    .paletteTag = ANIM_TAG_SHADOW_BALL,
     .oam = &gOamData_AffineOff_ObjNormal_16x16,
     .anims = gMoonlightSparkleAnimTable,
     .callback = AnimOrbitScatter
@@ -3050,6 +3144,15 @@ const struct SpriteTemplate gJawLockTeethTemplate =
     .callback = SpriteCB_LockingJaw
 };
 
+const struct SpriteTemplate gBoobyTrapTeethTemplate =
+{
+    .tileTag = ANIM_TAG_SHARP_TEETH,
+    .paletteTag = ANIM_TAG_AIR_WAVE_2,
+    .oam = &gOamData_AffineNormal_ObjBlend_64x64,
+    .affineAnims = gAffineAnims_Bite,
+    .callback = SpriteCB_LockingJaw
+};
+
 // Stuff Cheeks
 static const union AnimCmd sAnimCmdBerryChomp[] =
 {
@@ -3493,6 +3596,15 @@ const struct SpriteTemplate gSkitterSmackImpactTemplate =
     .callback = AnimIceEffectParticle
 };
 
+const struct SpriteTemplate gCovetImpactTemplate =
+{
+    .tileTag = ANIM_TAG_IMPACT,
+    .paletteTag = ANIM_TAG_MAGENTA_HEART,
+    .oam = &gOamData_AffineNormal_ObjBlend_32x32,
+    .affineAnims = gAffineAnims_IceCrystalHit,
+    .callback = AnimIceEffectParticle
+};
+
 // Triple Axel
 const struct SpriteTemplate gTripleAxelIceCrystalSpriteTemplate =
 {
@@ -3641,6 +3753,17 @@ const struct SpriteTemplate gSpriteTemplate_LashOutStrike = {
     .anims = gKnockOffStrikeAnimTable,
     .affineAnims = gKnockOffStrikeAffineAnimTable,
     .callback = SpriteCB_LashOutStrike
+};
+
+// New Vine Whip
+const struct SpriteTemplate gVineWhipStrikeSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SLAM_HIT_2,
+    .paletteTag = ANIM_TAG_LEAF,
+    .oam = &gOamData_AffineNormal_ObjNormal_64x64,
+    .anims = gKnockOffStrikeAnimTable,
+    .affineAnims = gKnockOffStrikeAffineAnimTable,
+    .callback = SpriteCB_LashOutStrike,
 };
 
 // Corrosize Gas
@@ -3935,6 +4058,34 @@ const struct SpriteTemplate gSpriteTemplate_BarbBarrage = {
     .tileTag = ANIM_TAG_SPIKES,
     .paletteTag = ANIM_TAG_SHADOW_BALL,
     .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .callback = AnimOutrageFlame
+};
+
+const struct SpriteTemplate gSpriteTemplate_SpikeBarrage = {
+    .tileTag = ANIM_TAG_SPIKES,
+    .paletteTag = ANIM_TAG_SPIKES,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .callback = AnimOutrageFlame
+};
+
+const struct SpriteTemplate gSpriteTemplate_StoneBarrage = {
+    .tileTag = ANIM_TAG_STEALTH_ROCK,
+    .paletteTag = ANIM_TAG_STEALTH_ROCK,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .callback = AnimOutrageFlame
+};
+
+const struct SpriteTemplate gSpriteTemplate_IceBarrage = {
+    .tileTag = ANIM_TAG_SPARKLE_6,
+    .paletteTag = ANIM_TAG_WATER_GUN,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .callback = AnimOutrageFlame
+};
+
+const struct SpriteTemplate gSpriteTemplate_ScaleShot = {
+    .tileTag = ANIM_TAG_SHELL_RIGHT,
+    .paletteTag = ANIM_TAG_SHELL_RIGHT,
+    .oam = &gOamData_AffineNormal_ObjNormal_64x64,
     .callback = AnimOutrageFlame
 };
 
@@ -6096,6 +6247,15 @@ const struct SpriteTemplate gMaxFlutterbyButterflySpriteTemplate =
     .callback = SpriteCB_MaxFlutterby
 };
 
+const struct SpriteTemplate gDiamondDustSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SPARKLE_6,
+    .paletteTag = ANIM_TAG_WATER_GUN,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .affineAnims = sSpriteAffineAnimTable_Flutterby,
+    .callback = SpriteCB_MaxFlutterby
+};
+
 const struct SpriteTemplate gReallyBigRockBlastRockSpriteTemplate =
 {
     .tileTag = ANIM_TAG_REALLY_BIG_ROCK,
@@ -6311,6 +6471,14 @@ const struct SpriteTemplate gFreezyFrostRisingSpearSpriteTemplate =
 {
     .tileTag = ANIM_TAG_ICICLE_SPEAR,
     .paletteTag = ANIM_TAG_ICICLE_SPEAR,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .callback = SpriteCB_GeyserTarget
+};
+
+const struct SpriteTemplate gStoneEdgeRisingSpearSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ICICLE_SPEAR,
+    .paletteTag = ANIM_TAG_ROCKS,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
     .callback = SpriteCB_GeyserTarget
 };
@@ -7756,7 +7924,7 @@ void AnimTask_ShellSideArm(u8 taskId)
 
 void AnimTask_TerrainPulse(u8 taskId)
 {
-    if (IsAnyTerrainAffected(gBattleAnimAttacker, GetBattlerAbility(gBattleAnimAttacker), GetBattlerHoldEffect(gBattleAnimAttacker), gFieldStatuses))
+    if (IsAnyTerrainAffected(gBattleAnimAttacker, gFieldStatuses))
     {
         if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
             gBattleAnimArgs[0] = TYPE_ELECTRIC;
@@ -7766,6 +7934,12 @@ void AnimTask_TerrainPulse(u8 taskId)
             gBattleAnimArgs[0] = TYPE_FAIRY;
         else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
             gBattleAnimArgs[0] = TYPE_PSYCHIC;
+        else if (gFieldStatuses & STATUS_FIELD_BUGGY_TERRAIN)
+            gBattleAnimArgs[0] = TYPE_BUG;
+        else if (gFieldStatuses & STATUS_FIELD_FAULTY_TERRAIN)
+            gBattleAnimArgs[0] = TYPE_TERRA;
+        else if (gFieldStatuses & STATUS_FIELD_SPOOKY_TERRAIN)
+            gBattleAnimArgs[0] = TYPE_GHOST;
         else //failsafe
             gBattleAnimArgs[0] = 0;
     }
@@ -8155,8 +8329,12 @@ static void SpriteCB_MaxFlutterbyStep1(struct Sprite* sprite)
     if (!FuncIsActiveTask(AnimTask_DynamaxGrowthStep))
     {
         if (gAnimMoveIndex != MOVE_INFERNAL_PARADE
-         && gAnimMoveIndex != MOVE_ASTRAL_BARRAGE)
+         && gAnimMoveIndex != MOVE_ASTRAL_BARRAGE
+         && gAnimMoveIndex != MOVE_DIAMOND_DUST)
             PlaySE(SE_M_SAND_ATTACK);
+
+        if (gAnimMoveIndex == MOVE_DIAMOND_DUST)
+            PlaySE(SE_M_ICY_WIND);
 
         StartSpriteAffineAnim(sprite, 1);
         InitAnimArcTranslation(sprite);
@@ -8292,14 +8470,20 @@ void AnimTask_DynamaxGrowth(u8 taskId) // from CFRU
 
 void AnimTask_GetWeatherToSet(u8 taskId)
 {
-    if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_SUN))
+    if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_SUN) 
+    || (gWeatherMoveAnim & B_WEATHER_RAIN && MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_MONSOON)))
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_SUN;
-    else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_RAIN))
+    else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_RAIN) 
+        || ((gWeatherMoveAnim == 0 || (gWeatherMoveAnim & B_WEATHER_SUN)) && MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_MONSOON)))
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_RAIN;
     else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_SANDSTORM))
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_SANDSTORM;
     else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_HAIL))
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_HAIL;
+    else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_SNOW))
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_SNOW;
+    else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_STRONG_WINDS))
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_STRONG_WINDS;
 
     DestroyAnimVisualTask(taskId);
 }

@@ -529,6 +529,14 @@ const struct SpriteTemplate gSwallowBlueOrbSpriteTemplate =
     .callback = AnimSwallowBlueOrb,
 };
 
+const struct SpriteTemplate gSwallowGreenOrbSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BLUE_ORB,
+    .paletteTag = ANIM_TAG_GLOWY_GREEN_ORB,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .callback = AnimSwallowBlueOrb,
+};
+
 const union AffineAnimCmd gSwallowDeformMonAffineAnimCmds[] =
 {
     AFFINEANIMCMD_FRAME(0, 6, 0, 20),
@@ -3736,7 +3744,7 @@ void AnimSmokeBallEscapeCloud(struct Sprite *sprite)
     if (!IsOnPlayerSide(gBattleAnimTarget))
         gBattleAnimArgs[1] = -gBattleAnimArgs[1];
 
-    sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2) + gBattleAnimArgs[1];
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2) + gBattleAnimArgs[1]; // May need be AnimTarget for Poof?
     sprite->y = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[2];
     sprite->callback = DestroyAnimSpriteAfterTimer;
 }
@@ -5253,6 +5261,16 @@ void AnimTask_GetReturnPowerLevel(u8 taskId)
     DestroyAnimVisualTask(taskId);
 }
 
+void AnimTask_TargetItemCheck(u8 taskId)
+{
+    if (gLastUsedItem != 0)
+        gBattleAnimArgs[ARG_RET_ID] = TRUE;
+    else
+        gBattleAnimArgs[ARG_RET_ID] = FALSE;
+
+    DestroyAnimVisualTask(taskId);
+}
+
 // Makes the mon run out of screen, run past the opposing mon, and return to its original position.
 // No args.
 void AnimTask_SnatchOpposingMonMove(u8 taskId)
@@ -5684,6 +5702,8 @@ void AnimTask_GetWeather(u8 taskId)
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_SNOW;
     else if (weather & B_WEATHER_FOG)
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_FOG;
+    else if (gWeatherMoveAnim & B_WEATHER_STRONG_WINDS)
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_STRONG_WINDS;
 
     DestroyAnimVisualTask(taskId);
 }

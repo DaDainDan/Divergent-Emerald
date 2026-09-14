@@ -1422,6 +1422,15 @@ const struct SpriteTemplate gCuttingSliceSpriteTemplate =
     .callback = AnimCuttingSlice,
 };
 
+const struct SpriteTemplate gFuryCutterSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_CUT,
+    .paletteTag = ANIM_TAG_RAZOR_LEAF,
+    .oam = &gOamData_AffineOff_ObjBlend_32x32,
+    .anims = gCuttingSliceAnimTable,
+    .callback = AnimCuttingSlice,
+};
+
 const struct SpriteTemplate gAirCutterSliceSpriteTemplate =
 {
     .tileTag = ANIM_TAG_CUT,
@@ -2004,6 +2013,15 @@ const struct SpriteTemplate gHealingBlueStarSpriteTemplate =
 {
     .tileTag = ANIM_TAG_BLUE_STAR,
     .paletteTag = ANIM_TAG_BLUE_STAR,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gHealingBlueStarAnimTable,
+    .callback = AnimSpriteOnMonPos,
+};
+
+const struct SpriteTemplate gHealBlockRedStarSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BLUE_STAR,
+    .paletteTag = ANIM_TAG_RED_ORB,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
     .anims = gHealingBlueStarAnimTable,
     .callback = AnimSpriteOnMonPos,
@@ -2865,7 +2883,15 @@ const struct SpriteTemplate gAcrobaticsSlashesSpriteTemplate =
 const struct SpriteTemplate gPsyshockOrbSpriteTemplate =
 {
     .tileTag = ANIM_TAG_RED_ORB_2,
-    .paletteTag = ANIM_TAG_POISON_JAB,
+    .paletteTag = ANIM_TAG_MAGENTA_HEART, // ANIM_TAG_POISON_JAB
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .callback = AnimPoisonJabProjectile,
+};
+
+const struct SpriteTemplate gMagnetBombSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_RED_ORB_2,
+    .paletteTag = ANIM_TAG_RED_BALL,
     .oam = &gOamData_AffineOff_ObjNormal_8x8,
     .callback = AnimPoisonJabProjectile,
 };
@@ -2883,6 +2909,16 @@ const struct SpriteTemplate gChainBindingSpriteTemplate =
 {
     .tileTag = ANIM_TAG_PURPLE_CHAIN,
     .paletteTag = ANIM_TAG_PURPLE_CHAIN,
+    .oam = &gOamData_AffineNormal_ObjNormal_64x32,
+    .anims = sAnims_ConstrictBinding,
+    .affineAnims = sAffineAnims_ConstrictBinding,
+    .callback = AnimConstrictBinding,
+};
+
+const struct SpriteTemplate gIceChainSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_PURPLE_CHAIN,
+    .paletteTag = ANIM_TAG_ICICLE_SPEAR,
     .oam = &gOamData_AffineNormal_ObjNormal_64x32,
     .anims = sAnims_ConstrictBinding,
     .affineAnims = sAffineAnims_ConstrictBinding,
@@ -3965,7 +4001,7 @@ void AnimMoveTwisterParticle(struct Sprite *sprite)
 {
     CMD_ARGS(duration, distanceY, wavePeriod, waveAmplitude, speedUpOnFrame);
 
-    if (IsDoubleBattle() == TRUE)
+    if (IsDoubleBattle() && GetMoveTarget(gAnimMoveIndex) == TARGET_BOTH && IsBattlerSpriteVisible(BATTLE_PARTNER(gBattlerTarget)))
         SetAverageBattlerPositions(gBattleAnimTarget, TRUE, &sprite->x, &sprite->y);
 
     sprite->y += 32;
@@ -6280,7 +6316,10 @@ static void AnimMoonlightSparkle(struct Sprite *sprite)
 {
     CMD_ARGS(unk0, unk1);
 
-    sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2) + cmd->unk0;
+    if (GetMoveTarget(gAnimMoveIndex) == TARGET_ALLY)
+        sprite->x = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2) + cmd->unk0;
+    else
+        sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2) + cmd->unk0;
     sprite->y = cmd->unk1;
     sprite->data[0] = 0;
     sprite->data[1] = 0;
@@ -6745,7 +6784,7 @@ static void AnimTask_AllySwitchDataSwap(u8 taskId)
         if (!IsBattlerAlly(gBattleStruct->moveTarget[i], battlerAtk))
             continue;
 
-        if (GetMoveEffect(gChosenMoveByBattler[i]) == EFFECT_SNIPE_SHOT || ability == ABILITY_PROPELLER_TAIL || ability == ABILITY_STALWART)
+        if (GetMoveEffect(gChosenMoveByBattler[i]) == EFFECT_SNIPE_SHOT || ability == ABILITY_INNER_FOCUS || ability == ABILITY_OBLIVIOUS) // || ability == ABILITY_PROPELLER_TAIL || ability == ABILITY_STALWART
             gBattleStruct->moveTarget[i] ^= BIT_FLANK;
     }
 

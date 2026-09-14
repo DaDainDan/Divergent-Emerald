@@ -230,6 +230,15 @@ const struct SpriteTemplate gWaterHitSplatSpriteTemplate =
     .callback = AnimHitSplatBasic,
 };
 
+const struct SpriteTemplate gSewerHitSplatSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_WATER_IMPACT,
+    .paletteTag = ANIM_TAG_POISON_BUBBLE,
+    .oam = &gOamData_AffineNormal_ObjBlend_32x32,
+    .affineAnims = gAffineAnims_HitSplat,
+    .callback = AnimHitSplatBasic,
+};
+
 const struct SpriteTemplate gRandomPosHitSplatSpriteTemplate =
 {
     .tileTag = ANIM_TAG_IMPACT,

@@ -76,6 +76,8 @@ void AnimTask_BlendBattleAnimPalExclude(u8 taskId)
         // fall through
     case ANIM_TARGET:
         animBattlers[0] = gBattleAnimTarget;
+        if (IsDoubleBattle() && GetMoveTarget(gAnimMoveIndex) == TARGET_BOTH && IsBattlerSpriteVisible(BATTLE_PARTNER(gBattleAnimTarget)))
+            animBattlers[1] = BATTLE_PARTNER(gBattleAnimTarget);
         break;
     case ANIM_PLAYER_LEFT:
         animBattlers[0] = gBattleAnimAttacker;
