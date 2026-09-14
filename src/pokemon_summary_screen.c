@@ -790,6 +790,7 @@ static const u8 sMovesPPLayout[] = _("{PP}{DYNAMIC 0}/{DYNAMIC 1}");
 #define TAG_MOVE_TYPES 30002
 #define TAG_MON_MARKINGS 30003
 #define TAG_CATEGORY_ICONS 30004
+#define TAG_AIRBORNE 30005
 
 static const struct OamData sOamData_CategoryIcons =
 {
@@ -842,6 +843,52 @@ const struct SpriteTemplate gSpriteTemplate_CategoryIcons =
     .paletteTag = TAG_CATEGORY_ICONS,
     .oam = &sOamData_CategoryIcons,
     .anims = sSpriteAnimTable_CategoryIcons,
+};
+
+static const struct OamData sOamData_AirborneIcon =
+{
+    .size = SPRITE_SIZE(16x16),
+    .shape = SPRITE_SHAPE(16x16),
+    .priority = 0,
+};
+
+const struct CompressedSpriteSheet gSpriteSheet_AirborneIcon =
+{
+    .data = gAirborne_Gfx,
+    .size = 16*16*3/2,
+    .tag = TAG_AIRBORNE,
+};
+
+const struct SpritePalette gSpritePal_AirborneIcon =
+{
+    .data = gAirborne_Pal,
+    .tag = TAG_AIRBORNE
+};
+
+static const union AnimCmd sSpriteAnim_AirborneIcon0[] =
+{
+    ANIMCMD_FRAME(0, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_AirborneIcon1[] =
+{
+    ANIMCMD_FRAME(4, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd *const sSpriteAnimTable_AirborneIcon[] =
+{
+    sSpriteAnim_AirborneIcon0,
+    sSpriteAnim_AirborneIcon1,
+};
+
+const struct SpriteTemplate gSpriteTemplate_AirborneIcon =
+{
+    .tileTag = TAG_AIRBORNE,
+    .paletteTag = TAG_AIRBORNE,
+    .oam = &sOamData_AirborneIcon,
+    .anims = sSpriteAnimTable_AirborneIcon,
 };
 
 static const struct OamData sOamData_MoveTypes =
@@ -996,7 +1043,11 @@ static const union AnimCmd sSpriteAnim_CategoryTough[] = {
     ANIMCMD_FRAME((CONTEST_CATEGORY_TOUGH + NUMBER_OF_MON_TYPES) * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
-static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT] = {
+static const union AnimCmd sSpriteAnim_Onaji[] = {
+    ANIMCMD_FRAME((CONTEST_CATEGORIES_COUNT + NUMBER_OF_MON_TYPES) * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT + 1] = {
     [TYPE_NONE] = sSpriteAnim_TypeNone,
     [TYPE_NORMAL] = sSpriteAnim_TypeNormal,
     [TYPE_FIGHTING] = sSpriteAnim_TypeFighting,
@@ -1031,12 +1082,13 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_CUTE] = sSpriteAnim_CategoryCute,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_SMART] = sSpriteAnim_CategorySmart,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_TOUGH] = sSpriteAnim_CategoryTough,
+    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT] = sSpriteAnim_Onaji,
 };
 
 const struct CompressedSpriteSheet gSpriteSheet_MoveTypes =
 {
     .data = gMoveTypes_Gfx,
-    .size = (NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT) * 0x100,
+    .size = (NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT + 1) * 0x100,
     .tag = TAG_MOVE_TYPES
 };
 const struct SpriteTemplate gSpriteTemplate_MoveTypes =
@@ -1182,6 +1234,10 @@ static const union AnimCmd sSpriteAnim_StatusFrostbite[] = {
     ANIMCMD_FRAME(28, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+static const union AnimCmd sSpriteAnim_StatusCurse[] = {
+    ANIMCMD_FRAME(32, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
 static const union AnimCmd *const sSpriteAnimTable_StatusCondition[] = {
     sSpriteAnim_StatusPoison,
     sSpriteAnim_StatusParalyzed,
@@ -1191,11 +1247,12 @@ static const union AnimCmd *const sSpriteAnimTable_StatusCondition[] = {
     sSpriteAnim_StatusPokerus,
     sSpriteAnim_StatusFaint,
     sSpriteAnim_StatusFrostbite,
+    sSpriteAnim_StatusCurse,
 };
 static const struct CompressedSpriteSheet sStatusIconsSpriteSheet =
 {
     .data = gStatusGfx_Icons,
-    .size = 0x400,
+    .size = 0x480,
     .tag = TAG_MON_STATUS
 };
 static const struct SpritePalette sStatusIconsSpritePalette =
@@ -4405,6 +4462,8 @@ void SetTypeSpritePosAndPal(enum Type typeId, u8 x, u8 y, u8 spriteArrayId)
     StartSpriteAnim(sprite, typeId);
     if (typeId < NUMBER_OF_MON_TYPES)
         sprite->oam.paletteNum = gTypesInfo[typeId].palette;
+    else if (typeId == 34)
+        sprite->oam.paletteNum = 13;
     else
         sprite->oam.paletteNum = gContestCategoryInfo[typeId - NUMBER_OF_MON_TYPES].palette;
     sprite->x = x + 16;
@@ -4430,7 +4489,9 @@ static void SetMonTypeIcons(void)
         }
         else
         {
-            SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, TRUE);
+            SetTypeSpritePosAndPal(34, 160, 48, SPRITE_ARR_ID_TYPE + 1);
+            SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, FALSE);
+            // SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, TRUE);
         }
         if (P_SHOW_TERA_TYPE >= GEN_9)
         {

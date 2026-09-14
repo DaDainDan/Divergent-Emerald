@@ -4577,12 +4577,12 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ApricornTree = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_PINK,
+    .paletteTag = IS_FRLG ? OBJ_EVENT_PAL_TAG_NPC_PINK : OBJ_EVENT_PAL_TAG_NPC_1,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
     .height = 32,
-    .paletteSlot = PALSLOT_NPC_2,
+    .paletteSlot = PALSLOT_NPC_1,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .compressed = FALSE,
@@ -4591,7 +4591,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker = {
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_Biker,
-    .affineAnims = gDummySpriteAffineAnimTable,
 };
 
 #if IS_FRLG

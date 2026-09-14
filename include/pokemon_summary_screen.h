@@ -12,6 +12,9 @@ extern const struct CompressedSpriteSheet gSpriteSheet_MoveTypes;
 extern const struct CompressedSpriteSheet gSpriteSheet_CategoryIcons;
 extern const struct SpritePalette gSpritePal_CategoryIcons;
 extern const struct SpriteTemplate gSpriteTemplate_CategoryIcons;
+extern const struct CompressedSpriteSheet gSpriteSheet_AirborneIcon;
+extern const struct SpritePalette gSpritePal_AirborneIcon;
+extern const struct SpriteTemplate gSpriteTemplate_AirborneIcon;
 extern MainCallback gInitialSummaryScreenCallback;
 
 enum IncrDecrUpdateValues

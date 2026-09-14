@@ -402,6 +402,7 @@ struct PokedexView
     u16 ownCount;
     u16 monSpriteIds[MAX_MONS_ON_SCREEN];
     u8 typeIconSpriteIds[2];
+    u8 airborneIconSpriteId;
     u16 moveSelected;
     u16 movesTotal;
     u8 statBarsSpriteId;
@@ -548,6 +549,7 @@ static void SetSpriteInvisibility(u8 spriteArrayId, bool8 invisible);
 static void CreateTypeIconSprites(void);
 static void SetSearchRectHighlight(u8 flags, u8 x, u8 y, u8 width);
 static void PrintInfoSubMenuText(u8 windowId, const u8 *str, u8 left, u8 top);
+static void CreateAirborneSprite(void);
 
 //Stats screen HGSS_Ui
 
@@ -3782,7 +3784,9 @@ static void Task_LoadInfoScreen(u8 taskId)
     case 3:
         sPokedexView->typeIconSpriteIds[0] = 0xFF;
         sPokedexView->typeIconSpriteIds[1] = 0xFF;
+        sPokedexView->airborneIconSpriteId = 0xFF;
         CreateTypeIconSprites();
+        CreateAirborneSprite();
         gMain.state++;
         break;
     case 4:
@@ -4136,7 +4140,9 @@ void Task_DisplayCaughtMonDexPageHGSS(u8 taskId)
     case 2:
         sPokedexView->typeIconSpriteIds[0] = 0xFF;
         sPokedexView->typeIconSpriteIds[1] = 0xFF;
+        sPokedexView->airborneIconSpriteId = 0xFF;
         CreateTypeIconSprites();
+        CreateAirborneSprite();
         gTasks[taskId].tState++;
         break;
     case 3:
@@ -4349,15 +4355,31 @@ static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
     StartSpriteAnim(sprite, typeId);
     if (typeId < NUMBER_OF_MON_TYPES)
         sprite->oam.paletteNum = gTypesInfo[typeId].palette + TYPE_INFO_PALETTE_NUM_OFFSET;
+    else if (typeId == 34)
+        sprite->oam.paletteNum = 13 + TYPE_INFO_PALETTE_NUM_OFFSET;
     else
         sprite->oam.paletteNum = gContestCategoryInfo[typeId - NUMBER_OF_MON_TYPES].palette  + TYPE_INFO_PALETTE_NUM_OFFSET;
+
     sprite->x = x + 16;
     sprite->y = y + 8;
     SetSpriteInvisibility(spriteArrayId, FALSE);
 }
+static void SetAirboneIcon(u8 x, u8 y)
+{
+    struct Sprite *sprite;
+
+    sprite = &gSprites[sPokedexView->airborneIconSpriteId];
+    StartSpriteAnim(sprite, 0);
+    // sprite->oam.paletteNum = 
+
+    sprite->x = x + 16;
+    sprite->y = y + 8;
+    gSprites[sPokedexView->airborneIconSpriteId].invisible = FALSE;
+}
 static void PrintCurrentSpeciesTypeInfo(u8 newEntry, enum Species species)
 {
     enum Type type1, type2;
+    bool8 airborne;
 
     if (!newEntry)
     {
@@ -4370,6 +4392,7 @@ static void PrintCurrentSpeciesTypeInfo(u8 newEntry, enum Species species)
     #else
         type1 = GetSpeciesType(species, 0);
         type2 = GetSpeciesType(species, 1);
+        airborne = IsSpeciesAirborne(species);
     #endif
     if (species == SPECIES_NONE)
         type1 = type2 = TYPE_MYSTERY;
@@ -4377,7 +4400,8 @@ static void PrintCurrentSpeciesTypeInfo(u8 newEntry, enum Species species)
     if (type1 == type2)
     {
         SetTypeIconPosAndPal(type1, 147, 48, 0);
-        SetSpriteInvisibility(1, TRUE);
+        SetTypeIconPosAndPal(34, 147 + 33, 48, 1);
+        // SetSpriteInvisibility(1, TRUE);
     }
     else
     {
@@ -4385,7 +4409,20 @@ static void PrintCurrentSpeciesTypeInfo(u8 newEntry, enum Species species)
         SetTypeIconPosAndPal(type2, 147 + 33, 48, 1);
     }
 
+    if (airborne)
+        SetAirboneIcon(147 + 60, 48);
 }
+
+static void CreateAirborneSprite(void)
+{
+    LoadCompressedSpriteSheet(&gSpriteSheet_AirborneIcon);
+    LoadSpritePalette(&gSpritePal_AirborneIcon);
+    if (sPokedexView->airborneIconSpriteId == 0xFF)
+        sPokedexView->airborneIconSpriteId = CreateSprite(&gSpriteTemplate_AirborneIcon, 20, 10, 2);
+
+    gSprites[sPokedexView->airborneIconSpriteId].invisible = TRUE;
+}
+
 static void CreateTypeIconSprites(void)
 {
     u8 i;
@@ -4859,7 +4896,9 @@ static void Task_LoadStatsScreen(u8 taskId)
     case 3:
         sPokedexView->typeIconSpriteIds[0] = 0xFF;
         sPokedexView->typeIconSpriteIds[1] = 0xFF;
+        sPokedexView->airborneIconSpriteId = 0xFF;
         CreateTypeIconSprites();
+        CreateAirborneSprite();
         sPokedexView->categoryIconSpriteId = 0xFF;
         LoadCompressedSpriteSheet(&gSpriteSheet_CategoryIcons);
         LoadSpritePalette(&gSpritePal_CategoryIcons);

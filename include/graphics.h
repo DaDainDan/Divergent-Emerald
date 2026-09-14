@@ -849,6 +849,10 @@ extern const u32 gItemIcon_RedOrb[];
 extern const u16 gItemIconPalette_RedOrb[];
 extern const u32 gItemIcon_BlueOrb[];
 extern const u16 gItemIconPalette_BlueOrb[];
+extern const u32 gItemIcon_JadeOrb[];
+extern const u16 gItemIconPalette_JadeOrb[];
+extern const u16 gItemIconPalette_BlueOrbHGSS[];
+extern const u16 gItemIconPalette_RedOrbHGSS[];
 // Mega Stones
 extern const u32 gItemIcon_Venusaurite[];
 extern const u16 gItemIconPalette_Venusaurite[];
@@ -1129,6 +1133,7 @@ extern const u16 gItemIconPalette_UltranecroziumZ[];
 // Species-specific Held Items
 extern const u32 gItemIcon_LightBall[];
 extern const u16 gItemIconPalette_LightBall[];
+extern const u16 gItemIconPalette_FrozenOrb[];
 extern const u32 gItemIcon_Leek[];
 extern const u16 gItemIconPalette_Leek[];
 extern const u32 gItemIcon_Bone[];
@@ -1167,6 +1172,7 @@ extern const u32 gItemIcon_RoseIncense[];
 extern const u16 gItemIconPalette_RoseIncense[];
 extern const u32 gItemIcon_LuckIncense[];
 extern const u16 gItemIconPalette_LuckIncense[];
+extern const u16 gItemIconPalette_RottenIncense[];
 extern const u32 gItemIcon_PureIncense[];
 extern const u16 gItemIconPalette_PureIncense[];
 // Contest Scarves
@@ -1235,6 +1241,7 @@ extern const u16 gItemIconPalette_ChoiceScarf[];
 // Status Orbs
 extern const u32 gItemIcon_FlameOrb[];
 extern const u16 gItemIconPalette_FlameOrb[];
+extern const u16 gItemIconPalette_CursedOrb[];
 extern const u32 gItemIcon_ToxicOrb[];
 extern const u16 gItemIconPalette_ToxicOrb[];
 // Weather Rocks
@@ -1350,6 +1357,8 @@ extern const u32 gItemIcon_WeaknessPolicy[];
 extern const u16 gItemIconPalette_WeaknessPolicy[];
 extern const u32 gItemIcon_AssaultVest[];
 extern const u16 gItemIconPalette_AssaultVest[];
+extern const u16 gItemIconPalette_SupportVest[];
+extern const u16 gItemIconPalette_LuckyVest[];
 extern const u32 gItemIcon_SafetyGoggles[];
 extern const u16 gItemIconPalette_SafetyGoggles[];
 extern const u32 gItemIcon_AdrenalineOrb[];
@@ -1366,10 +1375,14 @@ extern const u32 gItemIcon_HeavyDutyBoots[];
 extern const u16 gItemIconPalette_HeavyDutyBoots[];
 extern const u32 gItemIcon_BlunderPolicy[];
 extern const u16 gItemIconPalette_BlunderPolicy[];
+extern const u16 gItemIconPalette_HaplessPolicy[];
 extern const u32 gItemIcon_RoomService[];
 extern const u16 gItemIconPalette_RoomService[];
 extern const u32 gItemIcon_UtilityUmbrella[];
 extern const u16 gItemIconPalette_UtilityUmbrella[];
+extern const u32 gItemIcon_FineLens[];
+extern const u16 gItemIconPalette_FineLens[];
+
 // Berries
 extern const u32 gItemIcon_CheriBerry[];
 extern const u16 gItemIconPalette_CheriBerry[];
@@ -1532,6 +1545,7 @@ extern const u32 gItemIcon_OvalCharm[];
 extern const u16 gItemIconPalette_OvalCharm[];
 extern const u32 gItemIcon_ShinyCharm[];
 extern const u16 gItemIconPalette_ShinyCharm[];
+extern const u16 gItemIconPalette_CalamityCharm[];
 extern const u32 gItemIcon_CatchingCharm[];
 extern const u16 gItemIconPalette_CatchingCharm[];
 extern const u32 gItemIcon_ExpCharm[];
@@ -2022,6 +2036,8 @@ extern const u32 gStatusGfx_Icons[];
 extern const u16 gStatusPal_Icons[];
 extern const u16 gCategoryIcons_Pal[];
 extern const u32 gCategoryIcons_Gfx[];
+extern const u32 gAirborne_Gfx[];
+extern const u16 gAirborne_Pal[];
 
 extern const u32 gShopMenu_Gfx[];
 extern const u32 gShopMenu_Tilemap[];
