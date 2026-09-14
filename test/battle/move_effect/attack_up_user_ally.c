@@ -23,7 +23,7 @@ SINGLE_BATTLE_TEST("Howl raises user's Attack by 1 stage", s16 damage)
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.5), results[1].damage);
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.33), results[1].damage);
     }
 }
 
@@ -56,8 +56,8 @@ DOUBLE_BATTLE_TEST("Howl raises user's and partner's Attack by 1 stage", s16 dam
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, playerRight);
         HP_BAR(opponentRight, captureDamage: &results[i].damageRight);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damageLeft, Q_4_12(1.5), results[1].damageLeft);
-        EXPECT_MUL_EQ(results[0].damageRight, Q_4_12(1.5), results[1].damageRight);
+        EXPECT_MUL_EQ(results[0].damageLeft, Q_4_12(1.33), results[1].damageLeft);
+        EXPECT_MUL_EQ(results[0].damageRight, Q_4_12(1.33), results[1].damageRight);
     }
 }
 

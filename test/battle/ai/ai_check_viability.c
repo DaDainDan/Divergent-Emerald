@@ -427,7 +427,7 @@ AI_SINGLE_BATTLE_TEST("AI uses Simple Beam against Contrary Leaf Storm")
 
 AI_SINGLE_BATTLE_TEST("AI uses Skill Swap against Poison Heal")
 {
-    u8 status;
+    u32 status;
     u64 aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT;
     PARAMETRIZE { status = STATUS1_POISON; }
     PARAMETRIZE { status = STATUS1_POISON; aiFlags |= AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_PP_STALL_PREVENTION; }

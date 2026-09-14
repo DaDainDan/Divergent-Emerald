@@ -163,7 +163,7 @@ SINGLE_BATTLE_TEST("Aerilate doesn't affect Hidden Power's type")
         ASSUME(GetMoveEffect(MOVE_HIDDEN_POWER) == EFFECT_HIDDEN_POWER);
         ASSUME(gTypesInfo[TYPE_ELECTRIC].isHiddenPowerType == TRUE);
         ASSUME(GetSpeciesType(SPECIES_DIGLETT, 0) == TYPE_GROUND);
-        PLAYER(SPECIES_PINSIR) { Item(ITEM_PINSIRITE); HPIV(31); AttackIV(31); DefenseIV(31); SpAttackIV(30); SpDefenseIV(31); SpeedIV(31); } // HP Electric
+        PLAYER(SPECIES_PINSIR) { Item(ITEM_PINSIRITE); HPIV(15); AttackIV(15); DefenseIV(15); SpAttackIV(14); SpDefenseIV(15); SpeedIV(15); } // HP Electric
         OPPONENT(SPECIES_DIGLETT);
     } WHEN {
         TURN { MOVE(player, MOVE_HIDDEN_POWER, gimmick: GIMMICK_MEGA); }

@@ -336,9 +336,9 @@ SINGLE_BATTLE_TEST("(Z-MOVE) Z-Hidden Power always transforms into Breakneck Bli
 {
     u8 iv;
     PARAMETRIZE { iv = 0; } // test different Hidden Power types
+    PARAMETRIZE { iv = 5; }
     PARAMETRIZE { iv = 10; }
-    PARAMETRIZE { iv = 21; }
-    PARAMETRIZE { iv = 31; }
+    PARAMETRIZE { iv = 15; }
     GIVEN {
         ASSUME(GetMoveType(MOVE_HIDDEN_POWER) == TYPE_NORMAL);
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_NORMALIUM_Z); AttackIV(iv); }

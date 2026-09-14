@@ -10,8 +10,7 @@ SINGLE_BATTLE_TEST("Prism Armor reduces damage to Super Effective moves by 0.75"
         ASSUME(gSpeciesInfo[SPECIES_NECROZMA].types[0] == TYPE_PSYCHIC);
         ASSUME(gSpeciesInfo[SPECIES_NECROZMA].types[1] == TYPE_PSYCHIC);
         ASSUME(GetMoveType(MOVE_DARK_PULSE) == TYPE_DARK);
-        ASSUME(gTypeEffectivenessTable[TYPE_POISON][TYPE_FAIRY] > UQ_4_12(1.0));
-        ASSUME(gTypeEffectivenessTable[TYPE_POISON][TYPE_PSYCHIC] == UQ_4_12(1.0));
+        ASSUME(gTypeEffectivenessTable[TYPE_DARK][TYPE_PSYCHIC] > UQ_4_12(1.0));
         PLAYER(SPECIES_NECROZMA);
         OPPONENT(SPECIES_WEEZING) { Ability(ability); }
     } WHEN {

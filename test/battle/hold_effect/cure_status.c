@@ -200,7 +200,7 @@ SINGLE_BATTLE_TEST("Perism and Lum Berries cure confusion")
 
 SINGLE_BATTLE_TEST("Berry hold effect cures status if a Pokémon enters a battle")
 {
-    u16 status;
+    u32 status;
     enum Item item;
 
     PARAMETRIZE { status = STATUS1_BURN; item = ITEM_RAWST_BERRY; }

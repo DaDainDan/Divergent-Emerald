@@ -195,7 +195,7 @@ TEST("canhypertrain/hypertrain affect MON_DATA_HYPER_TRAINED_* and recalculate s
         canhypertrain STAT_ATK, 0;
     );
     EXPECT(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_HYPER_TRAINED_ATK));
-    EXPECT_EQ(atk + 31, GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_ATK));
+    EXPECT_EQ(atk + 15, GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_ATK));
     EXPECT(!VarGet(VAR_RESULT));
 }
 
@@ -256,12 +256,12 @@ TEST("givemon respects perfectIVCount")
     ZeroPlayerPartyMons();
     u32 perfectIVs[6] = {0};
 
-    ASSUME(gSpeciesInfo[SPECIES_MEW].perfectIVCount == 3);
-    ASSUME(gSpeciesInfo[SPECIES_CELEBI].perfectIVCount == 3);
-    ASSUME(gSpeciesInfo[SPECIES_JIRACHI].perfectIVCount == 3);
-    ASSUME(gSpeciesInfo[SPECIES_MANAPHY].perfectIVCount == 3);
-    ASSUME(gSpeciesInfo[SPECIES_VICTINI].perfectIVCount == 3);
-    ASSUME(gSpeciesInfo[SPECIES_DIANCIE].perfectIVCount == 3);
+    ASSUME(gSpeciesInfo[SPECIES_MEW].perfectIVCount == NUM_STATS);
+    ASSUME(gSpeciesInfo[SPECIES_CELEBI].perfectIVCount == NUM_STATS);
+    ASSUME(gSpeciesInfo[SPECIES_JIRACHI].perfectIVCount == NUM_STATS);
+    ASSUME(gSpeciesInfo[SPECIES_MANAPHY].perfectIVCount == NUM_STATS);
+    ASSUME(gSpeciesInfo[SPECIES_VICTINI].perfectIVCount == NUM_STATS);
+    ASSUME(gSpeciesInfo[SPECIES_DIANCIE].perfectIVCount == NUM_STATS);
 
     RUN_OVERWORLD_SCRIPT(
         givemon SPECIES_MEW, 100;
@@ -291,7 +291,7 @@ TEST("givemon respects perfectIVCount")
             if (GetMonData(&gParties[B_TRAINER_PLAYER][j], MON_DATA_HP_IV + k) == MAX_PER_STAT_IVS)
                 perfectIVs[j]++;
         }
-        EXPECT_GE(perfectIVs[j], 3);
+        EXPECT_GE(perfectIVs[j], NUM_STATS);
     }
 }
 
@@ -299,7 +299,7 @@ TEST("givemon respects perfectIVCount but does overwrite fixed IVs (1)")
 {
     ZeroPlayerPartyMons();
 
-    ASSUME(gSpeciesInfo[SPECIES_MEW].perfectIVCount == 3);
+    ASSUME(gSpeciesInfo[SPECIES_MEW].perfectIVCount == NUM_STATS);
     RUN_OVERWORLD_SCRIPT(
         givemon SPECIES_MEW, 100, hpIv=7, atkIv=8, defIv=9, speedIv=10, spAtkIv=11, spDefIv=12
     );
@@ -316,7 +316,7 @@ TEST("givemon respects perfectIVCount but does overwrite fixed IVs (2)")
 {
     ZeroPlayerPartyMons();
 
-    ASSUME(gSpeciesInfo[SPECIES_MEW].perfectIVCount == 3);
+    ASSUME(gSpeciesInfo[SPECIES_MEW].perfectIVCount == NUM_STATS);
     RUN_OVERWORLD_SCRIPT(
         givemon SPECIES_MEW, 100, hpIv=7, atkIv=8, defIv=9
     );
@@ -572,8 +572,8 @@ TEST("CalculateMonStats")
     );
 
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MAX_HP), 497);
-    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_ATK), 71);
-    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_DEF), 143);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_ATK), 82);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_DEF), 136);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SPEED), 82);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SPATK), 83);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SPDEF), 134);

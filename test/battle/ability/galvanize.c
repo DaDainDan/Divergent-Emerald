@@ -90,8 +90,8 @@ SINGLE_BATTLE_TEST("Galvanize doesn't affect Weather Ball's type", s16 damage)
         if (move == MOVE_SUNNY_DAY)
             MESSAGE("It's super effective!");
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(6.0), results[1].damage); // double base power + type effectiveness + sun 50% boost
-        EXPECT_MUL_EQ(results[2].damage, Q_4_12(6.0), results[3].damage);
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(4.8), results[1].damage); // double base power + type effectiveness + sun 50% boost
+        EXPECT_MUL_EQ(results[2].damage, Q_4_12(4.8), results[3].damage);
         EXPECT_EQ(results[0].damage, results[2].damage);
         EXPECT_EQ(results[1].damage, results[3].damage);
     }
@@ -104,15 +104,15 @@ SINGLE_BATTLE_TEST("Galvanize doesn't affect Natural Gift's type")
     PARAMETRIZE { ability = ABILITY_GALVANIZE; }
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_NATURAL_GIFT) == EFFECT_NATURAL_GIFT);
-        ASSUME(gBerries[ItemIdToBerryType(ITEM_ORAN_BERRY)].naturalGiftType == TYPE_POISON);
-        ASSUME(GetSpeciesType(SPECIES_BELDUM, 0) == TYPE_STEEL);
-        PLAYER(SPECIES_GEODUDE_ALOLA) { Ability(ability); Item(ITEM_ORAN_BERRY); }
-        OPPONENT(SPECIES_BELDUM);
+        ASSUME(gBerries[ItemIdToBerryType(ITEM_KASIB_BERRY)].naturalGiftType == TYPE_GHOST);
+        ASSUME(GetSpeciesType(SPECIES_CLEFABLE, 0) == TYPE_FAIRY);
+        PLAYER(SPECIES_GEODUDE_ALOLA) { Ability(ability); Item(ITEM_KASIB_BERRY); }
+        OPPONENT(SPECIES_CLEFABLE);
     } WHEN {
         TURN { MOVE(player, MOVE_NATURAL_GIFT); }
     } SCENE {
         NOT { ANIMATION(ANIM_TYPE_MOVE, MOVE_NATURAL_GIFT, player); }
-        MESSAGE("It doesn't affect the opposing Beldum…");
+        MESSAGE("It doesn't affect the opposing Clefable…");
     }
 }
 
@@ -153,9 +153,9 @@ SINGLE_BATTLE_TEST("Galvanize doesn't affect Hidden Power's type")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_HIDDEN_POWER) == EFFECT_HIDDEN_POWER);
-        ASSUME(gTypesInfo[TYPE_ELECTRIC].isHiddenPowerType == TRUE);
-        ASSUME(GetSpeciesType(SPECIES_DIGLETT, 0) == TYPE_GROUND);
-        PLAYER(SPECIES_GEODUDE_ALOLA) { Ability(ABILITY_GALVANIZE); HPIV(31); AttackIV(31); DefenseIV(31); SpAttackIV(30); SpDefenseIV(31); SpeedIV(30); } // HP Water
+        ASSUME(gTypesInfo[TYPE_WATER].isHiddenPowerType == TRUE);
+        ASSUME(GetSpeciesType(SPECIES_VAPOREON, 0) == TYPE_WATER);
+        PLAYER(SPECIES_GEODUDE_ALOLA) { Ability(ABILITY_GALVANIZE); HPIV(14); AttackIV(14); DefenseIV(15); SpAttackIV(15); SpDefenseIV(14); SpeedIV(15); } // HP Water
         OPPONENT(SPECIES_VAPOREON) { Ability(ABILITY_WATER_ABSORB); }
     } WHEN {
         TURN { MOVE(player, MOVE_HIDDEN_POWER); }
@@ -170,9 +170,9 @@ SINGLE_BATTLE_TEST("Galvanize changes Tera Blast's type when not Terastallized")
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TERA_BLAST) == EFFECT_TERA_BLAST);
         ASSUME(GetMoveType(MOVE_TERA_BLAST) == TYPE_NORMAL);
-        ASSUME(GetSpeciesType(SPECIES_ROOKIDEE, 0) == TYPE_FLYING || GetSpeciesType(SPECIES_ROOKIDEE, 1) == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_GOLDUCK, 0) == TYPE_WATER || GetSpeciesType(SPECIES_GOLDUCK, 1) == TYPE_WATER);
         PLAYER(SPECIES_GEODUDE_ALOLA) { Ability(ABILITY_GALVANIZE); }
-        OPPONENT(SPECIES_ROOKIDEE);
+        OPPONENT(SPECIES_GOLDUCK);
     } WHEN {
         TURN { MOVE(player, MOVE_TERA_BLAST); }
     } SCENE {

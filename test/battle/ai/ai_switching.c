@@ -2005,48 +2005,48 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't send out defensive mon 
             Item(ITEM_MYSTIC_WATER);
             Ability(ABILITY_GLUTTONY);
             Nature(NATURE_MODEST);
-            HPIV(31);
-            AttackIV(31);
-            DefenseIV(31);
-            SpAttackIV(31);
-            SpDefenseIV(31);
-            SpeedIV(31); }
+            HPIV(15);
+            AttackIV(15);
+            DefenseIV(15);
+            SpAttackIV(15);
+            SpDefenseIV(15);
+            SpeedIV(15); }
         OPPONENT(SPECIES_RHYHORN) {
             Level(14);
             Moves(MOVE_ROCK_TOMB, MOVE_HORN_ATTACK, MOVE_BULLDOZE, MOVE_ROCK_SMASH);
             Item(ITEM_RINDO_BERRY);
             Ability(ABILITY_LIGHTNING_ROD);
             Nature(NATURE_ADAMANT);
-            HPIV(31);
-            AttackIV(31);
-            DefenseIV(31);
-            SpAttackIV(31);
-            SpDefenseIV(31);
-            SpeedIV(31); }
+            HPIV(15);
+            AttackIV(15);
+            DefenseIV(15);
+            SpAttackIV(15);
+            SpDefenseIV(15);
+            SpeedIV(15); }
         OPPONENT(SPECIES_GLIGAR) {
             Level(15);
             Moves(MOVE_WING_ATTACK, MOVE_QUICK_ATTACK, MOVE_BULLDOZE);
             Item(ITEM_ORAN_BERRY);
             Ability(ABILITY_SAND_VEIL);
             Nature(NATURE_ADAMANT);
-            HPIV(31);
-            AttackIV(31);
-            DefenseIV(31);
-            SpAttackIV(31);
-            SpDefenseIV(31);
-            SpeedIV(31); }
+            HPIV(15);
+            AttackIV(15);
+            DefenseIV(15);
+            SpAttackIV(15);
+            SpDefenseIV(15);
+            SpeedIV(15); }
         OPPONENT(SPECIES_WOOPER_PALDEA) {
             Level(15);
             Moves(MOVE_MUD_SHOT, MOVE_ACID_SPRAY, MOVE_YAWN, MOVE_SANDSTORM);
             Item(ITEM_ORAN_BERRY);
             Ability(ABILITY_WATER_ABSORB);
             Nature(NATURE_MODEST);
-            HPIV(31);
-            AttackIV(31);
-            DefenseIV(31);
-            SpAttackIV(31);
-            SpDefenseIV(31);
-            SpeedIV(31); }
+            HPIV(15);
+            AttackIV(15);
+            DefenseIV(15);
+            SpAttackIV(15);
+            SpDefenseIV(15);
+            SpeedIV(15); }
     } WHEN {
         TURN { MOVE(player, MOVE_WATER_PULSE); EXPECT_MOVE(opponent, MOVE_BULLDOZE); EXPECT_SEND_OUT(opponent, 1); }
         TURN { MOVE(player, MOVE_WATER_PULSE); EXPECT_MOVE(opponent, MOVE_BULLDOZE); }
@@ -2206,7 +2206,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will consider Hidden Power wh
     GIVEN {
         WITH_CONFIG(B_REDIRECT_ABILITY_IMMUNITY, GEN_5);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING);
-        PLAYER(SPECIES_ZIGZAGOON) { Moves(MOVE_HIDDEN_POWER); HPIV(31); AttackIV(30); DefenseIV(31); SpAttackIV(30); SpDefenseIV(31); SpeedIV(30); }
+        PLAYER(SPECIES_ZIGZAGOON) { Moves(MOVE_HIDDEN_POWER); HPIV(15); AttackIV(14); DefenseIV(15); SpAttackIV(14); SpDefenseIV(15); SpeedIV(14); }
         OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_SCRATCH); }
         OPPONENT(SPECIES_NINETALES) { Moves(MOVE_SCRATCH); Ability(ABILITY_FLASH_FIRE); }
     } WHEN {

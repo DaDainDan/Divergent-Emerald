@@ -81,15 +81,15 @@ SINGLE_BATTLE_TEST("Dragonize doesn't affect Natural Gift's type")
     PARAMETRIZE { ability = ABILITY_DRAGONIZE; }
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_NATURAL_GIFT) == EFFECT_NATURAL_GIFT);
-        ASSUME(gBerries[ItemIdToBerryType(ITEM_ORAN_BERRY)].naturalGiftType == TYPE_POISON);
-        ASSUME(GetSpeciesType(SPECIES_BELDUM, 0) == TYPE_STEEL);
-        PLAYER(SPECIES_FERALIGATR_MEGA) { Ability(ability); Item(ITEM_ORAN_BERRY); }
-        OPPONENT(SPECIES_BELDUM);
+        ASSUME(gBerries[ItemIdToBerryType(ITEM_KASIB_BERRY)].naturalGiftType == TYPE_GHOST);
+        ASSUME(GetSpeciesType(SPECIES_CLEFABLE, 0) == TYPE_FAIRY);
+        PLAYER(SPECIES_FERALIGATR_MEGA) { Ability(ability); Item(ITEM_KASIB_BERRY); }
+        OPPONENT(SPECIES_CLEFABLE);
     } WHEN {
         TURN { MOVE(player, MOVE_NATURAL_GIFT); }
     } SCENE {
         NOT { ANIMATION(ANIM_TYPE_MOVE, MOVE_NATURAL_GIFT, player); }
-        MESSAGE("It doesn't affect the opposing Beldum…");
+        MESSAGE("It doesn't affect the opposing Clefable…");
     }
 }
 
@@ -127,7 +127,7 @@ SINGLE_BATTLE_TEST("Dragonize doesn't affect Hidden Power's type")
         ASSUME(GetMoveEffect(MOVE_HIDDEN_POWER) == EFFECT_HIDDEN_POWER);
         ASSUME(gTypesInfo[TYPE_ELECTRIC].isHiddenPowerType == TRUE);
         ASSUME(GetSpeciesType(SPECIES_DIGLETT, 0) == TYPE_GROUND);
-        PLAYER(SPECIES_FERALIGATR_MEGA) { Ability(ABILITY_DRAGONIZE); HPIV(31); AttackIV(31); DefenseIV(31); SpAttackIV(30); SpDefenseIV(31); SpeedIV(31); } // HP Electric
+        PLAYER(SPECIES_FERALIGATR_MEGA) { Ability(ABILITY_DRAGONIZE); HPIV(15); AttackIV(15); DefenseIV(15); SpAttackIV(14); SpDefenseIV(15); SpeedIV(15); } // HP Electric
         OPPONENT(SPECIES_DIGLETT);
     } WHEN {
         TURN { MOVE(player, MOVE_HIDDEN_POWER); }

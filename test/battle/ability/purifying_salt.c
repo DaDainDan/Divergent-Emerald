@@ -54,7 +54,7 @@ SINGLE_BATTLE_TEST("Purifying Salt makes Rest fail")
 SINGLE_BATTLE_TEST("Purifying Salt grants immunity to status effects")
 {
     enum Move move;
-    u16 status;
+    u32 status;
     PARAMETRIZE { move = MOVE_WILL_O_WISP; status = STATUS1_BURN; }
     PARAMETRIZE { move = MOVE_HYPNOSIS; status = STATUS1_SLEEP; }
     PARAMETRIZE { move = MOVE_THUNDER_WAVE; status = STATUS1_PARALYSIS; }

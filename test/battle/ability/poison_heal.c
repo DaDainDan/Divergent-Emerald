@@ -3,7 +3,7 @@
 
 SINGLE_BATTLE_TEST("Poison Heal heals from (Toxic) Poison damage")
 {
-    u8 status;
+    u32 status;
     PARAMETRIZE { status = STATUS1_POISON; }
     PARAMETRIZE { status = STATUS1_TOXIC_POISON; }
 

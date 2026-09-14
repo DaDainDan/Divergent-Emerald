@@ -68,9 +68,9 @@ SINGLE_BATTLE_TEST("Refrigerate doesn't affect Weather Ball's type", s16 damage)
         if (move == MOVE_SUNNY_DAY)
             MESSAGE("It's super effective!");
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(2.0), results[1].damage); // double base power + type effectiveness + sun 50% boost vs hail no type effectiveness
-        EXPECT_MUL_EQ(results[2].damage, Q_4_12(6.0), results[3].damage); // double base power + type effectiveness + sun 50% boost
-        EXPECT_MUL_EQ(results[2].damage, Q_4_12(3.0), results[0].damage); // type effectiveness + sun 50% boost, both have double base power
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.6), results[1].damage); // double base power + type effectiveness + sun 50% boost vs hail no type effectiveness
+        EXPECT_MUL_EQ(results[2].damage, Q_4_12(4.8), results[3].damage); // double base power + type effectiveness + sun 50% boost
+        EXPECT_MUL_EQ(results[2].damage, Q_4_12(2.4), results[0].damage); // type effectiveness + sun 50% boost, both have double base power
         EXPECT_EQ(results[1].damage, results[3].damage);
     }
 }
@@ -82,15 +82,15 @@ SINGLE_BATTLE_TEST("Refrigerate doesn't affect Natural Gift's type")
     PARAMETRIZE { ability = ABILITY_REFRIGERATE; }
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_NATURAL_GIFT) == EFFECT_NATURAL_GIFT);
-        ASSUME(gBerries[ItemIdToBerryType(ITEM_ORAN_BERRY)].naturalGiftType == TYPE_POISON);
-        ASSUME(GetSpeciesType(SPECIES_BELDUM, 0) == TYPE_STEEL);
-        PLAYER(SPECIES_AMAURA) { Ability(ability); Item(ITEM_ORAN_BERRY); }
-        OPPONENT(SPECIES_BELDUM);
+        ASSUME(gBerries[ItemIdToBerryType(ITEM_KASIB_BERRY)].naturalGiftType == TYPE_GHOST);
+        ASSUME(GetSpeciesType(SPECIES_CLEFABLE, 0) == TYPE_FAIRY);
+        PLAYER(SPECIES_AMAURA) { Ability(ability); Item(ITEM_KASIB_BERRY); }
+        OPPONENT(SPECIES_CLEFABLE);
     } WHEN {
         TURN { MOVE(player, MOVE_NATURAL_GIFT); }
     } SCENE {
         NOT { ANIMATION(ANIM_TYPE_MOVE, MOVE_NATURAL_GIFT, player); }
-        MESSAGE("It doesn't affect the opposing Beldum…");
+        MESSAGE("It doesn't affect the opposing Clefable…");
     }
 }
 
@@ -111,14 +111,13 @@ SINGLE_BATTLE_TEST("Refrigerate doesn't affect Judgment / Techno Blast / Multi-A
         ASSUME(gItemsInfo[ITEM_SHOCK_DRIVE].secondaryId == TYPE_ELECTRIC);
         ASSUME(gItemsInfo[ITEM_ELECTRIC_MEMORY].holdEffect == HOLD_EFFECT_MEMORY);
         ASSUME(gItemsInfo[ITEM_ELECTRIC_MEMORY].secondaryId == TYPE_ELECTRIC);
-        ASSUME(GetSpeciesType(SPECIES_DIGLETT, 0) == TYPE_GROUND);
         PLAYER(SPECIES_AMAURA) { Ability(ABILITY_REFRIGERATE); Item(item); }
-        OPPONENT(SPECIES_DIGLETT);
+        OPPONENT(SPECIES_RAICHU) { Ability(ABILITY_LIGHTNING_ROD); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
         NOT { ANIMATION(ANIM_TYPE_MOVE, move, player); }
-        MESSAGE("It doesn't affect the opposing Diglett…");
+        MESSAGE("It doesn't affect the opposing Jolteon…");
     }
 }
 
@@ -128,7 +127,7 @@ SINGLE_BATTLE_TEST("Refrigerate doesn't affect Hidden Power's type")
         ASSUME(GetMoveEffect(MOVE_HIDDEN_POWER) == EFFECT_HIDDEN_POWER);
         ASSUME(gTypesInfo[TYPE_ELECTRIC].isHiddenPowerType == TRUE);
         ASSUME(GetSpeciesType(SPECIES_DIGLETT, 0) == TYPE_GROUND);
-        PLAYER(SPECIES_AMAURA) { Ability(ABILITY_REFRIGERATE); HPIV(31); AttackIV(31); DefenseIV(31); SpAttackIV(30); SpDefenseIV(31); SpeedIV(31); } // HP Electric
+        PLAYER(SPECIES_AMAURA) { Ability(ABILITY_REFRIGERATE); HPIV(15); AttackIV(15); DefenseIV(15); SpAttackIV(14); SpDefenseIV(15); SpeedIV(15); } // HP Electric
         OPPONENT(SPECIES_DIGLETT);
     } WHEN {
         TURN { MOVE(player, MOVE_HIDDEN_POWER); }
