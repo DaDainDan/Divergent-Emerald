@@ -123,7 +123,7 @@ struct TrainerEncounterMusic
     u8 trainerEncounterMusic;
 };
 
-static const struct TrainerEncounterMusic sTrainerClassEncounterMusic[60] =
+static const struct TrainerEncounterMusic sTrainerClassEncounterMusic[61] =
 {
     {TRAINER_CLASS_TEAM_AQUA, TRAINER_ENCOUNTER_MUSIC_AQUA},
     {TRAINER_CLASS_AQUA_ADMIN, TRAINER_ENCOUNTER_MUSIC_AQUA},
@@ -178,6 +178,7 @@ static const struct TrainerEncounterMusic sTrainerClassEncounterMusic[60] =
     {TRAINER_CLASS_SIS_AND_BRO, TRAINER_ENCOUNTER_MUSIC_TWINS},
     {TRAINER_CLASS_HIKER, TRAINER_ENCOUNTER_MUSIC_HIKER},
     {TRAINER_CLASS_LEADER, TRAINER_ENCOUNTER_MUSIC_COOL},
+    {TRAINER_CLASS_MASTER, TRAINER_ENCOUNTER_MUSIC_COOL},
     {TRAINER_CLASS_SCHOOL_KID, TRAINER_ENCOUNTER_MUSIC_SWIMMER},
     {TRAINER_CLASS_BIKER_FRLG, TRAINER_ENCOUNTER_MUSIC_INTENSE},
     {TRAINER_CLASS_BURGLAR_FRLG, TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS},
@@ -5246,6 +5247,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
 
             enum TrainerClassID opponentTrainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
             if (!(opponentTrainerClass == TRAINER_CLASS_LEADER
+                || opponentTrainerClass == TRAINER_CLASS_MASTER
                 || opponentTrainerClass == TRAINER_CLASS_ELITE_FOUR
                 || opponentTrainerClass == TRAINER_CLASS_CHAMPION))
                 return;
@@ -5545,14 +5547,15 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
+        case TRAINER_CLASS_MASTER:
             return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 return MUS_VS_RIVAL;
-            if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
-                return MUS_VS_TRAINER;
+            // if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
+            //     return MUS_VS_TRAINER;
             return MUS_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;

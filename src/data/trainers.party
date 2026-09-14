@@ -89,10 +89,10 @@ Pic: Youngster
 
 Lillipup (M) 
 Level: 5
-Ability: Vital Spirit
+Ability: Guts
 EVs: 4 Atk
 Nature: Rash
-- Tackle
+- Head Smack
 - Leer
 
 === TRAINER_CALVIN_2 ===
@@ -130,45 +130,69 @@ Level: 33
 
 /* Route 102 */
 
-=== TRAINER_RICK ===
-Name: RICK
+=== TRAINER_NOAH ===
+Name: NOAH
 Class: Bug Catcher
 Pic: Bug Catcher
 
 Wurmple
 Level: 4
+Ability: Silk Spew  
+EVs: 8 SpD 
+Quirky Nature  
 
-Wurmple
-Level: 4
+Weedle
+Level: 5
+Ability: Poison Touch  
+EVs: 8 Def 
+Hardy Nature 
 
-=== TRAINER_ALLEN ===
-Name: ALLEN
+Paras
+Level: 6
+Ability: Unaware  
+EVs: 4 Atk / 4 Def / 4 SpD
+Relaxed Nature
+
+=== TRAINER_AVERY ===
+Name: AVERY
 Class: Youngster
 Pic: Youngster
 
-Zigzagoon
-Level: 4
+Pichu (M)
+Level: 5
+Ability: Reckless  
+EVs: 8 Spe
+Bashful Nature
 
-Taillow
-Level: 3
+Mankey (F)
+Level: 6
+Ability: Berserk  
+EVs: 12 Spe
+Hasty Nature
 
 === TRAINER_TIANA ===
 Name: TIANA
 Class: Lass
 Pic: Lass
 
-Zigzagoon
-Level: 4
+Bidoof (M)
+Level: 6
+Ability: Hustle    
+EVs: 12 Def
+Bold Nature
 
-Shroomish
-Level: 4
+Chikorita (F) @ Oran Berry
+Level: 6
+Ability: Leaf Guard
+EVs: 16 HP 
+Docile Nature
 
 /* Route 104 S */
 
 === TRAINER_BILLY ===
 Name: BILLY
-Class: Youngster
-Pic: Youngster
+Class: Biker Frlg
+Pic: Biker Frlg
 
 Zigzagoon
 Level: 5
@@ -176,21 +200,45 @@ Level: 5
 Seedot
 Level: 7
 
-=== TRAINER_DARIAN ===
-Name: DARIAN
+=== TRAINER_DALE ===
+Name: DALE
 Class: Fisherman
 Pic: Fisherman
 
-Magikarp
-Level: 9
+Goldeen (M)
+Level: 5
+Ability: Hydration    
+EVs: 16 HP
+Careful Nature  
+
+Goldeen (M)
+Level: 5
+Ability: Hydration    
+EVs: 8 Def / 8 SpD
+Mild Nature 
+
+Goldeen (F)
+Level: 6
+Ability: Competitive
+EVs: 8 HP / 8 Atk / 4 Spe 
+Modest Nature
 
 === TRAINER_CINDY_1 ===
 Name: CINDY
 Class: Lady
 Pic: Lady
 
-Zigzagoon @ Nugget
+Cottonee (F)
+Level: 6
+Ability: Cotton Down    
+EVs: 8 Def / 8 SpD
+Timid Nature
+
+Snubbull (M) @ Silk Scarf
 Level: 7
+Ability: Intimidate    
+EVs: 12 Atk / 8 SpD
+Lax Nature
 
 === TRAINER_CINDY_2 ===
 Name: CINDY
@@ -225,28 +273,28 @@ Name: LYLE
 Class: Bug Catcher
 Pic: Bug Catcher
 
-Wurmple
-Level: 3
+Spinarak (F)
+Level: 6
+Ability: Silk Spew    
+EVs: 12 HP / 12 Spe 
+Rash Nature  
 
-Wurmple
-Level: 3
-
-Wurmple
-Level: 3
-
-Wurmple
-Level: 3
+Nincada (M)
+Level: 7
+Ability: Stakeout    
+EVs: 12 Atk / 12 Def
+Hardy Nature  
 
 === TRAINER_JAMES_1 ===
 Name: JAMES
 Class: Bug Catcher
 Pic: Bug Catcher
 
-Nincada
-Level: 6
-
-Nincada
-Level: 6
+Pineco
+Level: 7
+Ability: Shell Armor    
+EVs: 12 HP / 12 Def
+Adamant Nature
 
 === TRAINER_JAMES_2 ===
 Name: JAMES
@@ -288,8 +336,17 @@ Name: WINSTON
 Class: Rich Boy
 Pic: Rich Boy
 
-Zigzagoon @ Nugget
+Nidoran-M (M)
 Level: 7
+Ability: Defiant    
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe 
+Sassy Nature 
+
+Electrike (M) @ Lucky Punch
+Level: 8
+Ability: Static    
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe 
+Modest Nature
 
 === TRAINER_WINSTON_2 ===
 Name: WINSTON
@@ -315,19 +372,25 @@ Pic: Rich Boy
 Linoone @ Nugget
 Level: 33
 
-=== TRAINER_HALEY_1 ===
-Name: HALEY
+=== TRAINER_GISELLE_1 ===
+Name: GISELLE
 Class: Lass
 Pic: Lass
 
-Lotad
-Level: 6
+Roselia
+Level: 8
+Ability: Flower Gift    
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe 
+Naughty Nature
 
-Shroomish
-Level: 6
+Vulpix
+Level: 8
+Ability: Serene Grace    
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe 
+Careful Nature
 
-=== TRAINER_HALEY_2 ===
-Name: HALEY
+=== TRAINER_GISELLE_2 ===
+Name: GISELLE
 Class: Lass
 Pic: Lass
 
@@ -337,8 +400,8 @@ Level: 26
 Shroomish
 Level: 26
 
-=== TRAINER_HALEY_3 ===
-Name: HALEY
+=== TRAINER_GISELLE_3 ===
+Name: GISELLE
 Class: Lass
 Pic: Lass
 
@@ -348,8 +411,8 @@ Level: 29
 Breloom
 Level: 29
 
-=== TRAINER_HALEY_4 ===
-Name: HALEY
+=== TRAINER_GISELLE_4 ===
+Name: GISELLE
 Class: Lass
 Pic: Lass
 
@@ -365,25 +428,34 @@ Class: Twins
 Pic: Twins
 Battle Type: Doubles
 
-Seedot
-Level: 6
+Azurill
+Level: 7
+Ability: Pacifier  
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe 
+Lonely Nature
 
-Lotad
-Level: 6
+Pichu
+Level: 7
+Ability: Electrolight    
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe 
+Naive Nature
 
 === TRAINER_IVAN ===
 Name: IVAN
 Class: Fisherman
 Pic: Fisherman
 
-Magikarp
-Level: 5
-
-Magikarp
-Level: 6
-
-Magikarp
+Wooper
 Level: 7
+Ability: Oblivious    
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe 
+Gentle Nature
+
+Poliwag
+Level: 7
+Ability: Water Absorb    
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe 
+Calm Nature
 
 /* Route 116 (No Cut) */
 
@@ -392,19 +464,34 @@ Name: JOSE
 Class: Bug Catcher
 Pic: Bug Catcher
 
-Wurmple
+Grubbin (M)
 Level: 8
+Ability: Tough Claws    
+EVs: 12 Atk / 20 Def
+Lax Nature
 
-Nincada
-Level: 8
+Combee (F) @ Honey
+Level: 9
+Ability: Hustle   
+EVs: 20 HP / 12 Def
+Bashful Nature
 
 === TRAINER_JOEY ===
 Name: JOEY
 Class: Youngster
 Pic: Youngster
 
-Machop
+Pidgey (F)
+Level: 8
+Ability: Run Away  
+EVs: 20 Atk / 12 Spe 
+Rash Nature
+
+Rattata (M)
 Level: 9
+Ability: Quick Feet  
+EVs: 32 Atk
+Rash Nature
 
 === TRAINER_KAREN_1 ===
 Name: KAREN
@@ -412,8 +499,17 @@ Class: School Kid
 Pic: School Kid F
 Music: Girl
 
-Shroomish
+Skitty (M)
+Level: 8
+Ability: Cute Charm   
+EVs: 8 HP / 16 Def / 8 SpD
+Sassy Nature
+
+Popplio (F)
 Level: 9
+Ability: Prankster   
+EVs: 32 HP
+Gentle Nature
 
 === TRAINER_KAREN_2 ===
 Name: KAREN
@@ -461,25 +557,39 @@ Level: 8
 
 === TRAINER_JOHNSON ===
 Name: JOHNSON
-Class: Youngster
-Pic: Youngster
+Class: Pkmn Breeder
+Pic: Pokemon Breeder M
 
-Shroomish
-Level: 8
+Happiny (F)
+Level: 6 
+EVs: 30 HP
+Calm Nature
 
-Lotad
-Level: 8
+Togepi (M)
+Level: 6 
+EVs: 30 HP
+Relaxed Nature
+
+Vullaby (M)
+Level: 7 
+EVs: 30 HP
+Rash Nature
+
+Munchlax (F)
+Level: 8 
+EVs: 30 HP
+Hasty Nature
 
 === TRAINER_DEVAN ===
 Name: DEVAN
 Class: Hiker
 Pic: Hiker
 
-Geodude
-Level: 8
-
-Geodude
-Level: 8
+Rhyhorn (F)
+Level: 11
+Ability: Sheer Force   
+EVs: 20 HP / 20 Atk / 20 Spe 
+Adamant Nature
 
 /* Rustboro Gym */
 
@@ -489,11 +599,17 @@ Class: Youngster
 Pic: Youngster
 Gym Trainer: Yes
 
-Geodude
-Level: 8
+Sentret (F) @ Hard Stone
+Level: 11
+Ability: Run Away    
+EVs: 20 Atk / 20 Spe 
+Mild Nature
 
-Geodude
-Level: 8
+Nacli (M) @ Wise Glasses
+Level: 11
+Ability: Natural Cure    
+EVs: 40 SpD
+Relaxed Nature
 
 === TRAINER_TRINITY ===
 Name: TRINITY
@@ -501,9 +617,17 @@ Class: Lass
 Pic: Lass
 Gym Trainer: Yes
 
-Geodude
-Level: 10
-- Tackle
+Phanpy (M)
+Level: 11
+Ability: Huge Power    
+EVs: 40 HP
+Serious Nature
+
+Staravia (F) @ Silk Scarf
+Level: 12
+Ability: Big Pecks    
+EVs: 12 Atk / 28 Spe 
+Sassy Nature
 
 === TRAINER_MARC ===
 Name: MARC
@@ -511,94 +635,106 @@ Class: Hiker
 Pic: Hiker
 Gym Trainer: Yes
 
-Geodude
-Level: 8
+Geodude (M)
+Level: 11
+Ability: Sturdy    
+EVs: 40 Atk
+Hardy Nature
 
-Geodude
-Level: 8
+Skiddo (M) @ Oran Berry
+Level: 12
+Ability: Cud Chew    
+EVs: 20 Def / 20 Spe 
+Naive Nature
 
 /* Route 116 (With Cut) */
 
 === TRAINER_SARAH ===
 Name: SARAH
-Class: Lady
-Pic: Lady
+Class: Picnicker
+Pic: Picnicker
 
-Lotad
-Level: 8
+Hoppip
+Level: 12
 
-Zigzagoon @ Nugget
-Level: 8
+Drilbur
+Level: 13
 
 === TRAINER_DAWSON ===
 Name: DAWSON
-Class: Rich Boy
-Pic: Rich Boy
+Class: Camper
+Pic: Camper
 
-Zigzagoon @ Nugget
-Level: 8
+Yungoos
+Level: 12
 
-Poochyena
-Level: 8
+Trumbeak
+Level: 13
 
-=== TRAINER_JERRY_1 ===
-Name: JERRY
+=== TRAINER_NICOLE_1 ===
+Name: NICOLE
+Class: Aroma Lady
+Pic: Aroma Lady
+
+Flabebe
+Level: 11
+
+Minccino
+Level: 13
+
+=== TRAINER_NICOLE_2 ===
+Name: NICOLE
 Class: School Kid
 Pic: School Kid M
 
-Ralts
-Level: 9
+Flabebe
+Level: 11
 
-=== TRAINER_JERRY_2 ===
-Name: JERRY
+Minccino
+Level: 13
+
+=== TRAINER_NICOLE_3 ===
+Name: NICOLE
 Class: School Kid
 Pic: School Kid M
 
-Ralts
-Level: 26
+Flabebe
+Level: 11
 
-Meditite
-Level: 26
+Minccino
+Level: 13
 
-=== TRAINER_JERRY_3 ===
-Name: JERRY
+=== TRAINER_NICOLE_4 ===
+Name: NICOLE
 Class: School Kid
 Pic: School Kid M
 
-Kirlia
-Level: 29
+Flabebe
+Level: 11
 
-Meditite
-Level: 29
-
-=== TRAINER_JERRY_4 ===
-Name: JERRY
-Class: School Kid
-Pic: School Kid M
-
-Kirlia
-Level: 32
-
-Medicham
-Level: 32
+Minccino
+Level: 13
 
 === TRAINER_JANICE ===
 Name: JANICE
 Class: Lass
 Pic: Lass
 
-Marill
-Level: 9
+Krokorok
+Level: 15
 
 /* Route 103 E */
 
 === TRAINER_PETE ===
 Name: PETE
-Class: Swimmer M
-Pic: Swimmer M
+Class: Biker Frlg
+Pic: Biker Frlg
 
-Tentacool
-Level: 15
+Pawniard
+Level: 16
+
+Varoom
+Level: 17
 
 === TRAINER_ISABELLE ===
 Name: ISABELLE
@@ -610,14 +746,11 @@ Level: 15
 
 === TRAINER_DAISY ===
 Name: DAISY
-Class: Aroma Lady
-Pic: Aroma Lady
+Class: Beauty
+Pic: Beauty
 
-Shroomish
-Level: 14
-
-Roselia
-Level: 14
+Nidorino
+Level: 18
 
 === TRAINER_AMY_AND_LIV_1 ===
 Name: AMY & LIV
@@ -625,11 +758,11 @@ Class: Twins
 Pic: Twins
 Battle Type: Doubles
 
-Plusle
-Level: 15
+Cottonee
+Level: 17
 
-Minun
-Level: 15
+Petilil
+Level: 17
 
 === TRAINER_AMY_AND_LIV_2 ===
 Name: AMY & LIV
@@ -637,11 +770,11 @@ Class: Twins
 Pic: Twins
 Battle Type: Doubles
 
-Plusle
-Level: 27
+Cottonee
+Level: 17
 
-Minun
-Level: 27
+Petilil
+Level: 17
 
 === TRAINER_AMY_AND_LIV_3 ===
 Name: AMY & LIV
@@ -649,11 +782,11 @@ Class: Twins
 Pic: Twins
 Battle Type: Doubles
 
-Plusle
-Level: 9
+Cottonee
+Level: 17
 
-Minun
-Level: 9
+Petilil
+Level: 17
 
 === TRAINER_AMY_AND_LIV_4 ===
 Name: AMY & LIV
@@ -661,11 +794,11 @@ Class: Twins
 Pic: Twins
 Battle Type: Doubles
 
-Plusle
-Level: 30
+Cottonee
+Level: 17
 
-Minun
-Level: 30
+Petilil
+Level: 17
 
 === TRAINER_AMY_AND_LIV_5 ===
 Name: AMY & LIV
@@ -673,234 +806,281 @@ Class: Twins
 Pic: Twins
 Battle Type: Doubles
 
-Plusle
-Level: 33
-- Spark
-- Charge
-- Fake Tears
-- Helping Hand
+Cottonee
+Level: 17
 
-Minun
-Level: 33
-- Spark
-- Charge
-- Charm
-- Helping Hand
+Petilil
+Level: 17
 
 === TRAINER_MIGUEL_1 ===
 Name: MIGUEL
-Class: Pokefan
-Pic: Pokefan M
+Class: Engineer Frlg
+Pic: Engineer Frlg
 
-Skitty @ Oran Berry
+Klink
 Level: 15
+
+Klink
+Level: 16
+
+Timburr
+Level: 17
 
 === TRAINER_MIGUEL_2 ===
 Name: MIGUEL
 Class: Pokefan
 Pic: Pokefan M
 
-Skitty @ Oran Berry
-Level: 29
+Klink
+Level: 15
+
+Klink
+Level: 16
+
+Timburr
+Level: 17
 
 === TRAINER_MIGUEL_3 ===
 Name: MIGUEL
 Class: Pokefan
 Pic: Pokefan M
 
-Skitty @ Oran Berry
-Level: 32
+Klink
+Level: 15
+
+Klink
+Level: 16
+
+Timburr
+Level: 17
 
 === TRAINER_MIGUEL_4 ===
 Name: MIGUEL
 Class: Pokefan
 Pic: Pokefan M
 
-Delcatty @ Oran Berry
-Level: 35
+Klink
+Level: 15
+
+Klink
+Level: 16
+
+Timburr
+Level: 17
 
 === TRAINER_MIGUEL_5 ===
 Name: MIGUEL
 Class: Pokefan
 Pic: Pokefan M
 
-Delcatty @ Sitrus Berry
-Level: 38
+Klink
+Level: 15
+
+Klink
+Level: 16
+
+Timburr
+Level: 17
 
 === TRAINER_ANDREW ===
 Name: ANDREW
 Class: Fisherman
 Pic: Fisherman
 
-Magikarp
-Level: 5
+Goldeen
+Level: 29
 
-Tentacool
-Level: 10
+Finneon
+Level: 30
 
-Magikarp
-Level: 15
+Corphish
+Level: 31
 
 === TRAINER_MARCOS ===
 Name: MARCOS
 Class: Guitarist
 Pic: Guitarist
 
-Voltorb
-Level: 15
+Shinx
+Level: 16
+
+Scraggy
+Level: 17
 
 === TRAINER_RHETT ===
 Name: RHETT
-Class: Black Belt
-Pic: Black Belt
+Class: Collector
+Pic: Collector
 
-Makuhita
-Level: 15
+Gastly
+Level: 16
+
+Morgrem
+Level: 17
 
 /* Route 110 */
 
-=== TRAINER_ISABEL_1 ===
-Name: ISABEL
+=== TRAINER_KELLY_1 ===
+Name: KELLY
 Class: Pokefan
 Pic: Pokefan F
 
-Plusle @ Oran Berry
-Level: 14
+Skitty
+Level: 17
 
-Minun @ Oran Berry
-Level: 14
+Piplup
+Level: 17
 
-=== TRAINER_ISABEL_2 ===
-Name: ISABEL
+=== TRAINER_KELLY_2 ===
+Name: KELLY
 Class: Pokefan
 Pic: Pokefan F
 
-Plusle @ Oran Berry
-Level: 26
+Skitty
+Level: 17
 
-Minun @ Oran Berry
-Level: 26
+Piplup
+Level: 17
 
-=== TRAINER_ISABEL_3 ===
-Name: ISABEL
+=== TRAINER_KELLY_3 ===
+Name: KELLY
 Class: Pokefan
 Pic: Pokefan F
 
-Plusle @ Oran Berry
-Level: 29
+Skitty
+Level: 17
 
-Minun @ Oran Berry
-Level: 29
+Piplup
+Level: 17
 
-=== TRAINER_ISABEL_4 ===
-Name: ISABEL
+=== TRAINER_KELLY_4 ===
+Name: KELLY
 Class: Pokefan
 Pic: Pokefan F
 
-Plusle @ Oran Berry
-Level: 32
+Skitty
+Level: 17
 
-Minun @ Oran Berry
-Level: 32
+Piplup
+Level: 17
 
-=== TRAINER_ISABEL_5 ===
-Name: ISABEL
+=== TRAINER_KELLY_5 ===
+Name: KELLY
 Class: Pokefan
 Pic: Pokefan F
 
-Plusle @ Sitrus Berry
-Level: 35
+Skitty
+Level: 17
 
-Minun @ Sitrus Berry
-Level: 35
+Piplup
+Level: 17
 
 === TRAINER_KALEB ===
 Name: KALEB
 Class: Pokefan
 Pic: Pokefan M
 
-Minun @ Oran Berry
-Level: 14
+Cyndaquil
+Level: 17
 
-Plusle @ Oran Berry
-Level: 14
+Spheal
+Level: 17
 
-=== TRAINER_TIMMY ===
-Name: TIMMY
-Class: Youngster
-Pic: Youngster
+=== TRAINER_TRISTAN ===
+Name: TRISTAN
+Class: Guitarist
+Pic: Guitarist
 
-Aron
-Level: 15
+Karrablast
+Level: 16
 
-Electrike
-Level: 13
+Elekid
+Level: 18
 
 === TRAINER_EDWIN_1 ===
 Name: EDWIN
 Class: Collector
 Pic: Collector
 
-Lombre
-Level: 14
+Swinub
+Level: 16
 
-Nuzleaf
-Level: 14
+Totodile
+Level: 17
+
+Bulbasaur
+Level: 18
 
 === TRAINER_EDWIN_2 ===
 Name: EDWIN
 Class: Collector
 Pic: Collector
 
-Lombre
-Level: 26
+Swinub
+Level: 16
 
-Nuzleaf
-Level: 26
+Totodile
+Level: 17
+
+Bulbasaur
+Level: 18
 
 === TRAINER_EDWIN_3 ===
 Name: EDWIN
 Class: Collector
 Pic: Collector
 
-Lombre
-Level: 29
+Swinub
+Level: 16
 
-Nuzleaf
-Level: 29
+Totodile
+Level: 17
+
+Bulbasaur
+Level: 18
 
 === TRAINER_EDWIN_4 ===
 Name: EDWIN
 Class: Collector
 Pic: Collector
 
-Lombre
-Level: 32
+Swinub
+Level: 16
 
-Nuzleaf
-Level: 32
+Totodile
+Level: 17
+
+Bulbasaur
+Level: 18
 
 === TRAINER_EDWIN_5 ===
 Name: EDWIN
 Class: Collector
 Pic: Collector
 
-Ludicolo
-Level: 35
+Swinub
+Level: 16
 
-Shiftry
-Level: 35
+Totodile
+Level: 17
+
+Bulbasaur
+Level: 18
 
 === TRAINER_JOSEPH ===
 Name: JOSEPH
-Class: Guitarist
-Pic: Guitarist
+Class: Juggler Frlg
+Pic: Juggler Frlg
 
-Electrike
-Level: 14
+Solosis
+Level: 16
+Ability: Regenerator
+- Teleport
 
-Voltorb
-Level: 14
+Mienfoo
+Level: 17
+Ability: Quick Draw
+- Flip Kick
 
 === TRAINER_ALYSSA ===
 Name: ALYSSA
@@ -910,8 +1090,8 @@ Pic: Cycling Triathlete F
 Magnemite
 Level: 15
 
-=== TRAINER_DALE ===
-Name: DALE
+=== TRAINER_DARIAN ===
+Name: DARIAN
 Class: Fisherman
 Pic: Fisherman
 
@@ -929,12 +1109,14 @@ Level: 14
 
 === TRAINER_EDWARD ===
 Name: EDWARD
-Class: Psychic
-Pic: Psychic M
+Class: Scientist Frlg
+Pic: Scientist Frlg
 
-Abra
-Level: 15
-- Hidden Power
+Gulpin
+Level: 18
+
+Staryu
+Level: 18
 
 /* Trick House */
 
@@ -1356,43 +1538,35 @@ Level: 34
 
 === TRAINER_VIVIAN ===
 Name: VIVIAN
-Class: Battle Girl
-Pic: Battle Girl
-Gym Trainer: Yes
-
-Meditite
-Level: 17
-- Bide
-- Detect
-- Confusion
-- Thunder Punch
-
-Meditite
-Level: 17
-- Thunder Punch
-- Detect
-- Confusion
-- Meditate
-
-=== TRAINER_BEN ===
-Name: BEN
-Class: Youngster
-Pic: Youngster
+Class: Pokefan
+Pic: Pokefan F
 Gym Trainer: Yes
 
 Zigzagoon
-Level: 17
-- Headbutt
-- Sand Attack
+Level: 18
 - Growl
-- Thunderbolt
+- Sand Attack
+- Astonish
+- Hit And Run
 
-Gulpin
-Level: 17
-- Amnesia
-- Sludge
-- Yawn
-- Pound
+Skiploom
+Level: 19
+- Follow Me
+- Helping Hand
+- Rest
+- Floral Healing
+
+=== TRAINER_BEN ===
+Name: BEN
+Class: School Kid
+Pic: School Kid M
+Gym Trainer: Yes
+
+Spinda
+Level: 18
+
+Pineco
+Level: 19
 
 === TRAINER_KIRK ===
 Name: KIRK
@@ -1400,48 +1574,39 @@ Class: Guitarist
 Pic: Guitarist
 Gym Trainer: Yes
 
-Electrike
-Level: 17
-- Quick Attack
-- Thunder Wave
-- Spark
-- Leer
+Luxio
+Level: 19
 
-Voltorb
-Level: 17
-- Charge
-- Shock Wave
-- Screech
+Jangmo-o
+Level: 19
 
 === TRAINER_ANGELO ===
 Name: ANGELO
-Class: Bug Maniac
-Pic: Bug Maniac
+Class: Scientist Frlg
+Pic: Scientist Frlg
 Gym Trainer: Yes
 
-Illumise
-Level: 17
-- Shock Wave
-- Quick Attack
-- Charm
+Elgyem
+Level: 19
 
-Volbeat
-Level: 17
-- Shock Wave
-- Quick Attack
-- Confuse Ray
+Duosion
+Level: 20
 
 === TRAINER_SHAWN ===
 Name: SHAWN
-Class: Guitarist
-Pic: Guitarist
+Class: Engineer Frlg
+Pic: Engineer Frlg
 Gym Trainer: Yes
 
-Voltorb
-Level: 17
+Charjabug
+Level: 19
+- Charge
+- Thunder Shock
+- String Shot
+- Harden
 
-Magnemite
-Level: 17
+Klang
+Level: 20
 
 /* Route 117 */
 
@@ -2093,8 +2258,8 @@ Level: 30
 Graveler
 Level: 30
 
-=== TRAINER_BRICE ===
-Name: BRICE
+=== TRAINER_BRYCE ===
+Name: BRYCE
 Class: Hiker
 Pic: Hiker
 
@@ -2124,8 +2289,8 @@ Level: 21
 
 === TRAINER_SHIRLEY ===
 Name: SHIRLEY
-Class: Beauty
-Pic: Beauty
+Class: Aroma Lady
+Pic: Aroma Lady
 
 Numel
 Level: 21
@@ -2240,8 +2405,8 @@ Level: 20
 
 === TRAINER_DIANA_1 ===
 Name: DIANA
-Class: Picnicker
-Pic: Picnicker
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 
 Shroomish
 Level: 19
@@ -2254,8 +2419,8 @@ Level: 19
 
 === TRAINER_DIANA_2 ===
 Name: DIANA
-Class: Picnicker
-Pic: Picnicker
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 
 Shroomish
 Level: 25
@@ -2268,8 +2433,8 @@ Level: 25
 
 === TRAINER_DIANA_3 ===
 Name: DIANA
-Class: Picnicker
-Pic: Picnicker
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 
 Breloom
 Level: 28
@@ -2282,8 +2447,8 @@ Level: 28
 
 === TRAINER_DIANA_4 ===
 Name: DIANA
-Class: Picnicker
-Pic: Picnicker
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 
 Breloom
 Level: 31
@@ -2365,13 +2530,18 @@ Class: Kindler
 Pic: Kindler
 Gym Trainer: Yes
 
-Numel
-Level: 23
+Fletchinder
+Level: 27
+Ability: Speed Boost
+
+Quilava
+Level: 28
+Ability: Intimidate
 
 === TRAINER_JEFF ===
 Name: JEFF
-Class: Kindler
-Pic: Kindler
+Class: Fisherman
+Pic: Fisherman
 Gym Trainer: Yes
 
 Slugma
@@ -2382,21 +2552,35 @@ Level: 22
 
 === TRAINER_AXLE ===
 Name: AXLE
-Class: Kindler
-Pic: Kindler
+Class: Gamer Frlg
+Pic: Gamer Frlg
 Gym Trainer: Yes
 
-Numel
-Level: 23
+Meowth
+Level: 27
+Ability: Pickpocket 
+
+Kadabra
+Level: 27
+Ability: Magic Bounce
+
+Mandibuzz
+Level: 29
+Ability: Stakeout
 
 === TRAINER_JACE ===
 Name: JACE
-Class: Kindler
-Pic: Kindler
+Class: Pokemaniac
+Pic: Pokemaniac
 Gym Trainer: Yes
 
-Slugma
-Level: 23
+Charmeleon
+Level: 28
+Ability: Competitive
+
+Zweilous
+Level: 28
+Ability: Scatterbrain
 
 === TRAINER_KEEGAN ===
 Name: KEEGAN
@@ -2404,21 +2588,31 @@ Class: Kindler
 Pic: Kindler
 Gym Trainer: Yes
 
-Slugma
-Level: 23
+Larvesta
+Level: 27
+Ability: Silk Spew 
+
+Monferno
+Level: 27
+Ability: Technician 
+
+Magmar
+Level: 28
+Ability: Flame Body 
 
 === TRAINER_GERALD ===
 Name: GERALD
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Hiker
+Pic: Hiker
 Gym Trainer: Yes
 
-Kecleon
-Level: 23
-- Flamethrower
-- Fury Swipes
-- Feint Attack
-- Bind
+Numel
+Level: 27
+Ability: Stamina
+
+Grotle
+Level: 28
+Ability: Water Compaction
 
 === TRAINER_DANIELLE ===
 Name: DANIELLE
@@ -2426,12 +2620,16 @@ Class: Battle Girl
 Pic: Battle Girl
 Gym Trainer: Yes
 
-Meditite
-Level: 23
-- Bide
-- Detect
-- Confusion
-- Fire Punch
+Crabrawler
+Level: 27
+
+Pignite
+Level: 27
+Ability: Guts
+
+Hitmonlee
+Level: 28
+Ability: Jet Leg
 
 === TRAINER_ELI ===
 Name: ELI
@@ -2439,8 +2637,13 @@ Class: Hiker
 Pic: Hiker
 Gym Trainer: Yes
 
-Numel
-Level: 23
+Baltoy
+Level: 27
+Ability: Mold Breaker
+
+Crustle
+Level: 29
+Ability: Shell Armor
 
 /* Route 111 Desert */
 
@@ -2504,8 +2707,8 @@ Level: 22
 Sandslash
 Level: 22
 
-=== TRAINER_BRANDEN ===
-Name: BRANDEN
+=== TRAINER_BRAYDEN ===
+Name: BRAYDEN
 Class: Camper
 Pic: Camper
 
@@ -2624,8 +2827,8 @@ Level: 25
 
 === TRAINER_CHESTER ===
 Name: CHESTER
-Class: Bird Keeper
-Pic: Bird Keeper
+Class: Ruin Maniac
+Pic: Ruin Maniac
 
 Taillow
 Level: 25
@@ -2684,8 +2887,8 @@ Level: 26
 
 /* Route 119 */
 
-=== TRAINER_DOUG ===
-Name: DOUG
+=== TRAINER_JASON ===
+Name: JASON
 Class: Bug Catcher
 Pic: Bug Catcher
 
@@ -2722,8 +2925,8 @@ Pic: Bug Maniac
 Surskit
 Level: 26
 
-=== TRAINER_DONALD ===
-Name: DONALD
+=== TRAINER_ELIAS ===
+Name: ELIAS
 Class: Bug Maniac
 Pic: Bug Maniac
 
@@ -2853,8 +3056,8 @@ Level: 26
 
 === TRAINER_PHIL ===
 Name: PHIL
-Class: Bird Keeper
-Pic: Bird Keeper
+Class: Engineer Frlg
+Pic: Engineer Frlg
 
 Swellow
 Level: 26
@@ -2929,8 +3132,8 @@ Level: 26
 
 /* Fortree Gym */
 
-=== TRAINER_HUMBERTO ===
-Name: HUMBERTO
+=== TRAINER_JORDAN ===
+Name: JORDAN
 Class: Bird Keeper
 Pic: Bird Keeper
 Gym Trainer: Yes
@@ -2942,7 +3145,6 @@ Level: 30
 Name: JARED
 Class: Bird Keeper
 Pic: Bird Keeper
-Gym Trainer: Yes
 
 Doduo
 Level: 27
@@ -2976,9 +3178,8 @@ Level: 30
 
 === TRAINER_FLINT ===
 Name: FLINT
-Class: Camper
-Pic: Camper
-Gym Trainer: Yes
+Class: Kindler
+Pic: Kindler
 
 Swellow
 Level: 29
@@ -3003,8 +3204,8 @@ Level: 27
 
 /* Route 112 N */
 
-=== TRAINER_BRYANT ===
-Name: BRYANT
+=== TRAINER_CARLOS ===
+Name: CARLOS
 Class: Kindler
 Pic: Kindler
 
@@ -3298,8 +3499,9 @@ Level: 19
 
 === TRAINER_SOPHIE ===
 Name: SOPHIE
-Class: Picnicker
-Pic: Picnicker
+Class: Aroma Lady
+Pic: Aroma Lady
+Gym Trainer: Yes
 
 Marill
 Level: 17
@@ -3320,8 +3522,8 @@ Level: 19
 
 /* Route 114 */
 
-=== TRAINER_NOLAN ===
-Name: NOLAN
+=== TRAINER_JOEL ===
+Name: JOEL
 Class: Fisherman
 Pic: Fisherman
 
@@ -3473,8 +3675,8 @@ Level: 18
 
 === TRAINER_ANGELINA ===
 Name: ANGELINA
-Class: Picnicker
-Pic: Picnicker
+Class: Parasol Lady
+Pic: Parasol Lady
 
 Lombre
 Level: 18
@@ -3495,7 +3697,7 @@ Level: 18
 
 /* Route 115 */
 
-=== TRAINER_NOB_1 ===
+=== TRAINER_OSCAR_1 ===
 Name: NOB
 Class: Black Belt
 Pic: Black Belt
@@ -3503,7 +3705,7 @@ Pic: Black Belt
 Machop
 Level: 19
 
-=== TRAINER_NOB_2 ===
+=== TRAINER_OSCAR_2 ===
 Name: NOB
 Class: Black Belt
 Pic: Black Belt
@@ -3511,7 +3713,7 @@ Pic: Black Belt
 Machoke
 Level: 27
 
-=== TRAINER_NOB_3 ===
+=== TRAINER_OSCAR_3 ===
 Name: NOB
 Class: Black Belt
 Pic: Black Belt
@@ -3535,8 +3737,9 @@ Level: 18
 
 === TRAINER_MARLENE ===
 Name: MARLENE
-Class: Psychic
-Pic: Psychic F
+Class: Expert
+Pic: Expert F
+Gym Trainer: Yes
 
 Meditite
 Level: 18
@@ -3546,8 +3749,8 @@ Level: 18
 
 === TRAINER_CYNDY_1 ===
 Name: CYNDY
-Class: Battle Girl
-Pic: Battle Girl
+Class: Psychic
+Pic: Psychic F
 
 Meditite
 Level: 18
@@ -3557,8 +3760,8 @@ Level: 18
 
 === TRAINER_CYNDY_2 ===
 Name: CYNDY
-Class: Battle Girl
-Pic: Battle Girl
+Class: Psychic
+Pic: Psychic F
 
 Meditite
 Level: 26
@@ -3568,8 +3771,8 @@ Level: 26
 
 === TRAINER_CYNDY_3 ===
 Name: CYNDY
-Class: Battle Girl
-Pic: Battle Girl
+Class: Psychic
+Pic: Psychic F
 
 Meditite
 Level: 29
@@ -3599,8 +3802,8 @@ Level: 26
 Gulpin
 Level: 26
 
-=== TRAINER_ALIX ===
-Name: ALIX
+=== TRAINER_AMBER ===
+Name: AMBER
 Class: Psychic
 Pic: Psychic F
 
@@ -3692,8 +3895,8 @@ Level: 26
 
 === TRAINER_GEORGE ===
 Name: GEORGE
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Gentleman
+Pic: Gentleman
 Gym Trainer: Yes
 
 Slakoth @ Sitrus Berry
@@ -3715,8 +3918,8 @@ Level: 26
 
 === TRAINER_MARY ===
 Name: MARY
-Class: Cooltrainer
-Pic: Cooltrainer F
+Class: Expert
+Pic: Expert F
 Gym Trainer: Yes
 
 Delcatty
@@ -3724,8 +3927,8 @@ Level: 26
 - Feint Attack
 - Shock Wave
 
-=== TRAINER_ALEXIA ===
-Name: ALEXIA
+=== TRAINER_AUBREY ===
+Name: AUBREY
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gym Trainer: Yes
@@ -3759,8 +3962,8 @@ Level: 26
 
 === TRAINER_BEVERLY ===
 Name: BEVERLY
-Class: Swimmer F
-Pic: Swimmer F
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 
 Wingull
 Level: 25
@@ -3940,8 +4143,8 @@ Level: 25
 
 === TRAINER_DENISE ===
 Name: DENISE
-Class: Swimmer F
-Pic: Swimmer F
+Class: Expert
+Pic: Expert F
 
 Wingull
 Level: 25
@@ -3957,8 +4160,8 @@ Pic: Swimmer F
 Goldeen
 Level: 26
 
-=== TRAINER_DARRIN ===
-Name: DARRIN
+=== TRAINER_DIEGO ===
+Name: DIEGO
 Class: Swimmer M
 Pic: Swimmer M
 
@@ -4016,10 +4219,11 @@ Level: 25
 Marill
 Level: 25
 
-=== TRAINER_MISSY ===
-Name: MISSY
-Class: Swimmer F
-Pic: Swimmer F
+=== TRAINER_MELANIE ===
+Name: MELANIE
+Class: Parasol Lady
+Pic: Parasol Lady
+Gym Trainer: Yes
 
 Goldeen
 Level: 26
@@ -4034,14 +4238,14 @@ Level: 26
 
 === TRAINER_MATTHEW ===
 Name: MATTHEW
-Class: Swimmer M
-Pic: Swimmer M
+Class: Scientist Frlg
+Pic: Scientist Frlg
 
 Carvanha
 Level: 26
 
-=== TRAINER_CAROLINA ===
-Name: CAROLINA
+=== TRAINER_CHRISTINE ===
+Name: CHRISTINE
 Class: Cooltrainer
 Pic: Cooltrainer F
 
@@ -4172,8 +4376,8 @@ Pic: Ruin Maniac
 Sandslash
 Level: 26
 
-=== TRAINER_JANI ===
-Name: JANI
+=== TRAINER_KYLIE ===
+Name: KYLIE
 Class: Tuber F
 Pic: Tuber F
 
@@ -4236,8 +4440,8 @@ Level: 26
 
 === TRAINER_DAVID ===
 Name: DAVID
-Class: Swimmer M
-Pic: Swimmer M
+Class: Sailor
+Pic: Sailor
 
 Tentacool
 Level: 25
@@ -4301,8 +4505,8 @@ Level: 27
 - Attract
 - Stun Spore
 
-=== TRAINER_HUEY ===
-Name: HUEY
+=== TRAINER_GAGE ===
+Name: GAGE
 Class: Sailor
 Pic: Sailor
 
@@ -4554,15 +4758,15 @@ Level: 13
 
 === TRAINER_LAURA ===
 Name: LAURA
-Class: Battle Girl
-Pic: Battle Girl
+Class: Picnicker
+Pic: Picnicker
 Gym Trainer: Yes
 
 Meditite
 Level: 13
 
-=== TRAINER_BRENDEN ===
-Name: BRENDEN
+=== TRAINER_BRYSON ===
+Name: BRYSON
 Class: Sailor
 Pic: Sailor
 Gym Trainer: Yes
@@ -4613,8 +4817,8 @@ Level: 28
 Lombre
 Level: 28
 
-=== TRAINER_CLARISSA ===
-Name: CLARISSA
+=== TRAINER_CAMILLA ===
+Name: CAMILLA
 Class: Parasol Lady
 Pic: Parasol Lady
 
@@ -4667,8 +4871,8 @@ Level: 28
 
 === TRAINER_LEONEL ===
 Name: LEONEL
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Dragon Tamer
+Pic: Dragon Tamer
 
 Manectric
 Level: 30
@@ -4908,11 +5112,10 @@ Level: 38
 - Glare
 - Crunch
 
-=== TRAINER_KATE_AND_JOY ===
-Name: KATE & JOY
-Class: Sr And Jr
-Pic: Sr And Jr
-Battle Type: Doubles
+=== TRAINER_JOY ===
+Name: JOY
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 
 Spinda
 Level: 30
@@ -5080,16 +5283,16 @@ Level: 26
 Kadabra
 Level: 26
 
-=== TRAINER_ZANDER ===
-Name: ZANDER
+=== TRAINER_XANDER ===
+Name: XANDER
 Class: Black Belt
 Pic: Black Belt
 
 Hariyama
 Level: 31
 
-=== TRAINER_LEAH ===
-Name: LEAH
+=== TRAINER_MARIAH ===
+Name: MARIAH
 Class: Hex Maniac
 Pic: Hex Maniac
 
@@ -5347,8 +5550,8 @@ Level: 28
 - Double Team
 - Swagger
 
-=== TRAINER_ALBERTO ===
-Name: ALBERTO
+=== TRAINER_ABRAHAM ===
+Name: ABRAHAM
 Class: Bird Keeper
 Pic: Bird Keeper
 
@@ -5652,8 +5855,8 @@ Level: 39
 Machoke
 Level: 39
 
-=== TRAINER_NOLEN ===
-Name: NOLEN
+=== TRAINER_GABRIEL ===
+Name: GABRIEL
 Class: Swimmer M
 Pic: Swimmer M
 
@@ -5695,11 +5898,10 @@ Pic: Swimmer F
 Luvdisc
 Level: 34
 
-=== TRAINER_KIM_AND_IRIS ===
-Name: KIM & IRIS
-Class: Sr And Jr
-Pic: Sr And Jr
-Battle Type: Doubles
+=== TRAINER_KIM ===
+Name: KIM
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 
 Swablu
 Level: 32
@@ -5759,7 +5961,6 @@ Level: 36
 Name: HANNAH
 Class: Psychic
 Pic: Psychic F
-Gym Trainer: Yes
 
 Kirlia
 Level: 36
@@ -5846,8 +6047,8 @@ Pic: Swimmer M
 Carvanha
 Level: 34
 
-=== TRAINER_ISOBEL ===
-Name: ISOBEL
+=== TRAINER_EVA ===
+Name: EVA
 Class: Triathlete
 Pic: Swimming Triathlete F
 
@@ -6323,8 +6524,17 @@ Class: Beauty
 Pic: Beauty
 Gym Trainer: Yes
 
-Goldeen
-Level: 40
+Froslass
+Level: 78
+Ability: Snow Warning
+
+Glaceon
+Level: 78
+Ability: Ice Body
+
+Primarina
+Level: 78
+Ability: Minstrel
 
 === TRAINER_ANDREA ===
 Name: ANDREA
@@ -6335,37 +6545,41 @@ Gym Trainer: Yes
 Luvdisc
 Level: 40
 
-=== TRAINER_CRISSY ===
-Name: CRISSY
-Class: Lass
-Pic: Lass
+=== TRAINER_CESAR ===
+Name: CESAR
+Class: Expert
+Pic: Expert M
 Gym Trainer: Yes
 
-Goldeen
-Level: 39
+Wyrdeer
+Level: 78
+Ability: Unnerve
 
-Wailmer
-Level: 39
+Absol Mega
+Level: 78
+Ability: Serene Grace
+
+Magmortar
+Level: 78
+Ability: Flame Body
 
 === TRAINER_DAPHNE ===
 Name: DAPHNE
-Class: Lady
-Pic: Lady
+Class: Aroma Lady
+Pic: Aroma Lady
 Gym Trainer: Yes
 
-Luvdisc @ Nugget
-Level: 39
-- Attract
-- Sweet Kiss
-- Flail
-- Water Pulse
+Whimsicott
+Level: 78
+Ability: Prankster
 
-Luvdisc @ Nugget
-Level: 39
-- Attract
-- Safeguard
-- Take Down
-- Water Pulse
+Sylveon
+Level: 78
+Ability: Pacifier
+
+Alomomola
+Level: 78
+Ability: Healer
 
 === TRAINER_TIFFANY ===
 Name: TIFFANY
@@ -6385,25 +6599,17 @@ Class: Beauty
 Pic: Beauty
 Gym Trainer: Yes
 
-Clamperl
-Level: 35
-- Iron Defense
-- Whirlpool
-- Rain Dance
-- Water Pulse
+Granbull
+Level: 78
+Ability: Intimidate
 
-Corphish
-Level: 37
-- Taunt
-- Crabhammer
-- Water Pulse
+Rapidash
+Level: 78
+Ability: Flame Body
 
-Lombre
-Level: 39
-- Uproar
-- Fury Swipes
-- Fake Out
-- Water Pulse
+Torterra
+Level: 79
+Ability: Symbiosis
 
 === TRAINER_BRIANNA ===
 Name: BRIANNA
@@ -6411,32 +6617,45 @@ Class: Lady
 Pic: Lady
 Gym Trainer: Yes
 
-Seaking @ Nugget
-Level: 40
+Lilligant
+Level: 79
+Ability: Aroma Veil
+
+Masquerain
+Level: 79
+Ability: Tinted Lens
+
+Jynx
+Level: 79
+Ability: Purity
 
 === TRAINER_BRIDGET ===
 Name: BRIDGET
-Class: Beauty
-Pic: Beauty
+Class: Cooltrainer
+Pic: Cooltrainer F
 Gym Trainer: Yes
 
-Azumarill
-Level: 40
+Umbreon
+Level: 79
+Ability: Insomnia
 
-=== TRAINER_BETHANY ===
-Name: BETHANY
-Class: Pokefan
-Pic: Pokefan F
+Revavroom
+Level: 79
+Ability: Speed Boost
+
+=== TRAINER_BRADLEY ===
+Name: BRADLEY
+Class: Rich Boy
+Pic: Rich Boy
 Gym Trainer: Yes
 
-Azurill @ Oran Berry
-Level: 35
+Electabuzz
+Level: 79
+Ability: Lightning Rod
 
-Marill @ Oran Berry
-Level: 37
-
-Azumarill @ Oran Berry
-Level: 39
+Tyrantrum
+Level: 79
+Ability: Intimidate
 
 === TRAINER_ANNIKA ===
 Name: ANNIKA
@@ -6581,8 +6800,8 @@ Pic: Swimmer M
 Sealeo
 Level: 34
 
-=== TRAINER_BECK ===
-Name: BECK
+=== TRAINER_BRODY ===
+Name: BRODY
 Class: Bird Keeper
 Pic: Bird Keeper
 
@@ -6625,8 +6844,8 @@ Level: 33
 
 /* Route 134 */
 
-=== TRAINER_LAUREL ===
-Name: LAUREL
+=== TRAINER_ELLIE ===
+Name: ELLIE
 Class: Swimmer F
 Pic: Swimmer F
 
@@ -6674,8 +6893,8 @@ Pic: Sailor
 Wailmer
 Level: 34
 
-=== TRAINER_MARLEY ===
-Name: MARLEY
+=== TRAINER_NATALIE ===
+Name: NATALIE
 Class: Cooltrainer
 Pic: Cooltrainer F
 
@@ -6832,24 +7051,36 @@ Sableye
 Level: 43
 
 === TRAINER_VITO ===
-Name: VITO
+Name: JAN
 Class: Cooltrainer
 Pic: Cooltrainer M
 
-Dodrio
-Level: 42
+Zangoose
+Level: 93
+Ability: Quick Draw
 
-Kadabra
-Level: 42
+Slowbro
+Level: 93
+Ability: Regenerator
 
-Electrode
-Level: 42
+Noctowl
+Level: 93
+Ability: Unnerve
 
-Shiftry
-Level: 42
+Ludicolo
+Level: 93
+Ability: Oblivious
+
+Malamar
+Level: 93
+Ability: Adaptability
+
+Magcargo
+Level: 93
+Ability: Magma Armor
 
 === TRAINER_MICHELLE ===
-Name: MICHELLE
+Name: SHEL
 Class: Cooltrainer
 Pic: Cooltrainer F
 
@@ -6881,8 +7112,8 @@ Level: 43
 - Light Screen
 - Shadow Ball
 
-=== TRAINER_HALLE ===
-Name: HALLE
+=== TRAINER_ERIN ===
+Name: ERIN
 Class: Cooltrainer
 Pic: Cooltrainer F
 
@@ -6897,14 +7128,32 @@ Name: EDGAR
 Class: Cooltrainer
 Pic: Cooltrainer M
 
-Cacturne
-Level: 43
+Decidueye
+Level: 93
+Ability: Quick Draw
 
-Pelipper
-Level: 43
+Stoutland
+Level: 93
+Ability: Stalwart
 
-=== TRAINER_KATELYNN ===
-Name: KATELYNN
+Hariyama
+Level: 93
+Ability: Thick Fat
+
+Yanmega
+Level: 93
+Ability: Kusanagi
+
+Malamar
+Level: 93
+Ability: Pure Power
+
+Magcargo
+Level: 93
+Ability: Miracle Eye
+
+=== TRAINER_KIMBERLY ===
+Name: KIMBERLY
 Class: Cooltrainer
 Pic: Cooltrainer F
 
@@ -6983,27 +7232,39 @@ Level: 43
 - Rest
 - Belly Drum
 
-=== TRAINER_NICOLAS_1 ===
-Name: NICOLAS
+=== TRAINER_SERGIO_1 ===
+Name: SERGIO
 Class: Dragon Tamer
 Pic: Dragon Tamer
 
 Altaria
-Level: 37
+Level: 87
 
-Altaria
-Level: 37
+Charizard
+Level: 87
 
-=== TRAINER_NICOLAS_2 ===
-Name: NICOLAS
+Haxorus
+Level: 87
+
+Salamence
+Level: 87
+
+=== TRAINER_SERGIO_2 ===
+Name: SERGIO
 Class: Dragon Tamer
 Pic: Dragon Tamer
 
 Altaria
-Level: 41
+Level: 87
 
-Altaria
-Level: 41
+Charizard
+Level: 87
+
+Haxorus
+Level: 87
+
+Salamence
+Level: 87
 
 /* SS Tidal */
 
@@ -7101,8 +7362,8 @@ Level: 45
 Luvdisc
 Level: 45
 
-=== TRAINER_PHILLIP ===
-Name: PHILLIP
+=== TRAINER_COLBY ===
+Name: COLBY
 Class: Sailor
 Pic: Sailor
 
@@ -7403,21 +7664,10 @@ Level: 27
 Poochyena
 Level: 27
 
-=== TRAINER_MATT ===
+=== TRAINER_MATT_OCEANIC_MUSEUM ===
 Name: MATT
 Class: Aqua Admin
 Pic: Aqua Admin M
-
-Mightyena
-Level: 34
-
-Golbat
-Level: 34
-
-=== TRAINER_SHELLY_WEATHER_INSTITUTE ===
-Name: SHELLY
-Class: Aqua Admin
-Pic: Aqua Admin F
 
 Carvanha
 Level: 28
@@ -7425,40 +7675,111 @@ Level: 28
 Mightyena
 Level: 28
 
-=== TRAINER_SHELLY_SEAFLOOR_CAVERN ===
-Name: SHELLY
+=== TRAINER_MATT_AQUA_HIDEOUT ===
+Name: MATT
+Class: Aqua Admin
+Pic: Aqua Admin M
+
+Poliwrath
+Level: 83
+Ability: Swift Swim
+
+Wailord
+Level: 83
+Ability: Unaware
+
+Beartic
+Level: 83
+Ability: Tough Claws
+
+Kabutops
+Level: 83
+Ability: Hyper Cutter
+
+Skarmory
+Level: 83
+Ability: Sturdy
+
+Venusaur
+Level: 83
+Ability: Symbiosis
+
+=== TRAINER_SHELLY ===
+Name: MICHELLE
 Class: Aqua Admin
 Pic: Aqua Admin F
 
-Sharpedo
-Level: 37
+Masquerain
+Level: 84
+Ability: Tinted Lens
 
-Mightyena
-Level: 37
+Tsareena
+Level: 84
+Ability: Moxie
+
+Archeops
+Level: 84
+Ability: Early Bird
+
+Lunatone
+Level: 84
+Ability: Moon Presence
+
+Crabominable
+Level: 84
+Ability: Sheer Force
+
+Crawdaunt
+Level: 84
+Ability: Defiant
 
 === TRAINER_ARCHIE ===
 Name: ARCHIE
 Class: Aqua Leader
 Pic: Aqua Leader Archie
 
-Mightyena
-Level: 41
+Barbaracle
+Level: 85
+Ability: Keen Eye
 
-Crobat
-Level: 41
+Machamp
+Level: 85
+Ability: Moxie
 
-Sharpedo
-Level: 43
+Weavile
+Level: 85
+Ability: Crafty
+
+Golisopod
+Level: 85
+Ability: Run Away
+
+Pangoro
+Level: 85
+Ability: Intimidate
+
+Clawitzer
+Level: 85
+Ability: Mega Launcher
 
 /* Team Magma */
 
 === TRAINER_GRUNT_RUSTURF_TUNNEL ===
 Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Class: Team Magma
+Pic: Magma Grunt M
 
-Poochyena
-Level: 11
+Trapinch
+Level: 12
+Ability: Arena Trap
+
+Ekans
+Level: 13
+Ability: Shed Skin
+
+Houndour
+Level: 14
+Ability: Defiant
 
 === TRAINER_GRUNT_JAGGED_PASS ===
 Name: GRUNT
@@ -7574,7 +7895,7 @@ Pic: Magma Grunt M
 Zubat
 Level: 32
 
-=== TRAINER_GRUNT_SPACE_CENTER_6 ===
+=== TRAINER_GRUNT_MT_CHIMNEY_3 ===
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
@@ -7582,7 +7903,7 @@ Pic: Magma Grunt M
 Mightyena
 Level: 32
 
-=== TRAINER_GRUNT_SPACE_CENTER_7 ===
+=== TRAINER_GRUNT_MT_CHIMNEY_4 ===
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
@@ -7676,7 +7997,7 @@ Pic: Magma Grunt M
 Mightyena
 Level: 29
 
-=== TRAINER_GRUNT_MAGMA_HIDEOUT_11 ===
+=== TRAINER_GRUNT_MT_PYRE_5 ===
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
@@ -7684,7 +8005,7 @@ Pic: Magma Grunt M
 Baltoy
 Level: 29
 
-=== TRAINER_GRUNT_MAGMA_HIDEOUT_12 ===
+=== TRAINER_GRUNT_SEAFLOOR_CAVERN_6 ===
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
@@ -7692,7 +8013,7 @@ Pic: Magma Grunt M
 Numel
 Level: 29
 
-=== TRAINER_GRUNT_MAGMA_HIDEOUT_13 ===
+=== TRAINER_GRUNT_SEAFLOOR_CAVERN_7 ===
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
@@ -7700,7 +8021,7 @@ Pic: Magma Grunt M
 Zubat
 Level: 29
 
-=== TRAINER_GRUNT_MAGMA_HIDEOUT_14 ===
+=== TRAINER_GRUNT_MUSEUM_3 ===
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt F
@@ -7708,7 +8029,7 @@ Pic: Magma Grunt F
 Mightyena
 Level: 29
 
-=== TRAINER_GRUNT_MAGMA_HIDEOUT_15 ===
+=== TRAINER_GRUNT_MUSEUM_4 ===
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt F
@@ -7716,7 +8037,7 @@ Pic: Magma Grunt F
 Numel
 Level: 29
 
-=== TRAINER_GRUNT_MAGMA_HIDEOUT_16 ===
+=== TRAINER_GRUNT_MUSEUM_5 ===
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt F
@@ -7724,39 +8045,114 @@ Pic: Magma Grunt F
 Baltoy
 Level: 29
 
-=== TRAINER_TABITHA_MT_CHIMNEY ===
-Name: TABITHA
+=== TRAINER_COURTNEY_MT_PYRE ===
+Name: COURTNEY
 Class: Magma Admin
-Pic: Magma Admin
+Pic: Magma Admin F
 
-Numel
-Level: 18
+Scrafty
+Level: 63
+Ability: Provocateur
 
-Poochyena
-Level: 20
+Scolipede
+Level: 63
+Ability: Battle Armor
 
-Numel
-Level: 22
+Salazzle
+Level: 63
+Ability: Blaze
 
-Zubat
-Level: 22
+Drapion
+Level: 63
+Ability: Intimidate
+
+=== TRAINER_MAXIE ===
+Name: MAXIE
+Class: Magma Leader
+Pic: Magma Leader Maxie
+AI: Smart Trainer / Conservative
+
+Magcargo
+Level: 71
+Ability: Magma Armor
+
+Solrock
+Level: 71
+Ability: Solar Power
+
+Cacturne
+Level: 71
+Ability: Rough Skin
+
+Cofagrigus
+Level: 71
+Ability: Magic Guard
+
+Weezing
+Level: 71
+Ability: Corrosion
+
+Camerupt
+Level: 71
+Ability: Adaptability
+
+=== TRAINER_COURTNEY_MAGMA_HIDEOUT ===
+Name: COURTNEY
+Class: Magma Admin
+Pic: Magma Admin F
+
+Scrafty
+Level: 73
+Ability: Provocateur
+
+Scolipede
+Level: 73
+Ability: Battle Armor
+
+Salazzle
+Level: 73
+Ability: Blaze
+
+Yanmega
+Level: 73
+Ability: Sniper
+
+Gengar
+Level: 73
+Ability: Malice
+
+Krookodile
+Level: 73
+Ability: Intimidate
 
 === TRAINER_TABITHA_MAGMA_HIDEOUT ===
 Name: TABITHA
-Class: Magma Admin
+Class: Magma Leader
 Pic: Magma Admin
 
-Numel
-Level: 26
+Pinsir
+Level: 73
+Ability: Hyper Cutter
 
-Mightyena
-Level: 28
+Typhlosion
+Level: 73
+Ability: Blaze
 
-Zubat
-Level: 30
+Grimmsnarl
+Level: 73
+Ability: Contrary
 
-Camerupt
-Level: 33
+Tyranitar
+Level: 73
+Ability: Defiant
+
+Drapion
+Level: 73
+Ability: Intimidate
+
+Toxicroak
+Level: 73
+Ability: Toxic Body
 
 === TRAINER_TABITHA_MOSSDEEP ===
 Name: TABITHA
@@ -7772,34 +8168,6 @@ Level: 38
 
 Golbat
 Level: 40
-
-=== TRAINER_MAXIE_MT_CHIMNEY ===
-Name: MAXIE
-Class: Magma Leader
-Pic: Magma Leader Maxie
-
-Mightyena
-Level: 24
-
-Zubat
-Level: 24
-
-Camerupt
-Level: 25
-
-=== TRAINER_MAXIE_MAGMA_HIDEOUT ===
-Name: MAXIE
-Class: Magma Leader
-Pic: Magma Leader Maxie
-
-Mightyena
-Level: 37
-
-Crobat
-Level: 38
-
-Camerupt
-Level: 39
 
 === TRAINER_MAXIE_MOSSDEEP ===
 Name: MAXIE
@@ -7880,42 +8248,90 @@ Name: MAY
 Class: Rival
 Pic: May
 
-Wingull
+Braixen
+Level: 18
+Ability: Crafty
+- Fire Spin
+- Morning Sun
+- Ember
+- Baby Doll Eyes
+
+Marshtomp
+Level: 18
+- Mud Sport
+- Mud Bomb
+- Tremors
+- Absorb
+
+Eevee
+Level: 18
+- Quick Attack
+- Work Up
+- Bite
+- Role Play
+
+Whismur
 Level: 18
 
-Lombre
+Clefairy
 Level: 18
-
-Combusken
-Level: 20
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
 Name: MAY
 Class: Rival
 Pic: May
 
-Lombre
+Dewott
+Level: 18
+- Razor Shell
+- Defense Curl
+- Yawn
+- Head Smack
+
+Grovyle
 Level: 18
 
-Slugma
+Eevee
+Level: 18
+- Quick Attack
+- Work Up
+- Bite
+- Role Play
+
+Whismur
 Level: 18
 
-Marshtomp
-Level: 20
+Clefairy
+Level: 18
 
 === TRAINER_MAY_ROUTE_110_TREECKO ===
 Name: MAY
 Class: Rival
 Pic: May
 
-Wingull
+Servine
+Level: 18
+Ability: Moxie
+- Double Slap
+- Vine Whip
+- Bind
+- Leer
+
+Combusken
 Level: 18
 
-Slugma
+Eevee
+Level: 18
+- Quick Attack
+- Work Up
+- Bite
+- Role Play
+
+Whismur
 Level: 18
 
-Grovyle
-Level: 20
+Clefairy
+Level: 18
 
 === TRAINER_MAY_ROUTE_119_TORCHIC ===
 Name: MAY
@@ -8072,42 +8488,90 @@ Name: BRENDAN
 Class: Rival
 Pic: Brendan
 
-Wingull
+Braixen
+Level: 18
+Ability: Prankster
+- Fire Spin
+- Morning Sun
+- Ember
+- Baby Doll Eyes
+
+Marshtomp
+Level: 18
+- Mud Sport
+- Mud Bomb
+- Tremors
+- Absorb
+
+Eevee
+Level: 18
+- Quick Attack
+- Work Up
+- Bite
+- Role Play
+
+Taillow
 Level: 18
 
-Lombre
+Grimer Alola
 Level: 18
-
-Combusken
-Level: 20
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
 
-Lombre
+Dewott
+Level: 18
+- Razor Shell
+- Defense Curl
+- Yawn
+- Water Gun
+
+Grovyle
 Level: 18
 
-Slugma
+Eevee
+Level: 18
+- Quick Attack
+- Work Up
+- Bite
+- Role Play
+
+Taillow
 Level: 18
 
-Marshtomp
-Level: 20
+Grimer Alola
+Level: 18
 
 === TRAINER_BRENDAN_ROUTE_110_TREECKO ===
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
 
-Slugma
+Servine
+Level: 18
+Ability: Contrary
+- Power Trip
+- Vine Whip
+- Bind
+- Confide
+
+Combusken
 Level: 18
 
-Wingull
+Eevee
+Level: 18
+- Quick Attack
+- Work Up
+- Bite
+- Role Play
+
+Taillow
 Level: 18
 
-Grovyle
-Level: 20
+Grimer Alola
+Level: 18
 
 === TRAINER_BRENDAN_ROUTE_119_TORCHIC ===
 Name: BRENDAN
@@ -8210,10 +8674,10 @@ Pic: Wally
 Ralts
 Level: 16
 
-=== TRAINER_WALLY_VR_1 ===
+=== TRAINER_WALLY_PETALBURG_DRIVE ===
 Name: WALLY
 Class: Rival
-Pic: Wally
+Pic: Wally Drive
 
 Altaria
 Level: 44
@@ -8250,7 +8714,7 @@ Level: 45
 - Psychic
 - Future Sight
 
-=== TRAINER_WALLY_VR_2 ===
+=== TRAINER_WALLY_PETALBURG_BOND ===
 Name: WALLY
 Class: Rival
 Pic: Wally
@@ -8290,125 +8754,86 @@ Level: 48
 - Psychic
 - Future Sight
 
-=== TRAINER_WALLY_VR_3 ===
+=== TRAINER_WALLY_VR_DRIVE ===
+Name: WALLY
+Class: Rival
+Pic: Wally Drive
+
+Tinkaton
+Level: 90
+Ability: Huge Power
+
+Mamoswine
+Level: 90
+Ability: Thick Fat
+
+Ledian
+Level: 90
+Ability: Victory Star
+
+Armaldo
+Level: 90
+Ability: Battle Armor
+
+Salamence
+Level: 90
+Ability: Inner Focus
+
+Gallade
+Level: 90
+Ability: Stalwart
+
+=== TRAINER_WALLY_VR_BOND ===
 Name: WALLY
 Class: Rival
 Pic: Wally
 
-Altaria
-Level: 50
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
+Togekiss
+Level: 90
+Ability: Victory Star
 
-Delcatty
-Level: 49
-- Sing
-- Assist
-- Charm
-- Feint Attack
+Quagsire
+Level: 90
+Ability: Unaware
 
-Roselia
-Level: 50
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
+Shiinotic
+Level: 90
+Ability: Prankster
 
-Magneton
-Level: 47
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
+Forretress
+Level: 90
+Ability: Shell Armor
+
+Garganacl
+Level: 90
+Ability: Healer
 
 Gardevoir
-Level: 51
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+Level: 90
+Ability: Soul Heart
 
-=== TRAINER_WALLY_VR_4 ===
+=== TRAINER_WALLY_CHAMPION_DRIVE ===
 Name: WALLY
 Class: Rival
-Pic: Wally
+Pic: Wally Drive
 
-Altaria
-Level: 53
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
+Tinkaton
+Ability: Huge Power
 
-Delcatty
-Level: 52
-- Sing
-- Assist
-- Charm
-- Feint Attack
+Mamoswine
+Ability: Thick Fat
 
-Roselia
-Level: 53
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
+Ledian
+Ability: Victory Star
 
-Magneton
-Level: 50
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
+Armaldo
+Ability: Battle Armor
 
-Gardevoir
-Level: 54
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+Salamence
+Ability: Inner Focus
 
-=== TRAINER_WALLY_VR_5 ===
-Name: WALLY
-Class: Rival
-Pic: Wally
-
-Altaria
-Level: 56
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
-Level: 55
-- Sing
-- Assist
-- Charm
-- Feint Attack
-
-Roselia
-Level: 56
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
-
-Magneton
-Level: 53
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
-
-Gardevoir
-Level: 57
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+Gallade
+Ability: Stalwart
 
 /* League Trainers */
 
@@ -8694,67 +9119,90 @@ Name: WATTSON
 Class: Leader
 Pic: Leader Wattson
 
-Voltorb
+Lombre (M) @ Damp Rock
 Level: 20
-- Rollout
-- Spark
-- Self Destruct
-- Shock Wave
+Ability: Rain Dish
+EVs: 40 HP / 40 Def / 20 Spe
+Naive Nature
+- Rain Dance
+- Soak
+- Water Gun
+- Yawn
 
-Electrike
+Helioptile (F) @ Float Stone
 Level: 20
-- Shock Wave
-- Leer
-- Quick Attack
-- Howl
+Ability: Dry Skin
+EVs: 40 Def / 40 SpA / 20 SpD
+Jolly Nature
 
-Magneton
-Level: 22
-- Supersonic
-- Shock Wave
-- Thunder Wave
-- Sonic Boom
+Kricketot (M) @ Aguav Berry
+Level: 20
+Ability: Minstrel
+EVs: 40 Def / 40 SpA / 20 SpD
+Gentle Nature
 
-Manectric @ Sitrus Berry
-Level: 24
-- Quick Attack
-- Thunder Wave
-- Shock Wave
-- Howl
+Gurdurr (M) @ Rocky Helmet
+Level: 20
+Ability: Guts
+EVs: 40 Def / 40 SpA / 20 SpD
+Bold Nature
+
+Golett @ Assault Vest
+Level: 20
+Ability: Motor Drive
+EVs: 40 Def / 40 SpA / 20 SpD
+Mild Nature
+
+Magneton @ Magnet
+Level: 20
+Ability: Analytic
+EVs: 40 Def / 40 SpA / 20 SpD
+Quiet Nature
 
 === TRAINER_WATTSON_2 ===
 Name: WATTSON
 Class: Leader
 Pic: Leader Wattson
-Battle Type: Doubles
 
-Mareep
-Level: 36
-- Thunder
-- Protect
-- Thunder Wave
-- Light Screen
-
-Electrode
-Level: 36
-- Rollout
-- Thunder
-- Explosion
+Ludicolo (M) @ Damp Rock
+Level: 86
+Ability: Rain Dish
+EVs: 180 HP / 80 Def / 180 Spe
+Naive Nature
 - Rain Dance
+- Soak
+- Water Gun
+- Yawn
 
-Magneton @ Sitrus Berry
-Level: 38
-- Supersonic
-- Protect
-- Thunder
-- Rain Dance
+Heliolisk (F) @ Float Stone
+Level: 86
+Ability: Dry Skin
+EVs: 180 SpA / 180 Spe / 80 HP
+Jolly Nature
 
-Manectric @ Sitrus Berry
-Level: 40
-- Bite
-- Thunder Wave
-- Thunder
-- Protect
+Kricketune (M) @ Aguav Berry
+Level: 86
+Ability: Minstrel
+EVs: 180 HP / 60 Def / 80 SpA / 60 SpD / 60 Spe
+Gentle Nature
+
+Conkeldurr (M) @ Rocky Helmet
+Level: 86
+Ability: Guts
+EVs: 180 HP / 180 Atk / 80 Def
+Bold Nature
+
+Golurk @ Assault Vest
+Level: 86
+Ability: Motor Drive
+EVs: 140 HP / 80 Atk / 60 Def / 80 SpA / 80 SpD
+Mild Nature
+
+Magnezone @ Magnet
+Level: 86
+Ability: Analytic
+EVs: 4 HP / 128 Def / 180 SpA / 128 SpD
+Quiet Nature
 
 === TRAINER_WATTSON_3 ===
 Name: WATTSON
@@ -8762,40 +9210,39 @@ Class: Leader
 Pic: Leader Wattson
 Battle Type: Doubles
 
-Pikachu
-Level: 39
-- Thunder
-- Slam
+Heliolisk (F) @ Float Stone
+Ability: Dry Skin
+EVs: 192 SpA / 192 Spe / 96 HP
+Jolly Nature
+
+Ludicolo (M) @ Damp Rock
+Ability: Rain Dish
+EVs: 192 HP / 96 Def / 192 Spe
+Naive Nature
 - Rain Dance
-- Shock Wave
+- Soak
+- Water Gun
+- Yawn
 
-Flaaffy
-Level: 41
-- Thunder
-- Protect
-- Thunder Wave
-- Light Screen
+Kricketune (M) @ Aguav Berry
+Ability: Minstrel
+EVs: 180 HP / 60 Def / 80 SpA / 60 SpD / 60 Spe
+Gentle Nature
 
-Electrode
-Level: 41
-- Rollout
-- Thunder
-- Explosion
-- Rain Dance
+Conkeldurr (M) @ Rocky Helmet
+Ability: Guts
+EVs: 180 HP / 180 Atk / 80 Def
+Bold Nature
 
-Magneton @ Sitrus Berry
-Level: 43
-- Supersonic
-- Protect
-- Thunder
-- Rain Dance
+Golurk @ Assault Vest
+Ability: Motor Drive
+EVs: 140 HP / 80 Atk / 60 Def / 80 SpA / 80 SpD
+Mild Nature
 
-Manectric @ Sitrus Berry
-Level: 45
-- Bite
-- Thunder Wave
-- Thunder
-- Protect
+Magneton @ Zoom Lens
+Ability: Analytic
+EVs: 4 HP / 128 Def / 180 SpA / 128 SpD
+Quiet Nature
 
 === TRAINER_WATTSON_4 ===
 Name: WATTSON
@@ -8843,33 +9290,30 @@ Name: FLANNERY
 Class: Leader
 Pic: Leader Flannery
 
-Numel
-Level: 24
-- Overheat
-- Take Down
-- Magnitude
-- Sunny Day
-
-Slugma
-Level: 24
-- Overheat
-- Smog
-- Light Screen
-- Sunny Day
-
-Camerupt
-Level: 26
-- Overheat
-- Tackle
-- Sunny Day
-- Attract
-
-Torkoal @ White Herb
+Torracat
 Level: 29
-- Overheat
-- Sunny Day
-- Body Slam
-- Attract
+Ability: Defiant
+
+Gabite
+Level: 29
+Ability: Sand Rush
+
+Electabuzz
+Level: 29
+Ability: Iron Fist
+
+Sandslash
+Level: 29
+Ability: Tough Claws
+- Sandstorm
+
+Ferroseed
+Level: 29
+Ability: Rough Skin
+
+Darmanitan
+Level: 29
+Ability: Gorilla Tactics
 
 === TRAINER_FLANNERY_2 ===
 Name: FLANNERY
@@ -8877,33 +9321,30 @@ Class: Leader
 Pic: Leader Flannery
 Battle Type: Doubles
 
-Magcargo @ White Herb
-Level: 38
-- Overheat
-- Attract
-- Light Screen
-- Rock Slide
+Torracat
+Level: 29
+Ability: Defiant
 
-Ponyta
-Level: 36
-- Flamethrower
-- Attract
-- Solar Beam
-- Bounce
+Gabite
+Level: 29
+Ability: Sand Rush
 
-Camerupt @ White Herb
-Level: 38
-- Overheat
-- Sunny Day
-- Earthquake
-- Attract
+Electabuzz
+Level: 29
+Ability: Iron Fist
 
-Torkoal @ White Herb
-Level: 40
-- Overheat
-- Sunny Day
-- Explosion
-- Attract
+Sandslash
+Level: 29
+Ability: Tough Claws
+- Sandstorm
+
+Ferroseed
+Level: 29
+Ability: Rough Skin
+
+Darmanitan
+Level: 29
+Ability: Gorilla Tactics
 
 === TRAINER_FLANNERY_3 ===
 Name: FLANNERY
@@ -8911,40 +9352,30 @@ Class: Leader
 Pic: Leader Flannery
 Battle Type: Doubles
 
-Growlithe
-Level: 41
-- Helping Hand
-- Flamethrower
-- Roar
-- Sunny Day
+Torracat
+Level: 29
+Ability: Defiant
 
-Magcargo @ White Herb
-Level: 43
-- Overheat
-- Attract
-- Light Screen
-- Rock Slide
+Gabite
+Level: 29
+Ability: Sand Rush
 
-Ponyta
-Level: 41
-- Flamethrower
-- Attract
-- Solar Beam
-- Bounce
+Electabuzz
+Level: 29
+Ability: Iron Fist
 
-Camerupt @ White Herb
-Level: 43
-- Overheat
-- Sunny Day
-- Earthquake
-- Attract
+Sandslash
+Level: 29
+Ability: Tough Claws
+- Sandstorm
 
-Torkoal @ White Herb
-Level: 45
-- Overheat
-- Sunny Day
-- Explosion
-- Attract
+Ferroseed
+Level: 29
+Ability: Rough Skin
+
+Darmanitan
+Level: 29
+Ability: Gorilla Tactics
 
 === TRAINER_FLANNERY_4 ===
 Name: FLANNERY
@@ -8952,47 +9383,30 @@ Class: Leader
 Pic: Leader Flannery
 Battle Type: Doubles
 
-Houndour
-Level: 46
-- Roar
-- Solar Beam
-- Taunt
-- Sunny Day
+Torracat
+Level: 29
+Ability: Defiant
 
-Growlithe
-Level: 46
-- Helping Hand
-- Flamethrower
-- Sunny Day
-- Roar
+Gabite
+Level: 29
+Ability: Sand Rush
 
-Magcargo @ White Herb
-Level: 48
-- Overheat
-- Attract
-- Light Screen
-- Rock Slide
+Electabuzz
+Level: 29
+Ability: Iron Fist
 
-Rapidash
-Level: 46
-- Flamethrower
-- Attract
-- Solar Beam
-- Bounce
+Sandslash
+Level: 29
+Ability: Tough Claws
+- Sandstorm
 
-Camerupt @ White Herb
-Level: 48
-- Overheat
-- Sunny Day
-- Earthquake
-- Attract
+Ferroseed
+Level: 29
+Ability: Rough Skin
 
-Torkoal @ White Herb
-Level: 50
-- Overheat
-- Sunny Day
-- Explosion
-- Attract
+Darmanitan
+Level: 29
+Ability: Gorilla Tactics
 
 === TRAINER_NORMAN_1 ===
 Name: NORMAN
@@ -9354,7 +9768,7 @@ Level: 42
 - Psychic
 - Flamethrower
 
-=== TRAINER_TATE_AND_LIZA_2 ===
+=== TRAINER_TATE ===
 Name: TATE&LIZA
 Class: Leader
 Pic: Leader Tate And Liza
@@ -9395,7 +9809,7 @@ Level: 50
 - Psychic
 - Flamethrower
 
-=== TRAINER_TATE_AND_LIZA_3 ===
+=== TRAINER_LIZA ===
 Name: TATE&LIZA
 Class: Leader
 Pic: Leader Tate And Liza
@@ -9443,7 +9857,7 @@ Level: 55
 - Psychic
 - Flamethrower
 
-=== TRAINER_TATE_AND_LIZA_4 ===
+=== TRAINER_TATE_AND_LIZA_2 ===
 Name: TATE&LIZA
 Class: Leader
 Pic: Leader Tate And Liza
@@ -9496,40 +9910,29 @@ Name: JUAN
 Class: Leader
 Pic: Leader Juan
 
-Luvdisc
-Level: 41
-- Water Pulse
-- Attract
-- Sweet Kiss
-- Flail
+Frosmoth
+Level: 79
+Ability: Intimidate
 
-Whiscash
-Level: 41
-- Rain Dance
-- Water Pulse
-- Amnesia
-- Earthquake
+Walrein
+Level: 79
+Ability: Thick Fat
 
-Sealeo
-Level: 43
-- Encore
-- Body Slam
-- Aurora Beam
-- Water Pulse
+Alakazam
+Level: 79
+Ability: Magic Bounce
 
-Crawdaunt
-Level: 43
-- Water Pulse
-- Crabhammer
-- Taunt
-- Leer
+Mienshao
+Level: 79
+Ability: Quick Draw
 
-Kingdra @ Chesto Berry
-Level: 46
-- Water Pulse
-- Double Team
-- Ice Beam
-- Rest
+Glimmora
+Level: 79
+Ability: Corrosion
+
+Kingdra
+Level: 79
+Ability: Multiscale
 
 === TRAINER_JUAN_2 ===
 Name: JUAN
@@ -9537,40 +9940,23 @@ Class: Leader
 Pic: Leader Juan
 Battle Type: Doubles
 
-Poliwag
-Level: 46
-- Hypnosis
-- Rain Dance
-- Protect
-- Hydro Pump
-
-Whiscash
-Level: 46
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
+Frosmoth
+Ability: Intimidate
 
 Walrein
-Level: 48
-- Water Pulse
-- Body Slam
-- Protect
-- Ice Beam
+Ability: Thick Fat
 
-Crawdaunt @ Chesto Berry
-Level: 48
-- Rest
-- Crabhammer
-- Taunt
-- Double Team
+Alakazam
+Ability: Magic Bounce
 
-Kingdra @ Chesto Berry
-Level: 51
-- Water Pulse
-- Double Team
-- Ice Beam
-- Rest
+Mienshao
+Ability: Quick Draw
+
+Glimmora
+Ability: Corrosion
+
+Kingdra
+Ability: Multiscale
 
 === TRAINER_JUAN_3 ===
 Name: JUAN
@@ -9578,40 +9964,23 @@ Class: Leader
 Pic: Leader Juan
 Battle Type: Doubles
 
-Poliwhirl
-Level: 50
-- Hypnosis
-- Rain Dance
-- Protect
-- Hydro Pump
-
-Whiscash
-Level: 51
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
+Frosmoth
+Ability: Intimidate
 
 Walrein
-Level: 53
-- Water Pulse
-- Body Slam
-- Protect
-- Ice Beam
+Ability: Thick Fat
 
-Crawdaunt @ Chesto Berry
-Level: 53
-- Rest
-- Guillotine
-- Taunt
-- Double Team
+Alakazam
+Ability: Magic Bounce
 
-Kingdra @ Chesto Berry
-Level: 56
-- Water Pulse
-- Double Team
-- Ice Beam
-- Rest
+Mienshao
+Ability: Quick Draw
+
+Glimmora
+Ability: Corrosion
+
+Kingdra
+Ability: Multiscale
 
 === TRAINER_JUAN_4 ===
 Name: JUAN
@@ -9667,163 +10036,121 @@ Class: Elite Four
 Pic: Elite Four Sidney
 Mugshot: Purple
 
-Mightyena
-Level: 46
-- Roar
-- Double Edge
-- Sand Attack
-- Crunch
+Kingambit
+Level: 94
+Ability: Intimidate
 
-Shiftry
-Level: 48
-- Torment
-- Double Team
-- Swagger
-- Extrasensory
+Crobat
+Level: 94
+Ability: Infiltrator
 
-Cacturne
-Level: 46
-- Leech Seed
-- Feint Attack
-- Needle Arm
-- Cotton Spore
+Glalie
+Level: 94
+Ability: Frost Armor
 
-Crawdaunt
-Level: 48
-- Surf
-- Swords Dance
-- Strength
-- Facade
+Nidoking
+Level: 94
+Ability: Moxie
 
-Absol @ Sitrus Berry
-Level: 49
-- Aerial Ace
-- Rock Slide
-- Swords Dance
-- Slash
+Annihilape
+Level: 94
+Ability: Irritability
+
+Houndoom Mega
+Level: 94
+Ability: Doom Desire
 
 === TRAINER_PHOEBE ===
-Name: PHOEBE
+Name: LEILANI
 Class: Elite Four
 Pic: Elite Four Phoebe
+Battle Type: Doubles
 Mugshot: Green
 
-Dusclops
-Level: 48
-- Shadow Punch
-- Confuse Ray
-- Curse
-- Protect
+Lurantis
+Level: 95
+Ability: Technician
 
-Banette
-Level: 49
-- Shadow Ball
-- Grudge
-- Will O Wisp
-- Feint Attack
+Relicanth
+Level: 95
+Ability: Resilience
 
-Sableye
-Level: 50
-- Shadow Ball
-- Double Team
-- Night Shade
-- Feint Attack
+Starmie
+Level: 95
+Ability: Regenerator
 
-Banette
-Level: 49
-- Shadow Ball
-- Psychic
-- Thunderbolt
-- Facade
+Palossand
+Level: 95
+Ability: Sand Stream
 
-Dusclops @ Sitrus Berry
-Level: 51
-- Shadow Ball
-- Ice Beam
-- Rock Slide
-- Earthquake
+Kommo-o
+Level: 95
+Ability: Multiscale
+
+Meganium
+Level: 95
+Ability: Flower Veil
 
 === TRAINER_GLACIA ===
-Name: GLACIA
+Name: ROSALYNN
 Class: Elite Four
 Pic: Elite Four Glacia
 Mugshot: Pink
 
-Sealeo
-Level: 50
-- Encore
-- Body Slam
-- Hail
-- Ice Ball
+Chandelure
+Level: 96
+Ability: Doom Desire
 
-Glalie
-Level: 50
-- Light Screen
-- Crunch
-- Icy Wind
-- Ice Beam
+Gothitelle
+Level: 96
+Ability: Shadow Tag
 
-Sealeo
-Level: 52
-- Attract
-- Double Edge
-- Hail
-- Blizzard
+Omastar
+Level: 96
+Ability: Merciless
 
-Glalie
-Level: 52
-- Shadow Ball
-- Explosion
-- Hail
-- Ice Beam
+Hydreigon
+Level: 96
+Ability: Contrary
 
-Walrein @ Sitrus Berry
-Level: 53
-- Surf
-- Body Slam
-- Ice Beam
-- Sheer Cold
+Florges
+Level: 96
+Ability: Adaptability
+
+Froslass
+Level: 96
+Ability: Snow Warning
 
 === TRAINER_DRAKE ===
 Name: DRAKE
 Class: Elite Four
 Pic: Elite Four Drake
+Battle Type: Doubles
 Mugshot: Blue
 
-Shelgon
-Level: 52
-- Rock Tomb
-- Dragon Claw
-- Protect
-- Double Edge
+Noivern
+Level: 97
+Ability: Sniper
 
-Altaria
-Level: 54
-- Double Edge
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
+Tentacruel
+Level: 97
+Ability: Rain Dish
 
-Kingdra
-Level: 53
-- Smokescreen
-- Dragon Dance
-- Surf
-- Body Slam
+Aerodactyl
+Level: 97
+Ability: Rough Skin
 
-Flygon
-Level: 53
-- Flamethrower
-- Crunch
-- Dragon Breath
-- Earthquake
+Dhelmise
+Level: 97
+Ability: Metallic
 
-Salamence @ Sitrus Berry
-Level: 55
-- Flamethrower
-- Dragon Claw
-- Rock Slide
-- Crunch
+Ampharos
+Level: 97
+Ability: Tinted Lens
+
+Gyarados
+Level: 97
+Ability: Berserk
 
 === TRAINER_WALLACE ===
 Name: WALLACE
@@ -9831,94 +10158,52 @@ Class: Champion
 Pic: Champion Wallace
 Mugshot: Yellow
 
-Wailord
-Level: 57
-- Rain Dance
-- Water Spout
-- Double Edge
-- Blizzard
+Milotic
+Level: 98
+Ability: Wonder Skin
 
-Tentacruel
-Level: 55
-- Toxic
-- Hydro Pump
-- Sludge Bomb
-- Ice Beam
+Absol Mega
+Level: 98
+Ability: Avenger
 
-Ludicolo
-Level: 56
-- Giga Drain
-- Surf
-- Leech Seed
-- Double Team
+Aegislash
+Level: 98
+Ability: Justified
 
-Whiscash
-Level: 56
-- Earthquake
-- Surf
-- Amnesia
-- Hyper Beam
+Dragonite
+Level: 98
+Ability: Guts
 
-Gyarados
-Level: 56
-- Dragon Dance
-- Earthquake
-- Hyper Beam
-- Surf
+Volcarona
+Level: 98
+Ability: Drought
 
-Milotic @ Sitrus Berry
-Level: 58
-- Recover
-- Surf
-- Ice Beam
-- Toxic
+Lapras
+Level: 98
+Ability: Unaware
 
 === TRAINER_STEVEN ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
 
-Skarmory
-Level: 77
-- Toxic
-- Aerial Ace
-- Spikes
-- Steel Wing
+Aggron
+Ability: Battle Armor
+
+Vikavolt
+Ability: Mega Launcher
 
 Claydol
-Level: 75
-- Reflect
-- Light Screen
-- Ancient Power
-- Earthquake
+Ability: Magic Guard
 
-Aggron
-Level: 76
-- Thunder
-- Earthquake
-- Solar Beam
-- Dragon Claw
+Lucario
+Ability: Inner Focus
 
-Cradily
-Level: 76
-- Giga Drain
-- Ancient Power
-- Ingrain
-- Confuse Ray
+Minior
+Ability: Shields Down
 
-Armaldo
-Level: 76
-- Water Pulse
-- Ancient Power
-- Aerial Ace
-- Slash
-
-Metagross @ Sitrus Berry
-Level: 78
-- Earthquake
-- Psychic
-- Meteor Mash
-- Shadow Ball
+Metagross
+Ability: Analytic
 
 === TRAINER_ANABEL ===
 Name: ANABEL
@@ -9937,7 +10222,7 @@ Beldum
 Level: 5
 
 === TRAINER_SPENSER ===
-Name: SPENSER
+Name: IBRAHIM
 Class: Palace Maven
 Pic: Palace Maven Spenser
 
@@ -9969,7 +10254,7 @@ Beldum
 Level: 5
 
 === TRAINER_BRANDON ===
-Name: BRANDON
+Name: ROMAN
 Class: Pyramid King
 Pic: Pyramid King Brandon
 
@@ -9978,18 +10263,18 @@ Level: 5
 
 /* Unused */
 
-=== TRAINER_CINDY_5 ===
-Name: CINDY
+=== TRAINER_IRIS ===
+Name: IRIS
 Class: Lady
 Pic: Lady
 
 Linoone @ Nugget
 Level: 33
 
-=== TRAINER_CINDY_6 ===
-Name: CINDY
-Class: Lady
-Pic: Lady
+=== TRAINER_HONOKA ===
+Name: HONOKA
+Class: Battle Girl
+Pic: Battle Girl
 
 Linoone @ Nugget
 Level: 36
@@ -9998,11 +10283,10 @@ Level: 36
 - Odor Sleuth
 - Sand Attack
 
-=== TRAINER_GINA_AND_MIA_2 ===
-Name: GINA & MIA
-Class: Twins
-Pic: Twins
-Battle Type: Doubles
+=== TRAINER_MAYU ===
+Name: MAYU
+Class: Battle Girl
+Pic: Battle Girl
 
 Duskull
 Level: 10
@@ -10014,11 +10298,10 @@ Level: 10
 - Absorb
 - Leech Seed
 
-=== TRAINER_AMY_AND_LIV_6 ===
-Name: AMY & LIV
-Class: Twins
-Pic: Twins
-Battle Type: Doubles
+=== TRAINER_MEI ===
+Name: MEI
+Class: Battle Girl
+Pic: Battle Girl
 
 Plusle
 Level: 36
@@ -10034,20 +10317,20 @@ Level: 36
 - Charm
 - Helping Hand
 
-=== TRAINER_LUCAS_2 ===
-Name: LUCAS
-Class: Hiker
-Pic: Hiker
+=== TRAINER_SAKURA ===
+Name: SAKURA
+Class: Battle Girl
+Pic: Battle Girl
 
 Wailmer
 Level: 9
 - Splash
 - Water Gun
 
-=== TRAINER_KAYLEE ===
-Name: KAYLEE
-Class: Swimmer F
-Pic: Swimmer F
+=== TRAINER_TREVOR ===
+Name: TREVOR
+Class: Biker Frlg
+Pic: Biker Frlg
 
 Lanturn
 Level: 34
@@ -10057,16 +10340,17 @@ Level: 34
 
 === TRAINER_TERRY ===
 Name: TERRY
-Class: Psychic
-Pic: Psychic F
+Class: Bird Keeper
+Pic: Bird Keeper
+Gym Trainer: Yes
 
 Girafarig
 Level: 37
 
-=== TRAINER_MIKE_1 ===
-Name: MIKE
-Class: Hiker
-Pic: Hiker
+=== TRAINER_DONOVAN ===
+Name: DONOVAN
+Class: Biker Frlg
+Pic: Biker Frlg
 
 Pelipper
 Level: 10
@@ -10080,8 +10364,8 @@ Level: 10
 
 === TRAINER_DUDLEY ===
 Name: DUDLEY
-Class: Swimmer M
-Pic: Swimmer M
+Class: Rich Boy
+Pic: Rich Boy
 
 Tentacool
 Level: 33
@@ -10092,10 +10376,10 @@ Level: 33
 Tentacruel
 Level: 33
 
-=== TRAINER_CALVIN_5 ===
-Name: CALVIN
-Class: Youngster
-Pic: Youngster
+=== TRAINER_SETH ===
+Name: SETH
+Class: Biker Frlg
+Pic: Biker Frlg
 
 Swellow
 Level: 34
@@ -10106,10 +10390,10 @@ Level: 32
 Mightyena
 Level: 36
 
-=== TRAINER_JAMES_5 ===
-Name: JAMES
-Class: Bug Catcher
-Pic: Bug Catcher
+=== TRAINER_MASON ===
+Name: MASON
+Class: Biker Frlg
+Pic: Biker Frlg
 
 Surskit
 Level: 33
@@ -10123,10 +10407,10 @@ Level: 33
 Ninjask
 Level: 33
 
-=== TRAINER_WINSTON_5 ===
-Name: WINSTON
-Class: Rich Boy
-Pic: Rich Boy
+=== TRAINER_CODY ===
+Name: CODY
+Class: Bird Keeper
+Pic: Bird Keeper
 
 Linoone @ Nugget
 Level: 36
@@ -10135,10 +10419,10 @@ Level: 36
 - Odor Sleuth
 - Sand Attack
 
-=== TRAINER_HALEY_5 ===
-Name: HALEY
-Class: Lass
-Pic: Lass
+=== TRAINER_ROUMA ===
+Name: ROUMA
+Class: Bird Keeper
+Pic: Bird Keeper
 
 Swellow
 Level: 34
@@ -10149,11 +10433,10 @@ Level: 34
 Breloom
 Level: 34
 
-=== TRAINER_KAREN_5 ===
-Name: KAREN
-Class: School Kid
-Pic: School Kid F
-Music: Girl
+=== TRAINER_ISSHIN ===
+Name: ISSHIN
+Class: Black Belt
+Pic: Black Belt
 
 Breloom
 Level: 35
@@ -10161,10 +10444,10 @@ Level: 35
 Exploud
 Level: 35
 
-=== TRAINER_JERRY_5 ===
-Name: JERRY
-Class: School Kid
-Pic: School Kid M
+=== TRAINER_SHUNSUI ===
+Name: SHUNSUI
+Class: Black Belt
+Pic: Black Belt
 
 Kirlia
 Level: 34
@@ -10175,10 +10458,11 @@ Level: 34
 Medicham
 Level: 34
 
-=== TRAINER_TRENT_5 ===
-Name: TRENT
-Class: Hiker
-Pic: Hiker
+=== TRAINER_KENSHIRO ===
+Name: KENSHIRO
+Class: Black Belt
+Pic: Black Belt
+Gym Trainer: Yes
 
 Graveler
 Level: 33
@@ -10192,10 +10476,11 @@ Level: 33
 Golem
 Level: 33
 
-=== TRAINER_SAWYER_5 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
+=== TRAINER_KAZAMA ===
+Name: KAZAMA
+Class: Black Belt
+Pic: Black Belt
+Gym Trainer: Yes
 
 Machoke
 Level: 33
@@ -10206,11 +10491,10 @@ Level: 33
 Golem
 Level: 33
 
-=== TRAINER_SHELBY_5 ===
-Name: SHELBY
-Class: Expert
-Pic: Expert F
-Music: Rich
+=== TRAINER_TAKESHI ===
+Name: TAKESHI
+Class: Black Belt
+Pic: Black Belt
 
 Medicham
 Level: 39
@@ -10218,10 +10502,10 @@ Level: 39
 Hariyama
 Level: 39
 
-=== TRAINER_DIANA_5 ===
-Name: DIANA
-Class: Picnicker
-Pic: Picnicker
+=== TRAINER_HEIHACHI ===
+Name: HEIHACHI
+Class: Black Belt
+Pic: Black Belt
 
 Breloom
 Level: 40
@@ -10232,10 +10516,10 @@ Level: 40
 Altaria
 Level: 40
 
-=== TRAINER_ETHAN_5 ===
-Name: ETHAN
-Class: Camper
-Pic: Camper
+=== TRAINER_RYU ===
+Name: RYU
+Class: Black Belt
+Pic: Black Belt
 
 Swellow
 Level: 34
@@ -10246,10 +10530,10 @@ Level: 34
 Linoone
 Level: 34
 
-=== TRAINER_DUSTY_5 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+=== TRAINER_TOSHINORI ===
+Name: TOSHINORI
+Class: Black Belt
+Pic: Black Belt
 
 Sandslash
 Level: 36
@@ -10258,10 +10542,10 @@ Level: 36
 - Sand Attack
 - Poison Sting
 
-=== TRAINER_CATHERINE_5 ===
-Name: CATHERINE
-Class: Pkmn Ranger
-Pic: Pokemon Ranger F
+=== TRAINER_KOJIRO ===
+Name: KOJIRO
+Class: Black Belt
+Pic: Black Belt
 
 Bellossom
 Level: 39
@@ -10269,10 +10553,10 @@ Level: 39
 Roselia
 Level: 39
 
-=== TRAINER_JACKSON_5 ===
-Name: JACKSON
-Class: Pkmn Ranger
-Pic: Pokemon Ranger M
+=== TRAINER_LOGAN ===
+Name: LOGAN
+Class: Bug Maniac
+Pic: Bug Maniac
 
 Kecleon
 Level: 39
@@ -10280,10 +10564,10 @@ Level: 39
 Breloom
 Level: 39
 
-=== TRAINER_WILTON_4 ===
-Name: WILTON
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_HUNTER ===
+Name: HUNTER
+Class: Burglar Frlg
+Pic: Burglar Frlg
 
 Manectric
 Level: 32
@@ -10294,10 +10578,10 @@ Level: 32
 Makuhita
 Level: 32
 
-=== TRAINER_WILTON_5 ===
-Name: WILTON
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_AUSTIN ===
+Name: AUSTIN
+Class: Burglar Frlg
+Pic: Burglar Frlg
 
 Manectric
 Level: 35
@@ -10308,10 +10592,10 @@ Level: 35
 Hariyama
 Level: 35
 
-=== TRAINER_BROOKE_4 ===
-Name: BROOKE
+=== TRAINER_WESLEY ===
+Name: WESLEY
 Class: Cooltrainer
-Pic: Cooltrainer F
+Pic: Cooltrainer M
 
 Pelipper
 Level: 32
@@ -10322,10 +10606,10 @@ Level: 32
 Roselia
 Level: 32
 
-=== TRAINER_BROOKE_5 ===
-Name: BROOKE
-Class: Cooltrainer
-Pic: Cooltrainer F
+=== TRAINER_GIOVANNI ===
+Name: GIOVANNI
+Class: Dragon Tamer
+Pic: Dragon Tamer
 
 Pelipper
 Level: 34
@@ -10336,10 +10620,11 @@ Level: 34
 Roselia
 Level: 34
 
-=== TRAINER_LAO_4 ===
-Name: LAO
-Class: Ninja Boy
-Pic: Ninja Boy
+=== TRAINER_FRANCISCO ===
+Name: FRANCISCO
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gym Trainer: Yes
 
 Koffing
 Level: 30
@@ -10364,10 +10649,10 @@ Level: 32
 - Tackle
 - Sludge
 
-=== TRAINER_LAO_5 ===
-Name: LAO
-Class: Ninja Boy
-Pic: Ninja Boy
+=== TRAINER_JAVIER ===
+Name: JAVIER
+Class: Dragon Tamer
+Pic: Dragon Tamer
 
 Koffing
 Level: 33
@@ -10394,10 +10679,10 @@ Level: 35
 - Tackle
 - Sludge
 
-=== TRAINER_MADELINE_4 ===
-Name: MADELINE
-Class: Parasol Lady
-Pic: Parasol Lady
+=== TRAINER_ALEJANDRO ===
+Name: ALEJANDRO
+Class: Dragon Tamer
+Pic: Dragon Tamer
 
 Roselia
 Level: 34
@@ -10413,10 +10698,10 @@ Level: 34
 - Magnitude
 - Sunny Day
 
-=== TRAINER_MADELINE_5 ===
-Name: MADELINE
-Class: Parasol Lady
-Pic: Parasol Lady
+=== TRAINER_OMAR ===
+Name: OMAR
+Class: Engineer Frlg
+Pic: Engineer Frlg
 
 Roselia
 Level: 37
@@ -10432,10 +10717,10 @@ Level: 37
 - Earthquake
 - Sunny Day
 
-=== TRAINER_STEVE_4 ===
-Name: STEVE
-Class: Pokemaniac
-Pic: Pokemaniac
+=== TRAINER_HANA ===
+Name: HANA
+Class: Expert
+Pic: Expert F
 
 Lairon
 Level: 32
@@ -10443,10 +10728,10 @@ Level: 32
 Rhyhorn
 Level: 32
 
-=== TRAINER_STEVE_5 ===
-Name: STEVE
-Class: Pokemaniac
-Pic: Pokemaniac
+=== TRAINER_ZACHARY ===
+Name: ZACHARY
+Class: Expert
+Pic: Expert M
 
 Aggron
 Level: 35
@@ -10454,10 +10739,10 @@ Level: 35
 Rhydon
 Level: 35
 
-=== TRAINER_BERNIE_4 ===
-Name: BERNIE
-Class: Kindler
-Pic: Kindler
+=== TRAINER_FUU ===
+Name: FUU
+Class: Expert
+Pic: Expert M
 
 Slugma
 Level: 32
@@ -10465,10 +10750,10 @@ Level: 32
 Pelipper
 Level: 32
 
-=== TRAINER_BERNIE_5 ===
-Name: BERNIE
-Class: Kindler
-Pic: Kindler
+=== TRAINER_MIYAMOTO ===
+Name: MIYAMOTO
+Class: Expert
+Pic: Expert M
 
 Magcargo
 Level: 35
@@ -10476,10 +10761,10 @@ Level: 35
 Pelipper
 Level: 35
 
-=== TRAINER_NOB_4 ===
-Name: NOB
-Class: Black Belt
-Pic: Black Belt
+=== TRAINER_KENNETH ===
+Name: KENNETH
+Class: Gamer Frlg
+Pic: Gamer Frlg
 
 Machop
 Level: 31
@@ -10490,10 +10775,10 @@ Level: 31
 Machoke
 Level: 31
 
-=== TRAINER_NOB_5 ===
-Name: NOB
-Class: Black Belt
-Pic: Black Belt
+=== TRAINER_CARSON ===
+Name: CARSON
+Class: Gamer Frlg
+Pic: Gamer Frlg
 
 Machop
 Level: 33
@@ -10507,10 +10792,10 @@ Level: 33
 Machamp @ Black Belt
 Level: 33
 
-=== TRAINER_CYNDY_4 ===
-Name: CYNDY
-Class: Battle Girl
-Pic: Battle Girl
+=== TRAINER_ADRIAN ===
+Name: ADRIAN
+Class: Gamer Frlg
+Pic: Gamer Frlg
 
 Medicham
 Level: 32
@@ -10518,10 +10803,10 @@ Level: 32
 Hariyama
 Level: 32
 
-=== TRAINER_CYNDY_5 ===
-Name: CYNDY
-Class: Battle Girl
-Pic: Battle Girl
+=== TRAINER_MAXWELL ===
+Name: MAXWELL
+Class: Gentleman
+Pic: Gentleman
 
 Medicham
 Level: 35
@@ -10529,10 +10814,11 @@ Level: 35
 Hariyama
 Level: 35
 
-=== TRAINER_TIMOTHY_4 ===
-Name: TIMOTHY
-Class: Expert
-Pic: Expert M
+=== TRAINER_TANNER ===
+Name: TANNER
+Class: Guitarist
+Pic: Guitarist
+Gym Trainer: Yes
 
 Hariyama
 Level: 39
@@ -10541,10 +10827,10 @@ Level: 39
 - Sand Attack
 - Dig
 
-=== TRAINER_TIMOTHY_5 ===
-Name: TIMOTHY
-Class: Expert
-Pic: Expert M
+=== TRAINER_ASHTON ===
+Name: ASHTON
+Class: Kindler
+Pic: Kindler
 
 Hariyama
 Level: 42
@@ -10553,10 +10839,11 @@ Level: 42
 - Sand Attack
 - Dig
 
-=== TRAINER_ANDRES_4 ===
-Name: ANDRES
-Class: Ruin Maniac
-Pic: Ruin Maniac
+=== TRAINER_MISSY_AND_MATT ===
+Name: MISSY & MA
+Class: Sis And Bro
+Pic: Sis And Bro
+Battle Type: Doubles
 
 Nosepass
 Level: 35
@@ -10567,10 +10854,11 @@ Level: 35
 Sandshrew
 Level: 35
 
-=== TRAINER_ANDRES_5 ===
-Name: ANDRES
-Class: Ruin Maniac
-Pic: Ruin Maniac
+=== TRAINER_LEVI ===
+Name: LEVI
+Class: Ninja Boy
+Pic: Ninja Boy
+Gym Trainer: Yes
 
 Nosepass
 Level: 37
@@ -10581,10 +10869,10 @@ Level: 37
 Sandslash
 Level: 37
 
-=== TRAINER_ELLIOT_4 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
+=== TRAINER_AOTO ===
+Name: AOTO
+Class: Ninja Boy
+Pic: Ninja Boy
 
 Gyarados
 Level: 31
@@ -10598,10 +10886,10 @@ Level: 30
 Gyarados
 Level: 31
 
-=== TRAINER_ELLIOT_5 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
+=== TRAINER_SOUSUKE ===
+Name: SOUSUKE
+Class: Ninja Boy
+Pic: Ninja Boy
 
 Gyarados
 Level: 33
@@ -10615,10 +10903,10 @@ Level: 33
 Tentacruel
 Level: 35
 
-=== TRAINER_TONY_4 ===
-Name: TONY
-Class: Swimmer M
-Pic: Swimmer M
+=== TRAINER_SEIYA ===
+Name: SEIYA
+Class: Ninja Boy
+Pic: Ninja Boy
 
 Staryu
 Level: 34
@@ -10626,10 +10914,10 @@ Level: 34
 Sharpedo
 Level: 36
 
-=== TRAINER_TONY_5 ===
-Name: TONY
-Class: Swimmer M
-Pic: Swimmer M
+=== TRAINER_YUUTA ===
+Name: YUUTA
+Class: Ninja Boy
+Pic: Ninja Boy
 
 Starmie
 Level: 37
@@ -10637,10 +10925,10 @@ Level: 37
 Sharpedo
 Level: 39
 
-=== TRAINER_CORY_4 ===
-Name: CORY
-Class: Sailor
-Pic: Sailor
+=== TRAINER_TETSUO ===
+Name: TETSUO
+Class: Ninja Boy
+Pic: Ninja Boy
 
 Pelipper
 Level: 34
@@ -10651,10 +10939,11 @@ Level: 34
 Tentacruel
 Level: 34
 
-=== TRAINER_CORY_5 ===
-Name: CORY
-Class: Sailor
-Pic: Sailor
+=== TRAINER_ADAM_AND_AVA ===
+Name: ADAM & AVA
+Class: Old Couple
+Pic: Old Couple
+Battle Type: Doubles
 
 Pelipper
 Level: 36
@@ -10665,10 +10954,10 @@ Level: 36
 Tentacruel
 Level: 36
 
-=== TRAINER_THALIA_4 ===
-Name: THALIA
-Class: Beauty
-Pic: Beauty
+=== TRAINER_CALEB ===
+Name: CALEB
+Class: Pokemaniac
+Pic: Pokemaniac
 
 Luvdisc
 Level: 38
@@ -10679,10 +10968,10 @@ Level: 38
 Seadra
 Level: 38
 
-=== TRAINER_THALIA_5 ===
-Name: THALIA
-Class: Beauty
-Pic: Beauty
+=== TRAINER_RICARDO ===
+Name: RICARDO
+Class: Pokemaniac
+Pic: Pokemaniac
 
 Luvdisc
 Level: 40
@@ -10693,11 +10982,10 @@ Level: 40
 Kingdra
 Level: 40
 
-=== TRAINER_KIRA_AND_DAN_4 ===
-Name: KIRA & DAN
-Class: Young Couple
-Pic: Young Couple
-Battle Type: Doubles
+=== TRAINER_TYLER ===
+Name: TYLER
+Class: Pokemaniac
+Pic: Pokemaniac
 
 Volbeat
 Level: 36
@@ -10705,11 +10993,10 @@ Level: 36
 Illumise
 Level: 36
 
-=== TRAINER_KIRA_AND_DAN_5 ===
-Name: KIRA & DAN
-Class: Young Couple
-Pic: Young Couple
-Battle Type: Doubles
+=== TRAINER_ANGEL ===
+Name: ANGEL
+Class: Psychic
+Pic: Psychic M
 
 Volbeat
 Level: 39
@@ -10717,10 +11004,10 @@ Level: 39
 Illumise
 Level: 39
 
-=== TRAINER_RICKY_4 ===
-Name: RICKY
-Class: Tuber M
-Pic: Tuber M
+=== TRAINER_COOPER ===
+Name: COOPER
+Class: Sailor
+Pic: Sailor
 
 Linoone
 Level: 33
@@ -10729,10 +11016,10 @@ Level: 33
 - Tail Whip
 - Surf
 
-=== TRAINER_RICKY_5 ===
-Name: RICKY
-Class: Tuber M
-Pic: Tuber M
+=== TRAINER_MICHAEL ===
+Name: MICHAEL
+Class: Sailor
+Pic: Sailor
 
 Linoone
 Level: 36
@@ -10741,10 +11028,10 @@ Level: 36
 - Tail Whip
 - Surf
 
-=== TRAINER_LOLA_4 ===
-Name: LOLA
-Class: Tuber F
-Pic: Tuber F
+=== TRAINER_GAVIN ===
+Name: GAVIN
+Class: Scientist Frlg
+Pic: Scientist Frlg
 
 Marill
 Level: 32
@@ -10752,10 +11039,10 @@ Level: 32
 Marill
 Level: 32
 
-=== TRAINER_LOLA_5 ===
-Name: LOLA
-Class: Tuber F
-Pic: Tuber F
+=== TRAINER_NATHANIEL ===
+Name: NATHANIEL
+Class: Scientist Frlg
+Pic: Scientist Frlg
 
 Azumarill
 Level: 35
@@ -10763,34 +11050,35 @@ Level: 35
 Azumarill
 Level: 35
 
-=== TRAINER_ABIGAIL_4 ===
-Name: ABIGAIL
-Class: Triathlete
-Pic: Cycling Triathlete F
+=== TRAINER_ANTON ===
+Name: ANTON
+Class: Scientist Frlg
+Pic: Scientist Frlg
 
 Magneton
 Level: 34
 
-=== TRAINER_ABIGAIL_5 ===
-Name: ABIGAIL
-Class: Triathlete
-Pic: Cycling Triathlete F
+=== TRAINER_EGO ===
+Name: EGO
+Class: Scientist Frlg
+Pic: Scientist Frlg
 
 Magneton
 Level: 37
 
-=== TRAINER_BENJAMIN_4 ===
-Name: BENJAMIN
-Class: Triathlete
-Pic: Cycling Triathlete M
+=== TRAINER_OLIVER ===
+Name: OLIVER
+Class: Scientist Frlg
+Pic: Scientist Frlg
 
 Magneton
 Level: 36
 
-=== TRAINER_BENJAMIN_5 ===
-Name: BENJAMIN
-Class: Triathlete
-Pic: Cycling Triathlete M
+=== TRAINER_KIRA_AND_DAN_4 ===
+Name: KIRA & DAN
+Class: Young Couple
+Pic: Young Couple
+Battle Type: Doubles
 
 Magneton
 Level: 39
@@ -11264,18 +11552,19 @@ Pic: Swimming Triathlete F
 Starmie
 Level: 45
 
-=== TRAINER_KATELYN_5 ===
-Name: KATELYN
-Class: Triathlete
-Pic: Swimming Triathlete F
+=== TRAINER_TABITHA_FRONTIER ===
+Name: TABITHA
+Class: Magma Leader
+Pic: Magma Admin
 
 Starmie
 Level: 48
 
-=== TRAINER_JOHN_AND_JAY_3 ===
-Name: JOHN & JAY
-Class: Old Couple
-Pic: Old Couple
+=== TRAINER_WALLACE_2 ===
+Name: WALLACE
+Class: Champion
+Pic: Champion Wallace
+Mugshot: Yellow
 Battle Type: Doubles
 
 Medicham
@@ -11292,11 +11581,11 @@ Level: 46
 - Rest
 - Belly Drum
 
-=== TRAINER_JOHN_AND_JAY_4 ===
-Name: JOHN & JAY
-Class: Old Couple
-Pic: Old Couple
-Battle Type: Doubles
+=== TRAINER_WALLACE_3 ===
+Name: WALLACE
+Class: Champion
+Pic: Champion Wallace
+Mugshot: Yellow
 
 Medicham
 Level: 49
@@ -11312,7 +11601,7 @@ Level: 49
 - Rest
 - Belly Drum
 
-=== TRAINER_JOHN_AND_JAY_5 ===
+=== TRAINER_TATE_2 ===
 Name: JOHN & JAY
 Class: Old Couple
 Pic: Old Couple
@@ -11332,8 +11621,8 @@ Level: 52
 - Rest
 - Belly Drum
 
-=== TRAINER_NICOLAS_3 ===
-Name: NICOLAS
+=== TRAINER_LIZA_2 ===
+Name: SERGIO
 Class: Dragon Tamer
 Pic: Dragon Tamer
 
@@ -11343,445 +11632,460 @@ Level: 44
 Altaria
 Level: 44
 
-=== TRAINER_NICOLAS_4 ===
-Name: NICOLAS
-Class: Dragon Tamer
-Pic: Dragon Tamer
+=== TRAINER_WALLY_CHAMPION_BOND ===
+Name: WALLY
+Class: Rival
+Pic: Wally
 
-Bagon
-Level: 46
+Togekiss
+Ability: Victory Star
+
+Quagsire
+Ability: Unaware
+
+Shiinotic
+Ability: Prankster
+
+Forretress
+Ability: Shell Armor
+
+Garganacl
+Ability: Healer
+
+Gardevoir
+Ability: Soul Heart
+
+=== TRAINER_WALLY_WALLACE_DRIVE ===
+Name: WALLY
+Class: Rival
+Pic: Wally Drive
 
 Altaria
-Level: 46
+Level: 56
+- Aerial Ace
+- Safeguard
+- Dragon Breath
+- Dragon Dance
 
-Altaria
-Level: 46
+Delcatty
+Level: 55
+- Sing
+- Assist
+- Charm
+- Feint Attack
 
-=== TRAINER_NICOLAS_5 ===
-Name: NICOLAS
-Class: Dragon Tamer
-Pic: Dragon Tamer
+Roselia
+Level: 56
+- Magical Leaf
+- Leech Seed
+- Giga Drain
+- Toxic
 
-Altaria
-Level: 49
-
-Altaria
-Level: 49
-
-Shelgon @ Dragon Fang
-Level: 49
-
-=== TRAINER_GRUNT_UNUSED ===
-Name: GRUNT
-Class: Team Magma
-Pic: Aqua Grunt F
-
-Wailmer
-Level: 31
-
-Zubat
-Level: 31
-
-=== TRAINER_ROXANNE_5 ===
-Name: ROXANNE
-Class: Leader
-Pic: Leader Roxanne
-Battle Type: Doubles
-
-Aerodactyl
-Level: 47
-- Rock Slide
-- Hyper Beam
+Magneton
+Level: 53
 - Supersonic
-- Protect
+- Thunderbolt
+- Tri Attack
+- Screech
 
-Golem
-Level: 47
-- Focus Punch
-- Rollout
-- Earthquake
-- Explosion
+Gardevoir
+Level: 57
+- Double Team
+- Calm Mind
+- Psychic
+- Future Sight
+
+=== TRAINER_WALLY_WALLACE_BOND ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+
+Altaria
+Level: 56
+- Aerial Ace
+- Safeguard
+- Dragon Breath
+- Dragon Dance
+
+Delcatty
+Level: 55
+- Sing
+- Assist
+- Charm
+- Feint Attack
+
+Roselia
+Level: 56
+- Magical Leaf
+- Leech Seed
+- Giga Drain
+- Toxic
+
+Magneton
+Level: 53
+- Supersonic
+- Thunderbolt
+- Tri Attack
+- Screech
+
+Gardevoir
+Level: 57
+- Double Team
+- Calm Mind
+- Psychic
+- Future Sight
+
+=== TRAINER_SIDNEY_2 ===
+Name: SIDNEY
+Class: Elite Four
+Pic: Elite Four Sidney
+Mugshot: Purple
+Battle Type: Doubles
+
+Kingambit
+Level: 94
+Ability: Intimidate
+
+Crobat
+Level: 94
+Ability: Infiltrator
+
+Glalie
+Level: 94
+Ability: Frost Armor
+
+Nidoking
+Level: 94
+Ability: Moxie
+
+Annihilape
+Level: 94
+Ability: Irritability
+
+Houndoom Mega
+Level: 94
+Ability: Doom Desire
+
+=== TRAINER_SIDNEY_3 ===
+Name: SIDNEY
+Class: Elite Four
+Pic: Elite Four Sidney
+Mugshot: Purple
+
+Kingambit
+Level: 94
+Ability: Intimidate
+
+Crobat
+Level: 94
+Ability: Infiltrator
+
+Glalie
+Level: 94
+Ability: Frost Armor
+
+Nidoking
+Level: 94
+Ability: Moxie
+
+Annihilape
+Level: 94
+Ability: Irritability
+
+Houndoom Mega
+Level: 94
+Ability: Doom Desire
+
+=== TRAINER_PHOEBE_2 ===
+Name: LEILANI
+Class: Elite Four
+Pic: Elite Four Phoebe
+Mugshot: Green
+
+Lurantis
+Ability: Technician
+
+Relicanth
+Ability: Resilience
+
+Starmie
+Ability: Regenerator
+
+Palossand
+Ability: Sand Stream
+
+Kommo-o
+Ability: Multiscale
+
+Meganium
+Ability: Flower Veil
+
+=== TRAINER_PHOEBE_3 ===
+Name: LEILANI
+Class: Elite Four
+Pic: Elite Four Phoebe
+Mugshot: Green
+Battle Type: Doubles
+
+Lurantis
+Ability: Technician
+
+Relicanth
+Ability: Resilience
+
+Starmie
+Ability: Regenerator
+
+Palossand
+Ability: Sand Stream
+
+Kommo-o
+Ability: Multiscale
+
+Meganium
+Ability: Flower Veil
+
+=== TRAINER_GLACIA_2 ===
+Name: ROSALYNN
+Class: Elite Four
+Pic: Elite Four Glacia
+Mugshot: Pink
+Battle Type: Doubles
+
+Chandelure
+Ability: Doom Desire
+
+Gothitelle
+Ability: Shadow Tag
 
 Omastar
-Level: 47
-- Protect
-- Ice Beam
-- Rock Slide
-- Surf
+Ability: Merciless
 
-Kabutops @ Sitrus Berry
-Level: 50
-- Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
+Hydreigon
+Ability: Contrary
 
-Steelix
-Level: 50
-- Iron Tail
-- Explosion
-- Roar
-- Rock Slide
+Florges
+Ability: Adaptability
 
-Nosepass @ Sitrus Berry
-Level: 52
-- Double Team
-- Explosion
-- Protect
-- Rock Slide
+Froslass
+Ability: Snow Warning
 
-=== TRAINER_BRAWLY_5 ===
-Name: BRAWLY
-Class: Leader
-Pic: Leader Brawly
-Battle Type: Doubles
+=== TRAINER_GLACIA_3 ===
+Name: ROSALYNN
+Class: Elite Four
+Pic: Elite Four Glacia
+Mugshot: Pink
 
-Hitmonlee
-Level: 46
-- Mega Kick
-- Focus Punch
-- Earthquake
-- Bulk Up
+Chandelure
+Ability: Doom Desire
 
-Hitmonchan
-Level: 46
-- Sky Uppercut
-- Protect
-- Fire Punch
-- Ice Punch
+Gothitelle
+Ability: Shadow Tag
 
-Machamp @ Sitrus Berry
-Level: 48
-- Cross Chop
-- Rock Slide
-- Focus Punch
-- Bulk Up
+Omastar
+Ability: Merciless
 
-Medicham
-Level: 48
-- Focus Punch
-- Light Screen
-- Reflect
-- Psychic
+Hydreigon
+Ability: Contrary
 
-Hitmontop
-Level: 50
-- Pursuit
-- Counter
-- Protect
-- Triple Kick
+Florges
+Ability: Adaptability
 
-Hariyama @ Sitrus Berry
-Level: 52
-- Fake Out
-- Focus Punch
-- Belly Drum
-- Earthquake
+Froslass
+Ability: Snow Warning
 
-=== TRAINER_WATTSON_5 ===
-Name: WATTSON
-Class: Leader
-Pic: Leader Wattson
-Battle Type: Doubles
+=== TRAINER_DRAKE_2 ===
+Name: DRAKE
+Class: Elite Four
+Pic: Elite Four Drake
+Mugshot: Blue
 
-Electabuzz
-Level: 50
-- Swift
-- Focus Punch
-- Thunder Punch
-- Light Screen
+Noivern
+Ability: Sniper
 
-Raichu
-Level: 51
-- Thunder
-- Slam
-- Rain Dance
-- Protect
+Tentacruel
+Ability: Rain Dish
+
+Aerodactyl
+Ability: Rough Skin
+
+Dhelmise
+Ability: Metallic
 
 Ampharos
-Level: 51
-- Thunder
-- Protect
-- Thunder Wave
-- Light Screen
+Ability: Tinted Lens
 
-Electrode
-Level: 53
-- Rollout
-- Thunder
-- Explosion
-- Rain Dance
+Gyarados
+Ability: Berserk
 
-Magneton @ Sitrus Berry
-Level: 53
-- Supersonic
-- Protect
-- Thunder
-- Rain Dance
-
-Manectric @ Sitrus Berry
-Level: 55
-- Bite
-- Thunder Wave
-- Thunder
-- Protect
-
-=== TRAINER_FLANNERY_5 ===
-Name: FLANNERY
-Class: Leader
-Pic: Leader Flannery
+=== TRAINER_DRAKE_3 ===
+Name: DRAKE
+Class: Elite Four
+Pic: Elite Four Drake
 Battle Type: Doubles
+Mugshot: Blue
 
-Arcanine
-Level: 51
-- Helping Hand
-- Flamethrower
-- Sunny Day
-- Roar
+Noivern
+Ability: Sniper
 
-Magcargo @ White Herb
-Level: 53
-- Overheat
-- Attract
-- Light Screen
-- Rock Slide
+Tentacruel
+Ability: Rain Dish
 
-Houndoom
-Level: 51
-- Roar
-- Solar Beam
-- Taunt
-- Sunny Day
+Aerodactyl
+Ability: Rough Skin
 
-Rapidash
-Level: 51
-- Flamethrower
-- Attract
-- Solar Beam
-- Bounce
+Dhelmise
+Ability: Metallic
 
-Camerupt @ White Herb
-Level: 53
-- Overheat
-- Sunny Day
-- Earthquake
-- Attract
+Ampharos
+Ability: Tinted Lens
 
-Torkoal @ White Herb
-Level: 55
-- Overheat
-- Sunny Day
-- Explosion
-- Attract
+Gyarados
+Ability: Berserk
 
-=== TRAINER_NORMAN_5 ===
-Name: NORMAN
-Class: Leader
-Pic: Leader Norman
-Battle Type: Doubles
+=== TRAINER_HAROLD ===
+Name: HAROLD
+Class: Triathlete
+Pic: Running Triathlete M
 
-Slaking @ Sitrus Berry
-Level: 57
-- Blizzard
-- Shadow Ball
-- Double Edge
-- Fire Blast
+Voltorb
+Level: 7
+Ability: Aftermath    
+EVs: 0 HP / 0 Atk / 0 Def / 8 SpA / 0 SpD / 8 Spe 
+Modest Nature
 
-Blissey
-Level: 57
-- Protect
-- Sing
-- Skill Swap
-- Focus Punch
+=== TRAINER_CHEYENNE ===
+Name: CHEYENNE
+Class: Hex Maniac
+Pic: Hex Maniac
 
-Kangaskhan
-Level: 55
-- Fake Out
-- Dizzy Punch
-- Endure
-- Reversal
+Shroomish
+Level: 31
 
-Tauros
-Level: 57
-- Take Down
-- Protect
-- Fire Blast
-- Earthquake
+Gloom
+Level: 31
 
-Spinda
-Level: 58
-- Teeter Dance
-- Skill Swap
-- Facade
-- Hypnosis
+Roselia
+Level: 31
 
-Slaking @ Sitrus Berry
-Level: 60
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
-- Shadow Ball
+=== TRAINER_LANDON ===
+Name: LANDON
+Class: Youngster
+Pic: Youngster
 
-=== TRAINER_WINONA_5 ===
-Name: WINONA
-Class: Leader
-Pic: Leader Winona
-Battle Type: Doubles
+Rattata
+Level: 5
 
-Noctowl
-Level: 53
-- Hypnosis
-- Psychic
-- Reflect
-- Dream Eater
+=== TRAINER_MALACHI ===
+Name: MALACHI
+Class: Psychic
+Pic: Psychic M
 
-Tropius
-Level: 54
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Earthquake
+Kadabra
+Level: 36
+- Dig
+- Slash
+- Sand Attack
+- Poison Sting
 
-Pelipper
-Level: 55
-- Surf
-- Supersonic
-- Protect
-- Aerial Ace
+=== TRAINER_SADIE ===
+Name: SADIE
+Class: Picnicker
+Pic: Picnicker
+Gym Trainer: Yes
 
-Dragonite @ Sitrus Berry
-Level: 55
-- Hyper Beam
-- Thunderbolt
-- Earthquake
-- Ice Beam
+Diglett
+Level: 11
+Ability: Hustle
+EVs: 20 HP / 20 Atk
+Bold Nature
 
-Skarmory
-Level: 58
-- Whirlwind
-- Spikes
-- Steel Wing
-- Aerial Ace
+Swadloon
+Level: 11
+Ability: Leaf Guard  
+EVs: 20 Def / 20 SpD
+Bold Nature
 
-Altaria @ Chesto Berry
-Level: 60
-- Sky Attack
-- Rest
-- Dragon Dance
-- Earthquake
+=== TRAINER_RAYMOND ===
+Name: RAYMOND
+Class: Rich Boy
+Pic: Rich Boy
 
-=== TRAINER_TATE_AND_LIZA_5 ===
-Name: TATE&LIZA
-Class: Leader
-Pic: Leader Tate And Liza
-Battle Type: Doubles
+Meowth
+Level: 8
+Ability: Limber    
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe 
+Quirky Nature 
 
-Hypno
-Level: 63
-- Hypnosis
-- Dream Eater
-- Headbutt
-- Protect
+Chimchar
+Level: 9
+Ability: Competitive    
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Brave Nature
 
-Claydol
-Level: 64
-- Earthquake
-- Explosion
-- Psychic
-- Light Screen
+=== TRAINER_JEREMIAH ===
+Name: JEREMIAH
+Class: Ruin Maniac
+Pic: Ruin Maniac
 
-Slowking
-Level: 63
-- Yawn
-- Psychic
-- Calm Mind
-- Protect
+Linoone @ Nugget
+Level: 33
 
-Xatu @ Chesto Berry
-Level: 64
-- Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+=== TRAINER_GRANT ===
+Name: GRANT
+Class: Hiker
+Pic: Hiker
 
-Lunatone @ Chesto Berry
-Level: 65
-- Earthquake
-- Psychic
-- Rest
-- Calm Mind
+Linoone @ Nugget
+Level: 36
+- Fury Swipes
+- Mud Sport
+- Odor Sleuth
+- Sand Attack
 
-Solrock @ Sitrus Berry
-Level: 65
-- Sunny Day
-- Solar Beam
-- Psychic
-- Flamethrower
+=== TRAINER_LIAM ===
+Name: LIAM
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
 
-=== TRAINER_JUAN_5 ===
-Name: JUAN
-Class: Leader
-Pic: Leader Juan
-Battle Type: Doubles
+Lairon
+Level: 32
 
-Lapras
-Level: 61
-- Hydro Pump
-- Perish Song
-- Ice Beam
-- Confuse Ray
-
-Whiscash
-Level: 63
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
-
-Politoed
-Level: 61
-- Hypnosis
-- Rain Dance
-- Hydro Pump
-- Perish Song
-
-Walrein
-Level: 63
-- Water Pulse
-- Body Slam
-- Protect
-- Sheer Cold
-
-Crawdaunt @ Chesto Berry
-Level: 63
-- Rest
-- Guillotine
-- Taunt
-- Double Team
-
-Kingdra @ Chesto Berry
-Level: 66
-- Water Pulse
-- Double Team
-- Ice Beam
-- Rest
+Rhyhorn
+Level: 32
 
 === TRAINER_RED ===
 Name: RED
 Class: Rival
 Pic: Red
 
-Blissey
-Level: 100
+Regigigas
+Ability: Resilience
+- Splash
+- Work Up
+- Rest
+- Heal Pulse
+
+Lapras
+Ability: Pacifier
+- Splash
+- Work Up
+- Rest
+- Heal Pulse
 
 Blissey
-Level: 100
+Ability: Natural Cure
+- Splash
+- Work Up
+- Rest
+- Heal Pulse
 
-Blissey
-Level: 100
-
-Blissey
-Level: 100
+Steelix
+Ability: Tectonic
+- Splash
+- Work Up
+- Rest
+- Heal Pulse
 
 === TRAINER_LEAF ===
 Name: LEAF
