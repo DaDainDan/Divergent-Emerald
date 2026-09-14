@@ -411,6 +411,7 @@ struct SpeciesInfo /*0xC4*/
     u16 padding2:3;
     enum Item itemCommon;
     enum Item itemRare;
+    enum Item itemUltraRare;
     u8 genderRatio;
     u8 eggCycles;
     u8 friendship;
@@ -475,6 +476,7 @@ struct SpeciesInfo /*0xC4*/
     u32 isRestrictedLegendary:1;
     u32 isSubLegendary:1;
     u32 isMythical:1;
+    u32 monTier:4;
     u32 isUltraBeast:1;
     u32 isParadox:1;
     u32 isTotem:1;
@@ -494,7 +496,7 @@ struct SpeciesInfo /*0xC4*/
     u32 isFrontierBanned:1; // This species is not allowed to participate in Battle Frontier facilities.
     u32 isSkyBattleBanned:1;
     u32 isTelekinesisBanned:1;
-    u32 padding4:7; // goto 3 when adding monTier
+    u32 padding4:3;
     // Shadow settings
     s8 enemyShadowXOffset; // This determines the X-offset for an enemy Pokémon's shadow during battle; negative values point left, positive values point right.
     s8 enemyShadowYOffset; // This determines the Y-offset for an enemy Pokémon's shadow during battle; negative values point up, positive values point down.
@@ -508,6 +510,7 @@ struct SpeciesInfo /*0xC4*/
     const struct Evolution *evolutions;
     const u16 *formSpeciesIdTable;
     const struct FormChange *formChangeTable;
+    enum Species shinySpecies;
 #if OW_POKEMON_OBJECT_EVENTS
     struct ObjectEventGraphicsInfo overworldData;
 #if P_GENDER_DIFFERENCES
@@ -654,6 +657,7 @@ struct FormChangeContext
     enum Type teraType;
     u32 level:7;
     u32 padding:8;
+    u16 friendship;
 };
 
 enum FusionExtraMoveHandling

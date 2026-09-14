@@ -1,16 +1,12 @@
 {
   "universalMoves":
     [
-      "MOVE_BIDE",
+      "MOVE_ENDURE",
       "MOVE_FRUSTRATION",
-      "MOVE_HIDDEN_POWER",
-      "MOVE_MIMIC",
-      "MOVE_NATURAL_GIFT",
-      "MOVE_RAGE",
+      "MOVE_PROTECT",
       "MOVE_RETURN",
-      "MOVE_SECRET_POWER",
-      "MOVE_SUBSTITUTE",
-      "MOVE_TERA_BLAST"
+      "MOVE_TERA_BLAST",
+      "MOVE_WORK_UP"
     ],
   "signatureTeachables":
     [

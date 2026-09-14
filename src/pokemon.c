@@ -4400,6 +4400,7 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
     u32 weather = GetCurrentWeather();
     u32 nature = GetNature(mon);
     bool32 removeHoldItem = FALSE;
+    bool32 addShedShell = FALSE;
     enum Item removeBagItem = ITEM_NONE;
     u32 removeBagItemCount = 0;
     u32 evolutionTracker = GetMonData(mon, MON_DATA_EVOLUTION_TRACKER, 0);
@@ -4530,6 +4531,8 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
                 if (GetMonData(&gParties[B_TRAINER_PLAYER][j], MON_DATA_SPECIES) == params[i].arg1)
                 {
                     currentCondition = TRUE;
+                    if (params[i].arg1 == SPECIES_KARRABLAST)
+                        addShedShell = TRUE;
                     break;
                 }
             }
@@ -4714,6 +4717,14 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
 
             if (removeBagItem != ITEM_NONE)
                 RemoveBagItem(removeBagItem, removeBagItemCount);
+            
+            if (addShedShell)
+            {
+                if (heldItem != ITEM_NONE)
+                    AddBagItem(heldItem, 1);
+                u32 heldItem = ITEM_SHED_SHELL;
+                SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
+            }
         }
 
         if (currentCondition == FALSE)
@@ -5806,7 +5817,7 @@ void SetWildMonHeldItem(void)
         u16 count = (WILD_DOUBLE_BATTLE) ? 2 : 1;
         u16 i;
         bool32 itemHeldBoost = CanFirstMonBoostHeldItemRarity();
-        u16 chanceNoItem = itemHeldBoost ? 20 : 45;
+        u16 chanceNoItem = itemHeldBoost ? 20 : 65; // 20 : 45;
         u16 chanceNotRare = itemHeldBoost ? 80 : 95;
 
         for (i = 0; i < count; i++)
@@ -6329,6 +6340,7 @@ enum Species GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, enum Fo
         .partyItemUsed = gSpecialVar_ItemId,
         .multichoiceSelection = gSpecialVar_Result,
         .status = GetBoxMonData(boxMon, MON_DATA_STATUS),
+        .friendship = GetBoxMonData(boxMon, MON_DATA_FRIENDSHIP),
     };
 
     return GetFormChangeTargetSpecies_Internal(ctx);
@@ -6458,7 +6470,8 @@ enum Species GetFormChangeTargetSpecies_Internal(struct FormChangeContext ctx)
                 targetSpecies = formChanges[i].targetSpecies;
             break;
         case FORM_CHANGE_BATTLE_SWITCH_OUT:
-            if (formChanges[i].param1 == ctx.ability || formChanges[i].param1 == ABILITY_NONE)
+            if ((formChanges[i].param1 == ctx.ability || formChanges[i].param1 == ABILITY_NONE)
+             && (formChanges[i].param2 == ctx.heldItem || formChanges[i].param2 == ITEM_NONE))
                 targetSpecies = formChanges[i].targetSpecies;
             break;
         case FORM_CHANGE_BATTLE_HP_PERCENT_DURING_MOVE:
@@ -6532,6 +6545,8 @@ enum Species GetFormChangeTargetSpecies_Internal(struct FormChangeContext ctx)
                 targetSpecies = formChanges[i].targetSpecies;
             break;
         case FORM_CHANGE_BATTLE_SWITCH_IN:
+            if (formChanges[i].param2 != 0 && formChanges[i].param2 != ctx.friendship)
+                break;
         case FORM_CHANGE_BATTLE_TURN_END:
         case FORM_CHANGE_BATTLE_HIT_BY_CONFUSION_SELF_DMG:
             if (formChanges[i].param1 == ctx.ability)

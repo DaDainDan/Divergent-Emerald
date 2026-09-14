@@ -359,17 +359,17 @@ static const u16 sFarfetchdFormSpeciesIdTable[] = {
 
 #if P_FAMILY_GRIMER
 static const u16 sGrimerFormSpeciesIdTable[] = {
-    SPECIES_GRIMER,
-#if P_ALOLAN_FORMS
     SPECIES_GRIMER_ALOLA,
+#if P_ALOLAN_FORMS
+    SPECIES_GRIMER,
 #endif
     FORM_SPECIES_END,
 };
 
 static const u16 sMukFormSpeciesIdTable[] = {
-    SPECIES_MUK,
-#if P_ALOLAN_FORMS
     SPECIES_MUK_ALOLA,
+#if P_ALOLAN_FORMS
+    SPECIES_MUK,
 #endif
     FORM_SPECIES_END,
 };
@@ -462,7 +462,7 @@ static const u16 sWeezingFormSpeciesIdTable[] = {
 #if P_FAMILY_KANGASKHAN
 static const u16 sKangaskhanFormSpeciesIdTable[] = {
     SPECIES_KANGASKHAN,
-#if P_MEGA_EVOLUTIONS
+#if P_MEGA_TO_EVOLUTION
     SPECIES_KANGASKHAN_MEGA,
 #endif
     FORM_SPECIES_END,
@@ -673,6 +673,14 @@ static const u16 sWooperFormSpeciesIdTable[] = {
 #endif
     FORM_SPECIES_END,
 };
+
+static const u16 sQuagsireFormSpeciesIdTable[] = {
+    SPECIES_QUAGSIRE,
+#if P_PALDEAN_FORMS
+    SPECIES_CLODSIRE,
+#endif
+    FORM_SPECIES_END,
+};
 #endif //P_FAMILY_WOOPER
 
 #if P_FAMILY_UNOWN
@@ -719,9 +727,9 @@ static const u16 sDudunsparceFormSpeciesIdTable[] = {
 
 #if P_FAMILY_QWILFISH
 static const u16 sQwilfishFormSpeciesIdTable[] = {
-    SPECIES_QWILFISH,
-#if P_HISUIAN_FORMS
     SPECIES_QWILFISH_HISUI,
+#if P_HISUIAN_FORMS
+    SPECIES_QWILFISH,
 #endif
     FORM_SPECIES_END,
 };
@@ -742,6 +750,14 @@ static const u16 sSneaselFormSpeciesIdTable[] = {
     SPECIES_SNEASEL,
 #if P_HISUIAN_FORMS
     SPECIES_SNEASEL_HISUI,
+#endif
+    FORM_SPECIES_END,
+};
+
+static const u16 sWeavileFormSpeciesIdTable[] = {
+    SPECIES_WEAVILE,
+#if P_HISUIAN_FORMS
+    SPECIES_SNEASLER,
 #endif
     FORM_SPECIES_END,
 };
@@ -1567,7 +1583,7 @@ static const u16 sDelphoxFormSpeciesIdTable[] = {
 #if P_FAMILY_FROAKIE
 static const u16 sGreninjaFormSpeciesIdTable[] = {
     SPECIES_GRENINJA,
-    SPECIES_GRENINJA_BATTLE_BOND,
+    // SPECIES_GRENINJA_BATTLE_BOND,
     SPECIES_GRENINJA_ASH,
 #if P_GEN_9_MEGA_EVOLUTIONS
     SPECIES_GRENINJA_MEGA,
@@ -1723,8 +1739,8 @@ static const u16 sMeowsticFormSpeciesIdTable[] = {
 
 #if P_FAMILY_HONEDGE
 static const u16 sAegislashFormSpeciesIdTable[] = {
-    SPECIES_AEGISLASH_SHIELD,
     SPECIES_AEGISLASH_BLADE,
+    SPECIES_AEGISLASH_SHIELD,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_HONEDGE
@@ -1840,7 +1856,7 @@ static const u16 sZygardeFormSpeciesIdTable[] = {
 #if P_FAMILY_DIANCIE
 static const u16 sDiancieFormSpeciesIdTable[] = {
     SPECIES_DIANCIE,
-#if P_MEGA_EVOLUTIONS
+#if P_MEGA_TO_EVOLUTION
     SPECIES_DIANCIE_MEGA,
 #endif
     FORM_SPECIES_END,

@@ -64,10 +64,12 @@ enum FormChanges
     FORM_CHANGE_END_BATTLE_ENVIRONMENT,
     // Form change that activates when the Pokémon is switched out in battle.
     // param1: (optional) ability to check
+    // param2: (optional) item to hold
     FORM_CHANGE_BATTLE_SWITCH_OUT,
     // Form change that activates when the Pokémon is switched-in in battle.
     // This form change happens before other abilities like Neutralizing Gas.
     // param1: ability to check
+    // param2: (optional) friendship value to check
     FORM_CHANGE_BATTLE_SWITCH_IN,
     // Form change that activates when the Pokémon's HP % passes a certain threshold.
     // param1: Ability to check.

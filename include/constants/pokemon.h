@@ -127,7 +127,7 @@ enum __attribute__((packed)) Stat
 #define MAX_STAT_STAGE     6
 
 // Shiny odds
-#define SHINY_ODDS 8 // Actual probability is SHINY_ODDS/65536
+#define SHINY_ODDS 128 // Actual probability is SHINY_ODDS/65536
 
 // Ribbon IDs used by TV and Pokénav
 #define CHAMPION_RIBBON       0
@@ -206,7 +206,7 @@ enum OtIdMethod
 #define LEVEL_UP_MOVE_LV   0xFE00
 #define LEVEL_UP_MOVE_END  0xFFFF
 
-#define MAX_LEVEL_UP_MOVES       20
+#define MAX_LEVEL_UP_MOVES       31
 
 #define MON_MALE       0x00
 #define MON_FEMALE     0xFE
@@ -290,6 +290,19 @@ enum BodyColor
     BODY_COLOR_GRAY,
     BODY_COLOR_WHITE,
     BODY_COLOR_PINK,
+};
+
+// Mon Tiers for Battle Frontier (And maybe Randomizer?)
+enum BattleFrontierTiers
+{
+    NEWBORN_TIER,
+    INFANTILE_TIER,
+    JUNIOR_TIER,
+    GREEN_TIER,
+    MUNDANE_TIER,
+    EXOTIC_TIER,
+    PRESTIGE_TIER,
+    REGAL_TIER,
 };
 
 #define F_SUMMARY_SCREEN_FLIP_SPRITE 0x80
