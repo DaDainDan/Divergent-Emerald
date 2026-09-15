@@ -902,6 +902,7 @@ enum EffectItem GetItemBattleUsage(enum Item itemId)
         case ITEM_EFFECT_CURE_BURN:
         case ITEM_EFFECT_CURE_FREEZE_FROSTBITE:
         case ITEM_EFFECT_CURE_PARALYSIS:
+        case ITEM_EFFECT_CURE_CURSE:
         case ITEM_EFFECT_CURE_ALL_STATUS:
         case ITEM_EFFECT_CURE_CONFUSION:
         case ITEM_EFFECT_CURE_INFATUATION:
@@ -942,6 +943,8 @@ u32 GetItemStatus1Mask(enum Item itemId)
         return STATUS1_PSN_ANY | STATUS1_TOXIC_COUNTER;
     case ITEM3_SLEEP:
         return STATUS1_SLEEP;
+    case ITEM3_CURSE:
+        return STATUS1_CURSE;
     case ITEM3_STATUS_ALL:
         return STATUS1_ANY | STATUS1_TOXIC_COUNTER;
     }
@@ -972,6 +975,13 @@ bool32 IsHoldEffectChoice(enum HoldEffect holdEffect)
     return holdEffect == HOLD_EFFECT_CHOICE_BAND
         || holdEffect == HOLD_EFFECT_CHOICE_SCARF
         || holdEffect == HOLD_EFFECT_CHOICE_SPECS;
+}
+
+bool32 IsHoldEffectChoiceNew(enum HoldEffect holdEffect)
+{
+    return holdEffect == HOLD_EFFECT_CHOICE_BAND_NEW
+        || holdEffect == HOLD_EFFECT_CHOICE_SCARF_NEW
+        || holdEffect == HOLD_EFFECT_CHOICE_SPECS_NEW;
 }
 
 ShopCriteriaFunc GetItemShopCriteriaFunc(u32 itemId)

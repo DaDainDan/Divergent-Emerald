@@ -3709,11 +3709,19 @@ bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, enum Item item, u8 partyI
 
 // EXP candies store an index for this table in their holdEffectParam.
 const u32 sExpCandyExperienceTable[] = {
-    [EXP_100 - 1] = 100,
-    [EXP_800 - 1] = 800,
-    [EXP_3000 - 1] = 3000,
-    [EXP_10000 - 1] = 10000,
-    [EXP_30000 - 1] = 30000,
+    [EXP_100 - 1] = 200,
+    [EXP_800 - 1] = 900,
+    [EXP_3000 - 1] = 4000,
+    [EXP_10000 - 1] = 12500,
+    [EXP_30000 - 1] = 33000,
+};
+
+const u32 sExpCandyCharmTable[] = {
+    [EXP_100 - 1] = 300,
+    [EXP_800 - 1] = 1350,
+    [EXP_3000 - 1] = 6000,
+    [EXP_10000 - 1] = 18750,
+    [EXP_30000 - 1] = 49500,
 };
 
 // Returns TRUE if the item has no effect on the Pokémon, FALSE otherwise
@@ -3801,7 +3809,13 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                 }
                 else if (param - 1 < ARRAY_COUNT(sExpCandyExperienceTable)) // EXP Candies
                 {
-                    dataUnsigned = sExpCandyExperienceTable[param - 1] + GetMonData(mon, MON_DATA_EXP);
+                    const u32 *table;
+                    if (CheckBagHasItem(ITEM_EXP_CHARM, 1))
+                        table = sExpCandyCharmTable;
+                    else
+                        table = sExpCandyExperienceTable;
+                    
+                    dataUnsigned = table[param - 1] + GetMonData(mon, MON_DATA_EXP);
                     if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][currentLevelCap])
                         dataUnsigned = gExperienceTables[gSpeciesInfo[species].growthRate][currentLevelCap];
                 }
@@ -3842,7 +3856,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                 effectFlags &= ~ITEM4_PP_UP;
                 dataUnsigned = (ppBonuses & gPPUpGetMask[moveIndex]) >> (moveIndex * 2);
                 temp1 = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + moveIndex), ppBonuses, moveIndex);
-                if (dataUnsigned <= 2 && temp1 > 4)
+                if (dataUnsigned == 0 && temp1 > 4)
                 {
                     dataUnsigned = ppBonuses + gPPUpAddValues[moveIndex];
                     SetMonData(mon, MON_DATA_PP_BONUSES, &dataUnsigned);
@@ -4403,11 +4417,11 @@ u8 *UseStatIncreaseItem(enum Item itemId)
         break;
     }
 
-    if (itemEffect[3] & ITEM3_GUARD_SPEC)
-    {
-        gBattlerAttacker = gBattlerInMenuId;
-        BattleStringExpandPlaceholdersToDisplayedString(gText_PkmnShroudedInMist);
-    }
+    // if (itemEffect[3] & ITEM3_GUARD_SPEC)
+    // {
+    //     gBattlerAttacker = gBattlerInMenuId;
+    //     BattleStringExpandPlaceholdersToDisplayedString(gText_PkmnShroudedInMist);
+    // }
 
     return gDisplayedStringBattle;
 }

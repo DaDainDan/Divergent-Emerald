@@ -40,6 +40,12 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
         .onStatusChange = TRUE,
     },
 
+    [HOLD_EFFECT_CURE_CRS] =
+    {
+        .onSwitchIn = TRUE,
+        .onStatusChange = TRUE,
+    },
+
     [HOLD_EFFECT_RESTORE_PP] =
     {
         .onSwitchIn = TRUE,
@@ -170,6 +176,10 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
     {
     },
 
+    [HOLD_EFFECT_CHOICE_BAND_NEW] =
+    {
+    },
+
     [HOLD_EFFECT_FLINCH] =
     {
         .onAttackerAfterHit = TRUE,
@@ -218,11 +228,18 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
 
     [HOLD_EFFECT_LEFTOVERS] =
     {
-        .leftovers = TRUE,
+        // .leftovers = TRUE,
+        .onSwitchIn = TRUE,
+        .onHpThreshold = TRUE,
+    },
+
+    [HOLD_EFFECT_DRAGON_SCALE] =
+    {   
     },
 
     [HOLD_EFFECT_LIGHT_BALL] =
     {
+        .orbs = TRUE,
     },
 
     [HOLD_EFFECT_TYPE_POWER] =
@@ -254,7 +271,15 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
     {
     },
 
+    [HOLD_EFFECT_CHOICE_SCARF_NEW] =
+    {
+    },
+
     [HOLD_EFFECT_CHOICE_SPECS] =
+    {
+    },
+
+    [HOLD_EFFECT_CHOICE_SPECS_NEW] =
     {
     },
 
@@ -296,7 +321,8 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
 
     [HOLD_EFFECT_LIFE_ORB] =
     {
-        .lifeOrbShellBell = TRUE,
+        .leftovers = TRUE,
+        // .lifeOrbShellBell = TRUE,
     },
 
     [HOLD_EFFECT_METRONOME] =
@@ -415,6 +441,16 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
         .onTargetAfterHit = TRUE,
     },
 
+    [HOLD_EFFECT_JABOCA_BERRY_NEW] =
+    {
+        .keeMarangaBerry = TRUE,
+    },
+
+    [HOLD_EFFECT_ROWAP_BERRY_NEW] =
+    {
+        .keeMarangaBerry = TRUE,
+    },
+
     [HOLD_EFFECT_KEE_BERRY] =
     {
         .keeMarangaBerry = TRUE,
@@ -509,7 +545,15 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
         .onTargetAfterHit = TRUE,
     },
 
-    [HOLD_EFFECT_PRIMAL_ORB] =
+    [HOLD_EFFECT_RED_ORB] =
+    {
+    },
+
+    [HOLD_EFFECT_BLUE_ORB] =
+    {
+    },
+
+    [HOLD_EFFECT_JADE_ORB] =
     {
     },
 
@@ -605,5 +649,73 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_BERSERK_GENE] =
     {
         .onSwitchIn = TRUE,
+    },
+
+    [HOLD_EFFECT_REAPER_CLOTH] =
+    {
+    },
+
+    [HOLD_EFFECT_ALL_STATS_UP] =
+    {
+        .onSwitchIn = TRUE,
+        .onHpThreshold = TRUE,
+    },
+
+    [HOLD_EFFECT_KINGS_ROCK] =
+    {
+    },
+
+    [HOLD_EFFECT_LUCKY_VEST] =
+    {
+    },
+
+    [HOLD_EFFECT_SUPPORT_VEST] =
+    {
+    },
+
+    [HOLD_EFFECT_CALAMITY_CHARM] =
+    {
+    },
+
+    [HOLD_EFFECT_PROTECTOR] =
+    {
+    },
+
+    [HOLD_EFFECT_PRISM_SCALE] =
+    {
+    },
+
+    [HOLD_EFFECT_RAZOR_CLAW] =
+    {
+    },
+
+    [HOLD_EFFECT_RAZOR_FANG] =
+    {
+    },
+
+    [HOLD_EFFECT_FINE_LENS] =
+    {
+        .onTargetAfterHit = TRUE
+    },
+
+    [HOLD_EFFECT_HAPLESS_POLICY] =
+    {
+        .onTargetAfterHit = TRUE,
+    },
+
+    [HOLD_EFFECT_CURSED_ORB] =
+    {
+        .orbs = TRUE,
+    },
+
+    [HOLD_EFFECT_FROZEN_ORB] =
+    {
+        .orbs = TRUE,
+    },
+
+    [HOLD_EFFECT_SNACK] =
+    {
+        .onSwitchIn = TRUE,
+        .onHpThreshold = TRUE,
     },
 };

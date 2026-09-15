@@ -4699,7 +4699,7 @@ void CB2_ShowPartyMenuForItemUse(void)
     MainCallback callback = CB2_ReturnToBagMenu;
     enum PartyMenuLayout partyLayout;
     enum PartyMenuType menuType;
-    u8 i;
+    // u8 i;
     u8 msgId;
     TaskFunc task;
 
@@ -4723,14 +4723,14 @@ void CB2_ShowPartyMenuForItemUse(void)
     if (GetItemEffectType(gSpecialVar_ItemId) == ITEM_EFFECT_SACRED_ASH)
     {
         gPartyMenu.slotId = 0;
-        for (i = 0; i < PARTY_SIZE; i++)
-        {
-            if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) != SPECIES_NONE && GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_HP) == 0)
-            {
-                gPartyMenu.slotId = i;
-                break;
-            }
-        }
+        // for (i = 0; i < PARTY_SIZE; i++)
+        // {
+        //     if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) != SPECIES_NONE && GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_HP) == 0)
+        //     {
+        //         gPartyMenu.slotId = i;
+        //         break;
+        //     }
+        // }
         task = Task_SetSacredAshCB;
         msgId = PARTY_MSG_NONE;
     }
@@ -4799,6 +4799,9 @@ static void GetMedicineItemEffectMessage(enum Item item, u32 statusCured)
         break;
     case ITEM_EFFECT_CURE_PARALYSIS:
         StringExpandPlaceholders(gStringVar4, gText_PkmnCuredOfParalysis);
+        break;
+    case ITEM_EFFECT_CURE_CURSE:
+        StringExpandPlaceholders(gStringVar4, gText_PkmnCurseHealed);
         break;
     case ITEM_EFFECT_CURE_CONFUSION:
         StringExpandPlaceholders(gStringVar4, gText_PkmnSnappedOutOfConfusion);
@@ -5297,7 +5300,10 @@ void ItemUseCB_ResetEVs(u8 taskId, TaskFunc task)
     {
         gPartyMenuUseExitCallback = TRUE;
         PlaySE(SE_USE_ITEM);
-        RemoveBagItem(item, 1);
+        if (GetItemImportance(item) == 0)
+        {
+            RemoveBagItem(item, 1);
+        }
         GetMonNickname(mon, gStringVar1);
         StringExpandPlaceholders(gStringVar4, sText_BasePointsResetToZero);
         DisplayPartyMenuMessage(gStringVar4, TRUE);
@@ -5825,8 +5831,14 @@ static void Task_TryLearningNextMoveAfterText(u8 taskId)
 
 static void UNUSED DisplayExpPoints(u8 taskId, TaskFunc task, u8 holdEffectParam)
 {
+    const u32 *table;
+    if (CheckBagHasItem(ITEM_EXP_CHARM, 1))
+        table = sExpCandyCharmTable;
+    else
+        table = sExpCandyExperienceTable;
+    
     PlaySE(SE_USE_ITEM);
-    ConvertIntToDecimalStringN(gStringVar2, sExpCandyExperienceTable[holdEffectParam], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar2, table[holdEffectParam], STR_CONV_MODE_LEFT_ALIGN, 3);
     StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExp);
     DisplayPartyMenuMessage(gStringVar4, FALSE);
     ScheduleBgCopyTilemapToVram(2);
@@ -5893,6 +5905,12 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     }
     else
     {
+        const u32 *table;
+        if (CheckBagHasItem(ITEM_EXP_CHARM, 1))
+            table = sExpCandyCharmTable;
+        else
+            table = sExpCandyExperienceTable;
+        
         sFinalLevel = GetMonData(mon, MON_DATA_LEVEL);
         gPartyMenuUseExitCallback = TRUE;
         UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
@@ -5908,7 +5926,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
             }
             else // Exp Candies
             {
-                ConvertIntToDecimalStringN(gStringVar2, sExpCandyExperienceTable[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
+                ConvertIntToDecimalStringN(gStringVar2, table[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
                 ConvertIntToDecimalStringN(gStringVar3, sFinalLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
                 StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExpAndElevatedToLvVar3);
             }
@@ -5921,7 +5939,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         {
             PlaySE(SE_USE_ITEM);
             gPartyMenuUseExitCallback = FALSE;
-            ConvertIntToDecimalStringN(gStringVar2, sExpCandyExperienceTable[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
+            ConvertIntToDecimalStringN(gStringVar2, table[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
             StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExp);
             DisplayPartyMenuMessage(gStringVar4, FALSE);
             ScheduleBgCopyTilemapToVram(2);
@@ -6179,6 +6197,66 @@ void ItemUseCB_DynamaxCandy(u8 taskId, TaskFunc task)
 #undef tDynamaxLevel
 #undef tOldFunc
 
+static bool8 IsMonNotFullyHealed(void)
+{
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
+    u16 currentHP = GetMonData(mon,MON_DATA_HP);
+    u16 maxHP = GetMonData(mon,MON_DATA_MAX_HP);
+    u32 status = GetMonData(mon,MON_DATA_STATUS);
+
+    u8 currentPP = 0, maxPP = 0;
+    u8 ppBonuses = GetMonData(mon, MON_DATA_PP_BONUSES);
+
+    s32 j;
+
+    if (currentHP < maxHP)
+        return TRUE;  // Found a Pokémon with less than full HP
+
+    if (status != 0)
+        return TRUE;  // Found a Pokémon with a status condition
+
+    for (j = 0; j < MAX_MON_MOVES; j++)
+    {
+        currentPP = GetMonData(mon, MON_DATA_PP1 + j);
+        maxPP = CalculatePPWithBonus(GetMonData(mon,MON_DATA_MOVE1 + j), ppBonuses, j);
+
+        if (currentPP < maxPP)
+        {
+            return TRUE;  // Found a Pokémon with less than max PP
+        }
+    }
+
+    return FALSE;
+}
+
+void HealMonFromSlotId(void)
+{
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
+    u32 j = 0, ppBonuses = 0; // i = 0, 
+    u8 arg[4] = {0,0,0,0};
+
+    // restore HP.
+    u16 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
+    arg[0] = maxHP;
+    arg[1] = maxHP >> 8;
+    SetMonData(mon, MON_DATA_HP, arg);
+
+    // restore PP.
+    ppBonuses = GetMonData(mon, MON_DATA_PP_BONUSES);
+    for(j = 0; j < MAX_MON_MOVES; j++)
+    {
+        arg[0] = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + j), ppBonuses, j);
+        SetMonData(mon, MON_DATA_PP1 + j, arg);
+    }
+
+    // since status is u32, the four 0 assignments here are probably for safety to prevent undefined data from reaching SetMonData.
+    arg[0] = 0;
+    arg[1] = 0;
+    arg[2] = 0;
+    arg[3] = 0;
+    SetMonData(mon, MON_DATA_STATUS, arg);
+}
+
 #define tUsedOnSlot   data[0]
 #define tHadEffect    data[1]
 #define tLastSlotUsed data[2]
@@ -6194,7 +6272,7 @@ void ItemUseCB_SacredAsh(u8 taskId, TaskFunc task)
 static void UseSacredAsh(u8 taskId)
 {
     struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
-    u16 hp;
+    u16 hp = 0, maxHP = 0;
 
     if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE)
     {
@@ -6202,21 +6280,27 @@ static void UseSacredAsh(u8 taskId)
         return;
     }
 
-    hp = GetMonData(mon, MON_DATA_HP);
-    if (ExecuteTableBasedItemEffect(mon, gSpecialVar_ItemId, gPartyMenu.slotId, 0))
+    // hp = GetMonData(mon, MON_DATA_HP);
+    if (!IsMonNotFullyHealed()) // ExecuteTableBasedItemEffect(mon, gSpecialVar_ItemId, gPartyMenu.slotId, 0)
     {
         gTasks[taskId].func = Task_SacredAshLoop;
         return;
     }
 
+    hp = GetMonData(mon, MON_DATA_HP);
+    maxHP = GetMonData(mon, MON_DATA_MAX_HP);
     PlaySE(SE_USE_ITEM);
+    HealMonFromSlotId();
     SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[gPartyMenu.slotId]);
     if (gSprites[sPartyMenuBoxes[gPartyMenu.slotId].statusSpriteId].invisible)
         DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
     AnimatePartySlot(sPartyMenuInternal->tLastSlotUsed, 0);
     AnimatePartySlot(gPartyMenu.slotId, 1);
-    PartyMenuModifyHP(taskId, gPartyMenu.slotId, 1, GetMonData(mon, MON_DATA_HP) - hp, Task_SacredAshDisplayHPRestored);
-    ResetHPTaskData(taskId, 0, hp);
+    if (hp != maxHP)
+    {
+        PartyMenuModifyHP(taskId, gPartyMenu.slotId, 1, GetMonData(mon, MON_DATA_HP) - hp, Task_SacredAshDisplayHPRestored);
+        ResetHPTaskData(taskId, 0, hp);
+    }
     sPartyMenuInternal->tUsedOnSlot = TRUE;
     sPartyMenuInternal->tHadEffect = TRUE;
 }
@@ -7007,7 +7091,7 @@ enum ItemEffectType GetItemEffectType(enum Item item)
     if (itemEffect == NULL)
         return ITEM_EFFECT_NONE;
 
-    if ((itemEffect[0] & ITEM0_DIRE_HIT) || itemEffect[1] || (itemEffect[3] & ITEM3_GUARD_SPEC))
+    if ((itemEffect[0] & ITEM0_DIRE_HIT) || itemEffect[1]) //  || (itemEffect[3] & ITEM3_GUARD_SPEC)
         return ITEM_EFFECT_X_ITEM;
     else if (itemEffect[0] & ITEM0_SACRED_ASH)
         return ITEM_EFFECT_SACRED_ASH;
@@ -7027,6 +7111,8 @@ enum ItemEffectType GetItemEffectType(enum Item item)
             return ITEM_EFFECT_CURE_FREEZE_FROSTBITE;
         else if (statusCure == ITEM3_PARALYSIS)
             return ITEM_EFFECT_CURE_PARALYSIS;
+        else if (statusCure == ITEM3_CURSE)
+            return ITEM_EFFECT_CURE_CURSE;
         else if (statusCure == ITEM3_CONFUSION)
             return ITEM_EFFECT_CURE_CONFUSION;
         else if (itemEffect[0] >> 7 && !statusCure)

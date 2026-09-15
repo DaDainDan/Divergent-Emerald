@@ -23,6 +23,10 @@ const u8 gItemEffect_ParalyzeHeal[6] = {
     [3] = ITEM3_PARALYSIS,
 };
 
+const u8 gItemEffect_NomelBerry[6] = {
+    [3] = ITEM3_CURSE,
+};
+
 const u8 gItemEffect_FullRestore[7] = {
     [3] = ITEM3_STATUS_ALL,
     [4] = ITEM4_HEAL_HP,
@@ -65,52 +69,57 @@ const u8 gItemEffect_FreshWater[7] = {
 
 const u8 gItemEffect_SodaPop[7] = {
     [4] = ITEM4_HEAL_HP,
-    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 50 : 60, // Amount of HP to recover
+    [6] = 60, // I_HEALTH_RECOVERY >= GEN_7 ? 50 : 60, // Amount of HP to recover
 };
 
 const u8 gItemEffect_Lemonade[7] = {
     [4] = ITEM4_HEAL_HP,
-    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 70 : 80, // Amount of HP to recover
+    [6] = 90, // I_HEALTH_RECOVERY >= GEN_7 ? 70 : 80, // Amount of HP to recover
 };
 
-const u8 gItemEffect_MoomooMilk[7] = {
+const u8 gItemEffect_MoomooMilk[10] = {
     [4] = ITEM4_HEAL_HP,
+    [5] = ITEM5_FRIENDSHIP_ALL,
     [6] = 100, // Amount of HP to recover
+    [7] = 8,
+    [8] = 8,
+    [9] = 8, 
 };
 
 const u8 gItemEffect_EnergyPowder[10] = {
     [4] = ITEM4_HEAL_HP,
     [5] = ITEM5_FRIENDSHIP_ALL,
-    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 60 : 50, // Amount of HP to recover
-    [7] = -5, // Friendship change, low
-    [8] = -5, // Friendship change, mid
-    [9] = -10, // Friendship change, high
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 120 : 200, // Amount of HP to recover
+    [7] = -4, // Friendship change, low
+    [8] = -3, // Friendship change, mid
+    [9] = -2, // Friendship change, high
 };
 
 const u8 gItemEffect_EnergyRoot[10] = {
+    [3] = ITEM3_STATUS_ALL,
     [4] = ITEM4_HEAL_HP,
     [5] = ITEM5_FRIENDSHIP_ALL,
-    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 120 : 200, // Amount of HP to recover
-    [7] = -10, // Friendship change, low
-    [8] = -10, // Friendship change, mid
-    [9] = -15, // Friendship change, high
+    [6] = ITEM6_HEAL_HP_FULL, // I_HEALTH_RECOVERY >= GEN_7 ? 120 : 200, // Amount of HP to recover
+    [7] = -6, // Friendship change, low
+    [8] = -5, // Friendship change, mid
+    [9] = -4, // Friendship change, high
 };
 
 const u8 gItemEffect_HealPowder[9] = {
     [3] = ITEM3_STATUS_ALL,
     [5] = ITEM5_FRIENDSHIP_ALL,
-    [6] = -5,  // Friendship change, low
-    [7] = -5,  // Friendship change, mid
-    [8] = -10, // Friendship change, high
+    [6] = -2,  // Friendship change, low
+    [7] = -1,  // Friendship change, mid
+    [8] = -1, // Friendship change, high
 };
 
 const u8 gItemEffect_RevivalHerb[10] = {
     [4] = ITEM4_REVIVE | ITEM4_HEAL_HP,
     [5] = ITEM5_FRIENDSHIP_ALL,
     [6] = ITEM6_HEAL_HP_FULL,
-    [7] = -15, // Friendship change, low
-    [8] = -15, // Friendship change, mid
-    [9] = -20, // Friendship change, high
+    [7] = -10, // Friendship change, low
+    [8] = -8, // Friendship change, mid
+    [9] = -6, // Friendship change, high
 };
 
 const u8 gItemEffect_Remedy[10] = {
@@ -161,7 +170,7 @@ const u8 gItemEffect_MaxElixir[7] = {
 };
 
 const u8 gItemEffect_YellowFlute[6] = {
-    [3] = ITEM3_CONFUSION,
+    [3] = ITEM3_CURSE,
 };
 
 const u8 gItemEffect_RedFlute[6] = {
@@ -174,9 +183,16 @@ const u8 gItemEffect_SacredAsh[7] = {
     [6] = ITEM6_HEAL_HP_FULL,
 };
 
+const u8 gItemEffect_SacredAshNew[7] = {
+    [0] = ITEM0_SACRED_ASH,
+    [3] = ITEM3_STATUS_ALL,
+    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP | ITEM4_HEAL_PP,
+    [6] = ITEM6_HEAL_HP_FULL | ITEM6_HEAL_PP_FULL,
+};
+
 #define VITAMIN_FRIENDSHIP_CHANGE(i)             \
-    [(i) + 0] = 5, /* Friendship change, low */  \
-    [(i) + 1] = 3, /* Friendship change, mid */  \
+    [(i) + 0] = 2, /* Friendship change, low */  \
+    [(i) + 1] = 2, /* Friendship change, mid */  \
     [(i) + 2] = 2  /* Friendship change, high */
 
 const u8 gItemEffect_HPUp[11] = {
@@ -335,7 +351,7 @@ const u8 gItemEffect_PPMax[9] = {
 };
 
 const u8 gItemEffect_GuardSpec[8] = {
-    [3] = ITEM3_GUARD_SPEC,
+    [1] = ITEM1_X_ATTACK, // [3] = ITEM3_GUARD_SPEC,
 };
 
 // The first item effect value for the stat boost items
@@ -398,9 +414,9 @@ const u8 gItemEffect_SitrusBerry[7] = {
 };
 
 #define EV_BERRY_FRIENDSHIP_CHANGE          \
-    [7] = 10, /* Friendship change, low */  \
-    [8] = 5,  /* Friendship change, mid */  \
-    [9] = 2   /* Friendship change, high */
+    [7] = 8, /* Friendship change, low */  \
+    [8] = 8,  /* Friendship change, mid */  \
+    [9] = 8   /* Friendship change, high */
 
 const u8 gItemEffect_PomegBerry[10] = {
     [4] = ITEM4_EV_HP,

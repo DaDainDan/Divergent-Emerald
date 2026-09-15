@@ -733,6 +733,11 @@ const u16 gItemIconPalette_RedOrb[] = INCGFX_U16("graphics/items/icon_palettes/r
 const u32 gItemIcon_BlueOrb[] = INCGFX_U32("graphics/items/icons/blue_orb.png", ".4bpp.smol");
 const u16 gItemIconPalette_BlueOrb[] = INCGFX_U16("graphics/items/icon_palettes/blue_orb.pal", ".gbapal");
 
+const u32 gItemIcon_JadeOrb[] = INCGFX_U32("graphics/items/icons/jade_orb.png", ".4bpp.smol");
+const u16 gItemIconPalette_JadeOrb[] = INCGFX_U16("graphics/items/icon_palettes/jade_orb.pal", ".gbapal");
+const u16 gItemIconPalette_BlueOrbHGSS[] = INCGFX_U16("graphics/items/icon_palettes/blue_orb_hgss.pal", ".gbapal");
+const u16 gItemIconPalette_RedOrbHGSS[] = INCGFX_U16("graphics/items/icon_palettes/red_orb_hgss.pal", ".gbapal");
+
 // Mega Stones
 
 const u32 gItemIcon_Venusaurite[] = INCGFX_U32("graphics/items/icons/venusaurite.png", ".4bpp.smol");
@@ -1144,6 +1149,7 @@ const u16 gItemIconPalette_UltranecroziumZ[] = INCGFX_U16("graphics/items/icon_p
 
 const u32 gItemIcon_LightBall[] = INCGFX_U32("graphics/items/icons/light_ball.png", ".4bpp.smol");
 const u16 gItemIconPalette_LightBall[] = INCGFX_U16("graphics/items/icon_palettes/light_ball.pal", ".gbapal");
+const u16 gItemIconPalette_FrozenOrb[] = INCGFX_U16("graphics/items/icon_palettes/frozen_orb.pal", ".gbapal");
 
 const u32 gItemIcon_Leek[] = INCGFX_U32("graphics/items/icons/leek.png", ".4bpp.smol");
 const u16 gItemIconPalette_Leek[] = INCGFX_U16("graphics/items/icon_palettes/leek.pal", ".gbapal");
@@ -1201,6 +1207,7 @@ const u16 gItemIconPalette_RoseIncense[] = INCGFX_U16("graphics/items/icon_palet
 
 const u32 gItemIcon_LuckIncense[] = INCGFX_U32("graphics/items/icons/luck_incense.png", ".4bpp.smol");
 const u16 gItemIconPalette_LuckIncense[] = INCGFX_U16("graphics/items/icon_palettes/luck_incense.pal", ".gbapal");
+const u16 gItemIconPalette_RottenIncense[] = INCGFX_U16("graphics/items/icon_palettes/rotten_incense.pal", ".gbapal");
 
 const u32 gItemIcon_PureIncense[] = INCGFX_U32("graphics/items/icons/pure_incense.png", ".4bpp.smol");
 const u16 gItemIconPalette_PureIncense[] = INCGFX_U16("graphics/items/icon_palettes/pure_incense.pal", ".gbapal");
@@ -1308,6 +1315,7 @@ const u16 gItemIconPalette_ChoiceScarf[] = INCGFX_U16("graphics/items/icon_palet
 
 const u32 gItemIcon_FlameOrb[] = INCGFX_U32("graphics/items/icons/flame_orb.png", ".4bpp.smol");
 const u16 gItemIconPalette_FlameOrb[] = INCGFX_U16("graphics/items/icon_palettes/flame_orb.pal", ".gbapal");
+const u16 gItemIconPalette_CursedOrb[] = INCGFX_U16("graphics/items/icon_palettes/cursed_orb.pal", ".gbapal");
 
 const u32 gItemIcon_ToxicOrb[] = INCGFX_U32("graphics/items/icons/toxic_orb.png", ".4bpp.smol");
 const u16 gItemIconPalette_ToxicOrb[] = INCGFX_U16("graphics/items/icon_palettes/toxic_orb.pal", ".gbapal");
@@ -1482,6 +1490,8 @@ const u16 gItemIconPalette_WeaknessPolicy[] = INCGFX_U16("graphics/items/icon_pa
 
 const u32 gItemIcon_AssaultVest[] = INCGFX_U32("graphics/items/icons/assault_vest.png", ".4bpp.smol");
 const u16 gItemIconPalette_AssaultVest[] = INCGFX_U16("graphics/items/icon_palettes/assault_vest.pal", ".gbapal");
+const u16 gItemIconPalette_SupportVest[] = INCGFX_U16("graphics/items/icon_palettes/support_vest.pal", ".gbapal");
+const u16 gItemIconPalette_LuckyVest[] = INCGFX_U16("graphics/items/icon_palettes/lucky_vest.pal", ".gbapal");
 
 const u32 gItemIcon_SafetyGoggles[] = INCGFX_U32("graphics/items/icons/safety_goggles.png", ".4bpp.smol");
 const u16 gItemIconPalette_SafetyGoggles[] = INCGFX_U16("graphics/items/icon_palettes/safety_goggles.pal", ".gbapal");
@@ -1506,12 +1516,16 @@ const u16 gItemIconPalette_HeavyDutyBoots[] = INCGFX_U16("graphics/items/icon_pa
 
 const u32 gItemIcon_BlunderPolicy[] = INCGFX_U32("graphics/items/icons/blunder_policy.png", ".4bpp.smol");
 const u16 gItemIconPalette_BlunderPolicy[] = INCGFX_U16("graphics/items/icon_palettes/blunder_policy.pal", ".gbapal");
+const u16 gItemIconPalette_HaplessPolicy[] = INCGFX_U16("graphics/items/icon_palettes/hapless_policy.pal", ".gbapal");
 
 const u32 gItemIcon_RoomService[] = INCGFX_U32("graphics/items/icons/room_service.png", ".4bpp.smol");
 const u16 gItemIconPalette_RoomService[] = INCGFX_U16("graphics/items/icon_palettes/room_service.pal", ".gbapal");
 
 const u32 gItemIcon_UtilityUmbrella[] = INCGFX_U32("graphics/items/icons/utility_umbrella.png", ".4bpp.smol");
 const u16 gItemIconPalette_UtilityUmbrella[] = INCGFX_U16("graphics/items/icon_palettes/utility_umbrella.pal", ".gbapal");
+
+const u32 gItemIcon_FineLens[] = INCGFX_U32("graphics/items/icons/fine_lens.png", ".4bpp.smol");
+const u16 gItemIconPalette_FineLens[] = INCGFX_U16("graphics/items/icon_palettes/fine_lens.pal", ".gbapal");
 
 // Berries
 
@@ -1767,6 +1781,7 @@ const u16 gItemIconPalette_OvalCharm[] = INCGFX_U16("graphics/items/icon_palette
 
 const u32 gItemIcon_ShinyCharm[] = INCGFX_U32("graphics/items/icons/shiny_charm.png", ".4bpp.smol");
 const u16 gItemIconPalette_ShinyCharm[] = INCGFX_U16("graphics/items/icon_palettes/shiny_charm.pal", ".gbapal");
+const u16 gItemIconPalette_CalamityCharm[] = INCGFX_U16("graphics/items/icon_palettes/calamity_charm.pal", ".gbapal");
 
 const u32 gItemIcon_CatchingCharm[] = INCGFX_U32("graphics/items/icons/catching_charm.png", ".4bpp.smol");
 const u16 gItemIconPalette_CatchingCharm[] = INCGFX_U16("graphics/items/icon_palettes/catching_charm.pal", ".gbapal");
