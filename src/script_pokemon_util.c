@@ -619,7 +619,7 @@ void Script_GetChosenMonDefensiveIVs(void)
 
 void Script_SetStatus1(struct ScriptContext *ctx)
 {
-    u32 status1 = VarGet(ScriptReadHalfword(ctx));
+    u32 status1 = VarGet(ScriptReadWord(ctx));
     u32 slot = VarGet(ScriptReadHalfword(ctx));
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);

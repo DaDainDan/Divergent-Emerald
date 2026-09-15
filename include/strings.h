@@ -275,6 +275,7 @@ extern const u8 gText_EscapeFromHere[];
 extern const u8 gText_PkmnCuredOfPoison[];
 extern const u8 gText_PkmnWokeUp2[];
 extern const u8 gText_PkmnBurnHealed[];
+extern const u8 gText_PkmnCurseHealed[];
 extern const u8 gText_PkmnFrostbiteHealed[];
 extern const u8 gText_PkmnThawedOut[];
 extern const u8 gText_PkmnCuredOfParalysis[];
@@ -702,6 +703,7 @@ extern const u8 gText_DadsAdvice[];
 extern const u8 gText_PlayerUsedVar2[];
 extern const u8 gText_RepelEffectsLingered[];
 extern const u8 gText_LureEffectsLingered[];
+extern const u8 gText_IncenseEffectsLingered[];
 extern const u8 gText_BoxFull[];
 extern const u8 gText_WontHaveEffect[];
 extern const u8 gText_NextFusionMon[];
@@ -1440,6 +1442,7 @@ extern const u8 gText_Burn[];
 extern const u8 gText_Ice[];
 extern const u8 gText_Confusion[];
 extern const u8 gText_Love[];
+extern const u8 gText_Curse[];
 
 // battle message
 extern const u8 gText_PkmnTransferredSomeonesPCBoxFull[];
