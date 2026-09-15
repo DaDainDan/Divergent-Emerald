@@ -284,11 +284,11 @@ bool32 IsSwitchinTSpikesAffected(enum BattlerId battler)
         return FALSE;
     if (!AI_IsBattlerGrounded(battler))
         return FALSE;
-    if (IsMistyTerrainAffected(battler, ability, heldItemEffect, gFieldStatuses))
+    if (IsMistyTerrainAffected(battler, gFieldStatuses))
         return FALSE;
-    if (IsLeafGuardProtected(battler, ability))
-        return FALSE;
-    if (IsShieldsDownProtected(battler, ability))
+    // if (IsLeafGuardProtected(battler, ability))
+    //     return FALSE;
+    if (IsShieldsDownMeteorProtected(battler, ability))
         return FALSE;
     if (IsFlowerVeilProtected(battler))
         return FALSE;
@@ -731,7 +731,7 @@ static bool32 ShouldSwitchIfBadlyStatused(struct SwitchAiContext *switchContext)
     {
         //Yawn
         if (gBattleMons[switchContext->battler].volatiles.yawn
-            && CanBeSlept(switchContext->battler, switchContext->battler, monAbility, BLOCKED_BY_SLEEP_CLAUSE)
+            && CanBeSlept(switchContext->battler, switchContext->battler, monAbility, monAbility, BLOCKED_BY_SLEEP_CLAUSE)
             && gBattleMons[switchContext->battler].hp > gBattleMons[switchContext->battler].maxHP / 3
             && RandomPercentage(RNG_AI_SWITCH_YAWN, GetSwitchChance(SHOULD_SWITCH_YAWN)))
         {
@@ -761,7 +761,7 @@ static bool32 ShouldSwitchIfBadlyStatused(struct SwitchAiContext *switchContext)
             // Check if Active Pokemon evasion boosted and might be able to dodge until awake
             if (gBattleMons[switchContext->battler].statStages[STAT_EVASION] > (DEFAULT_STAT_STAGE + 2)
                 && gAiLogicData->abilities[switchContext->opposingBattler] != ABILITY_UNAWARE
-                && gAiLogicData->abilities[switchContext->opposingBattler] != ABILITY_KEEN_EYE
+                // && gAiLogicData->abilities[switchContext->opposingBattler] != ABILITY_KEEN_EYE
                 && gAiLogicData->abilities[switchContext->opposingBattler] != ABILITY_MINDS_EYE
                 && (GetConfig(B_ILLUMINATE_EFFECT) >= GEN_9 && gAiLogicData->abilities[switchContext->opposingBattler] != ABILITY_ILLUMINATE)
                 && !gBattleMons[switchContext->battler].volatiles.foresight
@@ -831,9 +831,9 @@ static bool32 GetHitEscapeTransformState(enum BattlerId battlerAtk, enum Move mo
         return FALSE;
 
     moveType = GetBattleMoveType(move);
-    if ((moveType == TYPE_WATER && (AI_GetWeather() & B_WEATHER_SUN_PRIMAL))
-     || (moveType == TYPE_FIRE && (AI_GetWeather() & B_WEATHER_RAIN_PRIMAL)))
-        return FALSE;
+    // if ((moveType == TYPE_WATER && (AI_GetWeather() & B_WEATHER_SUN_PRIMAL))
+    //  || (moveType == TYPE_FIRE && (AI_GetWeather() & B_WEATHER_RAIN_PRIMAL)))
+    //     return FALSE;
 
     struct DamageContext ctx = {0};
     ctx.aiCalc = TRUE;
@@ -917,12 +917,13 @@ static bool32 CanIntimidateLowerOpponentAtk(enum BattlerId battler, enum Battler
     if (gSideStatuses[GetBattlerSide(opposingBattler)] & SIDE_STATUS_MIST)
         return FALSE;
 
-    if (IS_BATTLER_OF_TYPE(opposingBattler, TYPE_GRASS) && AI_IsAbilityOnSide(opposingBattler, ABILITY_FLOWER_VEIL))
-        return FALSE;
+    // if (IS_BATTLER_OF_TYPE(opposingBattler, TYPE_GRASS) && AI_IsAbilityOnSide(opposingBattler, ABILITY_FLOWER_VEIL))
+    //     return FALSE;
 
     switch (abilityDef)
     {
     case ABILITY_HYPER_CUTTER:
+    case ABILITY_TOUGH_CLAWS:
     case ABILITY_CLEAR_BODY:
     case ABILITY_FULL_METAL_BODY:
     case ABILITY_WHITE_SMOKE:
@@ -936,8 +937,9 @@ static bool32 CanIntimidateLowerOpponentAtk(enum BattlerId battler, enum Battler
         switch (abilityDef)
         {
         case ABILITY_INNER_FOCUS:
+        case ABILITY_GUTS:
         case ABILITY_SCRAPPY:
-        case ABILITY_OWN_TEMPO:
+        // case ABILITY_OWN_TEMPO:
         case ABILITY_OBLIVIOUS:
             return FALSE;
         default:
@@ -1571,7 +1573,7 @@ static u32 GetSwitchinSingleUseItemHealing(enum BattlerId battler, enum BattlerI
     // Check if we're at a single use healing item threshold
     if (currentHP <= 0
      || gAiLogicData->abilities[battler] == ABILITY_KLUTZ
-     || (gAiLogicData->abilities[opposingBattler] == ABILITY_UNNERVE && GetItemPocket(aiItem) == POCKET_BERRIES))
+     || (gAiLogicData->abilities[opposingBattler] == ABILITY_MY_LIEGE && GetItemPocket(aiItem) == POCKET_BERRIES))
         return itemHeal;
 
     switch (GetItemHoldEffect(aiItem))
@@ -1642,7 +1644,7 @@ static u32 GetSwitchinHazardsDamage(enum BattlerId battler)
             && status == 0
             && !(gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
             && !IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL)
-            && !IsMistyTerrainAffected(battler, ability, gAiLogicData->holdEffects[battler], gFieldStatuses)
+            && !IsMistyTerrainAffected(battler, gFieldStatuses)
             && !IsAbilityStatusProtected(battler, ability)
             && heldItemEffect != HOLD_EFFECT_CURE_PSN && heldItemEffect != HOLD_EFFECT_CURE_STATUS
             && AI_IsBattlerGrounded(battler)))
@@ -1835,12 +1837,12 @@ static u32 GetSwitchinStatusDamage(enum BattlerId battler)
         }
         else if ((status & STATUS1_TOXIC_POISON) && ability != ABILITY_POISON_HEAL)
         {
-            if ((status & STATUS1_TOXIC_COUNTER) != STATUS1_TOXIC_TURN(15)) // not 16 turns
+            if ((status & STATUS1_TOXIC_COUNTER) != STATUS1_TOXIC_TURN(7)) // not 8 turns
                 gBattleMons[battler].status1 += STATUS1_TOXIC_TURN(1);
             statusDamage = maxHP / 16;
             if (statusDamage == 0)
                 statusDamage = 1;
-            statusDamage *= (gBattleMons[battler].status1 & STATUS1_TOXIC_COUNTER) >> 8;
+            statusDamage *= (gBattleMons[battler].status1 & STATUS1_TOXIC_COUNTER) >> 12;
         }
     }
 

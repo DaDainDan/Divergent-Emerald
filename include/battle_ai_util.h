@@ -202,7 +202,7 @@ bool32 HasMoveWithMoveEffectExcept(enum BattlerId battlerId, enum MoveEffect mov
 bool32 HasMoveThatLowersOwnStats(enum BattlerId battlerId);
 bool32 HasMoveWithLowAccuracy(enum BattlerId battlerAtk, enum BattlerId battlerDef, u32 accCheck, bool32 ignoreStatus);
 bool32 HasAnyKnownMove(enum BattlerId battlerId);
-bool32 IsAromaVeilProtectedEffect(enum BattleMoveEffects moveEffect);
+bool32 IsEffectPreventedByAromaVeil(enum BattleMoveEffects moveEffect);
 bool32 IsNonVolatileStatusMove(enum Move move);
 bool32 IsMoveRedirectionPrevented(enum BattlerId battlerAtk, enum Move move, enum Ability atkAbility);
 bool32 IsHazardMove(enum Move move);
@@ -316,6 +316,7 @@ void IncreaseParalyzeScore(enum BattlerId battlerAtk, enum BattlerId battlerDef,
 void IncreaseSleepScore(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Move move, s32 *score);
 void IncreaseConfusionScore(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Move move, s32 *score);
 void IncreaseFrostbiteScore(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Move move, s32 *score);
+void IncreaseCurseScore(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Move move, s32 *score);
 bool32 HasHPForDamagingSetup(enum BattlerId battlerAtk, enum BattlerId battlerDef, u32 hpThreshold);
 
 s32 AI_TryToClearStats(enum BattlerId battlerAtk, enum BattlerId battlerDef, bool32 isDoubleBattle);
