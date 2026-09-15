@@ -2207,7 +2207,8 @@ static void Task_ReshowPokeStorage(u8 taskId)
         {
             if (sWhichToReshow == SCREEN_CHANGE_ITEM_FROM_BAG - 1 && gSpecialVar_ItemId != ITEM_NONE)
             {
-                PrintMessage(MSG_ITEM_IS_HELD);
+                // PrintMessage(MSG_ITEM_IS_HELD);
+                sStorage->state++;
                 sStorage->state++;
             }
             else
@@ -3119,7 +3120,8 @@ static void Task_GiveMovingItemToMon(u8 taskId)
             StartCursorAnim(CURSOR_ANIM_BOUNCE);
             RefreshDisplayMon();
             PrintDisplayMonInfo();
-            PrintMessage(MSG_ITEM_IS_HELD);
+            // PrintMessage(MSG_ITEM_IS_HELD);
+            sStorage->state++;
             sStorage->state++;
         }
         break;

@@ -340,7 +340,19 @@ static void FindMapsWithMon(enum Species species)
         if (GetRegionMapType(headerSectionId) != currentRegionMapType)
             continue;
 
-        if (MapHasSpecies(&gWildMonHeaders[i].encounterTypes[gAreaTimeOfDay], headerSectionId, species))
+        u8 time = gAreaTimeOfDay;
+        if (gWildMonHeaders[i].encounterTypes[TIME_NIGHT].landMonsInfo == NULL)
+            time = TIME_DAY;
+        else
+        {
+            if (time == TIME_MORNING && gWildMonHeaders[i].encounterTypes[TIME_MORNING].landMonsInfo == NULL)
+                time = TIME_DAY;
+
+            if (time == TIME_EVENING && gWildMonHeaders[i].encounterTypes[TIME_EVENING].landMonsInfo == NULL)
+                time = TIME_NIGHT;
+        }
+
+        if (MapHasSpecies(&gWildMonHeaders[i].encounterTypes[time], headerSectionId, species))
         {
             switch (gWildMonHeaders[i].mapGroup)
             {

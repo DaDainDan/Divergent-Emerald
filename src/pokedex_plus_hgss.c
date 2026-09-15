@@ -167,8 +167,24 @@ static const u8 sText_Stats_EggCycles_Fast[] = _("{EMOJI_DIZZYEGG}");
 static const u8 sText_Stats_EggCycles_Normal[] = _("{EMOJI_DIZZYEGG}{EMOJI_DIZZYEGG}");
 static const u8 sText_Stats_EggCycles_Slow[] = _("{EMOJI_DIZZYEGG}{EMOJI_DIZZYEGG}{EMOJI_DIZZYEGG}");
 static const u8 sText_Stats_Growthrate[] = _("GROW: ");
+// static const u8 sText_Stats_Airborne[] = _("FLIGHT:");
+// static const u8 sText_Stats_Flys[] = _("CAN FLY");
+// static const u8 sText_Stats_Grounded[] = _("GROUNDED");
+static const u8 sText_Stats_Tier[] = _("TIER:");
+static const u8 sText_Stats_Newborn[] = _("NEWBORN");
+static const u8 sText_Stats_Infantile[] = _("INFANTILE");
+static const u8 sText_Stats_Junior[] = _("JUNIOR");
+static const u8 sText_Stats_Green[] = _("GREEN");
+static const u8 sText_Stats_Mundane[] = _("MUNDANE");
+static const u8 sText_Stats_Exotic[] = _("EXOTIC");
+static const u8 sText_Stats_Prestige[] = _("PRESTIGE");
+static const u8 sText_Stats_Regal[] = _("REGAL");
+static const u8 sText_Stats_Mythical[] = _("MYTHICAL");
+static const u8 sText_Stats_Legendary[] = _("LEGENDARY");
+static const u8 sText_Stats_Divine[] = _("DIVINE");
 static const u8 sText_Stats_Friendship[] = _("FRIENDSHIP:");
 static const u8 sText_Stats_Friendship_BigAnger[] = _("{EMOJI_BIGANGER}");
+static const u8 sText_Stats_Friendship_Angry[] = _("{EMOJI_ANGRY}");
 static const u8 sText_Stats_Friendship_Neutral[] = _("{EMOJI_NEUTRAL}");
 static const u8 sText_Stats_Friendship_Happy[] = _("{EMOJI_HAPPY}");
 static const u8 sText_Stats_Friendship_BigSmile[] = _("{EMOJI_BIGSMILE}");
@@ -364,6 +380,11 @@ struct PokemonStats
     enum Ability ability0;
     enum Ability ability1;
     enum Ability abilityHidden;
+    bool8 airborne;
+    enum BattleFrontierTiers monTier;
+    bool8 isMythical;
+    bool8 isLegendary;
+    bool8 isDivine;
 };
 
 struct EvoScreenData
@@ -1019,8 +1040,8 @@ static const union AnimCmd *const sSpriteAnimTable_SeenOwnText[] =
 
 static const union AnimCmd *const sSpriteAnimTable_HoennNationalText[] =
 {
-    sSpriteAnim_HoennText,
-    sSpriteAnim_NationalText
+    sSpriteAnim_NationalText,
+    sSpriteAnim_HoennText
 };
 
 static const union AnimCmd *const sSpriteAnimTable_HoennSeenOwnNumber[] =
@@ -2483,7 +2504,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
     {
     default:
     case DEX_MODE_HOENN:
-        temp_dexCount = REGIONAL_DEX_COUNT;
+        temp_dexCount = REGIONAL_DEX_COUNT - 1;
         temp_isHoennDex = TRUE;
         break;
     case DEX_MODE_NATIONAL:
@@ -2494,7 +2515,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         }
         else
         {
-            temp_dexCount = REGIONAL_DEX_COUNT;
+            temp_dexCount = REGIONAL_DEX_COUNT - 1;
             temp_isHoennDex = TRUE;
         }
         break;
@@ -3521,19 +3542,19 @@ static void CreateStatBar(u8 *dst, u32 y, u32 width)
 
     switch (width)
     {
-    case 0 ... 5:
+    case 0 ... 7: // ... 5
         color = COLOR_WORST;
         break;
-    case 6 ... 15:
+    case 8 ... 16: // 6 ... 15
         color = COLOR_BAD;
         break;
-    case 16 ... 25:
+    case 17 ... 25: // 16 ...
         color = COLOR_AVERAGE;
         break;
-    case 26 ... 31:
+    case 26 ... 32: // ... 31
         color = COLOR_GOOD;
         break;
-    case 32 ... 37:
+    case 33 ... 36: // 32 ... 37
         color = COLOR_VERY_GOOD;
         break;
     default:
@@ -3622,7 +3643,11 @@ static void CreateStatBars(struct PokedexListItem *dexMon)
                     width -= 1;
             }
             else
-                width = (100 / 3) + ((statValue - 100) / 14);
+            {
+                width = (100 / 3) + ((statValue - 88) / 14);
+                if (i == 5) // Adust for Speed
+                    width++;
+            }
 
             if (width > 39) // Max pixels
                 width = 39;
@@ -4852,6 +4877,11 @@ static void SaveMonDataInStruct(void)
     sPokedexView->sPokemonStats.ability0            = GetAbilityBySpecies(species, 0);
     sPokedexView->sPokemonStats.ability1            = GetAbilityBySpecies(species, 1);
     sPokedexView->sPokemonStats.abilityHidden       = GetAbilityBySpecies(species, 2);
+    sPokedexView->sPokemonStats.airborne            = IsSpeciesAirborne(species);
+    sPokedexView->sPokemonStats.monTier             = gSpeciesInfo[species].monTier;
+    sPokedexView->sPokemonStats.isMythical          = (gSpeciesInfo[species].isMythical || gSpeciesInfo[species].isSubLegendary);
+    sPokedexView->sPokemonStats.isLegendary         = gSpeciesInfo[species].isRestrictedLegendary;
+    sPokedexView->sPokemonStats.isDivine            = gSpeciesInfo[species].isDivine;
 }
 
 #define tMonSpriteId data[4]
@@ -5616,16 +5646,24 @@ static void PrintStatsScreen_Left(u8 taskId)
     {
         u32 catchRate = sPokedexView->sPokemonStats.catchRate;
         enum GrowthRate growthRate = sPokedexView->sPokemonStats.growthRate;
+        // bool8 airborne = sPokedexView->sPokemonStats.airborne;
+        u8 tier = sPokedexView->sPokemonStats.monTier;
+        bool8 myth = sPokedexView->sPokemonStats.isMythical;
+        bool8 legend = sPokedexView->sPokemonStats.isLegendary;
+        bool8 god = sPokedexView->sPokemonStats.isDivine;
+
+        if (myth || legend || god)
+            tier = 8 + legend + (2 * god);
 
         //Catch rate
         PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_CatchRate, base_x, base_y + base_y_offset*base_i);
-        if (catchRate <= 10)
+        if (catchRate <= 15)
             PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_CatchRate_Legend, base_x + x_offset_column, base_y + base_y_offset*base_i);
-        else if (catchRate <= 70)
+        else if (catchRate <= 50)
             PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_CatchRate_VeryHard, base_x + x_offset_column, base_y + base_y_offset*base_i);
-        else if (catchRate <= 100)
+        else if (catchRate <= 80)
             PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_CatchRate_Difficult, base_x + x_offset_column, base_y + base_y_offset*base_i);
-        else if (catchRate <= 150)
+        else if (catchRate <= 140)
             PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_CatchRate_Medium, base_x + x_offset_column, base_y + base_y_offset*base_i);
         else if (catchRate <= 200)
             PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_CatchRate_Relaxed, base_x + x_offset_column, base_y + base_y_offset*base_i);
@@ -5660,6 +5698,57 @@ static void PrintStatsScreen_Left(u8 taskId)
         }
         align_x = GetStringRightAlignXOffset(0, strEV, total_x);
         PrintStatsScreenTextSmall(WIN_STATS_LEFT, strEV, align_x, base_y + base_y_offset*base_i);
+        base_i++;
+
+        // PrintStatsScreenTextSmall(WIN_STATS_LEFT_UNUSED, sText_Stats_Airborne, base_x, 0);
+        // if (airborne)
+        //     PrintStatsScreenTextSmall(WIN_STATS_LEFT_UNUSED, sText_Stats_Flys, base_x + x_offset_column + 10, 0);
+        // else
+        //     PrintStatsScreenTextSmall(WIN_STATS_LEFT_UNUSED, sText_Stats_Grounded, base_x + x_offset_column + 2, 0);
+
+        //Tier
+        PrintStatsScreenTextSmall(WIN_STATS_LEFT_UNUSED, sText_Stats_Tier, base_x, 0);
+        switch (tier)
+        {
+        case NEWBORN_TIER:
+            StringCopy(strEV, sText_Stats_Newborn);
+            break;
+        case INFANTILE_TIER:
+            StringCopy(strEV, sText_Stats_Infantile);
+            break;
+        case JUNIOR_TIER:
+            StringCopy(strEV, sText_Stats_Junior);
+            break;
+        case GREEN_TIER:
+            StringCopy(strEV, sText_Stats_Green);
+            break;
+        case MUNDANE_TIER:
+            StringCopy(strEV, sText_Stats_Mundane);
+            break;
+        case EXOTIC_TIER:
+            StringCopy(strEV, sText_Stats_Exotic);
+            break;
+        case PRESTIGE_TIER:
+            StringCopy(strEV, sText_Stats_Prestige);
+            break;
+        case REGAL_TIER:
+            StringCopy(strEV, sText_Stats_Regal);
+            break;
+        case 8:
+            StringCopy(strEV, sText_Stats_Mythical);
+            break;
+        case 9:
+            StringCopy(strEV, sText_Stats_Legendary);
+            break;
+        case 10:
+            StringCopy(strEV, sText_Stats_Divine);
+            break;
+        default:
+            break;
+        }
+        align_x = GetStringRightAlignXOffset(0, strEV, total_x);
+        PrintStatsScreenTextSmall(WIN_STATS_LEFT_UNUSED, strEV, align_x, 0);
+
     }
     else
     {
@@ -5673,14 +5762,14 @@ static void PrintStatsScreen_Left(u8 taskId)
         PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_Friendship, base_x, base_y + base_y_offset*base_i);
         switch (sPokedexView->sPokemonStats.friendship)
         {
-        case 35:
+        case 0:
             StringCopy(strEV, sText_Stats_Friendship_BigAnger);
+            break;
+        case 35:
+            StringCopy(strEV, sText_Stats_Friendship_Angry);
             break;
         case 70:
             StringCopy(strEV, sText_Stats_Friendship_Neutral);
-            break;
-        case 90:
-            StringCopy(strEV, sText_Stats_Friendship_Happy);
             break;
         case 100:
             StringCopy(strEV, sText_Stats_Friendship_Happy);
