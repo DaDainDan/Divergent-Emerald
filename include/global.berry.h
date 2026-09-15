@@ -11,7 +11,7 @@ struct BerryInfo
     enum BerryColor color:4;
     u16 size:10;
     u16 weedsBonus:3;
-    u16 pestsBonus:3;
+    u16 pestsTier:3;
     u8 maxYield;
     u8 minYield:4;
     u8 waterBonus:4;
@@ -49,7 +49,7 @@ struct EnigmaBerryInfo
     enum BerryColor color:4;
     u16 size:10;
     u16 weedsBonus:3;
-    u16 pestsBonus:3;
+    u16 pestsTier:3;
     u8 maxYield;
     u8 minYield:4;
     u8 waterBonus:4;

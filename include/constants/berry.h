@@ -109,7 +109,7 @@ enum __attribute__((__packed__)) Flavor
 #define BERRY_TREE_ROUTE_121_SOIL_2   54
 #define BERRY_TREE_ROUTE_115_BLUK_1   55
 #define BERRY_TREE_ROUTE_115_BLUK_2   56
-#define BERRY_TREE_UNUSED             57
+#define BERRY_TREE_ROUTE_130_STARF    57
 #define BERRY_TREE_ROUTE_123_POMEG_3  58
 #define BERRY_TREE_ROUTE_123_POMEG_4  59
 #define BERRY_TREE_ROUTE_123_GREPA_1  60
@@ -142,6 +142,10 @@ enum __attribute__((__packed__)) Flavor
 #define BERRY_TREE_ROUTE_123_PECHA    87
 #define BERRY_TREE_ROUTE_123_SITRUS   88
 #define BERRY_TREE_ROUTE_123_RAWST    89
+#define BERRY_TREE_ROUTE_117_NOMEL    90
+#define BERRY_TREE_ROUTE_114_NOMEL    91
+#define BERRY_TREE_FRONTIER_JABOCA    92
+#define BERRY_TREE_FRONTIER_ROWAP     93
 
 // Remainder are unused
 

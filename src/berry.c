@@ -1,4 +1,5 @@
 #include "global.h"
+#include "caps.h"
 #include "berry.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -29,7 +30,8 @@ static u8 GetWeedingBonusByBerryType(u8);
 static u8 GetPestsBonusByBerryType(u8);
 static void SetTreeMutations(u8 id, u8 berry);
 static u8 GetTreeMutationValue(u8 id);
-static enum Species GetBerryPestSpecies(u8 berryId);
+static enum Species GetBerryPestSpecies(u8 berryId, u16 pestlvl);
+static u16 GetBerryPestLevel(u8 berryId);
 static void TryForWeeds(struct BerryTree *tree);
 static void TryForPests(struct BerryTree *tree);
 static void AddTreeBonus(struct BerryTree *tree, u8 bonus);
@@ -76,24 +78,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SOFT,
             .color = BERRY_COLOR_RED,
             .size = 20,
-            .maxYield = YIELD_RATE(3, 5, 15, 20),
-            .minYield = YIELD_RATE(2, 2, 4, 4),
+            .maxYield = YIELD_RATE(5, 5, 15, 20),
+            .minYield = YIELD_RATE(3, 2, 4, 4),
             .description1 = COMPOUND_STRING("Blooms with delicate pretty flowers."),
             .description2 = COMPOUND_STRING("The bright red Berry is very spicy."),
-            .growthDuration = GROWTH_DURATION(12, 12, 18, 24, 16, 24),
-            .spicy = 10,
+            .growthDuration = GROWTH_DURATION(16, 12, 18, 24, 16, 24),
+            .spicy = 20,
             .dry = 0,
-            .sweet = 0,
+            .sweet = 10,
             .bitter = 0,
             .sour = 0,
-            .smoothness = 25,
+            .smoothness = 30,
             .drainRate = 15,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 2,
         },
         .naturalGiftType = TYPE_FIRE,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  20,
         .berryPic = gBerryPic_Cheri,
@@ -107,26 +109,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Chesto"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_BLUE,
+            .color = BERRY_COLOR_PURPLE,
             .size = 80,
-            .maxYield = YIELD_RATE(3, 5, 15, 20),
-            .minYield = YIELD_RATE(2, 2, 4, 4),
+            .maxYield = YIELD_RATE(5, 5, 15, 20),
+            .minYield = YIELD_RATE(3, 2, 4, 4),
             .description1 = COMPOUND_STRING("The Berry's thick skin and fruit are"),
             .description2 = COMPOUND_STRING("very tough. It is dry-tasting all over."),
-            .growthDuration = GROWTH_DURATION(12, 12, 18, 24, 16, 24),
+            .growthDuration = GROWTH_DURATION(16, 12, 18, 24, 16, 24),
             .spicy = 0,
-            .dry = 10,
+            .dry = 20,
             .sweet = 0,
-            .bitter = 0,
+            .bitter = 10,
             .sour = 0,
-            .smoothness = 25,
+            .smoothness = 30,
             .drainRate = 15,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 2,
         },
-        .naturalGiftType = TYPE_WATER,
-        .naturalGiftPower = 80,
+        .naturalGiftType = TYPE_GHOST,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  20,
         .berryPic = gBerryPic_Chesto,
@@ -142,24 +144,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
             .color = BERRY_COLOR_PINK,
             .size = 40,
-            .maxYield = YIELD_RATE(3, 5, 15, 20),
-            .minYield = YIELD_RATE(2, 2, 4, 4),
+            .maxYield = YIELD_RATE(5, 5, 15, 20),
+            .minYield = YIELD_RATE(3, 2, 4, 4),
             .description1 = COMPOUND_STRING("Very sweet and delicious."),
             .description2 = COMPOUND_STRING("Also very tender - handle with care."),
-            .growthDuration = GROWTH_DURATION(12, 12, 18, 24, 16, 24),
+            .growthDuration = GROWTH_DURATION(16, 12, 18, 24, 16, 24),
             .spicy = 0,
             .dry = 0,
-            .sweet = 10,
+            .sweet = 20,
             .bitter = 0,
-            .sour = 0,
-            .smoothness = 25,
+            .sour = 10,
+            .smoothness = 30,
             .drainRate = 15,
             .waterBonus = 10,
             .weedsBonus = 4,
-            .pestsBonus = 6,
+            .pestsTier = 2,
         },
-        .naturalGiftType = TYPE_ELECTRIC,
-        .naturalGiftPower = 80,
+        .naturalGiftType = TYPE_FAIRY,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  20,
         .berryPic = gBerryPic_Pecha,
@@ -173,26 +175,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Rawst"),
             .firmness = BERRY_FIRMNESS_HARD,
-            .color = BERRY_COLOR_GREEN,
+            .color = BERRY_COLOR_BLUE,
             .size = 32,
-            .maxYield = YIELD_RATE(3, 5, 15, 20),
-            .minYield = YIELD_RATE(2, 2, 4, 4),
+            .maxYield = YIELD_RATE(5, 5, 15, 20),
+            .minYield = YIELD_RATE(3, 2, 4, 4),
             .description1 = COMPOUND_STRING("If the leaves grow long and curly,"),
             .description2 = COMPOUND_STRING("the Berry seems to grow very bitter."),
-            .growthDuration = GROWTH_DURATION(12, 12, 18, 24, 16, 24),
+            .growthDuration = GROWTH_DURATION(16, 12, 18, 24, 16, 24),
             .spicy = 0,
-            .dry = 0,
+            .dry = 10,
             .sweet = 0,
-            .bitter = 10,
+            .bitter = 20,
             .sour = 0,
-            .smoothness = 25,
+            .smoothness = 30,
             .drainRate = 15,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 2,
         },
-        .naturalGiftType = TYPE_GRASS,
-        .naturalGiftPower = 80,
+        .naturalGiftType = TYPE_ICE,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  20,
         .berryPic = gBerryPic_Rawst,
@@ -208,24 +210,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .color = BERRY_COLOR_YELLOW,
             .size = 50,
-            .maxYield = YIELD_RATE(3, 5, 15, 20),
-            .minYield = YIELD_RATE(2, 2, 4, 4),
+            .maxYield = YIELD_RATE(5, 5, 15, 20),
+            .minYield = YIELD_RATE(3, 2, 4, 4),
             .description1 = COMPOUND_STRING("The hard Berry is dense with a rich"),
             .description2 = COMPOUND_STRING("juice. It is quite sour."),
-            .growthDuration = GROWTH_DURATION(12, 12, 18, 24, 16, 24),
-            .spicy = 0,
+            .growthDuration = GROWTH_DURATION(16, 12, 18, 24, 16, 24),
+            .spicy = 10,
             .dry = 0,
             .sweet = 0,
             .bitter = 0,
-            .sour = 10,
-            .smoothness = 25,
+            .sour = 20,
+            .smoothness = 30,
             .drainRate = 15,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 2,
         },
-        .naturalGiftType = TYPE_ICE,
-        .naturalGiftPower = 80,
+        .naturalGiftType = TYPE_GROUND,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  20,
         .berryPic = gBerryPic_Aspear,
@@ -241,24 +243,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .color = BERRY_COLOR_RED,
             .size = 28,
-            .maxYield = YIELD_RATE(3, 5, 15, 22),
-            .minYield = YIELD_RATE(2, 2, 2, 2),
+            .maxYield = YIELD_RATE(8, 5, 15, 22),
+            .minYield = YIELD_RATE(4, 2, 2, 2),
             .description1 = COMPOUND_STRING("Grows slower than Cheri and others."),
             .description2 = COMPOUND_STRING("The smaller the Berry, the tastier."),
-            .growthDuration = GROWTH_DURATION(16, 16, 24, 24, 16, 24),
-            .spicy = 10,
+            .growthDuration = GROWTH_DURATION(8, 16, 24, 24, 16, 24),
+            .spicy = 0,
             .dry = 0,
-            .sweet = 10,
+            .sweet = 0,
             .bitter = 10,
-            .sour = 10,
-            .smoothness = 20,
+            .sour = 0,
+            .smoothness = 10,
             .drainRate = 15,
             .waterBonus = 15,
             .weedsBonus = 3,
-            .pestsBonus = 6,
+            .pestsTier = 0,
         },
         .naturalGiftType = TYPE_FIGHTING,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Leppa,
@@ -274,24 +276,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .color = BERRY_COLOR_BLUE,
             .size = 35,
-            .maxYield = YIELD_RATE(3, 5, 15, 20),
-            .minYield = YIELD_RATE(2, 2, 4, 4),
+            .maxYield = YIELD_RATE(8, 5, 15, 20),
+            .minYield = YIELD_RATE(4, 2, 4, 4),
             .description1 = COMPOUND_STRING("A peculiar Berry with a mix of flavors."),
-            .description2 = COMPOUND_STRING("Berries grow in half a day."),
-            .growthDuration = GROWTH_DURATION(12, 16, 24, 24, 16, 24),
-            .spicy = 10,
-            .dry = 10,
-            .sweet = 10,
-            .bitter = 10,
+            .description2 = COMPOUND_STRING("Berries grow in a third of a day."),
+            .growthDuration = GROWTH_DURATION(8, 16, 24, 24, 16, 24),
+            .spicy = 0,
+            .dry = 0,
+            .sweet = 0,
+            .bitter = 0,
             .sour = 10,
-            .smoothness = 20,
+            .smoothness = 10,
             .drainRate = 15,
             .waterBonus = 10,
             .weedsBonus = 4,
-            .pestsBonus = 6,
+            .pestsTier = 0,
         },
-        .naturalGiftType = TYPE_POISON,
-        .naturalGiftPower = 80,
+        .naturalGiftType = TYPE_WATER,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Oran,
@@ -307,24 +309,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_HARD,
             .color = BERRY_COLOR_PINK,
             .size = 47,
-            .maxYield = YIELD_RATE(3, 5, 15, 20),
-            .minYield = YIELD_RATE(2, 2, 4, 4),
+            .maxYield = YIELD_RATE(6, 5, 15, 20),
+            .minYield = YIELD_RATE(3, 2, 4, 4),
             .description1 = COMPOUND_STRING("Loves sunlight. The Berry's color"),
             .description2 = COMPOUND_STRING("grows vivid when exposed to the sun."),
             .growthDuration = GROWTH_DURATION(12, 16, 24, 24, 16, 24),
             .spicy = 10,
-            .dry = 10,
+            .dry = 0,
             .sweet = 10,
-            .bitter = 10,
-            .sour = 10,
+            .bitter = 0,
+            .sour = 0,
             .smoothness = 20,
             .drainRate = 15,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
-        .naturalGiftType = TYPE_GROUND,
-        .naturalGiftPower = 80,
+        .naturalGiftType = TYPE_ROCK,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Persim,
@@ -344,17 +346,17 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .minYield = YIELD_RATE(1, 2, 3, 2),
             .description1 = COMPOUND_STRING("Slow to grow. If raised with loving"),
             .description2 = COMPOUND_STRING("care, it may grow two Berries."),
-            .growthDuration = GROWTH_DURATION(48, 48, 72, 48, 32, 48),
-            .spicy = 10,
-            .dry = 10,
-            .sweet = 10,
-            .bitter = 10,
-            .sour = 10,
-            .smoothness = 20,
+            .growthDuration = GROWTH_DURATION(50, 48, 72, 48, 32, 48),
+            .spicy = 25,
+            .dry = 25,
+            .sweet = 25,
+            .bitter = 25,
+            .sour = 25,
+            .smoothness = 80,
             .drainRate = 8,
             .waterBonus = 12,
             .weedsBonus = 1,
-            .pestsBonus = 6,
+            .pestsTier = 7,
         },
         .naturalGiftType = TYPE_WIND,
         .naturalGiftPower = 80,
@@ -373,23 +375,23 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .color = BERRY_COLOR_YELLOW,
             .size = 95,
-            .maxYield = YIELD_RATE(3, 5, 20, 27),
-            .minYield = YIELD_RATE(2, 2, 3, 3),
+            .maxYield = YIELD_RATE(5, 5, 20, 27),
+            .minYield = YIELD_RATE(3, 2, 3, 3),
             .description1 = COMPOUND_STRING("Closely related to Oran. The large"),
             .description2 = COMPOUND_STRING("Berry has a well-rounded flavor."),
-            .growthDuration = GROWTH_DURATION(24, 32, 48, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(20, 32, 48, 48, 32, 48),
             .spicy = 10,
-            .dry = 10,
-            .sweet = 10,
-            .bitter = 10,
-            .sour = 10,
-            .smoothness = 20,
+            .dry = 0,
+            .sweet = 0,
+            .bitter = 0,
+            .sour = 25,
+            .smoothness = 35,
             .drainRate = 7,
             .waterBonus = 12,
             .weedsBonus = 1,
-            .pestsBonus = 6,
+            .pestsTier = 2,
         },
-        .naturalGiftType = TYPE_PSYCHIC,
+        .naturalGiftType = TYPE_ELECTRIC,
         .naturalGiftPower = 80,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
@@ -404,25 +406,25 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Figy"),
             .firmness = BERRY_FIRMNESS_SOFT,
-            .color = BERRY_COLOR_RED,
+            .color = BERRY_COLOR_YELLOW,
             .size = 100,
-            .maxYield = YIELD_RATE(3, 5, 15, 15),
+            .maxYield = YIELD_RATE(5, 5, 15, 15),
             .minYield = YIELD_RATE(2, 1, 3, 3),
             .description1 = COMPOUND_STRING("The Berry, which looks chewed up,"),
             .description2 = COMPOUND_STRING("brims with spicy substances."),
             .growthDuration = GROWTH_DURATION(24, 20, 30, 24, 16, 24),
-            .spicy = 10,
-            .dry = 0,
+            .spicy = 30,
+            .dry = 10,
             .sweet = 0,
             .bitter = 0,
             .sour = 0,
-            .smoothness = 25,
+            .smoothness = 40,
             .drainRate = 10,
             .waterBonus = 15,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 3,
         },
-        .naturalGiftType = TYPE_BUG,
+        .naturalGiftType = TYPE_GROUND,
         .naturalGiftPower = 80,
         .berryCrushDifficulty =  60,
         .berryCrushPowder =  50,
@@ -437,23 +439,23 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Wiki"),
             .firmness = BERRY_FIRMNESS_HARD,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_BLUE,
+            .color = BERRY_COLOR_PURPLE, // OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_BLUE,
             .size = 115,
-            .maxYield = YIELD_RATE(3, 5, 15, 15),
+            .maxYield = YIELD_RATE(5, 5, 15, 15),
             .minYield = YIELD_RATE(2, 1, 3, 3),
             .description1 = COMPOUND_STRING("The Berry is said to have grown lumpy"),
             .description2 = COMPOUND_STRING("to help Pokémon grip it."),
             .growthDuration = GROWTH_DURATION(24, 20, 30, 24, 16, 24),
             .spicy = 0,
-            .dry = 10,
+            .dry = 30,
             .sweet = 0,
             .bitter = 0,
-            .sour = 0,
-            .smoothness = 25,
+            .sour = 10,
+            .smoothness = 40,
             .drainRate = 10,
             .waterBonus = 15,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 3,
         },
         .naturalGiftType = TYPE_ROCK,
         .naturalGiftPower = 80,
@@ -472,21 +474,21 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_HARD,
             .color = BERRY_COLOR_PINK,
             .size = 126,
-            .maxYield = YIELD_RATE(3, 5, 15, 15),
+            .maxYield = YIELD_RATE(5, 5, 15, 15),
             .minYield = YIELD_RATE(2, 1, 3, 3),
             .description1 = COMPOUND_STRING("The Berry turns curvy as it grows."),
             .description2 = COMPOUND_STRING("The curvier, the sweeter and tastier."),
             .growthDuration = GROWTH_DURATION(24, 20, 30, 24, 16, 24),
             .spicy = 0,
             .dry = 0,
-            .sweet = 10,
-            .bitter = 0,
+            .sweet = 30,
+            .bitter = 10,
             .sour = 0,
-            .smoothness = 25,
+            .smoothness = 40,
             .drainRate = 10,
             .waterBonus = 15,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 3,
         },
         .naturalGiftType = TYPE_GHOST,
         .naturalGiftPower = 80,
@@ -505,21 +507,21 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .color = BERRY_COLOR_GREEN,
             .size = 64,
-            .maxYield = YIELD_RATE(3, 5, 15, 15),
+            .maxYield = YIELD_RATE(5, 5, 15, 15),
             .minYield = YIELD_RATE(2, 1, 3, 3),
             .description1 = COMPOUND_STRING("The flower is dainty. It is rare in its"),
             .description2 = COMPOUND_STRING("ability to grow without light."),
             .growthDuration = GROWTH_DURATION(24, 20, 30, 24, 16, 24),
             .spicy = 0,
             .dry = 0,
-            .sweet = 0,
-            .bitter = 10,
+            .sweet = 10,
+            .bitter = 30,
             .sour = 0,
-            .smoothness = 25,
+            .smoothness = 40,
             .drainRate = 10,
             .waterBonus = 15,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 3,
         },
         .naturalGiftType = TYPE_DRAGON,
         .naturalGiftPower = 80,
@@ -538,24 +540,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SOFT,
             .color = BERRY_COLOR_YELLOW,
             .size = 223,
-            .maxYield = YIELD_RATE(3, 5, 15, 15),
+            .maxYield = YIELD_RATE(5, 5, 15, 15),
             .minYield = YIELD_RATE(2, 1, 3, 3),
             .description1 = COMPOUND_STRING("The Berry is very big and sour."),
             .description2 = COMPOUND_STRING("It takes at least a day to grow."),
             .growthDuration = GROWTH_DURATION(24, 20, 30, 24, 16, 24),
-            .spicy = 0,
+            .spicy = 10,
             .dry = 0,
             .sweet = 0,
             .bitter = 0,
-            .sour = 10,
-            .smoothness = 25,
+            .sour = 30,
+            .smoothness = 40,
             .drainRate = 10,
             .waterBonus = 15,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 3,
         },
         .naturalGiftType = TYPE_DARK,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  60,
         .berryCrushPowder =  50,
         .berryPic = gBerryPic_Iapapa,
@@ -575,9 +577,9 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .minYield = YIELD_RATE(3, 2, 3, 4),
             .description1 = COMPOUND_STRING("The red Berry tastes slightly spicy."),
             .description2 = COMPOUND_STRING("It grows quickly in just four hours."),
-            .growthDuration = GROWTH_DURATION(4, 8, 12, 24, 16, 24),
-            .spicy = 10,
-            .dry = 10,
+            .growthDuration = GROWTH_DURATION(12, 8, 12, 24, 16, 24),
+            .spicy = 30,
+            .dry = 0,
             .sweet = 0,
             .bitter = 0,
             .sour = 0,
@@ -585,7 +587,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 35,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
         .naturalGiftType = TYPE_STEEL,
         .naturalGiftPower = 80,
@@ -602,26 +604,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Bluk"),
             .firmness = BERRY_FIRMNESS_SOFT,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_BLUE,
+            .color = BERRY_COLOR_PURPLE, // OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_BLUE,
             .size = 108,
             .maxYield = YIELD_RATE(6, 10, 15, 20),
             .minYield = YIELD_RATE(3, 2, 3, 4),
             .description1 = COMPOUND_STRING("The Berry is blue on the outside, but"),
             .description2 = COMPOUND_STRING("it blackens the mouth when eaten."),
-            .growthDuration = GROWTH_DURATION(4, 8, 12, 24, 16, 24),
+            .growthDuration = GROWTH_DURATION(12, 8, 12, 24, 16, 24),
             .spicy = 0,
-            .dry = 10,
-            .sweet = 10,
+            .dry = 30,
+            .sweet = 0,
             .bitter = 0,
             .sour = 0,
             .smoothness = 20,
             .drainRate = 35,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
-        .naturalGiftType = TYPE_FIRE,
-        .naturalGiftPower = 90,
+        .naturalGiftType = TYPE_POISON,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  80,
         .berryCrushPowder =  70,
         .berryPic = gBerryPic_Bluk,
@@ -641,20 +643,20 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .minYield = YIELD_RATE(3, 2, 3, 4),
             .description1 = COMPOUND_STRING("This Berry was the seventh"),
             .description2 = COMPOUND_STRING("discovered in the world. It is sweet."),
-            .growthDuration = GROWTH_DURATION(4, 8, 12, 24, 16, 24),
+            .growthDuration = GROWTH_DURATION(12, 8, 12, 24, 16, 24),
             .spicy = 0,
             .dry = 0,
-            .sweet = 10,
-            .bitter = 10,
+            .sweet = 30,
+            .bitter = 0,
             .sour = 0,
             .smoothness = 20,
             .drainRate = 35,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
-        .naturalGiftType = TYPE_WATER,
-        .naturalGiftPower = 90,
+        .naturalGiftType = TYPE_PSYCHIC,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  80,
         .berryCrushPowder =  70,
         .berryPic = gBerryPic_Nanab,
@@ -673,21 +675,21 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .maxYield = YIELD_RATE(6, 10, 15, 20),
             .minYield = YIELD_RATE(3, 2, 3, 4),
             .description1 = COMPOUND_STRING("The flower is small and white. It has a"),
-            .description2 = COMPOUND_STRING("delicate balance of bitter and sour."),
-            .growthDuration = GROWTH_DURATION(4, 8, 12, 24, 16, 24),
+            .description2 = COMPOUND_STRING("a horribly bitter taste."),
+            .growthDuration = GROWTH_DURATION(12, 8, 12, 24, 16, 24),
             .spicy = 0,
             .dry = 0,
             .sweet = 0,
-            .bitter = 10,
-            .sour = 10,
+            .bitter = 30,
+            .sour = 0,
             .smoothness = 20,
             .drainRate = 35,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
-        .naturalGiftType = TYPE_ELECTRIC,
-        .naturalGiftPower = 90,
+        .naturalGiftType = TYPE_GRASS,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  80,
         .berryCrushPowder =  70,
         .berryPic = gBerryPic_Wepear,
@@ -706,21 +708,21 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .maxYield = YIELD_RATE(6, 10, 15, 20),
             .minYield = YIELD_RATE(3, 2, 3, 4),
             .description1 = COMPOUND_STRING("Weak against wind and cold."),
-            .description2 = COMPOUND_STRING("The fruit is spicy and the skin, sour."),
-            .growthDuration = GROWTH_DURATION(4, 8, 12, 24, 16, 24),
-            .spicy = 10,
+            .description2 = COMPOUND_STRING("The fruit is especially sour."),
+            .growthDuration = GROWTH_DURATION(12, 8, 12, 24, 16, 24),
+            .spicy = 0,
             .dry = 0,
             .sweet = 0,
             .bitter = 0,
-            .sour = 10,
+            .sour = 30,
             .smoothness = 20,
             .drainRate = 35,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
-        .naturalGiftType = TYPE_GRASS,
-        .naturalGiftPower = 90,
+        .naturalGiftType = TYPE_ELECTRIC,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty =  80,
         .berryCrushPowder =  70,
         .berryPic = gBerryPic_Pinap,
@@ -737,23 +739,23 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .color = BERRY_COLOR_RED,
             .size = 135,
             .maxYield = YIELD_RATE(6, 5, 20, 26),
-            .minYield = YIELD_RATE(2, 1, 1, 2),
+            .minYield = YIELD_RATE(3, 1, 1, 2),
             .description1 = COMPOUND_STRING("However much it is watered,"),
             .description2 = COMPOUND_STRING("it only grows up to six Berries."),
             .growthDuration = GROWTH_DURATION(12, 32, 48, 48, 32, 48),
             .spicy = 10,
             .dry = 0,
             .sweet = 10,
-            .bitter = 10,
+            .bitter = 0,
             .sour = 0,
             .smoothness = 20,
             .drainRate = 8,
             .waterBonus = 5,
             .weedsBonus = 3,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
-        .naturalGiftType = TYPE_ICE,
-        .naturalGiftPower = 90,
+        .naturalGiftType = TYPE_DRAGON,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty = 100,
         .berryCrushPowder = 100,
         .berryPic = gBerryPic_Pomeg,
@@ -770,7 +772,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .color = BERRY_COLOR_BLUE,
             .size = 150,
             .maxYield = YIELD_RATE(6, 5, 20, 26),
-            .minYield = YIELD_RATE(2, 1, 1, 2),
+            .minYield = YIELD_RATE(3, 1, 1, 2),
             .description1 = COMPOUND_STRING("A rare variety shaped like a root."),
             .description2 = COMPOUND_STRING("Grows a very large flower."),
             .growthDuration = GROWTH_DURATION(12, 32, 48, 48, 32, 48),
@@ -778,15 +780,15 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .dry = 10,
             .sweet = 0,
             .bitter = 10,
-            .sour = 10,
+            .sour = 0,
             .smoothness = 20,
             .drainRate = 8,
             .waterBonus = 5,
             .weedsBonus = 3,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
-        .naturalGiftType = TYPE_FIGHTING,
-        .naturalGiftPower = 90,
+        .naturalGiftType = TYPE_WATER,
+        .naturalGiftPower = 80,
         .berryCrushDifficulty = 100,
         .berryCrushPowder = 100,
         .berryPic = gBerryPic_Kelpsy,
@@ -800,10 +802,10 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Qualot"),
             .firmness = BERRY_FIRMNESS_HARD,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_YELLOW : BERRY_COLOR_PINK,
+            .color = BERRY_COLOR_YELLOW,
             .size = 110,
             .maxYield = YIELD_RATE(6, 5, 20, 26),
-            .minYield = YIELD_RATE(2, 1, 1, 2),
+            .minYield = YIELD_RATE(3, 1, 1, 2),
             .description1 = COMPOUND_STRING("Loves water. Grows strong even in"),
             .description2 = COMPOUND_STRING("locations with constant rainfall."),
             .growthDuration = GROWTH_DURATION(12, 32, 48, 48, 32, 48),
@@ -811,15 +813,15 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .dry = 0,
             .sweet = 10,
             .bitter = 0,
-            .sour = 10,
+            .sour = 0,
             .smoothness = 20,
             .drainRate = 8,
             .waterBonus = 5,
             .weedsBonus = 3,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
-        .naturalGiftType = TYPE_POISON,
-        .naturalGiftPower = 90,
+        .naturalGiftType = TYPE_FAIRY,
+        .naturalGiftPower = 80,
         .berryCrushDifficulty = 100,
         .berryCrushPowder = 100,
         .berryPic = gBerryPic_Qualot,
@@ -836,11 +838,11 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .color = BERRY_COLOR_GREEN,
             .size = 162,
             .maxYield = YIELD_RATE(6, 5, 20, 26),
-            .minYield = YIELD_RATE(2, 1, 1, 2),
+            .minYield = YIELD_RATE(3, 1, 1, 2),
             .description1 = COMPOUND_STRING("A Berry that is very valuable and"),
             .description2 = COMPOUND_STRING("rarely seen. It is very delicious."),
             .growthDuration = GROWTH_DURATION(12, 32, 48, 48, 32, 48),
-            .spicy = 10,
+            .spicy = 0,
             .dry = 10,
             .sweet = 0,
             .bitter = 10,
@@ -849,10 +851,10 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 8,
             .waterBonus = 5,
             .weedsBonus = 3,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
-        .naturalGiftType = TYPE_GROUND,
-        .naturalGiftPower = 90,
+        .naturalGiftType = TYPE_BUG,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty = 100,
         .berryCrushPowder = 100,
         .berryPic = gBerryPic_Hondew,
@@ -869,12 +871,12 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .color = BERRY_COLOR_YELLOW,
             .size = 149,
             .maxYield = YIELD_RATE(6, 5, 20, 26),
-            .minYield = YIELD_RATE(2, 1, 1, 2),
+            .minYield = YIELD_RATE(3, 1, 1, 2),
             .description1 = COMPOUND_STRING("Despite its tenderness and round"),
             .description2 = COMPOUND_STRING("shape, the Berry is unimaginably sour."),
             .growthDuration = GROWTH_DURATION(12, 32, 48, 48, 32, 48),
             .spicy = 0,
-            .dry = 10,
+            .dry = 0,
             .sweet = 10,
             .bitter = 0,
             .sour = 10,
@@ -882,10 +884,10 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 8,
             .waterBonus = 5,
             .weedsBonus = 3,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
         .naturalGiftType = TYPE_WIND,
-        .naturalGiftPower = 90,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty = 100,
         .berryCrushPowder = 100,
         .berryPic = gBerryPic_Grepa,
@@ -901,24 +903,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SOFT,
             .color = BERRY_COLOR_RED,
             .size = 200,
-            .maxYield = YIELD_RATE(4, 5, 20, 26),
-            .minYield = YIELD_RATE(2, 1, 1, 2),
+            .maxYield = YIELD_RATE(6, 5, 20, 26),
+            .minYield = YIELD_RATE(3, 1, 1, 2),
             .description1 = COMPOUND_STRING("The Berry is lip-bendingly spicy."),
             .description2 = COMPOUND_STRING("It takes time to grow."),
-            .growthDuration = GROWTH_DURATION(24, 32, 48, 48, 32, 48),
-            .spicy = 20,
+            .growthDuration = GROWTH_DURATION(12, 32, 48, 48, 32, 48),
+            .spicy = 10,
             .dry = 10,
             .sweet = 0,
             .bitter = 0,
             .sour = 0,
-            .smoothness = 30,
+            .smoothness = 20,
             .drainRate = 8,
             .waterBonus = 5,
             .weedsBonus = 3,
-            .pestsBonus = 6,
+            .pestsTier = 1,
         },
-        .naturalGiftType = TYPE_PSYCHIC,
-        .naturalGiftPower = 90,
+        .naturalGiftType = TYPE_FIRE,
+        .naturalGiftPower = 80,
         .berryCrushDifficulty = 130,
         .berryCrushPowder = 150,
         .berryPic = gBerryPic_Tamato,
@@ -948,7 +950,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 10,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_BUG,
         .naturalGiftPower = 90,
@@ -981,7 +983,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 10,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_ROCK,
         .naturalGiftPower = 90,
@@ -1014,7 +1016,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 10,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_GHOST,
         .naturalGiftPower = 90,
@@ -1033,24 +1035,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .color = BERRY_COLOR_YELLOW,
             .size = 285,
-            .maxYield = YIELD_RATE(4, 10, 15, 15),
-            .minYield = YIELD_RATE(2, 2, 3, 3),
+            .maxYield = YIELD_RATE(5, 10, 15, 15),
+            .minYield = YIELD_RATE(3, 2, 3, 3),
             .description1 = COMPOUND_STRING("Quite sour. Just one bite makes it"),
             .description2 = COMPOUND_STRING("impossible to taste for three days."),
-            .growthDuration = GROWTH_DURATION(24, 24, 36, 24, 16, 24),
+            .growthDuration = GROWTH_DURATION(16, 24, 36, 24, 16, 24),
             .spicy = 10,
             .dry = 0,
             .sweet = 0,
-            .bitter = 0,
-            .sour = 20,
+            .bitter = 10,
+            .sour = 10,
             .smoothness = 30,
             .drainRate = 10,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 2,
         },
-        .naturalGiftType = TYPE_DRAGON,
-        .naturalGiftPower = 90,
+        .naturalGiftType = TYPE_STEEL,
+        .naturalGiftPower = 60,
         .berryCrushDifficulty = 130,
         .berryCrushPowder = 150,
         .berryPic = gBerryPic_Nomel,
@@ -1080,7 +1082,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 8,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_DARK,
         .naturalGiftPower = 90,
@@ -1113,7 +1115,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 8,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_STEEL,
         .naturalGiftPower = 90,
@@ -1146,7 +1148,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 8,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_FIRE,
         .naturalGiftPower = 100,
@@ -1179,7 +1181,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 8,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_WATER,
         .naturalGiftPower = 100,
@@ -1212,7 +1214,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 8,
             .waterBonus = 10,
             .weedsBonus = 2,
-            .pestsBonus = 6,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_ELECTRIC,
         .naturalGiftPower = 100,
@@ -1231,24 +1233,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .color = BERRY_COLOR_RED,
             .size = 90,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Said to grow in the tropics once,"),
             .description2 = COMPOUND_STRING("it boasts an intensely hot spiciness."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
-            .spicy = 15,
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
+            .spicy = 30,
             .dry = 0,
-            .sweet = 10,
+            .sweet = 20,
             .bitter = 0,
             .sour = 0,
-            .smoothness = 30,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_FIRE,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty = 100,
         .berryCrushPowder = 100,
         .berryPic = gBerryPic_Occa,
@@ -1264,24 +1266,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SOFT,
             .color = BERRY_COLOR_BLUE,
             .size = 33,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Its flesh is dotted with many tiny"),
             .description2 = COMPOUND_STRING("bubbles that keep it afloat in water."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
-            .dry = 15,
+            .dry = 30,
             .sweet = 0,
-            .bitter = 10,
+            .bitter = 20,
             .sour = 0,
-            .smoothness = 30,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_WATER,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  60,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Passho,
@@ -1297,24 +1299,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
             .color = BERRY_COLOR_YELLOW,
             .size = 250,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Energy drawn from lightning strikes"),
             .description2 = COMPOUND_STRING("makes this Berry grow big and rich."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
             .dry = 0,
-            .sweet = 15,
+            .sweet = 30,
             .bitter = 0,
-            .sour = 10,
-            .smoothness = 30,
+            .sour = 20,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_ELECTRIC,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Wacan,
@@ -1330,24 +1332,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SOFT,
             .color = BERRY_COLOR_GREEN,
             .size = 156,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("This berry has a vegetable-like flavor,"),
             .description2 = COMPOUND_STRING("but is rich in health-promoting fiber."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
-            .spicy = 10,
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
+            .spicy = 20,
             .dry = 0,
             .sweet = 0,
-            .bitter = 15,
+            .bitter = 30,
             .sour = 0,
-            .smoothness = 30,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_GRASS,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Rindo,
@@ -1363,24 +1365,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .color = BERRY_COLOR_BLUE,
             .size = 135,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("This Berry has a refreshing dry and"),
             .description2 = COMPOUND_STRING("sour flavor. Tastes better chilled."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
-            .dry = 10,
+            .dry = 20,
             .sweet = 0,
             .bitter = 0,
-            .sour = 15,
-            .smoothness = 30,
+            .sour = 30,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_ICE,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Yache,
@@ -1396,24 +1398,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SOFT,
             .color = BERRY_COLOR_RED,
             .size = 77,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Contains a substance that generates"),
             .description2 = COMPOUND_STRING("heat. Can even fire up a chilly heart."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
-            .spicy = 15,
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
+            .spicy = 30,
             .dry = 0,
             .sweet = 0,
-            .bitter = 10,
+            .bitter = 20,
             .sour = 0,
-            .smoothness = 30,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_FIGHTING,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Chople,
@@ -1429,24 +1431,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_HARD,
             .color = BERRY_COLOR_GREEN,
             .size = 90,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Brilliant green on the outside, inside"),
             .description2 = COMPOUND_STRING("it is packed with black-colored flesh."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
-            .dry = 15,
+            .dry = 30,
             .sweet = 0,
             .bitter = 0,
-            .sour = 10,
-            .smoothness = 30,
+            .sour = 20,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_POISON,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Kebia,
@@ -1462,24 +1464,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SOFT,
             .color = BERRY_COLOR_YELLOW,
             .size = 42,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("The sweet pulp has just the hint of a"),
             .description2 = COMPOUND_STRING("a hard-edged and fragrant bite to it."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
-            .spicy = 10,
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
+            .spicy = 20,
             .dry = 0,
-            .sweet = 15,
+            .sweet = 30,
             .bitter = 0,
             .sour = 0,
-            .smoothness = 30,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
-        .naturalGiftType = TYPE_GROUND,
-        .naturalGiftPower = 80,
+        .naturalGiftType = TYPE_TERRA,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  20,
         .berryPic = gBerryPic_Shuca,
@@ -1495,24 +1497,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .color = BERRY_COLOR_BLUE,
             .size = 278,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("This Berry is said to be a cross of"),
             .description2 = COMPOUND_STRING("two Berries blown in from far away."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
-            .dry = 10,
+            .dry = 20,
             .sweet = 0,
-            .bitter = 15,
+            .bitter = 30,
             .sour = 0,
-            .smoothness = 30,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_WIND,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Coba,
@@ -1526,26 +1528,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Payapa"),
             .firmness = BERRY_FIRMNESS_SOFT,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_RED,
+            .color = BERRY_COLOR_PURPLE,
             .size = 252,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Said to sense human emotions, it swells"),
             .description2 = COMPOUND_STRING("roundly when a person approaches."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
             .dry = 0,
-            .sweet = 10,
+            .sweet = 20,
             .bitter = 0,
-            .sour = 15,
-            .smoothness = 30,
+            .sour = 30,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_PSYCHIC,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Payapa,
@@ -1561,24 +1563,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
             .color = BERRY_COLOR_GREEN,
             .size = 42,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("It grows a flower at the tip that lures"),
             .description2 = COMPOUND_STRING("Bug Pokémon with its stringy petals."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
-            .spicy = 20,
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
+            .spicy = 30,
             .dry = 0,
             .sweet = 0,
             .bitter = 0,
-            .sour = 10,
-            .smoothness = 35,
+            .sour = 20,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_BUG,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Tanga,
@@ -1594,24 +1596,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
             .color = BERRY_COLOR_YELLOW,
             .size = 28,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Often used for pickles because of its"),
             .description2 = COMPOUND_STRING("dry flavor. Sometimes eaten raw."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
-            .spicy = 10,
-            .dry = 20,
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
+            .spicy = 20,
+            .dry = 30,
             .sweet = 0,
             .bitter = 0,
             .sour = 0,
-            .smoothness = 35,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_ROCK,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Charti,
@@ -1625,26 +1627,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Kasib"),
             .firmness = BERRY_FIRMNESS_HARD,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_PINK,
+            .color = BERRY_COLOR_PURPLE, // OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_PINK,
             .size = 144,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Old superstitions say it has an odd"),
             .description2 = COMPOUND_STRING("power. A popular good-luck charm."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
-            .dry = 10,
-            .sweet = 20,
+            .dry = 20,
+            .sweet = 30,
             .bitter = 0,
             .sour = 0,
-            .smoothness = 35,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_GHOST,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Kasib,
@@ -1660,24 +1662,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SOFT,
             .color = BERRY_COLOR_RED,
             .size = 23,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Less bitter if enough of this Berry"),
             .description2 = COMPOUND_STRING("is boiled down. Makes a good jam."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
             .dry = 0,
-            .sweet = 10,
-            .bitter = 20,
+            .sweet = 20,
+            .bitter = 30,
             .sour = 0,
-            .smoothness = 35,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_DRAGON,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  50,
         .berryCrushPowder =  30,
         .berryPic = gBerryPic_Haban,
@@ -1691,26 +1693,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Colbur"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_PINK,
+            .color = BERRY_COLOR_PINK, // OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_PINK,
             .size = 39,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Tiny hooks on the surface latch onto"),
             .description2 = COMPOUND_STRING("Pokémon to reach far-off places."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
             .dry = 0,
             .sweet = 0,
-            .bitter = 10,
-            .sour = 20,
-            .smoothness = 35,
+            .bitter = 20,
+            .sour = 30,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_DARK,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  60,
         .berryCrushPowder =  50,
         .berryPic = gBerryPic_Colbur,
@@ -1726,24 +1728,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .color = BERRY_COLOR_GREEN,
             .size = 265,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("Very tough with a strong flavor. It"),
             .description2 = COMPOUND_STRING("was used to make medicine in the past."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
-            .spicy = 25,
-            .dry = 10,
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
+            .spicy = 30,
+            .dry = 20,
             .sweet = 0,
             .bitter = 0,
             .sour = 0,
-            .smoothness = 35,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_STEEL,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  80,
         .berryCrushPowder =  50,
         .berryPic = gBerryPic_Babiri,
@@ -1759,24 +1761,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
             .color = BERRY_COLOR_YELLOW,
             .size = 34,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("It can be made into a whistle that"),
             .description2 = COMPOUND_STRING("produces an indescribable sound."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
-            .dry = 25,
-            .sweet = 10,
+            .dry = 30,
+            .sweet = 20,
             .bitter = 0,
             .sour = 0,
-            .smoothness = 35,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_NORMAL,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  80,
         .berryCrushPowder =  70,
         .berryPic = gBerryPic_Chilan,
@@ -1790,26 +1792,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Liechi"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_RED : BERRY_COLOR_YELLOW,
+            .color = BERRY_COLOR_RED, // OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_RED : BERRY_COLOR_YELLOW,
             .size = 111,
-            .maxYield = YIELD_RATE(2, 5, 10, 13),
+            .maxYield = YIELD_RATE(3, 5, 10, 13),
             .minYield = YIELD_RATE(1, 1, 1, 2),
             .description1 = COMPOUND_STRING("A mysterious Berry. It is rumored to"),
             .description2 = COMPOUND_STRING("contain the power of the sea."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 96, 48, 72),
+            .growthDuration = GROWTH_DURATION(40, 96, 144, 96, 48, 72),
             .spicy = 40,
-            .dry = 0,
-            .sweet = 40,
+            .dry = 10,
+            .sweet = 30,
             .bitter = 0,
-            .sour = 10,
-            .smoothness = 80,
+            .sour = 0,
+            .smoothness = 70,
             .drainRate = 4,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 2,
+            .pestsTier = 6,
         },
-        .naturalGiftType = TYPE_GRASS,
-        .naturalGiftPower = 100,
+        .naturalGiftType = TYPE_FIGHTING,
+        .naturalGiftPower = 80,
         .berryCrushDifficulty = 180,
         .berryCrushPowder = 500,
         .berryPic = gBerryPic_Liechi,
@@ -1823,26 +1825,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Ganlon"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_BLUE,
+            .color = BERRY_COLOR_PURPLE, // OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_BLUE,
             .size = 33,
-            .maxYield = YIELD_RATE(2, 5, 10, 13),
+            .maxYield = YIELD_RATE(3, 5, 10, 13),
             .minYield = YIELD_RATE(1, 1, 1, 2),
             .description1 = COMPOUND_STRING("A mysterious Berry. It is rumored to"),
             .description2 = COMPOUND_STRING("contain the power of the land."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 96, 48, 72),
+            .growthDuration = GROWTH_DURATION(40, 96, 144, 96, 48, 72),
             .spicy = 0,
-            .dry = 40,
-            .sweet = 0,
+            .dry = 30,
+            .sweet = 10,
             .bitter = 40,
             .sour = 0,
-            .smoothness = 80,
+            .smoothness = 70,
             .drainRate = 4,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 2,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_ICE,
-        .naturalGiftPower = 100,
+        .naturalGiftPower = 80,
         .berryCrushDifficulty = 180,
         .berryCrushPowder = 500,
         .berryPic = gBerryPic_Ganlon,
@@ -1858,24 +1860,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .color = BERRY_COLOR_GREEN,
             .size = 95,
-            .maxYield = YIELD_RATE(2, 5, 10, 13),
+            .maxYield = YIELD_RATE(3, 5, 10, 13),
             .minYield = YIELD_RATE(1, 1, 1, 2),
             .description1 = COMPOUND_STRING("A mysterious Berry. It is rumored to"),
             .description2 = COMPOUND_STRING("contain the power of the sky."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 96, 48, 72),
+            .growthDuration = GROWTH_DURATION(40, 96, 144, 96, 48, 72),
             .spicy = 0,
             .dry = 0,
-            .sweet = 40,
-            .bitter = 0,
+            .sweet = 30,
+            .bitter = 10,
             .sour = 40,
-            .smoothness = 80,
+            .smoothness = 70,
             .drainRate = 4,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 2,
+            .pestsTier = 6,
         },
-        .naturalGiftType = TYPE_FIGHTING,
-        .naturalGiftPower = 100,
+        .naturalGiftType = TYPE_BUG,
+        .naturalGiftPower = 80,
         .berryCrushDifficulty = 180,
         .berryCrushPowder = 500,
         .berryPic = gBerryPic_Salac,
@@ -1891,24 +1893,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .color = BERRY_COLOR_PINK,
             .size = 237,
-            .maxYield = YIELD_RATE(2, 5, 10, 13),
+            .maxYield = YIELD_RATE(3, 5, 10, 13),
             .minYield = YIELD_RATE(1, 1, 1, 2),
             .description1 = COMPOUND_STRING("A mysterious Berry. It is rumored to"),
             .description2 = COMPOUND_STRING("contain the power of all living things."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 96, 48, 72),
-            .spicy = 40,
+            .growthDuration = GROWTH_DURATION(40, 96, 144, 96, 48, 72),
+            .spicy = 30,
             .dry = 0,
             .sweet = 0,
             .bitter = 40,
-            .sour = 0,
-            .smoothness = 80,
+            .sour = 10,
+            .smoothness = 70,
             .drainRate = 4,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 2,
+            .pestsTier = 6,
         },
-        .naturalGiftType = TYPE_POISON,
-        .naturalGiftPower = 100,
+        .naturalGiftType = TYPE_PSYCHIC,
+        .naturalGiftPower = 80,
         .berryCrushDifficulty = 180,
         .berryCrushPowder = 500,
         .berryPic = gBerryPic_Petaya,
@@ -1924,24 +1926,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_HARD,
             .color = BERRY_COLOR_BLUE,
             .size = 75,
-            .maxYield = YIELD_RATE(2, 5, 10, 13),
+            .maxYield = YIELD_RATE(3, 5, 10, 13),
             .minYield = YIELD_RATE(1, 1, 1, 2),
             .description1 = COMPOUND_STRING("A very mystifying Berry. No telling"),
             .description2 = COMPOUND_STRING("what may happen or how it can be used."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 96, 48, 72),
-            .spicy = 0,
+            .growthDuration = GROWTH_DURATION(40, 96, 144, 96, 48, 72),
+            .spicy = 10,
             .dry = 40,
             .sweet = 0,
             .bitter = 0,
-            .sour = 40,
-            .smoothness = 80,
+            .sour = 30,
+            .smoothness = 70,
             .drainRate = 4,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 2,
+            .pestsTier = 6,
         },
-        .naturalGiftType = TYPE_GROUND,
-        .naturalGiftPower = 100,
+        .naturalGiftType = TYPE_POISON,
+        .naturalGiftPower = 80,
         .berryCrushDifficulty = 180,
         .berryCrushPowder = 500,
         .berryPic = gBerryPic_Apicot,
@@ -1955,26 +1957,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Lansat"),
             .firmness = BERRY_FIRMNESS_SOFT,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_RED : BERRY_COLOR_PINK,
+            .color = BERRY_COLOR_RED, // OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_RED : BERRY_COLOR_PINK,
             .size = 97,
-            .maxYield = YIELD_RATE(2, 5, 5, 7),
+            .maxYield = YIELD_RATE(3, 5, 5, 7),
             .minYield = YIELD_RATE(1, 1, 1, 1),
             .description1 = COMPOUND_STRING("Said to be a legendary Berry."),
             .description2 = COMPOUND_STRING("Holding it supposedly brings joy."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 120, 48, 72),
-            .spicy = 10,
-            .dry = 10,
+            .growthDuration = GROWTH_DURATION(40, 96, 144, 120, 48, 72),
+            .spicy = 40,
+            .dry = 0,
             .sweet = 10,
-            .bitter = 10,
-            .sour = 10,
-            .smoothness = 30,
+            .bitter = 0,
+            .sour = 30,
+            .smoothness = 70,
             .drainRate = 4,
             .waterBonus = 1,
             .weedsBonus = 0,
-            .pestsBonus = 1,
+            .pestsTier = 6,
         },
-        .naturalGiftType = TYPE_WIND,
-        .naturalGiftPower = 100,
+        .naturalGiftType = TYPE_FIRE,
+        .naturalGiftPower = 120,
         .berryCrushDifficulty = 200,
         .berryCrushPowder = 750,
         .berryPic = gBerryPic_Lansat,
@@ -1994,20 +1996,20 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .minYield = YIELD_RATE(1, 1, 1, 1),
             .description1 = COMPOUND_STRING("So strong, it was abandoned at the"),
             .description2 = COMPOUND_STRING("world's edge. Considered a mirage."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 120, 48, 72),
-            .spicy = 10,
-            .dry = 10,
-            .sweet = 10,
-            .bitter = 10,
-            .sour = 10,
-            .smoothness = 30,
+            .growthDuration = GROWTH_DURATION(50, 96, 144, 120, 48, 72),
+            .spicy = 25,
+            .dry = 25,
+            .sweet = 25,
+            .bitter = 25,
+            .sour = 25,
+            .smoothness = 80,
             .drainRate = 4,
             .waterBonus = 1,
             .weedsBonus = 0,
-            .pestsBonus = 1,
+            .pestsTier = 7,
         },
-        .naturalGiftType = TYPE_PSYCHIC,
-        .naturalGiftPower = 100,
+        .naturalGiftType = TYPE_FAIRY,
+        .naturalGiftPower = 120,
         .berryCrushDifficulty = 200,
         .berryCrushPowder = 750,
         .berryPic = gBerryPic_Starf,
@@ -2021,26 +2023,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Enigma"),
             .firmness = BERRY_FIRMNESS_HARD,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_YELLOW,
+            .color = BERRY_COLOR_PURPLE, // OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PURPLE : BERRY_COLOR_YELLOW,
             .size = 155,
             .maxYield = YIELD_RATE(2, 5, 5, 13),
             .minYield = YIELD_RATE(1, 1, 1, 1),
             .description1 = COMPOUND_STRING("A completely enigmatic Berry."),
             .description2 = COMPOUND_STRING("Appears to have the power of stars."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 72, 48, 72),
-            .spicy = 40,
-            .dry = 10,
-            .sweet = 0,
-            .bitter = 0,
-            .sour = 0,
-            .smoothness = 60,
+            .growthDuration = GROWTH_DURATION(50, 96, 144, 72, 48, 72),
+            .spicy = 25,
+            .dry = 25,
+            .sweet = 25,
+            .bitter = 25,
+            .sour = 25,
+            .smoothness = 80,
             .drainRate = 7,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 0,
+            .pestsTier = 7,
         },
-        .naturalGiftType = TYPE_BUG,
-        .naturalGiftPower = 100,
+        .naturalGiftType = TYPE_GHOST,
+        .naturalGiftPower = 120,
         .berryCrushDifficulty = 150,
         .berryCrushPowder = 200,
         .berryPic = gBerryPic_Enigma,
@@ -2056,24 +2058,24 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SOFT,
             .color = BERRY_COLOR_GREEN,
             .size = 41,
-            .maxYield = YIELD_RATE(2, 5, 5, 13),
-            .minYield = YIELD_RATE(1, 1, 1, 1),
+            .maxYield = YIELD_RATE(4, 5, 5, 13),
+            .minYield = YIELD_RATE(2, 1, 1, 1),
             .description1 = COMPOUND_STRING("It makes other food eaten at the"),
             .description2 = COMPOUND_STRING("same time taste sweet."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 72, 48, 72),
+            .growthDuration = GROWTH_DURATION(28, 96, 144, 72, 48, 72),
             .spicy = 0,
-            .dry = 40,
+            .dry = 30,
             .sweet = 10,
-            .bitter = 0,
+            .bitter = 10,
             .sour = 0,
-            .smoothness = 60,
+            .smoothness = 40,
             .drainRate = 7,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 0,
+            .pestsTier = 3,
         },
-        .naturalGiftType = TYPE_ROCK,
-        .naturalGiftPower = 100,
+        .naturalGiftType = TYPE_GRASS,
+        .naturalGiftPower = 80,
         .berryCrushDifficulty = 130,
         .berryCrushPowder = 250,
         .berryPic = gBerryPic_Micle,
@@ -2089,23 +2091,23 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .color = BERRY_COLOR_RED,
             .size = 267,
-            .maxYield = YIELD_RATE(2, 5, 5, 13),
+            .maxYield = YIELD_RATE(3, 5, 5, 13),
             .minYield = YIELD_RATE(1, 1, 1, 1),
             .description1 = COMPOUND_STRING("The flesh underneath the Custap"),
             .description2 = COMPOUND_STRING("Berry's skin is sweet and creamy soft."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 72, 48, 72),
-            .spicy = 0,
+            .growthDuration = GROWTH_DURATION(40, 96, 144, 72, 48, 72),
+            .spicy = 10,
             .dry = 0,
             .sweet = 40,
-            .bitter = 10,
+            .bitter = 30,
             .sour = 0,
-            .smoothness = 60,
+            .smoothness = 70,
             .drainRate = 7,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 0,
+            .pestsTier = 6,
         },
-        .naturalGiftType = TYPE_GHOST,
+        .naturalGiftType = TYPE_SAND,
         .naturalGiftPower = 100,
         .berryCrushDifficulty = 200,
         .berryCrushPowder = 750,
@@ -2122,21 +2124,21 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_SOFT,
             .color = BERRY_COLOR_YELLOW,
             .size = 33,
-            .maxYield = YIELD_RATE(2, 5, 5, 13),
+            .maxYield = YIELD_RATE(3, 5, 5, 13),
             .minYield = YIELD_RATE(1, 1, 1, 1),
             .description1 = COMPOUND_STRING("The drupelets that make up this berry"),
             .description2 = COMPOUND_STRING("pop rythmically if handled roughly."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 72, 48, 72),
+            .growthDuration = GROWTH_DURATION(40, 96, 144, 72, 48, 72),
             .spicy = 0,
-            .dry = 0,
+            .dry = 20,
             .sweet = 0,
             .bitter = 40,
-            .sour = 10,
-            .smoothness = 60,
+            .sour = 20,
+            .smoothness = 70,
             .drainRate = 7,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 0,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_DRAGON,
         .naturalGiftPower = 100,
@@ -2155,21 +2157,21 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
             .color = BERRY_COLOR_BLUE,
             .size = 52,
-            .maxYield = YIELD_RATE(2, 5, 5, 13),
+            .maxYield = YIELD_RATE(3, 5, 5, 13),
             .minYield = YIELD_RATE(1, 1, 1, 1),
             .description1 = COMPOUND_STRING("People once worked top-shaped pieces"),
             .description2 = COMPOUND_STRING("of this berry free to use as toys."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 72, 48, 72),
-            .spicy = 10,
+            .growthDuration = GROWTH_DURATION(40, 96, 144, 72, 48, 72),
+            .spicy = 20,
             .dry = 0,
-            .sweet = 0,
+            .sweet = 20,
             .bitter = 0,
             .sour = 40,
-            .smoothness = 60,
+            .smoothness = 70,
             .drainRate = 7,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 0,
+            .pestsTier = 6,
         },
         .naturalGiftType = TYPE_DARK,
         .naturalGiftPower = 100,
@@ -2186,26 +2188,26 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Roseli"),
             .firmness = BERRY_FIRMNESS_HARD,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PINK : BERRY_COLOR_RED,
+            .color = BERRY_COLOR_PINK, // OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_PINK : BERRY_COLOR_RED,
             .size = 35,
-            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .maxYield = YIELD_RATE(4, 5, 20, 10),
             .minYield = YIELD_RATE(2, 1, 3, 2),
             .description1 = COMPOUND_STRING("In nature, they grow in wide rings"),
             .description2 = COMPOUND_STRING("for reasons that are still unknown."),
-            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .growthDuration = GROWTH_DURATION(32, 72, 108, 48, 32, 48),
             .spicy = 0,
             .dry = 0,
-            .sweet = 25,
-            .bitter = 10,
+            .sweet = 30,
+            .bitter = 20,
             .sour = 0,
-            .smoothness = 35,
+            .smoothness = 50,
             .drainRate = 6,
             .waterBonus = 10,
             .weedsBonus = 1,
-            .pestsBonus = 4,
+            .pestsTier = 4,
         },
         .naturalGiftType = TYPE_FAIRY,
-        .naturalGiftPower = 80,
+        .naturalGiftPower = 100,
         .berryCrushDifficulty =  60,
         .berryCrushPowder =  50,
         .berryPic = gBerryPic_Roseli,
@@ -2219,25 +2221,25 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .info = {
             .name = _("Kee"),
             .firmness = BERRY_FIRMNESS_UNKNOWN,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_YELLOW : BERRY_COLOR_PINK,
+            .color = BERRY_COLOR_PINK, // OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_YELLOW : BERRY_COLOR_PINK,
             .size = 0,
-            .maxYield = YIELD_RATE(2, 5, 10, 13),
-            .minYield = YIELD_RATE(1, 1, 1, 2),
+            .maxYield = YIELD_RATE(3, 5, 10, 13),
+            .minYield = YIELD_RATE(2, 1, 1, 2),
             .description1 = COMPOUND_STRING("A berry that is incredibly spicy at"),
             .description2 = COMPOUND_STRING("first, then extremely bitter."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 96, 48, 72),
-            .spicy = 30,
-            .dry = 30,
-            .sweet = 10,
-            .bitter = 10,
-            .sour = 10,
+            .growthDuration = GROWTH_DURATION(36, 96, 144, 96, 48, 72),
+            .spicy = 0,
+            .dry = 0,
+            .sweet = 40,
+            .bitter = 20,
+            .sour = 0,
             .smoothness = 60,
             .drainRate = 7,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 2,
+            .pestsTier = 5,
         },
-        .naturalGiftType = TYPE_FAIRY,
+        .naturalGiftType = TYPE_MUD,
         .naturalGiftPower = 100,
         .berryCrushDifficulty = 160,
         .berryCrushPowder = 500,
@@ -2250,28 +2252,28 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
     [BERRY_ID_MARANGA] =
     {
         .info = {
-            .name = _("Marnga"), // "Maranga" is too long
+            .name = _("Marang"), // "Maranga" is too long
             .firmness = BERRY_FIRMNESS_UNKNOWN,
-            .color = OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_BLUE : BERRY_COLOR_YELLOW,
+            .color = BERRY_COLOR_YELLOW, //  OW_BERRY_COLORS == GEN_6_XY ? BERRY_COLOR_BLUE : BERRY_COLOR_YELLOW,
             .size = 0,
-            .maxYield = YIELD_RATE(2, 5, 10, 13),
-            .minYield = YIELD_RATE(1, 1, 1, 2),
+            .maxYield = YIELD_RATE(3, 5, 10, 13),
+            .minYield = YIELD_RATE(2, 1, 1, 2),
             .description1 = COMPOUND_STRING("Its outside is very bitter, but its"),
             .description2 = COMPOUND_STRING("inside tastes like a sweet drink."),
-            .growthDuration = GROWTH_DURATION(96, 96, 144, 96, 48, 72),
-            .spicy = 10,
-            .dry = 10,
-            .sweet = 30,
-            .bitter = 30,
-            .sour = 10,
+            .growthDuration = GROWTH_DURATION(36, 96, 144, 96, 48, 72),
+            .spicy = 0,
+            .dry = 40,
+            .sweet = 0,
+            .bitter = 0,
+            .sour = 20,
             .smoothness = 60,
             .drainRate = 7,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 2,
+            .pestsTier = 5,
         },
         .naturalGiftType = TYPE_DARK,
-        .naturalGiftPower = 100,
+        .naturalGiftPower = 80,
         .berryCrushDifficulty = 160,
         .berryCrushPowder = 500,
         .berryPic = gBerryPic_Maranga,
@@ -2301,7 +2303,7 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
             .drainRate = 7,
             .waterBonus = 2,
             .weedsBonus = 0,
-            .pestsBonus = 0,
+            .pestsTier = 0,
         },
         .berryCrushDifficulty = 150,
         .berryCrushPowder = 200,
@@ -2691,9 +2693,15 @@ static u8 CalcBerryYield(struct BerryTree *tree)
     const struct BerryInfo *berryInfo = GetBerryInfo(tree->berry);
     u8 min = tree->berryYield;
     u8 max = berryInfo->maxYield;
+    u8 diff = max - berryInfo->minYield;
     u8 result;
     if (OW_BERRY_MULCH_USAGE && (tree->mulch == ITEM_TO_MULCH(ITEM_RICH_MULCH) || tree->mulch == ITEM_TO_MULCH(ITEM_AMAZE_MULCH)))
-        min += 2;
+    {
+        if (diff < 3)
+            min += 1;
+        else
+            min += 2;
+    }
     if (!(OW_BERRY_MOISTURE && OW_BERRY_ALWAYS_WATERABLE))
         min += berryInfo->minYield;
     if (min >= max)
@@ -2743,7 +2751,15 @@ static u8 GetWeedingBonusByBerryType(u8 berry)
 
 static u8 GetPestsBonusByBerryType(u8 berry)
 {
-    u8 bonus = GetBerryInfo(berry)->pestsBonus;
+    u8 max = GetBerryInfo(berry)->maxYield;
+    u8 diff = max - GetBerryInfo(berry)->minYield;
+    u8 bonus = 0; // GetBerryInfo(berry)->pestsBonus
+
+    if (diff < 3)
+        bonus += 2;
+    else
+        bonus += 4;
+    
     return (bonus == 0) ? 2 : bonus * 5;
 }
 
@@ -2883,12 +2899,14 @@ bool8 ObjectEventInteractionBerryHasWeed(void)
 bool8 ObjectEventInteractionBerryHasPests(void)
 {
     enum Species species;
+    u16 level = GetBerryPestLevel(gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].berry);
+
     if (!OW_BERRY_PESTS || !gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].pests)
         return FALSE;
-    species = GetBerryPestSpecies(gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].berry);
+    species = GetBerryPestSpecies(gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].berry, level);
     if (species == SPECIES_NONE)
         return FALSE;
-    CreateScriptedWildMon(species, 14 + Random() % 3, ITEM_NONE);
+    CreateScriptedWildMon(species, level, ITEM_NONE);
     gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].pests = FALSE;
     return TRUE;
 }
@@ -3060,37 +3078,285 @@ static void SetTreeMutations(u8 id, u8 berry)
 #endif
 }
 
-static enum Species GetBerryPestSpecies(u8 berryId)
+static u16 GetBerryPestLevel(u8 berryId)
+{
+    u16 level = 1; 
+#if OW_BERRY_PESTS == TRUE
+    const struct BerryInfo *berryInfo = GetBerryInfo(berryId);
+    u32 levelCap = GetCurrentLevelCap();
+
+    level = levelCap / 4;
+    if (berryInfo->pestsTier > 0) 
+        level += (levelCap * 3 * berryInfo->pestsTier) / 28;
+#endif
+    return level;
+}
+
+static enum Species GetBerryPestSpecies(u8 berryId, u16 pestlvl)
 {
 #if OW_BERRY_PESTS == TRUE
     const struct BerryInfo *berryInfo = GetBerryInfo(berryId);
-    switch (berryInfo->color)
+    u8 rand = Random() % 20;
+    switch(berryInfo->color)
     {
-    case BERRY_COLOR_RED:
-        return P_FAMILY_LEDYBA ? SPECIES_LEDYBA : SPECIES_NONE;
-        break;
-    case BERRY_COLOR_BLUE:
-        return P_FAMILY_VOLBEAT_ILLUMISE ? SPECIES_VOLBEAT : SPECIES_NONE;
-        break;
-    case BERRY_COLOR_PURPLE:
-        return P_FAMILY_VOLBEAT_ILLUMISE ? SPECIES_ILLUMISE : SPECIES_NONE;
-        break;
-    case BERRY_COLOR_GREEN:
-        return P_FAMILY_BURMY ? SPECIES_BURMY_PLANT : SPECIES_NONE;
-        break;
-    case BERRY_COLOR_YELLOW:
-        return P_FAMILY_COMBEE ? SPECIES_COMBEE : SPECIES_NONE;
-        break;
-    case BERRY_COLOR_PINK:
-        return P_FAMILY_SCATTERBUG ? SPECIES_SPEWPA : SPECIES_NONE;
-        break;
+        case BERRY_COLOR_RED:
+            if (rand < 8)
+            {
+                if (P_FAMILY_WURMPLE)
+                {
+                    if (pestlvl < 8)
+                        return SPECIES_WURMPLE;
+                    else if (pestlvl < 24)
+                    {
+                        if (rand < 5)
+                            return SPECIES_SILCOON;
+                        else
+                            return SPECIES_CASCOON;
+                    }
+                    else
+                    {
+                        if (rand < 5)
+                            return SPECIES_BEAUTIFLY;
+                        else
+                            return SPECIES_DUSTOX;
+                    }
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            else if (rand < 16)
+            {
+                if (P_FAMILY_PIKIPEK)
+                {
+                    if (pestlvl < 10)
+                        return SPECIES_PIKIPEK;
+                    else if (pestlvl < 24)
+                        return SPECIES_TRUMBEAK;
+                    else
+                        return SPECIES_TOUCANNON;
+                }
+                else
+                    return SPECIES_NONE;
+            }  
+            else
+            {
+                if (P_FAMILY_LEDYBA)
+                {
+                    if (pestlvl < 32)
+                        return SPECIES_LEDYBA;
+                    else
+                        return SPECIES_LEDIAN;
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            break;
+        case BERRY_COLOR_BLUE:
+            if (rand < 9)
+            {
+                if (P_FAMILY_CRABRAWLER)
+                {
+                    if (pestlvl < 40)
+                        return SPECIES_CRABRAWLER;
+                    else
+                        return SPECIES_CRABOMINABLE;
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            else if (rand < 14)
+            {
+                if (P_FAMILY_KARRABLAST)
+                {
+                    if (pestlvl < 30)
+                        return SPECIES_KARRABLAST;
+                    else
+                        return SPECIES_ESCAVALIER;
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            else if (rand < 19)
+            {
+                if (P_FAMILY_SHELMET)
+                {
+                    if (pestlvl < 30)
+                        return SPECIES_SHELMET;
+                    else
+                        return SPECIES_ACCELGOR;
+                }
+                else
+                    return SPECIES_NONE;
+            }   
+            else
+            {
+                if (P_FAMILY_HERACROSS)
+                    return SPECIES_HERACROSS;
+                else
+                    return SPECIES_NONE;
+            }
+            break;
+        case BERRY_COLOR_PURPLE:
+            if (rand < 8)
+            {
+                if (P_FAMILY_GULPIN)
+                {
+                    if (pestlvl < 29)
+                        return SPECIES_GULPIN;
+                    else
+                        return SPECIES_SWALOT;
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            else if (rand < 16)
+            {
+                if (P_FAMILY_GRAFAIAI)
+                {
+                    if (pestlvl < 33)
+                        return SPECIES_GRAFAIAI;
+                    else
+                        return SPECIES_GRAFAIAI; // Crimono
+                }
+                else
+                    return SPECIES_NONE;
+            }  
+            else
+            {
+                if (P_FAMILY_VENONAT)
+                {
+                    if (pestlvl < 31)
+                        return SPECIES_VENONAT;
+                    else
+                        return SPECIES_VENONAT; // Venonat Evo
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            break;
+        case BERRY_COLOR_GREEN:
+            if (rand < 7)
+            {
+                if (P_FAMILY_BUNNELBY)
+                {
+                    if (pestlvl < 18)
+                        return SPECIES_BUNNELBY;
+                    else
+                        return SPECIES_DIGGERSBY;
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            else if (rand < 14)
+            {
+                if (P_FAMILY_SENTRET)
+                {
+                    if (pestlvl < 22)
+                        return SPECIES_SENTRET;
+                    else
+                        return SPECIES_FURRET;
+                }
+                else
+                    return SPECIES_NONE;
+            }  
+            else
+            {
+                if (P_FAMILY_DIGLETT)
+                {
+                    if (pestlvl < 24)
+                        return SPECIES_DIGLETT;
+                    else
+                        return SPECIES_DUGTRIO;
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            break;
+        case BERRY_COLOR_YELLOW:
+            if (rand < 10)
+            {
+                if (P_FAMILY_CUTIEFLY)
+                {
+                    if (pestlvl < 19)
+                        return SPECIES_CUTIEFLY;
+                    else
+                        return SPECIES_RIBOMBEE;
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            else if (rand < 15)
+            {
+                if (P_FAMILY_COMBEE)
+                {
+                    if (pestlvl < 36)
+                        return SPECIES_COMBEE;
+                    else
+                        return SPECIES_VESPIQUEN;
+                }
+                else
+                    return SPECIES_NONE;
+            }  
+            else
+            {
+                if (P_FAMILY_TEDDIURSA)
+                {
+                    if (pestlvl < 28)
+                        return SPECIES_TEDDIURSA;
+                    else
+                        return SPECIES_URSARING;
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            break;
+        case BERRY_COLOR_PINK:
+            if (rand < 10)
+            {
+                if (P_FAMILY_BOUNSWEET)
+                {
+                    if (pestlvl < 17)
+                        return SPECIES_BOUNSWEET;
+                    else if (pestlvl < 42)
+                        return SPECIES_STEENEE;
+                    else
+                        return SPECIES_TSAREENA;
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            else if (rand < 18)
+            {
+                if (P_FAMILY_FOMANTIS)
+                {
+                    if (pestlvl < 29)
+                        return SPECIES_FOMANTIS;
+                    else
+                        return SPECIES_LURANTIS;
+                }
+                else
+                    return SPECIES_NONE;
+            }  
+            else
+            {
+                if (P_FAMILY_DROWZEE)
+                {
+                    if (pestlvl < 36)
+                        return SPECIES_DROWZEE;
+                    else
+                        return SPECIES_HYPNO;
+                }
+                else
+                    return SPECIES_NONE;
+            }
+            break;
     }
 #endif
     return SPECIES_NONE;
 }
 
 #define BERRY_WEEDS_CHANCE 15
-#define BERRY_PESTS_CHANCE 15
+#define BERRY_PESTS_CHANCE 20
 
 static void TryForWeeds(struct BerryTree *tree)
 {
@@ -3104,12 +3370,15 @@ static void TryForWeeds(struct BerryTree *tree)
 
 static void TryForPests(struct BerryTree *tree)
 {
-    if (!OW_BERRY_WEEDS)
+    if (!OW_BERRY_PESTS)
         return;
     if (tree->pests == TRUE)
         return;
     if (Random() % 100 < BERRY_PESTS_CHANCE && tree->stage > BERRY_STAGE_PLANTED)
+    {
         tree->pests = TRUE;
+        AddTreeBonus(tree, GetPestsBonusByBerryType(tree->berry));
+    }
 }
 
 static void AddTreeBonus(struct BerryTree *tree, u8 bonus)
