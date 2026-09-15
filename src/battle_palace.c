@@ -52,7 +52,7 @@ static const u16 sBattlePalaceEarlyPrizes[] =
 
 static const u16 sBattlePalaceLatePrizes[] =
 {
-    ITEM_BRIGHT_POWDER,
+    ITEM_FLOAT_STONE,
     ITEM_WHITE_HERB,
     ITEM_QUICK_CLAW,
     ITEM_LEFTOVERS,

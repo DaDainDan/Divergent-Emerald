@@ -264,7 +264,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         {
             {
                 .species = SPECIES_ALAKAZAM,
-                .heldItem = ITEM_BRIGHT_POWDER,
+                .heldItem = ITEM_FLOAT_STONE,
                 .fixedIV = 12,
                 .nature = NATURE_MODEST,
                 .evs = {76, 0, 152, 152, 100, 0},
@@ -299,7 +299,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
             },
             {
                 .species = SPECIES_LATIOS,
-                .heldItem = ITEM_BRIGHT_POWDER,
+                .heldItem = ITEM_FLOAT_STONE,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
                 .evs = {192, 0, 192, 6, 0, 0},
@@ -378,7 +378,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         {
             {
                 .species = SPECIES_CROBAT,
-                .heldItem = ITEM_BRIGHT_POWDER,
+                .heldItem = ITEM_FLOAT_STONE,
                 .fixedIV = 8,
                 .nature = NATURE_ADAMANT,
                 .evs = {152, 0, 0, 152, 100, 76},
@@ -451,7 +451,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
             },
             {
                 .species = SPECIES_SHEDINJA,
-                .heldItem = ITEM_BRIGHT_POWDER,
+                .heldItem = ITEM_FLOAT_STONE,
                 .fixedIV = 10,
                 .nature = NATURE_ADAMANT,
                 .evs = {0, 192, 6, 192, 0, 0},
@@ -584,7 +584,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
             },
             {
                 .species = SPECIES_STEELIX,
-                .heldItem = ITEM_BRIGHT_POWDER,
+                .heldItem = ITEM_FLOAT_STONE,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_BRAVE,
                 .evs = {192, 0, 0, 0, 6, 192},
@@ -649,7 +649,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
             },
             {
                 .species = SPECIES_MOLTRES,
-                .heldItem = ITEM_BRIGHT_POWDER,
+                .heldItem = ITEM_FLOAT_STONE,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MILD,
                 .evs = {6, 0, 192, 192, 0, 0},

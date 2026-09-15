@@ -745,6 +745,9 @@ static void GetRoomInflictedStatus(void)
     case STATUS1_SLEEP:
         gSpecialVar_Result = PIKE_STATUS_SLEEP;
         break;
+    case STATUS1_CURSE:
+        gSpecialVar_Result = PIKE_STATUS_CURSE;
+        break;
     }
 }
 
@@ -814,14 +817,14 @@ static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
     enum Ability ability = GetMonAbility(mon);
     bool8 ret = FALSE;
 
-    if (ability == ABILITY_COMATOSE)
+    if ((ability == ABILITY_WONDER_SKIN || ability == ABILITY_MAX_LUMINOUS) && status != STATUS1_SLEEP)
         return TRUE;
 
     switch (status)
     {
     case STATUS1_FREEZE:
     case STATUS1_FROSTBITE:
-        if (ability == ABILITY_MAGMA_ARMOR)
+        if (ability == ABILITY_MAGMA_ARMOR || ability == ABILITY_THICK_FAT)
             ret = TRUE;
         break;
     case STATUS1_BURN:
@@ -840,6 +843,10 @@ static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
         if (ability == ABILITY_IMMUNITY || ability == ABILITY_PASTEL_VEIL)
             ret = TRUE;
         break;
+    case STATUS1_CURSE:
+        if (ability == ABILITY_FORBIDDEN || ability == ABILITY_LUNAR_VEIL)
+            ret = TRUE;
+        break;
     }
     return ret;
 }
@@ -851,18 +858,17 @@ static bool8 DoesTypePreventStatus(enum Species species, u32 status)
     switch (status)
     {
     case STATUS1_TOXIC_POISON:
-        if (GetSpeciesType(species, 0) == TYPE_STEEL || GetSpeciesType(species, 0) == TYPE_POISON
-            || GetSpeciesType(species, 1) == TYPE_STEEL || GetSpeciesType(species, 1) == TYPE_POISON)
+        if (GetSpeciesType(species, 0) == TYPE_POISON || GetSpeciesType(species, 1) == TYPE_POISON)
             ret = TRUE;
         break;
     case STATUS1_FREEZE:
     case STATUS1_FROSTBITE:
-        if (GetSpeciesType(species, 0) == TYPE_ICE || GetSpeciesType(species, 1) == TYPE_ICE)
+        if (GetSpeciesType(species, 0) == TYPE_ICE || GetSpeciesType(species, 1) == TYPE_ICE
+         || GetSpeciesType(species, 0) == TYPE_FIRE || GetSpeciesType(species, 1) == TYPE_FIRE)
             ret = TRUE;
         break;
     case STATUS1_PARALYSIS:
-        if (GetSpeciesType(species, 0) == TYPE_GROUND || GetSpeciesType(species, 1) == TYPE_GROUND
-            || (GetConfig(B_PARALYZE_ELECTRIC) >= GEN_6 && (GetSpeciesType(species, 0) == TYPE_ELECTRIC || GetSpeciesType(species, 1) == TYPE_ELECTRIC)))
+        if ((GetConfig(B_PARALYZE_ELECTRIC) >= GEN_6 && (GetSpeciesType(species, 0) == TYPE_ELECTRIC || GetSpeciesType(species, 1) == TYPE_ELECTRIC)))
             ret = TRUE;
         break;
     case STATUS1_BURN:
@@ -872,6 +878,8 @@ static bool8 DoesTypePreventStatus(enum Species species, u32 status)
             ret = TRUE;
         break;
     case STATUS1_SLEEP:
+        if (GetSpeciesType(species, 0) == TYPE_GHOST || GetSpeciesType(species, 1) == TYPE_GHOST
+         || GetSpeciesType(species, 0) == TYPE_UNDEAD || GetSpeciesType(species, 1) == TYPE_UNDEAD)
         break;
     }
     return ret;
@@ -907,14 +915,16 @@ static bool8 TryInflictRandomStatus(void)
         statusChosen = FALSE;
         rand = Random() % 100;
 
-        if (rand < 35)
+        if (rand < 25)
             sStatusFlags = STATUS1_TOXIC_POISON;
-        else if (rand < 60)
+        else if (rand < 50)
             sStatusFlags = B_USE_FROSTBITE ? STATUS1_FROSTBITE : STATUS1_FREEZE;
-        else if (rand < 80)
+        else if (rand < 70)
             sStatusFlags = STATUS1_PARALYSIS;
-        else if (rand < 90)
+        else if (rand < 80)
             sStatusFlags = STATUS1_SLEEP;
+        else if (rand < 90)
+            sStatusFlags = STATUS1_CURSE;
         else
             sStatusFlags = STATUS1_BURN;
 
@@ -948,6 +958,7 @@ static bool8 TryInflictRandomStatus(void)
     {
     case STATUS1_FREEZE:
     case STATUS1_FROSTBITE:
+    case STATUS1_CURSE:
         sStatusMon = PIKE_STATUSMON_DUSCLOPS;
         break;
     case STATUS1_BURN:
@@ -1626,7 +1637,7 @@ static bool8 CanEncounterWildMon(u8 enemyMonLevel)
     if (!GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SANITY_IS_EGG))
     {
         enum Ability monAbility = GetMonAbility(&gParties[B_TRAINER_PLAYER][0]);
-        if (monAbility == ABILITY_KEEN_EYE || monAbility == ABILITY_INTIMIDATE)
+        if (monAbility == ABILITY_KEEN_EYE || monAbility == ABILITY_INTIMIDATE || monAbility == ABILITY_UNNERVE || monAbility == ABILITY_SUPERIOR)
         {
             u8 playerMonLevel = GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_LEVEL);
             if (playerMonLevel > 5 && enemyMonLevel <= playerMonLevel - 5 && Random() % 2 == 0)

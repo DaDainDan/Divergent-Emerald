@@ -137,7 +137,7 @@ static const u16 sShortStreakPrizeItems[] =
 
 static const u16 sLongStreakPrizeItems[] =
 {
-    ITEM_BRIGHT_POWDER,
+    ITEM_FLOAT_STONE,
     ITEM_WHITE_HERB,
     ITEM_QUICK_CLAW,
     ITEM_LEFTOVERS,
@@ -389,7 +389,7 @@ void BattleArena_AddSkillPoints(enum BattlerId battler)
         }
         else if (IsBattlerUnaffectedByMove(gBattlerTarget))
         {
-            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_MISSED))
+            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_MISSED)) // Detect?
                 skillPoints[battler] -= 2;
         }
         else if ((gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_SUPER_EFFECTIVE) && (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NOT_VERY_EFFECTIVE))

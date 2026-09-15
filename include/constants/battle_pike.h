@@ -33,6 +33,7 @@
 #define PIKE_STATUS_TOXIC       2
 #define PIKE_STATUS_PARALYSIS   3
 #define PIKE_STATUS_SLEEP       4
+#define PIKE_STATUS_CURSE       5
 
 // Function IDs for sBattlePikeFunctions / CallBattlePikeFunction
 #define BATTLE_PIKE_FUNC_SET_ROOM_TYPE             0
