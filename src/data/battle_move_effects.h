@@ -93,7 +93,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_HAZE] =
     {
-        .battleScript = BattleScript_EffectHaze,
+        .battleScript = BattleScript_EffectHazeOld,
         .battleTvScore = 5,
         .battleFactoryStyle = FACTORY_STYLE_ENDURANCE,
         .encourageEncore = TRUE,
@@ -421,7 +421,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_CURSE] =
     {
-        .battleScript = BattleScript_EffectCurse,
+        .battleScript = BattleScript_EffectCurseOld,
         .battleTvScore = 2,
         .battleFactoryStyle = FACTORY_STYLE_UNPREDICTABLE,
         .encourageEncore = TRUE,
@@ -487,7 +487,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_SWAGGER] =
     {
-        .battleScript = BattleScript_EffectStatChange,
+        .battleScript = BattleScript_EffectSwagger, // EffectStatChange
         .battleTvScore = 3,
         .battleFactoryStyle = FACTORY_STYLE_SLOW_STEADY,
         .encourageEncore = TRUE,
@@ -644,7 +644,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
     {
         .battleScript = BattleScript_EffectHit,
         .battleTvScore = 1,
-        .twoTurnEffect = TRUE,
+        // .twoTurnEffect = TRUE,
     },
 
     [EFFECT_TELEPORT] =
@@ -728,7 +728,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_FACADE] =
     {
-        .battleScript = BattleScript_EffectHit,
+        .battleScript = BattleScript_EffectStatChange,
         .battleTvScore = 1,
         .battleFactoryStyle = FACTORY_STYLE_HIGH_RISK,
     },
@@ -1210,6 +1210,12 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_SUCKER_PUNCH] =
     {
         .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_SIMPLE_BEAM] =
+    {
+        .battleScript = BattleScript_EffectSimpleBeam,
         .battleTvScore = 0, // TODO: Assign points
     },
 
@@ -1899,5 +1905,398 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
     {
         .battleScript = BattleScript_EffectHit,
         .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_FLORAL_HEALING] =
+    {
+        .battleScript = BattleScript_EffectFloralHealing,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_RECOVER] =
+    {
+        .battleScript = BattleScript_EffectRecover,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+    
+    [EFFECT_OVERHEAT] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_SING] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 3,
+        .battleFactoryStyle = FACTORY_STYLE_SLOW_STEADY,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_ULTRASONIC] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 3,
+        .battleFactoryStyle = FACTORY_STYLE_SLOW_STEADY,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_SWORDS_DANCE] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+        .battleFactoryStyle = FACTORY_STYLE_PREPARATION,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_CALM_MIND] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+        .battleFactoryStyle = FACTORY_STYLE_SLOW_STEADY,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_YOGA_POSE] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+        .battleFactoryStyle = FACTORY_STYLE_SLOW_STEADY,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_FORESTS_CURSE] =
+    {
+        .battleScript = BattleScript_EffectForestsCurse,
+        .battleTvScore = 0, // TODO: Assign points
+        .battleFactoryStyle = FACTORY_STYLE_WEAKENING,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_LUNAR_DANCE_NEW] =
+    {
+        .battleScript = BattleScript_EffectLunarDance,
+        .battleTvScore = 1,
+        .battleFactoryStyle = FACTORY_STYLE_ENDURANCE,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_LOVELY_KISS] =
+    {
+        .battleScript = BattleScript_EffectAttract,
+        .battleTvScore = 4,
+        .battleFactoryStyle = FACTORY_STYLE_SLOW_STEADY,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_BARRIER] =
+    {
+        .battleScript = BattleScript_EffectBarrier,
+        .battleTvScore = 7,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_AMNESIA] =
+    {
+        .battleScript = BattleScript_EffectAmnesia,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_LIQUIFY] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_SPIDER_WEB] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_WHIRLPOOL] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_FLINCH] =
+    {
+        .battleScript = BattleScript_EffectFlinch,
+        .battleTvScore = 0,
+    },
+
+    [EFFECT_BLOCK] =
+    {
+        .battleScript = BattleScript_EffectBlock,
+        .battleTvScore = 0,
+    },
+    
+    [EFFECT_EXTREME_SPEED] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_SCALD] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_NASTY_PLOT] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_GRASS_KNOT] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_HONE_EDGE] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_DIRE_OMEN]
+    {
+        .battleScript = BattleScript_EffectDireOmen,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_LEVEL_SCALED] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 1,
+    },
+
+    [EFFECT_TEARFUL_LOOK] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0,
+    },
+
+    [EFFECT_HEART_STAMP] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 1,
+    },
+
+    [EFFECT_CUT_DOWN] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 1,
+    },
+    
+    [EFFECT_UNBURDEN] =
+    {
+        .battleScript = BattleScript_EffectUnburden,
+        .battleTvScore = 7,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_SUBVERT] =
+    {
+        .battleScript = BattleScript_EffectSubvert,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_EXPEND] =
+    {
+        .battleScript = BattleScript_EffectExpend,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_BIG_GULP] =
+    {
+        .battleScript = BattleScript_EffectBigGulp,
+        .battleTvScore = 1,
+        .battleFactoryStyle = FACTORY_STYLE_ENDURANCE,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_SPIRIT_AWAY] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 7,
+    },
+
+    [EFFECT_IGNITE] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 7,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_CURSE_NEW] =
+    {
+        .battleScript = BattleScript_EffectCurse,
+        .battleTvScore = 2,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_TEST_OF_HONOR] =
+    {
+        .battleScript = BattleScript_EffectTestOfHonor,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_INSULT_TO_INJURY] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0,
+    },
+
+    [EFFECT_HOCUS_POCUS] =
+    {
+        .battleScript = BattleScript_EffectHocusPocus,
+        .battleTvScore = 1,
+    },
+
+    [EFFECT_EMBRACE_ESCAPE] =
+    {
+        .battleScript = BattleScript_EffectEmbraceEscape,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_ICE_SHARDS] =
+    {
+        .battleScript = BattleScript_EffectIceShards,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_HAUSTELL] =
+    {
+        .battleScript = BattleScript_EffectHaustell,
+        .battleTvScore = 5,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_PLAY_NICE] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_FLASH_FLOOD] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_AFTERSHOCK] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_HAZE_NEW] =
+    {
+        .battleScript = BattleScript_EffectHaze,
+        .battleTvScore = 5,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_BUGGY_TERRAIN] =
+    {
+        .battleScript = BattleScript_EffectBuggyTerrain,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_FAULTY_TERRAIN] =
+    {
+        .battleScript = BattleScript_EffectFaultyTerrain,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_SPOOKY_TERRAIN] =
+    {
+        .battleScript = BattleScript_EffectSpookyTerrain,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_ERROR_ROOM] =
+    {
+        .battleScript = BattleScript_EffectErrorRoom,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_STATIC_ROOM] =
+    {
+        .battleScript = BattleScript_EffectStaticRoom,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_REVERSE_ROOM] =
+    {
+        .battleScript = BattleScript_EffectReverseRoom,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_GRIM_ROOM] =
+    {
+        .battleScript = BattleScript_EffectGrimRoom,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_BOOBY_TRAP] =
+    {
+        .battleScript = BattleScript_EffectBoobyTrap,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_COIL] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_VENOM_DRENCH] =
+    {
+        .battleScript = BattleScript_EffectVenomDrench,
+        .battleTvScore = 7,
+    },
+
+    [EFFECT_ENDEAVOR_NEW] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 1,
+        .battleFactoryStyle = FACTORY_STYLE_HIGH_RISK,
+    },
+
+    [EFFECT_WORK_UP] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_HOWL] =
+    {
+        .battleScript = BattleScript_EffectStatChange,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_SACRIFICIAL_FLAME] =
+    {
+        .battleScript = BattleScript_EffectSacrificialFlame,
+        .battleTvScore = 7,
+        .battleFactoryStyle = FACTORY_STYLE_HIGH_RISK,
     },
 };

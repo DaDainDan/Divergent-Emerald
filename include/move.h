@@ -54,7 +54,10 @@ struct AdditionalEffect
     u32 speed:3;
     u32 accuracy:3;
     u32 evasion:3;
-    u32 padding2:11;
+    u32 random:3;
+    u32 highest:3;
+    u32 lowest:3;
+    u32 padding2:2;
 };
 
 enum ProtectType
@@ -72,6 +75,8 @@ enum ProtectMethod
     PROTECT_KINGS_SHIELD,
     PROTECT_BANEFUL_BUNKER,
     PROTECT_BURNING_BULWARK,
+    PROTECT_SOOTHING_GUARD,
+    PROTECT_GALVANIC_FIELD,
     PROTECT_OBSTRUCT,
     PROTECT_SILK_TRAP,
     PROTECT_MAX_GUARD,
@@ -79,6 +84,8 @@ enum ProtectMethod
     PROTECT_QUICK_GUARD,
     PROTECT_CRAFTY_SHIELD,
     PROTECT_MAT_BLOCK,
+    PROTECT_DETECT,
+    PROTECT_MIASMA,
 };
 
 enum TerrainGroundCheck
@@ -120,17 +127,23 @@ struct MoveInfo
     bool32 snatchAffected:1;
     bool32 ignoresKingsRock:1;
     bool32 punchingMove:1;
+    bool32 kickingMove:1;
+    bool32 grabMove:1;
+    bool32 headMove:1;
     bool32 bitingMove:1;
-    bool32 pulseMove:1;
+    bool32 extremityMove:1;
+    bool32 projectileMove:1; // pulseMove
+    bool32 clawMove:1;
     bool32 soundMove:1;
     bool32 ballisticMove:1;
     bool32 powderMove:1;
+    // end of word
     bool32 danceMove:1;
     bool32 windMove:1;
     bool32 slicingMove:1;
     bool32 healingMove:1;
+    bool32 sightMove:1;
     bool32 minimizeDoubleDamage:1;
-    // end of word
     bool32 ignoresTargetAbility:1;
     bool32 ignoresTargetDefenseEvasionStages:1;
     bool32 damagesUnderground:1;
@@ -148,7 +161,8 @@ struct MoveInfo
     bool32 alwaysHitsOnSameType:1; // Always hits if user is of same type as move
     bool32 noAffectOnSameTypeTarget:1; // Fails if target is of same type as move
     bool32 accIncreaseByTenOnSameType:1; // Accuracy is increased by 10% if user is of same type as move
-    bool32 padding1:15;
+    bool32 statChangeAlsoHitsUser:1;
+    bool32 padding1:8;
     // end of word
 
     // Ban flags
@@ -367,14 +381,39 @@ static inline bool32 IsPunchingMove(enum Move moveId)
     return gMovesInfo[SanitizeMoveId(moveId)].punchingMove;
 }
 
+static inline bool32 IsKickingMove(enum Move moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].kickingMove;
+}
+
+static inline bool32 IsGrabMove(enum Move moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].grabMove;
+}
+
+static inline bool32 IsHeadMove(enum Move moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].headMove;
+}
+
 static inline bool32 IsBitingMove(enum Move moveId)
 {
     return gMovesInfo[SanitizeMoveId(moveId)].bitingMove;
 }
 
-static inline bool32 IsPulseMove(enum Move moveId)
+static inline bool32 IsClawMove(enum Move moveId)
 {
-    return gMovesInfo[SanitizeMoveId(moveId)].pulseMove;
+    return gMovesInfo[SanitizeMoveId(moveId)].clawMove;
+}
+
+static inline bool32 IsProjectileMove(enum Move moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].projectileMove;
+}
+
+static inline bool32 IsExtremityMove(enum Move moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].extremityMove;
 }
 
 static inline bool32 IsSoundMove(enum Move moveId)
@@ -499,8 +538,8 @@ static inline bool32 MoveAlwaysHitsOnSameType(enum Move moveId)
 static inline bool32 MoveHasNoEffectOnSameType(enum Move moveId)
 {
     #if TESTING
-    if (moveId == MOVE_SHEER_COLD && GetConfig(B_SHEER_COLD_IMMUNITY) < GEN_7)
-       return FALSE;
+    if (moveId == MOVE_SHEER_COLD)
+       return GetConfig(B_SHEER_COLD_IMMUNITY) >= GEN_7;
     #endif
     return gMovesInfo[SanitizeMoveId(moveId)].noAffectOnSameTypeTarget;
 }
@@ -774,7 +813,9 @@ static inline enum MoveEffect GetMoveNonVolatileStatus(enum Move move)
     {
     case EFFECT_NON_VOLATILE_STATUS:
     case EFFECT_YAWN:
-    case EFFECT_DARK_VOID:
+    // case EFFECT_DARK_VOID:
+    case EFFECT_VENOM_DRENCH:
+    case EFFECT_CURSE_NEW:
         return gMovesInfo[move].argument.nonVolatileStatus;
     default:
         return MOVE_EFFECT_NONE;
