@@ -3,9 +3,9 @@
 
 // Parent compatibility scores
 #define PARENTS_INCOMPATIBLE       0
-#define PARENTS_LOW_COMPATIBILITY  20
+#define PARENTS_LOW_COMPATIBILITY  25
 #define PARENTS_MED_COMPATIBILITY  50
-#define PARENTS_MAX_COMPATIBILITY  70
+#define PARENTS_MAX_COMPATIBILITY  75
 
 // Daycare state
 #define DAYCARE_NO_MONS     0

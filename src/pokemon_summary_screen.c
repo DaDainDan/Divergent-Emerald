@@ -2142,7 +2142,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
             ChangeStatLabel(SUMMARY_SKILLS_MODE_STATS);
         }
 
-        if (FlagGet(FLAG_MOVE_RELEARNER) && IS_MOVE_PAGE(sMonSummaryScreen->currPageIndex))
+        if (FlagGet(FLAG_MOVE_RELEARNER_ACTIVE) && IS_MOVE_PAGE(sMonSummaryScreen->currPageIndex))
         {
             gMoveRelearnerState = MOVE_RELEARNER_LEVEL_UP_MOVES;
             UpdateMoveRelearnerState(FALSE);
@@ -4878,7 +4878,7 @@ static void KeepMoveSelectorVisible(u8 firstSpriteId)
 
 static inline bool32 ShouldShowMoveRelearner(void)
 {
-    return (FlagGet(FLAG_MOVE_RELEARNER)
+    return (FlagGet(FLAG_MOVE_RELEARNER_ACTIVE)
          && !sMonSummaryScreen->lockMovesFlag
          && sMonSummaryScreen->mode != SUMMARY_MODE_BOX_CURSOR
          && sMonSummaryScreen->hasRelearnableMoves

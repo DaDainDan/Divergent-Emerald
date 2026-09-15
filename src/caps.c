@@ -113,7 +113,7 @@ u32 GetCurrentEVCap(void)
         {FLAG_BADGE07_GET, 300},
         {FLAG_BADGE08_GET, 360},
         {FLAG_DEFEATED_WALLY_VICTORY_ROAD, 400},
-        {FLAG_IS_CHAMPION, 440},
+        {FLAG_SYS_GAME_CLEAR, 440},
     };
 
     if (B_EV_CAP_TYPE == EV_CAP_FLAG_LIST)

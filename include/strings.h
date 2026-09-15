@@ -537,26 +537,145 @@ extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc[];
 
 // Battle Frontier Move Tutors
-extern const u8 BattleFrontier_Lounge7_Text_SoftboiledDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_SeismicTossDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_DreamEaterDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_MegaPunchDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_MegaKickDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_BodySlamDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_RockSlideDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_CounterDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_ThunderWaveDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_SwordsDanceDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_DefenseCurlDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_SnoreDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_MudSlapDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_SwiftDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_IcyWindDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_EndureDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_PsychUpDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_IcePunchDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_ThunderPunchDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_FirePunchDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_DoubleEdgeDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_FlareBlitzDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_WildChargeDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_WaveCrashDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_FrostChargeDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_BraveBirdDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_HeadRamDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_BoulderRushDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_DragonRushDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_AdamantAssaultDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_OverheatDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_OverloadDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_LeafStormDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_BlizzardDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_SkyUppercutDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_GunkShotDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_EarthquakeDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_HurricaneDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_FocusBlastDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_ForceofWillDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_DracoMeteorDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_MeteorShowerDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_BloodMoonDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_LusterPurgeDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_FleurCannonDesc[];
+
+extern const u8 RustboroCity_CuttersHouse_Text_SlashDesc[];
+extern const u8 RustboroCity_CuttersHouse_Text_NightSlashDesc[];
+extern const u8 RustboroCity_CuttersHouse_Text_LeafBladeDesc[];
+extern const u8 RustboroCity_CuttersHouse_Text_SwallowReversalDesc[];
+extern const u8 RustboroCity_CuttersHouse_Text_AirSlashDesc[];
+extern const u8 RustboroCity_CuttersHouse_Text_PsychoCutDesc[];
+extern const u8 RustboroCity_CuttersHouse_Text_AquaCutterDesc[];
+extern const u8 RustboroCity_CuttersHouse_Text_ShiningSlashDesc[];
+extern const u8 RustboroCity_CuttersHouse_Text_HoneEdgeDesc[];
+
+extern const u8 LavaridgeTown_HerbShop_Text_WaterWhipDesc[];
+extern const u8 LavaridgeTown_HerbShop_Text_FireLashDesc[];
+extern const u8 LavaridgeTown_HerbShop_Text_LashOutDesc[];
+extern const u8 LavaridgeTown_HerbShop_Text_PowerWhipDesc[];
+
+extern const u8 PetalburgCity_Dojo_1F_Right_Text_FirePunchDesc[];
+extern const u8 PetalburgCity_Dojo_1F_Right_Text_IcePunchDesc[];
+extern const u8 PetalburgCity_Dojo_1F_Right_Text_ThunderPunchDesc[];
+extern const u8 PetalburgCity_Dojo_1F_Right_Text_ShadowPunchDesc[];
+extern const u8 PetalburgCity_Dojo_1F_Right_Text_BlazeKickDesc[];
+extern const u8 PetalburgCity_Dojo_1F_Right_Text_CircuitKicksDesc[];
+
+extern const u8 Route119_Text_DragonClawDesc[];
+extern const u8 Route119_Text_MetalClawDesc[];
+extern const u8 Route119_Text_ShadowClawDesc[];
+extern const u8 Route119_Text_SickleClawDesc[];
+extern const u8 Route119_Text_FireFangDesc[];
+extern const u8 Route119_Text_IceFangDesc[];
+extern const u8 Route119_Text_PoisonFangDesc[];
+extern const u8 Route119_Text_ThunderFangDesc[];
+
+extern const u8 Route114_Text_HeadbuttDesc[];
+extern const u8 Route114_Text_IronHeadDesc[];
+extern const u8 Route114_Text_RimeHeadDesc[];
+extern const u8 Route114_Text_ZenHeadbuttDesc[];
+extern const u8 Route114_Text_AquaTailDesc[];
+extern const u8 Route114_Text_DragonTailDesc[];
+extern const u8 Route114_Text_PoisonTailDesc[];
+extern const u8 Route114_Text_IronTailDesc[];
+extern const u8 Route114_Text_LightningTailDesc[];
+extern const u8 Route114_Text_TorchTailDesc[];
+
+extern const u8 Route119_WeatherInstitute_1F_Text_SunnyDayDesc[];
+extern const u8 Route119_WeatherInstitute_1F_Text_RainDanceDesc[];
+extern const u8 Route119_WeatherInstitute_1F_Text_SandstormDesc[];
+extern const u8 Route119_WeatherInstitute_1F_Text_SnowscapeDesc[];
+extern const u8 Route119_WeatherInstitute_1F_Text_StormCallDesc[];
+extern const u8 Route119_WeatherInstitute_1F_Text_WeatherBallDesc[];
+
+extern const u8 AlteringCave_B2F_Text_GrassyTerrainDesc[];
+extern const u8 AlteringCave_B2F_Text_ElectricTerrainDesc[];
+extern const u8 AlteringCave_B2F_Text_PsychicTerrainDesc[];
+extern const u8 AlteringCave_B2F_Text_MistyTerrainDesc[];
+extern const u8 AlteringCave_B2F_Text_SpookyTerrainDesc[];
+extern const u8 AlteringCave_B2F_Text_BuggyTerrainDesc[];
+extern const u8 AlteringCave_B2F_Text_FaultyTerrainDesc[];
+extern const u8 AlteringCave_B2F_Text_TerrainPulseDesc[];
+
+extern const u8 FortreeCity_Text_StealthRockDesc[];
+extern const u8 FortreeCity_Text_SpikesDesc[];
+extern const u8 FortreeCity_Text_ToxicSpikesDesc[];
+extern const u8 FortreeCity_Text_IceShardsDesc[];
+extern const u8 FortreeCity_Text_BoobyTrapDesc[];
+extern const u8 FortreeCity_Text_BarrierDesc[];
+extern const u8 FortreeCity_Text_LightScreenDesc[];
+extern const u8 FortreeCity_Text_ReflectDesc[];
+extern const u8 FortreeCity_Text_AuroraVeilDesc[];
+
+extern const u8 SlateportCity_NameRatersHouse_Text_SkillSwapDesc[];
+extern const u8 SlateportCity_NameRatersHouse_Text_PowerSwapDesc[];
+extern const u8 SlateportCity_NameRatersHouse_Text_GuardSwapDesc[];
+extern const u8 SlateportCity_NameRatersHouse_Text_SpeedSwapDesc[];
+extern const u8 SlateportCity_NameRatersHouse_Text_PowerTrickDesc[];
+
+extern const u8 Route110_TrickHouseEntrance_Text_TrickRoomDesc[];
+extern const u8 Route110_TrickHouseEntrance_Text_WonderRoomDesc[];
+extern const u8 Route110_TrickHouseEntrance_Text_ErrorRoomDesc[];
+extern const u8 Route110_TrickHouseEntrance_Text_ReverseRoomDesc[];
+extern const u8 Route110_TrickHouseEntrance_Text_StaticRoomDesc[];
+extern const u8 Route110_TrickHouseEntrance_Text_GrimRoomDesc[];
+
+extern const u8 BattleFrontier_Lounge8_Text_SupernovaDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_OsmoticBurstDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_BrumalBurstDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_SandBurstDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_ChloroblastDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_WitsEndDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_KaBoomDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_ArcBlastDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_RecklessUpheavalDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_BugBurstDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_SoulShatterDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_RockRuptureDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_BlastShellDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_NoxiousBlowoutDesc[];
+extern const u8 BattleFrontier_Lounge8_Text_ShatterDesc[];
+
+extern const u8 LilycoveCity_CoveLilyMotel_1F_Text_CrushGripDesc[];
+extern const u8 LilycoveCity_CoveLilyMotel_1F_Text_BurningGraspDesc[];
+extern const u8 LilycoveCity_CoveLilyMotel_1F_Text_LightningGraspDesc[];
+extern const u8 LilycoveCity_CoveLilyMotel_1F_Text_GlacialGraspDesc[];
+extern const u8 LilycoveCity_CoveLilyMotel_1F_Text_PutridGraspDesc[];
+extern const u8 LilycoveCity_CoveLilyMotel_1F_Text_DarkGraspDesc[];
+
+extern const u8 BattleFrontier_Lounge3_Text_HyperBeamDesc[];
+extern const u8 BattleFrontier_Lounge3_Text_FissureDesc[];
+extern const u8 BattleFrontier_Lounge3_Text_PurgatoryDesc[];
+extern const u8 BattleFrontier_Lounge3_Text_InfernoDesc[];
+extern const u8 BattleFrontier_Lounge3_Text_ZapCannonDesc[];
+extern const u8 BattleFrontier_Lounge3_Text_SheerColdDesc[];
+extern const u8 BattleFrontier_Lounge3_Text_SuperpowerDesc[];
+extern const u8 BattleFrontier_Lounge3_Text_SteelBeamDesc[];
+extern const u8 BattleFrontier_Lounge3_Text_MeteorBeamDesc[];
 
 extern const u8 gText_YourPartnerHasRetired[];
 

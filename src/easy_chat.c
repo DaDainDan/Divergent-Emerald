@@ -704,6 +704,7 @@ static const u16 sBerryMasterWifePhrases[][2] = {
     [PHRASE_OVERWHELMING_LATIAS - 1] = {EC_WORD_OVERWHELMING, EC_POKEMON(LATIAS)},
     [PHRASE_COOL_LATIOS - 1]         = {EC_WORD_COOL, EC_POKEMON(LATIOS)},
     [PHRASE_SUPER_HUSTLE - 1]        = {EC_WORD_SUPER, EC_WORD_HUSTLE},
+    [PHRASE_LATER_AIM - 1]           = {EC_WORD_LATER, EC_WORD_AIM}
 };
 
 static const u16 sTriangleCursor_Pal[] = INCGFX_U16("graphics/easy_chat/triangle_cursor.png", ".gbapal");
@@ -5072,8 +5073,8 @@ static bool8 IsEasyChatGroupUnlocked(u8 groupId)
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
         return FlagGet(FLAG_SYS_GAME_CLEAR);
-    case EC_GROUP_POKEMON_NATIONAL:
-        return EasyChatIsNationalPokedexEnabled();
+    // case EC_GROUP_POKEMON_NATIONAL:
+    //     return EasyChatIsNationalPokedexEnabled();
     default:
         return TRUE;
     }
@@ -5590,8 +5591,8 @@ static void SetUnlockedEasyChatGroups(void)
     if (FlagGet(FLAG_UNLOCKED_TRENDY_SAYINGS))
         sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = EC_GROUP_TRENDY_SAYING;
 
-    if (IsNationalPokedexEnabled())
-        sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = EC_GROUP_POKEMON_NATIONAL;
+    // if (IsNationalPokedexEnabled())
+    sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = EC_GROUP_POKEMON_NATIONAL;
 }
 
 static u8 GetNumUnlockedEasyChatGroups(void)

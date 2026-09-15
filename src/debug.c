@@ -196,6 +196,9 @@ enum DebugMenuTypes
 #define DEBUG_NUMBER_DIGITS_LOCALID 2
 #define DEBUG_NUMBER_DIGITS_TRAINERS MAX_DIGITS(TRAINERS_COUNT)
 
+// SELECT jumps the trainer ID picker straight to this trainer (passive training dummy)
+#define DEBUG_TRAINER_DUMMY TRAINER_RED
+
 #define DEBUG_NUMBER_ICON_X 210
 #define DEBUG_NUMBER_ICON_Y 50
 
@@ -2030,6 +2033,22 @@ static void DebugAction_ChooseTrainerID_Select(u8 taskId)
             break;
         case TRAINERS_DEBUG_SELECTION_PARTNER:
             sDebugMenuListData->data[4] = gTasks[taskId].tInput;
+            break;
+        }
+        Debug_Display_TrainerID(gTasks[taskId].tInput, gTasks[taskId].tSelection, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
+    }
+
+    if (JOY_NEW(SELECT_BUTTON) && gTasks[taskId].tSelection != TRAINERS_DEBUG_SELECTION_PARTNER)
+    {
+        PlaySE(SE_SELECT);
+        gTasks[taskId].tInput = DEBUG_TRAINER_DUMMY;
+        switch (gTasks[taskId].tSelection)
+        {
+        case TRAINERS_DEBUG_SELECTION_TRAINER1:
+            sDebugMenuListData->data[0] = DEBUG_TRAINER_DUMMY;
+            break;
+        case TRAINERS_DEBUG_SELECTION_TRAINER2:
+            sDebugMenuListData->data[2] = DEBUG_TRAINER_DUMMY;
             break;
         }
         Debug_Display_TrainerID(gTasks[taskId].tInput, gTasks[taskId].tSelection, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);

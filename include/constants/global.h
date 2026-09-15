@@ -96,7 +96,7 @@ enum Language
 #define MAIL_COUNT (10 + PARTY_SIZE)
 #define SECRET_BASES_COUNT 2
 #define POKE_NEWS_COUNT 16
-#define PC_ITEMS_COUNT 50
+#define PC_ITEMS_COUNT 50  // Rough Estimate of 280-300 Misc Items 232?
 #define OBJECT_EVENT_TEMPLATES_COUNT 64
 #define DECOR_MAX_SECRET_BASE 16
 #define DECOR_MAX_PLAYERS_HOUSE 12
@@ -111,10 +111,10 @@ enum Language
 
 // Bag constants
 #define BAG_ITEMS_COUNT 150
-#define BAG_KEYITEMS_COUNT 30
-#define BAG_POKEBALLS_COUNT 25
+#define BAG_KEYITEMS_COUNT 30 // Vanilla works if more event-based key items become temporary
+#define BAG_POKEBALLS_COUNT 25 // 25 PokeBalls Max ; 37 for Medicine if swapped
 #define BAG_TMHM_COUNT 108
-#define BAG_BERRIES_COUNT 59
+#define BAG_BERRIES_COUNT 59 // 57 Berries Total; 11 With No Battle Use; +2 If I bring back Jaboca and Rowap
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.

@@ -2344,7 +2344,7 @@
 	@ If \slot is greater or equal than PARTY_SIZE, the status is inflicted on each of the Player's Pokémon.
 	.macro setstatus1 status1:req, slot:req
 	callnative Script_SetStatus1, requests_effects=1
-	.2byte \status1
+	.4byte \status1
 	.2byte \slot
 	.endm
 

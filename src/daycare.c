@@ -1187,6 +1187,8 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
     {
         u32 eggCycles;
         u8 toSub = GetEggCyclesToSubtract();
+        if (CheckBagHasItem(ITEM_OVAL_CHARM, 1))
+            toSub *= 2;
 
         daycare->stepCounter = 0;
 
@@ -1598,17 +1600,7 @@ void ChooseSendDaycareMon(void)
 static u8 ModifyBreedingScoreForOvalCharm(u8 score)
 {
     if (CheckBagHasItem(ITEM_OVAL_CHARM, 1))
-    {
-        switch (score)
-        {
-        case 20:
-            return 40;
-        case 50:
-            return 80;
-        case 70:
-            return 88;
-        }
-    }
+        return 100;
 
     return score;
 }

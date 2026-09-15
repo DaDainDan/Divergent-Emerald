@@ -1579,7 +1579,7 @@ static u8 CheckValidityOfTradeMons(u8 *aliveMons, u8 playerPartyCount, u8 player
     // Partner can't trade Egg or non-Hoenn mon if player doesn't have National Dex
     if (!IsNationalPokedexEnabled())
     {
-        if (sTradeMenu->isEgg[TRADE_PARTNER][partnerMonIdx] || !IsSpeciesInRegionalDex(partnerSpecies))
+        if (!IsSpeciesInRegionalDex(partnerSpecies)) // sTradeMenu->isEgg[TRADE_PARTNER][partnerMonIdx] || 
             return PARTNER_MON_INVALID;
     }
 
@@ -2397,8 +2397,8 @@ static u32 CanTradeSelectedMon(struct Pokemon *playerParty, int partyCount, int 
     // Cant trade Eggs or non-Hoenn mons if player doesn't have National Dex
     if (!IsNationalPokedexEnabled())
     {
-        if (species2[monIdx] == SPECIES_EGG)
-            return CANT_TRADE_EGG_YET;
+        // if (species2[monIdx] == SPECIES_EGG)
+        //     return CANT_TRADE_EGG_YET;
 
         if (!IsSpeciesInRegionalDex(species2[monIdx]))
             return CANT_TRADE_NATIONAL;
@@ -2411,8 +2411,8 @@ static u32 CanTradeSelectedMon(struct Pokemon *playerParty, int partyCount, int 
         // Does partner not have National Dex
         if (!(partner->progressFlagsCopy & 0xF))
         {
-            if (species2[monIdx] == SPECIES_EGG)
-                return CANT_TRADE_PARTNER_EGG_YET;
+            // if (species2[monIdx] == SPECIES_EGG)
+            //     return CANT_TRADE_PARTNER_EGG_YET;
 
             if (!IsSpeciesInRegionalDex(species2[monIdx]))
                 return CANT_TRADE_INVALID_MON;

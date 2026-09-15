@@ -1104,6 +1104,7 @@
 #define PHRASE_OVERWHELMING_LATIAS  3
 #define PHRASE_COOL_LATIOS          4
 #define PHRASE_SUPER_HUSTLE         5
+#define PHRASE_LATER_AIM            6
 
 #define EC_NUM_ALPHABET_GROUPS 27 // 26 (1 for each letter) + 1 (Others)
 

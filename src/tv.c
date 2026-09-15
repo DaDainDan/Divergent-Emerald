@@ -986,8 +986,8 @@ static void TakeGabbyAndTyOffTheAir(void)
 // See gabby_and_ty.inc for details
 u8 GabbyAndTyGetBattleNum(void)
 {
-    if (gSaveBlock1Ptr->gabbyAndTyData.battleNum > 5)
-        return (gSaveBlock1Ptr->gabbyAndTyData.battleNum % 3) + 6;
+    if (gSaveBlock1Ptr->gabbyAndTyData.battleNum > 2)
+        return (gSaveBlock1Ptr->gabbyAndTyData.battleNum % 3) + 3;
 
     return gSaveBlock1Ptr->gabbyAndTyData.battleNum;
 }
