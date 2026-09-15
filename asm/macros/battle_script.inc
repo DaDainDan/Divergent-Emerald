@@ -675,9 +675,10 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro tryhealhalfhealth battler:req, failInstr:req
-	.byte B_SCR_OP_TRYHEALHALFHEALTH
+	.macro tryhealhealth battler:req, hpFraction:req, failInstr:req
+	.byte B_SCR_OP_TRYHEALHEALTH
 	.byte \battler
+	.byte \hpFraction
 	.4byte \failInstr
 	.endm
 
@@ -712,8 +713,9 @@
 	.4byte \failInstr
 	.endm
 
-	.macro normalisebuffs
-	.byte B_SCR_OP_NORMALISEBUFFS
+	.macro removestatchanges mode:req
+	.byte B_SCR_OP_REMOVESTATCHANGES
+	.byte \mode
 	.endm
 
 	.macro twoturnmoveschargestringandanimation
@@ -1619,6 +1621,12 @@
 	1:
 	.endm
 
+	.macro jumpifaromaveil jumpInstr:req
+	jumpifability BS_ATTACKER, ABILITY_INFILTRATOR, 1f
+	jumpifability BS_TARGET_SIDE, ABILITY_AROMA_VEIL, \jumpInstr
+	1:
+	.endm
+
 	.macro jumpifabilitycantbereactivated battler:req, jumpInstr:req
 	callnative BS_JumpIfAbilityCantBeReactivated
 	.byte \battler
@@ -1985,10 +1993,9 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro tryhealquarterhealth battler:req, failInstr:req
-	callnative BS_TryHealQuarterHealth
-	.byte \battler
-	.4byte \failInstr
+	.macro jumpiftargethealthy jumpInstr:req
+	callnative BS_JumpIfTargetHealthy
+	.4byte \jumpInstr
 	.endm
 
 	.macro jumpifpranksterblocked jumpInstr:req
@@ -2109,4 +2116,89 @@
 
 	.macro trywakebattlersuproar
 	callnative BS_TryWakeBattlersUproar
+	.endm
+
+	.macro jumpifairborne battler:req, jumpInstr:req
+	callnative BS_JumpIfAirborne
+	.byte \battler
+	.4byte \jumpInstr
+	.endm
+
+	.macro changeability battler:req, ability:req, failInstr:req
+	callnative BS_ChangeAbility
+	.byte \battler
+	.2byte \ability
+	.4byte \failInstr
+	.endm
+
+	.macro setbarrier
+	callnative BS_SetBarrier
+	.endm
+
+	.macro setboobytrap failInstr:req
+	callnative BS_SetBoobyTrap
+	.4byte \failInstr
+	.endm
+
+	.macro sethaze
+	callnative BS_SetHaze
+	.endm
+
+	.macro escapebind
+	callnative BS_EscapeBind
+	.endm
+
+	.macro sacrificeuserhp hpFraction:req, failInstr:req
+	callnative BS_SacrificeUserHP
+	.byte \hpFraction
+	.4byte \failInstr
+	.endm
+
+	.macro jumpiftargethasacted failInstr:req
+	callnative BS_JumpIfTargetHasActed
+	.4byte \failInstr
+	.endm
+
+	.macro expendstockpile failInstr:req
+	callnative BS_ExpendStockpile
+	.4byte \failInstr
+	.endm
+
+	.macro shiftstatstotarget
+	callnative BS_ShiftStatsToTarget
+	.endm
+
+	.macro hocuspocus
+	callnative BS_HocusPocus
+	.endm
+
+	.macro jumpifbelowquarterhp battler:req, jumpInstr:req
+	callnative BS_JumpIfBelowQuarterHealth
+	.byte \battler
+	.4byte \jumpInstr
+	.endm
+
+	.macro trysetdireomen failInstr:req
+	callnative BS_TrySetDireOmen
+	.endm
+
+	.macro removerooms
+	callnative BS_RemoveRooms
+	.endm
+
+	.macro giveleftovers battler:req
+	callnative BS_GiveLeftovers
+	.byte \battler
+	.endm
+
+	.macro sethazard hazard:req, primary:req, failInstr:req
+	callnative BS_SetHazard
+	.byte \hazard
+	.byte \primary
+	.4byte \failInstr
+	.endm
+
+	.macro tryhaustell failInstr:req
+	callnative BS_TryHaustell
+	.4byte \failInstr
 	.endm

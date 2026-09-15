@@ -146,7 +146,7 @@ u16 ChooseMoveAndTargetInBattlePalace(enum BattlerId battler)
     s32 i, var1, var2;
     s32 chosenMoveIndex = -1;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-    u8 unusableMovesBits = CheckMoveLimitations(battler, 0, MOVE_LIMITATIONS_ALL);
+    u32 unusableMovesBits = CheckMoveLimitations(battler, 0, MOVE_LIMITATIONS_ALL);
     s32 percent = Random() % 100;
 
     // Heavy variable re-use here makes this hard to read without defines
@@ -468,16 +468,18 @@ void InitAndLaunchChosenStatusAnimation(enum BattlerId battler, bool32 isVolatil
     {
         if (status == STATUS1_FREEZE)
             LaunchStatusAnimation(battler, B_ANIM_STATUS_FRZ);
-        else if (status == STATUS1_FROSTBITE)
+        else if (status & STATUS1_FROSTBITE)
             LaunchStatusAnimation(battler, B_ANIM_STATUS_FRB);
         else if (status == STATUS1_POISON || status & STATUS1_TOXIC_POISON)
             LaunchStatusAnimation(battler, B_ANIM_STATUS_PSN);
-        else if (status == STATUS1_BURN)
+        else if (status & STATUS1_BURN)
             LaunchStatusAnimation(battler, B_ANIM_STATUS_BRN);
         else if (status & STATUS1_SLEEP)
             LaunchStatusAnimation(battler, B_ANIM_STATUS_SLP);
-        else if (status == STATUS1_PARALYSIS)
+        else if (status & STATUS1_PARALYSIS)
             LaunchStatusAnimation(battler, B_ANIM_STATUS_PRZ);
+        else if (status == STATUS1_CURSE)
+            LaunchStatusAnimation(battler, B_ANIM_STATUS_CURSED);
         else // no animation
             gBattleSpritesDataPtr->healthBoxesData[battler].statusAnimActive = 0;
     }
@@ -488,9 +490,11 @@ void InitAndLaunchChosenStatusAnimation(enum BattlerId battler, bool32 isVolatil
         else if (status == VOLATILE_CONFUSION)
             LaunchStatusAnimation(battler, B_ANIM_STATUS_CONFUSION);
         else if (status == VOLATILE_CURSED)
-            LaunchStatusAnimation(battler, B_ANIM_STATUS_CURSED);
+            LaunchStatusAnimation(battler, B_ANIM_STATUS_PLAGUE);
         else if (status == VOLATILE_NIGHTMARE)
             LaunchStatusAnimation(battler, B_ANIM_STATUS_NIGHTMARE);
+        else if (status == VOLATILE_RAMPAGE_TURNS)
+            LaunchStatusAnimation(battler, B_ANIM_STATUS_RAMPAGE);
         else // no animation
             gBattleSpritesDataPtr->healthBoxesData[battler].statusAnimActive = 0;
     }

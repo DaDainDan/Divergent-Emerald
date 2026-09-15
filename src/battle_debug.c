@@ -136,6 +136,7 @@ enum
     LIST_STATUS1_TOXIC_POISON,
     LIST_STATUS1_TOXIC_COUNTER,
     LIST_STATUS1_FROSTBITE,
+    LIST_STATUS1_CURSE,
 };
 
 enum
@@ -145,6 +146,7 @@ enum
     LIST_SIDE_TOXIC_SPIKES,
     LIST_SIDE_STEALTH_ROCK,
     LIST_SIDE_STEELSURGE,
+    LIST_SIDE_BOOBY_TRAP,
 };
 
 enum
@@ -153,9 +155,11 @@ enum
     LIST_SIDE_LIGHTSCREEN,
     LIST_SIDE_SAFEGUARD,
     LIST_SIDE_MIST,
+    LIST_SIDE_BARRIER,
     LIST_SIDE_TAILWIND,
     LIST_SIDE_AURORA_VEIL,
     LIST_SIDE_LUCKY_CHANT,
+    LIST_SIDE_HAZE,
     LIST_SIDE_DAMAGE_NON_TYPES,
     LIST_SIDE_RAINBOW,
     LIST_SIDE_SEA_OF_FIRE,
@@ -241,12 +245,13 @@ static const struct BitfieldInfo sStatus1Bitfield[] =
 {
     {/*Sleep*/ 3, 0},
     {/*Poison*/ 1, 3},
-    {/*Burn*/ 1, 4},
-    {/*Freeze*/ 1, 5},
-    {/*Paralysis*/1, 6},
-    {/*Toxic Poison*/ 1, 7},
-    {/*Toxic Counter*/ 4, 8},
-    {/*Frostbite*/ 1, 12},
+    {/*Burn*/ 3, 4},
+    {/*Freeze*/ 1, 7},
+    {/*Paralysis*/3, 8},
+    {/*Toxic Poison*/ 1, 11},
+    {/*Toxic Counter*/ 3, 12},
+    {/*Frostbite*/ 3, 15},
+    {/*Curse*/ 1, 18},
 };
 
 static const struct BitfieldInfo sStatus3Bitfield[] =
@@ -351,6 +356,7 @@ static const struct ListMenuItem sStatus1ListItems[] =
     {COMPOUND_STRING("Toxic Poison"),  LIST_STATUS1_TOXIC_POISON},
     {COMPOUND_STRING("Toxic Counter"), LIST_STATUS1_TOXIC_COUNTER},
     {COMPOUND_STRING("Frostbite"),     LIST_STATUS1_FROSTBITE},
+    {COMPOUND_STRING("Curse"),         LIST_STATUS1_CURSE},
 };
 
 static const struct ListMenuItem sVolatileStatusListItems[] =
@@ -359,6 +365,7 @@ static const struct ListMenuItem sVolatileStatusListItems[] =
     {COMPOUND_STRING("Flinched"),           VOLATILE_FLINCHED},
     {COMPOUND_STRING("Torment"),            VOLATILE_TORMENT},
     {COMPOUND_STRING("Powder"),             VOLATILE_POWDER},
+    {COMPOUND_STRING("Block"),              VOLATILE_BLOCK},
     {COMPOUND_STRING("DefenseCurl"),        VOLATILE_DEFENSE_CURL},
     {COMPOUND_STRING("Rage"),               VOLATILE_RAGE},
     {COMPOUND_STRING("DestinyBond"),        VOLATILE_DESTINY_BOND},
@@ -379,6 +386,7 @@ static const struct ListMenuItem sVolatileStatusListItems[] =
     {COMPOUND_STRING("Perish Song"),        VOLATILE_PERISH_SONG},
     {COMPOUND_STRING("Minimize"),           VOLATILE_MINIMIZE},
     {COMPOUND_STRING("Charge"),             VOLATILE_CHARGE_TIMER},
+    {COMPOUND_STRING("Big Gulp"),           VOLATILE_BIG_GULP_TIMER},
     {COMPOUND_STRING("Root"),               VOLATILE_ROOT},
     {COMPOUND_STRING("Yawn"),               VOLATILE_YAWN},
     {COMPOUND_STRING("Imprison"),           VOLATILE_IMPRISON},
@@ -397,21 +405,24 @@ static const struct ListMenuItem sVolatileStatusListItems[] =
 
 static const struct ListMenuItem sHazardsListItems[] =
 {
-    {COMPOUND_STRING("Spikes"),       LIST_SIDE_SPIKES},
+    {COMPOUND_STRING("Caltrops"),     LIST_SIDE_SPIKES},
     {COMPOUND_STRING("Sticky Web"),   LIST_SIDE_STICKY_WEB},
     {COMPOUND_STRING("Toxic Spikes"), LIST_SIDE_TOXIC_SPIKES},
     {COMPOUND_STRING("Stealth Rock"), LIST_SIDE_STEALTH_ROCK},
-    {COMPOUND_STRING("Steelsurge"),   LIST_SIDE_STEELSURGE},
+    {COMPOUND_STRING("Booby Trap"),   LIST_SIDE_BOOBY_TRAP},
+    {COMPOUND_STRING("Ice Shards"),   LIST_SIDE_STEELSURGE},
 };
 
 static const struct ListMenuItem sSideStatusListItems[] =
 {
     {COMPOUND_STRING("Reflect"),          LIST_SIDE_REFLECT},
     {COMPOUND_STRING("Light Screen"),     LIST_SIDE_LIGHTSCREEN},
+    {COMPOUND_STRING("Barrier"),          LIST_SIDE_BARRIER},
+    {COMPOUND_STRING("Aurora Veil"),      LIST_SIDE_AURORA_VEIL},
     {COMPOUND_STRING("Safeguard"),        LIST_SIDE_SAFEGUARD},
     {COMPOUND_STRING("Mist"),             LIST_SIDE_MIST},
+    {COMPOUND_STRING("Haze"),             LIST_SIDE_HAZE},
     {COMPOUND_STRING("Tailwind"),         LIST_SIDE_TAILWIND},
-    {COMPOUND_STRING("Aurora Veil"),      LIST_SIDE_AURORA_VEIL},
     {COMPOUND_STRING("Lucky Chant"),      LIST_SIDE_LUCKY_CHANT},
     {COMPOUND_STRING("Damage Non-Types"), LIST_SIDE_DAMAGE_NON_TYPES},
     {COMPOUND_STRING("Rainbow"),          LIST_SIDE_RAINBOW},
@@ -1733,6 +1744,12 @@ static void ChangeHazardsValue(struct BattleDebugMenu *data)
         else if (data->modifyArrows.currValue == 0)
             RemoveHazardFromField(side, HAZARDS_STEELSURGE);
         break;
+    case LIST_SIDE_BOOBY_TRAP:
+        if (data->modifyArrows.currValue > 0)
+            PushHazardTypeToQueue(side, HAZARDS_BOOBY_TRAP);
+        else if (data->modifyArrows.currValue == 0)
+            RemoveHazardFromField(side, HAZARDS_BOOBY_TRAP);
+        break;
     }
 }
 
@@ -1755,6 +1772,9 @@ static u32 GetHazardsValue(struct BattleDebugMenu *data)
         break;
     case LIST_SIDE_STEELSURGE:
         hazardsLayers = IsHazardOnSide(GetBattlerSide(data->battlerId), HAZARDS_STEELSURGE);
+        break;
+    case LIST_SIDE_BOOBY_TRAP:
+        hazardsLayers = IsHazardOnSide(GetBattlerSide(data->battlerId), HAZARDS_BOOBY_TRAP);
         break;
     }
     return hazardsLayers;
@@ -1784,6 +1804,15 @@ static u16 *GetSideStatusValue(struct BattleDebugMenu *data, bool32 changeStatus
                 *(u32 *)(data->modifyArrows.modifiedValPtr) &= ~SIDE_STATUS_LIGHTSCREEN;
         }
         return &sideTimer->lightscreenTimer;
+    case LIST_SIDE_BARRIER:
+        if (changeStatus)
+        {
+            if (statusTrue)
+                *(u32 *)(data->modifyArrows.modifiedValPtr) |= SIDE_STATUS_BARRIER;
+            else
+                *(u32 *)(data->modifyArrows.modifiedValPtr) &= ~SIDE_STATUS_BARRIER;
+        }
+        return &sideTimer->barrierTimer;
     case LIST_SIDE_SAFEGUARD:
         if (changeStatus)
         {
@@ -1802,6 +1831,15 @@ static u16 *GetSideStatusValue(struct BattleDebugMenu *data, bool32 changeStatus
                 *(u32 *)(data->modifyArrows.modifiedValPtr) &= ~SIDE_STATUS_MIST;
         }
         return &sideTimer->mistTimer;
+    case LIST_SIDE_HAZE:
+        if (changeStatus)
+        {
+            if (statusTrue)
+                *(u32 *)(data->modifyArrows.modifiedValPtr) |= SIDE_STATUS_HAZE;
+            else
+                *(u32 *)(data->modifyArrows.modifiedValPtr) &= ~SIDE_STATUS_HAZE;
+        }
+        return &sideTimer->hazeTimer;
     case LIST_SIDE_TAILWIND:
         if (changeStatus)
         {
@@ -2050,6 +2088,7 @@ static void SetUpModifyArrows(struct BattleDebugMenu *data)
         case LIST_SIDE_STICKY_WEB:
         case LIST_SIDE_STEALTH_ROCK:
         case LIST_SIDE_STEELSURGE:
+        case LIST_SIDE_BOOBY_TRAP:
             data->modifyArrows.maxValue = 1;
             break;
         }
@@ -2167,6 +2206,7 @@ static const u8 *const sHoldEffectNames[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_CURE_PSN]         = COMPOUND_STRING("Cure Psn"),
     [HOLD_EFFECT_CURE_BRN]         = COMPOUND_STRING("Cure Brn"),
     [HOLD_EFFECT_CURE_FRZ]         = COMPOUND_STRING("Cure Frz"),
+    [HOLD_EFFECT_CURE_CRS]         = COMPOUND_STRING("Cure Crs"),
     [HOLD_EFFECT_RESTORE_PP]       = COMPOUND_STRING("Restore Pp"),
     [HOLD_EFFECT_CURE_CONFUSION]   = COMPOUND_STRING("Cure Confusion"),
     [HOLD_EFFECT_CURE_STATUS]      = COMPOUND_STRING("Cure Status"),
@@ -2246,7 +2286,9 @@ static const u8 *const sHoldEffectNames[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_MICLE_BERRY]      = COMPOUND_STRING("Micle Berry"),
     [HOLD_EFFECT_CUSTAP_BERRY]     = COMPOUND_STRING("Custap Berry"),
     [HOLD_EFFECT_JABOCA_BERRY]     = COMPOUND_STRING("Jaboca Berry"),
+    [HOLD_EFFECT_JABOCA_BERRY_NEW] = COMPOUND_STRING("Jaboca Berry"),
     [HOLD_EFFECT_ROWAP_BERRY]      = COMPOUND_STRING("Rowap Berry"),
+    [HOLD_EFFECT_ROWAP_BERRY_NEW]  = COMPOUND_STRING("Rowap Berry"),
     [HOLD_EFFECT_KEE_BERRY]        = COMPOUND_STRING("Kee Berry"),
     [HOLD_EFFECT_MARANGA_BERRY]    = COMPOUND_STRING("Maranga Berry"),
     [HOLD_EFFECT_PLATE]            = COMPOUND_STRING("Plate"),
@@ -2268,7 +2310,9 @@ static const u8 *const sHoldEffectNames[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_LUMINOUS_MOSS]    = COMPOUND_STRING("Luminous Moss"),
     [HOLD_EFFECT_SNOWBALL]         = COMPOUND_STRING("Snowball"),
     [HOLD_EFFECT_WEAKNESS_POLICY]  = COMPOUND_STRING("Weakness Policy"),
-    [HOLD_EFFECT_PRIMAL_ORB]       = COMPOUND_STRING("Primal Orb"),
+    [HOLD_EFFECT_RED_ORB]          = COMPOUND_STRING("Red Orb"),
+    [HOLD_EFFECT_BLUE_ORB]         = COMPOUND_STRING("Blue Orb"),
+    [HOLD_EFFECT_JADE_ORB]         = COMPOUND_STRING("Jade Orb"),
     [HOLD_EFFECT_PROTECTIVE_PADS]  = COMPOUND_STRING("Protective Pads"),
     [HOLD_EFFECT_TERRAIN_EXTENDER] = COMPOUND_STRING("Terrain Extender"),
     [HOLD_EFFECT_TERRAIN_SEED]     = COMPOUND_STRING("Seeds"),
@@ -2290,6 +2334,23 @@ static const u8 *const sHoldEffectNames[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_BOOSTER_ENERGY]   = COMPOUND_STRING("Booster Energy"),
     [HOLD_EFFECT_OGERPON_MASK]     = COMPOUND_STRING("Ogerpon Mask"),
     [HOLD_EFFECT_BERSERK_GENE]     = COMPOUND_STRING("Berserk Gene"),
+    [HOLD_EFFECT_REAPER_CLOTH]     = COMPOUND_STRING("Reaper Cloth"),
+    [HOLD_EFFECT_ALL_STATS_UP]     = COMPOUND_STRING("All Stats Up"),
+    [HOLD_EFFECT_CHOICE_BAND_NEW]  = COMPOUND_STRING("Choice Band"),
+    [HOLD_EFFECT_CHOICE_SCARF_NEW] = COMPOUND_STRING("Choice Scarf"),
+    [HOLD_EFFECT_CHOICE_SPECS_NEW] = COMPOUND_STRING("Choice Specs"),
+    [HOLD_EFFECT_SUPPORT_VEST]     = COMPOUND_STRING("Support Vest"),
+    [HOLD_EFFECT_CALAMITY_CHARM]   = COMPOUND_STRING("Calamity Charm"),
+    [HOLD_EFFECT_LUCKY_VEST]       = COMPOUND_STRING("Lucky Vest"),
+    [HOLD_EFFECT_PROTECTOR]        = COMPOUND_STRING("Protector"),
+    [HOLD_EFFECT_PRISM_SCALE]      = COMPOUND_STRING("Prism Scale"),
+    [HOLD_EFFECT_RAZOR_CLAW]       = COMPOUND_STRING("Razor Claw"),
+    [HOLD_EFFECT_RAZOR_FANG]       = COMPOUND_STRING("Razor Fang"),
+    [HOLD_EFFECT_KINGS_ROCK]       = COMPOUND_STRING("King's Rock"),
+    [HOLD_EFFECT_HAPLESS_POLICY]   = COMPOUND_STRING("Hapless Policy"),
+    [HOLD_EFFECT_FINE_LENS]        = COMPOUND_STRING("Fine Lens"),
+    [HOLD_EFFECT_FROZEN_ORB]       = COMPOUND_STRING("Frozen Orb"),
+    [HOLD_EFFECT_CURSED_ORB]       = COMPOUND_STRING("Cursed Orb"),
 };
 
 static const u8 *GetHoldEffectName(enum HoldEffect holdEffect)

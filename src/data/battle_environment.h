@@ -428,7 +428,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .name = _("Burial Ground"),
         .naturePower = MOVE_SHADOW_BALL,
         .secretPowerAnimation = gBattleAnimMove_ShadowSneak,
-        .secretPowerEffect = MOVE_EFFECT_FLINCH,
+        .secretPowerEffect = MOVE_EFFECT_CURSE,
         .camouflageType = TYPE_UNDEAD,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
     },

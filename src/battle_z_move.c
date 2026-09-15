@@ -513,7 +513,7 @@ void SetZEffect(const u8 *nextInstr)
     case Z_EFFECT_RECOVER_HP:
         if (gBattleMons[gBattlerAttacker].hp != gBattleMons[gBattlerAttacker].maxHP)
         {
-            SetHealAmount(gBattlerAttacker, gBattleMons[gBattlerAttacker].maxHP);
+            SetHealAmount(gBattlerAttacker, gBattleMons[gBattlerAttacker].maxHP, gFieldStatuses);
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_Z_RECOVER_HP;
             BattleScriptPush(nextInstr);
             gBattlescriptCurrInstr = BattleScript_RecoverHPZMove;

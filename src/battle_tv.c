@@ -265,6 +265,7 @@ void BattleTv_SetDataBasedOnString(enum StringID stringId)
         gBattleStruct->anyMonHasTransformed = TRUE;
         break;
     case STRINGID_CRITICALHIT:
+    case STRINGID_SUPERCRIT:
         AddMovePoints(PTS_CRITICAL_HIT, moveSlot, 0, 0);
         break;
     case STRINGID_STATROSE:
@@ -598,6 +599,7 @@ void BattleTv_SetDataBasedOnMove(enum Move move, u16 weatherFlags)
     AddPointsBasedOnWeather(weatherFlags, move, moveSlot);
     if (gBattleMons[gBattlerAttacker].volatiles.chargeTimer > 0)
         AddMovePoints(PTS_ELECTRIC, move, moveSlot, 0);
+    // Big Gulp ???
 
     if (move == MOVE_WISH)
     {
@@ -830,6 +832,7 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
         case MOVE_EFFECT_PARALYSIS:
             baseFromEffect += 3;
             break;
+        case MOVE_EFFECT_CURSE:
         case MOVE_EFFECT_BURN:
         case MOVE_EFFECT_POISON:
             baseFromEffect += 4;
@@ -1299,6 +1302,7 @@ static void TrySetBattleSeminarShow(void)
             ctx.move = ctx.chosenMove = gCurrentMove;
             ctx.moveType = GetMoveType(gCurrentMove);
             ctx.isCrit = FALSE;
+            ctx.isSuperCrit = FALSE;
             ctx.randomFactor = FALSE;
             ctx.updateFlags = FALSE;
             ctx.isSelfInflicted = FALSE;

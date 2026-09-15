@@ -844,15 +844,19 @@ static const u32 sCompressedStatuses[] =
     STATUS1_NONE,
     STATUS1_SLEEP_TURN(1),
     STATUS1_SLEEP_TURN(2),
-    STATUS1_SLEEP_TURN(3),
-    STATUS1_SLEEP_TURN(4),
-    STATUS1_SLEEP_TURN(5),
     STATUS1_POISON,
-    STATUS1_BURN,
+    STATUS1_BURN_TURN(1),
+    STATUS1_BURN_TURN(2),
+    STATUS1_BURN_TURN(3),
     STATUS1_FREEZE,
-    STATUS1_PARALYSIS,
+    STATUS1_PRLZ_TURN(1),
+    STATUS1_PRLZ_TURN(2),
+    STATUS1_PRLZ_TURN(3),
     STATUS1_TOXIC_POISON,
-    STATUS1_FROSTBITE,
+    STATUS1_FROST_TURN(1),
+    STATUS1_FROST_TURN(2),
+    STATUS1_FROST_TURN(3),
+    STATUS1_CURSE,
 };
 
 // Attempt to detect situations where the BoxPokemon struct is unable to
@@ -924,6 +928,42 @@ STATIC_ASSERT(MAX_LEVEL_PUSHY <= 102, PokemonSubstruct0_experience_PotentiallyTo
 
 static u32 CompressStatus(u32 status)
 {
+    switch (status)
+    {
+    case STATUS1_SLEEP:
+    {
+        if (STATUS1_SLEEP > STATUS1_SLEEP_TURN(2))
+            status = STATUS1_SLEEP_TURN(2);
+        break;
+    }
+    case STATUS1_BURN:
+    {
+        if (STATUS1_BURN > STATUS1_BURN_TURN(3))
+            status = STATUS1_BURN_TURN(3);
+        break;
+    }
+    case STATUS1_PARALYSIS:
+    {
+        if (STATUS1_PARALYSIS > STATUS1_PRLZ_TURN(3))
+            status = STATUS1_PRLZ_TURN(3);
+        break;
+    }
+    case STATUS1_FROSTBITE:
+    {
+        if (STATUS1_FROSTBITE > STATUS1_FROST_TURN(3))
+            status = STATUS1_FROST_TURN(3);
+        break;
+    }
+    case STATUS1_POISON:
+        status = STATUS1_TOXIC_POISON;
+        break;
+    case STATUS1_FREEZE:
+        status = STATUS1_FROST_TURN(3);
+        break;
+    default:
+        break;
+    }
+    
     s32 i;
     for (i = 0; i < ARRAY_COUNT(sCompressedStatuses); i++)
     {
@@ -1595,6 +1635,8 @@ void CalculateMonStats(struct Pokemon *mon)
         s32 n = 2 * GetSpeciesBaseHP(species) + iv[STAT_HP];
         newMaxHP = (((n + ev[STAT_HP] / 4) * level) / 100) + level + 10;
         newMaxHP = ModifyStatByNature(nature, newMaxHP, STAT_HP);
+        if (GetMonAbility(mon) == ABILITY_INFLATE)
+            newMaxHP = (5 * newMaxHP) / 4;
     }
 
     gBattleScripting.levelUpHP = newMaxHP - oldMaxHP;
@@ -3785,6 +3827,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                 retVal = FALSE;
             if ((itemEffect[i] & ITEM3_PARALYSIS) && HealStatusConditions(mon, STATUS1_PARALYSIS, battler) == 0)
                 retVal = FALSE;
+            if ((itemEffect[i] & ITEM3_CURSE) && HealStatusConditions(mon, STATUS1_CURSE, battler) == 0)
+                retVal = FALSE;
             break;
 
         // Handle ITEM4 effects (Change HP/Atk EVs, HP heal, PP heal, PP up, Revive, and evolution stones)
@@ -5340,7 +5384,9 @@ void MonGainEVs(struct Pokemon *mon, enum Species defeatedSpecies)
         if (totalEVs >= currentEVCap)
             break;
 
-        if (CheckMonHasHadPokerus(mon))
+        if (CheckMonPokerus(mon))
+            multiplier = 8;
+        else if (CheckMonHasHadPokerus(mon))
             multiplier = 4;
         else
             multiplier = 2;

@@ -183,20 +183,25 @@ enum BattleSide
 #define STATUS1_SLEEP            (1 << 0 | 1 << 1 | 1 << 2) // First 3 bits (Number of turns to sleep)
 #define STATUS1_SLEEP_TURN(num)  ((num) << 0) // Just for readability (or if rearranging statuses)
 #define STATUS1_POISON           (1 << 3)
-#define STATUS1_BURN             (1 << 4)
-#define STATUS1_FREEZE           (1 << 5)
-#define STATUS1_PARALYSIS        (1 << 6)
-#define STATUS1_TOXIC_POISON     (1 << 7)
-#define STATUS1_TOXIC_COUNTER    (1 << 8 | 1 << 9 | 1 << 10 | 1 << 11)
-#define STATUS1_TOXIC_TURN(num)  ((num) << 8)
-#define STATUS1_FROSTBITE        (1 << 12)
-#define STATUS1_PSN_ANY          (STATUS1_POISON | STATUS1_TOXIC_POISON)
-#define STATUS1_ANY              (STATUS1_SLEEP | STATUS1_POISON | STATUS1_BURN | STATUS1_FREEZE | STATUS1_PARALYSIS | STATUS1_TOXIC_POISON | STATUS1_FROSTBITE)
+#define STATUS1_BURN             (1 << 4 | 1 << 5 | 1 << 6)
+#define STATUS1_BURN_TURN(num)   ((num) << 4)
+#define STATUS1_FREEZE           (1 << 7)
+#define STATUS1_PARALYSIS        (1 << 8 | 1 << 9 | 1 << 10)
+#define STATUS1_PRLZ_TURN(num)   ((num) << 8)
+#define STATUS1_TOXIC_POISON     (1 << 11)
+#define STATUS1_TOXIC_COUNTER    (1 << 12 | 1 << 13 | 1 << 14)
+#define STATUS1_TOXIC_TURN(num)  ((num) << 12)
+#define STATUS1_FROSTBITE        (1 << 15 | 1 << 16 | 1 << 17)
+#define STATUS1_FROST_TURN(num)  ((num) << 15)
+#define STATUS1_CURSE		     (1 << 18)
 
-#define STATUS1_CAN_MOVE         (STATUS1_POISON | STATUS1_BURN | STATUS1_PARALYSIS | STATUS1_TOXIC_POISON | STATUS1_FROSTBITE)
+#define STATUS1_PSN_ANY          (STATUS1_POISON | STATUS1_TOXIC_POISON)
+#define STATUS1_ANY              (STATUS1_SLEEP | STATUS1_POISON | STATUS1_BURN | STATUS1_FREEZE | STATUS1_PARALYSIS | STATUS1_TOXIC_POISON | STATUS1_FROSTBITE | STATUS1_CURSE)
+
+#define STATUS1_CAN_MOVE         (STATUS1_POISON | STATUS1_BURN | STATUS1_PARALYSIS | STATUS1_TOXIC_POISON | STATUS1_FROSTBITE | STATUS1_CURSE)
 #define STATUS1_INCAPACITATED    (STATUS1_SLEEP | STATUS1_FREEZE)
 #define STATUS1_ICY_ANY          (STATUS1_FREEZE | STATUS1_FROSTBITE)
-#define STATUS1_DAMAGING         (STATUS1_PSN_ANY | STATUS1_BURN | STATUS1_FROSTBITE)
+#define STATUS1_DAMAGING         (STATUS1_PSN_ANY | STATUS1_BURN | STATUS1_FROSTBITE | STATUS1_CURSE)
 
 enum VolatileFlags
 {
@@ -221,7 +226,7 @@ enum VolatileFlags
     F(VOLATILE_WRAPPED_MOVE,                wrappedMove,                   (u32, MOVES_COUNT_ALL - 1)) \
     F(VOLATILE_WRAPPED_BINDING_BAND,        wrappedBindingBand,            (u32, 1)) \
     F(VOLATILE_POWDER,                      powder,                        (u32, 1)) \
-    F(VOLATILE_UNUSED,                      padding,                       (u32, 1)) \
+    F(VOLATILE_BLOCK,                       block,                         (u32, 1)) \
     F(VOLATILE_INFATUATION,                 infatuation,                   (enum BattlerId, MAX_BITS(MAX_BATTLERS_COUNT))) \
     F(VOLATILE_DEFENSE_CURL,                defenseCurl,                   (u32, 1)) \
     F(VOLATILE_TRANSFORMED,                 transformed,                   (u32, 1)) \
@@ -327,7 +332,13 @@ enum VolatileFlags
     F(VOLATILE_PARADOX_BOOSTED_STAT,        paradoxBoostedStat,            (enum Stat, NUM_STATS - 1)) \
     F(VOLATILE_UNABLE_TO_USE_MOVE,          unableToUseMove,               (u32, 1)) \
     F(VOLATILE_ACTIVATE_DANCER,             activateDancer,                (u32, 1)) \
-    F(VOLATILE_TRACE_ACTIVATED,             traceActivated,                (u32, 1))
+    F(VOLATILE_TRACE_ACTIVATED,             traceActivated,                (u32, 1)) \
+    F(VOLATILE_BIG_GULP_TIMER,              bigGulpTimer,                  (u32, 3)) \
+    F(VOLATILE_WATER_VEIL_ACTIVE,           waterVeilActive,               (u32, 1)) \
+    F(VOLATILE_TRUCE_TIMER,                 truceTimer,                    (u32, B_TRUCE_TIMER)) \
+    F(VOLATILE_LIQUIFY,                     liquify,                       (u32, 1)) \
+    F(VOLATILE_COIL,                        coil,                          (u32, 1)) \
+    // F(VOLATILE_LOVE_TIMER,               loveTimer,                     (u32, 1))
 
 
 /* Use within a macro to get the maximum allowed value for a volatile. Requires _typeMaxValue as input. */
@@ -408,8 +419,10 @@ enum QueuedSwitch
 #define SIDE_STATUS_RAINBOW                 (1 << 8)
 #define SIDE_STATUS_SEA_OF_FIRE             (1 << 9)
 #define SIDE_STATUS_SWAMP                   (1 << 10)
+#define SIDE_STATUS_BARRIER                 (1 << 11)
+#define SIDE_STATUS_HAZE                    (1 << 12)
 
-#define SIDE_STATUS_SCREEN_ANY     (SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN | SIDE_STATUS_AURORA_VEIL)
+#define SIDE_STATUS_SCREEN_ANY     (SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN | SIDE_STATUS_AURORA_VEIL | SIDE_STATUS_BARRIER)
 #define SIDE_STATUS_PLEDGE_ANY     (SIDE_STATUS_RAINBOW | SIDE_STATUS_SEA_OF_FIRE | SIDE_STATUS_SWAMP)
 #define SIDE_STATUS_GOOD_FOG       (SIDE_STATUS_SCREEN_ANY | SIDE_STATUS_SAFEGUARD | SIDE_STATUS_MIST)
 #define SIDE_STATUS_GOOD_COURT     (SIDE_STATUS_GOOD_FOG | SIDE_STATUS_TAILWIND | SIDE_STATUS_LUCKY_CHANT | SIDE_STATUS_RAINBOW)
@@ -423,6 +436,7 @@ enum Hazards
     HAZARDS_TOXIC_SPIKES,
     HAZARDS_STEALTH_ROCK,
     HAZARDS_STEELSURGE,
+    HAZARDS_BOOBY_TRAP,
     HAZARDS_MAX_COUNT,
 };
 
@@ -431,6 +445,7 @@ enum TypeSideHazard
 {
     TYPE_SIDE_HAZARD_POINTED_STONES = TYPE_ROCK,
     TYPE_SIDE_HAZARD_SHARP_STEEL    = TYPE_STEEL,
+    TYPE_SIDE_HAZARD_ICE_SHARDS     = TYPE_ICE,
 };
 
 // Field affecting statuses.
@@ -446,8 +461,16 @@ enum TypeSideHazard
 #define STATUS_FIELD_PSYCHIC_TERRAIN                (1 << 9)
 #define STATUS_FIELD_ION_DELUGE                     (1 << 10)
 #define STATUS_FIELD_FAIRY_LOCK                     (1 << 11)
+#define STATUS_FIELD_BUGGY_TERRAIN                  (1 << 12)
+#define STATUS_FIELD_FAULTY_TERRAIN                 (1 << 13)
+#define STATUS_FIELD_SPOOKY_TERRAIN                 (1 << 14)
+#define STATUS_FIELD_ERROR_ROOM                     (1 << 15)
+#define STATUS_FIELD_STATIC_ROOM                    (1 << 16)
+#define STATUS_FIELD_REVERSE_ROOM                   (1 << 17)
+#define STATUS_FIELD_GRIM_ROOM                      (1 << 18)
 
-#define STATUS_FIELD_TERRAIN_ANY        (STATUS_FIELD_GRASSY_TERRAIN | STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_PSYCHIC_TERRAIN)
+#define STATUS_FIELD_TERRAIN_ANY        (STATUS_FIELD_GRASSY_TERRAIN | STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_PSYCHIC_TERRAIN | STATUS_FIELD_BUGGY_TERRAIN | STATUS_FIELD_FAULTY_TERRAIN | STATUS_FIELD_SPOOKY_TERRAIN)
+#define STATUS_FIELD_ROOM_ANY           (STATUS_FIELD_TRICK_ROOM | STATUS_FIELD_WONDER_ROOM | STATUS_FIELD_ERROR_ROOM | STATUS_FIELD_STATIC_ROOM | STATUS_FIELD_REVERSE_ROOM | STATUS_FIELD_GRIM_ROOM)
 
 // Flags describing move's result
 #define MOVE_RESULT_MISSED                 (1 << 0)
@@ -500,7 +523,7 @@ enum BattleWeather
 #define B_WEATHER_FOG           (1 << BATTLE_WEATHER_FOG)
 #define B_WEATHER_STRONG_WINDS  (1 << BATTLE_WEATHER_STRONG_WINDS)
 
-#define B_WEATHER_DAMAGING_ANY  (B_WEATHER_HAIL | B_WEATHER_SANDSTORM)
+#define B_WEATHER_DAMAGING_ANY  (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_SUN)
 #define B_WEATHER_ICY_ANY       (B_WEATHER_HAIL | B_WEATHER_SNOW)
 #define B_WEATHER_LOW_LIGHT     (B_WEATHER_FOG | B_WEATHER_ICY_ANY | B_WEATHER_RAIN | B_WEATHER_SANDSTORM)
 #define B_WEATHER_PRIMAL_ANY    (B_WEATHER_RAIN_PRIMAL | B_WEATHER_SUN_PRIMAL | B_WEATHER_STRONG_WINDS)
@@ -517,6 +540,9 @@ enum __attribute__((packed)) MoveEffect
     MOVE_EFFECT_PARALYSIS = 5,
     MOVE_EFFECT_TOXIC = 6,
     MOVE_EFFECT_FROSTBITE = 7,
+    MOVE_EFFECT_CURSE = 8,
+    MOVE_EFFECT_DRAGON_BREATH,
+    MOVE_EFFECT_FROSTBITE_OR_SPD_MINUS_1,
     MOVE_EFFECT_CONFUSION,
     MOVE_EFFECT_FLINCH,
     MOVE_EFFECT_TRI_ATTACK,
@@ -563,6 +589,9 @@ enum __attribute__((packed)) MoveEffect
     MOVE_EFFECT_RAINBOW,
     MOVE_EFFECT_SEA_OF_FIRE,
     MOVE_EFFECT_SWAMP,
+    MOVE_EFFECT_ESCAPE_BIND,
+    MOVE_EFFECT_PLAGUE,
+    MOVE_EFFECT_SPELL_CHAIN,
 
     // Max move effects happen earlier in the execution chain.
     // For example stealth rock from G-Max Stonesurge is set up before abilities but from Stone Axe after.
@@ -572,10 +601,16 @@ enum __attribute__((packed)) MoveEffect
     MOVE_EFFECT_RAIN,
     MOVE_EFFECT_SANDSTORM,
     MOVE_EFFECT_HAIL,
+    MOVE_EFFECT_STRONG_WINDS,
+    MOVE_EFFECT_SNOW,
+    MOVE_EFFECT_MONSOON,
     MOVE_EFFECT_MISTY_TERRAIN,
     MOVE_EFFECT_GRASSY_TERRAIN,
     MOVE_EFFECT_ELECTRIC_TERRAIN,
     MOVE_EFFECT_PSYCHIC_TERRAIN,
+    MOVE_EFFECT_BUGGY_TERRAIN,
+    MOVE_EFFECT_FAULTY_TERRAIN,
+    MOVE_EFFECT_SPOOKY_TERRAIN,
     MOVE_EFFECT_VINE_LASH,
     MOVE_EFFECT_WILDFIRE,
     MOVE_EFFECT_CANNONADE,
@@ -601,6 +636,8 @@ enum __attribute__((packed)) MoveEffect
     MOVE_EFFECT_CONFUSE_SIDE,
     MOVE_EFFECT_STEELSURGE, // Steel type rocks
     MOVE_EFFECT_STEALTH_ROCK, // Max Move rocks, not to be confused with rocks set up from Ceasless Edge (same but differ in execution order)
+    MOVE_EFFECT_TOXIC_SPIKES,
+    MOVE_EFFECT_SPIKES,
     MOVE_EFFECT_TORMENT_SIDE,
     MOVE_EFFECT_FIRE_SPIN_SIDE,
     MOVE_EFFECT_FIXED_POWER,
@@ -823,6 +860,23 @@ enum FaintedActions
     F(STARTING_STATUS_STEALTH_ROCK_OPPONENT,          stealthRockOpponent,        (u32, 1)) /* Stealth Rock Opponent */                    \
     F(STARTING_STATUS_SHARP_STEEL_PLAYER,             sharpSteelPlayer,           (u32, 1)) /* Sharp Steel Player */                       \
     F(STARTING_STATUS_SHARP_STEEL_OPPONENT,           sharpSteelOpponent,         (u32, 1)) /* Sharp Steel Opponent */                     \
+    /* New */                                                                                                                              \
+    F(STARTING_STATUS_BUGGY_TERRAIN,                  buggyTerrain,               (u32, 1)) /* Buggy Terrain (Permanent) */                \
+    F(STARTING_STATUS_BUGGY_TERRAIN_TEMPORARY,        buggyTerrainTemporary,      (u32, 1)) /* Buggy Terrain Temporary (5 turns) */        \
+    F(STARTING_STATUS_FAULTY_TERRAIN,                 faultyTerrain,              (u32, 1)) /* Faulty Terrain (Permanent) */               \
+    F(STARTING_STATUS_FAULTY_TERRAIN_TEMPORARY,       faultyTerrainTemporary,     (u32, 1)) /* Faulty Terrain Temporary (5 turns) */       \
+    F(STARTING_STATUS_SPOOKY_TERRAIN,                 spookyTerrain,              (u32, 1)) /* Spooky Terrain (Permanent) */               \
+    F(STARTING_STATUS_SPOOKY_TERRAIN_TEMPORARY,       spookyTerrainTemporary,     (u32, 1)) /* Spooky Terrain Temporary (5 turns) */       \
+    F(STARTING_STATUS_ERROR_ROOM,                     errorRoom,                  (u32, 1)) /* Error Room (Permanent) */                   \
+    F(STARTING_STATUS_ERROR_ROOM_TEMPORARY,           errorRoomTemporary,         (u32, 1)) /* Error Room Temporary (5 turns) */           \
+    F(STARTING_STATUS_STATIC_ROOM,                    staticRoom,                 (u32, 1)) /* Static Room (Permanent) */                  \
+    F(STARTING_STATUS_STATIC_ROOM_TEMPORARY,          staticRoomTemporary,        (u32, 1)) /* Static Room Temporary (5 turns) */          \
+    F(STARTING_STATUS_REVERSE_ROOM,                   reverseRoom,                (u32, 1)) /* Reverse Room (Permanent) */                 \
+    F(STARTING_STATUS_REVERSE_ROOM_TEMPORARY,         reverseRoomTemporary,       (u32, 1)) /* Reverse Room Temporary (5 turns) */         \
+    F(STARTING_STATUS_GRIM_ROOM,                      grimRoom,                   (u32, 1)) /* Grim Room (Permanent) */                    \
+    F(STARTING_STATUS_GRIM_ROOM_TEMPORARY,            grimRoomTemporary,          (u32, 1)) /* Grim Room Temporary (5 turns) */            \
+    F(STARTING_STATUS_BOOBY_TRAP_PLAYER,              boobyTrapPlayer,            (u32, 1)) /* Booby Trap Player */                        \
+    F(STARTING_STATUS_BOOBY_TRAP_OPPONENT,            boobyTrapOpponent,          (u32, 1)) /* Booby Trap Opponent */                      \
 
 #define UNPACK_STARTING_STATUS_ENUMS(_enum, ...) _enum,
 

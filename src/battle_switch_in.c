@@ -49,6 +49,41 @@ bool32 DoSwitchInEvents(void)
         gBattleStruct->switchInBattlerCounter = 0;
         gBattleStruct->eventState.switchIn++;
         break;
+    case SWITCH_IN_EVENTS_REVEAL_ITEM:
+        while (gBattleStruct->switchInBattlerCounter < gBattlersCount)
+        {
+            battler = gBattlersByRawSpeed[gBattleStruct->switchInBattlerCounter++];
+            if (gBattleMons[battler].item != ITEM_NONE && (!IsOnPlayerSide(battler) || (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
+                && !GetBattlerPartyState(battler)->itemRevealed)
+            {
+                GetBattlerPartyState(battler)->itemRevealed = TRUE;
+                gBattlerAttacker = battler;
+                gLastUsedItem = gBattleMons[battler].item;
+                BattleScriptCall(BattleScript_ItemRevealMsg);
+                return TRUE;
+            }
+        }
+        gBattleStruct->switchInBattlerCounter = 0;
+        gBattleStruct->eventState.switchIn++;
+        break;
+    case SWITCH_IN_EVENTS_WATER_VEIL:
+        while (gBattleStruct->switchInBattlerCounter < gBattlersCount)
+        {
+            battler = gBattlersByRawSpeed[gBattleStruct->switchInBattlerCounter++];
+            if (gBattleEnvironment != BATTLE_ENVIRONMENT_UNDERWATER)
+            {
+                if (IS_BATTLER_OF_TYPE(battler, TYPE_OCEAN) && !gBattleMons[battler].volatiles.waterVeilActive)
+                {
+                    gBattleMons[battler].volatiles.waterVeilActive = TRUE;
+                    gBattlerAttacker = battler;
+                    BattleScriptCall(BattleScript_WaterVeilSwitchIn);
+                    return TRUE;
+                }
+            }
+        }
+        gBattleStruct->switchInBattlerCounter = 0;
+        gBattleStruct->eventState.switchIn++;
+        break;
     case SWITCH_IN_EVENTS_NEUTRALIZING_GAS:
         while (gBattleStruct->switchInBattlerCounter < gBattlersCount)
         {
@@ -221,7 +256,7 @@ static bool32 FirstEventBlockEvents(struct BattleCalcValues *calcValues)
         else if (gBattleStruct->battlerState[battler].storedHealingWish)
         {
             gBattleStruct->battlerState[battler].storedHealingWish = FALSE;
-            SetHealAmount(battler, GetNonDynamaxMaxHP(battler));
+            SetHealAmount(battler, GetNonDynamaxMaxHP(battler), gFieldStatuses);
             gBattleScripting.battler = battler;
             BattleScriptCall(BattleScript_HealingWishActivates);
             effect = TRUE;
@@ -229,7 +264,7 @@ static bool32 FirstEventBlockEvents(struct BattleCalcValues *calcValues)
         else if (gBattleStruct->battlerState[battler].storedLunarDance)
         {
             gBattleStruct->battlerState[battler].storedLunarDance = FALSE;
-            SetHealAmount(battler, GetNonDynamaxMaxHP(battler));
+            SetHealAmount(battler, GetNonDynamaxMaxHP(battler), gFieldStatuses);
             gBattleScripting.battler = battler;
             BattleScriptCall(BattleScript_LunarDanceActivates);
             effect = TRUE;
@@ -237,7 +272,7 @@ static bool32 FirstEventBlockEvents(struct BattleCalcValues *calcValues)
         else if (gBattleStruct->zmove.healReplacement & 1u << battler)
         {
             gBattleStruct->zmove.healReplacement &= ~(1u << battler);
-            SetHealAmount(battler, GetNonDynamaxMaxHP(battler));
+            SetHealAmount(battler, GetNonDynamaxMaxHP(battler), gFieldStatuses);
             gBattleScripting.battler = battler;
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_Z_HP_TRAP;
             BattleScriptCall(BattleScript_HealReplacementZMove);
@@ -315,18 +350,22 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
     case HAZARDS_NONE:
         break;
     case HAZARDS_SPIKES:
-        if (!IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD)
-         && IsBattlerAffectedByHazards(battler, holdEffect, FALSE)
-         && IsBattlerGrounded(battler, ability, holdEffect))
+        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE)
+         && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD)
+         && !IsAbilityAndRecord(battler, ability, ABILITY_BATTLE_ARMOR)
+         && !IsAbilityAndRecord(battler, ability, ABILITY_SHELL_ARMOR)
+         && !IsAbilityAndRecord(battler, ability, ABILITY_SOLID_ROCK))
         {
-            s32 spikesDmg = GetNonDynamaxMaxHP(battler) / ((5 - gSideTimers[side].spikesAmount) * 2);
-            SetPassiveDamageAmount(battler, spikesDmg);
+            u8 dmgFactor = ((5 - gSideTimers[side].spikesAmount) * 2);
+            if (dmgFactor < 5)
+                dmgFactor = 5;
+            SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / dmgFactor);
             SetDmgHazardsBattlescript(battler, B_MSG_PKMNHURTBYSPIKES);
             effect = TRUE;
         }
         break;
     case HAZARDS_STICKY_WEB:
-        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && IsBattlerGrounded(battler, ability, holdEffect))
+        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE))
         {
             gEffectBattler = battler;
             SetStatChange(battler, STAT_SPEED, -1);
@@ -339,7 +378,7 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
         {
             effect = FALSE;
         }
-        else if (IS_BATTLER_OF_TYPE(battler, TYPE_POISON)) // Absorb the toxic spikes.
+        else if (IS_BATTLER_OF_TYPE(battler, TYPE_POISON) && !IsSpookyTerrainAffected(battler, gFieldStatuses)) // Absorb the toxic spikes.
         {
             gSideTimers[side].toxicSpikesAmount = 0;
             RemoveHazardFromField(side, HAZARDS_TOXIC_SPIKES);
@@ -349,7 +388,8 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
             effect = TRUE;
         }
         else if (IsBattlerAffectedByHazards(battler, holdEffect, TRUE)
-              && CanBePoisoned(battler, battler, ABILITY_NONE, ability))
+              && CanBePoisoned(battler, battler, ABILITY_NONE, ability)
+              && ability != ABILITY_BATTLE_ARMOR && ability != ABILITY_SHELL_ARMOR && ability != ABILITY_SOLID_ROCK)
         {
             gBattleScripting.battler = battler;
             BattleScriptPushCursor();
@@ -357,11 +397,12 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
             {
                 gBattlescriptCurrInstr = BattleScript_ToxicSpikesBadlyPoisoned;
                 gBattleMons[battler].status1 |= STATUS1_TOXIC_POISON;
+                gBattleMons[battler].status1 += STATUS1_TOXIC_TURN(1);
             }
             else
             {
                 gBattlescriptCurrInstr = BattleScript_ToxicSpikesPoisoned;
-                gBattleMons[battler].status1 |= STATUS1_POISON;
+                gBattleMons[battler].status1 |= STATUS1_TOXIC_POISON;
             }
 
             BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[battler].status1), &gBattleMons[battler].status1);
@@ -370,7 +411,8 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
         }
         break;
     case HAZARDS_STEALTH_ROCK:
-        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD)
+        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD 
+         && ability != ABILITY_BATTLE_ARMOR && ability != ABILITY_SHELL_ARMOR && ability != ABILITY_SOLID_ROCK)
         {
             gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_POINTED_STONES, battler);
             if (gBattleStruct->passiveHpUpdate[battler] != 0)
@@ -381,14 +423,36 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
         }
         break;
     case HAZARDS_STEELSURGE:
-        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD)
+        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD 
+         && ability != ABILITY_BATTLE_ARMOR && ability != ABILITY_SHELL_ARMOR && ability != ABILITY_SOLID_ROCK)
         {
-            gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_SHARP_STEEL, battler);
+            gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_ICE_SHARDS, battler);
             if (gBattleStruct->passiveHpUpdate[battler] != 0)
             {
                 SetDmgHazardsBattlescript(battler, B_MSG_SHARPSTEELDMG);
                 effect = TRUE;
             }
+        }
+        break;
+    case HAZARDS_BOOBY_TRAP:
+        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD 
+         && ability != ABILITY_BATTLE_ARMOR && ability != ABILITY_SHELL_ARMOR && ability != ABILITY_SOLID_ROCK)
+        {
+            SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
+            RemoveHazardFromField(side, HAZARDS_BOOBY_TRAP);
+            if (!IS_BATTLER_OF_TYPE(battler, TYPE_GHOST) && !(gBattleMons[battler].volatiles.escapePrevention))
+            {
+                gBattleMons[battler].volatiles.escapePrevention = TRUE;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CAUGHTBYTRAP;
+            }
+            else
+            {
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DAMAGEDBYTRAP;
+            }
+            gBattleScripting.battler = battler;
+            BattleScriptPushCursor();
+            gBattlescriptCurrInstr = BattleScript_BoobyTrapTrigger;
+            effect = TRUE;
         }
         break;
     case HAZARDS_MAX_COUNT:

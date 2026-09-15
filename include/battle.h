@@ -69,7 +69,7 @@ struct ProtectStruct
     u32 stealMove:1;
     u32 chargingTurn:1;
     u32 fleeType:2; // 0: Normal, 1: FLEE_ITEM, 2: FLEE_ABILITY
-    u32 laggingTail:1;
+    u32 slowItem:1;
     u32 palaceUnableToUseMove:1;
     u32 statRaised:1;
     u32 usedCustapBerry:1;    // also quick claw
@@ -85,11 +85,16 @@ struct ProtectStruct
     u32 forcedSwitch:1;
     u32 myceliumMight:1;
     u32 survivedOHKO:1; // Used to keep track of effects that allow focus punch when surviving moves like Fissure
-    u32 padding1:3;
+    u32 eatPowerHerb:1;
+    u32 soloFollowMeTimer:1;
+    u32 padding1:1;
     // End of 32-bit bitfield
     u16 helpingHand:3;
+    u16 direOmen:3;
     u16 revengeDoubled:4;
-    u16 padding2:9;
+    u16 usedFuryCutter:1;
+    u16 howlActive:1;
+    u16 padding2:6;
     // End of 16-bit bitfield
     u16 physicalDmg;
     u16 specialDmg;
@@ -124,7 +129,8 @@ struct SpecialStatus
     u8 dancerUsedMove:1;
     u8 criticalHit:1;
     u8 shellBellEmergencyExit:1;
-    u8 padding:2;
+    u8 superCrit:1;
+    u8 padding:1;
     // End of byte
     u8 gemParam:7;
     u8 gemBoost:1;
@@ -147,7 +153,9 @@ struct SideTimer
 {
     u16 reflectTimer;
     u16 lightscreenTimer;
+    u16 barrierTimer;
     u16 mistTimer;
+    u16 hazeTimer;
     u16 safeguardTimer;
     u8 spikesAmount:4;
     u8 toxicSpikesAmount:4;
@@ -514,6 +522,7 @@ struct BattlerState
     u32 canPickupItem:1;
     u32 ateBoost:1;
     u32 wasAboveHalfHp:1; // For Berserk, Emergency Exit, Wimp Out and Anger Shell.
+    u32 wasAboveQuarterHp:1; // For Run Away
     u32 commanderSpecies:11;
     u32 selectionScriptFinished:1;
     u32 lastMoveTarget:3; // The last target on which each mon used a move, for the sake of Instruct
@@ -523,7 +532,7 @@ struct BattlerState
     u16 notOnField:1;
     u16 redCardSwitched:1;
     u16 isFirstTurn:2; // Starts at 2 on switch in and counts down during end turn
-    u16 padding:11;
+    u16 padding:10;
     // End of Word
 };
 
@@ -539,7 +548,10 @@ struct PartyState
     u32 changedSpecies:11; // For forms when multiple mons can change into the same Pokémon.
     u32 sentOut:1;
     u32 isKnockedOff:1;
-    u32 padding:8;
+    u32 sturdyActivation:1;
+    u32 itemRevealed:1;
+    u32 immobilityActivated:1;
+    u32 padding:5;
     u16 usedHeldItem;
 };
 
@@ -712,7 +724,8 @@ struct BattleStruct
     u8 numHazards[NUM_BATTLE_SIDES];
     u8 hazardsCounter:4; // Counter for applying hazard on switch in
     enum SubmoveState submoveAnnouncement:2;
-    u8 padding:2;
+    u8 confusionRandomMove:1; // Set by CancelerConfused, consumed by CancelerCallSubmove
+    u8 padding:1;
     u32 incrementEchoedVoice:1;
     u32 echoedVoiceCounter:3;
     u32 attackAnimPlayed:1;
@@ -1160,6 +1173,26 @@ static inline bool32 IsDoubleBattle(void)
     return !!(gBattleTypeFlags & BATTLE_TYPE_MORE_THAN_TWO_BATTLERS);
 }
 
+// GetOppositeBattler lands on the diagonal foe in a double battle (flank is preserved across the side flip).
+// This flips the flank too, landing on the foe directly across the field instead.
+static inline enum BattlerId GetAdjacentFoe(enum BattlerId battler)
+{
+    if (IsDoubleBattle())
+        return GetPartnerBattler(GetOppositeBattler(battler));
+    else
+        return GetOppositeBattler(battler);
+}
+
+static inline enum BattlerId GetFoeForSwitchInEffect(enum BattlerId battler)
+{
+    enum BattlerId adjacentFoe = GetAdjacentFoe(battler);
+
+    if (IsDoubleBattle() && IsBattlerAlive(adjacentFoe))
+        return adjacentFoe;
+    else
+        return GetOppositeBattler(battler);
+}
+
 static inline bool32 IsSpreadMove(enum MoveTarget moveTarget)
 {
     if (!IsDoubleBattle())
@@ -1179,11 +1212,15 @@ static inline void SetPassiveDamageAmount(enum BattlerId battler, s32 value)
     gBattleStruct->passiveHpUpdate[battler] = value;
 }
 
-static inline void SetHealAmount(enum BattlerId battler, s32 value)
+static inline void SetHealAmount(enum BattlerId battler, s32 value, u32 fieldStatuses)
 {
     if (value == 0)
         value = 1;
-    gBattleStruct->passiveHpUpdate[battler] = -1 * value;
+    
+    if (fieldStatuses & STATUS_FIELD_GRIM_ROOM)
+        gBattleStruct->passiveHpUpdate[battler] = value;
+    else
+        gBattleStruct->passiveHpUpdate[battler] = -1 * value;
 }
 
 static inline bool32 IsGhostBattleWithoutScope(void)
