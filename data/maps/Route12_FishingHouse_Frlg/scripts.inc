@@ -88,7 +88,7 @@ Route12_FishingHouse_EventScript_CheckMagikarpRecord_9:
 # 47 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"
 	setflag FLAG_GOT_RECORD_SETTING_MAGIKARP
 # 48 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"
-	msgbox Route12_FishingHouse_Text_WhoaXInchesTakeThis
+	msgbox Route12_FishingHouse_Text_WhoaXSizeTakeThis
 	giveitem ITEM_NET_BALL
 # 0 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"
 	compare VAR_RESULT, FALSE
@@ -118,12 +118,12 @@ Route12_FishingHouse_EventScript_CheckMagikarpRecord_10:
 
 Route12_FishingHouse_EventScript_CheckMagikarpRecord_17:
 # 42 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"
-	msgbox Route12_FishingHouse_Text_HmmXInchesDoesntMeasureUp
+	msgbox Route12_FishingHouse_Text_HmmXSizeDoesntMeasureUp
 	goto Route12_FishingHouse_EventScript_CheckMagikarpRecord_4
 
 Route12_FishingHouse_EventScript_CheckMagikarpRecord_18:
 # 43 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"
-	msgbox Route12_FishingHouse_Text_HuhXInchesSameSizeAsLast
+	msgbox Route12_FishingHouse_Text_HuhXSizeSameSizeAsLast
 	goto Route12_FishingHouse_EventScript_CheckMagikarpRecord_4
 
 Route12_FishingHouse_EventScript_CheckMagikarpRecord_20:
@@ -148,7 +148,7 @@ Route12_FishingHouse_EventScript_MagikarpRecordSign_2:
 # 62 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"
 	special GetMagikarpSizeRecordInfo
 # 63 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"
-	msgbox Route12_FishingHouse_Text_MostGiganticMagikarpXInches
+	msgbox Route12_FishingHouse_Text_MostGiganticMagikarpXSize
 	goto Route12_FishingHouse_EventScript_MagikarpRecordSign_1
 
 
@@ -205,10 +205,10 @@ Route12_FishingHouse_Text_OhMagikarpAllowMeToSee::
 	.string "Why, if it isn't a MAGIKARP!\p"
 	.string "Allow me to see it, quick!$"
 
-Route12_FishingHouse_Text_WhoaXInchesTakeThis::
+Route12_FishingHouse_Text_WhoaXSizeTakeThis::
 # 135 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"
 	.string "… … …Whoa!\n"
-	.string "{STR_VAR_2} inches!\p"
+	.string "{STR_VAR_2}!\p"
 	.string "You have a rare appreciation for\n"
 	.string "the fine, poetic aspects of fishing!\p"
 	.string "You must take this.\n"
@@ -219,19 +219,19 @@ Route12_FishingHouse_Text_LookForwardToGreaterRecords::
 	.string "I'll look forward to seeing greater\n"
 	.string "records from you!$"
 
-Route12_FishingHouse_Text_HuhXInchesSameSizeAsLast::
+Route12_FishingHouse_Text_HuhXSizeSameSizeAsLast::
 # 151 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"
 	.string "Huh?\n"
-	.string "{STR_VAR_2} inches?\p"
+	.string "{STR_VAR_2}?\p"
 	.string "This is the same size as the one\n"
 	.string "I saw before.$"
 
-Route12_FishingHouse_Text_HmmXInchesDoesntMeasureUp::
+Route12_FishingHouse_Text_HmmXSizeDoesntMeasureUp::
 # 159 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"
 	.string "Hmm…\n"
-	.string "This one is {STR_VAR_2} inches long.\p"
+	.string "This one is {STR_VAR_2} long.\p"
 	.string "It doesn't measure up to the\n"
-	.string "{STR_VAR_3}-inch one you brought before.$"
+	.string "{STR_VAR_3} one you brought before.$"
 
 Route12_FishingHouse_Text_DoesntLookLikeMagikarp::
 # 167 "data/maps/Route12_FishingHouse_Frlg/scripts.pory"

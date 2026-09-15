@@ -55,7 +55,6 @@ void ClearStatChangeValues(void);
 void ClearOtherStatChangeValues(enum BattlerId battler);
 void ClearBothStatChangeQueues(void);
 enum StatChangeResult TrySingleStatChange(struct BattleCalcValues *cv, struct StatChange *st);
-
 u32 GetStatStage(u32 stat, const struct AdditionalEffect *additionalEffect);
 u32 GetDynamicStatValue(const struct AdditionalEffect *additionalEffect);
 u32 GetEligibleStatBits(enum BattlerId battler, enum Ability ability, enum StatChangeType changeType, u32 numStats, u32 excludedBits);
@@ -63,8 +62,8 @@ enum Stat PickStatFromBits(enum RandomTag tag, u32 bits);
 enum Stat PickRandomStat(enum BattlerId battler, enum Ability ability, enum StatChangeType changeType, u32 numStats);
 bool32 ResolveDynamicStat(enum BattlerId battler, enum Ability ability, const struct AdditionalEffect *additionalEffect, enum Stat *stat);
 
+bool32 ShouldDefiantCompetitiveActivate(enum BattlerId battler, enum Ability ability);
 enum MoveResult DoStatChangeResolution(struct BattleCalcValues *cv);
-
 bool32 CanStatChange(struct BattleCalcValues *cv, struct StatChange *st);
 bool32 CanAbilityPreventStatChange(enum Ability ability);
 bool32 IsStatChangeStatusMove(enum Move move, bool32 (*isStatChange)(const struct AdditionalEffect *effect));

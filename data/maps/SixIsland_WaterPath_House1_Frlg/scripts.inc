@@ -26,7 +26,7 @@ SixIsland_WaterPath_House1_EventScript_Beauty_4:
 # 32 "data/maps/SixIsland_WaterPath_House1_Frlg/scripts.pory"
 	setflag FLAG_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1
 # 33 "data/maps/SixIsland_WaterPath_House1_Frlg/scripts.pory"
-	msgbox SixIsland_WaterPath_House1_Text_ItsXInchesDeserveReward
+	msgbox SixIsland_WaterPath_House1_Text_ItsXSizeDeserveReward
 	giveitem ITEM_NEST_BALL
 # 0 "data/maps/SixIsland_WaterPath_House1_Frlg/scripts.pory"
 	compare VAR_RESULT, FALSE
@@ -75,12 +75,12 @@ SixIsland_WaterPath_House1_EventScript_Beauty_13:
 
 SixIsland_WaterPath_House1_EventScript_Beauty_14:
 # 22 "data/maps/SixIsland_WaterPath_House1_Frlg/scripts.pory"
-	msgbox SixIsland_WaterPath_House1_Text_ItsXInchesYInchesWasBiggest
+	msgbox SixIsland_WaterPath_House1_Text_ItsXSizeYSizeWasBiggest
 	release_end
 
 SixIsland_WaterPath_House1_EventScript_Beauty_16:
 # 27 "data/maps/SixIsland_WaterPath_House1_Frlg/scripts.pory"
-	msgbox SixIsland_WaterPath_House1_Text_ItsXInchesSameAsBefore
+	msgbox SixIsland_WaterPath_House1_Text_ItsXSizeSameAsBefore
 	release_end
 
 
@@ -100,7 +100,7 @@ SixIsland_WaterPath_House1_EventScript_SizeRecord_2:
 # 45 "data/maps/SixIsland_WaterPath_House1_Frlg/scripts.pory"
 	special GetHeracrossSizeRecordInfo
 # 46 "data/maps/SixIsland_WaterPath_House1_Frlg/scripts.pory"
-	msgbox SixIsland_WaterPath_House1_Text_BiggestHeracrossIsXInches
+	msgbox SixIsland_WaterPath_House1_Text_BiggestHeracrossIsXSize
 	goto SixIsland_WaterPath_House1_EventScript_SizeRecord_1
 
 
@@ -117,9 +117,9 @@ SixIsland_WaterPath_House1_Text_MayIMeasureHeracross::
 	.string "Please, please, may I measure how\n"
 	.string "big it is?$"
 
-SixIsland_WaterPath_House1_Text_ItsXInchesDeserveReward::
+SixIsland_WaterPath_House1_Text_ItsXSizeDeserveReward::
 # 68 "data/maps/SixIsland_WaterPath_House1_Frlg/scripts.pory"
-	.string "Eeeek, it's {STR_VAR_2} inches!\n"
+	.string "Eeeek, it's {STR_VAR_2}!\n"
 	.string "I've never seen anything like this!\l"
 	.string "You deserve a reward!$"
 
@@ -130,16 +130,16 @@ SixIsland_WaterPath_House1_Text_WantToSeeBiggerOne::
 	.string "Oh, how I adore them, big\n"
 	.string "HERACROSS!$"
 
-SixIsland_WaterPath_House1_Text_ItsXInchesSameAsBefore::
+SixIsland_WaterPath_House1_Text_ItsXSizeSameAsBefore::
 # 82 "data/maps/SixIsland_WaterPath_House1_Frlg/scripts.pory"
-	.string "Huh? This {STR_VAR_2}-inch measurement…\n"
+	.string "Huh? This {STR_VAR_2} measurement…\n"
 	.string "Oh, boo! It's the same as before.$"
 
-SixIsland_WaterPath_House1_Text_ItsXInchesYInchesWasBiggest::
+SixIsland_WaterPath_House1_Text_ItsXSizeYSizeWasBiggest::
 # 87 "data/maps/SixIsland_WaterPath_House1_Frlg/scripts.pory"
-	.string "Oh, it's just {STR_VAR_2} inches.\n"
+	.string "Oh, it's just {STR_VAR_2}.\n"
 	.string "The HERACROSS before was bigger.\p"
-	.string "It was {STR_VAR_3} inches, the biggest\n"
+	.string "It was {STR_VAR_3}, the biggest\n"
 	.string "HERACROSS you've brought me.$"
 
 SixIsland_WaterPath_House1_Text_ThisWontDo::

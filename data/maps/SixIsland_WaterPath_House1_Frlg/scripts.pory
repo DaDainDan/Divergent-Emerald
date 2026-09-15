@@ -19,18 +19,18 @@ script SixIsland_WaterPath_House1_EventScript_Beauty {
 				release_end
 			case 2:
 				if (flag(FLAG_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1)) {
-					msgbox(SixIsland_WaterPath_House1_Text_ItsXInchesYInchesWasBiggest)
+					msgbox(SixIsland_WaterPath_House1_Text_ItsXSizeYSizeWasBiggest)
 					release_end
 				}
 			case 4:
 				if (flag(FLAG_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1)) {
-					msgbox(SixIsland_WaterPath_House1_Text_ItsXInchesSameAsBefore)
+					msgbox(SixIsland_WaterPath_House1_Text_ItsXSizeSameAsBefore)
 					release_end
 				}
 		}
     }
     setflag(FLAG_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1)
-    msgbox(SixIsland_WaterPath_House1_Text_ItsXInchesDeserveReward)
+    msgbox(SixIsland_WaterPath_House1_Text_ItsXSizeDeserveReward)
     if (giveitem(ITEM_NEST_BALL) == FALSE) {
         msgbox(SixIsland_WaterPath_House1_Text_YourBagIsFull)
     	release_end
@@ -43,7 +43,7 @@ script SixIsland_WaterPath_House1_EventScript_SizeRecord {
     lockall
     if (flag(FLAG_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1)) {
         special(GetHeracrossSizeRecordInfo)
-		msgbox(SixIsland_WaterPath_House1_Text_BiggestHeracrossIsXInches)
+		msgbox(SixIsland_WaterPath_House1_Text_BiggestHeracrossIsXSize)
     } else {
 		msgbox(SixIsland_WaterPath_House1_Text_BlankChartOfSomeSort)
 	}
@@ -65,8 +65,8 @@ text SixIsland_WaterPath_House1_Text_MayIMeasureHeracross {
 	big it is?"
 }
 
-text SixIsland_WaterPath_House1_Text_ItsXInchesDeserveReward {
-	"Eeeek, it's {STR_VAR_2} inches!
+text SixIsland_WaterPath_House1_Text_ItsXSizeDeserveReward {
+	"Eeeek, it's {STR_VAR_2}!
 	I've never seen anything like this!
 	You deserve a reward!"
 }
@@ -79,16 +79,16 @@ text SixIsland_WaterPath_House1_Text_WantToSeeBiggerOne {
 	HERACROSS!"
 }
 
-text SixIsland_WaterPath_House1_Text_ItsXInchesSameAsBefore {
-	"Huh? This {STR_VAR_2}-inch measurement…
+text SixIsland_WaterPath_House1_Text_ItsXSizeSameAsBefore {
+	"Huh? This {STR_VAR_2} measurement…
 	Oh, boo! It's the same as before."
 }
 
-text SixIsland_WaterPath_House1_Text_ItsXInchesYInchesWasBiggest {
-	"Oh, it's just {STR_VAR_2} inches.
+text SixIsland_WaterPath_House1_Text_ItsXSizeYSizeWasBiggest {
+	"Oh, it's just {STR_VAR_2}.
 	The HERACROSS before was bigger.
 
-	It was {STR_VAR_3} inches, the biggest
+	It was {STR_VAR_3}, the biggest
 	HERACROSS you've brought me."
 }
 

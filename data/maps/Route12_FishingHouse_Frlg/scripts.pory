@@ -39,13 +39,13 @@ script Route12_FishingHouse_EventScript_CheckMagikarpRecord {
 		}
 		elif ((var(VAR_RESULT) == 2 || var(VAR_RESULT) == 4) && flag(FLAG_GOT_RECORD_SETTING_MAGIKARP)) {
 			switch (var(VAR_RESULT)) {
-				case 2: msgbox(Route12_FishingHouse_Text_HmmXInchesDoesntMeasureUp)
-				case 4: msgbox(Route12_FishingHouse_Text_HuhXInchesSameSizeAsLast)
+				case 2: msgbox(Route12_FishingHouse_Text_HmmXSizeDoesntMeasureUp)
+				case 4: msgbox(Route12_FishingHouse_Text_HuhXSizeSameSizeAsLast)
 			}
 		}
 		else {
 			setflag(FLAG_GOT_RECORD_SETTING_MAGIKARP)
-			msgbox(Route12_FishingHouse_Text_WhoaXInchesTakeThis)
+			msgbox(Route12_FishingHouse_Text_WhoaXSizeTakeThis)
 			if (giveitem(ITEM_NET_BALL) == FALSE) {
 				msgbox(Route12_FishingHouse_Text_NoRoomForGift)
     			release_end
@@ -60,7 +60,7 @@ script Route12_FishingHouse_EventScript_MagikarpRecordSign {
     lockall
     if (flag(FLAG_GOT_RECORD_SETTING_MAGIKARP)) {
         special(GetMagikarpSizeRecordInfo)
-    	msgbox(Route12_FishingHouse_Text_MostGiganticMagikarpXInches)
+    	msgbox(Route12_FishingHouse_Text_MostGiganticMagikarpXSize)
     } else {
 		msgbox(Route12_FishingHouse_Text_BlankChartOfSomeSort)
 	}
@@ -132,9 +132,9 @@ text Route12_FishingHouse_Text_OhMagikarpAllowMeToSee {
 	Allow me to see it, quick!"
 }
 
-text Route12_FishingHouse_Text_WhoaXInchesTakeThis {
+text Route12_FishingHouse_Text_WhoaXSizeTakeThis {
 	"… … …Whoa!
-	{STR_VAR_2} inches!
+	{STR_VAR_2}!
 
 	You have a rare appreciation for
 	the fine, poetic aspects of fishing!
@@ -148,20 +148,20 @@ text Route12_FishingHouse_Text_LookForwardToGreaterRecords {
 	records from you!"
 }
 
-text Route12_FishingHouse_Text_HuhXInchesSameSizeAsLast {
+text Route12_FishingHouse_Text_HuhXSizeSameSizeAsLast {
 	"Huh?
-	{STR_VAR_2} inches?
+	{STR_VAR_2}?
 
 	This is the same size as the one
 	I saw before."
 }
 
-text Route12_FishingHouse_Text_HmmXInchesDoesntMeasureUp {
+text Route12_FishingHouse_Text_HmmXSizeDoesntMeasureUp {
 	"Hmm…
-	This one is {STR_VAR_2} inches long.
+	This one is {STR_VAR_2} long.
 
 	It doesn't measure up to the
-	{STR_VAR_3}-inch one you brought before."
+	{STR_VAR_3} one you brought before."
 }
 
 text Route12_FishingHouse_Text_DoesntLookLikeMagikarp {

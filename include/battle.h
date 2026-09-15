@@ -130,7 +130,7 @@ struct SpecialStatus
     u8 criticalHit:1;
     u8 shellBellEmergencyExit:1;
     u8 superCrit:1;
-    u8 padding:1;
+    u8 breaksThroughProtectFully:1;
     // End of byte
     u8 gemParam:7;
     u8 gemBoost:1;
@@ -544,14 +544,14 @@ struct PartyState
     u32 battleBondBoost:1;
     u32 transformZeroToHero:1;
     u32 supersweetSyrup:1;
-    u32 timesGotHit:5;
+    u32 timesGotHit:8;
     u32 changedSpecies:11; // For forms when multiple mons can change into the same Pokémon.
     u32 sentOut:1;
     u32 isKnockedOff:1;
     u32 sturdyActivation:1;
     u32 itemRevealed:1;
     u32 immobilityActivated:1;
-    u32 padding:5;
+    u32 padding:2;
     u16 usedHeldItem;
 };
 
@@ -712,6 +712,7 @@ struct BattleStruct
     s16 moveDamage[MAX_BATTLERS_COUNT];
     u16 innardsOutHpLost[MAX_BATTLERS_COUNT];
     u32 moveResultFlags[MAX_BATTLERS_COUNT];
+    u32 savedMoveResultFlags[MAX_BATTLERS_COUNT]; // for Bounced moves
     u8 doneDoublesSpreadHit:1;
     u8 calculatedDamageDone:1;
     u8 calculatedSpreadMoveAccuracy:1;
