@@ -31,6 +31,14 @@ u32 CountOrGetSprays(u32 func)
     u32 i, currentSpray, sprayCount = 0;
     u32 spray = GetLastUsedSprayType();
 
+    if (IS_LAST_USED_INCENSE(VarGet(VAR_REPEL_STEP_COUNT)))
+    {
+        if (func == SPRAY_COUNT)
+            return CheckBagHasItem(spray, 1) ? 1 : 0;
+        else
+            return spray;
+    }
+
     for (i = 0; i < NUM_SPRAY_STRENGTH; i++)
     {
         currentSpray = spray + i;
@@ -58,8 +66,11 @@ u32 GetSprayId(void)
 
 u32 GetLastUsedSprayType(void)
 {
-    if (IS_LAST_USED_LURE(VarGet(VAR_REPEL_STEP_COUNT)))
+    u16 stepVar = VarGet(VAR_REPEL_STEP_COUNT);
+    if (IS_LAST_USED_LURE(stepVar))
         return ITEM_LURE;
+    else if (IS_LAST_USED_INCENSE(stepVar))
+        return VarGet(VAR_LAST_REPEL_LURE_USED);
     else
         return ITEM_REPEL;
 }
@@ -105,11 +116,12 @@ void DrawSprayMenu(void)
 
 void HandleSprayMenuChoice(void)
 {
-    u32 lureMask = (GetLastUsedSprayType() == ITEM_LURE) ? REPEL_LURE_MASK : 0;
+    u16 stepVar = VarGet(VAR_REPEL_STEP_COUNT);
+    u32 typeMask = IS_LAST_USED_LURE(stepVar) ? REPEL_LURE_MASK : IS_LAST_USED_INCENSE(stepVar) ? REPEL_INCENSE_MASK : 0;
 
     LOCAL_VAR_SPRAY = VarGet(LOCAL_VAR_SPRAY_CONST + gSpecialVar_Result);
 
-    VarSet(VAR_REPEL_STEP_COUNT, GetItemHoldEffectParam(LOCAL_VAR_SPRAY) | lureMask);
+    VarSet(VAR_REPEL_STEP_COUNT, GetItemHoldEffectParam(LOCAL_VAR_SPRAY) | typeMask);
 
     if (VAR_LAST_REPEL_LURE_USED != 0)
         VarSet(VAR_LAST_REPEL_LURE_USED, LOCAL_VAR_SPRAY);

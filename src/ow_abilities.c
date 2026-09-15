@@ -50,8 +50,8 @@ static const bool32 (*const sSynchronizeModes[])(enum Species) =
 
 static const bool32 (*const sCuteCharmModes[])(enum Species) = 
 {
-    [WILDMON_ORIGIN] = HasTwoThirdsChance,
-    [STATIC_WILDMON_ORIGIN] = HasTwoThirdsChance,
+    [WILDMON_ORIGIN] = HasHalfChance,
+    [STATIC_WILDMON_ORIGIN] = HasHalfChance,
     [ROAMER_ORIGIN] = IsFalse,
     [GIFTMON_ORIGIN] = IsFalse,
 };

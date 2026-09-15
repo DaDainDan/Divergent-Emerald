@@ -30,6 +30,7 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/weather.h"
+#include "item.h"
 
 extern const u8 EventScript_SprayWoreOff[];
 
@@ -54,6 +55,7 @@ static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildM
 #else
 static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, enum Type type, enum Ability ability, u8 *monIndex);
 #endif
+static bool8 TryGetIncenseInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 numMon, u8 *monIndex);
 
 EWRAM_DATA static u8 sWildEncountersDisabled = 0;
 EWRAM_DATA static u32 sFeebasRngValue = 0;
@@ -349,7 +351,7 @@ u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, en
         if (!GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SANITY_IS_EGG))
         {
             enum Ability ability = GetMonAbility(&gParties[B_TRAINER_PLAYER][0]);
-            if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE)
+            if (ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE) // ability == ABILITY_HUSTLE || 
             {
                 if (Random() % 2 == 0)
                     return max;
@@ -444,6 +446,9 @@ enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area
     if (!OW_TIME_OF_DAY_ENCOUNTERS)
         return TIME_OF_DAY_DEFAULT;
 
+    if (timeOfDay == TIME_EVENING)
+        timeOfDay = TIME_NIGHT;
+
     if (InBattlePike() || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
         return OW_TIME_OF_DAY_FALLBACK;
 
@@ -522,15 +527,27 @@ bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPok
     case WILD_AREA_LAND:
         if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex, LAND_WILD_COUNT))
             break;
-        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, LAND_WILD_COUNT))
+        // if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, LAND_WILD_COUNT))
+        //     break;
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_GHOST, ABILITY_SHADOW_TAG, &wildMonIndex, LAND_WILD_COUNT))
             break;
         if (OW_LIGHTNING_ROD >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_LIGHTNING_ROD, &wildMonIndex, LAND_WILD_COUNT))
             break;
         if (OW_FLASH_FIRE >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_FIRE, ABILITY_FLASH_FIRE, &wildMonIndex, LAND_WILD_COUNT))
             break;
-        if (OW_HARVEST >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_GRASS, ABILITY_HARVEST, &wildMonIndex, LAND_WILD_COUNT))
+        if (OW_FLASH_FIRE >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_FIRE, ABILITY_RADIANT_SUN, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+        if (OW_HARVEST >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_GRASS, ABILITY_CULTIVATOR, &wildMonIndex, LAND_WILD_COUNT))
             break;
         if (OW_STORM_DRAIN >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_WATER, ABILITY_STORM_DRAIN, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_BUG, ABILITY_SWARM, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_DARK, ABILITY_STAKEOUT, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_DARK, ABILITY_DOOM_DESIRE, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+        if (TryGetIncenseInfluencedWildMonIndex(wildMonInfo->wildPokemon, LAND_WILD_COUNT, &wildMonIndex))  // Incense Check
             break;
 
         wildMonIndex = ChooseWildMonIndex_Land();
@@ -538,15 +555,27 @@ bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPok
     case WILD_AREA_WATER:
         if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex, WATER_WILD_COUNT))
             break;
-        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, WATER_WILD_COUNT))
+        // if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, WATER_WILD_COUNT))
+        //     break;
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_GHOST, ABILITY_SHADOW_TAG, &wildMonIndex, WATER_WILD_COUNT))
             break;
         if (OW_LIGHTNING_ROD >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_LIGHTNING_ROD, &wildMonIndex, WATER_WILD_COUNT))
             break;
         if (OW_FLASH_FIRE >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_FIRE, ABILITY_FLASH_FIRE, &wildMonIndex, WATER_WILD_COUNT))
             break;
-        if (OW_HARVEST >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_GRASS, ABILITY_HARVEST, &wildMonIndex, WATER_WILD_COUNT))
+        if (OW_FLASH_FIRE >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_FIRE, ABILITY_RADIANT_SUN, &wildMonIndex, LAND_WILD_COUNT))
             break;
-        if (OW_STORM_DRAIN >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_WATER, ABILITY_STORM_DRAIN, &wildMonIndex, WATER_WILD_COUNT))
+        if (OW_HARVEST >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_GRASS, ABILITY_CULTIVATOR, &wildMonIndex, WATER_WILD_COUNT))
+            break;
+        if (OW_STORM_DRAIN >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_OCEAN, ABILITY_STORM_DRAIN, &wildMonIndex, WATER_WILD_COUNT))
+            break;
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_BUG, ABILITY_SWARM, &wildMonIndex, WATER_WILD_COUNT))
+            break;
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_DARK, ABILITY_STAKEOUT, &wildMonIndex, WATER_WILD_COUNT))
+            break;
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_DARK, ABILITY_DOOM_DESIRE, &wildMonIndex, WATER_WILD_COUNT))
+            break;
+        if (TryGetIncenseInfluencedWildMonIndex(wildMonInfo->wildPokemon, WATER_WILD_COUNT, &wildMonIndex))  // Incense Check
             break;
 
         wildMonIndex = ChooseWildMonIndex_Water();
@@ -637,7 +666,11 @@ static bool8 WildEncounterCheck(u32 encounterRate, bool8 ignoreAbility)
             encounterRate *= 2;
         else if (ability == ABILITY_WHITE_SMOKE)
             encounterRate /= 2;
+        else if (ability == ABILITY_BLACK_FUMES)
+            encounterRate /= 2;
         else if (ability == ABILITY_ARENA_TRAP)
+            encounterRate *= 2;
+        else if (ability == ABILITY_HARVEST)
             encounterRate *= 2;
         else if (ability == ABILITY_SAND_VEIL && gSaveBlock1Ptr->weather == WEATHER_SANDSTORM)
             encounterRate /= 2;
@@ -915,11 +948,23 @@ bool8 SweetScentWildEncounter(void)
             }
 
             if (DoMassOutbreakEncounterTest() == TRUE)
+            {
                 SetUpMassOutbreakEncounter(0);
-            else
+                BattleSetup_StartWildBattle();
+                    return TRUE;
+            }
+    
+            if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, 0) == TRUE)
+            {
+                struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
                 TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, 0);
-
-            BattleSetup_StartWildBattle();
+                gParties[B_TRAINER_OPPONENT_A][1] = mon1;
+                BattleSetup_StartDoubleWildBattle();
+            }
+            else
+            {
+                BattleSetup_StartWildBattle();
+            }
             return TRUE;
         }
         else if (MetatileBehavior_IsWaterWildEncounter(MapGridGetMetatileBehaviorAt(x, y)) == TRUE)
@@ -937,8 +982,17 @@ bool8 SweetScentWildEncounter(void)
                 return TRUE;
             }
 
-            TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo, WILD_AREA_WATER, 0);
-            BattleSetup_StartWildBattle();
+            if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo, WILD_AREA_WATER, 0) == TRUE)
+            {
+                struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
+                TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo, WILD_AREA_WATER, 0);
+                gParties[B_TRAINER_OPPONENT_A][1] = mon1;
+                BattleSetup_StartDoubleWildBattle();
+            }
+            else
+            {
+                BattleSetup_StartWildBattle();
+            }
             return TRUE;
         }
     }
@@ -1049,6 +1103,7 @@ bool8 UpdateRepelCounter(void)
     u16 repelLureVar = VarGet(VAR_REPEL_STEP_COUNT);
     u16 steps = REPEL_LURE_STEPS(repelLureVar);
     bool32 isLure = IS_LAST_USED_LURE(repelLureVar);
+    bool32 isIncense = IS_LAST_USED_INCENSE(repelLureVar);
 
     if (InBattlePike() || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
         return FALSE;
@@ -1058,9 +1113,18 @@ bool8 UpdateRepelCounter(void)
     if (steps != 0)
     {
         steps--;
-        if (!isLure)
+        if (isLure)
         {
-            VarSet(VAR_REPEL_STEP_COUNT, steps);
+            VarSet(VAR_REPEL_STEP_COUNT, steps | REPEL_LURE_MASK);
+            if (steps == 0)
+            {
+                ScriptContext_SetupScript(EventScript_SprayWoreOff);
+                return TRUE;
+            }
+        }
+        else if (isIncense)
+        {
+            VarSet(VAR_REPEL_STEP_COUNT, steps | REPEL_INCENSE_MASK);
             if (steps == 0)
             {
                 ScriptContext_SetupScript(EventScript_SprayWoreOff);
@@ -1069,7 +1133,7 @@ bool8 UpdateRepelCounter(void)
         }
         else
         {
-            VarSet(VAR_REPEL_STEP_COUNT, steps | REPEL_LURE_MASK);
+            VarSet(VAR_REPEL_STEP_COUNT, steps);
             if (steps == 0)
             {
                 ScriptContext_SetupScript(EventScript_SprayWoreOff);
@@ -1108,10 +1172,10 @@ bool8 IsAbilityAllowingEncounter(u8 level)
         return TRUE;
 
     ability = GetMonAbility(&gParties[B_TRAINER_PLAYER][0]);
-    if (ability == ABILITY_KEEN_EYE || ability == ABILITY_INTIMIDATE)
+    if (ability == ABILITY_KEEN_EYE || ability == ABILITY_INTIMIDATE || ability == ABILITY_UNNERVE || ability == ABILITY_SUPERIOR)
     {
         u8 playerMonLevel = GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_LEVEL);
-        if (playerMonLevel > 5 && level <= playerMonLevel - 5 && !(Random() % 2))
+        if (playerMonLevel > 20 && level <= (playerMonLevel / 2) && !(Random() % 2))
             return FALSE;
     }
 
@@ -1181,7 +1245,7 @@ static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildM
         return FALSE;
     else if (GetMonAbility(&gParties[B_TRAINER_PLAYER][0]) != ability)
         return FALSE;
-    else if (Random() % 2 != 0)
+    else if (Random() % 3 != 0)
         return FALSE;
 
 #ifdef BUGFIX
@@ -1189,6 +1253,22 @@ static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildM
 #else
     return TryGetRandomWildMonIndexByType(wildMon, type, LAND_WILD_COUNT, monIndex);
 #endif
+}
+
+static bool8 TryGetIncenseInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 numMon, u8 *monIndex)
+{
+    u8 incenseType;
+
+    if (INCENSE_STEP_COUNT == 0)
+        return FALSE;
+    else if (Random() % 3 != 0)
+        return FALSE;
+
+    incenseType = GetItemSecondaryId(VarGet(VAR_LAST_REPEL_LURE_USED));
+    if (incenseType == TYPE_NONE)
+        return FALSE;
+
+    return TryGetRandomWildMonIndexByType(wildMon, incenseType, numMon, monIndex);
 }
 
 static void ApplyFluteEncounterRateMod(u32 *encRate)

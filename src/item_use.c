@@ -74,8 +74,10 @@ static void UseTMHMYesNo(u8);
 static void UseTMHM(u8);
 static void Task_StartUseRepel(u8);
 static void Task_StartUseLure(u8 taskId);
+static void Task_StartUseIncense(u8 taskId);
 static void Task_UseRepel(u8);
 static void Task_UseLure(u8 taskId);
+static void Task_UseIncense(u8 taskId);
 static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
@@ -976,7 +978,7 @@ static void RemoveUsedItem(void)
 
 void ItemUseOutOfBattle_Repel(u8 taskId)
 {
-    if (REPEL_STEP_COUNT == 0)
+    if (REPEL_LURE_STEPS(VarGet(VAR_REPEL_STEP_COUNT)) == 0)
         gTasks[taskId].func = Task_StartUseRepel;
     else if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE)
         DisplayItemMessage(taskId, FONT_NORMAL, gText_RepelEffectsLingered, CloseItemMessage);
@@ -1020,7 +1022,7 @@ void HandleUseExpiredRepel(struct ScriptContext *ctx)
 
 void ItemUseOutOfBattle_Lure(u8 taskId)
 {
-    if (LURE_STEP_COUNT == 0)
+    if (REPEL_LURE_STEPS(VarGet(VAR_REPEL_STEP_COUNT)) == 0)
         gTasks[taskId].func = Task_StartUseLure;
     else if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE)
         DisplayItemMessage(taskId, FONT_NORMAL, gText_LureEffectsLingered, CloseItemMessage);
@@ -1060,6 +1062,50 @@ void HandleUseExpiredLure(struct ScriptContext *ctx)
 {
 #if VAR_LAST_REPEL_LURE_USED != 0
     VarSet(VAR_REPEL_STEP_COUNT, GetItemHoldEffectParam(VarGet(VAR_LAST_REPEL_LURE_USED)) | REPEL_LURE_MASK);
+#endif
+}
+
+void ItemUseOutOfBattle_Incense(u8 taskId)
+{
+    if (REPEL_LURE_STEPS(VarGet(VAR_REPEL_STEP_COUNT)) == 0)
+        gTasks[taskId].func = Task_StartUseIncense;
+    else if (!InBattlePyramid_())
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_IncenseEffectsLingered, CloseItemMessage);
+    else
+        DisplayItemMessageInBattlePyramid(taskId, gText_IncenseEffectsLingered, Task_CloseBattlePyramidBagMessage);
+}
+
+static void Task_StartUseIncense(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    if (++data[8] > 7)
+    {
+        data[8] = 0;
+        PlaySE(SE_M_SWEET_SCENT);
+        gTasks[taskId].func = Task_UseIncense;
+    }
+}
+
+static void Task_UseIncense(u8 taskId)
+{
+    if (!IsSEPlaying())
+    {
+        VarSet(VAR_REPEL_STEP_COUNT, GetItemHoldEffectParam(gSpecialVar_ItemId) | REPEL_INCENSE_MASK);
+    #if VAR_LAST_REPEL_LURE_USED != 0
+        VarSet(VAR_LAST_REPEL_LURE_USED, gSpecialVar_ItemId);
+    #endif
+        RemoveUsedItem();
+        if (!InBattlePyramid_())
+            DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, CloseItemMessage);
+        else
+            DisplayItemMessageInBattlePyramid(taskId, gStringVar4, Task_CloseBattlePyramidBagMessage);
+    }
+}
+void HandleUseExpiredIncense(struct ScriptContext *ctx)
+{
+#if VAR_LAST_REPEL_LURE_USED != 0
+    VarSet(VAR_REPEL_STEP_COUNT, GetItemHoldEffectParam(VarGet(VAR_LAST_REPEL_LURE_USED)) | REPEL_INCENSE_MASK);
 #endif
 }
 
