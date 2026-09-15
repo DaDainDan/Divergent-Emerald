@@ -111,7 +111,7 @@ script FourIsland_PokemonDayCare_TryRetrieveMon {
 			goto(FourIsland_PokemonDayCare_ComeAgain)
 		}	
     }
-	special(GetDaycareCost)
+	special(GetDaycareCostAndPrepareString)
     msgbox(DayCare_Text_ItWillCostX, MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
         if (specialvar(VAR_RESULT, IsEnoughForCostInVar0x8005) == TRUE) {

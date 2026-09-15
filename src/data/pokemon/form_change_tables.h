@@ -1259,6 +1259,7 @@ static const struct FormChange sGreninjaFormChangeTable[] =
 static const struct FormChange sGreninjaBattleBondFormChangeTable[] =
 {
     {FORM_CHANGE_BATTLE_SWITCH_IN,        SPECIES_GRENINJA_ASH, ABILITY_BATTLE_BOND, MAX_FRIENDSHIP},
+    // {FORM_CHANGE_BATTLE_BOND, SPECIES_GRENINJA_ASH,        ABILITY_BATTLE_BOND},
     {FORM_CHANGE_FAINT,         SPECIES_GRENINJA},
     {FORM_CHANGE_END_BATTLE,    SPECIES_GRENINJA},
     // {FORM_CHANGE_FAINT,         SPECIES_GRENINJA_BATTLE_BOND},

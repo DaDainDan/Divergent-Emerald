@@ -219,7 +219,7 @@ FourIsland_PokemonDayCare_TryRetrieveMon::
 	goto_if_ne FourIsland_PokemonDayCare_TryRetrieveMon_5
 FourIsland_PokemonDayCare_TryRetrieveMon_4:
 # 114 "data/maps/FourIsland_PokemonDayCare_Frlg/scripts.pory"
-	special GetDaycareCost
+	special GetDaycareCostAndPrepareString
 # 115 "data/maps/FourIsland_PokemonDayCare_Frlg/scripts.pory"
 	msgbox DayCare_Text_ItWillCostX, MSGBOX_YESNO
 # 116 "data/maps/FourIsland_PokemonDayCare_Frlg/scripts.pory"

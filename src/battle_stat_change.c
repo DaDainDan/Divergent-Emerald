@@ -177,7 +177,7 @@ static bool32 CheckSpecificMoveCondition(struct BattleCalcValues *cv, struct Sta
         {
             if (!st->onlyChecking)
             {
-                st->moveScript = BattleScript_OwnTempoPrevents;
+                st->moveScript = BattleScript_SwaggerOwnTempoPrevents;
                 gBattlerAbility = cv->battlerDef;
                 gLastUsedAbility = ABILITY_INNER_FOCUS;
                 RecordAbilityBattle(cv->battlerDef, ABILITY_INNER_FOCUS);

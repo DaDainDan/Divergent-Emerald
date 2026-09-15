@@ -419,7 +419,7 @@ static void AnimTask_DigSetVisibleUnderground(u8 taskId)
 
 static void AnimTask_DigRiseUpFromHole(u8 taskId)
 {
-    u8 var0;
+    u8 y;
     struct Task *task = &gTasks[taskId];
 
     switch (task->data[0])
@@ -432,9 +432,9 @@ static void AnimTask_DigRiseUpFromHole(u8 taskId)
         else
             task->data[12] = gBattle_BG2_X;
 
-        var0 =  GetBattlerYCoordWithElevation(gBattleAnimAttacker);
-        task->data[14] = var0 - 32;
-        task->data[15] = var0 + 32;
+        y = GetBattlerYCoordWithElevation(gBattleAnimAttacker);
+task->data[14] = y - 32;
+task->data[15] = y + 32;
         task->data[0]++;
         break;
     case 1:
@@ -712,7 +712,7 @@ static void AnimTask_ShakeBattlers(u8 taskId)
 static void SetBattlersXOffsetForShake(struct Task *task)
 {
     u16 i;
-    u16 xOffset;
+    s16 xOffset;
 
     if ((task->tTimer & 1) == 0)
         xOffset = (task->tHorizOffset / 2) + (task->tHorizOffset & 1);
@@ -749,10 +749,10 @@ void AnimTask_PositionFissureBgOnBattler(u8 taskId)
     s16 targetY = 0;
 
     if (gBattleAnimArgs[0] > ANIM_TARGET)
-        battler = BATTLE_PARTNER(battler);
+        battler = GetPartnerBattler(battler);
 
     if (IsDoubleBattle() && GetMoveTarget(gAnimMoveIndex) == TARGET_BOTH
-        && IsBattlerSpriteVisible(BATTLE_PARTNER(battler)))
+        && IsBattlerSpriteVisible(GetPartnerBattler(battler)))
     {
         SetAverageBattlerPositions(battler, TRUE, &targetX, &targetY);
     }
