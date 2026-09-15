@@ -17,7 +17,7 @@ CONFIG_ENABLED_PAT = re.compile(r"^#define P_LEARNSET_HELPER_TEACHABLE\s+(?P<cfg
 
 TEACHING_TYPE_PAT =  re.compile(r"\s*\.teachingType\s*=\s*(?P<teaching_type>[A-Z_]+),")
 LEARNSET_PAT = re.compile(r"\s*\.teachableLearnset\s*=\s*s(?P<name>\w+?)TeachableLearnset")
-PREPROC_START_PAT = re.compile(r"^#if(def)?\s+\w+", flags=re.MULTILINE)
+PREPROC_START_PAT = re.compile(r"^#if(def)?\s+!?\s*\w+", flags=re.MULTILINE)
 PREPROC_END_PAT = re.compile(r"^#endif\s*(//\s*\w+)?", flags=re.MULTILINE)
 
 def enabled() -> bool:
