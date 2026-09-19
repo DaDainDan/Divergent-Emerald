@@ -35,7 +35,7 @@ CeladonCity_GameCorner_EventScript_CoinsClerk::
 # 21 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
 	showmoneybox 0, 0
 # 22 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
-	showcoinsbox 1, 6
+	showcoinsbox 0, 5
 # 23 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
 	message CeladonCity_GameCorner_Text_WelcomeBuySomeCoins
 # 24 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
@@ -112,7 +112,7 @@ CeladonCity_GameCorner_EventScript_BuyCoins::
 # 58 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
 	updatemoneybox
 # 59 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
-	updatecoinsbox 0, 5
+	updatecoinsbox
 # 60 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
 	playse SE_SHOP
 # 61 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
@@ -137,7 +137,7 @@ CeladonCity_GameCorner_EventScript_ClerkEnd::
 # 68 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
 	hidemoneybox
 # 69 "data/maps/CeladonCity_GameCorner_Frlg/scripts.pory"
-	hidecoinsbox 0, 5
+	hidecoinsbox
 	release_end
 
 

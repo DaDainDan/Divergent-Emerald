@@ -19,7 +19,7 @@ script CeladonCity_GameCorner_EventScript_InfoClerk {
 script CeladonCity_GameCorner_EventScript_CoinsClerk {
     lock_faceplayer
     showmoneybox(0, 0)
-    showcoinsbox(1, 6)
+    showcoinsbox(0, 5)
     message(CeladonCity_GameCorner_Text_WelcomeBuySomeCoins)
     waitmessage
     multichoice(13, 0, MULTI_GAME_CORNER_COIN_PURCHASE_COUNTER, FALSE)
@@ -56,7 +56,7 @@ script CeladonCity_GameCorner_EventScript_BuyCoins {
 		addcoins(VAR_0x8009)
 		removemoney(VAR_0x8008)
 		updatemoneybox
-		updatecoinsbox(0, 5)
+		updatecoinsbox
 		playse(SE_SHOP)
 		msgbox(CeladonCity_GameCorner_Text_HereAreYourCoins)
 	}
@@ -66,7 +66,7 @@ script CeladonCity_GameCorner_EventScript_BuyCoins {
 
 script CeladonCity_GameCorner_EventScript_ClerkEnd {
     hidemoneybox
-    hidecoinsbox(0, 5)
+    hidecoinsbox
     release_end
 }
 

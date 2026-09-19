@@ -103,7 +103,7 @@ script BattleFrontier_BattleFactoryBattleRoom_EventScript_IncrementBattleNum {
     frontier_get(FRONTIER_DATA_BATTLE_NUM)
     addvar(VAR_RESULT, 1)
     frontier_set(FRONTIER_DATA_BATTLE_NUM, VAR_RESULT)
-	if (var(VAR_RESULT) == 7) {
+	if (var(VAR_RESULT) == FRONTIER_STAGES_PER_CHALLENGE) {
 		goto(BattleFrontier_BattleFactoryBattleRoom_EventScript_WarpToLobbyWon)
 	}
     setvar(VAR_0x8006, 1)

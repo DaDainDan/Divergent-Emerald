@@ -78,7 +78,7 @@ static u32 GetTimerValue(u32 *src);
 #endif //FREE_TRAINER_HILL
 static void SetTrainerHillMonLevel(struct Pokemon *mon, u8 level);
 #if FREE_TRAINER_HILL == FALSE
-static u16 GetPrizeItemId(void);
+static enum Item GetPrizeItemId(void);
 #endif //FREE_TRAINER_HILL
 
 // const data
@@ -153,29 +153,29 @@ struct
     {TRAINER_CLASS_ENGINEER_FRLG, TRAINER_ENCOUNTER_MUSIC_HIKER},
 };
 
-static const u16 sPrizeListRareCandy1[]  = {ITEM_RARE_CANDY,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListLuxuryBall1[] = {ITEM_LUXURY_BALL,      ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListMaxRevive1[]  = {ITEM_MAX_REVIVE,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListMaxEther1[]   = {ITEM_MAX_ETHER,        ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListElixir1[]     = {ITEM_ELIXIR,           ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListRoar[]        = {ITEM_BLUNDER_POLICY,   ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListSludgeBomb[]  = {ITEM_WEAKNESS_POLICY,  ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListToxic[]       = {ITEM_HAPLESS_POLICY,   ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListSunnyDay[]    = {ITEM_AIR_BALLOON,      ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListEarthQuake[]  = {ITEM_SUPPORT_VEST,     ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListRareCandy1[]  = {ITEM_RARE_CANDY,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListLuxuryBall1[] = {ITEM_LUXURY_BALL,      ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListMaxRevive1[]  = {ITEM_MAX_REVIVE,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListMaxEther1[]   = {ITEM_MAX_ETHER,        ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListElixir1[]     = {ITEM_ELIXIR,           ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListRoar[]        = {ITEM_BLUNDER_POLICY,   ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListSludgeBomb[]  = {ITEM_WEAKNESS_POLICY,  ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListToxic[]       = {ITEM_HAPLESS_POLICY,   ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListSunnyDay[]    = {ITEM_AIR_BALLOON,      ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListEarthQuake[]  = {ITEM_SUPPORT_VEST,     ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
 
-static const u16 sPrizeListRareCandy2[]  = {ITEM_RARE_CANDY,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListLuxuryBall2[] = {ITEM_LUXURY_BALL,      ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListMaxRevive2[]  = {ITEM_MAX_REVIVE,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListMaxEther2[]   = {ITEM_MAX_ETHER,        ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListElixir2[]     = {ITEM_ELIXIR,           ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListBrickBreak[]  = {ITEM_MENTAL_HERB,      ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListTorment[]     = {ITEM_POWER_HERB,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListSkillSwap[]   = {ITEM_WHITE_HERB,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListGigaDrain[]   = {ITEM_FOCUS_SASH,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
-static const u16 sPrizeListAttract[]     = {ITEM_SUPPORT_VEST,     ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListRareCandy2[]  = {ITEM_RARE_CANDY,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListLuxuryBall2[] = {ITEM_LUXURY_BALL,      ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListMaxRevive2[]  = {ITEM_MAX_REVIVE,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListMaxEther2[]   = {ITEM_MAX_ETHER,        ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListElixir2[]     = {ITEM_ELIXIR,           ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListBrickBreak[]  = {ITEM_MENTAL_HERB,      ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListTorment[]     = {ITEM_POWER_HERB,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListSkillSwap[]   = {ITEM_WHITE_HERB,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListGigaDrain[]   = {ITEM_FOCUS_SASH,       ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
+static const enum Item sPrizeListAttract[]     = {ITEM_SUPPORT_VEST,     ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_POKE_DOLL, ITEM_GREAT_BALL};
 
-static const u16 *const sPrizeLists1[NUM_TRAINER_HILL_PRIZE_LISTS] =
+static const enum Item *const sPrizeLists1[NUM_TRAINER_HILL_PRIZE_LISTS] =
 {
     sPrizeListRareCandy1,
     sPrizeListLuxuryBall1,
@@ -189,7 +189,7 @@ static const u16 *const sPrizeLists1[NUM_TRAINER_HILL_PRIZE_LISTS] =
     sPrizeListEarthQuake
 };
 
-static const u16 *const sPrizeLists2[NUM_TRAINER_HILL_PRIZE_LISTS] =
+static const enum Item *const sPrizeLists2[NUM_TRAINER_HILL_PRIZE_LISTS] =
 {
     sPrizeListRareCandy2,
     sPrizeListLuxuryBall2,
@@ -203,7 +203,7 @@ static const u16 *const sPrizeLists2[NUM_TRAINER_HILL_PRIZE_LISTS] =
     sPrizeListAttract
 };
 
-static const u16 *const *const sPrizeListSets[] =
+static const enum Item *const *const sPrizeListSets[] =
 {
     sPrizeLists1,
     sPrizeLists2
@@ -613,11 +613,6 @@ static void IsTrainerHillChallengeActive(void)
         gSpecialVar_Result = TRUE;
 }
 
-static void UNUSED TrainerHillDummy_Unused(void)
-{
-
-}
-
 static void TrainerHillDummy(void)
 {
 
@@ -940,14 +935,6 @@ void FillHillTrainersParties(void)
     CreateNPCTrainerHillParty(TRAINER_BATTLE_PARAM.opponentB, B_TRAINER_OPPONENT_B);
 }
 
-// This function is unused, but my best guess is
-// it was supposed to return AI scripts for trainer
-// hill trainers.
-u64 GetTrainerHillAIFlags(void)
-{
-    return (AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY);
-}
-
 u8 GetTrainerEncounterMusicIdInTrainerHill(u16 trainerId)
 {
     s32 i;
@@ -1074,7 +1061,7 @@ static u8 GetPrizeListId(bool8 allowTMs)
     return prizeListId;
 }
 
-static u16 GetPrizeItemId(void)
+static enum Item GetPrizeItemId(void)
 {
     u8 i;
     const u16 *prizeList;

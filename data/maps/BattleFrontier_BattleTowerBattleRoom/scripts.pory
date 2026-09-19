@@ -39,7 +39,7 @@ script BattleFrontier_BattleTowerBattleRoom_EventScript_OpponentEnter {
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
 		frontier_incrementstreak
 		tower_setbattlewon
-		if (var(VAR_RESULT) == 7) {
+		if (var(VAR_RESULT) == FRONTIER_STAGES_PER_CHALLENGE) {
 			goto(BattleFrontier_BattleTowerBattleRoom_EventScript_WarpToLobbyWon)
 		}
 		applymovement(LOCALID_TOWER_BATTLE_OPPONENT, moves(walk_up * 4))

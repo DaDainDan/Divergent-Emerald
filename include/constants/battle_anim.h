@@ -568,8 +568,8 @@ enum AnimBattler
 #define B_ANIM_MON_HIT                  14
 #define B_ANIM_ITEM_STEAL               15
 #define B_ANIM_SNATCH_MOVE              16
-#define B_ANIM_FUTURE_SIGHT_HIT         17
-#define B_ANIM_DOOM_DESIRE_HIT          18
+#define B_ANIM_UNUSED_17                17
+#define B_ANIM_UNUSED_18                18
 #define B_ANIM_FOCUS_PUNCH_SETUP        19
 #define B_ANIM_INGRAIN_HEAL             20
 #define B_ANIM_WISH_HEAL                21
@@ -615,12 +615,13 @@ enum AnimBattler
 #define B_ANIM_FORM_CHANGE_INSTANT      61
 #define B_ANIM_FORM_CHANGE_DISGUISE     62
 #define B_ANIM_HELD_ITEM_BERRY          63
-#define B_ANIM_REVERSE_ROOM             64
-#define B_ANIM_ERROR_ROOM               65
-#define B_ANIM_GRIM_ROOM                66
-#define B_ANIM_BOOBY_TRAP               67
+#define B_ANIM_PROTECTED_ITSELF         64
+#define B_ANIM_REVERSE_ROOM             65
+#define B_ANIM_ERROR_ROOM               66
+#define B_ANIM_GRIM_ROOM                67
+#define B_ANIM_BOOBY_TRAP               68
 
-#define NUM_B_ANIMS_GENERAL             68
+#define NUM_B_ANIMS_GENERAL             69
 
 // special animations table (sBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
@@ -691,11 +692,18 @@ enum AnimBattler
 #define ANIM_FOOT_2  2
 #define ANIM_CHOP    3
 
-// surf wave palettes
-#define ANIM_SURF_PAL_SURF           0
-#define ANIM_SURF_PAL_MUDDY_WATER    1
-#define ANIM_SURF_PAL_SLUDGE_WAVE    2
-#define ANIM_SURF_PAL_SAND_TSUNAMI   3
+// Surf wave palettes
+#define ANIM_SURF_PAL_SURF_ORIGINAL  0
+#define ANIM_SURF_PAL_SURF_NEW       1
+#define ANIM_SURF_PAL_MUDDY_WATER    2
+#define ANIM_SURF_PAL_SLUDGE_WAVE    3
+#define ANIM_SURF_PAL_SAND_TSUNAMI   4
+
+#if B_NEW_SURF_PARTICLE_PALETTE
+#define ANIM_SURF_PAL_SURF ANIM_SURF_PAL_SURF_NEW
+#else
+#define ANIM_SURF_PAL_SURF ANIM_SURF_PAL_SURF_ORIGINAL
+#endif
 
 // Order Up palettes for Commander
 #define ANIM_ORDER_UP_NONE           0
@@ -712,10 +720,6 @@ enum SpeciesGfxChange
     SPECIES_GFX_CHANGE_ILLUSION_OFF,
     SPECIES_GFX_CHANGE_GHOST_UNVEIL,
 };
-
-// Surf wave palettes
-#define ANIM_SURF_PAL_SURF           0
-#define ANIM_SURF_PAL_MUDDY_WATER    1
 
 // Flags given to various functions to indicate which palettes to consider.
 // Handled by UnpackSelectedBattlePalettes

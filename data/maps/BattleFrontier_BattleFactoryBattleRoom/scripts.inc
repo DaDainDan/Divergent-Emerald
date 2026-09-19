@@ -198,7 +198,7 @@ BattleFrontier_BattleFactoryBattleRoom_EventScript_IncrementBattleNum::
 # 105 "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.pory"
 	frontier_set FRONTIER_DATA_BATTLE_NUM, VAR_RESULT
 # 106 "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.pory"
-	compare VAR_RESULT, 7
+	compare VAR_RESULT, FRONTIER_STAGES_PER_CHALLENGE
 	goto_if_eq BattleFrontier_BattleFactoryBattleRoom_EventScript_IncrementBattleNum_2
 BattleFrontier_BattleFactoryBattleRoom_EventScript_IncrementBattleNum_1:
 # 109 "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.pory"

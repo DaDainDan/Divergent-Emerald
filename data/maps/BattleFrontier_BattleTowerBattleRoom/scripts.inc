@@ -88,7 +88,7 @@ BattleFrontier_BattleTowerBattleRoom_EventScript_OpponentEnter_2:
 # 41 "data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.pory"
 	tower_setbattlewon
 # 42 "data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.pory"
-	compare VAR_RESULT, 7
+	compare VAR_RESULT, FRONTIER_STAGES_PER_CHALLENGE
 	goto_if_eq BattleFrontier_BattleTowerBattleRoom_EventScript_OpponentEnter_5
 BattleFrontier_BattleTowerBattleRoom_EventScript_OpponentEnter_4:
 # 45 "data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.pory"

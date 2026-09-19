@@ -18,7 +18,7 @@ MauvilleCity_GameCorner_EventScript_CoinsClerk::
 # 36 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	showmoneybox 0, 0
 # 37 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	showcoinsbox 1, 6
+	showcoinsbox 0, 5
 # 38 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ChooseCoinAmount
 	end
@@ -78,7 +78,7 @@ MauvilleCity_GameCorner_EventScript_ChooseCoinAmount::
 # 50 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	hidemoneybox
 # 51 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	hidecoinsbox 0, 5
+	hidecoinsbox
 	release_end
 
 MauvilleCity_GameCorner_EventScript_ChooseCoinAmount_1:
@@ -97,7 +97,7 @@ MauvilleCity_GameCorner_EventScript_ChooseCoinAmount_1:
 # 63 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatemoneybox
 # 64 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	updatecoinsbox 1, 6
+	updatecoinsbox
 # 65 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	playse SE_SHOP
 # 66 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -155,7 +155,7 @@ MauvilleCity_GameCorner_EventScript_PrizeCornerDolls_2:
 # 79 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 80 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	showcoinsbox 1, 1
+	showcoinsbox 0, 0
 # 81 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ChooseDollPrize
 	goto MauvilleCity_GameCorner_EventScript_PrizeCornerDolls_1
@@ -215,7 +215,7 @@ MauvilleCity_GameCorner_EventScript_CancelDollSelect::
 # 103 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT
 # 104 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	hidecoinsbox 0, 0
+	hidecoinsbox
 	release_end
 
 
@@ -243,7 +243,7 @@ MauvilleCity_GameCorner_EventScript_ConfirmDollPrize_7:
 # 123 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	adddecoration VAR_GIFT_ITEM
 # 124 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	updatecoinsbox 1, 1
+	updatecoinsbox
 # 125 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	playse SE_SHOP
 # 126 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -300,7 +300,7 @@ MauvilleCity_GameCorner_EventScript_PrizeCornerTMs_2:
 # 142 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 143 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	showcoinsbox 1, 1
+	showcoinsbox 0, 0
 # 144 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ChooseTMPrize
 	goto MauvilleCity_GameCorner_EventScript_PrizeCornerTMs_1
@@ -388,7 +388,7 @@ MauvilleCity_GameCorner_EventScript_PurchaseTM::
 # 180 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	additem VAR_GIFT_ITEM
 # 181 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	updatecoinsbox 1, 1
+	updatecoinsbox
 # 182 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	playse SE_SHOP
 # 183 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -417,7 +417,7 @@ MauvilleCity_GameCorner_EventScript_CancelTMSelect::
 # 192 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT
 # 193 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	hidecoinsbox 0, 0
+	hidecoinsbox
 	release_end
 
 
@@ -790,7 +790,7 @@ MauvilleCity_GameCorner_EventScript_PrizeCornerMons_2:
 # 407 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_TEMP_1, 0
 # 408 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	showcoinsbox 1, 1
+	showcoinsbox 0, 0
 # 409 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ChoosePrizeMon
 	goto MauvilleCity_GameCorner_EventScript_PrizeCornerMons_1
@@ -862,7 +862,7 @@ MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_15:
 # 465 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	removecoins VAR_EXCHANGE_PRICE
 # 466 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	updatecoinsbox 1, 1
+	updatecoinsbox
 # 467 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	bufferspeciesname STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES
 # 468 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -962,7 +962,7 @@ MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_23:
 # 461 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox gText_NoMoreRoomForPokemon
 # 462 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	hidecoinsbox 0, 0
+	hidecoinsbox
 	release_end
 
 MauvilleCity_GameCorner_EventScript_ChoosePrizeMon_27:
@@ -999,7 +999,7 @@ MauvilleCity_GameCorner_EventScript_CancelMonSelect::
 # 491 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT
 # 492 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	hidecoinsbox 0, 0
+	hidecoinsbox
 	release_end
 
 

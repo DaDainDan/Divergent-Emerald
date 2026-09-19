@@ -24,7 +24,7 @@ ASSUMPTIONS
     ASSUME(gTypesInfo[TYPE_DARK].isHiddenPowerType == TRUE);
     ASSUME(gTypesInfo[TYPE_FAIRY].isHiddenPowerType == TRUE);
     // Any type after Fairy shouldn't be part of Hidden Power.
-    for (u32 j = TYPE_FAIRY + 1; j < NUMBER_OF_MON_TYPES; j++) {
+    for (enum Type j = TYPE_FAIRY + 1; j < NUMBER_OF_MON_TYPES; j++) {
         if (j == TYPE_WIND || j == TYPE_TERRA)
             continue;
         ASSUME(gTypesInfo[j].isHiddenPowerType == FALSE);
@@ -35,7 +35,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Hidden Power's type is determined by IVs")
 {
     enum Type type, foeType, j;
-    u32 foeSpecies, foeItem;
+    enum Species foeSpecies;
+    enum Item foeItem;
     u32 hp, atk, def, spAtk, spDef, speed;
     bool32 hidden;
     bool32 resisted;
@@ -182,7 +183,7 @@ SINGLE_BATTLE_TEST("Hidden Power's type is determined by IVs")
                 HP_BAR(opponent);
                 MESSAGE("It's not very effective…");
             } else {
-                ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, opponent); // Check that the item is triggered
+                ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, opponent); // Check that the resist berry is triggered
                 ANIMATION(ANIM_TYPE_MOVE, MOVE_HIDDEN_POWER, player);
                 HP_BAR(opponent);
                 MESSAGE("It's super effective!");
@@ -213,7 +214,7 @@ SINGLE_BATTLE_TEST("Hidden Power always triggers Counter instead of Mirror Coat 
     PARAMETRIZE { hp = 15; atk = 15; def = 15; spa = 15; spd = 15; spe = 14; } // TYPE_ICE
     PARAMETRIZE { hp = 15; atk = 15; def = 14; spa = 15; spd = 15; spe = 15; } // TYPE_DRAGON
     PARAMETRIZE { hp = 15; atk = 15; def = 15; spa = 15; spd = 15; spe = 15; } // TYPE_DARK
- 
+
     GIVEN {
         WITH_CONFIG(B_HIDDEN_POWER_COUNTER, GEN_3);
         ASSUME(GetMoveEffect(MOVE_COUNTER) == EFFECT_REFLECT_DAMAGE );

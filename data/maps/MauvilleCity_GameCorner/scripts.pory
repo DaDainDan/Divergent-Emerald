@@ -34,7 +34,7 @@ script MauvilleCity_GameCorner_EventScript_CoinsClerk {
     message(MauvilleCity_GameCorner_Text_WereYouLookingForCoins)
     waitmessage
     showmoneybox(0, 0)
-    showcoinsbox(1, 6)
+    showcoinsbox(0, 5)
     goto(MauvilleCity_GameCorner_EventScript_ChooseCoinAmount)
     end
 }
@@ -48,7 +48,7 @@ script MauvilleCity_GameCorner_EventScript_ChooseCoinAmount {
         default: 
             msgbox(MauvilleCity_GameCorner_Text_DontNeedCoinsThen, MSGBOX_DEFAULT)
             hidemoneybox
-            hidecoinsbox(0, 5)
+            hidecoinsbox
             release_end
     }
     if (checkcoins(VAR_TEMP_1) >= VAR_0x8007) {
@@ -61,7 +61,7 @@ script MauvilleCity_GameCorner_EventScript_ChooseCoinAmount {
         addcoins(VAR_0x8009)
         removemoney(VAR_0x8008)
         updatemoneybox
-        updatecoinsbox(1, 6)
+        updatecoinsbox
         playse(SE_SHOP)
         msgbox(MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT)
     }
@@ -77,7 +77,7 @@ script MauvilleCity_GameCorner_EventScript_PrizeCornerDolls {
     if (checkitem(ITEM_COIN_CASE) == TRUE) {
         message(MauvilleCity_GameCorner_Text_WhichPrize)
         waitmessage
-        showcoinsbox(1, 1)
+        showcoinsbox(0, 0)
         goto(MauvilleCity_GameCorner_EventScript_ChooseDollPrize)
     }
     release_end
@@ -101,7 +101,7 @@ script MauvilleCity_GameCorner_EventScript_ChooseDollPrize {
 
 script MauvilleCity_GameCorner_EventScript_CancelDollSelect {
     msgbox(MauvilleCity_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT)
-    hidecoinsbox(0, 0)
+    hidecoinsbox
     release_end
 }
 
@@ -121,7 +121,7 @@ script MauvilleCity_GameCorner_EventScript_ConfirmDollPrize {
     }
     removecoins(VAR_EXCHANGE_PRICE)
     adddecoration(VAR_GIFT_ITEM)
-    updatecoinsbox(1, 1)
+    updatecoinsbox
     playse(SE_SHOP)
     msgbox(MauvilleCity_GameCorner_Text_SendToYourHomePC, MSGBOX_DEFAULT)
     goto(MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize)
@@ -140,7 +140,7 @@ script MauvilleCity_GameCorner_EventScript_PrizeCornerTMs {
     if (checkitem(ITEM_COIN_CASE) == TRUE) {
         message(MauvilleCity_GameCorner_Text_WhichPrize)
         waitmessage
-        showcoinsbox(1, 1)
+        showcoinsbox(0, 0)
         goto(MauvilleCity_GameCorner_EventScript_ChooseTMPrize)
     }
     release_end
@@ -178,7 +178,7 @@ script MauvilleCity_GameCorner_EventScript_PurchaseTM {
     else {
         removecoins(VAR_EXCHANGE_PRICE)
         additem(VAR_GIFT_ITEM)
-        updatecoinsbox(1, 1)
+        updatecoinsbox
         playse(SE_SHOP)
         msgbox(MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT)
     }
@@ -190,7 +190,7 @@ script MauvilleCity_GameCorner_EventScript_PurchaseTM {
 
 script MauvilleCity_GameCorner_EventScript_CancelTMSelect {
     msgbox(MauvilleCity_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT)
-    hidecoinsbox(0, 0)
+    hidecoinsbox
     release_end
 }
 
@@ -405,7 +405,7 @@ script MauvilleCity_GameCorner_EventScript_PrizeCornerMons {
         message(MauvilleCity_GameCorner_Text_WhichPrize)
 		waitmessage
 		setvar(VAR_TEMP_1, 0)
-		showcoinsbox(1, 1)
+		showcoinsbox(0, 0)
 		goto(MauvilleCity_GameCorner_EventScript_ChoosePrizeMon)
     }
     release_end
@@ -459,11 +459,11 @@ script MauvilleCity_GameCorner_EventScript_ChoosePrizeMon {
 	copyvar(VAR_0x8006, VAR_RESULT)
 	if (var(VAR_RESULT) == MON_CANT_GIVE) {
 		msgbox(gText_NoMoreRoomForPokemon)
-		hidecoinsbox(0, 0)
+		hidecoinsbox
 		release_end
 	}
 	removecoins(VAR_EXCHANGE_PRICE)
-    updatecoinsbox(1, 1)
+    updatecoinsbox
     bufferspeciesname(STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES)
     playfanfare(MUS_LEVEL_UP)
     message("{PLAYER} received {STR_VAR_1}!")
@@ -489,7 +489,7 @@ script MauvilleCity_GameCorner_EventScript_ChoosePrizeMon {
 script MauvilleCity_GameCorner_EventScript_CancelMonSelect {
     hidemonpic
     msgbox(MauvilleCity_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT)
-    hidecoinsbox(0, 0)
+    hidecoinsbox
     release_end
 }
 

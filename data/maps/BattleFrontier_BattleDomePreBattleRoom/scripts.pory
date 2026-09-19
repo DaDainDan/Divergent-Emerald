@@ -15,7 +15,6 @@ script BattleFrontier_BattleDomePreBattleRoom_EventScript_EnterRoom {
     if (var(VAR_0x8006) == 1) {
         goto(BattleFrontier_BattleDomePreBattleRoom_EventScript_ReturnFromBattle)
     }
-    delay(1)
     frontier_set(FRONTIER_DATA_RECORD_DISABLED, TRUE)
     setvar(VAR_TEMP_0, 1)
     applymovement(LOCALID_PLAYER, moves(walk_up * 4))

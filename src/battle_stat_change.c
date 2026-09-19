@@ -33,14 +33,14 @@ static bool32 IsStaminaBlocked(struct BattleCalcValues *cv, struct StatChange *s
 // Utitily
 static void AdjustStatStage(struct BattleCalcValues *cv, struct StatChange *st);
 static bool32 CanAbilityPreventStatLoss(enum Ability ability);
-static bool32 AbilityPreventsSpecificStatDrop(u32 ability, u32 stat);
+static bool32 AbilityPreventsSpecificStatDrop(enum Ability ability, enum Stat stat);
 static u32 GetNumPositiveStats(struct StatChange *st);
 static u32 GetNumNegativeStats(struct StatChange *st);
 static bool32 IsFullyAbsorbedByStamina(enum BattlerId battler, enum Ability ability, bool32 currentEntryAbsorbed);
 static void SetAdditionalEffectsOnStatChange(struct BattleCalcValues *cv, struct StatChange *st);
-static void MarkStatsAsDone(struct StatChange *st, u32 stat);
+static void MarkStatsAsDone(struct StatChange *st, enum Stat stat);
 
-u32 const sAccurateStatOrder[NUM_BATTLE_STATS] =
+enum Stat const sAccurateStatOrder[NUM_BATTLE_STATS] =
 {
     STAT_HP,
     STAT_ATK,
@@ -384,33 +384,6 @@ enum StatChangeResult TryStatChange(struct BattleCalcValues *cv, struct StatChan
         SetAdditionalEffectsOnStatChange(cv, st);
 
     return result;
-}
-
-enum StatChangeResult TrySingleStatChange(struct BattleCalcValues *cv, struct StatChange *st)
-{
-    AdjustStatStage(cv, st);
-
-    if (st->stage < 0 || (st->stage == 0 && cv->abilities[cv->battlerDef] == ABILITY_STAMINA))
-    {
-        if (CanDecreaseStat(cv, st) == STAT_CHANGE_DIDNT_WORK)
-            return STAT_CHANGE_DIDNT_WORK;
-
-        if (st->stage == 0) // Stamina absorbed it but didn't block (queue wasn't a full wipeout)
-            return STAT_CHANGE_DIDNT_WORK;
-
-        if (DecreaseStat(cv, st) == STAT_CHANGE_WORKED)
-            return STAT_CHANGE_WORKED;
-    }
-    else if (st->stage > 0)
-    {
-        if (CanIncreaseStat(cv, st) == STAT_CHANGE_DIDNT_WORK)
-            return STAT_CHANGE_DIDNT_WORK;
-
-        if (IncreaseStat(cv, st) == STAT_CHANGE_WORKED)
-            return STAT_CHANGE_WORKED;
-    }
-
-    return STAT_CHANGE_DIDNT_WORK;
 }
 
 static enum StatChangeResult CanDecreaseStat(struct BattleCalcValues *cv, struct StatChange *st)
@@ -972,7 +945,7 @@ static void AdjustStatStage(struct BattleCalcValues *cv, struct StatChange *st)
     if (st->stage == STAT_CHANGE_FORCE_MAX)
         st->stage = MAX_STAT_STAGE;
 
-    if (IsElectricTerrainAffected(cv->battlerDef, gFieldStatuses))
+    if (IsElectricTerrainAffected(cv->battlerDef, gFieldTimers.terrain))
         st->stage = 2 * st->stage;
 
     if ((cv->moveEffect == EFFECT_SWORDS_DANCE && cv->abilities[cv->battlerDef] == ABILITY_HYPER_CUTTER)
@@ -1132,7 +1105,7 @@ static bool32 IsStaminaBlocked(struct BattleCalcValues *cv, struct StatChange *s
     return TRUE;
 }
 
-static bool32 AbilityPreventsSpecificStatDrop(u32 ability, u32 stat)
+static bool32 AbilityPreventsSpecificStatDrop(enum Ability ability, enum Stat stat)
 {
     switch (ability)
     {
@@ -1184,7 +1157,7 @@ bool32 ShouldDefiantCompetitiveActivate(enum BattlerId battler, enum Ability abi
     return gSideTimers[side].stickyWebBattlerSide != side;
 }
 
-u32 GetStatStage(u32 stat, const struct AdditionalEffect *additionalEffect)
+u32 GetStatStage(enum Stat stat, const struct AdditionalEffect *additionalEffect)
 {
     switch (stat)
     {
@@ -1195,9 +1168,8 @@ u32 GetStatStage(u32 stat, const struct AdditionalEffect *additionalEffect)
     case STAT_SPDEF:   return additionalEffect->spDef;
     case STAT_ACC:     return additionalEffect->accuracy;
     case STAT_EVASION: return additionalEffect->evasion;
+    default:           return 0;
     }
-
-    return 0;
 }
 
 u32 GetDynamicStatValue(const struct AdditionalEffect *additionalEffect)
@@ -1482,7 +1454,7 @@ static void SetAdditionalEffectsOnStatChange(struct BattleCalcValues *cv, struct
         break;
     case EFFECT_AUTOTOMIZE:
         if (gBattleStruct->moveResultFlags[cv->battlerDef] & MOVE_RESULT_STAT_CHANGED
-         && GetBattlerWeight(cv->battlerDef) > 1)
+         && GetBattlerWeight(cv->battlerDef, cv->abilities[cv->battlerDef], cv->holdEffects[cv->battlerDef]) > 1)
         {
             gBattleMons[cv->battlerDef].volatiles.autotomizeCount++;
             st->moveScript = BattleScript_AutotomizeMessage;
@@ -1515,7 +1487,7 @@ static void SetAdditionalEffectsOnStatChange(struct BattleCalcValues *cv, struct
   1. Multiply failure pop ups
   2. Since we don't mark battlers as doesn't affect foe, they still get a stat drop
 */
-static void MarkStatsAsDone(struct StatChange *st, u32 stat)
+static void MarkStatsAsDone(struct StatChange *st, enum Stat stat)
 {
     for (u32 i = 0; i < st->statStageAmount; i++)
     {

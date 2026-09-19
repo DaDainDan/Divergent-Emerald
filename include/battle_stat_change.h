@@ -44,7 +44,7 @@ enum SpecialStatTarget
     LOWEST_STAT,
 };
 
-extern u32 const sAccurateStatOrder[NUM_BATTLE_STATS];
+extern enum Stat const sAccurateStatOrder[NUM_BATTLE_STATS];
 
 bool32 CompareStat(enum BattlerId battler, enum Stat statId, u32 cmpTo, u32 cmpKind, enum Ability ability);
 bool32 CanAnyStatChange(struct BattleCalcValues *cv, struct StatChange *st);
@@ -55,7 +55,7 @@ void ClearStatChangeValues(void);
 void ClearOtherStatChangeValues(enum BattlerId battler);
 void ClearBothStatChangeQueues(void);
 enum StatChangeResult TrySingleStatChange(struct BattleCalcValues *cv, struct StatChange *st);
-u32 GetStatStage(u32 stat, const struct AdditionalEffect *additionalEffect);
+u32 GetStatStage(enum Stat stat, const struct AdditionalEffect *additionalEffect);
 u32 GetDynamicStatValue(const struct AdditionalEffect *additionalEffect);
 u32 GetEligibleStatBits(enum BattlerId battler, enum Ability ability, enum StatChangeType changeType, u32 numStats, u32 excludedBits);
 enum Stat PickStatFromBits(enum RandomTag tag, u32 bits);

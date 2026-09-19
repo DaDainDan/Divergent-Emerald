@@ -54,7 +54,6 @@ script FourIsland_EventScript_DaycareMan {
 			goto(FourIsland_EventScript_DaycareAcceptEgg)
 		}
 		msgbox(DayCare_Text_IllKeepIt)
-		clearflag(FLAG_PENDING_DAYCARE_EGG)
 		special(RejectEggFromDayCare)
     }
     elif (var(VAR_RESULT) == DAYCARE_ONE_MON) {
@@ -85,7 +84,6 @@ script FourIsland_EventScript_DaycareAcceptEgg {
 		waitbuttonpress
 		msgbox(DayCare_Text_TakeGoodCareOfIt)
 		special(GiveEggFromDaycare)
-		clearflag(FLAG_PENDING_DAYCARE_EGG)
 		release_end
     }
     msgbox(DayCare_Text_YouHaveNoRoomForIt)

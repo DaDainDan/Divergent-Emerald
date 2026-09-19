@@ -21,7 +21,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_PrizeClerkMons::
 	goto_if_unset FLAG_GOT_COIN_CASE, CeladonCity_GameCorner_PrizeRoom_EventScript_PrizeClerkMons_2
 CeladonCity_GameCorner_PrizeRoom_EventScript_PrizeClerkMons_1:
 # 18 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
-	showcoinsbox 1, 1
+	showcoinsbox 0, 0
 # 19 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
 	msgbox CeladonCity_GameCorner_PrizeRoom_Text_WeExchangeCoinsForPrizes
 # 20 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
@@ -87,7 +87,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_PrizeClerkMons_11:
 
 CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange::
 # 37 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
-	hidecoinsbox 0, 0
+	hidecoinsbox
 	release_end
 
 
@@ -395,7 +395,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon::
 # 182 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
 	removecoins VAR_EXCHANGE_PRICE
 # 183 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
-	updatecoinsbox 0, 5
+	updatecoinsbox
 # 184 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
 	bufferspeciesname STR_VAR_1, VAR_TEMP_TRANSFERRED_SPECIES
 # 185 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
@@ -425,7 +425,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon_2:
 # 177 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
 	msgbox gText_NoMoreRoomForPokemon
 # 178 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
-	hidecoinsbox 0, 0
+	hidecoinsbox
 	release_end
 
 CeladonCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon_6:
@@ -483,7 +483,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_PrizeClerkTMs::
 	goto_if_unset FLAG_GOT_COIN_CASE, CeladonCity_GameCorner_PrizeRoom_EventScript_PrizeClerkTMs_2
 CeladonCity_GameCorner_PrizeRoom_EventScript_PrizeClerkTMs_1:
 # 225 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
-	showcoinsbox 1, 1
+	showcoinsbox 0, 0
 # 226 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
 	msgbox CeladonCity_GameCorner_PrizeRoom_Text_WeExchangeCoinsForPrizes
 # 227 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
@@ -585,7 +585,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_TryGivePrize_1:
 # 269 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
 	removecoins VAR_EXCHANGE_PRICE
 # 270 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
-	updatecoinsbox 0, 5
+	updatecoinsbox
 # 271 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
 	giveitem VAR_GIFT_ITEM
 # 272 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
@@ -603,7 +603,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_TryGivePrize_5:
 # 265 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
 	msgbox gText_TooBadBagIsFull
 # 266 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
-	hidecoinsbox 0, 0
+	hidecoinsbox
 	release_end
 
 
@@ -614,7 +614,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_PrizeClerkItems::
 	goto_if_unset FLAG_GOT_COIN_CASE, CeladonCity_GameCorner_PrizeRoom_EventScript_PrizeClerkItems_2
 CeladonCity_GameCorner_PrizeRoom_EventScript_PrizeClerkItems_1:
 # 281 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
-	showcoinsbox 1, 1
+	showcoinsbox 0, 0
 # 282 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
 	msgbox CeladonCity_GameCorner_PrizeRoom_Text_WeExchangeCoinsForPrizes
 # 283 "data/maps/CeladonCity_GameCorner_PrizeRoom_Frlg/scripts.pory"
