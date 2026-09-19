@@ -763,13 +763,13 @@ static const u16 sWeavileFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_SNEASEL
 
-#if P_FAMILY_TEDDIURSA
+#if P_FAMILY_TEDDIURSA && !P_DISABLE_CERTAIN_FAMILY_MEMBERS
 static const u16 sUrsalunaFormSpeciesIdTable[] = {
     SPECIES_URSALUNA,
     SPECIES_URSALUNA_BLOODMOON,
     FORM_SPECIES_END,
 };
-#endif //P_FAMILY_TEDDIURSA
+#endif //P_FAMILY_TEDDIURSA && !P_DISABLE_CERTAIN_FAMILY_MEMBERS
 
 #if P_FAMILY_CORSOLA
 static const u16 sCorsolaFormSpeciesIdTable[] = {

@@ -1375,7 +1375,9 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sLinooneGalarLevelUpLearnset,
         .teachableLearnset = sLinooneGalarTeachableLearnset,
         .formSpeciesIdTable = sLinooneFormSpeciesIdTable,
+    #if !P_DISABLE_CERTAIN_FAMILY_MEMBERS
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_OBSTAGOON, CONDITIONS({IF_TIME, TIME_NIGHT})}),
+    #endif
     },
 
 #if !P_DISABLE_CERTAIN_FAMILY_MEMBERS

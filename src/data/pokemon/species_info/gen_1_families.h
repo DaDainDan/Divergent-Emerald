@@ -16530,7 +16530,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sMrMimeGalarTeachableLearnset,
         .eggMoveLearnset = sMrMimeGalarEggMoveLearnset,
         .formSpeciesIdTable = sMrMimeFormSpeciesIdTable,
+    #if !P_DISABLE_CERTAIN_FAMILY_MEMBERS
         .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_MR_RIME}),
+    #endif
     },
 
 #if !P_DISABLE_CERTAIN_FAMILY_MEMBERS    
