@@ -12482,10 +12482,11 @@ void BS_TryDefiantRattled(void)
     switch (ability)
     {
     case ABILITY_DEFIANT:
+    case ABILITY_TERAVOLT:
     case ABILITY_STEADFAST:
         if (ShouldDefiantCompetitiveActivate(battler, ability))
         {
-            if (ability == ABILITY_DEFIANT)
+            if (ability != ABILITY_STEADFAST)
                 SetStatChange2(battler, GetHighestAtkStatId(battler), 2);
             else
                 SetStatChange2(battler, STAT_SPEED, 2);

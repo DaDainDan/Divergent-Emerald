@@ -942,9 +942,6 @@ static void AdjustStatStage(struct BattleCalcValues *cv, struct StatChange *st)
     if (cv->moveEffect == EFFECT_HOWL && gProtectStructs[cv->battlerDef].howlActive)
         st->stage = 2 * st->stage;
 
-    if (st->stage == STAT_CHANGE_FORCE_MAX)
-        st->stage = MAX_STAT_STAGE;
-
     if (IsElectricTerrainAffected(cv->battlerDef, gFieldTimers.terrain))
         st->stage = 2 * st->stage;
 
@@ -960,6 +957,9 @@ static void AdjustStatStage(struct BattleCalcValues *cv, struct StatChange *st)
         if (!st->onlyChecking)
             RecordItemEffectBattle(cv->battlerDef, cv->holdEffects[cv->battlerDef]);
     }
+
+    if (st->stage == STAT_CHANGE_FORCE_MAX)
+        st->stage = MAX_STAT_STAGE;
 
     switch (cv->abilities[cv->battlerDef])
     {
@@ -1139,6 +1139,7 @@ bool32 ShouldDefiantCompetitiveActivate(enum BattlerId battler, enum Ability abi
     switch (ability)
     {
     case ABILITY_DEFIANT:
+    case ABILITY_TERAVOLT:
         if (CompareStat(battler, GetHighestAtkStatId(battler), MAX_STAT_STAGE, CMP_EQUAL, ability))
             return FALSE;
         break;

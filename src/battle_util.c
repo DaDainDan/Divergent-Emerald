@@ -7617,7 +7617,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             basePower *= 2;
         break;
     case EFFECT_WEATHER_BALL:
-        if (GetAttackerWeather(ctx->holdEffects[ctx->battlerAtk], ctx->abilities[ctx->battlerAtk], ctx->weather) & (B_WEATHER_ANY & ~B_WEATHER_STRONG_WINDS))
+        if (GetAttackerWeather(ctx->holdEffects[ctx->battlerAtk], ctx->abilities[ctx->battlerAtk], ctx->weather) & (B_WEATHER_ANY))
             basePower *= 2;
         break;
     // case EFFECT_PURSUIT:
@@ -7885,7 +7885,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         u32 weather = GetAttackerWeather(ctx->holdEffects[ctx->battlerAtk], ctx->abilities[ctx->battlerAtk], ctx->weather);
         if ((GetConfig(B_SANDSTORM_SOLAR_BEAM) >= GEN_3 && weather & B_WEATHER_LOW_LIGHT)
             || weather & (B_WEATHER_RAIN | B_WEATHER_ICY_ANY | B_WEATHER_FOG)) // Excludes Sandstorm
-            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
         break;
     }
     case EFFECT_STOMPING_TANTRUM:
@@ -9020,7 +9020,6 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageContext *ctx)
                 return ctx->abilities[ctx->battlerAtk] == ABILITY_ADAPTABILITY ? UQ_4_12(2.0) : UQ_4_12(1.5);
         }
     }
-    
     return UQ_4_12(1.0);
 }
 
@@ -9144,7 +9143,7 @@ static inline uq4_12_t GetMoveAgainstProtectionModifier(struct DamageContext *ct
         enum MoveTarget moveTarget = GetBattlerMoveTargetType(ctx->battlerAtk, ctx->move);
 
         if (protected != PROTECT_NONE
-        && (!IsSideProtected(ctx->battlerDef, PROTECT_WIDE_GUARD) || (moveTarget != TARGET_BOTH & moveTarget != TARGET_FOES_AND_ALLY))
+        && (!IsSideProtected(ctx->battlerDef, PROTECT_WIDE_GUARD) || (moveTarget != TARGET_BOTH && moveTarget != TARGET_FOES_AND_ALLY))
         && (!IsSideProtected(ctx->battlerDef, PROTECT_QUICK_GUARD) || GetChosenMovePriority(ctx->battlerAtk, ctx->abilities[ctx->battlerAtk]) <= 0)
         && protected != PROTECT_CRAFTY_SHIELD
         && protected != PROTECT_MAX_GUARD)
@@ -11426,6 +11425,22 @@ bool32 IsBattlerWeatherAffected(enum HoldEffect holdEffect, u32 weather, u32 wea
         return FALSE;
 
     return TRUE;
+}
+
+enum Type GetWeatherType(u32 weather)
+{
+    if (weather & B_WEATHER_SUN)
+        return TYPE_FIRE;
+    else if (weather & B_WEATHER_RAIN)
+        return TYPE_WATER;
+    else if (weather & B_WEATHER_SANDSTORM)
+        return TYPE_SAND;
+    else if (weather & B_WEATHER_ICY_ANY)
+        return TYPE_ICE;
+    else if (weather & B_WEATHER_STRONG_WINDS)
+        return TYPE_WIND;
+    else
+        return TYPE_NONE;
 }
 
 static u32 CanBattlerHitBothFoesInTerrain(enum BattlerId battler, enum Move move, enum BattleMoveEffects effect)
