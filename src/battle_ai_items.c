@@ -73,6 +73,7 @@ bool32 ShouldUseItem(enum BattlerId battler)
              || (itemEffects[3] & ITEM3_BURN && gBattleMons[battler].status1 & STATUS1_BURN)
              || (itemEffects[3] & ITEM3_FREEZE && gBattleMons[battler].status1 & STATUS1_ICY_ANY)
              || (itemEffects[3] & ITEM3_PARALYSIS && gBattleMons[battler].status1 & STATUS1_PARALYSIS)
+             || (itemEffects[3] & ITEM3_CURSE && gBattleMons[battler].status1 & STATUS1_CURSE)
              || (itemEffects[3] & ITEM3_CONFUSION && gBattleMons[battler].volatiles.confusionTimer > 0))
                 shouldUse = ShouldCureStatusWithItem(battler, battler, gAiLogicData);
             break;

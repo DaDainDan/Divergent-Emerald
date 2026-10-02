@@ -36,6 +36,7 @@ static enum FieldEffectOutcome BenefitsFromSun(enum BattlerId battler);
 static enum FieldEffectOutcome BenefitsFromSandstorm(enum BattlerId battler);
 static enum FieldEffectOutcome BenefitsFromHailOrSnow(enum BattlerId battler, u32 weather);
 static enum FieldEffectOutcome BenefitsFromRain(enum BattlerId battler);
+static enum FieldEffectOutcome BenefitsFromStrongWinds(enum BattlerId battler);
 // The following functions all feed into FieldStatusChecker, which is then called by ShouldSetFieldStatus and ShouldClearFieldStatus.
 // They work approximately the same as the weather functions.
 static enum FieldEffectOutcome BenefitsFromElectricTerrain(enum BattlerId battler);
@@ -85,6 +86,8 @@ bool32 WeatherChecker(enum BattlerId battler, u32 weather, enum FieldEffectOutco
             result[sideBattlers] = BenefitsFromSandstorm(battlerIndex);
         else if (weather & B_WEATHER_ICY_ANY)
             result[sideBattlers] = BenefitsFromHailOrSnow(battlerIndex, weather);
+        else if (weather & B_WEATHER_STRONG_WINDS)
+            result[sideBattlers] = BenefitsFromStrongWinds(battlerIndex);
 
         sideBattlers = PARTNER;
     }
@@ -161,13 +164,17 @@ static bool32 DoesAbilityBenefitFromWeather(enum Ability ability, u32 weather)
     case ABILITY_FORECAST:
         return (weather & (B_WEATHER_RAIN | B_WEATHER_SUN | B_WEATHER_ICY_ANY));
     case ABILITY_MAGIC_GUARD:
+    case ABILITY_SUPERIOR:
     case ABILITY_OVERCOAT:
+    case ABILITY_SHELL_ARMOR:
+    case ABILITY_BATTLE_ARMOR:
+    case ABILITY_SOLID_ROCK:
         return (weather & B_WEATHER_DAMAGING_ANY);
     case ABILITY_SAND_FORCE:
     case ABILITY_SAND_RUSH:
     case ABILITY_SAND_VEIL:
         return (weather & B_WEATHER_SANDSTORM);
-    case ABILITY_ICE_BODY:
+    // case ABILITY_ICE_BODY:
     case ABILITY_ICE_FACE:
     case ABILITY_SNOW_CLOAK:
     case ABILITY_SLUSH_RUSH:
@@ -203,9 +210,11 @@ static bool32 DoesAbilityBenefitFromTerrain(enum Ability ability, enum BattleTer
         return terrain == B_TERRAIN_ELECTRIC;
     case ABILITY_GRASS_PELT:
         return terrain == B_TERRAIN_GRASSY;
-    // no abilities inherently benefit from Misty or Psychic Terrains
+    // no abilities inherently benefit from Misty Terrain
     // return terrain == B_TERRAIN_MISTY;
-    // return terrain == B_TERRAIN_PSYCHIC;
+    case ABILITY_ANALYTIC:
+        return terrain == B_TERRAIN_PSYCHIC;    
+        
     default:
         break;
     }
@@ -257,11 +266,13 @@ static enum FieldEffectOutcome BenefitsFromSun(enum BattlerId battler)
     if (DoesAbilityBenefitFromWeather(ability, B_WEATHER_SUN)
      || HasLightSensitiveMove(battler)
      || HasDamagingMoveOfType(battler, TYPE_FIRE)
+     || HasDamagingMoveOfType(battler, TYPE_GRASS)
      || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL)
      || HasMoveWithEffect(battler, EFFECT_HYDRO_STEAM))
         return FIELD_EFFECT_POSITIVE;
 
-    if (HasMoveWithFlag(battler, MoveHas50AccuracyInSun) || HasDamagingMoveOfType(battler, TYPE_WATER) || gAiLogicData->abilities[battler] == ABILITY_DRY_SKIN)
+    if (HasMoveWithFlag(battler, MoveHas50AccuracyInSun) || HasDamagingMoveOfType(battler, TYPE_ICE) 
+     || gAiLogicData->abilities[battler] == ABILITY_DRY_SKIN || IS_BATTLER_OF_TYPE(battler, TYPE_ICE))
         return FIELD_EFFECT_NEGATIVE;
 
     return FIELD_EFFECT_NEUTRAL;
@@ -270,8 +281,13 @@ static enum FieldEffectOutcome BenefitsFromSun(enum BattlerId battler)
 // Sandstorm
 static enum FieldEffectOutcome BenefitsFromSandstorm(enum BattlerId battler)
 {
+    if (gAiLogicData->holdEffects[battler] == HOLD_EFFECT_UTILITY_UMBRELLA)
+        return FIELD_EFFECT_NEUTRAL;
+    
     if (DoesAbilityBenefitFromWeather(gAiLogicData->abilities[battler], B_WEATHER_SANDSTORM)
-     || IS_BATTLER_OF_TYPE(battler, TYPE_ROCK)
+     || IS_BATTLER_OF_TYPE(battler, TYPE_ROCK, TYPE_GROUND, TYPE_SAND)
+     || HasDamagingMoveOfType(battler, TYPE_SAND)
+     || HasDamagingMoveOfType(battler, TYPE_GROUND)
      || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL))
         return FIELD_EFFECT_POSITIVE;
 
@@ -291,8 +307,12 @@ static enum FieldEffectOutcome BenefitsFromSandstorm(enum BattlerId battler)
 // Hail or Snow
 static enum FieldEffectOutcome BenefitsFromHailOrSnow(enum BattlerId battler, u32 weather)
 {
+    if (gAiLogicData->holdEffects[battler] == HOLD_EFFECT_UTILITY_UMBRELLA)
+        return FIELD_EFFECT_NEUTRAL;
+
     if (DoesAbilityBenefitFromWeather(gAiLogicData->abilities[battler], weather)
      || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
+     || HasDamagingMoveOfType(battler, TYPE_ICE)
      || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL)
      || HasMoveWithFlag(battler, MoveAlwaysHitsInHailSnow)
      || HasBattlerSideMoveWithEffect(battler, EFFECT_AURORA_VEIL))
@@ -317,8 +337,10 @@ static enum FieldEffectOutcome BenefitsFromRain(enum BattlerId battler)
         return FIELD_EFFECT_NEUTRAL;
 
     if (DoesAbilityBenefitFromWeather(gAiLogicData->abilities[battler], B_WEATHER_RAIN)
+      || IS_BATTLER_OF_TYPE(battler, TYPE_GRASS)
       || HasMoveWithFlag(battler, MoveAlwaysHitsInRain)
       || HasDamagingMoveOfType(battler, TYPE_WATER)
+      || HasDamagingMoveOfType(battler, TYPE_ELECTRIC)
       || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL)
       || HasMove(battler, MOVE_ELECTRO_SHOT))
         return FIELD_EFFECT_POSITIVE;
@@ -332,6 +354,20 @@ static enum FieldEffectOutcome BenefitsFromRain(enum BattlerId battler)
     return FIELD_EFFECT_NEUTRAL;
 }
 
+// Strong Winds
+static enum FieldEffectOutcome BenefitsFromStrongWinds(enum BattlerId battler)
+{
+    if (gAiLogicData->holdEffects[battler] == HOLD_EFFECT_UTILITY_UMBRELLA)
+        return FIELD_EFFECT_NEUTRAL;
+
+    if (HasDamagingMoveOfType(battler, TYPE_WIND)
+      || HasDamagingMoveOfType(battler, TYPE_FLYING)
+      || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL))
+        return FIELD_EFFECT_POSITIVE;
+
+    return FIELD_EFFECT_NEUTRAL;
+}
+
 //TODO: when is electric terrain bad?
 static enum FieldEffectOutcome BenefitsFromElectricTerrain(enum BattlerId battler)
 {
@@ -341,17 +377,21 @@ static enum FieldEffectOutcome BenefitsFromElectricTerrain(enum BattlerId battle
     if (HasBattlerTerrainBoostMove(battler, B_TERRAIN_ELECTRIC))
         return FIELD_EFFECT_POSITIVE;
 
-    if ((HasMoveWithEffect(GetBattlerLeftFoe(battler), EFFECT_REST) && AI_IsBattlerGrounded(GetBattlerLeftFoe(battler)))
-     || (HasMoveWithEffect(GetBattlerRightFoe(battler), EFFECT_REST) && AI_IsBattlerGrounded(GetBattlerRightFoe(battler))))
+    if (HasMoveWithEffect(GetBattlerLeftFoe(battler), EFFECT_REST)
+     || HasMoveWithEffect(GetBattlerRightFoe(battler), EFFECT_REST))
         return FIELD_EFFECT_POSITIVE;
 
-    bool32 grounded = AI_IsBattlerGrounded(battler);
-    if (grounded && HasBattlerSideMoveWithAdditionalEffect(GetBattlerLeftFoe(battler), MOVE_EFFECT_SLEEP))
+    if (HasBattlerSideMoveWithAdditionalEffect(GetBattlerLeftFoe(battler), MOVE_EFFECT_SLEEP))
         return FIELD_EFFECT_POSITIVE;
 
-    if (grounded && ((gBattleMons[battler].status1 & STATUS1_SLEEP)
+    if (HasMoveWithEffect(battler, EFFECT_STAT_CHANGE)
+     || HasMoveThatRaisesOwnStats(battler)
+     || HasMoveThatLowersOwnStats(GetBattlerLeftFoe(battler)))
+        return FIELD_EFFECT_POSITIVE;
+
+    if ((gBattleMons[battler].status1 & STATUS1_SLEEP)
     || gBattleMons[battler].volatiles.yawn
-    || HasDamagingMoveOfType(battler, TYPE_ELECTRIC)))
+    || HasDamagingMoveOfType(battler, TYPE_ELECTRIC))
         return FIELD_EFFECT_POSITIVE;
 
     if (HasBattlerTerrainBoostMove(GetBattlerLeftFoe(battler), B_TERRAIN_ELECTRIC)
@@ -372,14 +412,12 @@ static enum FieldEffectOutcome BenefitsFromGrassyTerrain(enum BattlerId battler)
     if (HasMoveWithAdditionalEffect(battler, MOVE_EFFECT_FLORAL_HEALING))
         return FIELD_EFFECT_POSITIVE;
 
-    bool32 grounded = AI_IsBattlerGrounded(battler);
-
     // Weaken spamming Earthquake, Magnitude, and Bulldoze.
-    if (grounded && (HasBattlerSideMoveWithEffect(GetBattlerLeftFoe(battler), EFFECT_EARTHQUAKE)
-    || HasBattlerSideMoveWithEffect(GetBattlerLeftFoe(battler), EFFECT_MAGNITUDE)))
+    if (HasBattlerSideMoveWithEffect(GetBattlerLeftFoe(battler), EFFECT_EARTHQUAKE)
+    || HasBattlerSideMoveWithEffect(GetBattlerLeftFoe(battler), EFFECT_MAGNITUDE))
         return FIELD_EFFECT_POSITIVE;
 
-    if (grounded && HasDamagingMoveOfType(battler, TYPE_GRASS))
+    if (HasDamagingMoveOfType(battler, TYPE_GRASS))
         return FIELD_EFFECT_POSITIVE;
 
     if (HasBattlerSideMoveWithEffect(GetBattlerLeftFoe(battler), EFFECT_GRASSY_GLIDE))
@@ -399,28 +437,40 @@ static enum FieldEffectOutcome BenefitsFromMistyTerrain(enum BattlerId battler)
      || HasBattlerTerrainBoostMove(GetPartnerBattler(battler), B_TERRAIN_MISTY))
         return FIELD_EFFECT_POSITIVE;
 
-    bool32 grounded = AI_IsBattlerGrounded(battler);
-    bool32 allyGrounded = FALSE;
-    if (HasPartner(battler))
-        allyGrounded = AI_IsBattlerGrounded(GetPartnerBattler(battler));
-
-    if ((HasMoveWithEffect(GetBattlerLeftFoe(battler), EFFECT_REST) && AI_IsBattlerGrounded(GetBattlerLeftFoe(battler)))
-     || (HasMoveWithEffect(GetBattlerRightFoe(battler), EFFECT_REST) && AI_IsBattlerGrounded(GetBattlerRightFoe(battler))))
+    if (HasMoveWithEffect(GetBattlerLeftFoe(battler), EFFECT_REST)
+     || HasMoveWithEffect(GetBattlerRightFoe(battler), EFFECT_REST))
         return FIELD_EFFECT_POSITIVE;
 
     // harass dragons
-    if ((grounded || allyGrounded)
-     && (HasDamagingMoveOfType(GetBattlerLeftFoe(battler), TYPE_DRAGON) || HasDamagingMoveOfType(GetBattlerRightFoe(battler), TYPE_DRAGON)))
+    if (HasDamagingMoveOfType(GetBattlerLeftFoe(battler), TYPE_DRAGON) || HasDamagingMoveOfType(GetBattlerRightFoe(battler), TYPE_DRAGON))
         return FIELD_EFFECT_POSITIVE;
 
-    if ((grounded || allyGrounded)
-     && (HasNonVolatileMoveEffect(GetBattlerLeftFoe(battler), MOVE_EFFECT_SLEEP) || HasNonVolatileMoveEffect(GetBattlerRightFoe(battler), MOVE_EFFECT_SLEEP)))
+    if (HasNonVolatileMoveEffect(GetBattlerLeftFoe(battler), MOVE_EFFECT_SLEEP) || HasNonVolatileMoveEffect(GetBattlerRightFoe(battler), MOVE_EFFECT_SLEEP))
         return FIELD_EFFECT_POSITIVE;
 
-    if (grounded && (gBattleMons[battler].status1 & STATUS1_SLEEP || gBattleMons[battler].volatiles.yawn))
+    if ((gBattleMons[battler].status1 & STATUS1_SLEEP || gBattleMons[battler].volatiles.yawn))
         return FIELD_EFFECT_POSITIVE;
 
     return FIELD_EFFECT_NEUTRAL;
+}
+
+static bool32 HasAdditivePriorityEffect(enum BattlerId battler)
+{
+    if (AI_IsAbilityOnSide(battler, ABILITY_GALE_WINGS)
+     || AI_IsAbilityOnSide(battler, ABILITY_TRIAGE)
+     || AI_IsAbilityOnSide(battler, ABILITY_PRANKSTER)
+     || AI_IsAbilityOnSide(battler, ABILITY_MINSTREL)
+     || AI_IsAbilityOnSide(battler, ABILITY_ELECTROLIGHT)
+     || AI_IsAbilityOnSide(battler, ABILITY_PROPELLER_TAIL))
+        return TRUE;
+
+    if ((HasMoveWithEffect(battler, EFFECT_ROLLOUT) && gBattleMons[battler].volatiles.defenseCurl)
+     || (HasMoveWithEffect(battler, EFFECT_ACROBATICS) && gBattleMons[battler].item == ITEM_NONE)
+     || HasMoveWithEffect(battler, EFFECT_QUASH)
+     || HasMoveWithEffect(battler, EFFECT_FLINCH))
+        return TRUE;
+
+    return FALSE;
 }
 
 //TODO: when is Psychic Terrain negative?
@@ -433,31 +483,18 @@ static enum FieldEffectOutcome BenefitsFromPsychicTerrain(enum BattlerId battler
      || HasBattlerTerrainBoostMove(GetPartnerBattler(battler), B_TERRAIN_PSYCHIC))
         return FIELD_EFFECT_POSITIVE;
 
-    bool32 grounded = AI_IsBattlerGrounded(battler);
-    bool32 allyGrounded = FALSE;
-    if (HasPartner(battler))
-        allyGrounded = AI_IsBattlerGrounded(GetPartnerBattler(battler));
+    // harass priority
+    if (HasAdditivePriorityEffect(GetBattlerLeftFoe(battler)))
+        return FIELD_EFFECT_POSITIVE;
 
-    // don't bother if we're not grounded
-    if (grounded || allyGrounded)
-    {
-        // harass priority
-        if (AI_IsAbilityOnSide(GetBattlerLeftFoe(battler), ABILITY_GALE_WINGS)
-         || AI_IsAbilityOnSide(GetBattlerLeftFoe(battler), ABILITY_TRIAGE)
-         || AI_IsAbilityOnSide(GetBattlerLeftFoe(battler), ABILITY_PRANKSTER))
-            return FIELD_EFFECT_POSITIVE;
-    }
-
-    if (grounded && HasDamagingMoveOfType(battler, TYPE_PSYCHIC))
+    if (HasDamagingMoveOfType(battler, TYPE_PSYCHIC))
         return FIELD_EFFECT_POSITIVE;
 
     if (HasBattlerTerrainBoostMove(GetBattlerLeftFoe(battler), B_TERRAIN_PSYCHIC)
      || HasBattlerTerrainBoostMove(GetBattlerRightFoe(battler), B_TERRAIN_PSYCHIC))
         return FIELD_EFFECT_NEGATIVE;
 
-    if (AI_IsAbilityOnSide(battler, ABILITY_GALE_WINGS)
-     || AI_IsAbilityOnSide(battler, ABILITY_TRIAGE)
-     || AI_IsAbilityOnSide(battler, ABILITY_PRANKSTER))
+    if (HasAdditivePriorityEffect(battler))
         return FIELD_EFFECT_NEGATIVE;
 
     return FIELD_EFFECT_NEUTRAL;
@@ -465,10 +502,19 @@ static enum FieldEffectOutcome BenefitsFromPsychicTerrain(enum BattlerId battler
 
 static enum FieldEffectOutcome BenefitsFromGravity(enum BattlerId battler)
 {
+    if (IS_BATTLER_OF_TYPE(GetBattlerLeftFoe(battler), TYPE_PSYCHIC)
+     || IS_BATTLER_OF_TYPE(GetBattlerRightFoe(battler), TYPE_PSYCHIC))
+        return FIELD_EFFECT_NEGATIVE;
+    
+    if (IS_BATTLER_OF_TYPE(battler, TYPE_PSYCHIC)
+     || IS_BATTLER_OF_TYPE(GetPartnerBattler(battler), TYPE_PSYCHIC))
+        return FIELD_EFFECT_POSITIVE;
+    
     if (!AI_IsBattlerGrounded(battler))
         return FIELD_EFFECT_NEGATIVE;
 
-    if (AI_IsAbilityOnSide(battler, ABILITY_HUSTLE))
+    if (AI_IsAbilityOnSide(battler, ABILITY_HUSTLE)
+     || AI_IsAbilityOnSide(battler, ABILITY_PROPELLER_TAIL))
         return FIELD_EFFECT_POSITIVE;
 
     if (HasMoveWithFlag(battler, IsMoveGravityBanned))
@@ -542,9 +588,7 @@ s32 CalcWeatherScore(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum 
             if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_DAMP_ROCK)
                 score += WEAK_EFFECT;
             if (HasBattlerSideMoveWithEffect(battlerDef, EFFECT_MORNING_SUN)
-             || HasBattlerSideMoveWithEffect(battlerDef, EFFECT_SYNTHESIS)
-             || HasBattlerSideMoveWithEffect(battlerDef, EFFECT_SOLAR_BEAM)
-             || HasBattlerSideMoveWithEffect(battlerDef, EFFECT_MOONLIGHT))
+             || HasBattlerSideMoveWithEffect(battlerDef, EFFECT_SOLAR_BEAM))
                 score += WEAK_EFFECT;
             if (HasDamagingMoveOfType(battlerDef, TYPE_FIRE) || HasDamagingMoveOfType(GetPartnerBattler(battlerDef), TYPE_FIRE))
                 score += WEAK_EFFECT;

@@ -62,6 +62,7 @@
 #define AI_WISH_HEAL_THRESHOLD                                  4 // Fraction of HP AI must restore to be considered a good recipient of Wish, treated as a fraction denominator (ie. 4 = 1/4 = 25% HP)
 #define AI_SWITCHIN_DAMAGE_THRESHOLD                            0 // Damage AI must exceed to be considered an acceptable switchin candidate. Keep this *very low*, as it's used as a fallback case before giving up.
 #define AI_REVERSE_BATTLER_LOGIC_ORDER_CHANCE                   50 // Chance to reverse the order of mons when running AI logic in double battles. For example if both mons want to switch and there's only one mon to switch in, the first mon processed will get to switch; setting this above zero controls the chance of switching which slot is processed first
+#define MIXED_ATTACKER_THRESHOLD                                70 // A battler's weaker offensive category (physical/special) must deal at least this % of its stronger category's best damage to be considered a mixed attacker
 
 // AI held item-based move scoring
 #define LOW_ACCURACY_THRESHOLD                                  75 // Moves with accuracy equal OR below this value are considered low accuracy
