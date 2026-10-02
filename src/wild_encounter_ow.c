@@ -1121,7 +1121,7 @@ void TryDespawnOWEsCrossingMapConnection(void)
 
     if (gMapHeader.mapType != MAP_TYPE_CITY && gMapHeader.mapType != MAP_TYPE_TOWN)
         return;
-        
+
     DespawnAllOverworldWildEncounters(OWE_GENERATED, 0);
 }
 

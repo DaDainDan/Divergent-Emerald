@@ -115,6 +115,14 @@ bool32 BattlerHasAi(enum BattlerId battlerId)
     if (IsAiVsAiBattle())
         return TRUE;
 
+    if (gBattleTypeFlags & BATTLE_TYPE_RECORDED
+     && gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER
+     && !(gBattleTypeFlags & BATTLE_TYPE_RECORDED_LINK)
+     && battlerId == B_BATTLER_2)
+    {
+        return TRUE;
+    }
+
     return FALSE;
 }
 
@@ -240,7 +248,7 @@ static void InitBtlControllersInternal(void)
             if (isDouble && isMulti && !isMaster)
                 SetBattlerControllerFunc(GetBattlerPosition(B_BATTLER_0), SetControllerToLinkPartner);
             else
-                 SetBattlerControllerFunc(GetBattlerPosition(B_BATTLER_0), SetControllerToPlayer);
+                SetBattlerControllerFunc(GetBattlerPosition(B_BATTLER_0), SetControllerToPlayer);
 
             if (!isDouble || !isMulti || !isMaster)
             {
@@ -317,7 +325,7 @@ static void InitBtlControllersInternal(void)
                         SetBattlerControllerFunc(GetBattlerPosition(B_BATTLER_2), SetControllerToPlayerPartner);
                     else
 #endif
-                    SetBattlerControllerFunc(GetBattlerPosition(B_BATTLER_2), SetControllerToRecordedPartner);
+                        SetBattlerControllerFunc(GetBattlerPosition(B_BATTLER_2), SetControllerToRecordedPartner);
                 }
                 else if ((isInGamePartner && !isRecorded)
                         || isAIvsAI)

@@ -20919,8 +20919,9 @@ MatchaGotchaDoubleProjectile:
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@
 gBattleAnimMove_None::
-gBattleAnimMove_Count:: @Unused?
 gBattleAnimMove_MirrorMove::
+	end
+	
 gBattleAnimMove_Pound::
 	monbg ANIM_TARGET
 	setalpha 12, 8

@@ -2563,7 +2563,7 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
 
 const u8 *AbsorbedByDrainHpAbility(enum BattlerId battlerDef)
 {
-    if (IsBattlerAtMaxHp(battlerDef) || (B_HEAL_BLOCKING >= GEN_5 && gBattleMons[battlerDef].volatiles.healBlockTimer))
+    if (IsBattlerAtMaxHp(battlerDef) || (GetConfig(B_HEAL_BLOCKING) >= GEN_5 && gBattleMons[battlerDef].volatiles.healBlockTimer))
     {
         return BattleScript_AbilityProtectedTarget;
     }
@@ -2937,6 +2937,7 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
         }
         else if (gStartingStatuses.tailwindPlayer || gStartingStatuses.tailwindPlayerTemporary)
         {
+            gCurrentMove = MOVE_TAILWIND;
             effect = SetStartingSideStatus(
                         SIDE_STATUS_TAILWIND,
                         B_SIDE_PLAYER,
@@ -2948,6 +2949,7 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
         }
         else if (gStartingStatuses.tailwindOpponent || gStartingStatuses.tailwindOpponentTemporary)
         {
+            gCurrentMove = MOVE_TAILWIND;
             effect = SetStartingSideStatus(
                         SIDE_STATUS_TAILWIND,
                         B_SIDE_OPPONENT,
@@ -4748,7 +4750,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             break;
         case ABILITY_ANGER_POINT:
             if (gSpecialStatuses[battler].criticalHit
-             && IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
+             && IsBattlerTurnDamaged(battler, GetConfig(B_UPDATED_ABILITY_DATA) <= GEN_4 ? INCLUDING_SUBSTITUTES : EXCLUDING_SUBSTITUTES)
              && IsBattlerAlive(battler)
              && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
             {
@@ -4772,10 +4774,11 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                     .move = MOVE_NONE,
                 };
 
-                cv.abilities[gBattlerAttacker] = GetBattlerAbility(gBattlerAttacker);
-                cv.abilities[gBattlerTarget] = ability;
-                cv.holdEffects[gBattlerAttacker] = GetBattlerHoldEffect(gBattlerAttacker);
-                cv.holdEffects[gBattlerTarget] = GetBattlerHoldEffect(gBattlerTarget);
+                for (enum BattlerId i = 0; i < gBattlersCount; i++)
+                {
+                    cv.abilities[i] = GetBattlerAbility(i);
+                    cv.holdEffects[i] = GetBattlerHoldEffect(i);
+                }
 
                 struct StatChange st = {
                     .onlyChecking = TRUE,
@@ -7056,19 +7059,31 @@ enum HoldEffect GetBattlerHoldEffectIgnoreAbility(enum BattlerId battler)
 
 enum HoldEffect GetBattlerHoldEffectInternal(enum BattlerId battler, enum Ability ability)
 {
+    enum HoldEffect holdEffect;
+
     if (gBattleStruct->battlerState[battler].notOnField)
         return HOLD_EFFECT_NONE;
     if (gSpecialStatuses[battler].attackerInParty)
         return HOLD_EFFECT_NONE;
-    if (gBattleMons[battler].volatiles.embargoTimer)
+
+    if (gBattleMons[battler].volatiles.embargoTimer
+     || gFieldStatuses & STATUS_FIELD_MAGIC_ROOM
+     || (ability == ABILITY_KLUTZ && !gBattleMons[battler].volatiles.gastroAcid))
+    {
+        if (gBattleMons[battler].item == ITEM_ENIGMA_BERRY_E_READER)
+            holdEffect = gEnigmaBerries[battler].holdEffect;
+        else
+            holdEffect = GetItemHoldEffect(gBattleMons[battler].item);
+
+        if (holdEffect == HOLD_EFFECT_DOUBLE_PRIZE)
+        {
+            gPotentialItemEffectBattler = battler;
+            return holdEffect;
+        }
         return HOLD_EFFECT_NONE;
-    if (gFieldStatuses & STATUS_FIELD_MAGIC_ROOM)
-        return HOLD_EFFECT_NONE;
-    if (ability == ABILITY_KLUTZ && !gBattleMons[battler].volatiles.gastroAcid)
-        return HOLD_EFFECT_NONE;
+    }
 
     gPotentialItemEffectBattler = battler;
-
     if (gBattleMons[battler].item == ITEM_ENIGMA_BERRY_E_READER)
         return gEnigmaBerries[battler].holdEffect;
     else
@@ -7477,7 +7492,7 @@ static inline u32 CalcTerrainBoostedPower(struct DamageContext *ctx, u32 basePow
         isTerrainAffected = IsBattlerTerrainAffected(ctx->battlerAtk, GetMoveTerrainBoost_Terrain(ctx->move), ctx->terrain);
     else if (GetMoveTerrainBoost_GroundCheck(ctx->move) == GROUND_CHECK_TARGET)
         isTerrainAffected = IsBattlerTerrainAffected(ctx->battlerDef, GetMoveTerrainBoost_Terrain(ctx->move), ctx->terrain);
-    else if (ctx->terrain & GetMoveTerrainBoost_Terrain(ctx->move)) // no ground check (Psyblade)
+    else if (ctx->terrain == GetMoveTerrainBoost_Terrain(ctx->move)) // no ground check (Psyblade)
         isTerrainAffected = TRUE;
 
     if (isTerrainAffected)
@@ -7777,7 +7792,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         break;
     case EFFECT_HIDDEN_POWER:
     {
-        if (B_HIDDEN_POWER_DMG < GEN_6)
+        if (GetConfig(B_HIDDEN_POWER_DMG) < GEN_6)
         {
             u8 powerBits = ((gBattleMons[battlerAtk].hpIV & 2) >> 1)
                          | ((gBattleMons[battlerAtk].attackIV & 2) << 0)
@@ -7829,7 +7844,11 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
     }
 
     if (basePower == 0)
-        basePower = 1;
+    {
+        if ((moveEffect != EFFECT_RETURN && moveEffect != EFFECT_FRUSTRATION)
+         || GetConfig(B_RETURN_FRUSTRATION_DMG) >= GEN_3)
+            basePower = 1;
+    }
     return basePower;
 }
 
@@ -8560,7 +8579,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.33));
         break;
     case ABILITY_PROTOSYNTHESIS:
-         if (ctx->weather & B_WEATHER_SUN || gBattleMons[battlerAtk].volatiles.boosterEnergyActivated)
+        if (ctx->weather & B_WEATHER_SUN || gBattleMons[battlerAtk].volatiles.boosterEnergyActivated)
             modifier = uq4_12_multiply(modifier, GetParadoxAbilityModifier(battlerAtk, move, STAT_ATK, STAT_SPATK));
         break;
     case ABILITY_QUARK_DRIVE:
@@ -9468,6 +9487,9 @@ static inline s32 DoMoveDamageCalcVars(struct DamageContext *ctx)
     else
         gBattleMovePower = CalcMoveBasePowerAfterModifiers(ctx);
 
+    if (gBattleMovePower == 0)
+        return 0;
+
     userFinalAttack = CalcAttackStat(ctx);
     targetFinalDefense = CalcDefenseStat(ctx);
 
@@ -10261,11 +10283,32 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
     return modifier;
 }
 
+static inline bool32 MoveIgnoresType(struct DamageContext *ctx)
+{
+    if (ctx->moveType == TYPE_MYSTERY)
+        return TRUE;
+
+    switch (GetMoveEffect(ctx->move))
+    {
+    case EFFECT_TRI_ATTACK:
+        return TRUE;
+    case EFFECT_FIXED_PERCENT_DAMAGE:
+    case EFFECT_FIXED_HP_DAMAGE:
+    case EFFECT_LEVEL_DAMAGE:
+    case EFFECT_PSYWAVE:
+    case EFFECT_BIDE:
+    case EFFECT_REFLECT_DAMAGE:
+        return GetConfig(B_FIXED_DMG_IGNORES_TYPE) < GEN_2;
+    default:
+        return FALSE;
+    }
+}
+
 uq4_12_t CalcTypeEffectivenessMultiplier(struct DamageContext *ctx)
 {
     uq4_12_t modifier = UQ_4_12(1.0);
 
-    if (ctx->move != MOVE_STRUGGLE && GetMoveEffect(ctx->move) != EFFECT_TRI_ATTACK && ctx->moveType != TYPE_MYSTERY)
+    if (!MoveIgnoresType(ctx))
     {
         modifier = CalcTypeEffectivenessMultiplierInternal(ctx, modifier);
         if (GetMoveEffect(ctx->move) == EFFECT_TWO_TYPED_MOVE && !ctx->isAnticipation)
@@ -10707,6 +10750,8 @@ bool32 TryBattleFormChange(enum BattlerId battler, enum FormChanges method, enum
         TryToSetBattleFormChangeMoves(mon, method);
         SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
         gBattleMons[battler].species = targetSpecies;
+        if (GetConfig(B_AUTOTOMIZE_FORM_CHANGE) >= GEN_6)
+            gBattleMons[battler].volatiles.autotomizeCount = 0;
         RecalcBattlerStats(battler, mon, method == FORM_CHANGE_BATTLE_GIGANTAMAX);
         return TRUE;
     }
@@ -11617,7 +11662,7 @@ u32 CalcSecondaryEffectChance(enum BattlerId battler, enum Ability battlerAbilit
     if (isCrafty || holdEffectAtk == HOLD_EFFECT_KINGS_ROCK) // Technician
         secondaryEffectChance += 30;
 
-    if (hasRainbow && additionalEffect->moveEffect != MOVE_EFFECT_SECRET_POWER)
+    if (hasRainbow)
         secondaryEffectChance *= 2;
 
     return secondaryEffectChance;
@@ -11858,9 +11903,9 @@ enum Type GetBattleMoveType(enum Move move)
             return gBattleStruct->dynamicMoveType;
 
         enum BattleMoveEffects effect = GetMoveEffect(move);
-        if (B_UPDATED_MOVE_TYPES < GEN_5
-         && (effect == EFFECT_BEAT_UP || effect == EFFECT_FUTURE_SIGHT))
-          return TYPE_MYSTERY;
+        if ((effect == EFFECT_BEAT_UP || effect == EFFECT_FUTURE_SIGHT)
+         && GetConfig(B_UPDATED_MOVE_TYPES) < GEN_5)
+            return TYPE_MYSTERY;
     }
     return GetMoveType(move);
 }
@@ -11940,7 +11985,7 @@ bool32 AreMultiPartiesFullTeams(void)
     enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
 
     if (B_MULTI_HALF_TEAMS)
-	{
+    {
         gSpecialVar_Result = FALSE;
         return FALSE;
     }
@@ -11950,7 +11995,7 @@ bool32 AreMultiPartiesFullTeams(void)
         gSpecialVar_Result = TRUE;
         return TRUE;
     }
-		
+
     if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_LINK_OPPONENT
      || gBattleTypeFlags & BATTLE_TYPE_TOWER_LINK_MULTI
      || (gTrainers[difficulty][TRAINER_BATTLE_PARAM.opponentA].multiTeamSize == MULTI_TEAM_SIZE_HALF)
@@ -12771,6 +12816,9 @@ void RemoveAbilityFlags(enum BattlerId battler)
 
     switch (GetBattlerAbility(battler))
     {
+    case ABILITY_NEUTRALIZING_GAS:
+        gSpecialStatuses[battler].neutralizingGasRemoved = TRUE;
+        break;
     case ABILITY_FLASH_FIRE:
         gBattleMons[battler].volatiles.flashFireBoosted = FALSE;
         break;
