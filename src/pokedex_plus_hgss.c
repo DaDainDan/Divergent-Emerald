@@ -459,7 +459,6 @@ enum
     WIN_STATS_MOVES_DESCRIPTION,
     WIN_STATS_MOVES_BOTTOM,
     WIN_STATS_ABILITIES,
-    WIN_STATS_LEFT_UNUSED,
 };
 static const struct WindowTemplate sStatsScreen_WindowTemplates[] =
 {
@@ -499,7 +498,7 @@ static const struct WindowTemplate sStatsScreen_WindowTemplates[] =
         .tilemapLeft = 0,
         .tilemapTop = 6,
         .width = 12,
-        .height = 8,
+        .height = 12,
         .paletteNum = 0,
         .baseBlock = 1 + 60 + 40 + 48,
     },
@@ -511,7 +510,7 @@ static const struct WindowTemplate sStatsScreen_WindowTemplates[] =
         .width = 12,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 1 + 60 + 40 + 48 + 96,
+        .baseBlock = 1 + 60 + 40 + 48 + 144,
     },
     [WIN_STATS_MOVES_TOP] =
     {
@@ -521,7 +520,7 @@ static const struct WindowTemplate sStatsScreen_WindowTemplates[] =
         .width = 18,
         .height = 4,
         .paletteNum = 0,
-        .baseBlock = 1 + 60 + 40 + 48 + 96 + 24,
+        .baseBlock = 1 + 60 + 40 + 48 + 144 + 24,
     },
     [WIN_STATS_MOVES_DESCRIPTION] =
     {
@@ -531,7 +530,7 @@ static const struct WindowTemplate sStatsScreen_WindowTemplates[] =
         .width = 18,
         .height = 4,
         .paletteNum = 0,
-        .baseBlock = 1 + 60 + 40 + 48 + 96 + 24 + 72,
+        .baseBlock = 1 + 60 + 40 + 48 + 144 + 24 + 72,
     },
     [WIN_STATS_MOVES_BOTTOM] =
     {
@@ -541,7 +540,7 @@ static const struct WindowTemplate sStatsScreen_WindowTemplates[] =
         .width = 18,
         .height = 2,
         .paletteNum = 0,
-        .baseBlock = 1 + 60 + 40 + 48 + 96 + 24 + 72 + 72,
+        .baseBlock = 1 + 60 + 40 + 48 + 144 + 24 + 72 + 72,
     },
     [WIN_STATS_ABILITIES] =
     {
@@ -551,17 +550,7 @@ static const struct WindowTemplate sStatsScreen_WindowTemplates[] =
         .width = 18,
         .height = 8,
         .paletteNum = 0,
-        .baseBlock = 1 + 60 + 40 + 48 + 96 + 24 + 72 + 72 + 36,
-    },
-    [WIN_STATS_LEFT_UNUSED] =
-    {
-        .bg = 2,
-        .tilemapLeft = 0,
-        .tilemapTop = 14,
-        .width = 12,
-        .height = 4,
-        .paletteNum = 0,
-        .baseBlock = 1 + 60 + 40 + 48 + 96 + 24 + 72 + 72 + 36 + 144,
+        .baseBlock = 1 + 60 + 40 + 48 + 144 + 24 + 72 + 72 + 36,
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -2821,14 +2810,14 @@ static void PrintStatsScreen_Left(u8 taskId)
         PrintStatsScreenTextSmall(WIN_STATS_LEFT, strEV, align_x, base_y + base_y_offset*base_i);
         base_i++;
 
-        // PrintStatsScreenTextSmall(WIN_STATS_LEFT_UNUSED, sText_Stats_Airborne, base_x, 0);
+        // PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_Airborne, base_x, 64);
         // if (airborne)
-        //     PrintStatsScreenTextSmall(WIN_STATS_LEFT_UNUSED, sText_Stats_Flys, base_x + x_offset_column + 10, 0);
+        //     PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_Flys, base_x + x_offset_column + 10, 64);
         // else
-        //     PrintStatsScreenTextSmall(WIN_STATS_LEFT_UNUSED, sText_Stats_Grounded, base_x + x_offset_column + 2, 0);
+        //     PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_Grounded, base_x + x_offset_column + 2, 64);
 
         //Tier
-        PrintStatsScreenTextSmall(WIN_STATS_LEFT_UNUSED, sText_Stats_Tier, base_x, 0);
+        PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_Tier, base_x, base_y + base_y_offset*base_i);
         switch (tier)
         {
         case NEWBORN_TIER:
@@ -2868,7 +2857,7 @@ static void PrintStatsScreen_Left(u8 taskId)
             break;
         }
         align_x = GetStringRightAlignXOffset(0, strEV, total_x);
-        PrintStatsScreenTextSmall(WIN_STATS_LEFT_UNUSED, strEV, align_x, 0);
+        PrintStatsScreenTextSmall(WIN_STATS_LEFT, strEV, align_x, base_y + base_y_offset*base_i);
 
     }
     else
