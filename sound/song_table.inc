@@ -415,7 +415,7 @@ gSongTable::
 	song mus_mt_chimney, MUSIC_PLAYER_BGM, 0
 	song mus_encounter_female, MUSIC_PLAYER_BGM, 0
 	song mus_lilycove, MUSIC_PLAYER_BGM, 0
-	song mus_route111, MUSIC_PLAYER_BGM, 0
+	song mus_desert, MUSIC_PLAYER_BGM, 0
 	song mus_help, MUSIC_PLAYER_BGM, 0
 	song mus_underwater, MUSIC_PLAYER_BGM, 0
 	song mus_victory_trainer, MUSIC_PLAYER_BGM, 0
