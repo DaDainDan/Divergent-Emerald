@@ -9043,3 +9043,77 @@ DirectSoundWaveData_sd90_classical_whistle::
 	.align 2
 DirectSoundWaveData_sd90_enhanced_delay_shaku::
 	.incbin "sound/direct_sound_samples/sd90_enhanced_delay_shaku.bin"
+
+@ Pokemon Pinball: Ruby & Sapphire samples (from pret/pokepinballrs)
+
+	.align 2
+DirectSoundWaveData_sc55_nylon_str_guitar::
+	.incbin "sound/direct_sound_samples/sc55_nylon_str_guitar.bin"
+
+	.align 2
+DirectSoundWaveData_sc88pro_clarinet::
+	.incbin "sound/direct_sound_samples/sc88pro_clarinet.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_sax_5AA074::
+	.incbin "sound/direct_sound_samples/unknown_sax_5AA074.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_vibraphone_55EA58::
+	.incbin "sound/direct_sound_samples/unknown_vibraphone_55EA58.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_marimba_5A4FE4::
+	.incbin "sound/direct_sound_samples/unknown_marimba_5A4FE4.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_bass_5A7D6C::
+	.incbin "sound/direct_sound_samples/unknown_bass_5A7D6C.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_synth_strings_5A8788::
+	.incbin "sound/direct_sound_samples/unknown_synth_strings_5A8788.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_voice_5AA274::
+	.incbin "sound/direct_sound_samples/unknown_voice_5AA274.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_picked_bass_5A37F4::
+	.incbin "sound/direct_sound_samples/unknown_picked_bass_5A37F4.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_drawbar_organ_5A5934::
+	.incbin "sound/direct_sound_samples/unknown_drawbar_organ_5A5934.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_contrabass_5A8470::
+	.incbin "sound/direct_sound_samples/unknown_contrabass_5A8470.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_muted_trumpet_5A9EA4::
+	.incbin "sound/direct_sound_samples/unknown_muted_trumpet_5A9EA4.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_shamisen_5A45E0::
+	.incbin "sound/direct_sound_samples/unknown_shamisen_5A45E0.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_slap_bass_5A3DF4::
+	.incbin "sound/direct_sound_samples/unknown_slap_bass_5A3DF4.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_viola_5A7EDC::
+	.incbin "sound/direct_sound_samples/unknown_viola_5A7EDC.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_whistle_5ABE38::
+	.incbin "sound/direct_sound_samples/unknown_whistle_5ABE38.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_snare_535D10::
+	.incbin "sound/direct_sound_samples/unknown_snare_535D10.bin"
+
+	.align 2
+DirectSoundWaveData_unknown_hand_clap_536404::
+	.incbin "sound/direct_sound_samples/unknown_hand_clap_536404.bin"

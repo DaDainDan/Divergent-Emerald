@@ -5,6 +5,7 @@
 .include "sound/voicegroups/drumsets/frlg.inc"
 .include "sound/voicegroups/drumsets/emerald_1.inc"
 .include "sound/voicegroups/drumsets/emerald_2.inc"
+.include "sound/voicegroups/drumsets/pinball.inc"
 
 @ key splits
 .include "sound/voicegroups/keysplits/piano.inc"
@@ -13,6 +14,7 @@
 .include "sound/voicegroups/unused.inc"
 .include "sound/voicegroups/keysplits/tuba.inc"
 .include "sound/voicegroups/keysplits/french_horn.inc"
+.include "sound/voicegroups/keysplits/pinball_piano.inc"
 
 .include "sound/voicegroups/route110.inc"
 .include "sound/voicegroups/route101.inc"
@@ -201,3 +203,5 @@
 .include "sound/voicegroups/rg_sevii_45.inc"
 .include "sound/voicegroups/rg_sevii_67.inc"
 .include "sound/voicegroups/drumsets/rg_credits.inc"
+
+.include "sound/voicegroups/pinball.inc"
