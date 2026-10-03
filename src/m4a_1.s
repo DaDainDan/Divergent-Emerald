@@ -142,7 +142,7 @@ lt_PCM_DMA_BUF_SIZE:      .word PCM_DMA_BUF_SIZE
 	.equ VAR_EXT_NOISE_SHAPE_RIGHT, 0xF      @ [byte] normally unused, used here for noise shaping
 	.equ VAR_DEF_PITCH_FAC, 0x18             @ [word] this value get's multiplied with the samplerate for the inter sample distance
 	.equ VAR_FIRST_CHN, 0x50                 @ [CHN struct] relative offset to channel array
-	.equ VAR_PCM_BUFFER, 0x350
+	.equ VAR_PCM_BUFFER, 0x410
 
 	/* just some more defines */
 	.equ ARM_OP_LEN, 0x4
@@ -1898,7 +1898,7 @@ _081DD9F6:
 	cmp r6, 0
 	beq _081DDA14
 	ldrb r0, [r4, o_CgbChannel_modify]
-	movs r1, 0x1
+	movs r1, CGB_CHANNEL_MO_VOL
 	orrs r0, r1
 	strb r0, [r4, o_CgbChannel_modify]
 _081DDA14:
