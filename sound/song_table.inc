@@ -565,6 +565,21 @@ gSongTable::
 	song mus_rg_trainer_tower, MUSIC_PLAYER_BGM, 0
 	song mus_rg_slow_pallet, MUSIC_PLAYER_BGM, 0
 	song mus_rg_teachy_tv_menu, MUSIC_PLAYER_BGM, 0
+	song mus_ns_farewell, MUSIC_PLAYER_BGM, 0
+	song mus_unova_route_12_autumn, MUSIC_PLAYER_BGM, 0
+	song mus_wally_battle_theme_gba, MUSIC_PLAYER_BGM, 0
+	song mus_unwavering_emotions, MUSIC_PLAYER_BGM, 0
+	song mus_oras_soaring_illusions, MUSIC_PLAYER_BGM, 0
+	song mus_unova_route_gate, MUSIC_PLAYER_BGM, 0
+	song mus_village_bridge, MUSIC_PLAYER_BGM, 0
+	song mus_unova_route_10, MUSIC_PLAYER_BGM, 0
+	song mus_xy_boutique, MUSIC_PLAYER_BGM, 0
+	song mus_sinnoh_pokemon_league_exterior_day, MUSIC_PLAYER_BGM, 0
+	song mus_unova_victory_road, MUSIC_PLAYER_BGM, 0
+	song mus_xy_route_15, MUSIC_PLAYER_BGM, 0
+	song mus_eterna_forest, MUSIC_PLAYER_BGM, 0
+	song mus_dp_canalave_night, MUSIC_PLAYER_BGM, 0
+	song mus_johto_route_47, MUSIC_PLAYER_BGM, 0
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2
 	song ph_trap_held, MUSIC_PLAYER_SE2, 2
 	song ph_trap_solo, MUSIC_PLAYER_SE2, 2

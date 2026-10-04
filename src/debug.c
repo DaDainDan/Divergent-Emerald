@@ -4187,7 +4187,22 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_RG_ENCOUNTER_DEOXYS)      \
     X(MUS_RG_TRAINER_TOWER)         \
     X(MUS_RG_SLOW_PALLET)           \
-    X(MUS_RG_TEACHY_TV_MENU)
+    X(MUS_RG_TEACHY_TV_MENU)        \
+    X(MUS_NS_FAREWELL)              \
+    X(MUS_UNOVA_ROUTE_12_AUTUMN)    \
+    X(MUS_WALLY_BATTLE_THEME_GBA)   \
+    X(MUS_UNWAVERING_EMOTIONS)      \
+    X(MUS_ORAS_SOARING_ILLUSIONS)   \
+    X(MUS_UNOVA_ROUTE_GATE)         \
+    X(MUS_VILLAGE_BRIDGE)           \
+    X(MUS_UNOVA_ROUTE_10)           \
+    X(MUS_XY_BOUTIQUE)              \
+    X(MUS_SINNOH_POKEMON_LEAGUE_EXTERIOR_DAY) \
+    X(MUS_UNOVA_VICTORY_ROAD) \
+    X(MUS_XY_ROUTE_15) \
+    X(MUS_ETERNA_FOREST) \
+    X(MUS_DP_CANALAVE_NIGHT) \
+    X(MUS_JOHTO_ROUTE_47)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \
