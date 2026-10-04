@@ -7452,10 +7452,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sHoundourLevelUpLearnset,
         .teachableLearnset = sHoundourTeachableLearnset,
         .eggMoveLearnset = sHoundourEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_HOUNDOOM}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_HOUNDREAD}),
     },
 
-    [SPECIES_HOUNDOOM] =
+    [SPECIES_HOUNDREAD] =
     {
         .baseHP        = 75,
         .baseAttack    = 90,

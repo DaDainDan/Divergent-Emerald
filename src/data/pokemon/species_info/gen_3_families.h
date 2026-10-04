@@ -4691,11 +4691,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggMoveLearnset = sSableyeEggMoveLearnset,
         // .formSpeciesIdTable = sSableyeFormSpeciesIdTable,
         // .formChangeTable = sSableyeFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_SABLEYE_MEGA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_SANGUINEYE}),
     },
 
 #if P_MEGA_TO_EVOLUTION
-    [SPECIES_SABLEYE_MEGA] =
+    [SPECIES_SANGUINEYE] =
     {
         .baseHP        = 53,
         .baseAttack    = 73,
@@ -4849,11 +4849,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggMoveLearnset = sMawileEggMoveLearnset,
         // .formSpeciesIdTable = sMawileFormSpeciesIdTable,
         // .formChangeTable = sMawileFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_MAWILE_MEGA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_DAIMAW}),
     },
 
 #if P_MEGA_TO_EVOLUTION
-    [SPECIES_MAWILE_MEGA] =
+    [SPECIES_DAIMAW] =
     {
         .baseHP        = 73,
         .baseAttack    = 98,
@@ -5392,11 +5392,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sMedichamTeachableLearnset,
         // .formSpeciesIdTable = sMedichamFormSpeciesIdTable,
         // .formChangeTable = sMedichamFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_MEDICHAM_MEGA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_INNERVANNA}),
     },
 
 #if P_MEGA_TO_EVOLUTION
-    [SPECIES_MEDICHAM_MEGA] =
+    [SPECIES_INNERVANNA] =
     {
         .baseHP        = 65,
         .baseAttack    = 88,
@@ -5614,11 +5614,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sManectricTeachableLearnset,
         // .formSpeciesIdTable = sManectricFormSpeciesIdTable,
         // .formChangeTable = sManectricFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 62, SPECIES_MANECTRIC_MEGA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 62, SPECIES_BOLTHIDE}),
     },
 
 #if P_MEGA_TO_EVOLUTION
-    [SPECIES_MANECTRIC_MEGA] =
+    [SPECIES_BOLTHIDE] =
     {
         .baseHP        = 80,
         .baseAttack    = 103,
@@ -7919,11 +7919,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sAltariaTeachableLearnset,
         // .formSpeciesIdTable = sAltariaFormSpeciesIdTable,
         // .formChangeTable = sAltariaFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 54, SPECIES_ALTARIA_MEGA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 54, SPECIES_CAELODIA}),
     },
 
 #if P_MEGA_TO_EVOLUTION
-    [SPECIES_ALTARIA_MEGA] =
+    [SPECIES_CAELODIA] =
     {
         .baseHP        = 75,
         .baseAttack    = 90,
@@ -9837,11 +9837,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sBanetteTeachableLearnset,
         // .formSpeciesIdTable = sBanetteFormSpeciesIdTable,
         // .formChangeTable = sBanetteFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_BANETTE_MEGA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_MORTIPLUSH}),
     },
 
 #if P_MEGA_TO_EVOLUTION
-    [SPECIES_BANETTE_MEGA] =
+    [SPECIES_MORTIPLUSH] =
     {
         .baseHP        = 73,
         .baseAttack    = 102,
@@ -10560,11 +10560,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggMoveLearnset = sAbsolEggMoveLearnset,
         // .formSpeciesIdTable = sAbsolFormSpeciesIdTable,
         // .formChangeTable = sAbsolFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 59, SPECIES_ABSOL_MEGA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 59, SPECIES_OBSERA}),
     },
 
 #if P_MEGA_TO_EVOLUTION
-    [SPECIES_ABSOL_MEGA] =
+    [SPECIES_OBSERA] =
     {
         .baseHP        = 72,
         .baseAttack    = 93,

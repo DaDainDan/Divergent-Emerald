@@ -2981,11 +2981,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .eggMoveLearnset = sAudinoEggMoveLearnset,
         // .formSpeciesIdTable = sAudinoFormSpeciesIdTable,
         // .formChangeTable = sAudinoFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 55, SPECIES_AUDINO_MEGA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 55, SPECIES_AUREMPINA}),
     },
 
 #if P_MEGA_TO_EVOLUTION
-    [SPECIES_AUDINO_MEGA] =
+    [SPECIES_AUREMPINA] =
     {
         .baseHP        = 73,
         .baseAttack    = 92,

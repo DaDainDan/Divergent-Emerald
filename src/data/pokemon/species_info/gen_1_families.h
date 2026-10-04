@@ -15576,11 +15576,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         // .eggMoveLearnset = sKangaskhanEggMoveLearnset,
         // .formSpeciesIdTable = sKangaskhanFormSpeciesIdTable,
         // .formChangeTable = sKangaskhanFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 90, SPECIES_KANGASKHAN_MEGA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 90, SPECIES_KHAN_DUO}),
     },
 
 #if P_MEGA_TO_EVOLUTION
-    [SPECIES_KANGASKHAN_MEGA] =
+    [SPECIES_KHAN_DUO] =
     {
         .baseHP        = 112,
         .baseAttack    = 133,

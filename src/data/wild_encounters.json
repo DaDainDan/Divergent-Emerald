@@ -3107,7 +3107,7 @@
               {
                 "min_level": 37,
                 "max_level": 38,
-                "species": "SPECIES_HOUNDOOM"
+                "species": "SPECIES_HOUNDREAD"
               },
               {
                 "min_level": 32,
@@ -3709,7 +3709,7 @@
               {
                 "min_level": 45,
                 "max_level": 46,
-                "species": "SPECIES_SABLEYE_MEGA"
+                "species": "SPECIES_SANGUINEYE"
               },
               {
                 "min_level": 45,
@@ -6160,7 +6160,7 @@
               {
                 "min_level": 37,
                 "max_level": 38,
-                "species": "SPECIES_HOUNDOOM"
+                "species": "SPECIES_HOUNDREAD"
               },
               {
                 "min_level": 32,
@@ -6229,7 +6229,7 @@
               {
                 "min_level": 37,
                 "max_level": 38,
-                "species": "SPECIES_HOUNDOOM"
+                "species": "SPECIES_HOUNDREAD"
               },
               {
                 "min_level": 32,
@@ -6298,7 +6298,7 @@
               {
                 "min_level": 37,
                 "max_level": 38,
-                "species": "SPECIES_HOUNDOOM"
+                "species": "SPECIES_HOUNDREAD"
               },
               {
                 "min_level": 32,
@@ -6367,7 +6367,7 @@
               {
                 "min_level": 37,
                 "max_level": 38,
-                "species": "SPECIES_HOUNDOOM"
+                "species": "SPECIES_HOUNDREAD"
               },
               {
                 "min_level": 32,
@@ -6436,7 +6436,7 @@
               {
                 "min_level": 37,
                 "max_level": 38,
-                "species": "SPECIES_HOUNDOOM"
+                "species": "SPECIES_HOUNDREAD"
               },
               {
                 "min_level": 32,
@@ -10237,7 +10237,7 @@
               {
                 "min_level": 45,
                 "max_level": 46,
-                "species": "SPECIES_SABLEYE_MEGA"
+                "species": "SPECIES_SANGUINEYE"
               },
               {
                 "min_level": 45,
@@ -10391,7 +10391,7 @@
               {
                 "min_level": 45,
                 "max_level": 46,
-                "species": "SPECIES_SABLEYE_MEGA"
+                "species": "SPECIES_SANGUINEYE"
               },
               {
                 "min_level": 45,
@@ -11805,17 +11805,17 @@
               {
                 "min_level": 90,
                 "max_level": 90,
-                "species": "SPECIES_ALTARIA_MEGA"
+                "species": "SPECIES_CAELODIA"
               },
               {
                 "min_level": 91,
                 "max_level": 91,
-                "species": "SPECIES_ALTARIA_MEGA"
+                "species": "SPECIES_CAELODIA"
               },
               {
                 "min_level": 91,
                 "max_level": 91,
-                "species": "SPECIES_ALTARIA_MEGA"
+                "species": "SPECIES_CAELODIA"
               }
             ]
           },
@@ -11959,17 +11959,17 @@
               {
                 "min_level": 90,
                 "max_level": 90,
-                "species": "SPECIES_ABSOL_MEGA"
+                "species": "SPECIES_OBSERA"
               },
               {
                 "min_level": 91,
                 "max_level": 91,
-                "species": "SPECIES_ABSOL_MEGA"
+                "species": "SPECIES_OBSERA"
               },
               {
                 "min_level": 91,
                 "max_level": 91,
-                "species": "SPECIES_ABSOL_MEGA"
+                "species": "SPECIES_OBSERA"
               }
             ]
           },
@@ -14590,7 +14590,7 @@
               {
                 "min_level": 50,
                 "max_level": 51,
-                "species": "SPECIES_SABLEYE_MEGA"
+                "species": "SPECIES_SANGUINEYE"
               },
               {
                 "min_level": 50,
@@ -15757,12 +15757,12 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_SABLEYE_MEGA"
+                "species": "SPECIES_SANGUINEYE"
               },
               {
                 "min_level": 38,
                 "max_level": 38,
-                "species": "SPECIES_SABLEYE_MEGA"
+                "species": "SPECIES_SANGUINEYE"
               },
               {
                 "min_level": 35,
